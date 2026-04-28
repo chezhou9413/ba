@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_One</defName>
+    <label>蓝牙项链Buff</label>
+    <description>佩戴蓝牙项链时提供每秒2.5点生命值的生命恢复和减少疼痛值，疼痛感受降低至92%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.92</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>8</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Tow</defName>
+    <label>雪花吊坠Buff</label>
+    <description>佩戴雪花吊坠时提供每秒4.3点生命值的生命恢复和减少疼痛值，疼痛感受降低至87%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+   <stages>
+      <li>
+        <painFactor>0.87</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>13</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Three</defName>
+    <label>尼古拉挂坠盒Buff</label>
+    <description>佩戴尼古拉挂坠盒时提供每秒6点生命值的生命恢复和减少疼痛值，疼痛感受降低至82%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.82</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>18</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Four</defName>
+    <label>十字架颈链Buff</label>
+    <description>佩戴十字架颈链时提供每秒8.3点生命值的生命恢复和减少疼痛值，疼痛感受降低至75%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.75</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>25</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Five</defName>
+    <label>身份牌Buff</label>
+    <description>佩戴身份牌时提供每秒9.3点生命值的生命恢复和减少疼痛值，疼痛感受降低至72%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.72</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>28</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Six</defName>
+    <label>朋克项圈Buff</label>
+    <description>佩戴朋克项圈时提供每秒10.5点生命值的生命恢复和减少疼痛值，疼痛感受降低至68%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.68</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>32</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Seven</defName>
+    <label>锁扣项链Buff</label>
+    <description>佩戴锁扣项链时提供每秒11.5点生命值的生命恢复和减少疼痛值，疼痛感受降低至65%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+   <stages>
+      <li>
+        <painFactor>0.65</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>35</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Eight</defName>
+    <label>绿叶项链Buff</label>
+    <description>佩戴绿叶项链时提供每秒12.5点生命值的生命恢复和减少疼痛值，疼痛感受降低至62%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.62</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>38</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Nine</defName>
+    <label>章鱼固定器Buff</label>
+    <description>佩戴章鱼固定器时提供每秒13.3点生命值的生命恢复和减少疼痛值，疼痛感受降低至60%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+   <stages>
+      <li>
+        <painFactor>0.60</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>40</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANC_BluetoothNecklace_Ten</defName>
+    <label>存储器项链Buff</label>
+    <description>佩戴存储器项链时提供每秒14点生命值的生命恢复和减少疼痛值，疼痛感受降低至58%</description>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.58</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>42</healAmount>
+        <healIntervalTicks>180</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

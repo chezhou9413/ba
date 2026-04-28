@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Asuna_EX</defName>
+ <label>要射击了哦！</label>
+ <description>对一名敌人造成自身攻击力416%的伤害</description>
+ <iconPath>Ability/Icon/Asuna/Asuna_EX</iconPath>
+ <cooldownTicksRange>1200</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Asuna_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>BANW_Asuna_gun</soundCast>
+ <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <defaultProjectile>BANC_Bullet_Asuna_EX</defaultProjectile>
+ <range>33.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>0.5</warmupTime><!-- 前摇时间（单位：秒） -->
+ <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+ <ticksBetweenBurstShots>6</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+<burstShotCount>11</burstShotCount> <!--连发射击的数量为 12 发。-->
+<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
+<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
+<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
+<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
+<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+</comps>
+</AbilityDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Asuna_EX</defName>
+    <label>惊喜派对子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
+      <damageAmountBase>26</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize>
+      <texPath>Projectile/Bullet_Asuna</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+<AbilityDef>
+<defName>BAWN_Asuna_EXX</defName>
+ <label>要冲了哦！</label>
+ <description>向目标处位移一段距离并为自己提供30%的闪避率和增加57%的攻击速度（持续30秒）</description>
+ <iconPath>Ability/Icon/Asuna/Asuna_EXX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Asuna_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>32</Ability_Duration>
+ </statBases>
+ <verbProperties>
+  <warmupEffecter></warmupEffecter>
+ <soundCast>Asuna_Skill_EXX_A</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>3.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <requireLineOfSight>False</requireLineOfSight>
+ <warmupTime>0.3</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>true</canTargetLocations><!-- 可以选择地点作为目标。 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="VEF.AnimalBehaviours.CompProperties_ControlledBlinking">
+</li>
+<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Asuna_hid</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+<li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_B</effecterDef>
+       <effecterDef>BANW_Asuna_Ef_A</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+</comps>
+</AbilityDef>
+    
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Asuna_hid</defName>
+        <!-- 显示名称 -->
+        <label>要冲了哦！</label>
+        <!-- 效果描述 -->
+        <description>提供30%的闪避率和增加57%的攻击速度。持续30秒</description>
+        <defaultLabelColor>(255, 255, 0)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <AimingDelayFactor>-0.95</AimingDelayFactor>
+           <RangedCooldownFactor>-0.57</RangedCooldownFactor>
+           <BANW_Miss>0.3</BANW_Miss>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+    </comps>
+    </HediffDef>
+  
+    
+</Defs>

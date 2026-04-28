@@ -1,0 +1,214 @@
+ManifestFileVersion: 0
+CRC: 1345333768
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bc87f2586aac0ffac6ea31a77a91818a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6c222a647dca10eeb3bc69982d5c09ef
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: bc87f2586aac0ffac6ea31a77a91818a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 84
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: deeb12332c062954093c24a3fab10b83, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d85b887af7e6c3f45a2e2d2920d641bc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f0600d7539e913e4cbdaa0c1b74b130b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d33c0007380f4e34b96470cc04e2901b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 85dd04af2715181479c2473e4eed6c08, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 79c17ad4c10909746acbed721fee3f2b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5a4311caa6156cf47b00033d277a0f9f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 7ba8efdf04e4c3d4faa7dc172f9bbfa8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fb3b806d5cd23184899c68b58862fb92, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+- Class: 328
+  Script: {instanceID: 0}
+- Class: 329
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.RectOffset
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.AnimationTriggers
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Button/ButtonClickedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ColorBlock
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.FontData
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Navigation
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ScrollRect/ScrollRectEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Scrollbar/ScrollEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Slider/SliderEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.SpriteState
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.BlendModeMaterials
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.MeshGenerator
+- AssemblyName: spine-unity
+  ClassName: Spine.Unity.MeshGenerator/Settings
+- AssemblyName: spineMono
+  ClassName: aronaAnimation
+Assets:
+- Assets/Scenes/Resources/Gaka/abImage/card.spriteatlas
+- Assets/Scenes/Resources/GakaObj/ShotMaskBack.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Explosion_def.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Composite_main.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Mysterious_def.png
+- Assets/Scenes/Resources/UI/StudentList.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/None_Box.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Explosion_box.png
+- Assets/Scenes/Resources/Gaka/abImage/FX_TEX_GT_SRCard.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Vehicle_big.png
+- Assets/Scenes/Resources/GakaObj/ResultList.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Vibration_box.png
+- Assets/Scenes/Resources/Gaka/abImage/srstar.png
+- Assets/Scenes/Resources/MissionGameObj/selectQue.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Through_def.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Tank_min.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Vibration_def.png
+- Assets/Scenes/Resources/MissionGameObj/MissionTarget_Node.prefab
+- Assets/Scenes/Resources/Gaka/abImage/gtwenhaoback.png
+- Assets/Scenes/Resources/MissionGameObj/EnemyListNode.prefab
+- Assets/Scenes/Resources/MissionGameObj/MissionRewardNode.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Assist_big.png
+- Assets/Scenes/Resources/Gaka/abImage/srwenhaoback.png
+- Assets/Scenes/Resources/UI/mainUI.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Composite_def.png
+- Assets/Scenes/Resources/Image/xuanzhonghuise.png
+- Assets/Scenes/Resources/UI/Main Camera.prefab
+- Assets/Scenes/Resources/Gaka/abImage/gtstar.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Mysterious_main.png
+- Assets/Scenes/Resources/UI/weixuanzeianliutex.prefab
+- Assets/Scenes/Resources/Gaka/abImage/ssrwenhaoback.png
+- Assets/Scenes/Resources/Gaka/abImage/srrback.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Henc_min.png
+- Assets/Scenes/Resources/Gaka/abImage/srback.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Explosion_main.png
+- Assets/Scenes/Resources/Gaka/abImage/Gacha_BG_SSR.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Henc_big.png
+- Assets/Scenes/Resources/UI/lizi.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Through_box.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Medical_min.png
+- Assets/Scenes/Resources/MissionGameObj/MissionType.prefab
+- Assets/Scenes/Resources/UI/messageUIQuek.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Medical_big.png
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Assist_min.png
+- Assets/Scenes/Resources/UI/shot.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Vibration_main.png
+- Assets/Scenes/Resources/MissionGameObj/selectList.prefab
+- Assets/Scenes/Resources/GakaObj/showGaList.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Tank_big.png
+- Assets/Scenes/Resources/Gaka/abImage/gtback.png
+- Assets/Scenes/Resources/Gaka/abImage/FX_TEX_GT_RCard_1.png
+- Assets/Scenes/Resources/UI/messageUI.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Mysterious_box.png
+- Assets/Scenes/Resources/MissionGameObj/MissionNodeGameObj.prefab
+- Assets/Scenes/Resources/UI/OpenUi.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Vehicle_min.png
+- Assets/Scenes/Resources/GakaObj/GakaAnimation.prefab
+- "Assets/Scenes/Resources/\u672A\u6807\u9898-1.png"
+- Assets/Scenes/Resources/Gaka/abImage/FX_TEX_GT_SSRCard.png
+- Assets/Scenes/Resources/Gaka/abImage/srrstar.png
+- Assets/Scenes/Resources/GakaObj/GakaHead.prefab
+- Assets/Scenes/Resources/Gaka/abImage/Growth_Bg.png
+- Assets/Scenes/Resources/GakaObj/GakaShotList.prefab
+- Assets/Scenes/Resources/UI/goumaiMack.prefab
+- Assets/Scenes/Resources/Tex/Mission/P4/chooseType/Through_main.png
+- Assets/Scenes/Resources/UI/star.prefab
+- "Assets/Scenes/Resources/Image/shangdian/\u767D\u6846\uFF12.png"
+Dependencies: []

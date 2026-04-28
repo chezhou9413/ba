@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Azusa</defName>
+		<label>-梓-</label>
+		<race>BANW_Azusa_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Azusa_EX</li>
+		</abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryAzusa</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Azusa</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Azusa</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>18~20</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>11~12</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>1</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>7</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Azusa_A>0</BAWC_TraitDef_Azusa_A>
+			<BAWC_TraitDef_Azusa_B>0</BAWC_TraitDef_Azusa_B>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Azusa_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;严酷的训练 &lt;/color&gt;</label>
+                <description>被动技能:自身暴击率增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_CriticalChance>0.26</BANW_CriticalChance>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Azusa_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;瞄准弱点&lt;/color&gt;</label>
+                <description>子技能:自身攻击时有&lt;color=#00FFFF&gt;20%&lt;/color&gt;的概率造成&lt;color=#DC143C&gt;80%&lt;/color&gt;攻击力的追加伤害</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BANW_Ibuki_Eff_A</defName>
+    <thingClass>MoteAttached</thingClass><!-- 附着 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hikali/EX_B</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.1</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.2</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>2</growthRate>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BANW_Ibuki_Eff_B</defName>
+    <thingClass>MoteAttached</thingClass><!-- 附着 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Ibuki/B/Ibuki_B</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>0.3</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.3</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.5</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>100</growthRate>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BANW_Ibuki_Eff_C</defName>
+    <thingClass>MoteAttached</thingClass><!-- 附着 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Ibuki/B/Ibuki_C</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>25</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>2</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>35</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+   <EffecterDef>
+<defName>BANW_Effecter_Ibuki_A</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>BANW_Skill_A</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+  <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BANW_Ibuki_Eff_A</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>45</rotation><!-- 初始旋转角度 -->
+        <rotationRate>90</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, -5, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>10</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+  <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_Natsu_4_fleck</fleckDef>
+        <scale>0.7</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+    </li>
+    <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BANW_Ibuki_Eff_B</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+    </li>
+</children>
+</EffecterDef>
+</Defs>

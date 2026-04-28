@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<PawnKindDef Name="BANW_BasePawn" ParentName="BasePlayerPawnKind" Abstract="True">
+		<useFactionXenotypes>false</useFactionXenotypes>
+		<xenotypeSet>
+		</xenotypeSet>
+		
+		<fixedGender>Female</fixedGender>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<initialResistanceRange>10~11</initialResistanceRange>
+		<royalTitleChance>0.0</royalTitleChance>
+		<biocodeWeaponChance>0.0</biocodeWeaponChance>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<chemicalAddictionChance>0.0</chemicalAddictionChance>
+		<combatEnhancingDrugsChance>0.0</combatEnhancingDrugsChance>
+		<destroyGearOnDrop>false</destroyGearOnDrop>
+	</PawnKindDef>
+
+</Defs>

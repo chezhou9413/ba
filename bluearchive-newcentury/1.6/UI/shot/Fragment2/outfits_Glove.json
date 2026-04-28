@@ -1,0 +1,101 @@
+[
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_2_Piece",
+        "ProductDefName": "BANW_Glove_2_Piece",
+        "ProductName": "Lv.2-针织连指手套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_3_Piece",
+        "ProductDefName": "BANW_Glove_3_Piece",
+        "ProductName": "Lv.3-佩洛洛烤箱手套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_4_Piece",
+        "ProductDefName": "BANW_Glove_4_Piece",
+        "ProductName": "Lv.4-皮手套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_5_Piece",
+        "ProductDefName": "BANW_Glove_5_Piece",
+        "ProductName": "Lv.5-战术手套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_6_Piece",
+        "ProductDefName": "BANW_Glove_6_Piece",
+        "ProductName": "Lv.6-机械臂手套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_7_Piece",
+        "ProductDefName": "BANW_Glove_7_Piece",
+        "ProductName": "Lv.7-袖套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_8_Piece",
+        "ProductDefName": "BANW_Glove_8_Piece",
+        "ProductName": "Lv.8-蕾丝手套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_9_Piece",
+        "ProductDefName": "BANW_Glove_9_Piece",
+        "ProductName": "Lv.9-防滑手套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Glove/Glove_10_Piece",
+        "ProductDefName": "BANW_Glove_10_Piece",
+        "ProductName": "Lv.10-能量手套设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    }
+]

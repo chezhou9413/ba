@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Shun</defName>
+		<label>-瞬-</label>
+		<race>BANW_Shun_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryShanhaijing</li>
+					<li>BANW_BackstoryShun</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Shun</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Shun</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>9</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+		</forcedTraits>
+	</PawnKindDef>
+
+</Defs>

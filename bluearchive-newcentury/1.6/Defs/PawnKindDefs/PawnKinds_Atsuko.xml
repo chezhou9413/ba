@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Atsuko</defName>
+		<label>-亚津子-</label>
+		<race>BANW_Atsuko_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+			<li>BAWN_Atsuko_EXX</li>
+		</abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+		<li>
+			<def>BAWN_Atsuko_Buff</def>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryArian</li>
+					<li>BANW_BackstoryAtsuko</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Atsuko</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Atsuko</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>4~8</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>5~10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+		<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+		<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+		<BAWC_TraitDef_Atsuko>0</BAWC_TraitDef_Atsuko>
+		<BAWC_TraitDef_Atsuko_A>0</BAWC_TraitDef_Atsuko_A>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Atsuko</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DDA0DD&gt;公主&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是阿里乌斯小队的一员，身上流淌着皇室血液，因此被阿里乌斯的各位称作"公主",性格非常的温柔，已经习惯了疼痛,因为时常带着面具，所以一直在用手语交流</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+				<PawnBeauty>2.0</PawnBeauty>
+				<PainShockThreshold>+0.50</PainShockThreshold>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Atsuko_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;被教会的事情&lt;/color&gt;</label>
+                <description>被动技能:自身闪避值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <BANW_Miss>0.26</BANW_Miss>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Atsuko_Buff</defName>
+        <!-- 显示名称 -->
+        <label>公主</label>
+        <!-- 效果描述 -->
+        <description>亚津子已经习惯了疼痛</description>
+        <defaultLabelColor>(221,160,221)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        <stages>
+        <li>
+        <painFactor>0.50</painFactor>
+        </li>
+        </stages>
+    </HediffDef>
+</Defs>

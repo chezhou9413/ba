@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Turugi</defName>
+		<label>-鹤城-</label>
+		<race>BANW_Turugi_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+		<li>
+			<def>BANW_Turugi_HpBuff</def>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryTurugi</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Turugi</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Turugi</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>7</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Turugi>0</BAWC_TraitDef_Turugi>
+			<BAWC_TraitDef_Turugi_A>0</BAWC_TraitDef_Turugi_A>
+			<BAWC_TraitDef_Turugi_B>0</BAWC_TraitDef_Turugi_B>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Turugi</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF7F50&gt;圣三一的战略兵器&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}的性格核心是与生俱来的好战与暴躁，堪称 "行动先于思考" 的典型。面对不满的事物或违背她认知的状况，会第一时间选择用武力解决，甚至做出冲上去撞电车这类看似失控的举动。日常表情管理完全失控，给人极具冲击力的强势印象。这种狂躁并非无的放矢，更多是对 "正义" 的直接践行 —— 用最迅猛的方式扫清障碍。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+				<MeleeDodgeChance>5</MeleeDodgeChance>
+				<IncomingDamageFactor>-0.1</IncomingDamageFactor>
+				<MoveSpeed>2.80</MoveSpeed>
+				<Flammability>-0.6</Flammability>
+                </statOffsets>
+				<statFactors>
+				<StaggerDurationFactor>0</StaggerDurationFactor>
+				<MeleeDamageFactor>7.5</MeleeDamageFactor>
+				<MeleeArmorPenetration>2.5</MeleeArmorPenetration>
+				<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Turugi_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;风驰电掣&lt;/color&gt;</label>
+                <description>被动技能:自身移动速度增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    
+                </statOffsets>
+				<statFactors>
+					<MoveSpeed>1.26</MoveSpeed>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Turugi_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;无法控制的力量&lt;/color&gt;</label>
+                <description>子技能:自身攻击时有&lt;color=#DC143C&gt;50%&lt;/color&gt;的概率对目标造成自身&lt;color=#DC143C&gt;100%&lt;/color&gt;的攻击力的伤害</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<HediffDef>
+    <defName>BANW_Turugi_HpBuff</defName>
+    <label>肉体再生</label>
+    <description>鹤城的夸张的治愈能力，能在肉眼可见的速度修复自身的伤口</description>
+	<labelNoun>每秒回复30点血</labelNoun>
+    <defaultLabelColor>(255, 0, 0)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+		 <stages>
+          <li>
+          <painFactor>0.70</painFactor>     
+           <statOffsets>
+			<ImmunityGainSpeed>2.0</ImmunityGainSpeed>
+            </statOffsets>
+           </li>
+          </stages>
+    <comps>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>60</healAmount>
+        <healIntervalTicks>120</healIntervalTicks>
+		<isHeatScar>true</isHeatScar>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

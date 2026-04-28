@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Kayako</defName>
+		<label>-佳代子-</label>
+		<race>BANW_Kayako_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryKayako</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>18</minGenerationAge>
+		<maxGenerationAge>19</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Kayako</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Kayako</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>1~6</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>15</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+		</forcedTraits>
+	</PawnKindDef>
+
+</Defs>

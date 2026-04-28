@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+	<defName>Rio_Skill_EX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Rio/Rio_ExSkill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Rio_Skill_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Rio/Rio_1</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+<SoundDef>
+	<defName>Rio_levelup_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Rio/Rio_Up_1</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Rio_levelup_B</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Rio/Rio_Up_2</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Rio_levelup_C</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Rio/Rio_Up_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Rio_levelup_D</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Rio/Rio_Up_4</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+  
+
+</Defs>

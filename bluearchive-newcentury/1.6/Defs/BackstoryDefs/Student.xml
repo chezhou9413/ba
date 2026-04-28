@@ -1,0 +1,1846 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAdult</defName>
+		<title>基沃托斯学生</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]出生于基沃托斯。\n现在她准备好战斗了.</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_Backstory</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSany</defName>
+		<title>圣三一综合学园</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园的一名学生，基沃托斯三大学院之一，其学生会名为"茶话会"。设有自警团、正义实现委员会、救护骑士团等许多社团。总体来说重视纪律和文化，学生们大多诚实善良，给人不谙世事的大小姐印象，内部的治安状况有序而稳定。自古以来就在基沃托斯推崇"文武双全"，是一所充满历史和传统气息的学园。当然，圣三一并不是完美的。在风平浪静的学院氛围下，也潜藏着诸多问题……和格赫娜在传统上是敌对关系。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstorySany</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAbydos</defName>
+		<title>阿拜多斯高中</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿拜多斯高中的一名学生，阿拜多斯高中曾经面积广阔、人口众多，但随着来源不明的沙尘暴在区域内席卷，大部分土地都变成了沙漠，学生会为了阻止沙漠化蔓延却毫无成效，濒临破产废校，居民也逐渐迁出，繁华之地走向荒芜。目前仅剩废校对策委员会的五位成员还留在此地。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryAbydos</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMillennium</defName>
+		<title>千禧年科学学院</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年的一名学生,基沃托斯三大学院之一。其学生会名为"研讨会",由女仆组成的CC负责维持秩序,工程部也名声在外。正如名字所示,干禧最关注技术，基沃托斯的前沿发明几乎都出自他们之手。学生以理科生居多，不乏醉心学术对现实生活反而不太关心的怪异天才</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryMillennium</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentGehena</defName>
+		<title>格黑娜学园</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格黑娜的一名学生,基沃托斯三大学院之一，其学生会名为"万魔殿"。用两个词来概括这里的风气，就是"自由"和"混沌"，每天都有人惹是生非，让负责维持秩序的风纪委员会非常头疼。当然，拜这些随心所欲、行为出格的家伙们所赐，格赫娜的风纪委员也锻炼出了强大的实力。和圣三一的关系相当差，但最近似乎也有少许缓和的倾向。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryGehena</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSrt</defName>
+		<title>SRT特殊学园</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是SRT的一名学生,SRT特殊学园是由联邦学生会长亲自创立的特殊部队,是在联邦学生会长的许可之下,为了治理瓦尔基里警察学校和各自治区风纪委员力不能及的D.U地区内部犯罪而设立的。拥有基沃托斯最先进的武器装备和最精英的团队。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstorySrt</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHighland</defName>
+		<title>海兰德铁道学园</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是海兰德的一名学生,海兰德铁道学园是一所同时有着铁路运营和进行相关教育机能的独立学园。尽管海兰德并不拥有自己的自治区，但是海兰德实际控制的铁路及其沿线设施在职能上充当了海兰德的自治区。在管理着基沃托斯内部分铁路的同时，还有着其他多项业务。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryHighland</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentArian</defName>
+		<title>阿里乌斯分校</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>在推动圣三一综合学园完成联合统一的「第一次公会议」中，由于阿里乌斯派系直到最后都持反对意见，最后与统一后的圣三一发生了争斗，遭到镇压，被逐出了圣三一的自治区，隐藏在了一个完全没人能找到的地方，逐渐被世人所遗忘……</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryArian</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentShanhaijing</defName>
+		<title>山海经高级中学</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>山海经高级中学是以中华风为特色的学院，有梅花园、炼丹研究会等社团。与基沃托斯的其它学院相比，文化十分独特，并且有着悠久的历史传统。在山海经，美食店铺林立，旅游业也非常兴盛。只是内部的具体情况不太为外人所知……</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryShanhaijing</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_Hyakkiyako</defName>
+		<title>百鬼夜行联合学院</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>以和风为特色，旅游业发达，有庆典运营管理部、忍术研究部、修行部、阴阳部等风格独特的社团。百鬼夜行联合学园并没有正式的学生会，而是由众多彼此独立的社团、委员会联合组成的。美食、温泉和庆典，是百鬼夜行的三大关键词。不过也要提防戴着天狗面具的危险分子出现！</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryHyakkiyako</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_Wildhunt</defName>
+		<title>狂猎艺术学院</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>是一个充满艺术气息的学院，学院内有多个艺术社团，如绘画部，内部又分为传统绘画派、现代绘画派，雕像部，负责蜡像、冰雕、石像等雕刻类艺术创作；LOGO 图标设计部；街头涂鸦部，是狂猎的问题儿童社团，成员后来扩大到基沃托斯各校学生，在基沃托斯很多地方都能看到他们的涂鸦作品。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryWildhunt</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_Valkyrie</defName>
+		<title>瓦尔基里</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>瓦尔基里警察学校是有着处理基沃托斯各种各样问题职能的学校。因此在各处都有据点，并且学生大多富有正义感，但即使这样因为各自治区的限制瓦尔基里几乎解决不了什么问题… 图标设计部；街头涂鸦部，是狂猎的问题儿童社团，成员后来扩大到基沃托斯各校学生，在基沃托斯很多地方都能看到他们的涂鸦作品。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryValkyrie</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSchale</defName>
+		<title>夏莱</title>
+		<titleShort>老师</titleShort>
+		<baseDesc>[PAWN_nameDef]是因为是联邦组织，所以所有学院的学生都能够不受限制地加入在各学园的自治区，可以不受制约地进行战斗活动。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstorySchale</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHikali</defName>
+		<title>CCC(中央管制中心)</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是海兰德铁道学园所属、CCC《管制中心》干部。
+在列车驾驶方面有卓越的才能，与其双胞胎妹妹望一同被选为干部。但是十分不擅长文件和管理业务。是忠实于当时的欲望，不在意他人目光的特殊性格，往往容易引发各种事件。
+"光选手，到——站——"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHikali</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAoba</defName>
+		<title>货物运输管理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]隶属于海兰德铁道学院，货物输送管理部的工程师。
+虽然性格腼腆胆小，但是同样也有着会自然而然地发表毒舌言论的一面。大概是因为她说话的声音比较小，要分清是不是在毒舌有一定难度。经常被繁杂任务找上门，觉得不讲道理的事情太多，对这个世界怀有强烈的不满。
+"我，我觉得敲一敲应该就能修好……不行吗……这样啊……"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAoba</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMiyu</defName>
+		<title>Rabbit小队</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是sT特殊学园所属，RABBIT小队的狙击手。
+因为具有狙击手的才能而进入SRT特殊学院就读，然而学园却突然被关闭。现在过着和小队成员们一起在公园露宿的生活。存在感薄弱，虽然对狙击任务很有帮助，但不仅是敌人，就连队友也时常忘记她的存在。
+代号为「RABBIT 4」。
+"这，这里是RABBIT4……那个，刚才有叫我吗？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMiyu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNozomi</defName>
+		<title>CCC(中央管制中心)</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是海兰德铁道学园所属，CCC（中央管制中心）的干部。
+性格开朗活泼，不拘小节。因此经常和双胞胎姐姐光一起引发麻烦。遇到有趣的事情就会沉迷其中，但在列车运行方面会认真负责。
+"噗哈哈！久等啦！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNozomi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHoshiro</defName>
+		<title>对策委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿拜多斯高中所属，阿比多斯学生会的前副会长，现在担任对策委员会委员长的懒惰虫少女。
+特征是像大叔一样的口气，比起工作更喜欢玩乐。
+因此她平常老是被委员会的成员们骂，不过一旦任务开始，她就会为了保护其他成员在最前线奋战。
+"完全没睡到午觉耶，嘛，也没办法吧"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHoshiro</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentTurugi</defName>
+		<title>正义实现委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，正义实现委员会的委员长，同时也是三一的战略兵器。
+生性好战且暴力，一旦遇到不满的事物就会先破坏再说。
+幸亏有副委员长莲见而勉强带领着正义实现委员会。虽然鹤城就像无法控制的狂犬，但在老师面前却会表现出如同藏不住害羞的少女的一面。
+"来吧，到了狩猎的时间啦～！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryTurugi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSeia</defName>
+		<title>茶话会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]隶属于圣三一综合学园，圣三一学生分派之一桑库特斯分派的领导人。
+说起话来十分晦涩，令人难以理解。因为是个书虫，所以经常泡在大图书馆里。在痊愈后，她比以前更常表现出孩子气的一面来。
+"最终——道路将彼此交织"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySeia</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAsuna</defName>
+		<title>CC</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年科学学园所属，秘密组织【CC】的代理人。代号【零一】，是凭借卓越的野性直觉来克服重重难关的老手。虽然在任务中，擅自相信别人而暴露自己的真实身份，把可疑的东西全部弄坏等大量难以理解的行动，但最终还是取得了好的成果。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAsuna</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMiyako</defName>
+		<title>Rabbit小队</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]SRT特殊学园所属，RABBIT小队的小队长。
+因为憧憬着前辈们的活跃而进入SRT特殊学园就读，然而学园却突然被关闭。
+现在过着和小队成员们一起在公园露宿的生活。因为表情的变化很少，也几乎不曾表露感情，身边的人都觉得她很木讷。不过其实时常在心里关心着队员们，拥有一颗温柔的心。
+代号为「RABBIT 1」。
+"这里是RABBIT1，即刻开始作战"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMiyako</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentShiroko</defName>
+		<title>对策委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]阿拜多斯高中所属，喜欢运动的阿比多斯对策委员会的突击队长。
+虽然给人沉默寡言且几乎没有表情变化的冷淡印象，但其实是个说她比任何人都珍惜阿比多斯高中也不为过的少女。
+为了复兴学园会不择手段，因此偶尔会提出令人意想不到的想法。
+"需要我的帮助？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryShiroko</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSaki</defName>
+		<title>Rabbit小队</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]SRT特殊学园所属，RABBIT小队的尖兵。
+为了追求规矩严格的生活而进入SRT特殊学园就读，然而学园却突然被关闭。
+现在过着和小队成员们一起在公园露宿的生活。随身携带写着SRT学园战术的教科书，是重视原则行动的类型。
+因为有采集野菜和收集废弃品的兴趣，似乎对现在总是资源不足的公园生活能有各种帮助。
+代号为「RABBIT 2」
+"这里是RABBIT2，感度良好"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySaki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAkane</defName>
+		<title>CC</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年科学学园所属，秘密组织「CC」的特务。
+代号为「Zero Three」，专门负责「清扫」的成员。
+会以温柔的印象为武器潜入敌阵，用炸药把敌方阵营一扫而空，因而以「清扫专家」的绰号广为人知。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAkane</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHasumi</defName>
+		<title>正义实现委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，正义实现委员会的第二把交椅。
+代替象征狂乱的部长鹤城，担任正义实现委员会的战术指挥官。
+因此，虽然第一眼看起来是沉稳知性、「这就是圣三一的学生」的模范学生，但她也毫无疑问是正义实现委员会的一员。
+比任何人都冷静，偶尔也会做出鲁莽的举动。
+—— 减肥中……</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHasumi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMika</defName>
+		<title>茶话会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，构成圣三一的学生组织之一，「帕特尔」原领导人的少女。
+身为原茶话会的一人，与同为领导人的渚是幼驯染。但是因政治立场上的对立，会好好区分公私。总是露出愉快笑容，展现天真无邪一面的她，心中却似乎抱有无法对他人言说的烦恼。
+"嗯，久等啦！
+今后就全都交给我吧☆"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMika</li>
+		</spawnCategories>
+		<workDisables>
+			<li>Social</li>
+			<li>Intellectual</li>
+		</workDisables>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMoe</defName>
+		<title>Rabbit小队</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是SRT特殊学园所属，Rabbit小队的报务员。代号「Rabbit 3」。
+因为憧憬强大火力的SRT特殊学园武器而入学就读，但学园却突然关闭，现在和其他小队员一起露宿公园。拥着奇特的癖好，对于爆破或让事情功亏一篑感到愉悦，但身为报务员的能力无可置疑。重度爱好甜食，随时都会咬着棒棒糖。
+"这里是RABBIT3。下一个爆破地点在哪？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMoe</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMashiro</defName>
+		<title>正义实现委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]圣三一综合学园所属，正义实现委员会的率直成员。
+随身带着一把和身高不合的反器材步枪，默默执行火力支持任务的少女。
+平时虽然话少但并不怕生，也并非不擅长人际关系。如果提及和正义有关的话题，她反而会变得多话。
+"如果正义被需要的话，不管何处我都会前往"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMashiro</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNero</defName>
+		<title>CC</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院所属，秘密组织「CC」的队长。
+乍看之下只是个在女仆装上穿着夹克的小小不良少女，但其实是拥有千禧学院最强战斗能力的特工。
+因此她的代号「Double O」被周围的人视为是誓约胜利的象征。
+"给我鼓起干劲哦。要全力上了！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNero</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentIchika</defName>
+		<title>正义实现委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学院所属的、正义实现委员会的一员。时刻都是一副稳重表情的，在各种各样学生组成的正义实现委员会中，主要担任着仲裁一职。与其他学院的关系也相对较好。擅长为人处事的性格并非与生俱来，而是努力而来的成果。
+"咦? 约定的时间还没到吧?让你久等了吗?"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryIchika</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKarlin</defName>
+		<title>CC</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院所属，秘密组织「CC」的特工。
+代号为「Zero Two」，使用强大的火力负责后援。
+和看似凶恶的外表不同，其实是CC特工中最谨慎的人。
+每天在都为了阻止在作战中时常暴走的明日奈和茜而伤脑筋。
+"遵照主人的指示"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKarlin</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentCherino</defName>
+		<title>红冬事务局</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是红冬联邦学园所属，蛮横又孩子气的学生会长。
+对权力的执着与欲望十分惊人，即使每周都因为革命而失势，却能不断设法回到学生会长的宝座。
+贴在鼻子下面的胡子据切里诺所说是「权威的象征」、以及「所谓的权威就是由胡子而来的」。
+"为与我这个最高权力者相遇，感到幸运吧！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryCherino</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMakoto</defName>
+		<title>万魔殿</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，「万魔殿」的议长。
+为达目的不择手段的，忠于内心欲望的野心家与阴谋家。尽管有时因其态度而经常遭受痛苦与挫折，但她是个很快能重新振作起来的内心坚强的少女。把伊吹当作可爱的妹妹而疼爱，同时也把伊吕波视作妹妹一般的存在。
+"来吧！老师！现在是与我等"万魔殿"共同迈进的时候了！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMakoto</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHina</defName>
+		<title>风纪委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，所有人都害怕的风纪委员长。
+虽然基本上是个怕麻烦少女，但是面对校规相关的问题时就会变得严格。
+嘴上说着「真麻烦」，在战场上却能毫不迷惘、冷静且迅速地判断情况并采取行动。
+战斗能力相当惊人，因此和格赫娜敌对的组织比什么都害怕她的登场。
+"虽然很麻烦，不过必须做该做的事，因为那就是我的义务"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHina</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+	
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNatsu</defName>
+		<title>放学后甜点部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，放学后的甜点部的首席麻烦制造者，自称是浪漫主义者。
+会突然说些富有哲学性的奇怪发言，爱用甜点作比喻的女孩。
+总会说出离奇的话，将大家卷入其中，但本意只是「想和大家一起分享浪漫」这种纯粹的心情。
+不过，因为「浪漫」的定义总是在改变，所以也无法否定「被她牵着鼻子走」的印象。
+"……老师有认真思考过，关于海绵蛋糕的事吗？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNatsu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentReisa</defName>
+		<title>三一自卫团</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学院所属，自警团的成员，在圣三一的各地出没，进行着维持治安的活动。
+虽然因为总是说些令人摸不着头脑的话，有时也会被认为是恶作剧报告，但是其实比谁都认真地在进行着自警团的活动。
+自报家门的开场白，每次都会稍微变化的样子。
+"为了寻求正义之人……我便在此……没错，我就是超级巨星。
+宇泽玲纱，登场！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryReisa</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentIbuki</defName>
+		<title>万魔殿</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]格黑娜学园所属，「万魔殿」的议员兼吉祥物少女。
+原本是从属格黑娜学园初等部，因能力得到认可而加入了在格黑娜学园里也只有优秀的学生才能进入的「万魔殿」。
+在「万魔殿」当中最为年幼，但因为自身那真诚的可爱而受到大家的宠爱。正如所说的这一点，为了不给前辈们添麻烦，今天这位品行端正的女孩子也在努力。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryIbuki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+	
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentYuuka</defName>
+		<title>研讨会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学园所属，学生会「研讨会」的会计。
+在理科比例较高的千禧科学学院中也是首屈一指的数学奇才，总揽千禧科学学院的预算管理。
+专长珠算。有着烦恼复杂的事情或心理纠结时靠打算盘冷静下来的习惯。
+—— 一切尽在掌握之中</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryYuuka</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentIori</defName>
+		<title>风纪委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，风纪委员会的冷酷专家。
+身为风纪委员会的突击队长，只要发现违反校规的学生，就会以压倒性的力量立刻进行惩处。
+虽然脑袋转得很快、办事迅速且战斗判断力也不差，不过有着一旦发现敌人就无法瞻前顾后的一面，连地洞这种单纯的陷阱也很容易中。
+"违反校规的家伙们不可原谅！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryIori</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSuzumi</defName>
+		<title>三一自卫团</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园的保障安全的自警团成员。
+由于频繁发生圣三一学生被其它学校袭击的事件，所以时常在大街上巡逻。
+因为自身强烈的正义感而被人误解为十分冷酷且正经，可实际上也有非常喜欢可爱事物的年轻少女的地方。
+—— 愿今天也是平安的一天</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySuzumi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentUi</defName>
+		<title>图书委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，图书委员会的委员长。
+是一位非常爱书的但讨厌人类的少女，至于何为因何为果，并不清楚。
+特别喜欢古书，每天都待在被称为「古书馆」的地方解读并管理古书，闭门不出。
+对知识的求知欲以及古书相关的技术都是一流的水准，被周围的人称为「古书馆的魔术师」。
+"那，那个，再稍微安静一点……"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryUi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAko</defName>
+		<title>风纪委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，除了是风纪委员会的行政官，对风纪委员长日奈来说也是如秘书般的存在。
+乍看之下给人一种亲切善良的印象，但对于违规的学生可是毫不留情。总是在风纪委员长日奈的身边辅佐她。
+因此也被格赫娜的学生称为「日奈的宠物」，不过本人并不是特别在意。
+"既然有我的协助，就不允许失误唷？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAko</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentShimiko</defName>
+		<title>图书委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，图书委员会的图书管理员。
+她是一名读书狂，是为数不多能把圣三一综合学园的图书馆庞大藏书全部读完的学生之一。
+爱读书的同时她也喜爱推荐书籍，无论遇到谁，她第一件思考的事情便是【这人对书的口味是啥呢？】
+—— 请在期限内归还书本。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryShimiko</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentIroha</defName>
+		<title>万魔殿</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，「万魔殿」的议员之一。
+虽然基本上是个讨厌麻烦的人，但她所属的格赫娜学园却总是问题百出，且学生会「万魔殿」（准确来说是真琴）自然是不会让她如意的。
+是个时常把「真没办法」、「好麻烦」挂在嘴边，淡然面对源源不断产生的问题与业务的中阶主管。被同样所属「万魔殿」，如吉祥物一般的存在「伊吹」所治愈，今天也一边叹着气一边执行着业务。
+"……需要我？真是的，真没办法呢"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryIroha</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAiry</defName>
+		<title>放学后甜点部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格圣三一综合学园所属，放学后的甜点部的开朗成员。
+个性悠然自得，最重视和朋友一边享用甜点一边聊天的时光。
+喜欢的东西是冰淇淋，最近迷上了薄荷巧克力的滋味。
+—— 薄荷巧克力最棒了！</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAiry</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMomoi</defName>
+		<title>游戏开发部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院所属，游戏开发部的编剧。
+是个和双胞胎妹妹绿一起在游戏开发部开发游戏的少女。
+个性爽快开朗，本来和内向的妹妹处得不太好，但两人对游戏的热爱意气相投，现在相处得非常好。
+—— 游戏人生</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMomoi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentChinatsu</defName>
+		<title>风纪委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，风纪委员会的救护负责人。
+重视规定、纪律及程序，是风纪委员会里为数不多有常识的人。在亚子或伊织等等风纪委员暴走时负责阻止他们的人。
+说话语气生硬，虽然给人「典型的风纪委员」的冷漠印象，但其实是个对可爱的动物毫无招架之力的善良少女。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryChinatsu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMidori</defName>
+		<title>游戏开发部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院所属，游戏开发部的插画家。
+是和双胞胎姐姐桃井一起在游戏开发部开发游戏的少女。
+个性害羞内向，本来和外向的姐姐处得不太好，但两人对游戏的热爱意气相投，现在相处得非常好。
+"这次的插图是自信作！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMidori</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKoharu</defName>
+		<title>补习授课部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，补习部的一员。
+原本是正义实现委员会的一员，但因为成绩下滑而面临着留级的危机，因此被强制加入到了补习部中。
+虽然本人一直自认为是精英，但实际上却笨到完全跟不上学校课程。
+有着偷偷收集色情杂志的爱好(?)，由于总会从日常的小事中发散妄想，经常为自己感到害臊。
+"色色的东西要全部烧掉！烧掉！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKoharu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentYuzu</defName>
+		<title>游戏开发部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院所属，游戏开发部的部长。
+非常害怕与人对话，因此几乎没有到外面去，大部分的时间都是在游戏开发部的置物柜中度过。
+制作游戏和玩游戏都很喜欢，对游戏的热情非同小可。
+"被，被发现了……"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryYuzu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAtsuko</defName>
+		<title>阿里乌斯小队</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿里乌斯分校所属，总是戴着防毒面具无法看到她的表情，有点神秘的阿里乌斯小队成员。
+虽然也不是要刻意要遮住脸，但依然除了吃饭睡觉，几乎总是戴着防毒面具。
+被阿里乌斯小队队长的纱织称为「公主」，但本人不会多谈自己的私事，充满了谜团。
+"这里也能，开满很多花就好了呢"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAtsuko</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSatsuki</defName>
+		<title>万魔殿</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶属于格赫娜学园，万魔殿的议员兼情报部长。
+虽说为了某个计划而习得了各种各样的催眠术，但是迄今为止的成功记录屈指可数。是个面对接连不断的失败也不会放弃的，坚强的女孩子。性格自在，悠闲度日。不擅长面对昆虫和可怕的东西。
+"你逐渐变得想向万魔殿效忠~"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySatsuki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentArisu</defName>
+		<title>游戏开发部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院所属，游戏开发部的成员。
+是在废墟发现的来历不明的少女。包含年龄在内的所有情报都无从得知。
+现在和桃井、绿和柚子一起享受游戏，已经变成重度​游戏狂热者了。
+说话时有点生硬不自然，但那是因为她的语句几乎都是由怀旧游戏的台词所构成。
+"……我一直在等待，被那道声音呼唤的时刻"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryArisu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKayako</defName>
+		<title>便利屋68</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，便利屋68的课长。
+和其他便利屋68的成员不同，尽管她没有恶意，只因为天生拥有着一张吓人的脸蛋，经常被误认为是不良少女。
+面对那种误会，佳代子本人一律沉默以对。但反而因此陷入了加深自己可怕形象的恶性循环。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKayako</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKoyuki</defName>
+		<title>研讨会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶属于千年科学学园学生会"研讨会"的总惹出麻烦的天才少女。
+虽然在数学密码的解密方面天赋异禀，但自己完全没意识到这一点。
+另外，由于喜欢那些自己无法控制的、与运气密切相关的因素，用各种方法对自己的运气进行着测试。
+即便因此吃了不少苦头，但仍然乐在其中。
+"正是不如意的时候，人生才会变得有趣哦！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKoyuki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSaya</defName>
+		<title>炼丹术研究会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是山海经高级中学所属的天才发明家。
+虽然是个读小学时就已经取得六个学位的天才。但比起天才这个称号，她更以是爱整人闹事的麻烦制造者为人所知。
+总是一起行动的老鼠根津助从小就是纱绫的好伙伴。对纱绫来说，它是如同家人一般重要的存在。
+"实验的话，就交给我吧！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySaya</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKazusa</defName>
+		<title>放学后甜点部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，个性温和安静的「放学后甜点部」成员。
+不常表现自己，大多时间都只会默默跟在其他成员后面。
+虽然总是被周遭的怪异行为牵累，但同时也认为这些时光很珍贵。
+"啊，老师。
+竟然在这种地方见到真巧呢。"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKazusa</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSaori</defName>
+		<title>阿里乌斯小队</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿里乌斯分校所属，学园内被视为精英特殊部队的阿里乌斯小队队长。
+同时具有为达目的不择手段的冷静，以及时而表现出的激情。
+在游击战术上是他人无法匹敌的专家，但日常生活方面可见到她不谙世事的一面。
+据说阿里乌斯小队的战斗力，正是她所训练出来的结果。
+还在，中途上迷惘──
+即使如此，总有一天……</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySaori</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentChiaki</defName>
+		<title>万魔殿</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶属于格赫娜学园，万魔殿的议员兼书记。
+是个总是十分开朗活泼的女孩子。靠个人兴趣发行了「周刊万魔殿」。为了能将伊吹的可爱之处传达给更多的学生而日夜进行着创作。
+"眼睛看这边！好，茄子！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryChiaki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMari</defName>
+		<title>修女会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，修女会虔诚且诚实的少女。
+乍看之下给人一种可爱的印象，但久了便被她一贯的温柔笑容及沉稳的气质所吸引，前来咨询的学生不胜枚举。
+觉得自己还不够成熟，想早点和其他前辈一样成为出色的修女。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMari</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSakurako</defName>
+		<title>修女会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，修女会的虔诚学生。
+不论什么事都认真对待，深受众多学生的信任。
+但过分认真导致有时会做出与流行跟常识有所偏差的事。
+"您的一言一行……。
+我一直都在注视着。"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySakurako</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKokona</defName>
+		<title>梅花园</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是山海经高级中学所属，担任培育支援部「梅花园」教官的1年级学生。
+虽然是该就读小学的年纪，但因为卓越的学习能力受到认可，而获得教官的权限。
+园生们都亲切地叫她「心奈酱」，但心奈本人并不喜欢那个称呼。
+"我是培育支援部「梅花园」的心奈！
+不，不是的！我就算这样也是货真价实的教官唷！？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKokona</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHinata</defName>
+		<title>修女会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是所属修女会的勤劳又善良的少女。
+负责圣三一大圣堂的管理重责，能勤劳的完成交付的工作，对任何人都很亲切。
+但是个性迷煳，经常会出错，对自己比较没有信心。
+虽然每天带在身上的背包里装着巨大的设置型榴弹发射器，但从来都没有显露出很重的感觉。
+"有什么，我可以做到的事吗？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHinata</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentYoshimi</defName>
+		<title>放学后甜点部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，放学后甜点部的成员。
+对娇小的身高与体型感到自卑，是个如同凶暴小动物一般的少女。
+虽然一直想变得成熟，然而她心里想的都表现在脸上，所以一直受周围人们的喜爱。
+兴趣是巡回咖啡厅，在品尝限定版甜点时会露出比任何人都明亮的笑容。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryYoshimi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentShun</defName>
+		<title>梅花园</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是山海经高级中学所属，培育支持部「梅花园」的教官。
+「梅花园」除了是园的名字之外也是社团的名字。个性善良且为人宽厚，除了梅花园的学生之外，也深得山海经其他学生的信任。
+由于担任教官许久，就算年幼学生恶作剧也不太会生气。唯独只要有人提及自己的年纪，就会产生​敏感反应。
+"乖乖的等着了吗？真是好孩子呢～"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryShun</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHaruka</defName>
+		<title>便利屋68</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，便利屋68的职员。
+由于个性黑暗阴沉，从小就一直被欺负。直到最近才在阿露的帮助下摆脱被欺负的困境。之后，她便作为便利屋68年纪最小的员工活动着。
+虽然胆小且自尊心很低，但她的突发奇想说是便利屋职员中最可怕的也不为过。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHaruka</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHanako</defName>
+		<title>补习授课部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣圣三一综合学园所属，补习部的感情丰富的女孩子。
+虽然一眼看起来有端庄气质大小姐……的感觉，其实是一开口就无法停止色情话题的问题学生。
+知道花子真面目的补习部学生，每当花子准备开口都会提心吊胆。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHanako</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAyane</defName>
+		<title>对策委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿比多斯高中所属，阿比多斯对策委员会认真的书记。
+是重视原则与规定的类型，正为了复兴阿比多斯高中而一心一意地努力着。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAyane</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKisaki</defName>
+		<title>玄龙门</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是山海经高级中学所属、学生会「玄龙门」门主。
+其言辞古雅威严，举手投足间透着一股神秘感，周身萦绕着难以靠近的氛围。然而，她巧妙地将这种印象活用于自己的职务之中。偶尔，她会"微服私访"下到寻常市井，能识破其真身者寥寥无几，而知晓的人只会向她投以微笑。
+那么，汝要向妾身展示些什么呢？</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKisaki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHiyori</defName>
+		<title>阿里乌斯小队</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿里乌斯分校所属，胆小怕事、个性忧郁的阿里乌斯小队成员。
+自尊心低、大多时间都很悲观，经常说些自虐发言。时常看到她背着沉重的行李，跟在大家后面。
+今，今天运气真好。唉嘿嘿……</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHiyori</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMutsuki</defName>
+		<title>便利屋68</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格黑娜学园所属的便利屋68里的行动派。
+与被罪恶感困扰的阿露不同的是，她是能毫不犹豫的作恶并享受其中的小恶魔般的少女。
+因为是阿露的青梅竹马，所以比谁都理解阿露，但却不特别为她设想。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMutsuki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMisaki</defName>
+		<title>阿里乌斯小队</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿里乌斯分校所属，不爱说话，令人觉得冷淡的阿里乌斯小队成员。
+不论对他人对自己都没什么兴趣，有时也会做出自暴自弃的举动。
+手腕和脖子包着厚厚的绷带，像是要隐藏什么一样。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMisaki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentJunko</defName>
+		<title>美食研究会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格黑娜学园的美食研究会的挑剔暴食家。
+与其他食奇品异的研究会成员不同的是，她还算是一名普通的美食爱好者，可有时面对美食，也难免失去理性。
+"老师！你真的会请我吃饭对吧？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryJunko</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHare</defName>
+		<title>真理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科技学园所属，黑客集团【真理部】的工程师。
+以聪颖的人居多而闻名的千禧科学学院里，她也是屈指可数的天才少女。
+而其中最先进的仪器，也几乎都是由她一手开发出来的。
+尽管她实力非凡成果卓越，她也不会有一丁点儿的骄傲自负，是一位十分听话善良的温柔女孩。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHare</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAru</defName>
+		<title>便利屋68</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格黑娜学园所属，自称便利屋68社长。
+作为格黑娜学园的社团活动，阿露喜欢以便利屋68为据点，从事一些不法行当。
+阿露虽然十分向往成为一位帅气的黑帮分子，但因为经常做事错漏百出，所以总是很快就暴露无遗。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAru</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSerika</defName>
+		<title>对策委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿拜多斯高中所属，阿比多斯对策委员会的难相处会计。
+时常碎碎念，是会毫不犹豫地表露自己感情的类型。
+虽然时常把「这种学园最好快点完蛋！」当成口头禅，但其实是个能为了偿还学园的债务而瞒着大家打工的、深爱着学校的孩子。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySerika</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentChihiro</defName>
+		<title>真理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学园所属，黑客集团「真理部」的副部长。
+是拥有卓越程序设计能力的黑客，同时也具有「不可滥用这项能力」的常识。是聚集了众多捣蛋鬼的真理部中有如良心的存在，平时就和部员们争辩「正确的黑客伦理」，但也是积极主动的类型，必要时会毫不犹豫地渗透进现场。
+"似乎发现了一个新的安全漏洞。"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryChihiro</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHifumi</defName>
+		<title>补习授课部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]圣三一综合学园所属，补习部的感情丰富的少女。
+虽然外貌和成绩都不出众，但稳重且温柔的性格很受人欢迎。
+时常倾听身边人们的烦恼及心事，但有时也会因而在无意中惹出麻烦。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHifumi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKotama</defName>
+		<title>真理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院所属，黑客集团「真理部」的黑客。
+专长是窃听，是个喜欢偷听别人私密谈话的、有点怪异的少女。
+不太擅长人际关系，是对年纪较小的1年级学生也会用敬语的类型。
+虽然在现实生活中是内向且沉默寡言的少女，在网路上却非常会聊。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKotama</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentFuuka</defName>
+		<title>料理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，负责管理格赫娜学园餐厅的供给部的成员。
+每天早上都为格赫娜学生准备非常大量的食物，是格赫娜少有的，善良认真的学生。
+料理手艺还算不错，但由于餐厅人手不足，其料理实力时常被低估。
+但她并未就此放弃，每天都为了提供更好的餐点而不断努力着。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryFuuka</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMaki</defName>
+		<title>真理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院所属，黑客社团「真理部」的成员。
+是个喜欢街头涂鸦的调皮少女，真理部的徽章也是她的作品。
+基本上是乐天派且随心所欲的类型，因此和其他社团间经常发生问题。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMaki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentJuri</defName>
+		<title>料理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，负责管理格赫娜学园餐厅的供给部的成员。
+和枫香一样是为了学生们努力制作餐点的少女，但她的料理手艺已经超越糟糕的等级来到毁灭的境界，因此对供餐并没有什么帮助。
+然而在枫香的鼓励和指导下，她今天也为了做出更好的料理而努力着。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryJuri</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentYokari</defName>
+		<title>百花缭乱纠纷调解委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行学院百花缭乱纠纷调解委员会的1年成员
+虽然是历史悠久的勘解由小路家族的继承人，但她选择了加入自己憧憬已久的百花缭乱，而不是继承家族事业。对此，她怀有强烈的自豪感，行动力无人能及。有时会遇到挫折而倒下，但她很快就会带着明朗的表情，重新站起来。她十分尊敬百花缭乱的前辈们，其中尤其敬仰的是名草。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryYokari</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+	
+<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNoa</defName>
+		<title>研讨会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是干禧年科技学院的理事会【研讨会】的秘书。
+主要工作是记录研讨会的决定与会议内容,还负责为千禧年学员研发的产品进行专利注册与鉴定的专利代理人业务。记忆力异常优秀,拥有过目不忘的能力。
+"和我一起去探访，
+合理与理性的世界吧？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNoa</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentRio</defName>
+		<title>研讨会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧科学学院，学生会「研讨会」的会长。
+作为一名理性主义者，她为了确保千禧和世界的安全不择手段。而其结果便是被冠上了「老大姐（Big Sister）」的昵称。她的独特品味十分独特，「前卫君」便是这一品味的冰山一角。
+"在无光之处再会吧。"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryRio</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKanoe</defName>
+		<title>神秘学研究会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是狂猎艺术学院神秘学研究会的成员，探索艺术中蕴含的神秘。
+是神秘学研究会中唯一的三年级学生，但不是会长，只是作为拥护者支持着其他成员。由于外表可疑，行为古怪，有人说她就是神秘本身……。
+“我早就在观察你了……从上辈子开始。”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKanoe</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKikyou</defName>
+		<title>百花缭乱纠纷调解委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行学院百花缭乱纠纷调解委员会的作战参谋。
+重视常识、逻辑和理性的少女。由于十分珍惜百花缭乱，如果有人威胁到它，便会立刻表现出敌意。换句话说，是那种敌我分明的类型。作为作战参谋，她重视胜利，但更重要的是她关心同伴的安全。冷酷而又温柔，这就是名为桔梗的少女。
+“我会向你证明……
+和我在一起是正确的决定。”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKikyou</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHanae</defName>
+		<title>救护骑士团</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶属于崔尼蒂的救护骑士团，是个活泼开朗的成员。
+对任何事都抱有积极的态度，但只要一看到患者就会过度吵闹，经常导致情况进一步恶化。
+虽然在很多方面都有些奇怪，但神奇的是，无论患者生了什么病，只要得到这位少女的祝福就可以迅速痊愈。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHanae</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAzusa</defName>
+		<title>补习部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是崔尼蒂补习部的冰冷魔女。
+主动离开了曾经的学院，又因某种原因加入了崔尼蒂，目前正在努力习惯新的生活。害怕孤独，却因为不想给人添麻烦而主动远离所有人。这让补习部的成员们很是担心。
+"凡事都是虚空，人生毫无意义。
+但是……我愿意相信您。"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAzusa</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSerina</defName>
+		<title>救护骑士团</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶属于崔尼蒂的救护骑士团，是个亲切的少女。
+她具有善良的品性，喜欢参加爱心志愿者服务，但因过度担心关于健康的问题，周围的女生常说她像妈妈。
+虽然她不喜欢争吵和纠纷，是个容易心软的人，但对于威胁和平的敌人就会坚决对抗，随时做好战斗到底的准备。
+「等您很久了，老师。
+今天也要为了世界和平 一起加油哦！」</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySerina</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentChise</defName>
+		<title>阴阳部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶属于百鬼夜行阴阳部的电波系少女。
+由于非常喜欢俳句这一类的传统文化，加入了阴阳部。
+其外貌和气质散发出一种特殊的神秘感，所以说百鬼夜行女生们憧憬的对象，但本人对此几乎毫不知情。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryChise</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMine</defName>
+		<title>救护骑士团</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是崔尼蒂救护骑士团的团长，性格刚正不阿，也有着过激一面的白衣战士。
+“美祢负责破坏，骑士团负责治疗”这句话，在全崔尼蒂都享有盛名（？）。闲暇的时候，她会保养自己的装备，或者准备茶点招待朋友们，度过一段安宁的时光。据说，她在红茶上的造诣能与正义实现部的莲见媲美。
+“我是救护骑士团的团长，苍森美祢。
+需要救护的人在哪里？”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMine</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMichiru</defName>
+		<title>忍术研究部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶百鬼夜行忍术研究部的部长兼视频频道【少女忍法帖小满亲】的运营者。
+总是充满谜之自信的少女。只要是和忍者有关，无论什么都非常喜欢。创立忍术研究部，运营忍者视频频道也都是因为这个。为了在基沃托斯掀起前所未有的忍者热潮，每天都和忍术研究部的成员们横冲直撞地在各处活跃着。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMichiru</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentRenge</defName>
+		<title>百花缭乱纠纷调解委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行学院百花缭乱纠纷调解委员会的突击队长。
+她充满正义感和责任感。虽然非常关爱后辈，但是在教育她们时绝不会手下留情，因此也是百花缭乱的魔鬼教官。她认为百花缭乱的活动非常有意义，所以并不后悔加入其中，但却因为没有享受青春而感到遗憾。正因如此，她渴望像漫画或小说中那样戏剧性的青春。今天，她依然怀揣梦想，努力训练，是个充满梦想的少女。
+"我的青春故事从遇到老师的这一刻就开始了！
+嗯，就这么定了！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryRenge</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentIzuna</defName>
+		<title>忍术研究部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶属于百鬼夜行忍术研究部的少女。 虽然活泼开朗，但因追求着他人无法理解的梦想，一直以来都是孤身一人。 而她的梦想就是成为基沃托斯最强的忍者。 为了成为一个出色的忍者，泉奈称呼老师“主公”，并一直活跃在各种任务中。
+"一切都是为了主公！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryIzuna</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+		<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentEri</defName>
+		<title>神秘学研究会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是狂猎艺术学院所属，致力于探究艺术中蕴藏的神秘的神秘学研究会会长。
+戴着一顶大帽子，喜欢把一切都比喻成魔法。坚信着通过神秘学可以提高自己的成绩和绘画能力。
+“唔呼呼，需要我的魔法吗？”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryEri</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKotori</defName>
+		<title>工程部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]千禧年科技工程部的成员。
+是一个喜欢和别人聊物理学或者机械原理的话痨。在千禧年只要发生与机器相关的问题，她就会第一时间到达现场进行讲解。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKotori</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNagusa</defName>
+		<title>百花缭乱纠纷调解委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行联合学院所属，百花缭乱纷争调停委员会的少女。之前是百花缭乱的副委员长。前任委员长菖蒲消失之后，继承了百莲。虽然胆小、自尊心低，有着优柔寡断的性格，但为了重要的人也能够战胜恐惧，在内心埋下前进的力量。
+"翘首以待，百花齐放的瞬间"
+		</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNagusa</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentTsukuyo</defName>
+		<title>忍术研究部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行忍术研究部的少女。
+从小就因为高大的体型遭到嘲笑，所以如今只要有机会，就会想隐藏起自己。月咏虽然是个说话支支吾吾，不擅长和人交流的内向少女，但只要下定决心，就会发挥出非常出色的执行力。虽然对忍者不怎么了解，但她为了认可自己的满和泉奈，认真执行着忍术研究部的活动。
+"虽，虽然我这么高……
+但我也想好好努力，帮助老师！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryTsukuyo</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNonomi</defName>
+		<title>对策委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿拜多斯对策委员会的成员。她心思细腻性格温柔，因此能让其他我行我素的对策委员会成员团结在身边，是所有人的精神支柱。虽然看起来很低调，但似乎很有钱，对策委员会大部分的零食费都是她从自己的零花钱中拿出的。
+「惩罚的时间到了哦~☆」</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNonomi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNagisa</defName>
+		<title>茶话会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是崔尼蒂综合学院【菲利乌斯】分派的领袖，同时也是理事会【茶话会】的主持者。
+她为人温和，说话亲切，但从不轻易袒露心声，因此周围的人都觉得很难与她相处。兴趣是准备茶会需要的红茶与茶点，许多崔尼蒂的学员都憧憬着与她在茶会上共饮。
+“……您好。
+我代表崔尼蒂向您致意。”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNagisa</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAkari</defName>
+		<title>美食研究会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是歌赫娜美食研究会的部员。
+虽然看起来很柔弱，但却是个十足的大胃王，从未错失过基沃托斯举办的美食大赛的冠军，是个非常优秀的美食斗士。
+平时都很温和善良，不过毕竟是来自盛产淘气鬼的歌赫娜，她也非常喜欢恶作剧整蛊别人。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAkari</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentIzumi</defName>
+		<title>美食研究会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是歌赫娜美食研究会的一员，什么都爱吃的吃货少女。
+不仅非常喜欢美食，连别人厌恶的黑暗料理都能吃得干干净净。
+“这个世界上有好~多好吃的哦！”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryIzumi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHaruna</defName>
+		<title>美食研究会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是歌赫娜美食研究会的会长。
+单看外貌就像个富家小姐，全身流露出高贵的气质，但一涉及到美食，就会不管不顾，是个热血十足的美食家。虽然很爱吃东西，但胃口小，所以实际吃的东西并不多。
+据说肠锅或者内脏这类油腻的食物是她的最爱。
+“偶尔这样做感觉也不错呢。
+老师，请您密切关注我的成长哦。”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHaruna</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentUmika</defName>
+		<title>庆典运营管理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是庆典运营管理部的第一年学员。
+她来自乡村，从前就一直对城市里举办的庆典很感兴趣。她是一位庆典专家，全基沃托斯的庆典她都谙熟于心。她一开口就会滔滔不绝地谈起各种冷门庆典的话题，因此常有人说只要她不开口就是个美女。
+"听到举办庆典的消息我就来了！
+诶……我搞错了吗？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryUmika</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentShizuko</defName>
+		<title>庆典运营管理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行庆典运营管理部的部长。
+同时也是百鬼夜行的传统茶店【百夜堂】的看板娘。
+平时一副冒冒失失的样子，其实全都是她作为看板娘吸引客人的演技。
+实际上她为了庆典的成功和百夜堂的销售额什么事都做得出来，是个职业气质十足的少女。
+但因其对每件事都会率直地表现出情感，所以好朋友和老师都知道她的真面目。
+“啊，老师！欢迎光临~！
+来来来，您随便看随便挑！”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryShizuko</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentPina</defName>
+		<title>庆典运营管理部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是因为憧憬着侠客而加入百鬼夜行的少女。
+性格爽朗，帮助别人会让她感到快乐。
+但她对于侠客的了解全都是来自电影，所以和真实的侠客有很多出入。
+坚持着自己的侠客梦想，是一个勇往直前的少女。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryPina</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentReisa_A</defName>
+		<title>圣三一自警团</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，为了执行自警团的潜行任务，穿上魔法少女服的少女。
+可能是因为从小就非常喜欢魔法少女题材的作品，所以看起来十分兴奋。
+“魔法少女自警团，参上！”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryReisa_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentToki</defName>
+		<title>CC</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年科技学院的秘密组织——CC的第五名特工。
+虽然隶属于CC，但一直以莉音的专属女仆与保镖身份活动，所以认识她的人并不多。她擅长利用高科技武器与技术战斗，是一名优秀的特工。她向来都是单打独斗，但有时也会感到孤单。
+“请交给我吧。
+我可是一名完美的特工女仆。”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryToki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSena</defName>
+		<title>急救医学部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]总是在处理事故的歌赫娜急救医学部部长。
+任何情况下都以一副冷淡的表情运送着伤员。虽然对待伤员的态度就像对待货物一样生硬，但一直以来，在运送歌赫娜各地的无数伤员时，她从未抱怨过一句话。
+"尸体……啊不，伤员在哪里？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySena</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKanna</defName>
+		<title>公共安全局</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是瓦尔基丽警员学院所属，担任公共安全局局长。
+一旦锁定了犯罪目标，她就会紧追不舍，直到调查出真相。因此也被人称为“疯狗”。由于给人的凶猛印象与独特绰号，常被人误以为脾气暴躁，性格冲动。但事实上，她处事沉着冷静，并且有着务实的价值观。
+"我会全心全意为市民们服务。"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKanna</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentFubuki</defName>
+		<title>生活安全局</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是瓦尔基丽警员学院所属，生活安全局的悠闲行政人员。向往着悠闲自在的办公室生活而加入了瓦尔基丽。总是摸鱼应付生活安全局接到的案件，享受着不为名利所动的悠闲生活。最大的爱好是边吃甜甜圈边听广播。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryFubuki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKirino</defName>
+		<title>生活安全局</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是瓦尔基丽生活安全局的热血警校生。
+憧憬着维持联合都市治安的前辈们的英姿，进入了瓦尔基丽，但因枪法太差，又被迫调到了生活安全局的闲职。
+不过她仍然没有放弃成为警员，帅气地制服罪犯的梦想，仍在各个方面坚持努力。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKirino</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHibiki</defName>
+		<title>工程部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年科技的工程部成员。
+相比其他女生，她不太善于交际，也不擅长说话，但凭借与生俱来的工程学才能，总是能发明出各种神奇的东西。
+她的大多数发明都是无可挑剔的杰作，但总是会加入一个奇怪的功能，让用户感到困惑。
+"有没有需要改造的东西？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHibiki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentEimi</defName>
+		<title>超自然现象调查部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年科技超自然现象调查部的要员。
+她是一个仿佛生活在四次元空间的少女，很少有人能看透她的想法。不仅沉默寡言，而且经常毫无理由地站着发呆。
+但是，执行研讨会委托的任务时，能比任何人都更有效率地行动并达成目标。
+"怎样才可以更有效率地战斗呢……？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryEimi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+	
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHimari</defName>
+		<title>超自然现象调查部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年黑客社团真理社的前社长，现任超自然现象调查部的部长。
+自称超天才病弱美少女黑客，且拥有在千禧年历史上只有三个人获得过的【全知】学位。但这种说法是否属实，甚至这种学位是否存在都无法证实。日鞠说秘密越多的少女越美丽…… 但无论如何，她确实是实力超群的天才黑客，同时也是一位痴迷超自然现象，兴趣独特的少女。
+"呵呵，轮到我这个千禧年超天才病弱美少女黑客
+大显身手了吧？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHimari</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentUtaha</defName>
+		<title>工程部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]千禧年科技工程部的部长。
+她无愧于工程部部长的头衔，发明了各种各样的机器人，尤其是她的宠物机器人“小雷”，被评价为拥有与数百台PMC战斗用自动人偶相比拟的战斗能力。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryUtaha</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSuzumi_A</defName>
+		<title>圣三一自警团</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是三一综合学园所属，为执行自警团的潜入任务而换上了魔法少女服的「三一自警团」少女。
+对魔法少女不是很了解，对其服装的理解也不深。虽还不善于站在众人面前，但她已经决定好以自己真诚的天性直面这一逆境。
+"老、老师……！
+这、这身打扮……那个……不是你想的那样！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySuzumi_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMimori</defName>
+		<title>修行部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行修行部温柔的副部长。
+脸上一直挂着温和的笑容，对每个人都同样亲切，因此受到众人的欢迎。和修行部部长椿是童年玩伴，受到小时候读过的少女漫画影响，怀揣着成为窈窕淑女的梦想加入了修行部。为了实现这个梦想，她每天都在努力做烹饪与打扫的修行。
+"虽然现在还不够完美……
+但还是请看看我修行的成果吧！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMimori</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKaede</defName>
+		<title>修行部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行修行部的干劲十足的成员。
+原本是村里有名的调皮鬼，但偶然认识了椿和三森后，便萌生了成为像她们一样的绝世佳人的念头，怀着这个梦想加入了修行部。每天都在为了成为绝世佳人而勤奋修行。但不知为何，枫的修行大多数时候都会演变成闹哄哄的麻烦事。
+"为了成为绝世佳人！
+老师！今天也要出动了！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKaede</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentTsubaki</defName>
+		<title>修行部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行修行部部长。
+平时专注的修行是“更舒适和更完美的睡眠”。
+修行的成果是，她可以做到坐着、站着，甚至吃饭的时候睡觉。
+于是，大家都叫她睡美人。
+别看她平时爱打瞌睡，一到夜晚她就会为了守护街区的和平而悄悄活跃起来。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryTsubaki</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKaho</defName>
+		<title>阴阳部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行联合学院阴阳部副部长兼观光文化产业宣传支援小组战略宣传组长。
+身为阴阳部中负责宣传工作的部员，果穗真心热爱百鬼夜行的文化，真心爱惜一起创作出百鬼夜行文化的学员们。她被百鬼夜行部分学员称为“比部长更像部长的果穗同学”。另外，她是阴阳部中最有常识的部员。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKaho</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNiya</defName>
+		<title>阴阳部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行联合学院所属，「阴阳部」的部长。
+局外人知道她是学生会长，可实际上她因为联合学院的体系而被更为复杂的内情限制着，所以她才被当成是「不干活的部长」……她为自己如此辩解，可不想做事的性格也是天生的。平日里看上去是在以乐子第一的原则惹出事端，但在其背后似乎隐藏着不对他人表露的心思。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNiya</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentArisu_B</defName>
+		<title>游戏开发部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千年科学学园所属，「游戏开发部」的成员。
+热爱游戏，稍微有点与众不同的少女。如今正背负着世界的命运。
+"爱丽丝，想见识更广阔的世界！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryArisu_B</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKasumi</defName>
+		<title>温泉开发部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是歌赫娜温泉开发部的部长。
+她主张流着温泉水的地方都应该成为温泉，只要是她看上的地方，不管上面有什么都会爆破清理。虽然她有着成员们的全面支持，但实际上是一名正被悬赏通缉的罪犯。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKasumi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMegu</defName>
+		<title>温泉开发部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是温泉开发部的中流砥柱，同时也是开发现场的作业班长。她相信所有问题都可以通过“拆除”来解决。
+她为人热情直率，以出色的工作能力赢得了温泉开发部所有人的信任。
+"有障碍物？都交给我吧！看我把它们全拆了！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMegu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMarina</defName>
+		<title>红冬事务局</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是红冬学院保安委员会的委员长，负责管理红冬治安。会对违反规则的学员进行无可置疑且毫无慈悲的制裁，众所周知是个冷酷无情的人。不过她实际上只是个无脑执行切里诺会长命令的笨蛋罢了。喜欢突击之类的词汇，在红冬发生问题时总是第一个冲出去，但因为是个天生的路痴所以总是迷路。
+"逃避不仅可耻，而且没用！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMarina</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+
+</Defs>

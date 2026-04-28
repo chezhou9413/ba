@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Mimori</defName>
+		<label>-三森-</label>
+		<race>BANW_Mimori_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHyakkiyako</li>
+					<li>BANW_BackstoryMimori</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>16</minGenerationAge>
+		<maxGenerationAge>17</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Mimori</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Mimori</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>3</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>18</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>9</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>11</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Mimori_A>0</BAWC_TraitDef_Mimori_A>
+		</forcedTraits>
+	</PawnKindDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Mimori_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;要再来一碗吗？&lt;/color&gt;</label>
+                <description>被动技能:自身护甲值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+			    <ArmorRating_Sharp>1.26</ArmorRating_Sharp>
+		        <ArmorRating_Blunt>1.26</ArmorRating_Blunt>
+	            <ArmorRating_Heat>1.26</ArmorRating_Heat>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

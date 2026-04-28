@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Juri</defName>
+		<label>-朱莉-</label>
+		<race>BANW_Juri_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Juri_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryJuri</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Juri</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Juri</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>4~10</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>10~15</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Juri>0</BAWC_TraitDef_Juri>
+			<BAWC_TraitDef_Juri_A>0</BAWC_TraitDef_Juri_A>
+			<BAWC_TraitDef_Juri_B>0</BAWC_TraitDef_Juri_B>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Juri</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFB6C1&gt;格黑娜的炼金术士&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}虽然身为料理部的一员，可是她的手艺已经超过了一般的糟糕，做出来的料理可以算是毁灭级别，所以对供餐提供不了帮助</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<FoodPoisonChance>99.99</FoodPoisonChance>
+                    <ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+					<ToxicResistance>0.5</ToxicResistance>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
+                </statOffsets>
+				<statFactors>
+					<FoodPoisonChance>99.99</FoodPoisonChance>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Juri_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;干劲十足！&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Juri_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;用餐时间到！&lt;/color&gt;</label>
+                <description>子技能:自身&lt;color=#DC143C&gt;生命值增加17%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

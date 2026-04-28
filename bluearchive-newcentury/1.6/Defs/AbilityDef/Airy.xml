@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Airy_EX</defName>
+ <label>可能会头晕哦……？</label>
+ <description>对1名敌方单位造成攻速减少35%。（持续30秒）</description>
+ <iconPath>Ability/Icon/Airy/Airy_EX</iconPath>
+ <cooldownTicksRange>1500</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Airy_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>False</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>16</Ability_Duration>
+ </statBases>
+ <verbProperties>
+  <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>BANW_Skill_A</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>35.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <requireLineOfSight>false</requireLineOfSight><!-- 不需要视线 -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Airy_Buff_A</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>false</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+</comps>
+</AbilityDef>
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Airy_Buff_A</defName>
+        <!-- 显示名称 -->
+        <label>可能会头晕哦……？</label>
+        <!-- 效果描述 -->
+        <description>对1名敌方单位造成攻速减少35%。</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+            <statOffsets>
+            <AimingDelayFactor>0.35</AimingDelayFactor>
+            <RangedCooldownFactor>0.35</RangedCooldownFactor>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_C</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+    
+<AbilityDef>
+<defName>BAWN_Airy_EXX</defName>
+ <label>虽然有点可惜……嘿！</label>
+ <description>对圆形范围内的敌方单位造成自身攻击力464%的伤害并且范围内的敌人移速减少23%，攻速减少26%（持续20秒）</description>
+ <iconPath>Ability/Icon/Airy/Airy_EXX</iconPath>
+ <cooldownTicksRange>3000</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Airy_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SphereArea">
+<warmupEffecter></warmupEffecter>
+ <soundCast>OrbitalTargeter_Fire</soundCast>
+ <verbClass>BANWlLib.BaVerb.Verb_SphereArea</verbClass> <!-- 改为投射物动词类 -->
+ <JobDef>BANW_Job_TEST_Airy</JobDef>      <!-- 技能定义标识符 -->
+ <range>69.9</range><!-- 投掷范围 -->
+ <Sphereradius>4.9</Sphereradius>
+ <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <requireLineOfSight>false</requireLineOfSight>      <!-- 是否需要视线 -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+       <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_Airy_A</effecterDef>
+        <maintainForTicks>1500</maintainForTicks>
+      </li>
+  </comps>
+</AbilityDef>
+
+<DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Airy_EXX</defName><!--通用贯通-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Airy_Buff_B</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+   <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Airy_Buff_B</defName>
+        <!-- 显示名称 -->
+        <label>虽然有点可惜……嘿！</label>
+        <!-- 效果描述 -->
+        <description>移速减少23%，攻速减少26%</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+            <statOffsets>
+            <AimingDelayFactor>0.26</AimingDelayFactor>
+            <RangedCooldownFactor>0.26</RangedCooldownFactor>
+            </statOffsets>
+            <statFactors>
+              <MoveSpeed>0.74</MoveSpeed>
+            </statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_C</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+  <JobDef Class="BANWlLib.BaDef.BaJobDef_SphereAreaAttack">
+    <defName>BANW_Job_TEST_Airy</defName>
+    <driverClass>BANWlLib.BaJob.Job_SphereAreaAttack</driverClass>
+    <!-- 球形范围攻击的伤害配置 -->
+    <damages>
+      <!-- 第一个伤害波 - 立即执行 -->
+      <li>
+        <!-- 伤害波的执行延迟TICK -->
+        <tick>0</tick>
+        <!-- 触发此伤害波时播放的效果 -->
+        <effecterDef></effecterDef>
+        <!-- 伤害波中包含的具体伤害 -->
+        <damages>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>28</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>387</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>0.15</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>88</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>148</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>208</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>268</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>328</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>388</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>448</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>508</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>568</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>628</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>688</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>748</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>808</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>868</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>928</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>988</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>1048</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>1108</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>1168</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>1</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>BANC_Damage_Airy_EXX</damageType>
+            <!-- 穿透 -->
+            <penetration>10.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+        </damages>
+      </li>
+    </damages>
+  </JobDef>
+
+</Defs>

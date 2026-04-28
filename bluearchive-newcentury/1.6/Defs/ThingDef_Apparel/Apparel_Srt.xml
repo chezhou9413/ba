@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+       
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Miyu</defName>
+        <label>美游的衣服</label>
+        <description>美游的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Srt/Miyu/Apparel/Miyu_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Miyu</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Miyako</defName>
+        <label>宫子的衣服</label>
+        <description>宫子的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Srt/Miyako/Apparel/Miyako_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Miyako</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Saki</defName>
+        <label>咲的衣服</label>
+        <description>咲的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Srt/Saki/Apparel/Saki_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Saki</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Moe</defName>
+        <label>萌绘的衣服</label>
+        <description>萌绘的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Srt/Moe/Apparel/Moe_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Moe</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+
+</Defs>

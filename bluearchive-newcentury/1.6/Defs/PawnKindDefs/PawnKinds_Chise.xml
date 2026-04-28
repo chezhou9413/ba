@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Chise</defName>
+		<label>-千世-</label>
+		<race>BANW_Chise_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Chise_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHyakkiyako</li>
+					<li>BANW_BackstoryChise</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Chise</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Chise</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>4~5</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>19</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>8</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Chise_A>0</BAWC_TraitDef_Chise_A>
+			<BAWC_TraitDef_Chise_B>0</BAWC_TraitDef_Chise_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Chise_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;好嘞，要加油啦~&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Chise_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;会有点痛哦~&lt;/color&gt;</label>
+                <description>子技能:自身攻击时会给敌人添加&lt;color=#DC143C&gt;燃烧&lt;/color&gt;效果</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

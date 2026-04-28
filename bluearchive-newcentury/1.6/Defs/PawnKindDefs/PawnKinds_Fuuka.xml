@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Fuuka</defName>
+		<label>-枫香-</label>
+		<race>BANW_Fuuka_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryFuuka</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Fuuka</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Fuuka</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>4~10</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>5~8</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Fuuka>0</BAWC_TraitDef_Fuuka>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Fuuka</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#00008B&gt;料理部部长&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是料理部的部长料理手艺还算不错，但由于餐厅人手不足，其料理实力时常被低估。—— 希望能度过平安的一天，哪怕只有今天 （ T_T ）</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<FoodPoisonChance>-1.0</FoodPoisonChance>
+                    <WorkSpeedGlobal>0.3</WorkSpeedGlobal>
+					<ButcheryFleshEfficiency>0.3</ButcheryFleshEfficiency>
+					<ButcheryFleshSpeed>0.5</ButcheryFleshSpeed>
+                </statOffsets>
+				<statFactors>
+					<CookSpeed>1.5</CookSpeed>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

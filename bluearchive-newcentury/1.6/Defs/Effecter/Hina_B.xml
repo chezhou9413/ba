@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BANW_Hina_Ef_Mote_A</defName>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hina/B/Hina</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>(3,7)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+      <fadeInTime>0</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.45</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.05</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>true</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BANW_Hina_Ef_Mote_B</defName>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hina/B/Hina</texPath><!-- 纹理图片路径 -->
+      <drawSize>(3,7)</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <rotateTowardsMoveDirection>true</rotateTowardsMoveDirection>
+      <fadeInTime>0</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.45</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.05</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>true</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+<EffecterDef>
+<defName>BANW_Hina_Ef_B</defName>
+<children>
+   <li>
+        <subEffecterClass>SubEffecter_CameraShakeChance</subEffecterClass>
+        <cameraShake>1</cameraShake>
+         <chancePerTick>5</chancePerTick>
+        <lifespanMaxTicks>360</lifespanMaxTicks>
+        <distanceAttenuationScale>1</distanceAttenuationScale>
+      </li>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>0.8</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-15</angle><!-- 发射角度 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>0.8</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-15</angle><!-- 发射角度 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>1</initialDelayTicks>
+        <scale>1.2</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-10</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>1</initialDelayTicks>
+        <scale>1.2</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-10</angle><!-- 发射角度 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>3</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-5</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>3</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-5</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>5</initialDelayTicks>
+        <scale>1.1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>8</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>5</initialDelayTicks>
+        <scale>1.1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>8</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>9</initialDelayTicks>
+        <scale>0.8</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>10</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>9</initialDelayTicks>
+        <scale>0.8</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>10</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>15</initialDelayTicks>
+        <scale>1.3</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>1</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>15</initialDelayTicks>
+        <scale>1.3</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>1</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+<li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>18</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>5</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>18</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>5</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>10</initialDelayTicks>
+        <scale>1.2</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-3</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>10</initialDelayTicks>
+        <scale>1.2</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-3</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>20</initialDelayTicks>
+        <scale>0.9</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>15</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>20</initialDelayTicks>
+        <scale>0.9</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>15</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>18</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-6</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>18</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>-6</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_A</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>27</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>7</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BANW_Hina_Ef_Mote_B</moteDef>
+         <ticksBetweenMotes>20</ticksBetweenMotes>
+        <initialDelayTicks>27</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>7</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>100</speed>
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+</children>
+</EffecterDef>
+</Defs>

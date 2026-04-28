@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 据点防御第二关任务节点 -->
+    <BANWlLib.BaDef.BaMissionNode>
+        <!-- 定义名称，用于程序内部识别 -->
+        <defName>BaseDefenseNode2</defName>
+        <!-- 任务ID编号 -->
+        <MissionID>02</MissionID>
+        <!-- 任务标题显示名称 -->
+        <MissionTitle>据点防御第二关</MissionTitle>
+        <!-- 任务类型：基地防御 -->
+        <MissionType>BaseDefense</MissionType>
+        <!-- 前置解锁条件：需要完成BaseDefenseNode1任务 -->
+        <UnlockedOn>BaseDefenseNode1</UnlockedOn>
+        <!-- 任务地图定义：使用BANC_taskMap_QSJ地图模板（修正了原来不存在的SmallHouseExample引用） -->
+        <missionMapDef>BANC_taskMap_QSJ</missionMapDef>
+        <!-- 任务运行时定义：使用MissionRunTimeTest运行时配置 -->
+        <missionRunTimeDef>MissionRunTimeTest</missionRunTimeDef>
+        <!-- 任务顺序编号 -->
+        <oder>2</oder>
+    </BANWlLib.BaDef.BaMissionNode>
+    
+    <!-- 据点防御第一关任务节点 -->
+    <BANWlLib.BaDef.BaMissionNode>
+        <!-- 定义名称，用于程序内部识别 -->
+        <defName>BaseDefenseNode1</defName>
+        <!-- 任务ID编号 -->
+        <MissionID>01</MissionID>
+        <!-- 任务标题显示名称 -->
+        <MissionTitle>据点防御第一关</MissionTitle>
+        <!-- 任务类型：基地防御 -->
+        <MissionType>BaseDefense</MissionType>
+        <!-- 任务地图定义：使用BANC_taskMap_QSJ地图模板 -->
+        <missionMapDef>BANC_taskMap_QSJ</missionMapDef>
+        <!-- 任务运行时定义：使用MissionRunTimeTest运行时配置 -->
+        <missionRunTimeDef>MissionRunTimeTest</missionRunTimeDef>
+        <!-- 任务描述信息 -->
+        <MissionDes>此任务为半成品，难度比较大，可以测试伤害，和刷青辉石</MissionDes>
+        <!-- 任务顺序编号 -->
+        <oder>1</oder>
+        <!-- 任务目标列表 -->
+        <MissionTarget>
+            <!-- 目标1：击杀所有敌人 -->
+            <li>击杀所有敌人</li>
+            <!-- 目标2：空目标 -->
+            <li></li>
+        </MissionTarget>
+        <!-- 任务奖励列表 -->
+        <Reward>
+            <!-- 奖励项1 -->
+            <li>
+                <!-- 物品定义：活动报告A -->
+                <thingDef>BANW_Huodongbaogao_D</thingDef>
+                <!-- 数量：10个 -->
+                <count>10</count>
+                <!-- 品质：低级 -->
+                <quality>Epic</quality>
+            </li>
+        </Reward>
+        <!-- 敌人列表 -->
+        <EnemyList>
+            <!-- 敌人1 -->
+            <li>
+                <!-- 敌人类型定义：清扫车 -->
+                <pawnKindDef>BANW_QSJ_A</pawnKindDef>
+                <!-- 标签路径1：UI界面中的重装甲类型标签 -->
+                <tagPath1>ManuaUI/Type/重装甲</tagPath1>
+                <!-- 标签路径2：UI界面中的爆发类型标签 -->
+                <tagPath2>ManuaUI/Type/爆发</tagPath2>
+            </li>
+        </EnemyList>
+    </BANWlLib.BaDef.BaMissionNode>
+    
+    <!-- 货币回收第一关任务节点 -->
+    <BANWlLib.BaDef.BaMissionNode>
+        <!-- 定义名称，用于程序内部识别 -->
+        <defName>CreditRetrievalNode1</defName>
+        <!-- 任务ID编号 -->
+        <MissionID>01</MissionID>
+        <!-- 任务标题显示名称 -->
+        <MissionTitle>货币回收第一关</MissionTitle>
+        <!-- 任务类型：货币回收 -->
+        <MissionType>CreditRetrieval</MissionType>
+        <!-- 任务地图定义：使用BANC_taskMap_QSJ地图模板（已修正） -->
+        <missionMapDef>BANC_taskMap_QSJ</missionMapDef>
+        <!-- 任务运行时定义：使用MissionRunTimeTest运行时配置 -->
+        <missionRunTimeDef>MissionRunTimeTest</missionRunTimeDef>
+        <!-- 任务顺序编号 -->
+        <oder>1</oder>
+        <!-- 任务目标列表 -->
+        <MissionTarget>
+            <!-- 目标1：击杀所有敌人 -->
+            <li>击杀所有敌人</li>
+        </MissionTarget>
+        <!-- 任务奖励列表 -->
+        <Reward>
+            <!-- 奖励项1 -->
+            <li>
+                <!-- 物品定义：Kami_Proplevel -->
+                <thingDef>Kami_Proplevel</thingDef>
+                <!-- 数量：100个 -->
+                <count>100</count>
+                <!-- 品质：中等 -->
+                <quality>Medium</quality>
+            </li>
+            <!-- 奖励项2 -->
+
+        </Reward>
+        <!-- 敌人列表 -->
+        <EnemyList>
+            <!-- 敌人1 -->
+            <li>
+                <!-- 敌人类型定义：BANW_Aoba -->
+                <pawnKindDef>BANW_Aoba</pawnKindDef>
+                <!-- 标签路径1：UI界面中的坦克类型标签 -->
+                <tagPath1>ManuaUI/Type/坦克</tagPath1>
+                <!-- 标签路径2：UI界面中的爆发类型标签 -->
+                <tagPath2>ManuaUI/Type/爆发</tagPath2>
+            </li>
+        </EnemyList>
+    </BANWlLib.BaDef.BaMissionNode>
+</Defs>

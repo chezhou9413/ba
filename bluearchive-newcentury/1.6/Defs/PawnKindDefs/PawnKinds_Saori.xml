@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Saori</defName>
+		<label>-纱织-</label>
+		<race>BANW_Saori_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryArian</li>
+					<li>BANW_BackstorySaori</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Saori</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Saori</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>16~18</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>16~18</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>4</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>12</range>
+			</li>
+		</skills>
+		<forcedTraits>
+		<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+		<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+		</forcedTraits>
+	</PawnKindDef>
+
+	
+</Defs>

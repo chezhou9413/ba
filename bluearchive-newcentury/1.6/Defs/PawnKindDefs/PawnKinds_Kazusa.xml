@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Kazusa</defName>
+		<label>-和纱-</label>
+		<race>BANW_Kazusa_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+			<li>BAWN_Kazusa_EX</li>
+			<li>BAWN_Kazusa_EXX</li>
+		</abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryKazusa</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Kazusa</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Kazusa</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>15~16</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>6~12</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>7~12</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>9</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Kazusa_A>0</BAWC_TraitDef_Kazusa_A>
+			<BAWC_TraitDef_Kazusa_B>0</BAWC_TraitDef_Kazusa_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Kazusa_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;高糖效应&lt;/color&gt;</label>
+                <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的攻击力。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Kazusa_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;初次品尝&lt;/color&gt;</label>
+                <description>子技能:使用EX技能时对自己造成攻击力增加&lt;color=#DC143C&gt;50%&lt;/color&gt;，攻速减少&lt;color=#DC143C&gt;16%&lt;/color&gt;（持续20秒）</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

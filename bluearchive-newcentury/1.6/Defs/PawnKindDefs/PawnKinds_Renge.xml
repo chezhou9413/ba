@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Renge</defName>
+		<label>-莲华-</label>
+		<race>BANW_Renge_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHyakkiyako</li>
+					<li>BANW_BackstoryRenge</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Renge</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Renge</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~12</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>4~6</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>13</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Renge_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;百花缭乱的魔鬼教官&lt;/color&gt;</label>
+                <description>被动技能：自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+                 <BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

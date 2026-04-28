@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Yoshimi_1_Mote</defName>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Yoshimi/A/Yoshimi_1</texPath><!-- 纹理图片路径 -->
+      <drawSize>4</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>1.0</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+  
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Yoshimi_2_Mote</defName>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Yoshimi/A/Yoshimi_2</texPath><!-- 纹理图片路径 -->
+      <drawSize>2</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.1</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>1.0</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.3</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+   <EffecterDef>
+<defName>BANW_Effecter_Yoshimi_A</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Yoshimi_Skill_EX_A</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+  <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Yoshimi_1_Mote</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>180</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 60.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>180</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>60</speed>
+    </li>
+    <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Yoshimi_1_Mote</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>60</initialDelayTicks>
+        <rotation>180</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>180</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+    </li>
+    <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Yoshimi_2_Mote</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>60</initialDelayTicks>
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(1.5, 0.5, 1.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+    </li>
+</children>
+</EffecterDef>
+</Defs>

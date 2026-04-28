@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+<defName>BAWN_Reisa_A_EX</defName>
+ <label>铝热剂重拳！</label>
+ <description>对一名敌人造成自身攻击力265%的伤害并回复自身130点生命值</description>
+ <iconPath>Ability/Icon/Reisa_A/Reisa_EX</iconPath>
+ <cooldownTicksRange>480</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Reisa_A_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter>BANW_Reisa_A_Ef_B</warmupEffecter>
+ <soundCast>BANW_Wp_SG_At</soundCast>
+ <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <defaultProjectile>BANC_Bullet_Reisa_A_EX</defaultProjectile>
+ <range>33.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1</warmupTime><!-- 前摇时间（单位：秒） -->
+ <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+ <ticksBetweenBurstShots>7</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+<burstShotCount>2</burstShotCount> <!--连发射击的数量为 12 发。-->
+<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
+<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
+<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
+<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
+<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+     <!-- 给予健康状态效果的组件 -->
+      <li Class="CompProperties_AbilityGiveHediff">
+        <!-- 组件类 -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <!-- 应用的健康状态效果定义 -->
+        <hediffDef>BAWN_Reisa_A_EXX_buff_C</hediffDef>
+        <!-- 是否只应用给自己 -->
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <!-- 是否替换已存在的同种效果 -->
+        <replaceExisting>true</replaceExisting>
+      </li>
+</comps>
+</AbilityDef>
+
+<HediffDef>
+    <!-- 范围内目标应用的健康状态标识符 -->
+    <defName>BAWN_Reisa_A_EXX_buff_C</defName>
+    <!-- 显示标签 -->
+    <label>铝热剂重拳！</label>
+    <!-- 描述信息 -->
+    <description>回复130点生命值</description>
+    <!-- 调试标签 -->
+    <debugLabelExtra>other</debugLabelExtra>
+    <!-- 健康状态类 -->
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <!-- 组件列表 -->
+    <comps>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>6.5</healAmount>
+        <healIntervalTicks>6</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+      </li>
+      <!-- 自动消失组件 -->
+       <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    <!-- 是否为负面效果 -->
+    <isBad>false</isBad>
+    <!-- 阶段效果定义 -->
+    <stages>
+      <li>
+        <!-- 属性加成 -->
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+ <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Reisa_A_EX</defName>
+    <label>铝热剂重拳！</label>
+    <projectile>
+      <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
+      <damageAmountBase>143</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.20</armorPenetrationBase><!--穿透-->
+      <speed>60</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>Stun</def>
+        <amount>5</amount>
+        <chance>0.5</chance>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>5</drawSize>
+      <texPath>Projectile/Bullet_Reisa_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <AbilityDef>
+     <!-- 能力的唯一标识符 -->
+    <defName>BAWN_Reisa_A_EXX</defName>
+    <!-- 能力显示名称 -->
+    <label>铝热剂粉红，登场！</label>
+    <!-- 能力描述，说明效果和持续时间 -->
+    <description>赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加22%；每4秒，赋予以自身为中心的圆形范围内除自身外的友方134的生命值回复(持续22秒)</description>
+    <!-- 是否需要特定目标，False表示为范围效果 -->
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <targetRequired>False</targetRequired>
+    <!-- 是否可以使用AOE范围来获取目标 -->
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <!-- 能力图标路径 -->
+    <iconPath>Ability/Icon/Reisa_A/Reisa_EXX</iconPath>
+    <!-- 施法时是否定身施法者 -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <!-- 是否显示心灵异能特效 -->
+    <showPsycastEffects>False</showPsycastEffects>
+    <!-- 未征召状态下是否显示能力按钮 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <!-- 未征召状态下是否禁用能力按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <!-- 快捷键设置 -->
+    <hotKey>Misc12</hotKey>
+    <!-- 在UI中的排列顺序 -->
+    <uiOrder>5</uiOrder>
+    <!-- 施法开始时播放的声音 -->
+    <warmupStartSound>Reisa_A_Skill_EXX</warmupStartSound>
+    <!-- 施法者是否必须具备暴力行为能力 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <!-- 数值属性 -->
+    <statBases>
+      <!-- 能力持续时间 -->
+      <Ability_Duration>22</Ability_Duration>
+      <!-- 能力效果半径 -->
+      <Ability_EffectRadius>9.9</Ability_EffectRadius>
+    </statBases>
+    <!-- 动作属性 -->
+    <verbProperties>
+      <warmupEffecter></warmupEffecter>
+      <soundCast></soundCast>
+      <!-- 动作类 -->
+      <verbClass>Verb_CastAbility</verbClass>
+      <!-- 前摇时间（秒） -->
+      <warmupTime>0.1</warmupTime>
+      <!-- 作用范围 -->
+      <range>9.9</range>
+      <!-- 是否绘制瞄准饼图 -->
+      <drawAimPie>False</drawAimPie>
+      <!-- 是否需要视线 -->
+      <requireLineOfSight>False</requireLineOfSight>
+      <!-- 目标参数设置 -->
+      <targetParams>
+        <!-- 是否可以以自己为目标 -->
+        <canTargetSelf>true</canTargetSelf>
+        <!-- 是否可以以pawn为目标 -->
+        <canTargetPawns>false</canTargetPawns>
+        <!-- 是否可以以建筑为目标 -->
+        <canTargetBuildings>false</canTargetBuildings>
+        <!-- 是否可以以动物为目标 -->
+        <canTargetAnimals>false</canTargetAnimals>
+        <!-- 是否可以以人类为目标 -->
+        <canTargetHumans>false</canTargetHumans>
+        <!-- 是否可以以机械体为目标 -->
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    
+    <!-- 能力组件 -->
+    <comps>
+      <!-- 给予健康状态效果的组件 -->
+      <li Class="CompProperties_AbilityGiveHediff">
+        <!-- 组件类 -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <!-- 应用的健康状态效果定义 -->
+        <hediffDef>BAWN_Reisa_A_EXX_buff_A</hediffDef>
+        <!-- 是否只应用给自己 -->
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <!-- 是否替换已存在的同种效果 -->
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+<HediffDef>
+    <!-- 健康状态唯一标识符 -->
+    <defName>BAWN_Reisa_A_EXX_buff_A</defName>
+    <!-- 显示标签 -->
+    <label>大家，要上了！</label>
+    <!-- 描述信息 -->
+    <description>大家，要上了！</description>
+    <!-- 健康状态类 -->
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <!-- 组件列表 -->
+    <comps>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Reisa_A_Ef_A</stateEffecter>
+      </li>
+      <!-- 自动消失组件 -->
+      <li Class="HediffCompProperties_Disappears">
+        <!-- 显示剩余时间 -->
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <!-- 死亡时消失组件 -->
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <!-- 范围内给予健康状态组件 -->
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <!-- 影响范围 -->
+        <range>9.9</range>
+        <!-- 显示的微粒效果 -->
+        <mote></mote>
+        <!-- 未征召时是否隐藏微粒 -->
+        <hideMoteWhenNotDrafted>false</hideMoteWhenNotDrafted>
+        <!-- 目标选择参数 -->
+        <targetingParameters>
+          <!-- 不影响建筑 -->
+          <canTargetBuildings>false</canTargetBuildings>
+          <!-- 不影响动物 -->
+          <canTargetAnimals>false</canTargetAnimals>
+          <!-- 不影响机械体 -->
+          <canTargetMechs>false</canTargetMechs>
+          <!-- 只影响殖民者 -->
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <!-- 应用的健康状态 -->
+        <hediff>BAWN_Reisa_A_EXX_buff_B</hediff>
+      </li>
+    </comps>
+    <!-- 是否为负面效果 -->
+    <isBad>false</isBad>
+  </HediffDef>
+  <HediffDef>
+    <!-- 范围内目标应用的健康状态标识符 -->
+    <defName>BAWN_Reisa_A_EXX_buff_B</defName>
+    <!-- 显示标签 -->
+    <label>大家，要上了！</label>
+    <!-- 描述信息 -->
+    <description>攻击力增加22%，每4秒回复134的生命值</description>
+    <!-- 调试标签 -->
+    <debugLabelExtra>other</debugLabelExtra>
+    <!-- 健康状态类 -->
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <!-- 组件列表 -->
+    <comps>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>134</healAmount>
+        <healIntervalTicks>240</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+      <!-- 自动消失组件 -->
+       <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <!-- 不显示剩余时间 -->
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <!-- 死亡时消失组件 -->
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <!-- 是否为负面效果 -->
+    <isBad>false</isBad>
+    <!-- 阶段效果定义 -->
+    <stages>
+      <li>
+        <!-- 属性加成 -->
+        <statOffsets>
+         <BANW_FinalDamageMultiplier>0.22</BANW_FinalDamageMultiplier>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Yuuka_EX</defName>
+ <label>I.F.F</label>
+ <description>对一名敌人造成自身攻击力573%的伤害</description>
+ <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
+ <cooldownTicksRange>900</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Yuuka_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>BANW_Wp_SMG_At</soundCast>
+ <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <defaultProjectile>BANC_Bullet_Yuuka_EX</defaultProjectile>
+ <range>30.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>0.7</warmupTime><!-- 前摇时间（单位：秒） -->
+ <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+ <ticksBetweenBurstShots>3</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+<burstShotCount>9</burstShotCount> <!--连发射击的数量为 12 发。-->
+<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
+<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
+<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
+<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
+<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+</comps>
+</AbilityDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Yuuka_EX</defName>
+    <label>逻辑与理性子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
+      <damageAmountBase>52</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>90</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>2.5</drawSize>
+      <texPath>Projectile/Bullet_Yuuka</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  
+    
+</Defs>

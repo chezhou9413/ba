@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kotama_1_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kotama/A/Kotama_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kotama_2_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.70</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kotama/A/Kotama_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>20</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kotama_3_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.70</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kotama/B/Kotama_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>16.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>20</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+
+   <EffecterDef>
+<defName>BANW_Effecter_Kotama_A</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Ye_GP</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_A</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>0</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_B</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>3</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_C</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>6</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_D</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>9</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_E</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>12</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_F</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>15</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_G</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>18</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_H</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>21</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_I</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>24</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_J</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>27</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_K</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>30</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_L</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>33</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_M</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>36</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_N</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>39</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li><li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeA_O</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>42</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_A</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>0</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_B</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>3</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_C</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>6</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_D</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>9</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_E</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>12</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_F</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>15</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_G</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>18</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_H</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>21</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_I</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>24</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_J</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>27</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_K</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>30</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_L</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>33</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_M</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>36</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_N</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>39</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_YeB_O</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>42</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+  <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Kotama_1_Mote</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+    </li>
+<li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Kotama_2_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+    </li>
+</children>
+</EffecterDef>
+
+<EffecterDef>
+<defName>BANW_Effecter_Kotama_B</defName>
+<children>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Kotama_3_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.45)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+</children>
+</EffecterDef>
+</Defs>

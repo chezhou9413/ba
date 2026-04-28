@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+<defName>BAWN_Mashiro_EX</defName>
+ <label>正义的审判</label>
+ <description>对圆形范围内的敌方单位造成自身攻击力289%的伤害</description>
+ <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
+ <cooldownTicksRange>1200</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Mashiro_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+<warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>ThrowGrenade</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+ <range>164.9</range><!-- 投掷范围 -->
+ <warmupTime>1</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Mashiro_EX</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+<AbilityDef>
+<defName>BAWN_Mashiro_EXX</defName>
+ <label>正义的一击</label>
+ <description>对一名敌人造成攻击力664%的伤害，有75%机率造成716%的追加伤害</description>
+ <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
+ <cooldownTicksRange>3000</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Mashiro_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter></warmupEffecter>
+ <soundCast>Mashiro_Gun_EX</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>true</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>169.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>2.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Mashiro_EXX</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Mashiro_EX</defName>
+    <label>正义的审判</label>
+    <projectile>
+      <explosionRadius>1.9</explosionRadius>
+      <damageDef>BANC_Damage_Shiroko_EX</damageDef><!--子弹类型-->
+      <damageAmountBase>307</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>100</speed><!--子弹速度-->
+    </projectile>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize>
+      <texPath>Projectile/Bullet_Mashiro</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Mashiro_hedi_B</defName>
+        <!-- 显示名称 -->
+        <label>正义的一击</label>
+        <!-- 效果描述 -->
+        <description>正义的一击</description>
+        <defaultLabelColor>(255, 0, 0)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>200</disappearsAfterTicks>
+      </li>
+            <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Mashiro_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Mashiro_EXX</defName>
+    <label>正义的显现子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_Mashiro</damageDef><!--子弹类型-->
+      <damageAmountBase>699</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>50</stoppingPower><!--抑制-->
+      <armorPenetrationBase>1</armorPenetrationBase><!--穿透-->
+      <speed>150</speed><!--子弹速度-->
+    <extraDamages>
+      <li>
+        <def>BANC_Damage_Mashiro</def>
+        <amount>758</amount>
+        <chance>0.75</chance>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>6</drawSize>
+      <texPath>Projectile/Bullet_Mashiro</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+
+  </ThingDef>
+    <DamageDef>
+    <defName>BANC_Damage_Mashiro</defName><!--通用爆发-->
+    <label>爆发</label><!--描述-->
+    <workerClass>DamageWorker_AddInjury</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于爆发伤害</deathMessage><!--死亡讯息-->
+    <hediff>Gunshot</hediff><!--穿刺-->
+    <hasForcefulImpact>false</hasForcefulImpact>
+     <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Mashiro_hedi_B</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+    <armorCategory>Sharp</armorCategory><!--利器。-->
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <armorCategory>Sharp</armorCategory><!--护甲种类-->
+    <overkillPctToDestroyPart>0~0.8</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+  </DamageDef>
+
+</Defs>

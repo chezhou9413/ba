@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<BANWlLib.BaDef.BaStudentRaceDef ParentName="BANW_KivotosStudent">
+    	<!-- 学生UI界面配置 -->
+		<BaStudentUI>
+			<!-- 学生头像路径，用于在UI中显示学生头像 -->
+			<StudentAvatar>ManuaUI/Avatar/Rio</StudentAvatar>
+			<!-- 学生名称显示模式，Auto表示自动生成名称 -->
+			<StudentName>Auto</StudentName>
+			<!-- 角色立绘路径，用于显示学生的全身立绘图像 -->
+			<CharacterimagePath>ManuaUI/Live/Rio</CharacterimagePath>
+			<!-- 背景图片路径，用于学生详情界面的背景 -->
+			<BackgroundPath>ManuaUI/Bg/BG_Millennium</BackgroundPath>
+			<!-- 角色立绘的缩放倍数，1.2表示放大1.2倍 -->
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			<!-- 角色立绘在X轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			<!-- 角色立绘在Y轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			<!-- 角色类型标签路径，用于显示学生的类型标签 -->
+			<CharacterTypePath>ManuaUI/Type/支援</CharacterTypePath>
+			<!-- 角色的星星数量 -->
+			<CharacterStarCount>3</CharacterStarCount>
+			<!-- 出击按钮旁边的1号tag图片路径，对应位置左上 -->
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			<!-- 出击按钮旁边的2号tag图片路径，对应位置左下 -->
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			<!-- 出击按钮旁边的3号tag图片路径，对应位置右上 -->
+			<infotagImagePath3>ManuaUI/Type/神秘</infotagImagePath3>
+			<!-- 出击按钮旁边的4号tag图片路径，对应位置右下 -->
+			<infotagImagePath4>ManuaUI/Type/弹力装甲</infotagImagePath4>
+			<!-- 技能等级显示，写整数，不要大于20，小于0 -->
+			<Skills>
+				<!--射击-->
+				<Shooting>0</Shooting>
+				<!--近战-->
+				<Melee>0</Melee>
+				<!--建造-->
+				<Construction>15</Construction>
+				<!--采矿-->
+				<Mining>0</Mining>
+				<!--烹饪-->
+				<Cooking>0</Cooking>
+				<!--种植-->
+				<Plants>0</Plants>
+				<!--驯兽-->
+				<Animals>0</Animals>
+				<!--手工-->
+				<Crafting>20</Crafting>
+				<!--艺术-->
+				<Artistic>0</Artistic>
+				<!--医学-->
+				<Medical>0</Medical>
+				<!--社交-->
+				<Social>3</Social>
+				<!--智慧-->
+				<Intellectual>20</Intellectual>
+			</Skills>
+		    <!--武器UI配置-->
+			<WapenUI>
+			   <!--武器图片路径配置-->
+				<WapenUIImagePath>ManuaUI/Wapen/Rio</WapenUIImagePath>
+			    <!--武器类型文本配置-->
+				<WapenTypeText>手枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>测试技能1</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Ibuki/Ibuki_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>唯一解</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>297%</color>的伤害并且护甲减少<color=#00FFFF>25%</color>
+(持续<color=#00FFFF>19</color>秒)]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_EX</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>追星者</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>测试技能4</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   <!--学生简介页面的粗略介绍配置，显示在学院logo旁边-->
+				<StudentDesp><![CDATA[千禧年科学学院
+3年级
+社团 研讨会]]>
+				</StudentDesp>
+				<!--学生简介页面的名字，显示在学院logo旁边-->
+				<StudentBioName>调月 莉音</StudentBioName>
+				<!--学院logo路径，显示在学生简介页面的左上角-->
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Millennium</AcademyLogoPath>
+				<!--学生简介页面的学生背景故事配置，长文本，可以任意字数-->
+				<StudentCard>隶属于千禧科学学院，学生会「研讨会」的会长。作为一名理性主义者，她为了确保千禧和世界的安全不择手段。而其结果便是被冠上了「老大姐（Big Sister）」的昵称。她的独特品味十分独特，「前卫君」便是这一品味的冰山一角。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+	<defName>BANW_Rio_race</defName>
+		<label>莉音</label>
+		<description>隶属于千禧科学学院，学生会「研讨会」的会长。作为一名理性主义者，她为了确保千禧和世界的安全不择手段。而其结果便是被冠上了「老大姐（Big Sister）」的昵称。她的独特品味十分独特，「前卫君」便是这一品味的冰山一角。
+&lt;color=#4169E1&gt;攻击属性：神秘
+[神秘属性攻击可以对热能护甲造成伤害,造成伤害时无视承伤属性，缺点是护甲穿透没有成长]&lt;/color&gt;
+&lt;color=#FFFF00&gt;出装建议&lt;/color&gt;
+&lt;color=#DC143C&gt;[鞋子]&lt;/color&gt;&lt;color=#00FF00&gt;[发夹]&lt;/color&gt;&lt;color=#00BFFF&gt;[手表]&lt;/color&gt;</description>
+		<killedLeavingsRanges>
+			<BANW_Rio_race_Proplevel>1</BANW_Rio_race_Proplevel>
+		</killedLeavingsRanges>
+		<alienRace>
+			<raceRestriction>
+				<onlyUseRaceRestrictedWeapons>true</onlyUseRaceRestrictedWeapons>
+				<weaponList>
+					<li>BANC_Rio</li>
+				</weaponList>
+			</raceRestriction>
+		</alienRace>
+		<race>
+	  <nameGenerator>NamerRio</nameGenerator>
+      <nameGeneratorFemale>NamerRio</nameGeneratorFemale>
+		</race>
+		<comps>
+		  <li Class="BANWlLib.StudentInitializationCompProperties">
+            <initialExperience>110</initialExperience>
+            <starUpEffect>BANW_Effecter_B</starUpEffect>
+			<starUpSounds>
+				<li>Rio_levelup_A</li>
+				<li>Rio_levelup_B</li>
+				<li>Rio_levelup_C</li>
+				<li>Rio_levelup_D</li>
+			 </starUpSounds>
+          </li>
+		  <li Class="BANWlLib.comp.LevelVisualCompPropertie">
+            <levelAudio>
+                <li>Rio_levelup_A</li>
+                <li>Rio_levelup_B</li>
+                <li>Rio_levelup_C</li>
+                <li>Rio_levelup_D</li>
+            </levelAudio>
+            <!-- 等级特效列表，使用模组中已有的特效 -->
+            <levelMote>
+                <li>BANW_Effecter_LevelUp</li>
+            </levelMote>
+          </li>
+		</comps>
+	<baStudentData>
+			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DamageType>Mysterious</DamageType>
+			<!-- 防御类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DefenseType>Vibration</DefenseType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			<PosType>Assist</PosType>
+			<!-- 星级数量 -->
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Rio</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Rio_race_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Rio_race_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Rio_race_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Rio</avtTexPath></baStudentData>
+		
+			
+			
+            <!-- 抽卡面板显示的纹理，就是最后翻牌那一下的头像 -->
+            
+	</BANWlLib.BaDef.BaStudentRaceDef>   
+</Defs>

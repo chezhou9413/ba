@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    
+    <LifeStageDef>
+		<defName>BANW_KivotosStudent_Adult</defName>
+		<label>Adult</label>
+		<adjective>Adult</adjective>
+		<reproductive>false</reproductive>
+		<silhouetteGraphicData>
+			<texPath>Things/Pawn/Humanlike/Silhouettes/Silhouette_HumanAdult</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.0</drawSize>
+		</silhouetteGraphicData>
+	</LifeStageDef>
+	
+
+    
+</Defs>

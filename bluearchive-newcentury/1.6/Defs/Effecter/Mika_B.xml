@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
+<defName>BAWN_Mika_1_fleck_A</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<graphicData>
+<graphicClass>Graphic_FleckPulse</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Mika/A/Mika_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>7</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>31</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</FleckDef>
+<FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
+<defName>BAWN_Mika_2_fleck_A</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<graphicData>
+<graphicClass>Graphic_FleckPulse</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Mika/A/Mika_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>7</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>31</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</FleckDef>
+<FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
+<defName>BAWN_Mika_3_fleck_A</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<graphicData>
+<graphicClass>Graphic_FleckPulse</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Mika/A/Mika_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>7</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>31</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</FleckDef>
+<FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
+<defName>BAWN_Mika_4_fleck_A</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<graphicData>
+<graphicClass>Graphic_FleckPulse</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Mika/A/Mika_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>7</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>31</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</FleckDef>
+<FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
+<defName>BAWN_Mika_5_fleck_A</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<graphicData>
+<graphicClass>Graphic_FleckPulse</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Mika/A/Mika_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>7</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>31</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</FleckDef>
+<FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
+<defName>BAWN_Mika_6_fleck_A</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<graphicData>
+<graphicClass>Graphic_FleckPulse</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Mika/A/Mika_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>7</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>16</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</FleckDef>
+<FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
+<defName>BAWN_Mika_1_fleck_C</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>2</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.1</fadeOutTime><!-- 特效淡出时间（秒） -->
+ <growthRate>33</growthRate>
+<graphicData>
+<graphicClass>Graphic_FleckPulse</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Mika/C/Mika_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>0.5</drawSize><!-- 绘制尺寸 -->  
+<shaderParameters>
+<_NumFrames>31</_NumFrames>
+<_FramesPerSec>15</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</FleckDef>
+<EffecterDef>
+<defName>BANW_Mika_Ef_B</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_CameraShakeChance</subEffecterClass>
+        <cameraShake>0.5</cameraShake>
+         <chancePerTick>5</chancePerTick>
+        <lifespanMaxTicks>100</lifespanMaxTicks>
+        <distanceAttenuationScale>0.5</distanceAttenuationScale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_CameraShakeChance</subEffecterClass>
+        <initialDelayTicks>200</initialDelayTicks>
+        <cameraShake>5</cameraShake>
+         <chancePerTick>5</chancePerTick>
+        <lifespanMaxTicks>20</lifespanMaxTicks>
+        <distanceAttenuationScale>1</distanceAttenuationScale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>BAWN_Mika_1_fleck_C</fleckDef>
+         <initialDelayTicks>200</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 1.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_Mika_1_fleck_A</fleckDef>
+         <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 1.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>BAWN_Mika_2_fleck_A</fleckDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>61</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 1.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>BAWN_Mika_3_fleck_A</fleckDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>121</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 1.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>BAWN_Mika_4_fleck_A</fleckDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>181</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 1.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>BAWN_Mika_5_fleck_A</fleckDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>241</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 1.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>BAWN_Mika_6_fleck_A</fleckDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>301</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 1.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      
+     
+</children>
+</EffecterDef>
+</Defs>

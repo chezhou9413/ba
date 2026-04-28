@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Trinity系列机械体的基础PawnKind定义 -->
+  <PawnKindDef Name="BANW_Trinity_MechanoidBase" Abstract="True">
+    <!-- 默认派系为机械族 -->
+    <defaultFactionType>Mechanoid</defaultFactionType>
+    <!-- 是否避开掩体 -->
+    <aiAvoidCover>false</aiAvoidCover>
+    <!-- 死亡时销毁装备 -->
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    <!-- 是否可被剥除装备 -->
+    <canStrip>false</canStrip>
+    <!-- 最小生成年龄（需要Biotech扩展） -->
+    <minGenerationAge MayRequire="Ludeon.Rimworld.Biotech">200</minGenerationAge>
+    <!-- 强制正常品质装备 -->
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+    <!-- 是否允许在机械集群中出现 -->
+    <allowInMechClusters>false</allowInMechClusters>
+	
+    <!-- 科技植入物概率 -->
+    <techHediffsChance>1</techHediffsChance>
+    <!-- 科技植入物价值范围 -->
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    <!-- 武器价值范围 -->
+    <weaponMoney>9999~9999</weaponMoney>
+  </PawnKindDef>
+  
+  <!-- Trinity系列机械体的基础Thing定义 -->
+  <ThingDef ParentName="BaseMechanoidWalker" Name="BANW_Trinity_Mechanoid" Abstract="True">
+    <statBases>
+		<!-- 钝器护甲值 -->
+		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+        <!-- 锐器护甲值 -->
+		<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+		<!-- 带宽消耗 -->
+		<BandwidthCost>1</BandwidthCost>
+		<!-- EMP抗性 -->
+		<EMPResistance>0.7</EMPResistance>
+		<!-- 移动速度 -->
+		<MoveSpeed>4.7</MoveSpeed>
+        <!-- 每点生命值的能量损失 -->
+        <MechEnergyLossPerHP>0.25</MechEnergyLossPerHP>
+    </statBases>
+	
+    <!-- 解剖产物 -->
+    <butcherProducts>
+      <Steel>1</Steel>
+    </butcherProducts>
+	
+    <!-- 攻击方式定义 -->
+    <tools>
+      <li>
+        <!-- 攻击部位标签 -->
+        <label>头</label>
+        <!-- 攻击类型 -->
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <!-- 攻击威力 -->
+        <power>8.5</power>
+        <!-- 冷却时间 -->
+        <cooldownTime>2</cooldownTime>
+        <!-- 关联的身体部位组 -->
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <!-- 确保关联身体部位组始终可用 -->
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <!-- 出现几率因子 -->
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <!-- 种族属性 -->
+    <race>
+      <!-- 基础健康值比例 -->
+      <baseHealthScale>5.5</baseHealthScale>
+      <!-- 使用的身体类型 -->
+      <body>Mech_Light</body>
+      <!-- 近战攻击命中的音效 -->
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      <!-- 近战攻击建筑的音效 -->
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <!-- 近战攻击未命中音效 -->
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+      <!-- 移除了重复的lifeStageAges定义，因为它已经由BaseMechanoidWalker提供 -->
+       <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>BANW_Sound_Kong</soundWounded>
+          <soundDeath>BANW_Sound_Kong</soundDeath>
+          <soundCall>BANW_Sound_Kong</soundCall>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>BANW_Sound_Kong</soundWounded>
+          <soundDeath>BANW_Sound_Kong</soundDeath>
+          <soundCall>BANW_Sound_Kong</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+  </ThingDef>
+  
+</Defs>

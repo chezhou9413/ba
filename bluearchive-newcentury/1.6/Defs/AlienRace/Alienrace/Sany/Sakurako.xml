@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<BANWlLib.BaDef.BaStudentRaceDef ParentName="BANW_KivotosStudent">
+		<!-- 学生UI界面配置 -->
+		<BaStudentUI>
+			<!-- 学生头像路径，用于在UI中显示学生头像 -->
+			<StudentAvatar>ManuaUI/Avatar/Sakurako</StudentAvatar>
+			<!-- 学生名称显示模式，Auto表示自动生成名称 -->
+			<StudentName>Auto</StudentName>
+			<!-- 角色立绘路径，用于显示学生的全身立绘图像 -->
+			<CharacterimagePath>ManuaUI/Live/Sakurako</CharacterimagePath>
+			<!-- 背景图片路径，用于学生详情界面的背景 -->
+			<BackgroundPath>ManuaUI/Bg/BG_Sany</BackgroundPath>
+			<!-- 角色立绘的缩放倍数，1.2表示放大1.2倍 -->
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			<!-- 角色立绘在X轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			<!-- 角色立绘在Y轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			<!-- 角色类型标签路径，用于显示学生的类型标签 -->
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			<!-- 角色的星星数量 -->
+			<CharacterStarCount>3</CharacterStarCount>
+			<!-- 出击按钮旁边的1号tag图片路径，对应位置左上 -->
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			<!-- 出击按钮旁边的2号tag图片路径，对应位置左下 -->
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			<!-- 出击按钮旁边的3号tag图片路径，对应位置右上 -->
+			<infotagImagePath3>ManuaUI/Type/神秘</infotagImagePath3>
+			<!-- 出击按钮旁边的4号tag图片路径，对应位置右下 -->
+			<infotagImagePath4>ManuaUI/Type/特殊装甲</infotagImagePath4>
+			<!-- 技能等级显示，写整数，不要大于20，小于0 -->
+			<Skills>
+				<!--射击-->
+				<Shooting>13</Shooting>
+				<!--近战-->
+				<Melee>0</Melee>
+				<!--建造-->
+				<Construction>0</Construction>
+				<!--采矿-->
+				<Mining>0</Mining>
+				<!--烹饪-->
+				<Cooking>8</Cooking>
+				<!--种植-->
+				<Plants>0</Plants>
+				<!--驯兽-->
+				<Animals>0</Animals>
+				<!--手工-->
+				<Crafting>0</Crafting>
+				<!--艺术-->
+				<Artistic>10</Artistic>
+				<!--医学-->
+				<Medical>7</Medical>
+				<!--社交-->
+				<Social>15</Social>
+				<!--智慧-->
+				<Intellectual>11</Intellectual>
+			</Skills>
+			<!--武器UI配置-->
+			<WapenUI>
+				<!--武器图片路径配置-->
+				<WapenUIImagePath>ManuaUI/Wapen/Sakurako</WapenUIImagePath>
+				<!--武器类型文本配置-->
+				<WapenTypeText>步枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>测试技能1</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+				<offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>测试技能2</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能2 / <color=black>COST:</color><color=blue>1342</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+				<offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>测试技能3</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能3 / <color=black>COST: </color><color=blue>20</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能3的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+				<offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>测试技能4</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+				<offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+				<!--学生简介页面的粗略介绍配置，显示在学院logo旁边-->
+				<StudentDesp><![CDATA[圣三一综合学园
+3年级
+社团 修女会]]>
+				</StudentDesp>
+				<!--学生简介页面的名字，显示在学院logo旁边-->
+				<StudentBioName>歌住 樱子</StudentBioName>
+				<!--学院logo路径，显示在学生简介页面的左上角-->
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Sany</AcademyLogoPath>
+				<!--学生简介页面的学生背景故事配置，长文本，可以任意字数-->
+				<StudentCard>所属修女会的勤劳又善良的少女。负责圣三一大圣堂的管理重责，能勤劳的完成交付的工作，对任何人都很亲切。但是个性迷煳，经常会出错，对自己比较没有信心。虽然每天带在身上的背包里装着巨大的设置型榴弹发射器，但从来都没有显露出很重的感觉。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+		<defName>BANW_Sakurako_race</defName>
+		<label>樱子</label>
+		<description>圣三一综合学园所属，修女会的虔诚学生。不论什么事都认真对待，深受众多学生的信任。但过分认真导致有时会做出与流行跟常识有所偏差的事。 &lt;color=#4169E1&gt;攻击属性：神秘 [神秘属性攻击可以对热能护甲造成伤害,造成伤害时无视承伤属性，缺点是护甲穿透没有成长]&lt;/color&gt; &lt;color=#FFFF00&gt;出装建议&lt;/color&gt; &lt;color=#DC143C&gt;[帽子]&lt;/color&gt;&lt;color=#00FF00&gt;[发夹]&lt;/color&gt;&lt;color=#00BFFF&gt;[手表]&lt;/color&gt;</description>
+		<killedLeavingsRanges>
+			<BANW_Sakurako_race_Proplevel>1</BANW_Sakurako_race_Proplevel>
+		</killedLeavingsRanges>
+		<alienRace>
+			<raceRestriction>
+				<onlyUseRaceRestrictedWeapons>true</onlyUseRaceRestrictedWeapons>
+				<weaponList>
+					<li>BANC_Sakurako</li>
+				</weaponList>
+			</raceRestriction>
+		</alienRace>
+		<race>
+			<nameGenerator>NamerSakurako</nameGenerator>
+			<nameGeneratorFemale>NamerSakurako</nameGeneratorFemale>
+		</race>
+		<comps>
+			<li Class="BANWlLib.StudentInitializationCompProperties">
+				<initialExperience>110</initialExperience>
+				<starUpEffect>BANW_Effecter_B</starUpEffect>
+				<starUpSounds>
+					<li>Sakurako_levelup_A</li>
+					<li>Sakurako_levelup_B</li>
+					<li>Sakurako_levelup_C</li>
+					<li>Sakurako_levelup_D</li>
+				</starUpSounds>
+			</li>
+			<li Class="BANWlLib.comp.LevelVisualCompPropertie">
+				<levelAudio>
+					<li>Sakurako_levelup_A</li>
+					<li>Sakurako_levelup_B</li>
+					<li>Sakurako_levelup_C</li>
+					<li>Sakurako_levelup_D</li>
+				</levelAudio>
+				<!-- 等级特效列表，使用模组中已有的特效 -->
+				<levelMote>
+					<li>BANW_Effecter_LevelUp</li>
+				</levelMote>
+			</li>
+		</comps>
+		<baStudentData>
+			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DamageType>Mysterious</DamageType>
+			<!-- 防御类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DefenseType>Mysterious</DefenseType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			<PosType>Henc</PosType>
+			<!-- 星级数量 -->
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Sakurako</DraggableAudio>
+			<GakaStudentThingData>
+				<li>
+					<key>Kami_Proplevel</key>
+					<value>50</value>
+				</li>
+				<li>
+					<key>BANW_Sakurako_race_Proplevel</key>
+					<value>30</value>
+				</li>
+			</GakaStudentThingData>
+			<UpGakaStudentThingData>
+				<li>
+					<key>Kami_Proplevel</key>
+					<value>50</value>
+				</li>
+				<li>
+					<key>BANW_Sakurako_race_Proplevel</key>
+					<value>100</value>
+				</li>
+			</UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+				<li>
+					<key>BANW_Sakurako_race_Proplevel</key>
+					<value>100</value>
+				</li>
+			</OneGakaStudentThingData>
+		
+    <avtTexPath>Gacha/Student/Sakurako</avtTexPath></baStudentData>
+		<!-- 抽卡面板显示的纹理，就是最后翻牌那一下的头像 -->
+		
+	</BANWlLib.BaDef.BaStudentRaceDef>
+</Defs>

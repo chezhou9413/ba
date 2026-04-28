@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<EffecterDef>
+<defName>BANW_Chinatsu_Ef_A</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Huifu_Skill_Sound</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_Natsu_4_fleck</fleckDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      
+</children>
+</EffecterDef>
+<SoundDef>
+	<defName>Huifu_Skill_Sound</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Huifu</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+</Defs>

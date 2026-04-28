@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Hoshiro</defName>
+        <label>星野的衣服</label>
+        <description>星野的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Abydos/Hoshiro/Apparel/Hoshiro_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Hoshiro</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Shiroko</defName>
+        <label>白子的衣服</label>
+        <description>白子的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Abydos/Shiroko/Apparel/Shiroko_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Shiroko</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Ayane</defName>
+        <label>绫音的衣服</label>
+        <description>绫音的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Abydos/Ayane/Apparel/Ayane_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Ayane</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Serika</defName>
+        <label>芹香的衣服</label>
+        <description>芹香的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Abydos/Serika/Apparel/Serika_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Serika</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Nonomi</defName>
+        <label>野宫的衣服</label>
+        <description>野宫的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Abydos/Nonomi/Apparel/Nonomi_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Nonomi</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+</Defs>

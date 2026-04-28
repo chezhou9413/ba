@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<AlienRace.ThingDef_AlienRace Name="BANW_KivotosSensei" ParentName="BANW_SenseiThingBase">
+		<defName>BANW_KivotosSensei</defName>
+		<label>基沃托斯人</label>
+		<description>[PlaceHolder]</description>
+		<alienRace>
+			<graphicPaths>
+				<body>
+					<path>Pawns/General/Invisible/Inv</path>
+				</body>
+				<head>Pawns/General/Invisible_Head/</head>
+				<skinColor>(0,0,0,1)</skinColor>
+			</graphicPaths>
+			<generalSettings>
+				<alienPartGenerator>
+					<customDrawSize>(1, 1)</customDrawSize>					<!-- 小人整体大小 -->
+					<bodyAddons>
+						<!-- 头 -->
+						<li>
+							<name>KivotosStudent_head</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.48</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+                            <Backstory For="BANW_StudentSensei">Pawns/Sensei/Head/Sensei_Head</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 身体 -->
+						<li>
+							<name>KivotosStudent_Body</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Torso</bodyPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>true</drawnInBed>								
+								</Posture>
+								<Apparel>
+									<hiddenUnderApparelTag>
+										<li>BANW_Body</li>
+									</hiddenUnderApparelTag>
+								</Apparel>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.39</layerOffset>
+									<offset>(0,0)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,0)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,0)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+							<Backstory For="BANW_StudentSensei">Pawns/Sensei/Body/Sensei_Body</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 头发前 -->
+						<li>
+							<name>KivotosStudent_hairfront</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.4</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+							<Backstory For="BANW_StudentSensei">Pawns/Sensei/Hair/Sensei_FrontHair</Backstory>	
+							</extendedGraphics>
+						</li>
+						<!-- 头发后 -->
+						
+						</bodyAddons>
+				</alienPartGenerator>
+			</generalSettings>
+		</alienRace>
+	</AlienRace.ThingDef_AlienRace>
+
+
+
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Sensei</defName>
+        <label>老师的衣服</label>
+        <description>老师的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Sensei/Apparel/Sensei_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Sensei</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+	<ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Head_Sensei</defName>
+        <label>奇怪的面具</label>
+        <description>一个滑稽的面具，可能会有人喜欢它</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Stone/Sensei</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+			
+        </graphicData>
+        <apparel>
+			<parentTagDef>ApparelHead</parentTagDef>
+            <wornGraphicPath>Pawns/Sensei/Hat/Sensei_Apparel_Thin</wornGraphicPath>
+            <bodyPartGroups Inherit="False">
+                <li>Eyes</li>
+            </bodyPartGroups>
+            <layers Inherit="False">
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANW_Head_Sensei</li>
+                <li>BANW_Head</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <HeadTypeDef ParentName="AverageBase">
+    <defName>Male_Senseihead</defName>
+    <graphicPath>Pawns/Sensei/Sensei_FrontHair</graphicPath>
+    <gender>Male</gender>
+    <eyeOffsetEastWest>(0.18, 0, 0.17)</eyeOffsetEastWest>
+  </HeadTypeDef>
+	<AlienRace.ThingDef_AlienRace ParentName="BasePawn" Name="BANW_SenseiThingBase" Abstract="True">
+		<alienRace>
+			<generalSettings>
+			    <minAgeForAdulthood>10</minAgeForAdulthood>
+				<maleGenderProbability>1.0</maleGenderProbability>
+				<immuneToAge>false</immuneToAge>
+				<canLayDown>true</canLayDown>
+				<immuneToXenophobia>true</immuneToXenophobia>
+				<notXenophobistTowards>
+				</notXenophobistTowards>
+				<humanRecipeImport>true</humanRecipeImport>
+				<alienPartGenerator>
+					<bodyTypes>
+						<li>Thin</li>
+					</bodyTypes>
+                    <headBodyPartDef>BANW_Head</headBodyPartDef>
+					<headTypes Inherit="False">
+						<li>Male_Senseihead</li>
+					</headTypes>
+					<colorChannels>
+						<li>
+							<name>skin</name>
+							<first Class="ColorGenerator_Options" Inherit="false">
+								<options>
+									<li>
+										<weight>10</weight>
+										<only>RGBA(1,1,1,1)</only>
+									</li>
+								</options>
+							</first>
+						</li>
+					</colorChannels>
+				</alienPartGenerator>
+				<maxDamageForSocialfight>6</maxDamageForSocialfight>
+				<reproduction>
+					<femaleFertilityAgeFactor>
+						<points>
+							<li>(0.01, 0)</li>
+							<li>(80,0)</li>
+						</points>
+					</femaleFertilityAgeFactor>
+				</reproduction>
+			</generalSettings>
+
+			<styleSettings>
+				<li>
+					<key>HairDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>TattooDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>BeardDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+			</styleSettings>
+			<relationSettings>
+			<relationChanceModifierLover>0</relationChanceModifierLover>
+			<relationChanceModifierExLover>0</relationChanceModifierExLover>
+			<relationChanceModifierFiance>0</relationChanceModifierFiance>
+			<relationChanceModifierSpouse>0</relationChanceModifierSpouse>
+			<relationChanceModifierExSpouse>0</relationChanceModifierExSpouse>
+			<relationChanceModifierParent>0</relationChanceModifierParent>
+			<relationChanceModifierChild>0</relationChanceModifierChild>
+			<relationChanceModifierSibling>0</relationChanceModifierSibling>
+		</relationSettings>
+			<raceRestriction>
+				<onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
+				<onlyUseRaceRestrictedWeapons>false</onlyUseRaceRestrictedWeapons>
+				<onlyBuildRaceRestrictedBuildings>false</onlyBuildRaceRestrictedBuildings>
+				<onlyEatRaceRestrictedFood>false</onlyEatRaceRestrictedFood>
+				<onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>
+				<apparelList>
+					<li>BANW_Head_Sensei</li>
+					<li>BANW_Body_Sensei</li>
+					<li>BANC_Hat_One</li>
+					<li>BANC_Glove_One</li>
+					<li>BANC_Amulet_One</li>
+					<li>BANC_Bag_One</li>
+					<li>BANC_Badge_One</li>
+					<li>BANC_Shoes_One</li>
+					<li>BANC_Hairpin_One</li>
+					<li>BANC_Watch_One</li>
+					<li>BANC_Necklace_One</li>
+
+					<li>BANC_Hat_Tow</li>
+					<li>BANC_Glove_Tow</li>
+					<li>BANC_Amulet_Tow</li>
+					<li>BANC_Bag_Tow</li>
+					<li>BANC_Badge_Tow</li>
+					<li>BANC_Shoes_Tow</li>
+					<li>BANC_Hairpin_Tow</li>
+					<li>BANC_Watch_Tow</li>
+					<li>BANC_Necklace_Tow</li>
+				</apparelList>
+				
+				<whiteApparelList>
+					<li>Apparel_ShieldBelt</li>
+					<li>Apparel_SmokepopBelt</li>
+					<li>Apparel_FirefoampopPack</li>
+					<li>Apparel_PsychicShockLance</li>
+					<li>Apparel_PsychicInsanityLance</li>
+					<li>OrbitalTargeterBombardment</li>
+					<li>OrbitalTargeterPowerBeam</li>
+					<li>TornadoGenerator</li>
+					<li MayRequire="Ludeon.Rimworld.Royalty">Apparel_PackJump</li>
+					<li MayRequire="Ludeon.Rimworld.Royalty">Apparel_PackBroadshield</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Apparel_HeavyShield</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Apparel_PackControl</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Apparel_PackBandwidth</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Apparel_PackTox</li>
+				</whiteApparelList>
+				<whiteGeneTags>
+				</whiteGeneTags>
+			</raceRestriction>
+		</alienRace>
+
+		<tools>
+			<li>
+				<label>左手</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>右手</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+		</tools>
+
+
+
+		<race>
+			<nameGenerator>NamerSensei</nameGenerator>
+            <nameGeneratorFemale>NamerSensei</nameGeneratorFemale>
+			<hasCorpse>true</hasCorpse>
+			<renderTree>Humanlike</renderTree>
+			<thinkTreeMain>Humanlike</thinkTreeMain>
+			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
+			<intelligence>Humanlike</intelligence>
+			<body Inherit="false">BANW_kivotos_Sensei</body>
+			<useMeatFrom>Human</useMeatFrom>
+			<baseBodySize>1</baseBodySize>
+			<baseHealthScale>1</baseHealthScale><!--		        ■血量-->
+			<foodType>OmnivoreHuman</foodType>
+			<lifeExpectancy>80</lifeExpectancy>
+			<leatherDef>Leather_Human</leatherDef>
+			<hasGenders>true</hasGenders>
+			<gestationPeriodDays>18</gestationPeriodDays>
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding_Metal</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+            <baseHungerRate>1.5</baseHungerRate>
+			<bloodDef>Filth_Blood</bloodDef>
+			<bloodSmearDef>Filth_BloodSmear</bloodSmearDef>
+			<canBecomeShambler>true</canBecomeShambler>
+			<knowledgeCategory MayRequire="Ludeon.RimWorld.Anomaly">Basic</knowledgeCategory>
+			<anomalyKnowledge>1</anomalyKnowledge>
+			<makesFootprints>true</makesFootprints>
+
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 0.30)</li>
+					<li>(2, 0.40)</li>
+					<li>(3, 0.10)</li>
+					<li>(4, 0.20)</li>
+					<li>(5, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeStageAges>
+				<li>
+					<def>BANW_KivotosStudent_Adult</def>
+					<minAge>0</minAge>
+				</li>
+				
+			</lifeStageAges>
+
+            <lifeStageWorkSettings MayRequire="Ludeon.RimWorld.Biotech">
+				<Firefighter>0</Firefighter>
+				<Patient>0</Patient>
+				<Doctor>0</Doctor>
+				<PatientBedRest>0</PatientBedRest>
+				<Childcare MayRequire="Ludeon.RimWorld.Biotech">0</Childcare>
+				<BasicWorker>0</BasicWorker>
+				<Warden>0</Warden>
+				<Handling>0</Handling>
+				<Cooking>0</Cooking>
+				<Hunting>0</Hunting>
+				<Construction>0</Construction>
+				<Growing>0</Growing>
+				<Mining>0</Mining>
+				<PlantCutting>0</PlantCutting>
+				<Smithing>0</Smithing>
+				<Tailoring>0</Tailoring>
+				<Art>0</Art>
+				<Crafting>0</Crafting>
+				<Hauling>0</Hauling>
+				<Cleaning>0</Cleaning>
+				<Research>0</Research>
+			</lifeStageWorkSettings>
+
+			<specialShadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,-0.3)</offset>
+			</specialShadowData>
+			<ageGenerationCurve Inherit="false">
+				<points>
+					<li>(10,0)</li>
+					<li>(16,100)</li>
+					<li>(40,100)</li>
+					<li>(50,30)</li>
+					<li>(60,18)</li>
+					<li>(65,10)</li>
+					<li>(70,3)</li>
+					<li>(80,0)</li>
+				</points>
+			</ageGenerationCurve>
+		</race>
+
+		<!--数据需要调整-->
+		<statBases>
+			<RoyalFavorValue>3</RoyalFavorValue><!--		        ■荣誉点数-->
+			<MarketValue>1000</MarketValue><!--		                ■价格-->
+			<Mass>50</Mass><!--		                                ■重量-->
+			<MoveSpeed>4.50</MoveSpeed><!--		                    ■移动速度-->
+			<Flammability>0.6</Flammability><!--		            ■易燃性-->
+			<ComfyTemperatureMax>30</ComfyTemperatureMax><!--		■最高适应温度-->
+			<ComfyTemperatureMin>-10</ComfyTemperatureMin><!--		■最低适应温度-->
+			<ImmunityGainSpeed>0.9</ImmunityGainSpeed><!--		    ■免疫增益速度-->
+			<CarryingCapacity>60</CarryingCapacity><!--		        ■承载力-->
+			<PainShockThreshold>0.5</PainShockThreshold><!--		■疼痛忍受力-->
+			<ToxicResistance>0.5</ToxicResistance><!--		        ■毒性-->
+			<MeatAmount>1</MeatAmount><!--		                    ■肉-->
+			<LeatherAmount>1</LeatherAmount><!--		            ■皮-->
+			<AimingDelayFactor>1.2</AimingDelayFactor><!--		    ■瞄准延迟系数-->
+			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn><!--	■射撃命中補正-->
+			<PlantWorkSpeed>1.1</PlantWorkSpeed><!--		        ■种植速度-->
+			<ConstructionSpeed>1.15</ConstructionSpeed><!--		    ■建筑速度-->
+			<ResearchSpeed>1.0</ResearchSpeed><!--		            ■研究速度-->
+		<SocialImpact>1.00</SocialImpact><!--		                ■社会影响-->
+		<IncomingDamageFactor>1</IncomingDamageFactor><!--		    ■收到的伤害倍率-->
+		<MentalBreakThreshold>0.25</MentalBreakThreshold><!--		■容易精神崩溃-->
+		<PsychicSensitivity>1.5</PsychicSensitivity><!--			■心里敏感-->
+		<MeleeDodgeChance>1</MeleeDodgeChance><!--					■回避補正-->
+		<ArmorRating_Blunt>0.05</ArmorRating_Blunt><!--				■打撃耐性-->
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp><!--				■刺突耐性-->
+		<ArmorRating_Heat>0.05</ArmorRating_Heat><!--				■熱耐性-->
+		<NegotiationAbility>1.0</NegotiationAbility><!--			■外交補正 -->
+		<SellPriceFactor>0.6</SellPriceFactor> <!--					■取引価格補正 -->
+		<TameAnimalChance>0.5</TameAnimalChance> <!--				■手なづけ補正-->
+		<TrainAnimalChance>0.5</TrainAnimalChance> <!--				■調教補正-->
+		<RestRateMultiplier>1.0</RestRateMultiplier><!--			■睡眠効率-->
+		<WorkSpeedGlobal>1</WorkSpeedGlobal><!--					■基本作業速度-->
+		<GeneralLaborSpeed>1</GeneralLaborSpeed><!--				■一般的作業速度-->
+		<MedicalTendSpeed>1</MedicalTendSpeed><!--				    ■医療速度補正-->
+		<ResearchSpeed>1</ResearchSpeed><!--						■研究速度補正-->
+		<MiningSpeed>1</MiningSpeed><!--							■採掘速度補正-->
+		<ConstructionSpeedFactor>1</ConstructionSpeedFactor><!--	■建設速度-->
+		<SmoothingSpeed>1</SmoothingSpeed><!--					    ■石を滑らかにする速度-->
+		<AnimalGatherSpeed>1</AnimalGatherSpeed><!--				■動物から採取する速度-->
+		<ButcheryMechanoidSpeed>1</ButcheryMechanoidSpeed><!--	    ■機械分解作業速度-->
+		</statBases>
+
+		<recipes>
+			<li>ExciseCarcinoma</li>
+			<li>AdministerMechSerumHealer</li>
+			<li>RemoveBodyPart</li>
+			<li>Euthanize</li>
+			<li>Anesthetize</li>
+		</recipes>
+
+	</AlienRace.ThingDef_AlienRace>
+
+</Defs>

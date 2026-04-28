@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ <ThingDef ParentName="BANW_Trinity_Mechanoid">
+    <!-- 定义名称，用于程序内部识别 -->
+    <defName>BANW_QSJ_A</defName>
+    <!-- 显示名称 -->
+    <label>清扫车</label>
+    <!-- 描述信息 -->
+    <description>一种小型机器人，主要用来进行清洁，移速和攻击速度很快。</description>
+    <!-- 基础属性设置 -->
+    <statBases>
+		<!-- 锐器护甲值 -->
+		<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+		<!-- 钝器护甲值 -->
+		<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+		<!-- 控制带宽消耗 -->
+		<BandwidthCost>1</BandwidthCost>
+		<!-- 携带容量 -->
+		<CarryingCapacity>0</CarryingCapacity>
+		<!-- EMP抗性 -->
+		<EMPResistance>0.7</EMPResistance>
+		<!-- 移动速度 -->
+		<MoveSpeed>5.5</MoveSpeed>
+        <!-- 每点生命值的能量损失 -->
+        <MechEnergyLossPerHP>0.25</MechEnergyLossPerHP>
+		<!-- 全局工作速度 -->
+		<WorkSpeedGlobal>1</WorkSpeedGlobal>
+    </statBases>
+    <!-- 种族特有属性 -->
+    <race>
+      <!-- 基础健康值比例 -->
+      <baseHealthScale>2.5</baseHealthScale>
+      <!-- 启用的工作类型 -->
+      <mechEnabledWorkTypes>
+	 </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BANW_Trinity_MechanoidBase">
+    <!-- 定义名称，与ThingDef保持一致 -->
+    <defName>BANW_QSJ_A</defName>
+    <!-- 显示名称 -->
+    <label>清扫车</label>
+    <!-- 关联的种族定义 -->
+    <race>BANW_QSJ_A</race>
+    <!-- 战斗力评估 -->
+    <combatPower>60</combatPower>
+    <!-- 不同生命阶段的外观设置 -->
+    <lifeStages>
+      <!-- 生命阶段图形定义 -->
+      <li MayRequire="Ludeon.Rimworld.Biotech">
+        <bodyGraphicData>
+          <!-- 主纹理路径 -->
+          <texPath>Mechanoid/QSJ/QSJ_A/BANW_QJS_A</texPath>
+          <!-- 着色器类型 -->
+          <shaderType>CutoutWithOverlay</shaderType>
+          <!-- 图形类 -->
+          <graphicClass>Graphic_Multi</graphicClass>
+          <!-- 绘制大小 -->
+          <drawSize>1.0</drawSize>
+          <!-- 阴影数据 -->
+          <shadowData>
+            <!-- 阴影体积 -->
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <!-- 第二生命阶段图形定义 -->
+      <li>
+        <bodyGraphicData>
+          <!-- 主纹理路径 -->
+          <texPath>Mechanoid/QSJ/QSJ_A/BANW_QJS_A</texPath>
+          <!-- 着色器类型 -->
+          <shaderType>CutoutWithOverlay</shaderType>
+          <!-- 图形类 -->
+          <graphicClass>Graphic_Multi</graphicClass>
+          <!-- 绘制大小 -->
+          <drawSize>1.0</drawSize>
+          <!-- 阴影数据 -->
+          <shadowData>
+            <!-- 阴影体积 -->
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <!-- 武器标签 -->
+    <weaponTags>
+		<!-- 使用自定义武器 -->
+		<li>BANW_QSJ_A_WP</li>
+    </weaponTags>
+  </PawnKindDef>
+   
+</Defs>

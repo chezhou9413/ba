@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<BANWlLib.BaDef.BaStudentRaceDef ParentName="BANW_KivotosStudent">
+    	<!-- 学生UI界面配置 -->
+		<BaStudentUI>
+			<!-- 学生头像路径，用于在UI中显示学生头像 -->
+			<StudentAvatar>ManuaUI/Avatar/Kikyou</StudentAvatar>
+			<!-- 学生名称显示模式，Auto表示自动生成名称 -->
+			<StudentName>Auto</StudentName>
+			<!-- 角色立绘路径，用于显示学生的全身立绘图像 -->
+			<CharacterimagePath>ManuaUI/Live/Kikyou</CharacterimagePath>
+			<!-- 背景图片路径，用于学生详情界面的背景 -->
+			<BackgroundPath>ManuaUI/Bg/BG_Hyakkiyako</BackgroundPath>
+			<!-- 角色立绘的缩放倍数，1.2表示放大1.2倍 -->
+			<CharacterimageOffsetSize>1.3</CharacterimageOffsetSize>
+			<!-- 角色立绘在X轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetX>100</CharacterimageOffsetX>
+			<!-- 角色立绘在Y轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetY>-150</CharacterimageOffsetY>
+			<!-- 角色类型标签路径，用于显示学生的类型标签 -->
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			<!-- 角色的星星数量 -->
+			<CharacterStarCount>3</CharacterStarCount>
+			<!-- 出击按钮旁边的1号tag图片路径，对应位置左上 -->
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			<!-- 出击按钮旁边的2号tag图片路径，对应位置左下 -->
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			<!-- 出击按钮旁边的3号tag图片路径，对应位置右上 -->
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			<!-- 出击按钮旁边的4号tag图片路径，对应位置右下 -->
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			<!-- 技能等级显示，写整数，不要大于20，小于0 -->
+			<Skills>
+				<!--射击-->
+				<Shooting>8</Shooting>
+				<!--近战-->
+				<Melee>0</Melee>
+				<!--建造-->
+				<Construction>0</Construction>
+				<!--采矿-->
+				<Mining>0</Mining>
+				<!--烹饪-->
+				<Cooking>6</Cooking>
+				<!--种植-->
+				<Plants>6</Plants>
+				<!--驯兽-->
+				<Animals>12</Animals>
+				<!--手工-->
+				<Crafting>8</Crafting>
+				<!--艺术-->
+				<Artistic>12</Artistic>
+				<!--医学-->
+				<Medical>6</Medical>
+				<!--社交-->
+				<Social>7</Social>
+				<!--智慧-->
+				<Intellectual>15</Intellectual>
+			</Skills>
+		    <!--武器UI配置-->
+			<WapenUI>
+			   <!--武器图片路径配置-->
+				<WapenUIImagePath>ManuaUI/Wapen/Kikyou</WapenUIImagePath>
+			    <!--武器类型文本配置-->
+				<WapenTypeText>狙击枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>测试技能1</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>测试技能1</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Chiaki/Chiaki_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>作战参谋的素养</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>子技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   <!--学生简介页面的粗略介绍配置，显示在学院logo旁边-->
+				<StudentDesp><![CDATA[百鬼夜行联合学院
+2年级
+社团 百花缭乱纠纷调解委员会]]>
+				</StudentDesp>
+				<!--学生简介页面的名字，显示在学院logo旁边-->
+				<StudentBioName>桐生 桔梗</StudentBioName>
+				<!--学院logo路径，显示在学生简介页面的左上角-->
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Hyakkiyako</AcademyLogoPath>
+				<!--学生简介页面的学生背景故事配置，长文本，可以任意字数-->
+				<StudentCard>百鬼夜行学院百花缭乱纠纷调解委员会的1年成员，虽然是历史悠久的勘解由小路家族的继承人，但她选择了加入自己憧憬已久的百花缭乱，而不是继承家族事业。对此，她怀有强烈的自豪感，行动力无人能及。有时会遇到挫折而倒下，但她很快就会带着明朗的表情，重新站起来。她十分尊敬百花缭乱的前辈们，其中尤其敬仰的是名草。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+		<defName>BANW_Kikyou_race</defName>
+		<label>桔梗</label>
+		<description>百鬼夜行学院百花缭乱纠纷调解委员会的作战参谋。重视常识、逻辑和理性的少女。由于十分珍惜百花缭乱，如果有人威胁到它，便会立刻表现出敌意。换句话说，是那种敌我分明的类型。作为作战参谋，她重视胜利，但更重要的是她关心同伴的安全。冷酷而又温柔，这就是名为桔梗的少女。
+&lt;color=#cc33cc&gt;攻击属性：振动
+[振动属性攻击可以对钝器护甲造成伤害,并且可以概率造成眩晕，缺点是伤害不能造成流血]&lt;/color&gt;
+&lt;color=#FFFF00&gt;出装建议&lt;/color&gt;
+&lt;color=#DC143C&gt;[帽子]&lt;/color&gt;&lt;color=#00FF00&gt;[发夹]&lt;/color&gt;&lt;color=#00BFFF&gt;[手表]&lt;/color&gt;</description>
+        <alienRace>
+			<raceRestriction>
+				<onlyUseRaceRestrictedWeapons>true</onlyUseRaceRestrictedWeapons>
+				<weaponList>
+					<li>BANC_Kikyou</li>
+				</weaponList>
+			</raceRestriction>
+		</alienRace>
+		<race>
+	  <nameGenerator>NamerKikyou</nameGenerator>
+      <nameGeneratorFemale>NamerKikyou</nameGeneratorFemale>
+		</race>
+		<killedLeavingsRanges>
+			<BANW_Kikyou_race_Proplevel>1</BANW_Kikyou_race_Proplevel>
+		</killedLeavingsRanges>
+		<comps>
+		  <li Class="BANWlLib.StudentInitializationCompProperties">
+            <initialExperience>110</initialExperience>
+            <starUpEffect>BANW_Effecter_B</starUpEffect>
+			<starUpSounds>
+				<li>Kikyou_levelup_A</li>
+				<li>Kikyou_levelup_B</li>
+				<li>Kikyou_levelup_C</li>
+				<li>Kikyou_levelup_D</li>
+			 </starUpSounds>
+          </li>
+		  <li Class="BANWlLib.comp.LevelVisualCompPropertie">
+            <levelAudio>
+                <li>Kikyou_levelup_A</li>
+                <li>Kikyou_levelup_B</li>
+                <li>Kikyou_levelup_C</li>
+                <li>Kikyou_levelup_D</li>
+            </levelAudio>
+            <!-- 等级特效列表，使用模组中已有的特效 -->
+            <levelMote>
+                <li>BANW_Effecter_LevelUp</li>
+            </levelMote>
+          </li>
+		</comps>
+	<baStudentData>
+			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DamageType>Vibration</DamageType>
+			<!-- 防御类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DefenseType>Through</DefenseType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			<PosType>Assist</PosType>
+			<!-- 星级数量 -->
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Kikyou</DraggableAudio>
+			<GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kikyou_race_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+			<UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kikyou_race_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Kikyou_race_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+            <!-- 抽卡面板显示的纹理，就是最后翻牌那一下的头像 -->
+            <avtTexPath>Gacha/Student/Kikyou</avtTexPath>
+		</baStudentData>
+	</BANWlLib.BaDef.BaStudentRaceDef>   
+</Defs>

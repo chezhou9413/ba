@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 2892212361
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: bamainui.ab
+      Dependencies: {}
+    Info_1:
+      Name: damagefontsystem.ab
+      Dependencies: {}

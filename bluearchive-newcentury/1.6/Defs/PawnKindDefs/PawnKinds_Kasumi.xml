@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Kasumi</defName>
+		<label>-霞-</label>
+		<race>BANW_Kasumi_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryKasumi</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>16</minGenerationAge>
+		<maxGenerationAge>17</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Kasumi</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Kasumi</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>3</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Kasumi_A>0</BAWC_TraitDef_Kasumi_A>
+		</forcedTraits>
+	</PawnKindDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Kasumi_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;狂人的战略&lt;/color&gt;</label>
+                <description>被动技能:自身暴击率增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <BANW_CriticalChance>0.26</BANW_CriticalChance>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+</Defs>

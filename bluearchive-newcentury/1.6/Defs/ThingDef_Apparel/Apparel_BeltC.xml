@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- ==================== Amulets ==================== -->
+    <ThingDef ParentName="BANC_Apparel_Base">
+        <defName>BANC_Amulet_One</defName>
+        <label>Lv.1-交通安全护身符</label>
+        <description>怀着交通安全的祈愿而制成的护身符。摇一摇护身符就可以听到里边有某种金属制品在叮当作响。
+        提供疼痛忍耐率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+         <MarketValue>500</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        <PainShockThreshold>+0.08</PainShockThreshold> 
+        </equippedStatOffsets>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_One</li>
+            </tags>
+        </apparel>
+        <tradeTags>
+    </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Tow</defName>
+        <label>Lv.2-暖手贴</label>
+        <description>揉搓几下再摇晃下，就会变热的暖手贴。在酷寒的环境下，没有比这更有用的护身符了。
+提供疼痛忍耐率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+         <WorkToMake>1200</WorkToMake>
+        <MarketValue>1000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        <PainShockThreshold>+0.13</PainShockThreshold>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Amulet_One>1</BANC_Amulet_One>
+        <BANW_Amulet_2_Piece>15</BANW_Amulet_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Tow</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Three</defName>
+        <label>Lv.3-佩洛洛的羽毛</label>
+        <description>用又大又白的羽毛制成的护身符。至于羽毛的出处，是MomoFriends的重大商业机密。
+提供疼痛忍耐率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+         <WorkToMake>1400</WorkToMake>
+        <MarketValue>1500</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        <PainShockThreshold>+0.18</PainShockThreshold>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Amulet_Tow>1</BANC_Amulet_Tow>
+        <BANW_Amulet_3_Piece>20</BANW_Amulet_3_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Three</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Four</defName>
+        <label>Lv.4-十字架</label>
+        <description>崔尼蒂的女生们喜欢的十字架形状护身符。也适合挂在包上当装饰品。
+提供疼痛忍耐率和承伤系数</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_4</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+         <WorkToMake>1600</WorkToMake>
+        <MarketValue>2000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        <PainShockThreshold>+0.25</PainShockThreshold>
+        <IncomingDamageFactor>-0.05</IncomingDamageFactor>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Amulet_Three>1</BANC_Amulet_Three>
+        <BANW_Amulet_4_Piece>30</BANW_Amulet_4_Piece><!--材料-->
+        <BANW_Amulet_2_Piece>10</BANW_Amulet_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Four</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Five</defName>
+        <label>Lv.5-迷彩不倒翁</label>
+        <description>拥有迷彩涂层的不倒翁。无论放在什么地方，都可以自然地融入背景中……
+减少疼痛值和承伤系数增加少量暴击率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_5</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothAmulet_Five</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <WorkToMake>1800</WorkToMake>
+        <MarketValue>2500</MarketValue>
+        
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.07</BANW_CriticalChance>
+        <IncomingDamageFactor>-0.08</IncomingDamageFactor>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Amulet_Four>1</BANC_Amulet_Four>
+        <BANW_Amulet_5_Piece>35</BANW_Amulet_5_Piece><!--材料-->
+        <BANW_Amulet_3_Piece>20</BANW_Amulet_3_Piece><!--材料-->
+        <BANW_Amulet_2_Piece>10</BANW_Amulet_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Five</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Six</defName>
+        <label>Lv.6-诅咒娃娃</label>
+        <description>想着怨恨的人并把怨念注入进去的诅咒娃娃。因为可以当作针线包，所以深受手艺部成员的喜爱。
+减少疼痛值和承伤系数增加少量暴击率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_6</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothAmulet_Six</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <WorkToMake>2000</WorkToMake>
+        <MarketValue>3000</MarketValue>
+        
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.09</BANW_CriticalChance>
+        <IncomingDamageFactor>-0.9</IncomingDamageFactor>
+        </equippedStatOffsets>
+         <costList>
+        <BANC_Amulet_Five>1</BANC_Amulet_Five>
+        <BANW_Amulet_6_Piece>40</BANW_Amulet_6_Piece><!--材料-->
+        <BANW_Amulet_4_Piece>15</BANW_Amulet_4_Piece><!--材料-->
+        <BANW_Amulet_3_Piece>5</BANW_Amulet_3_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Six</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Seven</defName>
+        <label>Lv.7-便携式除臭剂</label>
+        <description>与功能性化妆品制造商“Seaside”联名生产的便携式除臭剂。 因为设计时尚，很多学员会把它挂在钥匙圈上，当成装饰品。
+减少疼痛值和承伤系数增加少量暴击率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_7</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothAmulet_Seven</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <WorkToMake>2200</WorkToMake>
+        <MarketValue>3500</MarketValue>
+        
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
+        <IncomingDamageFactor>-0.11</IncomingDamageFactor>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Amulet_Six>1</BANC_Amulet_Six>
+        <BANW_Amulet_7_Piece>40</BANW_Amulet_7_Piece><!--材料-->
+        <BANW_Amulet_5_Piece>15</BANW_Amulet_5_Piece><!--材料-->
+        <BANW_Amulet_4_Piece>5</BANW_Amulet_4_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Seven</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Eight</defName>
+        <label>Lv.8-捕梦网</label>
+        <description>具有消除恶梦的咒术意义。闻起来有一股树木独特的香气。
+减少疼痛值和承伤系数增加少量暴击率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_8</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothAmulet_Eight</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <WorkToMake>2400</WorkToMake>
+        <MarketValue>4000</MarketValue>
+        
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.12</BANW_CriticalChance>
+        <IncomingDamageFactor>-0.12</IncomingDamageFactor>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Amulet_Seven>1</BANC_Amulet_Seven>
+        <BANW_Amulet_8_Piece>40</BANW_Amulet_8_Piece><!--材料-->
+        <BANW_Amulet_6_Piece>15</BANW_Amulet_6_Piece><!--材料-->
+        <BANW_Amulet_5_Piece>5</BANW_Amulet_5_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Eight</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Nine</defName>
+        <label>Lv.9-鲨齿护符</label>
+        <description>系上锐利的鲨鱼牙齿制成的护符。传说只要戴着这个护符，就能防止航海事故的发生。
+减少疼痛值和承伤系数增加少量暴击率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_9</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothAmulet_Nine</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <WorkToMake>2600</WorkToMake>
+        <MarketValue>4500</MarketValue>
+        
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
+        <IncomingDamageFactor>-0.13</IncomingDamageFactor>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Amulet_Eight>1</BANC_Amulet_Eight>
+        <BANW_Amulet_9_Piece>50</BANW_Amulet_9_Piece><!--材料-->
+        <BANW_Amulet_7_Piece>15</BANW_Amulet_7_Piece><!--材料-->
+        <BANW_Amulet_6_Piece>10</BANW_Amulet_6_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Nine</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Amulet_Ten</defName>
+        <label>Lv.10-键帽玩具</label>
+        <description>用键盘键帽制作的玩具。咔嚓一声的触感让人上瘾。
+减少疼痛值和承伤系数增加少量暴击率</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Amulet/Amulet_10</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothAmulet_Ten</hediff>
+            </li>
+        </comps>
+        <statBases>
+          <WorkToMake>3000</WorkToMake>
+        <MarketValue>6000</MarketValue>
+        
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.18</BANW_CriticalChance>
+        <IncomingDamageFactor>-0.18</IncomingDamageFactor>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Amulet_Nine>1</BANC_Amulet_Nine>
+        <BANW_Amulet_10_Piece>60</BANW_Amulet_10_Piece><!--材料-->
+        <BANW_Amulet_8_Piece>20</BANW_Amulet_8_Piece><!--材料-->
+        <BANW_Amulet_7_Piece>10</BANW_Amulet_7_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+              <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Amulet_Ten</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- ==================== Watches ==================== -->
+    <ThingDef ParentName="BANC_Apparel_Base">
+        <defName>BANC_Watch_One</defName>
+        <label>Lv.1-防水数码手表</label>
+        <description>运动品牌“薮猫”出品的数码手表。因为是防水手表，所以在游泳的时候也可以佩戴，不用担心出现故障。
+可以增加暴击率。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+         <MarketValue>500</MarketValue>
+         
+        </statBases>
+        <equippedStatOffsets>
+            <BANW_CriticalChance>+0.05</BANW_CriticalChance>
+        </equippedStatOffsets>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_One</li>
+            </tags>
+        </apparel>
+        <tradeTags>
+    </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Tow</defName>
+        <label>Lv.2-皮带手表</label>
+        <description>户外品牌“玛纳斯卢”出品的皮带手表。因表带是皮革，可以有效防止手腕变凉。
+可以增加暴击率。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+         <WorkToMake>1200</WorkToMake>
+        <MarketValue>1000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.08</BANW_CriticalChance>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Watch_One>1</BANC_Watch_One>
+        <BANW_Watch_2_Piece>15</BANW_Watch_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Tow</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Three</defName>
+        <label>Lv.3-波浪猫手表</label>
+        <description>印有MomoFriends中的波浪猫形象的手表。 根据时间变化，作为指针的波浪猫的双臂会奇怪地扭曲。
+可以增加暴击率。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+         <WorkToMake>1400</WorkToMake>
+        <MarketValue>1500</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Watch_Tow>1</BANC_Watch_Tow>
+        <BANW_Watch_3_Piece>20</BANW_Watch_3_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Three</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Four</defName>
+        <label>Lv.4-复古怀表</label>
+        <description>印有“维罗妮卡”标识的复古怀表。与手表相比，虽然确认时间时不太方便，但作为时尚单品很受人们的欢迎。
+可以增加暴击率和暴击伤害倍率。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_4</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+         <WorkToMake>1600</WorkToMake>
+        <MarketValue>2000</MarketValue>
+        
+        </statBases>
+        <equippedStatOffsets>
+            <BANW_CriticalChance>+0.15</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.10</BANW_CriticalDamage>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Watch_Three>1</BANC_Watch_Three>
+        <BANW_Watch_4_Piece>30</BANW_Watch_4_Piece><!--材料-->
+        <BANW_Watch_2_Piece>10</BANW_Watch_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Four</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Five</defName>
+        <label>Lv.5-复古怀表</label>
+        <description>印有“维罗妮卡”标识的复古怀表。与手表相比，虽然确认时间时不太方便，但作为时尚单品很受人们的欢迎。
+可以增加暴击率和暴击伤害倍率。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_5</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+         <WorkToMake>1800</WorkToMake>
+        <MarketValue>2500</MarketValue>
+         <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+         <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+         <ArmorRating_Heat>0.05</ArmorRating_Heat>
+         
+        </statBases>
+        <equippedStatOffsets>
+            <BANW_CriticalChance>+0.17</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.15</BANW_CriticalDamage>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Watch_Four>1</BANC_Watch_Four>
+        <BANW_Watch_5_Piece>35</BANW_Watch_5_Piece><!--材料-->
+        <BANW_Watch_3_Piece>20</BANW_Watch_3_Piece><!--材料-->
+        <BANW_Watch_2_Piece>10</BANW_Watch_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Five</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Six</defName>
+        <label>Lv.6-哥特风手表</label>
+        <description>带有复杂花纹的哥特风手表。与古典风格的衣服很搭，但缺点是很难看懂时间。
+可以增加暴击率和暴击伤害倍率和少量护甲。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_6</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+         <WorkToMake>2000</WorkToMake>
+        <MarketValue>3000</MarketValue>
+         <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
+         <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+         <ArmorRating_Heat>0.07</ArmorRating_Heat>
+         
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.19</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
+        </equippedStatOffsets>
+         <costList>
+        <BANC_Watch_Five>1</BANC_Watch_Five>
+        <BANW_Watch_6_Piece>40</BANW_Watch_6_Piece><!--材料-->
+        <BANW_Watch_4_Piece>15</BANW_Watch_4_Piece><!--材料-->
+        <BANW_Watch_3_Piece>5</BANW_Watch_3_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Six</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Seven</defName>
+        <label>Lv.7-街头时尚手表</label>
+        <description>同时有现代和可爱的设计而大受好评的街头时尚手表。“三步”在此使用了和手环组合成套装一起贩卖的策略。
+可以增加暴击率和暴击伤害倍率和少量护甲。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_7</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+         <WorkToMake>2200</WorkToMake>
+        <MarketValue>3500</MarketValue>
+         <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
+         <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+         <ArmorRating_Heat>0.07</ArmorRating_Heat>
+         
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.22</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.21</BANW_CriticalDamage>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Watch_Six>1</BANC_Watch_Six>
+        <BANW_Watch_7_Piece>40</BANW_Watch_7_Piece><!--材料-->
+        <BANW_Watch_5_Piece>15</BANW_Watch_5_Piece><!--材料-->
+        <BANW_Watch_4_Piece>5</BANW_Watch_4_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Seven</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Eight</defName>
+        <label>Lv.8-罗蕾莱手表</label>
+        <description>现代时尚品牌“罗蕾莱”发售的手表。 使用木头和皮革的精致设计，营造出独特的氛围。
+可以增加暴击率和暴击伤害倍率和少量护甲</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_8</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+         <WorkToMake>2400</WorkToMake>
+        <MarketValue>4000</MarketValue>
+         <ArmorRating_Sharp>0.11</ArmorRating_Sharp>
+         <ArmorRating_Blunt>0.11</ArmorRating_Blunt>
+         <ArmorRating_Heat>0.11</ArmorRating_Heat>
+        
+        </statBases>
+        <equippedStatOffsets>
+             <BANW_CriticalChance>+0.24</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.24</BANW_CriticalDamage>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Watch_Seven>1</BANC_Watch_Seven>
+        <BANW_Watch_8_Piece>40</BANW_Watch_8_Piece><!--材料-->
+        <BANW_Watch_6_Piece>15</BANW_Watch_6_Piece><!--材料-->
+        <BANW_Watch_5_Piece>5</BANW_Watch_5_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Eight</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Nine</defName>
+        <label>Lv.9-潜水员手表</label>
+        <description>海上运动品牌「哈耳庇厄」上市的一款潜水员用手表。理所应当地具备防水功能，就算在深水区域也能检测水下环境而不必担心水压对其造成影响。
+可以增加暴击率和暴击伤害倍率和少量护甲。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_9</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+          <WorkToMake>2600</WorkToMake>
+        <MarketValue>4500</MarketValue>
+         <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
+         <ArmorRating_Blunt>0.13</ArmorRating_Blunt>
+         <ArmorRating_Heat>0.13</ArmorRating_Heat>
+         
+        </statBases>
+        <equippedStatOffsets>
+            <BANW_CriticalChance>+0.26</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Watch_Eight>1</BANC_Watch_Eight>
+        <BANW_Watch_9_Piece>50</BANW_Watch_9_Piece><!--材料-->
+        <BANW_Watch_7_Piece>15</BANW_Watch_7_Piece><!--材料-->
+        <BANW_Watch_6_Piece>10</BANW_Watch_6_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Nine</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Watch_Ten</defName>
+        <label>Lv.10-触屏手表</label>
+        <description>支持触屏的手表。可以移植市面上的游戏并运行，但想要流畅游玩怎么说还是太难了。
+可以增加暴击率和暴击伤害倍率和少量护甲。</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Watch/Watch_10</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+          <WorkToMake>3000</WorkToMake>
+        <MarketValue>6000</MarketValue>
+         <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+         <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+         <ArmorRating_Heat>0.15</ArmorRating_Heat>
+        </statBases>
+        <equippedStatOffsets>
+        <BANW_CriticalChance>+0.28</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Watch_Nine>1</BANC_Watch_Nine>
+        <BANW_Watch_10_Piece>60</BANW_Watch_10_Piece><!--材料-->
+        <BANW_Watch_8_Piece>20</BANW_Watch_8_Piece><!--材料-->
+        <BANW_Watch_7_Piece>10</BANW_Watch_7_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Watch_Ten</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- ==================== Necklaces ==================== -->
+    <ThingDef ParentName="BANC_Apparel_Base">
+        <defName>BANC_Necklace_One</defName>
+        <label>Lv.1-蓝牙项链</label>
+        <description>可以测量佩戴者的体温和心率的蓝牙项链。可以通过项链轻易掌握运动量，因此对减肥的人来说是必需品。
+可以增加生命恢复和减少疼痛值</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_One</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <MarketValue>500</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_One</li>
+            </tags>
+         
+        </apparel>
+        <tradeTags>
+    </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Tow</defName>
+        <label>Lv.2-雪花吊坠</label>
+        <description>有雪花形状装饰的银色吊坠。一直盯着雪花看久了，就感觉身体凉飕飕的。
+可以增加生命恢复和减少疼痛值</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Tow</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <WorkToMake>1200</WorkToMake>
+        <MarketValue>1000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Necklace_One>1</BANC_Necklace_One>
+        <BANW_Necklace_2_Piece>15</BANW_Necklace_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Tow</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Three</defName>
+        <label>Lv.3-尼古拉挂坠盒</label>
+        <description>挂坠盒的形状是MomoFriends的吉祥物尼古拉先生。按一下鼻子，就会出现可以放照片的空间。
+可以增加生命恢复和减少疼痛值</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Three</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <WorkToMake>1400</WorkToMake>
+        <MarketValue>1500</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Necklace_Tow>1</BANC_Necklace_Tow>
+        <BANW_Necklace_3_Piece>20</BANW_Necklace_3_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Three</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Four</defName>
+        <label>Lv.4-十字架颈链</label>
+        <description>挂坠盒的形状是MomoFriends的吉祥物尼古拉先生。按一下鼻子，就会出现可以放照片的空间。
+可以增加生命恢复和减少疼痛值</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_4</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Four</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <WorkToMake>1600</WorkToMake>
+        <MarketValue>2000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Necklace_Three>1</BANC_Necklace_Three>
+        <BANW_Necklace_4_Piece>30</BANW_Necklace_4_Piece><!--材料-->
+        <BANW_Necklace_2_Piece>10</BANW_Necklace_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Four</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Five</defName>
+        <label>Lv.5-身份牌</label>
+        <description>刻有学员编号和名字的身份牌。是可以展现出个性的新款饰品，非常受女生欢迎。
+可以增加生命恢复和减少疼痛值和少量攻击力</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_5</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Five</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <BANW_FinalDamageMultiplier>+0.04</BANW_FinalDamageMultiplier>
+         <WorkToMake>1800</WorkToMake>
+        <MarketValue>2500</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+         <costList>
+        <BANC_Necklace_Four>1</BANC_Necklace_Four>
+        <BANW_Necklace_5_Piece>35</BANW_Necklace_5_Piece><!--材料-->
+        <BANW_Necklace_3_Piece>20</BANW_Necklace_3_Piece><!--材料-->
+        <BANW_Necklace_2_Piece>10</BANW_Necklace_2_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Five</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Six</defName>
+        <label>Lv.6-朋克项圈</label>
+        <description>带着尖刺的朋克风项圈。 尾端很尖锐，戴上去会很难点头。
+可以增加生命恢复和减少疼痛值和少量攻击力</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_6</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Six</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <BANW_FinalDamageMultiplier>+0.06</BANW_FinalDamageMultiplier>
+         <WorkToMake>2000</WorkToMake>
+        <MarketValue>3000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Necklace_Five>1</BANC_Necklace_Five>
+        <BANW_Necklace_6_Piece>40</BANW_Necklace_6_Piece><!--材料-->
+        <BANW_Necklace_4_Piece>15</BANW_Necklace_4_Piece><!--材料-->
+        <BANW_Necklace_3_Piece>5</BANW_Necklace_3_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Six</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Seven</defName>
+        <label>Lv.7-锁扣项链</label>
+        <description>用锁扣打造的项链。叮叮当当的声音听起来很悦耳，不过也有人认为触感太过冰冷。
+可以增加生命恢复和减少疼痛值和少量攻击力</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_7</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Seven</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <BANW_FinalDamageMultiplier>+0.08</BANW_FinalDamageMultiplier>
+         <WorkToMake>2200</WorkToMake>
+        <MarketValue>3500</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Necklace_Six>1</BANC_Necklace_Six>
+        <BANW_Necklace_7_Piece>40</BANW_Necklace_7_Piece><!--材料-->
+        <BANW_Necklace_5_Piece>15</BANW_Necklace_5_Piece><!--材料-->
+        <BANW_Necklace_4_Piece>5</BANW_Necklace_4_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Seven</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Eight</defName>
+        <label>Lv.8-绿叶项链</label>
+        <description>现代时尚品牌“罗蕾莱”推出的项链。据说被光芒照射的话，叶子会散发隐约的光泽。
+可以增加生命恢复和减少疼痛值和少量攻击力</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_8</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Eight</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <BANW_FinalDamageMultiplier>+0.1</BANW_FinalDamageMultiplier>
+         <WorkToMake>2400</WorkToMake>
+        <MarketValue>4000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+         <costList>
+        <BANC_Necklace_Seven>1</BANC_Necklace_Seven>
+        <BANW_Necklace_8_Piece>40</BANW_Necklace_8_Piece><!--材料-->
+        <BANW_Necklace_6_Piece>15</BANW_Necklace_6_Piece><!--材料-->
+        <BANW_Necklace_5_Piece>5</BANW_Necklace_5_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Eight</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Nine</defName>
+        <label>Lv.9-章鱼固定器</label>
+        <description>潜水员用于固定呼吸器材而使用的项链型固定器。「哈耳庇厄」的固定器的协调配色与设计受到好评，也经常被当作时尚道具使用。
+可以增加生命恢复和减少疼痛值和少量攻击力</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_9</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Nine</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <BANW_FinalDamageMultiplier>+0.14</BANW_FinalDamageMultiplier>
+          <WorkToMake>2600</WorkToMake>
+        <MarketValue>4500</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+        <costList>
+        <BANC_Necklace_Eight>1</BANC_Necklace_Eight>
+        <BANW_Necklace_9_Piece>50</BANW_Necklace_9_Piece><!--材料-->
+        <BANW_Necklace_7_Piece>15</BANW_Necklace_7_Piece><!--材料-->
+        <BANW_Necklace_6_Piece>10</BANW_Necklace_6_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Nine</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Base_Tow">
+        <defName>BANC_Necklace_Ten</defName>
+        <label>Lv.10-存储器项链</label>
+        <description>伪装成装饰的存储器项链。外表华丽，可内在却有可能存储着秘密数据。
+可以增加生命恢复和减少疼痛值和少量攻击力</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Belt/Necklace/Necklace_10</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_CauseHediff_Apparel">
+                <hediff>BANC_BluetoothNecklace_Ten</hediff>
+            </li>
+        </comps>
+        <statBases>
+         <BANW_FinalDamageMultiplier>+0.18</BANW_FinalDamageMultiplier>
+         <WorkToMake>3000</WorkToMake>
+        <MarketValue>6000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+        </equippedStatOffsets>
+         <costList>
+        <BANC_Necklace_Nine>1</BANC_Necklace_Nine>
+        <BANW_Necklace_10_Piece>60</BANW_Necklace_10_Piece><!--材料-->
+        <BANW_Necklace_8_Piece>20</BANW_Necklace_8_Piece><!--材料-->
+        <BANW_Necklace_7_Piece>10</BANW_Necklace_7_Piece><!--材料-->
+        </costList>
+        <apparel>
+            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <bodyPartGroups>
+               <li>Eyes</li>
+            </bodyPartGroups>
+            <layers>
+                <li>EyeCover</li>
+            </layers>
+            <tags>
+                <li>BANC_Necklace_Ten</li>
+            </tags>
+         
+        </apparel>
+    </ThingDef>
+</Defs>

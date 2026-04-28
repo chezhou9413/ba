@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Chise_EX</defName>
+ <label>要射击啦~</label>
+ <description>对圆形范围内的敌方单位造成自身攻击力416%的伤害</description>
+ <iconPath>Ability/Icon/Chise/Chise_EX</iconPath>
+ <cooldownTicksRange>1500</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Chise_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+<warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>ThrowGrenade</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+ <range>37.9</range><!-- 投掷范围 -->
+ <warmupTime>1</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BAWN_Chise_EX_Boom</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+ <ThingDef ParentName="BaseBullet">
+    <defName>BAWN_Chise_EX_Boom</defName>
+    <label>575式榴弹发射器子弹</label>
+    <projectile>
+      <explosionRadius>3.9</explosionRadius>
+      <damageDef>BANC_Damage_Chise</damageDef><!--子弹类型-->
+      <damageAmountBase>299</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <speed>50</speed><!--子弹速度-->
+    </projectile>
+   <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3.5</drawSize>
+      <texPath>Projectile/Bullet_Chise</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

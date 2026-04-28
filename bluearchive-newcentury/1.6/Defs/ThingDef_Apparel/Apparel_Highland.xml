@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Hikali</defName>
+        <label>橘光的衣服</label>
+        <description>橘光的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Highland/Hikali/Apparel/Hikali_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Hikali</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
+       
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Nozomi</defName>
+        <label>望的衣服</label>
+        <description>望的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Highland/Nozomi/Apparel/Nozomi_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Nozomi</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+    
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Aoba</defName>
+        <label>青叶的衣服</label>
+        <description>青叶的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Highland/Aoba/Apparel/Aoba_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Aoba</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+
+</Defs>

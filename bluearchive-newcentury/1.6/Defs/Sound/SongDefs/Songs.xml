@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SongDef>
+    <defName>BlueArchive_BGM</defName>
+    <clipPath>Songs/bgm</clipPath>
+    <volume>0.9</volume>
+    <commonality>1.0</commonality>
+    <allowedTimeOfDay>Any</allowedTimeOfDay>
+    <tense>false</tense>
+    <playOnMap>false</playOnMap>
+    <description>蔚蓝档案背景音乐</description>
+  </SongDef>
+   <SongDef>
+    <defName>BlueArchive_ROOMBGM2</defName>
+    <clipPath>Songs/bgm2</clipPath>
+    <volume>1</volume>
+    <commonality>1.0</commonality>
+    <allowedTimeOfDay>Any</allowedTimeOfDay>
+    <tense>false</tense>
+    <playOnMap>false</playOnMap>
+    <description>蔚蓝档案房间音乐</description>
+  </SongDef>
+   <SongDef>
+    <defName>BlueArchive_ROOMBGM3</defName>
+    <clipPath>Songs/bgm3</clipPath>
+    <volume>0.9</volume>
+    <commonality>1.0</commonality>
+    <allowedTimeOfDay>Any</allowedTimeOfDay>
+    <tense>false</tense>
+    <playOnMap>false</playOnMap>
+    <description>蔚蓝档案商店音乐</description>
+  </SongDef>
+  <SongDef>
+    <defName>BlueArchive_ROOMBGM4</defName>
+    <clipPath>Songs/bgm4</clipPath>
+    <volume>0.8</volume>
+    <commonality>1.0</commonality>
+    <allowedTimeOfDay>Any</allowedTimeOfDay>
+    <tense>false</tense>
+    <playOnMap>false</playOnMap>
+    <description>蔚蓝档案学生图鉴音乐</description>
+  </SongDef>
+</Defs> 

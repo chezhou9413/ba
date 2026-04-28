@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Yuzu</defName>
+		<label>-柚子-</label>
+		<race>BANW_Yuzu_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryYuzu</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Yuzu</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Yuzu</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>6~8</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>16</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+		</forcedTraits>
+	</PawnKindDef>
+
+</Defs>

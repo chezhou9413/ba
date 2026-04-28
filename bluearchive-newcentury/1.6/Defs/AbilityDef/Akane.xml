@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Akane_EX</defName>
+ <label>有品位的贯穿</label>
+ <description>对1名敌人造成自身攻击力750%的伤害</description>
+ <iconPath>Ability/Icon/Akane/Akane_EX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Akane_Skill</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>True</targetRequired>
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+ </statBases>
+ <verbProperties>
+ <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>Akane_Skill_EX</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>true</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>26.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+ <li Class="CompProperties_AbilityLaunchProjectile">
+  <projectileDef>Akane_Bullt_EX</projectileDef>
+
+
+  </li>
+  </comps>
+    </AbilityDef>
+    <ThingDef ParentName="BaseBullet">
+  <defName>Akane_Bullt_EX</defName>
+  <label>茜子弹</label>
+  <graphicData>
+    <drawSize>(1,3)</drawSize>
+    <texPath>Projectile/Bullet_Akane</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+  </graphicData>
+  <projectile>
+    <damageDef>RangedStab</damageDef>
+    <damageAmountBase>105</damageAmountBase>
+    <armorPenetrationBase>1</armorPenetrationBase>
+    <stoppingPower>1</stoppingPower>
+    <speed>75</speed>
+  </projectile>
+</ThingDef>
+
+<AbilityDef>
+<defName>BAWN_Akane_EXX</defName>
+ <label>清除，要优雅</label>
+ <description>对1名敌人造成自身攻击力890%的伤害，并且护甲减少30%，(持续30秒)</description>
+ <iconPath>Ability/Icon/Akane/Akane_EXX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Akane_ExSkill</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>True</targetRequired>
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+
+ </statBases>
+ <verbProperties>
+ <soundCast>Akane_ExxSkill</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>true</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>27.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>Akane_Bullt_EXX</projectileDef>
+      </li>
+  </comps>
+    </AbilityDef>
+    <ThingDef ParentName="BaseBullet">
+  <defName>Akane_Bullt_EXX</defName>
+  <label>茜子弹</label>
+  <graphicData>
+    <drawSize>7</drawSize>
+    <texPath>Projectile/Bullet_Akane_EX</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+  </graphicData>
+  <projectile>
+    <damageDef>BANC_Damage_Akane</damageDef>
+    <damageAmountBase>124</damageAmountBase>
+    <armorPenetrationBase>1</armorPenetrationBase>
+    <stoppingPower>2</stoppingPower>
+    <speed>100</speed>
+  <!--  <extraDamages>
+      <li>
+        <def>BANC_Damage_Akane</def>
+        <amount>1</amount>
+      </li>
+    </extraDamages>-->
+  </projectile>
+</ThingDef>
+
+<HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Akane_HediffDef</defName>
+        <!-- 显示名称 -->
+        <label>清除，要优雅</label>
+        <!-- 效果描述 -->
+        <description>减少30%护甲，效果持续30秒。</description>
+        <defaultLabelColor>(255, 0, 0)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statFactors>
+        <ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+		    <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+	      <ArmorRating_Heat>0.7</ArmorRating_Heat>
+            </statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1800</disappearsAfterTicks>
+        </li>
+         <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BAWN_Akane_Ef</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+<HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Akane_HediffDef_Common</defName>
+        <!-- 显示名称 -->
+        <label>压制，要明确</label>
+        <!-- 效果描述 -->
+        <description>减少12%的闪避率</description>
+        <defaultLabelColor>(255, 0, 0)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <BANW_Miss>-0.12</BANW_Miss>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1800</disappearsAfterTicks>
+        </li>
+    </comps>
+    </HediffDef>
+     <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX</defName>
+    <thingClass>MoteAttached</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Effect_Akane_A</texPath><!-- 纹理图片路径 -->
+      <shaderType></shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.1</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.7</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+
+   <EffecterDef>
+    <defName>BAWN_Akane_Ef</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Akane_EX</moteDef>
+        <scale>1</scale>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 1)</positionOffset>
+        <angle>0~0</angle>
+       <rotation>0~0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <ticksBetweenMotes>60</ticksBetweenMotes>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>BAWN_Akane_Ef_A</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_A</moteDef>
+        <scale>1</scale>
+        <burstCount>3</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0~360</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>8</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_B</moteDef>
+        <scale>1</scale>
+        <burstCount>3</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0~360</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>8</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_C</moteDef>
+        <scale>1</scale>
+        <burstCount>2</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0~360</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>8</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_D</moteDef>
+        <scale>1</scale>
+        <burstCount>3</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0~360</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>8</speed>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_G</moteDef>
+        <scale>1</scale>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_G</moteDef>
+        <scale>1</scale>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_H</moteDef>
+        <scale>1</scale>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_I</moteDef>
+        <scale>1</scale>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_J</moteDef>
+        <scale>1</scale>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Akane_EX_E</moteDef>
+        <scale>1</scale>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+      </li>
+    </children>
+  </EffecterDef>
+
+     <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_A</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_A</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>4</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.01</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.45</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.05</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>1</growthRate>
+    </mote>
+  </ThingDef>
+   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_B</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_B</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>4</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.01</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.45</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.05</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>1</growthRate>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_C</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_C</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>4</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.01</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.45</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.05</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>1</growthRate>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_D</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_D</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>4</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.01</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.45</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.05</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>1</growthRate>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_E</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_E</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>0.5</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.01</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.3</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.05</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>20</growthRate>
+    </mote>
+    </ThingDef>
+    <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_F</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_F</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>0.5</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.01</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.4</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>20</growthRate>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_J</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_F</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.06</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.4</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>8</growthRate>
+    </mote>
+  </ThingDef> <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_H</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_H</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.06</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.4</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>8</growthRate>
+    </mote>
+  </ThingDef>
+   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_I</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_I</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.06</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.4</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>8</growthRate>
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Akane_EX_G</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Akane/EX_G</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.06</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.4</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>8</growthRate>
+    </mote>
+  </ThingDef>
+</Defs>

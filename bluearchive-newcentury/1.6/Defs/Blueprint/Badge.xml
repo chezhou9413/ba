@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_2_Piece</defName>
+    <label>Lv.2-玛纳斯卢毛毡徽章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_2_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+
+      <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_3_Piece</defName>
+    <label>Lv.3-愤怒的阿德利圆形徽章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_3_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+
+        <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_4_Piece</defName>
+    <label>Lv.4-维罗妮卡刺绣徽章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_4_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+
+       <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_5_Piece</defName>
+    <label>Lv.5-风山纹章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_5_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+
+  
+       <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_6_Piece</defName>
+    <label>Lv.6-可可恶魔徽章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_6_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+
+         <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_7_Piece</defName>
+    <label>Lv.7-街头徽章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_7_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+
+          <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_8_Piece</defName>
+    <label>Lv.8-罗蕾莱徽章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_8_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_9_Piece</defName>
+    <label>Lv.9-哈耳庇厄弹性徽章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_9_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Badge_10_Piece</defName>
+    <label>Lv.10-硬币徽章设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Badge/Badge_10_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+
+  </ThingDef>
+</Defs>

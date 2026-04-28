@@ -1,0 +1,58 @@
+[
+    {
+        "CurrencyDefName": "BANW_Hoshiro_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Hoshiro",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "星野/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Shiroko_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Shiroko",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "白子/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Nonomi_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Nonomi",
+        "ProductAmount": 5,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "野宫/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+      {
+        "CurrencyDefName": "BANW_Serika_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Serika",
+        "ProductAmount": 5,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "芹香/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+      {
+        "CurrencyDefName": "BANW_Ayane_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Ayane",
+        "ProductAmount": 5,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "绫音/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    }
+    
+] 

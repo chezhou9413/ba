@@ -1,0 +1,24 @@
+[
+    {
+        "CurrencyDefName": "BANW_Kanoe_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kanoe",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "鹿江/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Eri_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Eri",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "绘里/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    }
+] 

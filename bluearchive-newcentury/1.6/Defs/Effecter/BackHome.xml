@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_BC_1_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<collide>false</collide><!-- 是否与其它物体碰撞 -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/BC/BC_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>3.0</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_BC_2_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<collide>false</collide><!-- 是否与其它物体碰撞 -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/BC/BC_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>3.0</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_BC_3_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<collide>false</collide><!-- 是否与其它物体碰撞 -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/BC/BC_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>3.0</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_BC_4_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<collide>false</collide><!-- 是否与其它物体碰撞 -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/BC/BC_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>(3,10)</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_BC_5_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<collide>false</collide><!-- 是否与其它物体碰撞 -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/BC/BC_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>(3,10)</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_BC_6_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<collide>false</collide><!-- 是否与其它物体碰撞 -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/BC/BC_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>(3,10)</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<EffecterDef>
+<defName>BANW_BC_Ef_A</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>BANW_BC_Sound</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_BC_1_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 - 改为false，因为pawn还未生成 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_BC_2_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 - 改为false，因为pawn还未生成 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_BC_3_Mote</moteDef>
+        <initialDelayTicks>118</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 - 改为false，因为pawn还未生成 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_BC_4_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,2.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 - 改为false，因为pawn还未生成 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_BC_5_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,2.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 - 改为false，因为pawn还未生成 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_BC_6_Mote</moteDef>
+        <initialDelayTicks>118</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,2.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 - 改为false，因为pawn还未生成 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+</children>
+</EffecterDef>
+
+<SoundDef>
+	<defName>BANW_BC_Sound</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>  
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>UI/SFX_Teleport</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+</Defs>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BANW_Kanoe_Ef_A</defName>
+    <thingClass>MoteAttached</thingClass><!-- 附着 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Kanoe/A/Kanoe_A</texPath><!-- 纹理图片路径 -->
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.2</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+<FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
+<defName>BAWN_Kanoe_1_fleck</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<graphicData>
+<graphicClass>Graphic_FleckPulse</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Natsu/E/Natsu_0</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>1.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>5</_NumFrames>
+<_FramesPerSec>5</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</FleckDef>
+  <EffecterDef>
+<defName>BANW_Effecter_Kanoe</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BANW_Kanoe_Ef_A</moteDef>
+        <scale>0.1~1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>30</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>10</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BANW_Kanoe_Ef_A</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>12</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>-30</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BANW_Kanoe_Ef_A</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>24</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>30</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+        <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BANW_Kanoe_Ef_A</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>36</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>-30</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BANW_Kanoe_Ef_A</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>48</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>30</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <fleckDef>BAWN_Kanoe_1_fleck</fleckDef>
+        <scale>0.8</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>48</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+</children>
+</EffecterDef>
+</Defs>

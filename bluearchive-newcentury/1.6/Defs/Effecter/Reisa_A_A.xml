@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_1_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.1</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>14</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_2_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_3_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_4_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_5_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_6_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_7_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_7</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_8_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_8</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_9_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_9</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>(3,25)</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_10_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_10</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_11_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_11</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_12_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_12</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_13_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_13</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_14_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_14</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_15_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_15</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_16_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.80</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/B/Reisa_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>24</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_17_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.06</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/B/Reisa_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>32</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Reisa_A_18_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>22.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<shaderType>MoteGlow</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Reisa_A/A/Reisa_16</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+<EffecterDef>
+<defName>BANW_Reisa_A_Ef_B</defName>
+<children>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_16_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_17_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+</children>
+</EffecterDef>
+<EffecterDef>
+<defName>BANW_Reisa_A_Ef_A</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Reisa_A_Skill_EX_A</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_9_Mote</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 2.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_7_Mote</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, -0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_8_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, -0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_1_Mote</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_2_Mote</moteDef>
+        <initialDelayTicks>30</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_18_Mote</moteDef>
+        <initialDelayTicks>30</initialDelayTicks>
+        <ticksBetweenMotes>1320</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_3_Mote</moteDef>
+        <initialDelayTicks>90</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_4_Mote</moteDef>
+        <initialDelayTicks>150</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_5_Mote</moteDef>
+        <initialDelayTicks>210</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_6_Mote</moteDef>
+        <initialDelayTicks>270</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_10_Mote</moteDef>
+        <initialDelayTicks>30</initialDelayTicks>
+        <ticksBetweenMotes>180</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_11_Mote</moteDef>
+        <initialDelayTicks>90</initialDelayTicks>
+        <ticksBetweenMotes>180</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_12_Mote</moteDef>
+        <initialDelayTicks>150</initialDelayTicks>
+        <ticksBetweenMotes>180</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_13_Mote</moteDef>
+        <initialDelayTicks>30</initialDelayTicks>
+        <ticksBetweenMotes>180</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_14_Mote</moteDef>
+        <initialDelayTicks>90</initialDelayTicks>
+        <ticksBetweenMotes>180</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Reisa_A_15_Mote</moteDef>
+        <initialDelayTicks>150</initialDelayTicks>
+        <ticksBetweenMotes>180</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.2)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+</children>
+</EffecterDef>
+</Defs>

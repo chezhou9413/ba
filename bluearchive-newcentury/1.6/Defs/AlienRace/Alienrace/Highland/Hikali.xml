@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<BANWlLib.BaDef.BaStudentRaceDef ParentName="BANW_KivotosStudent">
+    	<!-- 学生UI界面配置 -->
+		<BaStudentUI>
+			<!-- 学生头像路径，用于在UI中显示学生头像 -->
+			<StudentAvatar>ManuaUI/Avatar/Hikali</StudentAvatar>
+			<!-- 学生名称显示模式，Auto表示自动生成名称 -->
+			<StudentName>Auto</StudentName>
+			<!-- 角色立绘路径，用于显示学生的全身立绘图像 -->
+			<CharacterimagePath>ManuaUI/Live/Hikali</CharacterimagePath>
+			<!-- 背景图片路径，用于学生详情界面的背景 -->
+			<BackgroundPath>ManuaUI/Bg/BG_Highland</BackgroundPath>
+			<!-- 角色立绘的缩放倍数，1.2表示放大1.2倍 -->
+			<CharacterimageOffsetSize>1.1</CharacterimageOffsetSize>
+			<!-- 角色立绘在X轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			<!-- 角色立绘在Y轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			<!-- 角色类型标签路径，用于显示学生的类型标签 -->
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			<!-- 角色的星星数量 -->
+			<CharacterStarCount>3</CharacterStarCount>
+			<!-- 出击按钮旁边的1号tag图片路径，对应位置左上 -->
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			<!-- 出击按钮旁边的2号tag图片路径，对应位置左下 -->
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			<!-- 出击按钮旁边的3号tag图片路径，对应位置右上 -->
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			<!-- 出击按钮旁边的4号tag图片路径，对应位置右下 -->
+			<infotagImagePath4>ManuaUI/Type/轻装甲</infotagImagePath4>
+			<!-- 技能等级显示，写整数，不要大于20，小于0 -->
+			<Skills>
+				<!--射击-->
+				<Shooting>8</Shooting>
+				<!--近战-->
+				<Melee>8</Melee>
+				<!--建造-->
+				<Construction>6</Construction>
+				<!--采矿-->
+				<Mining>0</Mining>
+				<!--烹饪-->
+				<Cooking>0</Cooking>
+				<!--种植-->
+				<Plants>0</Plants>
+				<!--驯兽-->
+				<Animals>0</Animals>
+				<!--手工-->
+				<Crafting>6</Crafting>
+				<!--艺术-->
+				<Artistic>0</Artistic>
+				<!--医学-->
+				<Medical>0</Medical>
+				<!--社交-->
+				<Social>8</Social>
+				<!--智慧-->
+				<Intellectual>8</Intellectual>
+			</Skills>
+		    <!--武器UI配置-->
+			<WapenUI>
+			   <!--武器图片路径配置-->
+				<WapenUIImagePath>ManuaUI/Wapen/Hikali</WapenUIImagePath>
+			    <!--武器类型文本配置-->
+				<WapenTypeText>手枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Hikali/Hikali_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>剪票时间～</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能/ <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[使除自身外的一名我方单位护甲穿透提升<color=#00FFFF>92%</color>。
+（持续<color=#00FFFF>32</color>秒）]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Hikali/Hikali_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>来调车吧～</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>20</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[每隔<color=#00FFFF>30</color>秒获得一次“发车信号”充能，最多可以储存<color=#00FFFF>3</color>次，消耗一层“发车信号”可以赋予一个单位攻击力强化<color=#00FFFF>25%</color>，
+（持续<color=#00FFFF>32</color>秒）]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>测试技能3</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能 / <color=black>COST: </color><color=blue>20</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能3的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>测试技能4</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>15</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   <!--学生简介页面的粗略介绍配置，显示在学院logo旁边-->
+				<StudentDesp><![CDATA[海兰德铁道学园
+1年级
+社团 CCC（中央管制中心）]]>
+				</StudentDesp>
+				<!--学生简介页面的名字，显示在学院logo旁边-->
+				<StudentBioName>橘 光</StudentBioName>
+				<!--学院logo路径，显示在学生简介页面的左上角-->
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Highland</AcademyLogoPath>
+				<!--学生简介页面的学生背景故事配置，长文本，可以任意字数-->
+				<StudentCard>海兰德铁道学园所属、CCC（中央管制中心）的干部。在列车驾驶方面有卓越的才能，与其双胞胎妹妹望一同被选为干部。但是十分不擅长文件和管理业务。是忠实于当时的欲望，不在意他人目光的特殊性格，往往容易引发各种事件。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+		<defName>BANW_Hikali_race</defName>
+		<label>光</label>
+		<description>海兰德铁道学园所属、CCC（中央管制中心）的干部。在列车驾驶方面有卓越的才能，与其双胞胎妹妹望一同被选为干部。但是十分不擅长文件和管理业务。是忠实于当时的欲望，不在意他人目光的特殊性格，往往容易引发各种事件。
+&lt;color=#cc33cc&gt;攻击属性：振动
+[振动属性攻击可以造成钝器护甲造成伤害,并且可以概率造成眩晕，缺点是伤害不能造成流血]&lt;/color&gt;
+&lt;color=#FFFF00&gt;出装建议&lt;/color&gt;
+&lt;color=#DC143C&gt;[手套]&lt;/color&gt;&lt;color=#00FF00&gt;[发夹]&lt;/color&gt;&lt;color=#00BFFF&gt;[护符]&lt;/color&gt;</description>
+		<killedLeavingsRanges>
+			<BANW_Hikali_race_Proplevel>1</BANW_Hikali_race_Proplevel>
+		</killedLeavingsRanges>
+		<alienRace>
+			<raceRestriction>
+				<onlyUseRaceRestrictedWeapons>true</onlyUseRaceRestrictedWeapons>
+				<weaponList>
+					<li>BANC_Hikali</li>
+				</weaponList>
+			</raceRestriction>
+		</alienRace>
+		<race>
+	  <nameGenerator>NamerHikali</nameGenerator>
+      <nameGeneratorFemale>NamerHikali</nameGeneratorFemale>
+		</race>
+		<comps>
+		  <li Class="BANWlLib.StudentInitializationCompProperties">
+            <initialExperience>110</initialExperience>
+            <starUpEffect>BANW_Effecter_B</starUpEffect>
+			<starUpSounds>
+				<li>Hikali_levelup_A</li>
+				<li>Hikali_levelup_B</li>
+				<li>Hikali_levelup_C</li>
+				<li>Hikali_levelup_D</li>
+			 </starUpSounds>
+          </li>
+		  <li Class="BANWlLib.comp.LevelVisualCompPropertie">
+            <levelAudio>
+                <li>Hikali_levelup_A</li>
+                <li>Hikali_levelup_B</li>
+                <li>Hikali_levelup_C</li>
+                <li>Hikali_levelup_D</li>
+            </levelAudio>
+            <!-- 等级特效列表，使用模组中已有的特效 -->
+            <levelMote>
+                <li>BANW_Effecter_LevelUp</li>
+            </levelMote>
+          </li>
+		</comps>
+	<baStudentData>
+			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DamageType>Vibration</DamageType>
+			<!-- 防御类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DefenseType>Explosion</DefenseType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			<PosType>Assist</PosType>
+			<!-- 星级数量 -->
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Hikali</DraggableAudio>
+			<GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Hikali_race_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+			<UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Hikali_race_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Hikali_race_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+            <!-- 抽卡面板显示的纹理，就是最后翻牌那一下的头像 -->
+            <avtTexPath>Gacha/Student/Hikali</avtTexPath>
+		</baStudentData>
+	</BANWlLib.BaDef.BaStudentRaceDef>   
+</Defs>

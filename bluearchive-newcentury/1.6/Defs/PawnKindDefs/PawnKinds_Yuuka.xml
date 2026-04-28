@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Yuuka</defName>
+		<label>-优香-</label>
+		<race>BANW_Yuuka_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        <li>BAWN_Yuuka_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+		<li>
+			<def>BANW_Yuuka_HpBuff</def>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryYuuka</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Yuuka</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Yuuka</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>8~14</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>9</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>18</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Yuuka_A>0</BAWC_TraitDef_Yuuka_A>
+			<BAWC_TraitDef_Yuuka_B>0</BAWC_TraitDef_Yuuka_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Yuuka_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;导出最优解&lt;/color&gt;</label>
+                <description>被动技能:自身护甲值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+			    <ArmorRating_Sharp>1.26</ArmorRating_Sharp>
+		        <ArmorRating_Blunt>1.26</ArmorRating_Blunt>
+	            <ArmorRating_Heat>1.26</ArmorRating_Heat>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Yuuka_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;高速演算&lt;/color&gt;</label>
+                <description>子技能:自身获得每10秒回复&lt;color=#DC143C&gt;52&lt;/color&gt;点生命值</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<HediffDef>
+    <defName>BANW_Yuuka_HpBuff</defName>
+    <label>高速演算</label>
+    <description>子技能:自身获得每10秒回复&lt;color=#DC143C&gt;52&lt;/color&gt;点生命值</description>
+    <defaultLabelColor>(0, 94, 255)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+		 <stages>
+          <li>     
+           <statOffsets>
+            </statOffsets>
+           </li>
+          </stages>
+    <comps>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>52</healAmount>
+        <healIntervalTicks>600</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

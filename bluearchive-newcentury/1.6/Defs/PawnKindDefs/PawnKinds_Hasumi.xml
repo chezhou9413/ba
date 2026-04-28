@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Hasumi</defName>
+		<label>-莲见-</label>
+		<race>BANW_Hasumi_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Hasumi_EXX</li>
+		<li>BAWN_Hasumi_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryHasumi</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Hasumi</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Hasumi</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>7</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Hasumi_A>0</BAWC_TraitDef_Hasumi_A>
+			<BAWC_TraitDef_Hasumi_B>0</BAWC_TraitDef_Hasumi_B>
+		</forcedTraits>
+	</PawnKindDef>
+    <TraitDef>
+        <defName>BAWC_TraitDef_Hasumi_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;精确瞄准&lt;/color&gt;</label>
+                <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的护甲穿透</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_RangedWeapon_Penetration>+0.26</BANW_RangedWeapon_Penetration>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hasumi_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;目标搜索&lt;/color&gt;</label>
+                <description>子技能:增加自身&lt;color=#DC143C&gt;15%&lt;/color&gt;的攻击射程</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<VEF_VerbRangeFactor>0.15</VEF_VerbRangeFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

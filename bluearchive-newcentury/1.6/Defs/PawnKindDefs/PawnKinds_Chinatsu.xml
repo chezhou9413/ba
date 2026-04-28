@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Chinatsu</defName>
+		<label>-千夏-</label>
+		<race>BANW_Chinatsu_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<abilities>
+        <li>BAWN_Chinatsu_EX</li>
+		<li>BAWN_Chinatsu_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryChinatsu</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Chinatsu</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Chinatsu</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>17</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>5~8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>8~10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Chinatsu_A>0</BAWC_TraitDef_Chinatsu_A>
+			<BAWC_TraitDef_Chinatsu_B>0</BAWC_TraitDef_Chinatsu_B>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Chinatsu_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;强化医疗支援&lt;/color&gt;</label>
+                <description>被动技能:自身治疗速率增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <MedicalTendSpeed>0.26</MedicalTendSpeed>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Chinatsu_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;强化防御支援&lt;/color&gt;</label>
+                <description>被动技能:自身护甲值增加&lt;color=#DC143C&gt;17%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<ArmorRating_Sharp>0.17</ArmorRating_Sharp>
+		        <ArmorRating_Blunt>0.17</ArmorRating_Blunt>
+	            <ArmorRating_Heat>0.17</ArmorRating_Heat>
+                </statOffsets>
+				<statFactors>
+				<ArmorRating_Sharp>1.17</ArmorRating_Sharp>
+		        <ArmorRating_Blunt>1.17</ArmorRating_Blunt>
+	            <ArmorRating_Heat>1.17</ArmorRating_Heat>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

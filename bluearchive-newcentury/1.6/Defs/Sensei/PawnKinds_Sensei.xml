@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Sensei</defName>
+		<label>-老师-</label>
+		<race>BANW_Sensei_race</race>
+		<combatPower>0</combatPower>
+		<isFighter>false</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<fixedGender>Male</fixedGender>
+		<abilities>
+        </abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySchale</li>
+					<li>BANW_BackstorySensei</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>18</minGenerationAge>
+		<maxGenerationAge>20</maxGenerationAge>
+		<weaponTags>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Sensei</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6~8</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>6~10</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>6~10</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>1~6</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10~15</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Sensei>0</BAWC_TraitDef_Sensei>
+			<BAWC_TraitDef_Aluona>0</BAWC_TraitDef_Aluona>
+			<BAWC_TraitDef_plana>0</BAWC_TraitDef_plana>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Sensei</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFFF00&gt;老师&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是来自基沃托斯的老师，附属于夏莱，履行着大人的职责。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+					<VacuumResistance MayRequire="Ludeon.RimWorld.odyssey">1.0</VacuumResistance><!-- 真空抗性：提供在真空中生存的能力 -->
+					<GlobalLearningFactor>0.52</GlobalLearningFactor><!-- 学习速度：+50%的学习速度 -->
+					<PawnBeauty>7.5</PawnBeauty><!-- 美貌：增加角色的魅力值 -->
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">-0.48</CertaintyLossFactor><!-- 信念稳定：减少50%的信念丧失速度 -->
+					<NegotiationAbility>+1.2</NegotiationAbility><!-- 谈判能力：提高交易和外交能力 -->
+					<MentalBreakThreshold>-0.99</MentalBreakThreshold><!-- 精神阈值：降低精神崩溃的可能性 -->
+                    <PainShockThreshold>+0.5</PainShockThreshold><!-- 疼痛阈值：提高对疼痛的耐受性 -->
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Aluona</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#00BFFF&gt;阿罗娜的守护&lt;/color&gt;</label>
+                <description>老师！阿罗娜会一直守护着你的！</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_Miss>0.5</BANW_Miss>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_plana</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF1493&gt;普拉娜的守护&lt;/color&gt;</label>
+                <description>连接确认，老师，请放心，我会保护你的。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_Miss>0.5</BANW_Miss>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

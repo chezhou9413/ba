@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Serika</defName>
+		<label>-芹香-</label>
+		<race>BANW_Serika_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Serika_EX</li>
+		<li>BAWN_Serika_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryAbydos</li>
+					<li>BANW_BackstorySerika</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Serika</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Serika</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+		
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>11~15</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>1</range>
+			</li>
+		</skills>
+		   <forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Serika>0</BAWC_TraitDef_Serika>
+			<BAWC_TraitDef_Serika_A>0</BAWC_TraitDef_Serika_A>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Serika</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;打工皇帝&lt;/color&gt;</label>
+                <description>尽管阿拜多斯高中状况百出，债务如山，芹香却从未有过放弃的念头。她凭借顽强毅力，承担起多份辛苦工作，努力赚钱补贴学园。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                 <CarryingCapacity>50</CarryingCapacity>
+                <MentalBreakThreshold>-0.1</MentalBreakThreshold>
+				<WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+                </statOffsets>
+				<statFactors>
+					<GlobalLearningFactor>1.3</GlobalLearningFactor>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Serika_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;兼职生的韧性&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                 <BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

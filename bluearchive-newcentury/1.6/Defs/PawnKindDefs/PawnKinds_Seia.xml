@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Seia</defName>
+		<label>-圣娅-</label>
+		<race>BANW_Seia_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstorySeia</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Seia</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Seia</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>2</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>15~20</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>6~8</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>18~20</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_tanli>0</BAWC_TraitDef_tanli>
+		</forcedTraits>
+	</PawnKindDef>
+
+</Defs>

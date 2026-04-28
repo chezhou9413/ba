@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <!-- 建筑的内部唯一标识名 -->
+    <defName>BANW_TestDropPos</defName>
+    <!-- 显示在游戏中的建筑名称 -->
+    <label>夏莱信标</label>
+    <!-- 建筑的描述信息 -->
+    <description>可以集中商品空投的掉落</description>
+    <!-- 更新器类型：Normal表示每tick都会调用更新方法 -->
+    <tickerType>Normal</tickerType>
+    <!-- 不可旋转 -->
+    <rotatable>false</rotatable>
+    <!-- 图形数据定义 -->
+    <graphicData>
+      <!-- 建筑贴图路径 -->
+      <texPath>Player/Schale/Schale</texPath>
+      <!-- 图形类：Graphic_Single表示单张贴图 -->
+      <graphicClass>Graphic_Single</graphicClass>
+      <!-- 绘制尺寸 -->
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <!-- 建筑占用的网格大小 -->
+    <size>(2,2)</size>
+    <!-- 指定建筑所属的设计分类 -->
+    <designationCategory>BANW_BlueA</designationCategory>
+    <!-- 高度层级：Building表示建筑层 -->
+    <altitudeLayer>Building</altitudeLayer>
+    <!-- 通行性：PassThroughOnly表示仅能穿行 -->
+    <passability>PassThroughOnly</passability>
+    <!-- 路径成本：数值越高AI越不愿意经过 -->
+    <pathCost>0</pathCost>
+    <!-- 填充百分比：影响阴影和AI路径计算 -->
+    <fillPercent>0</fillPercent>
+    <!-- 基础属性值定义 -->
+    <statBases>
+      <!-- 最大耐久值 -->
+      <!-- 建造所需工作量 -->
+      <WorkToBuild>800</WorkToBuild>
+      <!-- 质量 -->
+      <Mass>5</Mass>
+      <!-- 易燃性：0为不燃，1为极易燃 -->
+      <Flammability>0</Flammability>
+    </statBases>
+    <!-- 设置建筑不使用耐久系统 -->
+    <useHitPoints>false</useHitPoints>
+    <!-- 建造所需材料列表 -->
+    <costList>
+      <!-- 需要20个钢材 -->
+      <Steel>20</Steel>
+      <!-- 需要1个工业组件 -->
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <!-- 建筑特殊属性 -->
+    <building>
+      <!-- 是否可以放置在墙上 -->
+      <canPlaceOverWall>false</canPlaceOverWall>
+    </building>
+    <canBeUsedUnderRoof>false</canBeUsedUnderRoof>
+    <!-- 所需的研究前提 -->
+    <researchPrerequisites>
+    </researchPrerequisites>
+    <!-- 组件属性定义 -->
+    <comps>
+      <!-- 使用自定义的DropPosCompProperties组件 -->
+      <li Class="BANWlLib.comp.DropPosCompProperties"/>
+       <li Class="CompProperties_Glower">
+    <glowRadius>10</glowRadius>
+    <glowColor>(73,123,138,0)</glowColor>
+  </li>
+    </comps>
+  </ThingDef>
+</Defs>

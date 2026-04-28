@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 减伤状态显示用的Hediff定义 -->
+  <HediffDef>
+    <defName>DamageReductionStatus</defName>
+    <label>学生星级</label>
+    <description>基于学生星级提供的减伤保护状态。</description>
+    <hediffClass>BANWlLib.DamageReductionHediff</hediffClass>
+    
+    <!-- 自定义颜色：金色 -->
+    <defaultLabelColor>(1.0, 0.84, 0.0)</defaultLabelColor>
+    
+    <!-- 基本属性 -->
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>1.0</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <makesSickThought>false</makesSickThought>
+    
+    <!-- 阶段定义 -->
+    <stages>
+      <li>
+        <label></label> <!-- 空标签，让自定义类控制显示 -->
+      </li>
+    </stages>
+  </HediffDef>
+</Defs> 

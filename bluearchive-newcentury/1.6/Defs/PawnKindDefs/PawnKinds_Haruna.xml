@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Haruna</defName>
+		<label>-晴奈-</label>
+		<race>BANW_Haruna_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Haruna_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryHaruna</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>16</minGenerationAge>
+		<maxGenerationAge>17</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Haruna</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Haruna</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>12~15</range>
+			</li>
+			 <li>
+				<skill>Cooking</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>17</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>18</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>14</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Haruna>0</BAWC_TraitDef_Haruna>
+			<BAWC_TraitDef_Haruna_A>0</BAWC_TraitDef_Haruna_A>
+			<BAWC_TraitDef_Haruna_B>0</BAWC_TraitDef_Haruna_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Haruna_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;美食家的品格&lt;/color&gt;</label>
+                <description>被动技能：自身生命值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Haruna_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;美食家的严谨&lt;/color&gt;</label>
+                <description>子技能：自身攻击力增加&lt;color=#DC143C&gt;19%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+                            <BANW_FinalDamageMultiplier>+0.19</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Haruna</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#F0F8FF&gt;热血美食家&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}乍一看给人一种有钱大小姐那样高傲的气质，通常表现得拘谨而又得体。但只要跟美食扯上关系，就会变成不顾一切的热血属性美食家。她对食物的热情往往是毁灭性的，如果一顿饭或一家餐馆不能使她满意，她可能会用烈性炸药给予痛苦的报应，这种巨大的反差是她的一大特性。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                  <PawnBeauty>4.5</PawnBeauty><!-- 美貌：增加角色的魅力值 -->
+                </statOffsets>
+				<statFactors>
+					<MaxNutrition>0.5</MaxNutrition>
+					<EatingSpeed>0.5</EatingSpeed>
+				</statFactors>
+		<disallowedThoughtsFromIngestion>                    <!-- 禁止的进食思想 -->
+          <li>                                               <!-- 第一个条目 -->
+            <meatSource>Humanlike</meatSource>               <!-- 肉类来源：类人生物 -->
+            <thoughts>     
+              <li>AteHumanlikeMeatDirect</li>
+              <li>AteHumanlikeMeatAsIngredient</li>          <!-- 禁止"作为配料食用类人肉"的负面思想 -->
+            </thoughts>
+          </li>
+        </disallowedThoughtsFromIngestion>
+		 <extraThoughtsFromIngestion>
+          <li>
+            <meatSource>Humanlike</meatSource>
+            <thoughtsDirect>
+              <li>BANW_AteHumanlikeMeatDirectCannibal_Haruna</li>
+            </thoughtsDirect>
+            <thoughtsAsIngredient>
+              <li>BANW_AteHumanlikeMeatDirectCannibal_Haruna</li>
+            </thoughtsAsIngredient>
+          </li>
+        </extraThoughtsFromIngestion>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<ThoughtDef>
+    <defName>BANW_AteHumanlikeMeatDirectCannibal_Haruna</defName>  <!-- 思维定义的唯一标识名：食人族直接吃人肉 -->
+    <showBubble>true</showBubble>  <!-- 是否显示思维气泡：是 -->
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>  <!-- 思维图标：食物相关图标 -->
+    <durationDays>30</durationDays>  <!-- 持续时间：1天 -->
+    <stages>  <!-- 思维阶段定义 -->
+      <li>
+        <label>啊啊啊啊啊啊</label>  <!-- 显示标签：生食人肉 -->
+        <description>开什么玩笑！开什么玩笑！你竟敢让我吃下人肉！？混蛋啊啊啊啊啊啊！</description>  <!-- 描述：我像动物一样生吃了另一个人的肉，真是太...多汁美味了 -->
+        <baseMoodEffect>-999</baseMoodEffect>  <!-- 基础情绪效果：+20（强烈的正面情绪） -->
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>BANW_AteRawFood_Haruna</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <durationDays>10</durationDays>
+    <nullifyingGenes>
+      <li MayRequire="Ludeon.RimWorld.Biotech">RobustDigestion</li>
+    </nullifyingGenes>
+    <stages>
+      <li>
+        <label>这是生的?</label>
+        <description>你敢让我吃生的食物？我一定要杀了你</description>
+        <baseMoodEffect>-99</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

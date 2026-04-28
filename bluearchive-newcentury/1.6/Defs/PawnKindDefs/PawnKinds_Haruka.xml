@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Haruka</defName>
+		<label>-遥香-</label>
+		<race>BANW_Haruka_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Haruka_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryHaruka</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Haruka</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Haruka</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>0</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Haruka_A>0</BAWC_TraitDef_Haruka_A>
+		</forcedTraits>
+	</PawnKindDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Haruka_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;我，我会加油的！&lt;/color&gt;</label>
+                <description>被动技能：自身生命值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

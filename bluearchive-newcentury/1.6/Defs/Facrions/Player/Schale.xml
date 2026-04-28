@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef Name="BANW_PlayerFactionBase" ParentName="FactionBase" Abstract="True">
+    <colorSpectrum>
+      <li>(0, 0.737, 0.847)</li>
+    </colorSpectrum>
+    <!--文化-->
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <disallowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+    </disallowedMemes>
+    <!--<xenotypeSet Inherit="False" MayRequire="Ludeon.RimWorld.Biotech">
+      <xenotypeChances MayRequire="Ludeon.RimWorld.Biotech">
+        <Axolotl_Xenotype_MoeLotlBase MayRequire="Ludeon.RimWorld.Biotech">999</Axolotl_Xenotype_MoeLotlBase>
+      </xenotypeChances>
+    </xenotypeSet>-->
+  </FactionDef>
+  <FactionDef ParentName="BANW_PlayerFactionBase">
+    <defName>BANW_PlayerFaction</defName>
+    <label>夏莱</label>
+    <description>「夏莱」是由联邦学生会长成立的社团——联邦搜查部，与单纯的社团活动不同，夏莱是一种超越法规的机构。</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>BANW_Sensei</basicMemberKind>
+    <pawnSingular>colonist</pawnSingular>
+    <pawnsPlural>colonists</pawnsPlural>
+    <techLevel>Spacer</techLevel>
+    <backstoryCategories>
+      <li>Offworld</li>
+    </backstoryCategories>
+    <settlementTexturePath>Player/Schale/Schale</settlementTexturePath>
+    <factionIconPath>Player/Schale/Schale</factionIconPath>
+    <playerInitialSettlementNameMaker>BANW_NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+    <factionNameMaker>BANW_NamerFaction</factionNameMaker>
+    <settlementNameMaker>BANW_NamerSettlement</settlementNameMaker>
+    <startingResearchTags>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+    </startingTechprintsResearchTags>
+    <apparelStuffFilter>
+      <thingDefs>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+
+   <RulePackDef>
+    <defName>BANW_NamerInitialSettlementColony</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->殖民地</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <!--派系namer-->
+  <RulePackDef>
+    <defName>BANW_NamerFaction</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->夏莱</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>BANW_NamerSettlement</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->夏莱</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <AlienRace.RaceSettings>
+    <defName>BANW_Race_Setting</defName>
+    <pawnKindSettings>
+      <startingColonists>
+        <li>
+          <pawnKindEntries>
+            <li>
+              <kindDefs>
+                <li>BANW_Sensei</li>
+              </kindDefs>
+              <chance>100.0</chance>
+            </li>
+          </pawnKindEntries>
+          <factionDefs>
+            <li>BANW_PlayerFaction</li>
+          </factionDefs>
+        </li>
+      </startingColonists>
+      <alienwandererkinds>
+        <li>
+          <pawnKindEntries>
+            <li>
+              <kindDefs>
+                <li>BANW_Sensei</li>
+              </kindDefs>
+              <chance>0.0</chance>
+            </li>
+          </pawnKindEntries>
+          <factionDefs>
+            <li>BANW_PlayerFaction</li>
+          </factionDefs>
+        </li>
+      </alienwandererkinds>
+    </pawnKindSettings>
+  </AlienRace.RaceSettings>
+</Defs>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+	<defName>Airy_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Airy/SkillEX/Airy_ExxSkill_1</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Airy/SkillEX/Airy_ExxSkill_2</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Airy/SkillEX/Airy_ExxSkill_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+	<SoundDef>
+	<defName>Airy_Skill_EX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Airy/Airy_ExSkill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+	<SoundDef>
+	<defName>Airy_Skill_EX_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Airy/Airy_A</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Airy_levelup_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Airy/Airy_Up_1</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Airy_levelup_B</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Airy/Airy_Up_2</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Airy_levelup_C</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Airy/Airy_Up_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Airy_levelup_D</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Airy/Airy_Up_4</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+  
+
+</Defs>

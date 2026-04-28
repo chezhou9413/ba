@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Shiroko</defName>
+		<label>-白子-</label>
+		<race>BANW_Shiroko_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Shiroko_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryAbydos</li>
+					<li>BANW_BackstoryShiroko</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Shiroko</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Shiroko</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>7~10</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>7~10</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>7~12</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>5</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+		</forcedTraits>
+	</PawnKindDef>
+
+</Defs>

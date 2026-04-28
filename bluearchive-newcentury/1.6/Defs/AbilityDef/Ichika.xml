@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Ichika_EX</defName>
+ <label>正义实现部的联络网</label>
+ <description>自身护甲穿透增加63%(持续25秒)</description>
+ <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Ichika_Skill_EX</warmupStartSound>
+ <warmupEffecter>BANW_Ichika_Ef_A</warmupEffecter>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>false</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>25</Ability_Duration>
+ </statBases>
+ <verbProperties>
+ <soundCast>Aoba_Skill_EX</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>3</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_B</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Ichika_Buff</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+
+</comps>
+</AbilityDef>
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Ichika_Buff</defName>
+        <!-- 显示名称 -->
+        <label>正义实现部的联络网</label>
+        <!-- 效果描述 -->
+        <description>自身护甲穿透增加63%(持续25秒)</description>
+        <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+            <statOffsets>
+              <BANW_RangedWeapon_Penetration>0.63</BANW_RangedWeapon_Penetration>
+            </statOffsets>
+           <statFactors>
+           </statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Ichika_Ef_B</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+  
+</Defs>

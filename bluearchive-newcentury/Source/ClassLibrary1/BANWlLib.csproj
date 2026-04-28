@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A850886-AD15-45C4-B892-D78F1879EB08}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BANWlLib</RootNamespace>
+    <AssemblyName>BANWlLib</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bluearchive-newcentury\1.6\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>E:\捷豹\rimworlddll\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AlienRace">
+      <HintPath>E:\捷豹\rimworlddll\AlienRace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:\捷豹\rimworlddll\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>E:\捷豹\rimworlddll\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="HarmonyMod">
+      <HintPath>E:\捷豹\rimworlddll\HarmonyMod.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\捷豹\rimworlddll\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="spineMono, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\BATEST\BAUIMIAN_Data\Managed\spineMono.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>E:\BATEST\BAUIMIAN_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>E:\捷豹\rimworlddll\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaClass\SubEffecter_SprayerTriggeredRotatedOffset.cs" />
+    <Compile Include="BaDef\AronaSpine.cs" />
+    <Compile Include="BaDef\BaDorp.cs" />
+    <Compile Include="BaDef\BaJobDef_SphereAreaAttack.cs" />
+    <Compile Include="BaDef\BaJobDef_SustainedAttack.cs" />
+    <Compile Include="BaDef\BaMapDef.cs" />
+    <Compile Include="BaDef\BaMissionNode.cs" />
+    <Compile Include="BaDef\BaMissionRunTime.cs" />
+    <Compile Include="BaDef\BaMissionType.cs" />
+    <Compile Include="BaDef\Gacha.cs" />
+    <Compile Include="BaDef\GachaSetting.cs" />
+    <Compile Include="BaGenStep\GenStep_FillTerrain.cs" />
+    <Compile Include="BaJob\Job_SphereSelfHediff.cs" />
+    <Compile Include="BaJob\Job_SphereAreaAttack.cs" />
+    <Compile Include="BaJob\Job_SustainedAreaAttack.cs" />
+    <Compile Include="BANWGamecomp\Gamecomp_gakaAction.cs" />
+    <Compile Include="BaVerb\Verb_SphereArea.cs" />
+    <Compile Include="BaVerb\Verb_SustainedAreaAttack.cs" />
+    <Compile Include="BaVerb\Verb_SustainedAreaAttackBox.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="comp\CompSpawnPawnWithEffect.cs" />
+    <Compile Include="comp\DropPosComp.cs" />
+    <Compile Include="comp\HediffCompProps_Regeneration.cs" />
+    <Compile Include="comp\LevelVisualComp.cs" />
+    <Compile Include="comp\stoneDrop.cs" />
+    <Compile Include="comp\ThingHediffComp.cs" />
+    <Compile Include="DamageFontSystem\Comp\DisableCriticalComp.cs" />
+    <Compile Include="DamageFontSystem\CriticalObjPool.cs" />
+    <Compile Include="DamageFontSystem\CriticalRef.cs" />
+    <Compile Include="DamageFontSystem\DamageFloatText.cs" />
+    <Compile Include="DamageFontSystem\FontDataBase.cs" />
+    <Compile Include="DamageFontSystem\FontDef.cs" />
+    <Compile Include="DamageFontSystem\InitializeFontSystem.cs" />
+    <Compile Include="DamageFontSystem\DamageFontSystemPatche.cs" />
+    <Compile Include="DamageFontSystem\Setting\DamageFontMod.cs" />
+    <Compile Include="DamageFontSystem\Setting\DamageFontSettings.cs" />
+    <Compile Include="DamageReductionComp.cs" />
+    <Compile Include="DamageReductionHediff.cs" />
+    <Compile Include="BaDef\BaStudentUIDef.cs" />
+    <Compile Include="Dev\GachaDebugActions.cs" />
+    <Compile Include="Dev\MissionDebug.cs" />
+    <Compile Include="Dev\StudentListShow.cs" />
+    <Compile Include="DOTween\DOTweenModuleUI.cs" />
+    <Compile Include="Drop\SpawnPawnWithEffectUtility.cs" />
+    <Compile Include="HediffDefOf.cs" />
+    <Compile Include="HumanIntPropertyComp.cs" />
+    <Compile Include="HumanIntPropertyHelper.cs" />
+    <Compile Include="Init\StartupModCheck.cs" />
+    <Compile Include="mainUI\Events\ShopEvents.cs" />
+    <Compile Include="mainUI\Events\StudentManualEvents.cs" />
+    <Compile Include="mainUI\Gaka\GachaSystem.cs" />
+    <Compile Include="mainUI\Gaka\Gakalord.cs" />
+    <Compile Include="mainUI\Gaka\GakaMapData.cs" />
+    <Compile Include="mainUI\Gaka\MonoComp\MonoComp_CardshowList.cs" />
+    <Compile Include="mainUI\Gaka\MonoComp\MonoComp_GakaAnimationPofab.cs" />
+    <Compile Include="mainUI\Gaka\MonoComp\MonoComp_ResultListShow.cs" />
+    <Compile Include="mainUI\Gaka\MonoComp\MonoComp_updataPoit.cs" />
+    <Compile Include="mainUI\lordHudong.cs" />
+    <Compile Include="mainUI\Mission\BaMapComp\BaMissionUIComponent.cs" />
+    <Compile Include="mainUI\Mission\GameComp\GameComp_TaskQuest.cs" />
+    <Compile Include="mainUI\Mission\MissionMapData.cs" />
+    <Compile Include="mainUI\Mission\MissionUIlord.cs" />
+    <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaLongPressDraggable.cs" />
+    <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionNode.cs" />
+    <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionSelect.cs" />
+    <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionType.cs" />
+    <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionInfo.cs" />
+    <Compile Include="mainUI\MonoComp\messageUILord.cs" />
+    <Compile Include="mainUI\MonoComp\MonoComp_backButtom.cs" />
+    <Compile Include="mainUI\MonoComp\pilianggoumai.cs" />
+    <Compile Include="mainUI\MonoComp\ShopButtonPage.cs" />
+    <Compile Include="mainUI\MonoComp\keyevents.cs" />
+    <Compile Include="mainUI\MonoComp\shotData.cs" />
+    <Compile Include="mainUI\pojo\shot.cs" />
+    <Compile Include="mainUI\pojo\StudentOBJRef.cs" />
+    <Compile Include="mainUI\pojo\StudentSave.cs" />
+    <Compile Include="mainUI\pojo\StudentData.cs" />
+    <Compile Include="mainUI\shotlord.cs" />
+    <Compile Include="mainUI\StudentManual\ManualDataGameComp.cs" />
+    <Compile Include="mainUI\StudentManual\ManualLord.cs" />
+    <Compile Include="mainUI\StudentManual\ManualMapData.cs" />
+    <Compile Include="mainUI\StudentManual\MonoComp\ActiveInfoShow.cs" />
+    <Compile Include="mainUI\StudentManual\MonoComp\StudentDetailsController.cs" />
+    <Compile Include="mainUI\StudentManual\MonoComp\StudentInfoType.cs" />
+    <Compile Include="mainUI\StudentManual\MonoComp\StudentListShow.cs" />
+    <Compile Include="mainUI\StudentManual\MonoComp\StudentResetList.cs" />
+    <Compile Include="mainUI\StudentManual\MonoComp\StudentTypeButtomController.cs" />
+    <Compile Include="mainUI\StudentManual\StudentDetailsLord.cs" />
+    <Compile Include="mainUI\UICoreStart.cs" />
+    <Compile Include="BANWMap\CreateMap.cs" />
+    <Compile Include="MissionRunTime\BaMissionManager.cs" />
+    <Compile Include="MissionRunTime\BaMissionRunTimeAction.cs" />
+    <Compile Include="MissionRunTime\MissionMain\MissionRunTime_BaseDefense.cs" />
+    <Compile Include="ModMain.cs" />
+    <Compile Include="pache\Patch_Projectile_Launch.cs" />
+    <Compile Include="pache\pawnKill.cs" />
+    <Compile Include="pache\Pawn_disDaed.cs" />
+    <Compile Include="PawnProgressBarUI.cs" />
+    <Compile Include="Pojo\TickDamage.cs" />
+    <Compile Include="Pojo\TickDelayDamageAndHediff.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pojo\PendingDamageAction.cs" />
+    <Compile Include="StudentInitializationComp.cs" />
+    <Compile Include="Tool\ListUtils.cs" />
+    <Compile Include="Tool\pawnUtils.cs" />
+    <Compile Include="Tool\ReflexHelper.cs" />
+    <Compile Include="Tool\RimWorldUISpriteUtil.cs" />
+    <Compile Include="Tool\StudentRosterUtility.cs" />
+    <Compile Include="uicreater\GameComponent_LateInit.cs" />
+    <Compile Include="uicreater\LongPressDraggableButton.cs" />
+    <Compile Include="uicreater\pojo\poit.cs" />
+    <Compile Include="uicreater\pojo\poitlist.cs" />
+    <Compile Include="uicreater\pojo\UIbody.cs" />
+    <Compile Include="uicreater\pojo\UIhead.cs" />
+    <Compile Include="uicreater\pojo\UiMapData.cs" />
+    <Compile Include="uicreater\tool\BamessageUI.cs" />
+    <Compile Include="uicreater\tool\CharacterGachaUtility.cs" />
+    <Compile Include="uicreater\tool\gameobjcreater.cs" />
+    <Compile Include="uicreater\tool\imgcvT2d.cs" />
+    <Compile Include="uicreater\tool\jsoncvpojo.cs" />
+    <Compile Include="uicreater\tool\LoopBGMManager.cs" />
+    <Compile Include="uicreater\tool\QinghuiStoneUtility.cs" />
+    <Compile Include="uicreater\tool\ButtomEffect.cs" />
+    <Compile Include="uicreater\tool\TextEffect.cs" />
+    <Compile Include="uicreater\tool\PawnDropHelper.cs" />
+    <Compile Include="updatecustomINT.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\BANWlLib.dll" />
+    <Content Include="bin\Debug\BANWlLib.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

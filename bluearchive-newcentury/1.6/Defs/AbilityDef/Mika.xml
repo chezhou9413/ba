@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Mika_EXX</defName>
+ <label>凯里·埃利森</label>
+ <description>对一名敌人一共造成自身子弹攻击力的1500%的伤害</description>
+ <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
+ <cooldownTicksRange>3000</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Mika_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter></warmupEffecter>
+ <soundCast></soundCast>
+ <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <defaultProjectile>BANC_Bullet_Mika_EXX</defaultProjectile>
+ <range>24.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>0.1</warmupTime><!-- 前摇时间（单位：秒） -->
+ <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+ <ticksBetweenBurstShots>7</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+<burstShotCount>18</burstShotCount> <!--连发射击的数量为 12 发。-->
+<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
+<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
+<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
+<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
+<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+  <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Mika_hedi_A</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+</comps>
+</AbilityDef>
+<AbilityDef>
+  <defName>BAWN_Mika_EX</defName>
+ <label>星之呼唤</label>
+ <description>对一名敌人造成自身子弹攻击力245%的伤害</description>
+ <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
+ <cooldownTicksRange>600</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Mika_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>BANW_Wp_SMG_At</soundCast>
+ <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <defaultProjectile>BANC_Bullet_Mika_EX</defaultProjectile>
+ <range>24.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>0.4</warmupTime><!-- 前摇时间（单位：秒） -->
+ <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+ <ticksBetweenBurstShots>5</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+<burstShotCount>3</burstShotCount> <!--连发射击的数量为 12 发。-->
+<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
+<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
+<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
+<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
+<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+</AbilityDef>
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Mika_hedi_A</defName>
+        <!-- 显示名称 -->
+        <label>凯里·埃利森</label>
+        <!-- 效果描述 -->
+        <description>凯里·埃利森</description>
+        <defaultLabelColor>(255, 153, 255)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>300</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Mika_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Mika_hedi_B</defName>
+        <!-- 显示名称 -->
+        <label>凯里·埃利森</label>
+        <!-- 效果描述 -->
+        <description>凯里·埃利森</description>
+        <defaultLabelColor>(255, 153, 255)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>True</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>300</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Mika_Ef_B</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Mika_EXX</defName>
+    <label>凯里·埃利森子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_Mika</damageDef><!--子弹类型-->
+      <damageAmountBase>108</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>20</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <speed>60</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>4</drawSize>
+      <texPath>Projectile/Bullet_Mika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Mika_EX</defName>
+    <label>星之呼唤子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_Mika_None</damageDef><!--子弹类型-->
+      <damageAmountBase>98</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize>
+      <texPath>Projectile/Bullet_Mika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+    <DamageDef>
+    <defName>BANC_Damage_Mika</defName><!--通用贯通-->
+    <label>贯通</label><!--描述-->
+    <workerClass>DamageWorker_Stab</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于贯通伤害</deathMessage><!--死亡讯息-->
+    <hediff>Stab</hediff><!--穿刺-->
+    <hediffSolid>Crack</hediffSolid><!--可能在物体上产生裂缝-->
+    <armorCategory>Sharp</armorCategory><!--利器。-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Mika_hedi_B</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+        <bluntInnerHitDamageFractionToConvert>0.1~0.2</bluntInnerHitDamageFractionToConvert><!--转换为内部伤害的原始伤害比例范围（10%-20%）。。-->
+    <bluntInnerHitDamageFractionToAdd>0.2~0.35</bluntInnerHitDamageFractionToAdd><!--添加到内部伤害的额外伤害比例（20%-35%）。-->
+   <hasForcefulImpact>true</hasForcefulImpact><!--击退。-->
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <overkillPctToDestroyPart>0~0.5</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal><!--设置强制将伤害转为内部伤害的概率为 60%-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+    <damageEffecter>BANW_Mika_Ef_C</damageEffecter>
+  </DamageDef>
+</Defs>

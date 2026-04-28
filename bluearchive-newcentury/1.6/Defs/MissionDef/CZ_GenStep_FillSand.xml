@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <GenStepDef>
+        <defName>CZ_GenStep_FillSand</defName>
+        <order>1000</order>
+        <genStep Class="BANWlLib.BaGenStep.GenStep_FillTerrain">
+            <terrainDef>Sand</terrainDef>
+        </genStep>
+    </GenStepDef>
+    <MapGeneratorDef>
+        <defName>CZ_SandPocketMap</defName>
+        <genSteps>
+            <li>CZ_GenStep_FillSand</li>
+        </genSteps>
+    </MapGeneratorDef>
+    <WorldObjectDef>
+        <defName>BANW_PocketMapParent</defName>
+        <label>pocket dimension</label>
+        <description>A small pocket dimension.</description>
+        <worldObjectClass>MapParent</worldObjectClass>
+        <expandingIcon>true</expandingIcon>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+        <mapGenerator>CZ_SandPocketMap</mapGenerator>
+        <canHaveFaction>true</canHaveFaction>
+        <useDynamicDrawer>false</useDynamicDrawer>
+    </WorldObjectDef>
+</Defs>

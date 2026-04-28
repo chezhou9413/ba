@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Shizuko</defName>
+		<label>-静子-</label>
+		<race>BANW_Shizuko_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHyakkiyako</li>
+					<li>BANW_BackstoryShizuko</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Shizuko</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Shizuko</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>13</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>9</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>9</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+			<BAWC_TraitDef_Shizuko_A>0</BAWC_TraitDef_Shizuko_A>
+		</forcedTraits>
+	</PawnKindDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Shizuko_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;诶，诶嘿嘿？&lt;/color&gt;</label>
+                <description>被动技能:自身命中率增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<ShootingAccuracyPawn>26</ShootingAccuracyPawn>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+    <defName>BAWN_Hina_EXX</defName>
+    <label>终幕：伊施波设</label>
+    <description>对扇形范围的敌方单位造成自身攻击力1200%的伤害</description>
+    <iconPath>Ability/Icon/Hina/Hina_EXX</iconPath>
+    <cooldownTicksRange>4200</cooldownTicksRange>
+     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <hostile>true</hostile>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Hina_Skill_EXX</warmupStartSound>
+    <warmupEffecter></warmupEffecter>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SustainedAreaAttack">
+      <TiggerHediff>BAWN_Hina_buff_A</TiggerHediff>
+      <!-- 扇形弧度 --> 
+      <fanArc>30</fanArc>
+      <verbClass>BANWlLib.BaVerb.Verb_SustainedAreaAttack</verbClass>
+      <label>终幕：伊施波设</label>
+      <!-- 绑定的JOB -->
+      <JobDef>BANW_Job_Skill_Hina_EXX</JobDef> <!-- 技能定义标识符 -->
+      <violent>true</violent> <!-- 是否为暴力行为 -->
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed> <!-- 是否强制正常时间速度 -->
+      <warmupTime>0.1</warmupTime> <!-- 预热时间（秒） -->
+      <range>46</range> <!-- 作用范围 -->
+      <requireLineOfSight>false</requireLineOfSight> <!-- 是否需要视线 -->
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations> <!-- 是否可以瞄准位置 -->
+        <canTargetPawns>true</canTargetPawns> <!-- 是否可以瞄准pawn（人物） -->
+        <canTargetBuildings>false</canTargetBuildings> <!-- 是否可以瞄准建筑物 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+    </comps>
+  </AbilityDef>
+<AbilityDef>
+<defName>BAWN_Hina_EX</defName>
+ <label>重装与毁灭</label>
+ <description>减少自身100%的装填时间并且攻击力增加40%（持续16秒）</description>
+ <iconPath>Ability/Icon/Hina/Hina_EX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Hina_Skill_EX</warmupStartSound>
+ <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+  <targetRequired>false</targetRequired> <!-- 是否需要指定目标，false表示不需要指定目标 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+  <Ability_Duration>16</Ability_Duration>
+ </statBases>
+ <verbProperties>
+ <soundCast>Aoba_Skill_EX</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>False</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_B</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+  <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Hina_buff</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+  </li>
+
+  </comps>
+    </AbilityDef>
+
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Hina_buff</defName>
+        <!-- 显示名称 -->
+        <label>重装与毁灭</label>
+        <!-- 效果描述 -->
+        <description>减少自身100%的装填时间并且攻击力增加40%（持续16秒）</description>
+        <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <RangedCooldownFactor>-1.00</RangedCooldownFactor>
+           <BANW_FinalDamageMultiplier>+0.40</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+      </li>
+         <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Hina_Ef_A</stateEffecter>
+      </li> 
+    </comps>
+
+    </HediffDef>
+
+     <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Hina_buff_A</defName>
+        <!-- 显示名称 -->
+        <label>终幕：伊施波设</label>
+        <!-- 效果描述 -->
+        <description>终幕：伊施波设</description>
+        <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>240</disappearsAfterTicks>
+      </li>
+         <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Hina_Ef_C</stateEffecter>
+      </li> 
+    </comps>
+    </HediffDef>
+
+
+           
+            
+<JobDef Class="BANWlLib.BaDef.BaJobDef_SustainedAttack">
+        <defName>BANW_Job_Skill_Hina_EXX</defName>
+        <driverClass>BANWlLib.BaJob.Job_SustainedAreaAttack</driverClass>
+        <damages>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>30</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>193</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <!-- 穿透 --> 
+                <penetration>0.35</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef>BANW_Hina_Ef_B</effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>30</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>96</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <!-- 穿透 --> 
+                <penetration>0.35</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>55</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>193</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <!-- 穿透 --> 
+                <penetration>0.35</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>55</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>96</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <!-- 穿透 --> 
+                <penetration>0.35</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>80</tick>
+                <damageAmount>193</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>80</tick>
+                <damageAmount>96</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>105</tick>
+                <damageAmount>193</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>105</tick>
+                <damageAmount>96</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>130</tick>
+                <damageAmount>193</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>130</tick>
+                <damageAmount>96</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>155</tick>
+                <damageAmount>193</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>155</tick>
+                <damageAmount>96</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>180</tick>
+                <damageAmount>193</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>180</tick>
+                <damageAmount>96</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>205</tick>
+                <damageAmount>193</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>205</tick>
+                <damageAmount>96</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>230</tick>
+                <damageAmount>193</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>230</tick>
+                <damageAmount>96</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <tick>255</tick>
+                <damageAmount>193</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+             <li>
+                <tick>255</tick>
+                <damageAmount>96</damageAmount>
+                <damageType>BANC_Damage_Hina_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+        </damages>
+    </JobDef>
+
+    <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Hina_EXX</defName><!--通用贯通-->
+    <damageEffecter></damageEffecter>
+    <buildingDamageFactor>0.1</buildingDamageFactor>
+  </DamageDef>
+</Defs>

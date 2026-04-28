@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   
+
+    <HediffDef>
+        <defName>BANC_BluetoothAmulet_Five</defName>
+        <label>迷彩不倒翁Buff</label>
+        <description>佩戴迷彩不倒翁时减少疼痛值。</description>
+
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+   <stages>
+      <li>
+      <painFactor>-0.20</painFactor>
+      </li>
+    </stages>
+        <comps>
+            <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+     <HediffDef>
+        <defName>BANC_BluetoothAmulet_Six</defName>
+        <label>诅咒娃娃Buff</label>
+        <description>佩戴诅咒娃娃时减少疼痛值。</description>
+
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+   <stages>
+      <li>
+      <painFactor>-0.25</painFactor>
+      </li>
+    </stages>
+        <comps>
+            <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+     <HediffDef>
+        <defName>BANC_BluetoothAmulet_Seven</defName>
+        <label>便携式除臭剂Buff</label>
+        <description>佩戴便携式除臭剂时减少疼痛值。</description>
+
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+   <stages>
+      <li>
+      <painFactor>-0.30</painFactor>
+      </li>
+    </stages>
+        <comps>
+            <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANC_BluetoothAmulet_Eight</defName>
+        <label>捕梦网Buff</label>
+        <description>佩戴捕梦网时减少疼痛值。</description>
+
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+   <stages>
+      <li>
+      <painFactor>-0.35</painFactor>
+      </li>
+    </stages>
+        <comps>
+            <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+     <HediffDef>
+        <defName>BANC_BluetoothAmulet_Nine</defName>
+        <label>鲨齿护符Buff</label>
+        <description>佩戴鲨齿护符时减少疼痛值。</description>
+
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+   <stages>
+      <li>
+      <painFactor>-0.40</painFactor>
+      </li>
+    </stages>
+        <comps>
+            <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+    <HediffDef>
+        <defName>BANC_BluetoothAmulet_Ten</defName>
+        <label>键帽玩具Buff</label>
+        <description>佩戴键帽玩具时减少疼痛值。</description>
+
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+   <stages>
+      <li>
+      <painFactor>-0.40</painFactor>
+      </li>
+    </stages>
+        <comps>
+            <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+</Defs>

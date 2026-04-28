@@ -1,0 +1,47 @@
+[
+    {
+        "CurrencyDefName": "BANW_Miyu_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Miyu",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "美游/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Saki_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Saki",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "咲/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Moe_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Moe",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "萌绘/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Miyako_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Miyako",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "宫子/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    }
+    
+] 

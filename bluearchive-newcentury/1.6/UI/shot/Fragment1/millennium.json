@@ -1,0 +1,190 @@
+[
+    {
+        "CurrencyDefName": "BANW_Akane_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Akane",
+        "ProductAmount": 5,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "茜/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Karlin_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Karlin",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "花凛/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Nero_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Nero",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "妮露/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Asuna_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Asuna",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "明日奈/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Kotori_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kotori",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "琴里/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Arisu_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Arisu",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "爱丽丝/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Momoi_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Momoi",
+        "ProductAmount": 5,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "桃井/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Midori_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Midori",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "绿/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Yuzu_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Yuzu",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "柚子/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Yuuka_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Yuuka",
+        "ProductAmount": 5,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "优香/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Koyuki_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Koyuki",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "小雪/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+     {
+        "CurrencyDefName": "BANW_Rio_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Rio",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "莉音/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+     {
+        "CurrencyDefName": "BANW_Chihiro_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Chihiro",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "千寻/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+     {
+        "CurrencyDefName": "BANW_Kotama_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kotama",
+        "ProductAmount": 5,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "小玉/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+     {
+        "CurrencyDefName": "BANW_Maki_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Maki",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "真纪/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Noa_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Noa",
+        "ProductAmount": 30,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "诺亚/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "BANW_Hare_race_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Hare",
+        "ProductAmount": 5,
+        "ProductImage": "Prop/Proplevel/Kami",
+        "ProductDefName": "Kami_Proplevel",
+        "ProductName": "晴/神明精髓",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    }
+    
+] 

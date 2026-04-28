@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_2_Piece</defName>
+    <label>Lv.2-防寒斜挎包设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_2_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+<ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_3_Piece</defName>
+    <label>Lv.3-佩洛洛背包设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_3_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_4_Piece</defName>
+    <label>Lv.4-藏蓝书包设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_4_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_5_Piece</defName>
+    <label>Lv.5-战术双肩包设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_5_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_6_Piece</defName>
+    <label>Lv.6-恶魔之翼挎包设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_6_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+<ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_7_Piece</defName>
+    <label>Lv.7-街头包设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_7_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_8_Piece</defName>
+    <label>Lv.8-蝴蝶图案单肩包设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_8_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_9_Piece</defName>
+    <label>Lv.9-防水挎包设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_9_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Bag_10_Piece</defName>
+    <label>Lv.10-金属匣设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Bag/Bag_10_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

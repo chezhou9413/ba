@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+     <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_2_Piece</defName>
+    <label>Lv.2-雪花吊坠设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_2_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_3_Piece</defName>
+    <label>Lv.3-尼古拉挂坠盒设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_3_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_4_Piece</defName>
+    <label>Lv.4-十字架颈链设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_4_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_5_Piece</defName>
+    <label>Lv.5-身份牌设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_5_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+     <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_6_Piece</defName>
+    <label>Lv.6-朋克项圈设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_6_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+    <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_7_Piece</defName>
+    <label>Lv.7-锁扣项链设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_7_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+    <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_8_Piece</defName>
+    <label>Lv.8-绿叶项链设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_8_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_9_Piece</defName>
+    <label>Lv.9-章鱼固定器设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_9_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Necklace_10_Piece</defName>
+    <label>Lv.10-存储器项链设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Necklace/Necklace_10_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

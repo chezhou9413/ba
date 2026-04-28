@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef>
+    <defName>BANC_Damage_Akane</defName><!--命名格式-->
+    <label>Bullet</label><!--描述-->
+    <workerClass>DamageWorker_Stab</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于有品位的贯通</deathMessage><!--死亡讯息-->
+    <hediff>Stab</hediff><!--穿刺-->
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <hediffSolid>Crack</hediffSolid><!--可能在物体上产生裂缝-->
+    <armorCategory>Sharp</armorCategory><!--利器。-->
+    <hasForcefulImpact>false</hasForcefulImpact>
+   <!-- <harmsHealth>false</harmsHealth>-->
+  <!--<makesBlood>false</makesBlood>-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Akane_HediffDef</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <overkillPctToDestroyPart>0.2~0.7</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal><!--设置强制将伤害转为内部伤害的概率为 60%-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+    <damageEffecter>BAWN_Akane_Ef_A</damageEffecter>
+
+  </DamageDef>
+  <DamageDef Name="BANC_Damage_guantong">
+    <defName>BANC_Damage_guantong</defName><!--通用贯通-->
+    <label>贯通</label><!--描述-->
+    <workerClass>DamageWorker_Stab</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于贯通伤害</deathMessage><!--死亡讯息-->
+    <hediff>Stab</hediff><!--穿刺-->
+    <hediffSolid>Crack</hediffSolid><!--可能在物体上产生裂缝-->
+    <armorCategory>Sharp</armorCategory><!--利器。-->
+    <bluntInnerHitDamageFractionToConvert>0.4~0.5</bluntInnerHitDamageFractionToConvert><!--转换为内部伤害的原始伤害比例范围（10%-20%）。。-->
+    <bluntInnerHitDamageFractionToAdd>0.4~0.5</bluntInnerHitDamageFractionToAdd><!--添加到内部伤害的额外伤害比例（20%-35%）。-->
+    <bluntInnerHitChance>0.6</bluntInnerHitChance><!--40%概率造成内部器官伤害-->
+    <hasForcefulImpact>true</hasForcefulImpact><!--击退。-->
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <overkillPctToDestroyPart>0.2~0.6</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal><!--设置强制将伤害转为内部伤害的概率为 60%-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+  </DamageDef>
+
+    <DamageDef Name="BANC_Damage_baofa">
+    <defName>BANC_Damage_baofa</defName><!--通用爆发-->
+    <label>爆发</label><!--描述-->
+    <workerClass>DamageWorker_AddInjury</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于爆发伤害</deathMessage><!--死亡讯息-->
+    <hediff>Gunshot</hediff><!--穿刺-->
+    <armorCategory>Sharp</armorCategory><!--利器。-->
+    <hasForcefulImpact>true</hasForcefulImpact><!--击退。-->
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal><!--设置强制将伤害转为内部伤害的概率为 60%-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+  </DamageDef>
+
+  <DamageDef Name="BANC_Damage_zhendong">
+    <defName>BANC_Damage_zhendong</defName><!--通用振动-->
+    <label>振动</label><!--描述-->
+    <workerClass>DamageWorker_Blunt</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于振动伤害</deathMessage><!--死亡讯息-->
+    <hediff>Crush</hediff><!--穿刺-->
+    <hediffSkin>Bruise</hediffSkin><!--沥青-->
+    <hediffSolid>Crack</hediffSolid><!--可能在物体上产生裂缝-->
+    <armorCategory>Blunt</armorCategory><!--利器。--> 
+    <hasForcefulImpact>true</hasForcefulImpact><!--击退。-->
+    <bluntInnerHitChance>0.2</bluntInnerHitChance><!--有 30% 的概率对内部器官造成伤害。-->
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <overkillPctToDestroyPart>0.2~0.7</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <bluntStunDuration>2.0</bluntStunDuration>
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+    <bluntStunChancePerDamagePctOfCorePartToHeadCurve>
+      <points>
+        <li>(0.01, 0.50)</li>
+        <li>(0.5, 1.0)</li>
+      </points>
+    </bluntStunChancePerDamagePctOfCorePartToHeadCurve>
+    <bluntStunChancePerDamagePctOfCorePartToBodyCurve>
+      <points>
+        <li>(0.01, 0.2)</li>
+        <li>(0.5, 1.0)</li>
+      </points>
+    </bluntStunChancePerDamagePctOfCorePartToBodyCurve>
+  </DamageDef>
+
+  <DamageDef Name="BANC_Damage_shenmi">
+    <defName>BANC_Damage_shenmi</defName><!--通用神秘-->
+    <label>神秘</label><!--描述-->
+    <workerClass>DamageWorker_AddInjury</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>false</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于神秘伤害</deathMessage><!--死亡讯息-->
+    <hediff>Shredded</hediff><!--穿刺-->
+    <armorCategory>Heat</armorCategory><!--热能。-->
+    <bluntInnerHitDamageFractionToConvert>0.1~0.2</bluntInnerHitDamageFractionToConvert><!--转换为内部伤害的原始伤害比例范围（10%-20%）。。-->
+    <bluntInnerHitDamageFractionToAdd>0.2~0.35</bluntInnerHitDamageFractionToAdd><!--添加到内部伤害的额外伤害比例（20%-35%）。-->
+    <bluntInnerHitChance>0.4</bluntInnerHitChance><!--40%概率造成内部器官伤害-->
+    <hasForcefulImpact>true</hasForcefulImpact><!--击退。-->
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <overkillPctToDestroyPart>0.2~0.8</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+  </DamageDef>
+
+  <DamageDef>
+    <defName>BANC_Damage_Yuzu</defName><!--通用贯通-->
+    <label>贯通</label><!--描述-->
+    <workerClass>DamageWorker_AddInjury</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于贯通伤害</deathMessage><!--死亡讯息-->
+    <hediff>Stab</hediff><!--穿刺-->
+    <hediffSolid>Crack</hediffSolid><!--可能在物体上产生裂缝-->
+    <armorCategory>Sharp</armorCategory><!--利器。-->
+        <bluntInnerHitDamageFractionToConvert>0.1~0.2</bluntInnerHitDamageFractionToConvert><!--转换为内部伤害的原始伤害比例范围（10%-20%）。。-->
+    <bluntInnerHitDamageFractionToAdd>0.2~0.35</bluntInnerHitDamageFractionToAdd><!--添加到内部伤害的额外伤害比例（20%-35%）。-->
+   <hasForcefulImpact>true</hasForcefulImpact><!--击退。-->
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <overkillPctToDestroyPart>0.4~0.8</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal><!--设置强制将伤害转为内部伤害的概率为 60%-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+   <DamageDef>
+    <defName>BANC_Damage_Misaki</defName><!--通用爆发-->
+    <label>爆发</label><!--描述-->
+    <workerClass>DamageWorker_AddInjury</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于爆发伤害</deathMessage><!--死亡讯息-->
+    <hediff>Gunshot</hediff><!--穿刺-->
+    <armorCategory>Sharp</armorCategory><!--利器。-->
+    <hasForcefulImpact>true</hasForcefulImpact><!--击退。-->
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <armorCategory>Sharp</armorCategory><!--护甲种类-->
+    <overkillPctToDestroyPart>0</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>BANC_Damage_Arisu</defName><!--通用神秘-->
+    <label>神秘</label><!--描述-->
+    <workerClass>DamageWorker_AddInjury</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>false</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0} 死于神秘伤害</deathMessage><!--死亡讯息-->
+    <hediff>Shredded</hediff><!--穿刺-->
+    <armorCategory>Heat</armorCategory><!--热能。-->
+    <bluntInnerHitDamageFractionToConvert>0.4~0.5</bluntInnerHitDamageFractionToConvert><!--转换为内部伤害的原始伤害比例范围（10%-20%）。。-->
+    <bluntInnerHitDamageFractionToAdd>0.4~0.5</bluntInnerHitDamageFractionToAdd><!--添加到内部伤害的额外伤害比例（20%-35%）。-->
+    <hasForcefulImpact>true</hasForcefulImpact><!--击退。-->
+    <bluntInnerHitChance>0.4</bluntInnerHitChance><!--40%概率造成内部器官伤害-->
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <overkillPctToDestroyPart>0~0.5</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
+    <buildingDamageFactor>4</buildingDamageFactor>
+    <damageEffecter>BANW_Effecter_ShakeAris</damageEffecter>
+  </DamageDef>
+
+  <DamageDef ParentName="BANC_Damage_guantong">
+    <defName>BANC_Damage_Akane_Common</defName><!--通用贯通-->
+   <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Akane_HediffDef_Common</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+  
+</Defs>

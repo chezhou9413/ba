@@ -1,0 +1,3722 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<BANWlLib.BaDef.BaMapDef>
+  <defName>BANC_taskMap_QSJ</defName>
+  <label>Generated Map</label>
+  <mapSizeX>80</mapSizeX>
+  <mapSizeZ>80</mapSizeZ>
+  <baseTerrainDef>Soil</baseTerrainDef>
+  <buildPlaces>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 78)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 77)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 76)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 75)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 74)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 73)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 72)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 71)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 70)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 69)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 68)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 67)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 66)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 65)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 64)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 63)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 62)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 61)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 60)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 59)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 58)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 57)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 56)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 55)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 54)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 78)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 77)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 76)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 75)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 74)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 73)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 72)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 71)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 70)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 69)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 68)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 67)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 66)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 65)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 64)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 63)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 62)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 61)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 60)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 59)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 58)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 54)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 57)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 56)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 55)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 53)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 52)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 51)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 50)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 53)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 52)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 51)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 50)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(34, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(33, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(32, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(31, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(30, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(29, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(28, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(27, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(26, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(25, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(24, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(23, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(22, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(21, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(20, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(19, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(18, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(17, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(16, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(15, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(14, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(13, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(12, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(11, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(10, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(9, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(8, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(7, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(6, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(5, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(4, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(3, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(2, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(1, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(46, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(47, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(48, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(49, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(50, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(51, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(52, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(53, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(54, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(55, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(56, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(57, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(58, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(59, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(60, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(61, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(62, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(63, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(64, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(65, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(66, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(67, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(68, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(69, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(70, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(71, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(72, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(73, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(74, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(75, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(76, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(77, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(78, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 49)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(1, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(2, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(3, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(4, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(5, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(6, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(7, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(8, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(9, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(10, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(11, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(12, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(13, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(14, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(15, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(16, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(17, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(18, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(19, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(20, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(21, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(22, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(23, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(24, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(25, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(26, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(27, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(28, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(29, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(30, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(31, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(32, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(33, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(34, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(46, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(47, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(48, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(49, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(50, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(51, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(52, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(53, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(54, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(55, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(56, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(57, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(58, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(59, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(60, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(61, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(62, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(63, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(64, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(65, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(66, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(67, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(68, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(69, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(70, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(71, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(72, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(73, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(74, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(75, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(76, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(77, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(78, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 33)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 32)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 31)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 30)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 29)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 28)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 27)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 26)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 25)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 24)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 23)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 22)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 21)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 20)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 19)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 18)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 17)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 16)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 15)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 14)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 13)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 12)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 11)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 10)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 9)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 8)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 7)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 6)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 5)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 4)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 3)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 2)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 1)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(35, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 32)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 31)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 30)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 29)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 28)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 27)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 26)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 25)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 24)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 23)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 22)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 21)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 20)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 19)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 18)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 17)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 16)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 15)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 14)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 13)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 12)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 11)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 10)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 9)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 8)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 7)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 6)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 5)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 4)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 3)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 2)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 1)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(45, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(1, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(2, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(3, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(4, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(5, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(6, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(7, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(8, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(9, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(10, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(11, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(12, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(13, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(14, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(15, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(16, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(17, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(18, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(19, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(20, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(21, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(22, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(23, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(24, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(25, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(26, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(27, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(28, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(29, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(30, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(31, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(32, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(33, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(34, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 78)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 77)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 76)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 75)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 74)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 73)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 72)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 71)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 70)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 69)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 68)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 67)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 66)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 65)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 64)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 63)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 62)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 61)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 60)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 59)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 58)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 57)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 56)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 55)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 54)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 53)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 52)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 51)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 50)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 32)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 31)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 30)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 29)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 28)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 27)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 26)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 25)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 24)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 23)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 22)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 21)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 20)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 19)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 18)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 17)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 16)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 15)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 14)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 13)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 12)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 11)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 10)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 9)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 8)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 7)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 6)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 5)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 4)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 3)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 2)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 1)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(0, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(34, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(33, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(32, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(31, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(30, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(29, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(28, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(27, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(26, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(25, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(24, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(23, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(22, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(21, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(20, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(19, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(18, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(17, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(16, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(15, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(14, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(13, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(12, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(11, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(10, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(9, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(8, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(7, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(6, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(5, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(4, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(3, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(2, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(1, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(46, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(47, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(48, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(49, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(50, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(51, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(52, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(53, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(54, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(55, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(56, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(57, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(58, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(59, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(60, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(61, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(62, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(63, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(64, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(65, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(66, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(67, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(68, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(69, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(70, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(71, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(72, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(73, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(74, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(77, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(76, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(75, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(78, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 0)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 32)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 31)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 30)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 29)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 28)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 27)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 26)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 25)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 24)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 23)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 22)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 21)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 20)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 19)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 18)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 17)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 16)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 15)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 14)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 13)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 12)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 11)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 10)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 9)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 8)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 7)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 6)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 5)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 4)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 3)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 2)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 1)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(46, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(47, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(48, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(49, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(50, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(51, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(52, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(53, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(54, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(55, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(56, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(57, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(62, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(63, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(61, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(60, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(59, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(58, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(64, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(65, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(66, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(68, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(69, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(70, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(71, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(72, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(73, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(74, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(75, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(76, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(77, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(78, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(67, 0, 79)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 78)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 77)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 76)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 75)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 74)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 73)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 72)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 71)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 70)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 69)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 68)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 67)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 66)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 65)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 64)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 63)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 62)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 61)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 60)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 59)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 58)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 57)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 56)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 55)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 54)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 53)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 52)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 51)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 50)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 48)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+    <li>
+      <buildingDef>Wall</buildingDef>
+      <stuffDef>Steel</stuffDef>
+      <position>(79, 0, 47)</position>
+      <rot>North</rot>
+      <factionDef>Mechanoid</factionDef>
+    </li>
+  </buildPlaces>
+</BANWlLib.BaDef.BaMapDef></Defs>

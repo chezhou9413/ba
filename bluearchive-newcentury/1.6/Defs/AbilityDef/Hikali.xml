@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Hikali_EXX</defName>
+ <label>剪票时间～</label>
+ <description>使除自身外的一名我方单位护甲穿透提升92%（持续32秒）</description>
+ <iconPath>Ability/Icon/Hikali/Hikali_EXX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Hikali_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>32</Ability_Duration>
+ </statBases>
+ <verbProperties>
+  <warmupEffecter>BAWN_Hikali_Ef_B</warmupEffecter>
+ <soundCast>Hikali_ExSkill</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>19.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  <neverTargetHostileFaction>true</neverTargetHostileFaction><!-- 只能选友军 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Hikali_ATK</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>false</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+<li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_B</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+</comps>
+</AbilityDef>
+<AbilityDef>
+<defName>BAWN_Hikali_EX</defName>
+ <label>来调车吧～</label>
+ <description>每隔30秒获得一次“发车信号”充能，最多可以储存3次，消耗一层“发车信号”可以赋予一个单位攻击力强化25%，持续20秒，同一效果不可以叠加。</description>
+ <iconPath>Ability/Icon/Hikali/Hikali_EX</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Hikali_Skill_EXX</warmupStartSound>
+ <charges>3</charges> <!-- 设置该能力有 5 次充能次数。-->
+ <cooldownPerCharge>true</cooldownPerCharge> <!-- 每次使用后单独计算冷却时间。。-->
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>20</Ability_Duration>
+ </statBases>
+ <verbProperties>
+  <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>BANW_Skill_A</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>25.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  <neverTargetHostileFaction>true</neverTargetHostileFaction><!-- 只能选友军 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Hikali_ATK_A</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>false</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+ <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_B</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+</comps>
+</AbilityDef>
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Hikali_ATK</defName>
+        <!-- 显示名称 -->
+        <label>剪票时间～</label>
+        <!-- 效果描述 -->
+        <description>提升92%的护甲穿透。持续32秒</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <BANW_RangedWeapon_Penetration>+0.92</BANW_RangedWeapon_Penetration>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BAWN_Hikali_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Hikali_ATK_A</defName>
+        <!-- 显示名称 -->
+        <label>来调车吧～</label>
+        <!-- 效果描述 -->
+        <description>提升25%的攻击力。持续20秒</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <BANW_FinalDamageMultiplier>+0.25</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+
+    </comps>
+    </HediffDef>
+    
+  
+     <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Hikali_EXX_A</defName>
+    <thingClass>MoteAttached</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hikali/EX_A</texPath><!-- 纹理图片路径 -->
+      <shaderType></shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1.2</drawSize>
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.3</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>32</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+    <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Hikali_EXX_B</defName>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hikali/EX_B</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>0.5</drawSize>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.3</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.2</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>4</growthRate><!-- 放大 -->
+    </mote>
+  </ThingDef>
+      <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Hikali_EXX_C</defName>
+    <thingClass>MoteAttached</thingClass>
+    <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hikali/EX_C</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize><!-- 绘制大小比例 -->
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.1</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.3</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+      <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Hikali_EXX_D</defName>
+    <thingClass>MoteAttached</thingClass>
+    <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hikali/EX_D</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>0.5</drawSize><!-- 绘制大小比例 -->
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.1</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.2</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>8</growthRate><!-- 放大 -->
+    </mote>
+  </ThingDef>
+    <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Hikali_EXX_E</defName>
+    <thingClass>MoteAttached</thingClass>
+    <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hikali/EX_E</texPath><!-- 纹理图片路径 -->
+      <shaderType></shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>0.5</drawSize><!-- 绘制大小比例 -->
+      <shaderParameters>
+      </shaderParameters>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0.1</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.2</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <growthRate>8</growthRate><!-- 放大 -->
+    </mote>
+  </ThingDef>
+   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Hikali_EXX_F</defName>
+    <thingClass>MoteAttached</thingClass>
+    <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hikali/EX_F</texPath><!-- 纹理图片路径 -->
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize><!-- 绘制大小比例 -->
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.5</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <defName>BAWN_Hikali_EXX_G</defName>
+    <thingClass>MoteAttached</thingClass>
+    <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
+    <graphicData><!-- 图形数据配置 -->
+      <texPath>Effect/Hikali/EX_G</texPath><!-- 纹理图片路径 -->
+      <shaderType></shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize><!-- 绘制大小比例 -->
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
+    <mote>
+      <fadeInTime>0</fadeInTime><!-- 淡入时间（秒） -->
+      <solidTime>0.5</solidTime><!-- 固定显示时间（秒） -->
+      <fadeOutTime>0</fadeOutTime> <!-- 淡出时间（秒） -->
+      <collide>false</collide><!-- 是否与其它物体碰撞 -->
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>BAWN_Hikali_Ef_A</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Hikali_EXX_B</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <initialDelayTicks>5500</initialDelayTicks><!-- 60tick1秒 -->
+        <rotation>45</rotation><!-- 初始旋转角度 -->
+        <rotationRate>90</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>2</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Hikali_EXX_C</moteDef>
+        <scale>1.5</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <positionRadius>0.2</positionRadius>
+         <ticksBetweenMotes>80</ticksBetweenMotes>
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+       <rotation>-150~150</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Hikali_EXX_A</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Hikali_EXX_D</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Hikali_EXX_E</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 1.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+       <rotation>0</rotation><!-- 初始旋转角度（无偏转） -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+   </EffecterDef>
+   <EffecterDef>
+    <defName>BAWN_Hikali_Ef_B</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Hikali_EXX_G</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <rotation>-150~150</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Hikali_EXX_F</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+     </children>
+ </EffecterDef>
+</Defs>

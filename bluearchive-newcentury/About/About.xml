@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>BlueArchive-NewWorld</name>
+  <author>NHUX</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <packageId>Archive.NewWorld</packageId>
+  <modDependencies>
+    <li>
+      <packageId>ludeon.rimworld.royalty</packageId>
+      <displayName>Royalty [Official DLC]</displayName>
+    </li>
+    <li>
+      <packageId>erdelf.HumanoidAlienRaces</packageId>
+      <displayName>Humanoid Alien Races 2.0</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=839005762</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>oskarpotocki.vanillafactionsexpanded.core</packageId>
+      <displayName>Vanilla Expanded Framework</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
+			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>erdelf.HumanoidAlienRaces</li>
+    <li>oskarpotocki.vanillafactionsexpanded.core</li>
+  </loadAfter>
+  <incompatibleWith>
+  <li>mjcg.showmeyourshield</li> 
+</incompatibleWith>
+  <description>公测版本1.0，这是第一次测试</description>
+</ModMetaData>

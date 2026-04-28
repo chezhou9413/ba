@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Atsuko_1_fleck</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>2</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<growthRate>80</growthRate>
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Atsuko/A/Atsuko_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>0.2</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>60</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Atsuko_2_fleck</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>30</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<shaderType>MoteGlow</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Atsuko/A/Atsuko_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>2</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Atsuko_3_fleck</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>2</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.1</fadeOutTime><!-- 特效淡出时间（秒） -->
+<growthRate>10</growthRate>
+</mote>
+<graphicData>
+<texPath>Effect/Atsuko/A/Atsuko_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>0.2</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Atsuko_4_fleck</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>30</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<texPath>Effect/Atsuko/A/Atsuko_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>2</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Atsuko_5_fleck</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>30</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Atsuko/A/Atsuko_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>2</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>60</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Atsuko_6_fleck</defName>
+<thingClass>MoteAttached</thingClass>
+<drawOffscreen>true</drawOffscreen>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.4</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Atsuko/A/Atsuko_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>3</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>12</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<EffecterDef>
+<defName>BANW_Atsuko_Ef_A</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Huifu_Skill_Sound</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_Natsu_4_fleck</fleckDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0.3)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Atsuko_1_fleck</moteDef>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,0.15)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>50</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Atsuko_2_fleck</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>10</rotation><!-- 初始旋转角度 -->
+        <rotationRate>20</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(-0.6, 0,0.35)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Atsuko_3_fleck</moteDef>
+        <ticksBetweenMotes>240</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(-0.6,1,0.35)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>30</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Atsuko_4_fleck</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>10</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(-0.6, 0.5,0.35)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Atsuko_5_fleck</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0,0,-0.55)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Atsuko_6_fleck</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(-0.6, 0.5,0.35)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+</children>
+</EffecterDef>
+</Defs>

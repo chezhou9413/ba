@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+<defName>BAWN_Suzumi_EX</defName>
+ <label>巡逻者的潜能</label>
+ <description>对1名敌人造成自身攻击力443%的伤害</description>
+ <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
+ <cooldownTicksRange>1500</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Suzumi_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>BANW_Wp_HG_At</soundCast>
+ <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <defaultProjectile>BANC_Bullet_Suzumi_EX</defaultProjectile>
+ <range>39.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>0.6</warmupTime><!-- 前摇时间（单位：秒） -->
+ <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+ <ticksBetweenBurstShots>5</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+<burstShotCount>10</burstShotCount> <!--连发射击的数量为 12 发。-->
+<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
+<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
+<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
+<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
+<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+</comps>
+</AbilityDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Suzumi_EX</defName>
+    <label>安全子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
+      <damageAmountBase>37</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>80</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize>
+      <texPath>Projectile/Bullet_Suzumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+<AbilityDef>
+<defName>BAWN_Suzumi_EXX</defName>
+ <label>自制闪光弹</label>
+ <description>对圆形范围内的敌方单位造成自身443%的伤害并眩晕4秒</description>
+ <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Suzumi_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+<verbProperties Class="BANWlLib.BaVerb.VerbProperties_SphereArea">
+<warmupEffecter></warmupEffecter>
+ <soundCast>ThrowGrenade</soundCast>
+ <verbClass>BANWlLib.BaVerb.Verb_SphereArea</verbClass> <!-- 改为投射物动词类 -->
+ <JobDef>BANW_Job_TEST_Suzumi</JobDef>      <!-- 技能定义标识符 -->
+ <range>39.9</range><!-- 投掷范围 -->
+ <Sphereradius>3.9</Sphereradius>
+ <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BAWN_Suzumi_EXX_Boom</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+
+<ThingDef Name="BAWN_Suzumi_EXX_Boom" ParentName="BaseGrenadeProjectile" Abstract="True">
+    <graphicData>
+      <texPath>Things/Projectile/Grenade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>387</damageAmountBase><!--子弹伤害-->
+      <explosionRadius>3.9</explosionRadius >
+      <armorPenetrationBase>1</armorPenetrationBase><!--穿透-->
+      <damageDef>BANC_Damage_Suzumi_EXX</damageDef>
+      <speed>50</speed><!--子弹速度-->
+      <explosionDelay>0</explosionDelay>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BAWN_Suzumi_EXX_Boom">
+    <defName>BAWN_Suzumi_EXX_Boom</defName>
+  </ThingDef>
+ <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Suzumi_EXX</defName><!--通用贯通-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.9, 0.9, 0.9)</explosionColorCenter>
+    <explosionColorEdge>(0.8, 0.8, 0.8)</explosionColorEdge>
+    <soundExplosion>Suzumi_Flash</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+  <JobDef Class="BANWlLib.BaDef.BaJobDef_SphereAreaAttack">
+    <defName>BANW_Job_TEST_Suzumi</defName>
+    <driverClass>BANWlLib.BaJob.Job_SphereAreaAttack</driverClass>
+    <!-- 球形范围攻击的伤害配置 -->
+    <damages>
+      <!-- 第一个伤害波 - 立即执行 -->
+      <li>
+        <!-- 伤害波的执行延迟TICK -->
+        <tick>0</tick>
+        <!-- 触发此伤害波时播放的效果 -->
+        <effecterDef></effecterDef>
+        <!-- 伤害波中包含的具体伤害 -->
+        <damages>
+          <li>
+            <!-- 伤害延迟 -->
+            <Delaytick>80</Delaytick>
+            <!-- 伤害量 -->
+            <damageAmount>5</damageAmount>
+            <!-- 伤害类型 -->
+            <damageType>Stun</damageType>
+            <!-- 穿透 -->
+            <penetration>1.0</penetration>
+            <!-- 是否攻击建筑 -->
+            <isAttackBuilding>false</isAttackBuilding>
+            <!-- 触发此伤害时播放的效果 -->
+            <effecterDef></effecterDef>
+          </li>
+        </damages>
+      </li>
+    </damages>
+  </JobDef>
+</Defs>

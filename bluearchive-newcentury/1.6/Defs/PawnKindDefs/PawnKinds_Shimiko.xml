@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Shimiko</defName>
+		<label>-志美子-</label>
+		<race>BANW_Shimiko_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryShimiko</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Shimiko</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Shimiko</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>5~9</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>5~9</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>8~9</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>14~16</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+		</forcedTraits>
+	</PawnKindDef>
+
+	
+</Defs>

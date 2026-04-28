@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Niya</defName>
+		<label>-尼娅-</label>
+		<race>BANW_Niya_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHyakkiyako</li>
+					<li>BANW_BackstoryNiya</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Niya</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Niya</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>20</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Niya_A>0</BAWC_TraitDef_Niya_A>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Niya_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;道满晴明&lt;/color&gt;</label>
+                <description>被动技能：自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+                          <BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	
+</Defs>

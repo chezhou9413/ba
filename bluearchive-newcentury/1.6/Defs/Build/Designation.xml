@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<DesignationCategoryDef>
+    <defName>BANW_BlueA</defName>
+    <label>碧蓝档案</label>
+    <order>4</order>
+    <specialDesignatorClasses>
+    <li>Designator_Cancel</li>
+    <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+</Defs>

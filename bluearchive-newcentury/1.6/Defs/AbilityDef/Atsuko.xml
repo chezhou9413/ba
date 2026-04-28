@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+     <!-- 能力的唯一标识符 -->
+    <defName>BAWN_Atsuko_EXX</defName>
+    <!-- 能力显示名称 -->
+    <label>这也是我的力量……?</label>
+    <!-- 能力描述，说明效果和持续时间 -->
+    <description>对以自身为中心的圆形范围内的我方单位每5秒回复66点生命值(持续30秒)</description>
+    <!-- 是否需要特定目标，False表示为范围效果 -->
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <targetRequired>False</targetRequired>
+    <!-- 是否可以使用AOE范围来获取目标 -->
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <!-- 能力图标路径 -->
+    <iconPath>Ability/Icon/Yuuka/Yuuka_A</iconPath>
+    <!-- 施法时是否定身施法者 -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <!-- 是否显示心灵异能特效 -->
+    <showPsycastEffects>False</showPsycastEffects>
+    <!-- 未征召状态下是否显示能力按钮 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <!-- 未征召状态下是否禁用能力按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <!-- 快捷键设置 -->
+    <hotKey>Misc12</hotKey>
+    <!-- 在UI中的排列顺序 -->
+    <uiOrder>5</uiOrder>
+    <!-- 施法开始时播放的声音 -->
+    <warmupStartSound>Atsuko_Skill_EXX</warmupStartSound>
+    <!-- 施法者是否必须具备暴力行为能力 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <!-- 数值属性 -->
+    <statBases>
+      <!-- 能力持续时间 -->
+      <Ability_Duration>30</Ability_Duration>
+      <!-- 能力效果半径 -->
+      <Ability_EffectRadius>12.9</Ability_EffectRadius>
+    </statBases>
+    <!-- 动作属性 -->
+    <verbProperties>
+      <warmupEffecter>BANW_Atsuko_Ef_B</warmupEffecter>
+      <soundCast></soundCast>
+      <!-- 动作类 -->
+      <verbClass>Verb_CastAbility</verbClass>
+      <!-- 前摇时间（秒） -->
+      <warmupTime>0.8</warmupTime>
+      <!-- 作用范围 -->
+      <range>12.9</range>
+      <!-- 是否绘制瞄准饼图 -->
+      <drawAimPie>False</drawAimPie>
+      <!-- 是否需要视线 -->
+      <requireLineOfSight>False</requireLineOfSight>
+      <!-- 目标参数设置 -->
+      <targetParams>
+        <!-- 是否可以以自己为目标 -->
+        <canTargetSelf>true</canTargetSelf>
+        <!-- 是否可以以pawn为目标 -->
+        <canTargetPawns>false</canTargetPawns>
+        <!-- 是否可以以建筑为目标 -->
+        <canTargetBuildings>false</canTargetBuildings>
+        <!-- 是否可以以动物为目标 -->
+        <canTargetAnimals>false</canTargetAnimals>
+        <!-- 是否可以以人类为目标 -->
+        <canTargetHumans>false</canTargetHumans>
+        <!-- 是否可以以机械体为目标 -->
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    
+    <!-- 能力组件 -->
+    <comps>
+      <!-- 给予健康状态效果的组件 -->
+      <li Class="CompProperties_AbilityGiveHediff">
+        <!-- 组件类 -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <!-- 应用的健康状态效果定义 -->
+        <hediffDef>BAWN_Atsuko_EXX_buff_A</hediffDef>
+        <!-- 是否只应用给自己 -->
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <!-- 是否替换已存在的同种效果 -->
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+<HediffDef>
+    <!-- 健康状态唯一标识符 -->
+    <defName>BAWN_Atsuko_EXX_buff_A</defName>
+    <!-- 显示标签 -->
+    <label>这也是我的力量……?</label>
+    <!-- 描述信息 -->
+    <description>每5秒回复132点生命值(持续30秒)</description>
+    <!-- 健康状态类 -->
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <!-- 组件列表 -->
+    <comps>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>66</healAmount>
+        <healIntervalTicks>300</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Atsuko_Ef_A</stateEffecter>
+      </li>
+      <!-- 自动消失组件 -->
+      <li Class="HediffCompProperties_Disappears">
+        <!-- 显示剩余时间 -->
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <!-- 死亡时消失组件 -->
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <!-- 范围内给予健康状态组件 -->
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <!-- 影响范围 -->
+        <range>12.9</range>
+        <!-- 显示的微粒效果 -->
+        <mote></mote>
+        <!-- 未征召时是否隐藏微粒 -->
+        <hideMoteWhenNotDrafted>false</hideMoteWhenNotDrafted>
+        <!-- 目标选择参数 -->
+        <targetingParameters>
+          <!-- 不影响建筑 -->
+          <canTargetBuildings>false</canTargetBuildings>
+          <!-- 不影响动物 -->
+          <canTargetAnimals>false</canTargetAnimals>
+          <!-- 不影响机械体 -->
+          <canTargetMechs>false</canTargetMechs>
+          <!-- 只影响殖民者 -->
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <!-- 应用的健康状态 -->
+        <hediff>BAWN_Atsuko_EXX_buff_B</hediff>
+      </li>
+    </comps>
+    <!-- 是否为负面效果 -->
+    <isBad>false</isBad>
+  </HediffDef>
+  <HediffDef>
+    <!-- 范围内目标应用的健康状态标识符 -->
+    <defName>BAWN_Atsuko_EXX_buff_B</defName>
+    <!-- 显示标签 -->
+    <label>这也是我的力量……?</label>
+    <!-- 描述信息 -->
+    <description>每5秒回复132点生命值(持续30秒)</description>
+    <!-- 调试标签 -->
+    <debugLabelExtra>other</debugLabelExtra>
+    <!-- 健康状态类 -->
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+    <!-- 组件列表 -->
+    <comps>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>66</healAmount>
+        <healIntervalTicks>300</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+      <!-- 自动消失组件 -->
+       <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <!-- 不显示剩余时间 -->
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <!-- 死亡时消失组件 -->
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <!-- 是否为负面效果 -->
+    <isBad>false</isBad>
+    <!-- 阶段效果定义 -->
+    <stages>
+      <li>
+        <!-- 属性加成 -->
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

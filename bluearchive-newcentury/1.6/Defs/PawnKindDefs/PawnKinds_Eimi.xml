@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Eimi</defName>
+		<label>-艾米-</label>
+		<race>BANW_Eimi_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+		<li>
+			<def>BANW_Eimi_HpBuff</def>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryEimi</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Eimi</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Eimi</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>18~20</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>9</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>12</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Eimi>0</BAWC_TraitDef_Eimi>
+			<BAWC_TraitDef_Eimi_A>0</BAWC_TraitDef_Eimi_A>
+			<BAWC_TraitDef_Eimi_B>0</BAWC_TraitDef_Eimi_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Eimi</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF69B4&gt;移动暖气片&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}的体温很高，是个非常怕热的少女，因此选择了非常适合散热的穿衣风格，和部长“日鞠”的关系非常好，自身实力也不凡</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+				<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+		        <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+	            <ArmorRating_Heat>0.5</ArmorRating_Heat>
+				<ComfyTemperatureMin>-999</ComfyTemperatureMin>
+			    <ComfyTemperatureMax>-28</ComfyTemperatureMax>
+				<MoveSpeed>3.00</MoveSpeed> <!-- 移动速度 -->
+				<CarryingCapacity>100</CarryingCapacity><!-- 承载力 -->
+				<IncomingDamageFactor>-0.1</IncomingDamageFactor> <!-- 承受伤害倍率 -->
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Eimi_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;专家的休憩&lt;/color&gt;</label>
+                <description>被动技能:自身获得每10秒回复&lt;color=#DC143C&gt;52&lt;/color&gt;点生命值</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Eimi_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;强韧的精神力&lt;/color&gt;</label>
+                <description>子技能:自身抑止时间乘数减少&lt;color=#DC143C&gt;38%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+					<StaggerDurationFactor>0.38</StaggerDurationFactor> <!-- 击退持续时间系数 -->
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<HediffDef>
+    <defName>BANW_Eimi_HpBuff</defName>
+    <label>专家的休憩</label>
+    <description>被动技能:自身获得每10秒回复&lt;color=#DC143C&gt;52&lt;/color&gt;点生命值</description>
+    <defaultLabelColor>(0, 94, 255)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+		 <stages>
+          <li>     
+           <statOffsets>
+            </statOffsets>
+           </li>
+          </stages>
+    <comps>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>52</healAmount>
+        <healIntervalTicks>600</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

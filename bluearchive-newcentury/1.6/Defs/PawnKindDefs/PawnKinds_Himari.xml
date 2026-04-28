@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Himari</defName>
+		<label>-日鞠-</label>
+		<race>BANW_Himari_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+		<li MayRequire="Ludeon.RimWorld.Biotech">
+			<def>MechlinkImplant</def>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryHimari</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>16</minGenerationAge>
+		<maxGenerationAge>17</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Himari</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Himari</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>14</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>20</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Himari>0</BAWC_TraitDef_Himari>
+			<BAWC_TraitDef_Himari_A>0</BAWC_TraitDef_Himari_A>
+			
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Himari</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFFFFF&gt;超天才清纯系黑客病弱美少女&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}自称“超天才清纯系黑客病弱美少女”，自称全知全能，虽然是自夸但确实是事实，自身身体比较弱但是坐轮椅也是人设设定</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                <ShootingAccuracyPawn>-10.0</ShootingAccuracyPawn>
+				<MechBandwidth MayRequire="ludeon.rimworld.Biotech">200</MechBandwidth>
+				<ResearchSpeed>1.0</ResearchSpeed>
+				<GlobalLearningFactor>1.0</GlobalLearningFactor>
+				<ComfyTemperatureMin>28</ComfyTemperatureMin>
+				<MechFormingSpeed>1.0</MechFormingSpeed>
+				<MoveSpeed>10.00</MoveSpeed> <!-- 移动速度 -->
+				<EntityStudyRate>1</EntityStudyRate>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Himari_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;清纯的高岭之花&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+</Defs>

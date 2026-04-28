@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<SoundDef>
+	<defName>Reisa_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Reisa/SkillEX/Reisa_ExxSkill_1</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Reisa/SkillEX/Reisa_ExxSkill_2</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Reisa/SkillEX/Reisa_ExxSkill_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+
+<SoundDef>
+    <defName>Reisa_Skill_EX_A</defName><!--一技能语音-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Reisa/Reisa_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>Reisa_Skill_EX_B</defName><!--一技能语音-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Reisa/Reisa_B</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>Reisa_Skill_EX_C</defName><!--一技能语音-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Reisa/Reisa_C</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+<SoundDef>
+    <defName>Reisa_Skill_EX</defName><!--一技能语音-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Reisa/Reisa_ExSkill</clipPath>
+          </li>
+        </grains>
+        <volumeRange>60~60</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <SoundDef>
+	<defName>Reisa_levelup_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Reisa/Reisa_Up_1</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Reisa_levelup_B</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Reisa/Reisa_Up_2</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Reisa_levelup_C</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Reisa/Reisa_Up_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Reisa_levelup_D</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/Reisa/Reisa_Up_4</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+
+</Defs>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 
+    为蔚蓝档案基沃托斯学生添加完整功能的补丁
+    包含：自定义属性组件、星星UI组件、光环减伤保护组件
+    基于 BANWlLib 命名空间的组件系统
+  -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[@Name="BANW_StudentThingBase"]/comps</xpath>
+    
+    <!-- 如果基类已经有comps节点，直接添加所有组件 -->
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/AlienRace.ThingDef_AlienRace[@Name="BANW_StudentThingBase"]/comps</xpath>
+      <value>
+        <!-- 经验值系统组件 - 修正为原项目的属性配置 -->
+        <li Class="BANWlLib.HumanIntPropertyCompProperties">
+          <defaultValue>0</defaultValue>
+          <minValue>0</minValue>
+          <maxValue>330</maxValue>
+        </li>
+        
+        <!-- 进度条UI组件 - 修正为原项目的属性配置 -->
+        <li Class="BANWlLib.CompProperties_PawnProgressBarUI">
+          <!-- 星星的间隔比例 -->
+          <starInterval>0.5</starInterval>
+          
+          <!-- 是否显示进度条（设为false只显示星星） -->
+          <showProgressBar>false</showProgressBar>
+          
+          <!-- 
+            星星显示的进度比例列表（0.0-1.0）
+            对应减伤系统的5个等级：
+            - 0点 → 1级（星星1）
+            - 20点 → 2级（星星2）
+            - 40点 → 3级（星星3）
+            - 60点 → 4级（星星4）
+            - 80点 → 5级（星星5）
+          -->
+          <starProgressRatios>
+            <li>0.0</li>   <!-- 0点：1级 -->
+            <li>0.09</li>   <!-- 20点：2级 -->
+            <li>0.33</li>   <!-- 40点：3级 -->
+            <li>0.63</li>   <!-- 60点：4级 -->
+            <li>1.0</li>   <!-- 80点：5级 -->
+          </starProgressRatios>
+          
+          <!-- 星星的大小（像素） -->
+          <starSize>28</starSize>
+          
+          <!-- 允许显示UI的种族列表 - 添加蔚蓝档案学生种族 -->
+          <allowedRaces>
+            <li>BANW_KivotosStudent</li>
+            <li>BANW_Hikali_race</li>
+            <li>BANW_Nozomi_race</li>
+            <li>BANW_Aoba_race</li>
+            <li>BANW_Asuna_race</li>
+            <li>BANW_Hoshiro_race</li>
+            <li>BANW_Miyako_race</li>
+            <li>BANW_Miyu_race</li>
+            <li>BANW_Seia_race</li>
+            <li>BANW_Shiroko_race</li>
+            <li>BANW_Turugi_race</li>
+            <li>BANW_Saki_race</li>
+            <li>BANW_Akane_race</li>
+            <li>BANW_Hasumi_race</li>
+            <li>BANW_Mika_race</li>
+            <li>BANW_Moe_race</li>
+            <li>BANW_Mashiro_race</li>
+            <li>BANW_Nero_race</li>
+            <li>BANW_Ichika_race</li>
+            <li>BANW_Karlin_race</li>
+            <li>BANW_Cherino_race</li>
+            <li>BANW_Makoto_race</li>
+            <li>BANW_Hina_race</li>
+            <li>BANW_Natsu_race</li>
+            <li>BANW_Reisa_race</li>
+            <li>BANW_Ibuki_race</li>
+            <li>BANW_Yuuka_race</li>
+            <li>BANW_Iori_race</li>
+            <li>BANW_Suzumi_race</li>
+            <li>BANW_Ui_race</li>
+            <li>BANW_Ako_race</li>
+            <li>BANW_Shimiko_race</li>
+            <li>BANW_Airy_race</li>
+            <li>BANW_Momoi_race</li>
+            <li>BANW_Chinatsu_race</li>
+            <li>BANW_Midori_race</li>
+            <li>BANW_Koharu_race</li>
+            <li>BANW_Yuzu_race</li>
+            <li>BANW_Atsuko_race</li>
+            <li>BANW_Satsuki_race</li>
+            <li>BANW_Arisu_race</li>
+            <li>BANW_Kayako_race</li>
+            <li>BANW_Koyuki_race</li>
+            <li>BANW_Saya_race</li>
+            <li>BANW_Kazusa_race</li>
+            <li>BANW_Saori_race</li>
+            <li>BANW_Chiaki_race</li>
+            <li>BANW_Mari_race</li>
+            <li>BANW_Sakurako_race</li>
+            <li>BANW_Kokona_race</li>
+            <li>BANW_Hinata_race</li>
+            <li>BANW_Yoshimi_race</li>
+            <li>BANW_Shun_race</li>
+            <li>BANW_Haruka_race</li>
+            <li>BANW_Hanako_race</li>
+            <li>BANW_Ayane_race</li>
+            <li>BANW_Kisaki_race</li>
+            <li>BANW_Hiyori_race</li>
+            <li>BANW_Misaki_race</li>
+            <li>BANW_Mutsuki_race</li>
+            <li>BANW_Junko_race</li>
+            <li>BANW_Hare_race</li>
+            <li>BANW_Aru_race</li>
+            <li>BANW_Serika_race</li>
+            <li>BANW_Chihiro_race</li>
+            <li>BANW_Hifumi_race</li>
+            <li>BANW_Kotama_race</li>
+            <li>BANW_Fuuka_race</li>
+            <li>BANW_Maki_race</li>
+            <li>BANW_Juri_race</li>
+            <li>BANW_Yokari_race</li>
+            <li>BANW_Noa_race</li>
+            <li>BANW_Rio_race</li>
+            <li>BANW_Kanoe_race</li>
+            <li>BANW_Kikyou_race</li>
+            <li>BANW_Hanae_race</li>
+            <li>BANW_Azusa_race</li>
+            <li>BANW_Serina_race</li>
+            <li>BANW_Chise_race</li>
+            <li>BANW_Mine_race</li>
+            <li>BANW_Michiru_race</li>
+            <li>BANW_Renge_race</li>
+            <li>BANW_Izuna_race</li>
+            <li>BANW_Eri_race</li>
+            <li>BANW_Kotori_race</li>
+            <li>BANW_Tsukuyo_race</li>
+            <li>BANW_Nagusa_race</li>
+            <li>BANW_Nonomi_race</li>
+            <li>BANW_Nagisa_race</li>
+            <li>BANW_Akari_race</li>
+            <li>BANW_Izumi_race</li>
+            <li>BANW_Haruna_race</li>
+            <li>BANW_Umika_race</li>
+            <li>BANW_Shizuko_race</li>
+             <li>BANW_Fubuki_race</li>
+          <li>BANW_Kirino_race</li>
+          <li>BANW_Hibiki_race</li>
+          <li>BANW_Eimi_race</li>
+          <li>BANW_Himari_race</li>
+          <li>BANW_Utaha_race</li>
+          <li>BANW_Suzumi_A_race</li>
+          <li>BANW_Mimori_race</li>
+          <li>BANW_Kaede_race</li>
+          <li>BANW_Tsubaki_race</li>
+          <li>BANW_Kaho_race</li>
+          <li>BANW_Niya_race</li>
+          <li>BANW_Arisu_B_race</li>
+          <li>BANW_Kasumi_race</li>
+          <li>BANW_Megu_race</li>
+          </allowedRaces>
+          
+          <!-- 星星的贴图路径 -->
+          <starTexturePath>UI/StarIcon</starTexturePath>
+        </li>
+        
+        <!-- 光环减伤组件 - 修正为原项目的属性配置 -->
+        <li Class="BANWlLib.DamageReductionCompProperties">
+          <!-- 减伤保护的身体部位：光环 -->
+          <damageReductionBodyPart>Halo</damageReductionBodyPart>
+          
+          <!-- 自定义属性值阈值列表 - 对应星星等级 -->
+          <customValueThresholds>
+            <li>0</li>   <!-- 1级阈值：0点 -->
+            <li>30</li>  <!-- 2级阈值：20点 -->
+            <li>110</li>  <!-- 3级阈值：40点 -->
+            <li>210</li>  <!-- 4级阈值：60点 -->
+            <li>330</li>  <!-- 5级阈值：80点 -->
+          </customValueThresholds>
+          
+          <!-- 减伤比例列表 - 对应各等级的减伤和回复比例 -->
+          <damageReductionRatios>
+              <li>0</li>  <!-- 1级：10%减伤+回复 -->
+              <li>0.1</li> <!-- 2级：25%减伤+回复 -->
+              <li>0.2</li>  <!-- 3级：40%减伤+回复 -->
+              <li>0.55</li> <!-- 4级：55%减伤+回复 -->
+              <li>0.7</li>  <!-- 5级：70%减伤+回复 -->
+          </damageReductionRatios>
+        </li>
+      </value>
+    </match>
+    
+    <!-- 如果基类还没有comps节点，先创建comps节点再添加所有组件 -->
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/AlienRace.ThingDef_AlienRace[@Name="BANW_StudentThingBase"]</xpath>
+      <value>
+        <comps>
+          <!-- 经验值系统组件 - 修正为原项目的属性配置 -->
+          <li Class="BANWlLib.HumanIntPropertyCompProperties">
+            <defaultValue>0</defaultValue>
+            <minValue>0</minValue>
+            <maxValue>330</maxValue>
+          </li>
+          
+          <!-- 进度条UI组件 - 修正为原项目的属性配置 -->
+          <li Class="BANWlLib.CompProperties_PawnProgressBarUI">
+            <!-- 星星的间隔比例 -->
+            <starInterval>0.5</starInterval>
+            
+            <!-- 是否显示进度条（设为false只显示星星） -->
+            <showProgressBar>false</showProgressBar>
+            
+            <!-- 星星显示的进度比例列表 -->
+            <starProgressRatios>
+            <li>0.0</li>   <!-- 0点：1级 -->
+            <li>0.09</li>   <!-- 20点：2级 -->
+            <li>0.33</li>   <!-- 40点：3级 -->
+            <li>0.63</li>   <!-- 60点：4级 -->
+            <li>1.0</li>   <!-- 80点：5级 -->
+            </starProgressRatios>
+            
+            <!-- 星星的大小（像素） -->
+            <starSize>28</starSize>
+            
+            <!-- 允许显示UI的种族列表 -->
+            <allowedRaces>
+              <li>BANW_KivotosStudent</li>
+              <li>BANW_Hikali_race</li>
+              <li>BANW_Nozomi_race</li>
+              <li>BANW_Aoba_race</li>
+              <li>BANW_Asuna_race</li>
+              <li>BANW_Hoshiro_race</li>
+              <li>BANW_Miyako_race</li>
+              <li>BANW_Miyu_race</li>
+              <li>BANW_Seia_race</li>
+              <li>BANW_Shiroko_race</li>
+              <li>BANW_Turugi_race</li>
+              <li>BANW_Saki_race</li>
+              <li>BANW_Akane_race</li>
+              <li>BANW_Hasumi_race</li>
+              <li>BANW_Mika_race</li>
+              <li>BANW_Moe_race</li>
+              <li>BANW_Mashiro_race</li>
+              <li>BANW_Nero_race</li>
+              <li>BANW_Ichika_race</li>
+              <li>BANW_Karlin_race</li>
+              <li>BANW_Cherino_race</li>
+              <li>BANW_Makoto_race</li>
+              <li>BANW_Hina_race</li>
+              <li>BANW_Natsu_race</li>
+              <li>BANW_Reisa_race</li>
+              <li>BANW_Ibuki_race</li>
+              <li>BANW_Yuuka_race</li>
+              <li>BANW_Iori_race</li>
+              <li>BANW_Suzumi_race</li>
+              <li>BANW_Ui_race</li>
+              <li>BANW_Ako_race</li>
+              <li>BANW_Shimiko_race</li>
+              <li>BANW_Airy_race</li>
+              <li>BANW_Momoi_race</li>
+              <li>BANW_Chinatsu_race</li>
+              <li>BANW_Midori_race</li>
+              <li>BANW_Koharu_race</li>
+              <li>BANW_Yuzu_race</li>
+              <li>BANW_Atsuko_race</li>
+              <li>BANW_Satsuki_race</li>
+              <li>BANW_Arisu_race</li>
+              <li>BANW_Kayako_race</li>
+              <li>BANW_Koyuki_race</li>
+              <li>BANW_Saya_race</li>
+              <li>BANW_Kazusa_race</li>
+              <li>BANW_Saori_race</li>
+              <li>BANW_Chiaki_race</li>
+              <li>BANW_Mari_race</li>
+              <li>BANW_Sakurako_race</li>
+              <li>BANW_Kokona_race</li>
+              <li>BANW_Hinata_race</li>
+              <li>BANW_Yoshimi_race</li>
+              <li>BANW_Shun_race</li>
+              <li>BANW_Haruka_race</li>
+              <li>BANW_Hanako_race</li>
+              <li>BANW_Ayane_race</li>
+              <li>BANW_Kisaki_race</li>
+              <li>BANW_Hiyori_race</li>
+              <li>BANW_Misaki_race</li>
+              <li>BANW_Mutsuki_race</li>
+              <li>BANW_Junko_race</li>
+              <li>BANW_Hare_race</li>
+              <li>BANW_Aru_race</li>
+              <li>BANW_Serika_race</li>
+              <li>BANW_Chihiro_race</li>
+              <li>BANW_Hifumi_race</li>
+              <li>BANW_Kotama_race</li>
+              <li>BANW_Fuuka_race</li>
+              <li>BANW_Maki_race</li>
+              <li>BANW_Juri_race</li>
+              <li>BANW_Yokari_race</li>
+              <li>BANW_Noa_race</li>
+              <li>BANW_Rio_race</li>
+              <li>BANW_Kanoe_race</li>
+              <li>BANW_Kikyou_race</li>
+              <li>BANW_Hanae_race</li>
+              <li>BANW_Azusa_race</li>
+              <li>BANW_Serina_race</li>
+              <li>BANW_Chise_race</li>
+              <li>BANW_Mine_race</li>
+              <li>BANW_Michiru_race</li>
+              <li>BANW_Renge_race</li>
+              <li>BANW_Izuna_race</li>
+              <li>BANW_Eri_race</li>
+              <li>BANW_Kotori_race</li>
+              <li>BANW_Tsukuyo_race</li>
+              <li>BANW_Nagusa_race</li>
+              <li>BANW_Nonomi_race</li>
+              <li>BANW_Nagisa_race</li>
+              <li>BANW_Akari_race</li>
+              <li>BANW_Izumi_race</li>
+              <li>BANW_Haruna_race</li>
+              <li>BANW_Umika_race</li>
+              <li>BANW_Shizuko_race</li>
+               <li>BANW_Fubuki_race</li>
+          <li>BANW_Kirino_race</li>
+          <li>BANW_Hibiki_race</li>
+          <li>BANW_Eimi_race</li>
+          <li>BANW_Himari_race</li>
+          <li>BANW_Utaha_race</li>
+          <li>BANW_Suzumi_A_race</li>
+          <li>BANW_Mimori_race</li>
+          <li>BANW_Kaede_race</li>
+          <li>BANW_Tsubaki_race</li>
+          <li>BANW_Kaho_race</li>
+          <li>BANW_Niya_race</li>
+          <li>BANW_Arisu_B_race</li>
+          <li>BANW_Kasumi_race</li>
+          <li>BANW_Megu_race</li>
+            </allowedRaces>
+            
+            <!-- 星星的贴图路径 -->
+            <starTexturePath>UI/StarIcon</starTexturePath>
+          </li>
+          
+          <!-- 光环减伤组件 - 修正为原项目的属性配置 -->
+          <li Class="BANWlLib.DamageReductionCompProperties">
+            <!-- 减伤保护的身体部位：光环 -->
+            <damageReductionBodyPart>Halo</damageReductionBodyPart>
+            
+            <!-- 自定义属性值阈值列表 -->
+            <customValueThresholds>
+            <li>0</li>   <!-- 1级阈值：0点 -->
+            <li>30</li>  <!-- 2级阈值：20点 -->
+            <li>110</li>  <!-- 3级阈值：40点 -->
+            <li>210</li>  <!-- 4级阈值：60点 -->
+            <li>330</li>  <!-- 5级阈值：80点 -->
+            </customValueThresholds>
+            
+            <!-- 减伤比例列表 -->
+            <damageReductionRatios>
+              <li>0</li>  <!-- 1级：10%减伤+回复 -->
+              <li>0.1</li> <!-- 2级：25%减伤+回复 -->
+              <li>0.2</li>  <!-- 3级：40%减伤+回复 -->
+              <li>0.55</li> <!-- 4级：55%减伤+回复 -->
+              <li>0.7</li>  <!-- 5级：70%减伤+回复 -->
+            </damageReductionRatios>
+          </li>
+        </comps>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch> 

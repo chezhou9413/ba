@@ -1,0 +1,13 @@
+# Local nested repository backup created before outer-repo snapshot
+.local-git-backups/
+
+# Build and IDE outputs
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.csproj.user
+
+# RimWorld/Unity generated debug symbols can be regenerated
+*.pdb

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Aoba</defName>
+		<label>-青叶-</label>
+		<race>BANW_Aoba_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Aoba_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHighland</li>
+					<li>BANW_BackstoryAoba</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Aoba</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Aoba</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>0</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Aoba>0</BAWC_TraitDef_Aoba>
+			<BAWC_TraitDef_Aoba_A>0</BAWC_TraitDef_Aoba_A>
+			<BAWC_TraitDef_Aoba_B>0</BAWC_TraitDef_Aoba_B>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Aoba</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FCFCB9&gt;货运管理部的工程师&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}的性格内向而怕事，但也有能若无其事说出毒舌发言的一面，修理机械的水平很高</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                <SmoothingSpeed>0.2</SmoothingSpeed>
+				<ConstructionSpeed>0.3</ConstructionSpeed>
+				<ConstructSuccessChance>0.5</ConstructSuccessChance>
+				<FixBrokenDownBuildingSuccessChance>0.5</FixBrokenDownBuildingSuccessChance>
+				<GeneralLaborSpeed>0.3</GeneralLaborSpeed>
+				<SocialImpact>-0.8</SocialImpact>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Aoba_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;绝望连轴转&lt;/color&gt;</label>
+                <description>被动技能：自身生命值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Aoba_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;我就，没指望过&lt;/color&gt;</label>
+                <description>子技能：使用普通技能时，额外&lt;color=#DC143C&gt;增加34%的护甲&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

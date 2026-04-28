@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Junko</defName>
+		<label>-淳子-</label>
+		<race>BANW_Junko_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryJunko</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Junko</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Junko</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+            <li>
+				<skill>Mining</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>5~10</range>
+			</li>
+			 <li>
+				<skill>Cooking</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>1</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+		</forcedTraits>
+	</PawnKindDef>
+
+</Defs>

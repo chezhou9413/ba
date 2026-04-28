@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<RulePackDef>
+		<defName>NamerHikali</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->光</li>
+                <li>LastName->橘</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerMiyu</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->霞泽</li>
+                <li>LastName->美游</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerNozomi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->望</li>
+                <li>LastName->橘</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHoshiro</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->小鸟游</li>
+				<li>NickName->星野</li>
+                <li>LastName->星野</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerAoba</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!内海</li>
+				<li>NickName->青叶</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerTurugi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->鹤城</li>
+                <li>LastName->!剑先</li>
+				<li>LastName->鹤城</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSeia</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->圣娅</li>
+                <li>LastName->百合园</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	
+    <RulePackDef>
+		<defName>NamerAsuna</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->一之濑</li>
+                <li>LastName->明日奈</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMiyako</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->月雪</li>
+                <li>LastName->宫子</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerShiroko</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName] [LastName] </li>
+				<li>FirstName->砂狼</li>
+				<li>NickName->白子</li>
+                <li>LastName->shiroko</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSakika</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->!空井</li>
+                <li>LastName->咲</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerAkane</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->茜</li>
+                <li>LastName->室笠</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHasumi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->羽川</li>
+                <li>LastName->莲见</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMika</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->圣园</li>
+				<li>NickName->未花</li>
+                <li>LastName->未花</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMoe</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->风仓</li>
+                <li>LastName->萌绘</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMashiro</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->真白</li>
+                <li>LastName->静山</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerNero</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->美甘</li>
+                <li>LastName->妮露</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerIchika</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->仲正</li>
+                <li>LastName->一花</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKarlin</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->角楯</li>
+                <li>LastName->花凛</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerCherino</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->连河</li>
+				<li>NickName->切里诺</li>
+                <li>LastName->切里诺</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerMakoto</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->羽沼</li>
+                <li>LastName->真琴</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerHina</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->空崎</li>
+				<li>NickName->日奈</li>
+                <li>LastName->日奈</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerNatsu</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->夏</li>
+                <li>LastName->柚鸟</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerReisa</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->宇泽</li>
+                <li>LastName->玲纱</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerIbuki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->丹花</li>
+                <li>LastName->伊吹</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerYuuka</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->早濑</li>
+                <li>LastName->优香</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerIori</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->眼镜</li>
+				<li>NickName->伊织</li>
+                <li>LastName->伊织</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerSuzumi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->铃美</li>
+                <li>LastName->守月</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerUi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->古关</li>
+                <li>LastName->忧</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerAko</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!天雨</li>
+				<li>NickName->亚子</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerShimiko</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->园堂</li>
+				<li>NickName->志美子</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerIroha</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->枣</li>
+                <li>LastName->伊吕波</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerAiry</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->栗村</li>
+                <li>LastName->爱莉</li>
+			</rulesStrings>
+            
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMomoi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->*才羽*</li>
+                <li>LastName->桃井</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerChinatsu</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->火宫</li>
+                <li>LastName->千夏</li>
+			</rulesStrings>
+	
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMidori</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->才羽</li>
+                <li>LastName->绿</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKoharu</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->小春</li>
+                <li>LastName->下江</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerYuzu</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!花冈</li>
+				<li>NickName->柚子</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerAtsuko</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->秤</li>
+                <li>LastName->亚津子</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSatsuki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->京极</li>
+                <li>LastName->皋月</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerArisu</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->天童</li>
+				<li>NickName->爱丽丝</li>
+                <li>LastName->爱丽丝</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>|
+
+	<RulePackDef>
+		<defName>NamerKayako</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->佳代子</li>
+                <li>LastName->鬼方</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKoyuki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->黑崎</li>
+				<li>NickName->小雪</li>
+                <li>LastName->小雪</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSaya</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->纱凌</li>
+                <li>LastName->药子</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKazusa</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->和纱</li>
+                <li>LastName->杏山</li>
+			</rulesStrings>
+
+		</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSaori</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->!锭前</li>
+                <li>LastName->纱织</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerChiaki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->元宫</li>
+                <li>LastName->千秋</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMari</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->玛丽</li>
+                <li>LastName->伊落</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSakurako</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->*歌住*</li>
+                <li>LastName->樱子</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKokona</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->春原</li>
+                <li>LastName->心奈</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHinata</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[FirstName] [LastName]</li>
+				<li>FirstName->日向</li>
+                <li>LastName->若叶</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerYoshimi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->伊原木</li>
+				<li>NickName->好美</li>
+                <li>LastName->好美</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerShun</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->春原</li>
+				<li>NickName->瞬</li>
+                <li>LastName->瞬</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHaruka</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->伊草</li>
+				<li>NickName->遥香</li>
+                <li>LastName->遥香</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHanako</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->浦和</li>
+				<li>NickName->花子</li>
+                <li>LastName->花子</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerAyane</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->奥空</li>
+				<li>NickName->绫音</li>
+                <li>LastName->绫音</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKisaki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->龙华</li>
+				<li>NickName->妃咲</li>
+                
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHiyori</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->槌永</li>
+				<li>NickName->日和</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMutsuki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->浅黄</li>
+				<li>NickName->睦月</li>
+                <li>LastName->睦月</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMisaki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!戒野</li>
+				<li>NickName->美咲</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerJunko</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->赤司</li>
+				<li>NickName->淳子</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHare</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->小钩</li>
+				<li>NickName->晴</li>
+				<li>LastName->晴</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerAru</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->陸八魔</li>
+				<li>NickName->阿露</li>
+				<li>LastName->阿露</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSerika</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->黑见</li>
+				<li>NickName->芹香</li>
+				<li>LastName->芹香</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	
+	<RulePackDef>
+		<defName>NamerChihiro</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->各务</li>
+				<li>NickName->千寻</li>
+				<li>LastName->千寻</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHifumi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->阿慈谷</li>
+				<li>NickName->日富美</li>
+				<li>LastName->日富美</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKotama</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!音濑</li>
+				<li>NickName->小玉</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerFuuka</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->爱清</li>
+				<li>NickName->枫香</li>
+				<li>LastName->枫香</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMaki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->小涂</li>
+				<li>NickName->真纪</li>
+				<li>LastName->真纪</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerJuri</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->牛牧</li>
+				<li>NickName->朱莉</li>
+				<li>LastName->朱莉</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerYokari</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName]  [FirstName]</li>
+				<li>FirstName->勘解由小路</li>
+				<li>NickName->紫</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerNoa</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->诺亚</li>
+				<li>NickName->生盐</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerRio</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!调月</li>
+				<li>NickName->莉音</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKanoe</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!板垣</li>
+				<li>NickName->鹿江</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKikyou</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->桐生</li>
+				<li>NickName->桔梗</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHanae</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->朝颜</li>
+				<li>NickName->花江</li>
+				<li>LastName->花江</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerAzusa</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->白洲</li>
+				<li>NickName->梓</li>
+				<li>LastName->梓</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSerina</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->鹫见</li>
+				<li>NickName->芹娜</li>
+				<li>LastName->芹娜</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerChise</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->和乐</li>
+				<li>NickName->千世</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+	
+	<RulePackDef>
+		<defName>NamerMine</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->苍森</li>
+				<li>NickName->美祢</li>
+				<li>LastName->美祢</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMichiru</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->千鸟</li>
+				<li>NickName->满</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerRenge</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->不破</li>
+				<li>NickName->莲华</li>
+				<li>LastName->莲华</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+	<RulePackDef>
+		<defName>NamerIzuna</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->久田</li>
+				<li>NickName->泉奈</li>
+				<li>LastName->泉奈</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerEri</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!白尾</li>
+				<li>NickName->绘里</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKotori</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->丰见</li>
+				<li>NickName->琴里</li>
+				<li>LastName->琴里</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerTsukuyo</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->大野</li>
+				<li>NickName->月咏</li>
+				<li>LastName->月咏</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerNagusa</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->御稜</li>
+				<li>NickName->名草</li>
+				<li>LastName->名草</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerNonomi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->十六夜</li>
+				<li>NickName->野宫</li>
+				<li>LastName->野宫</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerNagisa</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->桐藤</li>
+				<li>NickName->渚</li>
+				<li>LastName->渚</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerAkari</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->鳄渊</li>
+				<li>NickName->明里</li>
+				<li>LastName->明里</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerIzumi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->狮子堂</li>
+				<li>NickName->泉</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHaruna</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->晴奈</li>
+				<li>NickName->黑馆</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerUmika</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->海香</li>
+				<li>NickName->里浜</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerShizuko</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->河和</li>
+				<li>NickName->静子</li>
+				<li>LastName->静子</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerPina</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->朝比奈</li>
+				<li>NickName->菲娜</li>
+				<li>LastName->菲娜</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerToki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->飞鸟马</li>
+				<li>NickName->时</li>
+				<li>LastName->时</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerSena</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->!冰室</li>
+				<li>NickName->濑名</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+	
+	<RulePackDef>
+		<defName>NamerKanna</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->康纳</li>
+				<li>NickName->尾刃</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerFubuki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->合欢垣</li>
+				<li>NickName->吹雪</li>
+				<li>LastName->吹雪</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKirino</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->中务</li>
+				<li>NickName->桐乃</li>
+				<li>LastName->桐乃</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHibiki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->猫冢</li>
+				<li>NickName->响</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerEimi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->和泉元</li>
+				<li>NickName->艾米</li>
+				<li>LastName->艾米</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerHimari</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->明星</li>
+				<li>NickName->日鞠</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerUtaha</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->白石</li>
+				<li>NickName->歌原</li>
+				<li>LastName->歌原</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMimori</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->水羽</li>
+				<li>NickName->三森</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKaede</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->勇美</li>
+				<li>NickName->枫</li>
+				<li>LastName->枫</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerTsubaki</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->春日</li>
+				<li>NickName->椿</li>
+				<li>LastName->椿</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKaho</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->桑上</li>
+				<li>NickName->果穗</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerNiya</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->天地</li>
+				<li>NickName->尼娅</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerKasumi</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [LastName] [FirstName]</li>
+				<li>FirstName->鬼怒川</li>
+				<li>NickName->霞</li>
+				<li>LastName->霞</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+
+	<RulePackDef>
+		<defName>NamerMegu</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->惠</li>
+				<li>NickName->下仓</li>
+			</rulesStrings>
+			</rulePack>
+	</RulePackDef>
+</Defs>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <BANWlLib.DamageFontSystem.FontDef>
+        <defName>BANW_FontDef</defName>
+        <!-- 禁用暴击的伤害类型在这里配置 -->
+        <DisableCritical>
+           <li>BANC_Damage_Chiaki_EXX</li> 
+        </DisableCritical>
+        <!-- 必定暴击（无视暴击率计算）的伤害类型在这里配置 -->
+        <EnsureCritical>
+            <!-- 必定暴击，你定义的神秘子弹伤害类型 -->
+            <li>BANC_Damage_Mika_None</li>
+            <li>BANC_Damage_Mika</li>
+            <li>BANC_Damage_Nozomi_None</li>
+            <li>BANC_Damage_Arisu_None</li>
+        </EnsureCritical>
+        <DisableIncomingDamageFactorCritical>
+            <li>BANC_Damage_shenmi</li>
+            <li>BANC_Damage_Ibuki_EX</li>
+            <li>BANC_Damage_Rio_EX</li>
+        </DisableIncomingDamageFactorCritical>
+    </BANWlLib.DamageFontSystem.FontDef>
+</Defs>

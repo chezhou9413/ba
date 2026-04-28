@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+<AbilityDef>
+<defName>BAWN_Akari_EXX</defName>
+ <label>一发榴弹，分量满满！</label>
+ <description>对圆形范围内的敌方单位造成自身攻击力744%的伤害</description>
+ <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Akari_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+<warmupEffecter></warmupEffecter>
+ <soundCast>BANW_Wp_GL_At</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+ <range>36.9</range><!-- 投掷范围 -->
+ <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BAWN_Akari_EX_Boom</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+
+<ThingDef Name="BAWN_Akari_EX_Boom" ParentName="BaseGrenadeProjectile" Abstract="True">
+    <graphicData>
+      <texPath>Projectile/Bullet_Akari</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>3.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>666</damageAmountBase><!--子弹伤害-->
+      <explosionRadius>5.9</explosionRadius >
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <damageDef>BANC_Damage_Akari_EX</damageDef>
+      <speed>60</speed><!--子弹速度-->
+      <explosionDelay>0</explosionDelay>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <!-- Use default damage from explosion def -->
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BAWN_Akari_EX_Boom">
+    <defName>BAWN_Akari_EX_Boom</defName>
+  </ThingDef>
+
+
+     <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Akari_EX</defName><!--通用贯通-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+</Defs>

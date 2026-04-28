@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Izuna</defName>
+		<label>-泉奈-</label>
+		<race>BANW_Izuna_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHyakkiyako</li>
+					<li>BANW_BackstoryIzuna</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Izuna</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Izuna</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>4~5</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>16</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>11</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>13</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+		</forcedTraits>
+	</PawnKindDef>
+
+</Defs>

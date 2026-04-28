@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Miyako</defName>
+		<label>-宫子-</label>
+		<race>BANW_Miyako_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySrt</li>
+					<li>BANW_BackstoryMiyako</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Miyako</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Miyako</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>9~12</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>5~7</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>6~12</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+		</forcedTraits>
+	</PawnKindDef>
+
+</Defs>

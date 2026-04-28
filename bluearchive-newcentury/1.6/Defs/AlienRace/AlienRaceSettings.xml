@@ -1,0 +1,1753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<AlienRace.ThingDef_AlienRace Name="BANW_KivotosStudent" ParentName="BANW_StudentThingBase">
+		<defName>BANW_KivotosStudent</defName>
+		<label>基沃托斯人</label>
+		<description>[PlaceHolder]</description>
+		<alienRace>
+			<graphicPaths>
+				<body>
+					<path>Pawns/General/Invisible/Inv</path>
+				</body>
+				<head>Pawns/General/Invisible_Head/</head>
+				<skinColor>(0,0,0,1)</skinColor>
+			</graphicPaths>
+			<generalSettings>
+				<alienPartGenerator>
+					<customDrawSize>(1, 1)</customDrawSize>					<!-- 小人整体大小 -->
+					<bodyAddons>
+						<!-- 光环 -->
+						<li>
+							<name>KivotosStudent_halo</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							 <shaderType>MoteGlow</shaderType>							 
+							<conditions>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+								<BodyPart>
+									<bodyPart>Halo</bodyPart>
+									<bodyPartLabel>光环</bodyPartLabel>
+									<drawWithoutPart>true</drawWithoutPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>false</drawnLaying>
+									<drawnInBed>false</drawnInBed>									<!-- 睡觉不显示光环 -->
+								</Posture>
+							</conditions>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>0.3</layerOffset>
+									<offset>(0,0.1)</offset>
+								</north>
+								<south>
+									<layerOffset>0.11</layerOffset>
+									<offset>(0,0.29)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.29</layerOffset>
+									<offset>(0,0.35)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentHikali">Pawns/Highland/Hikali/Halo/Hikali_Halo</Backstory>
+								<Backstory For="BANW_StudentMiyu">Pawns/Srt/Miyu/Halo/Miyu_Halo</Backstory>
+								<Backstory For="BANW_StudentNozomi">Pawns/Highland/Nozomi/Halo/Nozomi_Halo</Backstory>
+								<Backstory For="BANW_StudentHoshiro">Pawns/Abydos/Hoshiro/Halo/Hoshiro_Halo</Backstory>
+								<Backstory For="BANW_StudentAoba">Pawns/Highland/Aoba/Halo/Aoba_Halo</Backstory>
+								<Backstory For="BANW_StudentTurugi">Pawns/Sany/Turugi/Halo/Turugi_Halo</Backstory>
+								<Backstory For="BANW_StudentSeia">Pawns/Sany/Seia/Halo/Seia_Halo</Backstory>
+								<Backstory For="BANW_StudentAsuna">Pawns/Millennium/Asuna/Halo/Asuna_Halo</Backstory>
+								<Backstory For="BANW_StudentMiyako">Pawns/Srt/Miyako/Halo/Miyako_Halo</Backstory>
+								<Backstory For="BANW_StudentShiroko">Pawns/Abydos/Shiroko/Halo/Shiroko_Halo</Backstory>
+								<Backstory For="BANW_StudentSaki">Pawns/Srt/Saki/Halo/Saki_Halo</Backstory>
+								<Backstory For="BANW_StudentAkane">Pawns/Millennium/Akane/Halo/Akane_Halo</Backstory>
+								<Backstory For="BANW_StudentHasumi">Pawns/Sany/Hasumi/Halo/Hasumi_Halo</Backstory>
+								<Backstory For="BANW_StudentMika">Pawns/Sany/Mika/Halo/Mika_Halo</Backstory>
+								<Backstory For="BANW_StudentMoe">Pawns/Srt/Moe/Halo/Moe_Halo</Backstory>
+								<Backstory For="BANW_StudentMashiro">Pawns/Sany/Mashiro/Halo/Mashiro_Halo</Backstory>
+								<Backstory For="BANW_StudentNero">Pawns/Millennium/Nero/Halo/Nero_Halo</Backstory>
+								<Backstory For="BANW_StudentIchika">Pawns/Sany/Ichika/Halo/Ichika_Halo</Backstory>
+								<Backstory For="BANW_StudentKarlin">Pawns/Millennium/Karlin/Halo/Karlin_Halo</Backstory>
+								<Backstory For="BANW_StudentCherino">Pawns/RedWinter/Cherino/Halo/Cherino_Halo</Backstory>
+								<Backstory For="BANW_StudentMakoto">Pawns/Gehena/Makoto/Halo/Makoto_Halo</Backstory>
+								<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Halo/Hina_Halo</Backstory>	
+								<Backstory For="BANW_StudentNatsu">Pawns/Sany/Natsu/Halo/Natsu_Halo</Backstory>	
+								<Backstory For="BANW_StudentReisa">Pawns/Sany/Reisa/Halo/Reisa_Halo</Backstory>	
+								<Backstory For="BANW_StudentIbuki">Pawns/Gehena/Ibuki/Halo/Ibuki_Halo</Backstory>
+								<Backstory For="BANW_StudentYuuka">Pawns/Millennium/Yuuka/Halo/Yuuka_Halo</Backstory>
+								<Backstory For="BANW_StudentIori">Pawns/Gehena/Iori/Halo/Iori_Halo</Backstory>
+								<Backstory For="BANW_StudentSuzumi">Pawns/Sany/Suzumi/Halo/Suzumi_Halo</Backstory>
+								<Backstory For="BANW_StudentUi">Pawns/Sany/Ui/Halo/Ui_Halo</Backstory>
+								<Backstory For="BANW_StudentAko">Pawns/Gehena/Ako/Halo/Ako_Halo2</Backstory>
+								<Backstory For="BANW_StudentShimiko">Pawns/Sany/Shimiko/Halo/Shimiko_Halo</Backstory>
+								<Backstory For="BANW_StudentIroha">Pawns/Gehena/Iroha/Halo/Iroha_Halo</Backstory>
+								<Backstory For="BANW_StudentAiry">Pawns/Sany/Airy/Halo/Airy_Halo2</Backstory>
+								<Backstory For="BANW_StudentMomoi">Pawns/Millennium/Momoi/Halo/Momoi_Halo</Backstory>
+								<Backstory For="BANW_StudentChinatsu">Pawns/Gehena/Chinatsu/Halo/Chinatsu_Halo</Backstory>
+								<Backstory For="BANW_StudentMidori">Pawns/Millennium/Midori/Halo/Midori_Halo</Backstory>
+								<Backstory For="BANW_StudentKoharu">Pawns/Sany/Koharu/Halo/Koharu_Halo</Backstory>
+								<Backstory For="BANW_StudentYuzu">Pawns/Millennium/Yuzu/Halo/Yuzu_Halo</Backstory>
+								<Backstory For="BANW_StudentAtsuko">Pawns/Arian/Atsuko/Halo/Atsuko_Halo</Backstory>
+								<Backstory For="BANW_StudentSatsuki">Pawns/Gehena/Satsuki/Halo/Satsuki_Halo</Backstory>
+								<Backstory For="BANW_StudentArisu">Pawns/Millennium/Arisu/Halo/Arisu_Halo2</Backstory>
+								<Backstory For="BANW_StudentKayako">Pawns/Gehena/Kayako/Halo/Kayako_Halo</Backstory>
+								<Backstory For="BANW_StudentKoyuki">Pawns/Millennium/Koyuki/Halo/Koyuki_Halo</Backstory>
+								<Backstory For="BANW_StudentSaya">Pawns/Shanhaijing/Saya/Halo/Saya_Halo</Backstory>
+								<Backstory For="BANW_StudentKazusa">Pawns/Sany/Kazusa/Halo/Kazusa_Halo</Backstory>
+								<Backstory For="BANW_StudentSaori">Pawns/Arian/Saori/Halo/Saori_Halo</Backstory>
+								<Backstory For="BANW_StudentChiaki">Pawns/Gehena/Chiaki/Halo/Chiaki_Halo</Backstory>
+								<Backstory For="BANW_StudentMari">Pawns/Sany/Mari/Halo/Mari_Halo</Backstory>
+								<Backstory For="BANW_StudentSakurako">Pawns/Sany/Sakurako/Halo/Sakurako_Halo</Backstory>
+								<Backstory For="BANW_StudentKokona">Pawns/Shanhaijing/Kokona/Halo/Kokona_Halo</Backstory>
+								<Backstory For="BANW_StudentHinata">Pawns/Sany/Hinata/Halo/Hinata_Halo</Backstory>
+								<Backstory For="BANW_StudentYoshimi">Pawns/Sany/Yoshimi/Halo/Yoshimi_Halo</Backstory>
+								<Backstory For="BANW_StudentShun">Pawns/Shanhaijing/Shun/Halo/Shun_Halo</Backstory>
+								<Backstory For="BANW_StudentHaruka">Pawns/Gehena/Haruka/Halo/Haruka_Halo</Backstory>
+								<Backstory For="BANW_StudentHanako">Pawns/Sany/Hanako/Halo/Hanako_Halo</Backstory>
+								<Backstory For="BANW_StudentAyane">Pawns/Abydos/Ayane/Halo/Ayane_Halo</Backstory>
+								<Backstory For="BANW_StudentKisaki">Pawns/Shanhaijing/Kisaki/Halo/Kisaki_Halo</Backstory>
+								<Backstory For="BANW_StudentHiyori">Pawns/Arian/Hiyori/Halo/Hiyori_Halo</Backstory>
+								<Backstory For="BANW_StudentMutsuki">Pawns/Gehena/Mutsuki/Halo/Mutsuki_Halo</Backstory>
+								<Backstory For="BANW_StudentMisaki">Pawns/Arian/Misaki/Halo/Misaki_Halo</Backstory>
+								<Backstory For="BANW_StudentJunko">Pawns/Gehena/Junko/Halo/Junko_Halo</Backstory>
+								<Backstory For="BANW_StudentHare">Pawns/Millennium/Hare/Halo/Hare_Halo</Backstory>
+								<Backstory For="BANW_StudentAru">Pawns/Gehena/Aru/Halo/Aru_Halo</Backstory>
+								<Backstory For="BANW_StudentSerika">Pawns/Abydos/Serika/Halo/Serika_Halo</Backstory>
+								<Backstory For="BANW_StudentChihiro">Pawns/Millennium/Chihiro/Halo/Chihiro_Halo2</Backstory>
+								<Backstory For="BANW_StudentHifumi">Pawns/Sany/Hifumi/Halo/Hifumi_Halo</Backstory>
+								<Backstory For="BANW_StudentKotama">Pawns/Millennium/Kotama/Halo/Kotama_Halo</Backstory>
+								<Backstory For="BANW_StudentMaki">Pawns/Millennium/Maki/Halo/Maki_Halo</Backstory>
+								<Backstory For="BANW_StudentFuuka">Pawns/Gehena/Fuuka/Halo/Fuuka_Halo</Backstory>
+								<Backstory For="BANW_StudentJuri">Pawns/Gehena/Juri/Halo/Juri_Halo</Backstory>
+								<Backstory For="BANW_StudentYokari">Pawns/Hyakkiyako/Yokari/Halo/Yokari_Halo</Backstory>
+								<Backstory For="BANW_StudentNoa">Pawns/Millennium/Noa/Halo/Noa_Halo2</Backstory>
+								<Backstory For="BANW_StudentRio">Pawns/Millennium/Rio/Halo/Rio_Halo</Backstory>
+								<Backstory For="BANW_StudentKanoe">Pawns/Wildhunt/Kanoe/Halo/Kanoe_Halo</Backstory>
+								<Backstory For="BANW_StudentKikyou">Pawns/Hyakkiyako/Kikyou/Halo/Kikyou_Halo</Backstory>
+								<Backstory For="BANW_StudentHanae">Pawns/Sany/Hanae/Halo/Hanae_Halo</Backstory>
+								<Backstory For="BANW_StudentAzusa">Pawns/Sany/Azusa/Halo/Azusa_Halo</Backstory>
+								<Backstory For="BANW_StudentSerina">Pawns/Sany/Serina/Halo/Serina_Halo</Backstory>
+								<Backstory For="BANW_StudentChise">Pawns/Hyakkiyako/Chise/Halo/Chise_Halo</Backstory>
+								<Backstory For="BANW_StudentMine">Pawns/Sany/Mine/Halo/Mine_Halo</Backstory>
+								<Backstory For="BANW_StudentMichiru">Pawns/Hyakkiyako/Michiru/Halo/Michiru_Halo</Backstory>
+								<Backstory For="BANW_StudentRenge">Pawns/Hyakkiyako/Renge/Halo/Renge_Halo</Backstory>
+								<Backstory For="BANW_StudentIzuna">Pawns/Hyakkiyako/Izuna/Halo/Izuna_Halo</Backstory>
+								<Backstory For="BANW_StudentKotori">Pawns/Millennium/Kotori/Halo/Kotori_Halo</Backstory>
+								<Backstory For="BANW_StudentNagusa">Pawns/Hyakkiyako/Nagusa/Halo/Nagusa_Halo</Backstory>
+								<Backstory For="BANW_StudentTsukuyo">Pawns/Hyakkiyako/Tsukuyo/Halo/Tsukuyo_Halo</Backstory>
+								<Backstory For="BANW_StudentNonomi">Pawns/Abydos/Nonomi/Halo/Nonomi_Halo</Backstory>
+								<Backstory For="BANW_StudentNagisa">Pawns/Sany/Nagisa/Halo/Nagisa_Halo</Backstory>
+								<Backstory For="BANW_StudentAkari">Pawns/Gehena/Akari/Halo/Akari_Halo</Backstory>
+								<Backstory For="BANW_StudentIzumi">Pawns/Gehena/Izumi/Halo/Izumi_Halo</Backstory>
+								<Backstory For="BANW_StudentHaruna">Pawns/Gehena/Haruna/Halo/Haruna_Halo</Backstory>
+								<Backstory For="BANW_StudentUmika">Pawns/Hyakkiyako/Umika/Halo/Umika_Halo</Backstory>
+								<Backstory For="BANW_StudentShizuko">Pawns/Hyakkiyako/Shizuko/Halo/Shizuko_Halo</Backstory>
+								<Backstory For="BANW_StudentPina">Pawns/Hyakkiyako/Pina/Halo/Pina_Halo</Backstory>
+								<Backstory For="BANW_StudentReisa_A">Pawns/Sany/Reisa_A/Halo/Reisa_Halo</Backstory>
+								<Backstory For="BANW_StudentToki">Pawns/Millennium/Toki/Halo/Toki_Halo2</Backstory>
+								<Backstory For="BANW_StudentSena">Pawns/Gehena/Sena/Halo/Sena_Halo</Backstory>
+								<Backstory For="BANW_StudentKanna">Pawns/Valkyrie/Kanna/Halo/Kanna_Halo</Backstory>
+								<Backstory For="BANW_StudentFubuki">Pawns/Valkyrie/Fubuki/Halo/Fubuki_Halo</Backstory>
+								<Backstory For="BANW_StudentKirino">Pawns/Valkyrie/Kirino/Halo/Kirino_Halo</Backstory>
+								<Backstory For="BANW_StudentHibiki">Pawns/Millennium/Hibiki/Halo/Hibiki_Halo</Backstory>
+								<Backstory For="BANW_StudentEimi">Pawns/Millennium/Eimi/Halo/Eimi_Halo</Backstory>
+								<Backstory For="BANW_StudentHimari">Pawns/Millennium/Himari/Halo/Himari_Halo</Backstory>
+								<Backstory For="BANW_StudentUtaha">Pawns/Millennium/Utaha/Halo/Utaha_Halo</Backstory>
+								<Backstory For="BANW_StudentSuzumi_A">Pawns/Sany/Suzumi_A/Halo/Suzumi_A_Halo</Backstory>
+								<Backstory For="BANW_StudentMimori">Pawns/Hyakkiyako/Mimori/Halo/Mimori_Halo</Backstory>
+								<Backstory For="BANW_StudentKaede">Pawns/Hyakkiyako/Kaede/Halo/Kaede_Halo</Backstory>
+								<Backstory For="BANW_StudentTsubaki">Pawns/Hyakkiyako/Tsubaki/Halo/Tsubaki_Halo</Backstory>
+								<Backstory For="BANW_StudentKaho">Pawns/Hyakkiyako/Kaho/Halo/Kaho_Halo</Backstory>
+								<Backstory For="BANW_StudentNiya">Pawns/Hyakkiyako/Niya/Halo/Niya_Halo</Backstory>
+								<Backstory For="BANW_StudentArisu_B">Pawns/Millennium/Arisu_B/Halo/Arisu_B_Halo2</Backstory>
+								<Backstory For="BANW_StudentKasumi">Pawns/Gehena/Kasumi/Halo/Kasumi_Halo</Backstory>
+								<Backstory For="BANW_StudentMegu">Pawns/Gehena/Megu/Halo/Megu_Halo</Backstory>
+								<Backstory For="BANW_StudentMarina">Pawns/RedWinter/Marina/Halo/Marina_Halo</Backstory>
+                                </extendedGraphics>
+						</li>
+						<!-- 头 -->
+						<li>
+							<name>KivotosStudent_head</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.48</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentHikali">Pawns/Highland/Hikali/Head/Hikali_Head</Backstory>
+								<Backstory For="BANW_StudentMiyu">Pawns/Srt/Miyu/Head/Miyu_Head</Backstory>
+								<Backstory For="BANW_StudentNozomi">Pawns/Highland/Nozomi/Head/Nozomi_Head</Backstory>
+								<Backstory For="BANW_StudentHoshiro">Pawns/Abydos/Hoshiro/Head/Hoshiro_Head</Backstory>
+								<Backstory For="BANW_StudentAoba">Pawns/Highland/Aoba/Head/Aoba_Head</Backstory>
+								<Backstory For="BANW_StudentTurugi">Pawns/Sany/Turugi/Head/Turugi_Head</Backstory>
+								<Backstory For="BANW_StudentAsuna">Pawns/Millennium/Asuna/Head/Asuna_Head</Backstory>
+								<Backstory For="BANW_StudentMiyako">Pawns/Srt/Miyako/Head/Miyako_Head</Backstory>
+								<Backstory For="BANW_StudentShiroko">Pawns/Abydos/Shiroko/Head/Shiroko_Head</Backstory>
+								<Backstory For="BANW_StudentSaki">Pawns/Srt/Saki/Head/Saki_Head</Backstory>
+								<Backstory For="BANW_StudentAkane">Pawns/Millennium/Akane/Head/Akane_Head</Backstory>
+								<Backstory For="BANW_StudentHasumi">Pawns/Sany/Hasumi/Head/Hasumi_Head</Backstory>
+								<Backstory For="BANW_StudentMika">Pawns/Sany/Mika/Head/Mika_Head</Backstory>
+								<Backstory For="BANW_StudentMoe">Pawns/Srt/Moe/Head/Moe_Head</Backstory>
+								<Backstory For="BANW_StudentMashiro">Pawns/Sany/Mashiro/Head/Mashiro_Head</Backstory>
+								<Backstory For="BANW_StudentIchika">Pawns/Sany/Ichika/Head/Ichika_Head</Backstory>
+								<Backstory For="BANW_StudentKarlin">Pawns/Millennium/Karlin/Head/Karlin_Head</Backstory>
+								<Backstory For="BANW_StudentMakoto">Pawns/Gehena/Makoto/Head/Makoto_Head</Backstory>
+								<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Head/Hina_Head</Backstory>
+								<Backstory For="BANW_StudentNatsu">Pawns/Sany/Natsu/Head/Natsu_Head</Backstory>	
+								<Backstory For="BANW_StudentReisa">Pawns/Sany/Reisa/Head/Reisa_Head</Backstory>
+								<Backstory For="BANW_StudentIbuki">Pawns/Gehena/Ibuki/Head/Ibuki_Head</Backstory>
+								<Backstory For="BANW_StudentYuuka">Pawns/Millennium/Yuuka/Head/Yuuka_Head</Backstory>
+								<Backstory For="BANW_StudentIori">Pawns/Gehena/Iori/Head/Iori_Head</Backstory>	
+								<Backstory For="BANW_StudentSuzumi">Pawns/Sany/Suzumi/Head/Suzumi_Head</Backstory>
+								<Backstory For="BANW_StudentUi">Pawns/Sany/Ui/Head/Ui_Head</Backstory>
+								<Backstory For="BANW_StudentAko">Pawns/Gehena/Ako/Head/Ako_Head</Backstory>
+								<Backstory For="BANW_StudentShimiko">Pawns/Sany/Shimiko/Head/Shimiko_Head</Backstory>
+								<Backstory For="BANW_StudentIroha">Pawns/Gehena/Iroha/Head/Iroha_Head</Backstory>
+								<Backstory For="BANW_StudentAiry">Pawns/Sany/Airy/Head/Airy_Head</Backstory>
+								<Backstory For="BANW_StudentMomoi">Pawns/Millennium/Momoi/Head/Momoi_Head</Backstory>
+								<Backstory For="BANW_StudentChinatsu">Pawns/Gehena/Chinatsu/Head/Chinatsu_Head</Backstory>
+								<Backstory For="BANW_StudentMidori">Pawns/Millennium/Midori/Head/Midori_Head</Backstory>
+								<Backstory For="BANW_StudentKoharu">Pawns/Sany/Koharu/Head/Koharu_Head</Backstory>
+								<Backstory For="BANW_StudentAtsuko">Pawns/Arian/Atsuko/Head/Atsuko_Head</Backstory>
+								<Backstory For="BANW_StudentSatsuki">Pawns/Gehena/Satsuki/Head/Satsuki_Head</Backstory>
+								<Backstory For="BANW_StudentArisu">Pawns/Millennium/Arisu/Head/Arisu_Head</Backstory>
+								<Backstory For="BANW_StudentKayako">Pawns/Gehena/Kayako/Head/Kayako_Head</Backstory>
+								<Backstory For="BANW_StudentKoyuki">Pawns/Millennium/Koyuki/Head/Koyuki_Head</Backstory>
+								<Backstory For="BANW_StudentSaya">Pawns/Shanhaijing/Saya/Head/Saya_Head</Backstory>
+								<Backstory For="BANW_StudentKazusa">Pawns/Sany/Kazusa/Head/Kazusa_Head</Backstory>
+								<Backstory For="BANW_StudentSaori">Pawns/Arian/Saori/Head/Saori_Head</Backstory>
+								<Backstory For="BANW_StudentChiaki">Pawns/Gehena/Chiaki/Head/Chiaki_Head</Backstory>
+								<Backstory For="BANW_StudentMari">Pawns/Sany/Mari/Head/Mari_Head</Backstory>
+								<Backstory For="BANW_StudentSakurako">Pawns/Sany/Sakurako/Head/Sakurako_Head</Backstory>
+								<Backstory For="BANW_StudentKokona">Pawns/Shanhaijing/Kokona/Head/Kokona_Head</Backstory>
+								<Backstory For="BANW_StudentHinata">Pawns/Sany/Hinata/Head/Hinata_Head</Backstory>
+								<Backstory For="BANW_StudentYoshimi">Pawns/Sany/Yoshimi/Head/Yoshimi_Head</Backstory>
+								<Backstory For="BANW_StudentShun">Pawns/Shanhaijing/Shun/Head/Shun_Head</Backstory>
+								<Backstory For="BANW_StudentHaruka">Pawns/Gehena/Haruka/Head/Haruka_Head</Backstory>
+								<Backstory For="BANW_StudentHanako">Pawns/Sany/Hanako/Head/Hanako_Head</Backstory>
+								<Backstory For="BANW_StudentAyane">Pawns/Abydos/Ayane/Head/Ayane_Head</Backstory>
+								<Backstory For="BANW_StudentKisaki">Pawns/Shanhaijing/Kisaki/Head/Kisaki_Head</Backstory>
+								<Backstory For="BANW_StudentMutsuki">Pawns/Gehena/Mutsuki/Head/Mutsuki_Head</Backstory>
+								<Backstory For="BANW_StudentMisaki">Pawns/Arian/Misaki/Head/Misaki_Head</Backstory>
+								<Backstory For="BANW_StudentJunko">Pawns/Gehena/Junko/Head/Junko_Head</Backstory>
+								<Backstory For="BANW_StudentHare">Pawns/Millennium/Hare/Head/Hare_Head</Backstory>
+								<Backstory For="BANW_StudentAru">Pawns/Gehena/Aru/Head/Aru_Head</Backstory>
+								<Backstory For="BANW_StudentSerika">Pawns/Abydos/Serika/Head/Serika_Head</Backstory>
+								<Backstory For="BANW_StudentChihiro">Pawns/Millennium/Chihiro/Head/Chihiro_Head</Backstory>
+								<Backstory For="BANW_StudentHifumi">Pawns/Sany/Hifumi/Head/Hifumi_Head</Backstory>
+								<Backstory For="BANW_StudentKotama">Pawns/Millennium/Kotama/Head/Kotama_Head</Backstory>
+								<Backstory For="BANW_StudentFuuka">Pawns/Gehena/Fuuka/Head/Fuuka_Head</Backstory>
+								<Backstory For="BANW_StudentMaki">Pawns/Millennium/Maki/Head/Maki_Head</Backstory>
+								<Backstory For="BANW_StudentJuri">Pawns/Gehena/Juri/Head/Juri_Head</Backstory>
+								<Backstory For="BANW_StudentYokari">Pawns/Hyakkiyako/Yokari/Head/Yokari_Head</Backstory>
+								<Backstory For="BANW_StudentNoa">Pawns/Millennium/Noa/Head/Noa_Head</Backstory>
+								<Backstory For="BANW_StudentRio">Pawns/Millennium/Rio/Head/Rio_Head</Backstory>
+								<Backstory For="BANW_StudentKanoe">Pawns/Wildhunt/Kanoe/Head/Kanoe_Head</Backstory>
+								<Backstory For="BANW_StudentKikyou">Pawns/Hyakkiyako/Kikyou/Head/Kikyou_Head</Backstory>
+								<Backstory For="BANW_StudentHanae">Pawns/Sany/Hanae/Head/Hanae_Head</Backstory>
+								<Backstory For="BANW_StudentAzusa">Pawns/Sany/Azusa/Head/Azusa_Head</Backstory>
+								<Backstory For="BANW_StudentSerina">Pawns/Sany/Serina/Head/Serina_Head</Backstory>
+								<Backstory For="BANW_StudentChise">Pawns/Hyakkiyako/Chise/Head/Chise_Head</Backstory>
+								<Backstory For="BANW_StudentRenge">Pawns/Hyakkiyako/Renge/Head/Renge_Head</Backstory>
+								<Backstory For="BANW_StudentIzuna">Pawns/Hyakkiyako/Izuna/Head/Izuna_Head</Backstory>
+						        <Backstory For="BANW_StudentEri">Pawns/Wildhunt/Eri/Head/Eri_Head</Backstory>
+								<Backstory For="BANW_StudentKotori">Pawns/Millennium/Kotori/Head/Kotori_Head</Backstory>
+								<Backstory For="BANW_StudentNagusa">Pawns/Hyakkiyako/Nagusa/Head/Nagusa_Head</Backstory>
+								<Backstory For="BANW_StudentTsukuyo">Pawns/Hyakkiyako/Tsukuyo/Head/Tsukuyo_Head</Backstory>
+								<Backstory For="BANW_StudentNonomi">Pawns/Abydos/Nonomi/Head/Nonomi_Head</Backstory>
+								<Backstory For="BANW_StudentNagisa">Pawns/Sany/Nagisa/Head/Nagisa_Head</Backstory>
+								<Backstory For="BANW_StudentAkari">Pawns/Gehena/Akari/Head/Akari_Head</Backstory>
+								<Backstory For="BANW_StudentIzumi">Pawns/Gehena/Izumi/Head/Izumi_Head</Backstory>
+								<Backstory For="BANW_StudentHaruna">Pawns/Gehena/Haruna/Head/Haruna_Head</Backstory>
+								<Backstory For="BANW_StudentUmika">Pawns/Hyakkiyako/Umika/Head/Umika_Head</Backstory>
+								<Backstory For="BANW_StudentShizuko">Pawns/Hyakkiyako/Shizuko/Head/Shizuko_Head</Backstory>
+								<Backstory For="BANW_StudentPina">Pawns/Hyakkiyako/Pina/Head/Pina_Head</Backstory>
+								<Backstory For="BANW_StudentReisa_A">Pawns/Sany/Reisa_A/Head/Reisa_Head</Backstory>
+								<Backstory For="BANW_StudentToki">Pawns/Millennium/Toki/Head/Toki_Head</Backstory>
+								<Backstory For="BANW_StudentSena">Pawns/Gehena/Sena/Head/Sena_Head</Backstory>
+					
+								
+							</extendedGraphics>
+						</li>
+						<!-- 身体 -->
+						<li>
+							<name>KivotosStudent_Body</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Torso</bodyPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>true</drawnInBed>								
+								</Posture>
+								<Apparel>
+									<hiddenUnderApparelTag>
+										<li>BANW_Body</li>
+									</hiddenUnderApparelTag>
+								</Apparel>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.39</layerOffset>
+									<offset>(0,0)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.29</layerOffset>
+									<offset>(0,0)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,0)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentHikali">Pawns/Highland/Hikali/Body/Hikali_Body</Backstory>
+								<Backstory For="BANW_StudentMiyu">Pawns/Srt/Miyu/Body/Miyu_Body</Backstory>
+								<Backstory For="BANW_StudentNozomi">Pawns/Highland/Nozomi/Body/Nozomi_Body</Backstory>
+								<Backstory For="BANW_StudentHoshiro">Pawns/Abydos/Hoshiro/Body/Hoshiro_Body</Backstory>
+								<Backstory For="BANW_StudentAoba">Pawns/Highland/Aoba/Body/Aoba_Body</Backstory>
+								<Backstory For="BANW_StudentTurugi">Pawns/Sany/Turugi/Body/Turugi_Body</Backstory>
+								<Backstory For="BANW_StudentSeia">Pawns/Sany/Seia/Body/Seia_Body</Backstory>
+								<Backstory For="BANW_StudentAsuna">Pawns/Millennium/Asuna/Body/Asuna_Body</Backstory>
+								<Backstory For="BANW_StudentMiyako">Pawns/Srt/Miyako/Body/Miyako_Body</Backstory>
+								<Backstory For="BANW_StudentShiroko">Pawns/Abydos/Shiroko/Body/Shiroko_Body</Backstory>
+								<Backstory For="BANW_StudentSaki">Pawns/Srt/Saki/Body/Saki_Body</Backstory>
+								<Backstory For="BANW_StudentAkane">Pawns/Millennium/Akane/Body/Akane_Body</Backstory>
+								<Backstory For="BANW_StudentHasumi">Pawns/Sany/Hasumi/Body/Hasumi_Body</Backstory>
+								<Backstory For="BANW_StudentMika">Pawns/Sany/Mika/Body/Mika_Body</Backstory>
+								<Backstory For="BANW_StudentMoe">Pawns/Srt/Moe/Body/Moe_Body</Backstory>
+								<Backstory For="BANW_StudentMashiro">Pawns/Sany/Mashiro/Body/Mashiro_Body</Backstory>
+								<Backstory For="BANW_StudentNero">Pawns/Millennium/Nero/Body/Nero_Body</Backstory>
+								<Backstory For="BANW_StudentIchika">Pawns/Sany/Ichika/Body/Ichika_Body</Backstory>
+								<Backstory For="BANW_StudentKarlin">Pawns/Millennium/Karlin/Body/Karlin_Body</Backstory>
+								<Backstory For="BANW_StudentCherino">Pawns/RedWinter/Cherino/Body/Cherino_Body</Backstory>
+								<Backstory For="BANW_StudentMakoto">Pawns/Gehena/Makoto/Body/Makoto_Body</Backstory>
+								<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Body/Hina_Body</Backstory>
+								<Backstory For="BANW_StudentNatsu">Pawns/Sany/Natsu/Body/Natsu_Body</Backstory>	
+								<Backstory For="BANW_StudentReisa">Pawns/Sany/Reisa/Body/Reisa_Body</Backstory>	
+								<Backstory For="BANW_StudentIbuki">Pawns/Gehena/Ibuki/Body/Ibuki_Body</Backstory>	
+								<Backstory For="BANW_StudentYuuka">Pawns/Millennium/Yuuka/Body/Yuuka_Body</Backstory>
+								<Backstory For="BANW_StudentIori">Pawns/Gehena/Iori/Body/Iori_Body</Backstory>	
+								<Backstory For="BANW_StudentSuzumi">Pawns/Sany/Suzumi/Body/Suzumi_Body</Backstory>	
+								<Backstory For="BANW_StudentUi">Pawns/Sany/Ui/Body/Ui_Body</Backstory>
+								<Backstory For="BANW_StudentAko">Pawns/Gehena/Ako/Body/Ako_Body</Backstory>
+								<Backstory For="BANW_StudentShimiko">Pawns/Sany/Shimiko/Body/Shimiko_Body</Backstory>
+								<Backstory For="BANW_StudentIroha">Pawns/Gehena/Iroha/Body/Iroha_Body</Backstory>
+								<Backstory For="BANW_StudentAiry">Pawns/Sany/Airy/Body/Airy_Body</Backstory>
+								<Backstory For="BANW_StudentMomoi">Pawns/Millennium/Momoi/Body/Momoi_Body</Backstory>
+								<Backstory For="BANW_StudentChinatsu">Pawns/Gehena/Chinatsu/Body/Chinatsu_Body</Backstory>
+								<Backstory For="BANW_StudentMidori">Pawns/Millennium/Midori/Body/Midori_Body</Backstory>
+								<Backstory For="BANW_StudentKoharu">Pawns/Sany/Koharu/Body/Koharu_Body</Backstory>
+								<Backstory For="BANW_StudentAtsuko">Pawns/Arian/Atsuko/Body/Atsuko_Body</Backstory>
+								<Backstory For="BANW_StudentSatsuki">Pawns/Gehena/Satsuki/Body/Satsuki_Body</Backstory>
+								<Backstory For="BANW_StudentArisu">Pawns/Millennium/Arisu/Body/Arisu_Body</Backstory>
+								<Backstory For="BANW_StudentKayako">Pawns/Gehena/Kayako/Body/Kayako_Body</Backstory>
+								<Backstory For="BANW_StudentKoyuki">Pawns/Millennium/Koyuki/Body/Koyuki_Body</Backstory>
+								<Backstory For="BANW_StudentSaya">Pawns/Shanhaijing/Saya/Body/Saya_Body</Backstory>
+								<Backstory For="BANW_StudentKazusa">Pawns/Sany/Kazusa/Body/Kazusa_Body</Backstory>
+								<Backstory For="BANW_StudentSaori">Pawns/Arian/Saori/Body/Saori_Body</Backstory>
+								<Backstory For="BANW_StudentChiaki">Pawns/Gehena/Chiaki/Body/Chiaki_Body</Backstory>
+								<Backstory For="BANW_StudentMari">Pawns/Sany/Mari/Body/Mari_Body</Backstory>
+								<Backstory For="BANW_StudentSakurako">Pawns/Sany/Sakurako/Body/Sakurako_Body</Backstory>
+								<Backstory For="BANW_StudentKokona">Pawns/Shanhaijing/Kokona/Body/Kokona_Body</Backstory>
+								<Backstory For="BANW_StudentHinata">Pawns/Sany/Hinata/Body/Hinata_Body</Backstory>
+								<Backstory For="BANW_StudentYoshimi">Pawns/Sany/Yoshimi/Body/Yoshimi_Body</Backstory>
+								<Backstory For="BANW_StudentShun">Pawns/Shanhaijing/Shun/Body/Shun_Body</Backstory>
+								<Backstory For="BANW_StudentHaruka">Pawns/Gehena/Haruka/Body/Haruka_Body</Backstory>
+								<Backstory For="BANW_StudentHanako">Pawns/Sany/Hanako/Body/Hanako_Body</Backstory>
+								<Backstory For="BANW_StudentAyane">Pawns/Abydos/Ayane/Body/Ayane_Body</Backstory>
+								<Backstory For="BANW_StudentKisaki">Pawns/Shanhaijing/Kisaki/Body/Kisaki_Body</Backstory>
+								<Backstory For="BANW_StudentMutsuki">Pawns/Gehena/Mutsuki/Body/Mutsuki_Body</Backstory>
+								<Backstory For="BANW_StudentMisaki">Pawns/Arian/Misaki/Body/Misaki_Body</Backstory>
+								<Backstory For="BANW_StudentJunko">Pawns/Gehena/Junko/Body/Junko_Body</Backstory>
+								<Backstory For="BANW_StudentHare">Pawns/Millennium/Hare/Body/Hare_Body</Backstory>
+								<Backstory For="BANW_StudentAru">Pawns/Gehena/Aru/Body/Aru_Body</Backstory>
+								<Backstory For="BANW_StudentSerika">Pawns/Abydos/Serika/Body/Serika_Body</Backstory>
+								<Backstory For="BANW_StudentChihiro">Pawns/Millennium/Chihiro/Body/Chihiro_Body</Backstory>
+								<Backstory For="BANW_StudentHifumi">Pawns/Sany/Hifumi/Body/Hifumi_Body</Backstory>
+								<Backstory For="BANW_StudentKotama">Pawns/Millennium/Kotama/Body/Kotama_Body</Backstory>
+								<Backstory For="BANW_StudentFuuka">Pawns/Gehena/Fuuka/Body/Fuuka_Body</Backstory>
+								<Backstory For="BANW_StudentMaki">Pawns/Millennium/Maki/Body/Maki_Body</Backstory>
+								<Backstory For="BANW_StudentJuri">Pawns/Gehena/Juri/Body/Juri_Body</Backstory>
+								<Backstory For="BANW_StudentYokari">Pawns/Hyakkiyako/Yokari/Body/Yokari_Body</Backstory>
+								<Backstory For="BANW_StudentNoa">Pawns/Millennium/Noa/Body/Noa_Body</Backstory>
+								<Backstory For="BANW_StudentRio">Pawns/Millennium/Rio/Body/Rio_Body</Backstory>
+								<Backstory For="BANW_StudentKanoe">Pawns/Wildhunt/Kanoe/Body/Kanoe_Body</Backstory>
+								<Backstory For="BANW_StudentKikyou">Pawns/Hyakkiyako/Kikyou/Body/Kikyou_Body</Backstory>
+								<Backstory For="BANW_StudentHanae">Pawns/Sany/Hanae/Body/Hanae_Body</Backstory>
+								<Backstory For="BANW_StudentAzusa">Pawns/Sany/Azusa/Body/Azusa_Body</Backstory>
+								<Backstory For="BANW_StudentSerina">Pawns/Sany/Serina/Body/Serina_Body</Backstory>
+								<Backstory For="BANW_StudentChise">Pawns/Hyakkiyako/Chise/Body/Chise_Body</Backstory>
+								<Backstory For="BANW_StudentMine">Pawns/Sany/Mine/Body/Mine_Body</Backstory>
+								<Backstory For="BANW_StudentRenge">Pawns/Hyakkiyako/Renge/Body/Renge_Body</Backstory>
+								<Backstory For="BANW_StudentIzuna">Pawns/Hyakkiyako/Izuna/Body/Izuna_Body</Backstory>
+								<Backstory For="BANW_StudentEri">Pawns/Wildhunt/Eri/Body/Eri_Body</Backstory>
+								<Backstory For="BANW_StudentKotori">Pawns/Millennium/Kotori/Body/Kotori_Body</Backstory>
+								<Backstory For="BANW_StudentNagusa">Pawns/Hyakkiyako/Nagusa/Body/Nagusa_Body</Backstory>
+								<Backstory For="BANW_StudentTsukuyo">Pawns/Hyakkiyako/Tsukuyo/Body/Tsukuyo_Body</Backstory>
+								<Backstory For="BANW_StudentNonomi">Pawns/Abydos/Nonomi/Body/Nonomi_Body</Backstory>
+								<Backstory For="BANW_StudentNagisa">Pawns/Sany/Nagisa/Body/Nagisa_Body</Backstory>
+								<Backstory For="BANW_StudentAkari">Pawns/Gehena/Akari/Body/Akari_Body</Backstory>
+								<Backstory For="BANW_StudentIzumi">Pawns/Gehena/Izumi/Body/Izumi_Body</Backstory>
+								<Backstory For="BANW_StudentHaruna">Pawns/Gehena/Haruna/Body/Haruna_Body</Backstory>
+								<Backstory For="BANW_StudentUmika">Pawns/Hyakkiyako/Umika/Body/Umika_Body</Backstory>
+								<Backstory For="BANW_StudentShizuko">Pawns/Hyakkiyako/Shizuko/Body/Shizuko_Body</Backstory>
+								<Backstory For="BANW_StudentPina">Pawns/Hyakkiyako/Pina/Body/Pina_Body</Backstory>
+								<Backstory For="BANW_StudentReisa_A">Pawns/Sany/Reisa_A/Body/Reisa_Body</Backstory>
+								<Backstory For="BANW_StudentToki">Pawns/Millennium/Toki/Body/Toki_Body</Backstory>
+								<Backstory For="BANW_StudentSena">Pawns/Gehena/Sena/Body/Sena_Body</Backstory>
+								<Backstory For="BANW_StudentKanna">Pawns/Valkyrie/Kanna/Body/Kanna_Body</Backstory>
+								<Backstory For="BANW_StudentFubuki">Pawns/Valkyrie/Fubuki/Body/Fubuki_Body</Backstory>
+								<Backstory For="BANW_StudentKirino">Pawns/Valkyrie/Kirino/Body/Kirino_Body</Backstory>
+								<Backstory For="BANW_StudentHibiki">Pawns/Millennium/Hibiki/Body/Hibiki_Body</Backstory>
+								<Backstory For="BANW_StudentEimi">Pawns/Millennium/Eimi/Body/Eimi_Body</Backstory>
+								<Backstory For="BANW_StudentHimari">Pawns/Millennium/Himari/Body/Himari_Body</Backstory>
+								<Backstory For="BANW_StudentUtaha">Pawns/Millennium/Utaha/Body/Utaha_Body</Backstory>
+								<Backstory For="BANW_StudentSuzumi_A">Pawns/Sany/Suzumi_A/Body/Suzumi_A_Body</Backstory>
+								<Backstory For="BANW_StudentMimori">Pawns/Hyakkiyako/Mimori/Body/Mimori_Body</Backstory>
+								<Backstory For="BANW_StudentKaede">Pawns/Hyakkiyako/Kaede/Body/Kaede_Body</Backstory>
+								<Backstory For="BANW_StudentTsubaki">Pawns/Hyakkiyako/Tsubaki/Body/Tsubaki_Body</Backstory>
+								<Backstory For="BANW_StudentKaho">Pawns/Hyakkiyako/Kaho/Body/Kaho_Body</Backstory>
+								<Backstory For="BANW_StudentNiya">Pawns/Hyakkiyako/Niya/Body/Niya_Body</Backstory>
+								<Backstory For="BANW_StudentArisu_B">Pawns/Millennium/Arisu_B/Body/Arisu_B_Body</Backstory>
+								<Backstory For="BANW_StudentKasumi">Pawns/Gehena/Kasumi/Body/Kasumi_Body</Backstory>
+								<Backstory For="BANW_StudentMegu">Pawns/Gehena/Megu/Body/Megu_Body</Backstory>
+								<Backstory For="BANW_StudentMarina">Pawns/RedWinter/Marina/Body/Marina_Body</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 头发前 -->
+						<li>
+							<name>KivotosStudent_hairfront</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.4</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentHikali">Pawns/Highland/Hikali/Hair/Hikali_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMiyu">Pawns/Srt/Miyu/Hair/Miyu_FrontHair</Backstory>
+								<Backstory For="BANW_StudentNozomi">Pawns/Highland/Nozomi/Hair/Nozomi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHoshiro">Pawns/Abydos/Hoshiro/Hair/Hoshiro_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAoba">Pawns/Highland/Aoba/Hair/Aoba_FrontHair</Backstory>
+								<Backstory For="BANW_StudentTurugi">Pawns/Sany/Turugi/Hair/Turugi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAsuna">Pawns/Millennium/Asuna/Hair/Asuna_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMiyako">Pawns/Srt/Miyako/Hair/Miyako_FrontHair</Backstory>
+								<Backstory For="BANW_StudentShiroko">Pawns/Abydos/Shiroko/Hair/Shiroko_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSaki">Pawns/Srt/Saki/Hair/Saki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAkane">Pawns/Millennium/Akane/Hair/Akane_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHasumi">Pawns/Sany/Hasumi/Hair/Hasumi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMika">Pawns/Sany/Mika/Hair/Mika_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMoe">Pawns/Srt/Moe/Hair/Moe_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMashiro">Pawns/Sany/Mashiro/Hair/Mashiro_FrontHair</Backstory>
+								<Backstory For="BANW_StudentIchika">Pawns/Sany/Ichika/Hair/Ichika_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKarlin">Pawns/Millennium/Karlin/Hair/Karlin_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMakoto">Pawns/Gehena/Makoto/Hair/Makoto_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Hair/Hina_FrontHair</Backstory>
+								<Backstory For="BANW_StudentNatsu">Pawns/Sany/Natsu/Hair/Natsu_FrontHair</Backstory>
+								<Backstory For="BANW_StudentReisa">Pawns/Sany/Reisa/Hair/Reisa_FrontHair</Backstory>
+								<Backstory For="BANW_StudentIbuki">Pawns/Gehena/Ibuki/Hair/Ibuki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentYuuka">Pawns/Millennium/Yuuka/Hair/Yuuka_FrontHair</Backstory>	
+								<Backstory For="BANW_StudentIori">Pawns/Gehena/Iori/Hair/Iori_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSuzumi">Pawns/Sany/Suzumi/Hair/Suzumi_FrontHair</Backstory>	
+								<Backstory For="BANW_StudentUi">Pawns/Sany/Ui/Hair/Ui_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAko">Pawns/Gehena/Ako/Hair/Ako_FrontHair</Backstory>
+								<Backstory For="BANW_StudentShimiko">Pawns/Sany/Shimiko/Hair/Shimiko_FrontHair</Backstory>
+								<Backstory For="BANW_StudentIroha">Pawns/Gehena/Iroha/Hair/Iroha_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAiry">Pawns/Sany/Airy/Hair/Airy_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMomoi">Pawns/Millennium/Momoi/Hair/Momoi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentChinatsu">Pawns/Gehena/Chinatsu/Hair/Chinatsu_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMidori">Pawns/Millennium/Midori/Hair/Midori_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKoharu">Pawns/Sany/Koharu/Hair/Koharu_FrontHair</Backstory>
+								<Backstory For="BANW_StudentYuzu">Pawns/Millennium/Yuzu/Hair/Yuzu_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAtsuko">Pawns/Arian/Atsuko/Hair/Atsuko_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSatsuki">Pawns/Gehena/Satsuki/Hair/Satsuki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentArisu">Pawns/Millennium/Arisu/Hair/Arisu_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKayako">Pawns/Gehena/Kayako/Hair/Kayako_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKoyuki">Pawns/Millennium/Koyuki/Hair/Koyuki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSaya">Pawns/Shanhaijing/Saya/Hair/Saya_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKazusa">Pawns/Sany/Kazusa/Hair/Kazusa_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSaori">Pawns/Arian/Saori/Hair/Saori_FrontHair</Backstory>
+								<Backstory For="BANW_StudentChiaki">Pawns/Gehena/Chiaki/Hair/Chiaki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMari">Pawns/Sany/Mari/Hair/Mari_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSakurako">Pawns/Sany/Sakurako/Hair/Sakurako_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKokona">Pawns/Shanhaijing/Kokona/Hair/Kokona_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHinata">Pawns/Sany/Hinata/Hair/Hinata_FrontHair</Backstory>
+								<Backstory For="BANW_StudentYoshimi">Pawns/Sany/Yoshimi/Hair/Yoshimi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentShun">Pawns/Shanhaijing/Shun/Hair/Shun_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHaruka">Pawns/Gehena/Haruka/Hair/Haruka_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHanako">Pawns/Sany/Hanako/Hair/Hanako_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAyane">Pawns/Abydos/Ayane/Hair/Ayane_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKisaki">Pawns/Shanhaijing/Kisaki/Hair/Kisaki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHiyori">Pawns/Arian/Hiyori/Hair/Hiyori_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMutsuki">Pawns/Gehena/Mutsuki/Hair/Mutsuki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMisaki">Pawns/Arian/Misaki/Hair/Misaki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentJunko">Pawns/Gehena/Junko/Hair/Junko_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHare">Pawns/Millennium/Hare/Hair/Hare_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAru">Pawns/Gehena/Aru/Hair/Aru_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSerika">Pawns/Abydos/Serika/Hair/Serika_FrontHair</Backstory>
+								<Backstory For="BANW_StudentChihiro">Pawns/Millennium/Chihiro/Hair/Chihiro_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHifumi">Pawns/Sany/Hifumi/Hair/Hifumi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKotama">Pawns/Millennium/Kotama/Hair/Kotama_FrontHair</Backstory>
+								<Backstory For="BANW_StudentFuuka">Pawns/Gehena/Fuuka/Hair/Fuuka_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMaki">Pawns/Millennium/Maki/Hair/Maki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentJuri">Pawns/Gehena/Juri/Hair/Juri_FrontHair</Backstory>
+								<Backstory For="BANW_StudentYokari">Pawns/Hyakkiyako/Yokari/Hair/Yokari_FrontHair</Backstory>
+								<Backstory For="BANW_StudentNoa">Pawns/Millennium/Noa/Hair/Noa_FrontHair</Backstory>
+								<Backstory For="BANW_StudentRio">Pawns/Millennium/Rio/Hair/Rio_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKanoe">Pawns/Wildhunt/Kanoe/Hair/Kanoe_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKikyou">Pawns/Hyakkiyako/Kikyou/Hair/Kikyou_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHanae">Pawns/Sany/Hanae/Hair/Hanae_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAzusa">Pawns/Sany/Azusa/Hair/Azusa_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSerina">Pawns/Sany/Serina/Hair/Serina_FrontHair</Backstory>
+								<Backstory For="BANW_StudentChise">Pawns/Hyakkiyako/Chise/Hair/Chise_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMichiru">Pawns/Hyakkiyako/Michiru/Hair/Michiru_FrontHair</Backstory>
+								<Backstory For="BANW_StudentRenge">Pawns/Hyakkiyako/Renge/Hair/Renge_FrontHair</Backstory>
+								<Backstory For="BANW_StudentIzuna">Pawns/Hyakkiyako/Izuna/Hair/Izuna_FrontHair</Backstory>
+								<Backstory For="BANW_StudentEri">Pawns/Wildhunt/Eri/Hair/Eri_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKotori">Pawns/Millennium/Kotori/Hair/Kotori_FrontHair</Backstory>
+								<Backstory For="BANW_StudentNagusa">Pawns/Hyakkiyako/Nagusa/Hair/Nagusa_FrontHair</Backstory>
+								<Backstory For="BANW_StudentTsukuyo">Pawns/Hyakkiyako/Tsukuyo/Hair/Tsukuyo_FrontHair</Backstory>
+								<Backstory For="BANW_StudentNonomi">Pawns/Abydos/Nonomi/Hair/Nonomi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentNagisa">Pawns/Sany/Nagisa/Hair/Nagisa_FrontHair</Backstory>
+								<Backstory For="BANW_StudentAkari">Pawns/Gehena/Akari/Hair/Akari_FrontHair</Backstory>
+								<Backstory For="BANW_StudentIzumi">Pawns/Gehena/Izumi/Hair/Izumi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHaruna">Pawns/Gehena/Haruna/Hair/Haruna_FrontHair</Backstory>
+								<Backstory For="BANW_StudentUmika">Pawns/Hyakkiyako/Umika/Hair/Umika_FrontHair</Backstory>
+								<Backstory For="BANW_StudentShizuko">Pawns/Hyakkiyako/Shizuko/Hair/Shizuko_FrontHair</Backstory>
+								<Backstory For="BANW_StudentPina">Pawns/Hyakkiyako/Pina/Hair/Pina_FrontHair</Backstory>
+								<Backstory For="BANW_StudentReisa_A">Pawns/Sany/Reisa_A/Hair/Reisa_FrontHair</Backstory>
+								<Backstory For="BANW_StudentToki">Pawns/Millennium/Toki/Hair/Toki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSena">Pawns/Gehena/Sena/Hair/Sena_FrontHair</Backstory>
+
+								
+							</extendedGraphics>
+						</li>
+						<!-- 头发后 -->
+						<li>
+							<name>KivotosStudent_hairback</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>false</drawnInBed>									<!-- 睡觉不显示光环 -->
+								</Posture>
+							</conditions>
+							
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.281</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>0.1</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.08</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentHikali">Pawns/Highland/Hikali/Hair/Hikali_BackHair</Backstory>
+								<Backstory For="BANW_StudentMiyu">Pawns/Srt/Miyu/Hair/Miyu_BackHair</Backstory>
+								<Backstory For="BANW_StudentNozomi">Pawns/Highland/Nozomi/Hair/Nozomi_BackHair</Backstory>
+								<Backstory For="BANW_StudentHoshiro">Pawns/Abydos/Hoshiro/Hair/Hoshiro_BackHair</Backstory>
+								<Backstory For="BANW_StudentAoba">Pawns/Highland/Aoba/Hair/Aoba_BackHair</Backstory>
+								<Backstory For="BANW_StudentTurugi">Pawns/Sany/Turugi/Hair/Turugi_BackHair</Backstory>
+								<Backstory For="BANW_StudentAsuna">Pawns/Millennium/Asuna/Hair/Asuna_BackHair</Backstory>
+								<Backstory For="BANW_StudentMiyako">Pawns/Srt/Miyako/Hair/Miyako_BackHair</Backstory>
+								<Backstory For="BANW_StudentShiroko">Pawns/Abydos/Shiroko/Hair/Shiroko_BackHair</Backstory>
+								<Backstory For="BANW_StudentSaki">Pawns/Srt/Saki/Hair/Saki_BackHair</Backstory>
+								<Backstory For="BANW_StudentAkane">Pawns/Millennium/Akane/Hair/Akane_BackHair</Backstory>
+								<Backstory For="BANW_StudentHasumi">Pawns/Sany/Hasumi/Hair/Hasumi_BackHair</Backstory>
+								<Backstory For="BANW_StudentMika">Pawns/Sany/Mika/Hair/Mika_BackHair</Backstory>
+								<Backstory For="BANW_StudentMoe">Pawns/Srt/Moe/Hair/Moe_BackHair</Backstory>
+								<Backstory For="BANW_StudentMashiro">Pawns/Sany/Mashiro/Hair/Mashiro_BackHair</Backstory>
+								<Backstory For="BANW_StudentIchika">Pawns/Sany/Ichika/Hair/Ichika_BackHair</Backstory>
+								<Backstory For="BANW_StudentKarlin">Pawns/Millennium/Karlin/Hair/Karlin_BackHair</Backstory>
+								<Backstory For="BANW_StudentMakoto">Pawns/Gehena/Makoto/Hair/Makoto_BackHair</Backstory>
+								<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Hair/Hina_BackHair</Backstory>
+								<Backstory For="BANW_StudentNatsu">Pawns/Sany/Natsu/Hair/Natsu_BackHair</Backstory>
+								<Backstory For="BANW_StudentReisa">Pawns/Sany/Reisa/Hair/Reisa_BackHair</Backstory>
+								<Backstory For="BANW_StudentIbuki">Pawns/Gehena/Ibuki/Hair/Ibuki_BackHair</Backstory>
+								<Backstory For="BANW_StudentYuuka">Pawns/Millennium/Yuuka/Hair/Yuuka_BackHair</Backstory>
+								<Backstory For="BANW_StudentIori">Pawns/Gehena/Iori/Hair/Iori_BackHair</Backstory>
+								<Backstory For="BANW_StudentSuzumi">Pawns/Sany/Suzumi/Hair/Suzumi_BackHair</Backstory>	
+								<Backstory For="BANW_StudentUi">Pawns/Sany/Ui/Hair/Ui_BackHair</Backstory>
+								<Backstory For="BANW_StudentAko">Pawns/Gehena/Ako/Hair/Ako_BackHair</Backstory>
+								<Backstory For="BANW_StudentShimiko">Pawns/Sany/Shimiko/Hair/Shimiko_BackHair</Backstory>
+								<Backstory For="BANW_StudentIroha">Pawns/Gehena/Iroha/Hair/Iroha_BackHair</Backstory>
+								<Backstory For="BANW_StudentAiry">Pawns/Sany/Airy/Hair/Airy_BackHair</Backstory>
+								<Backstory For="BANW_StudentMomoi">Pawns/Millennium/Momoi/Hair/Momoi_BackHair</Backstory>
+								<Backstory For="BANW_StudentChinatsu">Pawns/Gehena/Chinatsu/Hair/Chinatsu_BackHair</Backstory>
+								<Backstory For="BANW_StudentMidori">Pawns/Millennium/Midori/Hair/Midori_BackHair</Backstory>
+								<Backstory For="BANW_StudentKoharu">Pawns/Sany/Koharu/Hair/Koharu_BackHair</Backstory>
+								<Backstory For="BANW_StudentYuzu">Pawns/Millennium/Yuzu/Hair/Yuzu_BackHair</Backstory>
+								<Backstory For="BANW_StudentAtsuko">Pawns/Arian/Atsuko/Hair/Atsuko_BackHair</Backstory>
+								<Backstory For="BANW_StudentSatsuki">Pawns/Gehena/Satsuki/Hair/Satsuki_BackHair</Backstory>
+								<Backstory For="BANW_StudentArisu">Pawns/Millennium/Arisu/Hair/Arisu_BackHair</Backstory>
+								<Backstory For="BANW_StudentKayako">Pawns/Gehena/Kayako/Hair/Kayako_BackHair</Backstory>
+								<Backstory For="BANW_StudentKoyuki">Pawns/Millennium/Koyuki/Hair/Koyuki_BackHair</Backstory>
+								<Backstory For="BANW_StudentSaya">Pawns/Shanhaijing/Saya/Hair/Saya_BackHair</Backstory>
+								<Backstory For="BANW_StudentKazusa">Pawns/Sany/Kazusa/Hair/Kazusa_BackHair</Backstory>
+								<Backstory For="BANW_StudentSaori">Pawns/Arian/Saori/Hair/Saori_BackHair</Backstory>
+								<Backstory For="BANW_StudentChiaki">Pawns/Gehena/Chiaki/Hair/Chiaki_BackHair</Backstory>
+								<Backstory For="BANW_StudentMari">Pawns/Sany/Mari/Hair/Mari_BackHair</Backstory>
+								<Backstory For="BANW_StudentSakurako">Pawns/Sany/Sakurako/Hair/Sakurako_BackHair</Backstory>
+								<Backstory For="BANW_StudentKokona">Pawns/Shanhaijing/Kokona/Hair/Kokona_BackHair</Backstory>
+								<Backstory For="BANW_StudentHinata">Pawns/Sany/Hinata/Hair/Hinata_BackHair</Backstory>
+								<Backstory For="BANW_StudentYoshimi">Pawns/Sany/Yoshimi/Hair/Yoshimi_BackHair</Backstory>
+								<Backstory For="BANW_StudentShun">Pawns/Shanhaijing/Shun/Hair/Shun_BackHair</Backstory>
+								<Backstory For="BANW_StudentHaruka">Pawns/Gehena/Haruka/Hair/Haruka_BackHair</Backstory>
+								<Backstory For="BANW_StudentHanako">Pawns/Sany/Hanako/Hair/Hanako_BackHair</Backstory>
+								<Backstory For="BANW_StudentAyane">Pawns/Abydos/Ayane/Hair/Ayane_BackHair</Backstory>
+								<Backstory For="BANW_StudentKisaki">Pawns/Shanhaijing/Kisaki/Hair/Kisaki_BackHair</Backstory>
+								<Backstory For="BANW_StudentHiyori">Pawns/Arian/Hiyori/Hair/Hiyori_BackHair</Backstory>
+								<Backstory For="BANW_StudentMutsuki">Pawns/Gehena/Mutsuki/Hair/Mutsuki_BackHair</Backstory>
+								<Backstory For="BANW_StudentMisaki">Pawns/Arian/Misaki/Hair/Misaki_BackHair</Backstory>
+								<Backstory For="BANW_StudentJunko">Pawns/Gehena/Junko/Hair/Junko_BackHair</Backstory>
+								<Backstory For="BANW_StudentHare">Pawns/Millennium/Hare/Hair/Hare_BackHair</Backstory>
+								<Backstory For="BANW_StudentAru">Pawns/Gehena/Aru/Hair/Aru_BackHair</Backstory>
+								<Backstory For="BANW_StudentSerika">Pawns/Abydos/Serika/Hair/Serika_BackHair</Backstory>
+								<Backstory For="BANW_StudentChihiro">Pawns/Millennium/Chihiro/Hair/Chihiro_BackHair</Backstory>
+								<Backstory For="BANW_StudentHifumi">Pawns/Sany/Hifumi/Hair/Hifumi_BackHair</Backstory>
+								<Backstory For="BANW_StudentKotama">Pawns/Millennium/Kotama/Hair/Kotama_BackHair</Backstory>
+								<Backstory For="BANW_StudentFuuka">Pawns/Gehena/Fuuka/Hair/Fuuka_BackHair</Backstory>
+								<Backstory For="BANW_StudentMaki">Pawns/Millennium/Maki/Hair/Maki_BackHair</Backstory>
+								<Backstory For="BANW_StudentJuri">Pawns/Gehena/Juri/Hair/Juri_BackHair</Backstory>
+								<Backstory For="BANW_StudentYokari">Pawns/Hyakkiyako/Yokari/Hair/Yokari_BackHair</Backstory>
+								<Backstory For="BANW_StudentNoa">Pawns/Millennium/Noa/Hair/Noa_BackHair</Backstory>
+								<Backstory For="BANW_StudentRio">Pawns/Millennium/Rio/Hair/Rio_BackHair</Backstory>
+	                            <Backstory For="BANW_StudentKanoe">Pawns/Wildhunt/Kanoe/Hair/Kanoe_BackHair</Backstory>
+								<Backstory For="BANW_StudentKikyou">Pawns/Hyakkiyako/Kikyou/Hair/Kikyou_BackHair</Backstory>
+								<Backstory For="BANW_StudentHanae">Pawns/Sany/Hanae/Hair/Hanae_BackHair</Backstory>
+								<Backstory For="BANW_StudentAzusa">Pawns/Sany/Azusa/Hair/Azusa_BackHair</Backstory>
+								<Backstory For="BANW_StudentSerina">Pawns/Sany/Serina/Hair/Serina_BackHair</Backstory>
+								<Backstory For="BANW_StudentChise">Pawns/Hyakkiyako/Chise/Hair/Chise_BackHair</Backstory>
+								<Backstory For="BANW_StudentMichiru">Pawns/Hyakkiyako/Michiru/Hair/Michiru_BackHair</Backstory>
+								<Backstory For="BANW_StudentRenge">Pawns/Hyakkiyako/Renge/Hair/Renge_BackHair</Backstory>
+								<Backstory For="BANW_StudentIzuna">Pawns/Hyakkiyako/Izuna/Hair/Izuna_BackHair</Backstory>
+								<Backstory For="BANW_StudentEri">Pawns/Wildhunt/Eri/Hair/Eri_BackHair</Backstory>
+								<Backstory For="BANW_StudentKotori">Pawns/Millennium/Kotori/Hair/Kotori_BackHair</Backstory>
+								<Backstory For="BANW_StudentNagusa">Pawns/Hyakkiyako/Nagusa/Hair/Nagusa_BackHair</Backstory>
+								<Backstory For="BANW_StudentTsukuyo">Pawns/Hyakkiyako/Tsukuyo/Hair/Tsukuyo_BackHair</Backstory>
+								<Backstory For="BANW_StudentNonomi">Pawns/Abydos/Nonomi/Hair/Nonomi_BackHair</Backstory>
+								<Backstory For="BANW_StudentNagisa">Pawns/Sany/Nagisa/Hair/Nagisa_BackHair</Backstory>
+								<Backstory For="BANW_StudentAkari">Pawns/Gehena/Akari/Hair/Akari_BackHair</Backstory>
+								<Backstory For="BANW_StudentIzumi">Pawns/Gehena/Izumi/Hair/Izumi_BackHair</Backstory>
+								<Backstory For="BANW_StudentHaruna">Pawns/Gehena/Haruna/Hair/Haruna_BackHair</Backstory>
+								<Backstory For="BANW_StudentUmika">Pawns/Hyakkiyako/Umika/Hair/Umika_BackHair</Backstory>
+								<Backstory For="BANW_StudentShizuko">Pawns/Hyakkiyako/Shizuko/Hair/Shizuko_BackHair</Backstory>
+								<Backstory For="BANW_StudentPina">Pawns/Hyakkiyako/Pina/Hair/Pina_BackHair</Backstory>
+								<Backstory For="BANW_StudentReisa_A">Pawns/Sany/Reisa_A/Hair/Reisa_BackHair</Backstory>
+								<Backstory For="BANW_StudentToki">Pawns/Millennium/Toki/Hair/Toki_BackHair</Backstory>
+								<Backstory For="BANW_StudentSena">Pawns/Gehena/Sena/Hair/Sena_BackHair</Backstory>
+
+								
+							</extendedGraphics>
+						</li>
+						<!-- 光环 -->
+						<li>
+							<name>KivotosStudent_halo</name>
+							<path>Pawns/General/Invisible/Inv</path>						 
+							<conditions>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+								<BodyPart>
+									<bodyPart>Halo</bodyPart>
+									<bodyPartLabel>光环</bodyPartLabel>
+									<drawWithoutPart>true</drawWithoutPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>false</drawnLaying>
+									<drawnInBed>false</drawnInBed>									<!-- 睡觉不显示光环 -->
+								</Posture>
+							</conditions>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>0.3</layerOffset>
+									<offset>(0,0.1)</offset>
+								</north>
+								<south>
+									<layerOffset>0.12</layerOffset>
+									<offset>(0,0.29)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.29</layerOffset>
+									<offset>(0,0.35)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+						    <Backstory For="BANW_StudentMakoto">Pawns/Gehena/Makoto/Halo/Makoto_Halo</Backstory>
+							<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Halo/Hina_Halo</Backstory>
+						    <Backstory For="BANW_StudentYuuka">Pawns/Millennium/Yuuka/Halo/Yuuka_Halo</Backstory>
+							<Backstory For="BANW_StudentAko">Pawns/Gehena/Ako/Halo/Ako_Halo</Backstory>
+                            <Backstory For="BANW_StudentAiry">Pawns/Sany/Airy/Halo/Airy_Halo</Backstory>
+							<Backstory For="BANW_StudentKoharu">Pawns/Sany/Koharu/Halo/Koharu_Halo</Backstory>
+							<Backstory For="BANW_StudentSatsuki">Pawns/Gehena/Satsuki/Halo/Satsuki_Halo</Backstory>
+							<Backstory For="BANW_StudentArisu">Pawns/Millennium/Arisu/Halo/Arisu_Halo</Backstory>
+							<Backstory For="BANW_StudentKarlin">Pawns/Millennium/Karlin/Halo/Karlin_Halo</Backstory>
+							<Backstory For="BANW_StudentSaya">Pawns/Shanhaijing/Saya/Halo/Saya_Halo</Backstory>
+							<Backstory For="BANW_StudentSerika">Pawns/Abydos/Serika/Halo/Serika_Halo</Backstory>
+							<Backstory For="BANW_StudentAyane">Pawns/Abydos/Ayane/Halo/Ayane_Halo</Backstory>
+							<Backstory For="BANW_StudentChihiro">Pawns/Millennium/Chihiro/Halo/Chihiro_Halo</Backstory>
+							<Backstory For="BANW_StudentAru">Pawns/Gehena/Aru/Halo/Aru_Halo</Backstory>
+							<Backstory For="BANW_StudentFuuka">Pawns/Gehena/Fuuka/Halo/Fuuka_Halo</Backstory>
+							<Backstory For="BANW_StudentMaki">Pawns/Millennium/Maki/Halo/Maki_Halo</Backstory>
+							<Backstory For="BANW_StudentTurugi">Pawns/Sany/Turugi/Halo/Turugi_Halo</Backstory>
+							<Backstory For="BANW_StudentIchika">Pawns/Sany/Ichika/Halo/Ichika_Halo</Backstory>
+							<Backstory For="BANW_StudentHasumi">Pawns/Sany/Hasumi/Halo/Hasumi_Halo</Backstory>
+							<Backstory For="BANW_StudentMashiro">Pawns/Sany/Mashiro/Halo/Mashiro_Halo</Backstory>
+							<Backstory For="BANW_StudentYokari">Pawns/Hyakkiyako/Yokari/Halo/Yokari_Halo</Backstory>
+							<Backstory For="BANW_StudentNoa">Pawns/Millennium/Noa/Halo/Noa_Halo</Backstory>
+							<Backstory For="BANW_StudentRio">Pawns/Millennium/Rio/Halo/Rio_Halo</Backstory>
+							<Backstory For="BANW_StudentKanoe">Pawns/Wildhunt/Kanoe/Halo/Kanoe_Halo</Backstory>
+							<Backstory For="BANW_StudentKikyou">Pawns/Hyakkiyako/Kikyou/Halo/Kikyou_Halo</Backstory>
+							<Backstory For="BANW_StudentAkari">Pawns/Gehena/Akari/Halo/Akari_Halo</Backstory>
+							<Backstory For="BANW_StudentHaruna">Pawns/Gehena/Haruna/Halo/Haruna_Halo</Backstory>
+							<Backstory For="BANW_StudentToki">Pawns/Millennium/Toki/Halo/Toki_Halo</Backstory>
+							<Backstory For="BANW_StudentNero">Pawns/Millennium/Nero/Halo/Nero_Halo</Backstory>
+							<Backstory For="BANW_StudentArisu">Pawns/Millennium/Arisu/Halo/Arisu_Halo</Backstory>
+							<Backstory For="BANW_StudentEimi">Pawns/Millennium/Eimi/Halo/Eimi_Halo</Backstory>
+							<Backstory For="BANW_StudentUtaha">Pawns/Millennium/Utaha/Halo/Utaha_Halo</Backstory>
+							<Backstory For="BANW_StudentArisu_B">Pawns/Millennium/Arisu_B/Halo/Arisu_B_Halo</Backstory>
+							<Backstory For="BANW_StudentMarina">Pawns/RedWinter/Marina/Halo/Marina_Halo</Backstory>
+							</extendedGraphics>
+							</li>
+							<li>
+							<name>KivotosStudent_head</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							 <shaderType>MoteGlow</shaderType>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Head/Hina_eye</Backstory>
+								<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Head/Hina_G</Backstory>
+							</extendedGraphics>
+							</li>
+							<li>
+							<name>KivotosStudent_head</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							 <shaderType>MoteGlow</shaderType>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentHina">Pawns/Gehena/Hina/Head/Hina_G</Backstory>
+							</extendedGraphics>
+							</li>
+							<li>
+							<name>KivotosStudent_head</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.4</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+                            <Backstory For="BANW_StudentYuzu">Pawns/Millennium/Yuzu/Head/Yuzu_Head</Backstory>
+							<Backstory For="BANW_StudentHiyori">Pawns/Arian/Hiyori/Head/Hiyori_Head</Backstory>
+							<Backstory For="BANW_StudentMichiru">Pawns/Hyakkiyako/Michiru/Head/Michiru_Head</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 身体 -->
+						<li>
+							<name>KivotosStudent_Body</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Torso</bodyPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>true</drawnInBed>								
+								</Posture>
+								<Apparel>
+									<hiddenUnderApparelTag>
+										<li>BANW_Body</li>
+									</hiddenUnderApparelTag>
+								</Apparel>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.39</layerOffset>
+									<offset>(0,0)</offset>
+								</north>
+								<south>
+									<layerOffset>0.09</layerOffset>
+									<offset>(0,0)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,0)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+                                <Backstory For="BANW_StudentYuzu">Pawns/Millennium/Yuzu/Body/Yuzu_Body</Backstory>
+								<Backstory For="BANW_StudentHiyori">Pawns/Arian/Hiyori/Body/Hiyori_Body</Backstory>
+								<Backstory For="BANW_StudentMichiru">Pawns/Hyakkiyako/Michiru/Body/Michiru_Body</Backstory>
+							</extendedGraphics>
+						</li>
+						<li>
+							<name>KivotosStudent_hairfront</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.4</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.355)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.271</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+                           <Backstory For="BANW_StudentAru">Pawns/Gehena/Aru/Hair/Aru_BkbHair</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 头 -->
+						<li>
+							<name>KivotosStudent_head</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+                             <Backstory For="BANW_StudentMine">Pawns/Sany/Mine/Head/Mine_Head</Backstory>
+							  <Backstory For="BANW_StudentNero">Pawns/Millennium/Nero/Head/Nero_Head</Backstory>
+							  <Backstory For="BANW_StudentSeia">Pawns/Sany/Seia/Head/Seia_Head</Backstory>
+							  <Backstory For="BANW_StudentKanna">Pawns/Valkyrie/Kanna/Head/Kanna_Head</Backstory>
+							  <Backstory For="BANW_StudentFubuki">Pawns/Valkyrie/Fubuki/Head/Fubuki_Head</Backstory>
+                              <Backstory For="BANW_StudentKirino">Pawns/Valkyrie/Kirino/Head/Kirino_Head</Backstory>
+							  <Backstory For="BANW_StudentHibiki">Pawns/Millennium/Hibiki/Head/Hibiki_Head</Backstory>
+							  <Backstory For="BANW_StudentEimi">Pawns/Millennium/Eimi/Head/Eimi_Head</Backstory>
+								<Backstory For="BANW_StudentHimari">Pawns/Millennium/Himari/Head/Himari_Head</Backstory>
+								<Backstory For="BANW_StudentUtaha">Pawns/Millennium/Utaha/Head/Utaha_Head</Backstory>
+								<Backstory For="BANW_StudentSuzumi_A">Pawns/Sany/Suzumi_A/Head/Suzumi_A_Head</Backstory>
+								<Backstory For="BANW_StudentMimori">Pawns/Hyakkiyako/Mimori/Head/Mimori_Head</Backstory>
+								<Backstory For="BANW_StudentKaede">Pawns/Hyakkiyako/Kaede/Head/Kaede_Head</Backstory>
+								<Backstory For="BANW_StudentTsubaki">Pawns/Hyakkiyako/Tsubaki/Head/Tsubaki_Head</Backstory>
+								<Backstory For="BANW_StudentKaho">Pawns/Hyakkiyako/Kaho/Head/Kaho_Head</Backstory>
+								<Backstory For="BANW_StudentNiya">Pawns/Hyakkiyako/Niya/Head/Niya_Head</Backstory>
+								<Backstory For="BANW_StudentArisu_B">Pawns/Millennium/Arisu_B/Head/Arisu_B_Head</Backstory>
+								<Backstory For="BANW_StudentKasumi">Pawns/Gehena/Kasumi/Head/Kasumi_Head</Backstory>
+								<Backstory For="BANW_StudentMegu">Pawns/Gehena/Megu/Head/Megu_Head</Backstory>
+								<Backstory For="BANW_StudentCherino">Pawns/RedWinter/Cherino/Head/Cherino_Head</Backstory>
+								<Backstory For="BANW_StudentMarina">Pawns/RedWinter/Marina/Head/Marina_Head</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 头发前 -->
+						<li>
+							<name>KivotosStudent_hairfront</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.4</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+                                   <Backstory For="BANW_StudentMine">Pawns/Sany/Mine/Hair/Mine_FrontHair</Backstory>
+								   <Backstory For="BANW_StudentNero">Pawns/Millennium/Nero/Hair/Nero_FrontHair</Backstory>
+								   <Backstory For="BANW_StudentSeia">Pawns/Sany/Seia/Hair/Seia_FrontHair</Backstory>
+								   <Backstory For="BANW_StudentKanna">Pawns/Valkyrie/Kanna/Hair/Kanna_FrontHair</Backstory>
+								   <Backstory For="BANW_StudentFubuki">Pawns/Valkyrie/Fubuki/Hair/Fubuki_FrontHair</Backstory>
+								   <Backstory For="BANW_StudentKirino">Pawns/Valkyrie/Kirino/Hair/Kirino_FrontHair</Backstory>
+								   <Backstory For="BANW_StudentHibiki">Pawns/Millennium/Hibiki/Hair/Hibiki_FrontHair</Backstory>
+								   <Backstory For="BANW_StudentEimi">Pawns/Millennium/Eimi/Hair/Eimi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentHimari">Pawns/Millennium/Himari/Hair/Himari_FrontHair</Backstory>
+								<Backstory For="BANW_StudentUtaha">Pawns/Millennium/Utaha/Hair/Utaha_FrontHair</Backstory>
+								<Backstory For="BANW_StudentSuzumi_A">Pawns/Sany/Suzumi_A/Hair/Suzumi_A_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMimori">Pawns/Hyakkiyako/Mimori/Hair/Mimori_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKaede">Pawns/Hyakkiyako/Kaede/Hair/Kaede_FrontHair</Backstory>
+								<Backstory For="BANW_StudentTsubaki">Pawns/Hyakkiyako/Tsubaki/Hair/Tsubaki_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKaho">Pawns/Hyakkiyako/Kaho/Hair/Kaho_FrontHair</Backstory>
+								<Backstory For="BANW_StudentNiya">Pawns/Hyakkiyako/Niya/Hair/Niya_FrontHair</Backstory>
+								<Backstory For="BANW_StudentKasumi">Pawns/Gehena/Kasumi/Hair/Kasumi_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMegu">Pawns/Gehena/Megu/Hair/Megu_FrontHair</Backstory>
+								<Backstory For="BANW_StudentCherino">Pawns/RedWinter/Cherino/Hair/Cherino_FrontHair</Backstory>
+								<Backstory For="BANW_StudentMarina">Pawns/RedWinter/Marina/Hair/Marina_FrontHair</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 头发后 -->
+						<li>
+							<name>KivotosStudent_hairback</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>false</drawnInBed>									<!-- 睡觉不显示光环 -->
+								</Posture>
+							</conditions>
+							
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.281</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>0.1</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.08</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentMine">Pawns/Sany/Mine/Hair/Mine_BackHair</Backstory>
+								<Backstory For="BANW_StudentNero">Pawns/Millennium/Nero/Hair/Nero_BackHair</Backstory>
+								<Backstory For="BANW_StudentSeia">Pawns/Sany/Seia/Hair/Seia_BackHair</Backstory>
+								<Backstory For="BANW_StudentKanna">Pawns/Valkyrie/Kanna/Hair/Kanna_BackHair</Backstory>
+								<Backstory For="BANW_StudentFubuki">Pawns/Valkyrie/Fubuki/Hair/Fubuki_BackHair</Backstory>
+								<Backstory For="BANW_StudentKirino">Pawns/Valkyrie/Kirino/Hair/Kirino_BackHair</Backstory>
+								<Backstory For="BANW_StudentHibiki">Pawns/Millennium/Hibiki/Hair/Hibiki_BackHair</Backstory>
+								<Backstory For="BANW_StudentEimi">Pawns/Millennium/Eimi/Hair/Eimi_BackHair</Backstory>
+								<Backstory For="BANW_StudentUtaha">Pawns/Millennium/Utaha/Hair/Utaha_BackHair</Backstory>
+								<Backstory For="BANW_StudentSuzumi_A">Pawns/Sany/Suzumi_A/Hair/Suzumi_A_BackHair</Backstory>
+								<Backstory For="BANW_StudentMimori">Pawns/Hyakkiyako/Mimori/Hair/Mimori_BackHair</Backstory>
+								<Backstory For="BANW_StudentKaede">Pawns/Hyakkiyako/Kaede/Hair/Kaede_BackHair</Backstory>
+								<Backstory For="BANW_StudentTsubaki">Pawns/Hyakkiyako/Tsubaki/Hair/Tsubaki_BackHair</Backstory>
+								<Backstory For="BANW_StudentKaho">Pawns/Hyakkiyako/Kaho/Hair/Kaho_BackHair</Backstory>
+								<Backstory For="BANW_StudentNiya">Pawns/Hyakkiyako/Niya/Hair/Niya_BackHair</Backstory>
+								<Backstory For="BANW_StudentArisu_B">Pawns/Millennium/Arisu_B/Hair/Arisu_B_BackHair</Backstory>
+								<Backstory For="BANW_StudentKasumi">Pawns/Gehena/Kasumi/Hair/Kasumi_BackHair</Backstory> 
+								<Backstory For="BANW_StudentMegu">Pawns/Gehena/Megu/Hair/Megu_BackHair</Backstory>
+								<Backstory For="BANW_StudentCherino">Pawns/RedWinter/Cherino/Hair/Cherino_BackHair</Backstory>
+								<Backstory For="BANW_StudentMarina">Pawns/RedWinter/Marina/Hair/Marina_BackHair</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 头发后 -->
+						<li>
+							<name>KivotosStudent_hairback</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>true</drawnLaying>
+									<drawnInBed>false</drawnInBed>									<!-- 睡觉不显示光环 -->
+								</Posture>
+							</conditions>
+							
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-6.281</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>0.1</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</south>
+								<east>
+									<layerOffset>-1.08</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentHimari">Pawns/Millennium/Himari/Hair/Himari_BackHair</Backstory>
+							</extendedGraphics>
+						</li>
+						<!-- 光环 -->
+						<li>
+							<name>KivotosStudent_halo</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<shaderType>MoteGlow</shaderType>						 
+							<conditions>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+								<BodyPart>
+									<bodyPart>Halo</bodyPart>
+									<bodyPartLabel>光环</bodyPartLabel>
+									<drawWithoutPart>true</drawWithoutPart>
+								</BodyPart>
+								<Posture>
+									<drawnStanding>true</drawnStanding>
+									<drawnLaying>false</drawnLaying>
+									<drawnInBed>false</drawnInBed>									<!-- 睡觉不显示光环 -->
+								</Posture>
+							</conditions>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.59</layerOffset>
+									<offset>(0,0.1)</offset>
+								</north>
+								<south>
+									<layerOffset>-5.5</layerOffset>
+									<offset>(0,0.1)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.29</layerOffset>
+									<offset>(0.15,0.2)</offset>
+								</east>
+								<west>
+									<layerOffset>-5.5</layerOffset>
+									<offset>(0.15,0.2)</offset>
+								</west>
+							</offsets>
+							<extendedGraphics>
+                                       <Backstory For="BANW_StudentEri">Pawns/Wildhunt/Eri/Halo/Eri_Halo</Backstory>
+							</extendedGraphics>
+							</li>
+							<!-- 头发前 -->
+						<li>
+							<name>KivotosStudent_hairfront</name>
+							<path>Pawns/General/Invisible/Inv</path>
+							<inFrontOfBody>true</inFrontOfBody>
+							<conditions>
+								<BodyPart>
+									<bodyPart>BANW_Head</bodyPart>
+								</BodyPart>
+								<RotStage>Fresh,Rotting,Dessicated</RotStage>
+							</conditions>
+							<alignWithHead>true</alignWithHead>
+							<scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+							<offsets>
+								<north>
+									<layerOffset>-0.32</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
+							</offsets>
+							<extendedGraphics>
+								<Backstory For="BANW_StudentArisu_B">Pawns/Millennium/Arisu_B/Hair/Arisu_B_FrontHair</Backstory>
+							</extendedGraphics>
+						</li>
+						</bodyAddons>
+				</alienPartGenerator>
+			</generalSettings>
+		</alienRace>
+	</AlienRace.ThingDef_AlienRace>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<AlienRace.ThingDef_AlienRace ParentName="BasePawn" Name="BANW_StudentThingBase" Abstract="True">
+		<alienRace>
+			<generalSettings>
+			<minAgeForAdulthood>10</minAgeForAdulthood>
+				<maleGenderProbability>0.0</maleGenderProbability>
+				<immuneToAge>true</immuneToAge>
+				<canLayDown>true</canLayDown>
+				<immuneToXenophobia>true</immuneToXenophobia>
+				<notXenophobistTowards>
+				</notXenophobistTowards>
+				<humanRecipeImport>true</humanRecipeImport>
+				<alienPartGenerator>
+					<bodyTypes>
+						<li>Thin</li>
+					</bodyTypes>
+                    <headBodyPartDef>BANW_Head</headBodyPartDef>
+					<headTypes Inherit="False">
+						<li>Female_AverageNormal</li>
+					</headTypes>
+					<colorChannels>
+						<li>
+							<name>skin</name>
+							<first Class="ColorGenerator_Options" Inherit="false">
+								<options>
+									<li>
+										<weight>10</weight>
+										<only>RGBA(1,1,1,1)</only>
+									</li>
+								</options>
+							</first>
+						</li>
+					</colorChannels>
+				</alienPartGenerator>
+				<maxDamageForSocialfight>6</maxDamageForSocialfight>
+				<reproduction>
+					<femaleFertilityAgeFactor>
+						<points>
+							<li>(0.01, 0)</li>
+							<li>(80,0)</li>
+						</points>
+					</femaleFertilityAgeFactor>
+				</reproduction>
+			</generalSettings>
+
+			<styleSettings>
+				<li>
+					<key>HairDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>TattooDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+				<li>
+					<key>BeardDef</key>
+					<value>
+						<hasStyle>false</hasStyle>
+					</value>
+				</li>
+			</styleSettings>
+			<relationSettings>
+			<relationChanceModifierLover>0</relationChanceModifierLover>
+			<relationChanceModifierExLover>0</relationChanceModifierExLover>
+			<relationChanceModifierFiance>0</relationChanceModifierFiance>
+			<relationChanceModifierSpouse>0</relationChanceModifierSpouse>
+			<relationChanceModifierExSpouse>0</relationChanceModifierExSpouse>
+			<relationChanceModifierParent>0</relationChanceModifierParent>
+			<relationChanceModifierChild>0</relationChanceModifierChild>
+			<relationChanceModifierSibling>0</relationChanceModifierSibling>
+		    </relationSettings>
+			<raceRestriction>
+				<onlyUseRaceRestrictedApparel>true</onlyUseRaceRestrictedApparel>
+				<onlyUseRaceRestrictedWeapons>false</onlyUseRaceRestrictedWeapons>
+				<onlyBuildRaceRestrictedBuildings>false</onlyBuildRaceRestrictedBuildings>
+				<onlyEatRaceRestrictedFood>false</onlyEatRaceRestrictedFood>
+				<onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>
+				<apparelList>
+					<li>BANW_Body_Hikali</li>
+					<li>BANW_Body_Nozomi</li>
+					<li>BANW_Body_Hoshiro</li>
+					<li>BANW_Body_Miyu</li>
+					<li>BANW_Body_Aoba</li>
+					<li>BANW_Body_Turugi</li>
+					<li>BANW_Body_Seia</li>
+					<li>BANW_Body_Asuna</li>
+					<li>BANW_Body_Miyako</li>
+					<li>BANW_Body_Shiroko</li>
+					<li>BANW_Body_Saki</li>
+					<li>BANW_Body_Akane</li>
+					<li>BANW_Body_Hasumi</li>
+					<li>BANW_Body_Mika</li>
+					<li>BANW_Body_Moe</li>
+					<li>BANW_Body_Mashiro</li>
+					<li>BANW_Body_Nero</li>
+					<li>BANW_Body_Ichika</li>
+					<li>BANW_Body_Karlin</li>
+					<li>BANW_Body_Cherino</li>
+                    <li>BANW_Body_Makoto</li>
+					<li>BANW_Body_Hina</li>
+					<li>BANW_Body_Natsu</li>
+					<li>BANW_Body_Reisa</li>
+					<li>BANW_Body_Ibuki</li>
+					<li>BANW_Body_Yuuka</li>
+					<li>BANW_Body_Iori</li>
+					<li>BANW_Body_Suzumi</li>
+					<li>BANW_Body_Ui</li>
+					<li>BANW_Body_Ako</li>
+					<li>BANW_Body_Shimiko</li>
+					<li>BANW_Body_Iroha</li>
+					<li>BANW_Body_Airy</li>
+					<li>BANW_Body_Momoi</li>
+					<li>BANW_Body_Chinatsu</li>
+					<li>BANW_Body_Midori</li>
+					<li>BANW_Body_Koharu</li>
+					<li>BANW_Body_Yuzu</li>
+					<li>BANW_Body_Atsuko</li>
+					<li>BANW_Body_Satsuki</li>
+					<li>BANW_Body_Arisu</li>
+					<li>BANW_Body_Kayako</li>
+					<li>BANW_Body_Koyuki</li>
+					<li>BANW_Body_Saya</li>
+					<li>BANW_Body_Kazusa</li>
+					<li>BANW_Body_Saori</li>
+					<li>BANW_Body_Chiaki</li>
+					<li>BANW_Body_Mari</li>
+					<li>BANW_Body_Sakurako</li>
+					<li>BANW_Body_Kokona</li>
+					<li>BANW_Body_Hinata</li>
+					<li>BANW_Body_Yoshimi</li>
+					<li>BANW_Body_Shun</li>
+					<li>BANW_Body_Haruka</li>
+					<li>BANW_Body_Hanako</li>
+					<li>BANW_Body_Ayane</li>
+					<li>BANW_Body_Kisaki</li>
+					<li>BANW_Body_Hiyori</li>
+					<li>BANW_Body_Mutsuki</li>
+					<li>BANW_Body_Misaki</li>
+					<li>BANW_Body_Junko</li>
+					<li>BANW_Body_Hare</li>
+					<li>BANW_Body_Aru</li>
+					<li>BANW_Body_Serika</li>
+					<li>BANW_Body_Chihiro</li>
+					<li>BANW_Body_Hifumi</li>
+					<li>BANW_Body_Kotama</li>
+					<li>BANW_Body_Fuuka</li>
+					<li>BANW_Body_Maki</li>
+					<li>BANW_Body_Juri</li>
+					<li>BANW_Body_Yokari</li>
+					<li>BANW_Body_Noa</li>
+					<li>BANW_Body_Rio</li>
+					<li>BANW_Body_Kanoe</li>
+					<li>BANW_Body_Kikyou</li>
+					<li>BANW_Body_Hanae</li>
+					<li>BANW_Body_Azusa</li>
+					<li>BANW_Body_Serina</li>
+					<li>BANW_Body_Chise</li>
+					<li>BANW_Body_Mine</li>
+					<li>BANW_Body_Michiru</li>
+					<li>BANW_Body_Renge</li>
+					<li>BANW_Body_Izuna</li>
+					<li>BANW_Body_Eri</li>
+					<li>BANW_Body_Kotori</li>
+					<li>BANW_Body_Nagusa</li>
+					<li>BANW_Body_Tsukuyo</li>
+					<li>BANW_Body_Nonomi</li>
+					<li>BANW_Body_Nagisa</li>
+					<li>BANW_Body_Akari</li>
+					<li>BANW_Body_Izumi</li>
+					<li>BANW_Body_Haruna</li>
+					<li>BANW_Body_Umika</li>
+					<li>BANW_Body_Shizuko</li>
+					<li>BANW_Body_Pina</li>
+					<li>BANW_Body_Reisa_A</li>
+					<li>BANW_Body_Toki</li>
+					<li>BANW_Body_Sena</li>
+					<li>BANW_Body_Kanna</li>
+					<li>BANW_Body_Fubuki</li>
+					<li>BANW_Body_Kirino</li>
+					<li>BANW_Body_Hibiki</li>
+					<li>BANW_Body_Eimi</li>
+					<li>BANW_Body_Himari</li>
+					<li>BANW_Body_Utaha</li>
+					<li>BANW_Body_Suzumi_A</li>
+                    <li>BANW_Body_Mimori</li>
+					<li>BANW_Body_Kaede</li>
+					<li>BANW_Body_Tsubaki</li>
+					<li>BANW_Body_Kaho</li>
+					<li>BANW_Body_Niya</li>
+					<li>BANW_Body_Arisu_B</li>
+					<li>BANW_Body_Kasumi</li>
+					<li>BANW_Body_Megu</li>
+					<li>BANW_Body_Marina</li>
+
+					<li>BANC_Hat_One</li>
+					<li>BANC_Glove_One</li>
+					<li>BANC_Amulet_One</li>
+					<li>BANC_Bag_One</li>
+					<li>BANC_Badge_One</li>
+					<li>BANC_Shoes_One</li>
+					<li>BANC_Hairpin_One</li>
+					<li>BANC_Watch_One</li>
+					<li>BANC_Necklace_One</li>
+
+					<li>BANC_Hat_Tow</li>
+					<li>BANC_Glove_Tow</li>
+					<li>BANC_Amulet_Tow</li>
+					<li>BANC_Bag_Tow</li>
+					<li>BANC_Badge_Tow</li>
+					<li>BANC_Shoes_Tow</li>
+					<li>BANC_Hairpin_Tow</li>
+					<li>BANC_Watch_Tow</li>
+					<li>BANC_Necklace_Tow</li>
+
+					<li>BANC_Hat_Three</li>
+					<li>BANC_Glove_Three</li>
+					<li>BANC_Amulet_Three</li>
+					<li>BANC_Bag_Three</li>
+					<li>BANC_Badge_Three</li>
+					<li>BANC_Shoes_Three</li>
+					<li>BANC_Hairpin_Three</li>
+					<li>BANC_Watch_Three</li>
+					<li>BANC_Necklace_Three</li>
+
+					<li>BANC_Hat_Four</li>
+					<li>BANC_Glove_Four</li>
+					<li>BANC_Amulet_Four</li>
+					<li>BANC_Bag_Four</li>
+					<li>BANC_Badge_Four</li>
+					<li>BANC_Shoes_Four</li>
+					<li>BANC_Hairpin_Four</li>
+					<li>BANC_Watch_Four</li>
+					<li>BANC_Necklace_Four</li>
+
+					<li>BANC_Hat_Five</li>
+					<li>BANC_Glove_Five</li>
+					<li>BANC_Amulet_Five</li>
+					<li>BANC_Bag_Five</li>
+					<li>BANC_Badge_Five</li>
+					<li>BANC_Shoes_Five</li>
+					<li>BANC_Hairpin_Five</li>
+					<li>BANC_Watch_Five</li>
+					<li>BANC_Necklace_Five</li>
+
+					<li>BANC_Hat_Six</li>
+					<li>BANC_Glove_Six</li>
+					<li>BANC_Amulet_Six</li>
+					<li>BANC_Bag_Six</li>
+					<li>BANC_Badge_Six</li>
+					<li>BANC_Shoes_Six</li>
+					<li>BANC_Hairpin_Six</li>
+					<li>BANC_Watch_Six</li>
+					<li>BANC_Necklace_Six</li>
+
+					<li>BANC_Hat_Seven</li>
+					<li>BANC_Glove_Seven</li>
+					<li>BANC_Amulet_Seven</li>
+					<li>BANC_Bag_Seven</li>
+					<li>BANC_Badge_Seven</li>
+					<li>BANC_Shoes_Seven</li>
+					<li>BANC_Hairpin_Seven</li>
+					<li>BANC_Watch_Seven</li>
+					<li>BANC_Necklace_Seven</li>
+
+					<li>BANC_Hat_Eight</li>
+					<li>BANC_Glove_Eight</li>
+					<li>BANC_Amulet_Eight</li>
+					<li>BANC_Bag_Eight</li>
+					<li>BANC_Badge_Eight</li>
+					<li>BANC_Shoes_Eight</li>
+					<li>BANC_Hairpin_Eight</li>
+					<li>BANC_Watch_Eight</li>
+					<li>BANC_Necklace_Eight</li>
+
+					<li>BANC_Hat_Nine</li>
+					<li>BANC_Glove_Nine</li>
+					<li>BANC_Amulet_Nine</li>
+					<li>BANC_Bag_Nine</li>
+					<li>BANC_Badge_Nine</li>
+					<li>BANC_Shoes_Nine</li>
+					<li>BANC_Hairpin_Nine</li>
+					<li>BANC_Watch_Nine</li>
+					<li>BANC_Necklace_Nine</li>
+
+					<li>BANC_Hat_Ten</li>
+					<li>BANC_Glove_Ten</li>
+					<li>BANC_Bag_Ten</li>
+					<li>BANC_Badge_Ten</li>
+					<li>BANC_Shoes_Ten</li>
+					<li>BANC_Hairpin_Ten</li>
+					<li>BANC_Watch_Ten</li>
+					<li>BANC_Necklace_Ten</li>
+					<li>BANC_Amulet_Ten</li>
+				</apparelList>
+				
+				<whiteApparelList>
+					<li>Apparel_ShieldBelt</li>
+					<li>Apparel_SmokepopBelt</li>
+					<li>Apparel_FirefoampopPack</li>
+					<li>Apparel_PsychicShockLance</li>
+					<li>Apparel_PsychicInsanityLance</li>
+					<li>OrbitalTargeterBombardment</li>
+					<li>OrbitalTargeterPowerBeam</li>
+					<li>TornadoGenerator</li>
+					<li MayRequire="Ludeon.Rimworld.Royalty">Apparel_PackJump</li>
+					<li MayRequire="Ludeon.Rimworld.Royalty">Apparel_PackBroadshield</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Apparel_HeavyShield</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Apparel_PackControl</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Apparel_PackBandwidth</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Apparel_PackTox</li>
+				</whiteApparelList>
+				<whiteGeneTags>
+				</whiteGeneTags>
+			</raceRestriction>
+		</alienRace>
+
+		<tools>
+			<li>
+				<label>左手</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>右手</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>14</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+		</tools>
+
+
+
+		<race>
+			<hasCorpse>false</hasCorpse><!-- 是否有尸体 -->
+			<renderTree>Humanlike</renderTree><!-- 渲染树类型，使用类人渲染 -->
+			<thinkTreeMain>Humanlike</thinkTreeMain><!-- 主要思考树，使用类人AI -->
+			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant><!-- 持续思考树，使用类人常量AI -->
+			<intelligence>Humanlike</intelligence><!-- 智力类型，类人智力 -->
+			<body Inherit="false">BANW_kivotos</body><!-- 身体类型，使用自定义的BANW_kivotos身体，不继承父级 -->
+			<useMeatFrom>Human</useMeatFrom><!-- 使用人类的肉定义 -->
+			<baseBodySize>1</baseBodySize><!-- 基础身体大小 -->
+			<baseHealthScale>10</baseHealthScale><!-- 基础健康比例，即血量 -->
+			<foodType>OmnivoreHuman</foodType><!-- 食物类型，杂食类人 -->
+			<lifeExpectancy>80</lifeExpectancy><!-- 预期寿命 -->
+			<leatherDef>Leather_Human</leatherDef><!-- 皮革定义，使用人类皮革 -->
+			<hasGenders>true</hasGenders><!-- 是否有性别区分 -->
+			<gestationPeriodDays>18</gestationPeriodDays><!-- 妊娠期天数 -->
+			<soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn><!-- 近战攻击命中的音效 -->
+			<soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding_Metal</soundMeleeHitBuilding><!-- 近战攻击建筑的音效 -->
+			<soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss><!-- 近战攻击未命中的音效 -->
+			<soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge><!-- 近战闪避音效 -->
+            <baseHungerRate>1.5</baseHungerRate><!-- 基础饥饿速率 -->
+			<bloodDef>Filth_Blood</bloodDef><!-- 血迹定义 -->
+			<bloodSmearDef>Filth_BloodSmear</bloodSmearDef><!-- 血迹拖痕定义 -->
+			<canBecomeShambler>true</canBecomeShambler><!-- 是否能成为蹒跚者(来自异象扩展) -->
+			<knowledgeCategory MayRequire="Ludeon.RimWorld.Anomaly">Basic</knowledgeCategory><!-- 知识分类(需要异象扩展) -->
+			<anomalyKnowledge>1</anomalyKnowledge><!-- 异象知识数值 -->
+			<makesFootprints>true</makesFootprints><!-- 是否会留下脚印 -->
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 0.30)</li>
+					<li>(2, 0.40)</li>
+					<li>(3, 0.10)</li>
+					<li>(4, 0.20)</li>
+					<li>(5, 0)</li>
+				</points>
+			</litterSizeCurve>
+			<lifeStageAges>
+				<li>
+					<def>BANW_KivotosStudent_Adult</def>
+					<minAge>0</minAge>
+				</li>
+				
+			</lifeStageAges>
+
+            <lifeStageWorkSettings MayRequire="Ludeon.RimWorld.Biotech">
+				<Firefighter>0</Firefighter>
+				<Patient>0</Patient>
+				<Doctor>0</Doctor>
+				<PatientBedRest>0</PatientBedRest>
+				<Childcare MayRequire="Ludeon.RimWorld.Biotech">0</Childcare>
+				<BasicWorker>0</BasicWorker>
+				<Warden>0</Warden>
+				<Handling>0</Handling>
+				<Cooking>0</Cooking>
+				<Hunting>0</Hunting>
+				<Construction>0</Construction>
+				<Growing>0</Growing>
+				<Mining>0</Mining>
+				<PlantCutting>0</PlantCutting>
+				<Smithing>0</Smithing>
+				<Tailoring>0</Tailoring>
+				<Art>0</Art>
+				<Crafting>0</Crafting>
+				<Hauling>0</Hauling>
+				<Cleaning>0</Cleaning>
+				<Research>0</Research>
+			</lifeStageWorkSettings>
+
+			<specialShadowData>
+				<volume>(0.3, 0.8, 0.4)</volume>
+				<offset>(0,0,-0.3)</offset>
+			</specialShadowData>
+			<ageGenerationCurve Inherit="false">
+				<points>
+					<li>(10,0)</li>
+					<li>(16,100)</li>
+					<li>(40,100)</li>
+					<li>(50,30)</li>
+					<li>(60,18)</li>
+					<li>(65,10)</li>
+					<li>(70,3)</li>
+					<li>(80,0)</li>
+				</points>
+			</ageGenerationCurve>
+			<hediffGiverSets>
+				<li>OrganicStandard</li>
+			</hediffGiverSets>
+		</race>
+
+		<!--数据需要调整-->
+		<statBases>
+			<RoyalFavorValue>3</RoyalFavorValue><!--		        ■荣誉点数-->
+			<MarketValue>800</MarketValue><!--		                ■价格-->
+			<Mass>50</Mass><!--		                                ■重量-->
+			<MoveSpeed>4.50</MoveSpeed><!--		                    ■移动速度-->
+			<Flammability>0.6</Flammability><!--		            ■易燃性-->
+			<ComfyTemperatureMax>30</ComfyTemperatureMax><!--		■最高适应温度-->
+			<ComfyTemperatureMin>-10</ComfyTemperatureMin><!--		■最低适应温度-->
+			<ImmunityGainSpeed>0.9</ImmunityGainSpeed><!--		    ■免疫增益速度-->
+			<CarryingCapacity>60</CarryingCapacity><!--		        ■承载力-->
+			<PainShockThreshold>0.7</PainShockThreshold><!--		■疼痛忍受力-->
+			<ToxicResistance>0.5</ToxicResistance><!--		        ■毒性-->
+			<MeatAmount>1</MeatAmount><!--		                    ■肉-->
+			<LeatherAmount>1</LeatherAmount><!--		            ■皮-->
+			<AimingDelayFactor>1.2</AimingDelayFactor><!--		    ■瞄准延迟系数-->
+			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn><!--	■射撃命中補正-->
+			<PlantWorkSpeed>1.1</PlantWorkSpeed><!--		        ■种植速度-->
+			<ConstructionSpeed>1.15</ConstructionSpeed><!--		    ■建筑速度-->
+			<ResearchSpeed>1.0</ResearchSpeed><!--		            ■研究速度-->
+		<SocialImpact>1.00</SocialImpact><!--		                ■社会影响-->
+		<IncomingDamageFactor>1</IncomingDamageFactor><!--		    ■收到的伤害倍率-->
+		<MentalBreakThreshold>0.25</MentalBreakThreshold><!--		■容易精神崩溃-->
+		<PsychicSensitivity>1.5</PsychicSensitivity><!--			■心里敏感-->
+		<MeleeDodgeChance>1</MeleeDodgeChance><!--					■回避補正-->
+		<ArmorRating_Blunt>0.05</ArmorRating_Blunt><!--				■打撃耐性-->
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp><!--				■刺突耐性-->
+		<ArmorRating_Heat>0.05</ArmorRating_Heat><!--				■熱耐性-->
+		<NegotiationAbility>1.0</NegotiationAbility><!--			■外交補正 -->
+		<SellPriceFactor>0.6</SellPriceFactor> <!--					■取引価格補正 -->
+		<TameAnimalChance>0.5</TameAnimalChance> <!--				■手なづけ補正-->
+		<TrainAnimalChance>0.5</TrainAnimalChance> <!--				■調教補正-->
+		<RestRateMultiplier>1.0</RestRateMultiplier><!--			■睡眠効率-->
+		<WorkSpeedGlobal>1</WorkSpeedGlobal><!--					■基本作業速度-->
+		<GeneralLaborSpeed>1</GeneralLaborSpeed><!--				■一般的作業速度-->
+		<MedicalTendSpeed>1</MedicalTendSpeed><!--				    ■医療速度補正-->
+		<ResearchSpeed>1</ResearchSpeed><!--						■研究速度補正-->
+		<MiningSpeed>1</MiningSpeed><!--							■採掘速度補正-->
+		<ConstructionSpeedFactor>1</ConstructionSpeedFactor><!--	■建設速度-->
+		<SmoothingSpeed>1</SmoothingSpeed><!--					    ■石を滑らかにする速度-->
+		<AnimalGatherSpeed>1</AnimalGatherSpeed><!--				■動物から採取する速度-->
+		<ButcheryMechanoidSpeed>1</ButcheryMechanoidSpeed><!--	    ■機械分解作業速度-->
+		</statBases>
+
+		<recipes>
+			<li>ExciseCarcinoma</li>
+			<li>AdministerMechSerumHealer</li>
+			<li>RemoveBodyPart</li>
+			<li>Euthanize</li>
+			<li>Anesthetize</li>
+		</recipes>
+
+	</AlienRace.ThingDef_AlienRace>
+
+</Defs>

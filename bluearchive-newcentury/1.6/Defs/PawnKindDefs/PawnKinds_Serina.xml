@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Serina</defName>
+		<label>-芹娜-</label>
+		<race>BANW_Serina_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Serina_EX</li>
+			<li>BAWN_Serina_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstorySerina</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Serina</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Serina</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>13~14</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>8~10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Serina_A>0</BAWC_TraitDef_Serina_A>
+			
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Serina_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#0000FF&gt;白衣天使&lt;/color&gt;</label>
+                <description>被动技能:自身治疗质量增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    
+                </statOffsets>
+				<statFactors>
+					<MedicalTendQuality>1.26</MedicalTendQuality>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

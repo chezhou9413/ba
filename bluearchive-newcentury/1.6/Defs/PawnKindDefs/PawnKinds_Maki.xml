@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Maki</defName>
+		<label>-真纪-</label>
+		<race>BANW_Maki_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+        <li>BAWN_Maki_EX</li>
+		<li>BAWN_Maki_EXX</li>
+        </abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryMaki</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Maki</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Maki</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>11~14</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>18~20</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>5~10</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10~15</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Maki_A>0</BAWC_TraitDef_Maki_A>
+		</forcedTraits>
+	</PawnKindDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Maki_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;华丽演出&lt;/color&gt;</label>
+                <description>子技能:自身攻速增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<AimingDelayFactor>-0.26</AimingDelayFactor>
+                    <RangedCooldownFactor>-0.26</RangedCooldownFactor>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

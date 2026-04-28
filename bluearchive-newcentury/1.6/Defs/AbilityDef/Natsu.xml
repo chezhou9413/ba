@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Natsu_EXX</defName>
+ <label>为了这种时候准备的</label>
+ <description>回复自身360点生命值。</description>
+ <iconPath>Ability/Icon/Natsu/Natsu_EXX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Natsu_Skill_EXX</warmupStartSound>
+ <warmupEffecter>BANW_Natsu_Ef_B</warmupEffecter>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>false</targetRequired>
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+  <Ability_Duration>3</Ability_Duration>
+ </statBases>
+ <verbProperties>
+ <soundCast>Natsu_Skill2_EXX</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>False</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.5</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+  <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Natsu_Hedi_A</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+  </li>
+
+  </comps>
+    </AbilityDef>
+<AbilityDef>
+<defName>BAWN_Natsu_EX</defName>
+ <label>吃了这个打起精神来</label>
+ <description>对1名我方单位投掷甜派，攻击力增加16%（持续20秒），如果第一次投掷甜派的单位4格范围内存在其他单位，则可以同样享受效果加成</description>
+ <iconPath>Ability/Icon/Natsu/Natsu_EX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Natsu_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>20</Ability_Duration>
+ </statBases>
+ <verbProperties>
+  <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast></soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>16.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>0.8</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  <neverTargetHostileFaction>true</neverTargetHostileFaction><!-- 只能选友军 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Natsu_EX</projectileDef>
+      </li>
+</comps>
+</AbilityDef>
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Natsu_Hedi_A</defName>
+        <!-- 显示名称 -->
+        <label>为了这种时候准备的</label>
+        <!-- 效果描述 -->
+        <description>回复生命值</description>
+        <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>    <!-- 不可通过物品治愈 -->
+        <lethalSeverity>-1</lethalSeverity>    <!-- 不会致死 -->
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <comps>
+        <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>4</healAmount>
+        <healIntervalTicks>2</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>60</disappearsAfterTicks>
+      </li>
+         <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Natsu_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    <tags>
+      <li>Medical</li>
+      <li>Stimulant</li>
+      <li>Temporary</li>
+      <li>PainRelief</li>
+      <li>ConsciousnessBoost</li>
+    </tags>
+    </HediffDef>
+<HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Natsu_ATK_A</defName>
+        <!-- 显示名称 -->
+        <label>吃了这个打起精神来</label>
+        <!-- 效果描述 -->
+        <description>提升16%的攻击力（持续20秒）</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+            <InjuryHealingFactor>0.30</InjuryHealingFactor>
+           <BANW_FinalDamageMultiplier>+0.16</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+       <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>
+          <li>BANW_Natsu_Ef_C</li>
+        </stateEffecter>
+      </li>
+<!-- 范围内给予健康状态组件 -->
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <!-- 影响范围 -->
+        <range>3.9</range>
+        <!-- 目标选择参数 -->
+        <targetingParameters>
+          <!-- 不影响建筑 -->
+          <canTargetBuildings>false</canTargetBuildings>
+          <!-- 不影响动物 -->
+          <canTargetAnimals>false</canTargetAnimals>
+          <!-- 不影响机械体 -->
+          <canTargetMechs>false</canTargetMechs>
+          <!-- 只影响殖民者 -->
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <!-- 应用的健康状态 -->
+        <hediff>BAWN_Natsu_ATK_B</hediff>
+      </li>
+    </comps>
+    </HediffDef>
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Natsu_ATK_B</defName>
+        <!-- 显示名称 -->
+        <label>吃了这个打起精神来</label>
+        <!-- 效果描述 -->
+        <description>提升16%的攻击力</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+            <InjuryHealingFactor>0.30</InjuryHealingFactor>
+           <BANW_FinalDamageMultiplier>+0.16</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+       <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>
+          <li>BANW_Natsu_Ef_C</li>
+        </stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>BANC_Bullet_Natsu_EX</defName>
+    <label>甜派</label>
+    <projectile>
+      <damageDef>BANC_Damage_Natsu</damageDef><!--子弹类型-->
+      <damageAmountBase>1</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>50</stoppingPower><!--抑制-->
+      <armorPenetrationBase>100</armorPenetrationBase><!--穿透-->
+      <speed>40</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <drawSize>0.7</drawSize>
+      <texPath>Projectile/Bullet_Natsu_Ex</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <DamageDef>
+    <defName>BANC_Damage_Natsu</defName><!--命名格式-->
+    <label>Bullet</label><!--描述-->
+    <workerClass>DamageWorker_Blunt</workerClass><!--工作Class，一般直接复制粘贴原版的就足够了-->
+    <externalViolence>true</externalViolence><!--允许是否为暴力暴力伤害，true为原版子弹伤害表现，false会无视承伤系数，并且不再触发暴力相关的效果，也无法享受承伤系数的一些加成-->
+    <deathMessage>{0}</deathMessage><!--死亡讯息-->
+    <hediff>Stab</hediff><!--穿刺-->
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <hediffSolid>Crack</hediffSolid><!--可能在物体上产生裂缝-->
+    <armorCategory>Blunt</armorCategory><!--利器。-->
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <harmsHealth>false</harmsHealth>
+    <makesBlood>false</makesBlood>
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Natsu_ATK_A</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+    <soundExplosion>BANW_Sound_Kong</soundExplosion>
+    <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
+    <isRanged>true</isRanged><!--是否为远程武器-->
+    <makesAnimalsFlee>false</makesAnimalsFlee><!--是否使动物逃跑-->
+    <damageEffecter>BANW_Effecter_B</damageEffecter>
+
+  </DamageDef>
+</Defs>

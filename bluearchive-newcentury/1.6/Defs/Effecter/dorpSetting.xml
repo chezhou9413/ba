@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <BANWlLib.BaDef.BaDrop>
+        <defName>BANW_DropSetting</defName>
+        <label>特效空投设置</label>
+        <effecterDef>BANW_BC_Ef_A</effecterDef>
+        <dropTime>120</dropTime>
+    </BANWlLib.BaDef.BaDrop>
+</Defs>

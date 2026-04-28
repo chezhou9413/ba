@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <BANWlLib.BaDef.GachaSetting>
+        <!-- 配置唯一标识符 -->
+        <defName>GachaSystem_MainConfig</defName>
+
+        <!-- ========================================================== -->
+        <!-- 基础设置 (Basic Settings)                                   -->
+        <!-- ========================================================== -->
+        
+        <!-- 
+            RotationTick: 卡池轮换时间间隔
+            单位: 游戏Tick
+            换算: 60000 tick ≈ 1游戏日
+            示例值:
+            - 60000 = 1天轮换一次
+            - 420000 = 7天(一周)轮换一次
+            - 1800000 = 30天(一个月)轮换一次
+        -->
+        <RotationTick>240000</RotationTick>
+        
+        <!-- 
+            SlotsCount: 每次轮换随机抽取的卡池槽位数量
+            说明: 系统每次轮换时会随机选择这么多个卡池显示给玩家
+            建议: 3-5个为宜，太多会稀释玩家注意力
+        -->
+        <SlotsCount>4</SlotsCount>
+
+        <!-- ========================================================== -->
+        <!-- 常驻池配置 (Standard Pool Configuration)                    -->
+        <!-- ========================================================== -->
+        <!-- 
+            StandardPool: 常驻卡池列表
+            
+            抽取算法说明:
+            在生成随机卡池槽位时，每个槽位有 70% 的概率从此列表中随机抽取一个卡池
+            
+            适合放入此列表的卡池类型:
+            - 基础常驻池 (无时间限制)
+            - 武器池
+            - 角色类型专属池 (如辅助池)
+            
+            注意: 同一个卡池可能在多个槽位出现(如果随机抽中多次)
+        -->
+        <StandardPool>
+            <li>Gacha_Standard_Hoshiro</li>
+            <li>Gacha_Standard_Cherino</li>
+            <li>Gacha_Standard_Ako</li>
+            <li>Gacha_Standard_Arisu</li>
+            <li>Gacha_Standard_Azusa</li>
+            <li>Gacha_Standard_Atsuko</li>
+            <li>Gacha_Standard_Cherino</li>
+            <li>Gacha_Standard_Chiaki</li>
+            <li>Gacha_Standard_Chihiro</li>
+            <li>Gacha_Standard_Eri</li>
+            <li>Gacha_Standard_Haruna</li>
+            <li>Gacha_Standard_Hibiki</li>
+            <li>Gacha_Standard_Hina</li>
+            <li>Gacha_Standard_Hinata</li>
+            <li>Gacha_Standard_Hiyori</li>
+            <li>Gacha_Standard_Himari</li>
+            <li>Gacha_Standard_Ichika</li>
+            <li>Gacha_Standard_Iori</li>
+            <li>Gacha_Standard_Iroha</li>
+            <li>Gacha_Standard_Izuna</li>
+            <li>Gacha_Standard_Kaho</li>
+            <li>Gacha_Standard_Kaede</li>
+            <li>Gacha_Standard_Kanna</li>
+            <li>Gacha_Standard_Kanoe</li>
+            <li>Gacha_Standard_Karlin</li>
+            <li>Gacha_Standard_Kasumi</li>
+            <li>Gacha_Standard_Kazusa</li>
+            <li>Gacha_Standard_Kikyou</li>
+            <li>Gacha_Standard_Kisaki</li>
+            <li>Gacha_Standard_Koharu</li>
+            <li>Gacha_Standard_Kokona</li>
+            <li>Gacha_Standard_Koyuki</li>
+            <li>Gacha_Standard_Maki</li>
+            <li>Gacha_Standard_Mashiro</li>
+            <li>Gacha_Standard_Megu</li>
+            <li>Gacha_Standard_Meru</li>
+            <li>Gacha_Standard_Midori</li>
+            <li>Gacha_Standard_Mimori</li>
+            <li>Gacha_Standard_Mine</li>
+            <li>Gacha_Standard_Minori</li>
+            <li>Gacha_Standard_Miyako</li>
+            <li>Gacha_Standard_Misaki</li>
+            <li>Gacha_Standard_Miyu</li>
+            <li>Gacha_Standard_Moe</li>
+            <li>Gacha_Standard_Nagusa</li>
+            <li>Gacha_Standard_Natsu</li>
+            <li>Gacha_Standard_Niya</li>
+            <li>Gacha_Standard_Noa</li>
+            <li>Gacha_Standard_Reijo</li>
+            <li>Gacha_Standard_Reisa</li>
+            <li>Gacha_Standard_Renge</li>
+            <li>Gacha_Standard_Rumi</li>
+            <li>Gacha_Standard_Saki</li>
+            <li>Gacha_Standard_Sakurako</li>
+            <li>Gacha_Standard_Saori</li>
+            <li>Gacha_Standard_Satsuki</li>
+            <li>Gacha_Standard_Sena</li>
+            <li>Gacha_Standard_Shigure</li>
+            <li>Gacha_Standard_Shun</li>
+            <li>Gacha_Standard_Takane</li>
+            <li>Gacha_Standard_Tsukuyo</li>
+            <li>Gacha_Standard_Turugi</li>
+            <li>Gacha_Standard_Ui</li>
+            <li>Gacha_Standard_Umika</li>
+            <li>Gacha_Standard_Yakumo</li>
+            <li>Gacha_Standard_Yokari</li>
+            <li>Gacha_Standard_Yuzu</li>
+        </StandardPool>
+
+        <!-- ========================================================== -->
+        <!-- 限定池配置 (Limited Pool Configuration)                     -->
+        <!-- ========================================================== -->
+        <!-- 
+            LimitedPool: 限定卡池列表
+            
+            抽取算法说明:
+            在生成随机卡池槽位时，每个槽位有 30% 的概率从此列表中随机抽取一个卡池
+            
+            防重机制:
+            - 代码内置防重逻辑，不会连续两期抽出同一个限定池
+            - 同一期内也不会出现重复的限定池
+            
+            适合放入此列表的卡池类型:
+            - 期间限定角色池
+            - 主题限定池 (如赛博、夏日等)
+            - 联动限定池
+            - 季节活动池
+        -->
+        <LimitedPool>
+              <li>Gacha_Standard_Hikali</li>
+              <li>Gacha_Standard_Nozomi</li>
+              <li>Gacha_Standard_Makoto</li>
+              <li>Gacha_Standard_Nagisa</li>
+              <li>Gacha_Standard_Reisa_A</li>
+              <li>Gacha_Standard_Seia</li>
+              <li>Gacha_Standard_Toki</li>
+              <li>Gacha_Standard_Shizumi_A</li>
+        </LimitedPool>
+
+        <!-- ========================================================== -->
+        <!-- 固定池配置 (Fixed Pool Configuration)                       -->
+        <!-- ========================================================== -->
+        <!-- 
+            FixedPool: 永久固定显示的卡池列表
+            
+            算法说明:
+            这里的卡池不参与随机轮换机制，每次界面更新都会强制附加在卡池列表最后
+            无论轮换结果如何，这些卡池始终可见
+            
+            适合放入此列表的卡池类型:
+            - 新手池 (确保新玩家始终能看到)
+            - 基础常驻池 (如果希望始终显示)
+            - 教程/引导性质的卡池
+            
+            注意: 固定池会占用界面空间，建议只放1-2个最重要的
+        -->
+        <FixedPool>
+            <li>Gacha_Standard_Cangzhu</li> 
+        </FixedPool>
+
+        <!-- ========================================================== -->
+        <!-- 特殊队列配置 (Special Queue Configuration)                  -->
+        <!-- ========================================================== -->
+        <!-- 
+            SpecialQueues: 特殊触发队列
+            
+            功能说明:
+            允许在特定的轮换次数时，强制显示指定的卡池组合，绕过随机算法
+            用于运营活动、版本更新、特殊节日等场景的精确控制
+            
+            配置结构:
+            - triggerIndex: 触发索引，表示第N次刷新时触发
+            - forcedPool: 强制显示的卡池列表
+            
+            使用场景示例:
+            - 游戏首发时展示核心卡池
+            - 大版本更新时推广新卡池
+            - 节日活动时强制显示节日池
+            
+            注意: 
+            - triggerIndex 从1开始计数
+            - 特殊队列优先级高于随机算法
+            - FixedPool 的卡池仍会附加在最后
+        -->
+        <SpecialQueues>
+            <!-- 
+                第5次刷新的特殊队列
+                场景: 玩家游玩一段时间后
+                目的: 集中展示所有限定池，刺激消费/抽卡欲望
+            -->
+            <li>
+                <triggerIndex>12</triggerIndex>
+                <forcedPool>
+                    <li>Gacha_Standard_Mika</li> 
+                    <li>Gacha_Standard_Rio</li> 
+                    <li>Gacha_Standard_Arisu_B</li> 
+                </forcedPool>
+            </li>
+        </SpecialQueues>
+
+    </BANWlLib.BaDef.GachaSetting>
+</Defs>

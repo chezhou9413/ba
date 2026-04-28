@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Ayane</defName>
+		<label>-绫音-</label>
+		<race>BANW_Ayane_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryAbydos</li>
+					<li>BANW_BackstoryAyane</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Ayane</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Ayane</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>1~3</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>7~8</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>14</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Ayane>0</BAWC_TraitDef_Ayane>
+			<BAWC_TraitDef_Ayane_A>0</BAWC_TraitDef_Ayane_A>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Ayane</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#191970&gt;对策委员会书记&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}作为阿拜多斯对策委员会的书记，她重视基本理论与规定，是个原则主义者，为了复兴阿拜多斯高中，一直踏实地努力着，在面对各种事务时都秉持着认真的态度。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+				<FixBrokenDownBuildingSuccessChance>0.5</FixBrokenDownBuildingSuccessChance>
+				<WorkSpeedGlobal>+0.30</WorkSpeedGlobal>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Ayane_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;自我提升&lt;/color&gt;</label>
+                <description>被动技能:自身治疗质量增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    
+                </statOffsets>
+				<statFactors>
+					<MedicalTendQuality>1.26</MedicalTendQuality>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

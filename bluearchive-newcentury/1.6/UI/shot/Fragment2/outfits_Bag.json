@@ -1,0 +1,102 @@
+[
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_2_Piece",
+        "ProductDefName": "BANW_Bag_2_Piece",
+        "ProductName": "Lv.2-防寒斜挎包设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_3_Piece",
+        "ProductDefName": "BANW_Bag_3_Piece",
+        "ProductName": "Lv.3-佩洛洛背包设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_4_Piece",
+        "ProductDefName": "BANW_Bag_4_Piece",
+        "ProductName": "Lv.4-藏蓝书包设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_5_Piece",
+        "ProductDefName": "BANW_Bag_5_Piece",
+        "ProductName": "Lv.5-战术双肩包设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_6_Piece",
+        "ProductDefName": "BANW_Bag_6_Piece",
+        "ProductName": "Lv.6-恶魔之翼挎包设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_7_Piece",
+        "ProductDefName": "BANW_Bag_7_Piece",
+        "ProductName": "Lv.7-街头包设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_8_Piece",
+        "ProductDefName": "BANW_Bag_8_Piece",
+        "ProductName": "Lv.8-蝴蝶图案单肩包设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_9_Piece",
+        "ProductDefName": "BANW_Bag_9_Piece",
+        "ProductName": "Lv.9-防水挎包设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Bag/Bag_10_Piece",
+        "ProductDefName": "BANW_Bag_10_Piece",
+        "ProductName": "Lv.10-金属匣设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    }
+    
+]

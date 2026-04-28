@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+<defName>BAWN_Karlin_EX</defName>
+ <label>火力支援，开始</label>
+ <description>对一名敌人造成自身攻击力424%的伤害，有50%的施加4秒眩晕。</description>
+ <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Karlin_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+<warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>BANW_Wp_SR_At_A</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+ <range>109.9</range><!-- 投掷范围 -->
+ <warmupTime>1</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Karlin_EX</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Karlin_EX</defName>
+    <label>火力支援，开始</label>
+    <projectile>
+      <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
+      <damageAmountBase>305</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.85</armorPenetrationBase><!--穿透-->
+      <speed>180</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>Stun</def>
+        <amount>5</amount>
+        <chance>0.5</chance>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>(3,10)</drawSize>
+      <texPath>Projectile/Bullet_Karlin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+<AbilityDef>
+<defName>BAWN_Karlin_EXX</defName>
+ <label>目标，排除</label>
+ <description>对一名敌人造成攻击力1100%的伤害，有50%机率造成625%的追加伤害</description>
+ <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
+ <cooldownTicksRange>3000</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupEffecter>BANW_Karlin_Ef_A</warmupEffecter>
+ <warmupStartSound>Karlin_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter></warmupEffecter>
+ <soundCast>Karlin_Skill_EX_B</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>true</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>109.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>3.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Karlin_EXX</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Karlin_EXX</defName>
+    <label>目标，排除</label>
+    <projectile>
+      <damageDef>BANC_Damage_Kazusa_EXX</damageDef><!--子弹类型-->
+      <damageAmountBase>792</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.85</armorPenetrationBase><!--穿透-->
+      <speed>140</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>BANC_Damage_Kazusa_EXX</def>
+        <amount>450</amount>
+        <chance>0.5</chance>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>(3,10)</drawSize>
+      <texPath>Projectile/Bullet_Karlin_EX</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+<DamageDef ParentName="BANC_Damage_guantong">
+   <defName>BANC_Damage_Kazusa_EXX</defName>
+   <damageEffecter>BANW_Karlin_Ef_B</damageEffecter>
+    </DamageDef>
+</Defs>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Kanoe</defName>
+        <label>鹿江的衣服</label>
+        <description>鹿江的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Wildhunt/Kanoe/Apparel/Kanoe_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Kanoe</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
+
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Eri</defName>
+        <label>绘里的衣服</label>
+        <description>绘里的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Wildhunt/Eri/Apparel/Eri_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Eri</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
+       
+       
+
+</Defs>

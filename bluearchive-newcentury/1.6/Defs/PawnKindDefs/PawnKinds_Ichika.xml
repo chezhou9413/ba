@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Ichika</defName>
+		<label>-一花-</label>
+		<race>BANW_Ichika_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+			<li>BAWN_Ichika_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryIchika</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Ichika</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Ichika</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>9</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Ichika_A>0</BAWC_TraitDef_Ichika_A>
+			<BAWC_TraitDef_Ichika_B>0</BAWC_TraitDef_Ichika_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Ichika_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;敏锐本能&lt;/color&gt;</label>
+                <description>被动技能:自身命中率提升&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<ShootingAccuracyPawn>0.26</ShootingAccuracyPawn>
+                </statOffsets>
+				<statFactors>
+					
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Ichika_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;偶尔也会这样子的&lt;/color&gt;</label>
+                <description>子技能:自身攻击时造成&lt;color=#DC143C&gt;4.4%&lt;/color&gt;总攻击力的追加伤害</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<ShootingAccuracyPawn>0.26</ShootingAccuracyPawn>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

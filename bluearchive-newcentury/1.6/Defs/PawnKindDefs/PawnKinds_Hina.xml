@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Hina</defName>
+		<label>-日奈-</label>
+		<race>BANW_Hina_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Hina_EXX</li>
+			<li>BAWN_Hina_EX</li>
+		</abilities>
+		<startingHediffs>
+			<li>
+				<def>BANW_LevelTrait</def>
+				<severity>0.001</severity>
+			</li>
+		</startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryHina</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+			<li>BANC_Hina</li>
+		</weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Hina</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>18</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>15~20</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Hina>0</BAWC_TraitDef_Hina>
+			<BAWC_TraitDef_Hina_A>0</BAWC_TraitDef_Hina_A>
+			<BAWC_TraitDef_Hina_B>0</BAWC_TraitDef_Hina_B>
+		</forcedTraits>
+	</PawnKindDef>
+	<TraitDef>
+		<defName>BAWC_TraitDef_Hina</defName>
+		<commonality>0</commonality>
+		<degreeDatas>
+			<li>
+				<label>&lt;color=#9400D3&gt;风纪委员长&lt;/color&gt;</label>
+				<description>日奈平时是个觉得什么都很麻烦的懒虫少女，经常把 “好麻烦” 挂在嘴边。但在涉及校规和风纪的问题上，她会立刻展现出严格、认真的一面，对待违反校规扰乱风纪之人绝不留情。在战场上日奈从不迷茫，能够快速做出判断并采取行动，她的强大战斗力让与格黑娜敌对的组织十分害怕。</description>
+				<marketValueFactorOffset>1</marketValueFactorOffset>
+				<statOffsets>
+					<MentalBreakThreshold>+0.1</MentalBreakThreshold>
+					<MoveSpeed>3</MoveSpeed>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<PsychicSensitivity>0.2</PsychicSensitivity>
+					<ReadingSpeed>0.5</ReadingSpeed>
+					<ResearchSpeed>0.5</ResearchSpeed>
+					<VEF_VerbRangeFactor>1</VEF_VerbRangeFactor>
+				</statOffsets>
+				<statFactors>
+					<JoyFallRateFactor>1.2</JoyFallRateFactor>
+					<ShootingAccuracyPawn>15.0</ShootingAccuracyPawn>
+					<RestFallRateFactor>1.5</RestFallRateFactor>
+					<RestRateMultiplier>0.8</RestRateMultiplier>
+				</statFactors>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hina_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;彻头彻尾&lt;/color&gt;</label>
+                <description>子技能:自身攻击时造成&lt;color=#DC143C&gt;5%&lt;/color&gt;总攻击力的追加伤害</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Hina_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;冷静的风纪委员会&lt;/color&gt;</label>
+                <description>被动技能:自身攻速增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<AimingDelayFactor>-0.26</AimingDelayFactor>
+                    <RangedCooldownFactor>-0.26</RangedCooldownFactor>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

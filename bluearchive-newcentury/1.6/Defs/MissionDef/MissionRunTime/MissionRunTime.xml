@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 任务运行时定义 -->
+    <BANWlLib.BaDef.BaMissionRunTime>
+        <defName>MissionRunTimeTest</defName> <!-- 任务定义名称 -->
+        <Spawnposition>(40, 0, 40)</Spawnposition> <!-- 玩家生成位置坐标 -->
+        <TimeEndTick>50000</TimeEndTick> <!-- 任务结束时间（tick单位） -->
+        <missionClass>BANWlLib.MissionRunTime.MissionMain.MissionRunTime_BaseDefense</missionClass> <!-- 任务执行类 -->
+        
+        <!-- 敌人生成点设置 -->
+        <enemySpawnPoints>
+            <!-- 第一波敌人 -->
+            <li>
+                <SpawnTick>120</SpawnTick> <!-- 生成时间（tick） -->
+                <DelayTicks>120</DelayTicks> <!-- 延迟时间 -->
+                <EffecterDef>BANW_BC_Ef_A</EffecterDef> <!-- 特效定义 -->
+                <SpawnPosition>(41, 0, 80)</SpawnPosition> <!-- 生成位置坐标 -->
+                <AiType>Hunt</AiType> <!-- AI类型：追猎 Defend：防御 -->
+                <DefendRadius>20</DefendRadius> <!-- 防御半径 -->
+                <CannotFlee>true</CannotFlee> <!-- 是否无法逃跑 -->
+                <factionDef>Mechanoid</factionDef> <!-- 派系定义：机械体 -->
+                
+                <!-- 生成单位设置 -->
+                <KindSettings>
+                    <li>
+                        <pawnKindDef>BANW_QSJ_A</pawnKindDef> <!-- 单位类型：镰刀机器人 -->
+                        <count>20</count> <!-- 数量：2 -->
+                    </li>
+                    
+                </KindSettings>
+            </li>
+            <li>
+                <SpawnTick>120</SpawnTick> <!-- 生成时间（tick） -->
+                <DelayTicks>120</DelayTicks> <!-- 延迟时间 -->
+                <EffecterDef>BANW_BC_Ef_A</EffecterDef> <!-- 特效定义 -->
+                <SpawnPosition>(1, 0, 41)</SpawnPosition> <!-- 生成位置坐标 -->
+                <AiType>Hunt</AiType> <!-- AI类型：追猎 Defend：防御 -->
+                <DefendRadius>20</DefendRadius> <!-- 防御半径 -->
+                <CannotFlee>true</CannotFlee> <!-- 是否无法逃跑 -->
+                <factionDef>Mechanoid</factionDef> <!-- 派系定义：机械体 -->
+                
+                <!-- 生成单位设置 -->
+                <KindSettings>
+                    <li>
+                        <pawnKindDef>BANW_QSJ_A</pawnKindDef> <!-- 单位类型：镰刀机器人 -->
+                        <count>20</count> <!-- 数量：2 -->
+                    </li>
+                    
+                </KindSettings>
+            </li>
+             <li>
+                <SpawnTick>120</SpawnTick> <!-- 生成时间（tick） -->
+                <DelayTicks>120</DelayTicks> <!-- 延迟时间 -->
+                <EffecterDef>BANW_BC_Ef_A</EffecterDef> <!-- 特效定义 -->
+                <SpawnPosition>(41, 0, 1)</SpawnPosition> <!-- 生成位置坐标 -->
+                <AiType>Hunt</AiType> <!-- AI类型：追猎 Defend：防御 -->
+                <DefendRadius>20</DefendRadius> <!-- 防御半径 -->
+                <CannotFlee>true</CannotFlee> <!-- 是否无法逃跑 -->
+                <factionDef>Mechanoid</factionDef> <!-- 派系定义：机械体 -->
+                
+                <!-- 生成单位设置 -->
+                <KindSettings>
+                    <li>
+                        <pawnKindDef>BANW_QSJ_A</pawnKindDef> <!-- 单位类型：镰刀机器人 -->
+                        <count>20</count> <!-- 数量：2 -->
+                    </li>
+                    
+                </KindSettings>
+            </li>
+            <li>
+                <SpawnTick>120</SpawnTick> <!-- 生成时间（tick） -->
+                <DelayTicks>120</DelayTicks> <!-- 延迟时间 -->
+                <EffecterDef>BANW_BC_Ef_A</EffecterDef> <!-- 特效定义 -->
+                <SpawnPosition>(80, 0, 41)</SpawnPosition> <!-- 生成位置坐标 -->
+                <AiType>Hunt</AiType> <!-- AI类型：追猎 Defend：防御 -->
+                <DefendRadius>20</DefendRadius> <!-- 防御半径 -->
+                <CannotFlee>true</CannotFlee> <!-- 是否无法逃跑 -->
+                <factionDef>Mechanoid</factionDef> <!-- 派系定义：机械体 -->
+                
+                <!-- 生成单位设置 -->
+                <KindSettings>
+                    <li>
+                        <pawnKindDef>BANW_QSJ_A</pawnKindDef> <!-- 单位类型：镰刀机器人 -->
+                        <count>20</count> <!-- 数量：2 -->
+                    </li>
+                    
+                </KindSettings>
+            </li>
+            
+        </enemySpawnPoints>
+    </BANWlLib.BaDef.BaMissionRunTime>
+</Defs>

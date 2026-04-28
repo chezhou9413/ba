@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Pina</defName>
+		<label>-菲娜-</label>
+		<race>BANW_Pina_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+			<li>BAWN_Pina_EX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHyakkiyako</li>
+					<li>BANW_BackstoryPina</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Pina</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Pina</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>7</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_pina_A>0</BAWC_TraitDef_pina_A>
+			<BAWC_TraitDef_pina_B>0</BAWC_TraitDef_pina_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_pina_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;敏锐感知&lt;/color&gt;</label>
+                <description>被动技能:自身暴击率增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_CriticalChance>0.26</BANW_CriticalChance>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_pina_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;乱射准备就绪！&lt;/color&gt;</label>
+                <description>子技能:自身攻速增加&lt;color=#DC143C&gt;38%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+			    <AimingDelayFactor>-0.38</AimingDelayFactor>
+                <RangedCooldownFactor>-0.38</RangedCooldownFactor>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

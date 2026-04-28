@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  	<ThingCategoryDef>
+		<defName>BAWN_Costume</defName>
+		<label>碧蓝档案学生服装</label>
+		<parent>Apparel</parent>
+	</ThingCategoryDef>
+	<ThingCategoryDef>
+		<defName>BAWN_Costume_Belt</defName>
+		<label>碧蓝档案学生装备</label>
+		<parent>Apparel</parent>
+	</ThingCategoryDef>
+	<ThingCategoryDef>
+        <defName>BANC_Weapon</defName>
+        <label>碧蓝档案学生枪械</label>
+        <parent>Weapons</parent>
+    </ThingCategoryDef>
+	<ThingCategoryDef>
+		<defName>BAWN_Costume_Piece</defName>
+		<label>碧蓝档案设计图</label>
+		<parent>ResourcesRaw</parent>
+		<iconPath>Belt/Hat/Hat_2_Piece</iconPath>
+	</ThingCategoryDef>
+	<ThingCategoryDef>
+		<defName>BAWN_Proplevel_Piece</defName>
+		<label>碧蓝档案神明文字</label>
+		<parent>ResourcesRaw</parent>
+		<iconPath>Prop/Proplevel/Kami</iconPath>
+	</ThingCategoryDef>
+</Defs>

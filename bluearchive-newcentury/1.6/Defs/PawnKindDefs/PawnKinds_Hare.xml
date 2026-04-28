@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Hare</defName>
+		<label>-晴-</label>
+		<race>BANW_Hare_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Hare_EX</li>
+			<li>BAWN_Hare_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryHare</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Hare</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Hare</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>16</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Hare_A>0</BAWC_TraitDef_Hare_A>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hare_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;强化武装：B计划&lt;/color&gt;</label>
+                <description>被动技能:自身暴击率增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <BANW_CriticalChance>0.26</BANW_CriticalChance>
+                </statOffsets>
+				<statFactors>
+					
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

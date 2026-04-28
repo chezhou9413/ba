@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Akari</defName>
+		<label>-明里-</label>
+		<race>BANW_Akari_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Akari_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryAkari</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Akari</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Akari</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+            <li>
+				<skill>Mining</skill>
+				<range>9~10</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>0</range>
+			</li>
+			 <li>
+				<skill>Cooking</skill>
+				<range>14~15</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Akari>0</BAWC_TraitDef_Akari>
+			<BAWC_TraitDef_Akari_A>0</BAWC_TraitDef_Akari_A>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Akari</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF00FF&gt;暴食魔神&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}的饭量非常夸张，喜欢胡吃海喝，是个十足的大胃王，在一次大胃王比赛中吃完了60人份的麻婆豆腐，因此上了各家自助餐的黑名单</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+					<MaxNutrition>60</MaxNutrition>
+					<EatingSpeed>2.5</EatingSpeed>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Akari_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;我吃饱了！&lt;/color&gt;</label>
+                <description>被动技能：自身生命值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

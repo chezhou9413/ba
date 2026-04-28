@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Hoshiro</defName>
+		<label>-星野-</label>
+		<race>BANW_Hoshiro_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Hoshiro_Treat</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryAbydos</li>
+					<li>BANW_BackstoryHoshiro</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Hoshiro</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Hoshiro</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+		
+			<li>
+				<skill>Shooting</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>5~8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>8~10</range>
+			</li>
+		</skills>
+		   <forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Hoshiro>0</BAWC_TraitDef_Hoshiro>
+		</forcedTraits>
+	</PawnKindDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Hoshiro</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF1493&gt;基沃托斯最高级的神秘&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是自称大叔而且怕麻烦的少女，平时比较懒散，相比工作更喜欢到处玩乐，被某人称为最高级的神秘，实力非常强大，被格黑那情报部列为了潜在对象，具日奈所言，以前的小鸟游星野非常好战，现在的性格可能跟前对策委员会会长“栀子梦”有关</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+		            <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+	                <ArmorRating_Heat>1.0</ArmorRating_Heat>
+					<PainShockThreshold>0.5</PainShockThreshold>
+					<MoveSpeed>6</MoveSpeed>
+					<CarryingCapacity>100</CarryingCapacity><!--		        ■承载力--> 
+					<VEF_VerbRangeFactor>0.5</VEF_VerbRangeFactor>
+					<MeleeDodgeChance>20</MeleeDodgeChance>
+					<ShootingAccuracyPawn>30</ShootingAccuracyPawn>
+                </statOffsets>
+				<statFactors>
+					<IncomingDamageFactor>0.8</IncomingDamageFactor>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
+					<StaggerDurationFactor>0</StaggerDurationFactor> 
+					<RestFallRateFactor>1.5</RestFallRateFactor>
+					<PsychicSensitivity>2</PsychicSensitivity>
+					<WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+					<MeleeDamageFactor>7.1</MeleeDamageFactor>           <!-- 近战伤害系数：5.5（近战伤害增加450%） -->
+                    <MeleeArmorPenetration>7.5</MeleeArmorPenetration>   <!-- 近战护甲穿透：5.5（近战攻击穿透力增加450%） -->
+                    <MeleeCooldownFactor>0.3</MeleeCooldownFactor>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<ThoughtDef>
+    <!-- 想法的唯一标识符 -->
+    <defName>BAWC_TraitDef_Hoshiro_ThoughtDef</defName>
+    <!-- 工作类：始终激活，意味着这个想法会持续生效 -->
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <!-- 即使角色未被生成（不在地图上）时也有效 -->
+    <validWhileDespawned>true</validWhileDespawned>
+    <!-- 适用阶段：适用于婴儿、儿童和成人阶段的角色 -->
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <!-- 需要拥有的特质 -->
+    <requiredTraits>
+      <li>BAWC_TraitDef_Hoshiro</li>
+    </requiredTraits>
+    <!-- 需要特质的等级：0（最高等级） -->
+    <requiredTraitsDegree>0</requiredTraitsDegree>
+    <!-- 效果阶段 -->
+    <stages>
+      <li>
+        <!-- 显示标签 -->
+        <label>梦...</label>
+        <description>...</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

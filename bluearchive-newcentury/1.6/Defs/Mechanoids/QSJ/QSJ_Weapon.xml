@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- BANC模组中的Trinity系列武器QSJ型号的抽象基类定义，继承自基础枪械 -->
+	<ThingDef Name="BANC_Trinity_WeaponQSJ" ParentName="BaseGun" Abstract="True">
+		<!-- 武器的基础属性数值 -->
+		<statBases>
+			<!-- 市场价值：1银币（这个值非常低，可能是占位符或者特殊设定） -->
+			<MarketValue>1</MarketValue>
+			<!-- 重量：3.5千克（标准突击步枪重量） -->
+			<Mass>3.5</Mass>
+			<!-- 近距离射击精度：100%（完美精度） -->
+			<AccuracyTouch>1</AccuracyTouch>
+			<!-- 短距离射击精度：100%（完美精度） -->
+			<AccuracyShort>1</AccuracyShort>
+			<!-- 中距离射击精度：100%（完美精度） -->
+			<AccuracyMedium>1</AccuracyMedium>
+			<!-- 远距离射击精度：100%（完美精度） -->
+			<AccuracyLong>1</AccuracyLong>
+			<!-- 远程武器射击冷却时间：1.70秒（决定射击频率） -->
+			<RangedWeapon_Cooldown>1.70</RangedWeapon_Cooldown>
+		</statBases>
+		
+		<!-- 近战攻击工具定义（当武器被用于近战时） -->
+		<tools>
+			<!-- 枪托攻击方式 -->
+			<li>
+				<!-- 攻击部位名称：枪托 -->
+				<label>stock</label>
+				<!-- 攻击类型 -->
+				<capacities>
+					<!-- 钝器攻击 -->
+					<li>Blunt</li>
+				</capacities>
+				<!-- 攻击伤害值：9点 -->
+				<power>9</power>
+				<!-- 攻击冷却时间：2秒 -->
+				<cooldownTime>2</cooldownTime>
+			</li>
+			
+			<!-- 枪管攻击方式 -->
+			<li>
+				<!-- 攻击部位名称：枪管 -->
+				<label>barrel</label>
+				<!-- 攻击类型 -->
+				<capacities>
+					<!-- 钝器攻击 -->
+					<li>Blunt</li>
+					<!-- 戳刺攻击 -->
+					<li>Poke</li>
+				</capacities>
+				<!-- 攻击伤害值：9点 -->
+				<power>9</power>
+				<!-- 攻击冷却时间：2秒 -->
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+	</ThingDef>
+	
+	 
+	<ThingDef ParentName="BANC_Trinity_WeaponQSJ">
+		<!-- 定义名称，用于程序内部引用 -->
+		<defName>BANW_QSJ_A_WP</defName>
+		<!-- 显示名称 -->
+		<label>滋滋</label>
+		<!-- 武器描述 -->
+		<description>.</description>
+		<!-- 图形数据 -->
+		<graphicData>
+			<!-- 纹理路径 -->
+			<texPath>Projectile/kongbai</texPath>
+			<!-- 图形类 -->
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- 装备角度偏移 -->
+		<equippedAngleOffset>45</equippedAngleOffset>
+		<!-- 交互音效 -->
+		<soundInteract>Interact_Rifle</soundInteract>
+		<!-- 基础属性 -->
+		<statBases>
+			<!-- 重量 -->
+			<Mass>3.5</Mass>
+			<!-- 近距离射击精度 -->
+			<AccuracyTouch>1</AccuracyTouch>
+			<!-- 短距离射击精度 -->
+			<AccuracyShort>1</AccuracyShort>
+			<!-- 中距离射击精度 -->
+			<AccuracyMedium>1</AccuracyMedium>
+			<!-- 远距离射击精度 -->
+			<AccuracyLong>1</AccuracyLong>
+			<!-- 远程武器射击冷却时间 -->
+			<RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+		</statBases>
+		<!-- 武器标签 -->
+		<weaponTags>
+			<li>BANW_QSJ_A_WP</li>
+		</weaponTags>
+		<!-- 是否可熔炼 -->
+		<smeltable>false</smeltable>
+		<!-- 动作定义 -->
+		<verbs>
+			<li>
+				<!-- 动作类 -->
+				<verbClass>Verb_Shoot</verbClass>
+				<!-- 是否有标准命令 -->
+				<hasStandardCommand>true</hasStandardCommand>
+				<!-- 默认投射物 -->
+				<defaultProjectile>BANC_Bullet_QSJ_A</defaultProjectile>
+				<!-- 预热时间 -->
+				<warmupTime>0.3</warmupTime>
+				<!-- 射程 -->
+				<range>2.9</range>
+				<!-- 连发数 -->
+				<burstShotCount>1</burstShotCount>
+				<!-- 连发间隔 -->
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<!-- 射击音效 -->
+				<soundCast>BANW_Sound_Kong</soundCast>
+                <soundCastTail>BANW_Sound_Kong</soundCastTail>
+				<!-- 尾部音效 -->
+				<!-- 枪口闪光缩放 -->
+				<muzzleFlashScale>1</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+   <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_QSJ_A</defName>
+    <label>清扫机攻击</label>
+    <projectile>
+      <damageDef>Bullet</damageDef><!--贯通-->
+      <damageAmountBase>40</damageAmountBase>
+      <stoppingPower>8</stoppingPower>
+      <armorPenetrationBase>1.0</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>0.8</drawSize>
+      <texPath>Projectile/Bullet_Hoshiro</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    
+  </ThingDef>
+</Defs>

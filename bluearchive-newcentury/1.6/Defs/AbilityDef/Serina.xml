@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Serina_EXX</defName>
+ <label>集中治疗方案A</label>
+ <description>对1名我方单位恢复300点生命值</description>
+ <iconPath>Ability/Icon/Serina/Serina_EXX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Serina_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>False</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+ </statBases>
+ <verbProperties>
+  <warmupEffecter></warmupEffecter>
+ <soundCast></soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>65.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>0.5</warmupTime><!-- 前摇时间（单位：秒） -->
+<requireLineOfSight>false</requireLineOfSight><!-- 不需要视线 -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  <neverTargetHostileFaction>true</neverTargetHostileFaction>
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Serina_EXX</projectileDef>
+      </li>
+</comps>
+</AbilityDef>
+<ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>BANC_Bullet_Serina_EXX</defName>
+    <label>医疗包</label>
+    <projectile>
+      <damageDef>BANC_Damage_Serina</damageDef><!--子弹类型-->
+      <damageAmountBase>1</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>50</stoppingPower><!--抑制-->
+      <armorPenetrationBase>100</armorPenetrationBase><!--穿透-->
+      <speed>80</speed><!--子弹速度-->
+      <flyOverhead>true</flyOverhead>
+    </projectile>
+    <graphicData>
+      <drawSize>0.7</drawSize>
+      <texPath>Projectile/Bullet_Serina_EXX</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+    <DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Serina</defName><!--命名格式-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Serina_Buff_A</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+    <soundExplosion>BANW_Sound_Kong</soundExplosion>
+      <modExtensions>
+
+    </modExtensions>
+  </DamageDef>
+<AbilityDef>
+<defName>BAWN_Serina_EX</defName>
+ <label>紧急救护方案B</label>
+ <description>对1名我方单位恢复180点生命值</description>
+ <iconPath>Ability/Icon/Natsu/Natsu_EXX</iconPath>
+ <cooldownTicksRange>2100</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Serina_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>False</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>2</Ability_Duration>
+ </statBases>
+ <verbProperties>
+  <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast></soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>65.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <requireLineOfSight>false</requireLineOfSight><!-- 不需要视线 -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  <neverTargetHostileFaction>true</neverTargetHostileFaction><!-- 只能选友军 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Serina_Buff_B</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>false</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+</comps>
+</AbilityDef>
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Serina_Buff_A</defName>
+        <!-- 显示名称 -->
+        <label>集中治疗方案A</label>
+        <!-- 效果描述 -->
+        <description>对1名我方单位恢复300点生命值</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>150</disappearsAfterTicks>
+      </li>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>2</healAmount>
+        <healIntervalTicks>1</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    <tags>
+      <li>Medical</li>
+      <li>Stimulant</li>
+      <li>Temporary</li>
+      <li>PainRelief</li>
+      <li>ConsciousnessBoost</li>
+    </tags>
+    </HediffDef>
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Serina_Buff_B</defName>
+        <!-- 显示名称 -->
+        <label>紧急救护方案B</label>
+        <!-- 效果描述 -->
+        <description>对1名我方单位恢复180点生命值</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statFactors>
+            </statFactors> 
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>120</disappearsAfterTicks>
+      </li>
+    <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>3</healAmount>
+        <healIntervalTicks>2</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    <tags>
+      <li>Medical</li>
+      <li>Stimulant</li>
+      <li>Temporary</li>
+      <li>PainRelief</li>
+      <li>ConsciousnessBoost</li>
+    </tags>
+    </HediffDef>
+
+</Defs>

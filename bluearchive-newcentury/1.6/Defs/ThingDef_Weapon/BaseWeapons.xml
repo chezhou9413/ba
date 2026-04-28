@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Abstract="True" Name="BANC_BaseWeapon">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <equipmentType>Primary</equipmentType>
+    <pathCost>14</pathCost>
+    <selectable>true</selectable>
+    <statBases>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Beauty>10</Beauty>
+      <SellPriceFactor>0.20</SellPriceFactor>
+    </statBases>
+    <thingCategories>
+      <li>BANC_Weapon</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li Class="CompProperties_Styleable"/>
+    </comps>
+    <tools>
+      <li>
+        <label>Gun Butt</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>Gun Barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <graphicData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef Name="BANC_BaseGun" Abstract="True" ParentName="BANC_BaseWeapon">
+    <techLevel>Spacer</techLevel>
+    <smeltable>true</smeltable>
+    <relicChance>1</relicChance>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <statBases>
+     
+    </statBases>
+  </ThingDef>
+
+  <ThingDef Name="BANC_BaseGunWithQuality" Abstract="True" ParentName="BANC_BaseGun">
+   <!--<comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>-->
+  </ThingDef>
+
+  <ThingDef Name="BANC_BaseMakeableGun" ParentName="BANC_BaseGunWithQuality" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef Name="BANC_BaseHumanMakeableGun" ParentName="BANC_BaseMakeableGun" Abstract="True">
+    <tradeTags Inherit="False"/>
+    <weaponTags Inherit="False"/>
+    <thingSetMakerTags Inherit="False"/>
+    <comps>
+      <li Class="CompProperties_Biocodable"/>
+    </comps>
+  </ThingDef>
+
+  <!-- Without Quality -->
+  <ThingDef Name="BANC_BaseMakeableGunWithNoQuality" ParentName="BANC_BaseGun" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+</Defs>

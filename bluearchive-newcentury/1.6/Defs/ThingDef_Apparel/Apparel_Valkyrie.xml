@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Kanna</defName>
+        <label>康纳的衣服</label>
+        <description>康纳的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Valkyrie/Kanna/Apparel/Kanna_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Kanna</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
+
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Fubuki</defName>
+        <label>吹雪的衣服</label>
+        <description>吹雪的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Valkyrie/Fubuki/Apparel/Fubuki_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Fubuki</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
+
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Kirino</defName>
+        <label>桐乃的衣服</label>
+        <description>桐乃的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Valkyrie/Kirino/Apparel/Kirino_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Kirino</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
+
+      
+       
+
+</Defs>

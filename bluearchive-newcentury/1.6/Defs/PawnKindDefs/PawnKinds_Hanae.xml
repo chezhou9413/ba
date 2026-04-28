@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Hanae</defName>
+		<label>-花江-</label>
+		<race>BANW_Hanae_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Hanae_EX</li>
+			<li>BAWN_Hanae_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryHanae</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Hanae</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Hanae</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>13</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>15~18</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10~12</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>8~10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Hanae_A>0</BAWC_TraitDef_Hanae_A>
+			
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hanae_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;熟练治疗&lt;/color&gt;</label>
+                <description>被动技能:自身治疗质量增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    
+                </statOffsets>
+				<statFactors>
+					<MedicalTendQuality>1.26</MedicalTendQuality>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

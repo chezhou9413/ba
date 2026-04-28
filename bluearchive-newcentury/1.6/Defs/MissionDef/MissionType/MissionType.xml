@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <BANWlLib.BaDef.BaMissionType>
+        <defName>BaseDefense</defName>
+        <UIIconPath>UI/MissionUI/type/BaseDefense</UIIconPath>
+        <UIShowImagePath>UI/MissionUI/Node/1333</UIShowImagePath>
+        <oder>1</oder>
+    </BANWlLib.BaDef.BaMissionType>
+    <BANWlLib.BaDef.BaMissionType>
+        <defName>CreditRetrieval</defName>
+        <UIIconPath>UI/MissionUI/type/CreditRetrieval</UIIconPath>
+        <UIShowImagePath>UI/MissionUI/Node/test</UIShowImagePath>
+        <oder>2</oder>
+    </BANWlLib.BaDef.BaMissionType>
+</Defs>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HediffDef>
+        <defName>BANC_BluetoothBadge_Four</defName>
+        <label>维罗妮卡刺绣徽章Buff</label>
+        <description>佩戴维罗妮卡刺绣徽章时提供自然恢复系数。</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+        <naturalHealingFactor>1.0</naturalHealingFactor>
+        </li>
+        </stages>
+        <comps>
+        <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANC_BluetoothBadge_Five</defName>
+        <label>风山纹章Buff</label>
+        <description>佩戴风山纹章时提供自然恢复系数。</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+        <naturalHealingFactor>2.0</naturalHealingFactor>
+        </li>
+        </stages>
+        <comps>
+        <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANC_BluetoothBadge_Six</defName>
+        <label>可可恶魔徽章Buff</label>
+        <description>佩戴可可恶魔徽章时提供自然恢复系数。</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+        <naturalHealingFactor>3.0</naturalHealingFactor>
+        </li>
+        </stages>
+        <comps>
+        <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANC_BluetoothBadge_Seven</defName>
+        <label>街头勋章Buff</label>
+        <description>佩戴街头勋章时提供自然恢复系数。</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+        <naturalHealingFactor>3.2</naturalHealingFactor>
+        </li>
+        </stages>
+        <comps>
+        <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANC_BluetoothBadge_Eight</defName>
+        <label>罗蕾莱勋章Buff</label>
+        <description>佩戴罗蕾莱勋章时提供自然恢复系数。</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+        <naturalHealingFactor>3.4</naturalHealingFactor>
+        </li>
+        </stages>
+        <comps>
+        <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+     <HediffDef>
+        <defName>BANC_BluetoothBadge_Nine</defName>
+        <label>哈耳庇厄弹性徽章Buff</label>
+        <description>佩戴哈耳庇厄弹性徽章时提供自然恢复系数。</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+        <naturalHealingFactor>3.5</naturalHealingFactor>
+        </li>
+        </stages>
+        <comps>
+        <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANC_BluetoothBadge_Ten</defName>
+        <label>硬币徽章Buff</label>
+        <description>佩戴哈耳庇厄弹性徽章时提供自然恢复系数。</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+        <li>
+        <naturalHealingFactor>3.5</naturalHealingFactor>
+        </li>
+        </stages>
+        <comps>
+        <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+        </comps>
+    </HediffDef>
+
+   
+</Defs>

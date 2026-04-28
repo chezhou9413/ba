@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+<AbilityDef>
+<defName>BAWN_Shiroko_EX</defName>
+ <label>投掷手榴弹</label>
+ <description>投掷一枚手榴弹，造成自身攻击力368%的伤害</description>
+ <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Shiroko_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+<warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>ThrowGrenade</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+ <range>34.9</range><!-- 投掷范围 -->
+ <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BAWN_Shiroko_EX_Boom</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+
+<AbilityDef>
+<defName>BAWN_Shiroko_EXX</defName>
+ <label>召唤无人机：火力支援，开始</label>
+ <description>造成自身攻击力760%的伤害</description>
+ <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
+  <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Aoba_Skill</warmupStartSound>
+ <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>false</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>32</Ability_Duration>
+ </statBases>
+ <verbProperties>
+ <soundCast>Aoba_Skill_EX</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class = "CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<!-- 要给予的hediff定义 -->
+				<hediffDef>BAWN_Shiroko_EXX_Wurenji</hediffDef>
+				<!-- 是否只应用给自己 -->
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<!-- 是否替换现有效果 -->
+				<replaceExisting>True</replaceExisting>
+			</li>
+  </comps>
+</AbilityDef>
+
+<HediffDef>
+  <defName>BAWN_Shiroko_EXX_Wurenji</defName>
+  <label>无人机支援</label>
+  <defaultLabelColor>(218,112,214)</defaultLabelColor>
+  <description>造成自身攻击力760%的伤害</description>
+  <hediffClass>HediffWithComps</hediffClass>
+  <isBad>false</isBad>
+   <comps>
+    <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+    <li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
+      <verbs>
+        <li>
+          <verbClass>Verb_Shoot</verbClass>
+          <defaultProjectile>BAWN_Shiroko_EX_Boom</defaultProjectile>
+          <warmupTime>3</warmupTime>
+          <range>30.9</range>
+          <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+          <burstShotCount>4</burstShotCount>
+          <soundCast>Hasumi_Gun_EX</soundCast>
+          <soundCastTail>GunTail_Light</soundCastTail>
+          <muzzleFlashScale>1</muzzleFlashScale>
+          <label>BANC_Shiroko_EXX_A</label>
+        </li>
+      </verbs>
+      <verbProps>
+        <!-- 僚机A-左上 -->
+        <li>
+          <label>BANC_Shiroko_EXX_A</label>
+          <!-- 是否可以切换 -->
+          <canBeToggled>true</canBeToggled>
+          <comps>
+            <!-- 炮塔组件，控制僚机位置 -->
+            <li Class="MVCF.VerbComps.VerbCompProperties_Turret">
+              <compClass>MVCF.VerbComps.VerbComp_Turret</compClass>
+              <!-- 以人类为默认 -->
+              <humanAsDefault>true</humanAsDefault>
+              
+              <!-- 图形定义 -->
+              <graphic>
+                <texPath>Pawns/Abydos/Shiroko/Skill/Wurenji</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+              </graphic>
+              <specificPositions>
+                <li>
+                  <defName>Human</defName>
+                  <BodyType>Thin</BodyType>
+                  <Default>(0,0)</Default>
+                  <Up>(0.75,0.75)</Up>
+                  <Down>(-0.75,-0.75)</Down>
+                  <Right>(0.75,-0.75)</Right>
+                  <Left>(-0.75,0.75)</Left>
+                </li>
+              </specificPositions>
+            </li>
+          </comps>
+        </li>
+      </verbProps>
+    </li>
+  </comps>
+</HediffDef>
+<ThingDef Name="BAWN_Shiroko_EX_Boom" ParentName="BaseGrenadeProjectile" Abstract="True">
+    <graphicData>
+      <texPath>Things/Projectile/Grenade</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>182</damageAmountBase><!--子弹伤害-->
+      <explosionRadius>2.9</explosionRadius >
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <damageDef>BANC_Damage_Shiroko_EX</damageDef>
+      <speed>50</speed><!--子弹速度-->
+      <explosionDelay>0</explosionDelay>
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+      <!-- Use default damage from explosion def -->
+    </projectile>
+  </ThingDef>
+  
+  <ThingDef ParentName="BAWN_Shiroko_EX_Boom">
+    <defName>BAWN_Shiroko_EX_Boom</defName>
+  </ThingDef>
+
+
+     <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Shiroko_EX</defName><!--通用贯通-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+</Defs>

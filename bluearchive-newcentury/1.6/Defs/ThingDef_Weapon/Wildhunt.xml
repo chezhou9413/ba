@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Kanoe</defName>
+    <label>三重伟大</label>
+    <description>庚喜欢用的霰弹枪。不是用炸药，而是用炼金术的化学反应来发射子弹……大概。</description>
+    <graphicData>
+      <texPath>Weapon/Wildhunt/Kanoe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Kanoe</li>
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>BANW_Wp_SG_De</soundInteract>
+    <statBases>
+      <WorkToMake>80000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>0.8</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>440</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BANC_Bullet_Kanoe</defaultProjectile>
+        <warmupTime>0.8</warmupTime>
+        <range>17.9</range>
+        <soundCast>BANW_Wp_SG_At</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Kanoe</defName>
+    <label>三重伟大子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_shenmi</damageDef><!--贯通-->
+      <damageAmountBase>85</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <armorPenetrationBase>0.0</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>2.5</drawSize>
+      <texPath>Projectile/Bullet_Kanoe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+      </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Eri</defName>
+    <label>奥秘魔法之杖</label>
+    <description>艾利坚称是魔杖的步枪。就尖端会飞出火花来说，确实有相似之处。</description>
+    <graphicData>
+      <texPath>Weapon/Wildhunt/Eri</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.4</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Eri</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_SR_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0.71</AccuracyTouch>
+      <AccuracyShort>0.68</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.89</AccuracyLong>
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Eri</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.5</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>41.9</range><!--射距-->
+        <soundCast>BANW_Wp_SR_At_B</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Medium</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Eri</defName>
+    <label>奥秘魔法之杖子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
+      <damageAmountBase>59</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.45</armorPenetrationBase><!--穿透-->
+      <speed>100</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>Stun</def>
+        <amount>5</amount>
+        <chance>0.5</chance>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize>
+      <texPath>Projectile/Bullet_Eri</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+</Defs>

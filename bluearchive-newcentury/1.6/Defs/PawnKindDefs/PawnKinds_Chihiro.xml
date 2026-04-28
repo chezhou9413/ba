@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Chihiro</defName>
+		<label>-千寻-</label>
+		<race>BANW_Chihiro_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+		<li>
+			<def>BAWC_TraitDef_Chihiro_Buff</def>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryChihiro</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Chihiro</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Chihiro</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>9~12</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>9</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>9</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>18</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Chihiro_A>0</BAWC_TraitDef_Chihiro_A>
+			<BAWC_TraitDef_Chihiro_B>0</BAWC_TraitDef_Chihiro_B>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Chihiro_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;利用漏洞&lt;/color&gt;</label>
+                <description>被动技能:自身护甲穿透增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <BANW_RangedWeapon_Penetration>0.26</BANW_RangedWeapon_Penetration>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Chihiro_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;构筑防火墙&lt;/color&gt;</label>
+                <description>子技能:自身疼痛感受降低&lt;color=#DC143C&gt;17%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+            </li>
+        </degreeDatas>
+</TraitDef>
+ <HediffDef>
+    <defName>BAWC_TraitDef_Chihiro_Buff</defName>
+    <label>构筑防火墙</label>
+    <description>自身疼痛感受降低17%</description>
+    <defaultLabelColor>(255,187,0)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painFactor>0.83</painFactor>
+      </li>
+    </stages>
+
+    <comps>
+      <li Class="HediffCompProperties_RemoveIfApparelDropped" />
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>8</healAmount>
+        <healIntervalTicks>150</healIntervalTicks>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

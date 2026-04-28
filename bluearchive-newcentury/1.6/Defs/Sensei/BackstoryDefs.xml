@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AlienRace.AlienBackstoryDef Name="BaseBANWBackStory" Abstract="True">
+		<disallowedTraitsChance>
+			<li>
+				<defName Degree="-1">Beauty</defName>
+				<chance>100</chance>
+			</li>
+			<li>
+				<defName Degree="-2">Beauty</defName>
+				<chance>100</chance>
+			</li>
+            <li>
+				<defName Degree="2">DrugDesire</defName>
+				<chance>100</chance>
+			</li>
+			<li>
+				<defName Degree="1">DrugDesire</defName>
+				<chance>100</chance>
+			</li>
+			<li>
+				<defName Degree="0">DislikesWomen</defName>
+				<chance>100</chance>
+			</li>
+			<li>
+				<defName Degree="0">Brawler</defName>
+				<chance>100</chance>
+			</li>
+		</disallowedTraitsChance>
+	</AlienRace.AlienBackstoryDef>
+    <AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSensei</defName>
+		<title>老师</title>
+		<titleShort>老师</titleShort>
+		<baseDesc>[PAWN_nameDef]并非是基沃托斯本地人，是从基沃托斯外面的地方来的\n老师与学生不同，是已经完成了的“大人”，头上也没有学生的光环\n老师的身体素质与学生有较大差异，更接近于我们现实中的一般人，无法像学生那样中弹如同玩闹
+</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySensei</li>
+		</spawnCategories>
+		 <workDisables>
+		</workDisables>
+	</AlienRace.AlienBackstoryDef>
+
+    <AlienRace.ThingDef_AlienRace ParentName="BANW_KivotosSensei">
+		<defName>BANW_Sensei_race</defName>
+		<label>老师</label>
+		<description>“关于「背负责任之人」的话题，您曾经和我提起过”\n“虽然那个时候我还未明白，但现在我能够理解了”\n“身为大人的责任和义务，以及那条延长线上你的选择”\n“还有它所代表的想法”\n“所以，老师”\n“如果是你这个我能信任的大人的话”\n“请将这个扭曲的终点，引向其他的结局”\n“所以老师,请务必...”\n“将这份羁绊——”\n“与我们之间的回忆...一路走来的每个日子...请务必...”</description>
+		<alienRace>
+        <raceRestriction>
+        <buildingList>
+        <li>BANW_Workbench</li>
+        </buildingList>
+        </raceRestriction>
+  </alienRace>
+	</AlienRace.ThingDef_AlienRace>
+
+    <RulePackDef>
+		<defName>NamerSensei</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name->[NickName] [FirstName]</li>
+				<li>FirstName->老师</li>
+				<li>NickName->sensei</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+</Defs>

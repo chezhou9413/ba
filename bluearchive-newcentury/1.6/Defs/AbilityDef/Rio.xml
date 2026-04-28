@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <AbilityDef>
+  <defName>BAWN_Rio_EX</defName>
+ <label>唯一解</label>
+ <description>对1名敌方单位造成自身攻击力297%的伤害并且护甲减少25%。(持续19秒)</description>
+ <iconPath>Ability/Icon/Ibuki/Ibuki_EX</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Rio_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+    </statBases>
+ <verbProperties>
+<warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast></soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+ <range>34.9</range><!-- 投掷范围 -->
+ <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>false</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+ <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_C</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+       <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Rio_EX</projectileDef>
+      </li>
+  </comps>
+</AbilityDef>
+<DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Rio_EX</defName><!--通用贯通-->
+    <hasForcefulImpact>false</hasForcefulImpact><!--击退。-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Rio_Buff_A</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Rio_EX</defName>
+    <label>唯一解</label>
+    <projectile>
+      <damageDef>BANC_Damage_Rio_EX</damageDef><!--子弹类型-->
+      <damageAmountBase>89</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>55</stoppingPower><!--抑制-->
+      <armorPenetrationBase>10</armorPenetrationBase><!--穿透-->
+      <speed>200</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <drawSize>2</drawSize>
+      <texPath>Projectile/kongbai</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+ <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Rio_Buff_A</defName>
+        <!-- 显示名称 -->
+        <label>唯一解</label>
+        <!-- 效果描述 -->
+        <description>护甲减少25%。</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+            <statFactors>
+        <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+		    <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
+	      <ArmorRating_Heat>0.75</ArmorRating_Heat>
+           </statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1140</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Rio_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+    
+</Defs>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<BANWlLib.BaDef.Gacha>
+        <!-- 卡池唯一标识符 -->
+        <defName>Gacha_Standard_Reisa</defName> 
+        <!-- UI资源路径 -->
+        <gachaTexPath>UI/cardHead/Reisa</gachaTexPath>          <!-- 卡池头图/封面图片 -->
+        <gachaVidPath>UI/Video/Reisa.webm</gachaVidPath>        <!-- 卡池宣传视频 -->
+        <!-- 显示信息 -->
+        <gachaTitle>限时招募</gachaTitle>            <!-- 卡池标题 -->
+        <gachaUp>★3铃纱出现概率Up！\n首次奖励可获得[玲纱的神名文字x100]！</gachaUp>                 <!-- UP内容说明 -->
+        <gachaDesc>招募10次时，保证获得1名★2以上学生！\n※已招募过的学生會变换成神名文字碎片与该学生的神名文字。</gachaDesc>  <!-- 详细描述 -->
+        <!-- UP三星池配置 -->
+        <!-- Weight=70 表示在三星出货时，有70%概率从UP池抽取 -->
+        <upthreeStarPool>
+            <Weight>0.7</Weight>
+            <RaceList>
+                <li>BANW_Reisa_race</li>
+            </RaceList>
+        </upthreeStarPool>
+        <!-- 普通三星池配置 -->
+        <!-- Weight=0.7 表示每次抽卡有0.7%的基础概率抽中三星 -->
+        <threeStarPool>
+            <Weight>2.3</Weight>
+            <RaceList>
+                <li>BANW_Shiroko_race</li>                    <!-- 白子 -->
+                <li>BANW_Hoshiro_race</li>                    <!-- 星野 -->
+                <li>BANW_Natsu_race</li>
+                <li>BANW_Koharu_race</li>
+                <li>BANW_Ui_race</li>
+                <li>BANW_Hinata_race</li>
+                <li>BANW_Hifumi_race</li>
+                <li>BANW_Azusa_race</li>
+                <li>BANW_Sakurako_race</li>
+                <li>BANW_Ichika_race</li>
+                <li>BANW_Mashiro_race</li>
+                <li>BANW_Mine_race</li>
+                <li>BANW_Turugi_race</li>
+                <li>BANW_Ako_race</li>
+                <li>BANW_Iroha_race</li>
+                <li>BANW_Iori_race</li>
+                <li>BANW_Chiaki_race</li>
+                <li>BANW_Megu_race</li>
+                <li>BANW_Hina_race</li>
+                <li>BANW_Haruna_race</li>
+                <li>BANW_Izumi_race</li>
+                <li>BANW_Sena_race</li>
+                <li>BANW_Satsuki_race</li>
+                <li>BANW_Aru_race</li>
+                <li>BANW_Kasumi_race</li>
+                <li>BANW_Chihiro_race</li>
+                <li>BANW_Hibiki_race</li>
+                <li>BANW_Nero_race</li>
+                <li>BANW_Koyuki_race</li>
+                <li>BANW_Himari_race</li>
+                <li>BANW_Yuzu_race</li>
+                <li>BANW_Arisu_race</li>
+                <li>BANW_Maki_race</li>
+                <li>BANW_Midori_race</li>
+                <li>BANW_Eimi_race</li>
+                <li>BANW_Karlin_race</li>
+                <li>BANW_Noa_race</li>
+                <li>BANW_Yakumo_race</li>
+                <li>BANW_Cherino_race</li>
+                <li>BANW_Minori_race</li>
+                <li>BANW_Shigure_race</li>
+                <li>BANW_Meru_race</li>
+                <li>BANW_Marina_race</li>
+                <li>BANW_Takane_race</li>
+                <li>BANW_Reijo_race</li>
+                <li>BANW_Kisaki_race</li>
+                <li>BANW_Kokona_race</li>
+                <li>BANW_Rumi_race</li>
+                <li>BANW_Shun_race</li>
+                <li>BANW_Saya_race</li>
+                <li>BANW_Kanna_race</li>
+                <li>BANW_Nagusa_race</li>
+                <li>BANW_Niya_race</li>
+                <li>BANW_Mimori_race</li>
+                <li>BANW_Tsukuyo_race</li>
+                <li>BANW_Kaho_race</li>
+                <li>BANW_Kaede_race</li>
+                <li>BANW_Kikyou_race</li>
+                <li>BANW_Izuna_race</li>
+                <li>BANW_Umika_race</li>
+                <li>BANW_Yokari_race</li>
+                <li>BANW_Renge_race</li>
+                <li>BANW_Atsuko_race</li>
+                <li>BANW_Hiyori_race</li>
+                <li>BANW_Saori_race</li>
+                <li>BANW_Misaki_race</li>
+                <li>BANW_Saki_race</li>
+                <li>BANW_Miyako_race</li>
+                <li>BANW_Miyu_race</li>
+                <li>BANW_Moe_race</li>
+                <li>BANW_Kanoe_race</li>
+                <li>BANW_Eri_race</li>
+                <li>BANW_Kazusa_race</li>
+
+            </RaceList>
+        </threeStarPool>
+
+        <!-- 二星池配置 -->
+        <!-- Weight=30 表示每次抽卡有30%概率抽中二星 -->
+        <twoStarPool>
+            <Weight>18.5</Weight>
+            <RaceList>
+                <li>BANW_Serika_race</li>                     <!-- 芹香 -->
+                <li>BANW_Nonomi_race</li>                     <!-- 野乃美 -->
+                <li>BANW_Ayane_race</li>                      <!-- 绫音 -->
+                <li>BANW_Yuuka_race</li>                      <!-- 优香 -->
+                <li>BANW_Mutsuki_race</li>                    <!-- 睦月 -->
+                <li>BANW_Hanako_race</li>                     <!-- 花子 -->
+                <li>BANW_Momoi_race</li>                      <!-- 桃井 -->
+                <li>BANW_Hare_race</li>                       <!-- 晴 -->
+                <li>BANW_Junko_race</li>                      <!-- �的子 -->
+                <li>BANW_Airy_race</li>
+                <li>BANW_Mari_race</li>  
+                <li>BANW_Yuuka_race</li> 
+                <li>BANW_Utaha_race</li> 
+                <li>BANW_Akane_race</li> 
+                <li>BANW_Momiji_race</li> 
+                <li>BANW_Kirino_race</li>
+                <li>BANW_Tsubaki_race</li> 
+                <li>BANW_Shizuko_race</li>            
+            </RaceList>
+        </twoStarPool>
+
+        <!-- 一星池配置 -->
+        <!-- Weight=60 表示每次抽卡有60%概率抽中一星 (保底最低稀有度) -->
+        <oneStarPool>
+            <Weight>78.5</Weight>
+            <RaceList>
+                <li>BANW_Juri_race</li>                       <!-- 树里 -->
+                <li>BANW_Shimiko_race</li>                    <!-- 志美子 -->
+                <li>BANW_Pina_race</li>                       <!-- 皮娜 -->
+                <li>BANW_Kotori_race</li>                     <!-- 小�的 -->
+                <li>BANW_Haruka_race</li>                     <!-- 遥 -->
+                <li>BANW_Suzumi_race</li>                     <!-- 铃美 -->
+                <li>BANW_Yoshimi_race</li>                    <!-- 佳美 -->
+                <li>BANW_Serina_race</li>
+                <li>BANW_Ibuki_race</li>
+                <li>BANW_Kotama_race</li>
+                <li>BANW_Asuna_race</li>
+                <li>BANW_Nodoka_race</li>
+                <li>BANW_Tomoe_race</li>
+                <li>BANW_Fubuki_race</li>
+                <li>BANW_Michiru_race</li>
+                <li>BANW_Aoba_race</li>
+            </RaceList>
+        </oneStarPool>
+    </BANWlLib.BaDef.Gacha>
+</Defs>

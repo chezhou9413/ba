@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Karlin</defName>
+		<label>-花凛-</label>
+		<race>BANW_Karlin_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Karlin_EX</li>
+			<li>BAWN_Karlin_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryKarlin</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Karlin</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Karlin</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>11~15</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>18~20</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>15</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Karlin_A>0</BAWC_TraitDef_Karlin_A>
+		</forcedTraits>
+	</PawnKindDef>
+
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Karlin_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;武装强化，完成&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

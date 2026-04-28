@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <IncidentDef>
+    <defName>BANW_Sensei_Join</defName>
+    <label>夏莱的老师加入了殖民地</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_WandererJoin</workerClass>
+    <letterLabel>夏莱的老师加入了殖民地</letterLabel>
+    <letterText>....这里是哪里....?</letterText>
+    <baseChance>100000</baseChance>
+    <pawnKind>BANW_Sensei</pawnKind>
+    <populationEffect>IncreaseHard</populationEffect>
+    <earliestDay>0</earliestDay>
+    <minRefireDays>9999</minRefireDays>
+  </IncidentDef>
+</Defs>

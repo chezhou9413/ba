@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+     <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_2_Piece</defName>
+    <label>Lv.2-雪地靴设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_2_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_3_Piece</defName>
+    <label>Lv.3-粉嫩羊驼拖鞋设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_3_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_4_Piece</defName>
+    <label>Lv.4-复古漆皮豆豆鞋设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_4_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_5_Piece</defName>
+    <label>Lv.5-战术靴设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_5_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_6_Piece</defName>
+    <label>Lv.6-高跟鞋设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_6_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_7_Piece</defName>
+    <label>Lv.7-休闲运动鞋设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_7_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_8_Piece</defName>
+    <label>Lv.8-防水登山靴设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_8_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_9_Piece</defName>
+    <label>Lv.9-海蓝凉鞋设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_9_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+   <ThingDef ParentName="ResourceBase">
+    <defName>BANW_Shoes_10_Piece</defName>
+    <label>Lv.10-游戏拖鞋设计图</label>
+    <description>可制造装备的设计图。</description>
+    <graphicData>
+      <texPath>Belt/Shoes/Shoes_10_Piece</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.0,1.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <thingCategories>
+      <li>BAWN_Costume_Piece</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

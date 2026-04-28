@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Ako</defName>
+		<label>-亚子-</label>
+		<race>BANW_Ako_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Ako_EX</li>
+			<li>BAWN_Ako_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryAko</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Ako</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Ako</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>4</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>15~18</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Ako>0</BAWC_TraitDef_Ako>
+			<BAWC_TraitDef_Ako_A>0</BAWC_TraitDef_Ako_A>
+		</forcedTraits>
+	</PawnKindDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Ako</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;风纪委员会的行政官&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是辅佐空崎日奈的秘书，非常崇拜并且关心空崎日奈，泡咖啡技术很不错，乍一看给人一种亲切善良的印象，但是面对违规的学生却毫不留情</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                <NegotiationAbility>0.3</NegotiationAbility>
+				<PawnBeauty>2</PawnBeauty>
+				<SocialImpact>0.5</SocialImpact>
+				<RestFallRateFactor>0.3</RestFallRateFactor>
+				<MentalBreakThreshold>0.1</MentalBreakThreshold>
+				<WorkSpeedGlobal>0.3</WorkSpeedGlobal>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Ako_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;补给支援，开始&lt;/color&gt;</label>
+                <description>被动技能:自身治疗质量增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+
+                </statOffsets>
+				<statFactors>
+					<MedicalTendQuality>1.26</MedicalTendQuality>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	
+</Defs>

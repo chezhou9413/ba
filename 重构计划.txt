@@ -1,0 +1,909 @@
+# BlueArchive-NewWorld 单 HAR 种族多 PawnKind 学生系统重构计划
+
+## 0. 目标与边界
+
+本次重构目标不是彻底放弃 HAR，而是把当前“每个学生一个 HAR 种族”的结构，收敛为“一个 HAR 学生种族 + 多个 PawnKindDef 学生”的结构。也就是说，HAR 仍然负责基础异种族能力、身体部件、BodyAddon 渲染层等内容，但学生个体差异不再靠 `BANW_Akane_race`、`BANW_Hina_race` 这类独立种族表达，而是靠 `PawnKindDef`、ChezhouLib 的 `customPawn/kindRule`，以及必要时 ChezhouLib.HAR 的 kind 级 BodyAddon 规则表达。
+
+最终目标：
+
+- 移除 VEF 依赖。
+- 保留 HAR 依赖。
+- 新增或保留 ChezhouLib 依赖。
+- 只保留一个学生 HAR race，例如 `BANW_KivotosStudent`。
+- 每个学生对应一个 `PawnKindDef`，例如 `BANW_Akane`、`BANW_Hina`、`BANW_Shiroko`。
+- 学生身份从 `pawn.def.defName` / `ThingDef` / `BaStudentRaceDef` 迁移为 `pawn.kindDef.defName` 或专门的学生数据 Def。
+- UI、抽卡、任务编队、图鉴、存档、掉落、进度条、初始化组件全部围绕新的学生身份运行。
+
+不在本次重构中做的事：
+
+- 不重写整个 UI 资源包。
+- 不改变抽卡概率设计。
+- 不重做任务玩法。
+- 不移除 HAR。
+- 不把全部学生能力改成另一个能力框架。
+- 不在第一阶段批量删除旧 XML，先保留可回退的迁移路径。
+
+难度评估：高。VEF 本身工作量低，真正难点是学生身份模型和渲染模型的迁移。当前项目大量逻辑把“学生”等同于“种族 ThingDef”，这个假设会在新架构下失效。
+
+## 1. 当前依赖作用分析
+
+### 1.1 VEF 当前作用
+
+目前观察到的 VEF 作用主要是元数据依赖：
+
+- `About\About.xml` 中声明了 `oskarpotocki.vanillafactionsexpanded.core`。
+- `About\About.xml` 中 `loadAfter` 包含 VEF。
+- 初步搜索没有发现 C# 项目直接引用 VEF DLL。
+- 初步搜索没有发现 XML 中使用 `VFECore`、`VanillaExpanded`、`Vanilla Expanded Framework` 专属 Def 类。
+- 当前能力系统主要使用 RimWorld/Royalty 原生 `AbilityDef`、`Verb_CastAbility`、`Verb_AbilityShoot`、`CompAbilityEffect_*`。
+
+结论：
+
+- VEF 很可能是历史遗留依赖。
+- 第一阶段可以先删除 VEF 依赖并启动游戏做 Def 加载验证。
+- 如果删除 VEF 后没有缺失类、缺失 Def、Patch 失败，则 VEF 可彻底移除。
+
+### 1.2 HAR 当前作用
+
+HAR 是当前学生系统的核心依赖：
+
+- `BaStudentRaceDef : ThingDef_AlienRace` 直接继承 HAR 类型。
+- 大量 XML 使用 `AlienRace.ThingDef_AlienRace`。
+- 学生外观依赖 HAR `bodyAddons`。
+- 头、身体、头发、光环等贴图大量通过 `extendedGraphics` 和 `Backstory For` 分发。
+- `raceRestriction` 管理学生可用服装、装备等内容。
+- 每个学生有独立 `BANW_*_race`，而每个 `PawnKindDef` 再引用对应 race。
+
+重构后 HAR 的职责：
+
+- 保留一个通用学生 race。
+- 提供基础身体部件、头部部件、光环部件等 HAR 层能力。
+- 提供通用 BodyAddon 节点。
+- 不再用多个 race 表示学生个体。
+
+重构后 HAR 不再承担的职责：
+
+- 不再用 `ThingDef_AlienRace` 作为学生数据容器。
+- 不再用每个学生一个 race 存 UI、抽卡、任务数据。
+- 不再用 `pawn.def.defName` 判断具体学生。
+
+### 1.3 ChezhouLib 目标作用
+
+ChezhouLib 用来承接 PawnKind 级学生个体差异：
+
+- `kindRule.kindName/kindDesName`：学生姓名。
+- `kindRule.Gender/kindAge/fixedBodyTypeDef`：性别、年龄、体型。
+- `kindRule.addAbility`：学生能力。
+- `kindRule.fixedEquipments`：学生固定装备。
+- `kindRule.skillSettings`：学生技能。
+- `kindRule.traitName/randomTraitPool`：学生特性。
+- `kindRule.setinitHedif`：学生初始 Hediff。
+- `kindRule.renderNodeRules`：普通 PawnRenderNode 贴图、颜色、偏移、动画替换。
+- `kindRule.animationRules`：动画贴图替换。
+- `ChezhouLib.HAR.Extension.kindRuleHAR` 或新增同类能力：按 PawnKind 控制 HAR BodyAddon 路径与显示规则。
+
+关键要求：
+
+- 不回到“每个学生一个 race”的方式。
+- 如果现有 ChezhouLib.HAR 不能按 PawnKind 替换 BodyAddon，就优先扩展 ChezhouLib.HAR，而不是继续增加 race。
+
+## 2. 目标架构
+
+### 2.1 唯一学生 HAR race
+
+保留一个学生种族：
+
+```xml
+<AlienRace.ThingDef_AlienRace ParentName="BANW_StudentThingBase">
+  <defName>BANW_KivotosStudent</defName>
+  <label>基沃托斯学生</label>
+</AlienRace.ThingDef_AlienRace>
+```
+
+职责：
+
+- 提供学生共同身体结构。
+- 提供 HAR 基础渲染结构。
+- 提供通用光环、头、身体、头发等 BodyAddon 节点。
+- 提供通用年龄、性别、身体、生命阶段、工具、基础 stat。
+
+注意：
+
+- 这个 race 不保存具体学生 UI 数据。
+- 这个 race 不代表某个具体学生。
+- 这个 race 的默认贴图可以是透明图，具体贴图由 PawnKind 级规则替换。
+
+### 2.2 多 PawnKindDef 学生
+
+每个学生一个 PawnKind：
+
+```xml
+<PawnKindDef ParentName="BANW_BaseStudentKind">
+  <defName>BANW_Akane</defName>
+  <label>茜</label>
+  <race>BANW_KivotosStudent</race>
+  <modExtensions>
+    <li Class="ChezhouLib.Extension.kindRule">
+      <kindName>茜</kindName>
+      <kindDesName>室笠 茜</kindDesName>
+    </li>
+  </modExtensions>
+</PawnKindDef>
+```
+
+职责：
+
+- 表示一个具体学生。
+- 承载生成规则。
+- 作为学生身份来源。
+- 作为 UI、抽卡、任务、存档的主键来源。
+
+学生 ID 推荐：
+
+- 首选 `PawnKindDef.defName`，例如 `BANW_Akane`。
+- 如果需要和 UI 数据分离，可增加 `BaStudentDef.studentId`，默认等于 `kindDef.defName`。
+
+### 2.3 学生数据 Def
+
+推荐新增：
+
+```csharp
+public class BaStudentDef : Def
+{
+    public PawnKindDef kindDef;
+    public string studentId;
+    public string legacyRaceDefName;
+    public BaStudentUI BaStudentUI;
+    public BaStudentData baStudentData;
+}
+```
+
+职责：
+
+- 存放 UI、抽卡、任务、图鉴等非 PawnKind 原生字段。
+- 建立旧 race ID 到新学生 ID 的映射。
+- 让 UI 和抽卡不要直接依赖 `ThingDef_AlienRace`。
+
+推荐命名：
+
+- `BaStudentDef.defName` 使用 `BANW_Akane_Student`。
+- `BaStudentDef.studentId` 使用 `BANW_Akane`。
+- `BaStudentDef.kindDef` 指向 `BANW_Akane`。
+- `BaStudentDef.legacyRaceDefName` 写 `BANW_Akane_race`。
+
+这样可以清楚区分：
+
+- `BANW_Akane`：PawnKind。
+- `BANW_Akane_Student`：学生数据 Def。
+- `BANW_Akane_race`：旧 race ID，只用于兼容迁移。
+
+## 3. 数据模型迁移
+
+### 3.1 BaStudentRaceDef 迁移
+
+当前：
+
+```csharp
+public class BaStudentRaceDef : ThingDef_AlienRace
+{
+    public BaStudentUI BaStudentUI;
+    public BaStudentData baStudentData;
+}
+```
+
+目标：
+
+- 新增 `BaStudentDef : Def`。
+- 不建议直接把 `BaStudentRaceDef` 改成 `Def`，因为名字容易继续误导调用方。
+- 旧 `BaStudentRaceDef` 可短期保留，只用于旧 XML 未迁完阶段。
+- 完成迁移后，所有 `DefDatabase<BaStudentRaceDef>` 改为 `DefDatabase<BaStudentDef>`。
+
+### 3.2 BaStudentUI 迁移
+
+当前字段：
+
+- `RaceDefName`
+- `StudentAvatar`
+- `StudentName`
+- `BackgroundPath`
+- `CharacterimagePath`
+- `CharacterTypePath`
+- `Skills`
+- `Ability1` 到 `Ability4`
+- `WapenUI`
+- `StudentBio`
+
+目标：
+
+- `RaceDefName` 改为 `StudentId`。
+- 如需兼容旧 UI 代码，可短期保留 `RaceDefName`，但写入时等于新 `StudentId`。
+- `StudentName == "Auto"` 时优先使用 `BaStudentDef.label`，其次使用 `kindDef.label`。
+
+### 3.3 BaStudentData 迁移
+
+当前：
+
+```csharp
+public Dictionary<ThingDef, int> GakaStudentThingData;
+public Dictionary<ThingDef, int> UpGakaStudentThingData;
+public Dictionary<ThingDef, int> OneGakaStudentThingData;
+```
+
+目标：
+
+```csharp
+public Dictionary<BaStudentDef, int> GakaStudentData;
+public Dictionary<BaStudentDef, int> UpGakaStudentData;
+public Dictionary<BaStudentDef, int> OneGakaStudentData;
+```
+
+保留字段：
+
+- `DamageType`
+- `DefenseType`
+- `PosType`
+- `StarCont`
+- `DraggableAudio`
+- `avtTexPath`
+- `stuSchool`
+
+如果担心一次性改动过大，可先做兼容层：
+
+- 新字段使用 `BaStudentDef`。
+- 旧字段保留只读兼容。
+- 加一个转换工具，把旧 `ThingDef.defName` 映射为新 `BaStudentDef`。
+
+### 3.4 GachaPool 迁移
+
+当前：
+
+```csharp
+public class GachaPool
+{
+    public float Weight = 0;
+    public List<ThingDef> RaceList = new List<ThingDef>();
+}
+```
+
+目标：
+
+```csharp
+public class GachaPool
+{
+    public float Weight = 0;
+    public List<BaStudentDef> StudentList = new List<BaStudentDef>();
+}
+```
+
+兼容方案：
+
+- 第一阶段可同时保留 `RaceList` 和 `StudentList`。
+- 加载后若 `StudentList` 为空，则从 `RaceList` 通过 legacy 映射补齐。
+- XML 全部迁完后删除 `RaceList`。
+
+## 4. 身份系统设计
+
+新增工具类：`StudentIdentityUtility`
+
+职责：
+
+- 统一学生身份判断。
+- 统一旧 race ID 到新学生 ID 的映射。
+- 避免 UI、抽卡、任务、掉落各自写一套判断。
+
+建议接口：
+
+```csharp
+public static class StudentIdentityUtility
+{
+    public static string GetStudentId(Pawn pawn);
+    public static string GetStudentId(PawnKindDef kindDef);
+    public static string GetStudentId(BaStudentDef studentDef);
+    public static bool IsStudentPawn(Pawn pawn);
+    public static bool TryGetStudentDef(string idOrLegacyRaceDefName, out BaStudentDef studentDef);
+    public static bool TryGetKindDef(string idOrLegacyRaceDefName, out PawnKindDef kindDef);
+    public static string NormalizeStudentId(string idOrLegacyRaceDefName);
+}
+```
+
+判断规则：
+
+- 如果输入是 `BANW_Akane`，直接认为是新学生 ID。
+- 如果输入是 `BANW_Akane_Student`，解析到对应 `BaStudentDef.studentId`。
+- 如果输入是 `BANW_Akane_race`，通过 `legacyRaceDefName` 映射到 `BANW_Akane`。
+- 如果输入是 Pawn，则读取 `pawn.kindDef.defName`，不再读取 `pawn.def.defName`。
+
+必须替换的旧判断：
+
+- `pawn.def.defName`
+- `parent.def.defName`
+- `selectedPawn.def.defName`
+- `Props.allowedRaces.Contains(pawn.def?.defName)`
+- `DefDatabase<BaStudentRaceDef>.GetNamed(studentData.DefName)`
+- `DefDatabase<PawnKindDef>.AllDefs.FirstOrDefault(k => k.race.defName == baDef.defName)`
+
+目标写法：
+
+- `StudentIdentityUtility.GetStudentId(pawn)`
+- `StudentIdentityUtility.TryGetStudentDef(studentData.DefName, out var studentDef)`
+- `studentDef.kindDef`
+
+## 5. 需要重点改的代码区域
+
+### 5.1 Def 类型与数据容器
+
+重点文件：
+
+- `Source\ClassLibrary1\BaDef\BaStudentUIDef.cs`
+- `Source\ClassLibrary1\BaDef\Gacha.cs`
+
+改动：
+
+- 新增 `BaStudentDef`。
+- `BaStudentRaceDef` 不再作为新系统主入口。
+- `GachaPool.RaceList` 迁移为 `StudentList`。
+- 给类和函数补充职责注释，符合项目注释规范。
+
+### 5.2 图鉴 UI
+
+重点文件：
+
+- `Source\ClassLibrary1\mainUI\StudentManual\ManualLord.cs`
+- `Source\ClassLibrary1\mainUI\StudentManual\ManualMapData.cs`
+- `Source\ClassLibrary1\mainUI\StudentManual\MonoComp\StudentListShow.cs`
+- `Source\ClassLibrary1\mainUI\StudentManual\MonoComp\StudentDetailsController.cs`
+- `Source\ClassLibrary1\Tool\StudentRosterUtility.cs`
+
+改动：
+
+- `ManualMapData.StudentList` 从 `List<BaStudentRaceDef>` 改为 `List<BaStudentDef>`。
+- `ManualLord.lordStudentDef()` 从 `DefDatabase<BaStudentDef>` 加载。
+- `BaStudentUI.RaceDefName` 改为新学生 ID。
+- 已拥有学生匹配从旧 race defName 改为 student ID。
+- 详情页所有 `BaStudentRaceDef` 改为 `BaStudentDef`。
+
+### 5.3 抽卡系统
+
+重点文件：
+
+- `Source\ClassLibrary1\mainUI\Gaka\GachaSystem.cs`
+- `Source\ClassLibrary1\mainUI\Gaka\Gakalord.cs`
+- `Source\ClassLibrary1\mainUI\Gaka\MonoComp\MonoComp_ResultListShow.cs`
+- `Source\ClassLibrary1\BaDef\Gacha.cs`
+- `1.6\Defs\GakaDef\*.xml`
+
+改动：
+
+- 抽卡返回类型从 `ThingDef` 改为 `BaStudentDef`。
+- `RaceList` XML 改为 `StudentList`。
+- 抽卡获得学生时保存 `studentId`。
+- 抽卡结果头像、立绘、名称从 `BaStudentDef` 读取。
+- 保底逻辑只改类型，不改概率。
+
+### 5.4 任务编队与任务生成
+
+重点文件：
+
+- `Source\ClassLibrary1\mainUI\Mission\MonoComp\MonoComp_BaMissionSelect.cs`
+- `Source\ClassLibrary1\uicreater\tool\PawnDropHelper.cs`
+- `Source\ClassLibrary1\Drop\SpawnPawnWithEffectUtility.cs`
+- `Source\ClassLibrary1\mainUI\Mission\MissionUIlord.cs`
+
+改动：
+
+- `selectData.baDef` 改为 `studentDef`。
+- `Scribe_Defs.Look(ref baDef, "baDef")` 改为新字段，同时兼容读取旧字段。
+- `JumpForRaceOfBaEff` 改为 `JumpForStudentKindOfBaEff`。
+- 未生成实体的学生用 `studentDef.kindDef` 生成 Pawn。
+- 任务头像使用 `RimWorldUISpriteUtil.GetSpriteFromKind(studentDef.kindDef)`。
+
+### 5.5 头像与渲染工具
+
+重点文件：
+
+- `Source\ClassLibrary1\Tool\RimWorldUISpriteUtil.cs`
+
+改动：
+
+- 删除或废弃 `GetHeadShotSpriteFromDef(ThingDef_AlienRace raceDef)`。
+- 新增 `GetHeadShotSpriteFromStudent(BaStudentDef studentDef)`。
+- 保留 `GetSpriteFromKind(PawnKindDef kindDef)`，作为新系统主要入口。
+- 缓存 key 使用 `kindDef.defName`，不要使用 race defName。
+
+### 5.6 学生初始化与存档
+
+重点文件：
+
+- `Source\ClassLibrary1\StudentInitializationComp.cs`
+- `Source\ClassLibrary1\mainUI\pojo\StudentData.cs`
+- `Source\ClassLibrary1\mainUI\pojo\StudentSave.cs`
+- `Source\ClassLibrary1\mainUI\StudentManual\ManualDataGameComp.cs`
+- `Source\ClassLibrary1\pache\pawnKill.cs`
+
+改动：
+
+- `StudentData.DefName` 语义改为 student ID。
+- `StudentSave.DefName` 语义改为 student ID。
+- `StudentInitializationComp` 中 `parent.def.defName` 改为 `StudentIdentityUtility.GetStudentId(parent as Pawn)`。
+- 旧存档读取时自动把 `BANW_*_race` 转换为 `BANW_*`。
+- `pawnKill` 删除学生记录时按 student ID 删除。
+
+### 5.7 道具限制、掉落、进度条
+
+重点文件：
+
+- `Source\ClassLibrary1\PawnProgressBarUI.cs`
+- `Source\ClassLibrary1\comp\ThingHediffComp.cs`
+- `Source\ClassLibrary1\comp\stoneDrop.cs`
+- `Source\ClassLibrary1\updatecustomINT.cs`
+
+改动：
+
+- `allowedRaces` 改为 `allowedStudentIds` 或 `allowedStudentKinds`。
+- `Race`、`RaceRemove` 这类字段改名为 `StudentIds`、`StudentRemoveIds`。
+- 判断从 `pawn.def.defName` 改为 `StudentIdentityUtility.GetStudentId(pawn)`。
+- XML 中旧 race ID 暂时允许通过兼容映射解析，最终改为新 ID。
+
+## 6. XML 迁移策略
+
+### 6.1 About.xml
+
+目标：
+
+- 删除 VEF：
+  - `oskarpotocki.vanillafactionsexpanded.core`
+- 保留 HAR：
+  - `erdelf.HumanoidAlienRaces`
+- 添加 ChezhouLib：
+  - 需要确认 ChezhouLib 的实际 packageId。
+
+注意：
+
+- ChezhouLib packageId 不要猜，执行时从 `E:\huanshijie\1.6\RimWorld\Mods\ChezhouLib\About\About.xml` 读取。
+
+### 6.2 PawnKindDefs
+
+所有学生：
+
+```xml
+<race>BANW_KivotosStudent</race>
+```
+
+不再出现：
+
+```xml
+<race>BANW_Akane_race</race>
+```
+
+每个学生挂 ChezhouLib 配置：
+
+```xml
+<modExtensions>
+  <li Class="ChezhouLib.Extension.kindRule">
+    <kindName>茜</kindName>
+    <kindDesName>室笠 茜</kindDesName>
+  </li>
+</modExtensions>
+```
+
+如果有 HAR BodyAddon 个体差异：
+
+```xml
+<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+  <!-- 按 ChezhouLib.HAR 实际字段填写 -->
+</li>
+```
+
+### 6.3 AlienRaceSettings.xml
+
+保留：
+
+- `BANW_KivotosStudent`
+- `BANW_StudentThingBase`
+- 通用身体结构。
+- 通用 BodyAddon 节点。
+
+迁出：
+
+- 每个学生的 `extendedGraphics Backstory For` 映射。
+- 大量学生专属贴图路径。
+- 每学生专属 race restriction。
+
+迁出目标：
+
+- `PawnKindDef.modExtensions`。
+- 或 `BaStudentDef` + 运行时映射。
+- 或 ChezhouLib.HAR 的 PawnKind BodyAddon 规则。
+
+### 6.4 Alienrace 子目录
+
+当前：
+
+- `1.6\Defs\AlienRace\Alienrace\...\Akane.xml`
+- `1.6\Defs\AlienRace\Alienrace\...\Hina.xml`
+- 等大量学生独立 race 文件。
+
+目标：
+
+- 不再作为 race 加载。
+- 从这些文件迁出 `BaStudentUI` 和 `baStudentData` 到 `BaStudentDef`。
+- 保留旧文件到迁移完成后再删除或移入禁用目录。
+
+建议流程：
+
+1. 先迁移一个样板学生。
+2. 确认样板完整可用。
+3. 写脚本或半自动工具批量抽取。
+4. 批量迁移后再删除旧 race 文件。
+
+## 7. 渲染迁移细节
+
+### 7.1 当前渲染方式
+
+当前主要依赖：
+
+- HAR `bodyAddons`
+- `extendedGraphics`
+- `Backstory For`
+- 每学生独立 race
+- `forcedHair>Bald</forcedHair>`
+- `apparelRequired` 强制穿学生身体服装
+
+### 7.2 目标渲染方式
+
+目标是按 PawnKind 决定贴图：
+
+- 学生 race 提供通用渲染节点。
+- PawnKind 决定节点贴图。
+- ChezhouLib 的 `kindRule` 或 `kindRuleHAR` 替换路径、颜色、偏移、层级。
+
+### 7.3 样板学生 Akane 验收标准
+
+Akane 样板必须满足：
+
+- `BANW_Akane.race == BANW_KivotosStudent`。
+- 游戏内生成 Akane 后，身体、头、头发、光环显示正确。
+- 头像渲染不空白。
+- 图鉴头像显示正确。
+- 任务编队头像显示正确。
+- Akane 的能力正常。
+- Akane 的固定武器或装备正常。
+- Akane 的技能、特性、初始 Hediff 正常。
+- 旧存档里 `BANW_Akane_race` 能映射到 `BANW_Akane`。
+
+### 7.4 如果 ChezhouLib 不够用
+
+如果现有 ChezhouLib 不能做到按 PawnKind 替换 HAR BodyAddon，需要优先补 ChezhouLib.HAR：
+
+- 增加按 `pawn.kindDef` 匹配的 BodyAddon 路径替换。
+- 增加按 `PawnKindDef` 声明 BodyAddon 显示条件。
+- 增加按 `PawnKindDef` 设置 BodyAddon offset/layer 的能力。
+
+不要做：
+
+- 不要为了绕过限制继续新增 `BANW_*_race`。
+- 不要把学生身份又绑回 `pawn.def.defName`。
+
+## 8. 旧存档兼容
+
+### 8.1 兼容映射
+
+需要建立映射表：
+
+```text
+BANW_Akane_race -> BANW_Akane
+BANW_Hina_race -> BANW_Hina
+BANW_Shiroko_race -> BANW_Shiroko
+```
+
+来源：
+
+- `BaStudentDef.legacyRaceDefName`
+- 或单独 `StudentLegacyIdMap`
+
+### 8.2 需要迁移的数据
+
+需要迁移：
+
+- `ManualDataGameComp.HaveStudent`
+- `ManualDataGameComp.StudentCollect`
+- `ManualDataGameComp.studentSaves`
+- 任务编队保存的 `selectData.baDef`
+- 学生经验和星级数据。
+- 任何保存了旧 race defName 的字段。
+
+### 8.3 迁移时机
+
+推荐在 `ManualDataGameComp.ExposeData()` 读档后执行：
+
+- 读取旧字段。
+- 调用 `StudentIdentityUtility.NormalizeStudentId`。
+- 写回新 ID。
+- 标记迁移已完成。
+
+### 8.4 兼容期字段
+
+任务编队 `selectData` 可短期保留旧字段：
+
+```csharp
+public BaStudentDef studentDef;
+public BaStudentRaceDef legacyBaDef;
+```
+
+读取时：
+
+- 优先读 `studentDef`。
+- 如果为空，读旧 `baDef`。
+- 如果旧 `baDef` 存在，用 `baDef.defName` 映射到新 `studentDef`。
+- 保存时只保存新 `studentDef`。
+
+## 9. 推荐实施阶段
+
+### 阶段 1：只移除 VEF
+
+目标：
+
+- 删除 `About.xml` 中 VEF 依赖。
+- 保留 HAR。
+- 保留旧学生系统。
+- 启动游戏验证无 VEF 缺失。
+
+验收：
+
+- 游戏启动无 VEF 类缺失。
+- Def 加载无新增红字。
+- 抽卡、图鉴、任务仍按旧系统可用。
+
+### 阶段 2：新增新学生数据模型
+
+目标：
+
+- 新增 `BaStudentDef`。
+- 新增 `StudentIdentityUtility`。
+- 不大规模替换旧 UI。
+- 先让新旧 ID 可互相解析。
+
+验收：
+
+- `BANW_Akane_race` 能映射到 `BANW_Akane`。
+- `BANW_Akane` 能找到 `BaStudentDef` 和 `PawnKindDef`。
+- 新工具有单独调试日志或 DevMode 测试入口。
+
+### 阶段 3：样板学生 Akane 迁移
+
+目标：
+
+- 建立 `BANW_Akane_Student`。
+- `BANW_Akane.race` 改为 `BANW_KivotosStudent`。
+- 用 ChezhouLib 配置 Akane 个体生成和渲染。
+- UI 和任务最小支持 `BaStudentDef`。
+
+验收：
+
+- Akane 可抽到。
+- Akane 可在图鉴显示。
+- Akane 可加入任务编队。
+- Akane 可生成 Pawn。
+- Akane 渲染正确。
+- 旧 Akane 存档 ID 可迁移。
+
+### 阶段 4：UI、抽卡、任务全面切到 BaStudentDef
+
+目标：
+
+- 图鉴不再依赖 `BaStudentRaceDef`。
+- 抽卡不再返回 `ThingDef`。
+- 任务编队不再保存 `BaStudentRaceDef`。
+- 头像工具不再需要 `ThingDef_AlienRace` 参数。
+
+验收：
+
+- 所有已迁移学生都可以正常走完整流程。
+- 普通殖民者仍可加入任务编队。
+- UI 不因缺少旧 race defName 崩溃。
+
+### 阶段 5：批量迁移学生 Def
+
+目标：
+
+- 批量创建所有 `BaStudentDef`。
+- 批量改所有学生 `PawnKindDef.race`。
+- 批量迁移 GachaDef。
+- 批量迁移渲染配置。
+
+验收：
+
+- 所有学生 PawnKind 指向同一个 race。
+- 所有 GachaDef 使用 `StudentList`。
+- 不再有抽卡池引用 `BANW_*_race`。
+
+### 阶段 6：清理旧独立 race
+
+目标：
+
+- 删除或禁用旧 `BANW_*_race` Def。
+- 保留 `BANW_KivotosStudent`。
+- 删除 C# 中对 `BaStudentRaceDef` 的新系统依赖。
+
+验收：
+
+- 搜索 `BANW_.*_race` 只剩 legacy 映射和必要兼容。
+- 搜索 `DefDatabase<BaStudentRaceDef>` 无新系统调用。
+- 搜索 `pawn.def.defName` 不再用于学生身份。
+
+### 阶段 7：长期清理
+
+目标：
+
+- 删除兼容期旧字段。
+- 删除旧 RaceList。
+- 删除或归档旧 Alienrace 学生文件。
+- 整理文档。
+
+验收：
+
+- 新存档只保存新学生 ID。
+- 旧兼容逻辑只有集中映射工具保留。
+
+## 10. 测试清单
+
+### 10.1 启动测试
+
+- 无 VEF 启动游戏。
+- HAR 启用。
+- ChezhouLib 启用。
+- 没有 VFECore 类缺失。
+- 没有 `AlienRace.ThingDef_AlienRace` 缺失。
+- 没有 `BaStudentDef` 解析失败。
+
+### 10.2 Def 数据测试
+
+- 所有学生 `PawnKindDef.race` 指向 `BANW_KivotosStudent`。
+- 所有 `BaStudentDef.kindDef` 可解析。
+- 所有 `legacyRaceDefName` 可映射到新 ID。
+- 所有 GachaDef 的学生列表可解析。
+
+### 10.3 抽卡测试
+
+- 单抽正常。
+- 十连正常。
+- 二星保底正常。
+- 三星 UP 正常。
+- FES 池正常。
+- 已拥有学生转换为碎片或经验的逻辑正常。
+
+### 10.4 图鉴测试
+
+- 未拥有学生显示正常。
+- 已拥有学生显示正常。
+- 学生头像正常。
+- 学生立绘正常。
+- 技能说明正常。
+- 星级、等级、经验正常。
+- 从旧存档进入图鉴不丢数据。
+
+### 10.5 任务测试
+
+- 可选择已拥有学生。
+- 可选择普通殖民者。
+- 不可重复选择同一学生。
+- 不可重复选择同一 Pawn。
+- 队列头像正常。
+- 任务开始后学生进入任务地图。
+- 任务结束后 Pawn 状态正常回写。
+
+### 10.6 渲染测试
+
+- 南向站立正常。
+- 北向站立正常。
+- 东西向站立正常。
+- 倒地显示正常。
+- 睡眠时光环是否隐藏符合预期。
+- 头像裁切不空白。
+- UI 渲染不黑图。
+- 武器、身体、头、头发、光环层级正确。
+
+### 10.7 存档兼容测试
+
+- 旧存档中的 `BANW_Akane_race` 自动迁移到 `BANW_Akane`。
+- `HaveStudent` 不丢。
+- `StudentCollect` 不丢。
+- `studentSaves` 不丢。
+- 任务编队不丢。
+- 新保存后不再写旧 race ID。
+
+## 11. 风险点与处理方案
+
+### 11.1 ChezhouLib.HAR 是否支持 PawnKind 级 BodyAddon 替换
+
+风险：
+
+- 如果现有 ChezhouLib.HAR 只能处理部分 render node，可能无法完整替代 HAR `extendedGraphics Backstory For`。
+
+处理：
+
+- 先用 Akane 样板验证。
+- 如果不够，先补 ChezhouLib.HAR 的 PawnKind BodyAddon 替换能力。
+- 不为了赶进度恢复每学生一个 race。
+
+### 11.2 旧 UI 大量写死 race defName
+
+风险：
+
+- UI、任务、抽卡、掉落里可能有很多隐藏的 `pawn.def.defName`。
+
+处理：
+
+- 先新增 `StudentIdentityUtility`。
+- 每改一个模块都改成调用统一工具。
+- 保留 legacy 映射，让旧 XML 和旧存档有过渡期。
+
+### 11.3 XML 批量迁移容易漏项
+
+风险：
+
+- 学生数量多，手工迁移容易漏头像、立绘、光环、抽卡池。
+
+处理：
+
+- 先样板。
+- 样板字段稳定后写迁移脚本或半自动检查脚本。
+- 迁移后用搜索检查旧 race 引用。
+
+### 11.4 存档兼容复杂
+
+风险：
+
+- `Scribe_Defs.Look` 保存旧 `BaStudentRaceDef`，删除旧 Def 后旧存档可能读不到。
+
+处理：
+
+- 在删除旧 Def 前先发布一个兼容版本。
+- 兼容版本读取旧字段并写入新字段。
+- 等用户存档迁移后再删除旧独立 race。
+
+## 12. 搜索与验收关键词
+
+迁移过程中必须反复搜索：
+
+```text
+oskarpotocki.vanillafactionsexpanded.core
+VanillaExpanded
+VFECore
+BaStudentRaceDef
+ThingDef_AlienRace
+DefDatabase<BaStudentRaceDef>
+RaceList
+allowedRaces
+RaceRemove
+pawn.def.defName
+parent.def.defName
+BANW_.*_race
+Backstory For=
+```
+
+最终允许保留：
+
+- `ThingDef_AlienRace` 可在唯一学生 HAR race 相关 Def 或 HAR 专属兼容代码中保留。
+- `BANW_*_race` 可在 legacy 映射表中保留。
+- `RaceList` 可在兼容读取字段中短期保留。
+
+最终不应保留：
+
+- 用 `BaStudentRaceDef` 作为 UI 主数据。
+- 用 `ThingDef` 作为抽卡学生返回值。
+- 用 `pawn.def.defName` 判断具体学生。
+- 每个学生独立 `AlienRace.ThingDef_AlienRace`。
+
+## 13. 推荐第一刀
+
+第一刀不要直接批量迁移所有学生。推荐顺序：
+
+1. 删除 VEF 依赖，验证游戏能启动。
+2. 新增 `BaStudentDef` 和 `StudentIdentityUtility`。
+3. 迁移 Akane 一个学生。
+4. 改最小 UI、抽卡、任务链路，让 Akane 能完整跑通。
+5. 确认 ChezhouLib/HAR 渲染方案可行。
+6. 再批量迁移。
+
+这样做的原因是：当前最大未知不是数据量，而是 ChezhouLib 接管 HAR BodyAddon 差异的能力边界。只要样板学生完整跑通，后续大部分工作就是机械迁移和兼容清理。

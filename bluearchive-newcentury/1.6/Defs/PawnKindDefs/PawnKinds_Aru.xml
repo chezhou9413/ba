@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Aru</defName>
+		<label>-阿露-</label>
+		<race>BANW_Aru_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryAru</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Aru</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Aru</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>8~15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>0</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Aru>0</BAWC_TraitDef_Aru>
+			<BAWC_TraitDef_Aru_A>0</BAWC_TraitDef_Aru_A>
+			<BAWC_TraitDef_Aru_B>0</BAWC_TraitDef_Aru_B>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Aru</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF7F50&gt;笨蛋社长&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是便利屋68的社长，自以为是一个非常帅气的黑帮分子，但是做事经常掉链子</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+				<PawnBeauty>2.0</PawnBeauty>
+				<ShootingAccuracyPawn>-5.0</ShootingAccuracyPawn>
+				<WorkSpeedGlobal>-0.2</WorkSpeedGlobal>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Aru_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;社长的威严&lt;/color&gt;</label>
+                <description>被动技能:自身暴击伤害增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_CriticalDamage>0.26</BANW_CriticalDamage>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Aru_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;法外狂徒之路&lt;/color&gt;</label>
+                <description>子技能:自身护甲穿透提升&lt;color=#DC143C&gt;38%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <BANW_RangedWeapon_Penetration>0.38</BANW_RangedWeapon_Penetration>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

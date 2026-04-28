@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Izumi</defName>
+		<label>-泉-</label>
+		<race>BANW_Izumi_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Izumi_EX</li>
+			<li>BAWN_Izumi_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+		<li>
+			<def>BANW_Izumi_Buff</def>
+		</li>
+		<li>
+			<def>BAWN_Izumi_buff_A</def>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryIzumi</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Izumi</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Izumi</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+            <li>
+				<skill>Mining</skill>
+				<range>8~10</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>15</range>
+			</li>
+			 <li>
+				<skill>Cooking</skill>
+				<range>14~15</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>4</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Izumi>0</BAWC_TraitDef_Izumi>
+			<BAWC_TraitDef_Izumi_A>0</BAWC_TraitDef_Izumi_A>
+			<BAWC_TraitDef_Izumi_B>0</BAWC_TraitDef_Izumi_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Izumi_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;接下来吃什么呢？&lt;/color&gt;</label>
+                <description>被动技能:自身每10秒回复&lt;color=#DC143C&gt;26&lt;/color&gt;点生命值</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Izumi_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;美食才是最重要的~&lt;/color&gt;</label>
+                <description>子技能:自身攻击时造成&lt;color=#DC143C&gt;4%&lt;/color&gt;总攻击力的追加伤害</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Izumi</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFD700&gt;饥饿的美食家&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}无时无刻都会想吃东西，什么都爱吃的吃货少女。不仅非常喜欢美食，就连朱莉的“特级料理”都无法伤害{PAWN_nameDef}分毫，喜欢享用黑暗料理。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<FoodPoisonChance>100</FoodPoisonChance>
+					<ToxicResistance>-100</ToxicResistance>
+                </statOffsets>
+				<statFactors>
+					<MaxNutrition>20</MaxNutrition>
+					<EatingSpeed>8.5</EatingSpeed>
+					<FoodPoisonChance>100</FoodPoisonChance>
+				</statFactors>
+		<disallowedThoughtsFromIngestion>                    <!-- 禁止的进食思想 -->
+          <li>                                               <!-- 第一个条目 -->
+            <meatSource>Humanlike</meatSource>               <!-- 肉类来源：类人生物 -->
+            <thoughts>     
+				<li>AteKibble</li>                                 <!-- 被禁止的思想 -->
+               <li>AteRawFood</li>
+              <li>AteHumanlikeMeatDirect</li>
+              <li>AteHumanlikeMeatAsIngredient</li>          <!-- 禁止"作为配料食用类人肉"的负面思想 -->
+            </thoughts>
+          </li>
+        </disallowedThoughtsFromIngestion>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<HediffDef>
+    <defName>BANW_Izumi_Buff</defName>
+    <label>饥饿的美食家</label>
+    <description>泉不管吃什么都不会担心食物中毒</description>
+    <defaultLabelColor>(255, 215, 0)</defaultLabelColor>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+		 <stages>
+      <li>
+        <makeImmuneTo>
+          <li>GutWorms</li>
+        </makeImmuneTo>
+        <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+   <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Izumi_buff_A</defName>
+        <!-- 显示名称 -->
+        <label>接下来吃什么呢？</label>
+        <!-- 效果描述 -->
+        <description>自身每10秒回复26点生命值</description>
+        <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>    <!-- 不可通过物品治愈 -->
+        <lethalSeverity>-1</lethalSeverity>    <!-- 不会致死 -->
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         
+         <comps>
+        <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>26</healAmount>
+        <healIntervalTicks>600</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+    </comps>
+    <tags>
+      <li>Medical</li>
+      <li>Stimulant</li>
+      <li>Temporary</li>
+      <li>PainRelief</li>
+      <li>ConsciousnessBoost</li>
+    </tags>
+    </HediffDef>
+
+  <ThoughtDef>
+    <!-- 想法的唯一标识符 -->
+    <defName>BAWC_TraitDef_Izumi_ThoughtDef</defName>
+    <!-- 工作类：始终激活，意味着这个想法会持续生效 -->
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <!-- 即使角色未被生成（不在地图上）时也有效 -->
+    <validWhileDespawned>true</validWhileDespawned>
+    <!-- 适用阶段：适用于婴儿、儿童和成人阶段的角色 -->
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <!-- 需要拥有的特质 -->
+    <requiredTraits>
+      <li>BAWC_TraitDef_Izumi</li>
+    </requiredTraits>
+    <!-- 需要特质的等级：0（最高等级） -->
+    <requiredTraitsDegree>0</requiredTraitsDegree>
+    <!-- 效果阶段 -->
+    <stages>
+      <li>
+        <!-- 显示标签 -->
+        <label>这个世界的食物也好好吃！</label>
+        <!-- 描述：说明这是来自活力女仆特质的自然加成 -->
+        <description>来自"饥饿的美食家"特质的自然加成。</description>
+        <!-- 基础心情效果：提供+12的心情加成 -->
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

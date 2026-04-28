@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Mika</defName>
+		<label>-未花-</label>
+		<race>BANW_Mika_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+        <li>BAWN_Mika_EXX</li>
+		<li>BAWN_Mika_EX</li>
+        </abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryMika</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Mika</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Mika</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>16</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>4</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_Mika>0</BAWC_TraitDef_Mika>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Mika_A>0</BAWC_TraitDef_Mika_A>
+			<BAWC_TraitDef_Mika_B>0</BAWC_TraitDef_Mika_B>
+		</forcedTraits>
+	</PawnKindDef>
+
+	 <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Mika_hedi_C</defName>
+        <!-- 显示名称 -->
+        <label>本尼迪克特</label>
+        <!-- 效果描述 -->
+        <description>被动技能，护甲穿透增加1000%，承伤系数-12%</description>
+        <defaultLabelColor>(255, 153, 255)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+			 <BANW_RangedWeapon_Penetration>+10.00</BANW_RangedWeapon_Penetration>
+			 <IncomingDamageFactor>-0.12</IncomingDamageFactor>
+            </statOffsets>
+           </li>
+          </stages>
+    </HediffDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Mika_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;格洛丽亚·帕特里&lt;/color&gt;</label>
+                <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的攻击力。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Mika_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;本尼迪克特&lt;/color&gt;</label>
+                <description>子技能:所有攻击必定暴击，增加自身&lt;color=#DC143C&gt;24%的&lt;/color&gt;基础攻击力和减少&lt;color=#DC143C&gt;12%的乘伤系数&lt;/color&gt;。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_RangedWeapon_Damage>+0.24</BANW_RangedWeapon_Damage>
+					<IncomingDamageFactor>-0.12</IncomingDamageFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Mika</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFC0CB&gt;圣猿未花&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是茶话会的一员，拥有天生的怪力，天真的性格，容易被其他人的话语影响自己的判断，她表面上天真烂漫、活泼开朗，但内心也有着复杂的一面</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.3</CertaintyLossFactor>
+                    <CarryingCapacity>300</CarryingCapacity><!--		        ■承载力--> 
+				<VEF_MassCarryCapacity>300</VEF_MassCarryCapacity>
+                </statOffsets>
+				<statFactors>
+                <MeleeDamageFactor>5.5</MeleeDamageFactor>
+				<MeleeArmorPenetration>4.5</MeleeArmorPenetration>
+				<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+				
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

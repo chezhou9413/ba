@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+  <defName>BAWN_Ibuki_EX</defName>
+ <label>不许做坏事哦！</label>
+ <description>对1名敌方单位造成攻击力388%的伤害，并且造成攻击力减少24%(持续20秒)</description>
+ <iconPath>Ability/Icon/Ibuki/Ibuki_EX</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Ibuki_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+      <!-- 能力持续时间 -->
+      <Ability_Duration>4</Ability_Duration>
+    </statBases>
+ <verbProperties>
+<warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>Ibuki_Skill_EX_B</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+ <range>34.9</range><!-- 投掷范围 -->
+ <warmupTime>0.4</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>false</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Ibuki_EX</projectileDef>
+      </li>
+       <!-- 给予健康状态效果的组件 -->
+      <li Class="CompProperties_AbilityGiveHediff">
+        <!-- 组件类 -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <!-- 应用的健康状态效果定义 -->
+        <hediffDef>BAWN_Ibuki_Buff_B</hediffDef>
+        <!-- 是否只应用给自己 -->
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <!-- 是否替换已存在的同种效果 -->
+        <replaceExisting>true</replaceExisting>
+      </li>
+  </comps>
+</AbilityDef>
+<DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Ibuki_EX</defName><!--通用贯通-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Ibuki_Buff_A</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Ibuki_EX</defName>
+    <label>邦邦—！子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_Ibuki_EX</damageDef><!--子弹类型-->
+      <damageAmountBase>226</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>5.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>1.0</armorPenetrationBase><!--穿透-->
+      <speed>200</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <drawSize>2</drawSize>
+      <texPath>Projectile/kongbai</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+ <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Ibuki_Buff_A</defName>
+        <!-- 显示名称 -->
+        <label>不许做坏事哦！</label>
+        <!-- 效果描述 -->
+        <description>对1名敌方单位造成攻击力减少24%。</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+            <statOffsets>
+            <BANW_FinalDamageMultiplier>-0.24</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_Ibuki_D</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+<HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Ibuki_Buff_B</defName>
+        <!-- 显示名称 -->
+        <label>不许做坏事哦！</label>
+        <!-- 效果描述 -->
+        <description>不许做坏事哦！</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_Ibuki_C</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+  <AbilityDef>
+     <!-- 能力的唯一标识符 -->
+    <defName>BAWN_Ibuki_EXX</defName>
+    <!-- 能力显示名称 -->
+    <label>伊吹的绘画时间！</label>
+    <!-- 能力描述，说明效果和持续时间 -->
+    <description>除自身外圆形范围内的友方攻击力增加50%。(持续35秒)</description>
+    <!-- 是否需要特定目标，False表示为范围效果 -->
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <targetRequired>False</targetRequired>
+    <!-- 是否可以使用AOE范围来获取目标 -->
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <!-- 能力图标路径 -->
+    <iconPath>Ability/Icon/Natsu/Natsu_EX</iconPath>
+    <warmupMoteSocialSymbol>Effect/Ibuki/B/Ibuki_A</warmupMoteSocialSymbol>
+    <!-- 施法时是否定身施法者 -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <!-- 是否显示心灵异能特效 -->
+    <showPsycastEffects>False</showPsycastEffects>
+    <!-- 未征召状态下是否显示能力按钮 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <!-- 未征召状态下是否禁用能力按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <!-- 快捷键设置 -->
+    <hotKey>Misc12</hotKey>
+    <!-- 在UI中的排列顺序 -->
+    <uiOrder>5</uiOrder>
+    <!-- 施法开始时播放的声音 -->
+    <warmupStartSound>Ibuki_Skill_EX_A</warmupStartSound>
+    <!-- 施法者是否必须具备暴力行为能力 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <!-- 数值属性 -->
+    <statBases>
+      <!-- 能力持续时间 -->
+      <Ability_Duration>35</Ability_Duration>
+      <!-- 能力效果半径 -->
+      <Ability_EffectRadius>9.9</Ability_EffectRadius>
+    </statBases>
+    <!-- 动作属性 -->
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_Ibuki</warmupEffecter>
+      <soundCast>Ibuki_Skill_EXX</soundCast>
+      <!-- 动作类 -->
+      <verbClass>Verb_CastAbility</verbClass>
+      <!-- 前摇时间（秒） -->
+      <warmupTime>0.8</warmupTime>
+      <!-- 作用范围 -->
+      <range>9.9</range>
+      <!-- 是否绘制瞄准饼图 -->
+      <drawAimPie>False</drawAimPie>
+      <!-- 是否需要视线 -->
+      <requireLineOfSight>False</requireLineOfSight>
+      <!-- 目标参数设置 -->
+      <targetParams>
+        <!-- 是否可以以自己为目标 -->
+        <canTargetSelf>true</canTargetSelf>
+        <!-- 是否可以以pawn为目标 -->
+        <canTargetPawns>false</canTargetPawns>
+        <!-- 是否可以以建筑为目标 -->
+        <canTargetBuildings>false</canTargetBuildings>
+        <!-- 是否可以以动物为目标 -->
+        <canTargetAnimals>false</canTargetAnimals>
+        <!-- 是否可以以人类为目标 -->
+        <canTargetHumans>false</canTargetHumans>
+        <!-- 是否可以以机械体为目标 -->
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    
+    <!-- 能力组件 -->
+    <comps>
+      <!-- 给予健康状态效果的组件 -->
+      <li Class="CompProperties_AbilityGiveHediff">
+        <!-- 组件类 -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <!-- 应用的健康状态效果定义 -->
+        <hediffDef>BAWN_Ibuki_EXX_buff_A</hediffDef>
+        <!-- 是否只应用给自己 -->
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <!-- 是否替换已存在的同种效果 -->
+        <replaceExisting>true</replaceExisting>
+      </li>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_B</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+    </comps>
+  </AbilityDef>
+
+<HediffDef>
+    <!-- 健康状态唯一标识符 -->
+    <defName>BAWN_Ibuki_EXX_buff_A</defName>
+    <!-- 显示标签 -->
+    <label>伊吹的绘画时间！</label>
+    <!-- 描述信息 -->
+    <description>每秒恢复8点生命值(持续35秒)</description>
+    <!-- 健康状态类 -->
+    <hediffClass>HediffWithComps</hediffClass>
+    <!-- 组件列表 -->
+    <comps>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>8</healAmount>
+        <healIntervalTicks>60</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_Ibuki_A</stateEffecter>
+      </li>
+      <!-- 自动消失组件 -->
+      <li Class="HediffCompProperties_Disappears">
+        <!-- 显示剩余时间 -->
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <!-- 死亡时消失组件 -->
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <!-- 范围内给予健康状态组件 -->
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <!-- 影响范围 -->
+        <range>9.9</range>
+        <!-- 显示的微粒效果 -->
+        <mote>BANW_Ibuki_Eff_C</mote>
+        <!-- 未征召时是否隐藏微粒 -->
+        <hideMoteWhenNotDrafted>false</hideMoteWhenNotDrafted>
+        <!-- 目标选择参数 -->
+        <targetingParameters>
+          <!-- 不影响建筑 -->
+          <canTargetBuildings>false</canTargetBuildings>
+          <!-- 不影响动物 -->
+          <canTargetAnimals>false</canTargetAnimals>
+          <!-- 不影响机械体 -->
+          <canTargetMechs>false</canTargetMechs>
+          <!-- 只影响殖民者 -->
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <!-- 应用的健康状态 -->
+        <hediff>BAWN_Ibuki_EXX_buff_B</hediff>
+      </li>
+    </comps>
+    <!-- 是否为负面效果 -->
+    <isBad>false</isBad>
+  </HediffDef>
+  <HediffDef>
+    <!-- 范围内目标应用的健康状态标识符 -->
+    <defName>BAWN_Ibuki_EXX_buff_B</defName>
+    <!-- 显示标签 -->
+    <label>伊吹的绘画时间！</label>
+    <!-- 描述信息 -->
+    <description>攻击力增加50%。</description>
+    <!-- 调试标签 -->
+    <debugLabelExtra>other</debugLabelExtra>
+    <!-- 健康状态类 -->
+    <hediffClass>HediffWithComps</hediffClass>
+    <!-- 组件列表 -->
+    <comps>
+      <!-- 自动消失组件 -->
+       <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_Ibuki_B</stateEffecter>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <!-- 不显示剩余时间 -->
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <!-- 死亡时消失组件 -->
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <!-- 是否为负面效果 -->
+    <isBad>false</isBad>
+    <!-- 阶段效果定义 -->
+    <stages>
+      <li>
+        <!-- 属性加成 -->
+        <statOffsets>
+         <BANW_FinalDamageMultiplier>0.5</BANW_FinalDamageMultiplier>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

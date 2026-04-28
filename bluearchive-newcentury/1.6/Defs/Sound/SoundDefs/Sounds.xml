@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef>
+	<defName>BANW_Sound_Kong</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			<onCamera>True</onCamera>      
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/kong</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+  <SoundDef>
+    <defName>BlueArchive_CardDraw</defName>
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>UI/chek</clipPath> <!-- 对应 Resources/UI/chek.ogg 或 .wav -->
+          </li>
+        </grains>
+        <volumeRange>1.0~1.0</volumeRange> <!-- 用 0.0~1.0 表示百分比音量 -->
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+	<defName>BANW_Sound_LevelUp</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			<onCamera>True</onCamera>      
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Pawn/LevelUp</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+</Defs>

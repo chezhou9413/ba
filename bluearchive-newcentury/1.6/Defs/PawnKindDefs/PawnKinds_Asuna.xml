@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Asuna</defName>
+		<label>-明日奈-</label>
+		<race>BANW_Asuna_race</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Asuna_EX</li>
+		<li>BAWN_Asuna_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMillennium</li>
+					<li>BANW_BackstoryAsuna</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Asuna</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Asuna</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>7~15</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>10~12</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>5~8</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>7~11</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Asuna>0</BAWC_TraitDef_Asuna>
+			<BAWC_TraitDef_Asuna_A>0</BAWC_TraitDef_Asuna_A>
+			<BAWC_TraitDef_Asuna_B>0</BAWC_TraitDef_Asuna_B>
+		</forcedTraits>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Asuna</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#F0E68C&gt;活力女仆&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是秘密组织CC的一员，直觉和运气都非常好的一位少女，平时非常开朗，就算是在女仆咖啡厅认作为服务员也会开开心心的做下去</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                <TrainAnimalChance>0.5</TrainAnimalChance>
+				<TameAnimalChance>0.5</TameAnimalChance>
+				<MeleeDodgeChance>10</MeleeDodgeChance>
+				<MeleeHitChance>10</MeleeHitChance>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Asuna_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;会很痛哦？&lt;/color&gt;</label>
+                <description>被动技能:自身&lt;color=#DC143C&gt;护甲穿透增加26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_RangedWeapon_Penetration>0.26</BANW_RangedWeapon_Penetration>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Asuna_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;要加速了哦？&lt;/color&gt;</label>
+                <description>子技能:自身使用EX技能时&lt;color=#DC143C&gt;瞄准速度减少38%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+ <ThoughtDef>
+    <!-- 想法的唯一标识符 -->
+    <defName>BAWC_TraitDef_Asuna_ThoughtDef</defName>
+    <!-- 工作类：始终激活，意味着这个想法会持续生效 -->
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <!-- 即使角色未被生成（不在地图上）时也有效 -->
+    <validWhileDespawned>true</validWhileDespawned>
+    <!-- 适用阶段：适用于婴儿、儿童和成人阶段的角色 -->
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <!-- 需要拥有的特质 -->
+    <requiredTraits>
+      <li>BAWC_TraitDef_Asuna</li>
+    </requiredTraits>
+    <!-- 需要特质的等级：0（最高等级） -->
+    <requiredTraitsDegree>0</requiredTraitsDegree>
+    <!-- 效果阶段 -->
+    <stages>
+      <li>
+        <!-- 显示标签 -->
+        <label>活力女仆</label>
+        <!-- 描述：说明这是来自活力女仆特质的自然加成 -->
+        <description>来自"活力女仆"特质的自然加成。</description>
+        <!-- 基础心情效果：提供+12的心情加成 -->
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>
