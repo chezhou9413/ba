@@ -72,11 +72,12 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>栗村</kindName>
+				<kindName>爱莉</kindName>
 				<kindDesName>栗村 爱莉</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>
+			
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>

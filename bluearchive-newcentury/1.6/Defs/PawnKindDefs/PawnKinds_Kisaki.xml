@@ -63,7 +63,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>妃咲</kindName>
-				<kindDesName>妃咲 龙华</kindDesName>
+				<kindDesName>龙华 妃咲</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>

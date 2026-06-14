@@ -41,7 +41,8 @@
         </weaponTags>
 		<apparelRequired Inherit="False">
 			<li>BANW_Body_Natsu</li>
-</apparelRequired>
+			<li>BANW_Body_Natsu_D</li>
+        </apparelRequired>
 		<forcedHair>Bald</forcedHair>
 
 		<skills>
@@ -90,10 +91,11 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>夏</kindName>
-				<kindDesName>夏 柚鸟</kindDesName>
+				<kindDesName>柚鸟 夏</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>17</kindAge>
+				<kindAge>15</kindAge>
 			</li>
+			
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -130,6 +132,7 @@
                 <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的生命值。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
                 </statOffsets>
             </li>
         </degreeDatas>

@@ -4,6 +4,7 @@
     <label>铃美(魔法)</label>
     <studentId>BANW_Suzumi_A</studentId>
     <kindDef>BANW_Suzumi_A</kindDef>
+
     <BaStudentUI>
 			<!-- 学生头像路径，用于在UI中显示学生头像 -->
 			<StudentAvatar>ManuaUI/Avatar/Suzumi_A</StudentAvatar>
@@ -66,15 +67,13 @@
 				<WapenTypeText>步枪</WapenTypeText>
 			</WapenUI>
 <Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Suzumi_A/Suzumi_EX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
-				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<AbilityTitle>这是，基础魔法！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能/ <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对圆形范围内的友方单位攻击力增加<color=#00FFFF>51%</color>
+基础攻击力增加<color=#00FFFF>26%</color>(持续41秒)]]></AbilityIntroduction>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -86,19 +85,17 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Chiaki/Chiaki_A</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
-				<AbilityTitle>测试技能3</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能3 / <color=black>COST: </color><color=blue>20</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能3的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>魔法压制射击</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -110,7 +107,7 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>
@@ -128,13 +125,13 @@
 			</StudentBio>
 		</BaStudentUI>
     <baStudentData>
-			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			
 			<DamageType>Vibration</DamageType>
-			<!-- 防御类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			
 			<DefenseType>Mysterious</DefenseType>
-			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			
 			<PosType>Assist</PosType>
-			<!-- 星级数量 -->
+			
 			<StarCont>3</StarCont>
 			<DraggableAudio>Common\Sounds\Fight\Suzumi_A</DraggableAudio>
 		
@@ -144,7 +141,7 @@
                     <value>50</value>
                 </li>
                 <li>
-                    <key>BANW_Suzumi_A_Proplevel</key>
+                    <key>BANW_SuzumiA_Proplevel</key>
                     <value>30</value>
                 </li>
             </GakaStudentThingData>
@@ -154,13 +151,13 @@
                     <value>50</value>
                 </li>
                 <li>
-                    <key>BANW_Suzumi_A_Proplevel</key>
+                    <key>BANW_SuzumiA_Proplevel</key>
                     <value>100</value>
                 </li>
             </UpGakaStudentThingData>
     <OneGakaStudentThingData>
                 <li>
-                    <key>BANW_Suzumi_A_Proplevel</key>
+                    <key>BANW_SuzumiA_Proplevel</key>
                     <value>100</value>
                 </li>
             </OneGakaStudentThingData>

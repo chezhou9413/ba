@@ -851,7 +851,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Shoes_Four</defName>
         <label>Lv.4-复古漆皮豆豆鞋</label>
-        <description>崔尼蒂的女生们喜欢穿的高级平底鞋。因涂上了瓷漆，在光线的照射下鞋尖会闪闪发光。\n可以提供中量的攻击力和移动速度和少量护甲</description>
+        <description>崔尼蒂的女生们喜欢穿的高级平底鞋。因涂上了瓷漆，在光线的照射下鞋尖会闪闪发光。\n可以提供中量的攻击力和移动速度和少量生命值</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Shoes/Shoes_4</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -860,9 +860,7 @@
         <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
         <BANW_FinalDamageMultiplier>+0.12</BANW_FinalDamageMultiplier>
-        <ArmorRating_Sharp>0.12</ArmorRating_Sharp>
-         <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
-         <ArmorRating_Heat>0.12</ArmorRating_Heat>
+         <BANW_HealthScalePercentOffset>0.06</BANW_HealthScalePercentOffset>
         </statBases>
         <equippedStatOffsets>
            <MoveSpeed>+1.0</MoveSpeed>
@@ -893,7 +891,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Shoes_Five</defName>
         <label>Lv.5-战术靴</label>
-        <description>为了保护脚部不受伤害而做得厚重结实的战术靴。因鞋跟高，穿上之后会显得个子高些，所以矮个子的人很喜欢这款鞋。\n可以提供中量的攻击力和移动速度和少量护甲</description>
+        <description>为了保护脚部不受伤害而做得厚重结实的战术靴。因鞋跟高，穿上之后会显得个子高些，所以矮个子的人很喜欢这款鞋。\n可以提供中量的攻击力和移动速度和少量生命值</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Shoes/Shoes_5</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -902,9 +900,7 @@
        <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
         <BANW_FinalDamageMultiplier>+0.20</BANW_FinalDamageMultiplier>
-        <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
-         <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
-         <ArmorRating_Heat>0.18</ArmorRating_Heat>
+         <BANW_HealthScalePercentOffset>0.09</BANW_HealthScalePercentOffset>
         </statBases>
         <equippedStatOffsets>
            <MoveSpeed>+1.4</MoveSpeed>
@@ -935,7 +931,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Shoes_Six</defName>
         <label>Lv.6-高跟鞋</label>
-        <description>有可爱的绳带装饰的高跟鞋。穿上后无论何时何地都能走出更加优雅的步伐。\n可以提供中量的攻击力和移动速度和少量护甲</description>
+        <description>有可爱的绳带装饰的高跟鞋。穿上后无论何时何地都能走出更加优雅的步伐。\n可以提供中量的攻击力和移动速度和少量生命值</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Shoes/Shoes_6</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -944,9 +940,7 @@
         <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
         <BANW_FinalDamageMultiplier>+0.25</BANW_FinalDamageMultiplier>
-        <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
-         <ArmorRating_Blunt>0.24</ArmorRating_Blunt>
-         <ArmorRating_Heat>0.24</ArmorRating_Heat>
+         <BANW_HealthScalePercentOffset>0.12</BANW_HealthScalePercentOffset>
         </statBases>
         <equippedStatOffsets>
            <MoveSpeed>+1.8</MoveSpeed>
@@ -977,7 +971,7 @@
      <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Shoes_Seven</defName>
         <label>Lv.7-休闲运动鞋</label>
-        <description>设计简洁的运动鞋。重量轻巧，是活动量多的学员的最爱。\n可以提供中量的攻击力和移动速度和少量护甲</description>
+        <description>设计简洁的运动鞋。重量轻巧，是活动量多的学员的最爱。\n可以提供中量的攻击力和移动速度和少量生命值</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Shoes/Shoes_7</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -986,9 +980,7 @@
         <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
         <BANW_FinalDamageMultiplier>+0.30</BANW_FinalDamageMultiplier>
-        <ArmorRating_Sharp>0.26</ArmorRating_Sharp>
-         <ArmorRating_Blunt>0.26</ArmorRating_Blunt>
-         <ArmorRating_Heat>0.26</ArmorRating_Heat>
+         <BANW_HealthScalePercentOffset>0.13</BANW_HealthScalePercentOffset>
         </statBases>
         <equippedStatOffsets>
            <MoveSpeed>+2.2</MoveSpeed>
@@ -1019,7 +1011,7 @@
         <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Shoes_Eight</defName>
         <label>Lv.8-休闲运动鞋</label>
-        <description>设计简洁的运动鞋。重量轻巧，是活动量多的学员的最爱。\n可以提供中量的攻击力和移动速度和少量护甲</description>
+        <description>设计简洁的运动鞋。重量轻巧，是活动量多的学员的最爱。\n可以提供中量的攻击力和移动速度和少量生命值</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Shoes/Shoes_8</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1028,9 +1020,7 @@
         <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
         <BANW_FinalDamageMultiplier>+0.35</BANW_FinalDamageMultiplier>
-        <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
-         <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
-         <ArmorRating_Heat>0.3</ArmorRating_Heat>
+         <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
         </statBases>
         <equippedStatOffsets>
            <MoveSpeed>+2.8</MoveSpeed>
@@ -1061,7 +1051,7 @@
      <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Shoes_Nine</defName>
         <label>Lv.9-休闲运动鞋</label>
-        <description>使用疏水性强的防水原料制成的一体式凉鞋。为了不易在潮湿环境打滑而在鞋底加装了防滑垫。\n可以提供中量的攻击力和移动速度和少量护甲</description>
+        <description>使用疏水性强的防水原料制成的一体式凉鞋。为了不易在潮湿环境打滑而在鞋底加装了防滑垫。\n可以提供中量的攻击力和移动速度和少量生命值</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Shoes/Shoes_9</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1070,9 +1060,7 @@
        <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
         <BANW_FinalDamageMultiplier>+0.42</BANW_FinalDamageMultiplier>
-        <ArmorRating_Sharp>0.36</ArmorRating_Sharp>
-         <ArmorRating_Blunt>0.36</ArmorRating_Blunt>
-         <ArmorRating_Heat>0.36</ArmorRating_Heat>
+         <BANW_HealthScalePercentOffset>0.17</BANW_HealthScalePercentOffset>
         </statBases>
         <equippedStatOffsets>
            <MoveSpeed>+3.6</MoveSpeed>
@@ -1112,9 +1100,7 @@
          <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
         <BANW_FinalDamageMultiplier>+0.46</BANW_FinalDamageMultiplier>
-        <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
-         <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
-         <ArmorRating_Heat>0.40</ArmorRating_Heat>
+         <BANW_HealthScalePercentOffset>0.20</BANW_HealthScalePercentOffset>
         </statBases>
         <equippedStatOffsets>
            <MoveSpeed>+4.0</MoveSpeed>

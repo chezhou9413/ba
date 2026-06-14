@@ -67,10 +67,10 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>早濑</kindName>
+				<kindName>优香</kindName>
 				<kindDesName>早濑 优香</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>16</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
@@ -146,7 +146,7 @@
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        
 		 <stages>
           <li>     
            <statOffsets>

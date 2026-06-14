@@ -161,7 +161,7 @@
         <comps>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
-        <disappearsAfterTicks>60</disappearsAfterTicks>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
       </li>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Effecter_C</stateEffecter>

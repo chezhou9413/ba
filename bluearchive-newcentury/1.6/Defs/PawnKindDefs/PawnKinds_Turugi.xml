@@ -76,8 +76,11 @@
 				<kindName>鹤城</kindName>
 				<kindDesName>鹤城 鹤城</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>17</kindAge>
 			</li>
+			<li Class="BANWlLib.KindStats.BANWKindStatExtension">
+        <worldCargoCapacityOffset>100</worldCargoCapacityOffset>
+      </li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -174,7 +177,7 @@
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        
 		 <stages>
           <li>
           <painFactor>0.70</painFactor>     

@@ -65,9 +65,9 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>柚子</kindName>
-				<kindDesName>柚子 !花冈</kindDesName>
+				<kindDesName>花冈 柚子</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>16</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>

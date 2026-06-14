@@ -78,11 +78,14 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>美甘</kindName>
+				<kindName>妮露</kindName>
 				<kindDesName>美甘 妮露</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>17</kindAge>
 			</li>
+			<li Class="BANWlLib.KindStats.BANWKindStatExtension">
+        <worldCargoCapacityOffset>100</worldCargoCapacityOffset>
+      </li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -98,7 +101,7 @@
 						<ReplacePath>Pawns/Millennium/Nero/Halo/Nero_Halo</ReplacePath>
 					</li>
 					<li>
-						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
 						<ReplacePath>Pawns/Millennium/Nero/Head/Nero_Head</ReplacePath>
 					</li>
 					<li>
@@ -131,7 +134,7 @@
 				<MoveSpeed>5.80</MoveSpeed>
 				<Flammability>-0.6</Flammability>
 				<AimingDelayFactor>-0.80</AimingDelayFactor>
-				<CarryingCapacity>100</CarryingCapacity><!--		        ■承载力--> 
+				<CarryingCapacity>100</CarryingCapacity> 
 				<ShootingAccuracyPawn>30</ShootingAccuracyPawn>
                 </statOffsets>
 				<statFactors>

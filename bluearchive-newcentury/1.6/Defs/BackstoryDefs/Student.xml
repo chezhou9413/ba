@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
 		<defName>BANW_StudentAdult</defName>
@@ -1842,5 +1842,261 @@
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
 
+    <AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKei</defName>
+		<title>超自然现象调查部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>得到新躯体的凯伊。
+她变得比平时更为兴奋，但她本人似乎并不自知。
+"怎、怎么了吗……？
+有什么话倒是快说呀！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKei</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
 
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentTomoe</defName>
+		<title>红冬事务局</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是红冬事务局的秘书、切里诺会长的亲信。她是个演讲达人，不管是什么话经她一说，都被包装得头头是道。为了鼓吹对切里诺会长的忠心，会定期在红冬举行演讲。切里诺坚信巴是受自己的领袖魅力感染，才会这么忠于自己。但其实巴只是盲目地觉得切里诺可爱而已。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryTomoe</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentShigure</defName>
+		<title>227号特别班</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]遭红冬学院停学处分，在227号旧楼中反省的特别学员。
+因为在配给的水果罐头中掺入了酒精而受到处分。她与227号特别班的和香是关系很好的朋友。有传闻说，时雨是听到和香受到处分被驱逐到特别班后，才故意制造了这起事故。无论真相如何，时雨都很喜欢自己制作的水果罐头，会把它装进自己的口袋酒壶里随身携带。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryShigure</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNodoka</defName>
+		<title>227号特别班</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]受到红冬处分，目前正在旧楼反省的227号特别班成员。
+被处分的原因是“使用望远镜跟踪骚扰”。
+她喜欢用自己的双眼观察这个世界上有魅力的事物，即使是沙勒的老师也不例外。在227号特别班中吃了很多苦，节俭到吝啬的生活习惯已经刻在了她的骨子里。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNodoka</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentYakumo</defName>
+		<title>出版部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是红冬联邦学园所属，出版部的部长。
+同时也是「红熊」的主编。有着一旦决定就毫不动摇的固执一面，为了出版部的利益可以不择手段，能够发挥出无人能比的行动力。不过这样的她，好像也有着专一的一面……？
+"你对书……感兴趣吗？
+诶呀别这么说嘛，先聊两句看看嘛。"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryYakumo</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMinori</defName>
+		<title>工务部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是引领红冬联邦学院工务部的工务部长。
+哪里有需要人力的大规模土木工程，实梨就会奔赴哪里。她工作能力很强，擅长组织人员、现场指挥。但她经常因为小事罢工示威，导致她在雇主圈子中名声很差。
+"基沃托斯的所有布丁
+都应该属于勇于斗争的学员们！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMinori</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentTakane</defName>
+		<title>出版部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是红冬联邦学园所属，出版部的部员。
+上流优雅，注重礼节的大小姐。作为评论家的本事毋庸置疑，但过强的主观性时常引发麻烦。和「知识解放战线」是竞争关系。
+"贵安。
+我有本推荐的作品，要不要读一下？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryTakane</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMeru</defName>
+		<title>知识解放战线</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是红冬联邦学园所属、图书委员会「知识解放战线」的一员。
+与同属知识解放战线的红叶不同，不但热心于二次创作、也有在自己进行着创作。笔名是「梅露莉」。经常从看起来关系很要好、或者关系不是很好的学生之间寻找灵感，进行着所谓的真人二次创作，即使是敌对关系的圣三一、格赫娜的学生也是梅露的创作对象，因为经常被擅自创作，梅露在校外也是恶名广传。
+"起来……
+必须画……原稿才行……"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMeru</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMomiji</defName>
+		<title>知识解放战线</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是红冬联邦学园所属、知识解放战线的文学少女。
+与为了面包和点心而战斗的红冬里其他学生不同、她是为了图书馆中能有更多藏书而战。
+作为一个相当的御宅族，向事务局提出的购买图书的申请大多都是出于个人理由。虽然因此大部分申请都会被否决、但是红叶也依旧不放弃地在持续申请着。
+“啊……！可攻可受可是邪教！”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMomiji</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentReijo</defName>
+		<title>玄武商会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是山海经高级中学所属，「玄武商会」总店经理兼辅佐留美的护卫。
+一名狂热功夫爱好者，时常不分场合地模仿某知名武术家的言行举止。
+尽管她外表看上去沉稳冷静，其内心却偶尔会燃起熊熊热情。
+“你对功夫和武术有兴趣吗？”</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryReijo</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentRumi</defName>
+		<title>玄武商会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是山海经学院美食街【玄武商会】的会长。
+她以卓越的经营能力，让只是普通商业街的玄武商会一跃成为基沃托斯中屈指可数的美食街。因此，她被忌惮着新兴独立势力的山海经理事会视为眼中钉。不过，瑠海对发展玄武商会以外的事情都毫不关心。
+"有人肚子饿吗？"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryRumi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMina</defName>
+		<title>玄武商会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是山海经理事会【玄龙门】的执行部长，同时兼任理事长的直属护卫。
+与冷酷无情的外表不同，她其实是经典黑色电影的狂热影迷。她憧憬着电影里的帅气场面与台词，有时也会因为不合时宜的耍帅而吃到苦头。不过，为了不扫她的兴，【玄龙门】的成员们都并不在意。
+"城门失火，让我一人背负。
+——不必让其他人牵扯进来。"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMina</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMiku</defName>
+		<title>虚拟歌手</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]喜欢唱歌，性格开朗的虚拟歌手。
+本来是没有实体的虚拟存在，借助基沃托斯的科学技术，获得了身体，降临在这个世界。作为虚拟歌手的她，能够超越时间和空间，传递自己的歌声。据说她在基沃托斯也有不少粉丝，粉丝们都期待着她在基沃托斯的第一场演出。
+"请聆听我的歌声吧！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMiku</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentWakamo</defName>
+		<title>七囚人</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是百鬼夜行学园所属，因为停学处分而被送入矫正局，但从中越狱的「七囚人」之一。
+由于无差别且大规模的破坏行为而被称为「灾厄之狐」，令人畏惧的少女。动机及目的也被谜团所包围。隐藏在假面下的素颜有如「恶鬼般恐怖」、「恶魔般丑陋」等的传闻虽然不绝于耳，但人们只是畏惧着未知的事物而已。
+"啊啊……终于见面了呢，阁下♡"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryWakamo</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHina_B</defName>
+		<title>风纪委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是歌赫娜的风纪委员长，为了参加宴会特别换上了礼服。
+虽然是个对任何事都嫌麻烦的少女，但一听老师说很期待歌赫娜的特别宴会，便下定了决心要比平常稍微努力一点。她一有空就会认真练习要献给老师的钢琴演奏，散发出比平时更加青涩纯真的少女心，但本人并没有意识到这件事。
+"为了你，我会努力的"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHina_B</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHoshiro_A</defName>
+		<title>对策委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿比多斯高级中学所属，为了追求悠闲夏日，而来到无人岛的对策委员会委员长。
+跟她怕麻烦的态度相反，各项准备都非常确实。而她本人并没有发现自己比平常还要积极。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHoshiro_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHanako_A</defName>
+		<title>补习授课部</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是为了迎接享受夏天而来到孤岛上的补习部成员。
+也许是因为和亲近的人一起来到了自由的空间，穿着比之前更为大胆。但与之前的妩媚姿态不同，她偶尔也会展现出自己的坦率与真心
+"哎呀……
+竟然湿成这个样子……♡"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHanako_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentWakamo_A</defName>
+		<title>七囚人</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是七囚人】之一，在盛夏中更显华丽的少女。
+她身穿泳装来到海边，只为让老师欣赏；她脸上露出笑容，只因与老师相遇。在盛夏里，她始终怀着不输烈日的热情接近老师。这份感情，即使是酷暑也难以改变。
+"哦嗬嗬，若藻我也过来了。
+亲·爱·的·老·师·♡"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryWakamo_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
 </Defs>

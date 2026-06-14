@@ -13,7 +13,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>
@@ -31,7 +31,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>
@@ -49,7 +49,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>
@@ -67,7 +67,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>
@@ -85,7 +85,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>
@@ -103,7 +103,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>
@@ -121,7 +121,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>
@@ -139,7 +139,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>
@@ -157,7 +157,7 @@
       <MarketValue>1</MarketValue>
       <Mass>0.01</Mass>
     </statBases>
-    <stackLimit>100</stackLimit> <!-- 设置一个极高的堆叠上限 -->
+    <stackLimit>100</stackLimit> 
     <thingCategories>
       <li>BAWN_Costume_Piece</li>
     </thingCategories>

@@ -103,6 +103,55 @@
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1200</disappearsAfterTicks>
       </li>
+    <li Class="MVCF.Comps.HediffCompProperties_ExtendedVerbGiver">
+      <verbs>
+        <li>
+          <verbClass>Verb_Shoot</verbClass>
+          <defaultProjectile>BAWN_Shiroko_EX_Boom</defaultProjectile>
+          <warmupTime>3</warmupTime>
+          <range>30.9</range>
+          <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+          <burstShotCount>4</burstShotCount>
+          <soundCast>Hasumi_Gun_EX</soundCast>
+          <soundCastTail>GunTail_Light</soundCastTail>
+          <muzzleFlashScale>1</muzzleFlashScale>
+          <label>BANC_Shiroko_EXX_A</label>
+        </li>
+      </verbs>
+      <verbProps>
+        <!-- 僚机A-左上 -->
+        <li>
+          <label>BANC_Shiroko_EXX_A</label>
+          <!-- 是否可以切换 -->
+          <canBeToggled>true</canBeToggled>
+          <comps>
+            <!-- 炮塔组件，控制僚机位置 -->
+            <li Class="MVCF.VerbComps.VerbCompProperties_Turret">
+              <compClass>MVCF.VerbComps.VerbComp_Turret</compClass>
+              <!-- 以人类为默认 -->
+              <humanAsDefault>true</humanAsDefault>
+              
+              <!-- 图形定义 -->
+              <graphic>
+                <texPath>Pawns/Abydos/Shiroko/Skill/Wurenji</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+              </graphic>
+              <specificPositions>
+                <li>
+                  <defName>Human</defName>
+                  <BodyType>Thin</BodyType>
+                  <Default>(0,0)</Default>
+                  <Up>(0.75,0.75)</Up>
+                  <Down>(-0.75,-0.75)</Down>
+                  <Right>(0.75,-0.75)</Right>
+                  <Left>(-0.75,0.75)</Left>
+                </li>
+              </specificPositions>
+            </li>
+          </comps>
+        </li>
+      </verbProps>
+    </li>
   </comps>
 </HediffDef>
 <ThingDef Name="BAWN_Shiroko_EX_Boom" ParentName="BaseGrenadeProjectile" Abstract="True">

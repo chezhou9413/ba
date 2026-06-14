@@ -91,11 +91,12 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>玲纱(魔法)</kindName>
-				<kindDesName>玲纱(魔法)</kindDesName>
+				<kindName>玲纱</kindName>
+				<kindDesName>宇泽 玲纱</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>17</kindAge>
+				<kindAge>15</kindAge>
 			</li>
+			
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -131,7 +132,7 @@
                 <description>被动技能：自身生命值提升&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets> 
-
+                      <BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
                 </statOffsets>
 				<statFactors>
 				</statFactors>

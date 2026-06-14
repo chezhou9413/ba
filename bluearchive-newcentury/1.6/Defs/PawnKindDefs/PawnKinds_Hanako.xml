@@ -68,13 +68,14 @@
 		<forcedTraits>
 			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+			<BAWC_TraitDef_Hanako_A>0</BAWC_TraitDef_Hanako_A>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>花子</kindName>
 				<kindDesName>花子 浦和</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>16</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>

@@ -67,10 +67,13 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>爱丽丝</kindName>
-				<kindDesName>爱丽丝 爱丽丝 天童</kindDesName>
+				<kindDesName>天童 爱丽丝</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>
+			<li Class="BANWlLib.KindStats.BANWKindStatExtension">
+        <worldCargoCapacityOffset>1000</worldCargoCapacityOffset>
+      </li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -111,10 +114,10 @@
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 				<Flammability>-1.0</Flammability>
-                <ComfyTemperatureMax>100</ComfyTemperatureMax><!--		■最高适应温度-->
-			    <ComfyTemperatureMin>-100</ComfyTemperatureMin><!--		■最低适应温度-->   
-				<ImmunityGainSpeed>3</ImmunityGainSpeed><!--		    ■免疫增益速度-->
-				<CarryingCapacity>2000</CarryingCapacity><!--		        ■承载力--> 
+                <ComfyTemperatureMax>100</ComfyTemperatureMax>
+			    <ComfyTemperatureMin>-100</ComfyTemperatureMin>   
+				<ImmunityGainSpeed>3</ImmunityGainSpeed>
+				<CarryingCapacity>2000</CarryingCapacity> 
 </statOffsets>
 				<statFactors>
 				</statFactors>

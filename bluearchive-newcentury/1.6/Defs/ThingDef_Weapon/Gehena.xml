@@ -21,7 +21,7 @@
       <AccuracyShort>0.68</AccuracyShort><!--近-->
       <AccuracyMedium>0.96</AccuracyMedium><!--中-->
       <AccuracyLong>0.99</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -42,7 +42,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Makoto</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->
-        <warmupTime>3.5</warmupTime><!--瞄准时间-->
+        <warmupTime>1.5</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>61.9</range><!--射距-->
         <soundCast>BANW_Wp_SR_At_A</soundCast><!--射击音效-->
@@ -50,6 +50,13 @@
         <muzzleFlashScale>12</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Makoto</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -57,9 +64,9 @@
     <label>唯我独尊子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>71</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>83</damageAmountBase><!--子弹伤害-->
       <stoppingPower>1.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.85</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
       <speed>120</speed><!--子弹速度-->
     </projectile>
     <graphicData>
@@ -69,6 +76,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
+  
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Hina</defName>
     <label>终幕：Destroyer</label>
@@ -90,7 +98,7 @@
       <AccuracyShort>0.58</AccuracyShort><!--近-->
       <AccuracyMedium>0.59</AccuracyMedium><!--中-->
       <AccuracyLong>0.5</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -111,7 +119,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Hina</defaultProjectile><!--子弹-->
         <burstShotCount>7</burstShotCount><!--连射次数-->
-        <warmupTime>1.7</warmupTime><!--瞄准时间-->
+        <warmupTime>0.7</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>35.9</range><!--射距-->
         <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
@@ -151,17 +159,23 @@
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Hina</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Hina</defName>
     <label>终幕：Destroyer子弹</label>
     <projectile>
-
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>23</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>15</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
       <extraDamages>
       <li>
@@ -177,7 +191,6 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
-
 
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Ibuki</defName>
@@ -229,13 +242,19 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Ibuki</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Ibuki</defName>
     <label>邦邦—！子弹</label>
     <projectile>
-
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
       <damageAmountBase>24</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
@@ -298,6 +317,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Iori</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -345,7 +371,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>0.99</AccuracyMedium><!--中-->
       <AccuracyLong>0.69</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -366,7 +392,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Iroha</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->
-        <warmupTime>0.6</warmupTime><!--瞄准时间-->
+        <warmupTime>1.3</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>25.9</range><!--射距-->
         <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
@@ -374,6 +400,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Iroha</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -381,7 +414,7 @@
     <label>万魔殿制式手枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>22</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>71</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -415,7 +448,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>0.99</AccuracyMedium><!--中-->
       <AccuracyLong>0.69</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>0.5</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -436,7 +469,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Ako</defaultProjectile><!--子弹-->
         <burstShotCount>2</burstShotCount><!--连射次数-->
-        <warmupTime>0.6</warmupTime><!--瞄准时间-->
+        <warmupTime>1.6</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>10</ticksBetweenBurstShots><!--射速-->
         <range>25.9</range><!--射距-->
         <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
@@ -444,6 +477,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Ako</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -451,7 +491,7 @@
     <label>大人物子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>22</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>46</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -485,7 +525,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>0.99</AccuracyMedium><!--中-->
       <AccuracyLong>0.69</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown><!--冷却时间-->  
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->  
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -506,7 +546,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Chinatsu</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->
-        <warmupTime>0.6</warmupTime><!--瞄准时间-->
+        <warmupTime>1.6</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>25.9</range><!--射距-->
         <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
@@ -514,6 +554,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Chinatsu</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -521,11 +568,10 @@
     <label>支援方针子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>14</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>26</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
-
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -556,7 +602,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>0.99</AccuracyMedium><!--中-->
       <AccuracyLong>0.69</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown><!--冷却时间-->  
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->  
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -577,7 +623,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Satsuki</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->
-        <warmupTime>0.6</warmupTime><!--瞄准时间-->
+        <warmupTime>1.6</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>25.9</range><!--射距-->
         <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
@@ -585,6 +631,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Satsuki</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -592,11 +645,10 @@
     <label>NK Delta子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>20</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>74</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
-
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -656,13 +708,19 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Chiaki</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Chiaki</defName>
     <label>闪照子弹</label>
     <projectile>
-
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
       <damageAmountBase>30</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
@@ -705,7 +763,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>0.99</AccuracyMedium><!--中-->
       <AccuracyLong>0.69</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown><!--冷却时间-->  
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->  
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -726,7 +784,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Kayako</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->
-        <warmupTime>0.6</warmupTime><!--瞄准时间-->
+        <warmupTime>1</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>25.9</range><!--射距-->
         <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
@@ -734,6 +792,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Kayako</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -741,11 +806,10 @@
     <label>恶魔的咆哮子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>20</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>46</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
-
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -803,6 +867,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Haruka</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -810,7 +881,7 @@
     <label>吹飞子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--贯通-->
-      <damageAmountBase>85</damageAmountBase>
+      <damageAmountBase>36</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>0.2</armorPenetrationBase>
       <speed>60</speed>
@@ -821,10 +892,9 @@
       <texPath>Projectile/Bullet_Haruka</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    
   </ThingDef>
   
-   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Mutsuki</defName>
     <label>给糖也捣蛋</label>
     <description>睦月随身携带的机关枪。据睦月所说，为了更有趣的恶作剧，火力也很重要呢。</description>
@@ -845,7 +915,7 @@
       <AccuracyShort>0.68</AccuracyShort><!--近-->
       <AccuracyMedium>0.71</AccuracyMedium><!--中-->
       <AccuracyLong>0.7</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -866,7 +936,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Mutsuki</defaultProjectile><!--子弹-->
         <burstShotCount>3</burstShotCount><!--连射次数-->
-        <warmupTime>1.6</warmupTime><!--瞄准时间-->
+        <warmupTime>1.4</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>35.9</range><!--射距-->
         <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
@@ -874,17 +944,23 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Mutsuki</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Mutsuki</defName>
     <label>给糖也捣蛋子弹</label>
     <projectile>
-
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>33</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>26</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
     </projectile>
     <graphicData>
@@ -912,11 +988,11 @@
     <statBases>
       <WorkToMake>80000</WorkToMake><!--制作时间-->
       <Mass>3.5</Mass><!--重量-->
-      <AccuracyTouch>0.9</AccuracyTouch><!--贴近-->
+      <AccuracyTouch>0.88</AccuracyTouch><!--贴近-->
       <AccuracyShort>0.78</AccuracyShort><!--近-->
-      <AccuracyMedium>0.59</AccuracyMedium><!--中-->
-      <AccuracyLong>0.51</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown><!--冷却时间-->
+      <AccuracyMedium>0.81</AccuracyMedium><!--中-->
+      <AccuracyLong>0.7</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -936,26 +1012,32 @@
         <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Junko</defaultProjectile><!--子弹-->
-        <burstShotCount>6</burstShotCount><!--连射次数-->
-        <warmupTime>1.5</warmupTime><!--瞄准时间-->
-        <ticksBetweenBurstShots>8</ticksBetweenBurstShots><!--射速-->
-        <range>29.9</range><!--射距-->
+        <burstShotCount>5</burstShotCount><!--连射次数-->
+        <warmupTime>1.3</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots><!--射速-->
+        <range>30.9</range><!--射距-->
         <soundCast>BANW_Wp_AR_At</soundCast><!--射击音效-->
         <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Junko</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Junko</defName>
     <label>餐桌上的法外之徒子弹</label>
     <projectile>
-
-      <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>15</damageAmountBase><!--子弹伤害-->
-      <stoppingPower>0.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.3</armorPenetrationBase><!--穿透-->
+      <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
+      <damageAmountBase>22</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
     </projectile>
     <graphicData>
@@ -987,7 +1069,7 @@
       <AccuracyShort>0.68</AccuracyShort><!--近-->
       <AccuracyMedium>0.96</AccuracyMedium><!--中-->
       <AccuracyLong>0.99</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -1008,7 +1090,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Aru</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->
-        <warmupTime>3</warmupTime><!--瞄准时间-->
+        <warmupTime>1.5</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>61.9</range><!--射距-->
         <soundCast>BANW_Wp_SR_At_A</soundCast><!--射击音效-->
@@ -1016,6 +1098,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+     <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Aru</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -1023,9 +1112,9 @@
     <label>Wine-red·Admire子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>98</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>117</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
       <speed>120</speed><!--子弹速度-->
     </projectile>
     <graphicData>
@@ -1086,6 +1175,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Fuuka</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -1093,9 +1189,9 @@
     <label>供餐部防身用枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>21</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>14</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
       <speed>75</speed><!--子弹速度-->
     </projectile>
     <graphicData>
@@ -1147,13 +1243,20 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>BANC_Bullet_Juri</defaultProjectile>
-        <warmupTime>0.8</warmupTime>
+        <warmupTime>1.3</warmupTime>
         <range>17.9</range>
         <soundCast>BANW_Wp_SG_At</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Juri</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -1161,7 +1264,7 @@
     <label>供餐部自卫枪械B型</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--贯通-->
-      <damageAmountBase>65</damageAmountBase>
+      <damageAmountBase>51</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>0.18</armorPenetrationBase>
       <speed>60</speed>
@@ -1195,7 +1298,7 @@
       <AccuracyShort>0.9</AccuracyShort><!--近-->
       <AccuracyMedium>0.9</AccuracyMedium><!--中-->
       <AccuracyLong>0.9</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -1216,7 +1319,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Akari</defaultProjectile><!--子弹-->
         <burstShotCount>3</burstShotCount><!--连射次数-->
-        <warmupTime>0.8</warmupTime><!--瞄准时间-->
+        <warmupTime>2.2</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>6</ticksBetweenBurstShots><!--射速-->
         <range>33.9</range><!--射距-->
         <soundCast>BANW_Wp_AR_At</soundCast><!--射击音效-->
@@ -1224,6 +1327,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Akari</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -1231,7 +1341,7 @@
     <label>贪食之证子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>30</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>28</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1265,7 +1375,7 @@
       <AccuracyShort>0.68</AccuracyShort><!--近-->
       <AccuracyMedium>0.71</AccuracyMedium><!--中-->
       <AccuracyLong>0.7</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -1286,7 +1396,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Izumi</defaultProjectile><!--子弹-->
         <burstShotCount>3</burstShotCount><!--连射次数-->
-        <warmupTime>1.6</warmupTime><!--瞄准时间-->
+        <warmupTime>1.7</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>35.9</range><!--射距-->
         <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
@@ -1294,6 +1404,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Izumi</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -1302,7 +1419,7 @@
     <projectile>
 
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>38</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>22</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.30</armorPenetrationBase><!--穿透-->
       <speed>80</speed><!--子弹速度-->
@@ -1342,7 +1459,7 @@
       <AccuracyShort>0.68</AccuracyShort><!--近-->
       <AccuracyMedium>0.96</AccuracyMedium><!--中-->
       <AccuracyLong>0.99</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -1363,7 +1480,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Haruna</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->
-        <warmupTime>3</warmupTime><!--瞄准时间-->
+        <warmupTime>1.5</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>61.9</range><!--射距-->
         <soundCast>BANW_Wp_SR_At_A</soundCast><!--射击音效-->
@@ -1371,6 +1488,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Haruna</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -1378,7 +1502,7 @@
     <label>理想化子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>112</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>116</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.0</armorPenetrationBase><!--穿透-->
       <speed>120</speed><!--子弹速度-->
@@ -1413,7 +1537,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>1</AccuracyMedium><!--中-->
       <AccuracyLong>1</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -1435,7 +1559,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Sena</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->
-        <warmupTime>2.0</warmupTime><!--瞄准时间-->
+        <warmupTime>1.0</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>8</ticksBetweenBurstShots><!--射速-->
         <range>32.9</range><!--射距-->
         <soundCast>BANW_Wp_GL_At</soundCast><!--射击音效-->
@@ -1448,6 +1572,11 @@
       </li>
     </verbs>
     <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Sena</li>
+        </requiredPawnKindDefName>
+      </li>
     </comps>
   </ThingDef>
 
@@ -1457,7 +1586,7 @@
     <projectile>
       <explosionRadius>1.5</explosionRadius>
       <damageDef>BANC_Damage_Sena</damageDef><!--子弹类型-->
-      <damageAmountBase>91</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>54</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.0</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -1522,7 +1651,7 @@
         <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Kasumi</defaultProjectile><!--子弹-->
-        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <burstShotCount>2</burstShotCount><!--连射次数-->
         <warmupTime>1</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
         <range>25.9</range><!--射距-->
@@ -1531,6 +1660,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+     <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Kasumi</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -1538,10 +1674,17 @@
     <label>红色莱克特子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>60</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>25</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.25</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>Stun</def>
+        <amount>1</amount>
+        <chance>0.5</chance>
+      </li>
+    </extraDamages>
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -1551,33 +1694,113 @@
     </graphicData>
   </ThingDef>
 
-  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+<ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Megu</defName>
     <label>天惠神力!</label>
     <description>在开发现场与惠融为一体的火焰喷射器。由于其本身释放出的庞大热量，其他人都驾驭不了这把武器。至于武器的名字，来自有人曾说过的一句玩笑。惠很喜欢，于是就用它为武器命名。</description>
     <graphicData>
-      <texPath>Weapon/Gehena/Megu</texPath><!--贴图路径-->
-      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
-      <drawSize>1.2</drawSize><!--贴图大小-->
+      <texPath>Weapon/Gehena/Megu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
     </graphicData>
     <weaponTags>
-      <li>BANC_Megu</li><!--武器Tag-->
+      <li>BANC_Megu</li>
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>BANW_Wp_FT_De</soundInteract>
+    <statBases>
+      <WorkToMake>80000</WorkToMake>
+      <Mass>30</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+     
+    </equippedStatOffsets>
+   <costList>
+      <Steel>1</Steel>
+    </costList>
+    <recipeMaker>
+      
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>440</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BANC_Bullet_Megu</defaultProjectile>
+        <burstShotCount>1</burstShotCount>
+        <warmupTime>0.9</warmupTime>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <range>12.9</range>
+        <soundCast>BANW_Wp_FT_At</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+     <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Megu</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Megu</defName>
+    <label>燃烧</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef>
+      <damageAmountBase>23</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <speed>50</speed>
+    </projectile>
+    <thingClass>Bullet</thingClass>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>Projectile/Megu/A/Megu</texPath>
+
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Hina_B</defName>
+    <label>终幕：Destroyer</label>
+    <description>日奈得心应手的通用机枪。平时如果有谁胆敢违反规章、扰乱纪律，就会被它无情的破坏力打得落花流水，但它这次却蕴含着对自己的严格要求，以及对某个人的心意。</description>
+    <graphicData>
+      <texPath>Weapon/Gehena/Hina</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.4</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Hina_B</li><!--武器Tag-->
     </weaponTags>
     <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
-    <soundInteract>BANW_Wp_FT_De</soundInteract><!--装备音效-->
+    <soundInteract>BANW_Wp_MG_De</soundInteract><!--装备音效-->
     <statBases>
       <WorkToMake>80000</WorkToMake><!--制作时间-->
-      <Mass>30</Mass><!--重量-->
-      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
-      <AccuracyShort>1</AccuracyShort><!--近-->
-      <AccuracyMedium>1</AccuracyMedium><!--中-->
-      <AccuracyLong>1</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown><!--冷却时间-->
+      <Mass>9.5</Mass><!--重量-->
+      <AccuracyTouch>0.48</AccuracyTouch><!--贴近-->
+      <AccuracyShort>0.58</AccuracyShort><!--近-->
+      <AccuracyMedium>0.59</AccuracyMedium><!--中-->
+      <AccuracyLong>0.5</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
     </equippedStatOffsets>
-   <costList>
+    <costList>
       <Steel>1</Steel><!--材料-->
     </costList>
     <recipeMaker>
@@ -1589,38 +1812,74 @@
     </recipeMaker>
     <verbs>
       <li>
-        <targetParams>
-        <canTargetLocations>true</canTargetLocations>
-        </targetParams>
         <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
-        <defaultProjectile>BANC_Bullet_Megu</defaultProjectile><!--子弹-->
-        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <defaultProjectile>BANC_Bullet_Hina_B</defaultProjectile><!--子弹-->
+        <burstShotCount>7</burstShotCount><!--连射次数-->
         <warmupTime>0.9</warmupTime><!--瞄准时间-->
-        <ticksBetweenBurstShots>8</ticksBetweenBurstShots><!--射速-->
-        <range>12.9</range><!--射距-->
-        <soundCast>BANW_Wp_FT_At</soundCast><!--射击音效-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>35.9</range><!--射距-->
+        <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
         <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
-        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+        <muzzleFlashScale>11</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+     <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Hina_B</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+   <tools>
+      <!-- 定义近战攻击方式：枪托攻击 -->
+      <li>
+        <!-- 攻击标签：枪托 -->
+        <label>Gun Butt</label>
+        <!-- 攻击能力类型 -->
+        <capacities>
+          <!-- 钝击伤害 -->
+          <li>Blunt</li>
+        </capacities>
+        <!-- 攻击力：20点伤害 -->
+        <power>40</power>
+        <!-- 攻击冷却时间：2秒 -->
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <!-- 定义近战攻击方式：枪管攻击 -->
+      <li>
+        <!-- 攻击标签：枪管 -->
+        <label>Gun Barrel</label>
+        <!-- 攻击能力类型 -->
+        <capacities>
+          <!-- 钝击伤害 -->
+          <li>Blunt</li>
+          <!-- 戳击伤害 -->
+          <li>Poke</li>
+        </capacities>
+        <!-- 攻击力：20点伤害 -->
+        <power>40</power>
+        <!-- 攻击冷却时间：2秒 -->
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
-    <defName>BANC_Bullet_Megu</defName>
-    <label>燃烧</label>
+    <defName>BANC_Bullet_Hina_B</defName>
+    <label>终幕：Destroyer子弹</label>
     <projectile>
-      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>23</damageAmountBase><!--子弹伤害-->
-      <stoppingPower>3</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
-      <speed>50</speed><!--子弹速度-->
-    </projectile>
-    <thingClass>Bullet</thingClass>
-    <graphicData>
-      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
-      <texPath>Projectile/Megu/A/Megu</texPath>
 
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
+      <damageAmountBase>18</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>100</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+     <shaderType>MoteGlow</shaderType>
+      <drawSize>(2,4)</drawSize>
+      <texPath>Projectile/Bullet_Hina_B</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>

@@ -75,8 +75,52 @@
       </li>
 </children>
 </EffecterDef>
-
-
+<SoundDef>
+	<defName>BANW_Skill_NewA</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Skill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+<EffecterDef>
+<defName>BANW_Effecter_NewA</defName>
+<children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>BANW_Skill_NewA</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>BAWN_Effect_BA_A</fleckDef>
+        <burstCount>1</burstCount>
+        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <initialDelayTicks>0</initialDelayTicks>
+        <positionRadius>0</positionRadius>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.4, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+</children>
+</EffecterDef>
 
 <EffecterDef>
 <defName>BANW_Effecter_B</defName>

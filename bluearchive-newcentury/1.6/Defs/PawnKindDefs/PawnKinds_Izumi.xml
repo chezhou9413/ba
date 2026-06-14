@@ -86,10 +86,11 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>泉</kindName>
-				<kindDesName>泉 狮子堂</kindDesName>
+				<kindDesName>狮子堂 泉</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>
+			
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -167,14 +168,14 @@
 					<EatingSpeed>8.5</EatingSpeed>
 					<FoodPoisonChance>100</FoodPoisonChance>
 				</statFactors>
-		<disallowedThoughtsFromIngestion>                    <!-- 禁止的进食思想 -->
-          <li>                                               <!-- 第一个条目 -->
-            <meatSource>Humanlike</meatSource>               <!-- 肉类来源：类人生物 -->
+		<disallowedThoughtsFromIngestion>                    
+          <li>                                               
+            <meatSource>Humanlike</meatSource>               
             <thoughts>     
-				<li>AteKibble</li>                                 <!-- 被禁止的思想 -->
+				<li>AteKibble</li>                                 
                <li>AteRawFood</li>
               <li>AteHumanlikeMeatDirect</li>
-              <li>AteHumanlikeMeatAsIngredient</li>          <!-- 禁止"作为配料食用类人肉"的负面思想 -->
+              <li>AteHumanlikeMeatAsIngredient</li>          
             </thoughts>
           </li>
         </disallowedThoughtsFromIngestion>
@@ -190,7 +191,7 @@
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        
 		 <stages>
       <li>
         <makeImmuneTo>
@@ -202,19 +203,19 @@
   </HediffDef>
 
    <HediffDef>
-        <!-- 状态的唯一标识符 -->
+        
         <defName>BAWN_Izumi_buff_A</defName>
-        <!-- 显示名称 -->
+        
         <label>接下来吃什么呢？</label>
-        <!-- 效果描述 -->
+        
         <description>自身每10秒回复26点生命值</description>
         <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
+        
         <isBad>false</isBad>
         <hediffClass>HediffWithComps</hediffClass>
-        <everCurableByItem>false</everCurableByItem>    <!-- 不可通过物品治愈 -->
-        <lethalSeverity>-1</lethalSeverity>    <!-- 不会致死 -->
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        <everCurableByItem>false</everCurableByItem>    
+        <lethalSeverity>-1</lethalSeverity>    
+        
          
          <comps>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
@@ -233,28 +234,28 @@
     </HediffDef>
 
   <ThoughtDef>
-    <!-- 想法的唯一标识符 -->
+    
     <defName>BAWC_TraitDef_Izumi_ThoughtDef</defName>
-    <!-- 工作类：始终激活，意味着这个想法会持续生效 -->
+    
     <workerClass>ThoughtWorker_AlwaysActive</workerClass>
-    <!-- 即使角色未被生成（不在地图上）时也有效 -->
+    
     <validWhileDespawned>true</validWhileDespawned>
-    <!-- 适用阶段：适用于婴儿、儿童和成人阶段的角色 -->
+    
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-    <!-- 需要拥有的特质 -->
+    
     <requiredTraits>
       <li>BAWC_TraitDef_Izumi</li>
     </requiredTraits>
-    <!-- 需要特质的等级：0（最高等级） -->
+    
     <requiredTraitsDegree>0</requiredTraitsDegree>
-    <!-- 效果阶段 -->
+    
     <stages>
       <li>
-        <!-- 显示标签 -->
+        
         <label>这个世界的食物也好好吃！</label>
-        <!-- 描述：说明这是来自活力女仆特质的自然加成 -->
+        
         <description>来自"饥饿的美食家"特质的自然加成。</description>
-        <!-- 基础心情效果：提供+12的心情加成 -->
+        
         <baseMoodEffect>12</baseMoodEffect>
       </li>
     </stages>

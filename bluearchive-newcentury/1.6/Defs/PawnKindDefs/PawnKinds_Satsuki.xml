@@ -61,10 +61,10 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>京极</kindName>
+				<kindName>皋月</kindName>
 				<kindDesName>京极 皋月</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>17</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>

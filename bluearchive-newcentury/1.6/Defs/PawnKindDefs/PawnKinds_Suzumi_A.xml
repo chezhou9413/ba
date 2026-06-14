@@ -19,6 +19,7 @@
 		</li>
         </startingHediffs>
 		<abilities>
+			<li>BAWN_Suzumi_A_EXX</li>
 		</abilities>
 		<backstoryFiltersOverride>
 			<li>
@@ -89,8 +90,8 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>铃美(魔法)</kindName>
-				<kindDesName>铃美(魔法)</kindDesName>
+				<kindName>铃美</kindName>
+				<kindDesName>守月 铃美</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>
 			</li>

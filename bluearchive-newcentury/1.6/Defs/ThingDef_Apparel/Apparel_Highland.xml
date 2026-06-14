@@ -5,7 +5,7 @@
         <defName>BANW_Body_Hikali</defName>
         <label>橘光的衣服</label>
         <description>橘光的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -28,7 +28,7 @@
         <defName>BANW_Body_Nozomi</defName>
         <label>望的衣服</label>
         <description>望的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -51,7 +51,7 @@
         <defName>BANW_Body_Aoba</defName>
         <label>青叶的衣服</label>
         <description>青叶的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>

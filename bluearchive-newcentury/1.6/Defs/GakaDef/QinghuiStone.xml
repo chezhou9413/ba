@@ -32,7 +32,7 @@
     <min>1</min>
     <!-- 最大数量 -->
     <max>99</max>
-    <maxDropRate>0.1</maxDropRate>
+    <maxDropRate>0.35</maxDropRate>
     <thingToDrop>QinghuiStone</thingToDrop>
     <RaceRemove>
             <li>BANW_KivotosStudent</li>
@@ -68,6 +68,12 @@
             <li>BANW_Ako_Student</li>
             <li>BANW_Shimiko_Student</li>
             <li>BANW_Airy_Student</li>
+                <li>BANW_Chise_Student</li>
+               <li>BANW_Hasumi_Student</li>
+               <li>BANW_Akari_Student</li>
+               <li>BANW_Kayako_Student</li>
+                <li>BANW_Fuuka_Student</li>
+                <li>BANW_Hanae_Student</li>
             <li>BANW_Momoi_Student</li>
             <li>BANW_Chinatsu_Student</li>
             <li>BANW_Midori_Student</li>
@@ -79,6 +85,8 @@
             <li>BANW_Kayako_Student</li>
             <li>BANW_Koyuki_Student</li>
             <li>BANW_Saya_Student</li>
+                <li>BANW_Wakamo_A_Student</li>
+            <li>BANW_Mina_Student</li>
             <li>BANW_Kazusa_Student</li>
             <li>BANW_Saori_Student</li>
             <li>BANW_Chiaki_Student</li>

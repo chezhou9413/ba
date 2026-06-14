@@ -23,7 +23,7 @@
       <AccuracyShort>0.68</AccuracyShort>
       <AccuracyMedium>1</AccuracyMedium>
       <AccuracyLong>1</AccuracyLong>
-      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
       <SocialImpact>-0.35</SocialImpact>
@@ -43,13 +43,20 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>BANC_Bullet_Miyu</defaultProjectile>
-        <warmupTime>1.5</warmupTime>
+        <warmupTime>0.9</warmupTime>
         <range>54.9</range>
         <soundCast>BANW_Wp_SR_At_B</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Miyu</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -57,9 +64,9 @@
     <label>RABBIT-39式来福枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>64</damageAmountBase>
+      <damageAmountBase>73</damageAmountBase>
       <stoppingPower>1.5</stoppingPower>
-      <armorPenetrationBase>0.55</armorPenetrationBase>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
       <speed>100</speed>
     </projectile>
     <graphicData>
@@ -91,7 +98,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>1</AccuracyMedium><!--中-->
       <AccuracyLong>0.6</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -112,7 +119,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Miyako</defaultProjectile><!--子弹-->
         <burstShotCount>5</burstShotCount><!--连射次数-->
-        <warmupTime>0.6</warmupTime><!--瞄准时间-->
+        <warmupTime>1.3</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>5</ticksBetweenBurstShots><!--射速-->
         <range>22.9</range><!--射距-->
         <soundCast>BANW_Wp_SMG_At</soundCast><!--射击音效-->
@@ -120,6 +127,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Miyako</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -127,9 +141,9 @@
     <label>RABBIT-31式冲锋枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>16</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>7</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.3</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
     </projectile>
     <graphicData>
@@ -182,7 +196,7 @@
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Saki</defaultProjectile><!--子弹-->
         <burstShotCount>6</burstShotCount><!--连射次数-->
-        <warmupTime>1.5</warmupTime><!--瞄准时间-->
+        <warmupTime>1.3</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>7</ticksBetweenBurstShots><!--射速-->
         <range>35.9</range><!--射距-->
         <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
@@ -190,6 +204,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Saki</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -197,7 +218,7 @@
     <label>RABBIT-26式机关枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>21</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>18</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.55</armorPenetrationBase><!--穿透-->
       <speed>80</speed><!--子弹速度-->
@@ -260,6 +281,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Moe</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -267,7 +295,7 @@
     <label>Rabbit-224式手枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>10</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>9</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.25</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->

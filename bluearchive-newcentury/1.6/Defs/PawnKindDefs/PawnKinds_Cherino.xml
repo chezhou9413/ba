@@ -23,7 +23,7 @@
 		<backstoryFiltersOverride>
 			<li>
 				<categories>
-					<li>BANW_BackstoryAbydos</li>
+					<li>BANW_BackstoryRedWinter</li>
 					<li>BANW_BackstoryCherino</li>
 				</categories>
 			</li>
@@ -68,9 +68,9 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>切里诺</kindName>
-				<kindDesName>切里诺 切里诺 连河</kindDesName>
+				<kindDesName>连河 切里诺</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>14</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>

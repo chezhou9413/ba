@@ -79,7 +79,7 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>下仓</kindName>
+				<kindName>惠</kindName>
 				<kindDesName>下仓 惠</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>

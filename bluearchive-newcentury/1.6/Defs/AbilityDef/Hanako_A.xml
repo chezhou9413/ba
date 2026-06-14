@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+    <defName>BAWN_Hanako_A_EXX</defName>
+    <label>喷出来了好多呢♡</label>
+    <description>对扇形范围的敌方单位造成自身攻击力707%的伤害</description>
+    <iconPath>Ability/Icon/Hanako_A/Hanako_EXX</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <charges>3</charges> <!-- 设置该能力有 5 次充能次数。-->
+    <cooldownPerCharge>true</cooldownPerCharge> <!-- 每次使用后单独计算冷却时间。。-->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <hostile>true</hostile>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Hanako_A_Skill_EXX</warmupStartSound>
+    <warmupEffecter></warmupEffecter>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <statBases>
+  <Ability_Duration>20</Ability_Duration>
+ </statBases>
+    <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SustainedAreaAttack">
+      <!-- 扇形弧度 --> 
+      <soundCast></soundCast>
+      <TiggerHediff></TiggerHediff>
+      <fanArc>60</fanArc>
+      <verbClass>BANWlLib.BaVerb.Verb_SustainedAreaAttack</verbClass>
+      <label>喷出来了好多呢♡</label>
+      <!-- 绑定的JOB -->
+      <JobDef>BANW_Job_Skill_Hanako_A_EXX</JobDef> <!-- 技能定义标识符 -->
+      <violent>true</violent> <!-- 是否为暴力行为 -->
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed> <!-- 是否强制正常时间速度 -->
+      <warmupTime>0.1</warmupTime> <!-- 预热时间（秒） -->
+      <range>44</range> <!-- 作用范围 -->
+      <requireLineOfSight>false</requireLineOfSight> <!-- 是否需要视线 -->
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations> <!-- 是否可以瞄准位置 -->
+        <canTargetPawns>true</canTargetPawns> <!-- 是否可以瞄准pawn（人物） -->
+        <canTargetBuildings>false</canTargetBuildings> <!-- 是否可以瞄准建筑物 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Hanako_buff_A</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+  </li>
+    </comps>
+  </AbilityDef>
+   <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Hanako_buff_A</defName>
+        <!-- 显示名称 -->
+        <label>补充水分♡</label>
+        <!-- 效果描述 -->
+        <description>攻击力增加38%（持续20秒）</description>
+        <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <BANW_FinalDamageMultiplier>+0.38</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>2400</disappearsAfterTicks>
+      </li>
+         <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Hanako_Ef_A</stateEffecter>
+      </li> 
+    </comps>
+
+    </HediffDef>
+<DamageDef ParentName="BANC_Damage_zhendong">
+    <defName>BANC_Damage_Hanako_A_EXX</defName><!--通用贯通-->
+<damageEffecter></damageEffecter>
+  </DamageDef>
+<JobDef Class="BANWlLib.BaDef.BaJobDef_SustainedAttack">
+        <defName>BANW_Job_Skill_Hanako_A_EXX</defName>
+        <driverClass>BANWlLib.BaJob.Job_SustainedAreaAttack</driverClass>
+        <damages>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>70</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>85</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hanako_A_EXX</damageType>
+                <!-- 穿透 --> 
+                <penetration>0.35</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef>BANW_Hanako_Ef_B</effecterDef>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>80</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>85</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hanako_A_EXX</damageType>
+                <!-- 穿透 --> 
+                <penetration>0.35</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>90</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>85</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hanako_A_EXX</damageType>
+                <!-- 穿透 --> 
+                <penetration>0</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+            </li>
+            <li>
+                <tick>100</tick>
+                <damageAmount>85</damageAmount>
+                <damageType>BANC_Damage_Hanako_A_EXX</damageType>
+                <penetration>0.35</penetration>
+                <effecterDef></effecterDef>
+            </li>
+        <li>
+                <tick>110</tick>
+                <damageAmount>85</damageAmount>
+                <damageType>BANC_Damage_Hanako_A_EXX</damageType>
+                <penetration>0</penetration>
+                <effecterDef></effecterDef>
+            </li>
+              <li>
+                <tick>120</tick>
+                <damageAmount>85</damageAmount>
+                <damageType>BANC_Damage_Hanako_A_EXX</damageType>
+                <penetration>0</penetration>
+                <effecterDef></effecterDef>
+            </li>
+        </damages>
+    </JobDef>
+</Defs>

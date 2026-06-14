@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef Name="BANW_Proplevel" Abstract="True">
-    <!-- 物品类别：继承ThingWithComps类以支持组件系统 -->
+    
     <thingClass>ThingWithComps</thingClass>
-    <!-- 生成通用性：设为0表示不会在地图生成时随机出现 -->
+    
     <generateCommonality>0</generateCommonality>
-    <!-- 生成允许几率：设为0表示不会自然生成 -->
+    
     <generateAllowChance>0</generateAllowChance>
-    <!-- 交易可能性：设为None表示无法交易 -->
+    
     <tradeability>None</tradeability>
-    <!-- 地图生成时是否可散落：设为false表示不会在地图生成时随机散布 -->
+    
     <scatterableOnMapGen>false</scatterableOnMapGen>
-    <!-- 资源读数优先级：设为Middle表示在资源读数中有中等优先级 -->
+    
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
-    <!-- 基础属性数值 -->
+    
     <statBases>
-      <!-- 可燃性：设为0表示不可燃 -->
+      
       <Flammability>0</Flammability>
-      <!-- 市场价值：设为10表示基础市场价值 -->
+      
       <MarketValue>10</MarketValue>
-      <!-- 质量：设为0.5表示物品重量 -->
+      
       <Mass>0.5</Mass>
     </statBases>
-    <!-- 是否可选择：设为true表示玩家可以选择该物品 -->
+    
     <selectable>true</selectable>
-    <!-- 填充百分比：设为0.25表示占用空间比例 -->
+    
     <fillPercent>0.25</fillPercent>
-    <!-- 交易可能性：再次设定为None（可能为重复项） -->
+    
     <tradeability>None</tradeability>
-    <!-- 使用生命值：设为false表示不使用生命值系统 -->
+    
     <useHitPoints>false</useHitPoints>
-    <!-- 移动路径成本：设为15表示单位移动时消耗的路径点数 -->
+    
     <pathCost>15</pathCost>
-    <!-- 总是可以搬运：设为true表示总是可以被殖民者搬运 -->
-    <alwaysHaulable>true</alwaysHaulable> <!-- 添加可搬运属性 -->
-    <!-- 绘制GUI覆盖层：设为true表示显示数量标签 -->
-    <drawGUIOverlay>true</drawGUIOverlay> <!-- 显示数量浮标 -->
-    <!-- 物品类别列表 -->
+    
+    <alwaysHaulable>true</alwaysHaulable> 
+    
+    <drawGUIOverlay>true</drawGUIOverlay> 
+    
     <thingCategories>
-      <!-- 物品类别标识 -->
+      
       <li>BAWN_Proplevel_Piece</li>
     </thingCategories>
-    <!-- 交易标签：定义物品的交易分类 -->
+    
     <tradeTags Inherit="False">
-      <!-- 交易标签：异域商品 -->
+      
       <li>ExoticMisc</li>
     </tradeTags>
-    <!-- 物品集制作标签：用于控制物品如何被包含在战利品中 -->
+    
     <thingSetMakerTags Inherit="False" />
-    <!-- 计时器类型：设为Never表示不需要更新循环 -->
+    
     <tickerType>Never</tickerType>
-    <!-- 可旋转性：设为false表示物品不能旋转 -->
+    
     <rotatable>false</rotatable>
-    <!-- 移动路径成本：再次设定为14（可能与上面重复） -->
+    
     <pathCost>14</pathCost>
-    <!-- 允许的Archonexus计数：设为-1表示无限制或特殊处理 -->
+    
     <allowedArchonexusCount>-1</allowedArchonexusCount>
     <stackLimit>5000</stackLimit>
     <comps>
@@ -82,16 +82,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用美游的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Miyu</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Miyu</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -116,16 +116,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用宫子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Miyako</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Miyako</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -150,16 +150,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用咲的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Saki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Saki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -185,16 +185,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用星野的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hoshiro</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hoshiro</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -219,16 +219,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用圣娅的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Seia</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Seia</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -255,16 +255,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用鹤城的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Turugi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Turugi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -290,16 +290,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用莲见的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hasumi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hasumi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -325,16 +325,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用明日奈的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Asuna</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Asuna</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -360,16 +360,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用茜的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Akane</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Akane</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -396,16 +396,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用青叶的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Aoba</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Aoba</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -431,16 +431,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用光的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hikali</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hikali</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -466,16 +466,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用望的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nozomi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nozomi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -502,16 +502,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用白子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Shiroko</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Shiroko</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -538,16 +538,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用未花的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mika</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mika</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -574,16 +574,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用萌绘的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Moe</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Moe</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -610,16 +610,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用真白的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mashiro</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mashiro</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -646,16 +646,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用妮露的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nero</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nero</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -682,16 +682,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用一花的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ichika</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ichika</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -718,16 +718,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用花凛的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Karlin</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Karlin</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -754,16 +754,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用切里诺的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Cherino</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Cherino</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -789,16 +789,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用真琴的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Makoto</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Makoto</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -824,16 +824,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用日奈的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hina</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hina</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -859,16 +859,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用夏的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Natsu</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Natsu</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -895,16 +895,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用玲纱的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Reisa</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Reisa</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -931,16 +931,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用伊吹的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ibuki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ibuki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -967,16 +967,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用优香的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Yuuka</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Yuuka</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1003,16 +1003,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用伊织的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Iori</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Iori</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1039,16 +1039,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用铃美的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Suzumi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Suzumi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1075,16 +1075,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用忧的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ui</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ui</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1111,16 +1111,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用亚子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ako</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ako</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1147,16 +1147,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用志美子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Shimiko</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Shimiko</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1183,16 +1183,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用吕伊波的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Iroha</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Iroha</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1219,16 +1219,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用爱莉的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Airy</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Airy</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1255,16 +1255,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用桃井的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Momoi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Momoi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1291,16 +1291,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用千夏的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Chinatsu</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Chinatsu</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1327,16 +1327,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用绿的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Midori</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Midori</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1363,16 +1363,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用小春的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Koharu</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Koharu</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1398,16 +1398,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用柚子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Yuzu</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Yuzu</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1434,16 +1434,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用亚津子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Atsuko</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Atsuko</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1470,16 +1470,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用皋月的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Satsuki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Satsuki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1507,16 +1507,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用爱丽丝的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Arisu</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Arisu</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1543,16 +1543,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用佳代子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kayako</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kayako</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1579,16 +1579,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用小雪的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Koyuki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Koyuki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1615,16 +1615,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用纱凌的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Saya</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Saya</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1651,16 +1651,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用和纱的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kazusa</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kazusa</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1687,16 +1687,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用纱织的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Saori</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Saori</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1723,16 +1723,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用千秋的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Chiaki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Chiaki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1760,16 +1760,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用玛丽的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mari</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mari</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1796,16 +1796,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用樱子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Sakurako</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Sakurako</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1832,16 +1832,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用心奈的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kokona</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kokona</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1868,16 +1868,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用日向的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hinata</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hinata</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1904,16 +1904,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用好美的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Yoshimi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Yoshimi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1940,16 +1940,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用瞬的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Shun</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Shun</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1976,16 +1976,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用遥香的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Haruka</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Haruka</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2011,16 +2011,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用花子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hanako</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hanako</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2047,16 +2047,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用绫音的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ayane</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ayane</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2083,16 +2083,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用妃咲的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kisaki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kisaki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2119,16 +2119,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用日和的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hiyori</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hiyori</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2155,16 +2155,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用睦月的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mutsuki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mutsuki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2192,16 +2192,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用美咲的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Misaki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Misaki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2228,16 +2228,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用淳子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Junko</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Junko</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2264,16 +2264,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用晴的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hare</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hare</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2300,16 +2300,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用阿露的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Aru</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Aru</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2336,16 +2336,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用芹香的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Serika</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Serika</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2372,16 +2372,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用千寻的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Chihiro</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Chihiro</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2408,16 +2408,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用日富美的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hifumi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hifumi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2444,16 +2444,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用小玉的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kotama</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kotama</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2480,16 +2480,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用枫香的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Fuuka</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Fuuka</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2516,16 +2516,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用真纪的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Maki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Maki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2552,16 +2552,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用朱莉的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Juri</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Juri</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2588,16 +2588,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用紫的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Yokari</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Yokari</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2624,16 +2624,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用诺亚的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Noa</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Noa</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2660,16 +2660,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用莉音的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Rio</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Rio</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2696,16 +2696,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用鹿江的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kanoe</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kanoe</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2732,16 +2732,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用桔梗的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kikyou</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kikyou</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2768,16 +2768,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用花江的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hanae</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hanae</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2804,16 +2804,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用梓的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Azusa</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Azusa</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2840,16 +2840,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用芹娜的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Serina</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Serina</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2876,16 +2876,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用千世的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Chise</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Chise</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2912,16 +2912,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用美祢的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mine</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mine</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2948,16 +2948,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用满的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Michiru</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Michiru</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2984,16 +2984,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用莲华的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Renge</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Renge</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3020,16 +3020,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用泉奈的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Izuna</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Izuna</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3056,16 +3056,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用绘里的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Eri</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Eri</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3092,16 +3092,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用琴里的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kotori</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kotori</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3128,16 +3128,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用月脉的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Tsukuyo</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Tsukuyo</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3164,16 +3164,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用名草的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nagusa</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nagusa</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3200,16 +3200,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用野宫的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nonomi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nonomi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3236,16 +3236,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用渚的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nagisa</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nagisa</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3272,16 +3272,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用明里的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Akari</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Akari</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3308,16 +3308,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用泉的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Izumi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Izumi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3344,16 +3344,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用晴奈的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Haruna</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Haruna</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3380,16 +3380,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用海香的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Umika</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Umika</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3416,16 +3416,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用静子的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Shizuko</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Shizuko</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3452,16 +3452,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用菲娜的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Pina</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Pina</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3477,7 +3477,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Reisa_A_Proplevel</defName>
+    <defName>BANW_ReisaA_Proplevel</defName>
     <label>玲纱(魔法)的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3488,16 +3488,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用玲纱(魔法)的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Reisa_A</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Reisa_A</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3524,16 +3524,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用时的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Toki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Toki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3560,16 +3560,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用濑名的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Sena</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Sena</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3596,16 +3596,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用康纳的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kanna</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kanna</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3632,16 +3632,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用桐乃的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kirino</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kirino</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3668,16 +3668,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用吹雪的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Fubuki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Fubuki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3704,16 +3704,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用响的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hibiki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hibiki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3740,16 +3740,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用响的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Eimi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Eimi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3776,16 +3776,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用日鞠的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Himari</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Himari</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3812,16 +3812,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用歌原的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Utaha</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Utaha</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3837,7 +3837,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Suzumi_A_Proplevel</defName>
+    <defName>BANW_SuzumiA_Proplevel</defName>
     <label>铃美(魔法)的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3848,16 +3848,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用铃美(魔法)的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Suzumi_A</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Suzumi_A</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3884,16 +3884,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用三森的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mimori</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mimori</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3920,16 +3920,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用枫的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kaede</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kaede</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3956,16 +3956,16 @@
     </graphicData>
 
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用椿的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Tsubaki</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Tsubaki</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3990,16 +3990,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用果穗的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kaho</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kaho</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4024,16 +4024,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用尼娅的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Niya</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Niya</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4058,16 +4058,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用爱丽丝(武装)的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Arisu_B</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Arisu_B</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4092,16 +4092,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用霞的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kasumi</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kasumi</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4126,16 +4126,16 @@
       <drawSize>1.0</drawSize>
     </graphicData>
     <comps>
-      <!-- 可使用道具组件 -->
+      
       <li Class="CompProperties_Usable">
         <useJob>UseItem</useJob>
         <useLabel>使用惠的神明文字</useLabel>
         <useDuration>60</useDuration>
       </li>
-      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Megu</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Megu</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4151,11 +4151,645 @@
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
     <defName>BANW_Marina_Proplevel</defName>
-    <label>真里奈的神名文字</label>
-    <description>真里奈的神名文字。</description>
+    <label>真里奈的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
-      <texPath>Prop/Proplevel/Megu</texPath>
+      <texPath>Prop/Proplevel/Marina</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
     </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用真里奈的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Marina</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kei_Proplevel</defName>
+    <label>凯伊的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Kei</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用凯伊的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kei</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Tomoe_Proplevel</defName>
+    <label>巴的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Tomoe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用巴的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Tomoe</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Shigure_Proplevel</defName>
+    <label>时雨的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Shigure</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用时雨的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Shigure</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nodoka_Proplevel</defName>
+    <label>和香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Nodoka</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用和香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nodoka</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Yakumo_Proplevel</defName>
+    <label>八云的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Yakumo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用八云的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Yakumo</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Minori_Proplevel</defName>
+    <label>实梨的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Minori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用实梨的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Minori</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Takane_Proplevel</defName>
+    <label>贵音的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Takane</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用贵音的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Takane</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Meru_Proplevel</defName>
+    <label>梅露的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Meru</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用梅露的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Meru</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Momiji_Proplevel</defName>
+    <label>红叶的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Momiji</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用红叶的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Momiji</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Reijo_Proplevel</defName>
+    <label>丽情的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Reijo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用丽情的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Reijo</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+<ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Rumi_Proplevel</defName>
+    <label>瑠海的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Rumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用瑠海的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Rumi</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mina_Proplevel</defName>
+    <label>南的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Mina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用南的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mina</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Miku_Proplevel</defName>
+    <label>初音的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Miku</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用初音的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Miku</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Wakamo_Proplevel</defName>
+    <label>若藻的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Wakamo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用若藻的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Wakamo</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hoshiro_A_Proplevel</defName>
+    <label>星野(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hoshiro_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用星野(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hoshiro_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hina_B_Proplevel</defName>
+    <label>日奈(礼服)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hina_B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用日奈(礼服)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hina_B</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hanako_A_Proplevel</defName>
+    <label>花子(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hanako_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用花子(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hanako_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Wakamo_A_Proplevel</defName>
+    <label>若藻(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hina_B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用若藻(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Wakamo_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
   </ThingDef>
 </Defs>

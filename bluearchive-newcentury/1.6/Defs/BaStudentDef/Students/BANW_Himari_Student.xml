@@ -4,6 +4,7 @@
     <label>日鞠</label>
     <studentId>BANW_Himari</studentId>
     <kindDef>BANW_Himari</kindDef>
+
     <BaStudentUI>
 			<!-- 学生头像路径，用于在UI中显示学生头像 -->
 			<StudentAvatar>ManuaUI/Avatar/Himari</StudentAvatar>
@@ -66,27 +67,23 @@
 				<WapenTypeText>手枪</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Mika/Mika_A</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>呵呵，见识一下我的实力吧</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名我方单位增加<color=#00FFFF>102%</color>的攻击力（持续<color=#00FFFF>13</color>秒）]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Akane/Akane_EXX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>测试技能2</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能2 / <color=black>COST:</color><color=blue>1342</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>有些令人意外呢</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对一名敌人造成攻击力<color=#00FFFF>241%</color>的伤害，并且目标闪避率减少<color=#00FFFF>27%</color>（持续<color=#00FFFF>23</color>秒）]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
@@ -124,13 +121,13 @@
 			</StudentBio>
 		</BaStudentUI>
     <baStudentData>
-			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			
 			<DamageType>Through</DamageType>
-			<!-- 防御类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			
 			<DefenseType>Explosion</DefenseType>
-			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			
 			<PosType>Assist</PosType>
-			<!-- 星级数量 -->
+			
 			<StarCont>3</StarCont>
 			<DraggableAudio>Common\Sounds\Fight\Himari</DraggableAudio>
 		

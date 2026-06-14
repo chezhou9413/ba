@@ -136,7 +136,7 @@
     <label>甜蜜炮火</label>
     <projectile>
       <damageDef>BANC_Damage_Kazusa_A</damageDef><!--子弹类型-->
-      <damageAmountBase>167</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>113</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>1.0</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->

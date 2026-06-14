@@ -8,6 +8,9 @@
 		<isFighter>true</isFighter>
 
 		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        <li>BAWN_Shun_EXX</li>
+        </abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>
@@ -69,13 +72,14 @@
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Shun_A>0</BAWC_TraitDef_Shun_A>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>瞬</kindName>
-				<kindDesName>瞬 瞬 春原</kindDesName>
+				<kindDesName>春原 瞬</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>18</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
@@ -104,4 +108,21 @@
 		</modExtensions>
 	</PawnKindDef>
 
+	<TraitDef>
+        <defName>BAWC_TraitDef_Shun_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;教官的品格&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

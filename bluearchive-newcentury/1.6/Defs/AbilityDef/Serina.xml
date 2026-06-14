@@ -60,6 +60,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
+  
     <DamageDef ParentName="BANC_Damage_shenmi">
     <defName>BANC_Damage_Serina</defName><!--命名格式-->
     <additionalHediffs><!--额外健康-->
@@ -69,8 +70,8 @@
       </li>
     </additionalHediffs>
     <soundExplosion>BANW_Sound_Kong</soundExplosion>
-      <modExtensions>
-
+     <modExtensions>
+      <li Class="DodgeMod.IgnoreDodgeExtension" />
     </modExtensions>
   </DamageDef>
 <AbilityDef>

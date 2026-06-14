@@ -81,8 +81,8 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>!锭前</kindName>
-				<kindDesName>!锭前 纱织</kindDesName>
+				<kindName>纱织</kindName>
+				<kindDesName>锭前 纱织</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>
 			</li>

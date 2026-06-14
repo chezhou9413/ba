@@ -163,7 +163,7 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>0</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>220</damageAmount>
+                <damageAmount>80</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <!-- 穿透 --> 
@@ -175,7 +175,7 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>30</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>220</damageAmount>
+                <damageAmount>80</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <!-- 穿透 --> 
@@ -197,7 +197,7 @@
             </li>
             <li>
                 <tick>120</tick>
-                <damageAmount>222</damageAmount>
+                <damageAmount>80</damageAmount>
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>

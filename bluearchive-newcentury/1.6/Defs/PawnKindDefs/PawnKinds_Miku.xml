@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Miku</defName>
+		<label>-初音-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryLink</li>
+					<li>BANW_BackstoryMiku</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>16</minGenerationAge>
+		<maxGenerationAge>17</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Miku</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Miku</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>20</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Miku>0</BAWC_TraitDef_Miku>
+			<BAWC_TraitDef_Miku_A>0</BAWC_TraitDef_Miku_A>
+		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>初音</kindName>
+				<kindDesName>初音 未来</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>16</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Link/Miku/Head/Miku_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Link/Miku/Body/Miku_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Link/Miku/Hair/Miku_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Link/Miku/Hair/Miku_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Miku_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF0000&gt;初音未来的声援&lt;/color&gt;</label>
+                <description>被动技能:自身治疗质量增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+					<MedicalTendQuality>1.26</MedicalTendQuality>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Miku</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#00FFFF&gt;世界第一的公主殿下&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}是来自异世界的虚拟歌姬，被粉丝们誉为"世界第一的公主殿下"。拥有无与伦比的魅力和影响力，走到哪里都是众人瞩目的焦点。其存在本身就能让周围的人感到振奋和快乐，是团队中不可或缺的精神支柱。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+				<PawnBeauty>5</PawnBeauty>
+                <MentalBreakThreshold>-0.5</MentalBreakThreshold>
+				<SocialImpact>1</SocialImpact>
+				<WorkSpeedGlobal>0.15</WorkSpeedGlobal>
+				<CertaintyLossFactor>-0.3</CertaintyLossFactor>
+                </statOffsets>
+				<statFactors>
+                     <ConversionPower>1.5</ConversionPower>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	
+</Defs>

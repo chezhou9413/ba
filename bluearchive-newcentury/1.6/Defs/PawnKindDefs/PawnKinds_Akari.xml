@@ -78,7 +78,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>明里</kindName>
-				<kindDesName>明里 明里 鳄渊</kindDesName>
+				<kindDesName>鳄渊 明里</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>
@@ -139,6 +139,7 @@
                 <description>被动技能：自身生命值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
                 </statOffsets>
 				<statFactors>
 				</statFactors>

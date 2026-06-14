@@ -69,11 +69,11 @@
   </ThingDef>
 
   <ThingDef Name="BANC_BaseGunWithQuality" Abstract="True" ParentName="BANC_BaseGun">
-   <!--<comps>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
-    </comps>-->
+   
+
+
+
+
   </ThingDef>
 
   <ThingDef Name="BANC_BaseMakeableGun" ParentName="BANC_BaseGunWithQuality" Abstract="True">
@@ -99,7 +99,7 @@
     </comps>
   </ThingDef>
 
-  <!-- Without Quality -->
+  
   <ThingDef Name="BANC_BaseMakeableGunWithNoQuality" ParentName="BANC_BaseGun" Abstract="True">
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>

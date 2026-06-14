@@ -76,10 +76,13 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>未花</kindName>
-				<kindDesName>未花 未花 圣园</kindDesName>
+				<kindDesName>圣园 未花</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>
 			</li>
+			<li Class="BANWlLib.KindStats.BANWKindStatExtension">
+        <worldCargoCapacityOffset>100</worldCargoCapacityOffset>
+      </li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -108,18 +111,18 @@
 	</PawnKindDef>
 
 	 <HediffDef>
-        <!-- 状态的唯一标识符 -->
+        
         <defName>BAWN_Mika_hedi_C</defName>
-        <!-- 显示名称 -->
+        
         <label>本尼迪克特</label>
-        <!-- 效果描述 -->
+        
         <description>被动技能，护甲穿透增加1000%，承伤系数-12%</description>
         <defaultLabelColor>(255, 153, 255)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
+        
         <isBad>false</isBad>
         <hediffClass>HediffWithComps</hediffClass>
         <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        
           <stages>
           <li>     
            <statOffsets>
@@ -168,7 +171,7 @@
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.3</CertaintyLossFactor>
-                    <CarryingCapacity>300</CarryingCapacity><!--		        ■承载力--> 
+                    <CarryingCapacity>300</CarryingCapacity> 
 </statOffsets>
 				<statFactors>
                 <MeleeDamageFactor>5.5</MeleeDamageFactor>

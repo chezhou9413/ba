@@ -81,10 +81,11 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>美祢</kindName>
-				<kindDesName>美祢 美祢 苍森</kindDesName>
+				<kindDesName>苍森 美祢</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>17</kindAge>
 			</li>
+			
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -122,7 +123,7 @@
                 <statOffsets>
 				<PainShockThreshold>+0.30</PainShockThreshold>
 				<IncomingDamageFactor>-0.10</IncomingDamageFactor>
-				<CarryingCapacity>200</CarryingCapacity><!--		        ■承载力--> 
+				<CarryingCapacity>200</CarryingCapacity> 
 <MentalBreakThreshold>-0.1</MentalBreakThreshold>
                 </statOffsets>
 				<statFactors>
@@ -144,7 +145,7 @@
                 <description>被动技能:自身生命值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    
+                    <BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
                 </statOffsets>
 				<statFactors>
 				</statFactors>

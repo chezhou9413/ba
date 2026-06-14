@@ -60,7 +60,7 @@
     <label>双龙子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>25</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>10</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.45</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->

@@ -102,6 +102,7 @@
                 <description>被动技能：自身&lt;color=#DC143C&gt;生命值增加26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets> 
+					<BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
                 </statOffsets>
 				<statFactors>
 				</statFactors>

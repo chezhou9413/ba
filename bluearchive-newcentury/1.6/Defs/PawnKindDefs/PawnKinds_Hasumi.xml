@@ -79,7 +79,7 @@
 				<kindName>羽川</kindName>
 				<kindDesName>羽川 莲见</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>17</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
@@ -131,9 +131,10 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#FFBB00&gt;目标搜索&lt;/color&gt;</label>
-                <description>子技能:增加自身&lt;color=#DC143C&gt;15%&lt;/color&gt;的攻击射程</description>
+                <description>子技能:增加自身&lt;color=#DC143C&gt;15&lt;/color&gt;格的攻击射程</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_RangedWeapon_RangeOffset>15</BANW_RangedWeapon_RangeOffset>
 </statOffsets>
             </li>
         </degreeDatas>

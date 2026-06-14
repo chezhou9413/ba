@@ -4,7 +4,7 @@
     <colorSpectrum>
       <li>(0, 0.737, 0.847)</li>
     </colorSpectrum>
-    <!--文化-->
+    
     <allowedCultures>
       <li>Astropolitan</li>
     </allowedCultures>
@@ -13,11 +13,11 @@
       <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
       <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
     </disallowedMemes>
-    <!--<xenotypeSet Inherit="False" MayRequire="Ludeon.RimWorld.Biotech">
-      <xenotypeChances MayRequire="Ludeon.RimWorld.Biotech">
-        <Axolotl_Xenotype_MoeLotlBase MayRequire="Ludeon.RimWorld.Biotech">999</Axolotl_Xenotype_MoeLotlBase>
-      </xenotypeChances>
-    </xenotypeSet>-->
+    
+
+
+
+
   </FactionDef>
   <FactionDef ParentName="BANW_PlayerFactionBase">
     <defName>BANW_PlayerFaction</defName>
@@ -54,7 +54,7 @@
       </rulesStrings>
     </rulePack>
   </RulePackDef>
-  <!--派系namer-->
+  
   <RulePackDef>
     <defName>BANW_NamerFaction</defName>
     <rulePack>

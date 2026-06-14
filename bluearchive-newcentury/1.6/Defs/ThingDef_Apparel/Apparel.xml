@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <!--衣服-->
+    
     <ThingDef Name="BANW_Apparel_Base" ParentName="ApparelNoQualityBase" Abstract="True">
         <smeltable/>
 		<useHitPoints>false</useHitPoints>
@@ -20,15 +20,15 @@
     </equippedStatOffsets>
 		<apparel>
 			<bodyPartGroups>
-				<li>Torso</li><!--躯干-->
-				<li>Neck</li><!--脖子-->
-				<li>Shoulders</li><!--肩膀-->
-				<li>Arms</li><!--臂-->
-				<li>Legs</li><!--腿-->
-				<li>FullHead</li><!--头-->
-				<li>Feet</li><!--脚-->
-				<li>Waist</li><!--腰-->
-				<li>Hands</li><!--手-->
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>FullHead</li>
+				<li>Feet</li>
+				<li>Waist</li>
+				<li>Hands</li>
 			</bodyPartGroups>
 		    <layers>
 			    <li>Shell</li>
@@ -40,7 +40,7 @@
 		<tradeability>None</tradeability>
 		<scatterableOnMapGen>false</scatterableOnMapGen>
     </ThingDef>
-<!--A饰品-->
+
      <ThingDef Name="BANC_Apparel_Base" ParentName="ApparelNoQualityBase" Abstract="true">
         <smeltable/>
 		<useHitPoints>false</useHitPoints>
@@ -63,26 +63,26 @@
         </statBases>
 		<apparel>
 			<bodyPartGroups>
-				<li>Torso</li><!--躯干-->
-				<li>Neck</li><!--脖子-->
-				<li>Shoulders</li><!--肩膀-->
-				<li>Arms</li><!--臂-->
-				<li>Legs</li><!--腿-->
-				<li>FullHead</li><!--头-->
-				<li>Feet</li><!--脚-->
-				<li>Waist</li><!--腰-->
-				<li>Hands</li><!--手-->
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>FullHead</li>
+				<li>Feet</li>
+				<li>Waist</li>
+				<li>Hands</li>
 			</bodyPartGroups>
 
 		</apparel>
-		<!--<tradeability>Sellable</tradeability>-->
+		
 		<thingCategories>
 			<li>BAWN_Costume_Belt</li>
 		</thingCategories>
 		<tradeability>Sellable</tradeability>
 		<scatterableOnMapGen>false</scatterableOnMapGen>
     </ThingDef>
-<!--B饰品-->
+
 	<ThingDef Name="BANC_Apparel_Base_Tow" ParentName="ApparelNoQualityBase" Abstract="true">
         <smeltable/>
 		<useHitPoints>false</useHitPoints>
@@ -105,19 +105,19 @@
         </statBases>
 		<apparel>
 			<bodyPartGroups>
-				<li>Torso</li><!--躯干-->
-				<li>Neck</li><!--脖子-->
-				<li>Shoulders</li><!--肩膀-->
-				<li>Arms</li><!--臂-->
-				<li>Legs</li><!--腿-->
-				<li>FullHead</li><!--头-->
-				<li>Feet</li><!--脚-->
-				<li>Waist</li><!--腰-->
-				<li>Hands</li><!--手-->
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>FullHead</li>
+				<li>Feet</li>
+				<li>Waist</li>
+				<li>Hands</li>
 			</bodyPartGroups>
 
 		</apparel>
-		<!--<tradeability>Sellable</tradeability>-->
+		
 		<thingCategories>
 			<li>BAWN_Costume_Belt</li>
 		</thingCategories>
@@ -169,7 +169,7 @@
 		<countsAsClothingForNudity>false</countsAsClothingForNudity>
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 		</apparel>
-		<!--<tradeability>Sellable</tradeability>-->
+		
 		<thingCategories>
 			<li>BAWN_Costume_Belt</li>
 		</thingCategories>

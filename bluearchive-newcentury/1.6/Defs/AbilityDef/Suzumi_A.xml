@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Suzumi_A_EXX</defName>
+ <label>这是基础魔法！</label>
+ <description>对圆形范围内的友方单位攻击力增加51%基础攻击力增加26%(持续41秒)</description>
+ <iconPath>Ability/Icon/Suzumi_A/Suzumi_EX</iconPath>
+ <cooldownTicksRange>3000</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Suzumi_A_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SphereArea">
+<warmupEffecter>BANW_Suzumi_A_Ef_A</warmupEffecter>
+ <soundCast>OrbitalTargeter_Fire</soundCast>
+ <verbClass>BANWlLib.BaVerb.Verb_SphereArea</verbClass> <!-- 改为投射物动词类 -->
+ <JobDef>BANW_Job_TEST_Suzumi_A</JobDef>      <!-- 技能定义标识符 -->
+ <violent>false</violent>      <!-- 是否为暴力行为 -->
+ <range>8.9</range><!-- 投掷范围 -->
+ <Sphereradius>8.9</Sphereradius>
+ <warmupTime>1.9</warmupTime><!-- 前摇时间 -->
+ <requireLineOfSight>false</requireLineOfSight>      <!-- 是否需要视线 -->
+ <targetParams><!-- 目标参数设置 -->
+  <onlyTargetColonists>True</onlyTargetColonists>
+  <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 可以选择其他殖民者 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 可以选择人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+
+  </comps>
+</AbilityDef>
+
+ <!-- 这个是自己友军添加hediff的job,verb公用就行了 -->
+  <JobDef Class="BANWlLib.BaDef.BaJobDef_SphereSelfHediff">
+    <defName>BANW_Job_TEST_Suzumi_A</defName>
+    <driverClass>BANWlLib.BaJob.Job_SphereSelfHediff</driverClass>
+    <!-- 球形范围攻击的伤害配置 -->
+    <damages>
+      <li>
+        <tick>0</tick>
+        <effecterDef></effecterDef>
+        <damages>
+          <li>
+            <!-- 延迟40个TICK后执行 -->
+            <Delaytick>0</Delaytick>
+            <!-- 触发特效 -->
+            <effecterDef></effecterDef>
+            <!-- 触发hediff -->
+            <tiggerHediff>BAWN_Suzumi_A_Buff_A</tiggerHediff>
+          </li>
+        </damages>
+      </li>
+    </damages>
+  </JobDef>
+ <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Suzumi_A_Buff_A</defName>
+        <!-- 显示名称 -->
+        <label>这是基础魔法！</label>
+        <!-- 效果描述 -->
+        <description>攻击力增加51%，基础攻击力增加26%</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+           <statOffsets>
+            <BANW_RangedWeapon_Damage>+0.26</BANW_RangedWeapon_Damage>
+           <BANW_FinalDamageMultiplier>+0.47</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>2460</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Suzumi_A_Ef_B</stateEffecter>
+      </li>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <!-- 目标选择参数 -->
+        <targetingParameters>
+          <!-- 不影响建筑 -->
+          <canTargetBuildings>false</canTargetBuildings>
+          <!-- 不影响动物 -->
+          <canTargetAnimals>false</canTargetAnimals>
+          <!-- 不影响机械体 -->
+          <canTargetMechs>false</canTargetMechs>
+          <!-- 只影响殖民者 -->
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+      </li>
+    </comps>
+    </HediffDef>
+</Defs>

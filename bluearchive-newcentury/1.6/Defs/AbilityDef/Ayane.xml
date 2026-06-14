@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Ayane_EXX</defName>
+ <label>特级快递：战斗支援物资</label>
+ <description>对圆形范围内的友方单位回复270点生命值</description>
+ <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
+ <cooldownTicksRange>2400</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Ayane_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SphereArea">
+<warmupEffecter></warmupEffecter>
+ <soundCast></soundCast>
+ <verbClass>BANWlLib.BaVerb.Verb_SphereArea</verbClass> <!-- 改为投射物动词类 -->
+ <JobDef>BANW_Job_TEST_Ayane</JobDef>      <!-- 技能定义标识符 -->
+ <violent>false</violent>      <!-- 是否为暴力行为 -->
+ <range>69.9</range><!-- 投掷范围 -->
+ <Sphereradius>4.9</Sphereradius>
+ <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+ <requireLineOfSight>false</requireLineOfSight>      <!-- 是否需要视线 -->
+ <targetParams><!-- 目标参数设置 -->
+  <onlyTargetColonists>True</onlyTargetColonists>
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+       <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Ayane_Ef_A</effecterDef>
+        <maintainForTicks>480</maintainForTicks>
+      </li>
+  </comps>
+</AbilityDef>
+
+ <!-- 这个是自己友军添加hediff的job,verb公用就行了 -->
+  <JobDef Class="BANWlLib.BaDef.BaJobDef_SphereSelfHediff">
+    <defName>BANW_Job_TEST_Ayane</defName>
+    <driverClass>BANWlLib.BaJob.Job_SphereSelfHediff</driverClass>
+    <!-- 球形范围攻击的伤害配置 -->
+    <damages>
+      <li>
+        <tick>0</tick>
+        <effecterDef></effecterDef>
+        <damages>
+          <li>
+            <!-- 延迟40个TICK后执行 -->
+            <Delaytick>0</Delaytick>
+            <!-- 触发特效 -->
+            <effecterDef></effecterDef>
+            <!-- 触发hediff -->
+            <tiggerHediff>BAWN_Ayane_Buff_A</tiggerHediff>
+          </li>
+          <li>
+            <Delaytick>60</Delaytick>
+            <effecterDef></effecterDef>
+            <tiggerHediff></tiggerHediff>
+          </li>
+          <li>
+            <Delaytick>120</Delaytick>
+            <effecterDef></effecterDef>
+            <tiggerHediff></tiggerHediff>
+          </li>
+
+        </damages>
+      </li>
+    </damages>
+  </JobDef>
+ <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Ayane_Buff_A</defName>
+        <!-- 显示名称 -->
+        <label>特级快递：战斗支援物资</label>
+        <!-- 效果描述 -->
+        <description>回复270点生命值</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>120</disappearsAfterTicks>
+      </li>
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healAmount>2.2</healAmount>
+        <healIntervalTicks>1</healIntervalTicks>
+        <isHeatScar>true</isHeatScar>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>
+      </li>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <!-- 目标选择参数 -->
+        <targetingParameters>
+          <!-- 不影响建筑 -->
+          <canTargetBuildings>false</canTargetBuildings>
+          <!-- 不影响动物 -->
+          <canTargetAnimals>false</canTargetAnimals>
+          <!-- 不影响机械体 -->
+          <canTargetMechs>false</canTargetMechs>
+          <!-- 只影响殖民者 -->
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+      </li>
+    </comps>
+    
+    <tags>
+      <li>Medical</li>
+      <li>Stimulant</li>
+      <li>Temporary</li>
+      <li>PainRelief</li>
+      <li>ConsciousnessBoost</li>
+    </tags>
+    </HediffDef>
+</Defs>

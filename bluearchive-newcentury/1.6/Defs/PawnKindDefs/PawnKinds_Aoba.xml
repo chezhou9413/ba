@@ -43,19 +43,19 @@
 		<skills>
 			<li>
 				<skill>Shooting</skill>
-				<range>8~10</range>
+				<range>8</range>
 			</li>
 			<li>
 				<skill>Construction</skill>
-				<range>12~15</range>
+				<range>15</range>
 			</li>
 			<li>
 				<skill>Mining</skill>
-				<range>8~12</range>
+				<range>12</range>
 			</li>
 			<li>
 				<skill>Crafting</skill>
-				<range>12~15</range>
+				<range>14</range>
 			</li>
 			<li>
 				<skill>Social</skill>
@@ -72,7 +72,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>青叶</kindName>
-				<kindDesName>青叶 !内海</kindDesName>
+				<kindDesName>内海 青叶</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>

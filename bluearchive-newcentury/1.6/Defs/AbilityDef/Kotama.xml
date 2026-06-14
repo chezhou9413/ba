@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+<defName>BAWN_Kotama_EX</defName>
+ <label>监听弱点</label>
+ <description>对1名敌方单位造成自身攻击力450%的伤害并减少19%攻击力。（持续20秒）</description>
+ <iconPath>Ability/Icon/Juri/Juri_EX</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Kotama_Skill_EX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>False</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>20</Ability_Duration>
+ </statBases>
+ <verbProperties>
+  <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+ <soundCast>BANW_Skill_A</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>65.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Kotama_EX</projectileDef>
+      </li>
+</comps>
+</AbilityDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Kotama_EX</defName>
+    <label>监听弱点</label>
+    <projectile>
+      <damageDef>BANC_Damage_Kotama</damageDef><!--子弹类型-->
+      <damageAmountBase>198</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>5.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>200</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>2.0</drawSize>
+      <texPath>Projectile/kongbai</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+<DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Kotama</defName><!--通用贯通-->
+<additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Kotama_Buff_B</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Kotama_Buff_B</defName>
+        <!-- 显示名称 -->
+        <label>监听弱点</label>
+        <!-- 效果描述 -->
+        <description>对1名敌方单位造成攻击力减少19%。</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+            <statOffsets>
+            <BANW_FinalDamageMultiplier>-0.19</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_C</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+<AbilityDef>
+<defName>BAWN_Kotama_EXX</defName>
+ <label>开始监听</label>
+ <description>对圆形范围内的友方单位攻击力增加47%(持续30秒)</description>
+ <iconPath>Ability/Icon/Airy/Airy_A</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Kotama_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SphereArea">
+<warmupEffecter></warmupEffecter>
+ <soundCast>OrbitalTargeter_Fire</soundCast>
+ <verbClass>BANWlLib.BaVerb.Verb_SphereArea</verbClass> <!-- 改为投射物动词类 -->
+ <JobDef>BANW_Job_TEST_Kotama</JobDef>      <!-- 技能定义标识符 -->
+ <violent>false</violent>      <!-- 是否为暴力行为 -->
+ <range>69.9</range><!-- 投掷范围 -->
+ <Sphereradius>4.9</Sphereradius>
+ <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+ <requireLineOfSight>false</requireLineOfSight>      <!-- 是否需要视线 -->
+ <targetParams><!-- 目标参数设置 -->
+  <onlyTargetColonists>True</onlyTargetColonists>
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+       <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_Kotama_B</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+  </comps>
+</AbilityDef>
+
+ <!-- 这个是自己友军添加hediff的job,verb公用就行了 -->
+  <JobDef Class="BANWlLib.BaDef.BaJobDef_SphereSelfHediff">
+    <defName>BANW_Job_TEST_Kotama</defName>
+    <driverClass>BANWlLib.BaJob.Job_SphereSelfHediff</driverClass>
+    <!-- 球形范围攻击的伤害配置 -->
+    <damages>
+      <li>
+        <tick>0</tick>
+        <effecterDef></effecterDef>
+        <damages>
+          <li>
+            <!-- 延迟40个TICK后执行 -->
+            <Delaytick>0</Delaytick>
+            <!-- 触发特效 -->
+            <effecterDef></effecterDef>
+            <!-- 触发hediff -->
+            <tiggerHediff>BAWN_Kotama_Buff_A</tiggerHediff>
+          </li>
+        </damages>
+      </li>
+    </damages>
+  </JobDef>
+ <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Kotama_Buff_A</defName>
+        <!-- 显示名称 -->
+        <label>开始监听</label>
+        <!-- 效果描述 -->
+        <description>攻击力增加47%.</description>
+        <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+           <statOffsets>
+           <BANW_FinalDamageMultiplier>+0.47</BANW_FinalDamageMultiplier>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1800</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_Kotama_A</stateEffecter>
+      </li>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <!-- 目标选择参数 -->
+        <targetingParameters>
+          <!-- 不影响建筑 -->
+          <canTargetBuildings>false</canTargetBuildings>
+          <!-- 不影响动物 -->
+          <canTargetAnimals>false</canTargetAnimals>
+          <!-- 不影响机械体 -->
+          <canTargetMechs>false</canTargetMechs>
+          <!-- 只影响殖民者 -->
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+      </li>
+    </comps>
+    </HediffDef>
+</Defs>

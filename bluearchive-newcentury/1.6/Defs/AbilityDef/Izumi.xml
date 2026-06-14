@@ -47,7 +47,7 @@
     <label>瞄准，砰！</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>34</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>24</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->

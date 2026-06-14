@@ -4,6 +4,7 @@
     <label>日和</label>
     <studentId>BANW_Hiyori</studentId>
     <kindDef>BANW_Hiyori</kindDef>
+
     <BaStudentUI>
 			<!-- 学生头像路径，用于在UI中显示学生头像 -->
 			<StudentAvatar>ManuaUI/Avatar/Hiyori</StudentAvatar>
@@ -66,39 +67,33 @@
 				<WapenTypeText>狙击枪</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_EX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>我，我来支援了！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[发射子弹，对直线范围内的敌方单位造成自身攻击力<color=#00FFFF>331%</color>的伤害，并减少<color=#00FFFF>30%</color>的护甲(持续<color=#00FFFF>30</color>秒)]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_EX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>测试技能2</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能2 / <color=black>COST:</color><color=blue>1342</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>会，会很疼哦！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>409%</color>的伤害，并减少<color=#00FFFF>10%</color>的护甲（持续<color=#00FFFF>30</color>秒）]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
-				<AbilityTitle>测试技能3</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能3 / <color=black>COST: </color><color=blue>20</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能3的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>杂志上学到的知识</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身暴击伤害增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -110,7 +105,7 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>
@@ -128,13 +123,13 @@
 			</StudentBio>
 		</BaStudentUI>
     <baStudentData>
-			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			
 			<DamageType>Explosion</DamageType>
-			<!-- 防御类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			
 			<DefenseType>Explosion</DefenseType>
-			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			
 			<PosType>Assist</PosType>
-			<!-- 星级数量 -->
+			
 			<StarCont>3</StarCont>
 			<DraggableAudio>Common\Sounds\Fight\Hiyori</DraggableAudio>
 			<GakaStudentThingData>
@@ -163,7 +158,7 @@
 					<value>100</value>
 				</li>
 			</OneGakaStudentThingData>
-			<!-- 抽卡面板显示的纹理，就是最后翻牌那一下的头像 -->
+			
 			<avtTexPath>Gacha/Student/Hiyori</avtTexPath>
 		</baStudentData>
   </BANWlLib.BaDef.BaStudentDef>

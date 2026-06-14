@@ -77,11 +77,12 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>生盐</kindName>
+				<kindName>诺亚</kindName>
 				<kindDesName>生盐 诺亚</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>16</kindAge>
 			</li>
+			
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -121,7 +122,7 @@
                 <description>被动技能:自身&lt;color=#DC143C&gt;生命值增加26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-
+                     <BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
                 </statOffsets>
 				<statFactors>
 

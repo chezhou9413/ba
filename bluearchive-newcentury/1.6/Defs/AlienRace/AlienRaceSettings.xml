@@ -10,7 +10,7 @@
         <starUpEffect>BANW_Effecter_B</starUpEffect>
       </li>
       <li Class="BANWlLib.comp.LevelVisualCompPropertie">
-        <!-- 等级特效列表，使用模组中已有的特效 -->
+        
         <levelMote>
           <li>BANW_Effecter_LevelUp</li>
         </levelMote>
@@ -27,9 +27,9 @@
       <generalSettings>
         <alienPartGenerator>
           <customDrawSize>(1, 1)</customDrawSize>
-          <!-- 小人整体大小 -->
+          
           <bodyAddons>
-            <!-- 光环 -->
+            
             <li>
               <name>KivotosStudent_halo</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -45,7 +45,7 @@
                   <drawnStanding>true</drawnStanding>
                   <drawnLaying>false</drawnLaying>
                   <drawnInBed>false</drawnInBed>
-                  <!-- 睡觉不显示光环 -->
+                  
                 </Posture>
               </conditions>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
@@ -64,7 +64,7 @@
                 </east>
               </offsets>
             </li>
-            <!-- 头 -->
+            
             <li>
               <name>KivotosStudent_head</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -78,21 +78,21 @@
               <alignWithHead>true</alignWithHead>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <offsets>
-                <north>
-                  <layerOffset>-0.28</layerOffset>
-                  <offset>(0,-0.345)</offset>
-                </north>
-                <south>
-                  <layerOffset>-0.28</layerOffset>
-                  <offset>(0,-0.355)</offset>
-                </south>
-                <east>
-                  <layerOffset>-0.48</layerOffset>
-                  <offset>(0.09,-0.34)</offset>
-                </east>
+               <north>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.28</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
               </offsets>
             </li>
-            <!-- 身体 -->
+            
             <li>
               <name>KivotosStudent_Body</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -115,21 +115,20 @@
               </conditions>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <offsets>
-                <north>
-                  <layerOffset>-0.39</layerOffset>
-                  <offset>(0,0)</offset>
-                </north>
-                <south>
-                  <layerOffset>-0.29</layerOffset>
-                  <offset>(0,0)</offset>
-                </south>
-                <east>
-                  <layerOffset>-0.27</layerOffset>
-                  <offset>(0,0)</offset>
-                </east>
+               <north>
+									<layerOffset>-0.39</layerOffset>
+									<offset>(0,0)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.29</layerOffset>
+									<offset>(0,0)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,0)</offset>
+								</east>
               </offsets>
             </li>
-            <!-- 头发前 -->
             <li>
               <name>KivotosStudent_hairfront</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -144,20 +143,20 @@
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <offsets>
                 <north>
-                  <layerOffset>-0.4</layerOffset>
-                  <offset>(0,-0.345)</offset>
-                </north>
-                <south>
-                  <layerOffset>-0.27</layerOffset>
-                  <offset>(0,-0.355)</offset>
-                </south>
-                <east>
-                  <layerOffset>-0.27</layerOffset>
-                  <offset>(0.09,-0.34)</offset>
-                </east>
+									<layerOffset>-0.4</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>-0.27</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.26</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
               </offsets>
             </li>
-            <!-- 头发后 -->
+            
             <li>
               <name>KivotosStudent_hairback</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -170,27 +169,27 @@
                   <drawnStanding>true</drawnStanding>
                   <drawnLaying>true</drawnLaying>
                   <drawnInBed>false</drawnInBed>
-                  <!-- 睡觉不显示光环 -->
+                  
                 </Posture>
               </conditions>
               <alignWithHead>true</alignWithHead>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
               <offsets>
-                <north>
-                  <layerOffset>-0.281</layerOffset>
-                  <offset>(0,-0.345)</offset>
-                </north>
-                <south>
-                  <layerOffset>0.1</layerOffset>
-                  <offset>(0,-0.355)</offset>
-                </south>
-                <east>
-                  <layerOffset>-0.08</layerOffset>
-                  <offset>(0.09,-0.34)</offset>
-                </east>
+               <north>
+									<layerOffset>-0.281</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</north>
+								<south>
+									<layerOffset>0.1</layerOffset>
+									<offset>(0,-0.345)</offset>
+								</south>
+								<east>
+									<layerOffset>-0.08</layerOffset>
+									<offset>(0.09,-0.34)</offset>
+								</east>
               </offsets>
             </li>
-            <!-- 光环 -->
+            
             <li>
               <name>KivotosStudent_halo_layer2</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -205,7 +204,7 @@
                   <drawnStanding>true</drawnStanding>
                   <drawnLaying>false</drawnLaying>
                   <drawnInBed>false</drawnInBed>
-                  <!-- 睡觉不显示光环 -->
+                  
                 </Posture>
               </conditions>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
@@ -307,7 +306,7 @@
                 </east>
               </offsets>
             </li>
-            <!-- 身体 -->
+            
             <li>
               <name>KivotosStudent_Body_layer2</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -371,7 +370,7 @@
                 </east>
               </offsets>
             </li>
-            <!-- 头 -->
+            
             <li>
               <name>KivotosStudent_head_layer5</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -399,7 +398,7 @@
                 </east>
               </offsets>
             </li>
-            <!-- 头发前 -->
+            
             <li>
               <name>KivotosStudent_hairfront_layer3</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -427,7 +426,7 @@
                 </east>
               </offsets>
             </li>
-            <!-- 头发后 -->
+            
             <li>
               <name>KivotosStudent_hairback_layer2</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -440,7 +439,7 @@
                   <drawnStanding>true</drawnStanding>
                   <drawnLaying>true</drawnLaying>
                   <drawnInBed>false</drawnInBed>
-                  <!-- 睡觉不显示光环 -->
+                  
                 </Posture>
               </conditions>
               <alignWithHead>true</alignWithHead>
@@ -460,7 +459,7 @@
                 </east>
               </offsets>
             </li>
-            <!-- 头发后 -->
+            
             <li>
               <name>KivotosStudent_hairback_layer3</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -473,7 +472,7 @@
                   <drawnStanding>true</drawnStanding>
                   <drawnLaying>true</drawnLaying>
                   <drawnInBed>false</drawnInBed>
-                  <!-- 睡觉不显示光环 -->
+                  
                 </Posture>
               </conditions>
               <alignWithHead>true</alignWithHead>
@@ -493,7 +492,7 @@
                 </east>
               </offsets>
             </li>
-            <!-- 光环 -->
+            
             <li>
               <name>KivotosStudent_halo_layer3</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -509,7 +508,7 @@
                   <drawnStanding>true</drawnStanding>
                   <drawnLaying>false</drawnLaying>
                   <drawnInBed>false</drawnInBed>
-                  <!-- 睡觉不显示光环 -->
+                  
                 </Posture>
               </conditions>
               <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
@@ -532,7 +531,7 @@
                 </west>
               </offsets>
             </li>
-            <!-- 头发前 -->
+            
             <li>
               <name>KivotosStudent_hairfront_layer4</name>
               <path>Pawns/General/Invisible/Inv</path>
@@ -645,121 +644,148 @@
         <onlyEatRaceRestrictedFood>false</onlyEatRaceRestrictedFood>
         <onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>
         <apparelList>
-          <li>BANW_Body_Hikali</li>
-          <li>BANW_Body_Nozomi</li>
-          <li>BANW_Body_Hoshiro</li>
-          <li>BANW_Body_Miyu</li>
-          <li>BANW_Body_Aoba</li>
-          <li>BANW_Body_Turugi</li>
-          <li>BANW_Body_Seia</li>
-          <li>BANW_Body_Asuna</li>
-          <li>BANW_Body_Miyako</li>
-          <li>BANW_Body_Shiroko</li>
-          <li>BANW_Body_Saki</li>
-          <li>BANW_Body_Akane</li>
-          <li>BANW_Body_Hasumi</li>
-          <li>BANW_Body_Mika</li>
-          <li>BANW_Body_Moe</li>
-          <li>BANW_Body_Mashiro</li>
-          <li>BANW_Body_Nero</li>
-          <li>BANW_Body_Ichika</li>
-          <li>BANW_Body_Karlin</li>
-          <li>BANW_Body_Cherino</li>
+         					<li>BANW_Body_Hikali</li>
+					<li>BANW_Body_Nozomi</li>
+					<li>BANW_Body_Hoshiro</li>
+					<li>BANW_Body_Miyu</li>
+					<li>BANW_Body_Aoba</li>
+					<li>BANW_Body_Turugi</li>
+					<li>BANW_Body_Seia</li>
+					<li>BANW_Body_Asuna</li>
+					<li>BANW_Body_Miyako</li>
+					<li>BANW_Body_Shiroko</li>
+					<li>BANW_Body_Saki</li>
+					<li>BANW_Body_Akane</li>
+					<li>BANW_Body_Hasumi</li>
+					<li>BANW_Body_Mika</li>
+					<li>BANW_Body_Moe</li>
+					<li>BANW_Body_Mashiro</li>
+					<li>BANW_Body_Nero</li>
+					<li>BANW_Body_Ichika</li>
+					<li>BANW_Body_Karlin</li>
+					<li>BANW_Body_Cherino</li>
           <li>BANW_Body_Makoto</li>
-          <li>BANW_Body_Hina</li>
-          <li>BANW_Body_Natsu</li>
-          <li>BANW_Body_Reisa</li>
-          <li>BANW_Body_Ibuki</li>
-          <li>BANW_Body_Yuuka</li>
-          <li>BANW_Body_Iori</li>
-          <li>BANW_Body_Suzumi</li>
-          <li>BANW_Body_Ui</li>
-          <li>BANW_Body_Ako</li>
-          <li>BANW_Body_Shimiko</li>
-          <li>BANW_Body_Iroha</li>
-          <li>BANW_Body_Airy</li>
-          <li>BANW_Body_Momoi</li>
-          <li>BANW_Body_Chinatsu</li>
-          <li>BANW_Body_Midori</li>
-          <li>BANW_Body_Koharu</li>
-          <li>BANW_Body_Yuzu</li>
-          <li>BANW_Body_Atsuko</li>
-          <li>BANW_Body_Satsuki</li>
-          <li>BANW_Body_Arisu</li>
-          <li>BANW_Body_Kayako</li>
-          <li>BANW_Body_Koyuki</li>
-          <li>BANW_Body_Saya</li>
-          <li>BANW_Body_Kazusa</li>
-          <li>BANW_Body_Saori</li>
-          <li>BANW_Body_Chiaki</li>
-          <li>BANW_Body_Mari</li>
-          <li>BANW_Body_Sakurako</li>
-          <li>BANW_Body_Kokona</li>
-          <li>BANW_Body_Hinata</li>
-          <li>BANW_Body_Yoshimi</li>
-          <li>BANW_Body_Shun</li>
-          <li>BANW_Body_Haruka</li>
-          <li>BANW_Body_Hanako</li>
-          <li>BANW_Body_Ayane</li>
-          <li>BANW_Body_Kisaki</li>
-          <li>BANW_Body_Hiyori</li>
-          <li>BANW_Body_Mutsuki</li>
-          <li>BANW_Body_Misaki</li>
-          <li>BANW_Body_Junko</li>
-          <li>BANW_Body_Hare</li>
-          <li>BANW_Body_Aru</li>
-          <li>BANW_Body_Serika</li>
-          <li>BANW_Body_Chihiro</li>
-          <li>BANW_Body_Hifumi</li>
-          <li>BANW_Body_Kotama</li>
-          <li>BANW_Body_Fuuka</li>
-          <li>BANW_Body_Maki</li>
-          <li>BANW_Body_Juri</li>
-          <li>BANW_Body_Yokari</li>
-          <li>BANW_Body_Noa</li>
-          <li>BANW_Body_Rio</li>
-          <li>BANW_Body_Kanoe</li>
-          <li>BANW_Body_Kikyou</li>
-          <li>BANW_Body_Hanae</li>
-          <li>BANW_Body_Azusa</li>
-          <li>BANW_Body_Serina</li>
-          <li>BANW_Body_Chise</li>
-          <li>BANW_Body_Mine</li>
-          <li>BANW_Body_Michiru</li>
-          <li>BANW_Body_Renge</li>
-          <li>BANW_Body_Izuna</li>
-          <li>BANW_Body_Eri</li>
-          <li>BANW_Body_Kotori</li>
-          <li>BANW_Body_Nagusa</li>
-          <li>BANW_Body_Tsukuyo</li>
-          <li>BANW_Body_Nonomi</li>
-          <li>BANW_Body_Nagisa</li>
-          <li>BANW_Body_Akari</li>
-          <li>BANW_Body_Izumi</li>
-          <li>BANW_Body_Haruna</li>
-          <li>BANW_Body_Umika</li>
-          <li>BANW_Body_Shizuko</li>
-          <li>BANW_Body_Pina</li>
-          <li>BANW_Body_Reisa_A</li>
-          <li>BANW_Body_Toki</li>
-          <li>BANW_Body_Sena</li>
-          <li>BANW_Body_Kanna</li>
-          <li>BANW_Body_Fubuki</li>
-          <li>BANW_Body_Kirino</li>
-          <li>BANW_Body_Hibiki</li>
-          <li>BANW_Body_Eimi</li>
-          <li>BANW_Body_Himari</li>
-          <li>BANW_Body_Utaha</li>
-          <li>BANW_Body_Suzumi_A</li>
+					<li>BANW_Body_Hina</li>
+					<li>BANW_Body_Natsu</li>
+					<li>BANW_Body_Reisa</li>
+					<li>BANW_Body_Ibuki</li>
+					<li>BANW_Body_Yuuka</li>
+					<li>BANW_Body_Iori</li>
+					<li>BANW_Body_Suzumi</li>
+					<li>BANW_Body_Ui</li>
+					<li>BANW_Body_Ako</li>
+					<li>BANW_Body_Shimiko</li>
+					<li>BANW_Body_Iroha</li>
+					<li>BANW_Body_Airy</li>
+					<li>BANW_Body_Momoi</li>
+					<li>BANW_Body_Chinatsu</li>
+					<li>BANW_Body_Midori</li>
+					<li>BANW_Body_Koharu</li>
+					<li>BANW_Body_Yuzu</li>
+					<li>BANW_Body_Atsuko</li>
+					<li>BANW_Body_Satsuki</li>
+					<li>BANW_Body_Arisu</li>
+					<li>BANW_Body_Kayako</li>
+					<li>BANW_Body_Koyuki</li>
+					<li>BANW_Body_Saya</li>
+					<li>BANW_Body_Kazusa</li>
+					<li>BANW_Body_Saori</li>
+					<li>BANW_Body_Chiaki</li>
+					<li>BANW_Body_Mari</li>
+					<li>BANW_Body_Sakurako</li>
+					<li>BANW_Body_Kokona</li>
+					<li>BANW_Body_Hinata</li>
+					<li>BANW_Body_Yoshimi</li>
+					<li>BANW_Body_Shun</li>
+					<li>BANW_Body_Haruka</li>
+					<li>BANW_Body_Hanako</li>
+					<li>BANW_Body_Ayane</li>
+					<li>BANW_Body_Kisaki</li>
+					<li>BANW_Body_Hiyori</li>
+					<li>BANW_Body_Mutsuki</li>
+					<li>BANW_Body_Misaki</li>
+					<li>BANW_Body_Junko</li>
+					<li>BANW_Body_Hare</li>
+					<li>BANW_Body_Aru</li>
+					<li>BANW_Body_Serika</li>
+					<li>BANW_Body_Chihiro</li>
+					<li>BANW_Body_Hifumi</li>
+					<li>BANW_Body_Kotama</li>
+					<li>BANW_Body_Fuuka</li>
+					<li>BANW_Body_Maki</li>
+					<li>BANW_Body_Juri</li>
+					<li>BANW_Body_Yokari</li>
+					<li>BANW_Body_Noa</li>
+					<li>BANW_Body_Rio</li>
+					<li>BANW_Body_Kanoe</li>
+					<li>BANW_Body_Kikyou</li>
+					<li>BANW_Body_Hanae</li>
+					<li>BANW_Body_Azusa</li>
+					<li>BANW_Body_Serina</li>
+					<li>BANW_Body_Chise</li>
+					<li>BANW_Body_Mine</li>
+					<li>BANW_Body_Michiru</li>
+					<li>BANW_Body_Renge</li>
+					<li>BANW_Body_Izuna</li>
+					<li>BANW_Body_Eri</li>
+					<li>BANW_Body_Kotori</li>
+					<li>BANW_Body_Nagusa</li>
+					<li>BANW_Body_Tsukuyo</li>
+					<li>BANW_Body_Nonomi</li>
+					<li>BANW_Body_Nagisa</li>
+					<li>BANW_Body_Akari</li>
+					<li>BANW_Body_Izumi</li>
+					<li>BANW_Body_Haruna</li>
+					<li>BANW_Body_Umika</li>
+					<li>BANW_Body_Shizuko</li>
+					<li>BANW_Body_Pina</li>
+					<li>BANW_Body_Reisa_A</li>
+					<li>BANW_Body_Toki</li>
+					<li>BANW_Body_Sena</li>
+					<li>BANW_Body_Kanna</li>
+					<li>BANW_Body_Fubuki</li>
+					<li>BANW_Body_Kirino</li>
+					<li>BANW_Body_Hibiki</li>
+					<li>BANW_Body_Eimi</li>
+					<li>BANW_Body_Himari</li>
+					<li>BANW_Body_Utaha</li>
+					<li>BANW_Body_Suzumi_A</li>
           <li>BANW_Body_Mimori</li>
-          <li>BANW_Body_Kaede</li>
-          <li>BANW_Body_Tsubaki</li>
-          <li>BANW_Body_Kaho</li>
-          <li>BANW_Body_Niya</li>
-          <li>BANW_Body_Arisu_B</li>
-          <li>BANW_Body_Kasumi</li>
-          <li>BANW_Body_Megu</li>
-          <li>BANW_Body_Cherino</li>
+					<li>BANW_Body_Kaede</li>
+					<li>BANW_Body_Tsubaki</li>
+					<li>BANW_Body_Kaho</li>
+					<li>BANW_Body_Niya</li>
+					<li>BANW_Body_Arisu_B</li>
+					<li>BANW_Body_Kasumi</li>
+					<li>BANW_Body_Megu</li>
+					<li>BANW_Body_Marina</li>
+					<li>BANW_Body_Kei</li>
+					<li>BANW_Body_Tomoe</li>
+					<li>BANW_Body_Shigure</li>
+					<li>BANW_Body_Nodoka</li>
+					<li>BANW_Body_Minori</li>
+					<li>BANW_Body_Yakumo</li>
+					<li>BANW_Body_Takane</li>
+					<li>BANW_Body_Meru</li>
+					<li>BANW_Body_Momiji</li>
+					<li>BANW_Body_Reijo</li>
+					<li>BANW_Body_Rumi</li>
+					<li>BANW_Body_Mina</li>
+					<li>BANW_Body_Miku</li>
+					<li>BANW_Body_Wakamo</li>
+					<li>BANW_Body_Hina_B</li>
+					<li>BANW_Body_Hoshiro_A</li>
+          <li>BANW_Body_Hanako_A</li>
+          <li>BANW_Body_Wakamo_A</li>
+
+
+
+
+
+
+
+
+          
           <li>BANC_Hat_One</li>
           <li>BANC_Glove_One</li>
           <li>BANC_Amulet_One</li>
@@ -911,55 +937,55 @@
       <nameGenerator>NamerHikali</nameGenerator>
       <nameGeneratorFemale>NamerHikali</nameGeneratorFemale>
       <hasCorpse>false</hasCorpse>
-      <!-- 是否有尸体 -->
+      
       <renderTree>Humanlike</renderTree>
-      <!-- 渲染树类型，使用类人渲染 -->
+      
       <thinkTreeMain>Humanlike</thinkTreeMain>
-      <!-- 主要思考树，使用类人AI -->
+      
       <thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
-      <!-- 持续思考树，使用类人常量AI -->
+      
       <intelligence>Humanlike</intelligence>
-      <!-- 智力类型，类人智力 -->
+      
       <body Inherit="false">BANW_kivotos</body>
-      <!-- 身体类型，使用自定义的BANW_kivotos身体，不继承父级 -->
+      
       <useMeatFrom>Human</useMeatFrom>
-      <!-- 使用人类的肉定义 -->
+      
       <baseBodySize>1</baseBodySize>
-      <!-- 基础身体大小 -->
-      <baseHealthScale>10</baseHealthScale>
-      <!-- 基础健康比例，即血量 -->
+      
+      <baseHealthScale>2.5</baseHealthScale>
+      
       <foodType>OmnivoreHuman</foodType>
-      <!-- 食物类型，杂食类人 -->
+      
       <lifeExpectancy>80</lifeExpectancy>
-      <!-- 预期寿命 -->
+      
       <leatherDef>Leather_Human</leatherDef>
-      <!-- 皮革定义，使用人类皮革 -->
+      
       <hasGenders>true</hasGenders>
-      <!-- 是否有性别区分 -->
+      
       <gestationPeriodDays>18</gestationPeriodDays>
-      <!-- 妊娠期天数 -->
+      
       <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
-      <!-- 近战攻击命中的音效 -->
+      
       <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding_Metal</soundMeleeHitBuilding>
-      <!-- 近战攻击建筑的音效 -->
+      
       <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
-      <!-- 近战攻击未命中的音效 -->
+      
       <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
-      <!-- 近战闪避音效 -->
+      
       <baseHungerRate>1.5</baseHungerRate>
-      <!-- 基础饥饿速率 -->
+      
       <bloodDef>Filth_Blood</bloodDef>
-      <!-- 血迹定义 -->
+      
       <bloodSmearDef>Filth_BloodSmear</bloodSmearDef>
-      <!-- 血迹拖痕定义 -->
+      
       <canBecomeShambler>true</canBecomeShambler>
-      <!-- 是否能成为蹒跚者(来自异象扩展) -->
+      
       <knowledgeCategory MayRequire="Ludeon.RimWorld.Anomaly">Basic</knowledgeCategory>
-      <!-- 知识分类(需要异象扩展) -->
+      
       <anomalyKnowledge>1</anomalyKnowledge>
-      <!-- 异象知识数值 -->
+      
       <makesFootprints>true</makesFootprints>
-      <!-- 是否会留下脚印 -->
+      
       <litterSizeCurve>
         <points>
           <li>(0.5, 0)</li>
@@ -1019,88 +1045,88 @@
         <li>OrganicStandard</li>
       </hediffGiverSets>
     </race>
-    <!--数据需要调整-->
+    
     <statBases>
       <RoyalFavorValue>3</RoyalFavorValue>
-      <!--		        ■荣誉点数-->
+      
       <MarketValue>800</MarketValue>
-      <!--		                ■价格-->
+      
       <Mass>50</Mass>
-      <!--		                                ■重量-->
+      
       <MoveSpeed>4.50</MoveSpeed>
-      <!--		                    ■移动速度-->
+      
       <Flammability>0.6</Flammability>
-      <!--		            ■易燃性-->
+      
       <ComfyTemperatureMax>30</ComfyTemperatureMax>
-      <!--		■最高适应温度-->
+      
       <ComfyTemperatureMin>-10</ComfyTemperatureMin>
-      <!--		■最低适应温度-->
+      
       <ImmunityGainSpeed>0.9</ImmunityGainSpeed>
-      <!--		    ■免疫增益速度-->
+      
       <CarryingCapacity>60</CarryingCapacity>
-      <!--		        ■承载力-->
+      
       <PainShockThreshold>0.7</PainShockThreshold>
-      <!--		■疼痛忍受力-->
+      
       <ToxicResistance>0.5</ToxicResistance>
-      <!--		        ■毒性-->
+      
       <MeatAmount>1</MeatAmount>
-      <!--		                    ■肉-->
+      
       <LeatherAmount>1</LeatherAmount>
-      <!--		            ■皮-->
+      
       <AimingDelayFactor>1.2</AimingDelayFactor>
-      <!--		    ■瞄准延迟系数-->
+      
       <ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
-      <!--	■射撃命中補正-->
+      
       <PlantWorkSpeed>1.1</PlantWorkSpeed>
-      <!--		        ■种植速度-->
+      
       <ConstructionSpeed>1.15</ConstructionSpeed>
-      <!--		    ■建筑速度-->
+      
       <ResearchSpeed>1.0</ResearchSpeed>
-      <!--		            ■研究速度-->
+      
       <SocialImpact>1.00</SocialImpact>
-      <!--		                ■社会影响-->
+      
       <IncomingDamageFactor>1</IncomingDamageFactor>
-      <!--		    ■收到的伤害倍率-->
+      
       <MentalBreakThreshold>0.25</MentalBreakThreshold>
-      <!--		■容易精神崩溃-->
+      
       <PsychicSensitivity>1.5</PsychicSensitivity>
-      <!--			■心里敏感-->
+      
       <MeleeDodgeChance>1</MeleeDodgeChance>
-      <!--					■回避補正-->
+      
       <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-      <!--				■打撃耐性-->
+      
       <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
-      <!--				■刺突耐性-->
+      
       <ArmorRating_Heat>0.05</ArmorRating_Heat>
-      <!--				■熱耐性-->
+      
       <NegotiationAbility>1.0</NegotiationAbility>
-      <!--			■外交補正 -->
+      
       <SellPriceFactor>0.6</SellPriceFactor>
-      <!--					■取引価格補正 -->
+      
       <TameAnimalChance>0.5</TameAnimalChance>
-      <!--				■手なづけ補正-->
+      
       <TrainAnimalChance>0.5</TrainAnimalChance>
-      <!--				■調教補正-->
+      
       <RestRateMultiplier>1.0</RestRateMultiplier>
-      <!--			■睡眠効率-->
+      
       <WorkSpeedGlobal>1</WorkSpeedGlobal>
-      <!--					■基本作業速度-->
+      
       <GeneralLaborSpeed>1</GeneralLaborSpeed>
-      <!--				■一般的作業速度-->
+      
       <MedicalTendSpeed>1</MedicalTendSpeed>
-      <!--				    ■医療速度補正-->
+      
       <ResearchSpeed>1</ResearchSpeed>
-      <!--						■研究速度補正-->
+      
       <MiningSpeed>1</MiningSpeed>
-      <!--							■採掘速度補正-->
+      
       <ConstructionSpeedFactor>1</ConstructionSpeedFactor>
-      <!--	■建設速度-->
+      
       <SmoothingSpeed>1</SmoothingSpeed>
-      <!--					    ■石を滑らかにする速度-->
+      
       <AnimalGatherSpeed>1</AnimalGatherSpeed>
-      <!--				■動物から採取する速度-->
+      
       <ButcheryMechanoidSpeed>1</ButcheryMechanoidSpeed>
-      <!--	    ■機械分解作業速度-->
+      
     </statBases>
     <recipes>
       <li>ExciseCarcinoma</li>

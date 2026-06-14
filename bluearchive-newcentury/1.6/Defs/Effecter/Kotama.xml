@@ -42,6 +42,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Kotama_3_Mote</defName>
+<drawOffscreen>true</drawOffscreen>
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -63,6 +64,11 @@
    <EffecterDef>
 <defName>BANW_Effecter_Kotama_A</defName>
 <children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>BANW_Skill_A</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
   <li>
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <moteDef>BAWN_Ye_GP</moteDef>
@@ -584,10 +590,14 @@
 <EffecterDef>
 <defName>BANW_Effecter_Kotama_B</defName>
 <children>
+  <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Kotama_Skill_Sound</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
    <li>
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <moteDef>BAWN_Kotama_3_Mote</moteDef>
-        <initialDelayTicks>0</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
         <rotation>0</rotation><!-- 初始旋转角度 -->
         <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->

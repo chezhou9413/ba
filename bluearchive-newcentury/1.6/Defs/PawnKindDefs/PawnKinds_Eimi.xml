@@ -80,9 +80,9 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>艾米</kindName>
-				<kindDesName>艾米 艾米 和泉元</kindDesName>
+				<kindDesName>和泉元 艾米</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>17</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
@@ -129,9 +129,9 @@
 	            <ArmorRating_Heat>0.5</ArmorRating_Heat>
 				<ComfyTemperatureMin>-999</ComfyTemperatureMin>
 			    <ComfyTemperatureMax>-28</ComfyTemperatureMax>
-				<MoveSpeed>3.00</MoveSpeed> <!-- 移动速度 -->
-				<CarryingCapacity>100</CarryingCapacity><!-- 承载力 -->
-				<IncomingDamageFactor>-0.1</IncomingDamageFactor> <!-- 承受伤害倍率 -->
+				<MoveSpeed>3.00</MoveSpeed> 
+				<CarryingCapacity>100</CarryingCapacity>
+				<IncomingDamageFactor>-0.1</IncomingDamageFactor> 
                 </statOffsets>
 				<statFactors>
 				</statFactors>
@@ -166,7 +166,7 @@
                 <statOffsets>
                 </statOffsets>
 				<statFactors>
-					<StaggerDurationFactor>0.38</StaggerDurationFactor> <!-- 击退持续时间系数 -->
+					<StaggerDurationFactor>0.38</StaggerDurationFactor> 
 				</statFactors>
             </li>
         </degreeDatas>
@@ -180,7 +180,7 @@
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
 	<everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        
 		 <stages>
           <li>     
            <statOffsets>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<AbilityDef>
+<defName>BAWN_Nagisa_EXX</defName>
+ <label>Time On Target</label>
+ <description>对圆形范围内的敌方单位利器护甲减少40.2%(持续15秒),并造成自身攻击力772%的伤害</description>
+ <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
+ <cooldownTicksRange>1800</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Nagisa_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SphereArea">
+<warmupEffecter></warmupEffecter>
+ <soundCast>OrbitalTargeter_Fire</soundCast>
+ <verbClass>BANWlLib.BaVerb.Verb_SphereArea</verbClass> <!-- 改为投射物动词类 -->
+ <JobDef>BANW_Job_TEST_Nagisa</JobDef>      <!-- 技能定义标识符 -->
+ <range>69.9</range><!-- 投掷范围 -->
+ <Sphereradius>5.9</Sphereradius>
+ <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+ <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+ <requireLineOfSight>false</requireLineOfSight>      <!-- 是否需要视线 -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+  <canTargetSelf>false</canTargetSelf>
+  <canTargetPawns>true</canTargetPawns>
+  <canTargetBuildings>true</canTargetBuildings>
+  <canTargetAnimals>true</canTargetAnimals>
+  <canTargetHumans>true</canTargetHumans>
+  <canTargetMechs>true</canTargetMechs>
+  </targetParams>
+  </verbProperties>
+  <comps>
+       <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Nagisa_Ef_A</effecterDef>
+        <maintainForTicks>1500</maintainForTicks>
+      </li>
+  </comps>
+</AbilityDef>
+
+   <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Nagisa_Buff_A</defName>
+        <!-- 显示名称 -->
+        <label>Time On Target</label>
+        <!-- 效果描述 -->
+        <description>减少40%护甲</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+            <statOffsets>
+        <ArmorRating_Sharp>-0.40</ArmorRating_Sharp>
+            </statOffsets>
+            <statFactors>
+            </statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>900</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_C</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
+        <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Nagisa</defName><!--命名格式-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Nagisa_Buff_A</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+    <soundExplosion>BANW_Sound_Kong</soundExplosion>
+      <modExtensions>
+
+    </modExtensions>
+  </DamageDef>
+  <JobDef Class="BANWlLib.BaDef.BaJobDef_SphereAreaAttack">
+    <defName>BANW_Job_TEST_Nagisa</defName>
+    <driverClass>BANWlLib.BaJob.Job_SphereAreaAttack</driverClass>
+    <!-- 球形范围攻击的伤害配置 -->
+    <damages>
+      <!-- 第一个伤害波 - 立即执行 -->
+      <li>
+        <!-- 伤害波的执行延迟TICK -->
+        <tick>0</tick>
+        <!-- 触发此伤害波时播放的效果 -->
+        <effecterDef></effecterDef>
+        <!-- 伤害波中包含的具体伤害 -->
+        <damages>
+    <li>
+            <Delaytick>0</Delaytick>
+            <damageAmount>1</damageAmount>
+            <damageType>BANC_Damage_Nagisa</damageType>
+            <penetration>111</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef>BANW_Nagisa_Ef_B</effecterDef>
+          </li>
+          <li>
+            <Delaytick>10</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>20</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>30</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>40</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>50</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>60</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>70</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>80</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>90</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>100</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>110</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>120</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>130</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>140</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>150</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>160</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>170</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>180</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>190</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>200</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+          <li>
+            <Delaytick>210</Delaytick>
+            <damageAmount>60</damageAmount>
+            <damageType>BANC_Damage_baofa</damageType>
+            <penetration>0.15</penetration>
+            <isAttackBuilding>false</isAttackBuilding>
+            <effecterDef></effecterDef>
+          </li>
+        </damages>
+      </li>
+    </damages>
+  </JobDef>
+
+</Defs>

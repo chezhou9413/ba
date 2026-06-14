@@ -76,9 +76,9 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>星野</kindName>
-				<kindDesName>星野 星野 小鸟游</kindDesName>
+				<kindDesName>小鸟游 星野</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>16</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
@@ -121,9 +121,10 @@
 	                <ArmorRating_Heat>1.0</ArmorRating_Heat>
 					<PainShockThreshold>0.5</PainShockThreshold>
 					<MoveSpeed>6</MoveSpeed>
-					<CarryingCapacity>100</CarryingCapacity><!--		        ■承载力--> 
+					<CarryingCapacity>100</CarryingCapacity> 
 <MeleeDodgeChance>20</MeleeDodgeChance>
 					<ShootingAccuracyPawn>30</ShootingAccuracyPawn>
+					<BANW_RangedWeapon_RangeOffset>5</BANW_RangedWeapon_RangeOffset>
                 </statOffsets>
 				<statFactors>
 					<IncomingDamageFactor>0.8</IncomingDamageFactor>
@@ -132,8 +133,8 @@
 					<RestFallRateFactor>1.5</RestFallRateFactor>
 					<PsychicSensitivity>2</PsychicSensitivity>
 					<WorkSpeedGlobal>0.5</WorkSpeedGlobal>
-					<MeleeDamageFactor>7.1</MeleeDamageFactor>           <!-- 近战伤害系数：5.5（近战伤害增加450%） -->
-                    <MeleeArmorPenetration>7.5</MeleeArmorPenetration>   <!-- 近战护甲穿透：5.5（近战攻击穿透力增加450%） -->
+					<MeleeDamageFactor>7.1</MeleeDamageFactor>           
+                    <MeleeArmorPenetration>7.5</MeleeArmorPenetration>   
                     <MeleeCooldownFactor>0.3</MeleeCooldownFactor>
 				</statFactors>
             </li>
@@ -141,24 +142,24 @@
 </TraitDef>
 
 <ThoughtDef>
-    <!-- 想法的唯一标识符 -->
+    
     <defName>BAWC_TraitDef_Hoshiro_ThoughtDef</defName>
-    <!-- 工作类：始终激活，意味着这个想法会持续生效 -->
+    
     <workerClass>ThoughtWorker_AlwaysActive</workerClass>
-    <!-- 即使角色未被生成（不在地图上）时也有效 -->
+    
     <validWhileDespawned>true</validWhileDespawned>
-    <!-- 适用阶段：适用于婴儿、儿童和成人阶段的角色 -->
+    
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-    <!-- 需要拥有的特质 -->
+    
     <requiredTraits>
       <li>BAWC_TraitDef_Hoshiro</li>
     </requiredTraits>
-    <!-- 需要特质的等级：0（最高等级） -->
+    
     <requiredTraitsDegree>0</requiredTraitsDegree>
-    <!-- 效果阶段 -->
+    
     <stages>
       <li>
-        <!-- 显示标签 -->
+        
         <label>梦...</label>
         <description>...</description>
         <baseMoodEffect>-12</baseMoodEffect>

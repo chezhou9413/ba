@@ -70,7 +70,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>琴里</kindName>
-				<kindDesName>琴里 琴里 丰见</kindDesName>
+				<kindDesName>丰见 琴里</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>

@@ -50,6 +50,13 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Cherino</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -57,7 +64,7 @@
     <label>肃清子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型--><!--爆发-->
-      <damageAmountBase>39</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>55</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -69,4 +76,741 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Marina</defName>
+    <label>巴拉莱卡</label>
+    <description>真里奈爱用的加装了弹鼓的冲锋枪。可以用惊人的射速将质疑红冬事务局权威的人统统打倒。</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Marina</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>0.8</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Marina</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_SMG_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>1</AccuracyMedium><!--中-->
+      <AccuracyLong>0.6</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+   <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Utaha</defaultProjectile><!--子弹-->
+        <burstShotCount>4</burstShotCount><!--连射次数-->
+        <warmupTime>1.1</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>22.9</range><!--射距-->
+        <soundCast>BANW_Wp_SMG_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Marina</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Marina</defName>
+    <label>巴拉莱卡子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
+      <damageAmountBase>14</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1.0</drawSize>
+      <texPath>Projectile/Bullet_Marina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Tomoe</defName>
+    <label>忠诚</label>
+    <description>巴使用的超长的狙击步枪。配备了高倍率瞄准镜，就算在远处也能处理掉怀疑切里诺会长权威的不良分子。</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Tomoe</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.4</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Tomoe</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_SR_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0.41</AccuracyTouch><!--贴近-->
+      <AccuracyShort>0.68</AccuracyShort><!--近-->
+      <AccuracyMedium>0.96</AccuracyMedium><!--中-->
+      <AccuracyLong>0.99</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+   <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Tomoe</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.5</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>65.9</range><!--射距-->
+        <soundCast>BANW_Wp_SR_At_A</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Tomoe</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Tomoe</defName>
+    <label>忠诚子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
+      <damageAmountBase>68</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>1.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <speed>110</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>(2,5)</drawSize>
+      <texPath>Projectile/Bullet_Tomoe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Shigure</defName>
+    <label>春之宾治</label>
+    <description>时雨总是随身携带的连发式榴弹发射器。被它击中的人就会像名字一样，变得头晕目眩。</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Shigure</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.3</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Shigure</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_GL_De</soundInteract><!--装备音效-->
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>1</AccuracyMedium><!--中-->
+      <AccuracyLong>1</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+   <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <requireLineOfSight>false</requireLineOfSight>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Shigure</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.7</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots><!--射速-->
+        <range>28.9</range><!--射距-->
+        <soundCast>BANW_Wp_GL_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Medium</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+        <forcedMissRadius>0.5</forcedMissRadius>
+        <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Shigure</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Shigure</defName>
+    <label>春之宾治子弹</label>
+    <projectile>
+      <explosionRadius>1.5</explosionRadius>
+      <damageDef>BANC_Damage_Shigure</damageDef><!--子弹类型-->
+      <damageAmountBase>63</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>60</speed><!--子弹速度-->
+    </projectile>
+   <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize>
+      <texPath>Projectile/Bullet_Shigure</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Shigure</defName><!--通用贯通-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.85, 0.85, 0.85)</explosionColorCenter>
+    <explosionColorEdge>(0.7, 0.7, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+
+   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Nodoka</defName>
+    <label>射手座之夜</label>
+    <description>和香外出天文观测时经常使用的冲锋枪。枪体配备了手电筒，可以照亮漆黑的夜路。</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Nodoka</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.1</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Nodoka</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_SMG_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>1</AccuracyMedium><!--中-->
+      <AccuracyLong>0.6</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+   <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Nodoka</defaultProjectile><!--子弹-->
+        <burstShotCount>3</burstShotCount><!--连射次数-->
+        <warmupTime>0.5</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots><!--射速-->
+        <range>22.9</range><!--射距-->
+        <soundCast>BANW_Wp_SMG_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Light</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Nodoka</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Nodoka</defName>
+    <label>射手座之夜子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
+      <damageAmountBase>15</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>2.5</drawSize>
+      <texPath>Projectile/Bullet_Nodoka</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Yakumo</defName>
+    <label>真理</label>
+    <description>八云常备在身的手枪。八云常把「枪有各种各样的用途」挂在嘴边。在那些用途之中，似乎也有一种是让怠惰的作家「遵守截稿日」。</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Yakumo</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>0.6</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Yakumo</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_HG_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>0.99</AccuracyMedium><!--中-->
+      <AccuracyLong>0.88</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Yakumo</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.6</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>25.9</range><!--射距-->
+        <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Light</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Yakumo</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Yakumo</defName>
+    <label>真理子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型--><!--爆发-->
+      <damageAmountBase>64</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>2</drawSize>
+      <texPath>Projectile/Bullet_Yakumo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Minori</defName>
+    <label>钢铁火炬</label>
+    <description>实梨爱用的结实的突击步枪。这把步枪结构简洁，就如名字一般，一直照亮指引着实梨的战斗之路。</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Minori</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.0</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Minori</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_AR_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0.8</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>0.9</AccuracyMedium><!--中-->
+      <AccuracyLong>0.8</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Suzumi_A</defaultProjectile><!--子弹-->
+        <burstShotCount>3</burstShotCount><!--连射次数-->
+        <warmupTime>1.0</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots><!--射速-->
+        <range>34.9</range><!--射距-->
+        <soundCast>BANW_Wp_AR_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Medium</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Minori</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Minori</defName>
+    <label>钢铁火炬子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
+      <damageAmountBase>25</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>2.0</drawSize>
+      <texPath>Projectile/Bullet_Minori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Takane</defName>
+    <label>小顽童</label>
+    <description>贵音装饰过的手枪。据说不仅用于战斗，还用于展现贵音的怒气。</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Takane</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>0.6</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Takane</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_HG_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>0.99</AccuracyMedium><!--中-->
+      <AccuracyLong>0.88</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Takane</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.3</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>26.9</range><!--射距-->
+        <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Light</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Takane</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Takane</defName>
+    <label>小顽童子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型--><!--爆发-->
+      <damageAmountBase>39</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.0</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>2</drawSize>
+      <texPath>Projectile/Bullet_Takane</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Meru</defName>
+    <label>创作的……痛苦！</label>
+    <description>芽瑠专用的特制手枪。据说是因为实在想不出好名字，最后只好取了这个平平无奇的名字……</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Meru</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>0.8</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Meru</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_HG_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>0.99</AccuracyMedium><!--中-->
+      <AccuracyLong>0.88</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Meru</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.2</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>26.9</range><!--射距-->
+        <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Light</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Meru</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Meru</defName>
+    <label>创作的……痛苦！子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型--><!--爆发-->
+      <damageAmountBase>112</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>2</drawSize>
+      <texPath>Projectile/Bullet_Meru</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Momiji</defName>
+    <label>图书馆使用规则第7号</label>
+    <description>红叶使用的便携式RPG。只要遵守规则，这把“规则”就不会启动……</description>
+    <graphicData>
+      <texPath>Weapon/RedWinter/Momiji</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.3</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Momiji</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>0</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>Interact_Rifle</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0.81</AccuracyTouch><!--贴近-->
+      <AccuracyShort>0.88</AccuracyShort><!--近-->
+      <AccuracyMedium>0.86</AccuracyMedium><!--中-->
+      <AccuracyLong>0.89</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>6</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Momiji</defaultProjectile><!--子弹-->
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer><!--ai攻击建筑-->
+        <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius><!--5格回避范围-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots><!--射速-->
+        <range>40.9</range><!--射距-->
+        <soundCast>ThumpCannon_Fire</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+        <forcedMissRadius>2.5</forcedMissRadius>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Momiji</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Momiji</defName>
+    <label>图书馆使用规则第7号</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>BANC_Damage_Momiji</damageDef><!--子弹类型-->
+      <damageAmountBase>250</damageAmountBase><!--子弹伤害-->
+      <explosionRadius>2.9</explosionRadius>
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.25</armorPenetrationBase><!--穿透-->
+      <speed>20</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>Stun</def>
+        <amount>1</amount>
+        <chance>0.5</chance>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>TransparentPostLight</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>2.5</drawSize>
+      <texPath>Projectile/Bullet_Momiji</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <DamageDef ParentName="BANC_Damage_zhendong">
+    <defName>BANC_Damage_Momiji</defName><!--通用贯通-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.85, 0.85, 0.85)</explosionColorCenter>
+    <explosionColorEdge>(0.7, 0.7, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
 </Defs>

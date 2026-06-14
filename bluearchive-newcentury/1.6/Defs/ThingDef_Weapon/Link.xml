@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Miku</defName>
+    <label>演出用T恤加农炮</label>
+    <description>初音未来在演出中给观众们分发T恤和周边时使用的大炮。枪身镶嵌着发光二极管，会随着演出的音乐旋律闪耀出美丽的光芒。</description>
+    <graphicData>
+      <texPath>Weapon/Link/Miku</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.4</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Miku</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>0</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_GL_De</soundInteract><!--装备音效-->
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>1</AccuracyMedium><!--中-->
+      <AccuracyLong>1</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+   <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <requireLineOfSight>false</requireLineOfSight>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Miku</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.2</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots><!--射速-->
+        <range>32.9</range><!--射距-->
+        <soundCast>BANW_Wp_GL_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Medium</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+        <forcedMissRadius>0.5</forcedMissRadius>
+        <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+   <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Miku</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Miku</defName>
+    <label>演出用T恤加农炮子弹</label>
+    <projectile>
+      <explosionRadius>1</explosionRadius>
+      <damageDef>BANC_Damage_Miku</damageDef><!--子弹类型-->
+      <damageAmountBase>38</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <speed>80</speed><!--子弹速度-->
+    </projectile>
+   <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>3</drawSize>
+      <texPath>Projectile/Bullet_Miku</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Miku</defName><!--通用贯通-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.3, 0.85, 0.9)</explosionColorCenter>
+    <explosionColorEdge>(0.2, 0.6, 0.75)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+</Defs>

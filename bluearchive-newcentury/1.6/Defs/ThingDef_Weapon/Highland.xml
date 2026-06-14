@@ -49,6 +49,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Hikali</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -97,7 +104,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>0.99</AccuracyMedium><!--中-->
       <AccuracyLong>0.69</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
       <SocialImpact>+0.25</SocialImpact>
@@ -124,6 +131,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Nozomi</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <DamageDef ParentName="BANC_Damage_zhendong">
@@ -135,7 +149,7 @@
     <label>致命开关子弹</label>
     <projectile>
       <damageDef>BANC_Damage_Nozomi_None</damageDef>
-      <damageAmountBase>98</damageAmountBase>
+      <damageAmountBase>81</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.25</armorPenetrationBase>
       <speed>70</speed>
@@ -154,7 +168,7 @@
     </graphicData>
   </ThingDef>
 
-<ThingDef ParentName="BANC_BaseHumanMakeableGun">
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Aoba</defName>
     <label>半吊子的期待</label>
     <description>青叶爱用的霰弹枪。以讽刺的方式体现了她「不抱期待」的价值观。最适合用来轰飞碍眼的东西……</description>
@@ -202,6 +216,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Aoba</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">

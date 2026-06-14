@@ -82,7 +82,7 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>秤</kindName>
+				<kindName>亚津子</kindName>
 				<kindDesName>秤 亚津子</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>
@@ -148,18 +148,18 @@
 </TraitDef>
 
 <HediffDef>
-        <!-- 状态的唯一标识符 -->
+        
         <defName>BAWN_Atsuko_Buff</defName>
-        <!-- 显示名称 -->
+        
         <label>公主</label>
-        <!-- 效果描述 -->
+        
         <description>亚津子已经习惯了疼痛</description>
         <defaultLabelColor>(221,160,221)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
+        
         <isBad>false</isBad>
         <hediffClass>HediffWithComps</hediffClass>
         <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+        
         <stages>
         <li>
         <painFactor>0.50</painFactor>

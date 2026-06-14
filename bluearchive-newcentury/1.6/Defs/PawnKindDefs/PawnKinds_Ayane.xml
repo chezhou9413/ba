@@ -6,7 +6,6 @@
 		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
-
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<startingHediffs>
 		<li>
@@ -14,6 +13,9 @@
 			<severity>0.001</severity>
 		</li>
         </startingHediffs>
+		<abilities>
+			<li>BAWN_Ayane_EXX</li>
+		</abilities>
 		<backstoryFiltersOverride>
 			<li>
 				<categories>
@@ -67,7 +69,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>绫音</kindName>
-				<kindDesName>绫音 绫音 奥空</kindDesName>
+				<kindDesName>奥空 绫音</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>

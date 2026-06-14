@@ -266,8 +266,8 @@
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>134</healAmount>
-        <healIntervalTicks>240</healIntervalTicks>
+        <healAmount>3.5</healAmount>
+        <healIntervalTicks>6</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
       <!-- 自动消失组件 -->

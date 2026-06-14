@@ -15,6 +15,7 @@
                     <Flammability>-1.0</Flammability>
                     <PainShockThreshold>+0.15</PainShockThreshold>
                     <IncomingDamageFactor>-0.15</IncomingDamageFactor>
+                    <BANW_HealthScalePercentOffset>0.50</BANW_HealthScalePercentOffset>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -53,6 +54,7 @@
                     <DrugSynthesisSpeed>+0.25</DrugSynthesisSpeed>
                     <MedicalOperationSpeed>+0.15</MedicalOperationSpeed>
 		            <MedicalSurgerySuccessChance>+0.30</MedicalSurgerySuccessChance>
+                    <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -74,6 +76,7 @@
                    <GlobalLearningFactor>+0.25</GlobalLearningFactor>
                    <MoveSpeed>+1.5</MoveSpeed>
                    <RestRateMultiplier>+0.20</RestRateMultiplier>
+                   <BANW_HealthScalePercentOffset>0.10</BANW_HealthScalePercentOffset>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -87,12 +90,12 @@
                 <label>&lt;color=#FF0000&gt;轻装甲&lt;/color&gt;</label>
                 <description>{PAWN_nameDef}的装甲类型是轻型装甲，使用爆发输出造成的伤害最高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statFactors>
-                     <ArmorRating_Sharp>0.0</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
-                    <ArmorRating_Heat>1.0</ArmorRating_Heat>
+                <statOffsets>
+                     <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.3</ArmorRating_Heat>
                     <MoveSpeed>1.2</MoveSpeed>
-                </statFactors>
+                </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
@@ -105,12 +108,12 @@
                 <label>&lt;color=#DAA520&gt;重装甲&lt;/color&gt;</label>
                 <description>{PAWN_nameDef}的装甲类型是重型装甲，使用贯通输出造成的伤害最高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statFactors>
+                <statOffsets>
                    <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>2.0</ArmorRating_Blunt>
-                    <ArmorRating_Heat>2.0</ArmorRating_Heat>
+                    <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.1</ArmorRating_Heat>
                     <MoveSpeed>0.8</MoveSpeed>
-                </statFactors>
+                </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
@@ -123,11 +126,11 @@
                 <label>&lt;color=#4169E1&gt;特殊装甲&lt;/color&gt;</label>
                 <description>{PAWN_nameDef}的装甲类型是特殊装甲，使用热能输出造成的伤害最高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statFactors>
-                   <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+                <statOffsets>
+                   <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
                     <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
                     <ArmorRating_Heat>0</ArmorRating_Heat>
-                </statFactors>
+                </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
@@ -140,11 +143,11 @@
                 <label>&lt;color=#990099&gt;弹力装甲&lt;/color&gt;</label>
                 <description>{PAWN_nameDef}的装甲类型是弹力装甲，使用振动输出造成的伤害最高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statFactors>
-                   <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+                <statOffsets>
+                   <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
                     <ArmorRating_Blunt>0.0</ArmorRating_Blunt>
                     <ArmorRating_Heat>1.0</ArmorRating_Heat>
-                </statFactors>
+                </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
@@ -157,11 +160,11 @@
                 <label>&lt;color=#53b1aa&gt;复合装甲&lt;/color&gt;</label>
                 <description>{PAWN_nameDef}的装甲类型是复合装甲</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statFactors>
-                   <ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+                <statOffsets>
+                   <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
                     <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
                     <ArmorRating_Heat>1.0</ArmorRating_Heat>
-                </statFactors>
+                </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>

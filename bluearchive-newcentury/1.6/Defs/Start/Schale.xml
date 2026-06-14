@@ -57,13 +57,13 @@
 				<li Class="ScenPart_ScatterThingsNearPlayerStart">
 					<def>ScatterThingsNearPlayerStart</def>
 					<thingDef>QinghuiStone</thingDef>
-					<count>360</count>
+					<count>3600</count>
 					<allowRoofed>True</allowRoofed>
 				</li>
 				<li Class="ScenPart_ScatterThingsNearPlayerStart">
 					<def>ScatterThingsNearPlayerStart</def>
 					<thingDef>Kami_Proplevel</thingDef>
-					<count>30</count>
+					<count>50</count>
 					<allowRoofed>True</allowRoofed>
 				</li>
 				<li Class="ScenPart_ScatterThingsNearPlayerStart">
@@ -94,6 +94,60 @@
 					<def>ScatterThingsNearPlayerStart</def>
 					<thingDef>MedicineIndustrial</thingDef>
 					<count>30</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Hat_One</thingDef>
+					<count>1</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Glove_One</thingDef>
+					<count>1</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Shoes_One</thingDef>
+					<count>1</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Badge_One</thingDef>
+					<count>1</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Bag_One</thingDef>
+					<count>1</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Hairpin_One</thingDef>
+					<count>1</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Amulet_One</thingDef>
+					<count>1</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Watch_One</thingDef>
+					<count>1</count>
+					<allowRoofed>True</allowRoofed>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+					<def>ScatterThingsNearPlayerStart</def>
+					<thingDef>BANC_Necklace_One</thingDef>
+					<count>1</count>
 					<allowRoofed>True</allowRoofed>
 				</li>
 				<li Class="ScenPart_ScatterThingsAnywhere">

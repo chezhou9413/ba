@@ -99,6 +99,8 @@
   </targetParams>
   </verbProperties>
   <comps>
+<li Class="VEF.AnimalBehaviours.CompProperties_ControlledBlinking">
+</li>
 <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
   <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
   <hediffDef>BAWN_Asuna_hid</hediffDef><!-- 要添加的状态效果定义名 -->

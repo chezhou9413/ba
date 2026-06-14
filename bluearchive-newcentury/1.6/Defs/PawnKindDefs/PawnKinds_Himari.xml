@@ -8,6 +8,8 @@
 		<isFighter>true</isFighter>
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<abilities>
+		 <li>BAWN_Himari_EX</li>
+         <li>BAWN_Himari_EXX</li>
         </abilities>
 		<startingHediffs>
 		<li>
@@ -76,7 +78,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>日鞠</kindName>
-				<kindDesName>日鞠 明星</kindDesName>
+				<kindDesName>明星 日鞠</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>16</kindAge>
 			</li>
@@ -122,7 +124,7 @@
 				<GlobalLearningFactor>1.0</GlobalLearningFactor>
 				<ComfyTemperatureMin>28</ComfyTemperatureMin>
 				<MechFormingSpeed>1.0</MechFormingSpeed>
-				<MoveSpeed>10.00</MoveSpeed> <!-- 移动速度 -->
+				<MoveSpeed>10.00</MoveSpeed> 
 				<EntityStudyRate>1</EntityStudyRate>
                 </statOffsets>
 				<statFactors>

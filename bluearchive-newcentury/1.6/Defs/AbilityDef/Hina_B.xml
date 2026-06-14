@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef>
+    <defName>BAWN_Hina_B_EXX</defName>
+    <label>开演：伊施波设</label>
+    <description>发射3发子弹，对直线范围内的敌方单位造成自身攻击力2524%的伤害</description>
+    <iconPath>Ability/Icon/Hina/Hina_B</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+   <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <hostile>true</hostile>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Hina_B_Skill_EXX_A</warmupStartSound>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+<statBases>
+  <Ability_Duration>6</Ability_Duration>
+ </statBases>
+    <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SustainedAreaAttackBox">
+      <!-- 方形宽度 -->
+      <boxsize>1</boxsize>
+      <verbClass>BANWlLib.BaVerb.Verb_SustainedAreaAttackBox</verbClass>
+      <soundCast>Aoba_Skill_EX</soundCast>
+      <label>方形范围测试！</label>
+      <!-- 绑定的JOB -->
+      <JobDef>Ba_TestGunfireJob_Hina_B</JobDef>
+      <violent>true</violent>
+      <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+      <warmupTime>0.1</warmupTime>
+      <range>100</range>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Hina_B_buff_B</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+  </li>
+    </comps>
+  </AbilityDef>
+    <JobDef Class="BANWlLib.BaDef.BaJobDef_SustainedAttack">
+        <defName>Ba_TestGunfireJob_Hina_B</defName>
+        <driverClass>BANWlLib.BaJob.Job_SustainedAreaAttack</driverClass>
+        <damages>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>80</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>251</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hina_B_EXX_A</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>80</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>251</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_baofa</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>80</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>251</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_baofa</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+             <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>200</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>251</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hina_B_EXX_B</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>200</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>251</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_baofa</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef>BANW_Hina_B_SD_B</effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>200</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>251</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_baofa</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+              <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>350</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>523</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_Hina_B_EXX_C</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>350</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>523</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_baofa</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef>BANW_Hina_B_SD_C</effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>350</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>523</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_baofa</damageType>
+                <!-- 穿透 --> 
+                <penetration>1.29</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+            <li>
+                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
+                <tick>410</tick>
+                 <!-- 伤害量 --> 
+                <damageAmount>0</damageAmount>
+                <!-- 伤害类型 --> 
+                <damageType>BANC_Damage_baofa</damageType>
+                <!-- 穿透 --> 
+                <penetration>0</penetration>
+                <!-- 触发此伤害时播放的效果 --> 
+                <effecterDef></effecterDef>
+                <isAttackBuilding>true</isAttackBuilding>
+            </li>
+        </damages>
+    </JobDef>
+    <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Hina_B_EXX_A</defName><!--命名格式-->
+    <damageEffecter>BANW_Hina_B_Ef_1_D</damageEffecter>
+    <soundExplosion>BANW_Sound_Kong</soundExplosion>
+    <defaultStoppingPower>100.0</defaultStoppingPower>
+      <modExtensions>
+    </modExtensions>
+  </DamageDef>
+  <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Hina_B_EXX_B</defName><!--命名格式-->
+    <damageEffecter>BANW_Hina_B_Ef_2_D</damageEffecter>
+    <soundExplosion>BANW_Sound_Kong</soundExplosion>
+    <defaultStoppingPower>100.0</defaultStoppingPower>
+      <modExtensions>
+    </modExtensions>
+  </DamageDef>
+  <DamageDef ParentName="BANC_Damage_baofa">
+    <defName>BANC_Damage_Hina_B_EXX_C</defName><!--命名格式-->
+    <damageEffecter>BANW_Hina_B_Ef_3_D</damageEffecter>
+    <soundExplosion>BANW_Sound_Kong</soundExplosion>
+    <defaultStoppingPower>100.0</defaultStoppingPower>
+      <modExtensions>
+    </modExtensions>
+  </DamageDef>
+   
+   <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Hina_B_buff_B</defName>
+        <!-- 显示名称 -->
+        <label>于此传达真心</label>
+        <!-- 效果描述 -->
+        <description>自身护甲穿透增加64%</description>
+        <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <BANW_RangedWeapon_Penetration>0.63</BANW_RangedWeapon_Penetration>
+           </statOffsets>
+           <statFactors>
+				</statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Hina_BB_Ef_A</stateEffecter>
+      </li>
+      
+    </comps>
+    </HediffDef>
+<AbilityDef>    
+<defName>BAWN_Hina_B_EX</defName>
+ <label>一丝不苟的准备</label>
+ <description>自身护甲穿透增加64%命中率增加45%（持续24小时）</description>
+ <iconPath>Ability/Icon/Hina/Hina_A</iconPath>
+ <cooldownTicksRange>60000</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Hina_B_Skill_EX</warmupStartSound>
+ <warmupEffecter>BANW_Hina_B_Ef_A</warmupEffecter>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <targetRequired>false</targetRequired><!-- 对自己使用 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>false</hostile><!-- 是否是敌对行为 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>1000</Ability_Duration>
+ </statBases>
+ <verbProperties>
+ <soundCast>Aoba_Skill_EX</soundCast>
+ <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+ <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>3.5</warmupTime><!-- 前摇时间（单位：秒） -->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_B</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Hina_B_buff</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+</comps>
+</AbilityDef> 
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Hina_B_buff</defName>
+        <!-- 显示名称 -->
+        <label>一丝不苟的准备</label>
+        <!-- 效果描述 -->
+        <description>自身护甲穿透增加64%命中率增加45%</description>
+        <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <BANW_RangedWeapon_Penetration>0.64</BANW_RangedWeapon_Penetration>
+           <ShootingAccuracyPawn>45</ShootingAccuracyPawn>
+           </statOffsets>
+           <statFactors>
+				</statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+      
+    </comps>
+    </HediffDef>
+  
+</Defs>

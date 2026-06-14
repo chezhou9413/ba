@@ -147,18 +147,18 @@
                 <description>{PAWN_nameDef}乍一看给人一种有钱大小姐那样高傲的气质，通常表现得拘谨而又得体。但只要跟美食扯上关系，就会变成不顾一切的热血属性美食家。她对食物的热情往往是毁灭性的，如果一顿饭或一家餐馆不能使她满意，她可能会用烈性炸药给予痛苦的报应，这种巨大的反差是她的一大特性。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                  <PawnBeauty>4.5</PawnBeauty><!-- 美貌：增加角色的魅力值 -->
+                  <PawnBeauty>4.5</PawnBeauty>
                 </statOffsets>
 				<statFactors>
 					<MaxNutrition>0.5</MaxNutrition>
 					<EatingSpeed>0.5</EatingSpeed>
 				</statFactors>
-		<disallowedThoughtsFromIngestion>                    <!-- 禁止的进食思想 -->
-          <li>                                               <!-- 第一个条目 -->
-            <meatSource>Humanlike</meatSource>               <!-- 肉类来源：类人生物 -->
+		<disallowedThoughtsFromIngestion>                    
+          <li>                                               
+            <meatSource>Humanlike</meatSource>               
             <thoughts>     
               <li>AteHumanlikeMeatDirect</li>
-              <li>AteHumanlikeMeatAsIngredient</li>          <!-- 禁止"作为配料食用类人肉"的负面思想 -->
+              <li>AteHumanlikeMeatAsIngredient</li>          
             </thoughts>
           </li>
         </disallowedThoughtsFromIngestion>
@@ -178,15 +178,15 @@
 </TraitDef>
 
 <ThoughtDef>
-    <defName>BANW_AteHumanlikeMeatDirectCannibal_Haruna</defName>  <!-- 思维定义的唯一标识名：食人族直接吃人肉 -->
-    <showBubble>true</showBubble>  <!-- 是否显示思维气泡：是 -->
-    <icon>Things/Mote/ThoughtSymbol/Food</icon>  <!-- 思维图标：食物相关图标 -->
-    <durationDays>30</durationDays>  <!-- 持续时间：1天 -->
-    <stages>  <!-- 思维阶段定义 -->
+    <defName>BANW_AteHumanlikeMeatDirectCannibal_Haruna</defName>  
+    <showBubble>true</showBubble>  
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>  
+    <durationDays>30</durationDays>  
+    <stages>  
       <li>
-        <label>啊啊啊啊啊啊</label>  <!-- 显示标签：生食人肉 -->
-        <description>开什么玩笑！开什么玩笑！你竟敢让我吃下人肉！？混蛋啊啊啊啊啊啊！</description>  <!-- 描述：我像动物一样生吃了另一个人的肉，真是太...多汁美味了 -->
-        <baseMoodEffect>-999</baseMoodEffect>  <!-- 基础情绪效果：+20（强烈的正面情绪） -->
+        <label>啊啊啊啊啊啊</label>  
+        <description>开什么玩笑！开什么玩笑！你竟敢让我吃下人肉！？混蛋啊啊啊啊啊啊！</description>  
+        <baseMoodEffect>-999</baseMoodEffect>  
       </li>
     </stages>
   </ThoughtDef>

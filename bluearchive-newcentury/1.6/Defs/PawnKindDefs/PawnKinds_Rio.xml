@@ -80,9 +80,9 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>莉音</kindName>
-				<kindDesName>莉音 !调月</kindDesName>
+				<kindDesName>调月 莉音</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>16</kindAge>
+				<kindAge>17</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>

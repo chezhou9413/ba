@@ -64,9 +64,9 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>日奈</kindName>
-				<kindDesName>日奈 日奈 空崎</kindDesName>
+				<kindDesName>空崎 日奈</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>17</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
@@ -121,13 +121,15 @@
 					<PsychicSensitivity>0.2</PsychicSensitivity>
 					<ReadingSpeed>0.5</ReadingSpeed>
 					<ResearchSpeed>0.5</ResearchSpeed>
-</statOffsets>
+					<BANW_RangedWeapon_RangeOffset>20</BANW_RangedWeapon_RangeOffset>
+                </statOffsets>
 				<statFactors>
 					<JoyFallRateFactor>1.2</JoyFallRateFactor>
 					<ShootingAccuracyPawn>15.0</ShootingAccuracyPawn>
 					<RestFallRateFactor>1.5</RestFallRateFactor>
 					<RestRateMultiplier>0.8</RestRateMultiplier>
 				</statFactors>
+				
 			</li>
 		</degreeDatas>
 	</TraitDef>

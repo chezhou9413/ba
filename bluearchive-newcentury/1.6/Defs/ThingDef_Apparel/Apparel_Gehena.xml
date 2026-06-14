@@ -5,7 +5,7 @@
         <defName>BANW_Body_Makoto</defName>
         <label>真琴的衣服</label>
         <description>真琴的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -27,7 +27,7 @@
         <defName>BANW_Body_Hina</defName>
         <label>日奈的衣服</label>
         <description>日奈的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -49,7 +49,7 @@
         <defName>BANW_Body_Ibuki</defName>
         <label>伊吹的衣服</label>
         <description>伊吹的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -71,7 +71,7 @@
         <defName>BANW_Body_Iori</defName>
         <label>伊织的衣服</label>
         <description>伊织的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -93,7 +93,7 @@
         <defName>BANW_Body_Ako</defName>
         <label>亚子的衣服</label>
         <description>亚子的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -116,7 +116,7 @@
         <defName>BANW_Body_Iroha</defName>
         <label>吕伊波的衣服</label>
         <description>吕伊波的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -139,7 +139,7 @@
         <defName>BANW_Body_Chinatsu</defName>
         <label>千夏的衣服</label>
         <description>千夏的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -162,7 +162,7 @@
         <defName>BANW_Body_Satsuki</defName>
         <label>皋月的衣服</label>
         <description>皋月的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -185,7 +185,7 @@
         <defName>BANW_Body_Kayako</defName>
         <label>佳代子的衣服</label>
         <description>佳代子的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -208,7 +208,7 @@
         <defName>BANW_Body_Chiaki</defName>
         <label>千秋的衣服</label>
         <description>千秋的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -231,7 +231,7 @@
         <defName>BANW_Body_Haruka</defName>
         <label>遥香的衣服</label>
         <description>遥香的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -254,7 +254,7 @@
         <defName>BANW_Body_Mutsuki</defName>
         <label>睦月的衣服</label>
         <description>睦月的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -277,7 +277,7 @@
         <defName>BANW_Body_Junko</defName>
         <label>淳子的衣服</label>
         <description>睦月的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -300,7 +300,7 @@
         <defName>BANW_Body_Aru</defName>
         <label>阿露的衣服</label>
         <description>阿露的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -323,7 +323,7 @@
         <defName>BANW_Body_Fuuka</defName>
         <label>枫香的衣服</label>
         <description>枫香的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -346,7 +346,7 @@
         <defName>BANW_Body_Juri</defName>
         <label>朱莉的衣服</label>
         <description>朱莉的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -369,7 +369,7 @@
         <defName>BANW_Body_Akari</defName>
         <label>明里的衣服</label>
         <description>明里的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -393,7 +393,7 @@
         <defName>BANW_Body_Izumi</defName>
         <label>泉的衣服</label>
         <description>泉的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -416,7 +416,7 @@
         <defName>BANW_Body_Haruna</defName>
         <label>晴奈的衣服</label>
         <description>晴奈的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -439,7 +439,7 @@
         <defName>BANW_Body_Sena</defName>
         <label>濑名的衣服</label>
         <description>濑名的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -462,7 +462,7 @@
         <defName>BANW_Body_Kasumi</defName>
         <label>霞的衣服</label>
         <description>霞的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -485,7 +485,7 @@
         <defName>BANW_Body_Megu</defName>
         <label>惠的衣服</label>
         <description>惠的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -504,5 +504,26 @@
         </apparel>
     </ThingDef>
 
-
+<ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Hina_B</defName>
+        <label>日奈(礼服)的衣服</label>
+        <description>日奈(礼服)的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Gehena/Hina_B/Apparel/Hina_B_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Hina_B</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
 </Defs>

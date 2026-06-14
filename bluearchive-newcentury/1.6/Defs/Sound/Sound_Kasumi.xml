@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+	<SoundDef>
+	<defName>Kasumi_Skill_EX_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Kasumi/Kasumi_1</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+	<SoundDef>
+	<defName>Kasumi_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Kasumi/SkillEX/Kasumi_ExxSkill_1</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Kasumi/SkillEX/Kasumi_ExxSkill_2</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Kasumi/SkillEX/Kasumi_ExxSkill_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Kasumi_Skill_EX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Kasumi/Kasumi_ExSkill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
 <SoundDef>
 	<defName>Kasumi_levelup_A</defName>  <!--二技能语音-->  
 	<maxVoices>1</maxVoices>

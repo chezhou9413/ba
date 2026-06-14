@@ -68,11 +68,14 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>爱丽丝(武装)</kindName>
-				<kindDesName>爱丽丝(武装)</kindDesName>
+				<kindName>爱丽丝</kindName>
+				<kindDesName>天童 爱丽丝</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>
+			<li Class="BANWlLib.KindStats.BANWKindStatExtension">
+        <worldCargoCapacityOffset>1000</worldCargoCapacityOffset>
+      </li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>

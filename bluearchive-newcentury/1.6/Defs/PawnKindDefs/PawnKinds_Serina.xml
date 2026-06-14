@@ -74,9 +74,9 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>芹娜</kindName>
-				<kindDesName>芹娜 芹娜 鹫见</kindDesName>
+				<kindDesName>鹫见 芹娜</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>16</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>

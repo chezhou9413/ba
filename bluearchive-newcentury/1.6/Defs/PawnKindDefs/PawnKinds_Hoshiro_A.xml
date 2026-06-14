@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Hoshiro_A</defName>
+		<label>-星野-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+			<li>BAWN_Hoshiro_A_EX</li>
+			<li>BAWN_Hoshiro_A_EXX</li>
+		</abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryAbydos</li>
+					<li>BANW_BackstoryHoshiro_A</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Hoshiro_A</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Hoshiro_A</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+		
+			<li>
+				<skill>Shooting</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10</range>
+			</li>
+		</skills>
+		   <forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+			<BAWC_TraitDef_Hoshiro>0</BAWC_TraitDef_Hoshiro>
+			<BAWC_TraitDef_Hoshiro_A_A>0</BAWC_TraitDef_Hoshiro_A_A>
+		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>星野</kindName>
+				<kindDesName>小鸟游 星野</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>16</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro_A/Halo/Hoshiro_A_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro_A/Head/Hoshiro_A_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro_A/Body/Hoshiro_A_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro_A/Hair/Hoshiro_A_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro_A/Hair/Hoshiro_A_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Hoshiro_A_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;忍耐酷暑&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;16%&lt;/color&gt;护甲增加&lt;color=#DC143C&gt;16%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_FinalDamageMultiplier>0.16</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+			    <ArmorRating_Sharp>1.16</ArmorRating_Sharp>
+		        <ArmorRating_Blunt>1.16</ArmorRating_Blunt>
+	            <ArmorRating_Heat>1.16</ArmorRating_Heat>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

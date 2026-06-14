@@ -81,10 +81,11 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>鹿江</kindName>
-				<kindDesName>鹿江 !板垣</kindDesName>
+				<kindDesName>板垣 鹿江</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>16</kindAge>
 			</li>
+			
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -124,6 +125,7 @@
                 <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的生命值。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
                 </statOffsets>
             </li>
         </degreeDatas>

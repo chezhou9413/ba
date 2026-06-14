@@ -77,7 +77,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>伊织</kindName>
-				<kindDesName>伊织 伊织 眼镜</kindDesName>
+				<kindDesName>眼镜 伊织</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>

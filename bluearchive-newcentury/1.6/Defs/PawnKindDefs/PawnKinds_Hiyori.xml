@@ -13,6 +13,10 @@
 		
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
+		<abilities>
+			<li>BAWN_Hiyori_EX</li>
+			<li>BAWN_Hiyori_EXX</li>
+		</abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>
@@ -66,11 +70,12 @@
 		<forcedTraits>
 		<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
 		<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+		<BAWC_TraitDef_Hiyori_A>0</BAWC_TraitDef_Hiyori_A>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>日和</kindName>
-				<kindDesName>日和 槌永</kindDesName>
+				<kindDesName>槌永 日和</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>
 			</li>
@@ -101,5 +106,20 @@
 		</modExtensions>
 	</PawnKindDef>
 
-	
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hiyori_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;杂志上学到的知识&lt;/color&gt;</label>
+                <description>被动技能:自身暴击伤害增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_CriticalDamage>0.26</BANW_CriticalDamage>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
 </Defs>

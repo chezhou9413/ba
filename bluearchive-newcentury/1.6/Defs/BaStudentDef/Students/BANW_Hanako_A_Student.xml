@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?><Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Hanako_A_Student</defName>
+    <label>花子(泳装)</label>
+    <studentId>BANW_Hanako</studentId>
+    <kindDef>BANW_Hanako</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Hanako_A</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Hanako_A</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_WaterFall</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>10</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>8</Cooking>
+				
+				<Plants>10</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>0</Crafting>
+				
+				<Artistic>20</Artistic>
+				
+				<Medical>8</Medical>
+				
+				<Social>12</Social>
+				
+				<Intellectual>17</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Hanako</WapenUIImagePath>
+			    
+				<WapenTypeText>步枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Hanako_A/Hanako_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>喷出来了好多呢♡</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对扇形范围内的敌方单位造成自身攻击力<color=#00FFFF>642</color>%的伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Kasumi/Kasumi_EXX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>请接好哦♡</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Chiaki/Chiaki_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>隐藏在盛夏的真心</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>16%</color>暴击伤害增加<color=#00FFFF>16%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Hanako_A/Hanako_EX</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>补充水分♡</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[每20秒回复一次EX的充能，充能最大为3，每次使用一次EX会消耗一次充能并增加自身<color=#00FFFF>38%</color>的攻击力]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[圣三一综合学园
+2年级
+社团 补课部]]>
+				</StudentDesp>
+				
+				<StudentBioName>浦和 花子</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Sany</AcademyLogoPath>
+				
+				<StudentCard>为了迎接享受夏天而来到孤岛上的补习部成员。也许是因为和亲近的人一起来到了自由的空间，穿着比之前更为大胆。但与之前的妩媚姿态不同，她偶尔也会展现出自己的坦率与真心。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Vibration</DamageType>
+			
+			<DefenseType>Through</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Hanako_A</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Hanako_A_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+			<UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Hanako_A_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Hanako_A_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Hanako_A</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

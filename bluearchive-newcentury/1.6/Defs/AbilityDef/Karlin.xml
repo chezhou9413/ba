@@ -43,7 +43,7 @@
     <label>火力支援，开始</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>305</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>487</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.85</armorPenetrationBase><!--穿透-->
       <speed>180</speed><!--子弹速度-->
@@ -107,9 +107,9 @@
     <label>目标，排除</label>
     <projectile>
       <damageDef>BANC_Damage_Kazusa_EXX</damageDef><!--子弹类型-->
-      <damageAmountBase>792</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>1264</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.85</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.55</armorPenetrationBase><!--穿透-->
       <speed>140</speed><!--子弹速度-->
       <extraDamages>
       <li>

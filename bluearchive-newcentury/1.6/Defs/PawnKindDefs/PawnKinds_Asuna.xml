@@ -82,8 +82,8 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>一之濑</kindName>
-				<kindDesName>一之濑 明日奈</kindDesName>
+				<kindName>明日奈</kindName>
+				<kindDesName>明日奈 一之濑</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>
 			</li>
@@ -165,28 +165,28 @@
 </TraitDef>
 
  <ThoughtDef>
-    <!-- 想法的唯一标识符 -->
+    
     <defName>BAWC_TraitDef_Asuna_ThoughtDef</defName>
-    <!-- 工作类：始终激活，意味着这个想法会持续生效 -->
+    
     <workerClass>ThoughtWorker_AlwaysActive</workerClass>
-    <!-- 即使角色未被生成（不在地图上）时也有效 -->
+    
     <validWhileDespawned>true</validWhileDespawned>
-    <!-- 适用阶段：适用于婴儿、儿童和成人阶段的角色 -->
+    
     <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
-    <!-- 需要拥有的特质 -->
+    
     <requiredTraits>
       <li>BAWC_TraitDef_Asuna</li>
     </requiredTraits>
-    <!-- 需要特质的等级：0（最高等级） -->
+    
     <requiredTraitsDegree>0</requiredTraitsDegree>
-    <!-- 效果阶段 -->
+    
     <stages>
       <li>
-        <!-- 显示标签 -->
+        
         <label>活力女仆</label>
-        <!-- 描述：说明这是来自活力女仆特质的自然加成 -->
+        
         <description>来自"活力女仆"特质的自然加成。</description>
-        <!-- 基础心情效果：提供+12的心情加成 -->
+        
         <baseMoodEffect>20</baseMoodEffect>
       </li>
     </stages>

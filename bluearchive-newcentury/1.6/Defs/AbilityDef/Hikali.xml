@@ -5,7 +5,7 @@
  <label>剪票时间～</label>
  <description>使除自身外的一名我方单位护甲穿透提升92%（持续32秒）</description>
  <iconPath>Ability/Icon/Hikali/Hikali_EXX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
+ <cooldownTicksRange>1200</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Hikali_Skill_EX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

@@ -21,7 +21,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>0.99</AccuracyMedium><!--中-->
       <AccuracyLong>0.69</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
     </equippedStatOffsets>
@@ -47,6 +47,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Kanna</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -54,7 +61,7 @@
     <label>瓦尔基丽17号制式手枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>42</damageAmountBase>
+      <damageAmountBase>64</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.35</armorPenetrationBase>
       <speed>70</speed>
@@ -88,7 +95,7 @@
       <AccuracyShort>0.68</AccuracyShort>
       <AccuracyMedium>1</AccuracyMedium>
       <AccuracyLong>0.8</AccuracyLong>
-      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
     </equippedStatOffsets>
@@ -107,13 +114,21 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>BANC_Bullet_Fubuki</defaultProjectile>
-        <warmupTime>2.5</warmupTime>
+        <warmupTime>1</warmupTime>
+        <burstShotCount>3</burstShotCount><!--连射次数-->
         <range>44.9</range>
         <soundCast>BANW_Wp_SR_At_B</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Fubuki</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -121,9 +136,9 @@
     <label>瓦尔基丽14号制式步枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>28</damageAmountBase>
+      <damageAmountBase>25</damageAmountBase>
       <stoppingPower>1.5</stoppingPower>
-      <armorPenetrationBase>0.55</armorPenetrationBase>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
       <speed>100</speed>
     </projectile>
     <graphicData>
@@ -154,7 +169,7 @@
       <AccuracyShort>1</AccuracyShort><!--近-->
       <AccuracyMedium>0.99</AccuracyMedium><!--中-->
       <AccuracyLong>0.69</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
     </equippedStatOffsets>
@@ -180,6 +195,13 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Kirino</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -187,7 +209,7 @@
     <label>瓦尔基丽制式手枪3号子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>55</damageAmountBase>
+      <damageAmountBase>35</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.15</armorPenetrationBase>
       <speed>70</speed>

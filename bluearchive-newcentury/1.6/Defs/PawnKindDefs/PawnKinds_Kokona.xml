@@ -6,8 +6,10 @@
 		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
-
 		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Kokona_EXX</li>
+        </abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>
@@ -69,13 +71,14 @@
 		<forcedTraits>
 			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+			<BAWC_TraitDef_Kokona_A>0</BAWC_TraitDef_Kokona_A>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>春原</kindName>
 				<kindDesName>春原 心奈</kindDesName>
 				<Gender>Female</Gender>
-				<kindAge>15</kindAge>
+				<kindAge>11</kindAge>
 			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
@@ -104,4 +107,21 @@
 		</modExtensions>
 	</PawnKindDef>
 
+	<TraitDef>
+        <defName>BAWC_TraitDef_Kokona_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;作为教官的责任&lt;/color&gt;</label>
+                <description>被动技能:自身治疗质量增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    
+                </statOffsets>
+				<statFactors>
+					<MedicalTendQuality>1.26</MedicalTendQuality>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
 </Defs>

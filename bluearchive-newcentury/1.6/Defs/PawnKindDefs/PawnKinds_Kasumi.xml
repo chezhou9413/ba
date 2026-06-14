@@ -9,6 +9,8 @@
 
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<abilities>
+			<li>BAWN_Kasumi_EX</li>
+			<li>BAWN_Kasumi_EXX</li>
         </abilities>
 		<startingHediffs>
 		<li>
@@ -71,8 +73,8 @@
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>霞</kindName>
-				<kindDesName>霞 霞 鬼怒川</kindDesName>
+				<kindName>鬼怒川</kindName>
+				<kindDesName>霞 鬼怒川</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>16</kindAge>
 			</li>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?><Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Hina_B_Student</defName>
+    <label>日奈(礼服)</label>
+    <studentId>BANW_Hina_B</studentId>
+    <kindDef>BANW_Hina_B</kindDef>
+
+    <BaStudentUI>
+			<!-- 学生头像路径，用于在UI中显示学生头像 -->
+			<StudentAvatar>ManuaUI/Avatar/Hina_B</StudentAvatar>
+			<!-- 学生名称显示模式，Auto表示自动生成名称 -->
+			<StudentName>Auto</StudentName>
+			<!-- 角色立绘路径，用于显示学生的全身立绘图像 -->
+			<CharacterimagePath>ManuaUI/Live/Hina_B</CharacterimagePath>
+			<!-- 背景图片路径，用于学生详情界面的背景 -->
+			<BackgroundPath>ManuaUI/Bg/BG_Gehenna_B</BackgroundPath>
+			<!-- 角色立绘的缩放倍数，1.2表示放大1.2倍 -->
+			<CharacterimageOffsetSize>1.8</CharacterimageOffsetSize>
+			<!-- 角色立绘在X轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetX>100</CharacterimageOffsetX>
+			<!-- 角色立绘在Y轴上的偏移量，单位像素 -->
+			<CharacterimageOffsetY>5</CharacterimageOffsetY>
+			<!-- 角色类型标签路径，用于显示学生的类型标签 -->
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			<!-- 角色的星星数量 -->
+			<CharacterStarCount>3</CharacterStarCount>
+			<!-- 出击按钮旁边的1号tag图片路径，对应位置左上 -->
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			<!-- 出击按钮旁边的2号tag图片路径，对应位置左下 -->
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			<!-- 出击按钮旁边的3号tag图片路径，对应位置右上 -->
+			<infotagImagePath3>ManuaUI/Type/爆发</infotagImagePath3>
+			<!-- 出击按钮旁边的4号tag图片路径，对应位置右下 -->
+			<infotagImagePath4>ManuaUI/Type/弹力装甲</infotagImagePath4>
+			<!-- 技能等级显示，写整数，不要大于20，小于0 -->
+			<Skills>
+				<!--射击-->
+				<Shooting>20</Shooting>
+				<!--近战-->
+				<Melee>15</Melee>
+				<!--建造-->
+				<Construction>0</Construction>
+				<!--采矿-->
+				<Mining>0</Mining>
+				<!--烹饪-->
+				<Cooking>0</Cooking>
+				<!--种植-->
+				<Plants>0</Plants>
+				<!--驯兽-->
+				<Animals>0</Animals>
+				<!--手工-->
+				<Crafting>0</Crafting>
+				<!--艺术-->
+				<Artistic>20</Artistic>
+				<!--医学-->
+				<Medical>0</Medical>
+				<!--社交-->
+				<Social>18</Social>
+				<!--智慧-->
+				<Intellectual>15</Intellectual>
+			</Skills>
+		    <!--武器UI配置-->
+			<WapenUI>
+			   <!--武器图片路径配置-->
+				<WapenUIImagePath>ManuaUI/Wapen/Hina</WapenUIImagePath>
+			    <!--武器类型文本配置-->
+				<WapenTypeText>机枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Hina/Hina_B</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>开演：伊施波设</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>6</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对直线范围的敌方单位造成自身攻击力<color=#00FFFF>2524%</color>的伤害
+第一枪造成<color=#00FFFF>618%</color>的伤害
+第二枪造成<color=#00FFFF>618%%</color>的伤害
+第三枪造成<color=#00FFFF>1288%</color>的伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Hina/Hina_A</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>一丝不苟的准备</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>24</color>小时]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身护甲穿透增加<color=#00FFFF>64%</color>命中率增加<color=#00FFFF>45%</color>
+（持续<color=#00FFFF>24</color>小时）]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>演奏前的心情</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>16%</color>暴击率增加<color=#00FFFF>16%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Hina/Hina_A</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>于此传达真心</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身EX攻击期间增加自身<color=#00FFFF>63%</color>护甲穿透]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   <!--学生简介页面的粗略介绍配置，显示在学院logo旁边-->
+				<StudentDesp><![CDATA[格黑娜学院
+3年级
+社团 风纪委员会]]>
+				</StudentDesp>
+				<!--学生简介页面的名字，显示在学院logo旁边-->
+				<StudentBioName>空崎 日奈</StudentBioName>
+				<!--学院logo路径，显示在学生简介页面的左上角-->
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Gehenna</AcademyLogoPath>
+				<!--学生简介页面的学生背景故事配置，长文本，可以任意字数-->
+				<StudentCard>歌赫娜的风纪委员长，为了参加宴会特别换上了礼服。虽然是个对任何事都嫌麻烦的少女，但一听老师说很期待歌赫娜的特别宴会，便下定了决心要比平常稍微努力一点。她一有空就会认真练习要献给老师的钢琴演奏，散发出比平时更加青涩纯真的少女心，但本人并没有意识到这件事。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+   <baStudentData>
+			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DamageType>Explosion</DamageType>
+			<!-- 防御类型：Explosion(爆发), Mysterious(神秘), Vibration(振动), Through(穿透) -->
+			<DefenseType>Vibration</DefenseType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			<PosType>Henc</PosType>
+			<!-- 星级数量 -->
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Hina_B</DraggableAudio>
+			<GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Hina_B_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+			<UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Hina_B_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Hina_B_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+            <!-- 抽卡面板显示的纹理，就是最后翻牌那一下的头像 -->
+            <avtTexPath>Gacha/Student/Hina_B</avtTexPath>
+		</baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

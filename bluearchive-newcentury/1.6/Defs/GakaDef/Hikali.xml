@@ -8,7 +8,7 @@
         <gachaVidPath>UI/Video/Hikali.webm</gachaVidPath>        <!-- 卡池宣传视频 -->
         <!-- 显示信息 -->
         <gachaTitle>限定招募</gachaTitle>            <!-- 卡池标题 -->
-        <gachaUp>★3光出现概率Up！\n首次奖励可获得[Hikali的神名文字x100]！</gachaUp>                 <!-- UP内容说明 -->
+        <gachaUp>★3光出现概率Up！\n首次奖励可获得[光的神名文字x100]！</gachaUp>                 <!-- UP内容说明 -->
         <gachaDesc>招募10次时，保证获得1名★2以上学生！\n※已招募过的学生會变换成神名文字碎片与该学生的神名文字。</gachaDesc>  <!-- 详细描述 -->
         <!-- UP三星池配置 -->
         <!-- Weight=70 表示在三星出货时，有70%概率从UP池抽取 -->
@@ -61,12 +61,21 @@
                 <li>BANW_Eimi_Student</li>
                 <li>BANW_Karlin_Student</li>
                 <li>BANW_Noa_Student</li>
+                <li>BANW_Yakumo_Student</li>
                 <li>BANW_Cherino_Student</li>
+                <li>BANW_Minori_Student</li>
+                <li>BANW_Shigure_Student</li>
+                <li>BANW_Meru_Student</li>
                 <li>BANW_Marina_Student</li>
+                <li>BANW_Takane_Student</li>
+                <li>BANW_Reijo_Student</li>
                 <li>BANW_Kisaki_Student</li>
                 <li>BANW_Kokona_Student</li>
+                <li>BANW_Rumi_Student</li>
                 <li>BANW_Shun_Student</li>
                 <li>BANW_Saya_Student</li>
+                <li>BANW_Wakamo_A_Student</li>
+<li>BANW_Mina_Student</li>
                 <li>BANW_Kanna_Student</li>
                 <li>BANW_Nagusa_Student</li>
                 <li>BANW_Niya_Student</li>
@@ -109,10 +118,17 @@
                 <li>BANW_Hare_Student</li>                       <!-- 晴 -->
                 <li>BANW_Junko_Student</li>                      <!-- �的子 -->
                 <li>BANW_Airy_Student</li>
+                <li>BANW_Chise_Student</li>
+               <li>BANW_Hasumi_Student</li>
+               <li>BANW_Akari_Student</li>
+               <li>BANW_Kayako_Student</li>
+                <li>BANW_Fuuka_Student</li>
+                <li>BANW_Hanae_Student</li>
                 <li>BANW_Mari_Student</li>  
                 <li>BANW_Yuuka_Student</li> 
                 <li>BANW_Utaha_Student</li> 
                 <li>BANW_Akane_Student</li> 
+                <li>BANW_Momiji_Student</li> 
                 <li>BANW_Kirino_Student</li>
                 <li>BANW_Tsubaki_Student</li> 
                 <li>BANW_Shizuko_Student</li>            
@@ -135,6 +151,8 @@
                 <li>BANW_Ibuki_Student</li>
                 <li>BANW_Kotama_Student</li>
                 <li>BANW_Asuna_Student</li>
+                <li>BANW_Nodoka_Student</li>
+                <li>BANW_Tomoe_Student</li>
                 <li>BANW_Fubuki_Student</li>
                 <li>BANW_Michiru_Student</li>
                 <li>BANW_Aoba_Student</li>

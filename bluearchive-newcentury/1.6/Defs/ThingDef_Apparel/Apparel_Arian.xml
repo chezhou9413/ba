@@ -5,7 +5,7 @@
         <defName>BANW_Body_Atsuko</defName>
         <label>亚津子的衣服</label>
         <description>亚津子的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -28,7 +28,7 @@
         <defName>BANW_Body_Saori</defName>
         <label>纱织的衣服</label>
         <description>纱织的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -51,7 +51,7 @@
         <defName>BANW_Body_Hiyori</defName>
         <label>日和的衣服</label>
         <description>日和的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -74,7 +74,7 @@
         <defName>BANW_Body_Misaki</defName>
         <label>美咲的衣服</label>
         <description>美咲的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>

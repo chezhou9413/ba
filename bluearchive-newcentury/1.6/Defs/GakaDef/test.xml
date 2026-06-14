@@ -17,7 +17,7 @@
             - 420000 = 7天(一周)轮换一次
             - 1800000 = 30天(一个月)轮换一次
         -->
-        <RotationTick>240000</RotationTick>
+        <RotationTick>180000</RotationTick>
         
         <!-- 
             SlotsCount: 每次轮换随机抽取的卡池槽位数量
@@ -110,6 +110,8 @@
             <li>Gacha_Standard_Yakumo</li>
             <li>Gacha_Standard_Yokari</li>
             <li>Gacha_Standard_Yuzu</li>
+            <li>Gacha_Standard_Mina</li>
+            <li>Gacha_Standard_Wakamo_A</li>
         </StandardPool>
 
         <!-- ========================================================== -->
@@ -139,6 +141,7 @@
               <li>Gacha_Standard_Reisa_A</li>
               <li>Gacha_Standard_Seia</li>
               <li>Gacha_Standard_Toki</li>
+              <li>Gacha_Standard_Miku</li>
               <li>Gacha_Standard_Shizumi_A</li>
         </LimitedPool>
 
@@ -194,11 +197,16 @@
                 目的: 集中展示所有限定池，刺激消费/抽卡欲望
             -->
             <li>
-                <triggerIndex>12</triggerIndex>
+                <triggerIndex>10</triggerIndex>
                 <forcedPool>
                     <li>Gacha_Standard_Mika</li> 
                     <li>Gacha_Standard_Rio</li> 
                     <li>Gacha_Standard_Arisu_B</li> 
+                    <li>Gacha_Standard_Kei</li> 
+                    <li>Gacha_Standard_Hina_B</li> 
+                    <li>Gacha_Standard_Hanako_A</li>
+                    <li>Gacha_Standard_Hoshiro_A</li> 
+                    <li>Gacha_Standard_Wakamo</li> 
                 </forcedPool>
             </li>
         </SpecialQueues>

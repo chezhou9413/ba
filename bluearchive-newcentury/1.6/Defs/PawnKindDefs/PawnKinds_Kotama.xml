@@ -4,10 +4,14 @@
 		<defName>BANW_Kotama</defName>
 		<label>-小玉-</label>
 		<race>BANW_KivotosStudent</race>
-		<combatPower>100</combatPower>
+	<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
 		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Kotama_EX</li>
+			<li>BAWN_Kotama_EXX</li>
+		</abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>
@@ -53,11 +57,12 @@
 		<forcedTraits>
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Kotama_A>0</BAWC_TraitDef_Kotama_A>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>小玉</kindName>
-				<kindDesName>小玉 !音濑</kindDesName>
+				<kindDesName>音濑 小玉</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>15</kindAge>
 			</li>
@@ -88,4 +93,18 @@
 		</modExtensions>
 	</PawnKindDef>
 
+	<TraitDef>
+        <defName>BAWC_TraitDef_Kotama_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;集中分析&lt;/color&gt;</label>
+                <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的命中率。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<ShootingAccuracyPawn>0.26</ShootingAccuracyPawn>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

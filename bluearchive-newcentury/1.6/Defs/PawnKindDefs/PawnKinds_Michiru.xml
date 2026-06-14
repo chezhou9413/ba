@@ -88,7 +88,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>满</kindName>
-				<kindDesName>满 千鸟</kindDesName>
+				<kindDesName>千鸟 满</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>
 			</li>

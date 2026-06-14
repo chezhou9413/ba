@@ -15,9 +15,9 @@
 			</graphicPaths>
 			<generalSettings>
 				<alienPartGenerator>
-					<customDrawSize>(1, 1)</customDrawSize>					<!-- 小人整体大小 -->
+					<customDrawSize>(1, 1)</customDrawSize>					
 					<bodyAddons>
-						<!-- 头 -->
+						
 						<li>
 							<name>KivotosStudent_head</name>
 							<path>Pawns/General/Invisible/Inv</path>
@@ -48,7 +48,7 @@
                             <Backstory For="BANW_StudentSensei">Pawns/Sensei/Head/Sensei_Head</Backstory>
 							</extendedGraphics>
 						</li>
-						<!-- 身体 -->
+						
 						<li>
 							<name>KivotosStudent_Body</name>
 							<path>Pawns/General/Invisible/Inv</path>
@@ -88,7 +88,7 @@
 							<Backstory For="BANW_StudentSensei">Pawns/Sensei/Body/Sensei_Body</Backstory>
 							</extendedGraphics>
 						</li>
-						<!-- 头发前 -->
+						
 						<li>
 							<name>KivotosStudent_hairfront</name>
 							<path>Pawns/General/Invisible/Inv</path>
@@ -119,7 +119,7 @@
 							<Backstory For="BANW_StudentSensei">Pawns/Sensei/Hair/Sensei_FrontHair</Backstory>	
 							</extendedGraphics>
 						</li>
-						<!-- 头发后 -->
+						
 						
 						</bodyAddons>
 				</alienPartGenerator>
@@ -133,7 +133,7 @@
         <defName>BANW_Body_Sensei</defName>
         <label>老师的衣服</label>
         <description>老师的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -155,7 +155,7 @@
         <defName>BANW_Head_Sensei</defName>
         <label>奇怪的面具</label>
         <description>一个滑稽的面具，可能会有人喜欢它</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Stone/Sensei</texPath>
             <graphicClass>Graphic_Single</graphicClass>
 			
@@ -393,7 +393,7 @@
 			<body Inherit="false">BANW_kivotos_Sensei</body>
 			<useMeatFrom>Human</useMeatFrom>
 			<baseBodySize>1</baseBodySize>
-			<baseHealthScale>1</baseHealthScale><!--		        ■血量-->
+			<baseHealthScale>1</baseHealthScale>
 			<foodType>OmnivoreHuman</foodType>
 			<lifeExpectancy>80</lifeExpectancy>
 			<leatherDef>Leather_Human</leatherDef>
@@ -471,48 +471,48 @@
 			</ageGenerationCurve>
 		</race>
 
-		<!--数据需要调整-->
+		
 		<statBases>
-			<RoyalFavorValue>3</RoyalFavorValue><!--		        ■荣誉点数-->
-			<MarketValue>1000</MarketValue><!--		                ■价格-->
-			<Mass>50</Mass><!--		                                ■重量-->
-			<MoveSpeed>4.50</MoveSpeed><!--		                    ■移动速度-->
-			<Flammability>0.6</Flammability><!--		            ■易燃性-->
-			<ComfyTemperatureMax>30</ComfyTemperatureMax><!--		■最高适应温度-->
-			<ComfyTemperatureMin>-10</ComfyTemperatureMin><!--		■最低适应温度-->
-			<ImmunityGainSpeed>0.9</ImmunityGainSpeed><!--		    ■免疫增益速度-->
-			<CarryingCapacity>60</CarryingCapacity><!--		        ■承载力-->
-			<PainShockThreshold>0.5</PainShockThreshold><!--		■疼痛忍受力-->
-			<ToxicResistance>0.5</ToxicResistance><!--		        ■毒性-->
-			<MeatAmount>1</MeatAmount><!--		                    ■肉-->
-			<LeatherAmount>1</LeatherAmount><!--		            ■皮-->
-			<AimingDelayFactor>1.2</AimingDelayFactor><!--		    ■瞄准延迟系数-->
-			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn><!--	■射撃命中補正-->
-			<PlantWorkSpeed>1.1</PlantWorkSpeed><!--		        ■种植速度-->
-			<ConstructionSpeed>1.15</ConstructionSpeed><!--		    ■建筑速度-->
-			<ResearchSpeed>1.0</ResearchSpeed><!--		            ■研究速度-->
-		<SocialImpact>1.00</SocialImpact><!--		                ■社会影响-->
-		<IncomingDamageFactor>1</IncomingDamageFactor><!--		    ■收到的伤害倍率-->
-		<MentalBreakThreshold>0.25</MentalBreakThreshold><!--		■容易精神崩溃-->
-		<PsychicSensitivity>1.5</PsychicSensitivity><!--			■心里敏感-->
-		<MeleeDodgeChance>1</MeleeDodgeChance><!--					■回避補正-->
-		<ArmorRating_Blunt>0.05</ArmorRating_Blunt><!--				■打撃耐性-->
-		<ArmorRating_Sharp>0.05</ArmorRating_Sharp><!--				■刺突耐性-->
-		<ArmorRating_Heat>0.05</ArmorRating_Heat><!--				■熱耐性-->
-		<NegotiationAbility>1.0</NegotiationAbility><!--			■外交補正 -->
-		<SellPriceFactor>0.6</SellPriceFactor> <!--					■取引価格補正 -->
-		<TameAnimalChance>0.5</TameAnimalChance> <!--				■手なづけ補正-->
-		<TrainAnimalChance>0.5</TrainAnimalChance> <!--				■調教補正-->
-		<RestRateMultiplier>1.0</RestRateMultiplier><!--			■睡眠効率-->
-		<WorkSpeedGlobal>1</WorkSpeedGlobal><!--					■基本作業速度-->
-		<GeneralLaborSpeed>1</GeneralLaborSpeed><!--				■一般的作業速度-->
-		<MedicalTendSpeed>1</MedicalTendSpeed><!--				    ■医療速度補正-->
-		<ResearchSpeed>1</ResearchSpeed><!--						■研究速度補正-->
-		<MiningSpeed>1</MiningSpeed><!--							■採掘速度補正-->
-		<ConstructionSpeedFactor>1</ConstructionSpeedFactor><!--	■建設速度-->
-		<SmoothingSpeed>1</SmoothingSpeed><!--					    ■石を滑らかにする速度-->
-		<AnimalGatherSpeed>1</AnimalGatherSpeed><!--				■動物から採取する速度-->
-		<ButcheryMechanoidSpeed>1</ButcheryMechanoidSpeed><!--	    ■機械分解作業速度-->
+			<RoyalFavorValue>3</RoyalFavorValue>
+			<MarketValue>1000</MarketValue>
+			<Mass>50</Mass>
+			<MoveSpeed>4.50</MoveSpeed>
+			<Flammability>0.6</Flammability>
+			<ComfyTemperatureMax>30</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+			<ImmunityGainSpeed>0.9</ImmunityGainSpeed>
+			<CarryingCapacity>60</CarryingCapacity>
+			<PainShockThreshold>0.5</PainShockThreshold>
+			<ToxicResistance>0.5</ToxicResistance>
+			<MeatAmount>1</MeatAmount>
+			<LeatherAmount>1</LeatherAmount>
+			<AimingDelayFactor>1.2</AimingDelayFactor>
+			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
+			<PlantWorkSpeed>1.1</PlantWorkSpeed>
+			<ConstructionSpeed>1.15</ConstructionSpeed>
+			<ResearchSpeed>1.0</ResearchSpeed>
+		<SocialImpact>1.00</SocialImpact>
+		<IncomingDamageFactor>1</IncomingDamageFactor>
+		<MentalBreakThreshold>0.25</MentalBreakThreshold>
+		<PsychicSensitivity>1.5</PsychicSensitivity>
+		<MeleeDodgeChance>1</MeleeDodgeChance>
+		<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+		<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+		<ArmorRating_Heat>0.05</ArmorRating_Heat>
+		<NegotiationAbility>1.0</NegotiationAbility>
+		<SellPriceFactor>0.6</SellPriceFactor> 
+		<TameAnimalChance>0.5</TameAnimalChance> 
+		<TrainAnimalChance>0.5</TrainAnimalChance> 
+		<RestRateMultiplier>1.0</RestRateMultiplier>
+		<WorkSpeedGlobal>1</WorkSpeedGlobal>
+		<GeneralLaborSpeed>1</GeneralLaborSpeed>
+		<MedicalTendSpeed>1</MedicalTendSpeed>
+		<ResearchSpeed>1</ResearchSpeed>
+		<MiningSpeed>1</MiningSpeed>
+		<ConstructionSpeedFactor>1</ConstructionSpeedFactor>
+		<SmoothingSpeed>1</SmoothingSpeed>
+		<AnimalGatherSpeed>1</AnimalGatherSpeed>
+		<ButcheryMechanoidSpeed>1</ButcheryMechanoidSpeed>
 		</statBases>
 
 		<recipes>

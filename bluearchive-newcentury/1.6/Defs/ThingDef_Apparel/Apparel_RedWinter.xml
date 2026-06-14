@@ -4,7 +4,7 @@
         <defName>BANW_Body_Cherino</defName>
         <label>切里诺的衣服</label>
         <description>切里诺的衣服</description>
-        <graphicData><!--需要一个衣服的通用物品贴图-->
+        <graphicData>
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
@@ -40,6 +40,235 @@
             </layers>
             <tags>
                 <li>BANW_Body_Marina</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Tomoe</defName>
+        <label>巴的衣服</label>
+        <description>巴的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/RedWinter/Tomoe/Apparel/Tomoe_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Tomoe</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+     <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Shigure</defName>
+        <label>时雨的衣服</label>
+        <description>时雨的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/RedWinter/Shigure/Apparel/Shigure_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Shigure</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+     <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Nodoka</defName>
+        <label>和香的衣服</label>
+        <description>和香的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/RedWinter/Nodoka/Apparel/Nodoka_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Nodoka</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+    
+<ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Nodoka_Bag</defName>
+        <label>和香的望远镜</label>
+        <description>和香随身携带的望远镜，喜欢天体观测，有时候也会用来偷窥老师.</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/RedWinter/Nodoka/Apparel/Nodoka_Bag</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <equippedStatOffsets>
+
+		</equippedStatOffsets>
+        <apparel>
+            <wornGraphicData>
+                <renderUtilityAsPack>true</renderUtilityAsPack>
+            </wornGraphicData>
+            <wornGraphicPath>Pawns/RedWinter/Nodoka/Apparel/Nodoka_Bag_Apparel</wornGraphicPath>
+            <bodyPartGroups Inherit="False">
+                <li>Torso</li><!--躯干-->
+				<li>Neck</li><!--脖子-->
+				<li>Shoulders</li><!--肩膀-->
+				<li>Arms</li><!--臂-->
+				<li>Legs</li><!--腿-->
+				<li>FullHead</li><!--头-->
+				<li>Feet</li><!--脚-->
+				<li>Waist</li><!--腰-->
+				<li>Hands</li><!--手-->
+            </bodyPartGroups >
+            <layers Inherit="False">
+                <li>Belt</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Nodoka_Bag</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+        <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Nodoka</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+    </ThingDef>
+
+     <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Yakumo</defName>
+        <label>八云的衣服</label>
+        <description>八云的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/RedWinter/Yakumo/Apparel/Yakumo_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Yakumo</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+     <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Minori</defName>
+        <label>实梨的衣服</label>
+        <description>实梨的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/RedWinter/Minori/Apparel/Minori_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Minori</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Takane</defName>
+        <label>贵音的衣服</label>
+        <description>贵音的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/RedWinter/Takane/Apparel/Takane_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Takane</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Meru</defName>
+        <label>梅露的衣服</label>
+        <description>梅露的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/RedWinter/Meru/Apparel/Meru_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Meru</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Momiji</defName>
+        <label>红叶的衣服</label>
+        <description>红叶的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/RedWinter/Momiji/Apparel/Momiji_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Momiji</li>
                 <li>BANW_Body</li>
             </tags>
         </apparel>

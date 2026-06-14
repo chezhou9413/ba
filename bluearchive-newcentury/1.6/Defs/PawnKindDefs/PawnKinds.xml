@@ -15,6 +15,7 @@
 		<chemicalAddictionChance>0.0</chemicalAddictionChance>
 		<combatEnhancingDrugsChance>0.0</combatEnhancingDrugsChance>
 		<destroyGearOnDrop>false</destroyGearOnDrop>
+		
 	</PawnKindDef>
 
 </Defs>

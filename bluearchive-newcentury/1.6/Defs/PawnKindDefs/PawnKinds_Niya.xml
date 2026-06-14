@@ -92,7 +92,7 @@
 		<modExtensions>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>尼娅</kindName>
-				<kindDesName>尼娅 天地</kindDesName>
+				<kindDesName>天地 尼娅</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>17</kindAge>
 			</li>
@@ -107,7 +107,7 @@
 						<ReplacePath>Pawns/Hyakkiyako/Niya/Body/Niya_Body</ReplacePath>
 					</li>
 					<li>
-						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
 						<ReplacePath>Pawns/Hyakkiyako/Niya/Head/Niya_Head</ReplacePath>
 					</li>
 					<li>
