@@ -45,15 +45,15 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 if (!SelfisCollect)
                 {
                     SelfisCollect = true;
-                    if (!tracker.StudentCollect.Contains(BaStudentUI.RaceDefName))
+                    if (!tracker.StudentCollect.Contains(BaStudentUI.StudentId))
                     {
-                        tracker.StudentCollect.Add(BaStudentUI.RaceDefName);
+                        tracker.StudentCollect.Add(BaStudentUI.StudentId);
                     }
                 }
                 else
                 {
                     SelfisCollect = false;
-                    ListUtils.RemoveStringAndClean(tracker.StudentCollect, BaStudentUI.RaceDefName);
+                    ListUtils.RemoveStringAndClean(tracker.StudentCollect, BaStudentUI.StudentId);
                 }
 
                 UpdateCollectState();
@@ -73,7 +73,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         void UpDataStudentData()
         {
             StudentRosterUtility.SyncAllStudentRuntimeState(tracker);
-            studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.RaceDefName);
+            studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.StudentId);
 
             if (studentData != null)
             {
@@ -109,7 +109,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
 
         private void UpdateCollectState()
         {
-            SelfisCollect = tracker.StudentCollect.Contains(BaStudentUI.RaceDefName);
+            SelfisCollect = tracker.StudentCollect.Contains(BaStudentUI.StudentId);
             Collect.gameObject.GetComponent<Image>().color = SelfisCollect ? Color.yellow : Color.white;
         }
 

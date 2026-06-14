@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Nero</defName>
 		<label>-妮露-</label>
-		<race>BANW_Nero_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 		<defaultFactionType>PlayerColony</defaultFactionType>
@@ -76,6 +76,42 @@
 			<BAWC_TraitDef_Nero_A>0</BAWC_TraitDef_Nero_A>
 			<BAWC_TraitDef_Nero_B>0</BAWC_TraitDef_Nero_B>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>美甘</kindName>
+				<kindDesName>美甘 妮露</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Nero/Halo/Nero_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Nero/Body/Nero_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Nero/Halo/Nero_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Nero/Head/Nero_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront_layer3</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Nero/Hair/Nero_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Nero/Hair/Nero_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 
 	<TraitDef>

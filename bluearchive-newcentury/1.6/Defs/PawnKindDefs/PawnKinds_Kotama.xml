@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Kotama</defName>
 		<label>-小玉-</label>
-		<race>BANW_Kotama_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -54,6 +54,38 @@
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>小玉</kindName>
+				<kindDesName>小玉 !音濑</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Kotama/Halo/Kotama_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Kotama/Head/Kotama_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Kotama/Body/Kotama_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Kotama/Hair/Kotama_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Kotama/Hair/Kotama_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 
 </Defs>

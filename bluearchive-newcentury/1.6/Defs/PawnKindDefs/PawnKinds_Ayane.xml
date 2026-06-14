@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Ayane</defName>
 		<label>-绫音-</label>
-		<race>BANW_Ayane_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -64,6 +64,42 @@
 			<BAWC_TraitDef_Ayane>0</BAWC_TraitDef_Ayane>
 			<BAWC_TraitDef_Ayane_A>0</BAWC_TraitDef_Ayane_A>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>绫音</kindName>
+				<kindDesName>绫音 绫音 奥空</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Ayane/Halo/Ayane_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Ayane/Head/Ayane_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Ayane/Body/Ayane_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Ayane/Hair/Ayane_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Ayane/Hair/Ayane_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Ayane/Halo/Ayane_Halo</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Ayane</defName>

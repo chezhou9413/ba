@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Noa</defName>
 		<label>-诺亚-</label>
-		<race>BANW_Noa_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 		<defaultFactionType>PlayerColony</defaultFactionType>
@@ -75,6 +75,42 @@
 			<BAWC_TraitDef_Noa_A>0</BAWC_TraitDef_Noa_A>
 			<BAWC_TraitDef_Noa_B>0</BAWC_TraitDef_Noa_B>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>生盐</kindName>
+				<kindDesName>生盐 诺亚</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>16</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Noa/Halo/Noa_Halo2</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Noa/Head/Noa_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Noa/Body/Noa_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Noa/Hair/Noa_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Noa/Hair/Noa_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Noa/Halo/Noa_Halo</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Noa_A</defName>

@@ -7,14 +7,24 @@ using Verse;
 
 namespace BANWlLib.mainUI.Gaka
 {
+    /// <summary>
+    /// 抽卡结果数据，负责保存学生身份、PawnKind 和界面展示数据。
+    /// </summary>
     public class gacaData
     {
-        public BaStudentRaceDef BaStudentRaceDef;
+        public BaStudentDef BaStudentDef;
+        public PawnKindDef PawnKindDef;
+        public string StudentId;
+        public BaStudentUI StudentUI;
+        public BaStudentData BaStudentData;
         public int starNum;
         public Sprite gakaAvt;
         public bool isNew = false;
         public bool isUp = false;
     }
+    /// <summary>
+    /// 抽卡界面运行时缓存，负责保存界面预制体、当前卡池和抽卡结果。
+    /// </summary>
     public static class GakaMapData
     {
         public static GameObject Content;

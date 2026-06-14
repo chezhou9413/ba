@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Sena</defName>
 		<label>-濑名-</label>
-		<race>BANW_Sena_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 		<defaultFactionType>PlayerColony</defaultFactionType>
@@ -70,6 +70,38 @@
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
 			<BAWC_TraitDef_Sena_A>0</BAWC_TraitDef_Sena_A>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>濑名</kindName>
+				<kindDesName>濑名 !冰室</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Sena/Halo/Sena_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Sena/Head/Sena_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Sena/Body/Sena_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Sena/Hair/Sena_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Sena/Hair/Sena_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Sena_A</defName>

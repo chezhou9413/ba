@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Izumi</defName>
 		<label>-泉-</label>
-		<race>BANW_Izumi_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -83,6 +83,38 @@
 			<BAWC_TraitDef_Izumi_A>0</BAWC_TraitDef_Izumi_A>
 			<BAWC_TraitDef_Izumi_B>0</BAWC_TraitDef_Izumi_B>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>泉</kindName>
+				<kindDesName>泉 狮子堂</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Izumi/Halo/Izumi_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Izumi/Head/Izumi_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Izumi/Body/Izumi_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Izumi/Hair/Izumi_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Izumi/Hair/Izumi_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 
 	<TraitDef>

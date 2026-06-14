@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Aoba</defName>
 		<label>-青叶-</label>
-		<race>BANW_Aoba_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -69,6 +69,38 @@
 			<BAWC_TraitDef_Aoba_A>0</BAWC_TraitDef_Aoba_A>
 			<BAWC_TraitDef_Aoba_B>0</BAWC_TraitDef_Aoba_B>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>青叶</kindName>
+				<kindDesName>青叶 !内海</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Highland/Aoba/Halo/Aoba_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Highland/Aoba/Head/Aoba_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Highland/Aoba/Body/Aoba_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Highland/Aoba/Hair/Aoba_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Highland/Aoba/Hair/Aoba_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Aoba</defName>

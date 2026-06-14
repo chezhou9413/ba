@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Serika</defName>
 		<label>-芹香-</label>
-		<race>BANW_Serika_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -75,6 +75,42 @@
 			<BAWC_TraitDef_Serika>0</BAWC_TraitDef_Serika>
 			<BAWC_TraitDef_Serika_A>0</BAWC_TraitDef_Serika_A>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>芹香</kindName>
+				<kindDesName>芹香 芹香 黑见</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Serika/Halo/Serika_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Serika/Head/Serika_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Serika/Body/Serika_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Serika/Hair/Serika_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Serika/Hair/Serika_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Serika/Halo/Serika_Halo</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Serika</defName>

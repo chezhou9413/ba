@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Rio</defName>
 		<label>-莉音-</label>
-		<race>BANW_Rio_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 		<defaultFactionType>PlayerColony</defaultFactionType>
@@ -77,6 +77,42 @@
 			<BAWC_TraitDef_Rio>0</BAWC_TraitDef_Rio>
 			<BAWC_TraitDef_Rio_A>0</BAWC_TraitDef_Rio_A>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>莉音</kindName>
+				<kindDesName>莉音 !调月</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>16</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Rio/Halo/Rio_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Rio/Head/Rio_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Rio/Body/Rio_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Rio/Hair/Rio_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Rio/Hair/Rio_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Rio/Halo/Rio_Halo</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 	<TraitDef>
         <defName>BAWC_TraitDef_Rio</defName>

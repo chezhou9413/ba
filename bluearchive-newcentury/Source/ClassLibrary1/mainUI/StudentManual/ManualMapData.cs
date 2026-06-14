@@ -5,13 +5,16 @@ using UnityEngine;
 
 namespace BANWlLib.mainUI.StudentManual
 {
+    /// <summary>
+    /// 学生图鉴运行时缓存，负责保存图鉴界面对象和按学生数据 Def 读取的列表。
+    /// </summary>
     public static class ManualMapData
     {
         public static bool isOpenManual = false;
 
         public static GameObject StudentManual;
 
-        public static List<BaStudentRaceDef> StudentList = new List<BaStudentRaceDef>();
+        public static List<BaStudentDef> StudentList = new List<BaStudentDef>();
         public static List<BaStudentUI> studentUIList = new List<BaStudentUI>();
 
         public static GameObject StudentListOBJ;
@@ -39,7 +42,7 @@ namespace BANWlLib.mainUI.StudentManual
             ManualScrollView = null;
             StudentListOBJ = null;
             studentUIList = new List<BaStudentUI>();
-            StudentList = new List<BaStudentRaceDef>();   
+            StudentList = new List<BaStudentDef>();   
             StudentManual = null;
             isOpenManual = false;
         }

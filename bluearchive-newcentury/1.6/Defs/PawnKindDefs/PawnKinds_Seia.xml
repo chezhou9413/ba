@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Seia</defName>
 		<label>-圣娅-</label>
-		<race>BANW_Seia_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -69,6 +69,38 @@
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
 			<BAWC_TraitDef_tanli>0</BAWC_TraitDef_tanli>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>圣娅</kindName>
+				<kindDesName>圣娅 百合园</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Seia/Halo/Seia_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Seia/Body/Seia_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Seia/Head/Seia_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront_layer3</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Seia/Hair/Seia_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Seia/Hair/Seia_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 
 </Defs>

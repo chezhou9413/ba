@@ -73,7 +73,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Miyu_race_Proplevel</defName>
+    <defName>BANW_Miyu_Proplevel</defName>
     <label>美游的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -91,7 +91,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Miyu_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Miyu</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -107,7 +107,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Miyako_race_Proplevel</defName>
+    <defName>BANW_Miyako_Proplevel</defName>
     <label>宫子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -125,7 +125,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Miyako_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Miyako</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -141,7 +141,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Saki_race_Proplevel</defName>
+    <defName>BANW_Saki_Proplevel</defName>
     <label>咲的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -159,7 +159,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Saki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Saki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -176,7 +176,7 @@
 
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hoshiro_race_Proplevel</defName>
+    <defName>BANW_Hoshiro_Proplevel</defName>
     <label>星野的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -194,7 +194,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hoshiro_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hoshiro</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -210,7 +210,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Seia_race_Proplevel</defName>
+    <defName>BANW_Seia_Proplevel</defName>
     <label>圣娅的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -228,7 +228,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Seia_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Seia</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -244,7 +244,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Turugi_race_Proplevel</defName>
+    <defName>BANW_Turugi_Proplevel</defName>
     <label>鹤城的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -264,7 +264,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Turugi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Turugi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -279,7 +279,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hasumi_race_Proplevel</defName>
+    <defName>BANW_Hasumi_Proplevel</defName>
     <label>莲见的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -299,7 +299,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hasumi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hasumi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -314,7 +314,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Asuna_race_Proplevel</defName>
+    <defName>BANW_Asuna_Proplevel</defName>
     <label>明日奈的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -334,7 +334,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Asuna_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Asuna</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -349,7 +349,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Akane_race_Proplevel</defName>
+    <defName>BANW_Akane_Proplevel</defName>
     <label>茜的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -369,7 +369,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Akane_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Akane</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -385,7 +385,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Aoba_race_Proplevel</defName>
+    <defName>BANW_Aoba_Proplevel</defName>
     <label>青叶的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -405,7 +405,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Aoba_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Aoba</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -420,7 +420,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hikali_race_Proplevel</defName>
+    <defName>BANW_Hikali_Proplevel</defName>
     <label>光的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -440,7 +440,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hikali_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hikali</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -455,7 +455,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Nozomi_race_Proplevel</defName>
+    <defName>BANW_Nozomi_Proplevel</defName>
     <label>望的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -475,7 +475,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nozomi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nozomi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -491,7 +491,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Shiroko_race_Proplevel</defName>
+    <defName>BANW_Shiroko_Proplevel</defName>
     <label>白子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -511,7 +511,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Shiroko_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Shiroko</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -527,7 +527,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Mika_race_Proplevel</defName>
+    <defName>BANW_Mika_Proplevel</defName>
     <label>未花的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -547,7 +547,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mika_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mika</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -563,7 +563,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Moe_race_Proplevel</defName>
+    <defName>BANW_Moe_Proplevel</defName>
     <label>萌绘的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -583,7 +583,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Moe_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Moe</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -599,7 +599,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Mashiro_race_Proplevel</defName>
+    <defName>BANW_Mashiro_Proplevel</defName>
     <label>真白的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -619,7 +619,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mashiro_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mashiro</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -635,7 +635,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Nero_race_Proplevel</defName>
+    <defName>BANW_Nero_Proplevel</defName>
     <label>妮露的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -655,7 +655,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nero_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nero</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -671,7 +671,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Ichika_race_Proplevel</defName>
+    <defName>BANW_Ichika_Proplevel</defName>
     <label>一花的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -691,7 +691,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ichika_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ichika</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -707,7 +707,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Karlin_race_Proplevel</defName>
+    <defName>BANW_Karlin_Proplevel</defName>
     <label>花凛的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -727,7 +727,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Karlin_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Karlin</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -743,7 +743,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Cherino_race_Proplevel</defName>
+    <defName>BANW_Cherino_Proplevel</defName>
     <label>切里诺的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -763,7 +763,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Cherino_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Cherino</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -778,7 +778,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Makoto_race_Proplevel</defName>
+    <defName>BANW_Makoto_Proplevel</defName>
     <label>真琴的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -798,7 +798,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Makoto_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Makoto</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -813,7 +813,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hina_race_Proplevel</defName>
+    <defName>BANW_Hina_Proplevel</defName>
     <label>日奈的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -833,7 +833,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hina_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hina</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -848,7 +848,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Natsu_race_Proplevel</defName>
+    <defName>BANW_Natsu_Proplevel</defName>
     <label>夏的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -868,7 +868,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Natsu_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Natsu</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -884,7 +884,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Reisa_race_Proplevel</defName>
+    <defName>BANW_Reisa_Proplevel</defName>
     <label>玲纱的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -904,7 +904,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Reisa_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Reisa</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -920,7 +920,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Ibuki_race_Proplevel</defName>
+    <defName>BANW_Ibuki_Proplevel</defName>
     <label>伊吹的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -940,7 +940,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ibuki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ibuki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -956,7 +956,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Yuuka_race_Proplevel</defName>
+    <defName>BANW_Yuuka_Proplevel</defName>
     <label>优香的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -976,7 +976,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Yuuka_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Yuuka</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -992,7 +992,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Iori_race_Proplevel</defName>
+    <defName>BANW_Iori_Proplevel</defName>
     <label>伊织的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1012,7 +1012,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Iori_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Iori</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1028,7 +1028,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Suzumi_race_Proplevel</defName>
+    <defName>BANW_Suzumi_Proplevel</defName>
     <label>铃美的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1048,7 +1048,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Suzumi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Suzumi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1064,7 +1064,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Ui_race_Proplevel</defName>
+    <defName>BANW_Ui_Proplevel</defName>
     <label>忧的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1084,7 +1084,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ui_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ui</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1100,7 +1100,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Ako_race_Proplevel</defName>
+    <defName>BANW_Ako_Proplevel</defName>
     <label>亚子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1120,7 +1120,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ako_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ako</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1136,7 +1136,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Shimiko_race_Proplevel</defName>
+    <defName>BANW_Shimiko_Proplevel</defName>
     <label>志美子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1156,7 +1156,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Shimiko_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Shimiko</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1172,7 +1172,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Iroha_race_Proplevel</defName>
+    <defName>BANW_Iroha_Proplevel</defName>
     <label>伊吕波的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1192,7 +1192,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Iroha_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Iroha</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1208,7 +1208,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Airy_race_Proplevel</defName>
+    <defName>BANW_Airy_Proplevel</defName>
     <label>爱莉的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1228,7 +1228,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Airy_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Airy</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1244,7 +1244,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Momoi_race_Proplevel</defName>
+    <defName>BANW_Momoi_Proplevel</defName>
     <label>桃井的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1264,7 +1264,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Momoi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Momoi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1280,7 +1280,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Chinatsu_race_Proplevel</defName>
+    <defName>BANW_Chinatsu_Proplevel</defName>
     <label>千夏的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1300,7 +1300,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Chinatsu_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Chinatsu</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1316,7 +1316,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Midori_race_Proplevel</defName>
+    <defName>BANW_Midori_Proplevel</defName>
     <label>绿的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1336,7 +1336,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Midori_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Midori</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1352,7 +1352,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Koharu_race_Proplevel</defName>
+    <defName>BANW_Koharu_Proplevel</defName>
     <label>小春的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1372,7 +1372,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Koharu_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Koharu</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1387,7 +1387,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Yuzu_race_Proplevel</defName>
+    <defName>BANW_Yuzu_Proplevel</defName>
     <label>柚子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1407,7 +1407,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Yuzu_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Yuzu</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1423,7 +1423,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Atsuko_race_Proplevel</defName>
+    <defName>BANW_Atsuko_Proplevel</defName>
     <label>亚津子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1443,7 +1443,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Atsuko_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Atsuko</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1459,7 +1459,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Satsuki_race_Proplevel</defName>
+    <defName>BANW_Satsuki_Proplevel</defName>
     <label>皋月的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1479,7 +1479,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Satsuki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Satsuki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1496,7 +1496,7 @@
 
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Arisu_race_Proplevel</defName>
+    <defName>BANW_Arisu_Proplevel</defName>
     <label>爱丽丝的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1516,7 +1516,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Arisu_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Arisu</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1532,7 +1532,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kayako_race_Proplevel</defName>
+    <defName>BANW_Kayako_Proplevel</defName>
     <label>佳代子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1552,7 +1552,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kayako_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kayako</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1568,7 +1568,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Koyuki_race_Proplevel</defName>
+    <defName>BANW_Koyuki_Proplevel</defName>
     <label>小雪的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1588,7 +1588,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Koyuki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Koyuki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1604,7 +1604,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Saya_race_Proplevel</defName>
+    <defName>BANW_Saya_Proplevel</defName>
     <label>纱凌的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1624,7 +1624,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Saya_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Saya</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1640,7 +1640,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kazusa_race_Proplevel</defName>
+    <defName>BANW_Kazusa_Proplevel</defName>
     <label>和纱的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1660,7 +1660,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kazusa_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kazusa</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1676,7 +1676,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Saori_race_Proplevel</defName>
+    <defName>BANW_Saori_Proplevel</defName>
     <label>纱织的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1696,7 +1696,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Saori_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Saori</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1712,7 +1712,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Chiaki_race_Proplevel</defName>
+    <defName>BANW_Chiaki_Proplevel</defName>
     <label>千秋的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1732,7 +1732,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Chiaki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Chiaki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1749,7 +1749,7 @@
 
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Mari_race_Proplevel</defName>
+    <defName>BANW_Mari_Proplevel</defName>
     <label>玛丽的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1769,7 +1769,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mari_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mari</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1785,7 +1785,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Sakurako_race_Proplevel</defName>
+    <defName>BANW_Sakurako_Proplevel</defName>
     <label>樱子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1805,7 +1805,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Sakurako_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Sakurako</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1821,7 +1821,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kokona_race_Proplevel</defName>
+    <defName>BANW_Kokona_Proplevel</defName>
     <label>心奈的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1841,7 +1841,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kokona_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kokona</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1857,7 +1857,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hinata_race_Proplevel</defName>
+    <defName>BANW_Hinata_Proplevel</defName>
     <label>日向的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1877,7 +1877,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hinata_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hinata</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1893,7 +1893,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Yoshimi_race_Proplevel</defName>
+    <defName>BANW_Yoshimi_Proplevel</defName>
     <label>好美的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1913,7 +1913,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Yoshimi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Yoshimi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1929,7 +1929,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Shun_race_Proplevel</defName>
+    <defName>BANW_Shun_Proplevel</defName>
     <label>瞬的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1949,7 +1949,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Shun_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Shun</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -1965,7 +1965,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Haruka_race_Proplevel</defName>
+    <defName>BANW_Haruka_Proplevel</defName>
     <label>遥香的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -1985,7 +1985,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Haruka_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Haruka</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2000,7 +2000,7 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hanako_race_Proplevel</defName>
+    <defName>BANW_Hanako_Proplevel</defName>
     <label>花子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2020,7 +2020,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hanako_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hanako</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2036,7 +2036,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Ayane_race_Proplevel</defName>
+    <defName>BANW_Ayane_Proplevel</defName>
     <label>绫音的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2056,7 +2056,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Ayane_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Ayane</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2072,7 +2072,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kisaki_race_Proplevel</defName>
+    <defName>BANW_Kisaki_Proplevel</defName>
     <label>妃咲的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2092,7 +2092,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kisaki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kisaki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2108,7 +2108,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hiyori_race_Proplevel</defName>
+    <defName>BANW_Hiyori_Proplevel</defName>
     <label>日和的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2128,7 +2128,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hiyori_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hiyori</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2144,7 +2144,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Mutsuki_race_Proplevel</defName>
+    <defName>BANW_Mutsuki_Proplevel</defName>
     <label>睦月的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2164,7 +2164,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mutsuki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mutsuki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2181,7 +2181,7 @@
 
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Misaki_race_Proplevel</defName>
+    <defName>BANW_Misaki_Proplevel</defName>
     <label>美咲的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2201,7 +2201,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Misaki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Misaki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2217,7 +2217,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Junko_race_Proplevel</defName>
+    <defName>BANW_Junko_Proplevel</defName>
     <label>淳子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2237,7 +2237,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Junko_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Junko</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2253,7 +2253,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hare_race_Proplevel</defName>
+    <defName>BANW_Hare_Proplevel</defName>
     <label>晴的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2273,7 +2273,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hare_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hare</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2289,7 +2289,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Aru_race_Proplevel</defName>
+    <defName>BANW_Aru_Proplevel</defName>
     <label>阿露的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2309,7 +2309,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Aru_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Aru</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2325,7 +2325,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Serika_race_Proplevel</defName>
+    <defName>BANW_Serika_Proplevel</defName>
     <label>芹香的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2345,7 +2345,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Serika_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Serika</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2361,7 +2361,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Chihiro_race_Proplevel</defName>
+    <defName>BANW_Chihiro_Proplevel</defName>
     <label>千寻的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2381,7 +2381,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Chihiro_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Chihiro</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2397,7 +2397,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hifumi_race_Proplevel</defName>
+    <defName>BANW_Hifumi_Proplevel</defName>
     <label>日富美的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2417,7 +2417,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hifumi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hifumi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2433,7 +2433,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kotama_race_Proplevel</defName>
+    <defName>BANW_Kotama_Proplevel</defName>
     <label>小玉的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2453,7 +2453,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kotama_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kotama</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2469,7 +2469,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Fuuka_race_Proplevel</defName>
+    <defName>BANW_Fuuka_Proplevel</defName>
     <label>枫香的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2489,7 +2489,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Fuuka_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Fuuka</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2505,7 +2505,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Maki_race_Proplevel</defName>
+    <defName>BANW_Maki_Proplevel</defName>
     <label>真纪的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2525,7 +2525,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Maki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Maki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2541,7 +2541,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Juri_race_Proplevel</defName>
+    <defName>BANW_Juri_Proplevel</defName>
     <label>朱莉的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2561,7 +2561,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Juri_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Juri</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2577,7 +2577,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Yokari_race_Proplevel</defName>
+    <defName>BANW_Yokari_Proplevel</defName>
     <label>紫的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2597,7 +2597,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Yokari_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Yokari</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2613,7 +2613,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Noa_race_Proplevel</defName>
+    <defName>BANW_Noa_Proplevel</defName>
     <label>诺亚的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2633,7 +2633,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Noa_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Noa</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2649,7 +2649,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Rio_race_Proplevel</defName>
+    <defName>BANW_Rio_Proplevel</defName>
     <label>莉音的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2669,7 +2669,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Rio_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Rio</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2685,7 +2685,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kanoe_race_Proplevel</defName>
+    <defName>BANW_Kanoe_Proplevel</defName>
     <label>鹿江的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2705,7 +2705,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kanoe_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kanoe</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2721,7 +2721,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kikyou_race_Proplevel</defName>
+    <defName>BANW_Kikyou_Proplevel</defName>
     <label>桔梗的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2741,7 +2741,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kikyou_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kikyou</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2757,7 +2757,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hanae_race_Proplevel</defName>
+    <defName>BANW_Hanae_Proplevel</defName>
     <label>花江的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2777,7 +2777,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hanae_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hanae</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2793,7 +2793,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Azusa_race_Proplevel</defName>
+    <defName>BANW_Azusa_Proplevel</defName>
     <label>梓的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2813,7 +2813,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Azusa_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Azusa</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2829,7 +2829,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Serina_race_Proplevel</defName>
+    <defName>BANW_Serina_Proplevel</defName>
     <label>芹娜的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2849,7 +2849,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Serina_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Serina</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2865,7 +2865,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Chise_race_Proplevel</defName>
+    <defName>BANW_Chise_Proplevel</defName>
     <label>千世的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2885,7 +2885,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Chise_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Chise</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2901,7 +2901,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Mine_race_Proplevel</defName>
+    <defName>BANW_Mine_Proplevel</defName>
     <label>美祢的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2921,7 +2921,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mine_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mine</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2937,7 +2937,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Michiru_race_Proplevel</defName>
+    <defName>BANW_Michiru_Proplevel</defName>
     <label>满的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2957,7 +2957,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Michiru_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Michiru</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -2973,7 +2973,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Renge_race_Proplevel</defName>
+    <defName>BANW_Renge_Proplevel</defName>
     <label>莲华的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -2993,7 +2993,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Renge_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Renge</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3009,7 +3009,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Izuna_race_Proplevel</defName>
+    <defName>BANW_Izuna_Proplevel</defName>
     <label>泉奈的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3029,7 +3029,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Izuna_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Izuna</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3045,7 +3045,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Eri_race_Proplevel</defName>
+    <defName>BANW_Eri_Proplevel</defName>
     <label>绘里的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3065,7 +3065,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Eri_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Eri</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3081,7 +3081,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kotori_race_Proplevel</defName>
+    <defName>BANW_Kotori_Proplevel</defName>
     <label>琴里的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3101,7 +3101,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kotori_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kotori</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3117,7 +3117,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Tsukuyo_race_Proplevel</defName>
+    <defName>BANW_Tsukuyo_Proplevel</defName>
     <label>月脉的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3137,7 +3137,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Tsukuyo_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Tsukuyo</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3153,7 +3153,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Nagusa_race_Proplevel</defName>
+    <defName>BANW_Nagusa_Proplevel</defName>
     <label>名草的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3173,7 +3173,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nagusa_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nagusa</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3189,7 +3189,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Nonomi_race_Proplevel</defName>
+    <defName>BANW_Nonomi_Proplevel</defName>
     <label>野宫的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3209,7 +3209,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nonomi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nonomi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3225,7 +3225,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Nagisa_race_Proplevel</defName>
+    <defName>BANW_Nagisa_Proplevel</defName>
     <label>渚的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3245,7 +3245,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Nagisa_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Nagisa</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3261,7 +3261,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Akari_race_Proplevel</defName>
+    <defName>BANW_Akari_Proplevel</defName>
     <label>明里的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3281,7 +3281,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Akari_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Akari</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3297,7 +3297,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Izumi_race_Proplevel</defName>
+    <defName>BANW_Izumi_Proplevel</defName>
     <label>泉的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3317,7 +3317,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Izumi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Izumi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3333,7 +3333,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Haruna_race_Proplevel</defName>
+    <defName>BANW_Haruna_Proplevel</defName>
     <label>晴奈的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3353,7 +3353,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Haruna_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Haruna</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3369,7 +3369,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Umika_race_Proplevel</defName>
+    <defName>BANW_Umika_Proplevel</defName>
     <label>海香的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3389,7 +3389,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Umika_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Umika</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3405,7 +3405,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Shizuko_race_Proplevel</defName>
+    <defName>BANW_Shizuko_Proplevel</defName>
     <label>静子的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3425,7 +3425,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Shizuko_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Shizuko</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3441,7 +3441,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Pina_race_Proplevel</defName>
+    <defName>BANW_Pina_Proplevel</defName>
     <label>菲娜的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3461,7 +3461,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Pina_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Pina</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3477,7 +3477,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_ReisaA_race_Proplevel</defName>
+    <defName>BANW_Reisa_A_Proplevel</defName>
     <label>玲纱(魔法)的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3497,7 +3497,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Reisa_A_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Reisa_A</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3513,7 +3513,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Toki_race_Proplevel</defName>
+    <defName>BANW_Toki_Proplevel</defName>
     <label>时的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3533,7 +3533,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Toki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Toki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3549,7 +3549,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Sena_race_Proplevel</defName>
+    <defName>BANW_Sena_Proplevel</defName>
     <label>濑名的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3569,7 +3569,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Sena_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Sena</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3585,7 +3585,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kanna_race_Proplevel</defName>
+    <defName>BANW_Kanna_Proplevel</defName>
     <label>康纳的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3605,7 +3605,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kanna_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kanna</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3621,7 +3621,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kirino_race_Proplevel</defName>
+    <defName>BANW_Kirino_Proplevel</defName>
     <label>桐乃的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3641,7 +3641,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kirino_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kirino</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3657,7 +3657,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Fubuki_race_Proplevel</defName>
+    <defName>BANW_Fubuki_Proplevel</defName>
     <label>吹雪的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3677,7 +3677,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Fubuki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Fubuki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3693,7 +3693,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Hibiki_race_Proplevel</defName>
+    <defName>BANW_Hibiki_Proplevel</defName>
     <label>响的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3713,7 +3713,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Hibiki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Hibiki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3729,7 +3729,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Eimi_race_Proplevel</defName>
+    <defName>BANW_Eimi_Proplevel</defName>
     <label>艾米的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3749,7 +3749,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Eimi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Eimi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3765,7 +3765,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Himari_race_Proplevel</defName>
+    <defName>BANW_Himari_Proplevel</defName>
     <label>日鞠的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3785,7 +3785,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Himari_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Himari</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3801,7 +3801,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Utaha_race_Proplevel</defName>
+    <defName>BANW_Utaha_Proplevel</defName>
     <label>歌原的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3821,7 +3821,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Utaha_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Utaha</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3837,7 +3837,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_SuzumiA_race_Proplevel</defName>
+    <defName>BANW_Suzumi_A_Proplevel</defName>
     <label>铃美(魔法)的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3857,7 +3857,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Suzumi_A_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Suzumi_A</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3873,7 +3873,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Mimori_race_Proplevel</defName>
+    <defName>BANW_Mimori_Proplevel</defName>
     <label>三森的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3893,7 +3893,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Mimori_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Mimori</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3909,7 +3909,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kaede_race_Proplevel</defName>
+    <defName>BANW_Kaede_Proplevel</defName>
     <label>枫的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3929,7 +3929,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kaede_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kaede</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3945,7 +3945,7 @@
   </ThingDef>
 
     <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Tsubaki_race_Proplevel</defName>
+    <defName>BANW_Tsubaki_Proplevel</defName>
     <label>椿的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
 
@@ -3965,7 +3965,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Tsubaki_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Tsubaki</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -3981,7 +3981,7 @@
   </ThingDef>
 
    <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kaho_race_Proplevel</defName>
+    <defName>BANW_Kaho_Proplevel</defName>
     <label>果穗的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -3999,7 +3999,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kaho_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kaho</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4015,7 +4015,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Niya_race_Proplevel</defName>
+    <defName>BANW_Niya_Proplevel</defName>
     <label>尼娅的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -4033,7 +4033,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Niya_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Niya</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4049,7 +4049,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Arisu_B_race_Proplevel</defName>
+    <defName>BANW_Arisu_B_Proplevel</defName>
     <label>爱丽丝(武装)的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -4067,7 +4067,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Arisu_B_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Arisu_B</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4083,7 +4083,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Kasumi_race_Proplevel</defName>
+    <defName>BANW_Kasumi_Proplevel</defName>
     <label>霞的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -4101,7 +4101,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Kasumi_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Kasumi</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4117,7 +4117,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
-    <defName>BANW_Megu_race_Proplevel</defName>
+    <defName>BANW_Megu_Proplevel</defName>
     <label>惠的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
     <graphicData>
@@ -4135,7 +4135,7 @@
       <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
-        <Race>BANW_Megu_race</Race>  <!-- 只有星野能使用 -->
+        <Race>BANW_Megu</Race>  <!-- 只有星野能使用 -->
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>
@@ -4148,5 +4148,14 @@
         </batchUseCount>
       </li>
     </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Marina_Proplevel</defName>
+    <label>真里奈的神名文字</label>
+    <description>真里奈的神名文字。</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Megu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
   </ThingDef>
 </Defs>

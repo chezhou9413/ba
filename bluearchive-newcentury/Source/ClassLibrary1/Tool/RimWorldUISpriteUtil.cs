@@ -1,4 +1,3 @@
-using AlienRace;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,9 @@ using Verse;
 
 namespace BANWlLib.Tool
 {
+    /// <summary>
+    /// RimWorld Pawn 与物品图标工具，负责把游戏对象渲染成 Unity UI 可用的 Sprite。
+    /// </summary>
     public static class RimWorldUISpriteUtil
     {
         private static readonly Dictionary<string, Sprite> GeneratedSpriteCache = new Dictionary<string, Sprite>();
@@ -48,13 +50,6 @@ namespace BANWlLib.Tool
             Sprite sprite = CaptureAndProcess(pawn, size, zoom: 0.6f, offset: new Vector3(0f, 0f, 0.15f));
             CacheSprite(cacheKey, sprite);
             return sprite;
-        }
-
-        public static Sprite GetHeadShotSpriteFromDef(ThingDef_AlienRace raceDef, int size = 128)
-        {
-            if (raceDef == null) return null;
-            PawnKindDef kindDef = DefDatabase<PawnKindDef>.AllDefs.FirstOrDefault(k => k.race == raceDef);
-            return GetHeadShotSpriteFromKind(kindDef, size);
         }
 
         public static Sprite GetHeadShotSpriteFromKind(PawnKindDef kindDef, int size = 128)

@@ -14,141 +14,131 @@
         <!-- Weight=70 表示在三星出货时，有70%概率从UP池抽取 -->
         <upthreeStarPool>
             <Weight>0.7</Weight>
-            <RaceList>
-                <li>BANW_Makoto_race</li>
-            </RaceList>
+            <StudentList>
+                <li>BANW_Makoto_Student</li>
+            </StudentList>
         </upthreeStarPool>
         <!-- 普通三星池配置 -->
         <!-- Weight=0.7 表示每次抽卡有0.7%的基础概率抽中三星 -->
         <threeStarPool>
             <Weight>2.3</Weight>
-            <RaceList>
-                <li>BANW_Shiroko_race</li>                    <!-- 白子 -->
-                <li>BANW_Hoshiro_race</li>                    <!-- 星野 -->
-                <li>BANW_Natsu_race</li>
-                <li>BANW_Koharu_race</li>
-                <li>BANW_Ui_race</li>
-                <li>BANW_Hinata_race</li>
-                <li>BANW_Hifumi_race</li>
-                <li>BANW_Azusa_race</li>
-                <li>BANW_Sakurako_race</li>
-                <li>BANW_Reisa_race</li>
-                <li>BANW_Ichika_race</li>
-                <li>BANW_Mashiro_race</li>
-                <li>BANW_Mine_race</li>
-                <li>BANW_Turugi_race</li>
-                <li>BANW_Ako_race</li>
-                <li>BANW_Iroha_race</li>
-                <li>BANW_Iori_race</li>
-                <li>BANW_Chiaki_race</li>
-                <li>BANW_Megu_race</li>
-                <li>BANW_Hina_race</li>
-                <li>BANW_Haruna_race</li>
-                <li>BANW_Izumi_race</li>
-                <li>BANW_Sena_race</li>
-                <li>BANW_Satsuki_race</li>
-                <li>BANW_Aru_race</li>
-                <li>BANW_Kasumi_race</li>
-                <li>BANW_Chihiro_race</li>
-                <li>BANW_Hibiki_race</li>
-                <li>BANW_Nero_race</li>
-                <li>BANW_Koyuki_race</li>
-                <li>BANW_Himari_race</li>
-                <li>BANW_Yuzu_race</li>
-                <li>BANW_Arisu_race</li>
-                <li>BANW_Maki_race</li>
-                <li>BANW_Midori_race</li>
-                <li>BANW_Eimi_race</li>
-                <li>BANW_Karlin_race</li>
-                <li>BANW_Noa_race</li>
-                <li>BANW_Yakumo_race</li>
-                <li>BANW_Cherino_race</li>
-                <li>BANW_Minori_race</li>
-                <li>BANW_Shigure_race</li>
-                <li>BANW_Meru_race</li>
-                <li>BANW_Marina_race</li>
-                <li>BANW_Takane_race</li>
-                <li>BANW_Reijo_race</li>
-                <li>BANW_Kisaki_race</li>
-                <li>BANW_Kokona_race</li>
-                <li>BANW_Rumi_race</li>
-                <li>BANW_Shun_race</li>
-                <li>BANW_Saya_race</li>
-                <li>BANW_Kanna_race</li>
-                <li>BANW_Nagusa_race</li>
-                <li>BANW_Niya_race</li>
-                <li>BANW_Mimori_race</li>
-                <li>BANW_Tsukuyo_race</li>
-                <li>BANW_Kaho_race</li>
-                <li>BANW_Kaede_race</li>
-                <li>BANW_Kikyou_race</li>
-                <li>BANW_Izuna_race</li>
-                <li>BANW_Umika_race</li>
-                <li>BANW_Yokari_race</li>
-                <li>BANW_Renge_race</li>
-                <li>BANW_Atsuko_race</li>
-                <li>BANW_Hiyori_race</li>
-                <li>BANW_Saori_race</li>
-                <li>BANW_Misaki_race</li>
-                <li>BANW_Saki_race</li>
-                <li>BANW_Miyako_race</li>
-                <li>BANW_Miyu_race</li>
-                <li>BANW_Moe_race</li>
-                <li>BANW_Kanoe_race</li>
-                <li>BANW_Eri_race</li>
-                <li>BANW_Kazusa_race</li>
+            <StudentList>
+                <li>BANW_Shiroko_Student</li>                    <!-- 白子 -->
+                <li>BANW_Hoshiro_Student</li>                    <!-- 星野 -->
+                <li>BANW_Natsu_Student</li>
+                <li>BANW_Koharu_Student</li>
+                <li>BANW_Ui_Student</li>
+                <li>BANW_Hinata_Student</li>
+                <li>BANW_Hifumi_Student</li>
+                <li>BANW_Azusa_Student</li>
+                <li>BANW_Sakurako_Student</li>
+                <li>BANW_Reisa_Student</li>
+                <li>BANW_Ichika_Student</li>
+                <li>BANW_Mashiro_Student</li>
+                <li>BANW_Mine_Student</li>
+                <li>BANW_Turugi_Student</li>
+                <li>BANW_Ako_Student</li>
+                <li>BANW_Iroha_Student</li>
+                <li>BANW_Iori_Student</li>
+                <li>BANW_Chiaki_Student</li>
+                <li>BANW_Megu_Student</li>
+                <li>BANW_Hina_Student</li>
+                <li>BANW_Haruna_Student</li>
+                <li>BANW_Izumi_Student</li>
+                <li>BANW_Sena_Student</li>
+                <li>BANW_Satsuki_Student</li>
+                <li>BANW_Aru_Student</li>
+                <li>BANW_Kasumi_Student</li>
+                <li>BANW_Chihiro_Student</li>
+                <li>BANW_Hibiki_Student</li>
+                <li>BANW_Nero_Student</li>
+                <li>BANW_Koyuki_Student</li>
+                <li>BANW_Himari_Student</li>
+                <li>BANW_Yuzu_Student</li>
+                <li>BANW_Arisu_Student</li>
+                <li>BANW_Maki_Student</li>
+                <li>BANW_Midori_Student</li>
+                <li>BANW_Eimi_Student</li>
+                <li>BANW_Karlin_Student</li>
+                <li>BANW_Noa_Student</li>
+                <li>BANW_Cherino_Student</li>
+                <li>BANW_Marina_Student</li>
+                <li>BANW_Kisaki_Student</li>
+                <li>BANW_Kokona_Student</li>
+                <li>BANW_Shun_Student</li>
+                <li>BANW_Saya_Student</li>
+                <li>BANW_Kanna_Student</li>
+                <li>BANW_Nagusa_Student</li>
+                <li>BANW_Niya_Student</li>
+                <li>BANW_Mimori_Student</li>
+                <li>BANW_Tsukuyo_Student</li>
+                <li>BANW_Kaho_Student</li>
+                <li>BANW_Kaede_Student</li>
+                <li>BANW_Kikyou_Student</li>
+                <li>BANW_Izuna_Student</li>
+                <li>BANW_Umika_Student</li>
+                <li>BANW_Yokari_Student</li>
+                <li>BANW_Renge_Student</li>
+                <li>BANW_Atsuko_Student</li>
+                <li>BANW_Hiyori_Student</li>
+                <li>BANW_Saori_Student</li>
+                <li>BANW_Misaki_Student</li>
+                <li>BANW_Saki_Student</li>
+                <li>BANW_Miyako_Student</li>
+                <li>BANW_Miyu_Student</li>
+                <li>BANW_Moe_Student</li>
+                <li>BANW_Kanoe_Student</li>
+                <li>BANW_Eri_Student</li>
+                <li>BANW_Kazusa_Student</li>
 
-            </RaceList>
+            </StudentList>
         </threeStarPool>
 
         <!-- 二星池配置 -->
         <!-- Weight=30 表示每次抽卡有30%概率抽中二星 -->
         <twoStarPool>
             <Weight>18.5</Weight>
-            <RaceList>
-                <li>BANW_Serika_race</li>                     <!-- 芹香 -->
-                <li>BANW_Nonomi_race</li>                     <!-- 野乃美 -->
-                <li>BANW_Ayane_race</li>                      <!-- 绫音 -->
-                <li>BANW_Yuuka_race</li>                      <!-- 优香 -->
-                <li>BANW_Mutsuki_race</li>                    <!-- 睦月 -->
-                <li>BANW_Hanako_race</li>                     <!-- 花子 -->
-                <li>BANW_Momoi_race</li>                      <!-- 桃井 -->
-                <li>BANW_Hare_race</li>                       <!-- 晴 -->
-                <li>BANW_Junko_race</li>                      <!-- �的子 -->
-                <li>BANW_Airy_race</li>
-                <li>BANW_Mari_race</li>  
-                <li>BANW_Yuuka_race</li> 
-                <li>BANW_Utaha_race</li> 
-                <li>BANW_Akane_race</li> 
-                <li>BANW_Momiji_race</li> 
-                <li>BANW_Kirino_race</li>
-                <li>BANW_Tsubaki_race</li> 
-                <li>BANW_Shizuko_race</li>            
-            </RaceList>
+            <StudentList>
+                <li>BANW_Serika_Student</li>                     <!-- 芹香 -->
+                <li>BANW_Nonomi_Student</li>                     <!-- 野乃美 -->
+                <li>BANW_Ayane_Student</li>                      <!-- 绫音 -->
+                <li>BANW_Yuuka_Student</li>                      <!-- 优香 -->
+                <li>BANW_Mutsuki_Student</li>                    <!-- 睦月 -->
+                <li>BANW_Hanako_Student</li>                     <!-- 花子 -->
+                <li>BANW_Momoi_Student</li>                      <!-- 桃井 -->
+                <li>BANW_Hare_Student</li>                       <!-- 晴 -->
+                <li>BANW_Junko_Student</li>                      <!-- �的子 -->
+                <li>BANW_Airy_Student</li>
+                <li>BANW_Mari_Student</li>  
+                <li>BANW_Yuuka_Student</li> 
+                <li>BANW_Utaha_Student</li> 
+                <li>BANW_Akane_Student</li> 
+                <li>BANW_Kirino_Student</li>
+                <li>BANW_Tsubaki_Student</li> 
+                <li>BANW_Shizuko_Student</li>            
+            </StudentList>
         </twoStarPool>
 
         <!-- 一星池配置 -->
         <!-- Weight=60 表示每次抽卡有60%概率抽中一星 (保底最低稀有度) -->
         <oneStarPool>
             <Weight>78.5</Weight>
-            <RaceList>
-                <li>BANW_Juri_race</li>                       <!-- 树里 -->
-                <li>BANW_Shimiko_race</li>                    <!-- 志美子 -->
-                <li>BANW_Pina_race</li>                       <!-- 皮娜 -->
-                <li>BANW_Kotori_race</li>                     <!-- 小�的 -->
-                <li>BANW_Haruka_race</li>                     <!-- 遥 -->
-                <li>BANW_Suzumi_race</li>                     <!-- 铃美 -->
-                <li>BANW_Yoshimi_race</li>                    <!-- 佳美 -->
-                <li>BANW_Serina_race</li>
-                <li>BANW_Ibuki_race</li>
-                <li>BANW_Kotama_race</li>
-                <li>BANW_Asuna_race</li>
-                <li>BANW_Nodoka_race</li>
-                <li>BANW_Tomoe_race</li>
-                <li>BANW_Fubuki_race</li>
-                <li>BANW_Michiru_race</li>
-                <li>BANW_Aoba_race</li>
-            </RaceList>
+            <StudentList>
+                <li>BANW_Juri_Student</li>                       <!-- 树里 -->
+                <li>BANW_Shimiko_Student</li>                    <!-- 志美子 -->
+                <li>BANW_Pina_Student</li>                       <!-- 皮娜 -->
+                <li>BANW_Kotori_Student</li>                     <!-- 小�的 -->
+                <li>BANW_Haruka_Student</li>                     <!-- 遥 -->
+                <li>BANW_Suzumi_Student</li>                     <!-- 铃美 -->
+                <li>BANW_Yoshimi_Student</li>                    <!-- 佳美 -->
+                <li>BANW_Serina_Student</li>
+                <li>BANW_Ibuki_Student</li>
+                <li>BANW_Kotama_Student</li>
+                <li>BANW_Asuna_Student</li>
+                <li>BANW_Fubuki_Student</li>
+                <li>BANW_Michiru_Student</li>
+                <li>BANW_Aoba_Student</li>
+            </StudentList>
         </oneStarPool>
     </BANWlLib.BaDef.Gacha>
 </Defs>

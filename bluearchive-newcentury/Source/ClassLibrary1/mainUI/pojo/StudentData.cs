@@ -7,7 +7,9 @@ using Verse;
 
 namespace BANWlLib.mainUI.pojo
 {
-    // 学生数据，需支持保存与读取
+    /// <summary>
+    /// 学生名册数据，负责保存学生身份、出击状态、运行时 Pawn 引用和等级缓存。
+    /// </summary>
     public class StudentData : IExposable
     {
         // 学生对应的 Def 名称
@@ -18,7 +20,9 @@ namespace BANWlLib.mainUI.pojo
         public Pawn StudentPawn;
 
         public int StudentLv = 1;
-        // 无参构造函数（Deep 序列化要求）
+        /// <summary>
+        /// 构造空学生数据，负责满足 Scribe 深度序列化创建实例的要求。
+        /// </summary>
         public StudentData()
         {
             DefName = string.Empty;
@@ -27,7 +31,9 @@ namespace BANWlLib.mainUI.pojo
             StudentLv = 1;
         }
 
-        // 便捷构造
+        /// <summary>
+        /// 按当前学生 ID 构造名册数据。
+        /// </summary>
         public StudentData(string defName)
         {
             DefName = defName ?? string.Empty;
@@ -36,7 +42,9 @@ namespace BANWlLib.mainUI.pojo
             StudentLv = 1;
         }
 
-        // 序列化/反序列化实现
+        /// <summary>
+        /// 保存和读取学生名册数据。
+        /// </summary>
         public void ExposeData()
         {
             // 基础值类型保存
@@ -47,6 +55,9 @@ namespace BANWlLib.mainUI.pojo
             Scribe_References.Look(ref StudentPawn, "StudentPawn");
         }
 
+        /// <summary>
+        /// 输出学生名册调试文本，负责展示身份、出击状态和运行时 Pawn 信息。
+        /// </summary>
         public override string ToString()
         {
             string msg = "学生名字：" + DefName;

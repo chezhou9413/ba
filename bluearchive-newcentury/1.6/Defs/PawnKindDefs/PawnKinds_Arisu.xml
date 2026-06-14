@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Arisu</defName>
 		<label>-爱丽丝-</label>
-		<race>BANW_Arisu_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -64,6 +64,42 @@
 			<BAWC_TraitDef_Arisu>0</BAWC_TraitDef_Arisu>
 			<BAWC_TraitDef_Arisu_A>0</BAWC_TraitDef_Arisu_A>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>爱丽丝</kindName>
+				<kindDesName>爱丽丝 爱丽丝 天童</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Arisu/Halo/Arisu_Halo2</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Arisu/Head/Arisu_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Arisu/Body/Arisu_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Arisu/Hair/Arisu_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Arisu/Hair/Arisu_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Millennium/Arisu/Halo/Arisu_Halo</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Arisu</defName>
@@ -79,8 +115,7 @@
 			    <ComfyTemperatureMin>-100</ComfyTemperatureMin><!--		■最低适应温度-->   
 				<ImmunityGainSpeed>3</ImmunityGainSpeed><!--		    ■免疫增益速度-->
 				<CarryingCapacity>2000</CarryingCapacity><!--		        ■承载力--> 
-				<VEF_MassCarryCapacity>2000</VEF_MassCarryCapacity>
-                </statOffsets>
+</statOffsets>
 				<statFactors>
 				</statFactors>
             </li>

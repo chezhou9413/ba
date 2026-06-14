@@ -78,7 +78,7 @@
       <!-- 近战攻击命中的音效 -->
       <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
       <!-- 近战攻击建筑的音效 -->
-      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding_Generic</soundMeleeHitBuilding>
       <!-- 近战攻击未命中音效 -->
       <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
       <!-- 移除了重复的lifeStageAges定义，因为它已经由BaseMechanoidWalker提供 -->

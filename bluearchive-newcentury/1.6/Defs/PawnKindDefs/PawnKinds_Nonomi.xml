@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Nonomi</defName>
 		<label>-野宫-</label>
-		<race>BANW_Nonomi_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 		<defaultFactionType>PlayerColony</defaultFactionType>
@@ -76,6 +76,38 @@
 			<BAWC_TraitDef_Nonomi_A>0</BAWC_TraitDef_Nonomi_A>
 			<BAWC_TraitDef_Nonomi_B>0</BAWC_TraitDef_Nonomi_B>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>野宫</kindName>
+				<kindDesName>野宫 野宫 十六夜</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Nonomi/Halo/Nonomi_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Nonomi/Head/Nonomi_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Nonomi/Body/Nonomi_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Nonomi/Hair/Nonomi_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Nonomi/Hair/Nonomi_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Nonomi_A</defName>

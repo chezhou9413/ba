@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Mika</defName>
 		<label>-未花-</label>
-		<race>BANW_Mika_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -73,6 +73,38 @@
 			<BAWC_TraitDef_Mika_A>0</BAWC_TraitDef_Mika_A>
 			<BAWC_TraitDef_Mika_B>0</BAWC_TraitDef_Mika_B>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>未花</kindName>
+				<kindDesName>未花 未花 圣园</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>17</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mika/Halo/Mika_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mika/Head/Mika_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mika/Body/Mika_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mika/Hair/Mika_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mika/Hair/Mika_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 
 	 <HediffDef>
@@ -137,8 +169,7 @@
                 <statOffsets>
 					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.3</CertaintyLossFactor>
                     <CarryingCapacity>300</CarryingCapacity><!--		        ■承载力--> 
-				<VEF_MassCarryCapacity>300</VEF_MassCarryCapacity>
-                </statOffsets>
+</statOffsets>
 				<statFactors>
                 <MeleeDamageFactor>5.5</MeleeDamageFactor>
 				<MeleeArmorPenetration>4.5</MeleeArmorPenetration>

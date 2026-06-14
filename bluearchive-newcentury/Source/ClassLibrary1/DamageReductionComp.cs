@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
+using BANWlLib.Tool;
 using static Verse.DamageWorker;
 
 namespace BANWlLib
@@ -54,6 +55,14 @@ namespace BANWlLib
         public DamageReductionCompProperties Props => (DamageReductionCompProperties)this.props;
 
         /// <summary>
+        /// 判断当前组件父对象是否是已配置学生 Kind，负责让星级效果基于 PawnKindDef 生效。
+        /// </summary>
+        public bool IsStudentKindOwner()
+        {
+            return parent is Pawn pawn && StudentIdentityUtility.IsConfiguredStudentKind(pawn);
+        }
+
+        /// <summary>
         /// 获取当前减伤比例
         /// 根据玩家的自定义属性值计算减伤比例
         /// </summary>
@@ -64,6 +73,11 @@ namespace BANWlLib
                 // 获取角色的自定义属性组件
                 if (parent is Pawn pawn)
                 {
+                    if (!IsStudentKindOwner())
+                    {
+                        return 0f;
+                    }
+
                     HumanIntPropertyComp customComp = pawn.GetComp<HumanIntPropertyComp>();
                     if (customComp != null)
                     {
@@ -99,6 +113,11 @@ namespace BANWlLib
                 // 获取角色的自定义属性组件
                 if (parent is Pawn pawn)
                 {
+                    if (!IsStudentKindOwner())
+                    {
+                        return 0;
+                    }
+
                     HumanIntPropertyComp customComp = pawn.GetComp<HumanIntPropertyComp>();
                     if (customComp != null)
                     {
@@ -185,6 +204,11 @@ namespace BANWlLib
         {
             try
             {
+                if (!IsStudentKindOwner())
+                {
+                    return null;
+                }
+
                 if (string.IsNullOrEmpty(Props.damageReductionBodyPart))
                 {
                     return null; // 没有配置部位时不显示
@@ -255,6 +279,11 @@ namespace BANWlLib
         {
             try
             {
+                if (!IsStudentKindOwner())
+                {
+                    return;
+                }
+
                 if (parent is Pawn pawn && pawn.health?.hediffSet != null)
                 {
                     // 检查是否已经有减伤状态Hediff
@@ -317,7 +346,7 @@ namespace BANWlLib
 
                 //应用减伤逻辑
                 DamageReductionComp reductionComp = pawn?.GetComp<DamageReductionComp>();
-                if (reductionComp != null && reductionComp.IsBodyPartProtected(dinfo.HitPart))
+                if (reductionComp != null && reductionComp.IsStudentKindOwner() && reductionComp.IsBodyPartProtected(dinfo.HitPart))
                 {
                                      // 计算减伤后的伤害
                     float reducedDamage = reductionComp.CalculateReducedDamage(dinfo.Amount, dinfo.HitPart);               

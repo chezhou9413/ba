@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using Verse.AI;
+using BANWlLib.Tool;
 
 namespace BANWlLib
 {
@@ -54,15 +55,20 @@ namespace BANWlLib
         public CompProperties_UseEffectUpdateCustomInt Props => (CompProperties_UseEffectUpdateCustomInt)this.props;
 
         /// <summary>
-        /// 安全获取角色的种族名称
+        /// 安全获取角色的学生身份或种族名称
         /// </summary>
         /// <param name="pawn">要检查的角色</param>
-        /// <returns>种族名称，如果无法获取则返回"Unknown"</returns>
-        private string GetRaceDefName(Pawn pawn)
+        /// <returns>学生身份或种族名称，如果无法获取则返回"Unknown"</returns>
+        private string GetStudentIdentity(Pawn pawn)
         {
             try
             {
-                // 直接获取种族定义名称
+                string studentId = StudentIdentityUtility.GetStudentId(pawn);
+                if (!string.IsNullOrEmpty(studentId))
+                {
+                    return studentId;
+                }
+
                 if (pawn.def != null)
                 {
                     return pawn.def.defName;
@@ -256,7 +262,7 @@ namespace BANWlLib
             // 检查种族限制
             if (!string.IsNullOrEmpty(Props.Race))
             {
-                string currentRace = GetRaceDefName(p);
+                string currentRace = GetStudentIdentity(p);
                 if (currentRace == "ERR")
                 {
                     return new AcceptanceReport("无法识别种族，无法使用道具");

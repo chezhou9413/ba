@@ -3,6 +3,7 @@ using BANWlLib.Tool;
 using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -16,7 +17,7 @@ namespace BANWlLib.comp
         // 使用道具时增加或减少的严重度（正数增加，负数减少）
         public float updateHediffSeverity = 0f;
 
-        // 常见种族：Human（人类）、Muffalo（毛牛）、Thrumbo（敲击兽）等
+        // 学生限制列表，使用当前 studentId 或 PawnKindDef.defName。
         public List<string> Race = new List<string>();
 
         // 批量使用的数量
@@ -37,28 +38,23 @@ namespace BANWlLib.comp
     {
         public ThingHediffCompProperties Props => (ThingHediffCompProperties)this.props;
 
-        private bool isRaceDefName(Pawn pawn)
+        /// <summary>
+        /// 检查角色是否符合道具限制，负责按当前学生身份判断。
+        /// </summary>
+        private bool IsStudentIdentityAllowed(Pawn pawn)
         {
             if (Props.Race.Count < 1)
             {
                 return true;
             }
-            else
+
+            string studentId = StudentIdentityUtility.GetStudentId(pawn);
+            if (!string.IsNullOrEmpty(studentId) && Props.Race.Contains(studentId))
             {
-                // 直接获取种族定义名称
-                if (pawn.def != null)
-                {
-                    if (Props.Race.Contains(pawn.def.defName))
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
+                return true;
             }
-            return false;
+
+            return pawn.kindDef != null && Props.Race.Contains(pawn.kindDef.defName);
         }
 
         /// <summary>
@@ -333,7 +329,7 @@ namespace BANWlLib.comp
             }
 
             // 检查种族限制
-            if (isRaceDefName(p))
+            if (IsStudentIdentityAllowed(p))
             {
                 return AcceptanceReport.WasAccepted;
             }

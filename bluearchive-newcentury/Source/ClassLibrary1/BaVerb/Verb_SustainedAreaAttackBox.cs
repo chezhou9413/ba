@@ -17,19 +17,17 @@ namespace BANWlLib.BaVerb
     public class Verb_SustainedAreaAttackBox : Verb_CastAbility
     {
         private VerbProperties_SustainedAreaAttackBox VerbProperties => (VerbProperties_SustainedAreaAttackBox)this.verbProps;
-        private float cachedEffectiveRange = -1f;
 
         private HashSet<IntVec3> affectedCellsCache = new HashSet<IntVec3>();
         public override bool MultiSelect => true;
+        /// <summary>
+        /// 当前有效射程，负责实时读取属性加成后的射程，避免状态或装备变化后继续使用旧缓存。
+        /// </summary>
         public override float EffectiveRange
         {
             get
             {
-                if (cachedEffectiveRange < 0f)
-                {
-                    cachedEffectiveRange = base.EffectiveRange;
-                }
-                return cachedEffectiveRange;
+                return base.EffectiveRange;
             }
         }
 

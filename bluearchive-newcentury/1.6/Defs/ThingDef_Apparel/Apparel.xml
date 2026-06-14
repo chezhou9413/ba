@@ -164,7 +164,7 @@
 				<li>LeftHand</li>
 			</bodyPartGroups>
 			<layers>
-				<li>VFEC_OuterShell</li>
+				<li>Shell</li>
 			</layers>
 		<countsAsClothingForNudity>false</countsAsClothingForNudity>
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>

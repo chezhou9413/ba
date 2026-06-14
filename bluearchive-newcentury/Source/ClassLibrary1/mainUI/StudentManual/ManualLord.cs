@@ -1,4 +1,4 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.mainUI.MonoComp;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.mainUI.StudentManual.MonoComp;
@@ -63,7 +63,7 @@ namespace BANWlLib.mainUI.StudentManual
                 studentItem.transform.SetParent(ManualMapData.ManualScrollView.transform, false);
                 StudentListShow studentListShow = studentItem.AddComponent<StudentListShow>();
                 studentListShow.BaStudentUI = baStudentUI;
-                studentListShow.studentData = StudentRosterUtility.GetStudentData(tracker, baStudentUI.RaceDefName);
+                studentListShow.studentData = StudentRosterUtility.GetStudentData(tracker, baStudentUI.StudentId);
             }
             StudentManualEvents.resetUIlistRefresh();
         }
@@ -87,33 +87,33 @@ namespace BANWlLib.mainUI.StudentManual
 
         public static void lordStudentDef()
         {
-            ManualMapData.StudentList = DefDatabase<BaStudentRaceDef>.AllDefsListForReading;
+            ManualMapData.StudentList = DefDatabase<BaStudentDef>.AllDefsListForReading;
 
             if (ManualMapData.StudentList.NullOrEmpty())
             {
                 return;
             }
 
-            foreach (BaStudentRaceDef BaStudentRaceDef in ManualMapData.StudentList)
+            foreach (BaStudentDef baStudentDef in ManualMapData.StudentList)
             {
-                if (BaStudentRaceDef == null)
+                if (baStudentDef == null)
                 {
                     continue;
                 }
 
                 // 检查BaStudentUI是否为null
-                if (BaStudentRaceDef.BaStudentUI == null)
+                if (baStudentDef.BaStudentUI == null)
                 {
                     continue;
                 }
 
                 // 如果StudentName为"Auto"，则使用label作为学生名称
-                if (BaStudentRaceDef.BaStudentUI.StudentName == "Auto")
+                if (baStudentDef.BaStudentUI.StudentName == "Auto")
                 {
-                    BaStudentRaceDef.BaStudentUI.StudentName = BaStudentRaceDef.label;
+                    baStudentDef.BaStudentUI.StudentName = baStudentDef.label;
                 }
-                BaStudentRaceDef.BaStudentUI.RaceDefName = BaStudentRaceDef.defName;
-                ManualMapData.studentUIList.Add(BaStudentRaceDef.BaStudentUI);
+                baStudentDef.BaStudentUI.StudentId = StudentIdentityUtility.GetStudentId(baStudentDef);
+                ManualMapData.studentUIList.Add(baStudentDef.BaStudentUI);
             }
 
 

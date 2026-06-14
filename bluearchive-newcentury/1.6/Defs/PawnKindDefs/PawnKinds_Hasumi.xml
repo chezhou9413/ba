@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Hasumi</defName>
 		<label>-莲见-</label>
-		<race>BANW_Hasumi_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -74,6 +74,42 @@
 			<BAWC_TraitDef_Hasumi_A>0</BAWC_TraitDef_Hasumi_A>
 			<BAWC_TraitDef_Hasumi_B>0</BAWC_TraitDef_Hasumi_B>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>羽川</kindName>
+				<kindDesName>羽川 莲见</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Hasumi/Halo/Hasumi_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Hasumi/Head/Hasumi_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Hasumi/Body/Hasumi_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Hasumi/Hair/Hasumi_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Hasumi/Hair/Hasumi_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Hasumi/Halo/Hasumi_Halo</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
     <TraitDef>
         <defName>BAWC_TraitDef_Hasumi_A</defName>
@@ -98,8 +134,7 @@
                 <description>子技能:增加自身&lt;color=#DC143C&gt;15%&lt;/color&gt;的攻击射程</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<VEF_VerbRangeFactor>0.15</VEF_VerbRangeFactor>
-                </statOffsets>
+</statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>

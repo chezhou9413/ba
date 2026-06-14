@@ -18,7 +18,10 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         public Dictionary<ThingDef, int> goodThings = new Dictionary<ThingDef, int>();
         void Start()
         {
-            goodThings.AddRange(gacaData.BaStudentRaceDef.baStudentData.GakaStudentThingData);
+            if (gacaData?.BaStudentData != null)
+            {
+                goodThings.AddRange(gacaData.BaStudentData.GakaStudentThingData);
+            }
             Image = this.transform.Find("back").GetComponent<Image>();
             CharacteShow = this.transform.Find("back/CharacteShow").gameObject;
             ItemShow = this.transform.Find("back/ItemShow").gameObject;

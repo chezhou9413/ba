@@ -1,4 +1,4 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.BANWMap;
 using BANWlLib.mainUI.Mission.GameComp;
 using BANWlLib.mainUI.pojo;
@@ -32,15 +32,20 @@ namespace BANWlLib.mainUI.Mission.MonoComp
     public class selectData : IExposable
     {
         public string lable;
+        public string StudentId;
         public Pawn Pawn;
-        public BaStudentRaceDef baDef;
+        public BaStudentDef studentDef;
+        public PawnKindDef kindDef;
         public StudentData studentData;
         public void ExposeData()
         {
             Scribe_Values.Look(ref lable, "lable", string.Empty);
-            Scribe_Defs.Look(ref baDef, "baDef");
+            Scribe_Values.Look(ref StudentId, "StudentId", string.Empty);
+            Scribe_Defs.Look(ref studentDef, "studentDef");
+            Scribe_Defs.Look(ref kindDef, "kindDef");
             Scribe_Deep.Look(ref studentData, "studentData", null);
             Scribe_References.Look(ref Pawn, "Pawn");
+
         }
     }
     public class MonoComp_BaMissionSelect : MonoBehaviour
@@ -129,7 +134,8 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 }
                 else
                 {
-                    Pawn pawn = PawnDropHelper.JumpForRaceOfBaEff(map, selectData.baDef, spawnCell, selectData.studentData, selectData, false);
+                    string studentId = selectData.StudentId ?? StudentIdentityUtility.GetStudentId(selectData.studentDef);
+                    Pawn pawn = PawnDropHelper.JumpForStudentOfBaEff(map, studentId, spawnCell, selectData.studentData, selectData, false);
                     jumpedPawns.Add(pawn);
                 }
             }
@@ -197,7 +203,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 if (selectData != null)
                 {
                     child.Find("None").gameObject.SetActive(false);
-                    child.Find("buttom").gameObject.GetComponent<MonoComp_BaLongPressDraggable>().studentRaceDef = selectData.baDef;
+                    child.Find("buttom").gameObject.GetComponent<MonoComp_BaLongPressDraggable>().studentDef = selectData.studentDef;
                     GameObject SelectPawn = child.Find("SelectPawn").gameObject;
                     SelectPawn.SetActive(true);
                     if (selectData.Pawn != null)
@@ -206,31 +212,28 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                     }
                     else
                     {
-                        PawnKindDef kindDef = DefDatabase<PawnKindDef>.AllDefs.FirstOrDefault(k => k.race != null && k.race.defName == selectData.baDef.defName);
+                        PawnKindDef kindDef = selectData.kindDef;
+                        if (kindDef == null)
+                        {
+                            StudentIdentityUtility.TryGetPawnKindDef(selectData.StudentId ?? StudentIdentityUtility.GetStudentId(selectData.studentDef), out kindDef);
+                        }
                         SelectPawn.GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetSpriteFromKind(kindDef, MissionSpriteSizes.QueuePortrait);
                     }
-                    if (selectData.baDef != null)
+                    BaStudentData baStudentData = selectData.studentDef?.baStudentData;
+                    if (baStudentData != null)
                     {
-                        if (selectData.baDef.baStudentData != null)
+                        child.Find("infoBack").gameObject.SetActive(true);
+                        child.Find("infoBack/Info/Attack").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.DamageType.ToString() + "_main"];
+                        child.Find("infoBack/Info/Defense").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.DefenseType.ToString() + "_def"];
+                        child.Find("infoBack/Info").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.PosType.ToString() + "_big"];
+                        child.Find("infoBack/StarCont").GetComponent<UnityEngine.UI.Text>().text = baStudentData.StarCont.ToString();
+                        if (selectData.studentData != null)
                         {
-                            child.Find("infoBack").gameObject.SetActive(true);
-                            child.Find("infoBack/Info/Attack").GetComponent<Image>().sprite = MissionMapData.MissionSprite[selectData.baDef.baStudentData.DamageType.ToString() + "_main"];
-                            child.Find("infoBack/Info/Defense").GetComponent<Image>().sprite = MissionMapData.MissionSprite[selectData.baDef.baStudentData.DefenseType.ToString() + "_def"];
-                            Log.Message(selectData.baDef.baStudentData.DefenseType.ToString() + "_def");
-                            child.Find("infoBack/Info").GetComponent<Image>().sprite = MissionMapData.MissionSprite[selectData.baDef.baStudentData.PosType.ToString() + "_big"];
-                            child.Find("infoBack/StarCont").GetComponent<UnityEngine.UI.Text>().text = selectData.baDef.baStudentData.StarCont.ToString();
-                            if (selectData.studentData != null)
-                            {
-                                child.Find("infoBack/Leve").GetComponent<UnityEngine.UI.Text>().text = "Lv." + selectData.studentData.StudentLv;
-                            }
-                            else
-                            {
-                                child.Find("infoBack/Leve").GetComponent<UnityEngine.UI.Text>().text = "Lv.1";
-                            }
+                            child.Find("infoBack/Leve").GetComponent<UnityEngine.UI.Text>().text = "Lv." + selectData.studentData.StudentLv;
                         }
                         else
                         {
-                            child.Find("infoBack").gameObject.SetActive(false);
+                            child.Find("infoBack/Leve").GetComponent<UnityEngine.UI.Text>().text = "Lv.1";
                         }
                     }
                     else
@@ -277,9 +280,9 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                     {
                         isMatch = (savedData.Pawn == uiData.Pawn);
                     }
-                    else if (savedData.baDef != null && uiData.baDef != null)
+                    else if ((!string.IsNullOrEmpty(savedData.StudentId) || savedData.studentDef != null) && (!string.IsNullOrEmpty(uiData.StudentId) || uiData.studentDef != null))
                     {
-                        isMatch = (savedData.baDef.defName == uiData.baDef.defName);
+                        isMatch = (savedData.StudentId ?? StudentIdentityUtility.GetStudentId(savedData.studentDef)) == (uiData.StudentId ?? StudentIdentityUtility.GetStudentId(uiData.studentDef));
                     }
 
                     if (isMatch)
@@ -312,20 +315,25 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                         continue;
                     }
 
-                    BaStudentRaceDef def = DefDatabase<BaStudentRaceDef>.GetNamed(studentData.DefName);
-                    if (def == null)
+                    BaStudentDef baStudentDef;
+                    StudentIdentityUtility.TryGetStudentDef(studentData.DefName, out baStudentDef);
+                    if (baStudentDef == null)
                     {
                         continue;
                     }
+                    PawnKindDef kindDef;
+                    StudentIdentityUtility.TryGetPawnKindDef(studentData.DefName, out kindDef);
+                    BaStudentData baStudentData = baStudentDef.baStudentData;
+                    string studentId = StudentIdentityUtility.GetStudentId(baStudentDef) ?? StudentIdentityUtility.GetStudentId(kindDef);
 
                     GameObject MissionTargetObj = GameObject.Instantiate(MissionMapData.selectList, ListContent.transform);
-                    MissionTargetObj.transform.Find("avt").GetComponent<Image>().sprite = MissionMapData.pawnBigHardSprite[studentData.DefName];
-                    MissionTargetObj.transform.Find("Name").GetComponent<UnityEngine.UI.Text>().text = def.label;
-                    if (def.baStudentData != null)
+                    MissionTargetObj.transform.Find("avt").GetComponent<Image>().sprite = MissionMapData.pawnBigHardSprite[studentId];
+                    MissionTargetObj.transform.Find("Name").GetComponent<UnityEngine.UI.Text>().text = StudentIdentityUtility.GetStudentLabel(baStudentDef, kindDef);
+                    if (baStudentData != null)
                     {
-                        MissionTargetObj.transform.Find("box").GetComponent<Image>().sprite = MissionMapData.MissionSprite[def.baStudentData.DamageType + "_box"];
-                        MissionTargetObj.transform.Find("pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[def.baStudentData.PosType + "_min"];
-                        MissionTargetObj.transform.Find("Start/StarCont").GetComponent<UnityEngine.UI.Text>().text = def.baStudentData.StarCont.ToString();
+                        MissionTargetObj.transform.Find("box").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.DamageType + "_box"];
+                        MissionTargetObj.transform.Find("pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.PosType + "_min"];
+                        MissionTargetObj.transform.Find("Start/StarCont").GetComponent<UnityEngine.UI.Text>().text = baStudentData.StarCont.ToString();
                     }
                     else
                     {
@@ -338,8 +346,10 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                     });
                     selectData selectData = new selectData();
                     selectData.Pawn = studentData.StudentPawn;
-                    selectData.baDef = def;
-                    selectData.lable = def.label;
+                    selectData.StudentId = studentId;
+                    selectData.studentDef = baStudentDef;
+                    selectData.kindDef = kindDef;
+                    selectData.lable = StudentIdentityUtility.GetStudentLabel(baStudentDef, kindDef);
                     selectData.studentData = studentData;
                     objmap.Add(MissionTargetObj, selectData);
                 }
@@ -396,7 +406,9 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 });
                 selectData selectData = new selectData();
                 selectData.Pawn = p;
-                selectData.baDef = null;
+                selectData.StudentId = null;
+                selectData.studentDef = null;
+                selectData.kindDef = p.kindDef;
                 selectData.lable = p.LabelShort;
                 selectData.studentData = null;
                 objmap.Add(MissionTargetObj, selectData);
@@ -407,13 +419,13 @@ namespace BANWlLib.mainUI.Mission.MonoComp
         {
             quest.selectDataList.RemoveAll(selectData =>
             {
-                if (selectData.Pawn == null)
-                {
-                    if (selectData.baDef == null)
+                    if (selectData.Pawn == null)
+                    {
+                    if (selectData.studentDef == null && string.IsNullOrEmpty(selectData.StudentId))
                     {
                         return true;
                     }
-                    bool hasStudent = StudentRosterUtility.IsStudentDef(ManualDataGameComp, selectData.baDef.defName);
+                    bool hasStudent = StudentRosterUtility.IsStudentDef(ManualDataGameComp, selectData.StudentId ?? StudentIdentityUtility.GetStudentId(selectData.studentDef));
                     if (!hasStudent)
                     {
                         return true;
@@ -446,8 +458,8 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                     }
 
                     bool duplicateStudentSelected = currentData.Pawn == null &&
-                        currentData.baDef != null &&
-                        queSelect.Any(x => x.selectData?.baDef == currentData.baDef);
+                        (!string.IsNullOrEmpty(currentData.StudentId) || currentData.studentDef != null) &&
+                        queSelect.Any(x => (x.selectData?.StudentId ?? StudentIdentityUtility.GetStudentId(x.selectData?.studentDef)) == (currentData.StudentId ?? StudentIdentityUtility.GetStudentId(currentData.studentDef)));
                     if (duplicateStudentSelected)
                     {
                         return;
@@ -465,13 +477,11 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                     });
                     QueTargetObj.transform.Find("Avt").GetComponent<Image>().sprite = gameObject.transform.Find("avt").GetComponent<Image>().sprite;
                     QueTargetObj.transform.Find("box").GetComponent<Image>().sprite = gameObject.transform.Find("box").GetComponent<Image>().sprite;
-                    if (selectData.selectData.baDef != null)
+                    BaStudentData baStudentData = selectData.selectData.studentDef?.baStudentData;
+                    if (baStudentData != null)
                     {
-                        if (selectData.selectData.baDef.baStudentData != null)
-                        {
-                            QueTargetObj.transform.Find("Star/StarCont").GetComponent<UnityEngine.UI.Text>().text = selectData.selectData.baDef.baStudentData.StarCont.ToString();
-                            QueTargetObj.transform.Find("Pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[selectData.selectData.baDef.baStudentData.PosType + "_min"];
-                        }
+                        QueTargetObj.transform.Find("Star/StarCont").GetComponent<UnityEngine.UI.Text>().text = baStudentData.StarCont.ToString();
+                        QueTargetObj.transform.Find("Pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.PosType + "_min"];
                     }
                     else
                     {

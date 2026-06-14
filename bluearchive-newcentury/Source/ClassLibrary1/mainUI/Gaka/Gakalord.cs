@@ -1,7 +1,8 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.BANWGamecomp;
 using BANWlLib.mainUI.Gaka.MonoComp;
 using BANWlLib.mainUI.StudentManual;
+using BANWlLib.Tool;
 using BANWlLib.uicreater.tool;
 using MyCoolMusicMod.MyCoolMusicMod;
 using newpro;
@@ -147,33 +148,34 @@ namespace BANWlLib.mainUI.Gaka
 
         public static void SelectStu(string defname)
         {
-            BaStudentRaceDef thingDefs = DefDatabase<BaStudentRaceDef>.GetNamed(defname);
-            ExtGakaData(thingDefs);
+            BaStudentDef studentDef;
+            StudentIdentityUtility.TryGetStudentDef(defname, out studentDef);
+            ExtGakaData(studentDef);
         }
         public static void danchou()
         {
             GakaMapData.gamecomp_GakaAction.updataGacaPoit(1);
 
-            ThingDef thingDefs;
+            BaStudentDef thingDefs;
 
             // 判断是否为FES池
             if (GakaMapData.selectGachaDef.isFes)
             {
                 thingDefs = GachaSystem.DrawFES(
-                    GakaMapData.selectGachaDef.oneStarPool.RaceList,
-                    GakaMapData.selectGachaDef.twoStarPool.RaceList,
-                    GakaMapData.selectGachaDef.FESthreeStarPool.RaceList,
-                    GakaMapData.selectGachaDef.FESupthreeStarPool.RaceList,
-                    GakaMapData.selectGachaDef.threeStarPool.RaceList
+                    GakaMapData.selectGachaDef.oneStarPool.StudentList,
+                    GakaMapData.selectGachaDef.twoStarPool.StudentList,
+                    GakaMapData.selectGachaDef.FESthreeStarPool.StudentList,
+                    GakaMapData.selectGachaDef.FESupthreeStarPool.StudentList,
+                    GakaMapData.selectGachaDef.threeStarPool.StudentList
                 );
             }
             else
             {
                 thingDefs = GachaSystem.Draw(
-                    GakaMapData.selectGachaDef.oneStarPool.RaceList,
-                    GakaMapData.selectGachaDef.twoStarPool.RaceList,
-                    GakaMapData.selectGachaDef.threeStarPool.RaceList,
-                    GakaMapData.selectGachaDef.upthreeStarPool.RaceList,
+                    GakaMapData.selectGachaDef.oneStarPool.StudentList,
+                    GakaMapData.selectGachaDef.twoStarPool.StudentList,
+                    GakaMapData.selectGachaDef.threeStarPool.StudentList,
+                    GakaMapData.selectGachaDef.upthreeStarPool.StudentList,
                     GakaMapData.selectGachaDef.oneStarPool.Weight,
                     GakaMapData.selectGachaDef.twoStarPool.Weight,
                     GakaMapData.selectGachaDef.threeStarPool.Weight,
@@ -191,26 +193,26 @@ namespace BANWlLib.mainUI.Gaka
         {
             GakaMapData.gamecomp_GakaAction.updataGacaPoit(10);
 
-            List<ThingDef> thingDefs;
+            List<BaStudentDef> thingDefs;
 
             // 判断是否为FES池
             if (GakaMapData.selectGachaDef.isFes)
             {
                 thingDefs = GachaSystem.MultiDrawFES10(
-                    GakaMapData.selectGachaDef.oneStarPool.RaceList,
-                    GakaMapData.selectGachaDef.twoStarPool.RaceList,
-                    GakaMapData.selectGachaDef.FESthreeStarPool.RaceList,
-                    GakaMapData.selectGachaDef.FESupthreeStarPool.RaceList,
-                    GakaMapData.selectGachaDef.threeStarPool.RaceList
+                    GakaMapData.selectGachaDef.oneStarPool.StudentList,
+                    GakaMapData.selectGachaDef.twoStarPool.StudentList,
+                    GakaMapData.selectGachaDef.FESthreeStarPool.StudentList,
+                    GakaMapData.selectGachaDef.FESupthreeStarPool.StudentList,
+                    GakaMapData.selectGachaDef.threeStarPool.StudentList
                 );
             }
             else
             {
                 thingDefs = GachaSystem.MultiDraw10(
-                    GakaMapData.selectGachaDef.oneStarPool.RaceList,
-                    GakaMapData.selectGachaDef.twoStarPool.RaceList,
-                    GakaMapData.selectGachaDef.threeStarPool.RaceList,
-                    GakaMapData.selectGachaDef.upthreeStarPool.RaceList,
+                    GakaMapData.selectGachaDef.oneStarPool.StudentList,
+                    GakaMapData.selectGachaDef.twoStarPool.StudentList,
+                    GakaMapData.selectGachaDef.threeStarPool.StudentList,
+                    GakaMapData.selectGachaDef.upthreeStarPool.StudentList,
                     GakaMapData.selectGachaDef.oneStarPool.Weight,
                     GakaMapData.selectGachaDef.twoStarPool.Weight,
                     GakaMapData.selectGachaDef.threeStarPool.Weight,
@@ -218,20 +220,35 @@ namespace BANWlLib.mainUI.Gaka
                 );
             }
 
-            string results = string.Join(", ", thingDefs.Select(d => d.label.ToString()));
+            string results = string.Join(", ", thingDefs.Where(d => d != null).Select(d => d.label.ToString()));
             ExtGakaData(thingDefs);
             GameObject game = GameObject.Instantiate(GakaMapData.GakaAnimationPofab);
             game.GetComponent<Canvas>().worldCamera = UiMapData.mainUI.GetComponent<Canvas>().worldCamera;
             game.AddComponent<MonoComp_GakaAnimationPofab>();
         }
-        public static gacaData creatGacaData(BaStudentRaceDef badef)
+        public static gacaData creatGacaData(BaStudentDef studentDef)
         {
+            if (studentDef == null)
+            {
+                return null;
+            }
+
             ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
+            PawnKindDef kindDef;
+            StudentIdentityUtility.TryGetPawnKindDef(studentDef.defName, out kindDef);
+            BaStudentUI studentUI = studentDef.BaStudentUI;
+            BaStudentData studentData = studentDef.baStudentData;
+            string studentId = StudentIdentityUtility.GetStudentId(studentDef) ?? StudentIdentityUtility.GetStudentId(kindDef);
+
             gacaData gacaData = new gacaData();
-            gacaData.BaStudentRaceDef = badef;
-            gacaData.starNum = badef.BaStudentUI != null ? badef.BaStudentUI.CharacterStarCount : 1;
+            gacaData.BaStudentDef = studentDef;
+            gacaData.PawnKindDef = kindDef;
+            gacaData.StudentId = studentId;
+            gacaData.StudentUI = studentUI;
+            gacaData.BaStudentData = studentData;
+            gacaData.starNum = studentUI != null ? studentUI.CharacterStarCount : 1;
             Texture2D texture = null;
-            string path = badef.baStudentData.avtTexPath;
+            string path = studentData?.avtTexPath;
             if (!string.IsNullOrEmpty(path))
             {
                 texture = ContentFinder<Texture2D>.Get(path);
@@ -241,43 +258,46 @@ namespace BANWlLib.mainUI.Gaka
                 texture = BaseContent.BadTex;
             }
             gacaData.gakaAvt = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-            if (!BANWlLib.Tool.StudentRosterUtility.IsStudentDef(tracker, badef.defName))
+            if (!StudentRosterUtility.IsStudentDef(tracker, studentId))
             {
-                tracker.HaveStudent.Add(new BANWlLib.mainUI.pojo.StudentData(badef.defName));
+                tracker.HaveStudent.Add(new BANWlLib.mainUI.pojo.StudentData(studentId));
                 gacaData.isNew = true;
             }
             else
             {
                 gacaData.isNew = false;
             }
-            var upPool = GakaMapData.selectGachaDef?.upthreeStarPool?.RaceList;
-            gacaData.isUp = upPool != null && upPool.Contains(badef);
+            var upPool = GakaMapData.selectGachaDef?.upthreeStarPool?.StudentList;
+            gacaData.isUp = upPool != null && upPool.Any(def => def != null && StudentIdentityUtility.GetStudentId(def) == studentId);
             return gacaData;
         }
-        public static void ExtGakaData(List<ThingDef> extlist)
+        public static void ExtGakaData(List<BaStudentDef> extlist)
         {
             GakaMapData.gacaDatas.Clear();
             GakaMapData.tenGacha = true;
-            foreach (ThingDef thingDef in extlist)
+            foreach (BaStudentDef studentDef in extlist)
             {
-                if (thingDef is BaStudentRaceDef badef)
+                gacaData gacaData = creatGacaData(studentDef);
+                if (gacaData != null)
                 {
-                    gacaData gacaData = creatGacaData(badef);
                     GakaMapData.gacaDatas.Add(gacaData);
                 }
             }
             spawStudentThing();
         }
 
-        public static void ExtGakaData(ThingDef extlist)
+        public static void ExtGakaData(BaStudentDef extlist)
         {
             ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
             GakaMapData.gacaDatas.Clear();
             GakaMapData.tenGacha = false;
-            if (extlist is BaStudentRaceDef badef)
+            if (extlist != null)
             {
-                gacaData gacaData = creatGacaData(badef);
-                GakaMapData.gacaDatas.Add(gacaData);
+                gacaData gacaData = creatGacaData(extlist);
+                if (gacaData != null)
+                {
+                    GakaMapData.gacaDatas.Add(gacaData);
+                }
             }
             spawStudentThing();
         }
@@ -287,11 +307,17 @@ namespace BANWlLib.mainUI.Gaka
             Map map = Find.CurrentMap;
             foreach (gacaData gacaData in GakaMapData.gacaDatas)
             {
+                BaStudentData studentData = gacaData.BaStudentData;
+                if (studentData == null)
+                {
+                    continue;
+                }
+
                 if (gacaData.isUp)
                 {
                     if (gacaData.isNew)
                     {
-                        foreach (KeyValuePair<ThingDef, int> kvp in gacaData.BaStudentRaceDef.baStudentData.OneGakaStudentThingData)
+                        foreach (KeyValuePair<ThingDef, int> kvp in studentData.OneGakaStudentThingData)
                         {
                             Thing thing = ThingMaker.MakeThing(kvp.Key);
                             thing.stackCount = kvp.Value;
@@ -300,7 +326,7 @@ namespace BANWlLib.mainUI.Gaka
                     }
                     else if (!gacaData.isNew)
                     {
-                        foreach (KeyValuePair<ThingDef, int> kvp in gacaData.BaStudentRaceDef.baStudentData.UpGakaStudentThingData)
+                        foreach (KeyValuePair<ThingDef, int> kvp in studentData.UpGakaStudentThingData)
                         {
                             Thing thing = ThingMaker.MakeThing(kvp.Key);
                             thing.stackCount = kvp.Value;
@@ -312,7 +338,7 @@ namespace BANWlLib.mainUI.Gaka
                 {
                     if (!gacaData.isNew)
                     {
-                        foreach (KeyValuePair<ThingDef, int> kvp in gacaData.BaStudentRaceDef.baStudentData.GakaStudentThingData)
+                        foreach (KeyValuePair<ThingDef, int> kvp in studentData.GakaStudentThingData)
                         {
                             Thing thing = ThingMaker.MakeThing(kvp.Key);
                             thing.stackCount = kvp.Value;
@@ -324,7 +350,7 @@ namespace BANWlLib.mainUI.Gaka
             GakaMapData.isP3 = false;
             foreach (gacaData gacaData in GakaMapData.gacaDatas)
             {
-                if(gacaData.BaStudentRaceDef.baStudentData.StarCont == 3)
+                if(gacaData.BaStudentData != null && gacaData.BaStudentData.StarCont == 3)
                 {
                     GakaMapData.isP3 = true;
                 }

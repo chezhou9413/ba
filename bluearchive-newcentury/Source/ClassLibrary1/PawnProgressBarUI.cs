@@ -4,9 +4,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using BANWlLib.Tool;
 
 namespace BANWlLib
 {
+    /// <summary>
+    /// 小人星级进度条组件配置，负责保存星级显示规则和星星绘制参数。
+    /// </summary>
     public class CompProperties_PawnProgressBarUI : CompProperties
     {
         // 星星的间隔比例
@@ -21,8 +25,11 @@ namespace BANWlLib
         // 星星的尺寸
         public float starSize = 20f;
 
-        // UI显示的种族，可以配置多个，留空为全部都显示
-        public List<string> allowedRaces = new List<string>();
+        // 是否要求小人必须能通过 PawnKindDef 解析到学生数据。
+        public bool requireStudentKind = false;
+
+        // UI显示的学生 PawnKindDef 或学生身份，可以配置多个，留空时由 requireStudentKind 决定是否限制。
+        public List<string> allowedPawnKinds = new List<string>();
 
         // 星星的贴图路径
         public string starTexturePath = "UI/StarIcon";
@@ -37,6 +44,9 @@ namespace BANWlLib
         }
     }
 
+    /// <summary>
+    /// 小人星级进度条组件，负责根据 PawnKindDef 判断当前小人是否允许显示星级 UI。
+    /// </summary>
     public class CompUseEffect_PawnProgressBarUI : ThingComp
     {
         /// <summary>
@@ -54,24 +64,68 @@ namespace BANWlLib
         /// </summary>
         public CompProperties_PawnProgressBarUI Props => (CompProperties_PawnProgressBarUI)this.props;
 
-        public bool CheckRaceDefName(Pawn pawn)
+        /// <summary>
+        /// 检查进度条是否允许显示，负责按当前学生 Kind 身份判断。
+        /// </summary>
+        public bool CheckPawnKindDefName(Pawn pawn)
         {
             try
             {
-                if (Props.allowedRaces.Count < 1)
+                if (pawn == null)
                 {
-                    return true; // 如果没有配置种族，则默认允许所有
+                    return false;
                 }
-                if (Props.allowedRaces.Contains(pawn.def?.defName))
+
+                List<string> allowedPawnKinds = Props.allowedPawnKinds ?? new List<string>();
+                if (allowedPawnKinds.Count > 0)
                 {
-                    return true; // 如果当前小人的种族在允许列表中
+                    return IsPawnKindAllowed(pawn, allowedPawnKinds);
                 }
-                return false; // 如果不在允许列表中
+
+                if (Props.requireStudentKind)
+                {
+                    return StudentIdentityUtility.IsConfiguredStudentKind(pawn);
+                }
+
+                return true;
             }
             catch
             {
-                return false; // 如果没有配置种族，则默认不允许
+                return false;
             }
+        }
+
+        /// <summary>
+        /// 判断小人的 PawnKindDef 是否匹配配置列表。
+        /// </summary>
+        private bool IsPawnKindAllowed(Pawn pawn, List<string> allowedPawnKinds)
+        {
+            string kindDefName = pawn.kindDef?.defName;
+            if (string.IsNullOrEmpty(kindDefName))
+            {
+                return false;
+            }
+
+            string studentId = StudentIdentityUtility.GetStudentId(pawn.kindDef);
+            foreach (string allowedPawnKind in allowedPawnKinds)
+            {
+                if (string.IsNullOrEmpty(allowedPawnKind))
+                {
+                    continue;
+                }
+
+                if (allowedPawnKind == kindDefName)
+                {
+                    return true;
+                }
+
+                if (!string.IsNullOrEmpty(studentId) && allowedPawnKind == studentId)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 
@@ -286,12 +340,17 @@ namespace BANWlLib
         static void Postfix(ITab_Pawn_Character __instance)
         {
             Pawn selectpawn = Find.Selector.SingleSelectedThing as Pawn;
+            if (selectpawn == null)
+            {
+                return;
+            }
+
             CompUseEffect_PawnProgressBarUI PawnProgressBarUIComp = selectpawn.GetComp<CompUseEffect_PawnProgressBarUI>();
             if (PawnProgressBarUIComp == null)
             {
                 return; // 如果没有组件就不执行效果
             }
-            if (!PawnProgressBarUIComp.CheckRaceDefName(selectpawn))
+            if (!PawnProgressBarUIComp.CheckPawnKindDefName(selectpawn))
             {
                 return;
             }

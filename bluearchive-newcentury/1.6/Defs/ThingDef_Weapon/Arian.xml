@@ -120,25 +120,6 @@
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
       </li>
     </verbs>
-     <modExtensions>
-		<li Class="VEF.Things.ThingDefExtension">
-			<weaponCarryDrawOffsets>
-				<north>
-					<drawOffset>(0,0,0)</drawOffset>
-				</north>
-				<east>
-					<drawOffset>(-0.15,0,0)</drawOffset>
-				</east>
-				<south>
-					<drawOffset>(0,0,0)</drawOffset>
-				</south>
-				<west>
-					<drawOffset>(0.15,0,0)</drawOffset>
-				</west>
-			</weaponCarryDrawOffsets>
-      </li>
-      
-	</modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -286,25 +267,6 @@
         <forcedMissRadius>2.0</forcedMissRadius>
       </li>
     </verbs>
-    <modExtensions>
-		<li Class="VEF.Things.ThingDefExtension">
-			<weaponCarryDrawOffsets>
-				<north>
-					<drawOffset>(-0.1,0,0.1)</drawOffset>
-				</north>
-				<east>
-					<drawOffset>(-0.35,0,0.25)</drawOffset>
-				</east>
-				<south>
-					<drawOffset>(-0.1,0,0.1)</drawOffset>
-				</south>
-				<west>
-					<drawOffset>(0.35,0,0.25)</drawOffset>
-				</west>
-			</weaponCarryDrawOffsets>
-      </li>
-      
-	</modExtensions>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">

@@ -176,13 +176,6 @@ namespace newpro
                 return thingDef.label;
             }
 
-            if (defName.StartsWith("BANW_") && defName.EndsWith("_race"))
-            {
-                string characterName = defName.Substring(5, defName.Length - 10);
-                characterLabelCache[defName] = characterName;
-                return characterName;
-            }
-
             int lastUnderscoreIndex = defName.LastIndexOf('_');
             if (lastUnderscoreIndex > 0)
             {

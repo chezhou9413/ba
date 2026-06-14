@@ -8,6 +8,9 @@ using Verse;
 using System.Text.RegularExpressions;
 using BANWlLib.mainUI.MonoComp;
 
+/// <summary>
+/// 商品条目组件负责把商店配置绑定到单个商品预制体，并处理显示、购买按钮和刷新状态。
+/// </summary>
 public class shotData : MonoBehaviour
 {
     public shot shot;
@@ -15,31 +18,41 @@ public class shotData : MonoBehaviour
     public GameObject goumaiback;
     public Button gounauvbutton;
 
-    // ====== [新增配置] 自适应标题参数 ======
     [Header("Title Auto Fit")]
-    public int baseFontSize = 35;          // 基础字号（≤阈值时用）
-    public int minFontSize = 16;           // 缩小时的下限，避免太小
-    public int chineseThreshold = 6;       // 超过6个汉字开始缩
-    public int latinThreshold = 10;        // 超过10个字母/数字开始缩
-    public float extraPadding = 4f;        // 给文本留一点边距（像素）
-    private UnityEngine.UI.Text titleText;                // 缓存 title Text
-    private string lastTitle;              // 避免重复计算
+    public int baseFontSize = 35;          // 标题常规字号
+    public int minFontSize = 16;           // 标题缩放下限
+    public int chineseThreshold = 6;       // 中文标题开始缩放的字符阈值
+    public int latinThreshold = 10;        // 拉丁标题开始缩放的字符阈值
+    public float extraPadding = 4f;        // 文本容器保留的像素边距
+    private UnityEngine.UI.Text titleText; // 标题文本缓存
+    private string lastTitle;              // 上次计算过的标题内容
 
+    /// <summary>
+    /// 销毁当前商品条目对象，用于商店列表重建时清理旧 UI。
+    /// </summary>
     public void delect()
     {
         Destroy(this.gameObject);
     }
+
+    /// <summary>
+    /// Unity 生命周期入口，负责在商品数据已经绑定后初始化显示内容和按钮事件。
+    /// </summary>
     void Start()
     {
+        if (shot == null)
+        {
+            Log.Error("[shotData] 商品数据未绑定，跳过商品条目初始化。");
+            return;
+        }
+
         goumaiback = this.transform.Find("lock").gameObject;
         gounauvbutton = this.transform.Find("goumai").GetComponent<Button>();
 
-        // ====== [修改处] 缓存标题组件并设置文本 ======
         titleText = this.transform.Find("title").GetComponent<UnityEngine.UI.Text>();
         titleText.text = shot.ProductName;
         titleText.fontSize = baseFontSize;
 
-        // ====== [新增] 首次计算标题自适应 ======
         ApplyTitleAutoFit();
 
         this.transform.Find("cont").GetComponent<UnityEngine.UI.Text>().text = "x" + shot.ProductAmount;
@@ -68,17 +81,20 @@ public class shotData : MonoBehaviour
         ValidateParticlePrefab();
     }
 
-    // ====== [新增] 当 RectTransform 大小变化（比如分辨率/布局变了）时，重新适配 ======
+    /// <summary>
+    /// Unity 尺寸变化回调，负责在布局尺寸改变后重新计算标题字号。
+    /// </summary>
     void OnRectTransformDimensionsChange()
     {
-        // titleText 可能还没初始化
         if (titleText != null && gameObject.activeInHierarchy)
         {
             ApplyTitleAutoFit();
         }
     }
 
-    // ====== [新增] 外部如果修改了 shot.ProductName，可调用这个接口刷新标题并自适应 ======
+    /// <summary>
+    /// 刷新标题文本，并立即应用字号适配。
+    /// </summary>
     public void RefreshTitle(string newTitle)
     {
         if (titleText == null)
@@ -99,8 +115,7 @@ public class shotData : MonoBehaviour
         if (!force && content == lastTitle) return;
         lastTitle = content;
 
-        // 1) 按内容类型决定是否需要缩放（> 阈值则缩）
-        bool mostlyLatin = Regex.IsMatch(content, @"^[\u0000-\u00FF]+$"); // 基础ASCII视为拉丁
+        bool mostlyLatin = Regex.IsMatch(content, @"^[\u0000-\u00FF]+$"); // 基础 ASCII 按拉丁文本处理
         int threshold = mostlyLatin ? latinThreshold : chineseThreshold;
 
         int targetFontSize = baseFontSize;
@@ -111,20 +126,16 @@ public class shotData : MonoBehaviour
             targetFontSize = Mathf.Max(targetFontSize, minFontSize);
         }
 
-        // 2) 进一步用真实渲染宽度约束，确保不超出容器
         var rt = titleText.transform as RectTransform;
         float containerWidth = rt != null ? rt.rect.width : 0f;
         if (containerWidth > 0f)
         {
-            // 用 TextGenerator 计算期望宽度
             var settings = titleText.GetGenerationSettings(Vector2.zero);
             settings.scaleFactor = 1f;
 
-            // 先用上一步算出的 targetFontSize 试算
             settings.fontSize = targetFontSize;
             float preferredWidth = titleText.cachedTextGeneratorForLayout.GetPreferredWidth(content, settings) / titleText.pixelsPerUnit;
 
-            // 如果依旧超过容器，则继续按比例收缩
             float maxWidth = Mathf.Max(0f, containerWidth - extraPadding);
             if (preferredWidth > maxWidth && preferredWidth > 0.01f)
             {
@@ -138,7 +149,6 @@ public class shotData : MonoBehaviour
         titleText.horizontalOverflow = HorizontalWrapMode.Overflow; // 防止 Unity 因换行影响宽度计算
         titleText.verticalOverflow = VerticalWrapMode.Truncate;
         titleText.fontSize = targetFontSize;
-        // 可选：如需要两端留白可增加字间距（需 Text 支持/或改用 TMP 实现）
     }
 
     /// <summary>
@@ -175,6 +185,9 @@ public class shotData : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 在购买按钮位置播放购买粒子效果。
+    /// </summary>
     public void SpawnParticleAtButton(RectTransform btnRect)
     {
 
@@ -280,6 +293,9 @@ public class shotData : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 把粒子渲染排序同步到当前 Canvas，确保粒子显示在购买界面上方。
+    /// </summary>
     private void ApplySortingToParticles(GameObject root, Canvas canvas, int orderOffset)
     {
         try
@@ -313,8 +329,16 @@ public class shotData : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 根据玩家持有货币数量刷新购买按钮可用状态。
+    /// </summary>
     private void setLockButtton()
     {
+        if (shot == null || gounauvbutton == null || goumaiback == null)
+        {
+            return;
+        }
+
         if (ItemUtility.GetTotalItemCount(shot.CurrencyDefName) >= shot.CurrencyAmount)
         {
             gounauvbutton.interactable = true;
@@ -328,20 +352,29 @@ public class shotData : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Unity 销毁回调，负责解除商店刷新事件订阅。
+    /// </summary>
     void OnDestroy()
     {
         ShopEvents.OnRefreshAllButtons -= setLockButtton;
     }
 
+    /// <summary>
+    /// Unity 启用回调，负责订阅商店刷新事件并在数据可用时刷新排序。
+    /// </summary>
     void OnEnable()
     {
         ShopEvents.OnRefreshAllButtons += setLockButtton;
-        if(ItemUtility.GetTotalItemCount(shot.CurrencyDefName) >= shot.CurrencyAmount)
+        if (shot != null && ItemUtility.GetTotalItemCount(shot.CurrencyDefName) >= shot.CurrencyAmount)
         {
             this.gameObject.transform.SetAsFirstSibling();
         }
     }
 
+    /// <summary>
+    /// Unity 禁用回调，负责解除商店刷新事件订阅。
+    /// </summary>
     void OnDisable()
     {
         ShopEvents.OnRefreshAllButtons -= setLockButtton;

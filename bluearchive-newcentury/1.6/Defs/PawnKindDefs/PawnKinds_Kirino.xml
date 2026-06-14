@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Kirino</defName>
 		<label>-桐乃-</label>
-		<race>BANW_Kirino_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -82,8 +82,40 @@
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
 			<BAWC_TraitDef_Kirino_A>0</BAWC_TraitDef_Kirino_A>
-			<BAWC_TraitDef_Kirino>0</BAWC_TraitDef_Kirino >
+			<BAWC_TraitDef_Kirino>0</BAWC_TraitDef_Kirino>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>桐乃</kindName>
+				<kindDesName>桐乃 桐乃 中务</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Valkyrie/Kirino/Halo/Kirino_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Valkyrie/Kirino/Body/Kirino_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<ReplacePath>Pawns/Valkyrie/Kirino/Head/Kirino_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront_layer3</BodyAddonName>
+						<ReplacePath>Pawns/Valkyrie/Kirino/Hair/Kirino_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Valkyrie/Kirino/Hair/Kirino_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Kirino_A</defName>

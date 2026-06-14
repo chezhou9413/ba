@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Tsubaki</defName>
 		<label>-椿-</label>
-		<race>BANW_Tsubaki_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 		<defaultFactionType>PlayerColony</defaultFactionType>
@@ -39,8 +39,7 @@
         </weaponTags>
 		<apparelRequired Inherit="False">
 			<li>BANW_Body_Tsubaki</li>
-			<li>BANW_Body_Tsubaki_D</li>
-		</apparelRequired>
+</apparelRequired>
 		<forcedHair>Bald</forcedHair>
 
 		<skills>
@@ -98,6 +97,38 @@
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
 			<BAWC_TraitDef_Tsubaki_A>0</BAWC_TraitDef_Tsubaki_A>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>椿</kindName>
+				<kindDesName>椿 椿 春日</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>16</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Tsubaki/Halo/Tsubaki_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Tsubaki/Body/Tsubaki_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Tsubaki/Head/Tsubaki_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront_layer3</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Tsubaki/Hair/Tsubaki_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Tsubaki/Hair/Tsubaki_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 
 <TraitDef>

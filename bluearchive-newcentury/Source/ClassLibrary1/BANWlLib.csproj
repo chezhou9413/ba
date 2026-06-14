@@ -195,6 +195,10 @@
     <Compile Include="HumanIntPropertyComp.cs" />
     <Compile Include="HumanIntPropertyHelper.cs" />
     <Compile Include="Init\StartupModCheck.cs" />
+    <Compile Include="KindStats\BANWKindStatExtension.cs" />
+    <Compile Include="KindStats\BANWKindStatPatches.cs" />
+    <Compile Include="KindStats\BANWKindStatUtility.cs" />
+    <Compile Include="KindStats\BANWStatDefOf.cs" />
     <Compile Include="mainUI\Events\ShopEvents.cs" />
     <Compile Include="mainUI\Events\StudentManualEvents.cs" />
     <Compile Include="mainUI\Gaka\GachaSystem.cs" />
@@ -248,12 +252,15 @@
     <Compile Include="Pojo\TickDamage.cs" />
     <Compile Include="Pojo\TickDelayDamageAndHediff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Projectiles\PiercingProjectileExtension.cs" />
+    <Compile Include="Projectiles\Projectile_PiercingArea.cs" />
     <Compile Include="Pojo\PendingDamageAction.cs" />
     <Compile Include="StudentInitializationComp.cs" />
     <Compile Include="Tool\ListUtils.cs" />
     <Compile Include="Tool\pawnUtils.cs" />
     <Compile Include="Tool\ReflexHelper.cs" />
     <Compile Include="Tool\RimWorldUISpriteUtil.cs" />
+    <Compile Include="Tool\StudentIdentityUtility.cs" />
     <Compile Include="Tool\StudentRosterUtility.cs" />
     <Compile Include="uicreater\GameComponent_LateInit.cs" />
     <Compile Include="uicreater\LongPressDraggableButton.cs" />

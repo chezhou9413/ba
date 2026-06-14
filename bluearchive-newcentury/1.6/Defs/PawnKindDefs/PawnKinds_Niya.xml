@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Niya</defName>
 		<label>-尼娅-</label>
-		<race>BANW_Niya_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -89,6 +89,38 @@
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Niya_A>0</BAWC_TraitDef_Niya_A>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>尼娅</kindName>
+				<kindDesName>尼娅 天地</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>17</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Niya/Halo/Niya_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Niya/Body/Niya_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Niya/Head/Niya_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront_layer3</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Niya/Hair/Niya_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Niya/Hair/Niya_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Niya_A</defName>

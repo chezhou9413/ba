@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Hoshiro</defName>
 		<label>-星野-</label>
-		<race>BANW_Hoshiro_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -73,6 +73,38 @@
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Hoshiro>0</BAWC_TraitDef_Hoshiro>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>星野</kindName>
+				<kindDesName>星野 星野 小鸟游</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro/Halo/Hoshiro_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro/Head/Hoshiro_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro/Body/Hoshiro_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro/Hair/Hoshiro_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Abydos/Hoshiro/Hair/Hoshiro_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 
 <TraitDef>
@@ -90,8 +122,7 @@
 					<PainShockThreshold>0.5</PainShockThreshold>
 					<MoveSpeed>6</MoveSpeed>
 					<CarryingCapacity>100</CarryingCapacity><!--		        ■承载力--> 
-					<VEF_VerbRangeFactor>0.5</VEF_VerbRangeFactor>
-					<MeleeDodgeChance>20</MeleeDodgeChance>
+<MeleeDodgeChance>20</MeleeDodgeChance>
 					<ShootingAccuracyPawn>30</ShootingAccuracyPawn>
                 </statOffsets>
 				<statFactors>

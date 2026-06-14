@@ -1,4 +1,4 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.mainUI.Mission;
 using BANWlLib.mainUI.StudentManual;
 using BANWlLib.Tool;
@@ -70,31 +70,38 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
             gakashotList.Clear();
 
-            List<ThingDef> thingDefs = GetRedeemableStudents();
-            foreach(ThingDef thingDef in thingDefs)
+            List<BaStudentDef> thingDefs = GetRedeemableStudents();
+            foreach(BaStudentDef baStudentDef in thingDefs)
             {
-                BaStudentRaceDef studentDef = thingDef as BaStudentRaceDef;
-                if (studentDef != null)
-                {
+                PawnKindDef kindDef;
+                StudentIdentityUtility.TryGetPawnKindDef(baStudentDef.defName, out kindDef);
+                BaStudentUI studentUI = baStudentDef.BaStudentUI;
+                BaStudentData studentData = baStudentDef.baStudentData;
+                string studentId = StudentIdentityUtility.GetStudentId(baStudentDef) ?? StudentIdentityUtility.GetStudentId(kindDef);
+                    if (studentUI == null || studentData == null)
+                    {
+                        continue;
+                    }
+
                     GameObject obj = Instantiate(GakaMapData.GakaShotList);
-                    obj.transform.Find("StuName").GetComponent<UnityEngine.UI.Text>().text = studentDef.BaStudentUI.StudentBio.StudentBioName;
-                    obj.transform.Find("shouchouback/Text").GetComponent<UnityEngine.UI.Text>().text = "首次奖励可获得["+ studentDef.BaStudentUI.StudentBio.StudentBioName + "]的神名文字x100]！";
-                    obj.transform.Find("StuXuexiaoIcon").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(studentDef.BaStudentUI.StudentBio.AcademyLogoPath));
-                    obj.transform.Find("selectList/avt").GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetHeadShotSpriteFromDef(studentDef);
-                    obj.transform.Find("selectList/box").GetComponent<Image>().sprite = MissionMapData.MissionSprite[studentDef.baStudentData.DamageType + "_box"];
-                    obj.transform.Find("selectList/pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[studentDef.baStudentData.PosType + "_min"];
-                    obj.transform.Find("selectList/Start/StarCont").GetComponent<UnityEngine.UI.Text>().text = studentDef.baStudentData.StarCont.ToString();
-                    obj.transform.Find("StuXuexiao").GetComponent<UnityEngine.UI.Text>().text =string.IsNullOrEmpty(studentDef.baStudentData.stuSchool) ? "未配置学院" : studentDef.baStudentData.stuSchool;
+                    obj.transform.Find("StuName").GetComponent<UnityEngine.UI.Text>().text = studentUI.StudentBio.StudentBioName;
+                    obj.transform.Find("shouchouback/Text").GetComponent<UnityEngine.UI.Text>().text = "首次奖励可获得["+ studentUI.StudentBio.StudentBioName + "]的神名文字x100]！";
+                    obj.transform.Find("StuXuexiaoIcon").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(studentUI.StudentBio.AcademyLogoPath));
+                    obj.transform.Find("selectList/avt").GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetHeadShotSpriteFromKind(kindDef);
+                    obj.transform.Find("selectList/box").GetComponent<Image>().sprite = MissionMapData.MissionSprite[studentData.DamageType + "_box"];
+                    obj.transform.Find("selectList/pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[studentData.PosType + "_min"];
+                    obj.transform.Find("selectList/Start/StarCont").GetComponent<UnityEngine.UI.Text>().text = studentData.StarCont.ToString();
+                    obj.transform.Find("StuXuexiao").GetComponent<UnityEngine.UI.Text>().text =string.IsNullOrEmpty(studentData.stuSchool) ? "未配置学院" : studentData.stuSchool;
                     obj.transform.Find("buttom_zhaomu/Poit").GetComponent <UnityEngine.UI.Text>().text = 200.ToString();
                     obj.transform.Find("buttom_zhaomu").GetComponent<Button>().onClick.AddListener(() =>
                     {
                         LoopBGMManager.playEffAudio("鼠标点击音效");
-                        BamessageUI.ShowBaMessageUIQuek("提示", $"是否花费200招募点数兑换 {studentDef.BaStudentUI.StudentBio.StudentBioName}\n当前持有：{GakaMapData.gamecomp_GakaAction.gacaPoit}", "确认", "取消", () =>
+                        BamessageUI.ShowBaMessageUIQuek("提示", $"是否花费200招募点数兑换 {studentUI.StudentBio.StudentBioName}\n当前持有：{GakaMapData.gamecomp_GakaAction.gacaPoit}", "确认", "取消", () =>
                         {
                             if (GakaMapData.gamecomp_GakaAction.updataGacaPoit(-200))
                             {
-                                Gakalord.SelectStu(thingDef.defName);
-                                BamessageUI.ShowBaMessageUI("兑换成功", $"{studentDef.BaStudentUI.StudentBio.StudentBioName }加入了你的殖民地", "确认");
+                                Gakalord.SelectStu(studentId);
+                                BamessageUI.ShowBaMessageUI("兑换成功", $"{studentUI.StudentBio.StudentBioName }加入了你的殖民地", "确认");
                             }
                             else
                             {
@@ -102,14 +109,13 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                             }
                         });
                     });
-                    obj.name = studentDef.defName;
+                    obj.name = studentId;
                     obj.transform.SetParent(Content.transform,false);
                     gakashotList.Add(obj);
-                }
             }
         }
 
-        private List<ThingDef> GetRedeemableStudents()
+        private List<BaStudentDef> GetRedeemableStudents()
         {
             Gacha selectedGacha = GakaMapData.selectGachaDef;
             if (selectedGacha != null)
@@ -124,20 +130,20 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 .ToList();
         }
 
-        private IEnumerable<ThingDef> GetRedeemableStudentsFromGacha(Gacha gacha)
+        private IEnumerable<BaStudentDef> GetRedeemableStudentsFromGacha(Gacha gacha)
         {
             if (gacha == null)
             {
-                return Enumerable.Empty<ThingDef>();
+                return Enumerable.Empty<BaStudentDef>();
             }
 
             GachaPool redeemPool = gacha.isFes ? gacha.FESupthreeStarPool : gacha.upthreeStarPool;
-            if (redeemPool?.RaceList.NullOrEmpty() != false)
+            if (redeemPool?.StudentList.NullOrEmpty() != false)
             {
-                return Enumerable.Empty<ThingDef>();
+                return Enumerable.Empty<BaStudentDef>();
             }
 
-            return redeemPool.RaceList;
+            return redeemPool.StudentList;
         }
 
         void Update()

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <StatDef>
+    <defName>BANW_RangedWeapon_RangeOffset</defName>
+    <label>射程加成</label>
+    <description>增加非近战武器和技能的最终射程，+10 表示增加 10 格。</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <category>Apparel</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>true</showOnAnimals>
+    <showOnMechanoids>true</showOnMechanoids>
+    <showIfUndefined>false</showIfUndefined>
+    <displayPriorityInCategory>510</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>BANW_HealthScaleOffset</defName>
+    <label>生命值加成</label>
+    <description>增加小人的总生命值尺度，先与基础生命值相加。</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <category>Apparel</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>true</showOnAnimals>
+    <showOnMechanoids>true</showOnMechanoids>
+    <showIfUndefined>false</showIfUndefined>
+    <displayPriorityInCategory>511</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>BANW_HealthScalePercentOffset</defName>
+    <label>生命值百分比加成</label>
+    <description>按百分比提高小人的总生命值尺度，+10% 写作 0.10，并在生命值平加之后计算。</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <category>Apparel</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>true</showOnAnimals>
+    <showOnMechanoids>true</showOnMechanoids>
+    <showIfUndefined>false</showIfUndefined>
+    <displayPriorityInCategory>512</displayPriorityInCategory>
+  </StatDef>
+</Defs>

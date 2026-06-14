@@ -1,4 +1,4 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.Tool;
 using BANWlLib.uicreater.tool;
@@ -73,7 +73,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 Characterimage.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.CharacterimagePath));
                 CharacterType.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.CharacterTypePath));
                 CharacterName.text = BaStudentUI.StudentName;
-                studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.RaceDefName);
+                studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.StudentId);
                 if (studentData != null)
                 {
                     CharacterLv.text = "Lv." + studentData.StudentLv;
@@ -112,7 +112,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             }
 
             return BaStudentUI != null &&
-                   PawnDropHelper.HasPendingPawnForDefName(BaStudentUI.RaceDefName);
+                   PawnDropHelper.HasPendingPawnForDefName(BaStudentUI.StudentId);
         }
 
         void SetDeployButton()
@@ -120,7 +120,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             tracker = GetTracker();
             if (BaStudentUI != null)
             {
-                studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.RaceDefName);
+                studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.StudentId);
             }
 
             DeployButton.gameObject.SetActive(true);
@@ -177,7 +177,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                     }
 
                     tracker = GetTracker();
-                    studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.RaceDefName);
+                    studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.StudentId);
                     if (studentData == null)
                     {
                         Log.Warning("[StudentDetailsController] 找不到当前学生存档数据，无法执行出击。");
@@ -189,7 +189,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                         SetDeployButton();
                         return;
                     }
-                    if (PawnDropHelper.HasPendingPawnForDefName(BaStudentUI.RaceDefName))
+                    if (PawnDropHelper.HasPendingPawnForDefName(BaStudentUI.StudentId))
                     {
                         SetDeployButton();
                         return;
@@ -197,7 +197,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
 
                     deployInProgress = true;
                     DeployButton.interactable = false;
-                    Pawn pawn = PawnDropHelper.DropPawnsByDefName(BaStudentUI.RaceDefName);
+                    Pawn pawn = PawnDropHelper.DropPawnsByDefName(BaStudentUI.StudentId);
                     if (pawn != null)
                     {
                         StudentRosterUtility.BindStudentPawn(studentData, pawn);
@@ -223,7 +223,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             WithdrawButton.onClick.AddListener(() =>
             {
                 tracker = GetTracker();
-                studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.RaceDefName);
+                studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.StudentId);
                 if (studentData == null)
                 {
                     SetDeployButton();

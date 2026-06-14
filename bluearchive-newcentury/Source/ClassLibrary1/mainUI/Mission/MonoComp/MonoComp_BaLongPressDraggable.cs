@@ -1,5 +1,4 @@
-﻿using BANWlLib.BaDef;
-using BANWlLib.DamageFontSystem.Comp;
+using BANWlLib.BaDef;
 using MyCoolMusicMod.MyCoolMusicMod;
 using System.Collections;
 using UnityEngine;
@@ -27,7 +26,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
 
         private Transform originalParent;
         private int originalSiblingIndex;
-        public BaStudentRaceDef studentRaceDef;
+        public BaStudentDef studentDef;
 
         private void Start()
         {
@@ -58,9 +57,9 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             isMove = true;
 
             // 播放音效
-            if (studentRaceDef?.baStudentData?.DraggableAudio != null)
+            if (studentDef?.baStudentData?.DraggableAudio != null)
             {
-                LoopBGMManager.PlayClipDirectly(studentRaceDef.baStudentData.DraggableAudio);
+                LoopBGMManager.PlayClipDirectly(studentDef.baStudentData.DraggableAudio);
             }
 
             // --- A. 记录老家 ---

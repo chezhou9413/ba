@@ -32,7 +32,7 @@ namespace newpro
 
             foreach (string filePath in files)
             {
-                string fileName = Path.GetFileNameWithoutExtension(filePath)+ "_race";
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
                 pngMap[fileName] = filePath;
             }
 

@@ -7,11 +7,17 @@ using Verse;
 
 namespace BANWlLib.BaDef
 {
+    /// <summary>
+    /// 抽卡池配置，负责保存权重和按学生数据 Def 维护的候选列表。
+    /// </summary>
     public class GachaPool
     {
         public float Weight = 0;
-        public List<ThingDef> RaceList = new List<ThingDef>();
+        public List<BaStudentDef> StudentList = new List<BaStudentDef>();
     }
+    /// <summary>
+    /// 抽卡配置 Def，负责描述一个卡池的资源、文本和各星级池。
+    /// </summary>
     public class Gacha:Def
     {
         public string gachaTexPath;

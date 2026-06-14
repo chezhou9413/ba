@@ -1606,7 +1606,7 @@
     </verbs>
   </ThingDef>
 
-  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Megu</defName>
     <label>燃烧</label>
     <projectile>
@@ -1616,47 +1616,12 @@
       <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
       <speed>50</speed><!--子弹速度-->
     </projectile>
-    <thingClass>VEF.Weapons.ExpandableBullet</thingClass>
+    <thingClass>Bullet</thingClass>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
-      <texPath>Projectile/Megu/A</texPath>
-      <texPathFadeOut>Projectile/Megu/B</texPathFadeOut>
+      <texPath>Projectile/Megu/A/Megu</texPath>
+
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <widthScaleFactor>1.2</widthScaleFactor>
-    <heightScaleFactor>1.5</heightScaleFactor>
-    <startingPositionOffset>(0,0,0)</startingPositionOffset>
-    <totalSizeScale>0.9</totalSizeScale> 
-    <reachMaxRangeAlways>true</reachMaxRangeAlways><!--总是达到最大射程-->
-    <drawOffscreen>true</drawOffscreen><!--可在屏幕外绘制-->
-    <lifeTimeDuration>40</lifeTimeDuration><!--生命周期持续时间（ticks）-->
-    <minDistanceToAffect>0.9</minDistanceToAffect><!--最小影响距离（格）-->
-    <tickFrameRate>10</tickFrameRate><!--帧率更新间隔（ticks）-->
-    <finalTickFrameRate>6</finalTickFrameRate><!--最终帧率更新间隔（ticks）-->
-    <tickDamageRate>8</tickDamageRate><!--伤害频率（每5 ticks造成一次伤害）-->
-    <disableVanillaDamageMethod>false</disableVanillaDamageMethod><!--禁用原版伤害方法-->
-    <dealsDamageOnce>false</dealsDamageOnce><!--只造成一次伤害-->
-    <stopWhenHit>false</stopWhenHit><!--击中目标时是否停止（false表示可穿透）-->
-    <stopWhenHitAt>
-      <!--当击中以下物体类型时会停止-->
-			<li>MineableSteel</li><!--可开采的钢材-->
-			<li>CollapsedRocks</li><!--倒塌的岩石-->
-			<li>MineableSilver</li><!--可开采的银-->
-			<li>MineableGold</li><!--可开采的金-->
-			<li>MineableUranium</li><!--可开采的铀-->
-			<li>MineablePlasteel</li><!--可开采的塑钢-->
-			<li>MineableJade</li><!--可开采的玉石-->
-			<li>MineableComponentsIndustrial</li><!--可开采的工业组件-->
-			<li>RaisedRocks</li><!--隆起的岩石-->
-			<li>Sandstone</li><!--砂岩-->
-			<li>SmoothedSandstone</li><!--打磨的砂岩-->
-			<li>Granite</li><!--花岗岩-->
-			<li>SmoothedGranite</li><!--打磨的花岗岩-->
-			<li>Limestone</li><!--石灰岩-->
-			<li>SmoothedLimestone</li><!--打磨的石灰岩-->
-			<li>Slate</li><!--板岩-->
-			<li>SmoothedSlate</li><!--打磨的板岩-->
-			<li>Marble</li><!--大理石-->
-			<li>SmoothedMarble</li><!--打磨的大理石-->
-		</stopWhenHitAt>
-  </VEF.Weapons.ExpandableProjectileDef>
+  </ThingDef>
 </Defs>

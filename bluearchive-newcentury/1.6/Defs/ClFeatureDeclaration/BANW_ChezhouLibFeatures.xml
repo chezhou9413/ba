@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ChezhouLib.LibDef.ClFeatureDeclarationDef>
+    <defName>BANW_Enable_KindPawnGeneration</defName>
+    <feature>KindPawnGeneration</feature>
+  </ChezhouLib.LibDef.ClFeatureDeclarationDef>
+
+  <ChezhouLib.LibDef.ClFeatureDeclarationDef>
+    <defName>BANW_Enable_HARBodyAddon</defName>
+    <feature>HARBodyAddon</feature>
+  </ChezhouLib.LibDef.ClFeatureDeclarationDef>
+</Defs>

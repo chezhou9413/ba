@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Marina</defName>
+		<label>-真里奈-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+			<li>
+				<def>BANW_LevelTrait</def>
+				<severity>0.001</severity>
+			</li>
+		</startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryMarina</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+			<li>BANC_Marina</li>
+		</weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Marina</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>6</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>真里奈</kindName>
+				<kindDesName>池仓 真里奈</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/RedWinter/Marina/Halo/Marina_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/RedWinter/Marina/Head/Marina_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/RedWinter/Marina/Body/Marina_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/RedWinter/Marina/Hair/Marina_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/RedWinter/Marina/Hair/Marina_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+</Defs>

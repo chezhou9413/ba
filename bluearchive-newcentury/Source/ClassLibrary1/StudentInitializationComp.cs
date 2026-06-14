@@ -1,4 +1,5 @@
 using RimWorld;
+using BANWlLib.Tool;
 using System.Collections.Generic;
 using System.IO; // Added for Path and File operations
 using Verse;
@@ -122,6 +123,11 @@ namespace BANWlLib
         {
             base.CompTick();
 
+            if (!StudentIdentityUtility.IsConfiguredStudentKind(parent as Pawn))
+            {
+                return;
+            }
+
             // 处理延迟初始化
             if (!hasInitialized && initializationTimer > 0)
             {
@@ -171,13 +177,19 @@ namespace BANWlLib
         /// </summary>
         private void PerformInitialization()
         {
+            if (!StudentIdentityUtility.IsConfiguredStudentKind(parent as Pawn))
+            {
+                return;
+            }
+
             if (humanComp != null)
             {
                 // 检查是否有保存的学生数据
                 var tracker = Current.Game.GetComponent<BANWlLib.mainUI.StudentManual.ManualDataGameComp>();
                 if (tracker != null)
                 {
-                    var studentSave = tracker.studentSaves.FirstOrDefault(s => s.DefName == parent.def.defName);
+                    string studentId = StudentIdentityUtility.GetStudentId(parent as Pawn);
+                    var studentSave = tracker.studentSaves.FirstOrDefault(s => s != null && s.DefName == studentId);
                     if (studentSave != null)
                     {
                         // 如果有保存的数据，使用保存的经验值
@@ -205,6 +217,11 @@ namespace BANWlLib
         /// </summary>
         private void CheckExperienceChange()
         {
+            if (!StudentIdentityUtility.IsConfiguredStudentKind(parent as Pawn))
+            {
+                return;
+            }
+
             if (humanComp == null) return;
 
             int currentExperience = humanComp.CustomIntValue;
@@ -247,6 +264,11 @@ namespace BANWlLib
         /// <returns>当前星星等级</returns>
         private int GetCurrentStarLevel()
         {
+            if (!StudentIdentityUtility.IsConfiguredStudentKind(parent as Pawn))
+            {
+                return 0;
+            }
+
             if (humanComp == null) return 0;
 
             // 获取减伤组件来获取星星阈值
@@ -273,6 +295,11 @@ namespace BANWlLib
         /// </summary>
         public void PlayStarUpEffect()
         {
+            if (!StudentIdentityUtility.IsConfiguredStudentKind(parent as Pawn))
+            {
+                return;
+            }
+
             if (parent is Pawn pawn)
             {
 

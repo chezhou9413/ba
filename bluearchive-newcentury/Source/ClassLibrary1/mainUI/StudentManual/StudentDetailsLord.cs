@@ -32,7 +32,7 @@ namespace BANWlLib.mainUI.StudentManual
             MonoComp_BackButton.instance.setNewObj(ManualMapData.StudentDetailOBJ, null);
             studentDetails.BaStudentUI = baStudent;
             StudentRosterUtility.SyncAllStudentRuntimeState(tracker);
-            studentDetails.studentData = StudentRosterUtility.GetStudentData(tracker, baStudent.RaceDefName);
+            studentDetails.studentData = StudentRosterUtility.GetStudentData(tracker, baStudent.StudentId);
             studentDetails.setData();
         }
 

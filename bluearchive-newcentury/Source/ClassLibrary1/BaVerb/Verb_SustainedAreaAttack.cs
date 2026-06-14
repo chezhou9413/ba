@@ -21,20 +21,18 @@ namespace BANWlLib.BaVerb
     public class Verb_SustainedAreaAttack : Verb_CastAbility
     {
         private VerbProperties_SustainedAreaAttack VerbProperties => (VerbProperties_SustainedAreaAttack)this.verbProps;
-        private float cachedEffectiveRange = -1f;
 
         // 【保留】我们仍然需要这个变量，但只是为了让 DrawHighlight 绘制它
         private HashSet<IntVec3> affectedCellsCache = new HashSet<IntVec3>();
         public override bool MultiSelect => true;
+        /// <summary>
+        /// 当前有效射程，负责实时读取属性加成后的射程，避免状态或装备变化后继续使用旧缓存。
+        /// </summary>
         public override float EffectiveRange
         {
             get
             {
-                if (cachedEffectiveRange < 0f)
-                {
-                    cachedEffectiveRange = base.EffectiveRange;
-                }
-                return cachedEffectiveRange;
+                return base.EffectiveRange;
             }
         }
         private Vector3 getFanDirection(LocalTargetInfo target)

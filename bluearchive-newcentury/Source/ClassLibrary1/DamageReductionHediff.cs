@@ -1,19 +1,28 @@
 using Verse;
 using RimWorld;
+using BANWlLib.Tool;
 
 namespace BANWlLib
 {
-    // 减伤状态Hediff类
-    // 用来在健康面板显示减伤保护状态
+    /// <summary>
+    /// 减伤状态 Hediff，负责在学生健康面板显示基于 PawnKindDef 的星级保护状态。
+    /// </summary>
     public class DamageReductionHediff : Hediff
     {
-        // 在健康面板中显示的标签后缀
+        /// <summary>
+        /// 在健康面板中显示星级后缀。
+        /// </summary>
         public override string LabelInBrackets
         {
             get
             {
                 try
                 {
+                    if (!StudentIdentityUtility.IsConfiguredStudentKind(pawn))
+                    {
+                        return "";
+                    }
+
                     if (pawn != null)
                     {
                         // 获取减伤组件
@@ -39,11 +48,18 @@ namespace BANWlLib
             }
         }
 
-        // 鼠标悬停时显示的详细信息
+        /// <summary>
+        /// 获取鼠标悬停时显示的星级减伤详情。
+        /// </summary>
         public override string GetTooltip(Pawn pawn, bool showHediffSource = true)
         {
             try
             {
+                if (!StudentIdentityUtility.IsConfiguredStudentKind(pawn))
+                {
+                    return "";
+                }
+
                 string baseTooltip = base.GetTooltip(pawn, showHediffSource);
                 
                 // 获取减伤组件
@@ -94,13 +110,20 @@ namespace BANWlLib
             }
         }
 
-        // 检查这个Hediff是否应该被移除
+        /// <summary>
+        /// 检查这个 Hediff 是否应该被移除。
+        /// </summary>
         public override bool ShouldRemove
         {
             get
             {
                 try
                 {
+                    if (!StudentIdentityUtility.IsConfiguredStudentKind(pawn))
+                    {
+                        return true;
+                    }
+
                     if (pawn != null)
                     {
                         DamageReductionComp comp = pawn.GetComp<DamageReductionComp>();

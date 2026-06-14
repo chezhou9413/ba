@@ -64,15 +64,21 @@ namespace BANWlLib.mainUI.Mission
 
         private static void lordPawnHead()
         {
-             List<BaStudentRaceDef> StudentList = DefDatabase<BaStudentRaceDef>.AllDefsListForReading;
+             List<BaStudentDef> StudentList = DefDatabase<BaStudentDef>.AllDefsListForReading;
             if (StudentList.NullOrEmpty())
             {
                 return;
             }
-            foreach(BaStudentRaceDef student in StudentList)
+            foreach(BaStudentDef student in StudentList)
             {
-                Sprite sprite = RimWorldUISpriteUtil.GetHeadShotSpriteFromDef(student, MissionSpriteSizes.CachedHead);
-                MissionMapData.pawnBigHardSprite[student.defName] = sprite;
+                if (student?.kindDef == null)
+                {
+                    continue;
+                }
+
+                string studentId = StudentIdentityUtility.GetStudentId(student);
+                Sprite sprite = RimWorldUISpriteUtil.GetHeadShotSpriteFromKind(student.kindDef, MissionSpriteSizes.CachedHead);
+                MissionMapData.pawnBigHardSprite[studentId] = sprite;
             }
         }
         private static void lordMissionPrefab(AssetBundle bundle)

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using BANWlLib.BaDef;
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka
@@ -13,7 +14,7 @@ namespace BANWlLib.mainUI.Gaka
         /// <summary>
         /// 纯随机单抽
         /// </summary>
-        public static ThingDef Draw(List<ThingDef> p1, List<ThingDef> p2, List<ThingDef> p3, List<ThingDef> upList, float w1, float w2, float w3, float upRate)
+        public static BaStudentDef Draw(List<BaStudentDef> p1, List<BaStudentDef> p2, List<BaStudentDef> p3, List<BaStudentDef> upList, float w1, float w2, float w3, float upRate)
         {
             if (DebugGuarantee3Star && Prefs.DevMode)
             {
@@ -42,8 +43,8 @@ namespace BANWlLib.mainUI.Gaka
         /// <summary>
         /// FES池单抽 - 特殊概率分配
         /// </summary>
-        public static ThingDef DrawFES(List<ThingDef> p1, List<ThingDef> p2, List<ThingDef> p3,
-            List<ThingDef> fesUpList, List<ThingDef> fesOtherList)
+        public static BaStudentDef DrawFES(List<BaStudentDef> p1, List<BaStudentDef> p2, List<BaStudentDef> p3,
+            List<BaStudentDef> fesUpList, List<BaStudentDef> fesOtherList)
         {
             if (DebugGuarantee3Star && Prefs.DevMode)
             {
@@ -75,10 +76,10 @@ namespace BANWlLib.mainUI.Gaka
         /// <summary>
         /// FES池十连抽
         /// </summary>
-        public static List<ThingDef> MultiDrawFES10(List<ThingDef> p1, List<ThingDef> p2, List<ThingDef> p3,
-            List<ThingDef> fesUpList, List<ThingDef> fesOtherList)
+        public static List<BaStudentDef> MultiDrawFES10(List<BaStudentDef> p1, List<BaStudentDef> p2, List<BaStudentDef> p3,
+            List<BaStudentDef> fesUpList, List<BaStudentDef> fesOtherList)
         {
-            List<ThingDef> results = new List<ThingDef>();
+            List<BaStudentDef> results = new List<BaStudentDef>();
             if (DebugGuarantee3Star && Prefs.DevMode)
             {
                 for (int i = 0; i < 10; i++)
@@ -93,7 +94,7 @@ namespace BANWlLib.mainUI.Gaka
             // 前9次随机抽
             for (int i = 0; i < 9; i++)
             {
-                ThingDef item = DrawFES(p1, p2, p3, fesUpList, fesOtherList);
+                BaStudentDef item = DrawFES(p1, p2, p3, fesUpList, fesOtherList);
                 if (item != null && (p2.Contains(item) || p3.Contains(item) || fesUpList.Contains(item) || fesOtherList.Contains(item)))
                 {
                     hasHighStar = true;
@@ -117,9 +118,9 @@ namespace BANWlLib.mainUI.Gaka
         /// <summary>
         /// 十连抽：普通池保底逻辑
         /// </summary>
-        public static List<ThingDef> MultiDraw10(List<ThingDef> p1, List<ThingDef> p2, List<ThingDef> p3, List<ThingDef> upList, float w1, float w2, float w3, float upRate)
+        public static List<BaStudentDef> MultiDraw10(List<BaStudentDef> p1, List<BaStudentDef> p2, List<BaStudentDef> p3, List<BaStudentDef> upList, float w1, float w2, float w3, float upRate)
         {
-            List<ThingDef> results = new List<ThingDef>();
+            List<BaStudentDef> results = new List<BaStudentDef>();
             if (DebugGuarantee3Star && Prefs.DevMode)
             {
                 for (int i = 0; i < 10; i++)
@@ -132,7 +133,7 @@ namespace BANWlLib.mainUI.Gaka
 
             for (int i = 0; i < 9; i++)
             {
-                ThingDef item = Draw(p1, p2, p3, upList, w1, w2, w3, upRate);
+                BaStudentDef item = Draw(p1, p2, p3, upList, w1, w2, w3, upRate);
                 if (item != null && (p2.Contains(item) || p3.Contains(item) || upList.Contains(item)))
                 {
                     hasHighStar = true;
@@ -156,7 +157,7 @@ namespace BANWlLib.mainUI.Gaka
         /// FES三星层级抽取逻辑
         /// 当期FES: 0.7%, 其他FES: 0.3%, 常驻三星: 均分剩余概率
         /// </summary>
-        private static ThingDef GetFESTier3Result(List<ThingDef> p3, List<ThingDef> fesUpList, List<ThingDef> fesOtherList)
+        private static BaStudentDef GetFESTier3Result(List<BaStudentDef> p3, List<BaStudentDef> fesUpList, List<BaStudentDef> fesOtherList)
         {
             // 总三星概率 6%
             // 当期FES: 0.7% = 0.7/6 ≈ 11.67%
@@ -196,7 +197,7 @@ namespace BANWlLib.mainUI.Gaka
         /// <summary>
         /// 普通池三星层级内决定是UP还是普池
         /// </summary>
-        private static ThingDef GetTier3Result(List<ThingDef> p3, List<ThingDef> upList, float upRate)
+        private static BaStudentDef GetTier3Result(List<BaStudentDef> p3, List<BaStudentDef> upList, float upRate)
         {
             if (!upList.NullOrEmpty() && Rand.Value < upRate)
             {
@@ -214,8 +215,8 @@ namespace BANWlLib.mainUI.Gaka
         /// <summary>
         /// FES池保底抽取
         /// </summary>
-        private static ThingDef DrawFESGuaranteed(List<ThingDef> p2, List<ThingDef> p3,
-            List<ThingDef> fesUpList, List<ThingDef> fesOtherList)
+        private static BaStudentDef DrawFESGuaranteed(List<BaStudentDef> p2, List<BaStudentDef> p3,
+            List<BaStudentDef> fesUpList, List<BaStudentDef> fesOtherList)
         {
             // 保底只在二星和三星之间,按 18.5 : 6 的比例
             float totalWeight = 18.5f + 6f;
@@ -232,7 +233,7 @@ namespace BANWlLib.mainUI.Gaka
         /// <summary>
         /// 普通池保底抽取
         /// </summary>
-        private static ThingDef DrawGuaranteed(List<ThingDef> p2, List<ThingDef> p3, List<ThingDef> upList, float w2, float w3, float upRate)
+        private static BaStudentDef DrawGuaranteed(List<BaStudentDef> p2, List<BaStudentDef> p3, List<BaStudentDef> upList, float w2, float w3, float upRate)
         {
             float totalWeight = w2 + w3;
             if (totalWeight <= 0) return p2.NullOrEmpty() ? GetTier3Result(p3, upList, upRate) : p2.RandomElement();

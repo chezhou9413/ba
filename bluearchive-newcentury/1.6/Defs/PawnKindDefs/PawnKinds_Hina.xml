@@ -3,7 +3,7 @@
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Hina</defName>
 		<label>-日奈-</label>
-		<race>BANW_Hina_race</race>
+		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
@@ -61,6 +61,50 @@
 			<BAWC_TraitDef_Hina_A>0</BAWC_TraitDef_Hina_A>
 			<BAWC_TraitDef_Hina_B>0</BAWC_TraitDef_Hina_B>
 		</forcedTraits>
+		<modExtensions>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>日奈</kindName>
+				<kindDesName>日奈 日奈 空崎</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Halo/Hina_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Head/Hina_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Body/Hina_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Hair/Hina_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Hair/Hina_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Halo/Hina_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Head/Hina_G</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head_layer3</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Head/Hina_G</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
 	</PawnKindDef>
 	<TraitDef>
 		<defName>BAWC_TraitDef_Hina</defName>
@@ -77,8 +121,7 @@
 					<PsychicSensitivity>0.2</PsychicSensitivity>
 					<ReadingSpeed>0.5</ReadingSpeed>
 					<ResearchSpeed>0.5</ResearchSpeed>
-					<VEF_VerbRangeFactor>1</VEF_VerbRangeFactor>
-				</statOffsets>
+</statOffsets>
 				<statFactors>
 					<JoyFallRateFactor>1.2</JoyFallRateFactor>
 					<ShootingAccuracyPawn>15.0</ShootingAccuracyPawn>

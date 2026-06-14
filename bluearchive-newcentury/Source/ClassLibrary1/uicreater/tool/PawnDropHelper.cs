@@ -45,6 +45,9 @@ namespace newpro
         /// </summary>
         public static List<Pawn> droppedPawns = new List<Pawn>();
 
+        /// <summary>
+        /// 判断指定学生身份是否已有等待空投的 Pawn。
+        /// </summary>
         public static bool HasPendingPawnForDefName(string defName)
         {
             if (string.IsNullOrEmpty(defName))
@@ -52,11 +55,11 @@ namespace newpro
                 return false;
             }
 
+            string studentId = StudentIdentityUtility.GetStudentId(defName);
             return droppedPawns.Any(p =>
                 p != null &&
                 !p.DestroyedOrNull() &&
-                p.def != null &&
-                p.def.defName == defName);
+                StudentIdentityUtility.GetStudentId(p) == studentId);
         }
 
         /// <summary>
@@ -88,9 +91,9 @@ namespace newpro
 
                     // 检查该角色是否已经在地图上（此变量目前未使用，可能是预留逻辑）
                     Pawn existingPawn = map.mapPawns.AllPawns.FirstOrDefault(p =>
-                        p.def.defName == studentname && p.Spawned && p.Map == map);
+                        StudentIdentityUtility.GetStudentId(p) == studentname && p.Spawned && p.Map == map);
 
-                    // 尝试查找对应的升级道具（命名规则：角色defName + "_Proplevel"）
+                    // 尝试查找对应的升级道具（命名规则：当前 studentId + "_Proplevel"）
                     string propDefName = studentname + "_Proplevel";
                     ThingDef propDef = DefDatabase<ThingDef>.GetNamedSilentFail(propDefName);
 
@@ -289,27 +292,9 @@ namespace newpro
         }
 
         /// <summary>
-        /// 根据种族定义生成新 Pawn 并传送到指定位置（带特效）
-        /// 
-        /// 用途：从角色图鉴/选择界面召唤角色到地图
-        /// 
-        /// 与 JumpForPawnOfBaEff 的区别：
-        /// - 此方法会生成新的 Pawn（如果需要）
-        /// - 会更新 StudentData 和 selectData 的关联
-        /// - 会调用 StudentDetailsController 更新角色信息
+        /// 根据当前学生身份生成新 Pawn 并传送到指定位置，负责让任务和图鉴生成统一走 PawnKind。
         /// </summary>
-        /// <param name="map">目标地图</param>
-        /// <param name="raceDef">角色种族定义</param>
-        /// <param name="intVec3">目标位置</param>
-        /// <param name="studentData">角色数据（会被更新）</param>
-        /// <param name="selectData">选择数据（会被更新）</param>
-        /// <returns>生成/传送的 Pawn</returns>
-        public static Pawn JumpForRaceOfBaEff(Map map, BaStudentRaceDef raceDef, IntVec3 intVec3, StudentData studentData, selectData selectData)
-        {
-            return JumpForRaceOfBaEff(map, raceDef, intVec3, studentData, selectData, true);
-        }
-
-        public static Pawn JumpForRaceOfBaEff(Map map, BaStudentRaceDef raceDef, IntVec3 intVec3, StudentData studentData, selectData selectData, bool useEffect)
+        public static Pawn JumpForStudentOfBaEff(Map map, string studentId, IntVec3 intVec3, StudentData studentData, selectData selectData, bool useEffect)
         {
             // 确保配置已加载
             if (baDrop == null)
@@ -318,7 +303,7 @@ namespace newpro
             }
 
             // 生成 Pawn（内部会加入 droppedPawns 队列）
-            Pawn pawn = PawnDropHelper.DropPawnsByDefName(raceDef.defName);
+            Pawn pawn = PawnDropHelper.DropPawnsByDefName(studentId);
             if (pawn == null)
             {
                 return null;
@@ -337,7 +322,10 @@ namespace newpro
             }
 
             // === 更新关联数据 ===
-            selectData.Pawn = pawn;
+            if (selectData != null)
+            {
+                selectData.Pawn = pawn;
+            }
             StudentRosterUtility.BindStudentPawn(studentData, pawn);
             StudentDetailsController.lordStudentPawninfo(pawn, studentData);
 
@@ -471,14 +459,13 @@ namespace newpro
 
                 Map map = Find.CurrentMap;
 
-                // === 查找对应的 PawnKindDef ===
-                // 通过 race.defName 匹配，因为 PawnKindDef 和 ThingDef 是不同的定义
-                PawnKindDef kindDef = DefDatabase<PawnKindDef>.AllDefs
-                    .FirstOrDefault(k => k.race != null && k.race.defName == defName);
+                // 通过当前学生身份工具解析 PawnKind。
+                PawnKindDef kindDef;
+                StudentIdentityUtility.TryGetPawnKindDef(defName, out kindDef);
 
                 if (kindDef == null)
                 {
-                    Log.Error($"无法找到与种族 {defName} 匹配的 PawnKindDef");
+                    Log.Error($"无法找到与学生身份 {defName} 匹配的 PawnKindDef");
                     return null;
                 }
 
