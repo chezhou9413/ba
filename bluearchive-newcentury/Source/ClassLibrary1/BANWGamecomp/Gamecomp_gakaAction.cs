@@ -7,67 +7,72 @@ using Verse;
 
 namespace BANWlLib.BANWGamecomp
 {
+    //招募卡池轮换组件，负责记录刷新次数、生成展示卡池并在轮换时通知玩家。
     public class Gamecomp_gakaAction : GameComponent
     {
-        // 当前最终展示给玩家的卡池 (包含随机的4个 + 固定的x个)
+        //当前最终展示给玩家的卡池，包含随机卡池和固定卡池。
         public List<Gacha> CurrentDisplayPool = new List<Gacha>();
 
-        // 记录上一期随机生成的卡 (用于去重，不包含固定卡)
+        //记录上一期随机生成的卡池，用于常规轮换时去重。
         public List<Gacha> LastGeneratedRandomPool = new List<Gacha>();
 
         public GachaSetting gachaSetting;
         public int RotationTickCounter = 0;
 
-        // 新增：记录卡池更新了多少次，用于触发特殊队列
+        //记录卡池更新了多少次，用于触发特殊队列。
         public int TotalRefreshCount = 0;
         private const float LimitedPoolChance = 0.15f;
 
         public int gacaPoit = 0;
+
+        //创建招募卡池轮换组件，负责让 RimWorld GameComponent 系统实例化组件。
         public Gamecomp_gakaAction(Game game)
         {
         }
 
-        /// <summary>
-        /// 获取当期的非固定卡池（即随机生成的卡）
-        /// </summary>
+        //获取当期的非固定卡池，负责给界面和逻辑读取本期随机部分。
         public List<Gacha> GetCurrentRandomPool()
         {
             return LastGeneratedRandomPool?.ToList() ?? new List<Gacha>();
         }
+
+        //更新招募积分，负责增加积分或在积分足够时扣除消耗。
         public bool updataGacaPoit(int value) {
             if (value >= 0)
             {
                 gacaPoit += value;
                 return true;
             }
-            int cost = -value; // 转为正数
+            int cost = -value; //转为正数。
             if (cost > gacaPoit)
             {
-                return false; // 积分不足
+                return false; //积分不足。
             }
             gacaPoit -= cost;
             return true;
         }
+
+        //保存和读取招募系统数据，负责持久化积分、展示池、计时器和刷新次数。
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref gacaPoit, "gacaPoit", 0);
-            // 保存当前展示的池子
+            //保存当前展示的池子。
             Scribe_Collections.Look(ref CurrentDisplayPool, "CurrentDisplayPool", LookMode.Def);
-            // 保存上一期的池子用于去重
+            //保存上一期的池子用于去重。
             Scribe_Collections.Look(ref LastGeneratedRandomPool, "LastGeneratedRandomPool", LookMode.Def);
 
             Scribe_Defs.Look(ref gachaSetting, "gachaSetting");
             Scribe_Values.Look(ref RotationTickCounter, "RotationTickCounter", 0);
             Scribe_Values.Look(ref TotalRefreshCount, "TotalRefreshCount", 0);
 
-            // 初始化加载
+            //读档后补齐配置和展示池，防止旧档没有初始化卡池。
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 if (gachaSetting == null)
                     gachaSetting = DefDatabase<GachaSetting>.AllDefs.FirstOrDefault();
 
-                // 如果池子是空的，立即初始化一次
+                //如果池子是空的，立即初始化一次。
                 if (CurrentDisplayPool == null || CurrentDisplayPool.Count == 0)
                 {
                     UpdateRotationPool();
@@ -75,21 +80,23 @@ namespace BANWlLib.BANWGamecomp
             }
         }
 
+        //游戏逐 tick 更新，负责在界面开启时推进轮换倒计时并触发卡池刷新。
         public override void GameComponentTick()
         {
-            // 确保 Setting 存在
+            //确保配置存在。
             if (gachaSetting == null)
             {
                 gachaSetting = DefDatabase<GachaSetting>.AllDefs.FirstOrDefault();
-                if (gachaSetting == null) return; // 还没有Def，跳过
+                if (gachaSetting == null) return;
             }
 
-            if (!UiMapData.uiclose) // 假设这是你的UI判断逻辑
+            if (!UiMapData.uiclose)
             {
+                //界面开启时才推进倒计时，避免玩家看不到刷新结果。
                 RotationTickCounter--;
             }
 
-            // 倒计时结束，更新卡池
+            //倒计时结束，更新卡池。
             if (RotationTickCounter <= 0)
             {
                 UpdateRotationPool();
@@ -99,53 +106,44 @@ namespace BANWlLib.BANWGamecomp
             base.GameComponentTick();
         }
 
-        /// <summary>
-        /// 核心方法：更新卡池
-        /// </summary>
+        //更新卡池，负责按刷新次数选择特殊队列或常规随机池并组装最终展示列表。
         public void UpdateRotationPool()
         {
             if (gachaSetting == null) return;
 
-            // 1. 增加刷新次数计数 (第1次，第2次...)
+            //先增加刷新次数，特殊队列的周期判断从第 1 次刷新开始计算。
             TotalRefreshCount++;
 
             List<Gacha> newRandomItems = new List<Gacha>();
 
-            // === 逻辑 A: 检查是否命中特殊队列 ===
+            //检查是否命中特殊队列，triggerIndex 表示每隔多少次刷新触发一次。
             SpecialQueueConfig specialConfig = gachaSetting.SpecialQueues?
-                .FirstOrDefault(x => x.triggerIndex == TotalRefreshCount);
+                .FirstOrDefault(IsSpecialQueueTriggered);
 
             if (specialConfig != null && !specialConfig.forcedPool.NullOrEmpty())
             {
-                // 命中特殊队列！直接强制使用配置的卡池
-                // 注意：这里假设特殊队列配置的是那4个随机位的内容
-                newRandomItems.AddRange(specialConfig.forcedPool);
-
-                // 如果配置数量不足4个或过多，按需处理，这里直接全部采纳
+                //命中特殊队列时从配置候选池里按槽位数量随机抽取。
+                newRandomItems = GenerateSpecialPoolItems(specialConfig.forcedPool);
             }
             else
             {
-                // === 逻辑 B: 走常规随机算法 ===
                 newRandomItems = GenerateRandomPoolItems();
             }
 
-            // === 逻辑 C: 组装最终卡池 ===
-
-            // 1. 记录这次生成的随机部分，供下一次去重使用
+            //记录这次生成的随机部分，供下一次去重使用。
             LastGeneratedRandomPool.Clear();
             LastGeneratedRandomPool.AddRange(newRandomItems);
 
-            // 2. 清空当前展示池
+            //清空当前展示池。
             CurrentDisplayPool.Clear();
 
-            // 3. 加入本次生成的随机卡 (4个)
+            //加入本次生成的随机卡池。
             CurrentDisplayPool.AddRange(newRandomItems);
 
-            // 4. 加入永久固定的卡 (x个)
+            //加入永久固定的卡池。
             if (!gachaSetting.FixedPool.NullOrEmpty())
             {
-                // 这里使用 Distinct 防止如果随机池里偶然抽到了固定池的卡导致重复显示
-                // 如果你的逻辑允许重复，可以直接 AddRange
+                //避免固定池和随机池重复显示同一个卡池。
                 foreach (var fixedItem in gachaSetting.FixedPool)
                 {
                     if (!CurrentDisplayPool.Contains(fixedItem))
@@ -158,25 +156,77 @@ namespace BANWlLib.BANWGamecomp
             SendRotationLetter();
         }
 
-        /// <summary>
-        /// 随机算法实现
-        /// </summary>
+        //判断特殊队列是否在本次刷新触发，负责把 triggerIndex 作为重复周期使用。
+        private bool IsSpecialQueueTriggered(SpecialQueueConfig specialConfig)
+        {
+            return specialConfig != null &&
+                specialConfig.triggerIndex > 0 &&
+                TotalRefreshCount % specialConfig.triggerIndex == 0;
+        }
+
+        //生成特殊队列卡池，负责从强制候选池中按槽位数量随机抽取并尽量避免连续重复。
+        private List<Gacha> GenerateSpecialPoolItems(List<Gacha> forcedPool)
+        {
+            List<Gacha> result = new List<Gacha>();
+            int slotsToFill = gachaSetting.SlotsCount;
+
+            for (int i = 0; i < slotsToFill; i++)
+            {
+                Gacha selectedItem = TryPickForcedPoolItem(forcedPool, result);
+                if (selectedItem == null)
+                {
+                    break;
+                }
+
+                result.Add(selectedItem);
+            }
+
+            return result;
+        }
+
+        //尝试从特殊候选池中抽取一个卡池，负责在候选不足时逐步放宽重复限制。
+        private Gacha TryPickForcedPoolItem(List<Gacha> forcedPool, List<Gacha> currentBatch)
+        {
+            if (forcedPool.NullOrEmpty()) return null;
+
+            List<Gacha> candidates = forcedPool
+                .Where(x => !LastGeneratedRandomPool.Contains(x) && !currentBatch.Contains(x))
+                .ToList();
+            if (candidates.Count > 0)
+            {
+                return candidates.RandomElement();
+            }
+
+            //上一期去重导致候选不足时，允许和上一期重复，但仍保持本期内部不重复。
+            candidates = forcedPool
+                .Where(x => !currentBatch.Contains(x))
+                .ToList();
+            if (candidates.Count > 0)
+            {
+                return candidates.RandomElement();
+            }
+
+            //候选池数量本身小于槽位数量时，允许本期内部重复来补满展示槽位。
+            return forcedPool.RandomElement();
+        }
+
+        //生成常规随机卡池，负责按常驻和限定概率填充本期随机槽位。
         private List<Gacha> GenerateRandomPoolItems()
         {
             List<Gacha> result = new List<Gacha>();
-            int slotsToFill = gachaSetting.SlotsCount; // 目标抽4个
+            int slotsToFill = gachaSetting.SlotsCount;
 
             for (int i = 0; i < slotsToFill; i++)
             {
                 Gacha selectedItem = null;
 
-                // 15% 概率抽限定池，85% 概率抽常驻池
+                //按配置概率优先尝试限定池，否则尝试常驻池。
                 bool tryLimited = Verse.Rand.Value < LimitedPoolChance;
 
-                // 尝试抽取
+                //先按本次概率结果抽取。
                 selectedItem = TryPickItem(tryLimited, result);
 
-                // 如果因为池子空了或者去重太严格导致没抽到，尝试从另一个池子补救
+                //如果池子为空或去重后没有候选，就从另一个池子补位。
                 if (selectedItem == null)
                 {
                     selectedItem = TryPickItem(!tryLimited, result);
@@ -190,9 +240,7 @@ namespace BANWlLib.BANWGamecomp
             return result;
         }
 
-        /// <summary>
-        /// 尝试从指定类型的池子中抽取一个不重复的物品
-        /// </summary>
+        //尝试从指定类型的池子中抽取一个卡池，负责避开上一期和本期已选内容。
         private Gacha TryPickItem(bool fromLimited, List<Gacha> currentBatch)
         {
             List<Gacha> sourcePool = fromLimited ? gachaSetting.LimitedPool : gachaSetting.StandardPool;
@@ -203,6 +251,7 @@ namespace BANWlLib.BANWGamecomp
                 .ToList();
             if (candidates.Count == 0)
             {
+                //上一期去重过严时放宽限制，只保证本期内部不重复。
                 candidates = sourcePool
                     .Where(x => !currentBatch.Contains(x))
                     .ToList();
@@ -211,6 +260,8 @@ namespace BANWlLib.BANWGamecomp
             if (candidates.Count == 0) return null;
             return candidates.RandomElement();
         }
+
+        //获取轮换剩余时间文本，负责把 tick 倒计时转换成玩家可读的天、小时或分钟。
         public string GetRemainingTimeString(int currentCounter)
         {
             if (currentCounter <= 0) return "即将轮换";
@@ -226,6 +277,7 @@ namespace BANWlLib.BANWGamecomp
             }
         }
 
+        //调试强制刷新卡池，负责立即推进一次轮换并重置轮换倒计时。
         public void Debug_ForceNextPool()
         {
             RotationTickCounter = 0;
@@ -234,6 +286,7 @@ namespace BANWlLib.BANWGamecomp
             Messages.Message($"[Debug] 已强制刷新卡池，当前第 {TotalRefreshCount} 期", MessageTypeDefOf.PositiveEvent, false);
         }
 
+        //发送卡池轮换信件，负责把当前展示卡池名称通知玩家。
         private void SendRotationLetter()
         {
             if (CurrentDisplayPool.NullOrEmpty())

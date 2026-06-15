@@ -44,22 +44,64 @@ namespace BANWlLib.comp
             if (hediff != null)
             {
                 levelIndex = hediff.CurStageIndex;
-                EffecterDef effecterDef = DefDatabase<EffecterDef>.GetNamed(Props.levelMote.RandomElement(), false);
-                if (effecterDef != null)
+                string levelUpEffect = GetLevelUpEffect();
+                if (!string.IsNullOrEmpty(levelUpEffect))
                 {
-                    currentEffecter = effecterDef.Spawn(cachedPawn.Position, cachedPawn.Map);
-                    TargetInfo targetInfo = new TargetInfo(cachedPawn);
-                    currentEffecter.Trigger(targetInfo, targetInfo);
-                    effecterTimer = 300;
-
+                    EffecterDef effecterDef = DefDatabase<EffecterDef>.GetNamed(levelUpEffect, false);
+                    if (effecterDef != null)
+                    {
+                        currentEffecter = effecterDef.Spawn(cachedPawn.Position, cachedPawn.Map);
+                        TargetInfo targetInfo = new TargetInfo(cachedPawn);
+                        currentEffecter.Trigger(targetInfo, targetInfo);
+                        effecterTimer = 300;
+                    }
                 }
-                SoundDef soundDef = DefDatabase<SoundDef>.GetNamed(Props.levelAudio.RandomElement(), false);
-                if (soundDef != null)
+
+                List<string> levelUpSounds = GetLevelUpSounds();
+                if (levelUpSounds != null && levelUpSounds.Count > 0)
                 {
-                    SoundInfo info = SoundInfo.InMap(cachedPawn);
-                    soundDef.PlayOneShot(info);
+                    SoundDef soundDef = DefDatabase<SoundDef>.GetNamed(levelUpSounds.RandomElement(), false);
+                    if (soundDef != null)
+                    {
+                        SoundInfo info = SoundInfo.InMap(cachedPawn);
+                        soundDef.PlayOneShot(info);
+                    }
                 }
             }
+        }
+
+        //获取升级特效，负责优先使用 PawnKind 单独配置。
+        private string GetLevelUpEffect()
+        {
+            PawnProgressBarKindExtension kindConfig = cachedPawn?.kindDef?.GetModExtension<PawnProgressBarKindExtension>();
+            if (kindConfig?.levelUpEffects != null && kindConfig.levelUpEffects.Count > 0)
+            {
+                return kindConfig.levelUpEffects.RandomElement();
+            }
+
+            if (kindConfig != null && !string.IsNullOrEmpty(kindConfig.levelUpEffect))
+            {
+                return kindConfig.levelUpEffect;
+            }
+
+            if (Props.levelMote != null && Props.levelMote.Count > 0)
+            {
+                return Props.levelMote.RandomElement();
+            }
+
+            return "";
+        }
+
+        //获取升级语音列表，负责优先使用 PawnKind 单独配置。
+        private List<string> GetLevelUpSounds()
+        {
+            PawnProgressBarKindExtension kindConfig = cachedPawn?.kindDef?.GetModExtension<PawnProgressBarKindExtension>();
+            if (kindConfig?.levelUpSounds != null && kindConfig.levelUpSounds.Count > 0)
+            {
+                return kindConfig.levelUpSounds;
+            }
+
+            return Props.levelAudio;
         }
 
         public override void CompTick()

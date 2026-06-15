@@ -201,13 +201,26 @@ namespace BANWlLib
                 }
 
                 // 如果没有保存的数据，使用默认初始经验值
-                if (Props.initialExperience > 0)
+                int initialExperience = GetInitialExperience(parent as Pawn);
+                if (initialExperience > 0)
                 {
-                    humanComp.SetValue(Props.initialExperience);
-                    lastExperienceValue = Props.initialExperience;
+                    humanComp.SetValue(initialExperience);
+                    lastExperienceValue = initialExperience;
                     currentStarLevel = GetCurrentStarLevel();
                 }
             }
+        }
+
+        //获取 Pawn 的起始星星经验，负责优先使用 PawnKind 单独配置。
+        private int GetInitialExperience(Pawn pawn)
+        {
+            PawnProgressBarKindExtension kindConfig = pawn?.kindDef?.GetModExtension<PawnProgressBarKindExtension>();
+            if (kindConfig != null && kindConfig.initialExperience >= 0)
+            {
+                return kindConfig.initialExperience;
+            }
+
+            return Props.initialExperience;
         }
 
         /// <summary>
@@ -304,17 +317,16 @@ namespace BANWlLib
             {
 
                 // 播放升星特效
-                if (!string.IsNullOrEmpty(Props.starUpEffect))
+                string starUpEffect = GetStarUpEffect(pawn);
+                if (!string.IsNullOrEmpty(starUpEffect))
                 {
-                    TryPlayEffecter(Props.starUpEffect, pawn);
+                    TryPlayEffecter(starUpEffect, pawn);
                 }
 
-                // 检查音效列表
-                if (Props.starUpSounds != null && Props.starUpSounds.Count > 0)
+                List<string> starUpSounds = GetStarUpSounds(pawn);
+                if (starUpSounds != null && starUpSounds.Count > 0)
                 {
-
-                    // 随机选择并播放一个升星音效
-                    string selectedSound = GetRandomStarUpSound();
+                    string selectedSound = starUpSounds.RandomElement();
                     if (!string.IsNullOrEmpty(selectedSound))
                     {
                         TryPlaySound(selectedSound, pawn);
@@ -333,6 +345,35 @@ namespace BANWlLib
             {
                 Log.Error("[升星特效] parent不是Pawn类型");
             }
+        }
+
+        //获取升星特效，负责优先使用 PawnKind 单独配置。
+        private string GetStarUpEffect(Pawn pawn)
+        {
+            PawnProgressBarKindExtension kindConfig = pawn.kindDef?.GetModExtension<PawnProgressBarKindExtension>();
+            if (kindConfig?.starUpEffects != null && kindConfig.starUpEffects.Count > 0)
+            {
+                return kindConfig.starUpEffects.RandomElement();
+            }
+
+            if (kindConfig != null && !string.IsNullOrEmpty(kindConfig.starUpEffect))
+            {
+                return kindConfig.starUpEffect;
+            }
+
+            return Props.starUpEffect;
+        }
+
+        //获取升星语音列表，负责优先使用 PawnKind 单独配置。
+        private List<string> GetStarUpSounds(Pawn pawn)
+        {
+            PawnProgressBarKindExtension kindConfig = pawn.kindDef?.GetModExtension<PawnProgressBarKindExtension>();
+            if (kindConfig?.starUpSounds != null && kindConfig.starUpSounds.Count > 0)
+            {
+                return kindConfig.starUpSounds;
+            }
+
+            return Props.starUpSounds;
         }
 
         /// <summary>

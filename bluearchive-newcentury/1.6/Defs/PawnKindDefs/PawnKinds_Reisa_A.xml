@@ -102,6 +102,26 @@
 				</starProgressRatios>
 				<starSize>28</starSize>
 				<starTexturePath>UI/StarIcon</starTexturePath>
+                <!-- 起始星星经验：用于没有存档数据的新生成学生 -->
+                <initialExperience>30</initialExperience>
+                <!-- 升星特效占位：后续可替换为学生专属 EffecterDef -->
+                <starUpEffects>
+                    <li>BANW_Effecter_B</li>
+                </starUpEffects>
+                <!-- 升星语音占位：后续可替换为学生专属 SoundDef -->
+                <starUpSounds>
+                    <li>Arisu_levelup_A</li>
+                    <li>Arisu_levelup_B</li>
+                </starUpSounds>
+                <!-- 升级特效占位：后续可替换为学生专属 EffecterDef -->
+                <levelUpEffects>
+                    <li>BANW_Effecter_LevelUp</li>
+                </levelUpEffects>
+                <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
+                <levelUpSounds>
+                    <li>Arisu_levelup_C</li>
+                    <li>Arisu_levelup_D</li>
+                </levelUpSounds>
 			</li>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>玲纱</kindName>

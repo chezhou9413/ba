@@ -20,5 +20,26 @@ namespace BANWlLib
 
         //星星的贴图路径。
         public string starTexturePath = "UI/StarIcon";
+
+        //起始星星经验，-1 表示使用种族组件里的通用初始经验。
+        public int initialExperience = -1;
+
+        //升星时播放的单个特效。
+        public string starUpEffect = "";
+
+        //升星时随机播放的特效列表。
+        public List<string> starUpEffects = new List<string>();
+
+        //升星时随机播放的语音。
+        public List<string> starUpSounds = new List<string>();
+
+        //升级时播放的单个特效。
+        public string levelUpEffect = "";
+
+        //升级时随机播放的特效列表。
+        public List<string> levelUpEffects = new List<string>();
+
+        //升级时随机播放的语音。
+        public List<string> levelUpSounds = new List<string>();
     }
 }
