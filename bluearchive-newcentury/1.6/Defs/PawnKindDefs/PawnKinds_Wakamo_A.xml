@@ -11,6 +11,7 @@
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
 		<abilities>
+			<li>BAWN_Wakamo_A_EX</li>
         </abilities>
 		<startingHediffs>
 		<li>
