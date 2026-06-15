@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Hina_B</defName>
+		<label>-日奈(礼服)-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Hina_B_EX</li>
+			<li>BAWN_Hina_B_EXX</li>
+		</abilities>
+		<startingHediffs>
+			<li>
+				<def>BANW_LevelTrait</def>
+				<severity>0.001</severity>
+			</li>
+		</startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryGehena</li>
+					<li>BANW_BackstoryHina_B</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+			<li>BANC_Hina_B</li>
+		</weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Hina_B</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>18</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>15~20</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_tanli>0</BAWC_TraitDef_tanli>
+			<BAWC_TraitDef_Hina>0</BAWC_TraitDef_Hina>
+			<BAWC_TraitDef_Hina_B_A>0</BAWC_TraitDef_Hina_B_A>
+			<BAWC_TraitDef_Hina_B_B>0</BAWC_TraitDef_Hina_B_B>
+		</forcedTraits>
+		<modExtensions>
+			<li Class="BANWlLib.PawnProgressBarKindExtension">
+				<starInterval>0.5</starInterval>
+				<showProgressBar>false</showProgressBar>
+				<starProgressRatios>
+					<li>0.0</li>
+					<li>0.09</li>
+					<li>0.33</li>
+					<li>0.63</li>
+					<li>1.0</li>
+				</starProgressRatios>
+				<starSize>28</starSize>
+				<starTexturePath>UI/StarIcon</starTexturePath>
+			</li>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>日奈</kindName>
+				<kindDesName>空崎 日奈</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>17</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Halo/Hina_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina_B/Head/Hina_B_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina_B/Body/Hina_B_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina_B/Hair/Hina_B_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina_B/Hair/Hina_B_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Gehena/Hina/Halo/Hina_Halo</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hina_B_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;于此传达真心&lt;/color&gt;</label>
+                <description>子技能:自身EX攻击期间增加自身&lt;color=#DC143C&gt;63%&lt;/color&gt;护甲穿透</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Hina_B_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;演奏前的心情&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;16%&lt;/color&gt;暴击率增加&lt;color=#DC143C&gt;16%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_CriticalChance>0.16</BANW_CriticalChance>
+					<BANW_FinalDamageMultiplier>0.16</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

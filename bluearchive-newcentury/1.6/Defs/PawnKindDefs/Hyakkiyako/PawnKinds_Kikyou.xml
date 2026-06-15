@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Kikyou</defName>
+		<label>-桔梗-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryHyakkiyako</li>
+					<li>BANW_BackstoryKikyou</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Kikyou</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Kikyou</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>8~12</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>6~9</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>12~15</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>15~17</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Kikyou_A>0</BAWC_TraitDef_Kikyou_A>
+		</forcedTraits>
+		<modExtensions>
+			<li Class="BANWlLib.PawnProgressBarKindExtension">
+				<starInterval>0.5</starInterval>
+				<showProgressBar>false</showProgressBar>
+				<starProgressRatios>
+					<li>0.0</li>
+					<li>0.09</li>
+					<li>0.33</li>
+					<li>0.63</li>
+					<li>1.0</li>
+				</starProgressRatios>
+				<starSize>28</starSize>
+				<starTexturePath>UI/StarIcon</starTexturePath>
+			</li>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>桔梗</kindName>
+				<kindDesName>桐生 桔梗</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>17</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Kikyou/Halo/Kikyou_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Kikyou/Head/Kikyou_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Kikyou/Body/Kikyou_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Kikyou/Hair/Kikyou_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Kikyou/Hair/Kikyou_BackHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_halo_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Hyakkiyako/Kikyou/Halo/Kikyou_Halo</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Kikyou_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;作战参谋的素养&lt;/color&gt;</label>
+                <description>被动技能：自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+                          <BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	
+</Defs>

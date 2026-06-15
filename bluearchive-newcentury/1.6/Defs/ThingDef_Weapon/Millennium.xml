@@ -594,7 +594,7 @@
         <targetParams>
         <canTargetLocations>true</canTargetLocations>
         </targetParams>
-        <verbClass>Verb_LaunchProjectile</verbClass>
+        <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>BANC_Bullet_Arisu</defaultProjectile>
         <burstShotCount>1</burstShotCount>
@@ -630,26 +630,26 @@
       <shaderType>MoteGlow</shaderType>
       <texPath>Projectile/Arisu/Arisu_A/Bullet_Arisu</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(3,10)</drawSize><!--贴图大小-->
+      <drawSize>(8,15)</drawSize><!--贴图大小-->
     </graphicData>
     <modExtensions>
     <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
        <!-- 伤害间隔 Tick 数：飞行中每经过 10 ticks (约 0.16秒) 造成一次范围伤害 -->
-      <damageIntervalTicks>10</damageIntervalTicks>
+      <damageIntervalTicks>300</damageIntervalTicks>
       <!-- 伤害宽度：垂直于飞行方向的判定范围宽度，单位为格 (10格宽) -->
-      <damageWidth>10</damageWidth>
+      <damageWidth>2</damageWidth>
       <!-- 伤害长度：沿飞行方向的判定范围长度，单位为格 (10格长) -->
-      <damageLength>10</damageLength>
+      <damageLength>15</damageLength>
       <!-- 免疫友军伤害：true 表示跳过友方单位，不会误伤队友 -->
       <immuneFriendlyFire>true</immuneFriendlyFire>
       <!-- 起始贴图缩放：飞行开始时贴图的缩放比例 (0.3倍大小) -->
       <startDrawScale>0.3</startDrawScale>
       <!-- 结束贴图缩放：飞行结束时贴图的缩放比例 (2.0倍大小) -->
-      <endDrawScale>2.0</endDrawScale>
+      <endDrawScale>1.5</endDrawScale>
       <!-- 淡入 Tick 数：贴图从透明到完全显示所需的 tick 数 (5 ticks) -->
-      <fadeInTicks>5</fadeInTicks>
+      <fadeInTicks>0</fadeInTicks>
       <!-- 淡出 Tick 数：贴图从完全显示到消失所需的 tick 数 (10 ticks) -->
-      <fadeOutTicks>10</fadeOutTicks>
+      <fadeOutTicks>60</fadeOutTicks>
     </li>
   </modExtensions>
   </ThingDef>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Mine</defName>
+		<label>-美祢-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryMine</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Mine</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Mine</li>
+</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>17</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>6</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>6~8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>7</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Mine>0</BAWC_TraitDef_Mine>
+			<BAWC_TraitDef_Mine_A>0</BAWC_TraitDef_Mine_A>
+			
+		</forcedTraits>
+		<modExtensions>
+			<li Class="BANWlLib.PawnProgressBarKindExtension">
+				<starInterval>0.5</starInterval>
+				<showProgressBar>false</showProgressBar>
+				<starProgressRatios>
+					<li>0.0</li>
+					<li>0.09</li>
+					<li>0.33</li>
+					<li>0.63</li>
+					<li>1.0</li>
+				</starProgressRatios>
+				<starSize>28</starSize>
+				<starTexturePath>UI/StarIcon</starTexturePath>
+			</li>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>美祢</kindName>
+				<kindDesName>苍森 美祢</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>17</kindAge>
+			</li>
+			
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mine/Halo/Mine_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mine/Body/Mine_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mine/Head/Mine_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront_layer3</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mine/Hair/Mine_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback_layer2</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Mine/Hair/Mine_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Mine</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#87CEFA&gt;救护骑士团团长&lt;/color&gt;</label>
+                <description>救护骑士团的团长，美弥在某些情况下会表现得比较过激，她经常说 “美弥负责破坏，骑士团负责治疗”，并且她也确实会在行动中采取一些比较激进的方式来解决问题，比如即使是最简单的任务，她也可能会不假思索地通过破坏来达到目的</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+				<PainShockThreshold>+0.30</PainShockThreshold>
+				<IncomingDamageFactor>-0.10</IncomingDamageFactor>
+				<CarryingCapacity>200</CarryingCapacity> 
+<MentalBreakThreshold>-0.1</MentalBreakThreshold>
+                </statOffsets>
+				<statFactors>
+				<MedicalSurgerySuccessChance>0.1</MedicalSurgerySuccessChance>
+				<MedicalTendQuality>0.1</MedicalTendQuality>
+				<MeleeDamageFactor>5.5</MeleeDamageFactor>
+				<MeleeArmorPenetration>1.5</MeleeArmorPenetration>
+				<MeleeCooldownFactor>0.8</MeleeCooldownFactor>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Mine_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF0000&gt;骑士团的意志&lt;/color&gt;</label>
+                <description>被动技能:自身生命值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

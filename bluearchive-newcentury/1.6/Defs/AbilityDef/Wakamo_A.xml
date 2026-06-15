@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Wakamo_A_EX</defName>
  <label>只为您一人</label>
- <description>增加自身攻击力99%乘伤率减少29%（持续30秒）</description>
+ <description>增加自身攻击力99%乘伤率减少29%（持续20秒）</description>
  <iconPath>Ability/Icon/Wakamo_A/Wakamo_EX</iconPath>
  <cooldownTicksRange>3600</cooldownTicksRange>
  <hotKey>Misc12</hotKey>

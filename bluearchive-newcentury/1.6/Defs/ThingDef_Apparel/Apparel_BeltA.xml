@@ -393,11 +393,11 @@
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_One</li>
@@ -429,11 +429,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Tow</li>
@@ -463,11 +463,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Three</li>
@@ -500,11 +500,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Four</li>
@@ -537,11 +537,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Five</li>
@@ -575,11 +575,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Six</li>
@@ -613,11 +613,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Seven</li>
@@ -651,11 +651,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Eight</li>
@@ -689,11 +689,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Nine</li>
@@ -727,11 +727,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Glove_Ten</li>
@@ -758,11 +758,11 @@
 		</equippedStatOffsets>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_One</li>
@@ -797,11 +797,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Tow</li>
@@ -834,11 +834,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Three</li>
@@ -874,11 +874,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Four</li>
@@ -914,11 +914,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Five</li>
@@ -954,11 +954,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Six</li>
@@ -994,11 +994,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Seven</li>
@@ -1034,11 +1034,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Eight</li>
@@ -1074,11 +1074,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Nine</li>
@@ -1114,11 +1114,11 @@
         </costList>
         <apparel>
             <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
-            <bodyPartGroups>
-               <li>Eyes</li>
+            <bodyPartGroups Inherit="False">
+               <li>Neck</li>
             </bodyPartGroups>
-            <layers>
-                <li>Belt</li>
+            <layers Inherit="False">
+                <li>Overhead</li>
             </layers>
             <tags>
                 <li>BANC_Shoes_Ten</li>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Reisa</defName>
+		<label>-玲纱-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<abilities>
+			<li>BAWN_Reisa_EX</li>
+			<li>BAWN_Reisa_EXX</li>
+		</abilities>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryReisa</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<useFactionXenotypes>true</useFactionXenotypes>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>17</minGenerationAge>
+		<maxGenerationAge>18</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Reisa</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Reisa</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>7~10</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Animals</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>7</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>1</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>1</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Reisa_A>0</BAWC_TraitDef_Reisa_A>
+		</forcedTraits>
+		<modExtensions>
+			<li Class="BANWlLib.PawnProgressBarKindExtension">
+				<starInterval>0.5</starInterval>
+				<showProgressBar>false</showProgressBar>
+				<starProgressRatios>
+					<li>0.0</li>
+					<li>0.09</li>
+					<li>0.33</li>
+					<li>0.63</li>
+					<li>1.0</li>
+				</starProgressRatios>
+				<starSize>28</starSize>
+				<starTexturePath>UI/StarIcon</starTexturePath>
+			</li>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>玲纱</kindName>
+				<kindDesName>宇泽 玲纱</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>15</kindAge>
+			</li>
+			
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Reisa/Halo/Reisa_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Reisa/Head/Reisa_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Reisa/Body/Reisa_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Reisa/Hair/Reisa_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Reisa/Hair/Reisa_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Reisa_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;一整天也没问题！&lt;/color&gt;</label>
+                <description>被动技能:增加自身&lt;color=#DC143C&gt;16%&lt;/color&gt;的攻击力和&lt;color=#DC143C&gt;16%&lt;/color&gt;的生命值。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_FinalDamageMultiplier>+0.16</BANW_FinalDamageMultiplier>
+					<BANW_HealthScalePercentOffset>0.16</BANW_HealthScalePercentOffset>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	
+</Defs>
