@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\bluearchive-newcentury\1.6\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -248,6 +248,7 @@
     <Compile Include="pache\Patch_Projectile_Launch.cs" />
     <Compile Include="pache\pawnKill.cs" />
     <Compile Include="pache\Pawn_disDaed.cs" />
+    <Compile Include="PawnProgressBarKindExtension.cs" />
     <Compile Include="PawnProgressBarUI.cs" />
     <Compile Include="Pojo\TickDamage.cs" />
     <Compile Include="Pojo\TickDelayDamageAndHediff.cs" />

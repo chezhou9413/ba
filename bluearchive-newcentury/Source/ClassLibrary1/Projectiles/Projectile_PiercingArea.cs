@@ -70,7 +70,7 @@ namespace BANWlLib.Projectiles
                 }
 
                 DamagePawnsInArea();
-                Impact(null);
+                Destroy();
             }
         }
 
@@ -361,7 +361,7 @@ namespace BANWlLib.Projectiles
             int fadeInTicks = Mathf.Max(0, Extension?.fadeInTicks ?? 0);
             if (fadeInTicks > 0)
             {
-                float ageTicks = Mathf.Max(0f, StartingTicksToImpact - lifetime);
+                float ageTicks = Mathf.Max(0f, StartingTicksToImpact - Mathf.Max(0f, ticksToImpact));
                 alpha = Mathf.Min(alpha, ageTicks / fadeInTicks);
             }
 

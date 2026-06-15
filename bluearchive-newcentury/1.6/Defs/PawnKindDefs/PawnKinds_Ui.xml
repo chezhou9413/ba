@@ -69,6 +69,19 @@
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
 		</forcedTraits>
 		<modExtensions>
+			<li Class="BANWlLib.PawnProgressBarKindExtension">
+				<starInterval>0.5</starInterval>
+				<showProgressBar>false</showProgressBar>
+				<starProgressRatios>
+					<li>0.0</li>
+					<li>0.09</li>
+					<li>0.33</li>
+					<li>0.63</li>
+					<li>1.0</li>
+				</starProgressRatios>
+				<starSize>28</starSize>
+				<starTexturePath>UI/StarIcon</starTexturePath>
+			</li>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>忧</kindName>
 				<kindDesName>古关 忧</kindDesName>

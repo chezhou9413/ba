@@ -161,10 +161,10 @@
 				<li>Soldier</li>
 			</defaultOutfitTags>
 			<bodyPartGroups>
-				<li>LeftHand</li>
+				<li>Torso</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Shell</li>
+				<li>Belt</li>
 			</layers>
 		<countsAsClothingForNudity>false</countsAsClothingForNudity>
 		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>

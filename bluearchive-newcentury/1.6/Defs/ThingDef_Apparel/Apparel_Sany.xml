@@ -181,12 +181,60 @@
         </requiredPawnKindDefName>
       </li>
             <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+                <targetRaces>
+                    <li>BANW_KivotosStudent</li>
+                </targetRaces>
+                <bodyAddonDefs>
+                    <li>
+                        <name>BANW_Natsu_Greatshield_Back_Adult</name>
+                        <userCustomizable>true</userCustomizable>
+                        <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                        <path>Pawns/Sany/Natsu/Shield/Natsu_shield</path>
+                        <colorChannel>apparel</colorChannel>
+                        <inFrontOfBody>false</inFrontOfBody>
+                        <layerInvert>false</layerInvert>
+                        <angle>0</angle>
+                        <drawSize>0.85</drawSize>
+                        <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                        <defaultOffset>Center</defaultOffset>
+                        <alignWithHead>false</alignWithHead>
+                        <conditions>
+                            <BodyPart>
+                                <bodyPart>BANW_Torso</bodyPart>
+                            </BodyPart>
+                            <Apparel />
+                            <Posture>
+                                <drawnStanding>true</drawnStanding>
+                                <drawnLaying>true</drawnLaying>
+                                <drawnInBed>true</drawnInBed>
+                            </Posture>
+                        </conditions>
+                        <offsets>
+                            <west>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </west>
+                            <south>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </south>
+                            <north>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, -0.58)</offset>
+                            </north>
+                            <east>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </east>
+                        </offsets>
+                    </li>
+                </bodyAddonDefs>
                 <DraftedbodyAddonDefs>
                     <li>
                         <name>BANW_Natsu_GreatshieldB_Adult</name>
                         <userCustomizable>true</userCustomizable>
                         <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
-                        <path>Pawns/Sany/Natsu/Shield/Natsu_shield_Thin</path>
+                        <path>Pawns/Sany/Natsu/Shield/Natsu_shield</path>
                         <colorChannel>apparel</colorChannel>
                         <inFrontOfBody>true</inFrontOfBody>
                         <layerInvert>false</layerInvert>
@@ -194,10 +242,10 @@
                         <drawSize>0.85</drawSize>
                         <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
                         <defaultOffset>Center</defaultOffset>
-                        <alignWithHead>true</alignWithHead>
+                        <alignWithHead>false</alignWithHead>
                         <conditions>
                             <BodyPart>
-                                <bodyPart>Torso</bodyPart>
+                                <bodyPart>BANW_Torso</bodyPart>
                             </BodyPart>
                             <Apparel />
                             <Posture>
@@ -632,6 +680,103 @@
 		<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
 	    <ArmorRating_Heat>0.4</ArmorRating_Heat>
         </statBases>
+        <comps>
+            <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+                <targetRaces>
+                    <li>BANW_KivotosStudent</li>
+                </targetRaces>
+                <bodyAddonDefs>
+                    <li>
+                        <name>BANW_Mine_Greatshield_Back_Adult</name>
+                        <userCustomizable>true</userCustomizable>
+                        <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                        <path>Pawns/Sany/Mine/Shield/Mine_shield</path>
+                        <colorChannel>apparel</colorChannel>
+                        <inFrontOfBody>false</inFrontOfBody>
+                        <layerInvert>false</layerInvert>
+                        <angle>0</angle>
+                        <drawSize>0.85</drawSize>
+                        <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                        <defaultOffset>Center</defaultOffset>
+                        <alignWithHead>false</alignWithHead>
+                        <conditions>
+                            <BodyPart>
+                                <bodyPart>BANW_Torso</bodyPart>
+                            </BodyPart>
+                            <Apparel />
+                            <Posture>
+                                <drawnStanding>true</drawnStanding>
+                                <drawnLaying>true</drawnLaying>
+                                <drawnInBed>true</drawnInBed>
+                            </Posture>
+                        </conditions>
+                        <offsets>
+                            <west>
+                                <layerOffset>-0.28</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </west>
+                            <south>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </south>
+                            <north>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, -0.58)</offset>
+                            </north>
+                            <east>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </east>
+                        </offsets>
+                    </li>
+                </bodyAddonDefs>
+                <DraftedbodyAddonDefs>
+                    <li>
+                        <name>BANW_Mine_GreatshieldB_Adult</name>
+                        <userCustomizable>true</userCustomizable>
+                        <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                        <path>Pawns/Sany/Mine/Shield/Mine_shield</path>
+                        <colorChannel>apparel</colorChannel>
+                        <inFrontOfBody>true</inFrontOfBody>
+                        <layerInvert>false</layerInvert>
+                        <angle>0</angle>
+                        <drawSize>0.85</drawSize>
+                        <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                        <defaultOffset>Center</defaultOffset>
+                        <alignWithHead>false</alignWithHead>
+                        <conditions>
+                            <BodyPart>
+                                <bodyPart>BANW_Torso</bodyPart>
+                            </BodyPart>
+                            <Apparel />
+                            <Posture>
+                                <drawnStanding>true</drawnStanding>
+                                <drawnLaying>true</drawnLaying>
+                                <drawnInBed>true</drawnInBed>
+                            </Posture>
+                        </conditions>
+                        <offsets>
+                            <west>
+                                <layerOffset>-0.28</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </west>
+                            <south>
+                                <layerOffset>-0.28</layerOffset>
+                                <offset>(0.31, -0.58)</offset>
+                            </south>
+                            <north>
+                                <layerOffset>-0.28</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </north>
+                            <east>
+                                <layerOffset>-0.28</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </east>
+                        </offsets>
+                    </li>
+                </DraftedbodyAddonDefs>
+            </li>
+        </comps>
     </ThingDef>
 
     <ThingDef ParentName="BANW_Apparel_Base">

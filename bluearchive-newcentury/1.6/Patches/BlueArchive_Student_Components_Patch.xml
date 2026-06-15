@@ -2,7 +2,7 @@
 <Patch>
   <!-- 
     为蔚蓝档案基沃托斯学生添加完整功能的补丁
-    包含：自定义属性组件、星星UI组件、光环减伤保护组件
+    包含：自定义属性组件、光环减伤保护组件
     基于 BANWlLib 命名空间的组件系统
   -->
   <Operation Class="PatchOperationConditional">
@@ -16,40 +16,6 @@
           <defaultValue>0</defaultValue>
           <minValue>0</minValue>
           <maxValue>330</maxValue>
-        </li>
-        <!-- 进度条UI组件 - 修正为原项目的属性配置 -->
-        <li Class="BANWlLib.CompProperties_PawnProgressBarUI">
-          <!-- 星星的间隔比例 -->
-          <starInterval>0.5</starInterval>
-          <!-- 是否显示进度条（设为false只显示星星） -->
-          <showProgressBar>false</showProgressBar>
-          <!-- 
-            星星显示的进度比例列表（0.0-1.0）
-            对应减伤系统的5个等级：
-            - 0点 → 1级（星星1）
-            - 20点 → 2级（星星2）
-            - 40点 → 3级（星星3）
-            - 60点 → 4级（星星4）
-            - 80点 → 5级（星星5）
-          -->
-          <starProgressRatios>
-            <li>0.0</li>
-            <!-- 0点：1级 -->
-            <li>0.09</li>
-            <!-- 20点：2级 -->
-            <li>0.33</li>
-            <!-- 40点：3级 -->
-            <li>0.63</li>
-            <!-- 60点：4级 -->
-            <li>1.0</li>
-            <!-- 80点：5级 -->
-          </starProgressRatios>
-          <!-- 星星的大小（像素） -->
-          <starSize>28</starSize>
-          <!-- 要求小人必须能通过 PawnKindDef 解析到学生数据，避免同一种族下的非学生 Kind 显示星级。 -->
-          <requireStudentKind>true</requireStudentKind>
-          <!-- 星星的贴图路径 -->
-          <starTexturePath>UI/StarIcon</starTexturePath>
         </li>
         <!-- 光环减伤组件 - 修正为原项目的属性配置 -->
         <li Class="BANWlLib.DamageReductionCompProperties">
@@ -94,32 +60,6 @@
             <defaultValue>0</defaultValue>
             <minValue>0</minValue>
             <maxValue>330</maxValue>
-          </li>
-          <!-- 进度条UI组件 - 修正为原项目的属性配置 -->
-          <li Class="BANWlLib.CompProperties_PawnProgressBarUI">
-            <!-- 星星的间隔比例 -->
-            <starInterval>0.5</starInterval>
-            <!-- 是否显示进度条（设为false只显示星星） -->
-            <showProgressBar>false</showProgressBar>
-            <!-- 星星显示的进度比例列表 -->
-            <starProgressRatios>
-              <li>0.0</li>
-              <!-- 0点：1级 -->
-              <li>0.09</li>
-              <!-- 20点：2级 -->
-              <li>0.33</li>
-              <!-- 40点：3级 -->
-              <li>0.63</li>
-              <!-- 60点：4级 -->
-              <li>1.0</li>
-              <!-- 80点：5级 -->
-            </starProgressRatios>
-            <!-- 星星的大小（像素） -->
-            <starSize>28</starSize>
-            <!-- 要求小人必须能通过 PawnKindDef 解析到学生数据，避免同一种族下的非学生 Kind 显示星级。 -->
-            <requireStudentKind>true</requireStudentKind>
-            <!-- 星星的贴图路径 -->
-            <starTexturePath>UI/StarIcon</starTexturePath>
           </li>
           <!-- 光环减伤组件 - 修正为原项目的属性配置 -->
           <li Class="BANWlLib.DamageReductionCompProperties">

@@ -4,131 +4,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
-using BANWlLib.Tool;
 
 namespace BANWlLib
 {
-    /// <summary>
-    /// 小人星级进度条组件配置，负责保存星级显示规则和星星绘制参数。
-    /// </summary>
-    public class CompProperties_PawnProgressBarUI : CompProperties
-    {
-        // 星星的间隔比例
-        public float starInterval = 1f;
-
-        // 是否显示属性值进度条
-        public bool showProgressBar = true;
-
-        // 星星绘制的进度比例
-        public List<float> starProgressRatios = new List<float> { 0.2f, 0.4f, 0.6f, 0.8f, 1.0f };
-
-        // 星星的尺寸
-        public float starSize = 20f;
-
-        // 是否要求小人必须能通过 PawnKindDef 解析到学生数据。
-        public bool requireStudentKind = false;
-
-        // UI显示的学生 PawnKindDef 或学生身份，可以配置多个，留空时由 requireStudentKind 决定是否限制。
-        public List<string> allowedPawnKinds = new List<string>();
-
-        // 星星的贴图路径
-        public string starTexturePath = "UI/StarIcon";
-        
-        /// <summary>
-        /// 构造函数
-        /// 告诉游戏这个配置对应哪个组件类
-        /// </summary>
-        public CompProperties_PawnProgressBarUI()
-        {
-            this.compClass = typeof(CompUseEffect_PawnProgressBarUI);
-        }
-    }
-
-    /// <summary>
-    /// 小人星级进度条组件，负责根据 PawnKindDef 判断当前小人是否允许显示星级 UI。
-    /// </summary>
-    public class CompUseEffect_PawnProgressBarUI : ThingComp
-    {
-        /// <summary>
-        /// 默认构造函数
-        /// 环世界要求所有ThingComp都必须有默认构造函数
-        /// </summary>
-        public CompUseEffect_PawnProgressBarUI()
-        {
-            // 默认构造函数，无需特殊处理
-        }
-        
-        /// <summary>
-        /// 获取组件配置属性
-        /// 这些配置来自XML文件中的设置
-        /// </summary>
-        public CompProperties_PawnProgressBarUI Props => (CompProperties_PawnProgressBarUI)this.props;
-
-        /// <summary>
-        /// 检查进度条是否允许显示，负责按当前学生 Kind 身份判断。
-        /// </summary>
-        public bool CheckPawnKindDefName(Pawn pawn)
-        {
-            try
-            {
-                if (pawn == null)
-                {
-                    return false;
-                }
-
-                List<string> allowedPawnKinds = Props.allowedPawnKinds ?? new List<string>();
-                if (allowedPawnKinds.Count > 0)
-                {
-                    return IsPawnKindAllowed(pawn, allowedPawnKinds);
-                }
-
-                if (Props.requireStudentKind)
-                {
-                    return StudentIdentityUtility.IsConfiguredStudentKind(pawn);
-                }
-
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// 判断小人的 PawnKindDef 是否匹配配置列表。
-        /// </summary>
-        private bool IsPawnKindAllowed(Pawn pawn, List<string> allowedPawnKinds)
-        {
-            string kindDefName = pawn.kindDef?.defName;
-            if (string.IsNullOrEmpty(kindDefName))
-            {
-                return false;
-            }
-
-            string studentId = StudentIdentityUtility.GetStudentId(pawn.kindDef);
-            foreach (string allowedPawnKind in allowedPawnKinds)
-            {
-                if (string.IsNullOrEmpty(allowedPawnKind))
-                {
-                    continue;
-                }
-
-                if (allowedPawnKind == kindDefName)
-                {
-                    return true;
-                }
-
-                if (!string.IsNullOrEmpty(studentId) && allowedPawnKind == studentId)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-    }
-
     /// <summary>
     /// 小人进度条UI类 - 负责在信息面板上绘制进度条
     /// </summary>
@@ -324,6 +202,7 @@ namespace BANWlLib
                 return 0f;
             }
         }
+
     }
 
     /// <summary>
@@ -345,12 +224,8 @@ namespace BANWlLib
                 return;
             }
 
-            CompUseEffect_PawnProgressBarUI PawnProgressBarUIComp = selectpawn.GetComp<CompUseEffect_PawnProgressBarUI>();
-            if (PawnProgressBarUIComp == null)
-            {
-                return; // 如果没有组件就不执行效果
-            }
-            if (!PawnProgressBarUIComp.CheckPawnKindDefName(selectpawn))
+            PawnProgressBarKindExtension starConfig = selectpawn.kindDef?.GetModExtension<PawnProgressBarKindExtension>();
+            if (starConfig == null)
             {
                 return;
             }
@@ -362,7 +237,7 @@ namespace BANWlLib
             Rect progressRect = new Rect(
                 40f,                                    // X坐标：左边距
                 tabSize.y - 300f,                       // Y坐标：底部位置（增加空间给星星）
-                Mathf.Min(PawnProgressBarUI.ProgressBarWidth * PawnProgressBarUIComp.Props.starInterval, tabSize.x - 20f), // 宽度（不超过面板宽度）
+                Mathf.Min(PawnProgressBarUI.ProgressBarWidth * starConfig.starInterval, tabSize.x - 20f), // 宽度（不超过面板宽度）
                 PawnProgressBarUI.ProgressBarHeight    // 高度
             );
 
@@ -383,7 +258,7 @@ namespace BANWlLib
             }
 
             // 绘制进度条
-            PawnProgressBarUI.DrawProgressBar(PawnProgressBarUIComp.Props.showProgressBar, progressRect, progress, PawnProgressBarUIComp.Props.starProgressRatios, PawnProgressBarUIComp.Props.starSize, PawnProgressBarUIComp.Props.starTexturePath, label);
+            PawnProgressBarUI.DrawProgressBar(starConfig.showProgressBar, progressRect, progress, starConfig.starProgressRatios, starConfig.starSize, starConfig.starTexturePath, label);
         }
     }
 }

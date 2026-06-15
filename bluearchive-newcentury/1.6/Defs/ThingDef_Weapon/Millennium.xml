@@ -626,7 +626,6 @@
       <armorPenetrationBase>0.0</armorPenetrationBase>
       <speed>180</speed>
     </projectile>
-    <thingClass>Bullet</thingClass>
     <graphicData>
       <shaderType>MoteGlow</shaderType>
       <texPath>Projectile/Arisu/Arisu_A/Bullet_Arisu</texPath>
@@ -1476,7 +1475,7 @@
     </recipeMaker>
     <verbs>
       <li>
-        <verbClass>VEF.Weapons.Verb_Shoot</verbClass><!--子弹类型-->
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
         <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
         <defaultProjectile>BANC_Bullet_Hibiki</defaultProjectile><!--子弹-->
         <burstShotCount>1</burstShotCount><!--连射次数-->

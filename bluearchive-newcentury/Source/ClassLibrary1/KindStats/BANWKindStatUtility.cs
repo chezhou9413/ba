@@ -87,8 +87,8 @@ namespace BANWlLib.KindStats
                 baseScale = extension.healthScaleOverride.Value * lifeStageFactor;
             }
 
-            float offset = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthScaleOffset);
-            float percentOffset = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthScalePercentOffset);
+            float offset = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthScaleOffset) + GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthScaleOffset);
+            float percentOffset = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthScalePercentOffset) + GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthScalePercentOffset);
             return Mathf.Max(0.01f, (baseScale + offset) * Mathf.Max(0f, 1f + percentOffset));
         }
 
@@ -103,6 +103,29 @@ namespace BANWlLib.KindStats
             }
 
             return pawn.GetStatValue(statDef);
+        }
+
+        //获取已穿戴装备上的自定义属性，负责让装备生命值加成进入所有身体部位的生命倍率。
+        private static float GetWornApparelStatValue(Pawn pawn, StatDef statDef)
+        {
+            if (pawn?.apparel?.WornApparel == null || statDef == null)
+            {
+                return 0f;
+            }
+
+            float total = 0f;
+            for (int i = 0; i < pawn.apparel.WornApparel.Count; i++)
+            {
+                Apparel apparel = pawn.apparel.WornApparel[i];
+                if (apparel == null)
+                {
+                    continue;
+                }
+
+                total += apparel.GetStatValue(statDef);
+            }
+
+            return total;
         }
 
         /// <summary>
