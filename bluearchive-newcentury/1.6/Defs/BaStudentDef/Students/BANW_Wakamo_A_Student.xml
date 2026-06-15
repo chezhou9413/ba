@@ -13,9 +13,9 @@
 			<!-- 角色立绘路径，用于显示学生的全身立绘图像 -->
 			<CharacterimagePath>ManuaUI/Live/Wakamo_A</CharacterimagePath>
 			<!-- 背景图片路径，用于学生详情界面的背景 -->
-			<BackgroundPath>ManuaUI/Bg/BG_Hyakkiyako</BackgroundPath>
+			<BackgroundPath>ManuaUI/Bg/BG_Swimsuit02</BackgroundPath>
 			<!-- 角色立绘的缩放倍数，1.2表示放大1.2倍 -->
-			<CharacterimageOffsetSize>1.4</CharacterimageOffsetSize>
+			<CharacterimageOffsetSize>1.7</CharacterimageOffsetSize>
 			<!-- 角色立绘在X轴上的偏移量，单位像素 -->
 			<CharacterimageOffsetX>50</CharacterimageOffsetX>
 			<!-- 角色立绘在Y轴上的偏移量，单位像素 -->
@@ -79,11 +79,11 @@
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Wakamo_A/Wakamo_EX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle>基本技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>25</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>60</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[增加自身攻击力<color=#00FFFF>99%</color>乘伤率减少<color=#00FFFF>29%</color>（持续30秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

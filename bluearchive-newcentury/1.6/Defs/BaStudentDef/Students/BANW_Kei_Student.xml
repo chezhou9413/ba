@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><Defs>
   <BANWlLib.BaDef.BaStudentDef>
     <defName>BANW_Kei_Student</defName>
-    <label>爱丽丝(武装)</label>
+    <label>凯伊</label>
     <studentId>BANW_Kei</studentId>
     <kindDef>BANW_Kei</kindDef>
 

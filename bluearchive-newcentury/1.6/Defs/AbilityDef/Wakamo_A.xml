@@ -7,7 +7,7 @@
  <iconPath>Ability/Icon/Wakamo_A/Wakamo_EX</iconPath>
  <cooldownTicksRange>3600</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
- <warmupStartSound>Wakamo_Skill_EX</warmupStartSound>
+ <warmupStartSound>Wakamo_A_Skill_EX</warmupStartSound>
  <warmupEffecter>BANW_Wakamo_A_Ef_A</warmupEffecter>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
  <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
@@ -23,7 +23,7 @@
   <Ability_Duration>20</Ability_Duration>
  </statBases>
  <verbProperties>
- <soundCast></soundCast>
+ <soundCast>Aoba_Skill_EX</soundCast>
  <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
  <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
  <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
