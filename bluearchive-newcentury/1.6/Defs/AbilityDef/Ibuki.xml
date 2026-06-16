@@ -227,13 +227,13 @@
     <!-- 显示标签 -->
     <label>伊吹的绘画时间！</label>
     <!-- 描述信息 -->
-    <description>每秒恢复8点生命值(持续35秒)</description>
+    <description>每秒恢复16点生命值(持续35秒)</description>
     <!-- 健康状态类 -->
     <hediffClass>HediffWithComps</hediffClass>
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>8</healAmount>
+        <healAmount>16</healAmount>
         <healIntervalTicks>60</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

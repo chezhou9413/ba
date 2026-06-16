@@ -83,7 +83,7 @@
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle>再次燃烧！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>1</color>天]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[回复自身<color=#00FFFF>600</color>点生命值。]]>
+				<AbilityIntroduction><![CDATA[回复自身<color=#00FFFF>1200</color>点生命值。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

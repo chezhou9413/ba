@@ -45,7 +45,7 @@
 <AbilityDef>
 <defName>BAWN_Reisa_EX</defName>
  <label>胜利的姿势！</label>
- <description>赋予自身每秒11点生命值的持续回复状态(持续30秒).</description>
+ <description>赋予自身每秒40点生命值的持续回复状态(持续30秒).</description>
  <iconPath>Ability/Icon/Reisa/Reisa_EX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -110,8 +110,8 @@
         <disappearsAfterTicks>60</disappearsAfterTicks>
       </li>
        <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>11</healAmount>
-        <healIntervalTicks>60</healIntervalTicks>
+        <healAmount>2</healAmount>
+        <healIntervalTicks>3</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
          <li Class="HediffCompProperties_Effecter">

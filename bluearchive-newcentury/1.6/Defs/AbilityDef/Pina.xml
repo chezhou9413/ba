@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Pina_EX</defName>
  <label>再次燃烧！</label>
- <description>回复自身600点生命值。</description>
+ <description>回复自身1200点生命值。</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
  <cooldownTicksRange>48000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -53,7 +53,7 @@
         <!-- 显示名称 -->
         <label>再次燃烧！</label>
         <!-- 效果描述 -->
-        <description>回复600点生命值</description>
+        <description>回复1200点生命值</description>
         <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -64,7 +64,7 @@
          <comps>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <healAmount>6</healAmount>
-        <healIntervalTicks>2</healIntervalTicks>
+        <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
         <li Class="HediffCompProperties_Disappears">

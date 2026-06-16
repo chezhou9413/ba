@@ -15,7 +15,7 @@
          <BANW_FinalDamageMultiplier>+0.08</BANW_FinalDamageMultiplier>
          </statBases>
         <apparel>
-            <wornGraphicPath>Belt/Hat/Hat_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups Inherit="False">
                <li>Neck</li>
             </bodyPartGroups>
@@ -392,7 +392,7 @@
         <equippedStatOffsets>
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Glove/Glove_1_Thin</wornGraphicPath>
+            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
             <bodyPartGroups Inherit="False">
                <li>Neck</li>
             </bodyPartGroups>
@@ -757,7 +757,7 @@
            <MoveSpeed>+0.4</MoveSpeed>
 		</equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Shoes/Shoes_1_Thin</wornGraphicPath>
+            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
             <bodyPartGroups Inherit="False">
                <li>Neck</li>
             </bodyPartGroups>

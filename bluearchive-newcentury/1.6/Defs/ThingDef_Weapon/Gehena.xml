@@ -1761,18 +1761,38 @@
     <label>燃烧</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef>
-      <damageAmountBase>23</damageAmountBase>
+      <damageAmountBase>9</damageAmountBase>
       <stoppingPower>3</stoppingPower>
-      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <armorPenetrationBase>0.3</armorPenetrationBase>
       <speed>50</speed>
     </projectile>
-    <thingClass>Bullet</thingClass>
+    <thingClass>BANWlLib.Projectiles.Projectile_PiercingArea</thingClass>
     <graphicData>
       <shaderType>MoteGlow</shaderType>
       <texPath>Projectile/Megu/A/Megu</texPath>
-
+       <drawSize>(5,8)</drawSize>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <modExtensions>
+    <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
+       <!-- 伤害间隔 Tick 数：飞行中每经过 10 ticks (约 0.16秒) 造成一次范围伤害 -->
+      <damageIntervalTicks>5</damageIntervalTicks>
+      <!-- 伤害宽度：垂直于飞行方向的判定范围宽度，单位为格 (10格宽) -->
+      <damageWidth>5</damageWidth>
+      <!-- 伤害长度：沿飞行方向的判定范围长度，单位为格 (10格长) -->
+      <damageLength>5</damageLength>
+      <!-- 免疫友军伤害：true 表示跳过友方单位，不会误伤队友 -->
+      <immuneFriendlyFire>true</immuneFriendlyFire>
+      <!-- 起始贴图缩放：飞行开始时贴图的缩放比例 (0.3倍大小) -->
+      <startDrawScale>0.3</startDrawScale>
+      <!-- 结束贴图缩放：飞行结束时贴图的缩放比例 (2.0倍大小) -->
+      <endDrawScale>1.5</endDrawScale>
+      <!-- 淡入 Tick 数：贴图从透明到完全显示所需的 tick 数 (5 ticks) -->
+      <fadeInTicks>2</fadeInTicks>
+      <!-- 淡出 Tick 数：贴图从完全显示到消失所需的 tick 数 (10 ticks) -->
+      <fadeOutTicks>5</fadeOutTicks>
+    </li>
+  </modExtensions>
   </ThingDef>
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Hina_B</defName>

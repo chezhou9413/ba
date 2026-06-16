@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>芝士巧克力汉堡~</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对自身造成每秒回复<color=#00FFFF>15</color>点生命值,增加<color=#00FFFF>38%</color>的攻击速度
+				<AbilityIntroduction><![CDATA[对自身造成每秒回复<color=#00FFFF>30</color>点生命值,增加<color=#00FFFF>38%</color>的攻击速度
 （持续<color=#00FFFF>21</color>秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
@@ -92,7 +92,7 @@
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>接下来吃什么呢？</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身每10秒回复<color=#00FFFF>26</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[自身每10秒回复<color=#00FFFF>60</color>点生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

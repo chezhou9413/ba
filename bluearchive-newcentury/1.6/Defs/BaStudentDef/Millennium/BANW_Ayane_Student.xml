@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>特级快递：战斗支援物资</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对圆形范围内的友方单位回复<color=#00FFFF>270</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[对圆形范围内的友方单位回复<color=#00FFFF>540</color>点生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

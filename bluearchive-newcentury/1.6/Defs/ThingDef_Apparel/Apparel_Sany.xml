@@ -681,6 +681,11 @@
 	    <ArmorRating_Heat>0.4</ArmorRating_Heat>
         </statBases>
         <comps>
+            <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Mine</li>
+        </requiredPawnKindDefName>
+      </li>
             <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
                 <targetRaces>
                     <li>BANW_KivotosStudent</li>
@@ -690,7 +695,7 @@
                         <name>BANW_Mine_Greatshield_Back_Adult</name>
                         <userCustomizable>true</userCustomizable>
                         <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
-                        <path>Pawns/Sany/Mine/Shield/Mine_shield</path>
+                        <path>Pawns/Sany/Natsu/Shield/Natsu_Noting</path>
                         <colorChannel>apparel</colorChannel>
                         <inFrontOfBody>false</inFrontOfBody>
                         <layerInvert>false</layerInvert>
@@ -756,21 +761,21 @@
                             </Posture>
                         </conditions>
                         <offsets>
-                            <west>
-                                <layerOffset>-0.28</layerOffset>
-                                <offset>(0, 0)</offset>
+                           <west>
+                                <layerOffset>-0.20</layerOffset>
+                                <offset>(-0.4, -0.2)</offset> <!-- 左面往正左移动 -->
                             </west>
                             <south>
-                                <layerOffset>-0.28</layerOffset>
-                                <offset>(0.31, -0.58)</offset>
+                                <layerOffset>-0.20</layerOffset>
+                                <offset>(0.2, -0.2)</offset> <!-- 正面调整至人物正右边 -->
                             </south>
                             <north>
-                                <layerOffset>-0.28</layerOffset>
-                                <offset>(0, 0)</offset>
+                                <layerOffset>-0.35</layerOffset> <!-- 后面贴图调至最底层 -->
+                                <offset>(-0.2, -0.2)</offset>
                             </north>
                             <east>
-                                <layerOffset>-0.28</layerOffset>
-                                <offset>(0, 0)</offset>
+                                <layerOffset>-0.35</layerOffset>
+                                <offset>(-0.4, -0.2)</offset> <!-- 右面往正右移动 -->
                             </east>
                         </offsets>
                     </li>

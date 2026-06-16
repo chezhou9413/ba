@@ -84,6 +84,30 @@
 				</starProgressRatios>
 				<starSize>28</starSize>
 				<starTexturePath>UI/StarIcon</starTexturePath>
+				<!-- 起始星星经验：用于没有存档数据的新生成学生 -->
+                <initialExperience>110</initialExperience>
+                <!-- 升星特效占位：后续可替换为学生专属 EffecterDef -->
+                <starUpEffects>
+                    <li>BANW_Effecter_B</li>
+                </starUpEffects>
+                <!-- 升星语音占位：后续可替换为学生专属 SoundDef -->
+                <starUpSounds>
+                    <li>Turugi_levelup_A</li>
+                    <li>Turugi_levelup_B</li>
+					<li>Turugi_levelup_C</li>
+					<li>Turugi_levelup_D</li>
+                </starUpSounds>
+                <!-- 升级特效占位：后续可替换为学生专属 EffecterDef -->
+                <levelUpEffects>
+                    <li>BANW_Effecter_LevelUp</li>
+                </levelUpEffects>
+                <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
+                <levelUpSounds>
+                     <li>Turugi_levelup_A</li>
+                    <li>Turugi_levelup_B</li>
+					<li>Turugi_levelup_C</li>
+					<li>Turugi_levelup_D</li>
+                </levelUpSounds>
 			</li>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>鹤城</kindName>
@@ -185,7 +209,7 @@
     <defName>BANW_Turugi_HpBuff</defName>
     <label>肉体再生</label>
     <description>鹤城的夸张的治愈能力，能在肉眼可见的速度修复自身的伤口</description>
-	<labelNoun>每秒回复30点血</labelNoun>
+	<labelNoun>每秒回复60点血</labelNoun>
     <defaultLabelColor>(255, 0, 0)</defaultLabelColor>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
@@ -201,8 +225,8 @@
           </stages>
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>60</healAmount>
-        <healIntervalTicks>120</healIntervalTicks>
+        <healAmount>6</healAmount>
+        <healIntervalTicks>6</healIntervalTicks>
 		<isHeatScar>true</isHeatScar>
       </li>
     </comps>

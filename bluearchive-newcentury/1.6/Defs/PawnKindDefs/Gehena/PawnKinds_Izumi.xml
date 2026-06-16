@@ -96,6 +96,30 @@
 				</starProgressRatios>
 				<starSize>28</starSize>
 				<starTexturePath>UI/StarIcon</starTexturePath>
+				<!-- 起始星星经验：用于没有存档数据的新生成学生 -->
+                <initialExperience>110</initialExperience>
+                <!-- 升星特效占位：后续可替换为学生专属 EffecterDef -->
+                <starUpEffects>
+                    <li>BANW_Effecter_B</li>
+                </starUpEffects>
+                <!-- 升星语音占位：后续可替换为学生专属 SoundDef -->
+                <starUpSounds>
+                    <li>Izumi_levelup_A</li>
+                    <li>Izumi_levelup_B</li>
+					<li>Izumi_levelup_C</li>
+					<li>Izumi_levelup_D</li>
+                </starUpSounds>
+                <!-- 升级特效占位：后续可替换为学生专属 EffecterDef -->
+                <levelUpEffects>
+                    <li>BANW_Effecter_LevelUp</li>
+                </levelUpEffects>
+                <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
+                <levelUpSounds>
+                     <li>Izumi_levelup_A</li>
+                    <li>Izumi_levelup_B</li>
+					<li>Izumi_levelup_C</li>
+					<li>Izumi_levelup_D</li>
+                </levelUpSounds>
 			</li>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>泉</kindName>
@@ -137,7 +161,7 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#DC143C&gt;接下来吃什么呢？&lt;/color&gt;</label>
-                <description>被动技能:自身每10秒回复&lt;color=#DC143C&gt;26&lt;/color&gt;点生命值</description>
+                <description>被动技能:自身每10秒回复&lt;color=#DC143C&gt;50&lt;/color&gt;点生命值</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
                 </statOffsets>
@@ -221,7 +245,7 @@
         
         <label>接下来吃什么呢？</label>
         
-        <description>自身每10秒回复26点生命值</description>
+        <description>自身每10秒回复50点生命值</description>
         <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
         
         <isBad>false</isBad>
@@ -232,7 +256,7 @@
          
          <comps>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>26</healAmount>
+        <healAmount>50</healAmount>
         <healIntervalTicks>600</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

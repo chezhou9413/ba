@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>很好吃的哦……</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[赋予自身每秒<color=#00FFFF>23</color>点生命值的持续回复状态
+				<AbilityIntroduction><![CDATA[赋予自身每秒<color=#00FFFF>46</color>点生命值的持续回复状态
 (持续<color=#00FFFF>20</color>秒)]]></AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

@@ -6,7 +6,7 @@
     <!-- 能力显示名称 -->
     <label>这也是我的力量……?</label>
     <!-- 能力描述，说明效果和持续时间 -->
-    <description>对以自身为中心的圆形范围内的我方单位每5秒回复66点生命值(持续30秒)</description>
+    <description>对以自身为中心的圆形范围内的我方单位每5秒回复260点生命值(持续30秒)</description>
     <!-- 是否需要特定目标，False表示为范围效果 -->
     <cooldownTicksRange>2400</cooldownTicksRange>
     <targetRequired>False</targetRequired>
@@ -90,15 +90,15 @@
     <!-- 显示标签 -->
     <label>这也是我的力量……?</label>
     <!-- 描述信息 -->
-    <description>每5秒回复132点生命值(持续30秒)</description>
+    <description>每5秒回复260点生命值(持续30秒)</description>
     <!-- 健康状态类 -->
     <hediffClass>HediffWithComps</hediffClass>
     <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>66</healAmount>
-        <healIntervalTicks>300</healIntervalTicks>
+        <healAmount>12</healAmount>
+        <healIntervalTicks>30</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
       <li Class="HediffCompProperties_Effecter">
@@ -143,7 +143,7 @@
     <!-- 显示标签 -->
     <label>这也是我的力量……?</label>
     <!-- 描述信息 -->
-    <description>每5秒回复132点生命值(持续30秒)</description>
+    <description>每5秒回复260点生命值(持续30秒)</description>
     <!-- 调试标签 -->
     <debugLabelExtra>other</debugLabelExtra>
     <!-- 健康状态类 -->
@@ -152,8 +152,8 @@
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>66</healAmount>
-        <healIntervalTicks>300</healIntervalTicks>
+        <healAmount>12</healAmount>
+        <healIntervalTicks>30</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
       <!-- 自动消失组件 -->

@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>做得真棒！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对1名我方单位恢复380点生命值并回复自身130点生命值]]>
+				<AbilityIntroduction><![CDATA[对1名我方单位恢复760点生命值并回复自身260点生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

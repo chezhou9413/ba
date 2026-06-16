@@ -337,6 +337,108 @@
 		<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
 	    <ArmorRating_Heat>0.2</ArmorRating_Heat>
         </statBases>
+        <comps>
+            <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Tsubaki</li>
+        </requiredPawnKindDefName>
+      </li>
+            <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+                <targetRaces>
+                    <li>BANW_KivotosStudent</li>
+                </targetRaces>
+                <bodyAddonDefs>
+                    <li>
+                        <name>BANW_Tsubaki_Greatshield_Back_Adult</name>
+                        <userCustomizable>true</userCustomizable>
+                        <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                        <path>Pawns/Sany/Natsu/Shield/Natsu_Noting</path>
+                        <colorChannel>apparel</colorChannel>
+                        <inFrontOfBody>false</inFrontOfBody>
+                        <layerInvert>false</layerInvert>
+                        <angle>0</angle>
+                        <drawSize>0.85</drawSize>
+                        <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                        <defaultOffset>Center</defaultOffset>
+                        <alignWithHead>false</alignWithHead>
+                        <conditions>
+                            <BodyPart>
+                                <bodyPart>BANW_Torso</bodyPart>
+                            </BodyPart>
+                            <Apparel />
+                            <Posture>
+                                <drawnStanding>true</drawnStanding>
+                                <drawnLaying>true</drawnLaying>
+                                <drawnInBed>true</drawnInBed>
+                            </Posture>
+                        </conditions>
+                        <offsets>
+                            <west>
+                                <layerOffset>-0.28</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </west>
+                            <south>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </south>
+                            <north>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, -0.58)</offset>
+                            </north>
+                            <east>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </east>
+                        </offsets>
+                    </li>
+                </bodyAddonDefs>
+                <DraftedbodyAddonDefs>
+                    <li>
+                        <name>BANW_Mine_GreatshieldB_Adult</name>
+                        <userCustomizable>true</userCustomizable>
+                        <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                        <path>Pawns/Hyakkiyako/Tsubaki/Shield/Tsubaki_shield</path>
+                        <colorChannel>apparel</colorChannel>
+                        <inFrontOfBody>true</inFrontOfBody>
+                        <layerInvert>false</layerInvert>
+                        <angle>0</angle>
+                        <drawSize>0.85</drawSize>
+                        <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                        <defaultOffset>Center</defaultOffset>
+                        <alignWithHead>false</alignWithHead>
+                        <conditions>
+                            <BodyPart>
+                                <bodyPart>BANW_Torso</bodyPart>
+                            </BodyPart>
+                            <Apparel />
+                            <Posture>
+                                <drawnStanding>true</drawnStanding>
+                                <drawnLaying>true</drawnLaying>
+                                <drawnInBed>true</drawnInBed>
+                            </Posture>
+                        </conditions>
+                        <offsets>
+                           <west>
+                                <layerOffset>-0.20</layerOffset>
+                                <offset>(-0.4, -0.2)</offset> <!-- 左面往正左移动 -->
+                            </west>
+                            <south>
+                                <layerOffset>-0.20</layerOffset>
+                                <offset>(0.2, -0.2)</offset> <!-- 正面调整至人物正右边 -->
+                            </south>
+                            <north>
+                                <layerOffset>-0.35</layerOffset> <!-- 后面贴图调至最底层 -->
+                                <offset>(-0.2, -0.2)</offset>
+                            </north>
+                            <east>
+                                <layerOffset>-0.35</layerOffset>
+                                <offset>(-0.4, -0.2)</offset> <!-- 右面往正右移动 -->
+                            </east>
+                        </offsets>
+                    </li>
+                </DraftedbodyAddonDefs>
+            </li>
+        </comps>
     </ThingDef>
 
     <ThingDef ParentName="BANW_Apparel_Base">

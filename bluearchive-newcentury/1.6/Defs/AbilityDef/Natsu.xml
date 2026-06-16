@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Natsu_EXX</defName>
  <label>为了这种时候准备的</label>
- <description>回复自身360点生命值。</description>
+ <description>回复自身720点生命值。</description>
  <iconPath>Ability/Icon/Natsu/Natsu_EXX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -107,8 +107,8 @@
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
          <comps>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>4</healAmount>
-        <healIntervalTicks>2</healIntervalTicks>
+        <healAmount>8</healAmount>
+        <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
         <li Class="HediffCompProperties_Disappears">

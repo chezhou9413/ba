@@ -3,7 +3,7 @@
   <AbilityDef>
 <defName>BAWN_Ako_EX</defName>
  <label>补给作战B计划</label>
- <description>对1名我方单位恢复240点生命值</description>
+ <description>对1名我方单位恢复480点生命值</description>
  <iconPath>Ability/Icon/Natsu/Natsu_EXX</iconPath>
  <cooldownTicksRange>2700</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -71,7 +71,7 @@
         <disappearsAfterTicks>1200</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>2</healAmount>
+        <healAmount>4</healAmount>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

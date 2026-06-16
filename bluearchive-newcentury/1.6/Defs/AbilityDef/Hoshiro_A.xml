@@ -3,7 +3,7 @@
     <AbilityDef>
 <defName>BAWN_Hoshiro_A_EX</defName>
  <label>水上袭击</label>
- <description>对一名敌人造成自身攻击力454%的伤害并回复自身270点生命值</description>
+ <description>对一名敌人造成自身攻击力454%的伤害并回复自身560点生命值</description>
  <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -72,7 +72,7 @@
     <!-- 显示标签 -->
     <label>水上袭击</label>
     <!-- 描述信息 -->
-    <description>回复280点生命值</description>
+    <description>回复560点生命值</description>
     <!-- 调试标签 -->
     <debugLabelExtra>other</debugLabelExtra>
     <!-- 健康状态类 -->
@@ -81,7 +81,7 @@
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>1.5</healAmount>
+        <healAmount>3</healAmount>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

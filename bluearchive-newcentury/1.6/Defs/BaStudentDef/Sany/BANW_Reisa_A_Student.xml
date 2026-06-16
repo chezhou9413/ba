@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>铝热剂粉红，登场！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加<color=#00FFFF>22%</color>；每<color=#00FFFF>4</color>秒，赋予以自身为中心的圆形范围内除自身外的友方<color=#00FFFF>134</color>的生命值回复
+				<AbilityIntroduction><![CDATA[赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加<color=#00FFFF>22%</color>；每<color=#00FFFF>4</color>秒，赋予以自身为中心的圆形范围内除自身外的友方<color=#00FFFF>260</color>的生命值回复
 (持续<color=#00FFFF>22</color>秒)]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
@@ -82,7 +82,7 @@
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle />
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>8</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>265%</color>的伤害并回复自身<color=#00FFFF>130</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>265%</color>的伤害并回复自身<color=#00FFFF>260</color>点生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

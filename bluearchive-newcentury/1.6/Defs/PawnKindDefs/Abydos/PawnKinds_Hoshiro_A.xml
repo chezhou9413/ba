@@ -107,7 +107,7 @@
                 </levelUpEffects>
                 <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
                 <levelUpSounds>
-                     <li>Hoshiro_A_levelup_A</li>
+                    <li>Hoshiro_A_levelup_A</li>
                     <li>Hoshiro_A_levelup_B</li>
 					<li>Hoshiro_A_levelup_C</li>
 					<li>Hoshiro_A_levelup_D</li>

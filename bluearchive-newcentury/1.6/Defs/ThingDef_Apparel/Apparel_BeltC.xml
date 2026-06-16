@@ -18,7 +18,7 @@
         <PainShockThreshold>+0.08</PainShockThreshold> 
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -416,7 +416,7 @@
             <BANW_CriticalChance>+0.05</BANW_CriticalChance>
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -790,7 +790,7 @@
         <equippedStatOffsets>
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>

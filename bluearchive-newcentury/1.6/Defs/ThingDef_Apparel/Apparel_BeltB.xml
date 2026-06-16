@@ -18,7 +18,7 @@
         <equippedStatOffsets>
 		</equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
 
             <layers>
                 <li>OnSkin</li>
@@ -421,7 +421,7 @@
 
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -821,7 +821,7 @@
         <equippedStatOffsets>
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>

@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Chinatsu_EXX</defName>
  <label>实施战术治疗</label>
- <description>对1名我方单位恢复480点生命值</description>
+ <description>对1名我方单位恢复880点生命值</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
  <cooldownTicksRange>3000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -124,7 +124,7 @@
         <disappearsAfterTicks>1200</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>4</healAmount>
+        <healAmount>8</healAmount>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

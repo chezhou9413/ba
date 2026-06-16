@@ -95,7 +95,7 @@
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>专家的休憩</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身获得每<color=#00FFFF>10</color>秒回复<color=#00FFFF>52</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[自身获得每<color=#00FFFF>10</color>秒回复<color=#00FFFF>100</color>点生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

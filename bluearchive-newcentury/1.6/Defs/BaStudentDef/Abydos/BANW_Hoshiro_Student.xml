@@ -82,7 +82,7 @@
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle>急救治疗</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>800</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[赋予自身每秒<color=#00FFFF>50</color>点生命值的持续回复状态
+				<AbilityIntroduction><![CDATA[赋予自身每秒<color=#00FFFF>100</color>点生命值的持续回复状态
 (持续<color=#00FFFF>20</color>秒)]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>

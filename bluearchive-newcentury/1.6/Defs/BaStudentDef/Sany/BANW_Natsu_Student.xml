@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>为了这种时候准备的</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[回复自身<color=#00FFFF>360</color>点生命值。]]>
+				<AbilityIntroduction><![CDATA[回复自身<color=#00FFFF>720</color>点生命值。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

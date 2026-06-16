@@ -3,7 +3,7 @@
   <AbilityDef>
 <defName>BAWN_Reisa_A_EX</defName>
  <label>铝热剂重拳！</label>
- <description>对一名敌人造成自身攻击力265%的伤害并回复自身130点生命值</description>
+ <description>对一名敌人造成自身攻击力265%的伤害并回复自身260点生命值</description>
  <iconPath>Ability/Icon/Reisa_A/Reisa_EX</iconPath>
  <cooldownTicksRange>480</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -61,7 +61,7 @@
     <!-- 显示标签 -->
     <label>铝热剂重拳！</label>
     <!-- 描述信息 -->
-    <description>回复130点生命值</description>
+    <description>回复260点生命值</description>
     <!-- 调试标签 -->
     <debugLabelExtra>other</debugLabelExtra>
     <!-- 健康状态类 -->
@@ -71,7 +71,7 @@
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <healAmount>6.5</healAmount>
-        <healIntervalTicks>6</healIntervalTicks>
+        <healIntervalTicks>3</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
       <li Class="HediffCompProperties_Disappears">
@@ -125,7 +125,7 @@
     <!-- 能力显示名称 -->
     <label>铝热剂粉红，登场！</label>
     <!-- 能力描述，说明效果和持续时间 -->
-    <description>赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加22%；每4秒，赋予以自身为中心的圆形范围内除自身外的友方134的生命值回复(持续22秒)</description>
+    <description>赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加22%；每4秒，赋予以自身为中心的圆形范围内除自身外的友方264的生命值回复(持续22秒)</description>
     <!-- 是否需要特定目标，False表示为范围效果 -->
     <cooldownTicksRange>2400</cooldownTicksRange>
     <targetRequired>False</targetRequired>
@@ -257,7 +257,7 @@
     <!-- 显示标签 -->
     <label>大家，要上了！</label>
     <!-- 描述信息 -->
-    <description>攻击力增加22%，每4秒回复134的生命值</description>
+    <description>攻击力增加22%，每4秒回复264的生命值</description>
     <!-- 调试标签 -->
     <debugLabelExtra>other</debugLabelExtra>
     <!-- 健康状态类 -->
@@ -267,7 +267,7 @@
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <healAmount>3.5</healAmount>
-        <healIntervalTicks>6</healIntervalTicks>
+        <healIntervalTicks>3</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
       <!-- 自动消失组件 -->

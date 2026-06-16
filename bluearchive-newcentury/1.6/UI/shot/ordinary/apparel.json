@@ -1,7 +1,7 @@
 [
     {
         "CurrencyDefName": "Silver",
-        "CurrencyAmount": 15,
+        "CurrencyAmount": 7,
         "CurrencyImage": "Stone/XYDS",
         "ProductAmount": 1,
         "ProductImage": "Prop/Huodongbaogao/Icon_ExpItem_0",
@@ -12,7 +12,7 @@
     },
     {
         "CurrencyDefName": "Silver",
-        "CurrencyAmount": 150,
+        "CurrencyAmount": 70,
         "CurrencyImage": "Stone/XYDS",
         "ProductAmount": 1,
         "ProductImage": "Prop/Huodongbaogao/Icon_ExpItem_1",
@@ -23,7 +23,7 @@
     },
      {
         "CurrencyDefName": "Silver",
-        "CurrencyAmount": 600,
+        "CurrencyAmount": 300,
         "CurrencyImage": "Stone/XYDS",
         "ProductAmount": 1,
         "ProductImage": "Prop/Huodongbaogao/Icon_ExpItem_2",
@@ -34,7 +34,7 @@
     },
      {
         "CurrencyDefName": "Silver",
-        "CurrencyAmount": 3000,
+        "CurrencyAmount": 1500,
         "CurrencyImage": "Stone/XYDS",
         "ProductAmount": 1,
         "ProductImage": "Prop/Huodongbaogao/Icon_ExpItem_3",

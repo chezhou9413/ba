@@ -103,7 +103,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>高速演算</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身获得每<color=#00FFFF>10</color>秒回复<color=#00FFFF>52</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[自身获得每<color=#00FFFF>10</color>秒回复<color=#00FFFF>100</color>点生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

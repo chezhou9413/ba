@@ -84,7 +84,7 @@
 <AbilityDef>
 <defName>BAWN_Hanako_EXX</defName>
  <label>来玩禁忌的游戏吧？</label>
- <description>对圆形范围内的友方单位每秒恢复76点生命值(持续8秒)</description>
+ <description>对圆形范围内的友方单位每秒恢复140点生命值(持续8秒)</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
  <cooldownTicksRange>3000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -189,7 +189,7 @@
         <!-- 显示名称 -->
         <label>来玩禁忌的游戏吧？</label>
         <!-- 效果描述 -->
-        <description>范围内每秒恢复76点生命值</description>
+        <description>范围内每秒恢复140点生命值</description>
         <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -202,7 +202,7 @@
         <disappearsAfterTicks>60</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>8</healAmount>
+        <healAmount>16</healAmount>
         <healIntervalTicks>6</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

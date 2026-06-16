@@ -1,34 +1,34 @@
 [
     {
-        "CurrencyDefName": "BANW_Hikali_race_Proplevel",
-        "CurrencyAmount": 1,
-        "CurrencyImage": "Prop/Proplevel/Hikali",
-        "ProductAmount": 30,
-        "ProductImage": "Prop/Proplevel/Kami",
-        "ProductDefName": "Kami_Proplevel",
-        "ProductName": "光/神明精髓",
-        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
-        "ProductQuality": "low"
-    },
-     {
-        "CurrencyDefName": "BANW_Nozomi_race_Proplevel",
-        "CurrencyAmount": 1,
-        "CurrencyImage": "Prop/Proplevel/Nozomi",
-        "ProductAmount": 30,
-        "ProductImage": "Prop/Proplevel/Kami",
-        "ProductDefName": "Kami_Proplevel",
-        "ProductName": "望/神明精髓",
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Hikali",
+        "ProductDefName": "BANW_Hikali_race_Proplevel",
+        "ProductName": "光的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
     },
     {
-        "CurrencyDefName": "BANW_Aoba_race_Proplevel",
-        "CurrencyAmount": 1,
-        "CurrencyImage": "Prop/Proplevel/Aoba",
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
-        "ProductImage": "Prop/Proplevel/Kami",
-        "ProductDefName": "Kami_Proplevel",
-        "ProductName": "青叶/神明精髓",
+        "ProductImage": "Prop/Proplevel/Nozomi",
+        "ProductDefName": "BANW_Nozomi_race_Proplevel",
+        "ProductName": "望的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Aoba",
+        "ProductDefName": "BANW_Aoba_race_Proplevel",
+        "ProductName": "青叶的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
     }

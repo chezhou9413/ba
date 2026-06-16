@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Kanoe_EXX</defName>
  <label>很好吃的哦……</label>
- <description>赋予自身每秒23点生命值的持续回复状态(持续20秒).</description>
+ <description>赋予自身每秒50点生命值的持续回复状态(持续20秒).</description>
  <iconPath>Ability/Icon/Natsu/Natsu_EXX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -54,7 +54,7 @@
         <!-- 显示名称 -->
         <label>很好吃的哦……</label>
         <!-- 效果描述 -->
-        <description>赋予自身每秒23点生命值的持续回复状态(持续20秒)</description>
+        <description>赋予自身每秒50点生命值的持续回复状态(持续20秒)</description>
         <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -68,8 +68,8 @@
         <disappearsAfterTicks>60</disappearsAfterTicks>
       </li>
        <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>46</healAmount>
-        <healIntervalTicks>120</healIntervalTicks>
+        <healAmount>5</healAmount>
+        <healIntervalTicks>6</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
          <li Class="HediffCompProperties_Effecter">

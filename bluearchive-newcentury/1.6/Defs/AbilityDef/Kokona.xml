@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Kokona_EXX</defName>
  <label>做得真棒！</label>
- <description>对1名我方单位恢复380点生命值并回复自身130点生命值</description>
+ <description>对1名我方单位恢复760点生命值并回复自身260点生命值</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
  <cooldownTicksRange>1200</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -91,7 +91,7 @@
         <!-- 显示名称 -->
         <label>做得真棒！</label>
         <!-- 效果描述 -->
-        <description>对1名我方单位恢复380点生命值</description>
+        <description>对1名我方单位恢复760点生命值</description>
         <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -104,7 +104,7 @@
         <disappearsAfterTicks>100</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>4</healAmount>
+        <healAmount>8</healAmount>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
@@ -139,7 +139,7 @@
         <disappearsAfterTicks>65</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>2</healAmount>
+        <healAmount>4</healAmount>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

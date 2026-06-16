@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef Name="BANW_Proplevel" Abstract="True">
-    
+    <category>Item</category> <!-- 添加这一行 -->
     <thingClass>ThingWithComps</thingClass>
     
     <generateCommonality>0</generateCommonality>
@@ -38,7 +38,6 @@
     <drawGUIOverlay>true</drawGUIOverlay> 
     
     <thingCategories>
-      
       <li>BAWN_Proplevel_Piece</li>
     </thingCategories>
     

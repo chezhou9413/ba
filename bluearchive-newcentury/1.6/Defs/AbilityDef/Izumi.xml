@@ -69,7 +69,7 @@
 <AbilityDef>
 <defName>BAWN_Izumi_EXX</defName>
  <label>芝士巧克力汉堡~</label>
- <description>对自身造成每秒回复15点生命值,增加38%的攻击速度（持续21秒）</description>
+ <description>对自身造成每秒回复30点生命值,增加38%的攻击速度（持续21秒）</description>
  <iconPath>Ability/Icon/Yuuka/Yuuka_A</iconPath>
  <cooldownTicksRange>1800</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -137,8 +137,8 @@
           </stages>
          <comps>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>15</healAmount>
-        <healIntervalTicks>60</healIntervalTicks>
+        <healAmount>3</healAmount>
+        <healIntervalTicks>6</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
         <li Class="HediffCompProperties_Disappears">
