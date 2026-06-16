@@ -647,9 +647,9 @@
       <!-- 结束贴图缩放：飞行结束时贴图的缩放比例 (2.0倍大小) -->
       <endDrawScale>1.5</endDrawScale>
       <!-- 淡入 Tick 数：贴图从透明到完全显示所需的 tick 数 (5 ticks) -->
-      <fadeInTicks>0</fadeInTicks>
+      <fadeInTicks>2</fadeInTicks>
       <!-- 淡出 Tick 数：贴图从完全显示到消失所需的 tick 数 (10 ticks) -->
-      <fadeOutTicks>60</fadeOutTicks>
+      <fadeOutTicks>5</fadeOutTicks>
     </li>
   </modExtensions>
   </ThingDef>
