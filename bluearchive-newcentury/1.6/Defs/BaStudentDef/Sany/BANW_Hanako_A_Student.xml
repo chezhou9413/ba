@@ -2,8 +2,8 @@
   <BANWlLib.BaDef.BaStudentDef>
     <defName>BANW_Hanako_A_Student</defName>
     <label>花子(泳装)</label>
-    <studentId>BANW_Hanako</studentId>
-    <kindDef>BANW_Hanako</kindDef>
+    <studentId>BANW_Hanako_A</studentId>
+    <kindDef>BANW_Hanako_A</kindDef>
 
     <BaStudentUI>
 			

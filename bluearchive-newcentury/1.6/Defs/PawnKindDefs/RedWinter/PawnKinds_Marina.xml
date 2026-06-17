@@ -19,6 +19,7 @@
 		<backstoryFiltersOverride>
 			<li>
 				<categories>
+					<li>BANW_BackstoryRedWinter</li>
 					<li>BANW_BackstoryMarina</li>
 				</categories>
 			</li>

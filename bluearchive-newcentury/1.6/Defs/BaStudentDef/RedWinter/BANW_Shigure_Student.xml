@@ -162,7 +162,7 @@
 				</li>
 			</OneGakaStudentThingData>
 			<!-- 抽卡面板显示的纹理，就是最后翻牌那一下的头像 -->
-			<avtTexPath>Gacha/Student/Tomoe</avtTexPath>
+			<avtTexPath>Gacha/Student/Shigure</avtTexPath>
 		</baStudentData>
   </BANWlLib.BaDef.BaStudentDef>
 </Defs>

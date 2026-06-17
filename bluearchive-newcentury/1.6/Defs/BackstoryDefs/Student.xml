@@ -48,6 +48,18 @@
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
 
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentRedWinter</defName>
+		<title>红冬联邦学院</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是红冬联邦学院的一名学生,基沃托斯占地面积最大的学院，其理事会名为“红冬事务局”。因其地处偏僻，联邦理事会的权威很难辐射到此地，所以自治程度要高于一般学院。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryRedWinter</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
 <AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
 		<defName>BANW_StudentGehena</defName>
 		<title>格黑娜学园</title>
@@ -117,6 +129,18 @@
 		<slot>Adulthood</slot>
 		<spawnCategories>
  			<li>BANW_BackstoryHyakkiyako</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_Link</defName>
+		<title>百鬼夜行联合学院</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>联动其他作品的学生</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+ 			<li>BANW_BackstoryLink</li>
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
 
