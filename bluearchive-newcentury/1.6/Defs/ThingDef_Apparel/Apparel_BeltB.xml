@@ -18,7 +18,7 @@
         <equippedStatOffsets>
 		</equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
 
             <layers>
                 <li>OnSkin</li>
@@ -53,7 +53,7 @@
         <BANW_Badge_2_Piece>15</BANW_Badge_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -90,7 +90,7 @@
         <BANW_Badge_3_Piece>20</BANW_Badge_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -131,7 +131,7 @@
         <BANW_Badge_2_Piece>10</BANW_Badge_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -173,7 +173,7 @@
         <BANW_Badge_2_Piece>15</BANW_Badge_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -215,7 +215,7 @@
         <BANW_Badge_3_Piece>5</BANW_Badge_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -259,7 +259,7 @@
         <BANW_Badge_4_Piece>5</BANW_Badge_4_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -303,7 +303,7 @@
         <BANW_Badge_5_Piece>5</BANW_Badge_5_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -347,7 +347,7 @@
         <BANW_Badge_6_Piece>10</BANW_Badge_6_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -389,7 +389,7 @@
         <BANW_Badge_7_Piece>10</BANW_Badge_7_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Badge/Badge_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -421,7 +421,7 @@
 
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -460,7 +460,7 @@
         <BANW_Bag_2_Piece>15</BANW_Bag_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -497,7 +497,7 @@
         <BANW_Bag_3_Piece>20</BANW_Bag_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -538,7 +538,7 @@
         <BANW_Bag_2_Piece>10</BANW_Bag_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -580,7 +580,7 @@
         <BANW_Bag_2_Piece>15</BANW_Bag_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -622,7 +622,7 @@
         <BANW_Bag_3_Piece>5</BANW_Bag_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -663,7 +663,7 @@
         <BANW_Bag_4_Piece>5</BANW_Bag_4_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -704,7 +704,7 @@
         <BANW_Bag_5_Piece>5</BANW_Bag_5_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -747,7 +747,7 @@
         <BANW_Bag_6_Piece>10</BANW_Bag_6_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -790,7 +790,7 @@
         <BANW_Bag_7_Piece>10</BANW_Bag_7_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Bag/Bag_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Legs</li>
             </bodyPartGroups>
@@ -821,7 +821,7 @@
         <equippedStatOffsets>
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -859,7 +859,7 @@
         <BANW_Hairpin_2_Piece>15</BANW_Hairpin_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -895,7 +895,7 @@
         <BANW_Hairpin_3_Piece>20</BANW_Hairpin_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -933,7 +933,7 @@
         <BANW_Hairpin_2_Piece>10</BANW_Hairpin_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -972,7 +972,7 @@
         <BANW_Hairpin_2_Piece>15</BANW_Hairpin_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -1011,7 +1011,7 @@
         <BANW_Hairpin_3_Piece>5</BANW_Hairpin_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -1050,7 +1050,7 @@
         <BANW_Hairpin_4_Piece>5</BANW_Hairpin_4_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -1089,7 +1089,7 @@
         <BANW_Hairpin_5_Piece>5</BANW_Hairpin_5_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -1130,7 +1130,7 @@
         <BANW_Hairpin_6_Piece>10</BANW_Hairpin_6_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>
@@ -1170,7 +1170,7 @@
         <BANW_Hairpin_7_Piece>10</BANW_Hairpin_7_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Hairpin/Hairpin_1</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                 <li>Legs</li>
             </bodyPartGroups>

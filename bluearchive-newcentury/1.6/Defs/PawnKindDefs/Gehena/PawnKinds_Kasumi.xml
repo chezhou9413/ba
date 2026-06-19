@@ -110,8 +110,8 @@
                 </levelUpSounds>
 			</li>
 			<li Class="ChezhouLib.Extension.kindRule">
-				<kindName>鬼怒川</kindName>
-				<kindDesName>霞 鬼怒川</kindDesName>
+				<kindName>霞</kindName>
+				<kindDesName>鬼怒川 霞</kindDesName>
 				<Gender>Female</Gender>
 				<kindAge>16</kindAge>
 			</li>

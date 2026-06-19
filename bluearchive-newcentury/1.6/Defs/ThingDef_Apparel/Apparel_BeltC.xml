@@ -18,7 +18,7 @@
         <PainShockThreshold>+0.08</PainShockThreshold> 
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -55,7 +55,7 @@
         <BANW_Amulet_2_Piece>15</BANW_Amulet_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -90,7 +90,7 @@
         <BANW_Amulet_3_Piece>20</BANW_Amulet_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -127,7 +127,7 @@
         <BANW_Amulet_2_Piece>10</BANW_Amulet_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -170,7 +170,7 @@
         <BANW_Amulet_2_Piece>10</BANW_Amulet_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -213,7 +213,7 @@
         <BANW_Amulet_3_Piece>5</BANW_Amulet_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -256,7 +256,7 @@
         <BANW_Amulet_4_Piece>5</BANW_Amulet_4_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -299,7 +299,7 @@
         <BANW_Amulet_5_Piece>5</BANW_Amulet_5_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -342,7 +342,7 @@
         <BANW_Amulet_6_Piece>10</BANW_Amulet_6_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -385,7 +385,7 @@
         <BANW_Amulet_7_Piece>10</BANW_Amulet_7_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Amulet/Amulet_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
               <li>Eyes</li>
             </bodyPartGroups>
@@ -416,7 +416,7 @@
             <BANW_CriticalChance>+0.05</BANW_CriticalChance>
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -452,7 +452,7 @@
         <BANW_Watch_2_Piece>15</BANW_Watch_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -486,7 +486,7 @@
         <BANW_Watch_3_Piece>20</BANW_Watch_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -523,7 +523,7 @@
         <BANW_Watch_2_Piece>10</BANW_Watch_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -562,7 +562,7 @@
         <BANW_Watch_2_Piece>10</BANW_Watch_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -601,7 +601,7 @@
         <BANW_Watch_3_Piece>5</BANW_Watch_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -640,7 +640,7 @@
         <BANW_Watch_4_Piece>5</BANW_Watch_4_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -679,7 +679,7 @@
         <BANW_Watch_5_Piece>5</BANW_Watch_5_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -718,7 +718,7 @@
         <BANW_Watch_6_Piece>10</BANW_Watch_6_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -756,7 +756,7 @@
         <BANW_Watch_7_Piece>10</BANW_Watch_7_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Watch/Watch_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -790,7 +790,7 @@
         <equippedStatOffsets>
         </equippedStatOffsets>
         <apparel>
-            <wornGraphicPath>Belt/Hat/Hat_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -831,7 +831,7 @@
         <BANW_Necklace_2_Piece>15</BANW_Necklace_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -870,7 +870,7 @@
         <BANW_Necklace_3_Piece>20</BANW_Necklace_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -910,7 +910,7 @@
         <BANW_Necklace_2_Piece>10</BANW_Necklace_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -952,7 +952,7 @@
         <BANW_Necklace_2_Piece>10</BANW_Necklace_2_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -994,7 +994,7 @@
         <BANW_Necklace_3_Piece>5</BANW_Necklace_3_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -1036,7 +1036,7 @@
         <BANW_Necklace_4_Piece>5</BANW_Necklace_4_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -1078,7 +1078,7 @@
         <BANW_Necklace_5_Piece>5</BANW_Necklace_5_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -1120,7 +1120,7 @@
         <BANW_Necklace_6_Piece>10</BANW_Necklace_6_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
@@ -1162,7 +1162,7 @@
         <BANW_Necklace_7_Piece>10</BANW_Necklace_7_Piece><!--材料-->
         </costList>
         <apparel>
-            <wornGraphicPath>Belt/Necklace/Necklace_1_Thin</wornGraphicPath>
+            <wornGraphicPath></wornGraphicPath>
             <bodyPartGroups>
                <li>Eyes</li>
             </bodyPartGroups>
