@@ -18,6 +18,13 @@ namespace BANWlLib.Projectiles
         // 穿透弹配置，负责从 ThingDef 扩展中读取参数。
         private PiercingProjectileExtension Extension => def.GetModExtension<PiercingProjectileExtension>();
 
+        // 发射穿透弹，负责在需要时把近距离点击延长为按配置最大距离飞行。
+        public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null)
+        {
+            base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
+            ExtendDestinationToMaxRange();
+        }
+
         // 保存飞行状态，负责让存档读档后继续按配置造成范围伤害。
         public override void ExposeData()
         {
@@ -92,6 +99,65 @@ namespace BANWlLib.Projectiles
 
             DamagePawnsInArea();
             ticksUntilDamage = DamageIntervalTicks();
+        }
+
+        // 延长飞行终点，负责让直线技能点击近处时也沿方向飞到最大距离。
+        private void ExtendDestinationToMaxRange()
+        {
+            if (Extension == null || !Extension.extendToMaxRange)
+            {
+                return;
+            }
+
+            float range = MaxTravelRange();
+            if (range <= 0.01f)
+            {
+                return;
+            }
+
+            Vector3 direction = (destination - origin).Yto0();
+            if (direction.sqrMagnitude < 0.0001f)
+            {
+                IntVec3 fallbackCell = usedTarget.Cell;
+                direction = (fallbackCell.ToVector3Shifted() - origin).Yto0();
+            }
+
+            if (direction.sqrMagnitude < 0.0001f)
+            {
+                return;
+            }
+
+            direction.Normalize();
+            destination = origin + direction * range;
+            IntVec3 destinationCell = destination.ToIntVec3();
+            if (Map != null && !destinationCell.InBounds(Map))
+            {
+                destinationCell = ClampToMap(destinationCell, Map);
+                destination = destinationCell.ToVector3Shifted();
+            }
+
+            ticksToImpact = Mathf.Max(1, Mathf.CeilToInt((destination - origin).magnitude / def.projectile.SpeedTilesPerTick));
+            lifetime = ticksToImpact;
+        }
+
+        // 获取最大飞行距离，负责优先使用 XML 显式配置，其次使用判定长度。
+        private float MaxTravelRange()
+        {
+            if (Extension?.maxRange > 0f)
+            {
+                return Extension.maxRange;
+            }
+
+            return Extension?.damageLength > 0f ? Extension.damageLength : 0f;
+        }
+
+        // 限制终点到地图内，负责避免最大距离终点落到地图外导致立即销毁。
+        private static IntVec3 ClampToMap(IntVec3 cell, Map map)
+        {
+            return new IntVec3(
+                Mathf.Clamp(cell.x, 0, map.Size.x - 1),
+                cell.y,
+                Mathf.Clamp(cell.z, 0, map.Size.z - 1));
         }
 
         // 对范围内目标造成伤害，负责同时处理 Pawn 和墙体等建筑目标。
@@ -298,7 +364,8 @@ namespace BANWlLib.Projectiles
                 applyAffinity = Extension?.applyAffinity ?? true,
                 canHitBuilding = Extension?.canHitBuilding ?? true,
                 affectHostile = Extension?.affectHostile ?? true,
-                affectFriendly = Extension?.affectFriendly ?? false
+                affectFriendly = Extension?.affectFriendly ?? false,
+                isExSkill = Extension?.isExSkill ?? false
             };
         }
 

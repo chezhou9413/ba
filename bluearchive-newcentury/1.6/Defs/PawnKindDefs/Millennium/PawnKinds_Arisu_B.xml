@@ -67,7 +67,13 @@
 			<BAWC_TraitDef_Arisu_B_B>0</BAWC_TraitDef_Arisu_B_B>
 		</forcedTraits>
 		<modExtensions>
-			<li Class="BANWlLib.PawnProgressBarKindExtension">
+			
+			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
+				<!-- 攻击类型，作为属性克制矩阵的行。 -->
+				<damageType>Mysterious</damageType>
+				<!-- 护甲类型，作为属性克制矩阵的列。 -->
+				<defenseType>Mysterious</defenseType>
+			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
 				<starInterval>0.5</starInterval>
 				<showProgressBar>false</showProgressBar>
 				<starProgressRatios>

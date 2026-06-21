@@ -80,6 +80,8 @@ namespace BANWlLib.BaJob
                 }
 
                 BattleActionConfig action = nextAction.ToBattleAction();
+                TriggerAreaEffect(nextAction.effecterDef, map);
+                action.effecterDef = null;
                 foreach (LocalTargetInfo target in Cells)
                 {
                     if (!target.IsValid)
@@ -104,6 +106,20 @@ namespace BANWlLib.BaJob
             };
             channelingToil.defaultCompleteMode = ToilCompleteMode.Never;
             yield return channelingToil;
+        }
+
+        // 播放范围段特效，负责让 AOE 技能在目标点显示技能特效而不是依赖命中目标触发。
+        private void TriggerAreaEffect(EffecterDef effecterDef, Map map)
+        {
+            if (effecterDef == null || map == null)
+            {
+                return;
+            }
+
+            TargetInfo targetInfo = job.targetA.ToTargetInfo(map);
+            Effecter effecter = effecterDef.Spawn();
+            activeEffecters.Add(effecter);
+            effecter.Trigger(pawn, targetInfo);
         }
     }
 }

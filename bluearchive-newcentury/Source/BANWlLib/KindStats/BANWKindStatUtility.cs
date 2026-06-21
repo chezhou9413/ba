@@ -84,6 +84,8 @@ namespace BANWlLib.KindStats
 
             float offset = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthScaleOffset) + GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthScaleOffset);
             float percentOffset = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthScalePercentOffset) + GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthScalePercentOffset);
+            offset += BattleStatUtility.GetBaseHealthFlat(pawn);
+            percentOffset += BattleStatUtility.GetBaseHealthPercent(pawn);
             offset += BattleStatUtility.GetStarHealthFlat(pawn);
             percentOffset += BattleStatUtility.GetStarHealthPercent(pawn);
             return Mathf.Max(0.01f, (baseScale + offset) * Mathf.Max(0f, 1f + percentOffset));

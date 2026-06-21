@@ -140,6 +140,28 @@
 					</li>
 				</bodyAddonRules>
 			</li>
+			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
+				<!-- 学生基础生命尺度平加，参与 Pawn.HealthScale 计算，不是直接最终生命值。 -->
+				<healthFlat>0</healthFlat>
+				<!-- 学生基础生命尺度百分比，0.2 表示生命尺度额外增加 20%。 -->
+				<healthPercent>0</healthPercent>
+				<!-- 学生基础攻击力平加，进入技能、武器显示和统一伤害结算。 -->
+				<attackFlat>100</attackFlat>
+				<!-- 学生基础攻击力百分比，0.26 表示最终攻击力额外增加 26%。 -->
+				<attackPercent>0</attackPercent>
+				<!-- 学生基础治疗力平加，会叠加到 BANW_HealPowerBase 后参与治疗公式。 -->
+				<healFlat>0</healFlat>
+				<!-- 学生基础治疗力百分比，0.2 表示最终治疗力额外增加 20%。 -->
+				<healPercent>0</healPercent>
+				<!-- 学生基础受回复倍率平加，0.2 表示额外增加 20% 受疗。 -->
+				<healReceivedMultiplierOffset>0</healReceivedMultiplierOffset>
+				<!-- 学生基础 EX 技能倍率平加，0.5 表示 EX 技能倍率提高到 150%。 -->
+				<exSkillMultiplierOffset>0</exSkillMultiplierOffset>
+				<!-- 攻击类型，作为属性克制矩阵的行。 -->
+				<damageType>Vibration</damageType>
+				<!-- 护甲类型，作为属性克制矩阵的列。 -->
+				<defenseType>Explosion</defenseType>
+			</li>
 			<li Class="BANWlLib.BattleSystem.BattleStarGrowthExtension">
 				<!-- 星级生命百分比成长，starValues 从 1 星到 5 星依次读取。 -->
 				<healthPercent>

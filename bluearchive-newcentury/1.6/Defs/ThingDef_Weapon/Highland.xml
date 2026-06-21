@@ -196,12 +196,18 @@
         <damageWidth>3</damageWidth>
         <!-- 判定长度，沿飞行方向。 -->
         <damageLength>8</damageLength>
+        <!-- true 表示即使点击近处，也按 maxRange 沿点击方向飞到最大距离。 -->
+        <extendToMaxRange>true</extendToMaxRange>
+        <!-- 最大飞行距离，应与技能 range 保持一致。 -->
+        <maxRange>44</maxRange>
         <!-- 是否跳过同阵营和盟友。 -->
         <immuneFriendlyFire>true</immuneFriendlyFire>
         <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
         <baseAmount>0</baseAmount>
         <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
         <attackPowerRatio>2.0</attackPowerRatio>
+        <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>true</isExSkill>
         <!-- 是否允许暴击。 -->
         <canCrit>true</canCrit>
         <!-- 是否应用攻击类型与护甲类型克制。 -->

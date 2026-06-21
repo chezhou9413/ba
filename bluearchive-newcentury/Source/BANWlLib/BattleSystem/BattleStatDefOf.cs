@@ -3,6 +3,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
+    // BA战斗属性引用，负责让代码安全访问 XML 中定义的战斗 StatDef。
     [DefOf]
     public static class BattleStatDefOf
     {
@@ -20,6 +21,7 @@ namespace BANWlLib.BattleSystem
         public static StatDef BANW_AffinityBonus_Composite;
         public static StatDef BANW_HealthScaleOffset;
         public static StatDef BANW_HealthScalePercentOffset;
+        public static StatDef BANW_ExSkillMultiplier;
 
         static BattleStatDefOf()
         {

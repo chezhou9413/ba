@@ -9,6 +9,7 @@ using UnityEngine;
 using Verse;
 using static RimWorld.PsychicRitualRoleDef;
 using static UnityEngine.Networking.UnityWebRequest;
+using BANWlLib.BattleSystem;
 
 namespace BANWlLib
 {
@@ -95,10 +96,18 @@ namespace BANWlLib
                     field.SetValue(__instance, newLabel);
                 }      
             }
+
+            WeaponDamageDisplayUtility.TryOverrideValueString(__instance, optionalReq);
         }
 
         public static void Postfix(StatDrawEntry __instance, StatRequest optionalReq, ref string __result)
         {
+            string weaponDamageExplanation = WeaponDamageDisplayUtility.BuildExplanation(__instance, optionalReq);
+            if (!weaponDamageExplanation.NullOrEmpty())
+            {
+                __result += weaponDamageExplanation;
+            }
+
             // 举例：针对护甲穿透，修改说明文字
             if (__instance.LabelCap.Contains("护甲穿透"))
             {

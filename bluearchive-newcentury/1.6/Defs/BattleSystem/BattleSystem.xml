@@ -2,7 +2,7 @@
 <Defs>
   <BANWlLib.BattleSystem.DamageAffinityMatrixDef>
     <defName>BANW_DamageAffinityMatrix_Default</defName>
-    <label>蓝档属性克制矩阵</label>
+    <label>BA属性克制矩阵</label>
     <!-- 没有攻击类型或防御类型时使用的默认倍率。 -->
     <defaultMultiplier>1.0</defaultMultiplier>
     <!-- 每一行代表一种攻击类型，entries 里按目标防御类型配置最终克制倍率。 -->

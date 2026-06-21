@@ -21,6 +21,7 @@ namespace BANWlLib.Pojo
         public bool affectHostile = true;
         public bool affectFriendly = false;
         public bool allowPermanentInjuryHealing = false;
+        public bool isExSkill = false;
 
         // 转成统一战斗配置，负责让旧字段继续可用并进入新结算层。
         public BattleActionConfig ToBattleAction()
@@ -39,7 +40,8 @@ namespace BANWlLib.Pojo
                 canHitBuilding = isAttackBuilding,
                 affectHostile = affectHostile,
                 affectFriendly = affectFriendly,
-                allowPermanentInjuryHealing = allowPermanentInjuryHealing
+                allowPermanentInjuryHealing = allowPermanentInjuryHealing,
+                isExSkill = isExSkill
             };
         }
 

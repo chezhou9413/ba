@@ -3,6 +3,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
+    // 施法者属性快照，负责让脱手场地和延迟效果保存施放瞬间的战斗属性。
     public class BattleCasterSnapshot : IExposable
     {
         public float attackFlatBonus;
@@ -13,8 +14,10 @@ namespace BANWlLib.BattleSystem
         public float healPower;
         public float criticalChance;
         public float criticalDamage;
+        public float exSkillMultiplier = 1f;
         public damageType? damageType;
 
+        // 保存和读取快照数据，负责让存档后的场地继续使用同一套施法属性。
         public void ExposeData()
         {
             Scribe_Values.Look(ref attackFlatBonus, "attackFlatBonus", 0f);
@@ -25,6 +28,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref healPower, "healPower", 0f);
             Scribe_Values.Look(ref criticalChance, "criticalChance", 0f);
             Scribe_Values.Look(ref criticalDamage, "criticalDamage", 2f);
+            Scribe_Values.Look(ref exSkillMultiplier, "exSkillMultiplier", 1f);
             Scribe_Values.Look(ref damageType, "damageType");
         }
     }
