@@ -635,7 +635,7 @@
     <modExtensions>
     <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
        <!-- 伤害间隔 Tick 数：飞行中每经过 10 ticks (约 0.16秒) 造成一次范围伤害 -->
-      <damageIntervalTicks>300</damageIntervalTicks>
+      <damageIntervalTicks>10</damageIntervalTicks>
       <!-- 伤害宽度：垂直于飞行方向的判定范围宽度，单位为格 (10格宽) -->
       <damageWidth>2</damageWidth>
       <!-- 伤害长度：沿飞行方向的判定范围长度，单位为格 (10格长) -->

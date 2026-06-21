@@ -81,4 +81,146 @@
     </comps>
     </HediffDef>
   
+<AbilityDef>
+  <defName>BAWN_Nozomi_Train_Test</defName>
+  <label>发车测试</label>
+  <description>发射可穿墙直线子弹，对路径上的敌人和墙体按间隔造成攻击力200%的贯通伤害。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_A</iconPath>
+  <cooldownTicksRange>1800</cooldownTicksRange>
+  <hotKey>Misc11</hotKey>
+  <warmupStartSound>Nozomi_Skill_EX</warmupStartSound>
+  <showPsycastEffects>False</showPsycastEffects>
+  <stunTargetWhileCasting>false</stunTargetWhileCasting>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <showWhenDrafted>True</showWhenDrafted>
+  <hostile>true</hostile>
+  <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <verbProperties>
+    <!-- 发射投射物的技能动词，实际命中逻辑由 projectileDef 上的 Projectile_PiercingArea 执行。 -->
+    <soundCast>BANW_Wp_HG_At</soundCast>
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>44</range>
+    <warmupTime>0.5</warmupTime>
+    <requireLineOfSight>false</requireLineOfSight>
+    <targetParams>
+      <!-- 直线弹允许瞄准地面、Pawn 和建筑，用于测试穿墙与打墙。 -->
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>true</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+      <!-- 直线穿透弹 ThingDef。 -->
+      <projectileDef>BANC_Bullet_Nozomi_Train_Test</projectileDef>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <!-- 预览形状：Line 表示从施法者朝目标方向显示直线范围。 -->
+      <shape>Line</shape>
+      <!-- 最大预览距离，小于等于 0 时使用技能当前有效射程。 -->
+      <range>44</range>
+      <!-- true 表示从 projectileDef 的 PiercingProjectileExtension 读取判定宽度；长度未显式配置时使用技能射程。 -->
+      <usePiercingProjectileSize>true</usePiercingProjectileSize>
+      <!-- 是否显示施法者最大射程圈。 -->
+      <drawCasterRange>true</drawCasterRange>
+      <!-- 是否显示鼠标目标格高亮。 -->
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
+<AbilityDef>
+  <defName>BAWN_Nozomi_Field_Test</defName>
+  <label>脱手场地测试</label>
+  <description>在目标位置生成持续伤害场地，施法结束后仍持续生效。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_A</iconPath>
+  <cooldownTicksRange>2400</cooldownTicksRange>
+  <hotKey>Misc10</hotKey>
+  <targetRequired>true</targetRequired>
+  <hostile>true</hostile>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <verbProperties>
+    <!-- 普通点地技能，场地生成后由 Thing_BattleFieldController 自己 Tick。 -->
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>35</range>
+    <warmupTime>0.3</warmupTime>
+    <requireLineOfSight>false</requireLineOfSight>
+    <targetParams>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>true</canTargetBuildings>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.BattleSystem.CompProperties_AbilitySpawnBattleField">
+      <!-- 要生成的场地控制器 ThingDef。 -->
+      <fieldThingDef>BANW_BattleField_Damage_Template</fieldThingDef>
+      <!-- 覆盖场地默认持续时间，小于等于 0 时使用 ThingDef 扩展里的 durationTicks。 -->
+      <durationTicksOverride>600</durationTicksOverride>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <!-- 预览形状：Circle 表示以目标点为中心显示圆形场地范围。 -->
+      <shape>Circle</shape>
+      <!-- 最大施法距离，小于等于 0 时使用技能当前有效射程。 -->
+      <range>35</range>
+      <!-- true 表示从 fieldThingDef 的 BattleFieldControllerExtension 读取场地半径。 -->
+      <useBattleFieldRadius>true</useBattleFieldRadius>
+      <!-- 是否显示施法者最大射程圈。 -->
+      <drawCasterRange>true</drawCasterRange>
+      <!-- 是否显示鼠标目标格高亮。 -->
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
+<AbilityDef>
+  <defName>BAWN_Nozomi_StackBuff_Test</defName>
+  <label>叠层攻击测试</label>
+  <description>每次使用获得一层攻击力状态，按30%、70%、100%递增，并刷新持续时间。</description>
+  <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
+  <cooldownTicksRange>300</cooldownTicksRange>
+  <hotKey>Misc9</hotKey>
+  <targetRequired>false</targetRequired>
+  <hostile>false</hostile>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <verbProperties>
+    <verbClass>Verb_CastAbility</verbClass>
+    <drawAimPie>false</drawAimPie>
+    <range>-1</range>
+    <warmupTime>0.1</warmupTime>
+    <targetParams>
+      <canTargetSelf>true</canTargetSelf>
+      <canTargetPawns>false</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityGiveHediff">
+      <compClass>CompAbilityEffect_GiveHediff</compClass>
+      <!-- 可叠层攻击 Buff，重复施加时由 HediffComp_BattleStack 叠层并刷新时间。 -->
+      <hediffDef>BANW_BattleStack_Attack_Test</hediffDef>
+      <onlyApplyToSelf>true</onlyApplyToSelf>
+      <!-- 不能替换已有 Hediff，否则叠层组件没有机会累加层数。 -->
+      <replaceExisting>false</replaceExisting>
+    </li>
+  </comps>
+</AbilityDef>
+
+<DamageDef ParentName="BANC_Damage_guantong">
+  <defName>BANC_Damage_Nozomi_Train</defName>
+  <!-- 伤害命中时播放的方向自适应特效。 -->
+  <damageEffecter>BANW_Effecter_DirectionalImpact_Test</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+</DamageDef>
+
 </Defs>

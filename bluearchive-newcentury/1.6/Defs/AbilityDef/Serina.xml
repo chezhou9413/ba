@@ -142,8 +142,13 @@
         <disappearsAfterTicks>150</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>4</healAmount>
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>0.04</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
         <healIntervalTicks>1</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
       </li>
       <li Class="HediffCompProperties_Effecter">
@@ -183,8 +188,13 @@
         <disappearsAfterTicks>120</disappearsAfterTicks>
       </li>
     <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>6</healAmount>
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 2 tick 回复最终治疗力的 12%。 -->
+        <healPowerRatio>0.12</healPowerRatio>
+        <!-- 每 2 tick 触发一次治疗。 -->
         <healIntervalTicks>2</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
       </li>
       <li Class="HediffCompProperties_Effecter">
