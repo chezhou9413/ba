@@ -67,9 +67,9 @@
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
           <stages>
           <li>     
-           <statFactors>
+           <statOffsets>
          <BANW_RangedWeapon_Penetration>0.54</BANW_RangedWeapon_Penetration>
-           </statFactors>
+           </statOffsets>
            </li>
           </stages>
         <comps>
