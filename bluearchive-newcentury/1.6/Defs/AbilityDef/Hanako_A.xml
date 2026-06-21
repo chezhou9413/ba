@@ -38,6 +38,20 @@
         <canTargetBuildings>false</canTargetBuildings> <!-- 是否可以瞄准建筑物 -->
       </targetParams>
     </verbProperties>
+    <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <!-- 预览形状：Fan 表示从施法者朝目标方向显示扇形范围。 -->
+        <shape>Fan</shape>
+        <!-- 最大预览距离，小于等于 0 时使用技能当前有效射程。 -->
+        <range>44</range>
+        <!-- 扇形角度，需要和 verbProperties 里的 fanArc 保持一致。 -->
+        <fanArc>60</fanArc>
+        <!-- 是否显示施法者最大射程圈。 -->
+        <drawCasterRange>true</drawCasterRange>
+        <!-- 是否显示鼠标目标格高亮。 -->
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
+    </modExtensions>
     <comps>
       <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
   <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
@@ -90,7 +104,14 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>70</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>85</damageAmount>
+                <damageAmount>0</damageAmount>
+                <baseAmount>0</baseAmount>
+                <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
+                <attackPowerRatio>1.18</attackPowerRatio>
+                <!-- 允许该段伤害暴击。 -->
+                <canCrit>true</canCrit>
+                <!-- 允许该段伤害应用属性克制。 -->
+                <applyAffinity>true</applyAffinity>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 
@@ -102,7 +123,14 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>85</damageAmount>
+                <damageAmount>0</damageAmount>
+                <baseAmount>0</baseAmount>
+                <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
+                <attackPowerRatio>1.18</attackPowerRatio>
+                <!-- 允许该段伤害暴击。 -->
+                <canCrit>true</canCrit>
+                <!-- 允许该段伤害应用属性克制。 -->
+                <applyAffinity>true</applyAffinity>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 
@@ -114,7 +142,14 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>90</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>85</damageAmount>
+                <damageAmount>0</damageAmount>
+                <baseAmount>0</baseAmount>
+                <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
+                <attackPowerRatio>1.18</attackPowerRatio>
+                <!-- 允许该段伤害暴击。 -->
+                <canCrit>true</canCrit>
+                <!-- 允许该段伤害应用属性克制。 -->
+                <applyAffinity>true</applyAffinity>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 
@@ -124,21 +159,42 @@
             </li>
             <li>
                 <tick>100</tick>
-                <damageAmount>85</damageAmount>
+                <damageAmount>0</damageAmount>
+                <baseAmount>0</baseAmount>
+                <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
+                <attackPowerRatio>1.18</attackPowerRatio>
+                <!-- 允许该段伤害暴击。 -->
+                <canCrit>true</canCrit>
+                <!-- 允许该段伤害应用属性克制。 -->
+                <applyAffinity>true</applyAffinity>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
             </li>
         <li>
                 <tick>110</tick>
-                <damageAmount>85</damageAmount>
+                <damageAmount>0</damageAmount>
+                <baseAmount>0</baseAmount>
+                <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
+                <attackPowerRatio>1.18</attackPowerRatio>
+                <!-- 允许该段伤害暴击。 -->
+                <canCrit>true</canCrit>
+                <!-- 允许该段伤害应用属性克制。 -->
+                <applyAffinity>true</applyAffinity>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <penetration>0</penetration>
                 <effecterDef></effecterDef>
             </li>
               <li>
                 <tick>120</tick>
-                <damageAmount>85</damageAmount>
+                <damageAmount>0</damageAmount>
+                <baseAmount>0</baseAmount>
+                <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
+                <attackPowerRatio>1.18</attackPowerRatio>
+                <!-- 允许该段伤害暴击。 -->
+                <canCrit>true</canCrit>
+                <!-- 允许该段伤害应用属性克制。 -->
+                <applyAffinity>true</applyAffinity>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <penetration>0</penetration>
                 <effecterDef></effecterDef>

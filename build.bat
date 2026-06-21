@@ -3,8 +3,8 @@ chcp 65001 > nul
 setlocal
 
 REM 脚本职责：在外层开发目录中编译 BANWlLib C# 项目。
-set "PROJECT_FILE=%~dp0bluearchive-newcentury\Source\ClassLibrary1\BANWlLib.csproj"
-set "PROJECT_DIR=%~dp0bluearchive-newcentury\Source\ClassLibrary1"
+set "PROJECT_FILE=%~dp0bluearchive-newcentury\Source\BANWlLib\BANWlLib.csproj"
+set "PROJECT_DIR=%~dp0bluearchive-newcentury\Source\BANWlLib"
 set "CONFIGURATION=%~1"
 if "%CONFIGURATION%"=="" set "CONFIGURATION=Debug"
 
