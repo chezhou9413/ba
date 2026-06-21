@@ -46,6 +46,10 @@
 				<range>10~15</range>
 			</li>
 			<li>
+				<skill>Mining</skill>
+				<range>10</range>
+			</li>
+			<li>
 				<skill>Crafting</skill>
 				<range>10~15</range>
 			</li>

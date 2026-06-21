@@ -14,7 +14,7 @@
           <li><defenseType>Explosion</defenseType><multiplier>2.0</multiplier></li>
           <li><defenseType>Through</defenseType><multiplier>1.0</multiplier></li>
           <li><defenseType>Mysterious</defenseType><multiplier>0.5</multiplier></li>
-          <li><defenseType>Vibration</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Vibration</defenseType><multiplier>0.5</multiplier></li>
           <li><defenseType>Composite</defenseType><multiplier>1.0</multiplier></li>
         </entries>
       </li>
@@ -22,10 +22,10 @@
         <!-- 贯通攻击，当前按重装优势、弹力劣势处理。 -->
         <attackType>Through</attackType>
         <entries>
-          <li><defenseType>Explosion</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Explosion</defenseType><multiplier>0.5</multiplier></li>
           <li><defenseType>Through</defenseType><multiplier>2.0</multiplier></li>
           <li><defenseType>Mysterious</defenseType><multiplier>1.0</multiplier></li>
-          <li><defenseType>Vibration</defenseType><multiplier>0.5</multiplier></li>
+          <li><defenseType>Vibration</defenseType><multiplier>1.0</multiplier></li>
           <li><defenseType>Composite</defenseType><multiplier>1.0</multiplier></li>
         </entries>
       </li>
@@ -33,11 +33,11 @@
         <!-- 神秘攻击，当前按特殊优势、轻装劣势处理。 -->
         <attackType>Mysterious</attackType>
         <entries>
-          <li><defenseType>Explosion</defenseType><multiplier>0.5</multiplier></li>
-          <li><defenseType>Through</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Explosion</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Through</defenseType><multiplier>0.5</multiplier></li>
           <li><defenseType>Mysterious</defenseType><multiplier>2.0</multiplier></li>
           <li><defenseType>Vibration</defenseType><multiplier>1.0</multiplier></li>
-          <li><defenseType>Composite</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Composite</defenseType><multiplier>0.5</multiplier></li>
         </entries>
       </li>
       <li>
@@ -46,9 +46,9 @@
         <entries>
           <li><defenseType>Explosion</defenseType><multiplier>1.0</multiplier></li>
           <li><defenseType>Through</defenseType><multiplier>0.5</multiplier></li>
-          <li><defenseType>Mysterious</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Mysterious</defenseType><multiplier>1.5</multiplier></li>
           <li><defenseType>Vibration</defenseType><multiplier>2.0</multiplier></li>
-          <li><defenseType>Composite</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Composite</defenseType><multiplier>0.5</multiplier></li>
         </entries>
       </li>
       <li>

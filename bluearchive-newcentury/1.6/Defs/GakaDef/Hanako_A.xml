@@ -34,7 +34,7 @@
         <!-- 普通三星池配置 -->
         <!-- Weight=0.7 表示每次抽卡有0.7%的基础概率抽中三星 -->
         <threeStarPool>
-            <Weight>5.0</Weight>
+            <Weight>2.0</Weight>
             <StudentList>
                 <li>BANW_Shiroko_Student</li>                    <!-- 白子 -->
                 <li>BANW_Hoshiro_Student</li>                    <!-- 星野 -->
@@ -150,7 +150,7 @@
         <!-- 一星池配置 -->
         <!-- Weight=60 表示每次抽卡有60%概率抽中一星 (保底最低稀有度) -->
         <oneStarPool>
-            <Weight>75.5</Weight>
+            <Weight>78.5</Weight>
             <StudentList>
                 <li>BANW_Juri_Student</li>                       <!-- 树里 -->
                 <li>BANW_Shimiko_Student</li>                    <!-- 志美子 -->

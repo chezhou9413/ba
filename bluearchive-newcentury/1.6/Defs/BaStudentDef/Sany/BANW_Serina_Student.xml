@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>集中治疗方案A</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对1名我方单位恢复<color=#00FFFF>300</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[对1名我方单位恢复自身治愈力<color=#00FFFF>228%</color>的生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -81,7 +81,7 @@
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle>紧急救护方案B</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对1名我方单位恢复<color=#00FFFF>180</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[对1名我方单位恢复自身治愈力<color=#00FFFF>178%</color>的生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -91,7 +91,7 @@
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>白衣天使</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身治疗质量增加<color=#00FFFF>26%</color>]]>
+				<AbilityIntroduction><![CDATA[自身治愈力增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

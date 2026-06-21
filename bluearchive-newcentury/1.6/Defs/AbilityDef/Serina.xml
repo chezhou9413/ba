@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Serina_EXX</defName>
  <label>集中治疗方案A</label>
- <description>对1名我方单位恢复600点生命值</description>
+ <description>对1名我方单位恢复自身治愈力228%的生命值</description>
  <iconPath>Ability/Icon/Serina/Serina_EXX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -18,6 +18,7 @@
  <hostile>false</hostile><!-- 是否是敌对行为 -->
  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
  <statBases>
+  <Ability_Duration>0.1</Ability_Duration>
  </statBases>
  <verbProperties>
   <warmupEffecter></warmupEffecter>
@@ -77,7 +78,7 @@
 <AbilityDef>
 <defName>BAWN_Serina_EX</defName>
  <label>紧急救护方案B</label>
- <description>对1名我方单位恢复360点生命值</description>
+ <description>对1名我方单位恢复自身治愈力178%的生命值</description>
  <iconPath>Ability/Icon/Natsu/Natsu_EXX</iconPath>
  <cooldownTicksRange>2100</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -93,7 +94,7 @@
  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
  <statBases>
 <!-- 持续时间：20 秒 = 1200 ticks -->
-  <Ability_Duration>2</Ability_Duration>
+  <Ability_Duration>0.1</Ability_Duration>
  </statBases>
  <verbProperties>
   <warmupEffecter>BANW_Effecter_A</warmupEffecter>
@@ -129,7 +130,7 @@
         <!-- 显示名称 -->
         <label>集中治疗方案A</label>
         <!-- 效果描述 -->
-        <description>对1名我方单位恢复600点生命值</description>
+        <description>对1名我方单位恢复自身治愈力228%的生命值</description>
         <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -139,15 +140,15 @@
         <comps>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
-        <disappearsAfterTicks>150</disappearsAfterTicks>
+        <disappearsAfterTicks>60</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <healAmount>0</healAmount>
         <!-- 每 tick 回复最终治疗力的 4%。 -->
-        <healPowerRatio>0.04</healPowerRatio>
+        <healPowerRatio>1.14</healPowerRatio>
         <!-- 每 tick 触发一次治疗。 -->
-        <healIntervalTicks>1</healIntervalTicks>
+        <healIntervalTicks>3</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
       </li>
@@ -185,15 +186,15 @@
         <comps>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
-        <disappearsAfterTicks>120</disappearsAfterTicks>
+        <disappearsAfterTicks>10</disappearsAfterTicks>
       </li>
     <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <healAmount>0</healAmount>
         <!-- 每 2 tick 回复最终治疗力的 12%。 -->
-        <healPowerRatio>0.12</healPowerRatio>
+        <healPowerRatio>1.78</healPowerRatio>
         <!-- 每 2 tick 触发一次治疗。 -->
-        <healIntervalTicks>2</healIntervalTicks>
+        <healIntervalTicks>6</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
       </li>

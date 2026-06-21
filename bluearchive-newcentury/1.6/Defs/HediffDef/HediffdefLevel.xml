@@ -26,6 +26,7 @@
           <ArmorRating_Blunt>0.0</ArmorRating_Blunt>
           <ArmorRating_Heat>0.0</ArmorRating_Heat>
           <BANW_HealthScaleOffset>0.00</BANW_HealthScaleOffset>
+         <BANW_RangedWeapon_Penetration>0</BANW_RangedWeapon_Penetration>
         </statOffsets>
       </li>
       <li>
