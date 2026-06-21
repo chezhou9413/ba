@@ -54,6 +54,7 @@ namespace BANWlLib.Pojo
         public bool affectHostile = true;
         public bool affectFriendly = false;
         public bool allowPermanentInjuryHealing = false;
+        public bool isExSkill = false;
 
         // 保存和读取延迟效果数据，负责支持存读档。
         public void ExposeData()
@@ -71,6 +72,7 @@ namespace BANWlLib.Pojo
             Scribe_Values.Look(ref affectHostile, "affectHostile", true);
             Scribe_Values.Look(ref affectFriendly, "affectFriendly", false);
             Scribe_Values.Look(ref allowPermanentInjuryHealing, "allowPermanentInjuryHealing", false);
+            Scribe_Values.Look(ref isExSkill, "isExSkill", false);
             Scribe_Defs.Look(ref damageType, "damageType");
             Scribe_Defs.Look(ref effecterDef, "effecterDef");
             Scribe_Defs.Look(ref tiggerHediff, "tiggerHediff");
@@ -94,7 +96,8 @@ namespace BANWlLib.Pojo
                 canHitBuilding = isAttackBuilding,
                 affectHostile = affectHostile,
                 affectFriendly = affectFriendly,
-                allowPermanentInjuryHealing = allowPermanentInjuryHealing
+                allowPermanentInjuryHealing = allowPermanentInjuryHealing,
+                isExSkill = isExSkill
             };
         }
 

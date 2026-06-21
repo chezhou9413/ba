@@ -171,7 +171,10 @@
     <Compile Include="BaVerb\Verb_SphereArea.cs" />
     <Compile Include="BaVerb\Verb_SustainedAreaAttack.cs" />
     <Compile Include="BaVerb\Verb_SustainedAreaAttackBox.cs" />
+    <Compile Include="BattleSystem\AbilityBattleTooltipExtension.cs" />
+    <Compile Include="BattleSystem\AbilityBattleTooltipUtility.cs" />
     <Compile Include="BattleSystem\BattleActionConfig.cs" />
+    <Compile Include="BattleSystem\BattleBaseStatExtension.cs" />
     <Compile Include="BattleSystem\BattleCasterSnapshot.cs" />
     <Compile Include="BattleSystem\BattleDamageDisplayState.cs" />
     <Compile Include="BattleSystem\BattleDamageRequest.cs" />
@@ -182,10 +185,13 @@
     <Compile Include="BattleSystem\BattleStarGrowthExtension.cs" />
     <Compile Include="BattleSystem\BattleStatDefOf.cs" />
     <Compile Include="BattleSystem\BattleStatUtility.cs" />
+    <Compile Include="BattleSystem\BattleStatVisibilityPatch.cs" />
+    <Compile Include="BattleSystem\CommandAbilityBattleTooltipPatch.cs" />
     <Compile Include="BattleSystem\CompAbilityEffect_SpawnBattleField.cs" />
     <Compile Include="BattleSystem\DamageAffinityMatrixDef.cs" />
     <Compile Include="BattleSystem\HediffComp_BattleStack.cs" />
     <Compile Include="BattleSystem\Thing_BattleFieldController.cs" />
+    <Compile Include="BattleSystem\WeaponDamageDisplayUtility.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="comp\CompSpawnPawnWithEffect.cs" />
     <Compile Include="comp\DropPosComp.cs" />

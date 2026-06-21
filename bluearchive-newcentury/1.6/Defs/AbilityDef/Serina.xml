@@ -43,6 +43,27 @@
         <projectileDef>BANC_Bullet_Serina_EXX</projectileDef>
       </li>
 </comps>
+ <modExtensions>
+   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+     <showBattleFormula>true</showBattleFormula>
+     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+     <previewActions>
+       <li>
+         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+         <baseAmount>0</baseAmount>
+         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <healPowerRatio>0.04</healPowerRatio>
+         <!-- true 表示该段是治疗。 -->
+         <isHealing>true</isHealing>
+         <!-- 治疗是否允许暴击。 -->
+         <canCrit>false</canCrit>
+         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+         <isExSkill>true</isExSkill>
+       </li>
+     </previewActions>
+   </li>
+ </modExtensions>
 </AbilityDef>
 <ThingDef ParentName="BaseGrenadeProjectile">
     <defName>BANC_Bullet_Serina_EXX</defName>
@@ -151,6 +172,8 @@
         <healIntervalTicks>3</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>true</isExSkill>
       </li>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>

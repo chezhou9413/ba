@@ -30,6 +30,8 @@ namespace BANWlLib.BaJob
         private void actionDamageSetting(DamageSetting damage, Map map)
         {
             BattleActionConfig action = damage.ToBattleAction();
+            TriggerAreaEffect(damage.effecterDef, map);
+            action.effecterDef = null;
             foreach (LocalTargetInfo target in Cells)
             {
                 if (!target.IsValid)
@@ -49,6 +51,20 @@ namespace BANWlLib.BaJob
                     BattleStatUtility.ApplyAction(pawn, thing, action);
                 }
             }
+        }
+
+        // 播放延迟范围特效，负责让子段配置的 effecterDef 在范围中心触发。
+        private void TriggerAreaEffect(EffecterDef effecterDef, Map map)
+        {
+            if (effecterDef == null || map == null)
+            {
+                return;
+            }
+
+            TargetInfo targetInfo = job.targetA.ToTargetInfo(map);
+            Effecter effecter = effecterDef.Spawn();
+            activeEffecters.Add(effecter);
+            effecter.Trigger(pawn, targetInfo);
         }
 
         // 生成 Toil，负责维护主时间轴、待触发列表和朝向。

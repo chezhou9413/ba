@@ -8,7 +8,7 @@
     <allowedTimeOfDay>Any</allowedTimeOfDay>
     <tense>false</tense>
     <playOnMap>false</playOnMap>
-    <description>蔚蓝档案背景音乐</description>
+    <description>BA背景音乐</description>
   </SongDef>
    <SongDef>
     <defName>BlueArchive_ROOMBGM2</defName>
@@ -18,7 +18,7 @@
     <allowedTimeOfDay>Any</allowedTimeOfDay>
     <tense>false</tense>
     <playOnMap>false</playOnMap>
-    <description>蔚蓝档案房间音乐</description>
+    <description>BA房间音乐</description>
   </SongDef>
    <SongDef>
     <defName>BlueArchive_ROOMBGM3</defName>
@@ -28,7 +28,7 @@
     <allowedTimeOfDay>Any</allowedTimeOfDay>
     <tense>false</tense>
     <playOnMap>false</playOnMap>
-    <description>蔚蓝档案商店音乐</description>
+    <description>BA商店音乐</description>
   </SongDef>
   <SongDef>
     <defName>BlueArchive_ROOMBGM4</defName>
@@ -38,6 +38,6 @@
     <allowedTimeOfDay>Any</allowedTimeOfDay>
     <tense>false</tense>
     <playOnMap>false</playOnMap>
-    <description>蔚蓝档案学生图鉴音乐</description>
+    <description>BA学生图鉴音乐</description>
   </SongDef>
 </Defs> 

@@ -75,7 +75,13 @@
 			<BAWC_TraitDef_Iori_B>0</BAWC_TraitDef_Iori_B>
 		</forcedTraits>
 		<modExtensions>
-			<li Class="BANWlLib.PawnProgressBarKindExtension">
+			
+			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
+				<!-- 攻击类型，作为属性克制矩阵的行。 -->
+				<damageType>Through</damageType>
+				<!-- 护甲类型，作为属性克制矩阵的列。 -->
+				<defenseType>Through</defenseType>
+			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
 				<starInterval>0.5</starInterval>
 				<showProgressBar>false</showProgressBar>
 				<starProgressRatios>

@@ -13,6 +13,60 @@ namespace BANWlLib.BattleSystem
     {
         private static DamageAffinityMatrixDef cachedAffinityMatrix;
 
+        // 获取学生基础属性扩展，负责从 PawnKindDef 读取学生固有战斗属性。
+        public static BattleBaseStatExtension GetBaseStatExtension(Pawn pawn)
+        {
+            return pawn?.kindDef?.GetModExtension<BattleBaseStatExtension>();
+        }
+
+        // 获取学生基础生命尺度平加，负责接入 HealthScale 计算。
+        public static float GetBaseHealthFlat(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.healthFlat ?? 0f;
+        }
+
+        // 获取学生基础生命尺度百分比，负责接入 HealthScale 计算。
+        public static float GetBaseHealthPercent(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.healthPercent ?? 0f;
+        }
+
+        // 获取学生基础攻击力平加，负责接入最终攻击力计算。
+        public static float GetBaseAttackFlat(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.attackFlat ?? 0f;
+        }
+
+        // 获取学生基础攻击力百分比，负责接入最终攻击力计算。
+        public static float GetBaseAttackPercent(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.attackPercent ?? 0f;
+        }
+
+        // 获取学生基础治疗力平加，负责接入最终治疗力计算。
+        public static float GetBaseHealFlat(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.healFlat ?? 0f;
+        }
+
+        // 获取学生基础治疗力百分比，负责接入最终治疗力计算。
+        public static float GetBaseHealPercent(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.healPercent ?? 0f;
+        }
+
+        // 获取学生基础受回复倍率平加，负责接入受疗倍率计算。
+        public static float GetBaseHealReceivedMultiplierOffset(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.healReceivedMultiplierOffset ?? 0f;
+        }
+
+        // 获取学生基础 EX 技能倍率平加，负责接入 EX 技能最终倍率。
+        public static float GetBaseExSkillMultiplierOffset(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.exSkillMultiplierOffset ?? 0f;
+        }
+
         public static float GetStarHealthFlat(Pawn pawn)
         {
             BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
@@ -95,6 +149,7 @@ namespace BANWlLib.BattleSystem
             }
 
             return Mathf.Max(0f,
+                GetBaseAttackFlat(pawn) +
                 pawn.GetStatValue(BattleStatDefOf.BANW_RangedWeapon_Damage) +
                 GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_RangedWeapon_Damage) +
                 GetStarAttackFlat(pawn));
@@ -107,7 +162,8 @@ namespace BANWlLib.BattleSystem
                 return 1f;
             }
 
-            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_FinalDamageMultiplier) +
+            float bonus = GetBaseAttackPercent(pawn) +
+                          pawn.GetStatValue(BattleStatDefOf.BANW_FinalDamageMultiplier) +
                           GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_FinalDamageMultiplier) +
                           GetStarAttackPercent(pawn);
             return Mathf.Max(0f, 1f + bonus);
@@ -141,6 +197,7 @@ namespace BANWlLib.BattleSystem
             }
 
             return Mathf.Max(0f,
+                GetBaseHealFlat(pawn) +
                 pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerBase) +
                 GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_HealPowerBase) +
                 GetStarHealFlat(pawn));
@@ -153,7 +210,8 @@ namespace BANWlLib.BattleSystem
                 return 1f;
             }
 
-            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerMultiplier) +
+            float bonus = GetBaseHealPercent(pawn) +
+                          pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerMultiplier) +
                           GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_HealPowerMultiplier) +
                           GetStarHealPercent(pawn);
             return Mathf.Max(0f, 1f + bonus);
@@ -187,8 +245,39 @@ namespace BANWlLib.BattleSystem
             }
 
             float multiplier = pawn.GetStatValue(BattleStatDefOf.BANW_HealReceivedMultiplier) +
+                               GetBaseHealReceivedMultiplierOffset(pawn) +
                                GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_HealReceivedMultiplier);
             return Mathf.Max(0f, multiplier);
+        }
+
+        // 获取角色 EX 技能倍率，负责把属性和叠层状态加成合并为最终倍率。
+        public static float GetExSkillMultiplier(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 1f;
+            }
+
+            float multiplier = pawn.GetStatValue(BattleStatDefOf.BANW_ExSkillMultiplier) +
+                               GetBaseExSkillMultiplierOffset(pawn) +
+                               GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_ExSkillMultiplier);
+            return Mathf.Max(0f, multiplier);
+        }
+
+        // 获取本次动作的 EX 技能倍率，负责在普通动作和 EX 动作之间选择正确倍率。
+        public static float GetExSkillMultiplier(Thing instigator, BattleCasterSnapshot snapshot, bool isExSkill)
+        {
+            if (!isExSkill)
+            {
+                return 1f;
+            }
+
+            if (snapshot != null)
+            {
+                return Mathf.Max(0f, snapshot.exSkillMultiplier);
+            }
+
+            return GetExSkillMultiplier(instigator as Pawn);
         }
 
         public static BattleCasterSnapshot CreateSnapshot(Pawn pawn)
@@ -212,6 +301,7 @@ namespace BANWlLib.BattleSystem
                 healPower = healFlatBonus * healMultiplier,
                 criticalChance = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalChance) + GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_CriticalChance),
                 criticalDamage = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamage) + GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_CriticalDamage),
+                exSkillMultiplier = GetExSkillMultiplier(pawn),
                 damageType = TryGetDamageType(pawn)
             };
         }
@@ -253,6 +343,9 @@ namespace BANWlLib.BattleSystem
                 amount *= result.affinityMultiplier;
             }
 
+            result.exSkillMultiplier = GetExSkillMultiplier(request.instigator, request.snapshot, request.isExSkill);
+            amount *= result.exSkillMultiplier;
+
             result.finalAmount = Mathf.Max(0f, amount);
             return result;
         }
@@ -288,6 +381,8 @@ namespace BANWlLib.BattleSystem
             result.isCrit = TryRollCrit(casterPawn, request.snapshot, request.canCrit, out critMultiplier);
             amount *= critMultiplier;
             amount *= GetHealReceivedMultiplier(request.target);
+            result.exSkillMultiplier = GetExSkillMultiplier(request.instigator, request.snapshot, request.isExSkill);
+            amount *= result.exSkillMultiplier;
             result.finalAmount = Mathf.Max(0f, amount);
             return result;
         }
@@ -368,6 +463,7 @@ namespace BANWlLib.BattleSystem
                     healPowerRatio = action.healPowerRatio,
                     canCrit = action.canCrit,
                     allowPermanentInjuryHealing = action.allowPermanentInjuryHealing,
+                    isExSkill = action.isExSkill,
                     snapshot = snapshot
                 });
             }
@@ -383,6 +479,7 @@ namespace BANWlLib.BattleSystem
                     penetration = action.penetration,
                     canCrit = action.canCrit,
                     applyAffinity = action.applyAffinity,
+                    isExSkill = action.isExSkill,
                     snapshot = snapshot
                 });
             }
@@ -496,13 +593,8 @@ namespace BANWlLib.BattleSystem
                 return null;
             }
 
-            BaStudentDef studentDef;
-            if (StudentIdentityUtility.TryGetStudentDef(StudentIdentityUtility.GetStudentId(pawn), out studentDef) && studentDef?.baStudentData != null)
-            {
-                return studentDef.baStudentData.DamageType;
-            }
-
-            return null;
+            // 读取 PawnKindDef 扩展中的攻击类型，属性克制不再从 TraitDef 或学生 UI 数据读取。
+            return ParseConfiguredDamageType(pawn, GetBaseStatExtension(pawn)?.damageType, "damageType");
         }
 
         public static damageType? TryGetDefenseType(Pawn pawn)
@@ -512,12 +604,25 @@ namespace BANWlLib.BattleSystem
                 return null;
             }
 
-            BaStudentDef studentDef;
-            if (StudentIdentityUtility.TryGetStudentDef(StudentIdentityUtility.GetStudentId(pawn), out studentDef) && studentDef?.baStudentData != null)
+            // 读取 PawnKindDef 扩展中的护甲类型，属性克制不再从 TraitDef 或学生 UI 数据读取。
+            return ParseConfiguredDamageType(pawn, GetBaseStatExtension(pawn)?.defenseType, "defenseType");
+        }
+
+        // 解析配置中的属性类型，负责让 PawnKindDef 扩展成为唯一战斗属性类型来源。
+        private static damageType? ParseConfiguredDamageType(Pawn pawn, string value, string fieldName)
+        {
+            if (value.NullOrEmpty())
             {
-                return studentDef.baStudentData.DefenseType;
+                return null;
             }
 
+            damageType parsedValue;
+            if (System.Enum.TryParse(value, out parsedValue))
+            {
+                return parsedValue;
+            }
+
+            Log.Error("[BANW] PawnKindDef " + pawn.kindDef?.defName + " 的 " + fieldName + " 配置无效：" + value);
             return null;
         }
 

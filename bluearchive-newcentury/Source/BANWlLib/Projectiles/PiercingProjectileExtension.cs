@@ -8,9 +8,12 @@ namespace BANWlLib.Projectiles
         public int damageIntervalTicks = 1;
         public float damageWidth = 1f;
         public float damageLength = 1f;
+        public bool extendToMaxRange = false;
+        public float maxRange = 0f;
         public bool immuneFriendlyFire = true;
         public float baseAmount = 0f;
         public float attackPowerRatio = 0f;
+        public bool isExSkill = false;
         public bool canCrit = true;
         public bool applyAffinity = true;
         public bool canHitBuilding = true;

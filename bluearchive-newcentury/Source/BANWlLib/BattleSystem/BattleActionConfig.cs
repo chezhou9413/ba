@@ -2,6 +2,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
+    // 统一战斗动作配置，负责描述一次伤害、治疗或附加状态效果的可配置参数。
     public class BattleActionConfig : IExposable
     {
         public float baseAmount = 0f;
@@ -18,7 +19,9 @@ namespace BANWlLib.BattleSystem
         public bool affectHostile = true;
         public bool affectFriendly = false;
         public bool allowPermanentInjuryHealing = false;
+        public bool isExSkill = false;
 
+        // 保存和读取战斗动作配置，负责支持场地控制器等可存档对象。
         public void ExposeData()
         {
             Scribe_Values.Look(ref baseAmount, "baseAmount", 0f);
@@ -32,6 +35,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref affectHostile, "affectHostile", true);
             Scribe_Values.Look(ref affectFriendly, "affectFriendly", false);
             Scribe_Values.Look(ref allowPermanentInjuryHealing, "allowPermanentInjuryHealing", false);
+            Scribe_Values.Look(ref isExSkill, "isExSkill", false);
             Scribe_Defs.Look(ref damageDef, "damageDef");
             Scribe_Defs.Look(ref triggerHediff, "triggerHediff");
             Scribe_Defs.Look(ref effecterDef, "effecterDef");

@@ -112,6 +112,8 @@
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
+                <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+                <isExSkill>true</isExSkill>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 

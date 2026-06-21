@@ -11,6 +11,7 @@ namespace BANWlLib.comp
         public float healPowerRatio = 0f;
         public int healIntervalTicks = 60;
         public bool isHeatScar = true;
+        public bool isExSkill = false;
 
         // 初始化组件类型，负责把配置绑定到实际再生组件。
         public HediffCompProps_Regeneration()
@@ -40,7 +41,8 @@ namespace BANWlLib.comp
                 baseAmount = Props.healAmount,
                 healPowerRatio = Props.healPowerRatio,
                 canCrit = false,
-                allowPermanentInjuryHealing = Props.isHeatScar
+                allowPermanentInjuryHealing = Props.isHeatScar,
+                isExSkill = Props.isExSkill
             });
         }
     }

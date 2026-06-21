@@ -2,7 +2,7 @@
 <Defs>
 <DesignationCategoryDef>
     <defName>BANW_BlueA</defName>
-    <label>碧蓝档案</label>
+    <label>BA</label>
     <order>4</order>
     <specialDesignatorClasses>
     <li>Designator_Cancel</li>
