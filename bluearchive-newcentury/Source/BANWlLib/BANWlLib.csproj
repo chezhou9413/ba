@@ -262,6 +262,7 @@
     <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionSelect.cs" />
     <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionType.cs" />
     <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionInfo.cs" />
+    <Compile Include="mainUI\ManualUI\BAManualUIImageLoader.cs" />
     <Compile Include="mainUI\MonoComp\messageUILord.cs" />
     <Compile Include="mainUI\MonoComp\MonoComp_backButtom.cs" />
     <Compile Include="mainUI\MonoComp\pilianggoumai.cs" />

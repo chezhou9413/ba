@@ -2,6 +2,7 @@ using BANWlLib.BaDef;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.Tool;
 using MyCoolMusicMod.MyCoolMusicMod;
+using newpro;
 using UnityEngine;
 using UnityEngine.UI;
 using Verse;
@@ -36,7 +37,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         {
             StudentManualEvents.OnRefreshAllStudentData += UpDataStudentData;
 
-            avt.sprite = BaStudentUI.StudentAvatarSprite;
+            avt.sprite = imgcvT2d.LoadSpriteFromFile(BaStudentUI.StudentAvatar);
             studentNameText.text = BaStudentUI.StudentName;
             Collect.interactable = true;
 

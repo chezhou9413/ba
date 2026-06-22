@@ -90,7 +90,7 @@ namespace newpro
             {
                 if (UiMapData.modRootPath == null)
                 {
-                    UiMapData.modRootPath = LoadedModManager.GetMod<LordBgmData>().Content.RootDir;
+                    UiMapData.modRootPath = LoadedModManager.GetMod<BANWlLib.newpro>().Content.RootDir;
                 }
 
                 string UIimgPath = Path.Combine(UiMapData.modRootPath, "Common", "Textures");
@@ -115,6 +115,7 @@ namespace newpro
                     Log.Error("[抽卡UI] 主 UI 初始化失败，已停止本轮初始化，避免加载界面反复重试。");
                     return false;
                 }
+                LoopBGMManager.EnsureAudioLoaded();
                 ManualLord.lord();
                 MissionUIlord.lord();
                 return true;
@@ -133,7 +134,7 @@ namespace newpro
         private static string GetUIImagePath()
         {
             return Path.Combine(
-                LoadedModManager.GetMod<LordBgmData>().Content.RootDir,
+                LoadedModManager.GetMod<BANWlLib.newpro>().Content.RootDir,
                 "Common", "Textures"
             );
         }

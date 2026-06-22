@@ -12,7 +12,7 @@ namespace BANWlLib.Effects.AssetBundles
     {
         private const int CleanupIntervalTicks = 300;
         private const int IdleReleaseTicks = 600;
-        private static readonly bool EnableRuntimeIdleUnload = false;
+        private static readonly bool EnableRuntimeIdleUnload = true;
 
         private static readonly Dictionary<string, BAEffectBundleRecord> records = new Dictionary<string, BAEffectBundleRecord>(StringComparer.OrdinalIgnoreCase);
         private static readonly FieldInfo shaderParameterNameField = typeof(ShaderParameter).GetField("name", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);

@@ -1,4 +1,5 @@
 ﻿using BANWlLib.mainUI.Mission.MonoComp;
+using BANWlLib.mainUI.ManualUI;
 using MyCoolMusicMod.MyCoolMusicMod;
 using newpro;
 using System;
@@ -116,6 +117,7 @@ namespace BANWlLib.mainUI.MonoComp
             // 安全检查，防止报错
             if (UiMapData.uiCamera != null) UiMapData.uiCamera.gameObject.SetActive(false);
             if (UiMapData.mainUI != null) UiMapData.mainUI.SetActive(false);
+            BAManualUIImageLoader.ClearAll();
 
             UiMapData.uiclose = false;
 

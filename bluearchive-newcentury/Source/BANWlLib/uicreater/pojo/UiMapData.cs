@@ -1,4 +1,5 @@
 using BANWlLib.mainUI.Gaka;
+using BANWlLib.mainUI.ManualUI;
 using BANWlLib.mainUI.Mission;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.mainUI.StudentManual;
@@ -74,6 +75,7 @@ namespace newpro
         public static void Reset()
         {
             isLocKBack = false;
+            BAManualUIImageLoader.ClearAll();
             RimWorldUISpriteUtil.ClearGeneratedSpriteCache();
 
             if (mainUI != null)
