@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2956783570
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6665cef48b51b2cd975472fb9027fc37
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6665cef48b51b2cd975472fb9027fc37
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/HPP.png
+Dependencies: []

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Karlin_1_Mote</defName>
@@ -12,7 +12,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Karlin/A/Karlin_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.5</drawSize><!-- 绘制尺寸 -->   
@@ -34,7 +34,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Karlin/A/Karlin_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.5</drawSize><!-- 绘制尺寸 -->   
@@ -51,7 +51,7 @@
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 <graphicData>
-<graphicClass>Graphic_FleckPulse</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbFleckPulse</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Karlin/B/Karlin_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3</drawSize><!-- 绘制尺寸 -->   

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 <FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
@@ -8,7 +8,7 @@
 <solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 <graphicData>
-<graphicClass>Graphic_FleckPulse</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbFleckPulse</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Natsu/E/Natsu_0</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>1.5</drawSize><!-- 绘制尺寸 -->   
@@ -22,7 +22,7 @@
     <defName>BAWN_Natsu_9_fleck</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/E/Natsu_1</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/E/Natsu_1</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -36,7 +36,7 @@
     <defName>BAWN_Natsu_10_fleck</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/E/Natsu_2</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/E/Natsu_2</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -50,7 +50,7 @@
     <defName>BAWN_Natsu_11_fleck</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/E/Natsu_3</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/E/Natsu_3</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -64,7 +64,7 @@
     <defName>BAWN_Natsu_12_fleck</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/E/Natsu_4</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/E/Natsu_4</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -78,7 +78,7 @@
     <defName>BAWN_Natsu_13_fleck</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/E/Natsu_5</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/E/Natsu_5</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>

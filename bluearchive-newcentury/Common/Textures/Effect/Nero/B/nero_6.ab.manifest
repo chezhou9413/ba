@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3090916041
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5ce51b1d607ca94cfef7079d9d7f94e9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5ce51b1d607ca94cfef7079d9d7f94e9
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Nero/B/Nero_6.png
+Dependencies: []

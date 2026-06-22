@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3308645944
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6d4699177fc2704ea52fce0a6fe8a7df
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6d4699177fc2704ea52fce0a6fe8a7df
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Atsuko/B/Atsuko_1.png
+Dependencies: []

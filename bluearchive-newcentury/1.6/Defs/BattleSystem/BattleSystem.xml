@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <BANWlLib.BattleSystem.DamageAffinityMatrixDef>
     <defName>BANW_DamageAffinityMatrix_Default</defName>
@@ -156,7 +156,7 @@
     <drawOffscreen>true</drawOffscreen>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
       <texPath>Effect/HPP</texPath>
       <shaderType>MoteGlow</shaderType>
       <drawSize>1.5</drawSize>

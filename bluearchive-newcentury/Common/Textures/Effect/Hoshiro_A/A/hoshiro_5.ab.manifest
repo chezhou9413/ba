@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1948625031
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5823e7bdd93676e12814bd3dc0917166
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5823e7bdd93676e12814bd3dc0917166
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Hoshiro_A/A/Hoshiro_5.png
+Dependencies: []

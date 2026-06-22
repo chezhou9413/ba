@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3712429896
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6487bf903e4db20d77d9a4e0c312af62
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6487bf903e4db20d77d9a4e0c312af62
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Himari/A/Himari_5.jpg
+Dependencies: []

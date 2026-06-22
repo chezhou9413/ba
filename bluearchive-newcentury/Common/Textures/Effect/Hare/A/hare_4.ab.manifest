@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 751112943
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8ea9737ec9f0515c227f98c70ac68939
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 8ea9737ec9f0515c227f98c70ac68939
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Hare/A/Hare_4.jpg
+Dependencies: []

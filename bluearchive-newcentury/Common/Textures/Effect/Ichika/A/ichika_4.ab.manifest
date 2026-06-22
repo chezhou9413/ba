@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3664999305
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f1660f6f3e9e6ac915729d2f7f5a9e3c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: f1660f6f3e9e6ac915729d2f7f5a9e3c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Ichika/A/Ichika_4.png
+Dependencies: []

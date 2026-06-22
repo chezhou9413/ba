@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2298830331
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6bfa17aadab1eba932ffb0aa397d76db
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6bfa17aadab1eba932ffb0aa397d76db
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Kanoe/A/Kanoe_A.png
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4191912149
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 879becf235530c87a591735a347792a1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 879becf235530c87a591735a347792a1
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Momiji/A/Momiji_1.png
+Dependencies: []

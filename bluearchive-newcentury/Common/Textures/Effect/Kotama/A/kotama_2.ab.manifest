@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2892826410
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d24955a19059613de90a987b263001a6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d24955a19059613de90a987b263001a6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Kotama/A/Kotama_2.jpg
+Dependencies: []

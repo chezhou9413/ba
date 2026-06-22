@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Ibuki_At_C</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_C</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_C</texPath><!-- 纹理图片路径 -->
       <drawSize>1.5</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -19,7 +19,7 @@
     <defName>BANW_Ibuki_At_CC</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_CC</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_CC</texPath><!-- 纹理图片路径 -->
       <drawSize>1.5</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -34,7 +34,7 @@
     <defName>BANW_Ibuki_At_CCC</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_CCC</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_CCC</texPath><!-- 纹理图片路径 -->
       <drawSize>0.6</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -50,7 +50,7 @@
     <defName>BANW_Ibuki_At_D</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_D</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_D</texPath><!-- 纹理图片路径 -->
       <drawSize>0.3</drawSize>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
@@ -67,7 +67,7 @@
     <defName>BANW_Ibuki_At_DD</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_D</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_D</texPath><!-- 纹理图片路径 -->
       <drawSize>1.9</drawSize>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
@@ -83,7 +83,7 @@
     <defName>BANW_Ibuki_At_E</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_E</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_E</texPath><!-- 纹理图片路径 -->
       <drawSize>1.3</drawSize>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
@@ -99,7 +99,7 @@
     <defName>BANW_Ibuki_At_F</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_F</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_F</texPath><!-- 纹理图片路径 -->
       <drawSize>0.6</drawSize>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>

@@ -186,7 +186,18 @@ namespace BANWlLib.BattleSystem
                 return Mathf.Max(0f, baseAmount);
             }
 
-            return Mathf.Max(0f, (Mathf.Max(0f, baseAmount) + GetAttackFlatBonus(pawn)) * GetAttackMultiplier(pawn));
+            return Mathf.Max(0f, Mathf.Max(0f, baseAmount) * GetAttackFlatBonus(pawn) * GetAttackMultiplier(pawn));
+        }
+
+        // 缩放普通武器伤害，负责让武器弹丸按武器原始伤害、基础攻击力和攻击倍率三段相乘。
+        public static float ScaleWeaponDamageBase(Pawn pawn, float weaponBaseDamage)
+        {
+            if (pawn == null)
+            {
+                return Mathf.Max(0f, weaponBaseDamage);
+            }
+
+            return Mathf.Max(0f, Mathf.Max(0f, weaponBaseDamage) * GetAttackFlatBonus(pawn) * GetAttackMultiplier(pawn));
         }
 
         public static float GetHealFlatBonus(Pawn pawn)
@@ -318,7 +329,7 @@ namespace BANWlLib.BattleSystem
             float amount = Mathf.Max(0f, request.baseAmount);
             if (request.snapshot != null)
             {
-                amount = (Mathf.Max(0f, request.baseAmount) + request.snapshot.attackFlatBonus) * request.snapshot.attackMultiplier;
+                amount = Mathf.Max(0f, request.baseAmount) * request.snapshot.attackFlatBonus * request.snapshot.attackMultiplier;
                 if (request.attackPowerRatio > 0f)
                 {
                     amount += request.snapshot.attackPower * request.attackPowerRatio;

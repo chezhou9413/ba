@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2505352787
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: cc830814e1072bbc72a261f66dbc2c57
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: cc830814e1072bbc72a261f66dbc2c57
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/tong/B/B_G.png
+Dependencies: []

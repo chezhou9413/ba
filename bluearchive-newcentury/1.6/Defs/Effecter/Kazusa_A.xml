@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Mote定义 -->
 <defName>BAWN_Kazusa_1_fleck</defName>
@@ -12,7 +12,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Kazusa/A/Kazusa_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.0</drawSize><!-- 绘制尺寸 -->   
@@ -34,7 +34,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Kazusa/A/Kazusa_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.0</drawSize><!-- 绘制尺寸 -->   
@@ -56,7 +56,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Kazusa/A/Kazusa_7</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.0</drawSize><!-- 绘制尺寸 -->   
@@ -78,7 +78,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Kazusa/A/Kazusa_8</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.0</drawSize><!-- 绘制尺寸 -->   
@@ -100,7 +100,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Kazusa/B/Kazusa_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.5</drawSize><!-- 绘制尺寸 -->   
@@ -122,7 +122,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Kazusa/B/Kazusa_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.5</drawSize><!-- 绘制尺寸 -->   
@@ -144,7 +144,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Kazusa/B/Kazusa_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.5</drawSize><!-- 绘制尺寸 -->   
@@ -166,7 +166,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Kazusa/B/Kazusa_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.5</drawSize><!-- 绘制尺寸 -->   
@@ -188,7 +188,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Kazusa/B/Kazusa_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2.5</drawSize><!-- 绘制尺寸 -->   

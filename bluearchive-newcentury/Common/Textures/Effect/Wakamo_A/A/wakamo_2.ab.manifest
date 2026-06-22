@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4015667211
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f1454a4132cbc98868f8cb976bd62d78
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: f1454a4132cbc98868f8cb976bd62d78
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Wakamo_A/A/Wakamo_2.jpg
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1511239224
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bfc0e02d4d3672a8d88b0e5c633052e6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: bfc0e02d4d3672a8d88b0e5c633052e6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Ako/A/Ako_3.jpg
+Dependencies: []

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Reisa_A_1_Mote</defName>
@@ -11,7 +11,7 @@
 <fadeOutTime>0.1</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -32,7 +32,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -53,7 +53,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -74,7 +74,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -95,7 +95,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -116,7 +116,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -137,7 +137,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_7</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -158,7 +158,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_8</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -179,7 +179,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_9</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>(3,25)</drawSize><!-- 绘制尺寸 -->   
@@ -200,7 +200,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_10</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -221,7 +221,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_11</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -242,7 +242,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_12</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -263,7 +263,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_13</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -284,7 +284,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_14</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -305,7 +305,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/A/Reisa_15</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -326,7 +326,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/B/Reisa_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -347,7 +347,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa_A/B/Reisa_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -369,7 +369,7 @@
 </mote>
 <graphicData>
 <shaderType>MoteGlow</shaderType><!-- 着色器类型，使用发光动画着色器 -->
-<texPath>Effect/Reisa_A/A/Reisa_16</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Reisa_A/A/Reisa_16</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
 </graphicData>
 </ThingDef>

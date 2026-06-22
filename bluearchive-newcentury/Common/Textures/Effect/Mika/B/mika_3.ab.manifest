@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3239531827
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1603933d86a5c77f8c52eb24d2da9829
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1603933d86a5c77f8c52eb24d2da9829
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Mika/B/Mika_3.jpg
+Dependencies: []

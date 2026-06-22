@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 163039319
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6b9e0fb18b1f5e676dc63f7cdf51006a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6b9e0fb18b1f5e676dc63f7cdf51006a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Natsu/D/Natsu_28.png
+Dependencies: []

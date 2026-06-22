@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BAWN_Yoshimi_1_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Yoshimi/A/Yoshimi_1</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Yoshimi/A/Yoshimi_1</texPath><!-- 纹理图片路径 -->
       <drawSize>4</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -18,7 +18,7 @@
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BAWN_Yoshimi_2_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Yoshimi/A/Yoshimi_2</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Yoshimi/A/Yoshimi_2</texPath><!-- 纹理图片路径 -->
       <drawSize>2</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->

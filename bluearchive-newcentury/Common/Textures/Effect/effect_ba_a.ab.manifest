@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4258457497
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d3d82a93c4a43d27c4248c9e3933203e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d3d82a93c4a43d27c4248c9e3933203e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Effect_BA_A.png
+Dependencies: []

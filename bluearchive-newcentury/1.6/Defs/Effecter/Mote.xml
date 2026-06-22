@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BAWN_HPP</defName>
     <thingClass>MoteThrown</thingClass>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/HPP</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/HPP</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <shaderParameters>
 
@@ -25,7 +25,7 @@
     <defName>BAWN_HPPP</defName>
     <thingClass>MoteThrown</thingClass>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/HPPP</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/HPPP</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <shaderParameters>
       </shaderParameters>
@@ -46,7 +46,7 @@
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 <graphicData>
-<graphicClass>Graphic_FleckPulse</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbFleckPulse</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Effect_BA_A</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>6.5</drawSize><!-- 绘制尺寸 -->   
@@ -61,7 +61,7 @@
     <defName>BAWN_Ye_GP</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/G_P</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/G_P</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -76,7 +76,7 @@
     <defName>BAWN_YeA_A</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_A</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -91,7 +91,7 @@
     <defName>BAWN_YeA_B</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_B</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_B</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -106,7 +106,7 @@
     <defName>BAWN_YeA_C</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_C</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_C</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -121,7 +121,7 @@
     <defName>BAWN_YeA_D</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_D</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_D</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -136,7 +136,7 @@
     <defName>BAWN_YeA_E</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_E</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_E</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -151,7 +151,7 @@
     <defName>BAWN_YeA_F</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_F</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_F</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -166,7 +166,7 @@
     <defName>BAWN_YeA_G</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_G</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_G</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -181,7 +181,7 @@
     <defName>BAWN_YeA_H</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_H</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_H</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -196,7 +196,7 @@
     <defName>BAWN_YeA_I</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_I</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_I</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -211,7 +211,7 @@
     <defName>BAWN_YeA_J</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_J</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_J</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -226,7 +226,7 @@
     <defName>BAWN_YeA_K</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_K</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_K</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -241,7 +241,7 @@
     <defName>BAWN_YeA_L</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_L</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_L</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -256,7 +256,7 @@
     <defName>BAWN_YeA_M</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_M</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_M</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -271,7 +271,7 @@
     <defName>BAWN_YeA_N</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_N</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_N</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -286,7 +286,7 @@
     <defName>BAWN_YeA_O</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/A/A_O</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/A/A_O</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -301,7 +301,7 @@
     <defName>BAWN_YeB_A</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_A</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -316,7 +316,7 @@
     <defName>BAWN_YeB_B</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_B</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_B</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -331,7 +331,7 @@
     <defName>BAWN_YeB_C</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_C</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_C</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -346,7 +346,7 @@
     <defName>BAWN_YeB_D</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_D</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_D</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -361,7 +361,7 @@
     <defName>BAWN_YeB_E</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_E</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_E</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -376,7 +376,7 @@
     <defName>BAWN_YeB_F</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_F</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_F</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -391,7 +391,7 @@
     <defName>BAWN_YeB_G</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_G</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_G</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -406,7 +406,7 @@
     <defName>BAWN_YeB_H</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_H</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_H</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -421,7 +421,7 @@
     <defName>BAWN_YeB_I</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_I</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_I</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -436,7 +436,7 @@
     <defName>BAWN_YeB_J</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_J</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_J</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -451,7 +451,7 @@
     <defName>BAWN_YeB_K</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_K</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_K</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -466,7 +466,7 @@
     <defName>BAWN_YeB_L</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_L</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_L</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -481,7 +481,7 @@
     <defName>BAWN_YeB_M</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_M</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_M</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -496,7 +496,7 @@
     <defName>BAWN_YeB_N</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_N</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_N</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -511,7 +511,7 @@
     <defName>BAWN_YeB_O</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>3</drawSize>
-      <texPath>Effect/tong/B/B_O</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/B/B_O</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->

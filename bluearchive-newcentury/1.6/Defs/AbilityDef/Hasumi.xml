@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <AbilityDef>
 <defName>BAWN_Hasumi_EXX</defName>
@@ -143,7 +143,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hasumi/EXX_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hasumi/EXX_A</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>3</drawSize>
       <shaderParameters>

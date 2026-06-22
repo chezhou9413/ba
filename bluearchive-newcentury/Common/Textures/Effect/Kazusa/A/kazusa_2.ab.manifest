@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1911038333
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f973247a169f972a4f81bd6a91b21222
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: f973247a169f972a4f81bd6a91b21222
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Kazusa/A/Kazusa_2.jpg
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3449375244
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1f277fc2d16bbc4d0d532ac2ccb7b4af
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1f277fc2d16bbc4d0d532ac2ccb7b4af
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Hina_B/B/Hina_1.jpg
+Dependencies: []

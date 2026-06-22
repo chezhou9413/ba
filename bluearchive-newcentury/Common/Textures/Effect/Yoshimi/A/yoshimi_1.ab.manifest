@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2625448605
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3c728f3791e1275e65ad5a3bea3d2859
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3c728f3791e1275e65ad5a3bea3d2859
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Yoshimi/A/Yoshimi_1.png
+Dependencies: []

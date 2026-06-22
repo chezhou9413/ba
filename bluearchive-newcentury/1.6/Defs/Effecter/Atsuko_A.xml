@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Atsuko_1_fleck</defName>
@@ -12,7 +12,7 @@
 <growthRate>80</growthRate>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Atsuko/A/Atsuko_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>0.2</drawSize><!-- 绘制尺寸 -->   
@@ -34,7 +34,7 @@
 </mote>
 <graphicData>
 <shaderType>MoteGlow</shaderType><!-- 着色器类型，使用发光动画着色器 -->
-<texPath>Effect/Atsuko/A/Atsuko_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Atsuko/A/Atsuko_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2</drawSize><!-- 绘制尺寸 -->   
 </graphicData>
 </ThingDef>
@@ -50,7 +50,7 @@
 <growthRate>10</growthRate>
 </mote>
 <graphicData>
-<texPath>Effect/Atsuko/A/Atsuko_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Atsuko/A/Atsuko_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>0.2</drawSize><!-- 绘制尺寸 -->   
 </graphicData>
 </ThingDef>
@@ -66,7 +66,7 @@
 <fadeOutTime>0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<texPath>Effect/Atsuko/A/Atsuko_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Atsuko/A/Atsuko_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2</drawSize><!-- 绘制尺寸 -->   
 </graphicData>
 </ThingDef>
@@ -82,7 +82,7 @@
 <fadeOutTime>0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Atsuko/A/Atsuko_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>2</drawSize><!-- 绘制尺寸 -->   
@@ -104,7 +104,7 @@
 <fadeOutTime>0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Atsuko/A/Atsuko_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3</drawSize><!-- 绘制尺寸 -->   

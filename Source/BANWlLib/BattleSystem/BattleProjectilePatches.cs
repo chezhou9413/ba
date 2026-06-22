@@ -15,7 +15,7 @@ namespace BANWlLib.BattleSystem
                 return;
             }
 
-            __result = Mathf.Max(0, Mathf.RoundToInt(BattleStatUtility.ScaleDamageBase(pawn, __result)));
+            __result = Mathf.Max(0, Mathf.RoundToInt(BattleStatUtility.ScaleWeaponDamageBase(pawn, __result)));
         }
     }
 }

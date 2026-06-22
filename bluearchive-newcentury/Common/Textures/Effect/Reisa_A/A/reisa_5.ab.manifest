@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2610164139
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a879d2ca31b0d2fff82ebaf86438f00d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a879d2ca31b0d2fff82ebaf86438f00d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Reisa_A/A/Reisa_5.jpg
+Dependencies: []

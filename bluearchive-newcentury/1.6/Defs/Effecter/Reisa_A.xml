@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <FleckDef ParentName="FleckBase_Thrown"><!-- Fleck定义 -->
 <defName>BAWN_Reisa_1_fleck</defName>
@@ -7,7 +7,7 @@
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 <graphicData>
-<graphicClass>Graphic_FleckPulse</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbFleckPulse</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa/A/Reisa_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>6.5</drawSize><!-- 绘制尺寸 -->   
@@ -24,7 +24,7 @@
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 <graphicData>
-<graphicClass>Graphic_FleckPulse</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbFleckPulse</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa/A/Reisa_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>6.5</drawSize><!-- 绘制尺寸 -->   
@@ -41,7 +41,7 @@
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 <graphicData>
-<graphicClass>Graphic_FleckPulse</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbFleckPulse</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Reisa/A/Reisa_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>6.5</drawSize><!-- 绘制尺寸 -->   

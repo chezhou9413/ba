@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Ibuki_At_A</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_A</texPath><!-- 纹理图片路径 -->
       <drawSize>1.3</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -19,7 +19,7 @@
     <defName>BANW_Ibuki_At_AA</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_AA</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_AA</texPath><!-- 纹理图片路径 -->
       <drawSize>1.3</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -34,7 +34,7 @@
     <defName>BANW_Ibuki_At_B</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_B</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_B</texPath><!-- 纹理图片路径 -->
       <drawSize>1.3</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -49,7 +49,7 @@
     <defName>BANW_Ibuki_At_BB</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Ibuki/D/Ibuki_BB</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/D/Ibuki_BB</texPath><!-- 纹理图片路径 -->
       <drawSize>1.3</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1430453915
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2de7f117fcbdfaf08ec6efee663854e8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 2de7f117fcbdfaf08ec6efee663854e8
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Hanako/A/Hanako.jpg
+Dependencies: []

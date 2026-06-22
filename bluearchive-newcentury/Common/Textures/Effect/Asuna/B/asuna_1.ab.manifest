@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 957155917
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bdd90acb0fe990b85f0034aa7e1a6df7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: bdd90acb0fe990b85f0034aa7e1a6df7
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Asuna/B/Asuna_1.jpg
+Dependencies: []

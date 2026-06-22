@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2089594467
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3dd1c2823acc6e85d6afc3957f8fdb10
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3dd1c2823acc6e85d6afc3957f8fdb10
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Airy/A/Airy_0.png
+Dependencies: []

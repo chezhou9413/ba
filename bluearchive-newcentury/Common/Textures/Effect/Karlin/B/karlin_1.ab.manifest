@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 17653480
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 46266cecfd81b70f29d76440134b3ad6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 46266cecfd81b70f29d76440134b3ad6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Karlin/B/Karlin_1.png
+Dependencies: []

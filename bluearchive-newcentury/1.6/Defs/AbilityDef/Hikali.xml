@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <AbilityDef>
 <defName>BAWN_Hikali_EXX</defName>
@@ -170,7 +170,7 @@
     <thingClass>MoteAttached</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hikali/EX_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hikali/EX_A</texPath><!-- 纹理图片路径 -->
       <shaderType></shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>1.2</drawSize>
       <shaderParameters>
@@ -188,7 +188,7 @@
     <defName>BAWN_Hikali_EXX_B</defName>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hikali/EX_B</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hikali/EX_B</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>0.5</drawSize>
     </graphicData>
@@ -206,7 +206,7 @@
     <thingClass>MoteAttached</thingClass>
     <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hikali/EX_C</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hikali/EX_C</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>1</drawSize><!-- 绘制大小比例 -->
       <shaderParameters>
@@ -225,7 +225,7 @@
     <thingClass>MoteAttached</thingClass>
     <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hikali/EX_D</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hikali/EX_D</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>0.5</drawSize><!-- 绘制大小比例 -->
       <shaderParameters>
@@ -245,7 +245,7 @@
     <thingClass>MoteAttached</thingClass>
     <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hikali/EX_E</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hikali/EX_E</texPath><!-- 纹理图片路径 -->
       <shaderType></shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>0.5</drawSize><!-- 绘制大小比例 -->
       <shaderParameters>
@@ -265,7 +265,7 @@
     <thingClass>MoteAttached</thingClass>
     <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hikali/EX_F</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hikali/EX_F</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>3</drawSize><!-- 绘制大小比例 -->
     </graphicData>
@@ -282,7 +282,7 @@
     <thingClass>MoteAttached</thingClass>
     <drawOffscreen>true</drawOffscreen><!-- 即使超出屏幕范围也绘制 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hikali/EX_G</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hikali/EX_G</texPath><!-- 纹理图片路径 -->
       <shaderType></shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>3</drawSize><!-- 绘制大小比例 -->
     </graphicData>

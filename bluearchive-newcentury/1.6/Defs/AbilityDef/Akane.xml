@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <AbilityDef>
 <defName>BAWN_Akane_EX</defName>
@@ -188,7 +188,7 @@
     <thingClass>MoteAttached</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Effect_Akane_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Effect_Akane_A</texPath><!-- 纹理图片路径 -->
       <shaderType></shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>1</drawSize>
       <shaderParameters>
@@ -352,7 +352,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_A</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>4</drawSize>
       <shaderParameters>
@@ -372,7 +372,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_B</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_B</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>4</drawSize>
       <shaderParameters>
@@ -392,7 +392,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_C</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_C</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>4</drawSize>
       <shaderParameters>
@@ -412,7 +412,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_D</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_D</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>4</drawSize>
       <shaderParameters>
@@ -433,7 +433,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_E</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_E</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>0.5</drawSize>
       <shaderParameters>
@@ -453,7 +453,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_F</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_F</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>0.5</drawSize>
       <shaderParameters>
@@ -473,7 +473,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_F</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_F</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>1</drawSize>
       <shaderParameters>
@@ -492,7 +492,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_H</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_H</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>1</drawSize>
       <shaderParameters>
@@ -512,7 +512,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_I</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_I</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>1</drawSize>
       <shaderParameters>
@@ -532,7 +532,7 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Akane/EX_G</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Akane/EX_G</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>1</drawSize>
       <shaderParameters>
