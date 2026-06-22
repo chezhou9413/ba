@@ -84,7 +84,7 @@
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>880%</color>的伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>

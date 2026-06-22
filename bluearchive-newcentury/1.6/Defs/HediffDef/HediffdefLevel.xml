@@ -16,7 +16,6 @@
       </li>
     </comps>
     <stages>
-      
       <li>
         <minSeverity>0.001</minSeverity>
         <label>等级 1</label>
@@ -26,7 +25,8 @@
           <ArmorRating_Blunt>0.0</ArmorRating_Blunt>
           <ArmorRating_Heat>0.0</ArmorRating_Heat>
           <BANW_HealthScaleOffset>0.00</BANW_HealthScaleOffset>
-         <BANW_RangedWeapon_Penetration>0</BANW_RangedWeapon_Penetration>
+          <BANW_RangedWeapon_Penetration>0.00</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>0</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -38,6 +38,8 @@
           <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
           <ArmorRating_Heat>0.01</ArmorRating_Heat>
           <BANW_HealthScaleOffset>0.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.02</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>3</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -49,6 +51,8 @@
           <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
           <ArmorRating_Heat>0.01</ArmorRating_Heat>
           <BANW_HealthScaleOffset>0.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.03</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>7</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -60,6 +64,8 @@
           <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
           <ArmorRating_Heat>0.01</ArmorRating_Heat>
           <BANW_HealthScaleOffset>0.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.05</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>10</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -71,6 +77,8 @@
           <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
           <ArmorRating_Heat>0.02</ArmorRating_Heat>
           <BANW_HealthScaleOffset>1.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.07</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>13</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -82,6 +90,8 @@
           <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
           <ArmorRating_Heat>0.02</ArmorRating_Heat>
           <BANW_HealthScaleOffset>1.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.08</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>17</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -93,6 +103,8 @@
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.03</ArmorRating_Heat>
           <BANW_HealthScaleOffset>1.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.10</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>20</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -104,6 +116,8 @@
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.03</ArmorRating_Heat>
           <BANW_HealthScaleOffset>1.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.12</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>24</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -115,6 +129,8 @@
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.03</ArmorRating_Heat>
           <BANW_HealthScaleOffset>2.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.13</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>27</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -126,6 +142,8 @@
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.04</ArmorRating_Heat>
           <BANW_HealthScaleOffset>2.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.15</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>30</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -137,6 +155,8 @@
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.05</ArmorRating_Heat>
           <BANW_HealthScaleOffset>2.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.17</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>34</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -148,6 +168,8 @@
           <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
           <ArmorRating_Heat>0.06</ArmorRating_Heat>
           <BANW_HealthScaleOffset>2.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.19</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>37</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -159,6 +181,8 @@
           <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
           <ArmorRating_Heat>0.06</ArmorRating_Heat>
           <BANW_HealthScaleOffset>3.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.20</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>40</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -170,6 +194,8 @@
           <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
           <ArmorRating_Heat>0.06</ArmorRating_Heat>
           <BANW_HealthScaleOffset>3.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.22</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>44</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -181,6 +207,8 @@
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.07</ArmorRating_Heat>
           <BANW_HealthScaleOffset>3.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.24</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>47</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -192,6 +220,8 @@
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.08</ArmorRating_Heat>
           <BANW_HealthScaleOffset>3.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.25</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>51</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -203,6 +233,8 @@
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.10</ArmorRating_Heat>
           <BANW_HealthScaleOffset>4.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.27</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>54</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -214,6 +246,8 @@
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.10</ArmorRating_Heat>
           <BANW_HealthScaleOffset>4.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.29</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>57</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -225,6 +259,8 @@
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.10</ArmorRating_Heat>
           <BANW_HealthScaleOffset>4.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.30</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>61</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -236,6 +272,8 @@
           <ArmorRating_Blunt>0.09</ArmorRating_Blunt>
           <ArmorRating_Heat>0.11</ArmorRating_Heat>
           <BANW_HealthScaleOffset>4.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.32</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>64</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -247,6 +285,8 @@
           <ArmorRating_Blunt>0.09</ArmorRating_Blunt>
           <ArmorRating_Heat>0.11</ArmorRating_Heat>
           <BANW_HealthScaleOffset>5.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.34</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>67</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -258,6 +298,8 @@
           <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
           <ArmorRating_Heat>0.11</ArmorRating_Heat>
           <BANW_HealthScaleOffset>5.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.35</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>71</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -269,6 +311,8 @@
           <ArmorRating_Blunt>0.11</ArmorRating_Blunt>
           <ArmorRating_Heat>0.11</ArmorRating_Heat>
           <BANW_HealthScaleOffset>5.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.37</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>74</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -280,6 +324,8 @@
           <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
           <ArmorRating_Heat>0.12</ArmorRating_Heat>
           <BANW_HealthScaleOffset>5.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.39</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>78</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -291,6 +337,8 @@
           <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
           <ArmorRating_Heat>0.12</ArmorRating_Heat>
           <BANW_HealthScaleOffset>6.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.40</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>81</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -302,6 +350,8 @@
           <ArmorRating_Blunt>0.14</ArmorRating_Blunt>
           <ArmorRating_Heat>0.14</ArmorRating_Heat>
           <BANW_HealthScaleOffset>6.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.42</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>84</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -313,6 +363,8 @@
           <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
           <ArmorRating_Heat>0.15</ArmorRating_Heat>
           <BANW_HealthScaleOffset>6.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.44</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>88</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -324,6 +376,8 @@
           <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
           <ArmorRating_Heat>0.15</ArmorRating_Heat>
           <BANW_HealthScaleOffset>6.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.45</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>91</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -335,6 +389,8 @@
           <ArmorRating_Blunt>0.16</ArmorRating_Blunt>
           <ArmorRating_Heat>0.16</ArmorRating_Heat>
           <BANW_HealthScaleOffset>7.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.47</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>94</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -346,6 +402,8 @@
           <ArmorRating_Blunt>0.16</ArmorRating_Blunt>
           <ArmorRating_Heat>0.16</ArmorRating_Heat>
           <BANW_HealthScaleOffset>7.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.49</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>98</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -357,6 +415,8 @@
           <ArmorRating_Blunt>0.17</ArmorRating_Blunt>
           <ArmorRating_Heat>0.17</ArmorRating_Heat>
           <BANW_HealthScaleOffset>7.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.51</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>101</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -368,6 +428,8 @@
           <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
           <ArmorRating_Heat>0.18</ArmorRating_Heat>
           <BANW_HealthScaleOffset>7.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.52</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>105</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -379,6 +441,8 @@
           <ArmorRating_Blunt>0.19</ArmorRating_Blunt>
           <ArmorRating_Heat>0.19</ArmorRating_Heat>
           <BANW_HealthScaleOffset>8.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.54</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>108</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -390,6 +454,8 @@
           <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
           <ArmorRating_Heat>0.20</ArmorRating_Heat>
           <BANW_HealthScaleOffset>8.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.56</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>111</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -401,6 +467,8 @@
           <ArmorRating_Blunt>0.21</ArmorRating_Blunt>
           <ArmorRating_Heat>0.21</ArmorRating_Heat>
           <BANW_HealthScaleOffset>8.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.57</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>115</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -412,6 +480,8 @@
           <ArmorRating_Blunt>0.23</ArmorRating_Blunt>
           <ArmorRating_Heat>0.21</ArmorRating_Heat>
           <BANW_HealthScaleOffset>8.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.59</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>118</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -423,6 +493,8 @@
           <ArmorRating_Blunt>0.23</ArmorRating_Blunt>
           <ArmorRating_Heat>0.25</ArmorRating_Heat>
           <BANW_HealthScaleOffset>9.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.61</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>121</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -434,6 +506,8 @@
           <ArmorRating_Blunt>0.27</ArmorRating_Blunt>
           <ArmorRating_Heat>0.27</ArmorRating_Heat>
           <BANW_HealthScaleOffset>9.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.62</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>125</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -445,6 +519,8 @@
           <ArmorRating_Blunt>0.33</ArmorRating_Blunt>
           <ArmorRating_Heat>0.33</ArmorRating_Heat>
           <BANW_HealthScaleOffset>9.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.64</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>128</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -456,6 +532,8 @@
           <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
           <ArmorRating_Heat>0.35</ArmorRating_Heat>
           <BANW_HealthScaleOffset>9.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.66</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>131</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -467,6 +545,8 @@
           <ArmorRating_Blunt>0.38</ArmorRating_Blunt>
           <ArmorRating_Heat>0.38</ArmorRating_Heat>
           <BANW_HealthScaleOffset>10.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.67</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>135</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -478,6 +558,8 @@
           <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
           <ArmorRating_Heat>0.39</ArmorRating_Heat>
           <BANW_HealthScaleOffset>10.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.69</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>138</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -489,6 +571,8 @@
           <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
           <ArmorRating_Heat>0.39</ArmorRating_Heat>
           <BANW_HealthScaleOffset>10.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.71</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>142</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -500,6 +584,8 @@
           <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
           <ArmorRating_Heat>0.39</ArmorRating_Heat>
           <BANW_HealthScaleOffset>10.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.72</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>145</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -511,6 +597,8 @@
           <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
           <ArmorRating_Heat>0.39</ArmorRating_Heat>
           <BANW_HealthScaleOffset>11.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.74</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>148</BANW_HealPowerBase>
         </statOffsets>
       </li>
       <li>
@@ -522,6 +610,8 @@
           <ArmorRating_Blunt>0.43</ArmorRating_Blunt>
           <ArmorRating_Heat>0.41</ArmorRating_Heat>
           <BANW_HealthScaleOffset>11.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.76</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>152</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -539,6 +629,8 @@
           <ArmorRating_Blunt>0.47</ArmorRating_Blunt>
           <ArmorRating_Heat>0.46</ArmorRating_Heat>
           <BANW_HealthScaleOffset>11.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.77</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>155</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -556,6 +648,8 @@
           <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
           <ArmorRating_Heat>0.51</ArmorRating_Heat>
           <BANW_HealthScaleOffset>11.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.79</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>158</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -573,6 +667,8 @@
           <ArmorRating_Blunt>0.52</ArmorRating_Blunt>
           <ArmorRating_Heat>0.51</ArmorRating_Heat>
           <BANW_HealthScaleOffset>12.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.81</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>162</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -590,6 +686,8 @@
           <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
           <ArmorRating_Heat>0.55</ArmorRating_Heat>
           <BANW_HealthScaleOffset>12.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.82</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>165</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -608,6 +706,8 @@
           <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
           <ArmorRating_Heat>0.55</ArmorRating_Heat>
           <BANW_HealthScaleOffset>12.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.84</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>169</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -626,6 +726,8 @@
           <ArmorRating_Blunt>0.56</ArmorRating_Blunt>
           <ArmorRating_Heat>0.56</ArmorRating_Heat>
           <BANW_HealthScaleOffset>12.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.86</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>172</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -644,6 +746,8 @@
           <ArmorRating_Blunt>0.58</ArmorRating_Blunt>
           <ArmorRating_Heat>0.59</ArmorRating_Heat>
           <BANW_HealthScaleOffset>13.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.87</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>175</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -662,6 +766,8 @@
           <ArmorRating_Blunt>0.58</ArmorRating_Blunt>
           <ArmorRating_Heat>0.59</ArmorRating_Heat>
           <BANW_HealthScaleOffset>13.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.89</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>179</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -680,6 +786,8 @@
           <ArmorRating_Blunt>0.63</ArmorRating_Blunt>
           <ArmorRating_Heat>0.66</ArmorRating_Heat>
           <BANW_HealthScaleOffset>13.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.91</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>182</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -698,6 +806,8 @@
           <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
           <ArmorRating_Heat>0.66</ArmorRating_Heat>
           <BANW_HealthScaleOffset>13.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.92</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>185</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -716,6 +826,8 @@
           <ArmorRating_Blunt>0.67</ArmorRating_Blunt>
           <ArmorRating_Heat>0.67</ArmorRating_Heat>
           <BANW_HealthScaleOffset>14.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.94</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>189</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -734,6 +846,8 @@
           <ArmorRating_Blunt>0.67</ArmorRating_Blunt>
           <ArmorRating_Heat>0.67</ArmorRating_Heat>
           <BANW_HealthScaleOffset>14.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.96</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>192</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -752,6 +866,8 @@
           <ArmorRating_Blunt>0.70</ArmorRating_Blunt>
           <ArmorRating_Heat>0.67</ArmorRating_Heat>
           <BANW_HealthScaleOffset>14.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.97</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>196</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -770,6 +886,8 @@
           <ArmorRating_Blunt>0.70</ArmorRating_Blunt>
           <ArmorRating_Heat>0.70</ArmorRating_Heat>
           <BANW_HealthScaleOffset>14.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>0.99</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>199</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -788,6 +906,8 @@
           <ArmorRating_Blunt>0.73</ArmorRating_Blunt>
           <ArmorRating_Heat>0.73</ArmorRating_Heat>
           <BANW_HealthScaleOffset>15.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.01</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>202</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -806,6 +926,8 @@
           <ArmorRating_Blunt>0.76</ArmorRating_Blunt>
           <ArmorRating_Heat>0.76</ArmorRating_Heat>
           <BANW_HealthScaleOffset>15.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.02</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>206</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -824,6 +946,8 @@
           <ArmorRating_Blunt>0.77</ArmorRating_Blunt>
           <ArmorRating_Heat>0.77</ArmorRating_Heat>
           <BANW_HealthScaleOffset>15.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.04</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>210</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -842,6 +966,8 @@
           <ArmorRating_Blunt>0.80</ArmorRating_Blunt>
           <ArmorRating_Heat>0.80</ArmorRating_Heat>
           <BANW_HealthScaleOffset>15.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.06</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>214</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -860,7 +986,10 @@
           <ArmorRating_Blunt>0.83</ArmorRating_Blunt>
           <ArmorRating_Heat>0.80</ArmorRating_Heat>
           <BANW_HealthScaleOffset>16.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.08</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>218</BANW_HealPowerBase>
         </statOffsets>
+        
         <capMods>
           <li>
             <capacity>Consciousness</capacity>
@@ -878,6 +1007,8 @@
           <ArmorRating_Blunt>0.83</ArmorRating_Blunt>
           <ArmorRating_Heat>0.82</ArmorRating_Heat>
           <BANW_HealthScaleOffset>16.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.1</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>220</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -896,6 +1027,8 @@
           <ArmorRating_Blunt>0.85</ArmorRating_Blunt>
           <ArmorRating_Heat>0.85</ArmorRating_Heat>
           <BANW_HealthScaleOffset>16.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.13</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>224</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -914,6 +1047,8 @@
           <ArmorRating_Blunt>0.87</ArmorRating_Blunt>
           <ArmorRating_Heat>0.87</ArmorRating_Heat>
           <BANW_HealthScaleOffset>16.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.15</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>228</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -933,6 +1068,8 @@
           <ArmorRating_Heat>0.87</ArmorRating_Heat>
           <IncomingDamageFactor>-0.01</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>17.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.18</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>232</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -952,6 +1089,8 @@
           <ArmorRating_Heat>0.90</ArmorRating_Heat>
           <IncomingDamageFactor>-0.02</IncomingDamageFactor>
           <BANW_HealthScaleOffset>17.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.2</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>236</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -971,6 +1110,8 @@
           <ArmorRating_Heat>0.91</ArmorRating_Heat>
           <IncomingDamageFactor>-0.03</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>17.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.22</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>240</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -990,6 +1131,8 @@
           <ArmorRating_Heat>0.94</ArmorRating_Heat>
           <IncomingDamageFactor>-0.05</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>17.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.24</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>244</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1009,6 +1152,8 @@
           <ArmorRating_Heat>0.94</ArmorRating_Heat>
           <IncomingDamageFactor>-0.06</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>18.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.26</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>248</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1028,6 +1173,8 @@
           <ArmorRating_Heat>0.94</ArmorRating_Heat>
           <IncomingDamageFactor>-0.07</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>18.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.30</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>254</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1047,6 +1194,8 @@
           <ArmorRating_Heat>0.97</ArmorRating_Heat>
           <IncomingDamageFactor>-0.08</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>18.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.32</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>260</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1066,6 +1215,8 @@
           <ArmorRating_Heat>0.99</ArmorRating_Heat>
           <IncomingDamageFactor>-0.09</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>18.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.36</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>264</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1085,6 +1236,8 @@
           <ArmorRating_Heat>1.01</ArmorRating_Heat>
           <IncomingDamageFactor>-0.10</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>19.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.38</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>268</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1104,6 +1257,8 @@
           <ArmorRating_Heat>1.03</ArmorRating_Heat>
           <IncomingDamageFactor>-0.11</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>19.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.4</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>272</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1123,6 +1278,8 @@
           <ArmorRating_Heat>1.05</ArmorRating_Heat>
           <IncomingDamageFactor>-0.12</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>19.50</BANW_HealthScaleOffset>
+           <BANW_RangedWeapon_Penetration>1.43</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>276</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1142,6 +1299,8 @@
           <ArmorRating_Heat>1.07</ArmorRating_Heat>
           <IncomingDamageFactor>-0.13</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>19.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.45</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>282</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1161,6 +1320,8 @@
           <ArmorRating_Heat>1.19</ArmorRating_Heat>
           <IncomingDamageFactor>-0.14</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>20.00</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.47</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>286</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1180,6 +1341,8 @@
           <ArmorRating_Heat>1.21</ArmorRating_Heat>
           <IncomingDamageFactor>-0.15</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>20.25</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.49</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>290</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1199,6 +1362,8 @@
           <ArmorRating_Heat>1.32</ArmorRating_Heat>
           <IncomingDamageFactor>-0.16</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>20.50</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.5</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>292</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1218,6 +1383,8 @@
           <ArmorRating_Heat>1.35</ArmorRating_Heat>
           <IncomingDamageFactor>-0.17</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>20.75</BANW_HealthScaleOffset>
+          <BANW_RangedWeapon_Penetration>1.52</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>292</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1237,6 +1404,8 @@
           <ArmorRating_Heat>1.40</ArmorRating_Heat>
           <IncomingDamageFactor>-0.18</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>21.00</BANW_HealthScaleOffset>
+           <BANW_RangedWeapon_Penetration>1.55</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>295</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1256,6 +1425,8 @@
 	      <ArmorRating_Heat>1.44</ArmorRating_Heat>
         <IncomingDamageFactor>-0.19</IncomingDamageFactor> 
         <BANW_HealthScaleOffset>21.25</BANW_HealthScaleOffset>
+        <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>297</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1275,6 +1446,8 @@
 	      <ArmorRating_Heat>1.47</ArmorRating_Heat>
         <IncomingDamageFactor>-0.20</IncomingDamageFactor> 
         <BANW_HealthScaleOffset>21.50</BANW_HealthScaleOffset>
+        <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>297</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1294,6 +1467,8 @@
 	      <ArmorRating_Heat>1.47</ArmorRating_Heat>
         <IncomingDamageFactor>-0.20</IncomingDamageFactor> 
         <BANW_HealthScaleOffset>21.75</BANW_HealthScaleOffset>
+        <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>297</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1313,6 +1488,8 @@
 	      <ArmorRating_Heat>1.47</ArmorRating_Heat>
         <IncomingDamageFactor>-0.20</IncomingDamageFactor> 
         <BANW_HealthScaleOffset>21.9</BANW_HealthScaleOffset>
+        <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>297</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>
@@ -1331,9 +1508,10 @@
 		    <ArmorRating_Blunt>1.60</ArmorRating_Blunt>
 	      <ArmorRating_Heat>1.60</ArmorRating_Heat>
         <IncomingDamageFactor>-0.20</IncomingDamageFactor>
-        <BANW_RangedWeapon_Penetration>0.15</BANW_RangedWeapon_Penetration> 
         <MoveSpeed>+2.0</MoveSpeed>
         <BANW_HealthScaleOffset>23.10</BANW_HealthScaleOffset>
+        <BANW_RangedWeapon_Penetration>1.6</BANW_RangedWeapon_Penetration>
+          <BANW_HealPowerBase>300</BANW_HealPowerBase>
         </statOffsets>
         <capMods>
           <li>

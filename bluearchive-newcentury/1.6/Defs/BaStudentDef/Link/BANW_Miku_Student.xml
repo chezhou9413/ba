@@ -93,9 +93,9 @@
 			<Ability3>
 				<AbilityImagePath>Ability/Icon/Atsuko/Atsuko_A</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
-				<AbilityTitle>专家的锐敏</AbilityTitle>
+				<AbilityTitle>初音未来的声援</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身治疗质量增加<color=#00FFFF>26%</color>]]>
+				<AbilityIntroduction><![CDATA[自身治愈力增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

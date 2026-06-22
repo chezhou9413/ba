@@ -84,7 +84,7 @@
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>425%</color>的伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
@@ -94,7 +94,7 @@
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -106,7 +106,7 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>

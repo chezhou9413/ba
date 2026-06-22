@@ -16,7 +16,7 @@
  <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
  <hostile>true</hostile><!-- 是否是敌对行为 -->
  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
-  <warmupEffecter>BANW_Hoshiro_A_Ef_C</warmupEffecter>
+  <warmupEffecter></warmupEffecter>
   <statBases>
       <!-- 能力持续时间 -->
       <Ability_Duration>3</Ability_Duration>

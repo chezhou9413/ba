@@ -83,7 +83,9 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_shenmi>0</BAWC_TraitDef_shenmi>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Michiru_A></BAWC_TraitDef_Michiru_A>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -92,6 +94,38 @@
 				<damageType>Mysterious</damageType>
 				<!-- 护甲类型，作为属性克制矩阵的列。 -->
 				<defenseType>Explosion</defenseType>
+			</li>
+			<li Class="BANWlLib.BattleSystem.BattleStarGrowthExtension">
+				<!-- 星级生命百分比成长，starValues 从 1 星到 5 星依次读取。 -->
+				<healthPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.08</li>
+						<li>0.16</li>
+						<li>0.25</li>
+						<li>0.35</li>
+					</starValues>
+				</healthPercent>
+				<!-- 星级攻击百分比成长，参与 BattleStatUtility 的最终攻击力计算。 -->
+				<attackPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.06</li>
+						<li>0.12</li>
+						<li>0.20</li>
+						<li>0.30</li>
+					</starValues>
+				</attackPercent>
+				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
+				<attackFlat>
+					<starValues>
+						<li>0</li>
+						<li>5</li>
+						<li>10</li>
+						<li>18</li>
+						<li>30</li>
+					</starValues>
+				</attackFlat>
 			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
 				<starInterval>0.5</starInterval>
 				<showProgressBar>false</showProgressBar>
@@ -161,5 +195,21 @@
 			</li>
 		</modExtensions>
 	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Michiru_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;尝尝我的自创忍术！~&lt;/color&gt;</label>
+                <description>被动技能:自身暴击伤害增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
+                </statOffsets>
+				<statFactors>
 
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

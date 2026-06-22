@@ -75,7 +75,7 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -92,11 +92,11 @@
 			<Ability3>
 				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
-				<AbilityTitle>被动技能</AbilityTitle>
+				<AbilityTitle>尝尝我的自创忍术！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilityIntroduction><![CDATA[自身暴击伤害增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>

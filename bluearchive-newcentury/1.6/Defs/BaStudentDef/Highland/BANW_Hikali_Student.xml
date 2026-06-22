@@ -74,7 +74,7 @@
 				<AbilityIntroduction><![CDATA[使除自身外的一名我方单位护甲穿透提升<color=#00FFFF>92%</color>。
 （持续<color=#00FFFF>32</color>秒）]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -85,19 +85,17 @@
 				<AbilityIntroduction><![CDATA[每隔<color=#00FFFF>30</color>秒获得一次“发车信号”充能，最多可以储存<color=#00FFFF>3</color>次，消耗一层“发车信号”可以赋予一个单位攻击力强化<color=#00FFFF>25%</color>，
 （持续<color=#00FFFF>32</color>秒）]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Aoba/Aoba_EX</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
-				<AbilityTitle>测试技能3</AbilityTitle>
-				<AbilitySubtitle><![CDATA[被动技能 / <color=black>COST: </color><color=blue>20</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能3的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>行驶准备～</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身生命值增加<color=#00FFFF>26%</color>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -109,7 +107,7 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>

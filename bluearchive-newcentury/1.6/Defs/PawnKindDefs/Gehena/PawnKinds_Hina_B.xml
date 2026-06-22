@@ -56,6 +56,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_baofa>0</BAWC_TraitDef_baofa>
 			<BAWC_TraitDef_tanli>0</BAWC_TraitDef_tanli>
 			<BAWC_TraitDef_Hina>0</BAWC_TraitDef_Hina>
 			<BAWC_TraitDef_Hina_B_A>0</BAWC_TraitDef_Hina_B_A>
@@ -68,6 +69,38 @@
 				<damageType>Explosion</damageType>
 				<!-- 护甲类型，作为属性克制矩阵的列。 -->
 				<defenseType>Vibration</defenseType>
+			</li>
+			<li Class="BANWlLib.BattleSystem.BattleStarGrowthExtension">
+				<!-- 星级生命百分比成长，starValues 从 1 星到 5 星依次读取。 -->
+				<healthPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.08</li>
+						<li>0.16</li>
+						<li>0.25</li>
+						<li>0.35</li>
+					</starValues>
+				</healthPercent>
+				<!-- 星级攻击百分比成长，参与 BattleStatUtility 的最终攻击力计算。 -->
+				<attackPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.06</li>
+						<li>0.12</li>
+						<li>0.20</li>
+						<li>0.30</li>
+					</starValues>
+				</attackPercent>
+				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
+				<attackFlat>
+					<starValues>
+						<li>0</li>
+						<li>5</li>
+						<li>10</li>
+						<li>18</li>
+						<li>30</li>
+					</starValues>
+				</attackFlat>
 			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
 				<starInterval>0.5</starInterval>
 				<showProgressBar>false</showProgressBar>
@@ -147,7 +180,7 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#DC143C&gt;于此传达真心&lt;/color&gt;</label>
-                <description>子技能:自身EX攻击期间增加自身&lt;color=#DC143C&gt;63%&lt;/color&gt;护甲穿透</description>
+                <description>子技能:自身EX攻击期间增加自身&lt;color=#DC143C&gt;63%&lt;/color&gt;爆发克制率</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 

@@ -73,7 +73,7 @@
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身<color=#00FFFF>443%</color>的伤害并眩晕<color=#00FFFF>4</color>秒]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -83,7 +83,7 @@
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>25</color>秒]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对1名敌人造成自身攻击力<color=#00FFFF>443%</color>的伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
@@ -103,7 +103,7 @@
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身攻击时有<color=#00FFFF>20%</color>的概率造成<color=#00FFFF>50%</color>攻击力的追加伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>

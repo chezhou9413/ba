@@ -73,7 +73,7 @@
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对一名敌人造成自身子弹攻击力的<color=#00FFFF>1100%</color>的伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -84,7 +84,7 @@
 				<AbilityIntroduction><![CDATA[减少自身<color=#00FFFF>100%</color>的装填时间和增加<color=#00FFFF>57%</color>的护甲穿透
 （持续<color=#00FFFF>13</color>秒）]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
@@ -94,7 +94,7 @@
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>26%</color>的护甲穿透]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -104,7 +104,7 @@
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>15%</color>的攻击射程]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>

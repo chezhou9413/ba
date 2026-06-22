@@ -65,7 +65,9 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_zhendong>0</BAWC_TraitDef_zhendong>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Hikali_A>0</BAWC_TraitDef_Hikali_A>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -74,6 +76,38 @@
 				<damageType>Vibration</damageType>
 				<!-- 护甲类型，作为属性克制矩阵的列。 -->
 				<defenseType>Explosion</defenseType>
+			</li>
+			<li Class="BANWlLib.BattleSystem.BattleStarGrowthExtension">
+				<!-- 星级生命百分比成长，starValues 从 1 星到 5 星依次读取。 -->
+				<healthPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.08</li>
+						<li>0.16</li>
+						<li>0.25</li>
+						<li>0.35</li>
+					</starValues>
+				</healthPercent>
+				<!-- 星级攻击百分比成长，参与 BattleStatUtility 的最终攻击力计算。 -->
+				<attackPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.06</li>
+						<li>0.12</li>
+						<li>0.20</li>
+						<li>0.30</li>
+					</starValues>
+				</attackPercent>
+				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
+				<attackFlat>
+					<starValues>
+						<li>0</li>
+						<li>5</li>
+						<li>10</li>
+						<li>18</li>
+						<li>30</li>
+					</starValues>
+				</attackFlat>
 			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
 				<starInterval>0.5</starInterval>
 				<showProgressBar>false</showProgressBar>
@@ -105,7 +139,7 @@
                 </levelUpEffects>
                 <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
                 <levelUpSounds>
-                     <li>Hikali_levelup_A</li>
+                    <li>Hikali_levelup_A</li>
                     <li>Hikali_levelup_B</li>
 					<li>Hikali_levelup_C</li>
 					<li>Hikali_levelup_D</li>
@@ -144,4 +178,20 @@
 		</modExtensions>
 	</PawnKindDef>
 
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hikali_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;行驶准备～&lt;/color&gt;</label>
+                <description>被动技能：自身生命值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+                          <BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

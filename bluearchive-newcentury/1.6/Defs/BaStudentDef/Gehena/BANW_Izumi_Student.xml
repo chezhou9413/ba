@@ -84,7 +84,7 @@
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对一名敌人一共造成自身攻击力的<color=#00FFFF>423%</color>的伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
@@ -104,7 +104,7 @@
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身攻击时造成<color=#00FFFF>4%</color>总攻击力的追加伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>

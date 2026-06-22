@@ -74,7 +74,7 @@
 				<AbilityIntroduction><![CDATA[对一名敌人造成攻击力<color=#00FFFF>664%</color>的伤害，
 有<color=#00FFFF>75%</color>机率造成<color=#00FFFF>716%</color>的追加伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -84,7 +84,7 @@
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>20</color>秒]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>289%</color>的伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
@@ -96,7 +96,7 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -106,7 +106,7 @@
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身命中率提升<color=#00FFFF>17%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>

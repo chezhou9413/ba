@@ -74,7 +74,7 @@
 				<AbilityIntroduction><![CDATA[除自身外圆形范围内的友方攻击力增加<color=#00FFFF>50%</color>
 (持续<color=#00FFFF>35</color>秒)]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -85,7 +85,7 @@
 				<AbilityIntroduction><![CDATA[对1名敌方单位造成攻击力<color=#00FFFF>388%</color>的伤害，并且造成攻击力减少<color=#00FFFF>24%</color>
 (持续<color=#00FFFF>20</color>秒)]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>

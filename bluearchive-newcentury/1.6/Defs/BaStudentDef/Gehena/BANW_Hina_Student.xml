@@ -73,7 +73,7 @@
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>7</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对扇形范围的敌方单位造成自身攻击力<color=#00FFFF>1200%</color>的伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -94,7 +94,7 @@
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身攻速增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>

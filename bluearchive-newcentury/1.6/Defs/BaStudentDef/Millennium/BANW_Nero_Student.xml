@@ -73,7 +73,7 @@
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对一名敌人一共造成自身攻击力的<color=#00FFFF>1300%</color>的伤害。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -96,7 +96,7 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -106,7 +106,7 @@
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[使用普通技能时，自身攻击力增加<color=#00FFFF>32%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>

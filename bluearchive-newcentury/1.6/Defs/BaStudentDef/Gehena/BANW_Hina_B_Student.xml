@@ -105,7 +105,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>于此传达真心</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身EX攻击期间增加自身<color=#00FFFF>63%</color>护甲穿透]]>
+				<AbilityIntroduction><![CDATA[自身EX攻击期间增加自身<color=#00FFFF>63%</color>爆发克制率]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

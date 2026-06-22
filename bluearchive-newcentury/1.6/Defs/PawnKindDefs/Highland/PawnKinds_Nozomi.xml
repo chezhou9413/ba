@@ -68,6 +68,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhendong>0</BAWC_TraitDef_zhendong>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
 			<BAWC_TraitDef_Nozomi_A>0</BAWC_TraitDef_Nozomi_A>
 			<BAWC_TraitDef_Nozomi_B>0</BAWC_TraitDef_Nozomi_B>
@@ -146,7 +147,7 @@
 				<!-- 学生基础生命尺度百分比，0.2 表示生命尺度额外增加 20%。 -->
 				<healthPercent>0</healthPercent>
 				<!-- 学生基础攻击力平加，进入技能、武器显示和统一伤害结算。 -->
-				<attackFlat>100</attackFlat>
+				<attackFlat>0</attackFlat>
 				<!-- 学生基础攻击力百分比，0.26 表示最终攻击力额外增加 26%。 -->
 				<attackPercent>0</attackPercent>
 				<!-- 学生基础治疗力平加，会叠加到 BANW_HealPowerBase 后参与治疗公式。 -->
@@ -194,6 +195,7 @@
 					</starValues>
 				</attackFlat>
 			</li>
+			
 		</modExtensions>
 	</PawnKindDef>
 

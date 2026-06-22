@@ -9,9 +9,6 @@
                 <description>{PAWN_nameDef}的职位是坦克，负责抵挡伤害，防御与血量比其他职业高</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
-                    <ArmorRating_Heat>0.20</ArmorRating_Heat>
                     <Flammability>-1.0</Flammability>
                     <PainShockThreshold>+0.15</PainShockThreshold>
                     <IncomingDamageFactor>-0.15</IncomingDamageFactor>
@@ -48,9 +45,7 @@
                 <description>{PAWN_nameDef}的职位是医疗，拥有医疗技能，治疗速度和手术成功率会比较高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    <PainShockThreshold>+0.10</PainShockThreshold>
-                    <MedicalTendSpeed>+0.30</MedicalTendSpeed>
-		            <MedicalTendQuality>+0.25</MedicalTendQuality>
+                    <BANW_HealPowerBase>200</BANW_HealPowerBase>
                     <DrugSynthesisSpeed>+0.25</DrugSynthesisSpeed>
                     <MedicalOperationSpeed>+0.15</MedicalOperationSpeed>
 		            <MedicalSurgerySuccessChance>+0.30</MedicalSurgerySuccessChance>
@@ -69,9 +64,7 @@
                 <description>{PAWN_nameDef}的职位是辅助，拥有支援相关的技能，工作相关的能力会比较高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
-                    <ArmorRating_Heat>0.25</ArmorRating_Heat>
+                   <BANW_HealPowerBase>150</BANW_HealPowerBase>
                    <WorkSpeedGlobal>+0.30</WorkSpeedGlobal>
                    <GlobalLearningFactor>+0.25</GlobalLearningFactor>
                    <MoveSpeed>+1.5</MoveSpeed>
@@ -83,17 +76,72 @@
     </TraitDef>
 
     <TraitDef>
+        <defName>BAWC_TraitDef_baofa</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FF0000&gt;爆发&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}的攻击类型是爆发伤害，对轻装甲造成200%的伤害，对特殊和弹力装甲造成50%的伤害。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <MoveSpeed>1.2</MoveSpeed>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <TraitDef>
+        <defName>BAWC_TraitDef_guantong</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DAA520&gt;贯通&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}的攻击类型是爆发伤害，对重装甲造成200%的伤害，对轻装甲造成50%的伤害。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <TraitDef>
+        <defName>BAWC_TraitDef_shenmi</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;神秘&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}的攻击类型是神秘伤害，对特殊装甲造成200%的伤害，对重装甲和复合装甲造成50%的伤害。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <TraitDef>
+        <defName>BAWC_TraitDef_zhendong</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;振动&lt;/color&gt;</label>
+                <description>{PAWN_nameDef}的攻击类型是振动伤害，对弹力装甲造成200%的伤害对特殊装甲造成150%的伤害，对重装甲和复合装甲造成50%的伤害。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+
+    <TraitDef>
         <defName>BAWC_TraitDef_qing</defName>
         <commonality>0</commonality>
         <degreeDatas>
             <li>
                 <label>&lt;color=#FF0000&gt;轻装甲&lt;/color&gt;</label>
-                <description>{PAWN_nameDef}的装甲类型是轻型装甲，使用爆发输出造成的伤害最高。</description>
+                <description>{PAWN_nameDef}的装甲类型是轻型装甲，抵抗贯通和分解伤害，被爆发伤害克制。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                     <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
-                    <ArmorRating_Heat>0.3</ArmorRating_Heat>
                     <MoveSpeed>1.2</MoveSpeed>
                 </statOffsets>
             </li>
@@ -106,13 +154,9 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#DAA520&gt;重装甲&lt;/color&gt;</label>
-                <description>{PAWN_nameDef}的装甲类型是重型装甲，使用贯通输出造成的伤害最高。</description>
+                <description>{PAWN_nameDef}的装甲类型是重装甲，抵抗神秘和振动伤害，被贯穿和分解伤害克制。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                   <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
-                    <ArmorRating_Heat>0.1</ArmorRating_Heat>
-                    <MoveSpeed>0.8</MoveSpeed>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -124,12 +168,9 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#4169E1&gt;特殊装甲&lt;/color&gt;</label>
-                <description>{PAWN_nameDef}的装甲类型是特殊装甲，使用热能输出造成的伤害最高。</description>
+                <description>{PAWN_nameDef}的装甲类型是特殊装甲，抵抗爆发伤害，被神秘和振动伤害克制。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                   <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
-                    <ArmorRating_Heat>0</ArmorRating_Heat>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -141,12 +182,9 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#990099&gt;弹力装甲&lt;/color&gt;</label>
-                <description>{PAWN_nameDef}的装甲类型是弹力装甲，使用振动输出造成的伤害最高。</description>
+                <description>{PAWN_nameDef}的装甲类型是弹力装甲，抵抗爆发伤害，被振动伤害克制。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                   <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>0.0</ArmorRating_Blunt>
-                    <ArmorRating_Heat>1.0</ArmorRating_Heat>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -158,12 +196,9 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#53b1aa&gt;复合装甲&lt;/color&gt;</label>
-                <description>{PAWN_nameDef}的装甲类型是复合装甲</description>
+                <description>{PAWN_nameDef}的装甲类型是复合装甲，抵抗神秘和振动伤害，被分解伤害克制。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                   <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
-                    <ArmorRating_Heat>1.0</ArmorRating_Heat>
                 </statOffsets>
             </li>
         </degreeDatas>

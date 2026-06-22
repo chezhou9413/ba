@@ -117,7 +117,7 @@
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 
-                <penetration>0.35</penetration>
+                <penetration>2.0</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hanako_Ef_B</effecterDef>
             </li>
@@ -136,7 +136,7 @@
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 
-                <penetration>0.35</penetration>
+                <penetration>2.0</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
             </li>
@@ -155,7 +155,7 @@
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 
-                <penetration>0</penetration>
+                <penetration>2.0</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
             </li>
@@ -170,7 +170,7 @@
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
-                <penetration>0.35</penetration>
+                <penetration>2.0</penetration>
                 <effecterDef></effecterDef>
             </li>
         <li>
@@ -184,7 +184,7 @@
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
-                <penetration>0</penetration>
+                <penetration>2.0</penetration>
                 <effecterDef></effecterDef>
             </li>
               <li>
@@ -198,7 +198,7 @@
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
-                <penetration>0</penetration>
+                <penetration>2.0</penetration>
                 <effecterDef></effecterDef>
             </li>
         </damages>

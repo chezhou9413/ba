@@ -73,7 +73,7 @@
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对1名敌方单位造成自身攻击力<color=#00FFFF>1090%</color>的伤害，并且自身攻击力增加<color=#00FFFF>55%</color>持续<color=#00FFFF>30</color>秒]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -94,7 +94,7 @@
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身攻速增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -106,7 +106,7 @@
 可以包含<b>多行</b>文本。
 并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>

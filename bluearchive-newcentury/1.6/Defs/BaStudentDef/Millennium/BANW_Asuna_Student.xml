@@ -74,7 +74,7 @@
 				<AbilityIntroduction><![CDATA[向目标处位移一段距离并为自己提供<color=#00FFFF>30%</color>的闪避率和增加<color=#00FFFF>57%</color>的攻击速度
 （持续<color=#00FFFF>30</color>秒）]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
@@ -84,7 +84,7 @@
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>20</color>秒]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>416%</color>的伤害]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
@@ -94,7 +94,7 @@
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身护甲穿透增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
@@ -104,7 +104,7 @@
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身使用EX技能时瞄准速度减少<color=#00FFFF>38%</color>]]>
 				</AbilityIntroduction>
-				<offSetX>15</offSetX>
+				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability4>
 			<StudentBio>
