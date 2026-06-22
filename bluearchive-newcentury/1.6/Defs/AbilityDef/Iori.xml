@@ -47,7 +47,7 @@
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
       <damageAmountBase>401</damageAmountBase><!--子弹伤害-->
       <stoppingPower>10</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.45</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>140</speed><!--子弹速度-->
       <extraDamages>
       <li>

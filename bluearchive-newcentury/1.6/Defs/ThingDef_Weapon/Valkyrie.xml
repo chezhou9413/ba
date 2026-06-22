@@ -63,7 +63,7 @@
       <damageDef>BANC_Damage_guantong</damageDef>
       <damageAmountBase>64</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
-      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
     </projectile>
     <graphicData>
@@ -138,7 +138,7 @@
       <damageDef>BANC_Damage_guantong</damageDef>
       <damageAmountBase>25</damageAmountBase>
       <stoppingPower>1.5</stoppingPower>
-      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>
     </projectile>
     <graphicData>
@@ -211,7 +211,7 @@
       <damageDef>BANC_Damage_guantong</damageDef>
       <damageAmountBase>35</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
-      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
     </projectile>
     <graphicData>

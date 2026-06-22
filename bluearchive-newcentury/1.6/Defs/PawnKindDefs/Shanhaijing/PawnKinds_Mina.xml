@@ -60,6 +60,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_baofa>0</BAWC_TraitDef_baofa>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Mina_A>0</BAWC_TraitDef_Mina_A>
 		</forcedTraits>

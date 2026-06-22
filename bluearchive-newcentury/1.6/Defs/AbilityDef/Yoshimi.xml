@@ -48,7 +48,7 @@
       <damageDef>BANC_Damage_Yoshimi_EXX</damageDef><!--子弹类型-->
       <damageAmountBase>280</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.35</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>50</speed><!--子弹速度-->
     </projectile>
    <thingClass>Projectile_Explosive</thingClass>
@@ -114,7 +114,7 @@
     <projectile>
       <damageAmountBase>1</damageAmountBase><!--子弹伤害-->
       <explosionRadius>4.9</explosionRadius>
-      <armorPenetrationBase>1</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <damageDef>BANC_Damage_Yoshimi_EXX</damageDef>
       <speed>300</speed><!--子弹速度-->
       <explosionDelay>110</explosionDelay>

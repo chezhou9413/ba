@@ -159,7 +159,7 @@
 
   <StatDef>
     <defName>BANW_AffinityBonus_Explosion</defName>
-    <label>爆发克制伤害加成</label>
+    <label>爆发克制率</label>
     <description>爆发攻击处于属性优势时额外提高克制伤害。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
@@ -170,7 +170,7 @@
   </StatDef>
   <StatDef>
     <defName>BANW_AffinityBonus_Mysterious</defName>
-    <label>神秘克制伤害加成</label>
+    <label>神秘克制率</label>
     <description>神秘攻击处于属性优势时额外提高克制伤害。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
@@ -181,7 +181,7 @@
   </StatDef>
   <StatDef>
     <defName>BANW_AffinityBonus_Vibration</defName>
-    <label>振动克制伤害加成</label>
+    <label>振动克制率</label>
     <description>振动攻击处于属性优势时额外提高克制伤害。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
@@ -192,7 +192,7 @@
   </StatDef>
   <StatDef>
     <defName>BANW_AffinityBonus_Through</defName>
-    <label>贯通克制伤害加成</label>
+    <label>贯通克制率</label>
     <description>贯通攻击处于属性优势时额外提高克制伤害。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
@@ -203,7 +203,7 @@
   </StatDef>
   <StatDef>
     <defName>BANW_AffinityBonus_Composite</defName>
-    <label>复合克制伤害加成</label>
+    <label>复合克制率</label>
     <description>复合攻击处于属性优势时额外提高克制伤害。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>

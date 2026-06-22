@@ -72,6 +72,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_baofa>0</BAWC_TraitDef_baofa>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Rumi_A>0</BAWC_TraitDef_Rumi_A>
 		</forcedTraits>
@@ -190,10 +191,10 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#DC143C&gt;会长的矜持&lt;/color&gt;</label>
-                <description>被动技能:自身射程增加&lt;color=#DC143C&gt;10&lt;/color&gt;格，治疗质量增加&lt;color=#DC143C&gt;21%&lt;/color&gt;</description>
+                <description>被动技能:自身射程增加&lt;color=#DC143C&gt;10&lt;/color&gt;格，治愈力增加&lt;color=#DC143C&gt;21%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					 <BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
+					 <BANW_HealPowerMultiplier>0.21</BANW_HealPowerMultiplier>
 					 <BANW_RangedWeapon_RangeOffset>10</BANW_RangedWeapon_RangeOffset>
                 </statOffsets>
 				<statFactors>

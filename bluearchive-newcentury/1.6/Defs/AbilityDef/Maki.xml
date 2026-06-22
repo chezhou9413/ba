@@ -88,7 +88,7 @@
       <damageDef>BANC_Damage_Maki_B</damageDef><!--子弹类型-->
       <damageAmountBase>1</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0</stoppingPower><!--抑制-->
-      <armorPenetrationBase>10</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->
     </projectile>
     <graphicData>
@@ -155,7 +155,7 @@
       <damageDef>BANC_Damage_Maki_A</damageDef><!--子弹类型-->
       <damageAmountBase>148</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
-      <armorPenetrationBase>1</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->
     </projectile>
     <graphicData>

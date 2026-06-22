@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Nozomi_EX</defName>
  <label>在这边哟～！</label>
- <description>增加自身护甲穿透54%（持续26秒）</description>
+ <description>增加自身振动克制率54%（持续26秒）</description>
  <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
  <cooldownTicksRange>1800</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -58,7 +58,7 @@
         <!-- 显示名称 -->
         <label>在这边哟～！</label>
         <!-- 效果描述 -->
-        <description>增加自身护甲穿透54%。持续20秒</description>
+        <description>增加自身振动克制率54%。持续26秒</description>
         <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -68,7 +68,7 @@
           <stages>
           <li>     
            <statOffsets>
-         <BANW_RangedWeapon_Penetration>0.54</BANW_RangedWeapon_Penetration>
+         <BANW_AffinityBonus_Explosion>0.54</BANW_AffinityBonus_Explosion>
            </statOffsets>
            </li>
           </stages>
@@ -82,13 +82,13 @@
     </HediffDef>
   
 <AbilityDef>
-  <defName>BAWN_Nozomi_Train_Test</defName>
-  <label>发车测试</label>
-  <description>发射可穿墙直线子弹，对路径上的敌人和墙体按间隔造成攻击力200%的贯通伤害。</description>
-  <iconPath>Ability/Icon/Nozomi/Nozomi_A</iconPath>
-  <cooldownTicksRange>1800</cooldownTicksRange>
+  <defName>BAWN_Nozomi_EXX</defName>
+  <label>助推启动！</label>
+  <description>对直线范围内的1名指定敌方单位造成1567%自身攻击力的伤害</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
+  <cooldownTicksRange>3600</cooldownTicksRange>
   <hotKey>Misc11</hotKey>
-  <warmupStartSound>Nozomi_Skill_EX</warmupStartSound>
+  <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
   <showPsycastEffects>False</showPsycastEffects>
   <stunTargetWhileCasting>false</stunTargetWhileCasting>
   <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
@@ -101,13 +101,14 @@
     <soundCast>BANW_Wp_HG_At</soundCast>
     <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
     <range>44</range>
-    <warmupTime>0.5</warmupTime>
+    <warmupTime>1.0</warmupTime>
     <requireLineOfSight>false</requireLineOfSight>
     <targetParams>
       <!-- 直线弹允许瞄准地面、Pawn 和建筑，用于测试穿墙与打墙。 -->
-      <canTargetLocations>true</canTargetLocations>
+      <canTargetLocations>false</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
       <canTargetPawns>true</canTargetPawns>
-      <canTargetBuildings>true</canTargetBuildings>
+      <canTargetBuildings>false</canTargetBuildings>
       <canTargetAnimals>true</canTargetAnimals>
       <canTargetHumans>true</canTargetHumans>
       <canTargetMechs>true</canTargetMechs>
@@ -141,7 +142,7 @@
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
           <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>2.0</attackPowerRatio>
+          <attackPowerRatio>3.13</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>Bomb</damageDef>
           <!-- 是否允许暴击。 -->
@@ -150,12 +151,87 @@
           <applyAffinity>true</applyAffinity>
           <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
           <isExSkill>true</isExSkill>
+          <effecterDef>BANW_Hanako_Ef_B</effecterDef>
         </li>
+       
       </previewActions>
     </li>
   </modExtensions>
 </AbilityDef>
 
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Nozomi_Train_Test</defName>
+    <label>助推启动！</label>
+    <thingClass>BANWlLib.Projectiles.Projectile_PiercingArea</thingClass>
+    <projectile>
+      <!-- 统一战斗层使用的伤害类型。 -->
+      <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+      <!-- 固定基础伤害交给扩展字段配置，这里保持 0。 -->
+      <damageAmountBase>0</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <armorPenetrationBase>2</armorPenetrationBase>
+      <speed>70</speed>
+      <flyOverhead>true</flyOverhead>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(4,12)</drawSize>
+      <texPath>Projectile/Bullet_Nozomi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <modExtensions>
+      <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
+        <!-- 同一目标每隔多少 tick 可再次受到该穿透弹伤害。 -->
+        <damageIntervalTicks>5</damageIntervalTicks>
+        <!-- 判定宽度，垂直于飞行方向。 -->
+        <damageWidth>2</damageWidth>
+        <!-- 判定长度，沿飞行方向。 -->
+        <damageLength>5</damageLength>
+        <!-- true 表示即使点击近处，也按 maxRange 沿点击方向飞到最大距离。 -->
+        <extendToMaxRange>true</extendToMaxRange>
+        <!-- 最大飞行距离，应与技能 range 保持一致。 -->
+        <maxRange>44</maxRange>
+        <!-- 是否跳过同阵营和盟友。 -->
+        <immuneFriendlyFire>true</immuneFriendlyFire>
+        <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+        <baseAmount>0</baseAmount>
+        <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+        <attackPowerRatio>3.13</attackPowerRatio>
+        <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>true</isExSkill>
+        <!-- 是否允许暴击。 -->
+        <canCrit>true</canCrit>
+        <!-- 是否应用攻击类型与护甲类型克制。 -->
+        <applyAffinity>true</applyAffinity>
+        <!-- 是否允许命中墙体等建筑。 -->
+        <canHitBuilding>true</canHitBuilding>
+        <!-- 是否命中敌对目标。 -->
+        <affectHostile>true</affectHostile>
+        <!-- 是否命中友方目标。 -->
+        <affectFriendly>false</affectFriendly>
+        <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
+        <directionalImpactEffect></directionalImpactEffect>
+        <!-- 是否对 Pawn 触发方向命中特效。 -->
+        <directionalImpactOnPawn>true</directionalImpactOnPawn>
+        <!-- 是否对 Building 触发方向命中特效。 -->
+        <directionalImpactOnBuilding>true</directionalImpactOnBuilding>
+        <!-- 方向命中特效飞出速度。 -->
+        <directionalImpactSpeed>10</directionalImpactSpeed>
+        <!-- 方向命中特效沿弹道方向向前偏移。 -->
+        <directionalImpactOffsetForward>0.3</directionalImpactOffsetForward>
+        <!-- 方向命中特效向上偏移，避免埋进地面。 -->
+        <directionalImpactOffsetUp>0.5</directionalImpactOffsetUp>
+        <!-- 飞行开始时的绘制缩放。 -->
+        <startDrawScale>0.5</startDrawScale>
+        <!-- 飞行结束时的绘制缩放。 -->
+        <endDrawScale>1.2</endDrawScale>
+        <!-- 淡入 tick 数。 -->
+        <fadeInTicks>2</fadeInTicks>
+        <!-- 淡出 tick 数。 -->
+        <fadeOutTicks>5</fadeOutTicks>
+      </li>
+    </modExtensions>
+  </ThingDef>
 <AbilityDef>
   <defName>BAWN_Nozomi_Field_Test</defName>
   <label>脱手场地测试</label>
@@ -236,6 +312,13 @@
     </li>
   </comps>
 </AbilityDef>
+
+<DamageDef ParentName="BANC_Damage_zhendong">
+  <defName>BANC_Damage_Nozomi_EXX</defName>
+  <!-- 伤害命中时播放的方向自适应特效。 -->
+  <damageEffecter></damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+</DamageDef>
 
 <DamageDef ParentName="BANC_Damage_guantong">
   <defName>BANC_Damage_Nozomi_Train</defName>

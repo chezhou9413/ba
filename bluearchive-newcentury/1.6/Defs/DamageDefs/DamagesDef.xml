@@ -35,16 +35,13 @@
     <externalViolence>true</externalViolence>
     <deathMessage>{0} 死于贯通伤害</deathMessage>
     <hediff>Stab</hediff>
-    <hediffSolid>Crack</hediffSolid>
+    <hediff>Gunshot</hediff>
     <armorCategory>Sharp</armorCategory>
-    <bluntInnerHitDamageFractionToConvert>0.4~0.5</bluntInnerHitDamageFractionToConvert>
-    <bluntInnerHitDamageFractionToAdd>0.4~0.5</bluntInnerHitDamageFractionToAdd>
-    <bluntInnerHitChance>0.6</bluntInnerHitChance>
     <hasForcefulImpact>true</hasForcefulImpact>
-    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
     <impactSoundType>Bullet</impactSoundType>
-    <overkillPctToDestroyPart>0.2~0.6</overkillPctToDestroyPart>
-    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+    <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
     <isRanged>true</isRanged>
     <makesAnimalsFlee>true</makesAnimalsFlee>
   </DamageDef>
@@ -72,47 +69,30 @@
     <workerClass>DamageWorker_Blunt</workerClass>
     <externalViolence>true</externalViolence>
     <deathMessage>{0} 死于振动伤害</deathMessage>
-    <hediff>Crush</hediff>
-    <hediffSkin>Bruise</hediffSkin>
-    <hediffSolid>Crack</hediffSolid>
-    <armorCategory>Blunt</armorCategory> 
+    <hediff>Gunshot</hediff>
+    <armorCategory>Sharp</armorCategory>
     <hasForcefulImpact>true</hasForcefulImpact>
-    <bluntInnerHitChance>0.2</bluntInnerHitChance>
     <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
     <impactSoundType>Bullet</impactSoundType>
-    <overkillPctToDestroyPart>0.2~0.7</overkillPctToDestroyPart>
+    <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
     <isRanged>true</isRanged>
-    <bluntStunDuration>2.0</bluntStunDuration>
     <makesAnimalsFlee>true</makesAnimalsFlee>
-    <bluntStunChancePerDamagePctOfCorePartToHeadCurve>
-      <points>
-        <li>(0.01, 0.50)</li>
-        <li>(0.5, 1.0)</li>
-      </points>
-    </bluntStunChancePerDamagePctOfCorePartToHeadCurve>
-    <bluntStunChancePerDamagePctOfCorePartToBodyCurve>
-      <points>
-        <li>(0.01, 0.2)</li>
-        <li>(0.5, 1.0)</li>
-      </points>
-    </bluntStunChancePerDamagePctOfCorePartToBodyCurve>
   </DamageDef>
 
   <DamageDef Name="BANC_Damage_shenmi">
     <defName>BANC_Damage_shenmi</defName>
     <label>神秘</label>
     <workerClass>DamageWorker_AddInjury</workerClass>
-    <externalViolence>false</externalViolence>
+    <externalViolence>true</externalViolence>
     <deathMessage>{0} 死于神秘伤害</deathMessage>
-    <hediff>Shredded</hediff>
-    <armorCategory>Heat</armorCategory>
-    <bluntInnerHitDamageFractionToConvert>0.1~0.2</bluntInnerHitDamageFractionToConvert>
-    <bluntInnerHitDamageFractionToAdd>0.2~0.35</bluntInnerHitDamageFractionToAdd>
-    <bluntInnerHitChance>0.4</bluntInnerHitChance>
+    <hediff>Gunshot</hediff>
+    <armorCategory>Sharp</armorCategory>
     <hasForcefulImpact>true</hasForcefulImpact>
-    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
     <impactSoundType>Bullet</impactSoundType>
-    <overkillPctToDestroyPart>0.2~0.8</overkillPctToDestroyPart>
+    <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
     <isRanged>true</isRanged>
     <makesAnimalsFlee>true</makesAnimalsFlee>
   </DamageDef>
@@ -170,7 +150,7 @@
     <defName>BANC_Damage_Arisu</defName>
     <label>神秘</label>
     <workerClass>DamageWorker_AddInjury</workerClass>
-    <externalViolence>false</externalViolence>
+    <externalViolence>true</externalViolence>
     <deathMessage>{0} 死于神秘伤害</deathMessage>
     <hediff>Shredded</hediff>
     <armorCategory>Heat</armorCategory>

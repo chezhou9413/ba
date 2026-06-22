@@ -181,7 +181,7 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#FFBB00&gt;艺术家的灵感&lt;/color&gt;</label>
-                <description>子技能:自身暴击率增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <description>被动技能:自身暴击率增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 					<BANW_CriticalChance>0.26</BANW_CriticalChance>
@@ -193,12 +193,12 @@
         </degreeDatas>
     </TraitDef>
 	<TraitDef>
-        <defName>BAWC_TraitDef_Momoi_B</defName>
+        <defName>BAWC_TraitDef_Midori_B</defName>
         <commonality>0</commonality>
         <degreeDatas>
             <li>
                 <label>&lt;color=#FFBB00&gt;开发者协同效应：桃&lt;/color&gt;</label>
-                <description>子技能:增加自身&lt;color=#DC143C&gt;29%&lt;/color&gt;的攻击速度。</description>
+                <description>子技能:自身攻击速度增加&lt;color=#DC143C&gt;29%&lt;/color&gt;。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 					<AimingDelayFactor>-0.29</AimingDelayFactor>

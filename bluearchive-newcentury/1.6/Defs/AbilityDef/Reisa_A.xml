@@ -102,7 +102,7 @@
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
       <damageAmountBase>143</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.20</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
       <extraDamages>
       <li>

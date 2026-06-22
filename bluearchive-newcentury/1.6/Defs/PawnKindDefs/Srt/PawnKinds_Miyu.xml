@@ -63,7 +63,9 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Miyu_A>0</BAWC_TraitDef_Miyu_A>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -174,4 +176,21 @@
 		</modExtensions>
 	</PawnKindDef>
 
+	<TraitDef>
+        <defName>BAWC_TraitDef_Miyu_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;深呼吸&lt;/color&gt;</label>
+                <description>被动技能:自身暴击伤害增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

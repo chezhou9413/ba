@@ -76,6 +76,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Kazusa_A>0</BAWC_TraitDef_Kazusa_A>
 			<BAWC_TraitDef_Kazusa_B>0</BAWC_TraitDef_Kazusa_B>

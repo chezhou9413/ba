@@ -68,6 +68,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_shenmi>0</BAWC_TraitDef_shenmi>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Reijo_A>0</BAWC_TraitDef_Reijo_A>
 		</forcedTraits>

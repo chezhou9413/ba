@@ -70,7 +70,9 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_baofa>0</BAWC_TraitDef_baofa>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Shimiko_A>0</BAWC_TraitDef_Shimiko_A>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -181,5 +183,20 @@
 		</modExtensions>
 	</PawnKindDef>
 
-	
+	<TraitDef>
+        <defName>BAWC_TraitDef_Shimiko_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;积累知识吧！&lt;/color&gt;</label>
+                <description>被动技能:自身治愈力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <BANW_HealPowerMultiplier>0.26</BANW_HealPowerMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
 </Defs>

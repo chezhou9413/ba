@@ -93,7 +93,7 @@
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>熟练治疗</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身治疗质量增加<color=#00FFFF>26%</color>]]>
+				<AbilityIntroduction><![CDATA[自身治愈力增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

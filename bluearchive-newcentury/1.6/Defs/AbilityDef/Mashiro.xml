@@ -86,7 +86,7 @@
       <damageDef>BANC_Damage_Shiroko_EX</damageDef><!--子弹类型-->
       <damageAmountBase>307</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
     </projectile>
     <thingClass>Projectile_Explosive</thingClass>
@@ -127,7 +127,7 @@
       <damageDef>BANC_Damage_Mashiro</damageDef><!--子弹类型-->
       <damageAmountBase>699</damageAmountBase><!--子弹伤害-->
       <stoppingPower>50</stoppingPower><!--抑制-->
-      <armorPenetrationBase>1</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>150</speed><!--子弹速度-->
     <extraDamages>
       <li>

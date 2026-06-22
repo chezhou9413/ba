@@ -86,6 +86,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Tank>0</BAWC_TraitDef_Tank>
+			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Reisa_A>0</BAWC_TraitDef_Reisa_A>
 		</forcedTraits>

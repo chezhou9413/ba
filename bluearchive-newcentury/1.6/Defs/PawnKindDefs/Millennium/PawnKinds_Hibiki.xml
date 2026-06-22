@@ -182,7 +182,7 @@
         <commonality>0</commonality>
         <degreeDatas>
             <li>
-                <label>&lt;color=#DC143C&gt;精确瞄准&lt;/color&gt;</label>
+                <label>&lt;color=#DC143C&gt;可能会有危险哦&lt;/color&gt;</label>
                 <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的暴击伤害</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>

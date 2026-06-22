@@ -70,6 +70,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
+			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
 			<BAWC_TraitDef_Kokona_A>0</BAWC_TraitDef_Kokona_A>
 		</forcedTraits>
@@ -199,4 +200,6 @@
             </li>
         </degreeDatas>
 </TraitDef>
+
+
 </Defs>

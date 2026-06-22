@@ -95,7 +95,7 @@
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>会长的矜持</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身射程增加<color=#00FFFF>10%</color>，治疗质量增加<color=#00FFFF>21%</color>]]>
+				<AbilityIntroduction><![CDATA[自身射程增加<color=#00FFFF>10%</color>，治愈力增加<color=#00FFFF>21%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

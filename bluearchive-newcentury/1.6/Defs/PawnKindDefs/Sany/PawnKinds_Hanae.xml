@@ -63,6 +63,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Medical>0</BAWC_TraitDef_Medical>
+			<BAWC_TraitDef_baofa>0</BAWC_TraitDef_baofa>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Hanae_A>0</BAWC_TraitDef_Hanae_A>
 			
@@ -182,13 +183,12 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#FFBB00&gt;熟练治疗&lt;/color&gt;</label>
-                <description>被动技能:自身治疗质量增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <description>被动技能:自身治愈力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    
+                    <BANW_HealPowerMultiplier>0.26</BANW_HealPowerMultiplier>
                 </statOffsets>
 				<statFactors>
-					<MedicalTendQuality>1.26</MedicalTendQuality>
 				</statFactors>
             </li>
         </degreeDatas>

@@ -79,7 +79,9 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_baofa>0</BAWC_TraitDef_baofa>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
+			<BAWC_TraitDef_Mashiro_A>0</BAWC_TraitDef_Mashiro_A>
 			<BAWC_TraitDef_Mashiro_B>0</BAWC_TraitDef_Mashiro_B>
 		</forcedTraits>
 		<modExtensions>
@@ -194,6 +196,22 @@
 			</li>
 		</modExtensions>
 	</PawnKindDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Mashiro_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;正义的气息&lt;/color&gt;</label>
+                <description>子技能:自身暴击率提升&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <BANW_CriticalChance>0.26</BANW_CriticalChance>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
 <TraitDef>
         <defName>BAWC_TraitDef_Mashiro_B</defName>
         <commonality>0</commonality>

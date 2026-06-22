@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<SoundDef>
+	<defName>Nozomi_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Nozomi/SkillEX/Nozomi_ExxSkill_1</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Nozomi/SkillEX/Nozomi_ExxSkill_2</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Nozomi/SkillEX/Nozomi_ExxSkill_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+	<SoundDef>
 	<defName>Nozomi_Skill_EX</defName>  <!--一技能伤害-->  
 	<maxVoices>1</maxVoices>
   <context>MapOnly</context>  
@@ -29,6 +52,57 @@
 			<grains>
 				<li Class="AudioGrain_Clip">
 					<clipPath>Ability/Nozomi/Nozomi_A</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>90~90</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Nozomi_Skill_EX_B</defName>  <!--一技能伤害-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Nozomi/Nozomi_B</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>90~90</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Nozomi_Skill_EX_C</defName>  <!--一技能伤害-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Nozomi/Nozomi_C</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>90~90</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Nozomi_Skill_EX_D</defName>  <!--一技能伤害-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Nozomi/Nozomi_D</clipPath>
 				</li>
 			</grains>      
 			<volumeRange>90~90</volumeRange>

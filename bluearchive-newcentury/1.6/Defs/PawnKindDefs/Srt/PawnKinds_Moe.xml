@@ -74,7 +74,9 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Moe_A>0</BAWC_TraitDef_Moe_A>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -184,5 +186,21 @@
 			</li>
 		</modExtensions>
 	</PawnKindDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Moe_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;毁灭的快感&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
 
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

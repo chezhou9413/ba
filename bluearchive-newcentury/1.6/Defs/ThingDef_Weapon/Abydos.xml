@@ -65,7 +65,7 @@
       <damageDef>BANC_Damage_guantong</damageDef>
       <damageAmountBase>66</damageAmountBase>
       <stoppingPower>8</stoppingPower>
-      <armorPenetrationBase>0.45</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>
     </projectile>
     <graphicData>
@@ -143,7 +143,7 @@
       <damageDef>BANC_Damage_baofa</damageDef>
       <damageAmountBase>34</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
-      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
     </projectile>
     <graphicData>
@@ -220,7 +220,7 @@
       <damageDef>BANC_Damage_guantong</damageDef>
       <damageAmountBase>14</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
-      <armorPenetrationBase>0.35</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
     </projectile>
     <graphicData>
@@ -297,7 +297,7 @@
       <damageDef>BANC_Damage_baofa</damageDef>
       <damageAmountBase>32</damageAmountBase>
       <stoppingPower>2</stoppingPower>
-      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
     </projectile>
     <graphicData>
@@ -375,7 +375,7 @@
       <damageDef>BANC_Damage_guantong</damageDef>
       <damageAmountBase>24</damageAmountBase>
       <stoppingPower>5</stoppingPower>
-      <armorPenetrationBase>0.55</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>90</speed>
       <extraDamages>
       <li>
@@ -457,7 +457,7 @@
       <damageDef>BANC_Damage_baofa</damageDef><!--贯通-->
       <damageAmountBase>61</damageAmountBase>
       <stoppingPower>8</stoppingPower>
-      <armorPenetrationBase>0.25</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>
     </projectile>
     <graphicData>

@@ -54,7 +54,7 @@
   <projectile>
     <damageDef>RangedStab</damageDef>
     <damageAmountBase>300</damageAmountBase>
-    <armorPenetrationBase>1</armorPenetrationBase>
+    <armorPenetrationBase>2</armorPenetrationBase>
     <stoppingPower>1</stoppingPower>
     <speed>75</speed>
   </projectile>
@@ -112,7 +112,7 @@
   <projectile>
     <damageDef>BANC_Damage_Akane</damageDef>
     <damageAmountBase>350</damageAmountBase>
-    <armorPenetrationBase>1</armorPenetrationBase>
+    <armorPenetrationBase>2</armorPenetrationBase>
     <stoppingPower>2</stoppingPower>
     <speed>100</speed>
   <!--  <extraDamages>

@@ -68,6 +68,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_Mika>0</BAWC_TraitDef_Mika>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
 			<BAWC_TraitDef_Mika_A>0</BAWC_TraitDef_Mika_A>

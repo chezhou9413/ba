@@ -74,7 +74,9 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhendong>0</BAWC_TraitDef_zhendong>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+			<BAWC_TraitDef_Eri_A>0</BAWC_TraitDef_Eri_A>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -184,4 +186,22 @@
 			</li>
 		</modExtensions>
 	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Eri_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;吉兆&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

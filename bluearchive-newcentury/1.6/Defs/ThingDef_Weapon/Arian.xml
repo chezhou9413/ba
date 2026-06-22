@@ -66,7 +66,7 @@
       <damageDef>BANC_Damage_baofa</damageDef>
       <damageAmountBase>10</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
-      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>65</speed>
     </projectile>
     <graphicData>
@@ -144,7 +144,7 @@
       <damageDef>BANC_Damage_baofa</damageDef>
       <damageAmountBase>77</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
-      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>80</speed>
     </projectile>
     <graphicData>
@@ -221,7 +221,7 @@
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
       <damageAmountBase>74</damageAmountBase><!--子弹伤害-->
       <stoppingPower>1.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>120</speed><!--子弹速度-->
     </projectile>
     <graphicData>
@@ -306,7 +306,7 @@
       <damageAmountBase>24</damageAmountBase><!--子弹伤害-->
       <explosionRadius>1</explosionRadius>
       <stoppingPower>2</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.15</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>25</speed><!--子弹速度-->
     </projectile>
     <graphicData>

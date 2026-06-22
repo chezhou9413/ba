@@ -86,6 +86,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
+			<BAWC_TraitDef_zhendong>0</BAWC_TraitDef_zhendong>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
 			<BAWC_TraitDef_Reisa_A_A>0</BAWC_TraitDef_Reisa_A_A>
 		</forcedTraits>

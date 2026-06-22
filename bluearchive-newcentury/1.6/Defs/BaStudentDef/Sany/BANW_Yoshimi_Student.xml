@@ -91,7 +91,7 @@
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>别，别小看我！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>26%</color>的暴击率]]>
+				<AbilityIntroduction><![CDATA[自身暴击率增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

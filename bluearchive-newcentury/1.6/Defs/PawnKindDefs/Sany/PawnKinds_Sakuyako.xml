@@ -70,7 +70,9 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_shenmi>0</BAWC_TraitDef_shenmi>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+			<BAWC_TraitDef_Sakurako_A>0</BAWC_TraitDef_Sakurako_A>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -181,5 +183,19 @@
 		</modExtensions>
 	</PawnKindDef>
 
-	
+	<TraitDef>
+        <defName>BAWC_TraitDef_Sakurako_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;审判罪恶之人&lt;/color&gt;</label>
+                <description>被动技能:自身攻击速度增加&lt;color=#DC143C&gt;26%&lt;/color&gt;。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<AimingDelayFactor>-0.26</AimingDelayFactor>
+                    <RangedCooldownFactor>-0.26</RangedCooldownFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

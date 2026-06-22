@@ -47,7 +47,7 @@
       <damageDef>BANC_Damage_Chise</damageDef><!--子弹类型-->
       <damageAmountBase>312</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
-      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>50</speed><!--子弹速度-->
     </projectile>
    <thingClass>Projectile_Explosive</thingClass>

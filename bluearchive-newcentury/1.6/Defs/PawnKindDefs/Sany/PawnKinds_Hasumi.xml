@@ -70,6 +70,7 @@
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Hasumi_A>0</BAWC_TraitDef_Hasumi_A>
 			<BAWC_TraitDef_Hasumi_B>0</BAWC_TraitDef_Hasumi_B>
@@ -192,10 +193,10 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#FFBB00&gt;精确瞄准&lt;/color&gt;</label>
-                <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的护甲穿透</description>
+                <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的暴击伤害</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<BANW_RangedWeapon_Penetration>+0.26</BANW_RangedWeapon_Penetration>
+					<BANW_CriticalDamage>0.26</BANW_CriticalDamage>
                 </statOffsets>
             </li>
         </degreeDatas>
