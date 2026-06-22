@@ -535,7 +535,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             if (BaStudentUI.StudentBio.StudentBioName != null)
             {
                 GameObject gameObject = StudentBioContent.transform.Find("StudentAvatar").gameObject;
-                gameObject.GetComponent<Image>().sprite = BaStudentUI.StudentAvatarSprite;
+                gameObject.GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(BaStudentUI.StudentAvatar);
                 gameObject.transform.Find("StudentDesp").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.StudentBio.StudentDesp;
                 gameObject.transform.Find("StudentName").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.StudentBio.StudentBioName;
                 gameObject.transform.Find("AcademyLogo").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.StudentBio.AcademyLogoPath));

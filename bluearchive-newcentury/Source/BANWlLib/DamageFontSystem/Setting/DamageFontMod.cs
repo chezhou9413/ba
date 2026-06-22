@@ -5,12 +5,15 @@ using Verse;
 
 namespace BANWlLib.DamageFontSystem.Setting
 {
+    //伤害字体设置入口负责注册设置页，并在模组对象创建时安装全局 Harmony 补丁。
     public class DamageFontMod : Mod
     {
         public static DamageFontSettings settings;
 
+        //构造函数负责读取设置并触发轻量补丁安装，避免依赖其他 Mod 入口的实例化顺序。
         public DamageFontMod(ModContentPack content) : base(content)
         {
+            BANWlLib.ModMain.ApplyHarmonyPatches();
             settings = GetSettings<DamageFontSettings>();
         }
 

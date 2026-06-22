@@ -1,4 +1,5 @@
 using BANWlLib.BaDef;
+using BANWlLib.mainUI.ManualUI;
 using BANWlLib.Tool;
 using BANWlLib.mainUI.MonoComp;
 using BANWlLib.mainUI.StudentManual.MonoComp;
@@ -20,6 +21,7 @@ namespace BANWlLib.mainUI.StudentManual
         public static void ShowStudentDetail(BaStudentUI baStudent)
         {
             ManualMapData.isOpenDetail = true;
+            BAManualUIImageLoader.ClearDetailImages();
             if (tracker == null)
             {
                 tracker = Current.Game.GetComponent<ManualDataGameComp>();
@@ -38,6 +40,7 @@ namespace BANWlLib.mainUI.StudentManual
 
         public static void CloseStudentDetail()
         {
+            BAManualUIImageLoader.ClearDetailImages();
             ManualMapData.StudentDetailOBJ.SetActive(false);
             ManualMapData.isOpenDetail = false;
         }

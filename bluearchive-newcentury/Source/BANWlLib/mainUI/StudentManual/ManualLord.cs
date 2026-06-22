@@ -117,16 +117,11 @@ namespace BANWlLib.mainUI.StudentManual
             }
 
 
-            // 输出所有已加载的学生
+            // 记录学生头像路径，头像在列表实际显示时再解码。
             foreach (BaStudentUI baStudentUI in ManualMapData.studentUIList)
             {
-                baStudentUI.StudentAvatarPath = UiMapData.modRootPath + "/Common/Textures/" + baStudentUI.StudentAvatar + ".png";
-                baStudentUI.StudentAvatarSprite = imgcvT2d.LoadSpriteFromFile(baStudentUI.StudentAvatarPath);
-                if (baStudentUI.StudentAvatarSprite == null)
-                {
-                    Log.Warning("学生头像文件不存在: " + baStudentUI.StudentAvatarPath);
-                    continue;
-                }
+                baStudentUI.StudentAvatarPath = baStudentUI.StudentAvatar;
+                baStudentUI.StudentAvatarSprite = null;
             }
         }
         //此函数用于赋值缺失引用的pawn读档时调用

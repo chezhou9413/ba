@@ -282,10 +282,14 @@ namespace BANWlLib
         }
     }
 
+    //Mod 入口负责在 RimWorld 创建模组对象时安装轻量补丁，并记录全局资源根路径。
     public class newpro : Mod
     {
+        //构造函数只执行轻量初始化，避免在游戏启动初始化阶段加载 UI 音频或贴图资源。
         public newpro(ModContentPack content) : base(content)
         {
+            UiMapData.modRootPath = content.RootDir;
+            BANWlLib.ModMain.ApplyHarmonyPatches();
         }
     }
 }

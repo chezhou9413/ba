@@ -28,13 +28,14 @@ namespace MyCoolMusicMod
 
     namespace MyCoolMusicMod
     {
+        //音频入口类负责保留 RimWorld 对旧 Mod 类的实例化路径，并执行轻量全局初始化。
         public class LordBgmData : Mod
         {
+            //构造函数只记录模组根目录并安装补丁，音频解码延后到 BA UI 初始化阶段。
             public LordBgmData(ModContentPack content) : base(content)
             {
                 UiMapData.modRootPath = content.RootDir;
-                LoopBGMManager.LoadAllBgm();
-                LoopBGMManager.LoadAllAudio();
+                BANWlLib.ModMain.ApplyHarmonyPatches();
             }
         }
 
@@ -43,6 +44,21 @@ namespace MyCoolMusicMod
             public static Dictionary<string, AudioClip> bgmPool = new Dictionary<string, AudioClip>();
 
             public static Dictionary<string, AudioClip> audioPool = new Dictionary<string, AudioClip>();
+            private static bool audioLoadStarted;
+
+            //启动 UI 音频加载，负责保证 BGM 和音效只在 BA UI 初始化阶段异步加载一次。
+            public static void EnsureAudioLoaded()
+            {
+                if (audioLoadStarted)
+                {
+                    return;
+                }
+
+                audioLoadStarted = true;
+                LoadAllBgm();
+                LoadAllAudio();
+            }
+
             public static async void LoadAllBgm()
             {
                 // 防空检查

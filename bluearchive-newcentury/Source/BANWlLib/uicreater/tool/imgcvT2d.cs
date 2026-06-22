@@ -1,4 +1,5 @@
 ﻿using BANWlLib.BaDef;
+using BANWlLib.mainUI.ManualUI;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +12,11 @@ namespace newpro
     {
         public static string getRimWorldImgPath(string Rimworldpath)
         {
+            if (BAManualUIImageLoader.IsManualUIImagePath(Rimworldpath))
+            {
+                return BAManualUIImageLoader.GetFilePath(Rimworldpath);
+            }
+
             string a = UiMapData.modRootPath + "/Common/Textures/" + Rimworldpath + ".png".Replace("/", "\\");
             return a;
         }
@@ -48,6 +54,11 @@ namespace newpro
         {
             try
             {
+                if (BAManualUIImageLoader.IsManualUIImagePath(path))
+                {
+                    return BAManualUIImageLoader.GetSprite(path);
+                }
+
                 
                 string directory = Path.GetDirectoryName(path);
                 string fileNameNoExt = Path.GetFileNameWithoutExtension(path);
