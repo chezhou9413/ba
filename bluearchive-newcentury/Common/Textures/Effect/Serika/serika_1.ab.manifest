@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 150026887
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0aef7cd20dc90c68b2a9b6752add987d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 0aef7cd20dc90c68b2a9b6752add987d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Serika/Serika_1.jpg
+Dependencies: []

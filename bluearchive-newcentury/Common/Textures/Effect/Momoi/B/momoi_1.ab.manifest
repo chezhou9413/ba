@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3720703408
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8cd86fe896734831a2c4f49a9876b492
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 8cd86fe896734831a2c4f49a9876b492
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Momoi/B/Momoi_1.png
+Dependencies: []

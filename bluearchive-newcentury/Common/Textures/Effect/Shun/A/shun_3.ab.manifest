@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3561395121
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d80f5aab6fc2bbb34937149cced6b504
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d80f5aab6fc2bbb34937149cced6b504
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Shun/A/Shun_3.jpg
+Dependencies: []

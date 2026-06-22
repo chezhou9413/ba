@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef>
+    <defName>BANW_StarGrowthDisplayStatus</defName>
+    <label>阶级成长</label>
+    <description>显示当前阶级提供的生命、攻击和治疗成长。该状态只负责显示，不直接提供属性加成。</description>
+    <!-- 状态类：运行时读取 Pawn 当前阶级和 PawnKindDef 的 BattleStarGrowthExtension。 -->
+    <hediffClass>BANWlLib.BattleSystem.Hediff_StarGrowthDisplay</hediffClass>
+    <!-- 初始严重度：固定为 1，仅用于让健康页显示状态。 -->
+    <initialSeverity>1</initialSeverity>
+    <!-- 最大严重度：固定为 1，状态本身不靠严重度表达数值。 -->
+    <maxSeverity>1</maxSeverity>
+    <stages>
+      <li>
+        <!-- 状态阶段标签：实际显示内容由代码追加当前阶级。 -->
+        <label>阶级成长</label>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

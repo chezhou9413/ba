@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2404511733
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a4d2155c43d5c0ef3f0c55e9f33db0d1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a4d2155c43d5c0ef3f0c55e9f33db0d1
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Mashiro/A/Mashiro_2.jpg
+Dependencies: []

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_A_1_Mote</defName>
@@ -10,7 +10,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -30,7 +30,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -50,7 +50,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -70,7 +70,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -90,7 +90,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -110,7 +110,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -130,7 +130,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_7</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -150,7 +150,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_8</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -170,7 +170,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_9</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -190,7 +190,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/A/Hoshiro_10</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>20.5</drawSize><!-- 绘制尺寸 -->   
@@ -210,7 +210,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/B/Hoshiro_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   
@@ -230,7 +230,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hoshiro_A/B/Hoshiro_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>4.5</drawSize><!-- 绘制尺寸 -->   

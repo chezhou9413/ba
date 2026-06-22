@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BAWN_Hanako_0_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Hanako/A/Hanako</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hanako/A/Hanako</texPath><!-- 纹理图片路径 -->
       <drawSize>16.5</drawSize>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
@@ -24,7 +24,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hanako/A/Hanako_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>16.5</drawSize><!-- 绘制尺寸 -->   
@@ -43,7 +43,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hanako/A/Hanako_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>16.5</drawSize><!-- 绘制尺寸 -->   
@@ -62,7 +62,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hanako/A/Hanako_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>16.5</drawSize><!-- 绘制尺寸 -->   
@@ -81,7 +81,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hanako/A/Hanako_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>16.5</drawSize><!-- 绘制尺寸 -->   
@@ -100,7 +100,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hanako/A/Hanako_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>16.5</drawSize><!-- 绘制尺寸 -->   
@@ -119,7 +119,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hanako/A/Hanako_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>16.5</drawSize><!-- 绘制尺寸 -->   

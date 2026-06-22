@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_BC_1_Mote</defName>
@@ -10,7 +10,7 @@
 <collide>false</collide><!-- 是否与其它物体碰撞 -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/BC/BC_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.0</drawSize><!-- 绘制尺寸 -->   
@@ -30,7 +30,7 @@
 <collide>false</collide><!-- 是否与其它物体碰撞 -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/BC/BC_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.0</drawSize><!-- 绘制尺寸 -->   
@@ -50,7 +50,7 @@
 <collide>false</collide><!-- 是否与其它物体碰撞 -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/BC/BC_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.0</drawSize><!-- 绘制尺寸 -->   
@@ -70,7 +70,7 @@
 <collide>false</collide><!-- 是否与其它物体碰撞 -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/BC/BC_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>(3,10)</drawSize><!-- 绘制尺寸 -->   
@@ -90,7 +90,7 @@
 <collide>false</collide><!-- 是否与其它物体碰撞 -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/BC/BC_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>(3,10)</drawSize><!-- 绘制尺寸 -->   
@@ -110,7 +110,7 @@
 <collide>false</collide><!-- 是否与其它物体碰撞 -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/BC/BC_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>(3,10)</drawSize><!-- 绘制尺寸 -->   

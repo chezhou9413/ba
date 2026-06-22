@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 658272690
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 851a0907b87be75eefefa78b6fd5492c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 851a0907b87be75eefefa78b6fd5492c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Noa/A/Noa_4.jpg
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 370497622
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a48db1c390aa8bea5c80e02932700f36
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a48db1c390aa8bea5c80e02932700f36
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Ayane/A/Ayane_1.jpg
+Dependencies: []

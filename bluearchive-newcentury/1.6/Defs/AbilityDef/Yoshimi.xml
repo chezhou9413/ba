@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <AbilityDef>
 <defName>BAWN_Yoshimi_EX</defName>
@@ -56,7 +56,7 @@
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>3.5</drawSize>
       <texPath>Effect/Yoshimi/A/Yoshimi_1</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
     </graphicData>
   </ThingDef>
 <AbilityDef>
@@ -113,7 +113,7 @@
     </graphicData>
     <projectile>
       <damageAmountBase>1</damageAmountBase><!--子弹伤害-->
-      <explosionRadius>4.9</explosionRadius >
+      <explosionRadius>4.9</explosionRadius>
       <armorPenetrationBase>1</armorPenetrationBase><!--穿透-->
       <damageDef>BANC_Damage_Yoshimi_EXX</damageDef>
       <speed>300</speed><!--子弹速度-->

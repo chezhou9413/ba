@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BAWN_Airy_0_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Airy/A/Airy_0</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Airy/A/Airy_0</texPath><!-- 纹理图片路径 -->
       <drawSize>20</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -17,7 +17,7 @@
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BAWN_Airy_5_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Airy/A/Airy_5</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Airy/A/Airy_5</texPath><!-- 纹理图片路径 -->
       <drawSize>30</drawSize>
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -37,7 +37,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Airy/A/Airy_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>30.0</drawSize><!-- 绘制尺寸 -->   
@@ -56,7 +56,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Airy/A/Airy_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>30.0</drawSize><!-- 绘制尺寸 -->   
@@ -75,7 +75,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Airy/A/Airy_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>30.0</drawSize><!-- 绘制尺寸 -->   
@@ -94,7 +94,7 @@
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Airy/A/Airy_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>30.0</drawSize><!-- 绘制尺寸 -->   

@@ -189,7 +189,9 @@
     <Compile Include="BattleSystem\CommandAbilityBattleTooltipPatch.cs" />
     <Compile Include="BattleSystem\CompAbilityEffect_SpawnBattleField.cs" />
     <Compile Include="BattleSystem\DamageAffinityMatrixDef.cs" />
+    <Compile Include="BattleSystem\Hediff_StarGrowthDisplay.cs" />
     <Compile Include="BattleSystem\HediffComp_BattleStack.cs" />
+    <Compile Include="BattleSystem\StarGrowthDisplayUtility.cs" />
     <Compile Include="BattleSystem\Thing_BattleFieldController.cs" />
     <Compile Include="BattleSystem\WeaponDamageDisplayUtility.cs" />
     <Compile Include="Class1.cs" />
@@ -223,6 +225,15 @@
     <Compile Include="Dev\StudentListShow.cs" />
     <Compile Include="DOTween\DOTweenModuleUI.cs" />
     <Compile Include="Drop\SpawnPawnWithEffectUtility.cs" />
+    <Compile Include="Effects\AssetBundles\BAEffectBundleRecord.cs" />
+    <Compile Include="Effects\AssetBundles\BAEffectBundleRegistry.cs" />
+    <Compile Include="Effects\AssetBundles\BAEffectCacheGameComponent.cs" />
+    <Compile Include="Effects\AssetBundles\BAEffectGraphicsLifecycle.cs" />
+    <Compile Include="Effects\AssetBundles\BAEffectPathUtility.cs" />
+    <Compile Include="Effects\Graphics\Graphic_BAAbBase.cs" />
+    <Compile Include="Effects\Graphics\Graphic_BAAbFleckPulse.cs" />
+    <Compile Include="Effects\Graphics\Graphic_BAAbMoteWithAgeSecs.cs" />
+    <Compile Include="Effects\Graphics\Graphic_BAAbSingle.cs" />
     <Compile Include="HediffDefOf.cs" />
     <Compile Include="HumanIntPropertyComp.cs" />
     <Compile Include="HumanIntPropertyHelper.cs" />

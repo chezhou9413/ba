@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 133864478
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e868d9ed3e2c430eacb6517aae483694
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: e868d9ed3e2c430eacb6517aae483694
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/BC/BC_2.jpg
+Dependencies: []

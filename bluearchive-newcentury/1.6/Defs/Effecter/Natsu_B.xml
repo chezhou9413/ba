@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BAWN_Natsu_1_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_1</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_1</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -19,7 +19,7 @@
     <defName>BAWN_Natsu_1A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_1</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_1</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -33,7 +33,7 @@
     <defName>BAWN_Natsu_2_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_2</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_2</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -48,7 +48,7 @@
     <defName>BAWN_Natsu_2A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_2</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_2</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -62,7 +62,7 @@
     <defName>BAWN_Natsu_3_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_3</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_3</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -77,7 +77,7 @@
     <defName>BAWN_Natsu_3A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_3</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_3</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -91,7 +91,7 @@
     <defName>BAWN_Natsu_4_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_4</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_4</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -106,7 +106,7 @@
     <defName>BAWN_Natsu_4A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_4</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_4</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -120,7 +120,7 @@
     <defName>BAWN_Natsu_5_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_5</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_5</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -135,7 +135,7 @@
     <defName>BAWN_Natsu_5A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_5</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_5</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -149,7 +149,7 @@
     <defName>BAWN_Natsu_6_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_6</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_6</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -164,7 +164,7 @@
     <defName>BAWN_Natsu_6A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_6</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_6</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -178,7 +178,7 @@
     <defName>BAWN_Natsu_7_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_7</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_7</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -193,7 +193,7 @@
     <defName>BAWN_Natsu_7A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_7</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_7</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -207,7 +207,7 @@
     <defName>BAWN_Natsu_8_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_8</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_8</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -222,7 +222,7 @@
     <defName>BAWN_Natsu_8A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_8</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_8</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -236,7 +236,7 @@
     <defName>BAWN_Natsu_9_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_9</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_9</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -251,7 +251,7 @@
     <defName>BAWN_Natsu_9A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_9</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_9</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -265,7 +265,7 @@
     <defName>BAWN_Natsu_10_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_10</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_10</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -280,7 +280,7 @@
     <defName>BAWN_Natsu_10A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_10</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_10</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -294,7 +294,7 @@
     <defName>BAWN_Natsu_11_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_11</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_11</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -309,7 +309,7 @@
     <defName>BAWN_Natsu_11A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_11</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_11</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -323,7 +323,7 @@
     <defName>BAWN_Natsu_12A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_12</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_12</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -338,7 +338,7 @@
     <defName>BAWN_Natsu_12_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_12</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_12</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -353,7 +353,7 @@
     <defName>BAWN_Natsu_13A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_13</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_13</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -368,7 +368,7 @@
     <defName>BAWN_Natsu_13_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_13</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_13</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -382,7 +382,7 @@
     <defName>BAWN_Natsu_14_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_14</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_14</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -397,7 +397,7 @@
     <defName>BAWN_Natsu_14A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_14</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_14</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -411,7 +411,7 @@
     <defName>BAWN_Natsu_15_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_15</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_15</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -426,7 +426,7 @@
     <defName>BAWN_Natsu_15A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_15</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_15</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -440,7 +440,7 @@
     <defName>BAWN_Natsu_16_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_16</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_16</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -455,7 +455,7 @@
     <defName>BAWN_Natsu_16A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_16</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_16</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -469,7 +469,7 @@
     <defName>BAWN_Natsu_17_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_17</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_17</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -484,7 +484,7 @@
     <defName>BAWN_Natsu_17A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_17</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_17</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -498,7 +498,7 @@
     <defName>BAWN_Natsu_18_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_18</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_18</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -513,7 +513,7 @@
     <defName>BAWN_Natsu_18A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_18</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_18</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -527,7 +527,7 @@
     <defName>BAWN_Natsu_19_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_19</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_19</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -542,7 +542,7 @@
     <defName>BAWN_Natsu_19A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_19</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_19</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -556,7 +556,7 @@
     <defName>BAWN_Natsu_20_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_20</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_20</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -571,7 +571,7 @@
     <defName>BAWN_Natsu_20A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_20</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_20</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -585,7 +585,7 @@
     <defName>BAWN_Natsu_21_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_21</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_21</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -600,7 +600,7 @@
     <defName>BAWN_Natsu_21A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_21</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_21</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -615,7 +615,7 @@
     <defName>BAWN_Natsu_22_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_22</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_22</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -630,7 +630,7 @@
     <defName>BAWN_Natsu_22A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_22</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_22</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -645,7 +645,7 @@
     <defName>BAWN_Natsu_23_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_23</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_23</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -660,7 +660,7 @@
     <defName>BAWN_Natsu_23A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_23</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_23</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -675,7 +675,7 @@
     <defName>BAWN_Natsu_24_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_24</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_24</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -690,7 +690,7 @@
     <defName>BAWN_Natsu_24A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_24</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_24</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -705,7 +705,7 @@
     <defName>BAWN_Natsu_25_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_25</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_25</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -720,7 +720,7 @@
     <defName>BAWN_Natsu_25A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_25</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_25</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -735,7 +735,7 @@
     <defName>BAWN_Natsu_26_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_26</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_26</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -750,7 +750,7 @@
     <defName>BAWN_Natsu_26A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_26</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_26</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -765,7 +765,7 @@
     <defName>BAWN_Natsu_27_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_27</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_27</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -780,7 +780,7 @@
     <defName>BAWN_Natsu_27A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_27</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_27</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -795,7 +795,7 @@
     <defName>BAWN_Natsu_28_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_28</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_28</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -810,7 +810,7 @@
     <defName>BAWN_Natsu_28A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_28</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_28</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -825,7 +825,7 @@
     <defName>BAWN_Natsu_29_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_29</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_29</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -840,7 +840,7 @@
     <defName>BAWN_Natsu_29A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_29</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_29</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -855,7 +855,7 @@
     <defName>BAWN_Natsu_30_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_30</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_30</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -870,7 +870,7 @@
     <defName>BAWN_Natsu_30A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_30</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_30</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -885,7 +885,7 @@
     <defName>BAWN_Natsu_31_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_31</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_31</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -900,7 +900,7 @@
     <defName>BAWN_Natsu_31A_Mote</defName>
     <graphicData><!-- 图形数据配置 -->
       <drawSize>1.6</drawSize>
-      <texPath>Effect/Natsu/D/Natsu_31</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Natsu/D/Natsu_31</texPath><!-- 纹理图片路径 -->
 
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->

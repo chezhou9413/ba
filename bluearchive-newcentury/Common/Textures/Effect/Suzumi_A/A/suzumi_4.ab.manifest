@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3696895541
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6ec6f51e2c566ddb4bbcb1328fe4f213
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6ec6f51e2c566ddb4bbcb1328fe4f213
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Suzumi_A/A/Suzumi_4.jpg
+Dependencies: []

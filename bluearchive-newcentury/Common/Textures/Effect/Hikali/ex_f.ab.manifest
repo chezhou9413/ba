@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1554259315
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d1fbb3fdd2c726ec134f3e4b3a40aba5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d1fbb3fdd2c726ec134f3e4b3a40aba5
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Hikali/EX_F.png
+Dependencies: []

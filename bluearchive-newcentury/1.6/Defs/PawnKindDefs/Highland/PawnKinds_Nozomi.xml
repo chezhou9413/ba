@@ -193,6 +193,26 @@
 						<li>30</li>
 					</starValues>
 				</attackFlat>
+				<!-- 星级基础治愈力平加成长，先加入基础治愈力再乘治愈力百分比。 -->
+				<healFlat>
+					<starValues>
+						<li>0</li>
+						<li>3</li>
+						<li>6</li>
+						<li>10</li>
+						<li>15</li>
+					</starValues>
+				</healFlat>
+				<!-- 星级治愈力百分比成长，参与最终治愈力计算。 -->
+				<healPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.03</li>
+						<li>0.06</li>
+						<li>0.10</li>
+						<li>0.15</li>
+					</starValues>
+				</healPercent>
 			</li>
 		</modExtensions>
 	</PawnKindDef>

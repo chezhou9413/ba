@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Mote定义 -->
 <defName>BAWN_Wakamo_A_1_Mote</defName>
@@ -12,7 +12,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Wakamo_A/A/Wakamo_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.5</drawSize><!-- 绘制尺寸 -->   
@@ -34,7 +34,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Wakamo_A/A/Wakamo_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.5</drawSize><!-- 绘制尺寸 -->   
@@ -56,7 +56,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Wakamo_A/A/Wakamo_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.5</drawSize><!-- 绘制尺寸 -->   
@@ -78,7 +78,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Wakamo_A/A/Wakamo_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>3.5</drawSize><!-- 绘制尺寸 -->   

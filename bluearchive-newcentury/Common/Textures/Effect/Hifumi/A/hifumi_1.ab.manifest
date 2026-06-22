@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 952083912
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: dd07d282a735b5d76b082c37b0ad9243
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: dd07d282a735b5d76b082c37b0ad9243
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Hifumi/A/Hifumi_1.png
+Dependencies: []

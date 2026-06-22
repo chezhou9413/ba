@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2671261099
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 66a4caddea4300f97700ce33f0060812
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 66a4caddea4300f97700ce33f0060812
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Chiaki/A/Chiaki_1.png
+Dependencies: []

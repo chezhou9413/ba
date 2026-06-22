@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2904240287
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 32f1989385c7ff8eccd212d514e7d164
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 32f1989385c7ff8eccd212d514e7d164
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Rio/A/Rio_1.jpg
+Dependencies: []

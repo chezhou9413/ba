@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Kanoe_Ef_A</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <texPath>Effect/Kanoe/A/Kanoe_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Kanoe/A/Kanoe_A</texPath><!-- 纹理图片路径 -->
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
@@ -21,7 +21,7 @@
 <solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
 <graphicData>
-<graphicClass>Graphic_FleckPulse</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbFleckPulse</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Natsu/E/Natsu_0</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>1.5</drawSize><!-- 绘制尺寸 -->   

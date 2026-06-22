@@ -156,7 +156,7 @@
 						<li>0.25</li>
 					</starValues>
 				</healthPercent>
-				<!-- 星级治疗力平加成长，先加入基础治疗力再乘百分比。 -->
+				<!-- 星级基础治愈力平加成长，先加入基础治愈力再乘百分比。 -->
 				<healFlat>
 					<starValues>
 						<li>0</li>
@@ -166,7 +166,7 @@
 						<li>45</li>
 					</starValues>
 				</healFlat>
-				<!-- 星级治疗力百分比成长，参与最终治疗力计算。 -->
+				<!-- 星级治愈力百分比成长，参与最终治愈力计算。 -->
 				<healPercent>
 					<starValues>
 						<li>0</li>

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 663318524
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 048c2f048e746b174ca9f947b27110c2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 048c2f048e746b174ca9f947b27110c2
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Ibuki/D/Ibuki_A.png
+Dependencies: []

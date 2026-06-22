@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2479841455
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a34b616a4042e949d2fb02bf78349f6d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a34b616a4042e949d2fb02bf78349f6d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Kasumi/C/Kasumi_1.png
+Dependencies: []

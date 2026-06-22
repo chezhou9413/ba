@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 508191962
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 248ae6bcde70b6a9c52baac83233d485
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 248ae6bcde70b6a9c52baac83233d485
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Maki/B/Maki_2.png
+Dependencies: []

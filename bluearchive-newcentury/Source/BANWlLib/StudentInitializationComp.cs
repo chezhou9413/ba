@@ -1,4 +1,5 @@
 using RimWorld;
+using BANWlLib.BattleSystem;
 using BANWlLib.Tool;
 using System.Collections.Generic;
 using System.IO; // Added for Path and File operations
@@ -92,6 +93,8 @@ namespace BANWlLib
             {
                 return;
             }
+
+            StarGrowthDisplayUtility.EnsureDisplayHediff(parent as Pawn);
 
             if (!hasInitialized && initializationTimer > 0)
             {

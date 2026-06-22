@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 349057252
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2d084661a8ff99d1cc527710cc0fa5e6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 2d084661a8ff99d1cc527710cc0fa5e6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Reisa/A/Reisa_3.png
+Dependencies: []

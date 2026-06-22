@@ -129,7 +129,7 @@ namespace BANWlLib.BattleSystem
         // 格式化伤害算法，负责把当前代码实际结算顺序显示给玩家。
         private static string FormatDamageFormula(BattleActionConfig action)
         {
-            string formula = "(基础值 + 攻击力) x 攻击加成 + 最终攻击力 x 技能倍率";
+            string formula = "基础值 x 攻击力 x 攻击加成 + 最终攻击力 x 技能倍率";
             if (action.canCrit)
             {
                 formula += " -> 暴击";

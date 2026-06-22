@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2781349942
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a7b20b642159ab60a566d003562ecb8a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a7b20b642159ab60a566d003562ecb8a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Izumi/A/Izumi_4.png
+Dependencies: []

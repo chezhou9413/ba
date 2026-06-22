@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hina_B_1_Mote</defName>
@@ -11,7 +11,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hina_B/A/Hina_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
@@ -33,7 +33,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hina_B/A/Hina_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
@@ -55,7 +55,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hina_B/A/Hina_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
@@ -77,7 +77,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hina_B/A/Hina_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
@@ -98,7 +98,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hina_B/A/Hina_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
@@ -120,7 +120,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hina_B/A/Hina_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
@@ -142,7 +142,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hina_B/A/Hina_7</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
@@ -164,7 +164,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
 <shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
 <texPath>Effect/Hina_B/A/Hina_8</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>5.5</drawSize><!-- 绘制尺寸 -->   

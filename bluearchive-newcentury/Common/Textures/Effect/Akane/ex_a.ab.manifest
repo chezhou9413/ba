@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1509887570
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f9c856de502d1cd6a415369a34940989
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: f9c856de502d1cd6a415369a34940989
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/EffectImages/Akane/EX_A.png
+Dependencies: []
