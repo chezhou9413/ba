@@ -1,5 +1,7 @@
 using BANWlLib.BaDef;
 using BANWlLib.KindStats;
+using BANWlLib.mainUI.Mission.GameComp;
+using BANWlLib.mainUI.Mission.MonoComp;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.mainUI.StudentManual;
 using System.Collections.Generic;
@@ -51,9 +53,10 @@ namespace BANWlLib.Tool
             return GetStudentData(tracker, defName) != null;
         }
 
+        //判断当前 Pawn 是否是已拥有且仍然存活的学生，负责给任务和殖民者列表排除学生本体。
         public static bool IsStudentPawn(ManualDataGameComp tracker, Pawn pawn)
         {
-            if (tracker?.HaveStudent == null || pawn == null || pawn.DestroyedOrNull())
+            if (tracker?.HaveStudent == null || pawn == null || pawn.DestroyedOrNull() || pawn.Dead)
             {
                 return false;
             }
@@ -99,7 +102,7 @@ namespace BANWlLib.Tool
             Pawn resolvedPawn = studentData.StudentPawn;
             if (resolvedPawn != null)
             {
-                bool pawnStillValid = !resolvedPawn.DestroyedOrNull();
+                bool pawnStillValid = !resolvedPawn.DestroyedOrNull() && !resolvedPawn.Dead;
 
                 if (!pawnStillValid)
                 {
@@ -125,6 +128,7 @@ namespace BANWlLib.Tool
             }
         }
 
+        //绑定学生 Pawn，负责同步出击状态和当前等级缓存。
         public static void BindStudentPawn(StudentData studentData, Pawn pawn)
         {
             if (studentData == null)
@@ -133,7 +137,7 @@ namespace BANWlLib.Tool
             }
 
             studentData.StudentPawn = pawn;
-            studentData.isGoing = pawn != null && !pawn.DestroyedOrNull();
+            studentData.isGoing = pawn != null && !pawn.DestroyedOrNull() && !pawn.Dead;
 
             if (studentData.isGoing)
             {
@@ -145,6 +149,7 @@ namespace BANWlLib.Tool
             }
         }
 
+        //清除学生 Pawn 运行时引用，负责把学生恢复为未出击状态。
         public static void ClearStudentPawn(StudentData studentData)
         {
             if (studentData == null)
@@ -156,6 +161,7 @@ namespace BANWlLib.Tool
             studentData.isGoing = false;
         }
 
+        //获取当前所有存活学生 Pawn，负责给任务选择界面过滤普通殖民者。
         public static HashSet<Pawn> GetRuntimeStudentPawnSet(ManualDataGameComp tracker)
         {
             HashSet<Pawn> pawns = new HashSet<Pawn>();
@@ -166,13 +172,71 @@ namespace BANWlLib.Tool
 
             foreach (StudentData studentData in tracker.HaveStudent)
             {
-                if (studentData?.StudentPawn != null && !studentData.StudentPawn.DestroyedOrNull())
+                if (studentData?.StudentPawn != null && !studentData.StudentPawn.DestroyedOrNull() && !studentData.StudentPawn.Dead)
                 {
                     pawns.Add(studentData.StudentPawn);
                 }
             }
 
             return pawns;
+        }
+
+        //处理学生真正死亡后的名册状态，负责保留养成存档并移除已拥有和可出击状态。
+        public static void MarkStudentDeadAndUnowned(Pawn pawn)
+        {
+            ManualDataGameComp tracker = GetTracker();
+            if (tracker?.HaveStudent == null || pawn == null)
+            {
+                return;
+            }
+
+            string studentId = StudentIdentityUtility.GetStudentId(pawn);
+            if (string.IsNullOrEmpty(studentId))
+            {
+                Log.Error("[BANW] 学生死亡清册失败，无法解析学生身份：" + pawn.LabelShort);
+                return;
+            }
+
+            pawnUtils.setStudentSave(pawn, tracker);
+
+            tracker.HaveStudent.RemoveAll(student =>
+                student != null &&
+                (student.StudentPawn == pawn ||
+                 StudentIdentityUtility.GetStudentId(student.DefName) == studentId));
+
+            tracker.StudentCollect?.RemoveAll(defName => StudentIdentityUtility.GetStudentId(defName) == studentId);
+            RemoveDeadStudentFromMissionSelection(pawn, studentId);
+        }
+
+        //清理任务编队中的死亡学生，负责防止旧编队绕过名册继续出击。
+        private static void RemoveDeadStudentFromMissionSelection(Pawn pawn, string studentId)
+        {
+            GameComp_TaskQuest quest = Current.Game?.GetComponent<GameComp_TaskQuest>();
+            if (quest == null)
+            {
+                return;
+            }
+
+            quest.NoDie?.RemoveAll(p => p == pawn || p == null || p.DestroyedOrNull() || p.Dead);
+            quest.selectDataList?.RemoveAll(data => IsDeadStudentSelection(data, pawn, studentId));
+        }
+
+        //判断任务选择数据是否指向死亡学生，负责同时处理 Pawn 引用和学生身份引用。
+        private static bool IsDeadStudentSelection(selectData data, Pawn pawn, string studentId)
+        {
+            if (data == null)
+            {
+                return true;
+            }
+
+            if (data.Pawn != null)
+            {
+                return data.Pawn == pawn || data.Pawn.DestroyedOrNull() || data.Pawn.Dead;
+            }
+
+            string selectedStudentId = data.StudentId ?? StudentIdentityUtility.GetStudentId(data.studentDef);
+            return !string.IsNullOrEmpty(selectedStudentId) &&
+                   StudentIdentityUtility.GetStudentId(selectedStudentId) == studentId;
         }
 
         public static StudentSave GetOrCreateStudentSave(Pawn pawn)

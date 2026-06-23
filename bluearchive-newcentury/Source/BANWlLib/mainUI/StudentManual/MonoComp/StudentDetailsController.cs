@@ -97,13 +97,16 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             }
         }
 
+        //判断当前学生是否已有存活 Pawn，负责控制出击和召回按钮状态。
         private bool HasActiveStudentPawn()
         {
             return studentData != null &&
                    studentData.StudentPawn != null &&
-                   !studentData.StudentPawn.DestroyedOrNull();
+                   !studentData.StudentPawn.DestroyedOrNull() &&
+                   !studentData.StudentPawn.Dead;
         }
 
+        //判断当前学生是否已出击或正在空投，负责防止重复生成同一学生。
         private bool IsStudentDeployedOrPending()
         {
             if (HasActiveStudentPawn())
@@ -184,7 +187,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                         SetDeployButton();
                         return;
                     }
-                    if (studentData.isGoing || studentData.StudentPawn != null)
+                    if (studentData.isGoing || HasActiveStudentPawn())
                     {
                         SetDeployButton();
                         return;
@@ -235,13 +238,13 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                     isWring = true;
                     return;
                 }
-                if (!pawnUtils.IsAtFullHealth_IgnoreBenign(studentData.StudentPawn))
-                {
-                    BamessageUI.ShowBaMessageUI("召回失败", BaStudentUI.StudentName + " 的健康状态非正常，无法召回!", "返回");
-                }
-                else if (studentData.StudentPawn == null || studentData.StudentPawn.DestroyedOrNull())
+                if (studentData.StudentPawn == null || studentData.StudentPawn.DestroyedOrNull() || studentData.StudentPawn.Dead)
                 {
                     SetDeployButton();
+                }
+                else if (!pawnUtils.IsAtFullHealth_IgnoreBenign(studentData.StudentPawn))
+                {
+                    BamessageUI.ShowBaMessageUI("召回失败", BaStudentUI.StudentName + " 的健康状态非正常，无法召回!", "返回");
                 }
                 else if (!studentData.StudentPawn.Spawned)
                 {

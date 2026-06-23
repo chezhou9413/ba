@@ -44,8 +44,14 @@ namespace BANWlLib.Tool
             return pawn.health.hediffSet.hediffs.All(hediff => !hediff.def.isBad);
         }
 
+        //保存学生养成数据，负责记录等级严重度、等级、额外经验和技能等级，不覆盖已保存星级。
         public static void setStudentSave(Pawn __instance, ManualDataGameComp tracker)
         {
+            if (__instance == null || tracker?.studentSaves == null)
+            {
+                return;
+            }
+
             string studentId = StudentIdentityUtility.GetStudentId(__instance);
             StudentSave studentSave = StudentRosterUtility.GetStudentSave(tracker, studentId);
             StudentData studentData = StudentRosterUtility.GetStudentData(tracker, studentId);
@@ -63,12 +69,11 @@ namespace BANWlLib.Tool
             {
                 tracker.studentSaves.Add(studentSave = new StudentSave(studentData.DefName, pawnUtils.getStudentLvSeverity(__instance), pawnUtils.getStudentLv(__instance), humanIntProperty.CustomIntValue, StudentRosterUtility.GetDefaultStarLevel(__instance), SkillXPs));
             }
-            else if (studentData != null)
+            else if (studentSave != null && studentData != null && humanIntProperty != null)
             {
                 studentSave.StudentLv = pawnUtils.getStudentLvSeverity(__instance);
                 studentSave.StudentLvInt = pawnUtils.getStudentLv(__instance);
                 studentSave.StudentExtra = humanIntProperty.CustomIntValue;
-                studentSave.CurrentStarLevel = StudentRosterUtility.GetDefaultStarLevel(__instance);
                 studentSave.SkillXPs = SkillXPs;
             }
         }
