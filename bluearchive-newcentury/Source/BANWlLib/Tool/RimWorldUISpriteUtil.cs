@@ -1,6 +1,7 @@
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using Verse;
 
@@ -13,6 +14,7 @@ namespace BANWlLib.Tool
     {
         private static readonly Dictionary<string, Sprite> GeneratedSpriteCache = new Dictionary<string, Sprite>();
 
+        //按 PawnKindDef 生成全身预览，负责展示任务队列中未实例化学生的默认外观。
         public static Sprite GetSpriteFromKind(PawnKindDef kindDef, int size = 128)
         {
             if (kindDef == null) return null;
@@ -37,11 +39,12 @@ namespace BANWlLib.Tool
             }
         }
 
+        //按真实 Pawn 生成全身预览，负责保留当前发型、衣服和装备外观。
         public static Sprite GetSpriteFromPawn(Pawn pawn, int size = 128)
         {
             if (pawn == null) return null;
 
-            string cacheKey = BuildKey("full-pawn", pawn.ThingID, size);
+            string cacheKey = BuildPawnKey("full-pawn", pawn, size);
             if (TryGetCachedSprite(cacheKey, out Sprite cachedSprite))
             {
                 return cachedSprite;
@@ -52,6 +55,7 @@ namespace BANWlLib.Tool
             return sprite;
         }
 
+        //按 PawnKindDef 生成头像预览，负责展示未生成学生的默认头像。
         public static Sprite GetHeadShotSpriteFromKind(PawnKindDef kindDef, int size = 128)
         {
             if (kindDef == null) return null;
@@ -76,11 +80,12 @@ namespace BANWlLib.Tool
             }
         }
 
+        //按真实 Pawn 生成头像预览，负责保留当前穿戴状态。
         public static Sprite GetHeadShotSpriteFromPawn(Pawn pawn, int size = 128)
         {
             if (pawn == null) return null;
 
-            string cacheKey = BuildKey("head-pawn", pawn.ThingID, size);
+            string cacheKey = BuildPawnKey("head-pawn", pawn, size);
             if (TryGetCachedSprite(cacheKey, out Sprite cachedSprite))
             {
                 return cachedSprite;
@@ -111,7 +116,7 @@ namespace BANWlLib.Tool
         {
             Texture2D rawTexture = null;
             Texture2D finalTexture = null;
-            int requestSize = targetSize * 2;
+            int requestSize = targetSize * 4;
 
             try
             {
@@ -212,10 +217,7 @@ namespace BANWlLib.Tool
 
                     float srcX = minX + (x / scale);
                     float srcY = minY + (y / scale);
-                    int sx = Mathf.Clamp(Mathf.RoundToInt(srcX), 0, srcW - 1);
-                    int sy = Mathf.Clamp(Mathf.RoundToInt(srcY), 0, srcH - 1);
-
-                    finalPixels[destY * targetSize + destX] = srcPixels[sy * srcW + sx];
+                    finalPixels[destY * targetSize + destX] = SampleBilinear(srcPixels, srcW, srcH, srcX, srcY);
                 }
             }
 
@@ -223,6 +225,25 @@ namespace BANWlLib.Tool
             result.SetPixels32(finalPixels);
             result.Apply();
             return result;
+        }
+
+        //双线性采样源图像，负责在缩放截图时减少锯齿和模糊边缘。
+        private static Color32 SampleBilinear(Color32[] pixels, int width, int height, float x, float y)
+        {
+            int x0 = Mathf.Clamp(Mathf.FloorToInt(x), 0, width - 1);
+            int y0 = Mathf.Clamp(Mathf.FloorToInt(y), 0, height - 1);
+            int x1 = Mathf.Clamp(x0 + 1, 0, width - 1);
+            int y1 = Mathf.Clamp(y0 + 1, 0, height - 1);
+            float tx = Mathf.Clamp01(x - x0);
+            float ty = Mathf.Clamp01(y - y0);
+
+            Color c00 = pixels[y0 * width + x0];
+            Color c10 = pixels[y0 * width + x1];
+            Color c01 = pixels[y1 * width + x0];
+            Color c11 = pixels[y1 * width + x1];
+            Color cx0 = Color.Lerp(c00, c10, tx);
+            Color cx1 = Color.Lerp(c01, c11, tx);
+            return Color.Lerp(cx0, cx1, ty);
         }
 
         public static Texture2D AutoCrop(Texture2D original, int padding = 2)
@@ -256,6 +277,29 @@ namespace BANWlLib.Tool
             return category + ":" + id + ":" + size;
         }
 
+        //构建真实 Pawn 截图缓存键，负责在衣服和装备变化后重新生成头像。
+        private static string BuildPawnKey(string category, Pawn pawn, int size)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(category).Append(":").Append(pawn.ThingID).Append(":").Append(size);
+
+            if (pawn.apparel?.WornApparel != null)
+            {
+                foreach (Apparel apparel in pawn.apparel.WornApparel)
+                {
+                    builder.Append(":a=").Append(apparel.def?.defName).Append("#").Append(apparel.ThingID);
+                }
+            }
+
+            if (pawn.equipment?.Primary != null)
+            {
+                builder.Append(":e=").Append(pawn.equipment.Primary.def?.defName).Append("#").Append(pawn.equipment.Primary.ThingID);
+            }
+
+            builder.Append(":d=").Append(pawn.Drafted);
+            return builder.ToString();
+        }
+
         private static bool TryGetCachedSprite(string key, out Sprite sprite)
         {
             if (GeneratedSpriteCache.TryGetValue(key, out sprite))
@@ -280,6 +324,7 @@ namespace BANWlLib.Tool
             }
         }
 
+        //生成任务 UI 使用的临时 Pawn，负责给未出击学生提供默认预览图。
         private static Pawn GenerateTempPawn(PawnKindDef kindDef)
         {
             Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
@@ -305,7 +350,7 @@ namespace BANWlLib.Tool
                 forceBaselinerChance: 0f,
                 forbidAnyTitle: true,
                 dontGiveWeapon: true,
-                forceNoGear: true
+                forceNoGear: false
             ));
 
             if (pawn.equipment != null)

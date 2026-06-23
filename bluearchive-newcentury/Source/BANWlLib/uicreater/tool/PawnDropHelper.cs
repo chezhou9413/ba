@@ -59,6 +59,7 @@ namespace newpro
             return droppedPawns.Any(p =>
                 p != null &&
                 !p.DestroyedOrNull() &&
+                !p.Dead &&
                 StudentIdentityUtility.GetStudentId(p) == studentId);
         }
 
@@ -452,7 +453,8 @@ namespace newpro
                 StudentData existingStudent = StudentRosterUtility.GetStudentData(defName);
                 if (existingStudent != null &&
                     existingStudent.StudentPawn != null &&
-                    !existingStudent.StudentPawn.DestroyedOrNull())
+                    !existingStudent.StudentPawn.DestroyedOrNull() &&
+                    !existingStudent.StudentPawn.Dead)
                 {
                     return existingStudent.StudentPawn;
                 }

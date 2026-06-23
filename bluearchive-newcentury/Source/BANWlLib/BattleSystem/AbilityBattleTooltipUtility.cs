@@ -37,16 +37,18 @@ namespace BANWlLib.BattleSystem
             AppendCasterStats(builder, pawn);
 
             List<BattleActionConfig> actions = extension.previewActions;
-            for (int i = 0; i < actions.Count; i++)
+            for (int i = 0; i < actions.Count;)
             {
                 BattleActionConfig action = actions[i];
                 if (action == null)
                 {
+                    i++;
                     continue;
                 }
 
+                int repeatCount = CountSameActions(actions, i, action);
                 builder.AppendLine();
-                builder.AppendLine(("第" + (i + 1) + "段").Colorize(ColoredText.TipSectionTitleColor));
+                builder.AppendLine(FormatSegmentTitle(i, repeatCount).Colorize(ColoredText.TipSectionTitleColor));
                 if (action.isHealing)
                 {
                     AppendHealAction(builder, pawn, action);
@@ -55,15 +57,65 @@ namespace BANWlLib.BattleSystem
                 {
                     AppendDamageAction(builder, pawn, action);
                 }
+
+                i += repeatCount;
             }
 
             return builder.ToString();
+        }
+
+        //统计连续相同战斗段，负责让多段相同伤害在悬浮说明里合并显示。
+        private static int CountSameActions(List<BattleActionConfig> actions, int startIndex, BattleActionConfig action)
+        {
+            int count = 1;
+            for (int i = startIndex + 1; i < actions.Count; i++)
+            {
+                if (!IsSamePreviewAction(action, actions[i]))
+                {
+                    break;
+                }
+
+                count++;
+            }
+
+            return count;
+        }
+
+        //比较两个预览战斗段，负责判断它们是否可以在显示上合并。
+        private static bool IsSamePreviewAction(BattleActionConfig left, BattleActionConfig right)
+        {
+            if (left == null || right == null)
+            {
+                return false;
+            }
+
+            return left.baseAmount == right.baseAmount &&
+                   left.attackPowerRatio == right.attackPowerRatio &&
+                   left.healPowerRatio == right.healPowerRatio &&
+                   left.damageDef == right.damageDef &&
+                   left.penetration == right.penetration &&
+                   left.isHealing == right.isHealing &&
+                   left.canCrit == right.canCrit &&
+                   left.applyAffinity == right.applyAffinity &&
+                   left.isExSkill == right.isExSkill;
+        }
+
+        //格式化段落标题，负责把连续相同段压缩成短标题。
+        private static string FormatSegmentTitle(int startIndex, int repeatCount)
+        {
+            if (repeatCount <= 1)
+            {
+                return "第" + (startIndex + 1) + "段";
+            }
+
+            return "第" + (startIndex + 1) + "-" + (startIndex + repeatCount) + "段（共" + repeatCount + "次）";
         }
 
         // 写入施法者属性，负责让玩家看到公式里的实时基础值。
         private static void AppendCasterStats(StringBuilder builder, Pawn pawn)
         {
             float attackFlat = BattleStatUtility.GetAttackFlatBonus(pawn);
+            float attackPowerBase = BattleStatUtility.GetAttackPowerBaseMultiplier(pawn);
             float attackMultiplier = BattleStatUtility.GetAttackMultiplier(pawn);
             float finalAttack = BattleStatUtility.GetFinalAttackPower(pawn);
             float healFlat = BattleStatUtility.GetHealFlatBonus(pawn);
@@ -71,7 +123,7 @@ namespace BANWlLib.BattleSystem
             float finalHeal = BattleStatUtility.GetFinalHealPower(pawn);
             float exMultiplier = BattleStatUtility.GetExSkillMultiplier(pawn);
 
-            builder.AppendLine("攻击力：" + FormatNumber(attackFlat) + " x " + FormatPercent(attackMultiplier) + " = " + FormatColor(FormatNumber(finalAttack), DamageColor));
+            builder.AppendLine("攻击力：" + FormatNumber(attackFlat) + " x " + FormatPercent(attackPowerBase) + " x " + FormatPercent(attackMultiplier) + " = " + FormatColor(FormatNumber(finalAttack), DamageColor));
             builder.AppendLine("治疗力：" + FormatNumber(healFlat) + " x " + FormatPercent(healMultiplier) + " = " + FormatColor(FormatNumber(finalHeal), HealColor));
             builder.AppendLine("EX技能倍率：" + FormatColor(FormatPercent(exMultiplier), ExColor));
         }
@@ -98,7 +150,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("暴击：" + FormatSwitch(action.canCrit, CritColor));
             builder.AppendLine("属性克制：" + FormatSwitch(action.applyAffinity, AffinityColor));
             builder.AppendLine("EX倍率：" + FormatEx(action.isExSkill, result.exSkillMultiplier));
-            builder.AppendLine("算法：" + FormatDamageFormula(action));
+            AppendDamageFormula(builder, action);
             builder.AppendLine("预估伤害：" + FormatColor(FormatNumber(result.finalAmount), DamageColor));
             builder.AppendLine(FormatFormulaHint(action.applyAffinity));
         }
@@ -122,47 +174,50 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("暴击：" + FormatSwitch(action.canCrit, CritColor));
             builder.AppendLine("受回复倍率：" + FormatColor(FormatPercent(BattleStatUtility.GetHealReceivedMultiplier(pawn)), HealColor));
             builder.AppendLine("EX倍率：" + FormatEx(action.isExSkill, result.exSkillMultiplier));
-            builder.AppendLine("算法：" + FormatHealFormula(action));
+            AppendHealFormula(builder, action);
             builder.AppendLine("预估治疗：" + FormatColor(FormatNumber(result.finalAmount), HealColor));
         }
 
-        // 格式化伤害算法，负责把当前代码实际结算顺序显示给玩家。
-        private static string FormatDamageFormula(BattleActionConfig action)
+        //写入伤害算法，负责用短行展示实际结算顺序，避免 tooltip 横向撑开。
+        private static void AppendDamageFormula(StringBuilder builder, BattleActionConfig action)
         {
-            string formula = "基础值 x 攻击力 x 攻击加成 + 最终攻击力 x 技能倍率";
-            if (action.canCrit)
-            {
-                formula += " -> 暴击";
-            }
-
-            if (action.applyAffinity)
-            {
-                formula += " -> 克制";
-            }
-
-            if (action.isExSkill)
-            {
-                formula += " -> EX";
-            }
-
-            return formula.Colorize(ColoredText.SubtleGrayColor);
+            builder.AppendLine("算法：");
+            builder.AppendLine(FormatColor("  固定：基础值 x 基础攻倍 x 攻击加成", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  攻击：最终攻击力 x 技能倍率", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  合计：固定 + 攻击", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  修正：" + FormatFormulaModifiers(action.canCrit, action.applyAffinity, action.isExSkill), ColoredText.SubtleGrayColor));
         }
 
-        // 格式化治疗算法，负责把当前代码实际治疗顺序显示给玩家。
-        private static string FormatHealFormula(BattleActionConfig action)
+        //写入治疗算法，负责用短行展示实际结算顺序，避免 tooltip 横向撑开。
+        private static void AppendHealFormula(StringBuilder builder, BattleActionConfig action)
         {
-            string formula = "(基础值 + 治疗力) x 治疗加成 + 最终治疗力 x 技能倍率 -> 受回复";
-            if (action.canCrit)
+            builder.AppendLine("算法：");
+            builder.AppendLine(FormatColor("  基础：(基础值 + 治疗力) x 治疗加成", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  技能：最终治疗力 x 技能倍率", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  合计：基础 + 技能，再乘受回复", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  修正：" + FormatFormulaModifiers(action.canCrit, false, action.isExSkill), ColoredText.SubtleGrayColor));
+        }
+
+        //格式化公式修正项，负责把暴击、克制和 EX 这些附加步骤压缩成一行。
+        private static string FormatFormulaModifiers(bool canCrit, bool applyAffinity, bool isExSkill)
+        {
+            List<string> modifiers = new List<string>();
+            if (canCrit)
             {
-                formula += " -> 暴击";
+                modifiers.Add("暴击");
             }
 
-            if (action.isExSkill)
+            if (applyAffinity)
             {
-                formula += " -> EX";
+                modifiers.Add("克制");
             }
 
-            return formula.Colorize(ColoredText.SubtleGrayColor);
+            if (isExSkill)
+            {
+                modifiers.Add("EX");
+            }
+
+            return modifiers.Count > 0 ? string.Join("、", modifiers.ToArray()) : "无";
         }
 
         // 格式化属性克制说明，负责避免在没有目标时误报具体克制倍率。

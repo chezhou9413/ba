@@ -33,16 +33,16 @@ namespace BANWlLib.BattleSystem
                 return string.Empty;
             }
 
-            float attackFlat = BattleStatUtility.GetAttackFlatBonus(pawn);
+            float attackPowerBase = BattleStatUtility.GetAttackPowerBaseMultiplier(pawn);
             float attackMultiplier = BattleStatUtility.GetAttackMultiplier(pawn);
             float finalDamage = BattleStatUtility.ScaleWeaponDamageBase(pawn, baseDamage);
 
             return "\n\n" +
                    "武器伤害修正".Colorize(ColoredText.TipSectionTitleColor) + "\n" +
                    "基础武器伤害：" + FormatDamage(baseDamage) + "\n" +
-                   "基础攻击力加成：" + FormatDamage(attackFlat) + "\n" +
+                   "基础攻击力加成：" + attackPowerBase.ToString("P1") + "\n" +
                    "攻击力加成：" + attackMultiplier.ToString("P0") + "\n" +
-                   "算法：" + FormatDamage(baseDamage) + " x " + FormatDamage(attackFlat) + " x " + attackMultiplier.ToString("P0") + "\n" +
+                   "算法：" + FormatDamage(baseDamage) + " x " + attackPowerBase.ToString("P1") + " x " + attackMultiplier.ToString("P0") + "\n" +
                    "当前显示伤害：" + FormatDamage(finalDamage).Colorize(new Color(1f, 0.35f, 0.28f));
         }
 

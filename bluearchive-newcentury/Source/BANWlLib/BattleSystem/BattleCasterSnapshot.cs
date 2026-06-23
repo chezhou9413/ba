@@ -7,6 +7,7 @@ namespace BANWlLib.BattleSystem
     public class BattleCasterSnapshot : IExposable
     {
         public float attackFlatBonus;
+        public float attackPowerBase = 1f;
         public float attackMultiplier = 1f;
         public float attackPower;
         public float healFlatBonus;
@@ -21,6 +22,7 @@ namespace BANWlLib.BattleSystem
         public void ExposeData()
         {
             Scribe_Values.Look(ref attackFlatBonus, "attackFlatBonus", 0f);
+            Scribe_Values.Look(ref attackPowerBase, "attackPowerBase", 1f);
             Scribe_Values.Look(ref attackMultiplier, "attackMultiplier", 1f);
             Scribe_Values.Look(ref attackPower, "attackPower", 0f);
             Scribe_Values.Look(ref healFlatBonus, "healFlatBonus", 0f);

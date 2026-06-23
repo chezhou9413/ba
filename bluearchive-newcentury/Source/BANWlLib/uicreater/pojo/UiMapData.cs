@@ -70,12 +70,15 @@ namespace newpro
             {
                 bundle.Unload(false);
             }
+
+            BAUIRimWorldSpriteLoader.ClearAll();
         }
 
         public static void Reset()
         {
             isLocKBack = false;
             BAManualUIImageLoader.ClearAll();
+            BAUIRimWorldSpriteLoader.ClearAll();
             RimWorldUISpriteUtil.ClearGeneratedSpriteCache();
 
             if (mainUI != null)

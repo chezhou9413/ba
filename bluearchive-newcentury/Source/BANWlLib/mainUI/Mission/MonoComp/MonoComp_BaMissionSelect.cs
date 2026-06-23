@@ -19,9 +19,9 @@ namespace BANWlLib.mainUI.Mission.MonoComp
 {
     internal static class MissionSpriteSizes
     {
-        public const int QueuePortrait = 256;
-        public const int ListHead = 128;
-        public const int CachedHead = 128;
+        public const int QueuePortrait = 512;
+        public const int ListHead = 256;
+        public const int CachedHead = 256;
     }
 
     public class selectDataQue
@@ -80,6 +80,9 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             });
             this.transform.Find("Start").GetComponent<Button>().onClick.AddListener(() =>
             {
+                StudentRosterUtility.SyncAllStudentRuntimeState(ManualDataGameComp);
+                lordSaveSelect();
+
                 if (quest.selectDataList.Count < 1)
                 {
                     BamessageUI.ShowBaMessageUI("出击失败", "任务编队为空，请至少选择一名学生和殖民者再进行出击", "了解");
@@ -90,6 +93,13 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 Type classToSpawn = baMissionNode.missionRunTimeDef.missionClass;
                 BaMissionRunTimeAction actionInstance = (BaMissionRunTimeAction)Activator.CreateInstance(classToSpawn);
                 actionInstance.missionPawns = JumpPawn(missionMap);
+                if (actionInstance.missionPawns.Count < 1)
+                {
+                    CreateMap.DestroyPocketMap(missionMap);
+                    BamessageUI.ShowBaMessageUI("出击失败", "任务编队包含无效成员，请重新选择学生和殖民者", "了解");
+                    return;
+                }
+
                 actionInstance.map = missionMap;
                 actionInstance.def = baMissionNode;
                 quest.NoDie = actionInstance.missionPawns;
@@ -121,6 +131,11 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             for (int i = 0; i < quest.selectDataList.Count; i++)
             {
                 selectData selectData = quest.selectDataList[i];
+                if (selectData == null)
+                {
+                    continue;
+                }
+
                 IntVec3 spawnCell = spawnCells.ElementAtOrDefault(i);
                 if (!spawnCell.IsValid)
                 {
@@ -129,12 +144,24 @@ namespace BANWlLib.mainUI.Mission.MonoComp
 
                 if (selectData.Pawn != null)
                 {
+                    if (selectData.Pawn.DestroyedOrNull() || selectData.Pawn.Dead)
+                    {
+                        Log.Error("[BANW] 任务编队包含无效角色，已跳过：" + selectData.lable);
+                        continue;
+                    }
+
                     Pawn pawn = PawnDropHelper.JumpForPawnOfBaEff(map, selectData.Pawn, spawnCell, false);
                     jumpedPawns.Add(pawn);
                 }
                 else
                 {
                     string studentId = selectData.StudentId ?? StudentIdentityUtility.GetStudentId(selectData.studentDef);
+                    if (!StudentRosterUtility.IsStudentDef(ManualDataGameComp, studentId))
+                    {
+                        Log.Error("[BANW] 任务编队包含未拥有学生，已跳过：" + studentId);
+                        continue;
+                    }
+
                     Pawn pawn = PawnDropHelper.JumpForStudentOfBaEff(map, studentId, spawnCell, selectData.studentData, selectData, false);
                     jumpedPawns.Add(pawn);
                 }
@@ -327,7 +354,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                     string studentId = StudentIdentityUtility.GetStudentId(baStudentDef) ?? StudentIdentityUtility.GetStudentId(kindDef);
 
                     GameObject MissionTargetObj = GameObject.Instantiate(MissionMapData.selectList, ListContent.transform);
-                    MissionTargetObj.transform.Find("avt").GetComponent<Image>().sprite = MissionMapData.pawnBigHardSprite[studentId];
+                    MissionTargetObj.transform.Find("avt").GetComponent<Image>().sprite = GetStudentListSprite(studentData, kindDef, studentId);
                     MissionTargetObj.transform.Find("Name").GetComponent<UnityEngine.UI.Text>().text = StudentIdentityUtility.GetStudentLabel(baStudentDef, kindDef);
                     if (baStudentData != null)
                     {
@@ -356,6 +383,23 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             }
             setSelectOutPawn();
             SyncSelectionWithSave();
+        }
+
+        //获取学生任务列表头像，负责优先显示真实 Pawn 的当前衣服并在未出击时使用默认学生预览。
+        private Sprite GetStudentListSprite(StudentData studentData, PawnKindDef kindDef, string studentId)
+        {
+            Pawn pawn = studentData?.StudentPawn;
+            if (pawn != null && !pawn.DestroyedOrNull() && !pawn.Dead)
+            {
+                return RimWorldUISpriteUtil.GetHeadShotSpriteFromPawn(pawn, MissionSpriteSizes.ListHead);
+            }
+
+            if (!string.IsNullOrEmpty(studentId) && MissionMapData.pawnBigHardSprite.TryGetValue(studentId, out Sprite cachedSprite))
+            {
+                return cachedSprite;
+            }
+
+            return RimWorldUISpriteUtil.GetHeadShotSpriteFromKind(kindDef, MissionSpriteSizes.ListHead);
         }
 
         public void setSelectOutPawn()
@@ -419,8 +463,18 @@ namespace BANWlLib.mainUI.Mission.MonoComp
         {
             quest.selectDataList.RemoveAll(selectData =>
             {
-                    if (selectData.Pawn == null)
-                    {
+                if (selectData == null)
+                {
+                    return true;
+                }
+
+                if (selectData.Pawn != null)
+                {
+                    return selectData.Pawn.DestroyedOrNull() || selectData.Pawn.Dead;
+                }
+
+                if (selectData.Pawn == null)
+                {
                     if (selectData.studentDef == null && string.IsNullOrEmpty(selectData.StudentId))
                     {
                         return true;

@@ -8,6 +8,7 @@ using Verse;
 
 namespace BANWlLib.pache
 {
+    //Pawn 死亡补丁，负责在学生真正死亡后保存养成数据并移出已拥有名册。
     public class pawnKill
     {
         public static ManualDataGameComp tracker;
@@ -17,27 +18,22 @@ namespace BANWlLib.pache
         [HarmonyPatch(new Type[] { typeof(DamageInfo?), typeof(Hediff) })]
         public static class Patch_Pawn_Kill_DropGreenstone
         {
+            //Pawn.Kill 后置处理，负责只在死亡已经成立时执行学生死亡清册。
             public static void Postfix(Pawn __instance)
             {
                 try
                 {
-                    // ✅ 关键修复：只有学生真正死亡时才移除
-                    // 这样可以防止不死机制触发时学生被错误移除
-                    if (__instance.Dead)
+                    if (__instance != null &&
+                        __instance.Dead &&
+                        StudentIdentityUtility.IsConfiguredStudentKind(__instance))
                     {
-                        HumanIntPropertyComp humanIntProperty = __instance.GetComp<HumanIntPropertyComp>();
-                        if (humanIntProperty != null)
-                        {
-                            tracker = Current.Game.GetComponent<ManualDataGameComp>();
-                            pawnUtils.setStudentSave(__instance, tracker);
-                            tracker.HaveStudent.RemoveAll(student => __instance.def.defName == student.DefName);
-                            tracker.StudentCollect.RemoveAll(defName => __instance.def.defName == defName);
-                        }
+                        tracker = Current.Game.GetComponent<ManualDataGameComp>();
+                        StudentRosterUtility.MarkStudentDeadAndUnowned(__instance);
                     }
                 }
                 catch (Exception e)
                 {
-                    Log.Error($"[GreenstoneDrop] error in Pawn.Kill Postfix: {e}");
+                    Log.Error("[BANW] 学生死亡清册处理失败：" + e);
                 }
             }
         }

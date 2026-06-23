@@ -8,8 +8,10 @@ using Verse;
 
 namespace newpro
 {
+    //图片转换工具负责把磁盘图片、手册图片和 RimWorld 原生贴图统一转换为 Unity UI Sprite。
     public class imgcvT2d
     {
+        //获取 RimWorld 图片路径，负责保留原版贴图路径并兼容手册图片的真实磁盘路径。
         public static string getRimWorldImgPath(string Rimworldpath)
         {
             if (BAManualUIImageLoader.IsManualUIImagePath(Rimworldpath))
@@ -17,14 +19,10 @@ namespace newpro
                 return BAManualUIImageLoader.GetFilePath(Rimworldpath);
             }
 
-            string a = UiMapData.modRootPath + "/Common/Textures/" + Rimworldpath + ".png".Replace("/", "\\");
-            return a;
+            return Rimworldpath;
         }
-        /// <summary>
-        /// 获取指定文件夹内所有 PNG 图像的路径映射表。
-        /// </summary>
-        /// <param name="folderPath">文件夹路径，可以是绝对路径或 Unity 支持的路径</param>
-        /// <returns>文件名（无扩展名） -> 完整路径 的映射表</returns>
+
+        //获取指定文件夹内所有 PNG 图像的路径映射表。
         public static Dictionary<string, string> GetPngMap(string folderPath)
         {
             Dictionary<string, string> pngMap = new Dictionary<string, string>();
@@ -45,55 +43,33 @@ namespace newpro
             return pngMap;
         }
         
-        /// <summary>
-        /// 从指定路径加载图像，并转换为 Unity Sprite。
-        /// </summary>
-        /// <param name="path">图片路径（支持绝对路径或 StreamingAssets 相对路径）</param>
-        /// <returns>返回生成的 Sprite，失败返回 null。</returns>
+        //从指定路径加载图像，并转换为 Unity Sprite。
         public static Sprite LoadSpriteFromFile(string path)
         {
             try
             {
-                if (BAManualUIImageLoader.IsManualUIImagePath(path))
-                {
-                    return BAManualUIImageLoader.GetSprite(path);
-                }
-
-                
-                string directory = Path.GetDirectoryName(path);
-                string fileNameNoExt = Path.GetFileNameWithoutExtension(path);
-                string ext = Path.GetExtension(path);
-                if (string.IsNullOrEmpty(fileNameNoExt))
+                if (string.IsNullOrWhiteSpace(path))
                 {
                     return null;
                 }
 
-                string pngPath = !string.IsNullOrEmpty(ext) ? Path.Combine(directory ?? string.Empty, fileNameNoExt + ".png") : path.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ? path : path + ".png";
-                string ddsPath = !string.IsNullOrEmpty(ext) ? Path.Combine(directory ?? string.Empty, fileNameNoExt + ".dds") : path.EndsWith(".dds", StringComparison.OrdinalIgnoreCase) ? path : path + ".dds";
-
-                // 1) 先尝试 PNG
-                if (File.Exists(pngPath))
+                if (BAManualUIImageLoader.IsManualUIImagePath(path) || IsManualUIAbsolutePath(path))
                 {
-                    Sprite sp = CreateSpriteFromPng(pngPath);
-                    if (sp != null)
-                    {
-                        return sp;
-                    }
-                    // PNG 存在但加载失败，继续尝试 DDS
+                    return BAManualUIImageLoader.GetSprite(path);
                 }
 
-                // 2) 再尝试 DDS
-                if (File.Exists(ddsPath))
+                if (TryLoadLocalSprite(path, out Sprite localSprite))
                 {
-                    Sprite sp = CreateSpriteFromDds(ddsPath);
-                    if (sp != null)
-                    {
-                        return sp;
-                    }
+                    return localSprite;
                 }
 
-                // 3) 两者都没有
-                Debug.LogError("图片文件不存在（PNG 与 DDS 均未找到）：" + pngPath + " | " + ddsPath);
+                Sprite rimWorldSprite = BAUIRimWorldSpriteLoader.GetSprite(path);
+                if (rimWorldSprite != null)
+                {
+                    return rimWorldSprite;
+                }
+
+                Debug.LogError("图片资源不存在（本地 PNG/DDS 与 RimWorld 贴图均未找到）：" + path);
                 return null;
             }
             catch (System.Exception ex)
@@ -103,9 +79,72 @@ namespace newpro
             }
         }
 
-        /// <summary>
-        /// 从 PNG 文件创建 Sprite（使用 Unity 内置解码）。
-        /// </summary>
+        //尝试从磁盘 PNG 或 DDS 加载 Sprite，负责保持旧的绝对路径图片读取能力。
+        private static bool TryLoadLocalSprite(string path, out Sprite sprite)
+        {
+            sprite = null;
+            string localPath = path;
+            if (!Path.IsPathRooted(localPath))
+            {
+                localPath = BuildCommonTexturePath(localPath);
+            }
+
+            string directory = Path.GetDirectoryName(localPath);
+            string fileNameNoExt = Path.GetFileNameWithoutExtension(localPath);
+            string ext = Path.GetExtension(localPath);
+            if (string.IsNullOrEmpty(fileNameNoExt))
+            {
+                return false;
+            }
+
+            string pngPath = !string.IsNullOrEmpty(ext) ? Path.Combine(directory ?? string.Empty, fileNameNoExt + ".png") : localPath.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ? localPath : localPath + ".png";
+            string ddsPath = !string.IsNullOrEmpty(ext) ? Path.Combine(directory ?? string.Empty, fileNameNoExt + ".dds") : localPath.EndsWith(".dds", StringComparison.OrdinalIgnoreCase) ? localPath : localPath + ".dds";
+
+            if (File.Exists(pngPath))
+            {
+                sprite = CreateSpriteFromPng(pngPath);
+                if (sprite != null)
+                {
+                    return true;
+                }
+            }
+
+            if (File.Exists(ddsPath))
+            {
+                sprite = CreateSpriteFromDds(ddsPath);
+                if (sprite != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        //把 RimWorld 相对贴图路径转换为 Common/Textures 下的本地候选路径。
+        private static string BuildCommonTexturePath(string path)
+        {
+            string relativePath = path.Replace('\\', '/').Trim('/');
+            if (relativePath.StartsWith("Common/Textures/", StringComparison.OrdinalIgnoreCase))
+            {
+                relativePath = relativePath.Substring("Common/Textures/".Length);
+            }
+
+            return Path.Combine(UiMapData.modRootPath, "Common", "Textures", relativePath.Replace('/', Path.DirectorySeparatorChar));
+        }
+
+        //判断路径是否已经是手册图片真实磁盘路径。
+        private static bool IsManualUIAbsolutePath(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                return false;
+            }
+
+            return path.Replace('\\', '/').IndexOf("/Common/UIAssets/ManuaUI/", StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        //从 PNG 文件创建 Sprite。
         private static Sprite CreateSpriteFromPng(string pngPath)
         {
             try
@@ -131,11 +170,7 @@ namespace newpro
             }
         }
 
-        /// <summary>
-        /// 从 DDS 文件创建 Sprite（支持 DXT1/DXT5）。
-        /// 流程解析：
-        /// 1) 校验文件魔数 "DDS "；2) 解析宽高、像素格式 FourCC；3) 读取纹理数据并按压缩格式写入 Texture2D；4) 生成 Sprite。
-        /// </summary>
+        //从 DDS 文件创建 Sprite。
         private static Sprite CreateSpriteFromDds(string ddsPath)
         {
             try
@@ -158,10 +193,7 @@ namespace newpro
             }
         }
 
-        /// <summary>
-        /// 读取 DDS 文件为 Texture2D（最小实现：支持 DXT1 / DXT5 压缩）。
-        /// 注意：Unity 对压缩纹理格式的支持依赖平台；RimWorld Windows 环境支持 DXT1/DXT5。
-        /// </summary>
+        //读取 DDS 文件为 Texture2D。
         private static Texture2D LoadTextureFromDDS(string ddsPath)
         {
             byte[] bytes = File.ReadAllBytes(ddsPath);
@@ -171,7 +203,7 @@ namespace newpro
                 return null;
             }
 
-            // 1) 魔数校验：前 4 字节应为 'D','D','S',' '
+            //校验 DDS 文件魔数。
             if (!(bytes[0] == 0x44 && bytes[1] == 0x44 && bytes[2] == 0x53 && bytes[3] == 0x20))
             {
                 Debug.LogError("DDS 魔数不匹配：" + ddsPath);
@@ -180,17 +212,16 @@ namespace newpro
 
             try
             {
-                // 2) 解析关键头部字段（以下偏移量均以文件起始为基准）
-                int height = BitConverter.ToInt32(bytes, 12);   // dwHeight
-                int width = BitConverter.ToInt32(bytes, 16);    // dwWidth
-                int mipMapCount = Math.Max(1, BitConverter.ToInt32(bytes, 28)); // dwMipMapCount，最少 1
-                int fourCC = BitConverter.ToInt32(bytes, 84);   // ddspf.fourCC
+                //解析 DDS 头部字段。
+                int height = BitConverter.ToInt32(bytes, 12);
+                int width = BitConverter.ToInt32(bytes, 16);
+                int mipMapCount = Math.Max(1, BitConverter.ToInt32(bytes, 28));
+                int fourCC = BitConverter.ToInt32(bytes, 84);
 
-                // 3) 判断压缩格式
+                //根据 FourCC 判断压缩格式。
                 TextureFormat textureFormat;
-                bool isCompressed = true;
-                const int FOURCC_DXT1 = 0x31545844; // 'DXT1'
-                const int FOURCC_DXT5 = 0x35545844; // 'DXT5'
+                const int FOURCC_DXT1 = 0x31545844;
+                const int FOURCC_DXT5 = 0x35545844;
 
                 if (fourCC == FOURCC_DXT1)
                 {
@@ -202,12 +233,11 @@ namespace newpro
                 }
                 else
                 {
-                    // 最小实现仅支持 DXT1/DXT5，其余格式直接报错
                     Debug.LogError("不支持的 DDS FourCC（仅支持 DXT1/DXT5）：0x" + fourCC.ToString("X") + " 路径：" + ddsPath);
                     return null;
                 }
 
-                // 4) 提取像素数据（头部固定 128 字节）
+                //提取 DDS 头部后面的像素数据。
                 int dataOffset = 128;
                 int dataSize = bytes.Length - dataOffset;
                 if (dataSize <= 0)
@@ -219,7 +249,7 @@ namespace newpro
                 byte[] pixelData = new byte[dataSize];
                 Buffer.BlockCopy(bytes, dataOffset, pixelData, 0, dataSize);
 
-                // 5) 创建 Texture2D 并写入压缩数据
+                //创建 Unity 纹理并写入 DDS 压缩数据。
                 Texture2D tex = new Texture2D(width, height, textureFormat, mipMapCount > 1);
                 tex.LoadRawTextureData(pixelData);
                 tex.Apply(false, false);

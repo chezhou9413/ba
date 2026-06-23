@@ -263,6 +263,7 @@
     <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionType.cs" />
     <Compile Include="mainUI\Mission\MonoComp\MonoComp_BaMissionInfo.cs" />
     <Compile Include="mainUI\ManualUI\BAManualUIImageLoader.cs" />
+    <Compile Include="mainUI\ManualUI\BAUIRimWorldSpriteLoader.cs" />
     <Compile Include="mainUI\MonoComp\messageUILord.cs" />
     <Compile Include="mainUI\MonoComp\MonoComp_backButtom.cs" />
     <Compile Include="mainUI\MonoComp\pilianggoumai.cs" />
@@ -291,7 +292,6 @@
     <Compile Include="MissionRunTime\MissionMain\MissionRunTime_BaseDefense.cs" />
     <Compile Include="ModMain.cs" />
     <Compile Include="pache\Patch_Projectile_Launch.cs" />
-    <Compile Include="pache\RemoteAttackBoostPatch.cs" />
     <Compile Include="pache\pawnKill.cs" />
     <Compile Include="pache\Pawn_disDaed.cs" />
     <Compile Include="PawnProgressBarKindExtension.cs" />

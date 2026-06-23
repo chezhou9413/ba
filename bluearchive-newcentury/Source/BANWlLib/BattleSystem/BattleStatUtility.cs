@@ -150,9 +150,20 @@ namespace BANWlLib.BattleSystem
 
             return Mathf.Max(0f,
                 GetBaseAttackFlat(pawn) +
-                pawn.GetStatValue(BattleStatDefOf.BANW_RangedWeapon_Damage) +
-                GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_RangedWeapon_Damage) +
                 GetStarAttackFlat(pawn));
+        }
+
+        // 获取基础攻击倍率，负责把基础攻击力加成按百分比转成 100% 起步的倍率。
+        public static float GetAttackPowerBaseMultiplier(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 1f;
+            }
+
+            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_RangedWeapon_Damage) +
+                          GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_RangedWeapon_Damage);
+            return Mathf.Max(0f, 1f + bonus);
         }
 
         public static float GetAttackMultiplier(Pawn pawn)
@@ -176,7 +187,18 @@ namespace BANWlLib.BattleSystem
                 return 0f;
             }
 
-            return Mathf.Max(0f, GetAttackFlatBonus(pawn) * GetAttackMultiplier(pawn));
+            return Mathf.Max(0f, GetAttackFlatBonus(pawn) * GetAttackPowerBaseMultiplier(pawn) * GetAttackMultiplier(pawn));
+        }
+
+        // 获取最终攻击倍率，负责统一组合基础攻击倍率和最终攻击力加成。
+        public static float GetTotalAttackMultiplier(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 1f;
+            }
+
+            return Mathf.Max(0f, GetAttackPowerBaseMultiplier(pawn) * GetAttackMultiplier(pawn));
         }
 
         public static float ScaleDamageBase(Pawn pawn, float baseAmount)
@@ -186,10 +208,10 @@ namespace BANWlLib.BattleSystem
                 return Mathf.Max(0f, baseAmount);
             }
 
-            return Mathf.Max(0f, Mathf.Max(0f, baseAmount) * GetAttackFlatBonus(pawn) * GetAttackMultiplier(pawn));
+            return Mathf.Max(0f, Mathf.Max(0f, baseAmount) * GetTotalAttackMultiplier(pawn));
         }
 
-        // 缩放普通武器伤害，负责让武器弹丸按武器原始伤害、基础攻击力和攻击倍率三段相乘。
+        // 缩放普通武器伤害，负责让武器弹丸按武器原始伤害、基础攻击倍率和最终攻击倍率结算。
         public static float ScaleWeaponDamageBase(Pawn pawn, float weaponBaseDamage)
         {
             if (pawn == null)
@@ -197,7 +219,7 @@ namespace BANWlLib.BattleSystem
                 return Mathf.Max(0f, weaponBaseDamage);
             }
 
-            return Mathf.Max(0f, Mathf.Max(0f, weaponBaseDamage) * GetAttackFlatBonus(pawn) * GetAttackMultiplier(pawn));
+            return Mathf.Max(0f, Mathf.Max(0f, weaponBaseDamage) * GetTotalAttackMultiplier(pawn));
         }
 
         public static float GetHealFlatBonus(Pawn pawn)
@@ -299,14 +321,16 @@ namespace BANWlLib.BattleSystem
             }
 
             float attackFlatBonus = GetAttackFlatBonus(pawn);
+            float attackPowerBase = GetAttackPowerBaseMultiplier(pawn);
             float attackMultiplier = GetAttackMultiplier(pawn);
             float healFlatBonus = GetHealFlatBonus(pawn);
             float healMultiplier = GetHealMultiplier(pawn);
             return new BattleCasterSnapshot
             {
                 attackFlatBonus = attackFlatBonus,
+                attackPowerBase = attackPowerBase,
                 attackMultiplier = attackMultiplier,
-                attackPower = attackFlatBonus * attackMultiplier,
+                attackPower = attackFlatBonus * attackPowerBase * attackMultiplier,
                 healFlatBonus = healFlatBonus,
                 healMultiplier = healMultiplier,
                 healPower = healFlatBonus * healMultiplier,
@@ -329,7 +353,7 @@ namespace BANWlLib.BattleSystem
             float amount = Mathf.Max(0f, request.baseAmount);
             if (request.snapshot != null)
             {
-                amount = Mathf.Max(0f, request.baseAmount) * request.snapshot.attackFlatBonus * request.snapshot.attackMultiplier;
+                amount = Mathf.Max(0f, request.baseAmount) * request.snapshot.attackPowerBase * request.snapshot.attackMultiplier;
                 if (request.attackPowerRatio > 0f)
                 {
                     amount += request.snapshot.attackPower * request.attackPowerRatio;
