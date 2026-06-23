@@ -68,7 +68,7 @@
           <stages>
           <li>     
            <statOffsets>
-         <BANW_AffinityBonus_Explosion>0.54</BANW_AffinityBonus_Explosion>
+         <BANW_AffinityBonus_Vibration>0.54</BANW_AffinityBonus_Vibration>
            </statOffsets>
            </li>
           </stages>
@@ -95,8 +95,10 @@
   <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
   <showWhenDrafted>True</showWhenDrafted>
   <hostile>true</hostile>
+   <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
   <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
   <verbProperties>
+    <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
     <!-- 发射投射物的技能动词，实际命中逻辑由 projectileDef 上的 Projectile_PiercingArea 执行。 -->
     <soundCast>BANW_Wp_HG_At</soundCast>
     <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
@@ -140,20 +142,75 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
+          <baseAmount>81</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>3.13</attackPowerRatio>
           <!-- 伤害类型。 -->
-          <damageDef>Bomb</damageDef>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
           <!-- 是否允许暴击。 -->
           <canCrit>true</canCrit>
           <!-- 是否应用攻击类型与护甲类型克制。 -->
           <applyAffinity>true</applyAffinity>
           <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
           <isExSkill>true</isExSkill>
-          <effecterDef>BANW_Hanako_Ef_B</effecterDef>
         </li>
-       
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>81</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>3.13</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>81</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>3.13</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>81</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>3.13</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>81</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>3.13</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+
       </previewActions>
     </li>
   </modExtensions>
@@ -316,7 +373,7 @@
 <DamageDef ParentName="BANC_Damage_zhendong">
   <defName>BANC_Damage_Nozomi_EXX</defName>
   <!-- 伤害命中时播放的方向自适应特效。 -->
-  <damageEffecter></damageEffecter>
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
   <soundExplosion>BANW_Sound_Kong</soundExplosion>
 </DamageDef>
 

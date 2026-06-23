@@ -1,7 +1,43 @@
 ManifestFileVersion: 0
-CRC: 10284751
+CRC: 1955918777
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: banw_pawns_win
+      Name: banw_textures_qinghuistone
+      Dependencies: {}
+    Info_1:
+      Name: banw_textures_build
+      Dependencies: {}
+    Info_2:
+      Name: banw_textures_projectile
+      Dependencies: {}
+    Info_3:
+      Name: banw_textures_stone
+      Dependencies: {}
+    Info_4:
+      Name: banw_textures_ui
+      Dependencies: {}
+    Info_5:
+      Name: banw_textures_ability
+      Dependencies: {}
+    Info_6:
+      Name: banw_textures_belt
+      Dependencies: {}
+    Info_7:
+      Name: banw_textures_gacha
+      Dependencies: {}
+    Info_8:
+      Name: banw_textures_pawns
+      Dependencies: {}
+    Info_9:
+      Name: banw_textures_player
+      Dependencies: {}
+    Info_10:
+      Name: banw_textures_prop
+      Dependencies: {}
+    Info_11:
+      Name: banw_textures_weapon
+      Dependencies: {}
+    Info_12:
+      Name: banw_textures_mechanoid
       Dependencies: {}

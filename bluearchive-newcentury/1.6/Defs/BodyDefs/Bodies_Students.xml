@@ -156,6 +156,7 @@
 									<def>Eye</def>
 									<customLabel>左眼</customLabel>
 									<coverage>0</coverage>
+									<depth>Outside</depth>
 									<groups>
 										<li>FullHead</li>
 										<li>Eyes</li>
@@ -171,6 +172,7 @@
 									<def>Eye</def>
 									<customLabel>右眼</customLabel>
 									<coverage>0</coverage>
+									<depth>Outside</depth>
 									<groups>
 										<li>FullHead</li>
 										<li>Eyes</li>

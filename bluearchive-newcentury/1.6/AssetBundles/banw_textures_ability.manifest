@@ -1,0 +1,87 @@
+ManifestFileVersion: 0
+CRC: 279597444
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 974b24a467c4a7f12c92b64eaf8eaacb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 974b24a467c4a7f12c92b64eaf8eaacb
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Nero/Nero_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Airy/Airy_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Icon_Error.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Suzumi_A/Suzumi_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hikali/Hikali_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Kazusa/Kazusa_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Nonomi/Nonomi_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Atsuko/Atsuko_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Momoi/Momoi_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Serika/Serika_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Akane/Akane_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hare/Hare_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hasumi/Hasumi_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Airy/Airy_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Chinatsu/Chinatsu_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Natsu/Natsu_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Suzumi/Suzumi_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Reisa/Reisa_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Reisa_A/Reisa_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Shun/Shun_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Yuuka/Yuuka_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Chise/Chise_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Reisa_A/Reisa_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hina/Hina_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hifumi/Hifumi_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Asuna/Asuna_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Kasumi/Kasumi_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Wakamo_A/Wakamo_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Maki/Maki_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Yoshimi/Yoshimi_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hasumi/Hasumi_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Juri/Juri_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Ichika/Ichika_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Ibuki/Ibuki_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hoshiro/Hoshiro_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Shigure/Shigure_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Serina/Serina_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Airy/Airy_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hina/Hina_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Mika/Mika_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hanae/Hanae_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hoshiro/Hoshiro_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hina/Hina_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Chinatsu/Chinatsu_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Aoba/Aoba_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Mashiro/Mashiro_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hikali/Hikali_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Natsu/Natsu_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hina/Hina_B.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Koyuki/Koyuki_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Mika/Mika_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Mika/Mika_B.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Nozomi/Nozomi_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Akane/Akane_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Maki/Maki_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Akane/Akane_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Ichika/Ichika_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hanako_A/Hanako_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Arisu/Arisu_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Chise/Chise_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Momoi/Momoi_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Hanako_A/Hanako_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Megu/Megu_A.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Reisa/Reisa_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Reisa_A/Reisa_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Asuna/Asuna_EXX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Natsu/Natsu_EX.png
+- Assets/Data/Archive.NewWorld/Textures/Ability/Icon/Chiaki/Chiaki_A.png
+Dependencies: []
