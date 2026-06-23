@@ -27,11 +27,7 @@ public class DamageFontSystemPatche
 
             if (BattleDamageDisplayState.TryConsumeManualCritState(__instance, out bool manualCrit))
             {
-                if (manualCrit)
-                {
-                    CritState[__instance.thingIDNumber] = true;
-                }
-                else if (CritState.ContainsKey(__instance.thingIDNumber))
+                if (CritState.ContainsKey(__instance.thingIDNumber))
                 {
                     CritState.Remove(__instance.thingIDNumber);
                 }
@@ -95,7 +91,11 @@ public class DamageFontSystemPatche
             }
 
             bool isCrit = false;
-            if (CritState.TryGetValue(__instance.thingIDNumber, out bool state))
+            if (BattleDamageDisplayState.TryConsumeCriticalFloatText(__instance, out bool manualFloatTextCrit))
+            {
+                isCrit = manualFloatTextCrit;
+            }
+            else if (CritState.TryGetValue(__instance.thingIDNumber, out bool state))
             {
                 isCrit = state;
                 CritState.Remove(__instance.thingIDNumber);

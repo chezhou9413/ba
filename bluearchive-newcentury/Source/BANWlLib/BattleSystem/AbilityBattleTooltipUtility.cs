@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using BANWlLib.Projectiles;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -25,18 +26,23 @@ namespace BANWlLib.BattleSystem
             }
 
             AbilityBattleTooltipExtension extension = ability.def.GetModExtension<AbilityBattleTooltipExtension>();
-            if (extension == null || !extension.showBattleFormula || extension.previewActions.NullOrEmpty())
+            if (extension == null || !extension.showBattleFormula)
             {
                 return string.Empty;
             }
 
             Pawn pawn = ability.pawn;
+            List<BattleActionConfig> actions = ResolvePreviewActions(ability.def);
+            if (actions.NullOrEmpty())
+            {
+                return string.Empty;
+            }
+
             StringBuilder builder = new StringBuilder();
             builder.AppendLine();
             builder.AppendLine("BA战斗公式".Colorize(ColoredText.TipSectionTitleColor));
             AppendCasterStats(builder, pawn);
 
-            List<BattleActionConfig> actions = extension.previewActions;
             for (int i = 0; i < actions.Count;)
             {
                 BattleActionConfig action = actions[i];
@@ -48,7 +54,7 @@ namespace BANWlLib.BattleSystem
 
                 int repeatCount = CountSameActions(actions, i, action);
                 builder.AppendLine();
-                builder.AppendLine(FormatSegmentTitle(i, repeatCount).Colorize(ColoredText.TipSectionTitleColor));
+                builder.AppendLine(FormatSegmentTitle(i, repeatCount, action).Colorize(ColoredText.TipSectionTitleColor));
                 if (action.isHealing)
                 {
                     AppendHealAction(builder, pawn, action);
@@ -62,6 +68,64 @@ namespace BANWlLib.BattleSystem
             }
 
             return builder.ToString();
+        }
+
+        //解析预览战斗段，负责让直线投射物技能优先读取真实子弹配置，避免悬浮预估和实际结算分离。
+        private static List<BattleActionConfig> ResolvePreviewActions(AbilityDef abilityDef)
+        {
+            BattleActionConfig projectileAction = TryBuildPiercingProjectileAction(abilityDef);
+            if (projectileAction != null)
+            {
+                return new List<BattleActionConfig> { projectileAction };
+            }
+
+            return abilityDef.GetModExtension<AbilityBattleTooltipExtension>()?.previewActions;
+        }
+
+        //从直线穿透弹构建预览段，负责把 ThingDef 扩展里的真实伤害参数同步到技能公式显示。
+        private static BattleActionConfig TryBuildPiercingProjectileAction(AbilityDef abilityDef)
+        {
+            ThingDef projectileDef = FindLaunchProjectileDef(abilityDef);
+            PiercingProjectileExtension extension = projectileDef?.GetModExtension<PiercingProjectileExtension>();
+            if (extension == null)
+            {
+                return null;
+            }
+
+            return new BattleActionConfig
+            {
+                baseAmount = extension.baseAmount,
+                attackPowerRatio = extension.attackPowerRatio,
+                damageDef = projectileDef.projectile?.damageDef,
+                penetration = projectileDef.projectile?.GetArmorPenetration() ?? 0f,
+                canCrit = extension.canCrit,
+                applyAffinity = extension.applyAffinity,
+                canHitBuilding = extension.canHitBuilding,
+                affectHostile = extension.affectHostile,
+                affectFriendly = extension.affectFriendly,
+                isExSkill = extension.isExSkill,
+                isProjectilePreview = true
+            };
+        }
+
+        //查找技能发射的投射物，负责支持原版 CompProperties_AbilityLaunchProjectile 配置。
+        private static ThingDef FindLaunchProjectileDef(AbilityDef abilityDef)
+        {
+            if (abilityDef?.comps == null)
+            {
+                return null;
+            }
+
+            for (int i = 0; i < abilityDef.comps.Count; i++)
+            {
+                CompProperties_AbilityLaunchProjectile launchProjectile = abilityDef.comps[i] as CompProperties_AbilityLaunchProjectile;
+                if (launchProjectile?.projectileDef != null)
+                {
+                    return launchProjectile.projectileDef;
+                }
+            }
+
+            return null;
         }
 
         //统计连续相同战斗段，负责让多段相同伤害在悬浮说明里合并显示。
@@ -97,12 +161,18 @@ namespace BANWlLib.BattleSystem
                    left.isHealing == right.isHealing &&
                    left.canCrit == right.canCrit &&
                    left.applyAffinity == right.applyAffinity &&
-                   left.isExSkill == right.isExSkill;
+                   left.isExSkill == right.isExSkill &&
+                   left.isProjectilePreview == right.isProjectilePreview;
         }
 
         //格式化段落标题，负责把连续相同段压缩成短标题。
-        private static string FormatSegmentTitle(int startIndex, int repeatCount)
+        private static string FormatSegmentTitle(int startIndex, int repeatCount, BattleActionConfig action)
         {
+            if (action?.isProjectilePreview == true)
+            {
+                return "直线弹";
+            }
+
             if (repeatCount <= 1)
             {
                 return "第" + (startIndex + 1) + "段";
@@ -145,7 +215,7 @@ namespace BANWlLib.BattleSystem
             });
 
             builder.AppendLine("类型：" + FormatColor("伤害", DamageColor));
-            builder.AppendLine("基础值：" + FormatNumber(action.baseAmount));
+            builder.AppendLine("基础值：" + FormatBaseAmount(action.baseAmount));
             builder.AppendLine("攻击倍率：" + FormatColor(FormatPercent(action.attackPowerRatio), DamageColor));
             builder.AppendLine("暴击：" + FormatSwitch(action.canCrit, CritColor));
             builder.AppendLine("属性克制：" + FormatSwitch(action.applyAffinity, AffinityColor));
@@ -247,6 +317,12 @@ namespace BANWlLib.BattleSystem
         private static string FormatNumber(float value)
         {
             return value.ToString("0.#");
+        }
+
+        // 格式化基础值，负责在没有固定基础伤害时避免显示成容易误解的 0 段伤害。
+        private static string FormatBaseAmount(float value)
+        {
+            return Mathf.Abs(value) < 0.0001f ? FormatColor("无", DisabledColor) : FormatNumber(value);
         }
 
         // 格式化倍率，负责把 1.2 显示为 120%。

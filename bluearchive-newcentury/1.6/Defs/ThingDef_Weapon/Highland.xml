@@ -204,8 +204,8 @@
         <immuneFriendlyFire>true</immuneFriendlyFire>
         <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
         <baseAmount>0</baseAmount>
-        <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-        <attackPowerRatio>2.0</attackPowerRatio>
+        <!-- 最终攻击力倍率，15.67 表示造成 1567% 攻击力伤害。 -->
+        <attackPowerRatio>15.67</attackPowerRatio>
         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
         <isExSkill>true</isExSkill>
         <!-- 是否允许暴击。 -->
@@ -218,6 +218,18 @@
         <affectHostile>true</affectHostile>
         <!-- 是否命中友方目标。 -->
         <affectFriendly>false</affectFriendly>
+        <!-- 飞行中持续绑定到子弹上的特效。 -->
+        <flightEffecter>BANW_Effecter_Nozomi_Train_Flight_Test</flightEffecter>
+        <!-- true 表示飞行特效跟随投射物 Thing。 -->
+        <flightEffectAttachToProjectile>true</flightEffectAttachToProjectile>
+        <!-- true 表示附着 Mote 按投射物朝向同步旋转。 -->
+        <flightEffectRotateWithProjectile>true</flightEffectRotateWithProjectile>
+        <!-- 飞行特效沿弹道方向偏移。 -->
+        <flightEffectOffsetForward>0</flightEffectOffsetForward>
+        <!-- 飞行特效向弹道右侧偏移。 -->
+        <flightEffectOffsetRight>0</flightEffectOffsetRight>
+        <!-- 飞行特效向上偏移。 -->
+        <flightEffectOffsetUp>0.4</flightEffectOffsetUp>
         <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
         <directionalImpactEffect>BANW_Effecter_DirectionalImpact_Test</directionalImpactEffect>
         <!-- 是否对 Pawn 触发方向命中特效。 -->

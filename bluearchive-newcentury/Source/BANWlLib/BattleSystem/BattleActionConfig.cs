@@ -20,6 +20,7 @@ namespace BANWlLib.BattleSystem
         public bool affectFriendly = false;
         public bool allowPermanentInjuryHealing = false;
         public bool isExSkill = false;
+        public bool isProjectilePreview = false;
 
         // 保存和读取战斗动作配置，负责支持场地控制器等可存档对象。
         public void ExposeData()
@@ -36,6 +37,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref affectFriendly, "affectFriendly", false);
             Scribe_Values.Look(ref allowPermanentInjuryHealing, "allowPermanentInjuryHealing", false);
             Scribe_Values.Look(ref isExSkill, "isExSkill", false);
+            Scribe_Values.Look(ref isProjectilePreview, "isProjectilePreview", false);
             Scribe_Defs.Look(ref damageDef, "damageDef");
             Scribe_Defs.Look(ref triggerHediff, "triggerHediff");
             Scribe_Defs.Look(ref effecterDef, "effecterDef");

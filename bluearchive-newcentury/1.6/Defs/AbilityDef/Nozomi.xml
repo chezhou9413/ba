@@ -84,7 +84,7 @@
 <AbilityDef>
   <defName>BAWN_Nozomi_Train_Test</defName>
   <label>发车测试</label>
-  <description>发射可穿墙直线子弹，对路径上的敌人和墙体按间隔造成攻击力200%的贯通伤害。</description>
+  <description>发射可穿墙直线子弹，对路径上的敌人和墙体按间隔造成攻击力1567%的贯通伤害。</description>
   <iconPath>Ability/Icon/Nozomi/Nozomi_A</iconPath>
   <cooldownTicksRange>1800</cooldownTicksRange>
   <hotKey>Misc11</hotKey>
@@ -140,8 +140,8 @@
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
           <baseAmount>0</baseAmount>
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>2.0</attackPowerRatio>
+          <!-- 最终攻击力倍率，15.67 表示造成 1567% 攻击力伤害。直线弹实际预览优先读取 projectileDef。 -->
+          <attackPowerRatio>15.67</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>Bomb</damageDef>
           <!-- 是否允许暴击。 -->
@@ -230,6 +230,40 @@
       <compClass>CompAbilityEffect_GiveHediff</compClass>
       <!-- 可叠层攻击 Buff，重复施加时由 HediffComp_BattleStack 叠层并刷新时间。 -->
       <hediffDef>BANW_BattleStack_Attack_Test</hediffDef>
+      <onlyApplyToSelf>true</onlyApplyToSelf>
+      <!-- 不能替换已有 Hediff，否则叠层组件没有机会累加层数。 -->
+      <replaceExisting>false</replaceExisting>
+    </li>
+  </comps>
+</AbilityDef>
+
+<AbilityDef>
+  <defName>BAWN_Nozomi_MultiStackBuff_Test</defName>
+  <label>叠层多属性测试</label>
+  <description>每次使用获得一层多属性状态，同时提高最终伤害、暴击率、暴击伤害和EX技能倍率，最多3层。</description>
+  <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
+  <cooldownTicksRange>300</cooldownTicksRange>
+  <hotKey>Misc8</hotKey>
+  <targetRequired>false</targetRequired>
+  <hostile>false</hostile>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <verbProperties>
+    <verbClass>Verb_CastAbility</verbClass>
+    <drawAimPie>false</drawAimPie>
+    <range>-1</range>
+    <warmupTime>0.1</warmupTime>
+    <targetParams>
+      <canTargetSelf>true</canTargetSelf>
+      <canTargetPawns>false</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityGiveHediff">
+      <compClass>CompAbilityEffect_GiveHediff</compClass>
+      <!-- 可叠层多属性 Buff，重复施加时由 HediffComp_BattleStack 叠层并刷新时间。 -->
+      <hediffDef>BANW_BattleStack_MultiStat_Test</hediffDef>
       <onlyApplyToSelf>true</onlyApplyToSelf>
       <!-- 不能替换已有 Hediff，否则叠层组件没有机会累加层数。 -->
       <replaceExisting>false</replaceExisting>

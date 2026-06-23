@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 穿透抛射体配置扩展，负责提供统一伤害参数、命中规则和方向特效参数。
+    // 穿透抛射体配置扩展，负责提供统一伤害参数、命中规则、飞行特效和方向特效参数。
     public class PiercingProjectileExtension : DefModExtension
     {
         public int damageIntervalTicks = 1;
@@ -19,6 +19,12 @@ namespace BANWlLib.Projectiles
         public bool canHitBuilding = true;
         public bool affectHostile = true;
         public bool affectFriendly = false;
+        public EffecterDef flightEffecter;
+        public bool flightEffectAttachToProjectile = true;
+        public bool flightEffectRotateWithProjectile = true;
+        public float flightEffectOffsetForward = 0f;
+        public float flightEffectOffsetRight = 0f;
+        public float flightEffectOffsetUp = 0.4f;
         public EffecterDef directionalImpactEffect;
         public bool directionalImpactOnPawn = true;
         public bool directionalImpactOnBuilding = true;

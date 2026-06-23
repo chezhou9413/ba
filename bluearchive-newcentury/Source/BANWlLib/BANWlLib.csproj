@@ -301,7 +301,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Projectiles\PiercingProjectileExtension.cs" />
     <Compile Include="Projectiles\DirectionalImpactEffectContext.cs" />
+    <Compile Include="Projectiles\ProjectileFlightEffectContext.cs" />
     <Compile Include="Projectiles\Projectile_PiercingArea.cs" />
+    <Compile Include="Projectiles\SubEffecter_AttachedProjectileMote.cs" />
     <Compile Include="Projectiles\SubEffecter_DirectionalImpactMote.cs" />
     <Compile Include="Pojo\PendingDamageAction.cs" />
     <Compile Include="StudentInitializationComp.cs" />

@@ -132,9 +132,9 @@ namespace BANWlLib.BattleSystem
             for (int i = 0; i < hediffs.Count; i++)
             {
                 HediffComp_BattleStack comp = hediffs[i].TryGetComp<HediffComp_BattleStack>();
-                if (comp != null && comp.Props.targetStat == statDef)
+                if (comp != null && comp.AffectsStat(statDef))
                 {
-                    total += comp.GetCurrentValue();
+                    total += comp.GetCurrentValue(statDef);
                 }
             }
 
@@ -432,6 +432,7 @@ namespace BANWlLib.BattleSystem
             BattleDamageResult result = BuildDamageResult(request);
             bool instigatorGuilty = !(request.instigator is Pawn launcherPawn) || !launcherPawn.Drafted;
             BattleDamageDisplayState.RegisterManualDamage(request.target, request.instigator, result.isCrit);
+            BattleDamageDisplayState.RegisterCriticalFloatText(request.target, result.isCrit);
             DamageInfo damageInfo = new DamageInfo(
                 request.damageDef,
                 result.finalAmount,

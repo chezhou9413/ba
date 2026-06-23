@@ -8,6 +8,7 @@ namespace BANWlLib.DamageFontSystem
     public static class CriticalObjPool
     {
         public static Queue<GameObject> Criticalpool = new Queue<GameObject>();
+        private static bool missingPrefabLogged;
 
         // 获取飘字对象，负责优先复用对象池中的实例。
         public static GameObject getCriticalObj()
@@ -48,6 +49,17 @@ namespace BANWlLib.DamageFontSystem
         // 统一显示飘字，负责设置世界坐标、文本样式和对象激活。
         private static void ShowFloatText(int amount, Pawn pawn, Color color, string prefix)
         {
+            if (pawn == null || FontDataBase.CriticalFont == null || FontDataBase.Canvas == null)
+            {
+                if (!missingPrefabLogged)
+                {
+                    missingPrefabLogged = true;
+                    Log.Error("BA伤害飘字资源未初始化，无法显示暴击或治疗飘字。");
+                }
+
+                return;
+            }
+
             GameObject gameObject = getCriticalObj();
             if (FontDataBase.Canvas.GetComponent<Canvas>().worldCamera != Find.Camera)
             {
