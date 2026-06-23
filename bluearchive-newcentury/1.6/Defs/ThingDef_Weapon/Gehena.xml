@@ -1776,7 +1776,7 @@
     <modExtensions>
     <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
        <!-- 伤害间隔 Tick 数：飞行中每经过 10 ticks (约 0.16秒) 造成一次范围伤害 -->
-      <damageIntervalTicks>5</damageIntervalTicks>
+      <damageIntervalTicks>1</damageIntervalTicks>
       <!-- 伤害宽度：垂直于飞行方向的判定范围宽度，单位为格 (10格宽) -->
       <damageWidth>5</damageWidth>
       <!-- 伤害长度：沿飞行方向的判定范围长度，单位为格 (10格长) -->
@@ -1791,6 +1791,8 @@
       <fadeInTicks>2</fadeInTicks>
       <!-- 淡出 Tick 数：贴图从完全显示到消失所需的 tick 数 (10 ticks) -->
       <fadeOutTicks>5</fadeOutTicks>
+       <!-- true 表示即使点击近处，也按 maxRange 沿点击方向飞到最大距离。 -->
+        <extendToMaxRange>true</extendToMaxRange>
     </li>
   </modExtensions>
   </ThingDef>

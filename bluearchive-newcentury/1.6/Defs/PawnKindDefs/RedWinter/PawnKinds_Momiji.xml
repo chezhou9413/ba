@@ -159,23 +159,23 @@
 				<bodyAddonRules>
 					<li>
 						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
-						<ReplacePath>Pawns/RedWinter/Cherino/Halo/Cherino_Halo</ReplacePath>
+						<ReplacePath>Pawns/RedWinter/Momiji/Halo/Momiji_Halo</ReplacePath>
 					</li>
 					<li>
 						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
-						<ReplacePath>Pawns/RedWinter/Cherino/Body/Cherino_Body</ReplacePath>
+						<ReplacePath>Pawns/RedWinter/Momiji/Body/Momiji_Body</ReplacePath>
 					</li>
 					<li>
 						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
-						<ReplacePath>Pawns/RedWinter/Cherino/Head/Cherino_Head</ReplacePath>
+						<ReplacePath>Pawns/RedWinter/Momiji/Head/Momiji_Head</ReplacePath>
 					</li>
 					<li>
 						<BodyAddonName>KivotosStudent_hairfront_layer3</BodyAddonName>
-						<ReplacePath>Pawns/RedWinter/Cherino/Hair/Cherino_FrontHair</ReplacePath>
+						<ReplacePath>Pawns/RedWinter/Momiji/Hair/Momiji_FrontHair</ReplacePath>
 					</li>
 					<li>
 						<BodyAddonName>KivotosStudent_hairback_layer2</BodyAddonName>
-						<ReplacePath>Pawns/RedWinter/Cherino/Hair/Cherino_BackHair</ReplacePath>
+						<ReplacePath>Pawns/RedWinter/Momiji/Hair/Momiji_BackHair</ReplacePath>
 					</li>
 				</bodyAddonRules>
 			</li>

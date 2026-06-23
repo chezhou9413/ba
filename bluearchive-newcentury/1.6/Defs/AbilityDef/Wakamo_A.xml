@@ -1,12 +1,124 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <AbilityDef>
+<defName>BAWN_Wakamo_A_EXX</defName>
+ <label>翡翠花占</label>
+ <description>对一名敌人一共造成自身子弹攻击力的1074%的伤害,每一段伤害附加眩晕</description>
+ <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
+ <cooldownTicksRange>3000</cooldownTicksRange>
+ <hotKey>Misc12</hotKey>
+ <warmupStartSound>Mika_Skill_EXX</warmupStartSound>
+ <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+ <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
+ <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
+ <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+ <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+ <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+ <hostile>true</hostile><!-- 是否是敌对行为 -->
+ <targetRequired>true</targetRequired><!-- 对自己使用 -->
+ <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+ <verbProperties>
+ <warmupEffecter></warmupEffecter>
+ <soundCast></soundCast>
+ <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <defaultProjectile>BANC_Bullet_Wakamo_A_EXX</defaultProjectile>
+ <range>24.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <warmupTime>0.1</warmupTime><!-- 前摇时间（单位：秒） -->
+ <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+ <ticksBetweenBurstShots>7</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+<burstShotCount>18</burstShotCount> <!--连发射击的数量为 12 发。-->
+<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
+<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
+<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
+<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
+<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
+ <targetParams><!-- 目标参数设置 -->
+  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+  </targetParams>
+  </verbProperties>
+  <comps>
+  <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+  <hediffDef>BAWN_Mika_hedi_A</hediffDef><!-- 要添加的状态效果定义名 -->
+  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+  <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+</li>
+</comps>
+</AbilityDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Wakamo_A_EXX</defName>
+    <label>凯里·埃利森子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_Mika</damageDef><!--子弹类型-->
+      <damageAmountBase>141</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>20</stoppingPower><!--抑制-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
+      <speed>60</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>Stun</def>
+        <amount>1.5</amount>
+        <chance>1</chance>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>4</drawSize>
+      <texPath>Projectile/Bullet_Mika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <DamageDef ParentName="BANC_Damage_zhendong">
+  <defName>BANC_Damage_Nozomi_EXX</defName>
+  <!-- 伤害命中时播放的方向自适应特效。 -->
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+</DamageDef>
+
+  <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Mika_hedi_A</defName>
+        <!-- 显示名称 -->
+        <label>凯里·埃利森</label>
+        <!-- 效果描述 -->
+        <description>凯里·埃利森</description>
+        <defaultLabelColor>(255, 153, 255)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>300</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Mika_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
 <AbilityDef>
 <defName>BAWN_Wakamo_A_EX</defName>
  <label>只为您一人</label>
- <description>增加自身攻击力99%乘伤率减少29%（持续20秒）</description>
+ <description>根据自身使用该技能的次数，对自身造成以下效果中的1种\n第1次：攻击力增加31%.承伤率减少9%.\n第1次：攻击力增加62%.承伤率减少19%\n第1次：攻击力增加99%.承伤率增加29%（持续120秒）</description>
  <iconPath>Ability/Icon/Wakamo_A/Wakamo_EX</iconPath>
- <cooldownTicksRange>3600</cooldownTicksRange>
+ <cooldownTicksRange>21600</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
+ <charges>3</charges> <!-- 设置该能力有 5 次充能次数。-->
  <warmupStartSound>Wakamo_A_Skill_EX</warmupStartSound>
  <warmupEffecter>BANW_Wakamo_A_Ef_A</warmupEffecter>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
@@ -20,7 +132,7 @@
  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
  <statBases>
 <!-- 持续时间：20 秒 = 1200 ticks -->
-  <Ability_Duration>20</Ability_Duration>
+  <Ability_Duration>120</Ability_Duration>
  </statBases>
  <verbProperties>
  <soundCast>Aoba_Skill_EX</soundCast>
@@ -51,35 +163,34 @@
 
 </comps>
 </AbilityDef>
-    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
-    <HediffDef>
-        <!-- 状态的唯一标识符 -->
-        <defName>BAWN_Wakamo_A_buff</defName>
-        <!-- 显示名称 -->
-        <label>只为您一人</label>
-        <!-- 效果描述 -->
-        <description>增加自身攻击力99%乘伤率减少29%（持续20秒）</description>
-        <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
-        <isBad>false</isBad>
-        <hediffClass>HediffWithComps</hediffClass>
-        <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
-          <stages>
-          <li>     
-           <statFactors>
-         <BANW_FinalDamageMultiplier>+0.99</BANW_FinalDamageMultiplier>
-         <IncomingDamageFactor>-0.29</IncomingDamageFactor>
-           </statFactors>
-           </li>
-          </stages>
-        <comps>
-        <li Class="HediffCompProperties_Disappears">
-        <showRemainingTime>true</showRemainingTime>
-        <disappearsAfterTicks>1200</disappearsAfterTicks>
+   <HediffDef>
+    <defName>BAWN_Wakamo_A_buff</defName>
+    <label>只为您一人</label>
+    <description>根据自身使用该技能的次数，对自身造成以下效果中的1种\n第1次：攻击力增加31%.承伤率减少9%.\n第1次：攻击力增加62%.承伤率减少19%\n第1次：攻击力增加99%.承伤率增加29%</description>
+    <defaultLabelColor>(255, 210, 80)</defaultLabelColor>
+    <isBad>false</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleStack">
+        <!-- 叠层状态实际修改的战斗 Stat。 -->
+        <targetStat>BANW_FinalDamageMultiplier</targetStat>
+        <!-- 最大层数，超过后只刷新时间。 -->
+        <maxStacks>3</maxStacks>
+        <!-- 重复施加时是否重置持续时间。 -->
+        <refreshDurationOnApply>true</refreshDurationOnApply>
+        <!-- 状态持续时间，单位 tick。 -->
+        <durationTicks>3600</durationTicks>
+        <!-- 到期后是否移除 Hediff。 -->
+        <removeOnExpire>true</removeOnExpire>
+        <!-- 每层对应的最终数值，第一层 30%，第二层 70%，第三层 100%。 -->
+        <stackValues>
+          <li>0.31</li>
+          <li>0.62</li>
+          <li>0.99</li>
+        </stackValues>
       </li>
-      
+
     </comps>
-    </HediffDef>
-  
+  </HediffDef>
 </Defs>
