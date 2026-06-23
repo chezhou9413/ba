@@ -313,17 +313,44 @@
   </comps>
 </AbilityDef>
 
+<AbilityDef>
+  <defName>BAWN_Nozomi_MultiStackBuff_Test</defName>
+  <label>叠层多属性测试</label>
+  <description>每次使用获得一层多属性状态，同时提高最终伤害、暴击率、暴击伤害和EX技能倍率，最多3层。</description>
+  <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
+  <cooldownTicksRange>300</cooldownTicksRange>
+  <hotKey>Misc8</hotKey>
+  <targetRequired>false</targetRequired>
+  <hostile>false</hostile>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <verbProperties>
+    <verbClass>Verb_CastAbility</verbClass>
+    <drawAimPie>false</drawAimPie>
+    <range>-1</range>
+    <warmupTime>0.1</warmupTime>
+    <targetParams>
+      <canTargetSelf>true</canTargetSelf>
+      <canTargetPawns>false</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityGiveHediff">
+      <compClass>CompAbilityEffect_GiveHediff</compClass>
+      <!-- 可叠层多属性 Buff，重复施加时由 HediffComp_BattleStack 叠层并刷新时间。 -->
+      <hediffDef>BANW_BattleStack_MultiStat_Test</hediffDef>
+      <onlyApplyToSelf>true</onlyApplyToSelf>
+      <!-- 不能替换已有 Hediff，否则叠层组件没有机会累加层数。 -->
+      <replaceExisting>false</replaceExisting>
+    </li>
+  </comps>
+</AbilityDef>
+
 <DamageDef ParentName="BANC_Damage_zhendong">
   <defName>BANC_Damage_Nozomi_EXX</defName>
   <!-- 伤害命中时播放的方向自适应特效。 -->
   <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
-  <soundExplosion>BANW_Sound_Kong</soundExplosion>
-</DamageDef>
-
-<DamageDef ParentName="BANC_Damage_guantong">
-  <defName>BANC_Damage_Nozomi_Train</defName>
-  <!-- 伤害命中时播放的方向自适应特效。 -->
-  <damageEffecter>BANW_Effecter_DirectionalImpact_Test</damageEffecter>
   <soundExplosion>BANW_Sound_Kong</soundExplosion>
 </DamageDef>
 

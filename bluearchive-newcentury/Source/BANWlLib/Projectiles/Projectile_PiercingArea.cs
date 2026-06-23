@@ -11,6 +11,7 @@ namespace BANWlLib.Projectiles
     {
         private readonly Dictionary<int, int> lastDamageTicksByThingId = new Dictionary<int, int>();
         private int ticksUntilDamage;
+        private Effecter flightEffecter;
 
         // 抛射体更新频率，负责让穿透伤害稳定按 tick 运行。
         public override int UpdateRateTicks => 1;
@@ -23,6 +24,7 @@ namespace BANWlLib.Projectiles
         {
             base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
             ExtendDestinationToMaxRange();
+            StartFlightEffecter();
         }
 
         // 保存飞行状态，负责让存档读档后继续按配置造成范围伤害。
@@ -30,6 +32,13 @@ namespace BANWlLib.Projectiles
         {
             base.ExposeData();
             Scribe_Values.Look(ref ticksUntilDamage, "ticksUntilDamage", 0);
+        }
+
+        // 销毁抛射体，负责同步清理绑定在飞行弹体上的持续特效。
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
+        {
+            CleanupFlightEffecter();
+            base.Destroy(mode);
         }
 
         // 飞行 tick，负责替代原版命中即销毁逻辑并执行穿透范围伤害。
@@ -52,6 +61,7 @@ namespace BANWlLib.Projectiles
 
             Vector3 newExactPosition = ExactPosition;
             Position = newExactPosition.ToIntVec3();
+            TickFlightEffecter();
             TickDamage(delta);
             if (ticksToImpact <= 0)
             {
@@ -138,6 +148,84 @@ namespace BANWlLib.Projectiles
 
             ticksToImpact = Mathf.Max(1, Mathf.CeilToInt((destination - origin).magnitude / def.projectile.SpeedTilesPerTick));
             lifetime = ticksToImpact;
+        }
+
+        // 开始飞行特效，负责在投射物发射后创建可持续维护的 Effecter。
+        private void StartFlightEffecter()
+        {
+            if (Extension?.flightEffecter == null)
+            {
+                return;
+            }
+
+            CleanupFlightEffecter();
+            ProjectileFlightEffectContext.Register(this, new ProjectileFlightEffectData
+            {
+                rotateWithProjectile = Extension.flightEffectRotateWithProjectile,
+                offsetForward = Extension.flightEffectOffsetForward,
+                offsetRight = Extension.flightEffectOffsetRight,
+                offsetUp = Extension.flightEffectOffsetUp
+            });
+            flightEffecter = Extension.flightEffecter.Spawn();
+            TickFlightEffecter();
+        }
+
+        // 维护飞行特效，负责让持续 Mote 附着或跟随当前弹体位置。
+        private void TickFlightEffecter()
+        {
+            if (flightEffecter == null || Map == null || Destroyed)
+            {
+                return;
+            }
+
+            TargetInfo targetInfo = FlightEffectTargetInfo();
+            flightEffecter.EffectTick(targetInfo, targetInfo);
+        }
+
+        // 构建飞行特效目标，负责根据 XML 配置决定附着到子弹还是使用当前位置。
+        private TargetInfo FlightEffectTargetInfo()
+        {
+            if (Extension?.flightEffectAttachToProjectile ?? true)
+            {
+                return new TargetInfo(this);
+            }
+
+            return new TargetInfo(FlightEffectCell(), Map);
+        }
+
+        // 获取飞行特效格子，负责给非附着特效提供带偏移的生成位置。
+        private IntVec3 FlightEffectCell()
+        {
+            Vector3 position = ExactPosition + FlightEffectOffset();
+            return position.ToIntVec3();
+        }
+
+        // 获取飞行特效偏移，负责把前后、左右和高度配置转换为世界坐标。
+        private Vector3 FlightEffectOffset()
+        {
+            Vector3 forward = GetTravelDirection();
+            if (forward.sqrMagnitude < 0.0001f)
+            {
+                forward = Vector3.forward;
+            }
+
+            Vector3 right = new Vector3(forward.z, 0f, -forward.x);
+            return forward * (Extension?.flightEffectOffsetForward ?? 0f)
+                + right * (Extension?.flightEffectOffsetRight ?? 0f)
+                + Vector3.up * (Extension?.flightEffectOffsetUp ?? 0f);
+        }
+
+        // 清理飞行特效，负责在弹体到达终点或异常销毁时结束持续 Mote。
+        private void CleanupFlightEffecter()
+        {
+            if (flightEffecter == null)
+            {
+                return;
+            }
+
+            flightEffecter.Cleanup();
+            flightEffecter = null;
+            ProjectileFlightEffectContext.Clear(this);
         }
 
         // 获取最大飞行距离，负责优先使用 XML 显式配置，其次使用判定长度。
