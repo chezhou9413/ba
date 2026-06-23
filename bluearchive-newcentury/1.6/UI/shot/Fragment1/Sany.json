@@ -5,7 +5,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Airy",
-        "ProductDefName": "BANW_Airy_race_Proplevel",
+        "ProductDefName": "BANW_Airy_Proplevel",
         "ProductName": "爱莉的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -16,7 +16,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hanae",
-        "ProductDefName": "BANW_Hanae_race_Proplevel",
+        "ProductDefName": "BANW_Hanae_Proplevel",
         "ProductName": "花江的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -27,7 +27,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Serina",
-        "ProductDefName": "BANW_Serina_race_Proplevel",
+        "ProductDefName": "BANW_Serina_Proplevel",
         "ProductName": "芹娜的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -38,7 +38,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Mine",
-        "ProductDefName": "BANW_Mine_race_Proplevel",
+        "ProductDefName": "BANW_Mine_Proplevel",
         "ProductName": "美祢的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -49,7 +49,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Natsu",
-        "ProductDefName": "BANW_Natsu_race_Proplevel",
+        "ProductDefName": "BANW_Natsu_Proplevel",
         "ProductName": "夏的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -60,7 +60,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Kazusa",
-        "ProductDefName": "BANW_Kazusa_race_Proplevel",
+        "ProductDefName": "BANW_Kazusa_Proplevel",
         "ProductName": "和纱的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -71,7 +71,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Yoshimi",
-        "ProductDefName": "BANW_Yoshimi_race_Proplevel",
+        "ProductDefName": "BANW_Yoshimi_Proplevel",
         "ProductName": "好美的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -82,7 +82,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hasumi",
-        "ProductDefName": "BANW_Hasumi_race_Proplevel",
+        "ProductDefName": "BANW_Hasumi_Proplevel",
         "ProductName": "莲见的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -93,7 +93,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Ichika",
-        "ProductDefName": "BANW_Ichika_race_Proplevel",
+        "ProductDefName": "BANW_Ichika_Proplevel",
         "ProductName": "一花的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -104,7 +104,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Koharu",
-        "ProductDefName": "BANW_Koharu_race_Proplevel",
+        "ProductDefName": "BANW_Koharu_Proplevel",
         "ProductName": "小春的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -115,7 +115,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hanako",
-        "ProductDefName": "BANW_Hanako_race_Proplevel",
+        "ProductDefName": "BANW_Hanako_Proplevel",
         "ProductName": "花子的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -126,7 +126,7 @@
         "CurrencyImage": "Prop/Proplevel/Hanako_A",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hanako_A",
-        "ProductDefName": "BANW_Hanako_race_Proplevel",
+        "ProductDefName": "BANW_Hanako_Proplevel",
         "ProductName": "花子(泳装)的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -137,7 +137,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hifumi",
-        "ProductDefName": "BANW_Hifumi_race_Proplevel",
+        "ProductDefName": "BANW_Hifumi_Proplevel",
         "ProductName": "日富美的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -148,7 +148,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Azusa",
-        "ProductDefName": "BANW_Azusa_race_Proplevel",
+        "ProductDefName": "BANW_Azusa_Proplevel",
         "ProductName": "梓的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -159,7 +159,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Mari",
-        "ProductDefName": "BANW_Mari_race_Proplevel",
+        "ProductDefName": "BANW_Mari_Proplevel",
         "ProductName": "玛丽的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -170,7 +170,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Sakurako",
-        "ProductDefName": "BANW_Sakurako_race_Proplevel",
+        "ProductDefName": "BANW_Sakurako_Proplevel",
         "ProductName": "樱子的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -181,7 +181,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hinata",
-        "ProductDefName": "BANW_Hinata_race_Proplevel",
+        "ProductDefName": "BANW_Hinata_Proplevel",
         "ProductName": "日向的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -192,7 +192,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Mashiro",
-        "ProductDefName": "BANW_Mashiro_race_Proplevel",
+        "ProductDefName": "BANW_Mashiro_Proplevel",
         "ProductName": "真白的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -203,7 +203,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Mika",
-        "ProductDefName": "BANW_Mika_race_Proplevel",
+        "ProductDefName": "BANW_Mika_Proplevel",
         "ProductName": "未花的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -214,7 +214,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Nagisa",
-        "ProductDefName": "BANW_Nagisa_race_Proplevel",
+        "ProductDefName": "BANW_Nagisa_Proplevel",
         "ProductName": "渚的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -225,7 +225,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Reisa",
-        "ProductDefName": "BANW_Reisa_race_Proplevel",
+        "ProductDefName": "BANW_Reisa_Proplevel",
         "ProductName": "玲纱的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -236,7 +236,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Reisa_A",
-        "ProductDefName": "BANW_ReisaA_race_Proplevel",
+        "ProductDefName": "BANW_ReisaA_Proplevel",
         "ProductName": "玲纱(魔法)的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -247,7 +247,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Seia",
-        "ProductDefName": "BANW_Seia_race_Proplevel",
+        "ProductDefName": "BANW_Seia_Proplevel",
         "ProductName": "圣娅的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -258,7 +258,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Shimiko",
-        "ProductDefName": "BANW_Shimiko_race_Proplevel",
+        "ProductDefName": "BANW_Shimiko_Proplevel",
         "ProductName": "志美子的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -269,7 +269,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Suzumi",
-        "ProductDefName": "BANW_Suzumi_race_Proplevel",
+        "ProductDefName": "BANW_Suzumi_Proplevel",
         "ProductName": "铃美的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -280,7 +280,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Suzumi_A",
-        "ProductDefName": "BANW_Suzumi_A_race_Proplevel",
+        "ProductDefName": "BANW_Suzumi_A_Proplevel",
         "ProductName": "铃美(魔法)的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -291,7 +291,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Turugi",
-        "ProductDefName": "BANW_Turugi_race_Proplevel",
+        "ProductDefName": "BANW_Turugi_Proplevel",
         "ProductName": "鹤城的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"

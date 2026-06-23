@@ -33,7 +33,7 @@
         <minSeverity>0.010</minSeverity>
         <label>等级 2</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.01</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.1022</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.01</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
           <ArmorRating_Heat>0.01</ArmorRating_Heat>
@@ -46,7 +46,7 @@
         <minSeverity>0.035</minSeverity>
         <label>等级 3</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.02</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.2044</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.02</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
           <ArmorRating_Heat>0.01</ArmorRating_Heat>
@@ -59,7 +59,7 @@
         <minSeverity>0.075</minSeverity>
         <label>等级 4</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.03</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.3066</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.02</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
           <ArmorRating_Heat>0.01</ArmorRating_Heat>
@@ -72,7 +72,7 @@
         <minSeverity>0.130</minSeverity>
         <label>等级 5</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.04</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.4088</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
           <ArmorRating_Heat>0.02</ArmorRating_Heat>
@@ -85,7 +85,7 @@
         <minSeverity>0.200</minSeverity>
         <label>等级 6</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.05</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.5110</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.02</ArmorRating_Blunt>
           <ArmorRating_Heat>0.02</ArmorRating_Heat>
@@ -98,7 +98,7 @@
         <minSeverity>0.275</minSeverity>
         <label>等级 7</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.05</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.6132</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.03</ArmorRating_Heat>
@@ -111,7 +111,7 @@
         <minSeverity>0.355</minSeverity>
         <label>等级 8</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.05</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.7154</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.04</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.03</ArmorRating_Heat>
@@ -124,7 +124,7 @@
         <minSeverity>0.445</minSeverity>
         <label>等级 9</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.06</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.8176</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.04</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.03</ArmorRating_Heat>
@@ -137,7 +137,7 @@
         <minSeverity>0.540</minSeverity>
         <label>等级 10</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.07</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>0.9198</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.04</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.04</ArmorRating_Heat>
@@ -150,7 +150,7 @@
         <minSeverity>0.645</minSeverity>
         <label>等级 11</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.08</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.0220</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
           <ArmorRating_Heat>0.05</ArmorRating_Heat>
@@ -163,7 +163,7 @@
         <minSeverity>0.760</minSeverity>
         <label>等级 12</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.09</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.1242</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
           <ArmorRating_Heat>0.06</ArmorRating_Heat>
@@ -176,7 +176,7 @@
         <minSeverity>0.890</minSeverity>
         <label>等级 13</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.10</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.2264</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
           <ArmorRating_Heat>0.06</ArmorRating_Heat>
@@ -189,7 +189,7 @@
         <minSeverity>1.035</minSeverity>
         <label>等级 14</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.10</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.3286</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
           <ArmorRating_Heat>0.06</ArmorRating_Heat>
@@ -202,7 +202,7 @@
         <minSeverity>1.195</minSeverity>
         <label>等级 15</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.10</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.4308</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.07</ArmorRating_Heat>
@@ -215,7 +215,7 @@
         <minSeverity>1.370</minSeverity>
         <label>等级 16</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.11</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.5330</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.08</ArmorRating_Heat>
@@ -228,7 +228,7 @@
         <minSeverity>1.555</minSeverity>
         <label>等级 17</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.12</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.6352</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.10</ArmorRating_Heat>
@@ -241,7 +241,7 @@
         <minSeverity>1.755</minSeverity>
         <label>等级 18</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.12</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.7374</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.10</ArmorRating_Heat>
@@ -254,7 +254,7 @@
         <minSeverity>1.970</minSeverity>
         <label>等级 19</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.13</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.8396</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.08</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
           <ArmorRating_Heat>0.10</ArmorRating_Heat>
@@ -267,7 +267,7 @@
         <minSeverity>2.200</minSeverity>
         <label>等级 20</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.14</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>1.9418</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.09</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.09</ArmorRating_Blunt>
           <ArmorRating_Heat>0.11</ArmorRating_Heat>
@@ -280,7 +280,7 @@
         <minSeverity>2.585</minSeverity>
         <label>等级 21</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.16</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.0440</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.09</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.09</ArmorRating_Blunt>
           <ArmorRating_Heat>0.11</ArmorRating_Heat>
@@ -293,7 +293,7 @@
         <minSeverity>3.010</minSeverity>
         <label>等级 22</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.17</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.1462</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
           <ArmorRating_Heat>0.11</ArmorRating_Heat>
@@ -306,7 +306,7 @@
         <minSeverity>3.490</minSeverity>
         <label>等级 23</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.17</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.2484</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.11</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.11</ArmorRating_Blunt>
           <ArmorRating_Heat>0.11</ArmorRating_Heat>
@@ -319,7 +319,7 @@
         <minSeverity>4.025</minSeverity>
         <label>等级 24</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.18</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.3506</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.12</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
           <ArmorRating_Heat>0.12</ArmorRating_Heat>
@@ -332,7 +332,7 @@
         <minSeverity>4.605</minSeverity>
         <label>等级 25</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.19</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.4528</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.12</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
           <ArmorRating_Heat>0.12</ArmorRating_Heat>
@@ -345,7 +345,7 @@
         <minSeverity>5.240</minSeverity>
         <label>等级 26</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.20</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.5550</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.14</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.14</ArmorRating_Blunt>
           <ArmorRating_Heat>0.14</ArmorRating_Heat>
@@ -358,7 +358,7 @@
         <minSeverity>6.025</minSeverity>
         <label>等级 27</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.21</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.6572</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
           <ArmorRating_Heat>0.15</ArmorRating_Heat>
@@ -371,7 +371,7 @@
         <minSeverity>6.870</minSeverity>
         <label>等级 28</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.21</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.7594</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
           <ArmorRating_Heat>0.15</ArmorRating_Heat>
@@ -384,7 +384,7 @@
         <minSeverity>7.765</minSeverity>
         <label>等级 29</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.22</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.8616</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.16</ArmorRating_Blunt>
           <ArmorRating_Heat>0.16</ArmorRating_Heat>
@@ -397,7 +397,7 @@
         <minSeverity>8.690</minSeverity>
         <label>等级 30</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.24</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>2.9638</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.16</ArmorRating_Blunt>
           <ArmorRating_Heat>0.16</ArmorRating_Heat>
@@ -410,7 +410,7 @@
         <minSeverity>9.665</minSeverity>
         <label>等级 31</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.25</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.0660</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.17</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.17</ArmorRating_Blunt>
           <ArmorRating_Heat>0.17</ArmorRating_Heat>
@@ -423,7 +423,7 @@
         <minSeverity>10.675</minSeverity>
         <label>等级 32</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.25</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.1682</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
           <ArmorRating_Heat>0.18</ArmorRating_Heat>
@@ -436,7 +436,7 @@
         <minSeverity>11.770</minSeverity>
         <label>等级 33</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.25</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.2704</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.19</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.19</ArmorRating_Blunt>
           <ArmorRating_Heat>0.19</ArmorRating_Heat>
@@ -449,7 +449,7 @@
         <minSeverity>12.935</minSeverity>
         <label>等级 34</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.27</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.3726</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
           <ArmorRating_Heat>0.20</ArmorRating_Heat>
@@ -462,7 +462,7 @@
         <minSeverity>14.185</minSeverity>
         <label>等级 35</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.29</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.4748</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.21</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.21</ArmorRating_Blunt>
           <ArmorRating_Heat>0.21</ArmorRating_Heat>
@@ -475,7 +475,7 @@
         <minSeverity>15.520</minSeverity>
         <label>等级 36</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.31</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.5770</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.23</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.23</ArmorRating_Blunt>
           <ArmorRating_Heat>0.21</ArmorRating_Heat>
@@ -488,7 +488,7 @@
         <minSeverity>16.945</minSeverity>
         <label>等级 37</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.31</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.6792</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.23</ArmorRating_Blunt>
           <ArmorRating_Heat>0.25</ArmorRating_Heat>
@@ -501,7 +501,7 @@
         <minSeverity>18.490</minSeverity>
         <label>等级 38</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.33</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.7814</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.29</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.27</ArmorRating_Blunt>
           <ArmorRating_Heat>0.27</ArmorRating_Heat>
@@ -514,7 +514,7 @@
         <minSeverity>20.115</minSeverity>
         <label>等级 39</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.35</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.8836</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.33</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.33</ArmorRating_Blunt>
           <ArmorRating_Heat>0.33</ArmorRating_Heat>
@@ -527,7 +527,7 @@
         <minSeverity>21.800</minSeverity>
         <label>等级 40</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.38</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>3.9858</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
           <ArmorRating_Heat>0.35</ArmorRating_Heat>
@@ -540,7 +540,7 @@
         <minSeverity>23.535</minSeverity>
         <label>等级 41</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.40</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.0880</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.38</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.38</ArmorRating_Blunt>
           <ArmorRating_Heat>0.38</ArmorRating_Heat>
@@ -553,7 +553,7 @@
         <minSeverity>25.335</minSeverity>
         <label>等级 42</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.41</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.1902</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.39</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
           <ArmorRating_Heat>0.39</ArmorRating_Heat>
@@ -566,7 +566,7 @@
         <minSeverity>27.310</minSeverity>
         <label>等级 43</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.42</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.2924</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
           <ArmorRating_Heat>0.39</ArmorRating_Heat>
@@ -579,7 +579,7 @@
         <minSeverity>29.475</minSeverity>
         <label>等级 44</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.43</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.3946</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.41</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
           <ArmorRating_Heat>0.39</ArmorRating_Heat>
@@ -592,7 +592,7 @@
         <minSeverity>31.845</minSeverity>
         <label>等级 45</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.43</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.4968</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.41</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.39</ArmorRating_Blunt>
           <ArmorRating_Heat>0.39</ArmorRating_Heat>
@@ -605,7 +605,7 @@
         <minSeverity>34.430</minSeverity>
         <label>等级 46</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.45</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.5990</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.41</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.43</ArmorRating_Blunt>
           <ArmorRating_Heat>0.41</ArmorRating_Heat>
@@ -624,7 +624,7 @@
         <minSeverity>37.245</minSeverity>
         <label>等级 47</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.49</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.7012</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.47</ArmorRating_Blunt>
           <ArmorRating_Heat>0.46</ArmorRating_Heat>
@@ -643,7 +643,7 @@
         <minSeverity>40.310</minSeverity>
         <label>等级 48</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.51</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.8034</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.47</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
           <ArmorRating_Heat>0.51</ArmorRating_Heat>
@@ -662,7 +662,7 @@
         <minSeverity>43.650</minSeverity>
         <label>等级 49</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.55</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>4.9056</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.52</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.52</ArmorRating_Blunt>
           <ArmorRating_Heat>0.51</ArmorRating_Heat>
@@ -681,7 +681,7 @@
         <minSeverity>47.295</minSeverity>
         <label>等级 50</label>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.55</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.0078</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
           <ArmorRating_Heat>0.55</ArmorRating_Heat>
@@ -701,7 +701,7 @@
         <label>等级 51</label>
         <painFactor>0.88</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.55</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.1100</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
           <ArmorRating_Heat>0.55</ArmorRating_Heat>
@@ -721,7 +721,7 @@
         <label>等级 52</label>
         <painFactor>0.87</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.56</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.2122</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.56</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.56</ArmorRating_Blunt>
           <ArmorRating_Heat>0.56</ArmorRating_Heat>
@@ -741,7 +741,7 @@
         <label>等级 53</label>
         <painFactor>0.86</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.59</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.3144</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.57</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.58</ArmorRating_Blunt>
           <ArmorRating_Heat>0.59</ArmorRating_Heat>
@@ -761,7 +761,7 @@
         <label>等级 54</label>
         <painFactor>0.85</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.64</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.4166</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.58</ArmorRating_Blunt>
           <ArmorRating_Heat>0.59</ArmorRating_Heat>
@@ -781,7 +781,7 @@
         <label>等级 55</label>
         <painFactor>0.84</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.66</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.5188</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.61</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.63</ArmorRating_Blunt>
           <ArmorRating_Heat>0.66</ArmorRating_Heat>
@@ -801,7 +801,7 @@
         <label>等级 56</label>
         <painFactor>0.83</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.69</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.6210</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.62</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
           <ArmorRating_Heat>0.66</ArmorRating_Heat>
@@ -821,7 +821,7 @@
         <label>等级 57</label>
         <painFactor>0.82</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.70</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.7232</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.67</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.67</ArmorRating_Blunt>
           <ArmorRating_Heat>0.67</ArmorRating_Heat>
@@ -841,7 +841,7 @@
         <label>等级 58</label>
         <painFactor>0.81</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.70</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.8254</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.67</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.67</ArmorRating_Blunt>
           <ArmorRating_Heat>0.67</ArmorRating_Heat>
@@ -861,7 +861,7 @@
         <label>等级 59</label>
         <painFactor>0.80</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.74</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>5.9276</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.69</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.70</ArmorRating_Blunt>
           <ArmorRating_Heat>0.67</ArmorRating_Heat>
@@ -881,7 +881,7 @@
         <label>等级 60</label>
         <painFactor>0.75</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.75</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.0298</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.70</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.70</ArmorRating_Blunt>
           <ArmorRating_Heat>0.70</ArmorRating_Heat>
@@ -901,7 +901,7 @@
         <label>等级 61</label>
         <painFactor>0.74</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.80</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.1320</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.73</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.73</ArmorRating_Blunt>
           <ArmorRating_Heat>0.73</ArmorRating_Heat>
@@ -921,7 +921,7 @@
         <label>等级 62</label>
         <painFactor>0.73</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.83</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.2342</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.76</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.76</ArmorRating_Blunt>
           <ArmorRating_Heat>0.76</ArmorRating_Heat>
@@ -941,7 +941,7 @@
         <label>等级 63</label>
         <painFactor>0.72</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.84</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.3364</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.77</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.77</ArmorRating_Blunt>
           <ArmorRating_Heat>0.77</ArmorRating_Heat>
@@ -961,7 +961,7 @@
         <label>等级 64</label>
         <painFactor>0.71</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.89</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.4386</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.80</ArmorRating_Blunt>
           <ArmorRating_Heat>0.80</ArmorRating_Heat>
@@ -981,7 +981,7 @@
         <label>等级 65</label>
         <painFactor>0.70</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.9</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.5408</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.83</ArmorRating_Blunt>
           <ArmorRating_Heat>0.80</ArmorRating_Heat>
@@ -1002,7 +1002,7 @@
         <label>等级 66</label>
         <painFactor>0.69</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.95</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.6430</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.83</ArmorRating_Blunt>
           <ArmorRating_Heat>0.82</ArmorRating_Heat>
@@ -1022,7 +1022,7 @@
         <label>等级 67</label>
         <painFactor>0.68</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.95</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.7452</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.87</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.85</ArmorRating_Blunt>
           <ArmorRating_Heat>0.85</ArmorRating_Heat>
@@ -1042,7 +1042,7 @@
         <label>等级 68</label>
         <painFactor>0.67</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.95</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.8474</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.87</ArmorRating_Blunt>
           <ArmorRating_Heat>0.87</ArmorRating_Heat>
@@ -1062,11 +1062,10 @@
         <label>等级 69</label>
         <painFactor>0.66</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>0.97</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>6.9496</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.90</ArmorRating_Blunt>
           <ArmorRating_Heat>0.87</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.01</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>17.00</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.18</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>232</BANW_HealPowerBase>
@@ -1083,11 +1082,10 @@
         <label>等级 70</label>
         <painFactor>0.65</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.0</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>7.0518</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.90</ArmorRating_Blunt>
           <ArmorRating_Heat>0.90</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.02</IncomingDamageFactor>
           <BANW_HealthScaleOffset>17.25</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.2</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>236</BANW_HealPowerBase>
@@ -1104,11 +1102,10 @@
         <label>等级 71</label>
         <painFactor>0.64</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.01</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>7.1540</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.91</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.91</ArmorRating_Blunt>
           <ArmorRating_Heat>0.91</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.03</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>17.50</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.22</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>240</BANW_HealPowerBase>
@@ -1125,11 +1122,10 @@
         <label>等级 72</label>
         <painFactor>0.63</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.04</BANW_RangedWeapon_Damage>
+          <BANW_RangedWeapon_Damage>7.2562</BANW_RangedWeapon_Damage>
           <ArmorRating_Sharp>0.94</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.94</ArmorRating_Blunt>
           <ArmorRating_Heat>0.94</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.05</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>17.75</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.24</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>244</BANW_HealPowerBase>
@@ -1146,11 +1142,10 @@
         <label>等级 73</label>
         <painFactor>0.62</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.1</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+          <BANW_RangedWeapon_Damage>7.3584</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>0.94</ArmorRating_Sharp>
           <ArmorRating_Blunt>0.94</ArmorRating_Blunt>
           <ArmorRating_Heat>0.94</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.06</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>18.00</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.26</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>248</BANW_HealPowerBase>
@@ -1167,11 +1162,10 @@
         <label>等级 74</label>
         <painFactor>0.61</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.15</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
-          <ArmorRating_Blunt>0.98</ArmorRating_Blunt>
+          <BANW_RangedWeapon_Damage>7.4606</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>0.94</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.94</ArmorRating_Blunt>
           <ArmorRating_Heat>0.94</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.07</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>18.25</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.30</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>254</BANW_HealPowerBase>
@@ -1188,11 +1182,10 @@
         <label>等级 75</label>
         <painFactor>0.60</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.17</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.02</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.00</ArmorRating_Blunt>
-          <ArmorRating_Heat>0.97</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.08</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>7.5628</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>0.95</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.95</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.95</ArmorRating_Heat>
           <BANW_HealthScaleOffset>18.50</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.32</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>260</BANW_HealPowerBase>
@@ -1209,11 +1202,11 @@
         <label>等级 76</label>
         <painFactor>0.59</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.19</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.02</ArmorRating_Blunt>
-          <ArmorRating_Heat>0.99</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.09</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>7.6650</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>0.97</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.97</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.97</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.1</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>18.75</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.36</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>264</BANW_HealPowerBase>
@@ -1230,11 +1223,11 @@
         <label>等级 77</label>
         <painFactor>0.58</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.21</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.06</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.04</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.01</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.10</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>7.7672</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>0.97</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.97</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.97</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.2</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>19.00</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.38</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>268</BANW_HealPowerBase>
@@ -1251,11 +1244,11 @@
         <label>等级 78</label>
         <painFactor>0.57</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.23</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.08</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.06</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.03</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.11</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>7.8694</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>0.99</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.99</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.99</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.3</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>19.25</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.4</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>272</BANW_HealPowerBase>
@@ -1272,11 +1265,11 @@
         <label>等级 79</label>
         <painFactor>0.56</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.25</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.10</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.08</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.05</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.12</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>7.9716</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.00</ArmorRating_Blunt>
+          <ArmorRating_Heat>1.00</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.4</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>19.50</BANW_HealthScaleOffset>
            <BANW_RangedWeapon_Penetration>1.43</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>276</BANW_HealPowerBase>
@@ -1293,11 +1286,11 @@
         <label>等级 80</label>
         <painFactor>0.55</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.27</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.12</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.10</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.07</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.13</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>8.0738</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.00</ArmorRating_Blunt>
+          <ArmorRating_Heat>1.00</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.5</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>19.75</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.45</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>282</BANW_HealPowerBase>
@@ -1314,11 +1307,11 @@
         <label>等级 81</label>
         <painFactor>0.54</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.35</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.24</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.22</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.19</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.14</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>8.1760</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.04</ArmorRating_Blunt>
+          <ArmorRating_Heat>1.04</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.6</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>20.00</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.47</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>286</BANW_HealPowerBase>
@@ -1335,11 +1328,11 @@
         <label>等级 82</label>
         <painFactor>0.53</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.39</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.26</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.24</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.21</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.15</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>8.2782</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.04</ArmorRating_Blunt>
+          <ArmorRating_Heat>1.04</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.7</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>20.25</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.49</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>290</BANW_HealPowerBase>
@@ -1356,11 +1349,11 @@
         <label>等级 83</label>
         <painFactor>0.52</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.43</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.31</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.31</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.32</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.16</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>8.3804</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.04</ArmorRating_Blunt>
+          <ArmorRating_Heat>1.04</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.8</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>20.50</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.5</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>292</BANW_HealPowerBase>
@@ -1377,11 +1370,11 @@
         <label>等级 84</label>
         <painFactor>0.51</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.45</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.34</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.38</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.35</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.17</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>8.4826</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>1.08</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.08</ArmorRating_Blunt>
+          <ArmorRating_Heat>1.08</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.9</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>20.75</BANW_HealthScaleOffset>
           <BANW_RangedWeapon_Penetration>1.52</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>292</BANW_HealPowerBase>
@@ -1398,11 +1391,11 @@
         <label>等级 85</label>
         <painFactor>0.50</painFactor>
         <statOffsets>
-          <BANW_RangedWeapon_Damage>1.5</BANW_RangedWeapon_Damage>
-          <ArmorRating_Sharp>1.38</ArmorRating_Sharp>
-          <ArmorRating_Blunt>1.44</ArmorRating_Blunt>
-          <ArmorRating_Heat>1.40</ArmorRating_Heat>
-          <IncomingDamageFactor>-0.18</IncomingDamageFactor> 
+          <BANW_RangedWeapon_Damage>8.5848</BANW_RangedWeapon_Damage>
+          <ArmorRating_Sharp>1.08</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.14</ArmorRating_Blunt>
+          <ArmorRating_Heat>1.10</ArmorRating_Heat>
+          <IncomingDamageFactor>-0.10</IncomingDamageFactor> 
           <BANW_HealthScaleOffset>21.00</BANW_HealthScaleOffset>
            <BANW_RangedWeapon_Penetration>1.55</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>295</BANW_HealPowerBase>
@@ -1419,11 +1412,11 @@
         <label>等级 86</label>
         <painFactor>0.49</painFactor>
         <statOffsets>
-        <BANW_RangedWeapon_Damage>1.54</BANW_RangedWeapon_Damage>
-        <ArmorRating_Sharp>1.44</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>1.44</ArmorRating_Blunt>
-	      <ArmorRating_Heat>1.44</ArmorRating_Heat>
-        <IncomingDamageFactor>-0.19</IncomingDamageFactor> 
+        <BANW_RangedWeapon_Damage>8.6870</BANW_RangedWeapon_Damage>
+        <ArmorRating_Sharp>1.14</ArmorRating_Sharp>
+		    <ArmorRating_Blunt>1.14</ArmorRating_Blunt>
+	      <ArmorRating_Heat>1.14</ArmorRating_Heat>
+        <IncomingDamageFactor>-0.11</IncomingDamageFactor> 
         <BANW_HealthScaleOffset>21.25</BANW_HealthScaleOffset>
         <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>297</BANW_HealPowerBase>
@@ -1440,11 +1433,11 @@
         <label>等级 87</label>
         <painFactor>0.48</painFactor>
         <statOffsets>
-        <BANW_RangedWeapon_Damage>1.54</BANW_RangedWeapon_Damage>
-        <ArmorRating_Sharp>1.47</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>1.47</ArmorRating_Blunt>
-	      <ArmorRating_Heat>1.47</ArmorRating_Heat>
-        <IncomingDamageFactor>-0.20</IncomingDamageFactor> 
+        <BANW_RangedWeapon_Damage>8.7892</BANW_RangedWeapon_Damage>
+        <ArmorRating_Sharp>1.17</ArmorRating_Sharp>
+		    <ArmorRating_Blunt>1.17</ArmorRating_Blunt>
+	      <ArmorRating_Heat>1.17</ArmorRating_Heat>
+        <IncomingDamageFactor>-0.12</IncomingDamageFactor> 
         <BANW_HealthScaleOffset>21.50</BANW_HealthScaleOffset>
         <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>297</BANW_HealPowerBase>
@@ -1461,11 +1454,11 @@
         <label>等级 88</label>
         <painFactor>0.47</painFactor>
         <statOffsets>
-        <BANW_RangedWeapon_Damage>1.56</BANW_RangedWeapon_Damage>
-        <ArmorRating_Sharp>1.50</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>1.47</ArmorRating_Blunt>
-	      <ArmorRating_Heat>1.47</ArmorRating_Heat>
-        <IncomingDamageFactor>-0.20</IncomingDamageFactor> 
+        <BANW_RangedWeapon_Damage>8.8914</BANW_RangedWeapon_Damage>
+        <ArmorRating_Sharp>1.17</ArmorRating_Sharp>
+		    <ArmorRating_Blunt>1.17</ArmorRating_Blunt>
+	      <ArmorRating_Heat>1.17</ArmorRating_Heat>
+        <IncomingDamageFactor>-0.13</IncomingDamageFactor> 
         <BANW_HealthScaleOffset>21.75</BANW_HealthScaleOffset>
         <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>297</BANW_HealPowerBase>
@@ -1482,11 +1475,11 @@
         <label>等级 89</label>
         <painFactor>0.46</painFactor>
         <statOffsets>
-        <BANW_RangedWeapon_Damage>1.58</BANW_RangedWeapon_Damage>
-        <ArmorRating_Sharp>1.50</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>1.50</ArmorRating_Blunt>
-	      <ArmorRating_Heat>1.47</ArmorRating_Heat>
-        <IncomingDamageFactor>-0.20</IncomingDamageFactor> 
+        <BANW_RangedWeapon_Damage>8.9936</BANW_RangedWeapon_Damage>
+        <ArmorRating_Sharp>1.17</ArmorRating_Sharp>
+		    <ArmorRating_Blunt>1.17</ArmorRating_Blunt>
+	      <ArmorRating_Heat>1.17</ArmorRating_Heat>
+        <IncomingDamageFactor>-0.14</IncomingDamageFactor> 
         <BANW_HealthScaleOffset>21.9</BANW_HealthScaleOffset>
         <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
           <BANW_HealPowerBase>297</BANW_HealPowerBase>
@@ -1503,11 +1496,11 @@
         <label>等级 90</label>
         <painFactor>0.45</painFactor>
         <statOffsets>
-        <BANW_RangedWeapon_Damage>1.7</BANW_RangedWeapon_Damage>
-        <ArmorRating_Sharp>1.60</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>1.60</ArmorRating_Blunt>
-	      <ArmorRating_Heat>1.60</ArmorRating_Heat>
-        <IncomingDamageFactor>-0.20</IncomingDamageFactor>
+        <BANW_RangedWeapon_Damage>9.0958</BANW_RangedWeapon_Damage>
+        <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+		    <ArmorRating_Blunt>1.20</ArmorRating_Blunt>
+	      <ArmorRating_Heat>1.20</ArmorRating_Heat>
+        <IncomingDamageFactor>-0.15</IncomingDamageFactor>
         <MoveSpeed>+2.0</MoveSpeed>
         <BANW_HealthScaleOffset>23.10</BANW_HealthScaleOffset>
         <BANW_RangedWeapon_Penetration>1.6</BANW_RangedWeapon_Penetration>

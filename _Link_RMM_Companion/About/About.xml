@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RimModManager Companion</name>
+  <author>管理器工具</author>
+  <packageId>RMM.Companion</packageId>
+  <modVersion IgnoreIfNoMatchingField="True">0.3.11</modVersion>
+  <supportedVersions>
+    <li>1.5</li>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>RimModManager 的核心伴生模组。支持从游戏获取更加详细的日志。必须放在 Harmony 之后加载。最好放在列表最前端以便获取更加完整的加载日志。
+  
+  本模组参考了以下优质项目实现：
+ - [url=https://github.com/Yan-Zero/BetterModSort] BetterModSort [/url]
+ - [url=https://github.com/emipa606/LogAfterDefError] LogAfterDefError [/url]
+ - [url=https://github.com/bbradson/BetterLog] BetterLog [/url]
+ - [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2877266511] ModErrorChecker [/url]
+  </description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+    </li>
+  </modDependencies>
+  <!-- 强制排序：必须紧跟在 Harmony 后面 -->
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+</ModMetaData>

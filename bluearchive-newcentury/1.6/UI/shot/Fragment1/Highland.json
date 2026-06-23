@@ -5,7 +5,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hikali",
-        "ProductDefName": "BANW_Hikali_race_Proplevel",
+        "ProductDefName": "BANW_Hikali_Proplevel",
         "ProductName": "光的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -16,7 +16,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Nozomi",
-        "ProductDefName": "BANW_Nozomi_race_Proplevel",
+        "ProductDefName": "BANW_Nozomi_Proplevel",
         "ProductName": "望的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -27,7 +27,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Aoba",
-        "ProductDefName": "BANW_Aoba_race_Proplevel",
+        "ProductDefName": "BANW_Aoba_Proplevel",
         "ProductName": "青叶的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"

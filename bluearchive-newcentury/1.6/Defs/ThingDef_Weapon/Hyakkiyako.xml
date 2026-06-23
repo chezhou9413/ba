@@ -64,17 +64,11 @@
     <label>少女的决心子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>90</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>32</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>5</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
+      
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -148,17 +142,11 @@
     <label>百花缭乱制式步枪——绀碧色智慧子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>80</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>25</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>5</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
+      
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -239,7 +227,7 @@
     <projectile>
       <explosionRadius>1.5</explosionRadius>
       <damageDef>BANC_Damage_Chise</damageDef><!--子弹类型-->
-      <damageAmountBase>74</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>22</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>40</speed><!--子弹速度-->
@@ -339,7 +327,7 @@
     <label>满流过载霰弹枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--贯通-->
-      <damageAmountBase>34</damageAmountBase>
+      <damageAmountBase>28</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>60</speed>
@@ -417,17 +405,11 @@
     <label>百花缭乱制式步枪——青春的火焰</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>105</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>31</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>5</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
+     
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -503,7 +485,7 @@
     <label>泉奈流超级忍具</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>19</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>6</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -582,7 +564,7 @@
     <label>月咏流冲锋枪</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>8</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>3</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -659,17 +641,11 @@
     <label>百花缭乱制式步枪——青春的火焰</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>72</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>30</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>5</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
+    
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -744,7 +720,7 @@
     <projectile>
 
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>21</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>9</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -820,7 +796,7 @@
     <label>樱花砰砰子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--贯通-->
-      <damageAmountBase>43</damageAmountBase>
+      <damageAmountBase>17</damageAmountBase>
       <stoppingPower>8</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>90</speed>
@@ -897,7 +873,7 @@
     <label>无仁义之射击子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>15</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>7</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->
@@ -974,7 +950,7 @@
     <label>刚柔并济之心子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>28</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>13</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1051,7 +1027,7 @@
     <label>趣味烟花子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>30</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>15</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1134,7 +1110,7 @@
     <label>睡眠助手II子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>13</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>6</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1211,7 +1187,7 @@
     <label>战略宣传组长的秘诀子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>19</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>8</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1288,17 +1264,10 @@
     <label>口蜜腹剑子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>86</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>31</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>1</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
@@ -1373,7 +1342,7 @@
     <label>深红灾厄子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>118</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>35</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
@@ -1450,7 +1419,7 @@
     <label>深红灾厄子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>79</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>37</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->

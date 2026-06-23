@@ -64,7 +64,7 @@
     <label>RABBIT-39式来福枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>73</damageAmountBase>
+      <damageAmountBase>26</damageAmountBase>
       <stoppingPower>1.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>
@@ -141,7 +141,7 @@
     <label>RABBIT-31式冲锋枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>7</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>3</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -218,7 +218,7 @@
     <label>RABBIT-26式机关枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>18</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>5</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>80</speed><!--子弹速度-->
@@ -295,7 +295,7 @@
     <label>Rabbit-224式手枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>9</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>3</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->

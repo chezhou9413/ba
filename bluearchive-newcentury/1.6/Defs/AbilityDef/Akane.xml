@@ -53,7 +53,7 @@
   </graphicData>
   <projectile>
     <damageDef>RangedStab</damageDef>
-    <damageAmountBase>300</damageAmountBase>
+    <damageAmountBase>90</damageAmountBase>
     <armorPenetrationBase>2</armorPenetrationBase>
     <stoppingPower>1</stoppingPower>
     <speed>75</speed>
@@ -63,7 +63,7 @@
 <AbilityDef>
 <defName>BAWN_Akane_EXX</defName>
  <label>清除，要优雅</label>
- <description>对1名敌人造成自身攻击力890%的伤害，并且护甲减少30%，(持续30秒)</description>
+ <description>对1名敌人造成自身攻击力890%的伤害，并且目标乘伤系数增加30%，(持续30秒)</description>
  <iconPath>Ability/Icon/Akane/Akane_EXX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -111,7 +111,7 @@
   </graphicData>
   <projectile>
     <damageDef>BANC_Damage_Akane</damageDef>
-    <damageAmountBase>350</damageAmountBase>
+    <damageAmountBase>106</damageAmountBase>
     <armorPenetrationBase>2</armorPenetrationBase>
     <stoppingPower>2</stoppingPower>
     <speed>100</speed>
@@ -130,7 +130,7 @@
         <!-- 显示名称 -->
         <label>清除，要优雅</label>
         <!-- 效果描述 -->
-        <description>减少30%护甲，效果持续30秒。</description>
+        <description>乘伤系数增加30%，效果持续30秒。</description>
         <defaultLabelColor>(255, 0, 0)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>true</isBad>
@@ -139,11 +139,9 @@
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
           <stages>
           <li>     
-           <statFactors>
-        <ArmorRating_Sharp>0.7</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
-	      <ArmorRating_Heat>0.7</ArmorRating_Heat>
-            </statFactors>
+           <statOffsets>
+        <IncomingDamageFactor>0.30</IncomingDamageFactor>
+            </statOffsets>
            </li>
           </stages>
         <comps>

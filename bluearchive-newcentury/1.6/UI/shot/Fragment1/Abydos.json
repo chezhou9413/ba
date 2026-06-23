@@ -5,7 +5,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hoshiro",
-        "ProductDefName": "BANW_Hoshiro_race_Proplevel",
+        "ProductDefName": "BANW_Hoshiro_Proplevel",
         "ProductName": "星野的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -16,7 +16,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hoshiro_A",
-        "ProductDefName": "BANW_Hoshiro_A_race_Proplevel",
+        "ProductDefName": "BANW_Hoshiro_A_Proplevel",
         "ProductName": "星野(泳装)的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -27,7 +27,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Shiroko",
-        "ProductDefName": "BANW_Shiroko_race_Proplevel",
+        "ProductDefName": "BANW_Shiroko_Proplevel",
         "ProductName": "白子的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -38,7 +38,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Nonomi",
-        "ProductDefName": "BANW_Nonomi_race_Proplevel",
+        "ProductDefName": "BANW_Nonomi_Proplevel",
         "ProductName": "野宫的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -49,7 +49,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Serika",
-        "ProductDefName": "BANW_Serika_race_Proplevel",
+        "ProductDefName": "BANW_Serika_Proplevel",
         "ProductName": "芹香的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -60,7 +60,7 @@
         "CurrencyImage": "Prop/Proplevel/Kami",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Ayane",
-        "ProductDefName": "BANW_Ayane_race_Proplevel",
+        "ProductDefName": "BANW_Ayane_Proplevel",
         "ProductName": "绫音的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"

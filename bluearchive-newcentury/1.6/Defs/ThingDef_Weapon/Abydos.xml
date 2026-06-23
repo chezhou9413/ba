@@ -63,7 +63,7 @@
     <label>荷鲁斯之眼子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>66</damageAmountBase>
+      <damageAmountBase>17</damageAmountBase>
       <stoppingPower>8</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>
@@ -141,7 +141,7 @@
     <label>WHITE FANG 465</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef>
-      <damageAmountBase>34</damageAmountBase>
+      <damageAmountBase>28</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
@@ -218,7 +218,7 @@
     <label>常识子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>14</damageAmountBase>
+      <damageAmountBase>12</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
@@ -295,7 +295,7 @@
     <label>诚意的子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef>
-      <damageAmountBase>32</damageAmountBase>
+      <damageAmountBase>16</damageAmountBase>
       <stoppingPower>2</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
@@ -373,14 +373,14 @@
     <projectile>
 
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>24</damageAmountBase>
+      <damageAmountBase>5</damageAmountBase>
       <stoppingPower>5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>90</speed>
       <extraDamages>
       <li>
         <def>BANC_Damage_guantong</def>
-        <amount>19</amount>
+        <amount>1</amount>
       </li>
     </extraDamages>
     </projectile>
@@ -455,7 +455,7 @@
     <label>荷鲁斯之眼子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--贯通-->
-      <damageAmountBase>61</damageAmountBase>
+      <damageAmountBase>28</damageAmountBase>
       <stoppingPower>8</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>

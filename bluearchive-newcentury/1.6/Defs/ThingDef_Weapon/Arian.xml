@@ -64,7 +64,7 @@
     <label>天蝎座子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef>
-      <damageAmountBase>10</damageAmountBase>
+      <damageAmountBase>5</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>65</speed>
@@ -142,7 +142,7 @@
     <projectile>
 
       <damageDef>BANC_Damage_baofa</damageDef>
-      <damageAmountBase>77</damageAmountBase>
+      <damageAmountBase>22</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>80</speed>
@@ -176,7 +176,7 @@
       <AccuracyShort>0.58</AccuracyShort><!--近-->
       <AccuracyMedium>1</AccuracyMedium><!--中-->
       <AccuracyLong>1</AccuracyLong><!--远-->
-      <RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown><!--冷却时间-->
+      <RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown><!--冷却时间-->
     </statBases>
     <equippedStatOffsets>
      <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
@@ -219,7 +219,7 @@
     <label>身份子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>74</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>21</damageAmountBase><!--子弹伤害-->
       <stoppingPower>1.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>120</speed><!--子弹速度-->
@@ -278,7 +278,7 @@
         <defaultProjectile>BANC_Bullet_Misaki</defaultProjectile><!--子弹-->
         <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer><!--ai攻击建筑-->
         <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius><!--5格回避范围-->
-        <burstShotCount>8</burstShotCount><!--连射次数-->
+        <burstShotCount>5</burstShotCount><!--连射次数-->
         <warmupTime>2</warmupTime><!--瞄准时间-->
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots><!--射速-->
         <range>40.9</range><!--射距-->
@@ -303,7 +303,7 @@
     <thingClass>Projectile_Explosive</thingClass>
     <projectile>
       <damageDef>BANC_Damage_Misaki</damageDef><!--子弹类型-->
-      <damageAmountBase>24</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>11</damageAmountBase><!--子弹伤害-->
       <explosionRadius>1</explosionRadius>
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->

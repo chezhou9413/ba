@@ -11,8 +11,8 @@
                 <statOffsets>
                     <Flammability>-1.0</Flammability>
                     <PainShockThreshold>+0.15</PainShockThreshold>
-                    <IncomingDamageFactor>-0.15</IncomingDamageFactor>
-                    <BANW_HealthScalePercentOffset>0.50</BANW_HealthScalePercentOffset>
+                    <IncomingDamageFactor>-0.05</IncomingDamageFactor>
+                    <BANW_HealthScalePercentOffset>0.45</BANW_HealthScalePercentOffset>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -67,7 +67,7 @@
                    <BANW_HealPowerBase>150</BANW_HealPowerBase>
                    <WorkSpeedGlobal>+0.30</WorkSpeedGlobal>
                    <GlobalLearningFactor>+0.25</GlobalLearningFactor>
-                   <MoveSpeed>+1.5</MoveSpeed>
+                   <MoveSpeed>+2.0</MoveSpeed>
                    <RestRateMultiplier>+0.20</RestRateMultiplier>
                    <BANW_HealthScalePercentOffset>0.10</BANW_HealthScalePercentOffset>
                 </statOffsets>
@@ -142,7 +142,6 @@
                 <description>{PAWN_nameDef}的装甲类型是轻型装甲，抵抗贯通和分解伤害，被爆发伤害克制。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    <MoveSpeed>1.2</MoveSpeed>
                 </statOffsets>
             </li>
         </degreeDatas>

@@ -18,7 +18,7 @@
  <hostile>false</hostile><!-- 是否是敌对行为 -->
  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
  <statBases>
-  <Ability_Duration>0.1</Ability_Duration>
+  <Ability_Duration>1</Ability_Duration>
  </statBases>
  <verbProperties>
   <warmupEffecter></warmupEffecter>
@@ -53,7 +53,7 @@
          <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
          <baseAmount>0</baseAmount>
          <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
-         <healPowerRatio>0.04</healPowerRatio>
+         <healPowerRatio>2.28</healPowerRatio>
          <!-- true 表示该段是治疗。 -->
          <isHealing>true</isHealing>
          <!-- 治疗是否允许暴击。 -->
@@ -115,7 +115,7 @@
  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
  <statBases>
 <!-- 持续时间：20 秒 = 1200 ticks -->
-  <Ability_Duration>0.1</Ability_Duration>
+  <Ability_Duration>1</Ability_Duration>
  </statBases>
  <verbProperties>
   <warmupEffecter>BANW_Effecter_A</warmupEffecter>
@@ -123,7 +123,7 @@
  <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
  <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
  <range>65.9</range><!-- 作用范围：-1 表示只能近战接触 -->
- <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+ <warmupTime>0.1</warmupTime><!-- 前摇时间（单位：秒） -->
  <requireLineOfSight>false</requireLineOfSight><!-- 不需要视线 -->
  <targetParams><!-- 目标参数设置 -->
   <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
@@ -161,19 +161,19 @@
         <comps>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
-        <disappearsAfterTicks>60</disappearsAfterTicks>
+        <disappearsAfterTicks>6</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <healAmount>0</healAmount>
         <!-- 每 tick 回复最终治疗力的 4%。 -->
-        <healPowerRatio>1.14</healPowerRatio>
+        <healPowerRatio>2.28</healPowerRatio>
         <!-- 每 tick 触发一次治疗。 -->
-        <healIntervalTicks>3</healIntervalTicks>
+        <healIntervalTicks>6</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
         <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
-        <isExSkill>true</isExSkill>
+        <isExSkill>false</isExSkill>
       </li>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>

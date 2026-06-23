@@ -61,7 +61,7 @@
     <label>瓦尔基丽17号制式手枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>64</damageAmountBase>
+      <damageAmountBase>21</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
@@ -209,7 +209,7 @@
     <label>瓦尔基丽制式手枪3号子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef>
-      <damageAmountBase>35</damageAmountBase>
+      <damageAmountBase>11</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>

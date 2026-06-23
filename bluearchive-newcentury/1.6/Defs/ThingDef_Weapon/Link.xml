@@ -71,7 +71,7 @@
     <projectile>
       <explosionRadius>1</explosionRadius>
       <damageDef>BANC_Damage_Miku</damageDef><!--子弹类型-->
-      <damageAmountBase>38</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>18</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>80</speed><!--子弹速度-->

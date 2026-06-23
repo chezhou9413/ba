@@ -62,7 +62,7 @@
     <label>三重伟大子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--贯通-->
-      <damageAmountBase>101</damageAmountBase>
+      <damageAmountBase>57</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>0.0</armorPenetrationBase>
       <speed>60</speed>
@@ -139,17 +139,11 @@
     <label>奥秘魔法之杖子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>85</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>31</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>5</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
+     
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->

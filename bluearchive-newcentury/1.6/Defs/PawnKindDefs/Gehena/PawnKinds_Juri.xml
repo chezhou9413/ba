@@ -84,22 +84,23 @@
 				<attackPercent>
 					<starValues>
 						<li>0</li>
-						<li>0.06</li>
 						<li>0.12</li>
-						<li>0.20</li>
-						<li>0.30</li>
+						<li>0.25</li>
+						<li>0.35</li>
+						<li>0.50</li>
 					</starValues>
 				</attackPercent>
 				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
-				<attackFlat>
+				<!-- 星级基础治愈力平加成长，先加入基础治愈力再乘治愈力百分比。 -->
+				<healPercent>
 					<starValues>
 						<li>0</li>
-						<li>5</li>
-						<li>10</li>
-						<li>18</li>
-						<li>30</li>
+						<li>0.1</li>
+						<li>0.2</li>
+						<li>0.3</li>
+						<li>0.45</li>
 					</starValues>
-				</attackFlat>
+				</healPercent>
 			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
 				<starInterval>0.5</starInterval>
 				<showProgressBar>false</showProgressBar>
@@ -214,7 +215,7 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#DC143C&gt;用餐时间到！&lt;/color&gt;</label>
-                <description>子技能:自身&lt;color=#DC143C&gt;生命值增加17%&lt;/color&gt;</description>
+                <description>子技能:自身生命值增加&lt;color=#DC143C&gt;17%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 					<BANW_HealthScalePercentOffset>0.17</BANW_HealthScalePercentOffset>

@@ -103,7 +103,7 @@
     <soundCast>BANW_Wp_HG_At</soundCast>
     <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
     <range>44</range>
-    <warmupTime>1.0</warmupTime>
+    <warmupTime>2.0</warmupTime>
     <requireLineOfSight>false</requireLineOfSight>
     <targetParams>
       <!-- 直线弹允许瞄准地面、Pawn 和建筑，用于测试穿墙与打墙。 -->
@@ -119,7 +119,7 @@
   <comps>
     <li Class="CompProperties_AbilityLaunchProjectile">
       <!-- 直线穿透弹 ThingDef。 -->
-      <projectileDef>BANC_Bullet_Nozomi_Train_Test</projectileDef>
+      <projectileDef>BANC_Bullet_Nozomi_EXX</projectileDef>
     </li>
   </comps>
   <modExtensions>
@@ -142,7 +142,7 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
+          <baseAmount>81</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>3.13</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -160,14 +160,14 @@
 </AbilityDef>
 
 <ThingDef ParentName="BaseBullet">
-    <defName>BANC_Bullet_Nozomi_Train_Test</defName>
+    <defName>BANC_Bullet_Nozomi_EXX</defName>
     <label>助推启动！</label>
     <thingClass>BANWlLib.Projectiles.Projectile_PiercingArea</thingClass>
     <projectile>
       <!-- 统一战斗层使用的伤害类型。 -->
       <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
       <!-- 固定基础伤害交给扩展字段配置，这里保持 0。 -->
-      <damageAmountBase>0</damageAmountBase>
+      <damageAmountBase>81</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>2</armorPenetrationBase>
       <speed>70</speed>
@@ -176,17 +176,17 @@
     <graphicData>
       <shaderType>MoteGlow</shaderType>
       <drawSize>(4,12)</drawSize>
-      <texPath>Projectile/Bullet_Nozomi</texPath>
+      <texPath>Projectile/kongbai</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <modExtensions>
       <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
         <!-- 同一目标每隔多少 tick 可再次受到该穿透弹伤害。 -->
-        <damageIntervalTicks>1</damageIntervalTicks>
+        <damageIntervalTicks>5</damageIntervalTicks>
         <!-- 判定宽度，垂直于飞行方向。 -->
-        <damageWidth>2</damageWidth>
+        <damageWidth>3</damageWidth>
         <!-- 判定长度，沿飞行方向。 -->
-        <damageLength>5</damageLength>
+        <damageLength>8</damageLength>
         <!-- true 表示即使点击近处，也按 maxRange 沿点击方向飞到最大距离。 -->
         <extendToMaxRange>true</extendToMaxRange>
         <!-- 最大飞行距离，应与技能 range 保持一致。 -->
@@ -195,7 +195,7 @@
         <immuneFriendlyFire>true</immuneFriendlyFire>
         <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
         <baseAmount>0</baseAmount>
-        <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+        <!-- 最终攻击力倍率，15.67 表示造成 1567% 攻击力伤害。 -->
         <attackPowerRatio>3.13</attackPowerRatio>
         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
         <isExSkill>true</isExSkill>
@@ -209,6 +209,18 @@
         <affectHostile>true</affectHostile>
         <!-- 是否命中友方目标。 -->
         <affectFriendly>false</affectFriendly>
+        <!-- 飞行中持续绑定到子弹上的特效。 -->
+        <flightEffecter>BANW_Effecter_Nozomi_Train_Flight_Test</flightEffecter>
+        <!-- true 表示飞行特效跟随投射物 Thing。 -->
+        <flightEffectAttachToProjectile>true</flightEffectAttachToProjectile>
+        <!-- true 表示附着 Mote 按投射物朝向同步旋转。 -->
+        <flightEffectRotateWithProjectile>true</flightEffectRotateWithProjectile>
+        <!-- 飞行特效沿弹道方向偏移。 -->
+        <flightEffectOffsetForward>0</flightEffectOffsetForward>
+        <!-- 飞行特效向弹道右侧偏移。 -->
+        <flightEffectOffsetRight>0</flightEffectOffsetRight>
+        <!-- 飞行特效向上偏移。 -->
+        <flightEffectOffsetUp>0.4</flightEffectOffsetUp>
         <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
         <directionalImpactEffect></directionalImpactEffect>
         <!-- 是否对 Pawn 触发方向命中特效。 -->
@@ -232,52 +244,6 @@
       </li>
     </modExtensions>
   </ThingDef>
-<AbilityDef>
-  <defName>BAWN_Nozomi_Field_Test</defName>
-  <label>脱手场地测试</label>
-  <description>在目标位置生成持续伤害场地，施法结束后仍持续生效。</description>
-  <iconPath>Ability/Icon/Nozomi/Nozomi_A</iconPath>
-  <cooldownTicksRange>2400</cooldownTicksRange>
-  <hotKey>Misc10</hotKey>
-  <targetRequired>true</targetRequired>
-  <hostile>true</hostile>
-  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
-  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-  <verbProperties>
-    <!-- 普通点地技能，场地生成后由 Thing_BattleFieldController 自己 Tick。 -->
-    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
-    <range>35</range>
-    <warmupTime>0.3</warmupTime>
-    <requireLineOfSight>false</requireLineOfSight>
-    <targetParams>
-      <canTargetLocations>true</canTargetLocations>
-      <canTargetPawns>true</canTargetPawns>
-      <canTargetBuildings>true</canTargetBuildings>
-    </targetParams>
-  </verbProperties>
-  <comps>
-    <li Class="BANWlLib.BattleSystem.CompProperties_AbilitySpawnBattleField">
-      <!-- 要生成的场地控制器 ThingDef。 -->
-      <fieldThingDef>BANW_BattleField_Damage_Template</fieldThingDef>
-      <!-- 覆盖场地默认持续时间，小于等于 0 时使用 ThingDef 扩展里的 durationTicks。 -->
-      <durationTicksOverride>600</durationTicksOverride>
-    </li>
-  </comps>
-  <modExtensions>
-    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
-      <!-- 预览形状：Circle 表示以目标点为中心显示圆形场地范围。 -->
-      <shape>Circle</shape>
-      <!-- 最大施法距离，小于等于 0 时使用技能当前有效射程。 -->
-      <range>35</range>
-      <!-- true 表示从 fieldThingDef 的 BattleFieldControllerExtension 读取场地半径。 -->
-      <useBattleFieldRadius>true</useBattleFieldRadius>
-      <!-- 是否显示施法者最大射程圈。 -->
-      <drawCasterRange>true</drawCasterRange>
-      <!-- 是否显示鼠标目标格高亮。 -->
-      <drawTargetHighlight>true</drawTargetHighlight>
-    </li>
-  </modExtensions>
-</AbilityDef>
 
 <AbilityDef>
   <defName>BAWN_Nozomi_StackBuff_Test</defName>
@@ -352,6 +318,7 @@
   <!-- 伤害命中时播放的方向自适应特效。 -->
   <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
   <soundExplosion>BANW_Sound_Kong</soundExplosion>
+   <buildingDamageFactor>0.4</buildingDamageFactor>
 </DamageDef>
 
 </Defs>

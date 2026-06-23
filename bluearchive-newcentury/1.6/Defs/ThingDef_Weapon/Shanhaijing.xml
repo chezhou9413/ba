@@ -64,7 +64,7 @@
     <label>我的特制手枪子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>66</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>19</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -141,7 +141,7 @@
     <label>淑女的气质子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>14</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>7</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -218,7 +218,7 @@
     <label>爱之鞭子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>112</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>32</damageAmountBase><!--子弹伤害-->
       <stoppingPower>1.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>110</speed><!--子弹速度-->
@@ -295,17 +295,11 @@
     <label>知己知彼子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>20</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>5</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>1</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
+      
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType>
@@ -319,7 +313,7 @@
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Reijo</defName>
     <label>明镜止水</label>
-    <description>无论是在展现淑女的品味的时候，还是在履行作为教官的职责的时候都非常实用的突击步枪。</description>
+    <description>丽情使用的自动步枪。为了实现枪与拳的配合，她进行了自己的改良。射击技术……据说通过不断的训练得到了提升。</description>
     <graphicData>
       <texPath>Weapon/Shanhaijing/Reijo</texPath><!--贴图路径-->
       <graphicClass>Graphic_Single</graphicClass><!--贴图-->
@@ -380,7 +374,7 @@
     <label>明镜止水子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>30</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>10</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.0</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -457,17 +451,11 @@
     <label>知己知彼子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>8</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>3</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>1</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
+      
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType>
@@ -541,7 +529,7 @@
     <label>玄龙 白虎子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>9</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>4</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->

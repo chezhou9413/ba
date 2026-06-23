@@ -63,17 +63,10 @@
     <label>车票拳铳子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef>
-      <damageAmountBase>62</damageAmountBase>
+      <damageAmountBase>24</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>60</speed>
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>5</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
     </projectile>
     <graphicData>
       <drawSize>2</drawSize>
@@ -149,17 +142,10 @@
     <label>致命开关子弹</label>
     <projectile>
       <damageDef>BANC_Damage_Nozomi_None</damageDef>
-      <damageAmountBase>81</damageAmountBase>
+      <damageAmountBase>30</damageAmountBase>
       <stoppingPower>0.5</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>70</speed>
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>1</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
     </projectile>
     <graphicData>
       <drawSize>2</drawSize>
@@ -168,91 +154,7 @@
     </graphicData>
   </ThingDef>
 
-  <ThingDef ParentName="BaseBullet">
-    <defName>BANC_Bullet_Nozomi_Train_Test</defName>
-    <label>发车测试子弹</label>
-    <thingClass>BANWlLib.Projectiles.Projectile_PiercingArea</thingClass>
-    <projectile>
-      <!-- 统一战斗层使用的伤害类型。 -->
-      <damageDef>BANC_Damage_Nozomi_Train</damageDef>
-      <!-- 固定基础伤害交给扩展字段配置，这里保持 0。 -->
-      <damageAmountBase>0</damageAmountBase>
-      <stoppingPower>3</stoppingPower>
-      <armorPenetrationBase>0.25</armorPenetrationBase>
-      <speed>120</speed>
-      <flyOverhead>true</flyOverhead>
-    </projectile>
-    <graphicData>
-      <shaderType>MoteGlow</shaderType>
-      <drawSize>(4,12)</drawSize>
-      <texPath>Projectile/Bullet_Nozomi</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <modExtensions>
-      <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
-        <!-- 同一目标每隔多少 tick 可再次受到该穿透弹伤害。 -->
-        <damageIntervalTicks>5</damageIntervalTicks>
-        <!-- 判定宽度，垂直于飞行方向。 -->
-        <damageWidth>3</damageWidth>
-        <!-- 判定长度，沿飞行方向。 -->
-        <damageLength>8</damageLength>
-        <!-- true 表示即使点击近处，也按 maxRange 沿点击方向飞到最大距离。 -->
-        <extendToMaxRange>true</extendToMaxRange>
-        <!-- 最大飞行距离，应与技能 range 保持一致。 -->
-        <maxRange>44</maxRange>
-        <!-- 是否跳过同阵营和盟友。 -->
-        <immuneFriendlyFire>true</immuneFriendlyFire>
-        <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-        <baseAmount>0</baseAmount>
-        <!-- 最终攻击力倍率，15.67 表示造成 1567% 攻击力伤害。 -->
-        <attackPowerRatio>15.67</attackPowerRatio>
-        <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-        <isExSkill>true</isExSkill>
-        <!-- 是否允许暴击。 -->
-        <canCrit>true</canCrit>
-        <!-- 是否应用攻击类型与护甲类型克制。 -->
-        <applyAffinity>true</applyAffinity>
-        <!-- 是否允许命中墙体等建筑。 -->
-        <canHitBuilding>true</canHitBuilding>
-        <!-- 是否命中敌对目标。 -->
-        <affectHostile>true</affectHostile>
-        <!-- 是否命中友方目标。 -->
-        <affectFriendly>false</affectFriendly>
-        <!-- 飞行中持续绑定到子弹上的特效。 -->
-        <flightEffecter>BANW_Effecter_Nozomi_Train_Flight_Test</flightEffecter>
-        <!-- true 表示飞行特效跟随投射物 Thing。 -->
-        <flightEffectAttachToProjectile>true</flightEffectAttachToProjectile>
-        <!-- true 表示附着 Mote 按投射物朝向同步旋转。 -->
-        <flightEffectRotateWithProjectile>true</flightEffectRotateWithProjectile>
-        <!-- 飞行特效沿弹道方向偏移。 -->
-        <flightEffectOffsetForward>0</flightEffectOffsetForward>
-        <!-- 飞行特效向弹道右侧偏移。 -->
-        <flightEffectOffsetRight>0</flightEffectOffsetRight>
-        <!-- 飞行特效向上偏移。 -->
-        <flightEffectOffsetUp>0.4</flightEffectOffsetUp>
-        <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
-        <directionalImpactEffect>BANW_Effecter_DirectionalImpact_Test</directionalImpactEffect>
-        <!-- 是否对 Pawn 触发方向命中特效。 -->
-        <directionalImpactOnPawn>true</directionalImpactOnPawn>
-        <!-- 是否对 Building 触发方向命中特效。 -->
-        <directionalImpactOnBuilding>true</directionalImpactOnBuilding>
-        <!-- 方向命中特效飞出速度。 -->
-        <directionalImpactSpeed>10</directionalImpactSpeed>
-        <!-- 方向命中特效沿弹道方向向前偏移。 -->
-        <directionalImpactOffsetForward>0.3</directionalImpactOffsetForward>
-        <!-- 方向命中特效向上偏移，避免埋进地面。 -->
-        <directionalImpactOffsetUp>0.5</directionalImpactOffsetUp>
-        <!-- 飞行开始时的绘制缩放。 -->
-        <startDrawScale>0.5</startDrawScale>
-        <!-- 飞行结束时的绘制缩放。 -->
-        <endDrawScale>1.2</endDrawScale>
-        <!-- 淡入 tick 数。 -->
-        <fadeInTicks>2</fadeInTicks>
-        <!-- 淡出 tick 数。 -->
-        <fadeOutTicks>5</fadeOutTicks>
-      </li>
-    </modExtensions>
-  </ThingDef>
+  
 
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Aoba</defName>
@@ -316,17 +218,10 @@
     <label>半吊子的期待子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef>
-      <damageAmountBase>48</damageAmountBase>
+      <damageAmountBase>39</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>60</speed>
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>5</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
     </projectile>
     <graphicData>
       <drawSize>2</drawSize>

@@ -65,7 +65,7 @@
     <label>惊喜派对子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>24</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>9</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -143,7 +143,7 @@
     <label>无声解决方案子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>40</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>10</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -229,7 +229,7 @@
     <label>双龙子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>13</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>4</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -307,7 +307,7 @@
     <label>鹰眼子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>115</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>28</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>120</speed><!--子弹速度-->
@@ -385,7 +385,7 @@
     <label>逻辑与理性子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>11</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>4</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -462,7 +462,7 @@
     <label>独特点子子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>19</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>7</damageAmountBase><!--子弹伤害-->
       <stoppingPower>1</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -539,7 +539,7 @@
     <label>清爽灵感子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>84</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>32</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>80</speed><!--子弹速度-->
@@ -574,7 +574,7 @@
       <AccuracyShort>1</AccuracyShort>
       <AccuracyMedium>1</AccuracyMedium>
       <AccuracyLong>1</AccuracyLong>
-      <RangedWeapon_Cooldown>6</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
      
@@ -597,7 +597,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>BANC_Bullet_Arisu</defaultProjectile>
-        <burstShotCount>1</burstShotCount>
+        <burstShotCount>2</burstShotCount>
         <warmupTime>4.5</warmupTime>
         <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
         <range>79.9</range>
@@ -621,16 +621,16 @@
     <thingClass>BANWlLib.Projectiles.Projectile_PiercingArea</thingClass>
     <projectile>
       <damageDef>BANC_Damage_Arisu</damageDef>
-      <damageAmountBase>170</damageAmountBase>
+      <damageAmountBase>42</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
-      <speed>180</speed>
+      <speed>140</speed>
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType>
       <texPath>Projectile/Arisu/Arisu_A/Bullet_Arisu</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(8,15)</drawSize><!--贴图大小-->
+      <drawSize>(2,15)</drawSize><!--贴图大小-->
     </graphicData>
     <modExtensions>
     <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
@@ -638,6 +638,7 @@
       <damageIntervalTicks>10</damageIntervalTicks>
       <!-- 伤害宽度：垂直于飞行方向的判定范围宽度，单位为格 (10格宽) -->
       <damageWidth>2</damageWidth>
+      <maxRange>79.9</maxRange>
       <!-- 伤害长度：沿飞行方向的判定范围长度，单位为格 (10格长) -->
       <damageLength>15</damageLength>
       <!-- 免疫友军伤害：true 表示跳过友方单位，不会误伤队友 -->
@@ -727,7 +728,7 @@
     <projectile>
       <explosionRadius>1.5</explosionRadius>
       <damageDef>BANC_Damage_Yuzu</damageDef><!--子弹类型-->
-      <damageAmountBase>113</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>36</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>50</speed><!--子弹速度-->
@@ -807,7 +808,7 @@
     <projectile>
 
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>23</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>7</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->
@@ -884,7 +885,7 @@
     <label>自动标记校准装置子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>57</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>19</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>80</speed><!--子弹速度-->
@@ -961,7 +962,7 @@
     <label>后门子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>23</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>9</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1038,7 +1039,7 @@
     <label>业余电台子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型--><!--爆发-->
-      <damageAmountBase>43</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>14</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -1116,7 +1117,7 @@
     <projectile>
 
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>23</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>8</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->
@@ -1193,7 +1194,7 @@
     <label>秘书的裁断子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型--><!--爆发-->
-      <damageAmountBase>32</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>11</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1270,7 +1271,7 @@
     <label>立案者子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型--><!--爆发-->
-      <damageAmountBase>70</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>22</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -1348,7 +1349,7 @@
     <projectile>
 
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>13</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>4</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->
@@ -1425,7 +1426,7 @@
     <label>秘密时间子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>31</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>8</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1510,7 +1511,7 @@
     <projectile>
       <explosionRadius>2.9</explosionRadius>
       <damageDef>BANC_Damage_Misaki</damageDef><!--子弹类型-->
-      <damageAmountBase>91</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>25</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>50</speed><!--子弹速度-->
@@ -1586,7 +1587,7 @@
     <label>多功能战术执行工具子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--贯通-->
-      <damageAmountBase>39</damageAmountBase>
+      <damageAmountBase>11</damageAmountBase>
       <stoppingPower>8</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>
@@ -1664,7 +1665,7 @@
     <label>高岭之花子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型--><!--爆发-->
-      <damageAmountBase>60</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>22</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -1741,7 +1742,7 @@
     <label>大师・零子弹</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>15</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>3</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -1818,7 +1819,7 @@
     <label>光之剑：超新星for阿比舒子弹</label>
     <projectile>
       <damageDef>BANC_Damage_Arisu_None</damageDef><!--子弹类型-->
-      <damageAmountBase>39</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>14</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->
@@ -1870,6 +1871,7 @@
       </skillRequirements>
       <displayPriority>440</displayPriority><!--优先级-->
     </recipeMaker>
+   
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
@@ -1882,6 +1884,9 @@
         <soundCast>BANW_Wp_RG_At</soundCast><!--射击音效-->
         <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+         <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        </targetParams>
       </li>
     </verbs>
     <comps>
@@ -1899,7 +1904,7 @@
     <thingClass>BANWlLib.Projectiles.Projectile_PiercingArea</thingClass>
     <projectile>
       <damageDef>BANC_Damage_Arisu</damageDef><!--子弹类型-->
-      <damageAmountBase>86</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>37</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>140</speed><!--子弹速度-->
@@ -1914,6 +1919,7 @@
     <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
        <!-- 伤害间隔 Tick 数：飞行中每经过 10 ticks (约 0.16秒) 造成一次范围伤害 -->
       <damageIntervalTicks>10</damageIntervalTicks>
+      <maxRange>79.9</maxRange>
       <!-- 伤害宽度：垂直于飞行方向的判定范围宽度，单位为格 (10格宽) -->
       <damageWidth>2</damageWidth>
       <!-- 伤害长度：沿飞行方向的判定范围长度，单位为格 (10格长) -->

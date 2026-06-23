@@ -70,7 +70,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>清除，要优雅</AbilityTitle>
 				<AbilitySubtitle><![CDATA[有品位的贯通 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对1名敌人造成自身攻击力<color=#00FFFF>890%</color>的伤害，并且护甲减少<color=#00FFFF>30%</color>，(持续<color=#00FFFF>30</color>秒)]]>
+				<AbilityIntroduction><![CDATA[对1名敌人造成自身攻击力<color=#00FFFF>890%</color>的伤害，并且目标乘伤系数增加<color=#00FFFF>30%</color>，(持续<color=#00FFFF>30</color>秒)]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

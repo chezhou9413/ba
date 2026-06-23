@@ -8,7 +8,6 @@
         </DisableCritical>
         
         <EnsureCritical>
-            
             <li>BANC_Damage_Mika_None</li>
             <li>BANC_Damage_Mika</li>
             <li>BANC_Damage_Nozomi_None</li>
