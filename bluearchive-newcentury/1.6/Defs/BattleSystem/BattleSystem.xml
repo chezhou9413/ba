@@ -200,15 +200,22 @@
     <drawOffscreen>true</drawOffscreen>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <graphicData>
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
-      <texPath>Effect/HPP</texPath>
-      <shaderType>MoteGlow</shaderType>
-      <drawSize>2.5</drawSize>
+      <!-- 用原版 Graphic_MoteWithAgeSecs 驱动 AgeSecs，配合 GlowAnimated shader 实现飞行中逐帧播放；Effect/Nozomi/B 是本地贴图无 AB。 -->
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <texPath>Effect/Nozomi/B/Nozomi_1</texPath>
+      <shaderType>GlowAnimated</shaderType>
+      <drawSize>6.5</drawSize>
+      <shaderParameters>
+        <!-- 序列帧总帧数，与 Nozomi_1 本地贴图一致。 -->
+        <_NumFrames>30</_NumFrames>
+        <!-- 播放帧率，30 帧约 1 秒。 -->
+        <_FramesPerSec>30</_FramesPerSec>
+      </shaderParameters>
     </graphicData>
     <mote>
       <!-- 飞行特效需要持续维护，投射物销毁时会清理。 -->
       <fadeInTime>0.02</fadeInTime>
-      <solidTime>0.20</solidTime>
+      <solidTime>2.00</solidTime>
       <fadeOutTime>0.10</fadeOutTime>
       <needsMaintenance>true</needsMaintenance>
       <fadeOutUnmaintained>true</fadeOutUnmaintained>

@@ -19,11 +19,17 @@ namespace BANWlLib.Projectiles
         // 穿透弹配置，负责从 ThingDef 扩展中读取参数。
         private PiercingProjectileExtension Extension => def.GetModExtension<PiercingProjectileExtension>();
 
-        // 发射穿透弹，负责在需要时把近距离点击延长为按配置最大距离飞行。
+        // 是否禁用穿透，负责让投递物按原版普通子弹飞行命中第一个目标即销毁。
+        private bool DisablePiercing => Extension?.disablePiercing ?? false;
+
+        // 发射穿透弹，负责在需要时把近距离点击延长为按配置最大距离飞行；禁用穿透时保持原版飞行终点。
         public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null)
         {
             base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
-            ExtendDestinationToMaxRange();
+            if (!DisablePiercing)
+            {
+                ExtendDestinationToMaxRange();
+            }
             StartFlightEffecter();
         }
 
@@ -41,9 +47,27 @@ namespace BANWlLib.Projectiles
             base.Destroy(mode);
         }
 
-        // 飞行 tick，负责替代原版命中即销毁逻辑并执行穿透范围伤害。
+        // 命中目标结算，负责在禁用穿透模式下用统一战斗系统对命中目标结算一次后走原版销毁流程。
+        protected override void Impact(Thing hitThing, bool blockedByShield = false)
+        {
+            if (DisablePiercing && hitThing != null)
+            {
+                ApplyDamageToThing(hitThing);
+            }
+            base.Impact(hitThing, blockedByShield);
+        }
+
+        // 飞行 tick，负责替代原版命中即销毁逻辑并执行穿透范围伤害；禁用穿透时走原版飞行命中第一个目标即销毁。
         protected override void TickInterval(int delta)
         {
+            if (DisablePiercing)
+            {
+                base.TickInterval(delta);
+                // 普通子弹模式也需要维护飞行特效，让附着 Mote 跟随弹体位置。
+                TickFlightEffecter();
+                return;
+            }
+
             lifetime -= delta;
             if (landed)
             {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -45,10 +46,14 @@ namespace BANWlLib.BattleSystem
     }
 
     // 叠层状态组件，负责记录当前层数、过期时间，并按层数提供多个 Stat 加值。
+    // 通过动态写入 HediffStage.statOffsets 让原版 StatWorker 和悬浮提示显示当前加成。
     public class HediffComp_BattleStack : HediffComp
     {
         private int currentStacks = 1;
         private int ticksRemaining = -1;
+
+        // 缓存上一次刷新层数，避免每 tick 重复构建 statOffsets。
+        private int lastRefreshedStacks = -1;
 
         public HediffCompProperties_BattleStack Props
         {
@@ -71,11 +76,19 @@ namespace BANWlLib.BattleSystem
             base.CompPostMake();
             currentStacks = 1;
             ticksRemaining = Props.durationTicks;
+            EnsureStageExists();
+            RefreshStageStatOffsets();
         }
 
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
+            // 层数变化后才刷新，避免每 tick 重建 statOffsets。
+            if (lastRefreshedStacks != CurrentStacks)
+            {
+                RefreshStageStatOffsets();
+            }
+
             if (ticksRemaining < 0)
             {
                 return;
@@ -100,6 +113,7 @@ namespace BANWlLib.BattleSystem
             {
                 ticksRemaining = Props.durationTicks;
             }
+            RefreshStageStatOffsets();
         }
 
         public float GetCurrentValue()
@@ -177,11 +191,110 @@ namespace BANWlLib.BattleSystem
             return CurrentStacks * Props.valuePerStack;
         }
 
+        // 确保 HediffDef 有至少一个 stage，原版 StatWorker 和悬浮提示依赖 CurStage。
+        private void EnsureStageExists()
+        {
+            if (parent?.def == null)
+            {
+                return;
+            }
+
+            if (parent.def.stages == null)
+            {
+                parent.def.stages = new List<HediffStage>();
+            }
+
+            if (parent.def.stages.Count == 0)
+            {
+                parent.def.stages.Add(new HediffStage());
+            }
+        }
+
+        // 刷新当前 stage 的 statOffsets 为当前层数对应加值，让原版 StatWorker 和悬浮提示自动显示。
+        private void RefreshStageStatOffsets()
+        {
+            if (parent?.def?.stages == null || parent.def.stages.Count == 0)
+            {
+                return;
+            }
+
+            HediffStage stage = parent.def.stages[0];
+            if (stage.statOffsets == null)
+            {
+                stage.statOffsets = new List<StatModifier>();
+            }
+            stage.statOffsets.Clear();
+
+            // 旧格式单属性 targetStat。
+            if (Props.targetStat != null)
+            {
+                stage.statOffsets.Add(new StatModifier
+                {
+                    stat = Props.targetStat,
+                    value = GetLegacyCurrentValue()
+                });
+            }
+
+            // 新格式多属性组 statGroups。
+            if (Props.statGroups != null)
+            {
+                for (int i = 0; i < Props.statGroups.Count; i++)
+                {
+                    BattleStackStatGroup group = Props.statGroups[i];
+                    if (group?.targetStat == null)
+                    {
+                        continue;
+                    }
+
+                    // 同一个 Stat 可能既有旧格式又有新格式组，这里追加不覆盖。
+                    stage.statOffsets.Add(new StatModifier
+                    {
+                        stat = group.targetStat,
+                        value = group.GetValue(CurrentStacks)
+                    });
+                }
+            }
+
+            // 同步 label 带层数，让玩家在悬浮和信息面板看到当前叠层进度。
+            UpdateStackLabel();
+
+            lastRefreshedStacks = CurrentStacks;
+        }
+
+        // 更新 Hediff label 显示层数，负责让悬浮提示直观反映当前叠层状态。
+        private void UpdateStackLabel()
+        {
+            if (parent?.def == null)
+            {
+                return;
+            }
+
+            // 首次记录原始 label，避免重复追加层数后缀。
+            if (string.IsNullOrEmpty(baseLabel))
+            {
+                baseLabel = parent.def.label;
+            }
+
+            int max = Mathf.Max(1, Props.maxStacks);
+            parent.def.label = $"{baseLabel} ({CurrentStacks}/{max})";
+        }
+
+        private string baseLabel;
+
         public override void CompExposeData()
         {
             base.CompExposeData();
             Scribe_Values.Look(ref currentStacks, "currentStacks", 1);
             Scribe_Values.Look(ref ticksRemaining, "ticksRemaining", -1);
+            Scribe_Values.Look(ref baseLabel, "baseLabel", "");
+        }
+
+        // 存档读档后重建 statOffsets 和 label，避免显示旧数据。
+        public override void CompPostPostAdd(DamageInfo? dinfo)
+        {
+            base.CompPostPostAdd(dinfo);
+            EnsureStageExists();
+            RefreshStageStatOffsets();
         }
     }
 
@@ -207,3 +320,4 @@ namespace BANWlLib.BattleSystem
         }
     }
 }
+

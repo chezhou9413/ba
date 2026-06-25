@@ -3,10 +3,13 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 投射物附着 Mote 子特效，负责把持续特效绑定到飞行子弹并按弹道角度旋转。
+    // 投射物附着 Mote 子特效，负责把持续特效绑定到飞行子弹并按弹道角度旋转，支持 initialDelayTicks 延迟生成。
     public class SubEffecter_AttachedProjectileMote : SubEffecter
     {
         private Mote mote;
+
+        // 延迟生成倒计时，-1 表示尚未初始化，0 表示延迟结束可以生成。
+        private int ticksUntilSpawn = -1;
 
         // 初始化子特效，负责接收 EffecterDef 中配置的 Mote 参数。
         public SubEffecter_AttachedProjectileMote(SubEffecterDef def, Effecter parent)
@@ -14,13 +17,24 @@ namespace BANWlLib.Projectiles
         {
         }
 
-        // 每 tick 维护子特效，负责在首次运行时生成 Mote，并持续同步到投射物位置。
+        // 每 tick 维护子特效，负责在延迟结束后生成 Mote 并持续同步到投射物位置。
         public override void SubEffectTick(TargetInfo A, TargetInfo B)
         {
             Projectile projectile = A.Thing as Projectile;
             if (projectile == null || projectile.Map == null || def.moteDef == null)
             {
                 DestroyMote();
+                return;
+            }
+
+            // 首次进入时读取 initialDelayTicks 初始化倒计时，延迟期间不生成 Mote。
+            if (ticksUntilSpawn < 0)
+            {
+                ticksUntilSpawn = def.initialDelayTicks;
+            }
+            if (ticksUntilSpawn > 0)
+            {
+                ticksUntilSpawn--;
                 return;
             }
 

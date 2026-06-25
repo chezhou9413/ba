@@ -13,9 +13,9 @@
         </graphicData>
         <statBases>
         <MarketValue>500</MarketValue>
-        <BANW_HealthScaleOffset>0.8</BANW_HealthScaleOffset> 
         </statBases>
         <equippedStatOffsets>
+        <BANW_HealthScaleOffset>0.8</BANW_HealthScaleOffset> 
 		</equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -43,10 +43,10 @@
         <statBases>
         <WorkToMake>1200</WorkToMake>
         <MarketValue>1000</MarketValue>
-        <BANW_HealthScaleOffset>1.3</BANW_HealthScaleOffset> 
         </statBases>
         <equippedStatOffsets>
 
+        <BANW_HealthScaleOffset>1.3</BANW_HealthScaleOffset> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_One>1</BANC_Badge_One>
@@ -80,10 +80,10 @@
         <statBases>
         <WorkToMake>1400</WorkToMake>
         <MarketValue>1500</MarketValue>
-        <BANW_HealthScaleOffset>1.8</BANW_HealthScaleOffset> 
         </statBases>
         <equippedStatOffsets>
 
+        <BANW_HealthScaleOffset>1.8</BANW_HealthScaleOffset> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Tow>1</BANC_Badge_Tow>
@@ -121,9 +121,9 @@
         <statBases>
        <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
-        <BANW_HealthScaleOffset>2.5</BANW_HealthScaleOffset> 
         </statBases>
         <equippedStatOffsets>
+        <BANW_HealthScaleOffset>2.5</BANW_HealthScaleOffset> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Three>1</BANC_Badge_Three>
@@ -161,10 +161,10 @@
         <statBases>
         <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
-        <BANW_HealthScaleOffset>4.5</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.10</BANW_HealthScalePercentOffset> 
         </statBases>
         <equippedStatOffsets>
+        <BANW_HealthScaleOffset>4.5</BANW_HealthScaleOffset>
+        <BANW_HealthScalePercentOffset>0.10</BANW_HealthScalePercentOffset> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Four>1</BANC_Badge_Four>
@@ -203,10 +203,10 @@
         <statBases>
         <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
-        <BANW_HealthScaleOffset>6.5</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.18</BANW_HealthScalePercentOffset> 
         </statBases>
         <equippedStatOffsets>
+        <BANW_HealthScaleOffset>6.5</BANW_HealthScaleOffset>
+        <BANW_HealthScalePercentOffset>0.18</BANW_HealthScalePercentOffset> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Five>1</BANC_Badge_Five>
@@ -245,12 +245,12 @@
         <statBases>
         <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
-         <BANW_HealthScaleOffset>9.5</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.22</BANW_HealthScalePercentOffset> 
-        <BANW_Miss>0.10</BANW_Miss>
         </statBases>
         <equippedStatOffsets>
             
+         <BANW_HealthScaleOffset>9.5</BANW_HealthScaleOffset>
+        <BANW_HealthScalePercentOffset>0.22</BANW_HealthScalePercentOffset> 
+        <BANW_Miss>0.10</BANW_Miss>
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Six>1</BANC_Badge_Six>
@@ -289,12 +289,12 @@
         <statBases>
         <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
-         <BANW_HealthScaleOffset>12.0</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.24</BANW_HealthScalePercentOffset> 
-        <BANW_Miss>0.15</BANW_Miss>
         </statBases>
         <equippedStatOffsets>
             
+         <BANW_HealthScaleOffset>12.0</BANW_HealthScaleOffset>
+        <BANW_HealthScalePercentOffset>0.24</BANW_HealthScalePercentOffset> 
+        <BANW_Miss>0.15</BANW_Miss>
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Seven>1</BANC_Badge_Seven>
@@ -333,12 +333,12 @@
         <statBases>
         <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
-         <BANW_HealthScaleOffset>14</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
-        <BANW_Miss>0.20</BANW_Miss>
         </statBases>
         <equippedStatOffsets>
             
+         <BANW_HealthScaleOffset>14</BANW_HealthScaleOffset>
+        <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
+        <BANW_Miss>0.20</BANW_Miss>
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Eight>1</BANC_Badge_Eight>
@@ -377,9 +377,6 @@
         <statBases>
         <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
-         <BANW_HealthScaleOffset>16</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
-        <BANW_Miss>0.30</BANW_Miss>
         </statBases>
             
         <costList>
@@ -400,6 +397,11 @@
                 <li>BANC_Badge_Ten</li>
             </tags>
         </apparel>
+        <equippedStatOffsets>
+         <BANW_HealthScaleOffset>16</BANW_HealthScaleOffset>
+        <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
+        <BANW_Miss>0.30</BANW_Miss>
+        </equippedStatOffsets>
     </ThingDef>
 
     <!-- ==================== Bags ==================== -->
@@ -415,10 +417,10 @@
         </graphicData>
         <statBases>
         <MarketValue>500</MarketValue>
-          <BANW_HealthScaleOffset>0.6</BANW_HealthScaleOffset>
         </statBases>
         <equippedStatOffsets>
 
+          <BANW_HealthScaleOffset>0.6</BANW_HealthScaleOffset>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -450,10 +452,10 @@
         <statBases>
         <WorkToMake>1200</WorkToMake>
         <MarketValue>1000</MarketValue>
-         <BANW_HealthScaleOffset>0.97</BANW_HealthScaleOffset>
         </statBases>
         <equippedStatOffsets>
 
+         <BANW_HealthScaleOffset>0.97</BANW_HealthScaleOffset>
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_One>1</BANC_Bag_One>
@@ -487,10 +489,10 @@
         <statBases>
         <WorkToMake>1400</WorkToMake>
         <MarketValue>1500</MarketValue>
-         <BANW_HealthScaleOffset>1.35</BANW_HealthScaleOffset>   
         </statBases>
         <equippedStatOffsets>
 
+         <BANW_HealthScaleOffset>1.35</BANW_HealthScaleOffset>   
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Tow>1</BANC_Bag_Tow>
@@ -524,13 +526,13 @@
         <statBases>
         <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
-        <BANW_HealthScaleOffset>1.87</BANW_HealthScaleOffset> 
         <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
         <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
         <ArmorRating_Heat>1.0</ArmorRating_Heat>  
         </statBases>
         <equippedStatOffsets>
 
+        <BANW_HealthScaleOffset>1.87</BANW_HealthScaleOffset> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Three>1</BANC_Bag_Three>
@@ -565,13 +567,13 @@
         <statBases>
        <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
-         <BANW_HealthScaleOffset>3.5</BANW_HealthScaleOffset> 
         <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
         <ArmorRating_Blunt>1.1</ArmorRating_Blunt>
         <ArmorRating_Heat>1.1</ArmorRating_Heat>  
         </statBases>
         <equippedStatOffsets>
 
+         <BANW_HealthScaleOffset>3.5</BANW_HealthScaleOffset> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Four>1</BANC_Bag_Four>
@@ -607,13 +609,13 @@
         <statBases>
         <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
-        <BANW_HealthScaleOffset>5.5</BANW_HealthScaleOffset> 
         <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
         <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
         <ArmorRating_Heat>1.2</ArmorRating_Heat>   
         </statBases>
         <equippedStatOffsets>
 
+        <BANW_HealthScaleOffset>5.5</BANW_HealthScaleOffset> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Five>1</BANC_Bag_Five>
@@ -649,12 +651,12 @@
         <statBases>
         <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
-         <BANW_HealthScaleOffset>7.5</BANW_HealthScaleOffset> 
         <ArmorRating_Sharp>1.3</ArmorRating_Sharp>
         <ArmorRating_Blunt>1.3</ArmorRating_Blunt>
         <ArmorRating_Heat>1.3</ArmorRating_Heat>  
         </statBases>
         <equippedStatOffsets>
+         <BANW_HealthScaleOffset>7.5</BANW_HealthScaleOffset> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Six>1</BANC_Bag_Six>
@@ -690,12 +692,12 @@
         <statBases>
         <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
-         <BANW_HealthScaleOffset>9.5</BANW_HealthScaleOffset> 
         <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
         <ArmorRating_Blunt>1.4</ArmorRating_Blunt>
         <ArmorRating_Heat>1.4</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
+         <BANW_HealthScaleOffset>9.5</BANW_HealthScaleOffset> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Seven>1</BANC_Bag_Seven>
@@ -731,14 +733,14 @@
         <statBases>
         <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
-         <BANW_HealthScaleOffset>12</BANW_HealthScaleOffset> 
         <ArmorRating_Sharp>1.6</ArmorRating_Sharp>
         <ArmorRating_Blunt>1.6</ArmorRating_Blunt>
         <ArmorRating_Heat>1.6</ArmorRating_Heat>   
-        <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset> 
         </statBases>
         <equippedStatOffsets>
 
+         <BANW_HealthScaleOffset>12</BANW_HealthScaleOffset> 
+        <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset> 
         </equippedStatOffsets>
          <costList>
         <BANC_Bag_Eight>1</BANC_Bag_Eight>
@@ -774,14 +776,14 @@
         <statBases>
         <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
-         <BANW_HealthScaleOffset>14</BANW_HealthScaleOffset> 
         <ArmorRating_Sharp>1.7</ArmorRating_Sharp>
         <ArmorRating_Blunt>1.7</ArmorRating_Blunt>
         <ArmorRating_Heat>1.7</ArmorRating_Heat>   
-        <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset> 
         </statBases>
         <equippedStatOffsets>
 
+         <BANW_HealthScaleOffset>14</BANW_HealthScaleOffset> 
+        <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Nine>1</BANC_Bag_Nine>
@@ -816,9 +818,9 @@
         </graphicData>
         <statBases>
         <MarketValue>500</MarketValue>
-            <BANW_HealthScaleOffset>0.4</BANW_HealthScaleOffset> 
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealthScaleOffset>0.4</BANW_HealthScaleOffset> 
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -849,10 +851,10 @@
         <statBases>
        <WorkToMake>1200</WorkToMake>
         <MarketValue>1000</MarketValue>
-         <BANW_HealthScaleOffset>0.65</BANW_HealthScaleOffset>   
         </statBases>
         <equippedStatOffsets>
 
+         <BANW_HealthScaleOffset>0.65</BANW_HealthScaleOffset>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_One>1</BANC_Hairpin_One>
@@ -885,10 +887,10 @@
         <statBases>
         <WorkToMake>1400</WorkToMake>
         <MarketValue>1500</MarketValue>
-         <BANW_HealthScaleOffset>0.9</BANW_HealthScaleOffset>  
         </statBases>
         <equippedStatOffsets>
 
+         <BANW_HealthScaleOffset>0.9</BANW_HealthScaleOffset>  
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Tow>1</BANC_Hairpin_Tow>
@@ -921,11 +923,11 @@
         <statBases>
         <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
-         <BANW_HealthScaleOffset>1.25</BANW_HealthScaleOffset>   
         </statBases>
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.1</StaggerDurationFactor>
          <Flammability>-0.1</Flammability>
+         <BANW_HealthScaleOffset>1.25</BANW_HealthScaleOffset>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Three>1</BANC_Hairpin_Three>
@@ -959,11 +961,11 @@
         <statBases>
         <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
-         <BANW_HealthScaleOffset>3</BANW_HealthScaleOffset>   
         </statBases>
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.2</StaggerDurationFactor>
          <Flammability>-0.2</Flammability>
+         <BANW_HealthScaleOffset>3</BANW_HealthScaleOffset>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Four>1</BANC_Hairpin_Four>
@@ -998,11 +1000,11 @@
         <statBases>
         <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
-         <BANW_HealthScaleOffset>4.5</BANW_HealthScaleOffset>   
         </statBases>
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.24</StaggerDurationFactor>
          <Flammability>-0.24</Flammability>
+         <BANW_HealthScaleOffset>4.5</BANW_HealthScaleOffset>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Five>1</BANC_Hairpin_Five>
@@ -1037,11 +1039,11 @@
         <statBases>
         <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
-         <BANW_HealthScaleOffset>6.5</BANW_HealthScaleOffset>   
         </statBases>
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.28</StaggerDurationFactor>
          <Flammability>-0.28</Flammability>
+         <BANW_HealthScaleOffset>6.5</BANW_HealthScaleOffset>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Six>1</BANC_Hairpin_Six>
@@ -1076,11 +1078,11 @@
         <statBases>
         <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
-         <BANW_HealthScaleOffset>8.5</BANW_HealthScaleOffset>   
         </statBases>
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.32</StaggerDurationFactor>
          <Flammability>-0.32</Flammability>
+         <BANW_HealthScaleOffset>8.5</BANW_HealthScaleOffset>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Seven>1</BANC_Hairpin_Seven>
@@ -1116,12 +1118,12 @@
         
         <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
-        <BANW_HealthScaleOffset>11</BANW_HealthScaleOffset>   
         </statBases>
         <equippedStatOffsets>
         <StaggerDurationFactor>-0.34</StaggerDurationFactor>
          <Flammability>-0.34</Flammability>
          <BANW_CriticalChance>+0.09</BANW_CriticalChance>
+        <BANW_HealthScaleOffset>11</BANW_HealthScaleOffset>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Eight>1</BANC_Hairpin_Eight>
@@ -1156,12 +1158,12 @@
         
         <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
-        <BANW_HealthScaleOffset>13</BANW_HealthScaleOffset> 
         </statBases>
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.36</StaggerDurationFactor>
          <Flammability>-0.36</Flammability>
          <BANW_CriticalChance>+0.09</BANW_CriticalChance>
+        <BANW_HealthScaleOffset>13</BANW_HealthScaleOffset> 
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Nine>1</BANC_Hairpin_Nine>
