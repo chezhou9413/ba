@@ -321,4 +321,249 @@
    <buildingDamageFactor>0.4</buildingDamageFactor>
 </DamageDef>
 
+<!-- 不穿透普通子弹技能案例：与 BAWN_Nozomi_EXX 穿透弹对比，投射物设置 disablePiercing=true 后命中第一个目标即销毁。 -->
+<AbilityDef>
+  <defName>BAWN_Nozomi_NormalShot_Test</defName>
+  <label>精准射击·测试</label>
+  <description>对单个敌方目标造成500%自身攻击力的振动伤害，子弹命中第一个目标即停止，不穿透。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
+  <cooldownTicksRange>1800</cooldownTicksRange>
+  <hotKey>Misc7</hotKey>
+  <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
+  <showPsycastEffects>False</showPsycastEffects>
+  <stunTargetWhileCasting>false</stunTargetWhileCasting>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <showWhenDrafted>True</showWhenDrafted>
+  <hostile>true</hostile>
+  <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
+  <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <verbProperties>
+    <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
+    <!-- 发射投射物的技能动词，命中逻辑由 projectileDef 上的 Projectile_PiercingArea 配合 disablePiercing 执行。 -->
+    <soundCast>BANW_Wp_HG_At</soundCast>
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>30</range>
+    <warmupTime>1.0</warmupTime>
+    <requireLineOfSight>true</requireLineOfSight>
+    <targetParams>
+      <!-- 普通子弹只瞄准 Pawn，命中第一个目标即销毁。 -->
+      <canTargetLocations>false</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+      <!-- 普通子弹投射物，disablePiercing=true 使命中即销毁。 -->
+      <projectileDef>BANC_Bullet_Nozomi_NormalShot_Test</projectileDef>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <!-- 普通子弹不显示直线范围，Circle 且不设 radius 时只显示射程圈和目标点高亮。 -->
+      <shape>Circle</shape>
+      <range>30</range>
+      <!-- 不启用 usePiercingProjectileSize，因为不穿透时无需读取判定宽度。 -->
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+      <previewActions>
+        <li>
+          <baseAmount>0</baseAmount>
+          <!-- 500% 攻击力伤害。 -->
+          <attackPowerRatio>5.0</attackPowerRatio>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <canCrit>true</canCrit>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>false</isExSkill>
+        </li>
+      </previewActions>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
+<!-- 不穿透普通子弹投射物：disablePiercing=true 时沿原版飞行命中第一个目标即销毁，仍走统一战斗系统结算一次。 -->
+<ThingDef ParentName="BaseBullet">
+  <defName>BANC_Bullet_Nozomi_NormalShot_Test</defName>
+  <label>精准射击·测试</label>
+  <thingClass>BANWlLib.Projectiles.Projectile_PiercingArea</thingClass>
+  <projectile>
+    <!-- 统一战斗层使用的伤害类型。 -->
+    <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+    <!-- 固定基础伤害，实际伤害主要来自 attackPowerRatio。 -->
+    <damageAmountBase>10</damageAmountBase>
+    <stoppingPower>1</stoppingPower>
+    <armorPenetrationBase>2</armorPenetrationBase>
+    <!-- 普通子弹飞行速度较快。 -->
+    <speed>120</speed>
+  </projectile>
+  <graphicData>
+    <shaderType>MoteGlow</shaderType>
+    <drawSize>(1,3)</drawSize>
+    <texPath>Projectile/kongbai</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+  </graphicData>
+  <modExtensions>
+    <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
+      <!-- 核心开关：true 时禁用穿透，子弹按原版飞行命中第一个目标即销毁。 -->
+      <disablePiercing>true</disablePiercing>
+
+      <!-- 以下穿透相关字段在 disablePiercing=true 时不生效，保留仅供对照。 -->
+      <damageIntervalTicks>5</damageIntervalTicks>
+      <damageWidth>3</damageWidth>
+      <damageLength>8</damageLength>
+      <extendToMaxRange>true</extendToMaxRange>
+      <maxRange>30</maxRange>
+
+      <!-- 以下统一战斗系统参数在 disablePiercing=true 时仍然生效，命中目标时结算一次。 -->
+      <immuneFriendlyFire>true</immuneFriendlyFire>
+      <baseAmount>0</baseAmount>
+      <!-- 500% 攻击力伤害。 -->
+      <attackPowerRatio>5.0</attackPowerRatio>
+      <isExSkill>false</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <canHitBuilding>true</canHitBuilding>
+      <affectHostile>true</affectHostile>
+      <affectFriendly>false</affectFriendly>
+
+      <!-- 序列帧飞行特效：EffecterDef 内 initialDelayTicks 控制延迟生成，MoteDef 用 Graphic_BAAbMoteWithAgeSecs 播放 AB 序列帧。 -->
+      <flightEffecter>BANW_Effecter_Nozomi_SequenceFlight_Test</flightEffecter>
+      <flightEffectAttachToProjectile>true</flightEffectAttachToProjectile>
+      <flightEffectRotateWithProjectile>true</flightEffectRotateWithProjectile>
+      <flightEffectOffsetForward>0</flightEffectOffsetForward>
+      <flightEffectOffsetRight>0</flightEffectOffsetRight>
+      <flightEffectOffsetUp>0.4</flightEffectOffsetUp>
+
+      <!-- 绘制参数在普通子弹模式下仍生效。 -->
+      <startDrawScale>0.8</startDrawScale>
+      <endDrawScale>1.0</endDrawScale>
+      <fadeInTicks>2</fadeInTicks>
+      <fadeOutTicks>3</fadeOutTicks>
+    </li>
+  </modExtensions>
+</ThingDef>
+
+<!-- 场地脱手测试技能：悬浮显示伤害公式，每 tick 脉冲伤害 + 触发 Hediff。 -->
+<AbilityDef>
+  <defName>BAWN_Nozomi_BattleField_Test</defName>
+  <label>支援炮击·测试</label>
+  <description>在目标区域生成持续场地，每 60 tick 对范围内敌方造成 200% 攻击力振动伤害并附加叠层攻击状态。悬浮技能按钮可查看预估伤害公式。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
+  <cooldownTicksRange>1800</cooldownTicksRange>
+  <hotKey>Misc6</hotKey>
+  <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
+  <showPsycastEffects>False</showPsycastEffects>
+  <stunTargetWhileCasting>false</stunTargetWhileCasting>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <showWhenDrafted>True</showWhenDrafted>
+  <hostile>true</hostile>
+  <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
+  <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <verbProperties>
+    <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
+    <soundCast>BANW_Wp_HG_At</soundCast>
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>40</range>
+    <warmupTime>1.0</warmupTime>
+    <requireLineOfSight>false</requireLineOfSight>
+    <targetParams>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.BattleSystem.CompProperties_AbilitySpawnBattleField">
+      <!-- 场地控制器 ThingDef。 -->
+      <fieldThingDef>BANW_BattleField_Nozomi_Test</fieldThingDef>
+      <!-- 场地持续 600 tick（约 10 秒）。 -->
+      <durationTicksOverride>600</durationTicksOverride>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <!-- 圆形预览，从场地控制器读取半径。 -->
+      <shape>Circle</shape>
+      <range>40</range>
+      <useBattleFieldRadius>true</useBattleFieldRadius>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示悬浮技能按钮时显示 BA 战斗公式，actions 从场地控制器扩展自动读取。 -->
+      <showBattleFormula>true</showBattleFormula>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
+<!-- 场地控制器 ThingDef：每 60 tick 脉冲一次，对范围内敌方造成伤害并触发叠层 Hediff。 -->
+<ThingDef>
+  <defName>BANW_BattleField_Nozomi_Test</defName>
+  <label>支援炮击·测试</label>
+  <thingClass>BANWlLib.BattleSystem.Thing_BattleFieldController</thingClass>
+  <category>Mote</category>
+  <drawerType>MapMeshOnly</drawerType>
+  <tickerType>Normal</tickerType>
+  <altitudeLayer>MoteOverhead</altitudeLayer>
+  <useHitPoints>false</useHitPoints>
+  <selectable>false</selectable>
+  <graphicData>
+    <graphicClass>Graphic_Single</graphicClass>
+    <texPath>UI/StarIcon</texPath>
+    <drawSize>0.01</drawSize>
+  </graphicData>
+  <modExtensions>
+    <li Class="BANWlLib.BattleSystem.BattleFieldControllerExtension">
+      <!-- 场地存在时间，单位 tick。 -->
+      <durationTicks>600</durationTicks>
+      <!-- 每 60 tick（约 1 秒）结算一次。 -->
+      <intervalTicks>60</intervalTicks>
+      <!-- 场地半径。 -->
+      <radius>4.9</radius>
+      <!-- 快照施法者属性。 -->
+      <useCasterSnapshot>true</useCasterSnapshot>
+      <!-- 每次脉冲播放的范围提示特效。 -->
+      <pulseEffecter></pulseEffecter>
+      <!-- 场地每次脉冲执行的战斗动作。 -->
+      <actions>
+        <li>
+          <!-- 固定基础伤害。 -->
+          <baseAmount>0</baseAmount>
+          <!-- 200% 攻击力伤害。 -->
+          <attackPowerRatio>2.0</attackPowerRatio>
+          <!-- 伤害类型，复用 Nozomi EXX 的振动伤害。 -->
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <!-- 护甲穿透。 -->
+          <penetration>2</penetration>
+          <!-- 允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 应用属性克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- 影响敌对目标。 -->
+          <affectHostile>true</affectHostile>
+          <!-- 不影响友方。 -->
+          <affectFriendly>false</affectFriendly>
+          <!-- 不命中建筑。 -->
+          <canHitBuilding>false</canHitBuilding>
+          <!-- 每次脉冲对命中目标触发叠层攻击 Hediff，重复施加时叠层并刷新时间。 -->
+          <triggerHediff>BANW_BattleStack_Attack_Test</triggerHediff>
+        </li>
+      </actions>
+    </li>
+  </modExtensions>
+</ThingDef>
+
 </Defs>

@@ -307,7 +307,7 @@ namespace BANWlLib.Dev
                 return;
             }
 
-            Log.Message($"[BANW测试] {title}: 阶级={BattleStatUtility.GetCurrentRankLevel(pawn)}, 稀有度={StudentRosterUtility.GetCurrentStarLevel(pawn)}, 攻击平加={BattleStatUtility.GetAttackFlatBonus(pawn):F2}, 攻击倍率={BattleStatUtility.GetAttackMultiplier(pawn):F2}, 最终攻击={BattleStatUtility.GetFinalAttackPower(pawn):F2}, 治疗平加={BattleStatUtility.GetHealFlatBonus(pawn):F2}, 治疗倍率={BattleStatUtility.GetHealMultiplier(pawn):F2}, 最终治疗={BattleStatUtility.GetFinalHealPower(pawn):F2}, 受疗={BattleStatUtility.GetHealReceivedMultiplier(pawn):F2}");
+            Log.Message($"[BANW测试] {title}: 阶级={BattleStatUtility.GetCurrentRankLevel(pawn)}, 稀有度={StudentRosterUtility.GetCurrentStarLevel(pawn)}, 攻击倍率={BattleStatUtility.GetAttackMultiplier(pawn):F2}, 最终攻击={BattleStatUtility.GetFinalAttackPower(pawn):F2}, 治疗倍率={BattleStatUtility.GetHealMultiplier(pawn):F2}, 最终治疗={BattleStatUtility.GetFinalHealPower(pawn):F2}, 受疗={BattleStatUtility.GetHealReceivedMultiplier(pawn):F2}");
         }
 
         // 获取敌对派系，负责生成稳定敌人目标。

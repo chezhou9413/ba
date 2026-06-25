@@ -70,7 +70,7 @@ namespace BANWlLib.BattleSystem
             return builder.ToString();
         }
 
-        //解析预览战斗段，负责让直线投射物技能优先读取真实子弹配置，避免悬浮预估和实际结算分离。
+        //解析预览战斗段，负责让直线投射物技能和场地脱手技能优先读取真实配置，避免悬浮预估和实际结算分离。
         private static List<BattleActionConfig> ResolvePreviewActions(AbilityDef abilityDef)
         {
             BattleActionConfig projectileAction = TryBuildPiercingProjectileAction(abilityDef);
@@ -79,7 +79,76 @@ namespace BANWlLib.BattleSystem
                 return new List<BattleActionConfig> { projectileAction };
             }
 
+            List<BattleActionConfig> fieldActions = TryBuildBattleFieldActions(abilityDef);
+            if (fieldActions != null)
+            {
+                return fieldActions;
+            }
+
             return abilityDef.GetModExtension<AbilityBattleTooltipExtension>()?.previewActions;
+        }
+
+        //从场地脱手技能构建预览段，负责把 BattleFieldControllerExtension 的 actions 同步到技能公式显示。
+        private static List<BattleActionConfig> TryBuildBattleFieldActions(AbilityDef abilityDef)
+        {
+            ThingDef fieldThingDef = FindBattleFieldThingDef(abilityDef);
+            if (fieldThingDef == null)
+            {
+                return null;
+            }
+
+            BattleFieldControllerExtension extension = fieldThingDef.GetModExtension<BattleFieldControllerExtension>();
+            if (extension?.actions == null || extension.actions.Count == 0)
+            {
+                return null;
+            }
+
+            // 复制一份避免修改原始配置。
+            List<BattleActionConfig> copies = new List<BattleActionConfig>();
+            for (int i = 0; i < extension.actions.Count; i++)
+            {
+                BattleActionConfig source = extension.actions[i];
+                copies.Add(new BattleActionConfig
+                {
+                    baseAmount = source.baseAmount,
+                    attackPowerRatio = source.attackPowerRatio,
+                    healPowerRatio = source.healPowerRatio,
+                    damageDef = source.damageDef,
+                    triggerHediff = source.triggerHediff,
+                    effecterDef = source.effecterDef,
+                    penetration = source.penetration,
+                    isHealing = source.isHealing,
+                    canCrit = source.canCrit,
+                    applyAffinity = source.applyAffinity,
+                    canHitBuilding = source.canHitBuilding,
+                    affectHostile = source.affectHostile,
+                    affectFriendly = source.affectFriendly,
+                    allowPermanentInjuryHealing = source.allowPermanentInjuryHealing,
+                    isExSkill = source.isExSkill
+                });
+            }
+
+            return copies;
+        }
+
+        //查找技能生成的场地控制器 ThingDef，负责支持 CompProperties_AbilitySpawnBattleField 配置。
+        private static ThingDef FindBattleFieldThingDef(AbilityDef abilityDef)
+        {
+            if (abilityDef?.comps == null)
+            {
+                return null;
+            }
+
+            for (int i = 0; i < abilityDef.comps.Count; i++)
+            {
+                CompProperties_AbilitySpawnBattleField spawnBattleField = abilityDef.comps[i] as CompProperties_AbilitySpawnBattleField;
+                if (spawnBattleField?.fieldThingDef != null)
+                {
+                    return spawnBattleField.fieldThingDef;
+                }
+            }
+
+            return null;
         }
 
         //从直线穿透弹构建预览段，负责把 ThingDef 扩展里的真实伤害参数同步到技能公式显示。
@@ -184,17 +253,16 @@ namespace BANWlLib.BattleSystem
         // 写入施法者属性，负责让玩家看到公式里的实时基础值。
         private static void AppendCasterStats(StringBuilder builder, Pawn pawn)
         {
-            float attackFlat = BattleStatUtility.GetAttackFlatBonus(pawn);
             float attackPowerBase = BattleStatUtility.GetAttackPowerBaseMultiplier(pawn);
             float attackMultiplier = BattleStatUtility.GetAttackMultiplier(pawn);
             float finalAttack = BattleStatUtility.GetFinalAttackPower(pawn);
-            float healFlat = BattleStatUtility.GetHealFlatBonus(pawn);
+            float healPowerBase = BattleStatUtility.GetHealPowerBase(pawn);
             float healMultiplier = BattleStatUtility.GetHealMultiplier(pawn);
             float finalHeal = BattleStatUtility.GetFinalHealPower(pawn);
             float exMultiplier = BattleStatUtility.GetExSkillMultiplier(pawn);
 
-            builder.AppendLine("攻击力：" + FormatNumber(attackFlat) + " x " + FormatPercent(attackPowerBase) + " x " + FormatPercent(attackMultiplier) + " = " + FormatColor(FormatNumber(finalAttack), DamageColor));
-            builder.AppendLine("治疗力：" + FormatNumber(healFlat) + " x " + FormatPercent(healMultiplier) + " = " + FormatColor(FormatNumber(finalHeal), HealColor));
+            builder.AppendLine("攻击倍率：" + FormatPercent(attackPowerBase) + " x " + FormatPercent(attackMultiplier) + " = " + FormatColor(FormatPercent(finalAttack), DamageColor));
+            builder.AppendLine("治愈力：" + FormatNumber(healPowerBase) + " x " + FormatPercent(healMultiplier) + " = " + FormatColor(FormatNumber(finalHeal), HealColor));
             builder.AppendLine("EX技能倍率：" + FormatColor(FormatPercent(exMultiplier), ExColor));
         }
 
@@ -228,24 +296,17 @@ namespace BANWlLib.BattleSystem
         // 写入治疗段公式，负责展示固定值、治疗力倍率、暴击、受疗和 EX 倍率。
         private static void AppendHealAction(StringBuilder builder, Pawn pawn, BattleActionConfig action)
         {
-            BattleHealResult result = BattleStatUtility.BuildHealResult(new BattleHealRequest
-            {
-                instigator = pawn,
-                target = pawn,
-                baseAmount = action.baseAmount,
-                healPowerRatio = action.healPowerRatio,
-                canCrit = false,
-                isExSkill = action.isExSkill
-            });
+            float estimatedHealBeforeTargetReceived = BattleStatUtility.GetFinalHealPower(pawn) * Mathf.Max(0f, action.healPowerRatio);
 
             builder.AppendLine("类型：" + FormatColor("治疗", HealColor));
-            builder.AppendLine("基础值：" + FormatNumber(action.baseAmount));
-            builder.AppendLine("治疗倍率：" + FormatColor(FormatPercent(action.healPowerRatio), HealColor));
-            builder.AppendLine("暴击：" + FormatSwitch(action.canCrit, CritColor));
-            builder.AppendLine("受回复倍率：" + FormatColor(FormatPercent(BattleStatUtility.GetHealReceivedMultiplier(pawn)), HealColor));
-            builder.AppendLine("EX倍率：" + FormatEx(action.isExSkill, result.exSkillMultiplier));
+            builder.AppendLine("基础治愈力：" + FormatColor(FormatNumber(BattleStatUtility.GetHealPowerBase(pawn)), HealColor));
+            builder.AppendLine("治愈力加成：" + FormatColor(FormatPercent(BattleStatUtility.GetHealMultiplier(pawn)), HealColor));
+            builder.AppendLine("技能治疗量乘数：" + FormatColor(FormatPercent(action.healPowerRatio), HealColor));
+            builder.AppendLine("目标受回复倍率：" + FormatColor("命中目标后按被治疗者结算", HealColor));
+            builder.AppendLine("暴击：" + FormatColor("不参与", DisabledColor));
+            builder.AppendLine("EX倍率：" + FormatColor("不参与", DisabledColor));
             AppendHealFormula(builder, action);
-            builder.AppendLine("预估治疗：" + FormatColor(FormatNumber(result.finalAmount), HealColor));
+            builder.AppendLine("基础预估治疗：" + FormatColor(FormatNumber(estimatedHealBeforeTargetReceived), HealColor));
         }
 
         //写入伤害算法，负责用短行展示实际结算顺序，避免 tooltip 横向撑开。
@@ -262,10 +323,10 @@ namespace BANWlLib.BattleSystem
         private static void AppendHealFormula(StringBuilder builder, BattleActionConfig action)
         {
             builder.AppendLine("算法：");
-            builder.AppendLine(FormatColor("  基础：(基础值 + 治疗力) x 治疗加成", ColoredText.SubtleGrayColor));
-            builder.AppendLine(FormatColor("  技能：最终治疗力 x 技能倍率", ColoredText.SubtleGrayColor));
-            builder.AppendLine(FormatColor("  合计：基础 + 技能，再乘受回复", ColoredText.SubtleGrayColor));
-            builder.AppendLine(FormatColor("  修正：" + FormatFormulaModifiers(action.canCrit, false, action.isExSkill), ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  治愈：基础治愈力 x 治愈力加成", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  技能：最终治愈力 x 技能治疗量乘数", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  合计：技能治疗量 x 目标受回复率", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  修正：暴击和 EX 不参与治疗", ColoredText.SubtleGrayColor));
         }
 
         //格式化公式修正项，负责把暴击、克制和 EX 这些附加步骤压缩成一行。

@@ -186,7 +186,10 @@
     <Compile Include="BattleSystem\BattleStatDefOf.cs" />
     <Compile Include="BattleSystem\BattleStatUtility.cs" />
     <Compile Include="BattleSystem\BattleStatVisibilityPatch.cs" />
+    <Compile Include="BattleSystem\BattleStatWorkerValuePatch.cs" />
+    <Compile Include="BattleSystem\HealProjectileContext.cs" />
     <Compile Include="BattleSystem\CommandAbilityBattleTooltipPatch.cs" />
+    <Compile Include="BattleSystem\CompAbilityEffectGiveHediffPatch.cs" />
     <Compile Include="BattleSystem\CompAbilityEffect_SpawnBattleField.cs" />
     <Compile Include="BattleSystem\DamageAffinityMatrixDef.cs" />
     <Compile Include="BattleSystem\Hediff_StarGrowthDisplay.cs" />

@@ -324,4 +324,53 @@
       </li>
 </children>
 </EffecterDef>
+
+<!-- 序列帧飞行特效 Mote：用 Graphic_BAAbMoteWithAgeSecs 从 AssetBundle 加载多帧贴图，AgeSecs 驱动逐帧播放。 -->
+<ThingDef ParentName="MoteBase">
+  <defName>BANW_Mote_Nozomi_SequenceFlight_Test</defName>
+  <thingClass>MoteAttached</thingClass>
+  <drawOffscreen>true</drawOffscreen>
+  <altitudeLayer>MoteOverhead</altitudeLayer>
+  <mote>
+    <!-- 飞行特效需要持续维护，投射物销毁时由 CleanupFlightEffecter 停止维护并淡出。 -->
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>2.00</solidTime>
+    <fadeOutTime>0.10</fadeOutTime>
+    <needsMaintenance>true</needsMaintenance>
+    <fadeOutUnmaintained>true</fadeOutUnmaintained>
+    <collide>false</collide>
+  </mote>
+  <graphicData>
+    <!-- Graphic_BAAbMoteWithAgeSecs 负责在绘制时设置 AgeSecs，驱动 TransparentAnimated/GlowAnimated shader 按帧播放。 -->
+    <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
+    <shaderType>GlowAnimated</shaderType>
+    <texPath>Effect/Nozomi/A/Nozomi_1</texPath>
+    <drawSize>3.5</drawSize>
+    <shaderParameters>
+      <!-- 序列帧总帧数。 -->
+      <_NumFrames>60</_NumFrames>
+      <!-- 播放帧率，30 表示每秒 30 帧，60 帧约播放 2 秒。 -->
+      <_FramesPerSec>30</_FramesPerSec>
+    </shaderParameters>
+  </graphicData>
+</ThingDef>
+
+<!-- 序列帧飞行特效 Effecter：initialDelayTicks 控制 SubEffecter_AttachedProjectileMote 延迟生成 Mote。 -->
+<EffecterDef>
+  <defName>BANW_Effecter_Nozomi_SequenceFlight_Test</defName>
+  <children>
+    <li>
+      <!-- SubEffecter_AttachedProjectileMote 支持 initialDelayTicks，延迟结束后才在子弹当前位置生成序列帧 Mote。 -->
+      <subEffecterClass>BANWlLib.Projectiles.SubEffecter_AttachedProjectileMote</subEffecterClass>
+      <moteDef>BANW_Mote_Nozomi_SequenceFlight_Test</moteDef>
+      <!-- 延迟 15 tick（约 0.25 秒）后才开始播放飞行特效，让子弹先飞一段再出现特效。 -->
+      <initialDelayTicks>15</initialDelayTicks>
+      <positionOffset>(0, 0.4, 0)</positionOffset>
+      <scale>1</scale>
+      <rotation>0</rotation>
+      <rotationRate>0</rotationRate>
+    </li>
+  </children>
+</EffecterDef>
+
 </Defs>

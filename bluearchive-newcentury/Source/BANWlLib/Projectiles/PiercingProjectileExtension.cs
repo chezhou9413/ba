@@ -9,6 +9,7 @@ namespace BANWlLib.Projectiles
         public float damageWidth = 1f;
         public float damageLength = 1f;
         public bool extendToMaxRange = false;
+        public bool disablePiercing = false;
         public float maxRange = 0f;
         public bool immuneFriendlyFire = true;
         public float baseAmount = 0f;

@@ -33,20 +33,17 @@ namespace BANWlLib.BattleSystem
         // 判断是否需要显示阶级成长状态，负责避免没有成长配置的 Pawn 出现空状态。
         public static bool ShouldDisplay(Pawn pawn)
         {
-            if (pawn == null || BattleStatUtility.GetStarGrowthExtension(pawn) == null)
+            if (pawn == null)
             {
                 return false;
             }
 
-            return BattleStatUtility.GetStarHealthFlat(pawn) != 0f ||
-                   BattleStatUtility.GetStarHealthPercent(pawn) != 0f ||
-                   BattleStatUtility.GetStarAttackFlat(pawn) != 0f ||
-                   BattleStatUtility.GetStarAttackPercent(pawn) != 0f ||
-                   BattleStatUtility.GetStarHealFlat(pawn) != 0f ||
-                   BattleStatUtility.GetStarHealPercent(pawn) != 0f;
+            return BattleStatUtility.GetBaseHealthPercent(pawn) != 0f ||
+                   BattleStatUtility.GetBaseAttackPercent(pawn) != 0f ||
+                   BattleStatUtility.GetBaseHealPercent(pawn) != 0f;
         }
 
-        // 构建健康状态悬浮说明，负责向玩家展示当前阶级实际参与结算的成长值。
+        // 构建健康状态悬浮说明，负责向玩家展示当前 PawnKind 基础属性带来的加成。
         public static string BuildTooltip(Pawn pawn)
         {
             if (pawn == null)
@@ -55,22 +52,12 @@ namespace BANWlLib.BattleSystem
             }
 
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine("当前阶级：" + BattleStatUtility.GetCurrentRankLevel(pawn));
-            builder.AppendLine("生命值平加：" + FormatNumber(BattleStatUtility.GetStarHealthFlat(pawn)));
-            builder.AppendLine("生命值百分比：" + FormatPercent(BattleStatUtility.GetStarHealthPercent(pawn)));
-            builder.AppendLine("基础攻击力：" + FormatNumber(BattleStatUtility.GetStarAttackFlat(pawn)));
-            builder.AppendLine("攻击力百分比：" + FormatPercent(BattleStatUtility.GetStarAttackPercent(pawn)));
-            builder.AppendLine("基础治愈力：" + FormatNumber(BattleStatUtility.GetStarHealFlat(pawn)));
-            builder.AppendLine("治愈力百分比：" + FormatPercent(BattleStatUtility.GetStarHealPercent(pawn)));
+            builder.AppendLine("生命值百分比：" + FormatPercent(BattleStatUtility.GetBaseHealthPercent(pawn)));
+            builder.AppendLine("攻击力百分比：" + FormatPercent(BattleStatUtility.GetBaseAttackPercent(pawn)));
+            builder.AppendLine("治愈力百分比：" + FormatPercent(BattleStatUtility.GetBaseHealPercent(pawn)));
             builder.AppendLine();
-            builder.Append("该状态只负责显示阶级成长，实际数值由战斗属性层统一结算。");
+            builder.Append("该状态只负责显示 PawnKind 基础属性，实际数值由战斗属性层统一结算。");
             return builder.ToString();
-        }
-
-        // 格式化普通数值，负责去掉没有意义的小数位。
-        private static string FormatNumber(float value)
-        {
-            return value.ToString("0.##", CultureInfo.InvariantCulture);
         }
 
         // 格式化百分比数值，负责把 0.2 显示为 20%。

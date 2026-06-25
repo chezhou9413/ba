@@ -19,22 +19,10 @@ namespace BANWlLib.BattleSystem
             return pawn?.kindDef?.GetModExtension<BattleBaseStatExtension>();
         }
 
-        // 获取学生基础生命尺度平加，负责接入 HealthScale 计算。
-        public static float GetBaseHealthFlat(Pawn pawn)
-        {
-            return GetBaseStatExtension(pawn)?.healthFlat ?? 0f;
-        }
-
         // 获取学生基础生命尺度百分比，负责接入 HealthScale 计算。
         public static float GetBaseHealthPercent(Pawn pawn)
         {
             return GetBaseStatExtension(pawn)?.healthPercent ?? 0f;
-        }
-
-        // 获取学生基础攻击力平加，负责接入最终攻击力计算。
-        public static float GetBaseAttackFlat(Pawn pawn)
-        {
-            return GetBaseStatExtension(pawn)?.attackFlat ?? 0f;
         }
 
         // 获取学生基础攻击力百分比，负责接入最终攻击力计算。
@@ -43,16 +31,16 @@ namespace BANWlLib.BattleSystem
             return GetBaseStatExtension(pawn)?.attackPercent ?? 0f;
         }
 
-        // 获取学生基础治疗力平加，负责接入最终治疗力计算。
-        public static float GetBaseHealFlat(Pawn pawn)
-        {
-            return GetBaseStatExtension(pawn)?.healFlat ?? 0f;
-        }
-
         // 获取学生基础治疗力百分比，负责接入最终治疗力计算。
         public static float GetBaseHealPercent(Pawn pawn)
         {
             return GetBaseStatExtension(pawn)?.healPercent ?? 0f;
+        }
+
+        // 获取学生基础治疗力平加，负责接入最终治愈力计算。
+        public static float GetBaseHealFlat(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.healFlat ?? 0f;
         }
 
         // 获取学生基础受回复倍率平加，负责接入受疗倍率计算。
@@ -67,48 +55,7 @@ namespace BANWlLib.BattleSystem
             return GetBaseStatExtension(pawn)?.exSkillMultiplierOffset ?? 0f;
         }
 
-        public static float GetStarHealthFlat(Pawn pawn)
-        {
-            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
-            return extension?.healthFlat?.Evaluate(GetCurrentRankLevel(pawn)) ?? 0f;
-        }
-
-        public static float GetStarHealthPercent(Pawn pawn)
-        {
-            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
-            return extension?.healthPercent?.Evaluate(GetCurrentRankLevel(pawn)) ?? 0f;
-        }
-
-        public static float GetStarAttackFlat(Pawn pawn)
-        {
-            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
-            return extension?.attackFlat?.Evaluate(GetCurrentRankLevel(pawn)) ?? 0f;
-        }
-
-        public static float GetStarAttackPercent(Pawn pawn)
-        {
-            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
-            return extension?.attackPercent?.Evaluate(GetCurrentRankLevel(pawn)) ?? 0f;
-        }
-
-        public static float GetStarHealFlat(Pawn pawn)
-        {
-            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
-            return extension?.healFlat?.Evaluate(GetCurrentRankLevel(pawn)) ?? 0f;
-        }
-
-        public static float GetStarHealPercent(Pawn pawn)
-        {
-            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
-            return extension?.healPercent?.Evaluate(GetCurrentRankLevel(pawn)) ?? 0f;
-        }
-
-        public static BattleStarGrowthExtension GetStarGrowthExtension(Pawn pawn)
-        {
-            return pawn?.kindDef?.GetModExtension<BattleStarGrowthExtension>();
-        }
-
-        // 获取当前阶级，负责让战斗成长跟随角色信息面板的星星进度。
+        // 获取当前阶级，负责兼容外部调用。
         public static int GetCurrentRankLevel(Pawn pawn)
         {
             return StudentRankUtility.GetCurrentRankLevel(pawn);
@@ -118,6 +65,78 @@ namespace BANWlLib.BattleSystem
         public static int GetCurrentStarLevel(Pawn pawn)
         {
             return GetCurrentRankLevel(pawn);
+        }
+
+        // 获取阶级成长扩展，负责从 PawnKindDef 读取当前角色的成长配置。
+        public static BattleStarGrowthExtension GetStarGrowthExtension(Pawn pawn)
+        {
+            return pawn?.kindDef?.GetModExtension<BattleStarGrowthExtension>();
+        }
+
+        // 获取当前阶级基础治愈力成长，负责让阶级成长进入最终治愈力。
+        public static float GetRankHealFlat(Pawn pawn)
+        {
+            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
+            if (extension == null)
+            {
+                return 0f;
+            }
+
+            return extension.healFlat.Evaluate(GetCurrentRankLevel(pawn));
+        }
+
+        // 获取当前阶级治愈力百分比成长，负责让阶级成长进入治愈力加成。
+        public static float GetRankHealPercent(Pawn pawn)
+        {
+            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
+            if (extension == null)
+            {
+                return 0f;
+            }
+
+            return extension.healPercent.Evaluate(GetCurrentRankLevel(pawn));
+        }
+
+        // 获取 PawnKind 基础战斗属性对指定 Stat 的额外加成，负责让 PawnKind 固有属性注入原版 StatWorker 显示。
+        public static float GetBaseStatOffset(Pawn pawn, StatDef statDef)
+        {
+            if (pawn == null || statDef == null)
+            {
+                return 0f;
+            }
+
+            BattleBaseStatExtension ext = GetBaseStatExtension(pawn);
+            if (ext == null)
+            {
+                return 0f;
+            }
+
+            if (statDef == BattleStatDefOf.BANW_FinalDamageMultiplier)
+            {
+                return ext.attackPercent;
+            }
+
+            if (statDef == BattleStatDefOf.BANW_HealPowerMultiplier)
+            {
+                return ext.healPercent;
+            }
+
+            if (statDef == BattleStatDefOf.BANW_HealReceivedMultiplier)
+            {
+                return ext.healReceivedMultiplierOffset;
+            }
+
+            if (statDef == BattleStatDefOf.BANW_ExSkillMultiplier)
+            {
+                return ext.exSkillMultiplierOffset;
+            }
+
+            if (statDef == BattleStatDefOf.BANW_HealthScalePercentOffset)
+            {
+                return ext.healthPercent;
+            }
+
+            return 0f;
         }
 
         public static float GetAdditionalBattleStatOffset(Pawn pawn, StatDef statDef)
@@ -141,19 +160,21 @@ namespace BANWlLib.BattleSystem
             return total;
         }
 
-        public static float GetAttackFlatBonus(Pawn pawn)
+        // 获取攻击力倍率，负责把基础攻击百分比、装备加成和叠层状态合并为最终倍率。
+        public static float GetAttackMultiplier(Pawn pawn)
         {
             if (pawn == null)
             {
-                return 0f;
+                return 1f;
             }
 
-            return Mathf.Max(0f,
-                GetBaseAttackFlat(pawn) +
-                GetStarAttackFlat(pawn));
+            float bonus = GetBaseAttackPercent(pawn) +
+                          pawn.GetStatValue(BattleStatDefOf.BANW_FinalDamageMultiplier) +
+                          GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_FinalDamageMultiplier);
+            return Mathf.Max(0f, 1f + bonus);
         }
 
-        // 获取基础攻击倍率，负责把基础攻击力加成按百分比转成 100% 起步的倍率。
+        // 获取基础攻击倍率，负责把基础攻击力百分比加成转成 100% 起步的倍率。
         public static float GetAttackPowerBaseMultiplier(Pawn pawn)
         {
             if (pawn == null)
@@ -166,20 +187,7 @@ namespace BANWlLib.BattleSystem
             return Mathf.Max(0f, 1f + bonus);
         }
 
-        public static float GetAttackMultiplier(Pawn pawn)
-        {
-            if (pawn == null)
-            {
-                return 1f;
-            }
-
-            float bonus = GetBaseAttackPercent(pawn) +
-                          pawn.GetStatValue(BattleStatDefOf.BANW_FinalDamageMultiplier) +
-                          GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_FinalDamageMultiplier) +
-                          GetStarAttackPercent(pawn);
-            return Mathf.Max(0f, 1f + bonus);
-        }
-
+        // 获取最终攻击力，负责统一组合基础攻击倍率和最终攻击力倍率。
         public static float GetFinalAttackPower(Pawn pawn)
         {
             if (pawn == null)
@@ -187,7 +195,7 @@ namespace BANWlLib.BattleSystem
                 return 0f;
             }
 
-            return Mathf.Max(0f, GetAttackFlatBonus(pawn) * GetAttackPowerBaseMultiplier(pawn) * GetAttackMultiplier(pawn));
+            return Mathf.Max(0f, GetAttackPowerBaseMultiplier(pawn) * GetAttackMultiplier(pawn));
         }
 
         // 获取最终攻击倍率，负责统一组合基础攻击倍率和最终攻击力加成。
@@ -222,20 +230,7 @@ namespace BANWlLib.BattleSystem
             return Mathf.Max(0f, Mathf.Max(0f, weaponBaseDamage) * GetTotalAttackMultiplier(pawn));
         }
 
-        public static float GetHealFlatBonus(Pawn pawn)
-        {
-            if (pawn == null)
-            {
-                return 0f;
-            }
-
-            return Mathf.Max(0f,
-                GetBaseHealFlat(pawn) +
-                pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerBase) +
-                GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_HealPowerBase) +
-                GetStarHealFlat(pawn));
-        }
-
+        // 获取治疗力倍率，负责把基础治疗百分比、装备加成和叠层状态合并为最终倍率。
         public static float GetHealMultiplier(Pawn pawn)
         {
             if (pawn == null)
@@ -243,13 +238,26 @@ namespace BANWlLib.BattleSystem
                 return 1f;
             }
 
-            float bonus = GetBaseHealPercent(pawn) +
-                          pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerMultiplier) +
-                          GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_HealPowerMultiplier) +
-                          GetStarHealPercent(pawn);
+            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerMultiplier) +
+                          GetRankHealPercent(pawn);
             return Mathf.Max(0f, 1f + bonus);
         }
 
+        // 获取基础治愈力，负责把属性、学生基础值和阶级成长合并为治疗公式的基础项。
+        public static float GetHealPowerBase(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 0f;
+            }
+
+            float basePower = pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerBase) +
+                              GetBaseHealFlat(pawn) +
+                              GetRankHealFlat(pawn);
+            return Mathf.Max(0f, basePower);
+        }
+
+        // 获取最终治愈力，负责统一组合基础治愈力和治愈力加成。
         public static float GetFinalHealPower(Pawn pawn)
         {
             if (pawn == null)
@@ -257,17 +265,13 @@ namespace BANWlLib.BattleSystem
                 return 0f;
             }
 
-            return Mathf.Max(0f, GetHealFlatBonus(pawn) * GetHealMultiplier(pawn));
+            return Mathf.Max(0f, GetHealPowerBase(pawn) * GetHealMultiplier(pawn));
         }
 
+        // 缩放治疗基础值，负责兼容旧调用；严格治疗公式下固定治疗值不再参与结算。
         public static float ScaleHealBase(Pawn pawn, float baseAmount)
         {
-            if (pawn == null)
-            {
-                return Mathf.Max(0f, baseAmount);
-            }
-
-            return Mathf.Max(0f, (Mathf.Max(0f, baseAmount) + GetHealFlatBonus(pawn)) * GetHealMultiplier(pawn));
+            return 0f;
         }
 
         public static float GetHealReceivedMultiplier(Pawn pawn)
@@ -320,20 +324,16 @@ namespace BANWlLib.BattleSystem
                 return null;
             }
 
-            float attackFlatBonus = GetAttackFlatBonus(pawn);
             float attackPowerBase = GetAttackPowerBaseMultiplier(pawn);
             float attackMultiplier = GetAttackMultiplier(pawn);
-            float healFlatBonus = GetHealFlatBonus(pawn);
             float healMultiplier = GetHealMultiplier(pawn);
             return new BattleCasterSnapshot
             {
-                attackFlatBonus = attackFlatBonus,
                 attackPowerBase = attackPowerBase,
                 attackMultiplier = attackMultiplier,
-                attackPower = attackFlatBonus * attackPowerBase * attackMultiplier,
-                healFlatBonus = healFlatBonus,
+                attackPower = attackPowerBase * attackMultiplier,
                 healMultiplier = healMultiplier,
-                healPower = healFlatBonus * healMultiplier,
+                healPower = GetFinalHealPower(pawn),
                 criticalChance = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalChance) + GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_CriticalChance),
                 criticalDamage = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamage) + GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_CriticalDamage),
                 exSkillMultiplier = GetExSkillMultiplier(pawn),
@@ -394,30 +394,25 @@ namespace BANWlLib.BattleSystem
             }
 
             Pawn casterPawn = request.instigator as Pawn;
-            float amount = Mathf.Max(0f, request.baseAmount);
+            float amount = 0f;
             if (request.snapshot != null)
             {
-                amount = (Mathf.Max(0f, request.baseAmount) + request.snapshot.healFlatBonus) * request.snapshot.healMultiplier;
                 if (request.healPowerRatio > 0f)
                 {
-                    amount += request.snapshot.healPower * request.healPowerRatio;
+                    amount = request.snapshot.healPower * request.healPowerRatio;
                 }
             }
             else if (casterPawn != null)
             {
-                amount = ScaleHealBase(casterPawn, request.baseAmount);
                 if (request.healPowerRatio > 0f)
                 {
-                    amount += GetFinalHealPower(casterPawn) * request.healPowerRatio;
+                    amount = GetFinalHealPower(casterPawn) * request.healPowerRatio;
                 }
             }
 
-            float critMultiplier = 1f;
-            result.isCrit = TryRollCrit(casterPawn, request.snapshot, request.canCrit, out critMultiplier);
-            amount *= critMultiplier;
+            result.isCrit = false;
             amount *= GetHealReceivedMultiplier(request.target);
-            result.exSkillMultiplier = GetExSkillMultiplier(request.instigator, request.snapshot, request.isExSkill);
-            amount *= result.exSkillMultiplier;
+            result.exSkillMultiplier = 1f;
             result.finalAmount = Mathf.Max(0f, amount);
             return result;
         }

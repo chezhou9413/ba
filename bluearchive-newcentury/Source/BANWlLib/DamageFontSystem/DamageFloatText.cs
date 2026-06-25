@@ -11,9 +11,12 @@ namespace BANWlLib.DamageFontSystem
         public float moveTime = 0.3f;
         public float stayTime = 0.5f;
         public float fadeTime = 0.3f;
+        private const float TextWidthPadding = 20f;
 
         private UnityEngine.UI.Text text;
         private Image image;
+        private RectTransform textRect;
+        private RectTransform selfRect;
         private Vector3 startPos;
         private Vector3 targetPos;
         private Coroutine routine;
@@ -28,8 +31,11 @@ namespace BANWlLib.DamageFontSystem
         {
             text = transform.Find("Text").GetComponent<UnityEngine.UI.Text>();
             image = GetComponent<Image>();
+            selfRect = GetComponent<RectTransform>();
             if (text != null)
             {
+                textRect = text.GetComponent<RectTransform>();
+                text.horizontalOverflow = HorizontalWrapMode.Overflow;
                 baseTextColor = text.color;
             }
             if (image != null)
@@ -84,6 +90,28 @@ namespace BANWlLib.DamageFontSystem
                 configuredColor.a = 1f;
                 text.color = configuredColor;
                 text.text = configuredText;
+                ApplyTextWidth();
+            }
+        }
+
+        // 按当前文字内容扩宽飘字区域，负责让带加号的治疗数字不会被固定宽度截断。
+        private void ApplyTextWidth()
+        {
+            if (text == null || textRect == null)
+            {
+                return;
+            }
+
+            float preferredWidth = text.preferredWidth + TextWidthPadding;
+            if (preferredWidth <= textRect.sizeDelta.x)
+            {
+                return;
+            }
+
+            textRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, preferredWidth);
+            if (selfRect != null && preferredWidth > selfRect.sizeDelta.x)
+            {
+                selfRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, preferredWidth);
             }
         }
 
