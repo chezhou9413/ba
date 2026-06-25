@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>让世界更加鲜艳！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对1名敌方单位造成自身攻击力<color=#00FFFF>1090%</color>的伤害，并且自身攻击力增加<color=#00FFFF>55%</color>持续<color=#00FFFF>30</color>秒]]>
+				<AbilityIntroduction><![CDATA[对1名敌方单位造成自身攻击力<color=#00FFFF>1081%</color>的伤害，并且自身攻击力增加<color=#00FFFF>55%</color>持续<color=#00FFFF>30</color>秒]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

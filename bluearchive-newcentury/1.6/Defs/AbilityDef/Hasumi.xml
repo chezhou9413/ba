@@ -38,11 +38,34 @@
         <projectileDef>BANC_Bullet_Hasumi_EX</projectileDef>
       </li>
   </comps>
+  <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+      <showBattleFormula>true</showBattleFormula>
+      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <previewActions>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>34</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>11.0</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_Hasumi</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+      </previewActions>
+    </li>
+    </modExtensions>
 </AbilityDef>
 <AbilityDef>
 <defName>BAWN_Hasumi_EX</defName>
  <label>冷静的心</label>
-<description>减少自身100%的装填时间和增加57%的护甲穿透持续13秒</description>
+<description>减少自身50%的装填时间和增加57%的暴击伤害持续13秒</description>
  <iconPath>Ability/Icon/Hasumi/Hasumi_EX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -94,9 +117,9 @@
         <!-- 状态的唯一标识符 -->
         <defName>BAWN_Hasumi_hediff</defName>
         <!-- 显示名称 -->
-        <label>冷静的心</label>
+        <label> </label>
         <!-- 效果描述 -->
-        <description>减少自身100%的射击冷却时间并提高57%的护甲穿透持续13秒</description>
+        <description>减少自身50%的射击冷却时间并提高57%的暴击伤害持续13秒</description>
         <defaultLabelColor>(255, 255, 0)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -106,8 +129,8 @@
           <stages>
           <li>     
            <statOffsets>
-           <RangedCooldownFactor>-1.00</RangedCooldownFactor>
-           <BANW_RangedWeapon_Penetration>+0.57</BANW_RangedWeapon_Penetration>
+           <RangedCooldownFactor>-0.50</RangedCooldownFactor>
+           <BANW_CriticalDamage>+0.57</BANW_CriticalDamage>
             </statOffsets>
            </li>
           </stages>
@@ -124,7 +147,7 @@
     <label>穿甲弹</label>
     <projectile>
       <damageDef>BANC_Damage_Hasumi</damageDef><!--子弹类型-->
-      <damageAmountBase>1254</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>374</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>120</speed><!--子弹速度-->
@@ -143,7 +166,8 @@
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Hasumi/EXX_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Hasumi/EXX_A</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>3</drawSize>
       <shaderParameters>

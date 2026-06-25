@@ -172,7 +172,7 @@
         <actions>
           <li>
             <!-- 固定基础值，和 attackPowerRatio 可叠加。 -->
-            <baseAmount>38</baseAmount>
+            <baseAmount>17</baseAmount>
             <!-- 攻击力倍率，1.2 表示造成最终攻击力 120% 的伤害。 -->
             <attackPowerRatio>1.0</attackPowerRatio>
             <!-- 伤害 Def，决定伤害类型、命中特效和原版伤害表现。 -->

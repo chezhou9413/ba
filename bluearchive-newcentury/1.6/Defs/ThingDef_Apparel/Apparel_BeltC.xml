@@ -15,7 +15,7 @@
          <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>+0.08</PainShockThreshold> 
+        <PainShockThreshold>-0.08</PainShockThreshold> 
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -48,7 +48,7 @@
         <MarketValue>1000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>+0.13</PainShockThreshold>
+        <PainShockThreshold>-0.13</PainShockThreshold>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_One>1</BANC_Amulet_One>
@@ -83,7 +83,7 @@
         <MarketValue>1500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>+0.18</PainShockThreshold>
+        <PainShockThreshold>-0.18</PainShockThreshold>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Tow>1</BANC_Amulet_Tow>
@@ -107,7 +107,7 @@
         <defName>BANC_Amulet_Four</defName>
         <label>Lv.4-十字架</label>
         <description>崔尼蒂的女生们喜欢的十字架形状护身符。也适合挂在包上当装饰品。
-提供疼痛忍耐率和承伤系数</description>
+减少疼痛值和承伤系数</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_4</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -157,10 +157,10 @@
         <statBases>
          <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
-        
+        <BANW_CriticalChance>+0.10</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.07</BANW_CriticalChance>
+        <PainShockThreshold>-0.28</PainShockThreshold>
         <IncomingDamageFactor>-0.08</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -200,10 +200,10 @@
         <statBases>
          <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
-        
+        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.09</BANW_CriticalChance>
+        <PainShockThreshold>-0.32</PainShockThreshold>
         <IncomingDamageFactor>-0.09</IncomingDamageFactor>
         </equippedStatOffsets>
          <costList>
@@ -243,10 +243,10 @@
         <statBases>
          <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
-        
+        <BANW_CriticalChance>+0.12</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
+        <PainShockThreshold>-0.36</PainShockThreshold>
         <IncomingDamageFactor>-0.11</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -286,10 +286,10 @@
         <statBases>
          <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
-        
+        <BANW_CriticalChance>+0.13</BANW_CriticalChance>  
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.12</BANW_CriticalChance>
+        <PainShockThreshold>-0.38</PainShockThreshold>
         <IncomingDamageFactor>-0.12</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -329,10 +329,10 @@
         <statBases>
          <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
-        
+        <BANW_CriticalChance>+0.14</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
+        <PainShockThreshold>-0.40</PainShockThreshold>
         <IncomingDamageFactor>-0.13</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -372,10 +372,10 @@
         <statBases>
           <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
-        
+        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.18</BANW_CriticalChance>
+        <PainShockThreshold>-0.42</PainShockThreshold>
         <IncomingDamageFactor>-0.18</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -410,10 +410,10 @@
         </graphicData>
         <statBases>
          <MarketValue>500</MarketValue>
-         
+         <BANW_CriticalChance>+0.05</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.05</BANW_CriticalChance>
+            
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -443,9 +443,10 @@
         <statBases>
          <WorkToMake>1200</WorkToMake>
         <MarketValue>1000</MarketValue>
+        <BANW_CriticalChance>+0.08</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.08</BANW_CriticalChance>
+        
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_One>1</BANC_Watch_One>
@@ -477,9 +478,10 @@
         <statBases>
          <WorkToMake>1400</WorkToMake>
         <MarketValue>1500</MarketValue>
+        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
+        
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Tow>1</BANC_Watch_Tow>
@@ -511,11 +513,11 @@
         <statBases>
          <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
-        
+        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.10</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.15</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.10</BANW_CriticalDamage>
+            
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Three>1</BANC_Watch_Three>
@@ -549,11 +551,11 @@
          <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
          <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset>
-         
+         <BANW_CriticalChance>+0.17</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.15</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.17</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.15</BANW_CriticalDamage>
+            
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Four>1</BANC_Watch_Four>
@@ -588,11 +590,11 @@
          <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
          <BANW_HealthScalePercentOffset>0.07</BANW_HealthScalePercentOffset>
-         
+         <BANW_CriticalChance>+0.19</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.19</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
+        
         </equippedStatOffsets>
          <costList>
         <BANC_Watch_Five>1</BANC_Watch_Five>
@@ -627,11 +629,11 @@
          <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
         <BANW_HealthScalePercentOffset>0.09</BANW_HealthScalePercentOffset>
-         
+         <BANW_CriticalChance>+0.22</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.21</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalChance>+0.22</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.21</BANW_CriticalDamage>
+        
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Six>1</BANC_Watch_Six>
@@ -666,11 +668,11 @@
          <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
          <BANW_HealthScalePercentOffset>0.11</BANW_HealthScalePercentOffset>
-        
+        <BANW_CriticalChance>+0.24</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.24</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-             <BANW_CriticalChance>+0.24</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.24</BANW_CriticalDamage>
+             
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Seven>1</BANC_Watch_Seven>
@@ -705,11 +707,11 @@
           <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
          <BANW_HealthScalePercentOffset>0.13</BANW_HealthScalePercentOffset>
-         
+         <BANW_CriticalChance>+0.26</BANW_CriticalChance>
+        <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.26</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
+            
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Eight>1</BANC_Watch_Eight>
@@ -744,10 +746,11 @@
           <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
         <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
-        </statBases>
-        <equippedStatOffsets>
         <BANW_CriticalChance>+0.28</BANW_CriticalChance>
         <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
+        </statBases>
+        <equippedStatOffsets>
+        
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Nine>1</BANC_Watch_Nine>
@@ -774,17 +777,13 @@
         <defName>BANC_Necklace_One</defName>
         <label>Lv.1-蓝牙项链</label>
         <description>可以测量佩戴者的体温和心率的蓝牙项链。可以通过项链轻易掌握运动量，因此对减肥的人来说是必需品。
-可以增加生命恢复和减少疼痛值</description>
+可以增加治愈力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_One</hediff>
-            </li>
-        </comps>
         <statBases>
+         <BANW_HealPowerMultiplier>0.08</BANW_HealPowerMultiplier>
          <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
@@ -810,17 +809,14 @@
         <defName>BANC_Necklace_Tow</defName>
         <label>Lv.2-雪花吊坠</label>
         <description>有雪花形状装饰的银色吊坠。一直盯着雪花看久了，就感觉身体凉飕飕的。
-可以增加生命恢复和减少疼痛值</description>
+可以增加治愈力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_Tow</hediff>
-            </li>
-        </comps>
+       
         <statBases>
+         <BANW_HealPowerMultiplier>0.13</BANW_HealPowerMultiplier>
          <WorkToMake>1200</WorkToMake>
         <MarketValue>1000</MarketValue>
         </statBases>
@@ -849,17 +845,14 @@
         <defName>BANC_Necklace_Three</defName>
         <label>Lv.3-尼古拉挂坠盒</label>
         <description>挂坠盒的形状是MomoFriends的吉祥物尼古拉先生。按一下鼻子，就会出现可以放照片的空间。
-可以增加生命恢复和减少疼痛值</description>
+可以增加治愈力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_Three</hediff>
-            </li>
-        </comps>
+       
         <statBases>
+        <BANW_HealPowerMultiplier>0.18</BANW_HealPowerMultiplier>
          <WorkToMake>1400</WorkToMake>
         <MarketValue>1500</MarketValue>
         </statBases>
@@ -888,17 +881,14 @@
         <defName>BANC_Necklace_Four</defName>
         <label>Lv.4-十字架颈链</label>
         <description>挂坠盒的形状是MomoFriends的吉祥物尼古拉先生。按一下鼻子，就会出现可以放照片的空间。
-可以增加生命恢复和减少疼痛值</description>
+可以增加治愈力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_4</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_Four</hediff>
-            </li>
-        </comps>
+        
         <statBases>
+            <BANW_HealPowerMultiplier>0.25</BANW_HealPowerMultiplier>
          <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
         </statBases>
@@ -928,17 +918,14 @@
         <defName>BANC_Necklace_Five</defName>
         <label>Lv.5-身份牌</label>
         <description>刻有学员编号和名字的身份牌。是可以展现出个性的新款饰品，非常受女生欢迎。
-可以增加生命恢复和减少疼痛值和少量攻击力</description>
+可以增加治愈力和少量攻击力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_5</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_Five</hediff>
-            </li>
-        </comps>
+        
         <statBases>
+            <BANW_HealPowerMultiplier>0.28</BANW_HealPowerMultiplier>
          <BANW_FinalDamageMultiplier>+0.04</BANW_FinalDamageMultiplier>
          <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
@@ -970,7 +957,7 @@
         <defName>BANC_Necklace_Six</defName>
         <label>Lv.6-朋克项圈</label>
         <description>带着尖刺的朋克风项圈。 尾端很尖锐，戴上去会很难点头。
-可以增加生命恢复和减少疼痛值和少量攻击力</description>
+可以增加治愈力和少量攻击力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_6</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -981,6 +968,7 @@
             </li>
         </comps>
         <statBases>
+            <BANW_HealPowerMultiplier>0.32</BANW_HealPowerMultiplier>
          <BANW_FinalDamageMultiplier>+0.06</BANW_FinalDamageMultiplier>
          <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
@@ -1012,17 +1000,14 @@
         <defName>BANC_Necklace_Seven</defName>
         <label>Lv.7-锁扣项链</label>
         <description>用锁扣打造的项链。叮叮当当的声音听起来很悦耳，不过也有人认为触感太过冰冷。
-可以增加生命恢复和减少疼痛值和少量攻击力</description>
+可以增加治愈力和少量攻击力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_7</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_Seven</hediff>
-            </li>
-        </comps>
+       
         <statBases>
+            <BANW_HealPowerMultiplier>0.35</BANW_HealPowerMultiplier>
          <BANW_FinalDamageMultiplier>+0.08</BANW_FinalDamageMultiplier>
          <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
@@ -1054,17 +1039,14 @@
         <defName>BANC_Necklace_Eight</defName>
         <label>Lv.8-绿叶项链</label>
         <description>现代时尚品牌“罗蕾莱”推出的项链。据说被光芒照射的话，叶子会散发隐约的光泽。
-可以增加生命恢复和减少疼痛值和少量攻击力</description>
+可以增加治愈力和少量攻击力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_8</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_Eight</hediff>
-            </li>
-        </comps>
+       
         <statBases>
+            <BANW_HealPowerMultiplier>0.38</BANW_HealPowerMultiplier>
          <BANW_FinalDamageMultiplier>+0.1</BANW_FinalDamageMultiplier>
          <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
@@ -1096,17 +1078,14 @@
         <defName>BANC_Necklace_Nine</defName>
         <label>Lv.9-章鱼固定器</label>
         <description>潜水员用于固定呼吸器材而使用的项链型固定器。「哈耳庇厄」的固定器的协调配色与设计受到好评，也经常被当作时尚道具使用。
-可以增加生命恢复和减少疼痛值和少量攻击力</description>
+可以增加治愈力和少量攻击力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_9</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_Nine</hediff>
-            </li>
-        </comps>
+       
         <statBases>
+            <BANW_HealPowerMultiplier>0.40</BANW_HealPowerMultiplier>
          <BANW_FinalDamageMultiplier>+0.14</BANW_FinalDamageMultiplier>
           <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
@@ -1138,17 +1117,14 @@
         <defName>BANC_Necklace_Ten</defName>
         <label>Lv.10-存储器项链</label>
         <description>伪装成装饰的存储器项链。外表华丽，可内在却有可能存储着秘密数据。
-可以增加生命恢复和减少疼痛值和少量攻击力</description>
+可以增加治愈力和少量攻击力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_10</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothNecklace_Ten</hediff>
-            </li>
-        </comps>
+        
         <statBases>
+            <BANW_HealPowerMultiplier>0.42</BANW_HealPowerMultiplier>
          <BANW_FinalDamageMultiplier>+0.18</BANW_FinalDamageMultiplier>
          <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>

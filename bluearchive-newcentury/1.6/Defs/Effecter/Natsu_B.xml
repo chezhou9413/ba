@@ -13,6 +13,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
@@ -27,6 +29,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
@@ -42,6 +46,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
@@ -56,6 +62,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
@@ -71,6 +79,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
@@ -85,6 +95,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
@@ -100,6 +112,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
@@ -114,6 +128,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
@@ -129,6 +145,8 @@
       <solidTime>0.05</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0</fadeOutTime><!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
+      <needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
     </mote>
   </ThingDef>
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->

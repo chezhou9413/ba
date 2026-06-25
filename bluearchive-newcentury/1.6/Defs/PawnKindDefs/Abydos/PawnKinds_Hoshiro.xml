@@ -73,6 +73,7 @@
 			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Hoshiro>0</BAWC_TraitDef_Hoshiro>
+			<BAWC_TraitDef_Hoshiro_A>0</BAWC_TraitDef_Hoshiro_A>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -213,6 +214,25 @@
 					<MeleeDamageFactor>7.1</MeleeDamageFactor>           
                     <MeleeArmorPenetration>7.5</MeleeArmorPenetration>   
                     <MeleeCooldownFactor>0.3</MeleeCooldownFactor>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<TraitDef>
+        <defName>BAWC_TraitDef_Hoshiro_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;对策委员长&lt;/color&gt;</label>
+                <description>被动技能:自身护甲值增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+			    <ArmorRating_Sharp>1.26</ArmorRating_Sharp>
+		        <ArmorRating_Blunt>1.26</ArmorRating_Blunt>
+	            <ArmorRating_Heat>1.26</ArmorRating_Heat>
 				</statFactors>
             </li>
         </degreeDatas>

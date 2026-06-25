@@ -103,7 +103,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>万魔殿的可爱吉祥物</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[使用EX技能时自身获得每秒恢复<color=#00FFFF>8</color>点生命值的治疗效果]]>
+				<AbilityIntroduction><![CDATA[使用EX技能时自身获得每5秒恢复自身治愈力<color=#00FFFF>25%</color>的生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

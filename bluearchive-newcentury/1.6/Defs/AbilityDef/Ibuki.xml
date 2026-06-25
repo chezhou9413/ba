@@ -53,6 +53,29 @@
         <replaceExisting>true</replaceExisting>
       </li>
   </comps>
+  <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+      <showBattleFormula>true</showBattleFormula>
+      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <previewActions>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>0</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>3.88</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_shenmi</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+      </previewActions>
+    </li>
+    </modExtensions>
 </AbilityDef>
 <DamageDef ParentName="BANC_Damage_shenmi">
     <defName>BANC_Damage_Ibuki_EX</defName><!--通用贯通-->
@@ -68,7 +91,7 @@
     <label>邦邦—！子弹</label>
     <projectile>
       <damageDef>BANC_Damage_Ibuki_EX</damageDef><!--子弹类型-->
-      <damageAmountBase>226</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>93</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>200</speed><!--子弹速度-->
@@ -200,7 +223,27 @@
         <canTargetMechs>false</canTargetMechs>
       </targetParams>
     </verbProperties>
-    
+       <modExtensions>
+   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+     <showBattleFormula>true</showBattleFormula>
+     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+     <previewActions>
+       <li>
+         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+         <baseAmount>0</baseAmount>
+         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <healPowerRatio>0.171</healPowerRatio>
+         <!-- true 表示该段是治疗。 -->
+         <isHealing>true</isHealing>
+         <!-- 治疗是否允许暴击。 -->
+         <canCrit>false</canCrit>
+         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+         <isExSkill>false</isExSkill>
+       </li>
+     </previewActions>
+   </li>
+ </modExtensions>
     <!-- 能力组件 -->
     <comps>
       <!-- 给予健康状态效果的组件 -->
@@ -227,15 +270,22 @@
     <!-- 显示标签 -->
     <label>伊吹的绘画时间！</label>
     <!-- 描述信息 -->
-    <description>每秒恢复16点生命值(持续35秒)</description>
+    <description>每5秒恢复25%的生命值(持续35秒)</description>
     <!-- 健康状态类 -->
     <hediffClass>HediffWithComps</hediffClass>
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>16</healAmount>
-        <healIntervalTicks>60</healIntervalTicks>
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>0.25</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>300</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Effecter_Ibuki_A</stateEffecter>

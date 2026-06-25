@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>巨踵冲击</AbilityTitle>
 				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>432%</color>的伤害并且范围内的敌人护甲减少<color=#00FFFF>33%</color>（持续<color=#00FFFF>25</color>秒）]]>
+				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>432%</color>的伤害并且范围内的敌人乘伤系数增加<color=#00FFFF>33%</color>（持续<color=#00FFFF>25</color>秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

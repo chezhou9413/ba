@@ -3,7 +3,7 @@
   <AbilityDef>
 <defName>BAWN_Izumi_EX</defName>
  <label>瞄准，砰！</label>
- <description>对一名敌人一共造成自身攻击力的423%的伤害</description>
+ <description>对一名敌人一共造成自身攻击力的523%的伤害</description>
  <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
  <cooldownTicksRange>1800</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -40,6 +40,29 @@
   <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
   </targetParams>
   </verbProperties>
+  <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+      <showBattleFormula>true</showBattleFormula>
+      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <previewActions>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>0</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>5.23</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_baofa</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+      </previewActions>
+    </li>
+    </modExtensions>
 </AbilityDef>
 
 <ThingDef ParentName="BaseBullet">
@@ -47,14 +70,14 @@
     <label>瞄准，砰！</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>24</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>8</damageAmountBase><!--子弹伤害-->
       <stoppingPower>3</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
       <extraDamages>
       <li>
         <def>BANC_Damage_baofa</def>
-        <amount>40</amount>
+        <amount>1</amount>
       </li>
     </extraDamages>
     </projectile>
@@ -69,7 +92,7 @@
 <AbilityDef>
 <defName>BAWN_Izumi_EXX</defName>
  <label>芝士巧克力汉堡~</label>
- <description>对自身造成每秒回复30点生命值,增加38%的攻击速度（持续21秒）</description>
+ <description>对自身造成每2秒回复自身治愈力25.4%的生命值,增加38%的攻击速度（持续21秒）</description>
  <iconPath>Ability/Icon/Yuuka/Yuuka_A</iconPath>
  <cooldownTicksRange>1800</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -110,6 +133,27 @@
   <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
   </li>
   </comps>
+  <modExtensions>
+   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+     <showBattleFormula>true</showBattleFormula>
+     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+     <previewActions>
+       <li>
+         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+         <baseAmount>0</baseAmount>
+         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <healPowerRatio>0.254</healPowerRatio>
+         <!-- true 表示该段是治疗。 -->
+         <isHealing>true</isHealing>
+         <!-- 治疗是否允许暴击。 -->
+         <canCrit>false</canCrit>
+         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+         <isExSkill>false</isExSkill>
+       </li>
+     </previewActions>
+   </li>
+ </modExtensions>
     </AbilityDef>
 
      <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
@@ -119,7 +163,7 @@
         <!-- 显示名称 -->
         <label>芝士巧克力汉堡~</label>
         <!-- 效果描述 -->
-        <description>自身每秒恢复15点生命值,增加38%的攻击速度</description>
+        <description>每2秒回复自身治愈力25.4%的生命值,增加38%的攻击速度</description>
         <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -137,9 +181,16 @@
           </stages>
          <comps>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>3</healAmount>
-        <healIntervalTicks>6</healIntervalTicks>
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>0.254</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>120</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>

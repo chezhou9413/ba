@@ -72,7 +72,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>水上支援</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[赋予以自身为中心的圆形范围内的友方单位攻击力增加<color=#00FFFF>39%</color>护甲穿透增加<color=#00FFFF>99%</color>(持续50秒)]]>
+				<AbilityIntroduction><![CDATA[赋予以自身为中心的圆形范围内的友方单位攻击力增加<color=#00FFFF>39%</color>爆发克制率增加<color=#00FFFF>99%</color>(持续50秒)]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
@@ -82,7 +82,7 @@
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle>水上袭击</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>454%</color>的伤害并回复自身<color=#00FFFF>540</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>454%</color>的伤害并回复自身<color=#00FFFF>98%</color>的生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>

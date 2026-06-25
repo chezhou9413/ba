@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Azusa_EX</defName>
  <label>死亡之箭</label>
- <description>对一名敌人造成攻击力468%的伤害，并且目标护甲减少24%（持续20秒）</description>
+ <description>对一名敌人造成攻击力468%的伤害，并且目标乘伤系数减少增加24%（持续20秒）</description>
  <iconPath>Ability/Icon/Airy/Airy_EX</iconPath>
  <cooldownTicksRange>1800</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -45,7 +45,7 @@
     <label>万事皆虚子弹</label>
     <projectile>
       <damageDef>BANC_Damage_Azusa</damageDef><!--子弹类型-->
-      <damageAmountBase>230</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>89</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
@@ -73,7 +73,7 @@
         <!-- 显示名称 -->
         <label>死亡之箭</label>
         <!-- 效果描述 -->
-        <description>护甲减少24%（持续20秒）</description>
+        <description>乘伤系数增加26%（持续20秒）</description>
         <defaultLabelColor>(0,0,128)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>true</isBad>
@@ -82,11 +82,9 @@
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
          <stages>
           <li>     
-            <statFactors>
-        <ArmorRating_Sharp>0.76</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>0.76</ArmorRating_Blunt>
-	      <ArmorRating_Heat>0.76</ArmorRating_Heat>
-           </statFactors>
+           <statOffsets>
+        <IncomingDamageFactor>0.26</IncomingDamageFactor>
+            </statOffsets>
            </li>
           </stages>
         <comps>

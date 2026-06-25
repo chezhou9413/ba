@@ -48,7 +48,7 @@
       <drawSize>3.5</drawSize>
     </graphicData>
     <projectile>
-      <damageAmountBase>666</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>208</damageAmountBase><!--子弹伤害-->
       <explosionRadius>5.9</explosionRadius >
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <damageDef>BANC_Damage_Akari_EX</damageDef>

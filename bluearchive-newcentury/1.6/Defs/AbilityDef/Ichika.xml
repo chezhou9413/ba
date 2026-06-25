@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Ichika_EX</defName>
  <label>正义实现部的联络网</label>
- <description>自身护甲穿透增加63%(持续25秒)</description>
+ <description>自身振动克制率增加63%(持续25秒)</description>
  <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
  <cooldownTicksRange>1800</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -68,7 +68,7 @@
           <stages>
           <li>     
             <statOffsets>
-              <BANW_RangedWeapon_Penetration>0.63</BANW_RangedWeapon_Penetration>
+              <BANW_AffinityBonus_Vibration>0.63</BANW_AffinityBonus_Vibration>
             </statOffsets>
            <statFactors>
            </statFactors>

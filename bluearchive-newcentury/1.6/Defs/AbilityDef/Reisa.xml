@@ -41,11 +41,34 @@
   <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
   </li>
     </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+      <showBattleFormula>true</showBattleFormula>
+      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <previewActions>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>0</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>7.07</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_guantong</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+      </previewActions>
+    </li>
+    </modExtensions>
   </AbilityDef>
 <AbilityDef>
 <defName>BAWN_Reisa_EX</defName>
  <label>胜利的姿势！</label>
- <description>赋予自身每秒40点生命值的持续回复状态(持续30秒).</description>
+ <description>赋予自身每4秒回复自身治愈力43.1%的持续回复状态(持续30秒).</description>
  <iconPath>Ability/Icon/Reisa/Reisa_EX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -87,6 +110,27 @@
   </li>
 
   </comps>
+  <modExtensions>
+   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+     <showBattleFormula>true</showBattleFormula>
+     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+     <previewActions>
+       <li>
+         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+         <baseAmount>0</baseAmount>
+         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <healPowerRatio>0.43</healPowerRatio>
+         <!-- true 表示该段是治疗。 -->
+         <isHealing>true</isHealing>
+         <!-- 治疗是否允许暴击。 -->
+         <canCrit>false</canCrit>
+         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+         <isExSkill>false</isExSkill>
+       </li>
+     </previewActions>
+   </li>
+ </modExtensions>
     </AbilityDef>
 
     <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
@@ -107,12 +151,19 @@
         <comps>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
-        <disappearsAfterTicks>60</disappearsAfterTicks>
+        <disappearsAfterTicks>1800</disappearsAfterTicks>
       </li>
-       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>2</healAmount>
-        <healIntervalTicks>3</healIntervalTicks>
+        <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>0.43</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>240</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
          <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Reisa_Ef_A</stateEffecter>
@@ -151,8 +202,45 @@
     </comps>
     </HediffDef>
 
+     <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Reisa_Hedi_C</defName>
+        <!-- 显示名称 -->
+        <label>宇泽玲纱的存在感</label>
+        <!-- 效果描述 -->
+        <description>乘伤系数增加11%(持续25秒)</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+           <statOffsets>
+        <IncomingDamageFactor>0.11</IncomingDamageFactor>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+           <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1500</disappearsAfterTicks>
+      </li>
+         <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_CC</stateEffecter>
+      </li> 
+    </comps>
+    </HediffDef>
+
 <DamageDef ParentName="BANC_Damage_guantong">
     <defName>BANC_Damage_Reisa_EXX</defName><!--通用贯通-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BAWN_Reisa_Hedi_C</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
 <damageEffecter></damageEffecter>
   </DamageDef>
 <JobDef Class="BANWlLib.BaDef.BaJobDef_SustainedAttack">
@@ -163,11 +251,11 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>0</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>80</damageAmount>
+                <damageAmount>40</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <!-- 穿透 --> 
-                <penetration>0.35</penetration>
+                <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
             </li>
@@ -175,11 +263,11 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>30</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>80</damageAmount>
+                <damageAmount>40</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <!-- 穿透 --> 
-                <penetration>0.35</penetration>
+                <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
             </li>
@@ -197,9 +285,9 @@
             </li>
             <li>
                 <tick>120</tick>
-                <damageAmount>80</damageAmount>
+                <damageAmount>40</damageAmount>
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
-                <penetration>0.35</penetration>
+                <penetration>2</penetration>
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
             </li>
         <li>

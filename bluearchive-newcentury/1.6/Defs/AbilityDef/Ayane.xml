@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Ayane_EXX</defName>
  <label>特级快递：战斗支援物资</label>
- <description>对圆形范围内的友方单位回复540点生命值</description>
+ <description>对圆形范围内的友方单位回复自身治愈力224%的生命值</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
  <cooldownTicksRange>2400</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -37,6 +37,27 @@
         <maintainForTicks>480</maintainForTicks>
       </li>
   </comps>
+   <modExtensions>
+   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+     <showBattleFormula>true</showBattleFormula>
+     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+     <previewActions>
+       <li>
+         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+         <baseAmount>0</baseAmount>
+         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <healPowerRatio>2.24</healPowerRatio>
+         <!-- true 表示该段是治疗。 -->
+         <isHealing>true</isHealing>
+         <!-- 治疗是否允许暴击。 -->
+         <canCrit>false</canCrit>
+         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+         <isExSkill>false</isExSkill>
+       </li>
+     </previewActions>
+   </li>
+ </modExtensions>
 </AbilityDef>
 
  <!-- 这个是自己友军添加hediff的job,verb公用就行了 -->
@@ -79,7 +100,7 @@
         <!-- 显示名称 -->
         <label>特级快递：战斗支援物资</label>
         <!-- 效果描述 -->
-        <description>回复540点生命值</description>
+        <description>复自身治愈力224%的生命值值</description>
         <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -89,12 +110,19 @@
         <comps>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
-        <disappearsAfterTicks>120</disappearsAfterTicks>
+        <disappearsAfterTicks>6</disappearsAfterTicks>
       </li>
-      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>4.4</healAmount>
-        <healIntervalTicks>1</healIntervalTicks>
+       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>2.24</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>6</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>

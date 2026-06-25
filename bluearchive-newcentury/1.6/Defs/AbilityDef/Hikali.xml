@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Hikali_EXX</defName>
  <label>剪票时间～</label>
- <description>使除自身外的一名我方单位护甲穿透提升92%（持续32秒）</description>
+ <description>使除自身外的一名我方单位振动克制率提高93%（持续32秒）</description>
  <iconPath>Ability/Icon/Hikali/Hikali_EXX</iconPath>
  <cooldownTicksRange>1200</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -111,7 +111,7 @@
         <!-- 显示名称 -->
         <label>剪票时间～</label>
         <!-- 效果描述 -->
-        <description>提升92%的护甲穿透。持续32秒</description>
+        <description>提升92%的振动克制率。持续32秒</description>
         <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -121,7 +121,7 @@
           <stages>
           <li>     
            <statOffsets>
-           <BANW_RangedWeapon_Penetration>+0.92</BANW_RangedWeapon_Penetration>
+           <BANW_AffinityBonus_Vibration>+0.92</BANW_AffinityBonus_Vibration>
             </statOffsets>
            </li>
           </stages>

@@ -108,20 +108,16 @@
         <defName>BANC_Badge_Four</defName>
         <label>Lv.4-维罗妮卡刺绣徽章</label>
         <description>印有奢侈品牌“维罗妮卡”标识的刺绣徽章。无论用在什么东西上，都显得很高档。
-提供高额的生命值和自然治愈系数</description>
+提供高额的生命值和受回复率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Badge/Badge_4</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothBadge_Four</hediff>
-            </li>
-        </comps>
         <statBases>
        <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
         <BANW_HealthScaleOffset>2.5</BANW_HealthScaleOffset> 
+        <BANW_HealReceivedMultiplier>1.1</BANW_HealReceivedMultiplier>
         </statBases>
         <equippedStatOffsets>
 		</equippedStatOffsets>
@@ -148,21 +144,17 @@
         <defName>BANC_Badge_Five</defName>
         <label>Lv.5-风山纹章徽章</label>
         <description>印有迷彩专业品牌“风山”标识的纹章。可用后方的魔术贴轻松贴在衣服上。
-提供高额的生命值和自然治愈系数</description>
+提供高额的生命值和受回复率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Badge/Badge_5</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothBadge_Five</hediff>
-            </li>
-        </comps>
         <statBases>
         <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
         <BANW_HealthScaleOffset>4.5</BANW_HealthScaleOffset>
         <BANW_HealthScalePercentOffset>0.10</BANW_HealthScalePercentOffset> 
+        <BANW_HealReceivedMultiplier>1.2</BANW_HealReceivedMultiplier>
         </statBases>
         <equippedStatOffsets>
 		</equippedStatOffsets>
@@ -190,21 +182,17 @@
         <defName>BANC_Badge_Six</defName>
         <label>Lv.6-可可恶魔徽章</label>
         <description>印着哥特萝莉品牌“可可恶魔”标志的白银徽章。可以用背面的别针像胸针一样戴在身上。
-提供高额的生命值和自然治愈系数</description>
+提供高额的生命值和受回复率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Badge/Badge_6</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothBadge_Six</hediff>
-            </li>
-        </comps>
         <statBases>
         <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
         <BANW_HealthScaleOffset>6.5</BANW_HealthScaleOffset>
         <BANW_HealthScalePercentOffset>0.18</BANW_HealthScalePercentOffset> 
+        <BANW_HealReceivedMultiplier>1.3</BANW_HealReceivedMultiplier>
         </statBases>
         <equippedStatOffsets>
 		</equippedStatOffsets>
@@ -232,21 +220,17 @@
         <defName>BANC_Badge_Seven</defName>
         <label>Lv.7-街头勋章</label>
         <description>由街头时尚品牌“三步”推出的勋章。从把自己公司的名号大大印在正中央的这点，可以看出制作公司对品牌的自豪。
-提供高额的生命值和自然治愈系数和闪避率</description>
+提供高额的生命值和受回复率和闪避率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Badge/Badge_7</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothBadge_Seven</hediff>
-            </li>
-        </comps>
         <statBases>
         <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
          <BANW_HealthScaleOffset>9.5</BANW_HealthScaleOffset>
         <BANW_HealthScalePercentOffset>0.22</BANW_HealthScalePercentOffset> 
+        <BANW_HealReceivedMultiplier>1.32</BANW_HealReceivedMultiplier>
         <BANW_Miss>0.10</BANW_Miss>
         </statBases>
         <equippedStatOffsets>
@@ -276,22 +260,18 @@
         <defName>BANC_Badge_Eight</defName>
         <label>Lv.8-罗蕾莱勋章</label>
         <description>现代时尚品牌“罗蕾莱”发售的勋章。木材经过精巧的加工，表面光滑且散发香气。
-提供高额的生命值和自然治愈系数和闪避率</description>
+提供高额的生命值和受回复率和闪避率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Badge/Badge_8</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothBadge_Eight</hediff>
-            </li>
-        </comps>
         <statBases>
         <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
          <BANW_HealthScaleOffset>12.0</BANW_HealthScaleOffset>
         <BANW_HealthScalePercentOffset>0.24</BANW_HealthScalePercentOffset> 
         <BANW_Miss>0.15</BANW_Miss>
+        <BANW_HealReceivedMultiplier>1.34</BANW_HealReceivedMultiplier>
         </statBases>
         <equippedStatOffsets>
             
@@ -320,7 +300,7 @@
         <defName>BANC_Badge_Nine</defName>
         <label>Lv.9-哈耳庇厄弹性徽章</label>
         <description>印刷有海上运动品牌「哈耳庇厄」的徽标的徽章。由柔软的橡胶制成，耐污性强，因此能毫无顾虑将其贴在别的物品上装饰。
-提供高额的生命值和自然治愈系数和闪避率</description>
+提供高额的生命值和受回复率和闪避率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Badge/Badge_9</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -336,6 +316,7 @@
          <BANW_HealthScaleOffset>14</BANW_HealthScaleOffset>
         <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
         <BANW_Miss>0.20</BANW_Miss>
+        <BANW_HealReceivedMultiplier>1.35</BANW_HealReceivedMultiplier>
         </statBases>
         <equippedStatOffsets>
             
@@ -364,7 +345,7 @@
         <defName>BANC_Badge_Ten</defName>
         <label>Lv.10-硬币徽章</label>
         <description>仿造游戏中心使用的硬币的样子制成的徽章。比实际的硬币要大，所以没法当成真的用。
-提供高额的生命值和自然治愈系数和闪避率</description>
+提供高额的生命值和受回复率和闪避率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Badge/Badge_10</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -380,6 +361,7 @@
          <BANW_HealthScaleOffset>16</BANW_HealthScaleOffset>
         <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
         <BANW_Miss>0.30</BANW_Miss>
+        <BANW_HealReceivedMultiplier>1.35</BANW_HealReceivedMultiplier>
         </statBases>
             
         <costList>
@@ -515,7 +497,7 @@
         <defName>BANC_Bag_Four</defName>
         <label>Lv.4-藏蓝书包</label>
         <description>根据崔尼蒂的规定制作的藏蓝书包。 因其简洁且高级的设计，在其他地区人气也很高。
-提供高额的生命值和护甲</description>
+提供高额的生命值和护甲和乘伤系数</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Bag/Bag_4</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -530,7 +512,7 @@
         <ArmorRating_Heat>1.0</ArmorRating_Heat>  
         </statBases>
         <equippedStatOffsets>
-
+        <IncomingDamageFactor>-0.1</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Three>1</BANC_Bag_Three>
@@ -556,7 +538,7 @@
         <defName>BANC_Bag_Five</defName>
         <label>Lv.5-战术双肩包</label>
         <description>“风山”公司特制的箱式书包，加强了功能性和收纳性。在携带很多副武器的人之中广受好评。
-提供高额的生命值和护甲</description>
+提供高额的生命值和护甲和乘伤系数</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Bag/Bag_5</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -571,7 +553,7 @@
         <ArmorRating_Heat>1.1</ArmorRating_Heat>  
         </statBases>
         <equippedStatOffsets>
-
+        <IncomingDamageFactor>-0.11</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Four>1</BANC_Bag_Four>
@@ -598,7 +580,7 @@
         <defName>BANC_Bag_Six</defName>
         <label>Lv.6-恶魔之翼挎包</label>
         <description>画着巨大恶魔之翼的挎包。设计简约，很适合搭配休闲风格的服装。
-提供高额的生命值和护甲</description>
+提供高额的生命值和护甲和乘伤系数</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Bag/Bag_6</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -613,7 +595,7 @@
         <ArmorRating_Heat>1.2</ArmorRating_Heat>   
         </statBases>
         <equippedStatOffsets>
-
+        <IncomingDamageFactor>-0.12</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Five>1</BANC_Bag_Five>
@@ -640,7 +622,7 @@
         <defName>BANC_Bag_Seven</defName>
         <label>Lv.7-街头包</label>
         <description>休闲款设计，更加强调实用性的街头包。 收纳空间大，很受学员们欢迎。
-提供高额的生命值和护甲</description>
+提供高额的生命值和护甲和乘伤系数</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Bag/Bag_7</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -655,6 +637,7 @@
         <ArmorRating_Heat>1.3</ArmorRating_Heat>  
         </statBases>
         <equippedStatOffsets>
+                    <IncomingDamageFactor>-0.13</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Six>1</BANC_Bag_Six>
@@ -681,7 +664,7 @@
         <defName>BANC_Bag_Eight</defName>
         <label>Lv.8-蝴蝶图案单肩包</label>
         <description>画有巨大蝴蝶的单肩包。 因为材质轻盈，所以带去旅行也不会有负担。
-提供高额的生命值和护甲</description>
+提供高额的生命值和护甲和乘伤系数</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Bag/Bag_8</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -696,6 +679,7 @@
         <ArmorRating_Heat>1.4</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
+                    <IncomingDamageFactor>-0.14</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Seven>1</BANC_Bag_Seven>
@@ -722,7 +706,7 @@
         <defName>BANC_Bag_Nine</defName>
         <label>Lv.9-防水挎包</label>
         <description>挂在单肩上背着使用的挎包。使用防水原料制成，因此适合将易受潮的电子设备之类的收纳其中。
-提供高额的生命值和护甲</description>
+提供高额的生命值和护甲和乘伤系数</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Bag/Bag_9</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -738,7 +722,7 @@
         <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset> 
         </statBases>
         <equippedStatOffsets>
-
+        <IncomingDamageFactor>-0.16</IncomingDamageFactor>
         </equippedStatOffsets>
          <costList>
         <BANC_Bag_Eight>1</BANC_Bag_Eight>
@@ -765,7 +749,7 @@
         <defName>BANC_Bag_Ten</defName>
         <label>Lv.10-金属匣</label>
         <description>内含电池组的防弹合金制背包。可以抗住步枪全自动模式下的射击，非常适合保管电子设备。
-提供高额的生命值和护甲</description>
+提供高额的生命值和护甲和乘伤系数</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Bag/Bag_10</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -781,7 +765,7 @@
         <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset> 
         </statBases>
         <equippedStatOffsets>
-
+        <IncomingDamageFactor>-0.17</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Nine>1</BANC_Bag_Nine>

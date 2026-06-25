@@ -597,7 +597,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>BANC_Bullet_Arisu</defaultProjectile>
-        <burstShotCount>2</burstShotCount>
+        <burstShotCount>1</burstShotCount>
         <warmupTime>4.5</warmupTime>
         <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
         <range>79.9</range>

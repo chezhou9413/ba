@@ -81,7 +81,7 @@
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle>冷静的心</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[减少自身<color=#00FFFF>100%</color>的装填时间和增加<color=#00FFFF>57%</color>的护甲穿透
+				<AbilityIntroduction><![CDATA[减少自身<color=#00FFFF>50%</color>的装填时间和增加<color=#00FFFF>57%</color>的暴击伤害
 （持续<color=#00FFFF>13</color>秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
@@ -92,7 +92,7 @@
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>精确瞄准</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>26%</color>的护甲穿透]]>
+				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>26%</color>的暴击伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

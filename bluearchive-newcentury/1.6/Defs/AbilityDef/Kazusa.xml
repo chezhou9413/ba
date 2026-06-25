@@ -130,13 +130,36 @@
   <severity>+1</severity>
 </li>
 </comps>
+<modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+      <showBattleFormula>true</showBattleFormula>
+      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <previewActions>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>0</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>17.73</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_guantong</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+      </previewActions>
+    </li>
+    </modExtensions>
 </AbilityDef>
 <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Kazusa_EX</defName>
     <label>甜蜜炮火</label>
     <projectile>
       <damageDef>BANC_Damage_Kazusa_A</damageDef><!--子弹类型-->
-      <damageAmountBase>113</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>33</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -158,7 +181,7 @@
         <!-- 显示名称 -->
         <label>初次品尝</label>
         <!-- 效果描述 -->
-        <description>攻击力增加50%，攻速减少16%（持续20秒）</description>
+        <description>攻击力增加50%，攻速减少16%,最多叠加两层（持续20秒）</description>
         <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -166,27 +189,52 @@
         <everCurableByItem>false</everCurableByItem>
         <maxSeverity>2</maxSeverity>
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
-          <stages>
-         <li>
-        <minSeverity>1</minSeverity>
-        <label>一层</label>
-        <statOffsets>
-        <BANW_FinalDamageMultiplier>+0.50</BANW_FinalDamageMultiplier>
-        <AimingDelayFactor>0.16</AimingDelayFactor>
-        <RangedCooldownFactor>0.16</RangedCooldownFactor>
-        </statOffsets>
+         <comps>
+      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleStack">
+        <!-- 最大层数，超过后只刷新时间。 -->
+        <maxStacks>2</maxStacks>
+        <!-- 重复施加时是否重置持续时间。 -->
+        <refreshDurationOnApply>true</refreshDurationOnApply>
+        <!-- 状态持续时间，单位 tick。 -->
+        <durationTicks>1200</durationTicks>
+        <!-- 到期后是否移除 Hediff。 -->
+        <removeOnExpire>true</removeOnExpire>
+        <!-- 同一个叠层状态内可以配置多个属性组，每组按当前层数取值。 -->
+        <statGroups>
+          <li>
+            <!-- 最终伤害倍率加值：30% / 70% / 100%。 -->
+            <targetStat>BANW_FinalDamageMultiplier</targetStat>
+            <stackValues>
+              <li>0.50</li>
+              <li>1.00</li>
+            </stackValues>
+          </li>
+          <li>
+            <!-- 暴击率加值：5% / 10% / 15%。 -->
+            <targetStat>AimingDelayFactor</targetStat>
+            <stackValues>
+              <li>0.09</li>
+              <li>-0.19</li>
+            </stackValues>
+          </li>
+          <li>
+            <!-- 暴击率加值：5% / 10% / 15%。 -->
+            <targetStat>AimingDelayFactor</targetStat>
+            <stackValues>
+              <li>0.16</li>
+              <li>0.32</li>
+            </stackValues>
+          </li>
+          <li>
+            <!-- 暴击率加值：5% / 10% / 15%。 -->
+            <targetStat>RangedCooldownFactor</targetStat>
+            <stackValues>
+              <li>0.16</li>
+              <li>0.32</li>
+            </stackValues>
+          </li>
+        </statGroups>
       </li>
-      <li>
-        <minSeverity>2</minSeverity>
-        <label>二层</label>
-        <statOffsets>
-        <BANW_FinalDamageMultiplier>+1.00</BANW_FinalDamageMultiplier>
-        <AimingDelayFactor>0.32</AimingDelayFactor>
-        <RangedCooldownFactor>0.32</RangedCooldownFactor>
-        </statOffsets>
-      </li>
-          </stages>
-        <comps>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1200</disappearsAfterTicks>

@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Pina_EX</defName>
  <label>再次燃烧！</label>
- <description>回复自身1200点生命值。</description>
+ <description>回复自身治愈力674%的生命值。</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
  <cooldownTicksRange>48000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -19,7 +19,7 @@
  <hostile>false</hostile><!-- 是否是敌对行为 -->
  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
  <statBases>
-  <Ability_Duration>3</Ability_Duration>
+  <Ability_Duration>0.1</Ability_Duration>
  </statBases>
  <verbProperties>
  <soundCast></soundCast>
@@ -44,6 +44,27 @@
   <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
   </li>
   </comps>
+  <modExtensions>
+   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+     <showBattleFormula>true</showBattleFormula>
+     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+     <previewActions>
+       <li>
+         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+         <baseAmount>0</baseAmount>
+         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <healPowerRatio>6.74</healPowerRatio>
+         <!-- true 表示该段是治疗。 -->
+         <isHealing>true</isHealing>
+         <!-- 治疗是否允许暴击。 -->
+         <canCrit>false</canCrit>
+         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+         <isExSkill>false</isExSkill>
+       </li>
+     </previewActions>
+   </li>
+ </modExtensions>
     </AbilityDef>
 
     <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
@@ -62,10 +83,17 @@
         <lethalSeverity>-1</lethalSeverity>    <!-- 不会致死 -->
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
          <comps>
-        <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>6</healAmount>
-        <healIntervalTicks>1</healIntervalTicks>
+         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>6.74</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>6</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>

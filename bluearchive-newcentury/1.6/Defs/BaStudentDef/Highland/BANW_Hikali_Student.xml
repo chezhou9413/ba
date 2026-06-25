@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>剪票时间～</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能/ <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[使除自身外的一名我方单位护甲穿透提升<color=#00FFFF>92%</color>。
+				<AbilityIntroduction><![CDATA[使除自身外的一名我方单位振动克制率提升<color=#00FFFF>92%</color>。
 （持续<color=#00FFFF>32</color>秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>

@@ -8,8 +8,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
-<needsMaintenance>True</needsMaintenance>
-<fadeOutUnmaintained>True</fadeOutUnmaintained>
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
@@ -30,8 +30,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.0</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
-<needsMaintenance>True</needsMaintenance>
-<fadeOutUnmaintained>True</fadeOutUnmaintained>
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
@@ -53,8 +53,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.8</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
-<needsMaintenance>True</needsMaintenance>
-<fadeOutUnmaintained>True</fadeOutUnmaintained>
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>

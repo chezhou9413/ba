@@ -102,7 +102,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>初次品尝</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[使用EX技能时对自己造成攻击力增加<color=#00FFFF>50%</color>，攻速减少<color=#00FFFF>16%</color>
+				<AbilityIntroduction><![CDATA[使用EX技能时对自己造成攻击力增加<color=#00FFFF>50%</color>，攻速减少<color=#00FFFF>16%</color>，最多叠加两层
 （持续<color=#00FFFF>20</color>秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>

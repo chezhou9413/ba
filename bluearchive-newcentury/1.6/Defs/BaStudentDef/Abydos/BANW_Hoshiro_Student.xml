@@ -80,9 +80,9 @@
 			<Ability2>
 				<AbilityImagePath>Ability/Icon/Hoshiro/Hoshiro_EX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>急救治疗</AbilityTitle>
+				<AbilityTitle>应急处理</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>800</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[赋予自身每秒<color=#00FFFF>100</color>点生命值的持续回复状态
+				<AbilityIntroduction><![CDATA[赋予自身每4秒回复自身治愈力<color=#00FFFF>191</color>的生命值的持续回复状态
 (持续<color=#00FFFF>20</color>秒)]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
@@ -91,9 +91,9 @@
 			<Ability3>
 				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
-				<AbilityTitle>瞄准弱点</AbilityTitle>
+				<AbilityTitle>对策委员长</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身暴击率增加<color=#00FFFF>26%</color>]]>
+				<AbilityIntroduction><![CDATA[自身防御力增加<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>

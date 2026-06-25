@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>实施战术治疗</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对1名我方单位恢复<color=#00FFFF>310</color>点生命值]]>
+				<AbilityIntroduction><![CDATA[对1名我方单位恢复自身治愈力<color=#00FFFF>342%</color>的生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

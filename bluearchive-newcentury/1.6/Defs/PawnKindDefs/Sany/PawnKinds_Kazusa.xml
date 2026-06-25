@@ -212,7 +212,7 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#FFBB00&gt;初次品尝&lt;/color&gt;</label>
-                <description>子技能:使用EX技能时对自己造成攻击力增加&lt;color=#DC143C&gt;50%&lt;/color&gt;，攻速减少&lt;color=#DC143C&gt;16%&lt;/color&gt;（持续20秒）</description>
+                <description>子技能:使用EX技能时对自己造成攻击力增加&lt;color=#DC143C&gt;50%&lt;/color&gt;，攻速减少&lt;color=#DC143C&gt;16%&lt;/color&gt;,最多叠加两层（持续20秒）</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
                 </statOffsets>

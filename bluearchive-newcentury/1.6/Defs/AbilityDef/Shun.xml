@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Shun_EXX</defName>
  <label>坏孩子在哪呢？</label>
- <description>对自身基础攻击力增加53%，射程增加24，暴击率增加50%，攻速减少19%(持续30秒)</description>
+ <description>对自身基础攻击力增加153%，射程增加24，暴击率增加50%，攻速减少19%(持续30秒)</description>
  <iconPath>Ability/Icon/Shun/Shun_EXX</iconPath>
  <cooldownTicksRange>1800</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -58,7 +58,7 @@
         <!-- 显示名称 -->
         <label>坏孩子在哪呢？</label>
         <!-- 效果描述 -->
-        <description>对自身基础攻击力增加53%，射程增加24，暴击率增加50%，攻速减少19%(持续30秒)</description>
+        <description>对自身基础攻击力增加153%，射程增加24，暴击率增加50%，攻速减少19%(持续30秒)</description>
         <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -68,7 +68,7 @@
           <stages>
           <li>     
            <statOffsets>
-           <BANW_RangedWeapon_Damage>+0.53</BANW_RangedWeapon_Damage>
+           <BANW_RangedWeapon_Damage>+1.53</BANW_RangedWeapon_Damage>
            <AimingDelayFactor>0.19</AimingDelayFactor>
            <BANW_CriticalChance>0.50</BANW_CriticalChance>
             <RangedCooldownFactor>0.19</RangedCooldownFactor>

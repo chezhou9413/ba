@@ -84,7 +84,7 @@
 <AbilityDef>
 <defName>BAWN_Hanako_EXX</defName>
  <label>来玩禁忌的游戏吧？</label>
- <description>对圆形范围内的友方单位每秒恢复140点生命值(持续8秒)</description>
+ <description>对圆形范围内的友方单位每秒恢复自身治愈力51%的生命值(持续8秒)</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
  <cooldownTicksRange>3000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -118,6 +118,27 @@
         <maintainForTicks>480</maintainForTicks>
       </li>
   </comps>
+  <modExtensions>
+   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+     <showBattleFormula>true</showBattleFormula>
+     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+     <previewActions>
+       <li>
+         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+         <baseAmount>0</baseAmount>
+         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <healPowerRatio>0.51</healPowerRatio>
+         <!-- true 表示该段是治疗。 -->
+         <isHealing>true</isHealing>
+         <!-- 治疗是否允许暴击。 -->
+         <canCrit>false</canCrit>
+         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+         <isExSkill>false</isExSkill>
+       </li>
+     </previewActions>
+   </li>
+ </modExtensions>
 </AbilityDef>
 
  <!-- 这个是自己友军添加hediff的job,verb公用就行了 -->
@@ -189,7 +210,7 @@
         <!-- 显示名称 -->
         <label>来玩禁忌的游戏吧？</label>
         <!-- 效果描述 -->
-        <description>范围内每秒恢复140点生命值</description>
+        <description>范围内每秒恢复自身治愈力51%的生命值</description>
         <defaultLabelColor>(51, 255, 153)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -201,10 +222,17 @@
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>60</disappearsAfterTicks>
       </li>
-      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>16</healAmount>
-        <healIntervalTicks>6</healIntervalTicks>
+     <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>0.51</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>60</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>

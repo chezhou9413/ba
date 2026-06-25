@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>芝士巧克力汉堡~</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对自身造成每秒回复<color=#00FFFF>30</color>点生命值,增加<color=#00FFFF>38%</color>的攻击速度
+				<AbilityIntroduction><![CDATA[对自身造成每2秒回复自身治愈力<color=#00FFFF>25.4%</color>的生命值,增加<color=#00FFFF>38%</color>的攻击速度
 （持续<color=#00FFFF>21</color>秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
@@ -82,7 +82,7 @@
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle>瞄准，砰！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对一名敌人一共造成自身攻击力的<color=#00FFFF>423%</color>的伤害]]>
+				<AbilityIntroduction><![CDATA[对一名敌人一共造成自身攻击力的<color=#00FFFF>523%</color>的伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

@@ -12,8 +12,6 @@
 		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
-		<abilities>
-        </abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>

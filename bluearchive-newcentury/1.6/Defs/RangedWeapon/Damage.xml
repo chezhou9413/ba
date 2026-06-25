@@ -135,7 +135,7 @@
   </StatDef>
   <StatDef>
     <defName>BANW_HealReceivedMultiplier</defName>
-    <label>受回复倍率</label>
+    <label>受回复率</label>
     <description>受到治疗时使用的最终倍率</description>
     <defaultBaseValue>1</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>

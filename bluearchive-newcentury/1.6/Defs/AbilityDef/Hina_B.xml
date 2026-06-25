@@ -42,6 +42,29 @@
   <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
   </li>
     </comps>
+     <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+      <showBattleFormula>true</showBattleFormula>
+      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <previewActions>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>0</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>25.24</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_baofa</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+      </previewActions>
+    </li>
+    </modExtensions>
   </AbilityDef>
     <JobDef Class="BANWlLib.BaDef.BaJobDef_SustainedAttack">
         <defName>Ba_TestGunfireJob_Hina_B</defName>
@@ -51,11 +74,11 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>251</damageAmount>
+                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_B_EXX_A</damageType>
                 <!-- 穿透 --> 
-                <penetration>1.29</penetration>
+                <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
@@ -64,11 +87,11 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>251</damageAmount>
+                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
-                <penetration>1.29</penetration>
+                <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
@@ -77,11 +100,11 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>251</damageAmount>
+                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
-                <penetration>1.29</penetration>
+                <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
@@ -90,11 +113,11 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>251</damageAmount>
+                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_B_EXX_B</damageType>
                 <!-- 穿透 --> 
-                <penetration>1.29</penetration>
+                <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
@@ -103,11 +126,11 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>251</damageAmount>
+                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
-                <penetration>1.29</penetration>
+                <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_SD_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
@@ -116,11 +139,11 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>251</damageAmount>
+                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
-                <penetration>1.29</penetration>
+                <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
@@ -129,7 +152,7 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>523</damageAmount>
+                <damageAmount>150</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_B_EXX_C</damageType>
                 <!-- 穿透 --> 
@@ -142,7 +165,7 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>523</damageAmount>
+                <damageAmount>150</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
@@ -155,7 +178,7 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>523</damageAmount>
+                <damageAmount>150</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
@@ -210,7 +233,7 @@
         <!-- 显示名称 -->
         <label>于此传达真心</label>
         <!-- 效果描述 -->
-        <description>自身护甲穿透增加64%</description>
+        <description>自身爆发克制率增加64%</description>
         <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>
@@ -220,7 +243,7 @@
           <stages>
           <li>     
            <statOffsets>
-           <BANW_RangedWeapon_Penetration>0.63</BANW_RangedWeapon_Penetration>
+           <BANW_AffinityBonus_Explosion>0.63</BANW_AffinityBonus_Explosion>
            </statOffsets>
            <statFactors>
 				</statFactors>
@@ -240,7 +263,7 @@
 <AbilityDef>    
 <defName>BAWN_Hina_B_EX</defName>
  <label>一丝不苟的准备</label>
- <description>自身护甲穿透增加64%命中率增加45%（持续24小时）</description>
+ <description>自身爆发克制率增加64%命中率增加45%（持续24小时）</description>
  <iconPath>Ability/Icon/Hina/Hina_A</iconPath>
  <cooldownTicksRange>60000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -304,7 +327,7 @@
           <stages>
           <li>     
            <statOffsets>
-           <BANW_RangedWeapon_Penetration>0.64</BANW_RangedWeapon_Penetration>
+           <BANW_AffinityBonus_Explosion>0.64</BANW_AffinityBonus_Explosion>
            <ShootingAccuracyPawn>45</ShootingAccuracyPawn>
            </statOffsets>
            <statFactors>

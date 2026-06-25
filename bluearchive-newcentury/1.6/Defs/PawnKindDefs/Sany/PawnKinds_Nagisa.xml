@@ -14,6 +14,9 @@
 		
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Nagisa_EXX</li>
+        </abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>

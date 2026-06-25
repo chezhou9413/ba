@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>这也是我的力量……?</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对以自身为中心的圆形范围内的我方单位每<color=#00FFFF>5</color>秒回复<color=#00FFFF>260</color>点生命值
+				<AbilityIntroduction><![CDATA[对以自身为中心的圆形范围内的我方单位每5秒回复自身治愈力<color=#00FFFF>54%</color>的生命值
 (持续<color=#00FFFF>30</color>秒)]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>

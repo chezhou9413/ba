@@ -110,6 +110,50 @@
         <soundDef>BANW_Skill_A</soundDef>
         <spawnLocType>OnSource</spawnLocType>
       </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Bl_GP</moteDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_tong_1_fleck</fleckDef>
+         <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_tong_2_fleck</fleckDef>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>true</absoluteAngle>
+      </li>
 </children>
 </EffecterDef>
 </Defs>

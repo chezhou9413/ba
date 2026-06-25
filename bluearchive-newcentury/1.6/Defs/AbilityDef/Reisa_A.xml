@@ -3,7 +3,7 @@
   <AbilityDef>
 <defName>BAWN_Reisa_A_EX</defName>
  <label>铝热剂重拳！</label>
- <description>对一名敌人造成自身攻击力265%的伤害并回复自身260点生命值</description>
+ <description>对一名敌人造成自身攻击力265%的伤害并回复自身治愈力54%的生命值</description>
  <iconPath>Ability/Icon/Reisa_A/Reisa_EX</iconPath>
  <cooldownTicksRange>480</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -53,6 +53,29 @@
         <replaceExisting>true</replaceExisting>
       </li>
 </comps>
+<modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+      <showBattleFormula>true</showBattleFormula>
+      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <previewActions>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <baseAmount>0</baseAmount>
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>2.65</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_zhendong</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+      </previewActions>
+    </li>
+    </modExtensions>
 </AbilityDef>
 
 <HediffDef>
@@ -69,14 +92,21 @@
     <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
     <!-- 组件列表 -->
     <comps>
-      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>6.5</healAmount>
-        <healIntervalTicks>3</healIntervalTicks>
+         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>0.54</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>6</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
       <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
-        <disappearsAfterTicks>60</disappearsAfterTicks>
+        <disappearsAfterTicks>6</disappearsAfterTicks>
       </li>
       <!-- 自动消失组件 -->
        <li Class="HediffCompProperties_Effecter">
@@ -100,17 +130,10 @@
     <label>铝热剂重拳！</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>143</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>66</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
-      <extraDamages>
-      <li>
-        <def>Stun</def>
-        <amount>5</amount>
-        <chance>0.5</chance>
-      </li>
-    </extraDamages>
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType>
@@ -125,7 +148,7 @@
     <!-- 能力显示名称 -->
     <label>铝热剂粉红，登场！</label>
     <!-- 能力描述，说明效果和持续时间 -->
-    <description>赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加22%；每4秒，赋予以自身为中心的圆形范围内除自身外的友方264的生命值回复(持续22秒)</description>
+    <description>赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加22%；每4秒，赋予以自身为中心的圆形范围内除自身外的友方自身治愈力56.5%的生命值回复(持续22秒)</description>
     <!-- 是否需要特定目标，False表示为范围效果 -->
     <cooldownTicksRange>2400</cooldownTicksRange>
     <targetRequired>False</targetRequired>
@@ -201,6 +224,27 @@
         <replaceExisting>true</replaceExisting>
       </li>
     </comps>
+    <modExtensions>
+   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+     <showBattleFormula>true</showBattleFormula>
+     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+     <previewActions>
+       <li>
+         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+         <baseAmount>0</baseAmount>
+         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <healPowerRatio>0.56</healPowerRatio>
+         <!-- true 表示该段是治疗。 -->
+         <isHealing>true</isHealing>
+         <!-- 治疗是否允许暴击。 -->
+         <canCrit>false</canCrit>
+         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+         <isExSkill>false</isExSkill>
+       </li>
+     </previewActions>
+   </li>
+ </modExtensions>
   </AbilityDef>
 
 <HediffDef>
@@ -257,7 +301,7 @@
     <!-- 显示标签 -->
     <label>大家，要上了！</label>
     <!-- 描述信息 -->
-    <description>攻击力增加22%，每4秒回复264的生命值</description>
+    <description>攻击力增加22%，每4秒回复自身治愈力56%的生命值</description>
     <!-- 调试标签 -->
     <debugLabelExtra>other</debugLabelExtra>
     <!-- 健康状态类 -->
@@ -265,10 +309,17 @@
     <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
     <!-- 组件列表 -->
     <comps>
-      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>3.5</healAmount>
-        <healIntervalTicks>3</healIntervalTicks>
+         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>0.56</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>240</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
       <!-- 自动消失组件 -->
        <li Class="HediffCompProperties_Effecter">

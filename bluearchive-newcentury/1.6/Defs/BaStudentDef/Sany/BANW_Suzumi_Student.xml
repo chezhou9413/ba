@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>自制闪光弹</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身<color=#00FFFF>443%</color>的伤害并眩晕<color=#00FFFF>4</color>秒]]>
+				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身<color=#00FFFF>518%</color>的伤害并眩晕<color=#00FFFF>4</color>秒]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

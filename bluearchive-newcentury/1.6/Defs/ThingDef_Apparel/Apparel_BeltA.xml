@@ -115,10 +115,10 @@
         <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
           <BANW_FinalDamageMultiplier>+0.25</BANW_FinalDamageMultiplier>
-          
+          <BANW_CriticalDamage>0.08</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalDamage>0.08</BANW_CriticalDamage>
+        
 		</equippedStatOffsets>
         <costList>
         <BANC_Hat_Three>1</BANC_Hat_Three>
@@ -153,10 +153,10 @@
         <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
         <BANW_FinalDamageMultiplier>+0.30</BANW_FinalDamageMultiplier>
-       
+       <BANW_CriticalDamage>0.12</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalDamage>0.12</BANW_CriticalDamage>
+        
 		</equippedStatOffsets>
         <costList>
         <BANC_Hat_Four>1</BANC_Hat_Four>
@@ -192,10 +192,10 @@
         <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
         <BANW_FinalDamageMultiplier>+0.35</BANW_FinalDamageMultiplier>
-        
+        <BANW_CriticalDamage>0.16</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalDamage>0.16</BANW_CriticalDamage>
+        
 		</equippedStatOffsets>
         <costList>
         <BANC_Hat_Five>1</BANC_Hat_Five>
@@ -231,10 +231,10 @@
         <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
         <BANW_FinalDamageMultiplier>+0.40</BANW_FinalDamageMultiplier>
-        
+        <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
+        
 		</equippedStatOffsets>
         <costList>
         <BANC_Hat_Six>1</BANC_Hat_Six>
@@ -270,10 +270,10 @@
         <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
         <BANW_FinalDamageMultiplier>+0.45</BANW_FinalDamageMultiplier>
-        
+        <BANW_CriticalDamage>0.20</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalDamage>0.20</BANW_CriticalDamage>
+        
 		</equippedStatOffsets>
         <costList>
         <BANC_Hat_Seven>1</BANC_Hat_Seven>
@@ -309,10 +309,10 @@
         <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
         <BANW_FinalDamageMultiplier>+0.48</BANW_FinalDamageMultiplier>
-        
+        <BANW_CriticalDamage>0.20</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalDamage>0.20</BANW_CriticalDamage>
+        
 		</equippedStatOffsets>
         <costList>
         <BANC_Hat_Eight>1</BANC_Hat_Eight>
@@ -348,10 +348,10 @@
         <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
         <BANW_FinalDamageMultiplier>+0.50</BANW_FinalDamageMultiplier>
-        
+        <BANW_CriticalDamage>0.20</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        <BANW_CriticalDamage>0.20</BANW_CriticalDamage>
+        
 		</equippedStatOffsets>
         <costList>
         <BANC_Hat_Nine>1</BANC_Hat_Nine>
@@ -487,10 +487,10 @@
         <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
           <BANW_FinalDamageMultiplier>+0.20</BANW_FinalDamageMultiplier>
-          
+          <BANW_CriticalChance>+0.04</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.04</BANW_CriticalChance>
+            
         </equippedStatOffsets>
         <costList>
         <BANC_Glove_Three>1</BANC_Glove_Three>
@@ -524,10 +524,10 @@
         <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
           <BANW_FinalDamageMultiplier>+0.25</BANW_FinalDamageMultiplier>
-          
+          <BANW_CriticalChance>+0.12</BANW_CriticalChance>  
         </statBases>
         <equippedStatOffsets>
-         <BANW_CriticalChance>+0.12</BANW_CriticalChance>   
+          
         </equippedStatOffsets>
         <costList>
         <BANC_Glove_Four>1</BANC_Glove_Four>
@@ -561,10 +561,10 @@
         <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
           <BANW_FinalDamageMultiplier>+0.30</BANW_FinalDamageMultiplier>
-          
+          <BANW_CriticalChance>+0.18</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.18</BANW_CriticalChance>
+            
          <ShootingAccuracyPawn>3.0</ShootingAccuracyPawn>
         </equippedStatOffsets>
         <costList>
@@ -599,10 +599,10 @@
         <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
           <BANW_FinalDamageMultiplier>+0.35</BANW_FinalDamageMultiplier>
-          
+          <BANW_CriticalChance>+0.21</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.21</BANW_CriticalChance>
+            
          <ShootingAccuracyPawn>20.0</ShootingAccuracyPawn>
         </equippedStatOffsets>
         <costList>
@@ -637,10 +637,10 @@
         <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
           <BANW_FinalDamageMultiplier>+0.40</BANW_FinalDamageMultiplier>
-          
+          <BANW_CriticalChance>+0.22</BANW_CriticalChance>
         </statBases>
          <equippedStatOffsets>
-            <BANW_CriticalChance>+0.22</BANW_CriticalChance>
+            
          <ShootingAccuracyPawn>+22.0</ShootingAccuracyPawn>
         </equippedStatOffsets>
         <costList>
@@ -675,10 +675,10 @@
         <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
         <BANW_FinalDamageMultiplier>+0.46</BANW_FinalDamageMultiplier>
-        
+        <BANW_CriticalChance>+0.27</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.27</BANW_CriticalChance>
+            
          <ShootingAccuracyPawn>22.0</ShootingAccuracyPawn>
         </equippedStatOffsets>
         <costList>
@@ -713,10 +713,10 @@
          <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
           <BANW_FinalDamageMultiplier>+0.50</BANW_FinalDamageMultiplier>
-          
+          <BANW_CriticalChance>+0.30</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.30</BANW_CriticalChance>
+            
          <ShootingAccuracyPawn>+22.0</ShootingAccuracyPawn>
         </equippedStatOffsets>
         <costList>

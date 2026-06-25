@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Hoshiro_Treat</defName>
  <label>应急处理</label>
- <description>赋予自身每秒100点生命值的持续回复状态(持续20秒).</description>
+ <description>赋予自身每4秒回复自身治愈力191%的生命值的持续回复状态(持续20秒).</description>
  <iconPath>Ability/Icon/Hoshiro/Hoshiro_EX</iconPath>
  <cooldownTicksRange>48000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -72,11 +72,18 @@
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1200</disappearsAfterTicks>
         </li>
-        <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>10</healAmount>
-        <healIntervalTicks>6</healIntervalTicks>
+         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <healAmount>0</healAmount>
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>1.91</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
+        <healIntervalTicks>240</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
-        </li>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
+      </li>
        <li Class="HediffCompProperties_Effecter">
         <stateEffecter>Hoshiro_HPP</stateEffecter>
       </li>

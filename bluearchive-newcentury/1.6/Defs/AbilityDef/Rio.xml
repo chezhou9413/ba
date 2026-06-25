@@ -60,7 +60,7 @@
     <label>唯一解</label>
     <projectile>
       <damageDef>BANC_Damage_Rio_EX</damageDef><!--子弹类型-->
-      <damageAmountBase>89</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>65</damageAmountBase><!--子弹伤害-->
       <stoppingPower>55</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>200</speed><!--子弹速度-->
@@ -77,7 +77,7 @@
         <!-- 显示名称 -->
         <label>唯一解</label>
         <!-- 效果描述 -->
-        <description>护甲减少25%。</description>
+        <description>乘伤系数增加25%。</description>
         <defaultLabelColor>(0,0,128)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>true</isBad>
@@ -86,11 +86,9 @@
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
          <stages>
           <li>     
-            <statFactors>
-        <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>0.75</ArmorRating_Blunt>
-	      <ArmorRating_Heat>0.75</ArmorRating_Heat>
-           </statFactors>
+          <statOffsets>
+        <IncomingDamageFactor>0.25</IncomingDamageFactor>
+           </statOffsets>
            </li>
           </stages>
         <comps>

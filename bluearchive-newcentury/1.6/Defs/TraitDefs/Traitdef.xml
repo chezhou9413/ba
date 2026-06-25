@@ -29,7 +29,7 @@
                 <statOffsets>
                     <AimingDelayFactor>-0.20</AimingDelayFactor>
                     <RangedWeapon_Cooldown>-0.15</RangedWeapon_Cooldown>
-                    <BANW_RangedWeapon_Damage>+0.30</BANW_RangedWeapon_Damage>
+                    <BANW_FinalDamageMultiplier>+0.15</BANW_FinalDamageMultiplier>
                     <ShootingAccuracyPawn>5</ShootingAccuracyPawn><!--	■射撃命中補正-->
                 </statOffsets>
             </li>
