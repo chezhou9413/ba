@@ -157,11 +157,11 @@
         <statBases>
          <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
-        <BANW_CriticalChance>+0.10</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
         <PainShockThreshold>-0.28</PainShockThreshold>
         <IncomingDamageFactor>-0.08</IncomingDamageFactor>
+        <BANW_CriticalChance>+0.10</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Four>1</BANC_Amulet_Four>
@@ -200,11 +200,11 @@
         <statBases>
          <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
-        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
         <PainShockThreshold>-0.32</PainShockThreshold>
         <IncomingDamageFactor>-0.09</IncomingDamageFactor>
+        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
         </equippedStatOffsets>
          <costList>
         <BANC_Amulet_Five>1</BANC_Amulet_Five>
@@ -229,7 +229,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Amulet_Seven</defName>
         <label>Lv.7-便携式除臭剂</label>
-        <description>与功能性化妆品制造商“Seaside”联名生产的便携式除臭剂。 因为设计时尚，很多学员会把它挂在钥匙圈上，当成装饰品。
+        <description>与功能性化妆品制造商"Seaside"联名生产的便携式除臭剂。 因为设计时尚，很多学员会把它挂在钥匙圈上，当成装饰品。
 减少疼痛值和承伤系数增加少量暴击率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_7</texPath>
@@ -243,11 +243,11 @@
         <statBases>
          <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
-        <BANW_CriticalChance>+0.12</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
         <PainShockThreshold>-0.36</PainShockThreshold>
         <IncomingDamageFactor>-0.11</IncomingDamageFactor>
+        <BANW_CriticalChance>+0.12</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Six>1</BANC_Amulet_Six>
@@ -286,11 +286,11 @@
         <statBases>
          <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
-        <BANW_CriticalChance>+0.13</BANW_CriticalChance>  
         </statBases>
         <equippedStatOffsets>
         <PainShockThreshold>-0.38</PainShockThreshold>
         <IncomingDamageFactor>-0.12</IncomingDamageFactor>
+        <BANW_CriticalChance>+0.13</BANW_CriticalChance>  
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Seven>1</BANC_Amulet_Seven>
@@ -329,11 +329,11 @@
         <statBases>
          <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
-        <BANW_CriticalChance>+0.14</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
         <PainShockThreshold>-0.40</PainShockThreshold>
         <IncomingDamageFactor>-0.13</IncomingDamageFactor>
+        <BANW_CriticalChance>+0.14</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Eight>1</BANC_Amulet_Eight>
@@ -372,11 +372,11 @@
         <statBases>
           <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
-        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
         <PainShockThreshold>-0.42</PainShockThreshold>
         <IncomingDamageFactor>-0.18</IncomingDamageFactor>
+        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Nine>1</BANC_Amulet_Nine>
@@ -402,7 +402,7 @@
     <ThingDef ParentName="BANC_Apparel_Base">
         <defName>BANC_Watch_One</defName>
         <label>Lv.1-防水数码手表</label>
-        <description>运动品牌“薮猫”出品的数码手表。因为是防水手表，所以在游泳的时候也可以佩戴，不用担心出现故障。
+        <description>运动品牌"薮猫"出品的数码手表。因为是防水手表，所以在游泳的时候也可以佩戴，不用担心出现故障。
 可以增加暴击率。</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Watch/Watch_1</texPath>
@@ -410,10 +410,9 @@
         </graphicData>
         <statBases>
          <MarketValue>500</MarketValue>
-         <BANW_CriticalChance>+0.05</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-            
+            <BANW_CriticalChance>+0.05</BANW_CriticalChance>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -434,7 +433,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Watch_Tow</defName>
         <label>Lv.2-皮带手表</label>
-        <description>户外品牌“玛纳斯卢”出品的皮带手表。因表带是皮革，可以有效防止手腕变凉。
+        <description>户外品牌"玛纳斯卢"出品的皮带手表。因表带是皮革，可以有效防止手腕变凉。
 可以增加暴击率。</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Watch/Watch_2</texPath>
@@ -443,10 +442,9 @@
         <statBases>
          <WorkToMake>1200</WorkToMake>
         <MarketValue>1000</MarketValue>
-        <BANW_CriticalChance>+0.08</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        
+            <BANW_CriticalChance>+0.08</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_One>1</BANC_Watch_One>
@@ -478,10 +476,9 @@
         <statBases>
          <WorkToMake>1400</WorkToMake>
         <MarketValue>1500</MarketValue>
-        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
         </statBases>
         <equippedStatOffsets>
-        
+            <BANW_CriticalChance>+0.11</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Tow>1</BANC_Watch_Tow>
@@ -504,7 +501,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Watch_Four</defName>
         <label>Lv.4-复古怀表</label>
-        <description>印有“维罗妮卡”标识的复古怀表。与手表相比，虽然确认时间时不太方便，但作为时尚单品很受人们的欢迎。
+        <description>印有"维罗妮卡"标识的复古怀表。与手表相比，虽然确认时间时不太方便，但作为时尚单品很受人们的欢迎。
 可以增加暴击率和暴击伤害倍率。</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Watch/Watch_4</texPath>
@@ -513,11 +510,10 @@
         <statBases>
          <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
-        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.10</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-            
+            <BANW_CriticalChance>+0.15</BANW_CriticalChance>
+            <BANW_CriticalDamage>0.10</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Three>1</BANC_Watch_Three>
@@ -541,7 +537,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Watch_Five</defName>
         <label>Lv.5-复古怀表</label>
-        <description>印有“维罗妮卡”标识的复古怀表。与手表相比，虽然确认时间时不太方便，但作为时尚单品很受人们的欢迎。
+        <description>印有"维罗妮卡"标识的复古怀表。与手表相比，虽然确认时间时不太方便，但作为时尚单品很受人们的欢迎。
 可以增加暴击率和暴击伤害倍率和少量生命值。</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Watch/Watch_5</texPath>
@@ -550,12 +546,11 @@
         <statBases>
          <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
-         <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset>
-         <BANW_CriticalChance>+0.17</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.15</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-            
+            <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset>
+            <BANW_CriticalChance>+0.17</BANW_CriticalChance>
+            <BANW_CriticalDamage>0.15</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Four>1</BANC_Watch_Four>
@@ -589,12 +584,11 @@
         <statBases>
          <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
-         <BANW_HealthScalePercentOffset>0.07</BANW_HealthScalePercentOffset>
-         <BANW_CriticalChance>+0.19</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        
+            <BANW_HealthScalePercentOffset>0.07</BANW_HealthScalePercentOffset>
+            <BANW_CriticalChance>+0.19</BANW_CriticalChance>
+            <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
         </equippedStatOffsets>
          <costList>
         <BANC_Watch_Five>1</BANC_Watch_Five>
@@ -619,7 +613,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Watch_Seven</defName>
         <label>Lv.7-街头时尚手表</label>
-        <description>同时有现代和可爱的设计而大受好评的街头时尚手表。“三步”在此使用了和手环组合成套装一起贩卖的策略。
+        <description>同时有现代和可爱的设计而大受好评的街头时尚手表。"三步"在此使用了和手环组合成套装一起贩卖的策略。
 可以增加暴击率和暴击伤害倍率和少量生命值。</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Watch/Watch_7</texPath>
@@ -628,12 +622,11 @@
         <statBases>
          <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
-        <BANW_HealthScalePercentOffset>0.09</BANW_HealthScalePercentOffset>
-         <BANW_CriticalChance>+0.22</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.21</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        
+            <BANW_HealthScalePercentOffset>0.09</BANW_HealthScalePercentOffset>
+            <BANW_CriticalChance>+0.22</BANW_CriticalChance>
+            <BANW_CriticalDamage>0.21</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Six>1</BANC_Watch_Six>
@@ -658,7 +651,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Watch_Eight</defName>
         <label>Lv.8-罗蕾莱手表</label>
-        <description>现代时尚品牌“罗蕾莱”发售的手表。 使用木头和皮革的精致设计，营造出独特的氛围。
+        <description>现代时尚品牌"罗蕾莱"发售的手表。 使用木头和皮革的精致设计，营造出独特的氛围。
 可以增加暴击率和暴击伤害倍率和少量生命值</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Watch/Watch_8</texPath>
@@ -667,12 +660,11 @@
         <statBases>
          <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
-         <BANW_HealthScalePercentOffset>0.11</BANW_HealthScalePercentOffset>
-        <BANW_CriticalChance>+0.24</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.24</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-             
+            <BANW_HealthScalePercentOffset>0.11</BANW_HealthScalePercentOffset>
+            <BANW_CriticalChance>+0.24</BANW_CriticalChance>
+            <BANW_CriticalDamage>0.24</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Seven>1</BANC_Watch_Seven>
@@ -706,12 +698,11 @@
         <statBases>
           <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
-         <BANW_HealthScalePercentOffset>0.13</BANW_HealthScalePercentOffset>
-         <BANW_CriticalChance>+0.26</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-            
+            <BANW_HealthScalePercentOffset>0.13</BANW_HealthScalePercentOffset>
+            <BANW_CriticalChance>+0.26</BANW_CriticalChance>
+            <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Eight>1</BANC_Watch_Eight>
@@ -745,12 +736,11 @@
         <statBases>
           <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
-        <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
-        <BANW_CriticalChance>+0.28</BANW_CriticalChance>
-        <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
         </statBases>
         <equippedStatOffsets>
-        
+            <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
+            <BANW_CriticalChance>+0.28</BANW_CriticalChance>
+            <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Nine>1</BANC_Watch_Nine>
@@ -783,10 +773,10 @@
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <statBases>
-         <BANW_HealPowerMultiplier>0.08</BANW_HealPowerMultiplier>
          <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.08</BANW_HealPowerMultiplier>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -816,11 +806,11 @@
         </graphicData>
        
         <statBases>
-         <BANW_HealPowerMultiplier>0.13</BANW_HealPowerMultiplier>
          <WorkToMake>1200</WorkToMake>
         <MarketValue>1000</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.13</BANW_HealPowerMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_One>1</BANC_Necklace_One>
@@ -852,11 +842,11 @@
         </graphicData>
        
         <statBases>
-        <BANW_HealPowerMultiplier>0.18</BANW_HealPowerMultiplier>
          <WorkToMake>1400</WorkToMake>
         <MarketValue>1500</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.18</BANW_HealPowerMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_Tow>1</BANC_Necklace_Tow>
@@ -888,11 +878,11 @@
         </graphicData>
         
         <statBases>
-            <BANW_HealPowerMultiplier>0.25</BANW_HealPowerMultiplier>
          <WorkToMake>1600</WorkToMake>
         <MarketValue>2000</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.25</BANW_HealPowerMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_Three>1</BANC_Necklace_Three>
@@ -925,12 +915,12 @@
         </graphicData>
         
         <statBases>
-            <BANW_HealPowerMultiplier>0.28</BANW_HealPowerMultiplier>
-         <BANW_FinalDamageMultiplier>+0.04</BANW_FinalDamageMultiplier>
          <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.28</BANW_HealPowerMultiplier>
+            <BANW_FinalDamageMultiplier>+0.04</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
          <costList>
         <BANC_Necklace_Four>1</BANC_Necklace_Four>
@@ -968,12 +958,12 @@
             </li>
         </comps>
         <statBases>
-            <BANW_HealPowerMultiplier>0.32</BANW_HealPowerMultiplier>
-         <BANW_FinalDamageMultiplier>+0.06</BANW_FinalDamageMultiplier>
          <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.32</BANW_HealPowerMultiplier>
+            <BANW_FinalDamageMultiplier>+0.06</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_Five>1</BANC_Necklace_Five>
@@ -1007,12 +997,12 @@
         </graphicData>
        
         <statBases>
-            <BANW_HealPowerMultiplier>0.35</BANW_HealPowerMultiplier>
-         <BANW_FinalDamageMultiplier>+0.08</BANW_FinalDamageMultiplier>
          <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.35</BANW_HealPowerMultiplier>
+            <BANW_FinalDamageMultiplier>+0.08</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_Six>1</BANC_Necklace_Six>
@@ -1038,7 +1028,7 @@
     <ThingDef ParentName="BANC_Apparel_Base_Tow">
         <defName>BANC_Necklace_Eight</defName>
         <label>Lv.8-绿叶项链</label>
-        <description>现代时尚品牌“罗蕾莱”推出的项链。据说被光芒照射的话，叶子会散发隐约的光泽。
+        <description>现代时尚品牌"罗蕾莱"推出的项链。据说被光芒照射的话，叶子会散发隐约的光泽。
 可以增加治愈力和少量攻击力</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Necklace/Necklace_8</texPath>
@@ -1046,12 +1036,12 @@
         </graphicData>
        
         <statBases>
-            <BANW_HealPowerMultiplier>0.38</BANW_HealPowerMultiplier>
-         <BANW_FinalDamageMultiplier>+0.1</BANW_FinalDamageMultiplier>
          <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.38</BANW_HealPowerMultiplier>
+            <BANW_FinalDamageMultiplier>+0.1</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
          <costList>
         <BANC_Necklace_Seven>1</BANC_Necklace_Seven>
@@ -1085,12 +1075,12 @@
         </graphicData>
        
         <statBases>
-            <BANW_HealPowerMultiplier>0.40</BANW_HealPowerMultiplier>
-         <BANW_FinalDamageMultiplier>+0.14</BANW_FinalDamageMultiplier>
           <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.40</BANW_HealPowerMultiplier>
+            <BANW_FinalDamageMultiplier>+0.14</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_Eight>1</BANC_Necklace_Eight>
@@ -1124,12 +1114,12 @@
         </graphicData>
         
         <statBases>
-            <BANW_HealPowerMultiplier>0.42</BANW_HealPowerMultiplier>
-         <BANW_FinalDamageMultiplier>+0.18</BANW_FinalDamageMultiplier>
          <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
         </statBases>
         <equippedStatOffsets>
+            <BANW_HealPowerMultiplier>0.42</BANW_HealPowerMultiplier>
+            <BANW_FinalDamageMultiplier>+0.18</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
          <costList>
         <BANC_Necklace_Nine>1</BANC_Necklace_Nine>
