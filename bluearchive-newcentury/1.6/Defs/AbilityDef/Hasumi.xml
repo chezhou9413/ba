@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Hasumi_EXX</defName>
@@ -135,7 +135,7 @@
       <texPath>Projectile/Bullet_Hasumi_EX</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>12.54</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
     <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
     
      <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->

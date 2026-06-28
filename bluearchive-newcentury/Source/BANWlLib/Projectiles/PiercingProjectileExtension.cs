@@ -12,10 +12,12 @@ namespace BANWlLib.Projectiles
         public bool disablePiercing = false;
         public float maxRange = 0f;
         public bool immuneFriendlyFire = true;
-        public float baseAmount = 0f;
         public float attackPowerRatio = 0f;
+        public float normalAttackMultiplier = 1f;
+        public float baseMasteryMultiplier = 1f;
         public bool isExSkill = false;
         public bool canCrit = true;
+        public bool alwaysShowCriticalText = false;
         public bool applyAffinity = true;
         public bool canHitBuilding = true;
         public bool affectHostile = true;

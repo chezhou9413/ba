@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
 
 
@@ -104,7 +104,7 @@
 					</starValues>
 				</attackPercent>
 				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
-				<!-- 星级基础治愈力平加成长，先加入基础治愈力再乘治愈力百分比。 -->
+				<!-- 升星固定治愈力成长，进入治愈力公式的固定加算项。 -->
 				<healPercent>
 					<starValues>
 						<li>0</li>
@@ -232,7 +232,7 @@
                 <description>子技能:所有攻击必定暴击，增加自身&lt;color=#DC143C&gt;24%的&lt;/color&gt;基础攻击力和减少&lt;color=#DC143C&gt;12%的乘伤系数&lt;/color&gt;。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<BANW_RangedWeapon_Damage>+0.24</BANW_RangedWeapon_Damage>
+					<BANW_AttackLevelMultiplier>+0.24</BANW_AttackLevelMultiplier>
 					<IncomingDamageFactor>-0.12</IncomingDamageFactor>
                 </statOffsets>
             </li>

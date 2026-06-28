@@ -8,7 +8,7 @@ namespace BANWlLib.BattleSystem
     [HarmonyPatch(typeof(Command_Ability), "get_Tooltip")]
     public static class CommandAbilityBattleTooltipPatch
     {
-        // 追加公式文本，负责保留原版说明并只对配置了扩展的技能生效。
+        // 追加公式文本，负责保留原版说明并让自动识别或手动配置的技能显示战斗预估。
         public static void Postfix(Command_Ability __instance, ref string __result)
         {
             if (__instance?.Ability == null)

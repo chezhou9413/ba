@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
     <defName>BAWN_Hanako_A_EXX</defName>
@@ -104,8 +104,8 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>70</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
-                <baseAmount>0</baseAmount>
+                
+                
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -125,8 +125,8 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
-                <baseAmount>0</baseAmount>
+                
+                
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -144,8 +144,8 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>90</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
-                <baseAmount>0</baseAmount>
+                
+                
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -161,8 +161,8 @@
             </li>
             <li>
                 <tick>100</tick>
-                <damageAmount>0</damageAmount>
-                <baseAmount>0</baseAmount>
+                
+                
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -175,8 +175,8 @@
             </li>
         <li>
                 <tick>110</tick>
-                <damageAmount>0</damageAmount>
-                <baseAmount>0</baseAmount>
+                
+                
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -189,8 +189,8 @@
             </li>
               <li>
                 <tick>120</tick>
-                <damageAmount>0</damageAmount>
-                <baseAmount>0</baseAmount>
+                
+                
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->

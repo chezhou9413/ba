@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <Defs>
        
        <ThingDef ParentName="BANW_Apparel_Base">
@@ -560,7 +560,7 @@
 				<li>Feet</li>
 				<li>Waist</li>
 				<li>Hands</li>
-            </bodyPartGroups >
+            </bodyPartGroups>
             <layers Inherit="False">
                 <li>Belt</li>
             </layers>

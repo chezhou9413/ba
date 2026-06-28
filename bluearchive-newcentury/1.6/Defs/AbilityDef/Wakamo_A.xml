@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Wakamo_A_EXX</defName>
@@ -73,7 +73,7 @@
       <texPath>Projectile/Bullet_Mika</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>1.41</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
     <HediffDef>
         <!-- 状态的唯一标识符 -->
@@ -162,7 +162,7 @@
     <description>根据自身使用该技能的次数，对自身造成以下效果中的1种\n第1次：攻击力增加31%.承伤系数减少9%.\n第2次：攻击力增加62%.承伤系数减少19%\n第3次：攻击力增加99%.承伤率减少29%</description>
     <defaultLabelColor>(255, 210, 80)</defaultLabelColor>
     <isBad>false</isBad>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>BANWlLib.BattleSystem.Hediff_BattleStack</hediffClass>
     <everCurableByItem>false</everCurableByItem>
     <comps>
       <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleStack">

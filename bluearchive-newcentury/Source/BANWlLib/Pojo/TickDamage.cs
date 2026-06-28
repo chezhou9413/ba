@@ -7,48 +7,54 @@ namespace BANWlLib.Pojo
     public class TickDamage
     {
         public int tick;
-        public float damageAmount;
         public DamageDef damageType;
         public EffecterDef effecterDef;
         public float penetration = 0f;
         public bool isAttackBuilding = false;
-        public float baseAmount = 0f;
+        public bool canHitOwnBuilding = false;
+        public bool canHitOwnPawn = false;
         public float attackPowerRatio = 0f;
         public float healPowerRatio = 0f;
+        public float shieldPowerRatio = 0f;
+        public HediffDef shieldHediffDef;
         public bool isHealing = false;
+        public bool isShield = false;
         public bool canCrit = true;
+        public bool alwaysShowCriticalText = false;
+        public bool alwaysShowHealText = false;
         public bool applyAffinity = true;
         public bool affectHostile = true;
         public bool affectFriendly = false;
         public bool allowPermanentInjuryHealing = false;
         public bool isExSkill = false;
 
-        // 转成统一战斗配置，负责让旧字段继续可用并进入新结算层。
+        // 转成统一战斗配置，负责让持续伤害片段进入统一结算层。
         public BattleActionConfig ToBattleAction()
         {
             return new BattleActionConfig
             {
-                baseAmount = ResolveBaseAmount(),
                 attackPowerRatio = attackPowerRatio,
+                isNormalAttack = false,
                 healPowerRatio = healPowerRatio,
+                shieldPowerRatio = shieldPowerRatio,
                 damageDef = damageType,
+                shieldHediffDef = shieldHediffDef,
                 effecterDef = effecterDef,
                 penetration = penetration,
                 isHealing = isHealing,
+                isShield = isShield,
                 canCrit = canCrit,
+                alwaysShowCriticalText = alwaysShowCriticalText,
+                alwaysShowHealText = alwaysShowHealText,
                 applyAffinity = applyAffinity,
                 canHitBuilding = isAttackBuilding,
+                canHitOwnBuilding = canHitOwnBuilding,
+                canHitOwnPawn = canHitOwnPawn,
                 affectHostile = affectHostile,
                 affectFriendly = affectFriendly,
                 allowPermanentInjuryHealing = allowPermanentInjuryHealing,
                 isExSkill = isExSkill
             };
-        }
-
-        // 解析基础数值，负责兼容旧的 damageAmount 字段。
-        private float ResolveBaseAmount()
-        {
-            return baseAmount != 0f ? baseAmount : damageAmount;
         }
     }
 }

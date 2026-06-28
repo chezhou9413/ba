@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Natsu_EXX</defName>
@@ -107,7 +107,7 @@
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
          <comps>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>8</healAmount>
+        <healPowerRatio>8</healPowerRatio>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

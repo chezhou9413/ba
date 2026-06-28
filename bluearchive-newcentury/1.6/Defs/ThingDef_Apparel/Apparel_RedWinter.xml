@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <Defs>
     <ThingDef ParentName="BANW_Apparel_Base">
         <defName>BANW_Body_Cherino</defName>
@@ -141,7 +141,7 @@
 				<li>Feet</li><!--脚-->
 				<li>Waist</li><!--腰-->
 				<li>Hands</li><!--手-->
-            </bodyPartGroups >
+            </bodyPartGroups>
             <layers Inherit="False">
                 <li>Belt</li>
             </layers>

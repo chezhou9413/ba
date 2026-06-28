@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Hanako_EX</defName>
@@ -202,7 +202,7 @@
         <disappearsAfterTicks>60</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>16</healAmount>
+        <healPowerRatio>16</healPowerRatio>
         <healIntervalTicks>6</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

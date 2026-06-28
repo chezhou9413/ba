@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Shun_EXX</defName>
@@ -68,7 +68,7 @@
           <stages>
           <li>     
            <statOffsets>
-           <BANW_RangedWeapon_Damage>+0.53</BANW_RangedWeapon_Damage>
+           <BANW_AttackLevelMultiplier>+0.53</BANW_AttackLevelMultiplier>
            <AimingDelayFactor>0.19</AimingDelayFactor>
            <BANW_CriticalChance>0.50</BANW_CriticalChance>
             <RangedCooldownFactor>0.19</RangedCooldownFactor>

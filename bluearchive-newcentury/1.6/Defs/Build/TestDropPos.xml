@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <ThingDef ParentName="BuildingBase">
     
@@ -63,7 +63,7 @@
     
     <comps>
       
-      <li Class="BANWlLib.comp.DropPosCompProperties"/>
+      <li Class="BANWlLib.comp.DropPosCompProperties" />
        <li Class="CompProperties_Glower">
     <glowRadius>10</glowRadius>
     <glowColor>(73,123,138,0)</glowColor>

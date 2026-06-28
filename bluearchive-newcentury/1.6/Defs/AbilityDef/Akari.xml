@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   
 <AbilityDef>
@@ -49,7 +49,7 @@
     </graphicData>
     <projectile>
       <damageAmountBase>666</damageAmountBase><!--子弹伤害-->
-      <explosionRadius>5.9</explosionRadius >
+      <explosionRadius>5.9</explosionRadius>
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <damageDef>BANC_Damage_Akari_EX</damageDef>
       <speed>60</speed><!--子弹速度-->
@@ -57,7 +57,7 @@
       <explosionDamageFalloff>true</explosionDamageFalloff>
       <!-- Use default damage from explosion def -->
     </projectile>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>6.66</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   
   <ThingDef ParentName="BAWN_Akari_EX_Boom">
     <defName>BAWN_Akari_EX_Boom</defName>

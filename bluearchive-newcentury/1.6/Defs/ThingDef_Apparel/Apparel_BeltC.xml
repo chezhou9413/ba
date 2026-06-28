@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <Defs>
     <!-- ==================== Amulets ==================== -->
     <ThingDef ParentName="BANC_Apparel_Base">
@@ -553,7 +553,7 @@
         <equippedStatOffsets>
             <BANW_CriticalChance>+0.17</BANW_CriticalChance>
         <BANW_CriticalDamage>0.15</BANW_CriticalDamage>
-         <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset>
+         <BANW_HealthBonusMultiplier>0.05</BANW_HealthBonusMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Four>1</BANC_Watch_Four>
@@ -592,7 +592,7 @@
         <equippedStatOffsets>
         <BANW_CriticalChance>+0.19</BANW_CriticalChance>
         <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
-         <BANW_HealthScalePercentOffset>0.07</BANW_HealthScalePercentOffset>
+         <BANW_HealthBonusMultiplier>0.07</BANW_HealthBonusMultiplier>
         </equippedStatOffsets>
          <costList>
         <BANC_Watch_Five>1</BANC_Watch_Five>
@@ -631,7 +631,7 @@
         <equippedStatOffsets>
         <BANW_CriticalChance>+0.22</BANW_CriticalChance>
         <BANW_CriticalDamage>0.21</BANW_CriticalDamage>
-        <BANW_HealthScalePercentOffset>0.09</BANW_HealthScalePercentOffset>
+        <BANW_HealthBonusMultiplier>0.09</BANW_HealthBonusMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Six>1</BANC_Watch_Six>
@@ -670,7 +670,7 @@
         <equippedStatOffsets>
              <BANW_CriticalChance>+0.24</BANW_CriticalChance>
         <BANW_CriticalDamage>0.24</BANW_CriticalDamage>
-         <BANW_HealthScalePercentOffset>0.11</BANW_HealthScalePercentOffset>
+         <BANW_HealthBonusMultiplier>0.11</BANW_HealthBonusMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Seven>1</BANC_Watch_Seven>
@@ -709,7 +709,7 @@
         <equippedStatOffsets>
             <BANW_CriticalChance>+0.26</BANW_CriticalChance>
         <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
-         <BANW_HealthScalePercentOffset>0.13</BANW_HealthScalePercentOffset>
+         <BANW_HealthBonusMultiplier>0.13</BANW_HealthBonusMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Eight>1</BANC_Watch_Eight>
@@ -747,7 +747,7 @@
         <equippedStatOffsets>
         <BANW_CriticalChance>+0.28</BANW_CriticalChance>
         <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
-        <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
+        <BANW_HealthBonusMultiplier>0.15</BANW_HealthBonusMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Nine>1</BANC_Watch_Nine>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Haruna_EX</defName>
@@ -56,5 +56,5 @@
       <texPath>Projectile/Bullet_Haruna</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>4.25</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 </Defs>

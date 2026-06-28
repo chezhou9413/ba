@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <StatCategoryDef>
     <defName>BANW_BattleStats</defName>
@@ -17,9 +17,9 @@
     <showIfUndefined>true</showIfUndefined>
   </StatDef>
   <StatDef>
-    <defName>BANW_RangedWeapon_Damage</defName>
-    <label>基础攻击力加成</label>
-    <description>优先计算基础伤害加成可以为你的武器提高攻击力</description>
+    <defName>BANW_AttackLevelMultiplier</defName>
+    <label>升级攻击力倍率</label>
+    <description>按等级成长提高角色自身攻击力，参与武器初始攻击力的升级乘区。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
     <category>BANW_BattleStats</category>
@@ -71,6 +71,30 @@
     <toStringStyle>PercentZero</toStringStyle>
   </StatDef>
   <StatDef>
+    <defName>BANW_CriticalChanceResistance</defName>
+    <label>暴击抵抗率</label>
+    <description>被攻击时减算攻击者的暴击率。</description>
+    <category>BANW_BattleStats</category>
+    <minValue>0</minValue>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showIfUndefined>true</showIfUndefined>
+    <displayPriorityInCategory>506</displayPriorityInCategory>
+  </StatDef>
+  <StatDef>
+    <defName>BANW_CriticalDamageResistance</defName>
+    <label>暴击伤害抵抗率</label>
+    <description>被暴击时减算攻击者的暴击伤害倍率，最终暴击伤害最低为100%。</description>
+    <category>BANW_BattleStats</category>
+    <minValue>0</minValue>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showIfUndefined>true</showIfUndefined>
+    <displayPriorityInCategory>507</displayPriorityInCategory>
+  </StatDef>
+  <StatDef>
     <defName>BANW_RangedWeapon_RangeOffset</defName>
     <label>射程加成</label>
     <description>增加非近战武器和技能的最终射程。</description>
@@ -85,11 +109,11 @@
   </StatDef>
 
   <StatDef>
-    <defName>BANW_HealthScaleOffset</defName>
-    <label>生命值加成</label>
-    <description>增加小人的总生命值尺度，先与基础生命值相加。</description>
+    <defName>BANW_HealthLevelMultiplier</defName>
+    <label>升级生命值倍率</label>
+    <description>按等级成长提高生命值，参与基础固定生命值的升级乘区。</description>
     <defaultBaseValue>0</defaultBaseValue>
-    <toStringStyle>FloatOne</toStringStyle>
+    <toStringStyle>PercentZero</toStringStyle>
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showOnAnimals>true</showOnAnimals>
@@ -98,11 +122,11 @@
     <displayPriorityInCategory>511</displayPriorityInCategory>
   </StatDef>
   <StatDef>
-    <defName>BANW_HealthScalePercentOffset</defName>
-    <label>生命值百分比加成</label>
-    <description>按百分比提高小人的总生命值尺度，并在生命值平加之后计算。</description>
+    <defName>BANW_HealthFlatBonus</defName>
+    <label>固定生命值</label>
+    <description>在升级和升星乘算后增加固定生命值，1 表示 100 点生命值。</description>
     <defaultBaseValue>0</defaultBaseValue>
-    <toStringStyle>PercentZero</toStringStyle>
+    <toStringStyle>FloatOne</toStringStyle>
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showOnAnimals>true</showOnAnimals>
@@ -110,51 +134,75 @@
     <showIfUndefined>true</showIfUndefined>
     <displayPriorityInCategory>512</displayPriorityInCategory>
   </StatDef>
+  <StatDef>
+    <defName>BANW_HealthBonusMultiplier</defName>
+    <label>生命值加成</label>
+    <description>按百分比提高最终生命值，在固定生命值加算之后计算。</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <category>BANW_BattleStats</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>true</showOnAnimals>
+    <showOnMechanoids>true</showOnMechanoids>
+    <showIfUndefined>true</showIfUndefined>
+    <displayPriorityInCategory>513</displayPriorityInCategory>
+  </StatDef>
 
   <StatDef>
-    <defName>BANW_HealPowerBase</defName>
-    <label>基础治愈力</label>
-    <description>增加该单位造成回复时，回复的生命值</description>
-    <defaultBaseValue>100</defaultBaseValue>
-    <toStringStyle>FloatOne</toStringStyle>
+    <defName>BANW_HealLevelMultiplier</defName>
+    <label>升级治愈力倍率</label>
+    <description>按等级成长提高治愈力，参与基础固定治愈力的升级乘区。</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
     <displayPriorityInCategory>520</displayPriorityInCategory>
   </StatDef>
   <StatDef>
-    <defName>BANW_HealPowerMultiplier</defName>
-    <label>治愈力加成</label>
-    <description>按百分比提高自身最终治愈力。</description>
+    <defName>BANW_HealFlatBonus</defName>
+    <label>固定治愈力</label>
+    <description>在升级和升星乘算后增加固定治愈力。</description>
     <defaultBaseValue>0</defaultBaseValue>
-    <toStringStyle>PercentZero</toStringStyle>
+    <toStringStyle>FloatOne</toStringStyle>
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
     <displayPriorityInCategory>521</displayPriorityInCategory>
   </StatDef>
   <StatDef>
-    <defName>BANW_HealReceivedMultiplier</defName>
-    <label>受回复倍率</label>
-    <description>受到治疗时使用的最终倍率</description>
-    <defaultBaseValue>1</defaultBaseValue>
+    <defName>BANW_HealBonusMultiplier</defName>
+    <label>治愈力加成</label>
+    <description>按百分比提高最终治愈力，在固定治愈力加算之后计算。</description>
+    <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
     <displayPriorityInCategory>522</displayPriorityInCategory>
   </StatDef>
-
   <StatDef>
-    <defName>BANW_ExSkillMultiplier</defName>
-    <label>EX技能倍率</label>
-    <description>标记为EX技能的伤害和治疗会在最终结算后额外乘以该倍率。</description>
+    <defName>BANW_HealReceivedMultiplier</defName>
+    <label>受回复率</label>
+    <description>受到治疗时在最终治疗量之后计算的倍率。</description>
     <defaultBaseValue>1</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
     <displayPriorityInCategory>523</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>BANW_ExSkillMultiplier</defName>
+    <label>EX技能倍率</label>
+    <description>标记为EX技能的伤害会在最终结算后额外乘以该倍率。</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <category>BANW_BattleStats</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showIfUndefined>true</showIfUndefined>
+    <displayPriorityInCategory>524</displayPriorityInCategory>
   </StatDef>
 
   <StatDef>

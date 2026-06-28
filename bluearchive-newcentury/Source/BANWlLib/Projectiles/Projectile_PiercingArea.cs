@@ -466,30 +466,22 @@ namespace BANWlLib.Projectiles
         {
             return new BattleActionConfig
             {
-                baseAmount = ResolveBaseAmount(),
                 attackPowerRatio = Extension?.attackPowerRatio ?? 0f,
+                normalAttackMultiplier = Extension?.normalAttackMultiplier ?? 1f,
+                baseMasteryMultiplier = Extension?.baseMasteryMultiplier ?? 1f,
                 healPowerRatio = 0f,
                 damageDef = DamageDef,
                 penetration = ArmorPenetration,
                 isHealing = false,
+                isNormalAttack = false,
                 canCrit = Extension?.canCrit ?? true,
+                alwaysShowCriticalText = Extension?.alwaysShowCriticalText ?? false,
                 applyAffinity = Extension?.applyAffinity ?? true,
                 canHitBuilding = Extension?.canHitBuilding ?? true,
                 affectHostile = Extension?.affectHostile ?? true,
                 affectFriendly = Extension?.affectFriendly ?? false,
                 isExSkill = Extension?.isExSkill ?? false
             };
-        }
-
-        // 解析基础伤害，负责让旧投射物的原版基础伤害继续作为新系统的基础值。
-        private float ResolveBaseAmount()
-        {
-            if (Extension != null && Extension.baseAmount != 0f)
-            {
-                return Extension.baseAmount;
-            }
-
-            return DamageAmount;
         }
 
         // 计算范围格子，负责以当前弹体位置为中心生成沿飞行方向的矩形区域。

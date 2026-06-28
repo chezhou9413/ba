@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
     <AbilityDef>
 <defName>BAWN_Hoshiro_A_EX</defName>
@@ -81,7 +81,7 @@
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>3</healAmount>
+        <healPowerRatio>3</healPowerRatio>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
@@ -121,7 +121,7 @@
       <texPath>Projectile/kongbai</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>2.77</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   <AbilityDef>
      <!-- 能力的唯一标识符 -->
     <defName>BAWN_Hoshiro_A_EXX</defName>
@@ -227,7 +227,7 @@
         <showRemainingTime>True</showRemainingTime>
       </li>
       <!-- 死亡时消失组件 -->
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
       <!-- 范围内给予健康状态组件 -->
       <li Class="HediffCompProperties_GiveHediffsInRange">
         <!-- 影响范围 -->
@@ -277,7 +277,7 @@
         <showRemainingTime>false</showRemainingTime>
       </li>
       <!-- 死亡时消失组件 -->
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
     </comps>
     <!-- 是否为负面效果 -->
     <isBad>false</isBad>

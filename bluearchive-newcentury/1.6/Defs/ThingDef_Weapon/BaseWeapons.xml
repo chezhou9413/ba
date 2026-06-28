@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 
   <ThingDef Abstract="True" Name="BANC_BaseWeapon">
@@ -22,11 +22,11 @@
       <li>BANC_Weapon</li>
     </thingCategories>
     <comps>
-      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Forbiddable" />
       <li>
         <compClass>CompEquippable</compClass>
       </li>
-      <li Class="CompProperties_Styleable"/>
+      <li Class="CompProperties_Styleable" />
     </comps>
     <tools>
       <li>
@@ -91,11 +91,11 @@
   </ThingDef>
 
   <ThingDef Name="BANC_BaseHumanMakeableGun" ParentName="BANC_BaseMakeableGun" Abstract="True">
-    <tradeTags Inherit="False"/>
-    <weaponTags Inherit="False"/>
-    <thingSetMakerTags Inherit="False"/>
+    <tradeTags Inherit="False" />
+    <weaponTags Inherit="False" />
+    <thingSetMakerTags Inherit="False" />
     <comps>
-      <li Class="CompProperties_Biocodable"/>
+      <li Class="CompProperties_Biocodable" />
     </comps>
   </ThingDef>
 

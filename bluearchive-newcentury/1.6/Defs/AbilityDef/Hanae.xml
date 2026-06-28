@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Hanae_EXX</defName>
@@ -119,7 +119,7 @@
         <disappearsAfterTicks>1200</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>6</healAmount>
+        <healPowerRatio>6</healPowerRatio>
         <healIntervalTicks>6</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

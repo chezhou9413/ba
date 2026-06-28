@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Hare_EX</defName>
@@ -135,7 +135,7 @@
             <!-- 伤害延迟 -->
             <Delaytick>0</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>0</damageAmount>
+            
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_guantong</damageType>
             <!-- 穿透 -->
@@ -144,39 +144,39 @@
             <isAttackBuilding>false</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0</attackPowerRatio></li>
           <li>
             <Delaytick>60</Delaytick>
-            <damageAmount>330</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>3.3</attackPowerRatio></li>
            <li>
             <Delaytick>60</Delaytick>
-            <damageAmount>5</damageAmount>
+            
             <damageType>EMP</damageType>
             <penetration>1</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.05</attackPowerRatio></li>
           <li>
             <Delaytick>60</Delaytick>
-            <damageAmount>4</damageAmount>
+            
             <damageType>Stun</damageType>
             <penetration>1</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.04</attackPowerRatio></li>
           <li>
             <Delaytick>240</Delaytick>
-            <damageAmount>5</damageAmount>
+            
             <damageType>EMP</damageType>
             <penetration>1</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.05</attackPowerRatio></li>
         </damages>
       </li>
     </damages>

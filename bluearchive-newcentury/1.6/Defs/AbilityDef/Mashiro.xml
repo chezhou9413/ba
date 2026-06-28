@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Mashiro_EX</defName>
@@ -96,7 +96,7 @@
       <texPath>Projectile/Bullet_Mashiro</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>3.07</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
     <HediffDef>
         <!-- 状态的唯一标识符 -->
         <defName>BAWN_Mashiro_hedi_B</defName>
@@ -144,7 +144,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
 
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>6.99</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
     <DamageDef>
     <defName>BANC_Damage_Mashiro</defName><!--通用爆发-->
     <label>爆发</label><!--描述-->

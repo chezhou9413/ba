@@ -1,17 +1,14 @@
 using Verse;
 using RimWorld;
+using BANWlLib.BattleSystem;
 using BANWlLib.Tool;
 
 namespace BANWlLib
 {
-    /// <summary>
-    /// 减伤状态 Hediff，负责在学生健康面板显示基于 PawnKindDef 的星级保护状态。
-    /// </summary>
+    // 减伤状态 Hediff，负责在学生健康面板显示学生星级和星级成长总加成。
     public class DamageReductionHediff : Hediff
     {
-        /// <summary>
-        /// 在健康面板中显示星级后缀。
-        /// </summary>
+        // 在健康面板中显示星级后缀，负责让状态名称后方直观看到当前星级。
         public override string LabelInBrackets
         {
             get
@@ -30,7 +27,6 @@ namespace BANWlLib
                         if (comp != null)
                         {
                             int level = comp.GetCurrentLevel();
-                            string bodyPart = comp.Props.damageReductionBodyPart;
                             string stars = "";
                             for (int i = 0; i < level; i++)
                             {
@@ -48,9 +44,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 获取鼠标悬停时显示的星级减伤详情。
-        /// </summary>
+        // 获取鼠标悬停时显示的星级详情，负责合并减伤保护和当前星级成长总加成。
         public override string GetTooltip(Pawn pawn, bool showHediffSource = true)
         {
             try
@@ -90,18 +84,14 @@ namespace BANWlLib
                     {
                         baseTooltip += $"\n• 状态：未激活";
                     }
-
-                    // 显示所有等级信息
-                    baseTooltip += $"\n\n等级阈值：";
-                    for (int i = 0; i < comp.Props.customValueThresholds.Count && i < comp.Props.damageReductionRatios.Count; i++)
-                    {
-                        int threshold = comp.Props.customValueThresholds[i];
-                        float levelRatio = comp.Props.damageReductionRatios[i];
-                        string status = currentValue >= threshold ? "★" : "☆";
-                        baseTooltip += $"\n{status} 等级{i + 1}：{threshold}点 → 减伤{levelRatio:P0}";
-                    }
                 }
-                
+
+                string growthTooltip = StarGrowthDisplayUtility.BuildTooltip(pawn);
+                if (!growthTooltip.NullOrEmpty())
+                {
+                    baseTooltip += "\n\n" + growthTooltip;
+                }
+                 
                 return baseTooltip;
             }
             catch
@@ -110,9 +100,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 检查这个 Hediff 是否应该被移除。
-        /// </summary>
+        // 检查这个 Hediff 是否应该被移除，负责在非学生或缺少星级组件时清理状态。
         public override bool ShouldRemove
         {
             get
@@ -127,7 +115,7 @@ namespace BANWlLib
                     if (pawn != null)
                     {
                         DamageReductionComp comp = pawn.GetComp<DamageReductionComp>();
-                        return comp == null; // 如果没有减伤组件，则移除这个Hediff
+                        return comp == null;
                     }
                     return true;
                 }

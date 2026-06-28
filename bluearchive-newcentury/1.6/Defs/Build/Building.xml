@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <ThingDef ParentName="BenchBase">
     <defName>BANW_Workbench</defName>
@@ -43,13 +43,13 @@
         <shortCircuitInRain>true</shortCircuitInRain>
         <basePowerConsumption>120</basePowerConsumption>
       </li>
-      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Flickable" />
       <li Class="CompProperties_AffectedByFacilities">
         <linkableFacilities>
           <li>ToolCabinet</li>
         </linkableFacilities>
       </li>
-      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Breakdownable" />
        <li Class="CompProperties_Glower">
     <glowRadius>5</glowRadius>
     <glowColor>(73,123,138,0)</glowColor>

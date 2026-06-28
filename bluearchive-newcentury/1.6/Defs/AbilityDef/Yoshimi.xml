@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Yoshimi_EX</defName>
@@ -58,7 +58,7 @@
       <texPath>Effect/Yoshimi/A/Yoshimi_1</texPath>
       <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>2.8</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 <AbilityDef>
 <defName>BAWN_Yoshimi_EXX</defName>
  <label>谁，谁慌了？！</label>
@@ -122,7 +122,7 @@
       <flyOverhead>true</flyOverhead>
       <shadowSize>0</shadowSize>
     </projectile>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>0.01</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   
   <ThingDef ParentName="BAWN_Yoshimi_EXX_Boom">
     <defName>BAWN_Yoshimi_EXX_Boom</defName>
@@ -153,7 +153,7 @@
             <!-- 伤害延迟 -->
             <Delaytick>120</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>3</damageAmount>
+            
             <!-- 伤害类型 -->
             <damageType>Stun</damageType>
             <!-- 穿透 -->
@@ -162,12 +162,12 @@
             <isAttackBuilding>false</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.03</attackPowerRatio></li>
           <li>
             <!-- 伤害延迟 -->
             <Delaytick>120</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>273</damageAmount>
+            
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_guantong</damageType>
             <!-- 穿透 -->
@@ -176,7 +176,7 @@
             <isAttackBuilding>false</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>2.73</attackPowerRatio></li>
         </damages>
       </li>
     </damages>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Serina_EXX</defName>
@@ -50,9 +50,9 @@
      <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
      <previewActions>
        <li>
-         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
-         <baseAmount>0</baseAmount>
-         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+         <!-- 治疗倍率由 healPowerRatio 配置，实际治疗量按最终治愈力结算。 -->
+         
+         <!-- 技能治愈倍率，2.28 表示回复 228% 最终治愈力。 -->
          <healPowerRatio>2.28</healPowerRatio>
          <!-- true 表示该段是治疗。 -->
          <isHealing>true</isHealing>
@@ -164,9 +164,8 @@
         <disappearsAfterTicks>6</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
-        <healAmount>0</healAmount>
-        <!-- 每 tick 回复最终治疗力的 228%。 -->
+        <!-- 该持续治疗只使用 healPowerRatio，不配置额外固定回复值。 -->
+        <!-- 每次触发回复最终治愈力的 228%。 -->
         <healPowerRatio>2.28</healPowerRatio>
         <!-- 每 tick 触发一次治疗。 -->
         <healIntervalTicks>6</healIntervalTicks>
@@ -212,9 +211,8 @@
         <disappearsAfterTicks>10</disappearsAfterTicks>
       </li>
     <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
-        <healAmount>0</healAmount>
-        <!-- 每 2 tick 回复最终治疗力的 12%。 -->
+        <!-- 该持续治疗只使用 healPowerRatio，不配置额外固定回复值。 -->
+        <!-- 每次触发回复最终治愈力的 12%。 -->
         <healPowerRatio>1.78</healPowerRatio>
         <!-- 每 2 tick 触发一次治疗。 -->
         <healIntervalTicks>6</healIntervalTicks>

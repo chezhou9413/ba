@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Suzumi_EX</defName>
@@ -59,7 +59,7 @@
       <texPath>Projectile/Bullet_Suzumi</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>0.37</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 <AbilityDef>
 <defName>BAWN_Suzumi_EXX</defName>
  <label>自制闪光弹</label>
@@ -109,14 +109,14 @@
     </graphicData>
     <projectile>
       <damageAmountBase>387</damageAmountBase><!--子弹伤害-->
-      <explosionRadius>3.9</explosionRadius >
+      <explosionRadius>3.9</explosionRadius>
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <damageDef>BANC_Damage_Suzumi_EXX</damageDef>
       <speed>50</speed><!--子弹速度-->
       <explosionDelay>0</explosionDelay>
       <explosionDamageFalloff>true</explosionDamageFalloff>
     </projectile>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>3.87</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   
   <ThingDef ParentName="BAWN_Suzumi_EXX_Boom">
     <defName>BAWN_Suzumi_EXX_Boom</defName>
@@ -147,7 +147,7 @@
             <!-- 伤害延迟 -->
             <Delaytick>80</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>5</damageAmount>
+            
             <!-- 伤害类型 -->
             <damageType>Stun</damageType>
             <!-- 穿透 -->
@@ -156,7 +156,7 @@
             <isAttackBuilding>false</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.05</attackPowerRatio></li>
         </damages>
       </li>
     </damages>

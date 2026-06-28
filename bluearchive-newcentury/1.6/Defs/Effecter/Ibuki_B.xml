@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Ibuki_Eff_A</defName>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
   <HediffDef>
     <defName>BANC_BluetoothNecklace_One</defName>
@@ -16,7 +16,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>8</healAmount>
+        <healPowerRatio>8</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -38,7 +38,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>13</healAmount>
+        <healPowerRatio>13</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -60,7 +60,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>18</healAmount>
+        <healPowerRatio>18</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -82,7 +82,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>25</healAmount>
+        <healPowerRatio>25</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -104,7 +104,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>28</healAmount>
+        <healPowerRatio>28</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -126,7 +126,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>32</healAmount>
+        <healPowerRatio>32</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -148,7 +148,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>35</healAmount>
+        <healPowerRatio>35</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -170,7 +170,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>38</healAmount>
+        <healPowerRatio>38</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -192,7 +192,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>40</healAmount>
+        <healPowerRatio>40</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>
@@ -214,7 +214,7 @@
     <comps>
       <li Class="HediffCompProperties_RemoveIfApparelDropped" />
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>42</healAmount>
+        <healPowerRatio>42</healPowerRatio>
         <healIntervalTicks>180</healIntervalTicks>
       </li>
     </comps>

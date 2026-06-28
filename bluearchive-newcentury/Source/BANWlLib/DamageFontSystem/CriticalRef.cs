@@ -12,6 +12,8 @@ namespace BANWlLib.DamageFontSystem
     {
         public static StatDef BANW_CriticalChance;
         public static StatDef BANW_CriticalDamage;
+        public static StatDef BANW_CriticalChanceResistance;
+        public static StatDef BANW_CriticalDamageResistance;
         public static StatDef IncomingDamageFactor;
         static CriticalRef()
         {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Nozomi_EX</defName>
@@ -141,14 +141,16 @@
       <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
       <previewActions>
         <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>81</baseAmount>
+          
+          
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>3.13</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
           <!-- 是否允许暴击。 -->
           <canCrit>true</canCrit>
+          <!-- 是否无论实际暴击判定都显示暴击文字。 -->
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
           <!-- 是否应用攻击类型与护甲类型克制。 -->
           <applyAffinity>true</applyAffinity>
           <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
@@ -166,7 +168,7 @@
     <projectile>
       <!-- 统一战斗层使用的伤害类型。 -->
       <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
-      <!-- 固定基础伤害交给扩展字段配置，这里保持 0。 -->
+      
       <damageAmountBase>81</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>2</armorPenetrationBase>
@@ -193,14 +195,16 @@
         <maxRange>44</maxRange>
         <!-- 是否跳过同阵营和盟友。 -->
         <immuneFriendlyFire>true</immuneFriendlyFire>
-        <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-        <baseAmount>0</baseAmount>
+        
+        
         <!-- 最终攻击力倍率，15.67 表示造成 1567% 攻击力伤害。 -->
         <attackPowerRatio>3.13</attackPowerRatio>
         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
         <isExSkill>true</isExSkill>
         <!-- 是否允许暴击。 -->
         <canCrit>true</canCrit>
+        <!-- 是否无论实际暴击判定都显示暴击文字。 -->
+        <alwaysShowCriticalText>true</alwaysShowCriticalText>
         <!-- 是否应用攻击类型与护甲类型克制。 -->
         <applyAffinity>true</applyAffinity>
         <!-- 是否允许命中墙体等建筑。 -->
@@ -313,6 +317,56 @@
   </comps>
 </AbilityDef>
 
+<AbilityDef>
+  <defName>BAWN_Nozomi_Shield_Test</defName>
+  <label>护盾测试</label>
+  <description>给自己添加200%最终治愈力的护盾，重复使用会叠加护盾值并刷新持续时间。</description>
+  <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
+  <cooldownTicksRange>300</cooldownTicksRange>
+  <hotKey>Misc5</hotKey>
+  <targetRequired>false</targetRequired>
+  <hostile>false</hostile>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <verbProperties>
+    <verbClass>Verb_CastAbility</verbClass>
+    <drawAimPie>false</drawAimPie>
+    <range>-1</range>
+    <warmupTime>0.1</warmupTime>
+    <targetParams>
+      <canTargetSelf>true</canTargetSelf>
+      <canTargetPawns>false</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.BattleSystem.CompProperties_AbilityApplyBattleAction">
+      <applyToSelf>true</applyToSelf>
+      <action>
+        <isShield>true</isShield>
+        <shieldPowerRatio>2.0</shieldPowerRatio>
+        <shieldHediffDef>BANW_BattleShield</shieldHediffDef>
+        <affectFriendly>true</affectFriendly>
+        <affectHostile>false</affectHostile>
+      </action>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+      <previewActions>
+        <li>
+          <isShield>true</isShield>
+          <shieldPowerRatio>2.0</shieldPowerRatio>
+          <shieldHediffDef>BANW_BattleShield</shieldHediffDef>
+          <affectFriendly>true</affectFriendly>
+          <affectHostile>false</affectHostile>
+        </li>
+      </previewActions>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
 <DamageDef ParentName="BANC_Damage_zhendong">
   <defName>BANC_Damage_Nozomi_EXX</defName>
   <!-- 伤害命中时播放的方向自适应特效。 -->
@@ -376,7 +430,7 @@
       <showBattleFormula>true</showBattleFormula>
       <previewActions>
         <li>
-          <baseAmount>0</baseAmount>
+          
           <!-- 500% 攻击力伤害。 -->
           <attackPowerRatio>5.0</attackPowerRatio>
           <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
@@ -397,7 +451,7 @@
   <projectile>
     <!-- 统一战斗层使用的伤害类型。 -->
     <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
-    <!-- 固定基础伤害，实际伤害主要来自 attackPowerRatio。 -->
+    
     <damageAmountBase>10</damageAmountBase>
     <stoppingPower>1</stoppingPower>
     <armorPenetrationBase>2</armorPenetrationBase>
@@ -424,7 +478,7 @@
 
       <!-- 以下统一战斗系统参数在 disablePiercing=true 时仍然生效，命中目标时结算一次。 -->
       <immuneFriendlyFire>true</immuneFriendlyFire>
-      <baseAmount>0</baseAmount>
+      
       <!-- 500% 攻击力伤害。 -->
       <attackPowerRatio>5.0</attackPowerRatio>
       <isExSkill>false</isExSkill>
@@ -540,8 +594,8 @@
       <!-- 场地每次脉冲执行的战斗动作。 -->
       <actions>
         <li>
-          <!-- 固定基础伤害。 -->
-          <baseAmount>0</baseAmount>
+          
+          
           <!-- 200% 攻击力伤害。 -->
           <attackPowerRatio>2.0</attackPowerRatio>
           <!-- 伤害类型，复用 Nozomi EXX 的振动伤害。 -->

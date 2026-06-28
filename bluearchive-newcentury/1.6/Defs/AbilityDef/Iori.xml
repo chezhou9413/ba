@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Iori_EX</defName>
@@ -62,5 +62,5 @@
       <texPath>Projectile/Bullet_Iori</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>4.01</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 </Defs>

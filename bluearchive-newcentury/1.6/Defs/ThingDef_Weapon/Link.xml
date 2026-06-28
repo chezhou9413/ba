@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
     <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Miku</defName>

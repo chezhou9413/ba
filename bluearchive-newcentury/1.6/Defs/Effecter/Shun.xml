@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Shun_1_Mote</defName>

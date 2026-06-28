@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Chise_EX</defName>
@@ -57,6 +57,6 @@
       <texPath>Projectile/Bullet_Chise</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>3.12</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 
 </Defs>

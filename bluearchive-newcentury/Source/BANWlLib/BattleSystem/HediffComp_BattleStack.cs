@@ -67,7 +67,15 @@ namespace BANWlLib.BattleSystem
         {
             get
             {
-                return Mathf.Clamp(currentStacks, 1, Mathf.Max(1, Props.maxStacks));
+                return Mathf.Clamp(currentStacks, 1, MaxStacks);
+            }
+        }
+
+        public int MaxStacks
+        {
+            get
+            {
+                return Mathf.Max(1, Props.maxStacks);
             }
         }
 
@@ -108,7 +116,7 @@ namespace BANWlLib.BattleSystem
 
         public void AddStack()
         {
-            currentStacks = Mathf.Clamp(currentStacks + 1, 1, Mathf.Max(1, Props.maxStacks));
+            currentStacks = Mathf.Clamp(currentStacks + 1, 1, MaxStacks);
             if (Props.refreshDurationOnApply)
             {
                 ticksRemaining = Props.durationTicks;
@@ -255,38 +263,14 @@ namespace BANWlLib.BattleSystem
                 }
             }
 
-            // 同步 label 带层数，让玩家在悬浮和信息面板看到当前叠层进度。
-            UpdateStackLabel();
-
             lastRefreshedStacks = CurrentStacks;
         }
-
-        // 更新 Hediff label 显示层数，负责让悬浮提示直观反映当前叠层状态。
-        private void UpdateStackLabel()
-        {
-            if (parent?.def == null)
-            {
-                return;
-            }
-
-            // 首次记录原始 label，避免重复追加层数后缀。
-            if (string.IsNullOrEmpty(baseLabel))
-            {
-                baseLabel = parent.def.label;
-            }
-
-            int max = Mathf.Max(1, Props.maxStacks);
-            parent.def.label = $"{baseLabel} ({CurrentStacks}/{max})";
-        }
-
-        private string baseLabel;
 
         public override void CompExposeData()
         {
             base.CompExposeData();
             Scribe_Values.Look(ref currentStacks, "currentStacks", 1);
             Scribe_Values.Look(ref ticksRemaining, "ticksRemaining", -1);
-            Scribe_Values.Look(ref baseLabel, "baseLabel", "");
         }
 
         // 存档读档后重建 statOffsets 和 label，避免显示旧数据。
@@ -320,4 +304,3 @@ namespace BANWlLib.BattleSystem
         }
     }
 }
-

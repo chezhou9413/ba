@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Nagisa_EXX</defName>
@@ -105,180 +105,180 @@
         <damages>
     <li>
             <Delaytick>0</Delaytick>
-            <damageAmount>1</damageAmount>
+            
             <damageType>BANC_Damage_Nagisa</damageType>
             <penetration>111</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef>BANW_Nagisa_Ef_B</effecterDef>
-          </li>
+          <attackPowerRatio>0.01</attackPowerRatio></li>
           <li>
             <Delaytick>10</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>20</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>30</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>40</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>50</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>60</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>70</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>80</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>90</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>100</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>110</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>120</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>130</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>140</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>150</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>160</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>170</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>180</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>190</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>200</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>210</Delaytick>
-            <damageAmount>60</damageAmount>
+            
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
         </damages>
       </li>
     </damages>

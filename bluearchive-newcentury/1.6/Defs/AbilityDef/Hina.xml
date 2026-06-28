@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
     <defName>BAWN_Hina_EXX</defName>
@@ -155,7 +155,7 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>30</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>193</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <!-- 穿透 --> 
@@ -163,12 +163,12 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_Ef_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>30</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>96</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <!-- 穿透 --> 
@@ -176,12 +176,12 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>55</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>193</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <!-- 穿透 --> 
@@ -189,12 +189,12 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>55</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>96</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <!-- 穿透 --> 
@@ -202,135 +202,135 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>80</tick>
-                <damageAmount>193</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>80</tick>
-                <damageAmount>96</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>105</tick>
-                <damageAmount>193</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>105</tick>
-                <damageAmount>96</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>130</tick>
-                <damageAmount>193</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>130</tick>
-                <damageAmount>96</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>155</tick>
-                <damageAmount>193</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>155</tick>
-                <damageAmount>96</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>180</tick>
-                <damageAmount>193</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>180</tick>
-                <damageAmount>96</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>205</tick>
-                <damageAmount>193</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>205</tick>
-                <damageAmount>96</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>230</tick>
-                <damageAmount>193</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>230</tick>
-                <damageAmount>96</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>255</tick>
-                <damageAmount>193</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
              <li>
                 <tick>255</tick>
-                <damageAmount>96</damageAmount>
+                
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
         </damages>
     </JobDef>
 

@@ -8,10 +8,14 @@ namespace BANWlLib.BattleSystem
         public Thing instigator;
         public Thing target;
         public DamageDef damageDef;
-        public float baseAmount;
         public float attackPowerRatio;
+        public float weaponBaseAttack;
+        public float normalAttackMultiplier = 1f;
+        public float baseMasteryMultiplier = 1f;
         public float penetration;
+        public bool isNormalAttack = false;
         public bool canCrit = true;
+        public bool alwaysShowCriticalText = false;
         public bool applyAffinity = true;
         public bool isExSkill = false;
         public BattleCasterSnapshot snapshot;

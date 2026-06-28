@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Pina_EX</defName>
@@ -63,7 +63,7 @@
         <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
          <comps>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>6</healAmount>
+        <healPowerRatio>6</healPowerRatio>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

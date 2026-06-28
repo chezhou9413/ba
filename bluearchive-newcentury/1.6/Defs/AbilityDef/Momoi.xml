@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
     <defName>BAWN_Momoi_EXX</defName>
@@ -159,7 +159,7 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>60</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>102</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Momoi_EXX</damageType>
                 <!-- 穿透 --> 
@@ -167,12 +167,12 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Momoi_Ef_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.02</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>90</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>102</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Momoi_EXX</damageType>
                 <!-- 穿透 --> 
@@ -180,15 +180,15 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.02</attackPowerRatio></li>
             <li>
                 <tick>120</tick>
-                <damageAmount>102</damageAmount>
+                
                 <damageType>BANC_Damage_Momoi_EXX</damageType>
                 <penetration>0.35</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.02</attackPowerRatio></li>
         
         </damages>
     </JobDef>

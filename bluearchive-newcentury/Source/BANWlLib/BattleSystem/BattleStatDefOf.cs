@@ -7,20 +7,24 @@ namespace BANWlLib.BattleSystem
     [DefOf]
     public static class BattleStatDefOf
     {
-        public static StatDef BANW_RangedWeapon_Damage;
+        public static StatDef BANW_AttackLevelMultiplier;
         public static StatDef BANW_FinalDamageMultiplier;
         public static StatDef BANW_CriticalChance;
         public static StatDef BANW_CriticalDamage;
-        public static StatDef BANW_HealPowerBase;
-        public static StatDef BANW_HealPowerMultiplier;
+        public static StatDef BANW_CriticalChanceResistance;
+        public static StatDef BANW_CriticalDamageResistance;
+        public static StatDef BANW_HealLevelMultiplier;
+        public static StatDef BANW_HealFlatBonus;
+        public static StatDef BANW_HealBonusMultiplier;
         public static StatDef BANW_HealReceivedMultiplier;
         public static StatDef BANW_AffinityBonus_Explosion;
         public static StatDef BANW_AffinityBonus_Mysterious;
         public static StatDef BANW_AffinityBonus_Vibration;
         public static StatDef BANW_AffinityBonus_Through;
         public static StatDef BANW_AffinityBonus_Composite;
-        public static StatDef BANW_HealthScaleOffset;
-        public static StatDef BANW_HealthScalePercentOffset;
+        public static StatDef BANW_HealthLevelMultiplier;
+        public static StatDef BANW_HealthFlatBonus;
+        public static StatDef BANW_HealthBonusMultiplier;
         public static StatDef BANW_ExSkillMultiplier;
 
         static BattleStatDefOf()

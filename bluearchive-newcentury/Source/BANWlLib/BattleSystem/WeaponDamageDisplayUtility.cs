@@ -33,16 +33,22 @@ namespace BANWlLib.BattleSystem
                 return string.Empty;
             }
 
-            float attackPowerBase = BattleStatUtility.GetAttackPowerBaseMultiplier(pawn);
+            float levelMultiplier = BattleStatUtility.GetAttackLevelMultiplier(pawn);
+            float starMultiplier = BattleStatUtility.GetAttackStarMultiplier(pawn);
+            float attackFlat = BattleStatUtility.GetAttackFlatBonus(pawn);
             float attackMultiplier = BattleStatUtility.GetAttackMultiplier(pawn);
+            float characterAttack = BattleStatUtility.GetFinalAttackPower(pawn, baseDamage);
             float finalDamage = BattleStatUtility.ScaleWeaponDamageBase(pawn, baseDamage);
 
             return "\n\n" +
                    "武器伤害修正".Colorize(ColoredText.TipSectionTitleColor) + "\n" +
-                   "基础武器伤害：" + FormatDamage(baseDamage) + "\n" +
-                   "基础攻击力加成：" + attackPowerBase.ToString("P1") + "\n" +
+                   "武器初始攻击力：" + FormatDamage(baseDamage) + "\n" +
+                   "升级攻击力倍率：" + levelMultiplier.ToString("P1") + "\n" +
+                   "升星攻击力倍率：" + starMultiplier.ToString("P1") + "\n" +
+                   "固定攻击力：" + FormatDamage(attackFlat) + "\n" +
+                   "角色自身攻击力：" + FormatDamage(characterAttack) + "\n" +
                    "攻击力加成：" + attackMultiplier.ToString("P0") + "\n" +
-                   "算法：" + FormatDamage(baseDamage) + " x " + attackPowerBase.ToString("P1") + " x " + attackMultiplier.ToString("P0") + "\n" +
+                   "算法：((" + FormatDamage(baseDamage) + " x " + levelMultiplier.ToString("P1") + ") x " + starMultiplier.ToString("P1") + " + " + FormatDamage(attackFlat) + ") x " + attackMultiplier.ToString("P0") + "\n" +
                    "当前显示伤害：" + FormatDamage(finalDamage).Colorize(new Color(1f, 0.35f, 0.28f));
         }
 

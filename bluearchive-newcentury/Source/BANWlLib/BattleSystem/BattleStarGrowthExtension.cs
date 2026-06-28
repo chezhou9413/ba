@@ -30,10 +30,10 @@ namespace BANWlLib.BattleSystem
     // 阶级成长扩展，负责让 PawnKindDef 配置生命、攻击和治愈力的每阶成长。
     public class BattleStarGrowthExtension : DefModExtension
     {
-        // 生命值平加成长，参与 Pawn.HealthScale 计算。
+        // 固定生命值成长，参与生命值公式的固定加算项，1 表示 100 点生命值。
         public BattleStarGrowthValue healthFlat = new BattleStarGrowthValue();
 
-        // 生命值百分比成长，参与 Pawn.HealthScale 计算。
+        // 升星生命值倍率成长，参与生命值公式的升星乘区。
         public BattleStarGrowthValue healthPercent = new BattleStarGrowthValue();
 
         // 基础攻击力平加成长，进入最终攻击力计算。
@@ -42,10 +42,10 @@ namespace BANWlLib.BattleSystem
         // 攻击力百分比成长，进入最终攻击力倍率计算。
         public BattleStarGrowthValue attackPercent = new BattleStarGrowthValue();
 
-        // 基础治愈力平加成长，进入最终治愈力计算。
+        // 升星固定治愈力成长，参与治愈力公式的固定加算项。
         public BattleStarGrowthValue healFlat = new BattleStarGrowthValue();
 
-        // 治愈力百分比成长，进入最终治愈力倍率计算。
+        // 升星治愈力倍率成长，参与治愈力公式的升星乘区。
         public BattleStarGrowthValue healPercent = new BattleStarGrowthValue();
     }
 }

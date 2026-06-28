@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   
 <AbilityDef>
@@ -79,7 +79,7 @@
   </targetParams>
   </verbProperties>
   <comps>
-    <li Class = "CompProperties_AbilityGiveHediff">
+    <li Class="CompProperties_AbilityGiveHediff">
 				<compClass>CompAbilityEffect_GiveHediff</compClass>
 				<!-- 要给予的hediff定义 -->
 				<hediffDef>BAWN_Shiroko_EXX_Wurenji</hediffDef>
@@ -112,7 +112,7 @@
     </graphicData>
     <projectile>
       <damageAmountBase>182</damageAmountBase><!--子弹伤害-->
-      <explosionRadius>2.9</explosionRadius >
+      <explosionRadius>2.9</explosionRadius>
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <damageDef>BANC_Damage_Shiroko_EX</damageDef>
       <speed>50</speed><!--子弹速度-->
@@ -120,7 +120,7 @@
       <explosionDamageFalloff>true</explosionDamageFalloff>
       <!-- Use default damage from explosion def -->
     </projectile>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>1.82</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   
   <ThingDef ParentName="BAWN_Shiroko_EX_Boom">
     <defName>BAWN_Shiroko_EX_Boom</defName>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Ayane_EXX</defName>
@@ -92,7 +92,7 @@
         <disappearsAfterTicks>120</disappearsAfterTicks>
       </li>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>4.4</healAmount>
+        <healPowerRatio>4.4</healPowerRatio>
         <healIntervalTicks>1</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>

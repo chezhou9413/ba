@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <Defs>
     <!-- ==================== Badges ==================== -->
     <ThingDef ParentName="BANC_Apparel_Base">
@@ -15,7 +15,7 @@
         <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <BANW_HealthScaleOffset>0.8</BANW_HealthScaleOffset> 
+        <BANW_HealthFlatBonus>0.8</BANW_HealthFlatBonus> 
 		</equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -46,7 +46,7 @@
         </statBases>
         <equippedStatOffsets>
 
-        <BANW_HealthScaleOffset>1.3</BANW_HealthScaleOffset> 
+        <BANW_HealthFlatBonus>1.3</BANW_HealthFlatBonus> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_One>1</BANC_Badge_One>
@@ -83,7 +83,7 @@
         </statBases>
         <equippedStatOffsets>
 
-        <BANW_HealthScaleOffset>1.8</BANW_HealthScaleOffset> 
+        <BANW_HealthFlatBonus>1.8</BANW_HealthFlatBonus> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Tow>1</BANC_Badge_Tow>
@@ -123,7 +123,7 @@
         <MarketValue>2000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <BANW_HealthScaleOffset>2.5</BANW_HealthScaleOffset> 
+        <BANW_HealthFlatBonus>2.5</BANW_HealthFlatBonus> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Three>1</BANC_Badge_Three>
@@ -163,8 +163,8 @@
         <MarketValue>2500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <BANW_HealthScaleOffset>4.5</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.10</BANW_HealthScalePercentOffset> 
+        <BANW_HealthFlatBonus>4.5</BANW_HealthFlatBonus>
+        <BANW_HealthBonusMultiplier>0.10</BANW_HealthBonusMultiplier> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Four>1</BANC_Badge_Four>
@@ -205,8 +205,8 @@
         <MarketValue>3000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <BANW_HealthScaleOffset>6.5</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.18</BANW_HealthScalePercentOffset> 
+        <BANW_HealthFlatBonus>6.5</BANW_HealthFlatBonus>
+        <BANW_HealthBonusMultiplier>0.18</BANW_HealthBonusMultiplier> 
 		</equippedStatOffsets>
         <costList>
         <BANC_Badge_Five>1</BANC_Badge_Five>
@@ -248,8 +248,8 @@
         </statBases>
         <equippedStatOffsets>
             
-         <BANW_HealthScaleOffset>9.5</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.22</BANW_HealthScalePercentOffset> 
+         <BANW_HealthFlatBonus>9.5</BANW_HealthFlatBonus>
+        <BANW_HealthBonusMultiplier>0.22</BANW_HealthBonusMultiplier> 
         <BANW_Miss>0.10</BANW_Miss>
 		</equippedStatOffsets>
         <costList>
@@ -292,8 +292,8 @@
         </statBases>
         <equippedStatOffsets>
             
-         <BANW_HealthScaleOffset>12.0</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.24</BANW_HealthScalePercentOffset> 
+         <BANW_HealthFlatBonus>12.0</BANW_HealthFlatBonus>
+        <BANW_HealthBonusMultiplier>0.24</BANW_HealthBonusMultiplier> 
         <BANW_Miss>0.15</BANW_Miss>
 		</equippedStatOffsets>
         <costList>
@@ -336,8 +336,8 @@
         </statBases>
         <equippedStatOffsets>
             
-         <BANW_HealthScaleOffset>14</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
+         <BANW_HealthFlatBonus>14</BANW_HealthFlatBonus>
+        <BANW_HealthBonusMultiplier>0.25</BANW_HealthBonusMultiplier> 
         <BANW_Miss>0.20</BANW_Miss>
 		</equippedStatOffsets>
         <costList>
@@ -398,8 +398,8 @@
             </tags>
         </apparel>
         <equippedStatOffsets>
-         <BANW_HealthScaleOffset>16</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
+         <BANW_HealthFlatBonus>16</BANW_HealthFlatBonus>
+        <BANW_HealthBonusMultiplier>0.25</BANW_HealthBonusMultiplier> 
         <BANW_Miss>0.30</BANW_Miss>
         </equippedStatOffsets>
     </ThingDef>
@@ -420,7 +420,7 @@
         </statBases>
         <equippedStatOffsets>
 
-          <BANW_HealthScaleOffset>0.6</BANW_HealthScaleOffset>
+          <BANW_HealthFlatBonus>0.6</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -455,7 +455,7 @@
         </statBases>
         <equippedStatOffsets>
 
-         <BANW_HealthScaleOffset>0.97</BANW_HealthScaleOffset>
+         <BANW_HealthFlatBonus>0.97</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_One>1</BANC_Bag_One>
@@ -492,7 +492,7 @@
         </statBases>
         <equippedStatOffsets>
 
-         <BANW_HealthScaleOffset>1.35</BANW_HealthScaleOffset>   
+         <BANW_HealthFlatBonus>1.35</BANW_HealthFlatBonus>   
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Tow>1</BANC_Bag_Tow>
@@ -532,7 +532,7 @@
         </statBases>
         <equippedStatOffsets>
 
-        <BANW_HealthScaleOffset>1.87</BANW_HealthScaleOffset> 
+        <BANW_HealthFlatBonus>1.87</BANW_HealthFlatBonus> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Three>1</BANC_Bag_Three>
@@ -573,7 +573,7 @@
         </statBases>
         <equippedStatOffsets>
 
-         <BANW_HealthScaleOffset>3.5</BANW_HealthScaleOffset> 
+         <BANW_HealthFlatBonus>3.5</BANW_HealthFlatBonus> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Four>1</BANC_Bag_Four>
@@ -615,7 +615,7 @@
         </statBases>
         <equippedStatOffsets>
 
-        <BANW_HealthScaleOffset>5.5</BANW_HealthScaleOffset> 
+        <BANW_HealthFlatBonus>5.5</BANW_HealthFlatBonus> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Five>1</BANC_Bag_Five>
@@ -656,7 +656,7 @@
         <ArmorRating_Heat>1.3</ArmorRating_Heat>  
         </statBases>
         <equippedStatOffsets>
-         <BANW_HealthScaleOffset>7.5</BANW_HealthScaleOffset> 
+         <BANW_HealthFlatBonus>7.5</BANW_HealthFlatBonus> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Six>1</BANC_Bag_Six>
@@ -697,7 +697,7 @@
         <ArmorRating_Heat>1.4</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
-         <BANW_HealthScaleOffset>9.5</BANW_HealthScaleOffset> 
+         <BANW_HealthFlatBonus>9.5</BANW_HealthFlatBonus> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Seven>1</BANC_Bag_Seven>
@@ -739,8 +739,8 @@
         </statBases>
         <equippedStatOffsets>
 
-         <BANW_HealthScaleOffset>12</BANW_HealthScaleOffset> 
-        <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset> 
+         <BANW_HealthFlatBonus>12</BANW_HealthFlatBonus> 
+        <BANW_HealthBonusMultiplier>0.05</BANW_HealthBonusMultiplier> 
         </equippedStatOffsets>
          <costList>
         <BANC_Bag_Eight>1</BANC_Bag_Eight>
@@ -782,8 +782,8 @@
         </statBases>
         <equippedStatOffsets>
 
-         <BANW_HealthScaleOffset>14</BANW_HealthScaleOffset> 
-        <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset> 
+         <BANW_HealthFlatBonus>14</BANW_HealthFlatBonus> 
+        <BANW_HealthBonusMultiplier>0.05</BANW_HealthBonusMultiplier> 
         </equippedStatOffsets>
         <costList>
         <BANC_Bag_Nine>1</BANC_Bag_Nine>
@@ -820,7 +820,7 @@
         <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealthScaleOffset>0.4</BANW_HealthScaleOffset> 
+            <BANW_HealthFlatBonus>0.4</BANW_HealthFlatBonus> 
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -854,7 +854,7 @@
         </statBases>
         <equippedStatOffsets>
 
-         <BANW_HealthScaleOffset>0.65</BANW_HealthScaleOffset>   
+         <BANW_HealthFlatBonus>0.65</BANW_HealthFlatBonus>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_One>1</BANC_Hairpin_One>
@@ -890,7 +890,7 @@
         </statBases>
         <equippedStatOffsets>
 
-         <BANW_HealthScaleOffset>0.9</BANW_HealthScaleOffset>  
+         <BANW_HealthFlatBonus>0.9</BANW_HealthFlatBonus>  
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Tow>1</BANC_Hairpin_Tow>
@@ -927,7 +927,7 @@
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.1</StaggerDurationFactor>
          <Flammability>-0.1</Flammability>
-         <BANW_HealthScaleOffset>1.25</BANW_HealthScaleOffset>   
+         <BANW_HealthFlatBonus>1.25</BANW_HealthFlatBonus>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Three>1</BANC_Hairpin_Three>
@@ -965,7 +965,7 @@
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.2</StaggerDurationFactor>
          <Flammability>-0.2</Flammability>
-         <BANW_HealthScaleOffset>3</BANW_HealthScaleOffset>   
+         <BANW_HealthFlatBonus>3</BANW_HealthFlatBonus>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Four>1</BANC_Hairpin_Four>
@@ -1004,7 +1004,7 @@
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.24</StaggerDurationFactor>
          <Flammability>-0.24</Flammability>
-         <BANW_HealthScaleOffset>4.5</BANW_HealthScaleOffset>   
+         <BANW_HealthFlatBonus>4.5</BANW_HealthFlatBonus>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Five>1</BANC_Hairpin_Five>
@@ -1043,7 +1043,7 @@
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.28</StaggerDurationFactor>
          <Flammability>-0.28</Flammability>
-         <BANW_HealthScaleOffset>6.5</BANW_HealthScaleOffset>   
+         <BANW_HealthFlatBonus>6.5</BANW_HealthFlatBonus>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Six>1</BANC_Hairpin_Six>
@@ -1082,7 +1082,7 @@
         <equippedStatOffsets>
          <StaggerDurationFactor>-0.32</StaggerDurationFactor>
          <Flammability>-0.32</Flammability>
-         <BANW_HealthScaleOffset>8.5</BANW_HealthScaleOffset>   
+         <BANW_HealthFlatBonus>8.5</BANW_HealthFlatBonus>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Seven>1</BANC_Hairpin_Seven>
@@ -1123,7 +1123,7 @@
         <StaggerDurationFactor>-0.34</StaggerDurationFactor>
          <Flammability>-0.34</Flammability>
          <BANW_CriticalChance>+0.09</BANW_CriticalChance>
-        <BANW_HealthScaleOffset>11</BANW_HealthScaleOffset>   
+        <BANW_HealthFlatBonus>11</BANW_HealthFlatBonus>   
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Eight>1</BANC_Hairpin_Eight>
@@ -1163,7 +1163,7 @@
          <StaggerDurationFactor>-0.36</StaggerDurationFactor>
          <Flammability>-0.36</Flammability>
          <BANW_CriticalChance>+0.09</BANW_CriticalChance>
-        <BANW_HealthScaleOffset>13</BANW_HealthScaleOffset> 
+        <BANW_HealthFlatBonus>13</BANW_HealthFlatBonus> 
         </equippedStatOffsets>
         <costList>
         <BANC_Hairpin_Nine>1</BANC_Hairpin_Nine>

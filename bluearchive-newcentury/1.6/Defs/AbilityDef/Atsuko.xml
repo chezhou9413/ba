@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
      <!-- 能力的唯一标识符 -->
@@ -97,7 +97,7 @@
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>12</healAmount>
+        <healPowerRatio>12</healPowerRatio>
         <healIntervalTicks>30</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
@@ -110,7 +110,7 @@
         <showRemainingTime>True</showRemainingTime>
       </li>
       <!-- 死亡时消失组件 -->
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
       <!-- 范围内给予健康状态组件 -->
       <li Class="HediffCompProperties_GiveHediffsInRange">
         <!-- 影响范围 -->
@@ -152,7 +152,7 @@
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healAmount>12</healAmount>
+        <healPowerRatio>12</healPowerRatio>
         <healIntervalTicks>30</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
       </li>
@@ -165,7 +165,7 @@
         <showRemainingTime>false</showRemainingTime>
       </li>
       <!-- 死亡时消失组件 -->
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
     </comps>
     <!-- 是否为负面效果 -->
     <isBad>false</isBad>
