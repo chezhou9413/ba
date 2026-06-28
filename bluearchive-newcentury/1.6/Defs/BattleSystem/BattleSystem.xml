@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
   <BANWlLib.BattleSystem.DamageAffinityMatrixDef>
     <defName>BANW_DamageAffinityMatrix_Default</defName>
@@ -73,7 +73,7 @@
     <description>重复使用技能时按30%、70%、100%提高攻击力，并刷新持续时间。</description>
     <defaultLabelColor>(255, 210, 80)</defaultLabelColor>
     <isBad>false</isBad>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>BANWlLib.BattleSystem.Hediff_BattleStack</hediffClass>
     <everCurableByItem>false</everCurableByItem>
     <comps>
       <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleStack">
@@ -103,7 +103,7 @@
     <description>重复使用技能时同时提高最终伤害、暴击率、暴击伤害和EX技能倍率，并刷新持续时间。</description>
     <defaultLabelColor>(120, 230, 255)</defaultLabelColor>
     <isBad>false</isBad>
-    <hediffClass>HediffWithComps</hediffClass>
+    <hediffClass>BANWlLib.BattleSystem.Hediff_BattleStack</hediffClass>
     <everCurableByItem>false</everCurableByItem>
     <comps>
       <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleStack">

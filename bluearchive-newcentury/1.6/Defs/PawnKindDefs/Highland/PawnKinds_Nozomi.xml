@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
 
 
@@ -17,6 +17,7 @@
         <li>BAWN_Nozomi_EXX</li>
         <li>BAWN_Nozomi_StackBuff_Test</li>
         <li>BAWN_Nozomi_MultiStackBuff_Test</li>
+        <li>BAWN_Nozomi_Shield_Test</li>
         </abilities>
 		<startingHediffs>
 		<li>
@@ -142,15 +143,15 @@
 				</bodyAddonRules>
 			</li>
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
-				<!-- 学生基础生命尺度平加，参与 Pawn.HealthScale 计算，不是直接最终生命值。 -->
+				<!-- 学生基础固定生命值，参与生命值公式的基础乘算项，1 表示 100 点生命值。 -->
 				<healthFlat>0</healthFlat>
-				<!-- 学生基础生命尺度百分比，0.2 表示生命尺度额外增加 20%。 -->
+				<!-- 学生基础生命值加成，参与最终生命值加成乘区，0.2 表示额外增加 20%。 -->
 				<healthPercent>0</healthPercent>
 				<!-- 学生基础攻击力平加，进入技能、武器显示和统一伤害结算。 -->
 				<attackFlat>0</attackFlat>
 				<!-- 学生基础攻击力百分比，0.26 表示最终攻击力额外增加 26%。 -->
 				<attackPercent>0</attackPercent>
-				<!-- 学生基础治疗力平加，会叠加到 BANW_HealPowerBase 后参与治疗公式。 -->
+				<!-- 学生基础固定治愈力，参与新治愈力公式的基础乘算项。 -->
 				<healFlat>0</healFlat>
 				<!-- 学生基础治疗力百分比，0.2 表示最终治疗力额外增加 20%。 -->
 				<healPercent>0</healPercent>
@@ -185,7 +186,7 @@
 					</starValues>
 				</attackPercent>
 				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
-				<!-- 星级基础治愈力平加成长，先加入基础治愈力再乘治愈力百分比。 -->
+				<!-- 升星固定治愈力成长，进入治愈力公式的固定加算项。 -->
 				<healPercent>
 					<starValues>
 						<li>0</li>

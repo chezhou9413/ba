@@ -34,6 +34,11 @@ public class DamageFontSystemPatche
                 return;
             }
 
+            if (TryApplySkillProjectileDamage(__instance, ref dinfo))
+            {
+                return;
+            }
+
             DisableCriticalComp comp = Current.Game.GetComponent<DisableCriticalComp>();
             Pawn attacker = dinfo.Instigator as Pawn;
             if (attacker == null)
@@ -48,8 +53,8 @@ public class DamageFontSystemPatche
             bool isCrit = false;
             if (!disableCrit)
             {
-                float critChance = attacker.GetStatValue(CriticalRef.BANW_CriticalChance);
-                float critMultiplier = attacker.GetStatValue(CriticalRef.BANW_CriticalDamage);
+                float critChance = Mathf.Clamp01(attacker.GetStatValue(CriticalRef.BANW_CriticalChance) - BattleStatUtility.GetCriticalChanceResistance(__instance));
+                float critMultiplier = Mathf.Max(1f, attacker.GetStatValue(CriticalRef.BANW_CriticalDamage) - BattleStatUtility.GetCriticalDamageResistance(__instance));
                 isCrit = isForcedCrit || Rand.Value < critChance;
                 if (isCrit)
                 {
@@ -78,6 +83,7 @@ public class DamageFontSystemPatche
                 dinfo.SetAmount(finalAmount);
             }
         }
+
     }
 
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PostApplyDamage))]
@@ -107,6 +113,43 @@ public class DamageFontSystemPatche
             }
 
             CriticalObjPool.showCriticalShow(totalDamageDealt, __instance);
+            }
+        }
+
+        // 应用技能投射物伤害，负责让爆炸和延迟命中的技能弹也进入新攻击力公式。
+        private static bool TryApplySkillProjectileDamage(Pawn target, ref DamageInfo dinfo)
+        {
+            if (!(dinfo.Instigator is Pawn attacker) || !ProjectileBattleContext.TryGetSkillDamage(attacker, dinfo.Def, out ProjectileBattleData data))
+            {
+                return false;
+            }
+
+            if (data.hasCustomExtension && BattleProjectileTargetFilter.IsBlockedOwnTarget(attacker, target, data))
+            {
+                dinfo.SetAmount(0f);
+                return true;
+            }
+
+            BattleDamageResult result = BattleStatUtility.BuildDamageResult(new BattleDamageRequest
+            {
+                instigator = attacker,
+                target = target,
+                damageDef = dinfo.Def,
+                weaponBaseAttack = data.weaponBaseAttack,
+                attackPowerRatio = data.attackPowerRatio,
+                normalAttackMultiplier = data.normalAttackMultiplier,
+                baseMasteryMultiplier = data.baseMasteryMultiplier,
+                penetration = dinfo.ArmorPenetrationInt,
+                isNormalAttack = data.isNormalAttack,
+                canCrit = data.canCrit,
+                alwaysShowCriticalText = data.alwaysShowCriticalText,
+                applyAffinity = data.applyAffinity,
+                isExSkill = data.isExSkill
+            });
+
+            BattleDamageDisplayState.RegisterManualDamage(target, attacker, result.isCrit);
+            BattleDamageDisplayState.RegisterCriticalFloatText(target, result.isCrit || data.alwaysShowCriticalText);
+            dinfo.SetAmount(result.finalAmount);
+            return true;
         }
     }
-}

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Reisa_A_EX</defName>
@@ -141,7 +141,7 @@
       <texPath>Projectile/Bullet_Reisa_A</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>1.43</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   <AbilityDef>
      <!-- 能力的唯一标识符 -->
     <defName>BAWN_Reisa_A_EXX</defName>
@@ -268,7 +268,7 @@
         <showRemainingTime>True</showRemainingTime>
       </li>
       <!-- 死亡时消失组件 -->
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
       <!-- 范围内给予健康状态组件 -->
       <li Class="HediffCompProperties_GiveHediffsInRange">
         <!-- 影响范围 -->
@@ -330,7 +330,7 @@
         <showRemainingTime>false</showRemainingTime>
       </li>
       <!-- 死亡时消失组件 -->
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
     </comps>
     <!-- 是否为负面效果 -->
     <isBad>false</isBad>

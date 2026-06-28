@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
     <defName>BAWN_Momoi_EXX</defName>
@@ -190,7 +190,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Momoi_Ef_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.02</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>90</tick>
@@ -203,7 +203,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.02</attackPowerRatio></li>
             <li>
                 <tick>120</tick>
                 <damageAmount>38</damageAmount>
@@ -211,7 +211,7 @@
                 <penetration>2</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.02</attackPowerRatio></li>
         
         </damages>
     </JobDef>

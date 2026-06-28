@@ -180,7 +180,10 @@
     <Compile Include="BattleSystem\BattleDamageRequest.cs" />
     <Compile Include="BattleSystem\BattleFieldControllerExtension.cs" />
     <Compile Include="BattleSystem\BattleHealRequest.cs" />
+    <Compile Include="BattleSystem\BattleShieldRequest.cs" />
     <Compile Include="BattleSystem\BattleProjectilePatches.cs" />
+    <Compile Include="BattleSystem\BattleProjectileExtension.cs" />
+    <Compile Include="BattleSystem\ProjectileBattleContext.cs" />
     <Compile Include="BattleSystem\BattleResult.cs" />
     <Compile Include="BattleSystem\BattleStarGrowthExtension.cs" />
     <Compile Include="BattleSystem\BattleStatDefOf.cs" />
@@ -190,9 +193,12 @@
     <Compile Include="BattleSystem\HealProjectileContext.cs" />
     <Compile Include="BattleSystem\CommandAbilityBattleTooltipPatch.cs" />
     <Compile Include="BattleSystem\CompAbilityEffectGiveHediffPatch.cs" />
+    <Compile Include="BattleSystem\CompAbilityEffect_ApplyBattleAction.cs" />
     <Compile Include="BattleSystem\CompAbilityEffect_SpawnBattleField.cs" />
     <Compile Include="BattleSystem\DamageAffinityMatrixDef.cs" />
+    <Compile Include="BattleSystem\Hediff_BattleStack.cs" />
     <Compile Include="BattleSystem\Hediff_StarGrowthDisplay.cs" />
+    <Compile Include="BattleSystem\HediffComp_BattleShield.cs" />
     <Compile Include="BattleSystem\HediffComp_BattleStack.cs" />
     <Compile Include="BattleSystem\StarGrowthDisplayUtility.cs" />
     <Compile Include="BattleSystem\Thing_BattleFieldController.cs" />

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Karlin_EX</defName>
@@ -84,7 +84,7 @@
       <texPath>Projectile/Bullet_Karlin</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>4.87</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 <AbilityDef>
 <defName>BAWN_Karlin_EXX</defName>
  <label>目标，排除</label>
@@ -171,7 +171,7 @@
       <texPath>Projectile/Bullet_Karlin_EX</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>12.64</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 <DamageDef ParentName="BANC_Damage_guantong">
    <defName>BANC_Damage_Kazusa_EXX</defName>
    <damageEffecter>BANW_Karlin_Ef_B</damageEffecter>

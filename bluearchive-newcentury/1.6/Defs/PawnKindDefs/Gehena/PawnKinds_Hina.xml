@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Hina</defName>
@@ -92,7 +92,7 @@
 					</starValues>
 				</attackPercent>
 				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
-				<!-- 星级基础治愈力平加成长，先加入基础治愈力再乘治愈力百分比。 -->
+				<!-- 升星固定治愈力成长，进入治愈力公式的固定加算项。 -->
 				<healPercent>
 					<starValues>
 						<li>0</li>

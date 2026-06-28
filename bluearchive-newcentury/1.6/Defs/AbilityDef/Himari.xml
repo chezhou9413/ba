@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Himari_EX</defName>
@@ -79,7 +79,7 @@
       <texPath>Projectile/kongbai</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>1.44</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 <DamageDef ParentName="BANC_Damage_baofa">
     <defName>BANC_Damage_Himari</defName><!--通用贯通-->
 <additionalHediffs><!--额外健康-->

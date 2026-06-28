@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
      <!-- 能力的唯一标识符 -->
@@ -118,6 +118,7 @@
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+<<<<<<< HEAD
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <healAmount>0</healAmount>
         <!-- 每 tick 回复最终治疗力的 4%。 -->
@@ -125,6 +126,10 @@
         <!-- 每 tick 触发一次治疗。 -->
         <healIntervalTicks>300</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
+=======
+        <healPowerRatio>12</healPowerRatio>
+        <healIntervalTicks>30</healIntervalTicks>
+>>>>>>> 2afde9faefb1d8a327eb06524d3d5471af779638
         <isHeatScar>true</isHeatScar>
         <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
         <isExSkill>false</isExSkill>
@@ -138,7 +143,7 @@
         <showRemainingTime>True</showRemainingTime>
       </li>
       <!-- 死亡时消失组件 -->
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
       <!-- 范围内给予健康状态组件 -->
       <li Class="HediffCompProperties_GiveHediffsInRange">
         <!-- 影响范围 -->
@@ -179,6 +184,7 @@
     <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
     <!-- 组件列表 -->
     <comps>
+<<<<<<< HEAD
      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <healAmount>0</healAmount>
@@ -187,6 +193,11 @@
         <!-- 每 tick 触发一次治疗。 -->
         <healIntervalTicks>300</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
+=======
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healPowerRatio>12</healPowerRatio>
+        <healIntervalTicks>30</healIntervalTicks>
+>>>>>>> 2afde9faefb1d8a327eb06524d3d5471af779638
         <isHeatScar>true</isHeatScar>
         <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
         <isExSkill>false</isExSkill>
@@ -200,7 +211,7 @@
         <showRemainingTime>false</showRemainingTime>
       </li>
       <!-- 死亡时消失组件 -->
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
     </comps>
     <!-- 是否为负面效果 -->
     <isBad>false</isBad>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
     <AbilityDef>
   <defName>BAWN_Rio_EX</defName>
@@ -70,7 +70,7 @@
       <texPath>Projectile/kongbai</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>0.89</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
  <HediffDef>
         <!-- 状态的唯一标识符 -->
         <defName>BAWN_Rio_Buff_A</defName>

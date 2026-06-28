@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <Defs>
     <!-- ==================== Badges ==================== -->
     <ThingDef ParentName="BANC_Apparel_Base">
@@ -375,8 +375,8 @@
             </tags>
         </apparel>
         <equippedStatOffsets>
-         <BANW_HealthScaleOffset>16</BANW_HealthScaleOffset>
-        <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
+         <BANW_HealthFlatBonus>16</BANW_HealthFlatBonus>
+        <BANW_HealthBonusMultiplier>0.25</BANW_HealthBonusMultiplier> 
         <BANW_Miss>0.30</BANW_Miss>
         </equippedStatOffsets>
     </ThingDef>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>   
   <AbilityDef>
 <defName>BAWN_Kasumi_EX</defName>
@@ -193,7 +193,7 @@
             <!-- 伤害延迟 -->
             <Delaytick>0</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>1</damageAmount>
+            
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX</damageType>
             <!-- 穿透 -->
@@ -202,7 +202,7 @@
             <isAttackBuilding>false</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.01</attackPowerRatio></li>
           <li>
             <!-- 伤害延迟 -->
             <Delaytick>54</Delaytick>
@@ -216,7 +216,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef>BANW_Kasumi_Ef_B</effecterDef>
-          </li>
+          <attackPowerRatio>0.3</attackPowerRatio></li>
           <li>
             <!-- 伤害延迟 -->
             <Delaytick>66</Delaytick>
@@ -230,7 +230,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.3</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>78</Delaytick>
@@ -244,7 +244,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.3</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>90</Delaytick>
@@ -258,7 +258,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.3</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>102</Delaytick>
@@ -272,7 +272,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.3</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>114</Delaytick>
@@ -300,12 +300,12 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0.3</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>172</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>0</damageAmount>
+            
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX_A</damageType>
             <!-- 穿透 -->
@@ -314,7 +314,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>0</attackPowerRatio></li>
        
         </damages>
       </li>
@@ -347,7 +347,7 @@
             <isAttackBuilding>false</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          </li>
+          <attackPowerRatio>2.07</attackPowerRatio></li>
     </damages>
     </li>
     </damages>

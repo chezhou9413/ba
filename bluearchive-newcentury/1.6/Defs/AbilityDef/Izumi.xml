@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
 <defName>BAWN_Izumi_EX</defName>
@@ -87,7 +87,7 @@
       <texPath>Projectile/Bullet_Izumi</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>0.24</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 
 <AbilityDef>
 <defName>BAWN_Izumi_EXX</defName>

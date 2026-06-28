@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 	<AlienRace.AlienBackstoryDef Name="BaseBANWBackStory" Abstract="True">
 		<disallowedTraitsChance>
@@ -60,9 +60,9 @@
 		<defName>NamerSensei</defName>
 		<rulePack>
 			<rulesStrings>
-				<li>name->[NickName] [FirstName]</li>
-				<li>FirstName->老师</li>
-				<li>NickName->sensei</li>
+				<li>name-&gt;[NickName] [FirstName]</li>
+				<li>FirstName-&gt;老师</li>
+				<li>NickName-&gt;sensei</li>
 			</rulesStrings>
 		</rulePack>
 	</RulePackDef>

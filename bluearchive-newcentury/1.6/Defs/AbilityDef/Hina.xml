@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
     <defName>BAWN_Hina_EXX</defName>
@@ -192,7 +192,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_Ef_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>30</tick>
@@ -212,7 +212,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>55</tick>
@@ -231,7 +231,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>55</tick>
@@ -249,7 +249,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>80</tick>
                                 <!-- 伤害量 --> 
@@ -267,7 +267,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>80</tick>
                   <baseAmount>5</baseAmount>
@@ -284,7 +284,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>105</tick>
                                <!-- 伤害量 --> 
@@ -302,7 +302,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>105</tick>
                   <baseAmount>5</baseAmount>
@@ -319,7 +319,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>130</tick>
                               <!-- 伤害量 --> 
@@ -337,7 +337,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>130</tick>
                   <baseAmount>5</baseAmount>
@@ -354,7 +354,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>155</tick>
                               <!-- 伤害量 --> 
@@ -372,7 +372,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>155</tick>
                   <baseAmount>5</baseAmount>
@@ -389,7 +389,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>180</tick>
                                <!-- 伤害量 --> 
@@ -407,7 +407,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>180</tick>
                  <baseAmount>5</baseAmount>
@@ -424,7 +424,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>205</tick>
                               <!-- 伤害量 --> 
@@ -442,7 +442,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>205</tick>
                  <baseAmount>5</baseAmount>
@@ -459,7 +459,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>230</tick>
                                <!-- 伤害量 --> 
@@ -477,7 +477,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
             <li>
                 <tick>230</tick>
                 <baseAmount>5</baseAmount>
@@ -494,7 +494,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
             <li>
                 <tick>255</tick>
                               <!-- 伤害量 --> 
@@ -512,7 +512,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>1.93</attackPowerRatio></li>
              <li>
                 <tick>255</tick>
                   <baseAmount>5</baseAmount>
@@ -529,7 +529,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0.96</attackPowerRatio></li>
         </damages>
     </JobDef>
 

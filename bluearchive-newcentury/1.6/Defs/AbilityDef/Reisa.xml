@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
     <defName>BAWN_Reisa_EXX</defName>
@@ -258,7 +258,7 @@
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
-            </li>
+            <attackPowerRatio>0.8</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>30</tick>
@@ -270,33 +270,33 @@
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
-            </li>
+            <attackPowerRatio>0.8</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>75</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <!-- 穿透 --> 
                 <penetration>0</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Reisa_Ef_D</effecterDef>
-            </li>
+            <attackPowerRatio>0</attackPowerRatio></li>
             <li>
                 <tick>120</tick>
                 <damageAmount>40</damageAmount>
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <penetration>2</penetration>
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
-            </li>
+            <attackPowerRatio>0.8</attackPowerRatio></li>
         <li>
                 <tick>180</tick>
-                <damageAmount>0</damageAmount>
+                
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <penetration>0</penetration>
                 <effecterDef>BANW_Reisa_Ef_E</effecterDef>
-            </li>
+            <attackPowerRatio>0</attackPowerRatio></li>
         </damages>
     </JobDef>
 </Defs>

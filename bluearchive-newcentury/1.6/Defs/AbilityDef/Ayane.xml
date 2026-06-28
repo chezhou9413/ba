@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Ayane_EXX</defName>
@@ -112,6 +112,7 @@
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>6</disappearsAfterTicks>
       </li>
+<<<<<<< HEAD
        <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <healAmount>0</healAmount>
@@ -120,6 +121,11 @@
         <!-- 每 tick 触发一次治疗。 -->
         <healIntervalTicks>6</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
+=======
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+        <healPowerRatio>4.4</healPowerRatio>
+        <healIntervalTicks>1</healIntervalTicks>
+>>>>>>> 2afde9faefb1d8a327eb06524d3d5471af779638
         <isHeatScar>true</isHeatScar>
         <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
         <isExSkill>false</isExSkill>

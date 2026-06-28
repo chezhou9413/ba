@@ -7,9 +7,9 @@ namespace BANWlLib.BattleSystem
     {
         public Thing instigator;
         public Pawn target;
-        public float baseAmount;
         public float healPowerRatio;
         public bool canCrit = false;
+        public bool alwaysShowHealText = false;
         public bool allowPermanentInjuryHealing = false;
         public bool isExSkill = false;
         public BattleCasterSnapshot snapshot;

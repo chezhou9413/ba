@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
     <TraitDef>
         <defName>BAWC_TraitDef_Tank</defName>
@@ -45,11 +45,11 @@
                 <description>{PAWN_nameDef}的职位是医疗，拥有医疗技能，治疗速度和手术成功率会比较高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    <BANW_HealPowerBase>200</BANW_HealPowerBase>
+                    <BANW_HealFlatBonus>200</BANW_HealFlatBonus>
                     <DrugSynthesisSpeed>+0.25</DrugSynthesisSpeed>
                     <MedicalOperationSpeed>+0.15</MedicalOperationSpeed>
 		            <MedicalSurgerySuccessChance>+0.30</MedicalSurgerySuccessChance>
-                    <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
+                    <BANW_HealthBonusMultiplier>0.15</BANW_HealthBonusMultiplier>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -69,7 +69,7 @@
                    <GlobalLearningFactor>+0.25</GlobalLearningFactor>
                    <MoveSpeed>+2.0</MoveSpeed>
                    <RestRateMultiplier>+0.20</RestRateMultiplier>
-                   <BANW_HealthScalePercentOffset>0.10</BANW_HealthScalePercentOffset>
+                   <BANW_HealthBonusMultiplier>0.10</BANW_HealthBonusMultiplier>
                 </statOffsets>
             </li>
         </degreeDatas>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <AbilityDef>
     <defName>BAWN_Hina_B_EXX</defName>
@@ -82,7 +82,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>2.51</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
@@ -95,7 +95,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>2.51</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
@@ -108,7 +108,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>2.51</attackPowerRatio></li>
              <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
@@ -121,7 +121,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>2.51</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
@@ -134,7 +134,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_SD_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>2.51</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
@@ -147,7 +147,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>2.51</attackPowerRatio></li>
               <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
@@ -160,7 +160,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>5.23</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
@@ -173,7 +173,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_SD_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>5.23</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
@@ -186,12 +186,12 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>5.23</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>410</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
@@ -199,7 +199,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0</attackPowerRatio></li>
         </damages>
     </JobDef>
     <DamageDef ParentName="BANC_Damage_baofa">

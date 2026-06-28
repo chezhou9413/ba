@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
   <AlienRace.ThingDef_AlienRace Name="BANW_KivotosStudent" ParentName="BANW_StudentThingBase">
     <defName>BANW_KivotosStudent</defName>

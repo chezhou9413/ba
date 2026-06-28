@@ -3,30 +3,23 @@ using Verse;
 
 namespace BANWlLib.KindStats
 {
-    /// <summary>
-    /// 自定义属性 Def 引用，负责为射程和生命值补丁提供稳定入口。
-    /// </summary>
+    // 自定义属性 Def 引用，负责为射程和生命值补丁提供稳定入口。
     [DefOf]
     public static class BANWStatDefOf
     {
-        /// <summary>
-        /// 非近战攻击最终射程平加属性。
-        /// </summary>
+        // 非近战攻击最终射程平加属性。
         public static StatDef BANW_RangedWeapon_RangeOffset;
 
-        /// <summary>
-        /// 生命值尺度平加属性。
-        /// </summary>
-        public static StatDef BANW_HealthScaleOffset;
+        // 升级生命值倍率属性，0.8 表示在默认 100% 基础上增加 80%。
+        public static StatDef BANW_HealthLevelMultiplier;
 
-        /// <summary>
-        /// 生命值尺度百分比加成属性，0.10 表示增加 10%。
-        /// </summary>
-        public static StatDef BANW_HealthScalePercentOffset;
+        // 固定生命值加算属性，1 表示 100 点生命值。
+        public static StatDef BANW_HealthFlatBonus;
 
-        /// <summary>
-        /// 静态构造函数，负责触发 DefOf 注入。
-        /// </summary>
+        // 最终生命值加成属性，0.10 表示增加 10%。
+        public static StatDef BANW_HealthBonusMultiplier;
+
+        // 静态构造函数，负责触发 DefOf 注入。
         static BANWStatDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(BANWStatDefOf));

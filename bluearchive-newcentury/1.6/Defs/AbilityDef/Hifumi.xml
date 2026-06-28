@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Hifumi_EX</defName>
@@ -149,7 +149,7 @@
       <texPath>Projectile/Bullet_Hifumi_EX</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>1.58</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   <DamageDef ParentName="BANC_Damage_guantong">
     <defName>BANC_Damage_Hifumi_EX</defName><!--通用贯通-->
     <additionalHediffs><!--额外健康-->

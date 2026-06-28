@@ -60,13 +60,13 @@ namespace BANWlLib.KindStats
             return range;
         }
 
-        // 获取生命值尺度，负责通过缓存降低 Pawn.HealthScale 高频访问开销。
+        // 获取生命值倍率，负责通过缓存降低 Pawn.HealthScale 高频访问开销。
         public static float GetHealthScale(Pawn pawn, float originalHealthScale)
         {
             return HealthScaleCache.GetOrCalculate(pawn, originalHealthScale);
         }
 
-        // 计算生命值尺度，负责执行 Kind 覆盖、平加和百分比加成的固定公式。
+        // 计算生命值倍率，负责执行 BA 新生命值公式并返回给 Pawn.HealthScale。
         public static float CalculateHealthScaleUncached(Pawn pawn, float originalHealthScale)
         {
             if (pawn == null)
@@ -74,18 +74,58 @@ namespace BANWlLib.KindStats
                 return originalHealthScale;
             }
 
-            float baseScale = originalHealthScale;
-            BANWKindStatExtension extension = GetKindExtension(pawn);
-            if (extension != null && extension.healthScaleOverride.HasValue)
+            if (BattleStatUtility.GetBaseStatExtension(pawn) == null && BattleStatUtility.GetStarGrowthExtension(pawn) == null)
             {
-                float lifeStageFactor = pawn.ageTracker?.CurLifeStage?.healthScaleFactor ?? 1f;
-                baseScale = extension.healthScaleOverride.Value * lifeStageFactor;
+                return originalHealthScale;
             }
 
-            float offset = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthScaleOffset) + GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthScaleOffset);
-            float percentOffset = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthScalePercentOffset) + GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthScalePercentOffset);
-            percentOffset += BattleStatUtility.GetBaseHealthPercent(pawn);
-            return Mathf.Max(0.01f, (baseScale + offset) * Mathf.Max(0f, 1f + percentOffset));
+            float baseHealth = GetBaseHealth(pawn, originalHealthScale);
+            float levelMultiplier = GetHealthLevelMultiplier(pawn);
+            float starMultiplier = GetHealthStarMultiplier(pawn);
+            float flatBonus = GetHealthFlatBonus(pawn);
+            float bonusMultiplier = GetHealthBonusMultiplier(pawn);
+            float finalHealth = (baseHealth * levelMultiplier * starMultiplier + flatBonus) * bonusMultiplier;
+            return Mathf.Max(0.01f, finalHealth);
+        }
+
+        // 获取基础固定生命值，负责把原版 HealthScale 和 PawnKind 基础生命值合并为乘算基础。
+        private static float GetBaseHealth(Pawn pawn, float originalHealthScale)
+        {
+            float baseHealth = Mathf.Max(0f, originalHealthScale);
+            baseHealth += Mathf.Max(0f, BattleStatUtility.GetBaseHealthFlat(pawn));
+            return baseHealth;
+        }
+
+        // 获取升级生命值倍率，负责把等级、装备和状态提供的升级加成转换为乘区。
+        private static float GetHealthLevelMultiplier(Pawn pawn)
+        {
+            float bonus = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthLevelMultiplier) +
+                          GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthLevelMultiplier);
+            return Mathf.Max(0f, 1f + bonus);
+        }
+
+        // 获取升星生命值倍率，负责读取当前阶级对应的生命值成长。
+        private static float GetHealthStarMultiplier(Pawn pawn)
+        {
+            float bonus = BattleStatUtility.GetRankHealthPercent(pawn);
+            return Mathf.Max(0f, 1f + bonus);
+        }
+
+        // 获取固定生命值加算，负责把装备、状态和星级固定成长加入乘算后的生命值。
+        private static float GetHealthFlatBonus(Pawn pawn)
+        {
+            float bonus = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthFlatBonus) +
+                          GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthFlatBonus) +
+                          BattleStatUtility.GetRankHealthFlat(pawn);
+            return Mathf.Max(0f, bonus);
+        }
+
+        // 获取生命值加成倍率，负责把最终百分比生命值加成转换为乘区。
+        private static float GetHealthBonusMultiplier(Pawn pawn)
+        {
+            float bonus = GetPawnStatValue(pawn, BANWStatDefOf.BANW_HealthBonusMultiplier) +
+                          GetWornApparelStatValue(pawn, BANWStatDefOf.BANW_HealthBonusMultiplier);
+            return Mathf.Max(0f, 1f + bonus);
         }
 
         // 获取小人属性值，负责在 StatDef 未加载或 Pawn 无效时返回安全默认值。
@@ -99,7 +139,7 @@ namespace BANWlLib.KindStats
             return pawn.GetStatValue(statDef);
         }
 
-        //获取已穿戴装备上的自定义属性，负责让装备生命值加成进入所有身体部位的生命倍率。
+        // 获取已穿戴装备上的自定义属性，负责让装备生命值属性进入 BA 生命值公式。
         private static float GetWornApparelStatValue(Pawn pawn, StatDef statDef)
         {
             if (pawn?.apparel?.WornApparel == null || statDef == null)

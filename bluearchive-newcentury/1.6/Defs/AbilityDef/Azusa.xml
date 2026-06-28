@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Azusa_EX</defName>
@@ -56,7 +56,7 @@
       <texPath>Projectile/Bullet_Azusa</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>2.3</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
 <DamageDef ParentName="BANC_Damage_baofa">
     <defName>BANC_Damage_Azusa</defName><!--通用贯通-->
 <additionalHediffs><!--额外健康-->

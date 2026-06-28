@@ -1,19 +1,46 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   <HediffDef>
     <defName>BANW_StarGrowthDisplayStatus</defName>
-    <label>阶级成长</label>
-    <description>显示当前阶级提供的生命、攻击和治疗成长。该状态只负责显示，不直接提供属性加成。</description>
-    <!-- 状态类：运行时读取 Pawn 当前阶级和 PawnKindDef 的 BattleStarGrowthExtension。 -->
+    <label>星级成长</label>
+    <description>显示当前星级提供的生命、攻击和治疗成长。该状态只负责显示，不直接提供属性加成。</description>
+    <!-- 状态类：运行时读取 Pawn 当前星级和 PawnKindDef 的 BattleStarGrowthExtension。 -->
     <hediffClass>BANWlLib.BattleSystem.Hediff_StarGrowthDisplay</hediffClass>
+    <!-- 非负面状态：旧存档短暂带有该状态时不应被召回健康检查视为异常。 -->
+    <isBad>false</isBad>
+    <makesSickThought>false</makesSickThought>
     <!-- 初始严重度：固定为 1，仅用于让健康页显示状态。 -->
     <initialSeverity>1</initialSeverity>
     <!-- 最大严重度：固定为 1，状态本身不靠严重度表达数值。 -->
     <maxSeverity>1</maxSeverity>
     <stages>
       <li>
-        <!-- 状态阶段标签：实际显示内容由代码追加当前阶级。 -->
-        <label>阶级成长</label>
+        <!-- 状态阶段标签：实际显示内容由代码追加当前星级。 -->
+        <label>星级成长</label>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_BattleShield</defName>
+    <label>护盾</label>
+    <description>吸收下一次受到的伤害，护盾不足时也会完整抵住本次伤害。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleShield" />
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>3600</min>
+          <max>3600</max>
+        </disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>护盾</label>
       </li>
     </stages>
   </HediffDef>

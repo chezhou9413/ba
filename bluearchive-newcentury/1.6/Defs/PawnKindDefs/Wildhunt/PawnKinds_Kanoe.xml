@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Kanoe</defName>
@@ -109,7 +109,7 @@
 					</starValues>
 				</attackPercent>
 				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
-				<!-- 星级基础治愈力平加成长，先加入基础治愈力再乘治愈力百分比。 -->
+				<!-- 升星固定治愈力成长，进入治愈力公式的固定加算项。 -->
 				<healPercent>
 					<starValues>
 						<li>0</li>
@@ -202,7 +202,7 @@
                 <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的生命值。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<BANW_HealthScalePercentOffset>0.26</BANW_HealthScalePercentOffset>
+					<BANW_HealthBonusMultiplier>0.26</BANW_HealthBonusMultiplier>
                 </statOffsets>
             </li>
         </degreeDatas>

@@ -355,15 +355,15 @@ namespace BANWlLib
                 }
 
                 //继续原版的伤害处理逻辑
-                float damageAmount = dinfo.Amount;
+                float injuryDamage = dinfo.Amount;
                 bool shouldCheckArmor = !dinfo.InstantPermanentInjury && !dinfo.IgnoreArmor;
                 bool deflectedByMetalArmor = false;
                 if (shouldCheckArmor)
                 {
                     DamageDef damageDef = dinfo.Def;
-                    damageAmount = ArmorUtility.GetPostArmorDamage(pawn, damageAmount, dinfo.ArmorPenetrationInt, dinfo.HitPart, ref damageDef, out deflectedByMetalArmor, out var diminishedByMetalArmor);
+                    injuryDamage = ArmorUtility.GetPostArmorDamage(pawn, injuryDamage, dinfo.ArmorPenetrationInt, dinfo.HitPart, ref damageDef, out deflectedByMetalArmor, out var diminishedByMetalArmor);
                     dinfo.Def = damageDef;
-                    if (damageAmount < dinfo.Amount)
+                    if (injuryDamage < dinfo.Amount)
                     {
                         result.diminished = true;
                         result.diminishedByMetalArmor = diminishedByMetalArmor;
@@ -373,11 +373,11 @@ namespace BANWlLib
                 // 承伤系数计算
                 if (dinfo.Def.ExternalViolenceFor(pawn))
                 {
-                    damageAmount *= pawn.GetStatValue(StatDefOf.IncomingDamageFactor);
+                    injuryDamage *= pawn.GetStatValue(StatDefOf.IncomingDamageFactor);
                 }
 
                 // 检查是否完全格挡
-                if (damageAmount <= 0f)
+                if (injuryDamage <= 0f)
                 {
                     result.AddPart(pawn, dinfo.HitPart);
                     result.deflected = true;
@@ -396,11 +396,11 @@ namespace BANWlLib
                 {
                     if (!dinfo.AllowDamagePropagation)
                     {
-                        FinalizeAndAddInjury(worker, pawn, damageAmount, dinfo, result);
+                        FinalizeAndAddInjury(worker, pawn, injuryDamage, dinfo, result);
                     }
                     else
                     {
-                        ApplySpecialEffectsToPart(worker, pawn, damageAmount, dinfo, result);
+                        ApplySpecialEffectsToPart(worker, pawn, injuryDamage, dinfo, result);
                     }
                 }
             }

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
   
 <AbilityDef>
@@ -57,7 +57,7 @@
       <explosionDamageFalloff>true</explosionDamageFalloff>
       <!-- Use default damage from explosion def -->
     </projectile>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>6.66</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   
   <ThingDef ParentName="BAWN_Akari_EX_Boom">
     <defName>BAWN_Akari_EX_Boom</defName>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Mika_EXX</defName>
@@ -214,7 +214,7 @@
       <texPath>Projectile/Bullet_Mika</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>1.08</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Mika_EX</defName>
     <label>星之呼唤子弹</label>
@@ -231,7 +231,7 @@
       <texPath>Projectile/Bullet_Mika</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>0.98</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
     <DamageDef>
     <defName>BANC_Damage_Mika</defName><!--通用贯通-->
     <label>贯通</label><!--描述-->

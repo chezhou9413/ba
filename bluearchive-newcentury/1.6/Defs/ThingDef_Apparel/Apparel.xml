@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <Defs>
     
     <ThingDef Name="BANW_Apparel_Base" ParentName="ApparelNoQualityBase" Abstract="True">
-        <smeltable/>
+        <smeltable />
 		<useHitPoints>false</useHitPoints>
         <statBases>
             <MarketValue>1</MarketValue>
@@ -42,7 +42,7 @@
     </ThingDef>
 
      <ThingDef Name="BANC_Apparel_Base" ParentName="ApparelNoQualityBase" Abstract="true">
-        <smeltable/>
+        <smeltable />
 		<useHitPoints>false</useHitPoints>
 		<graphicData>
 			<drawSize>0.8</drawSize>
@@ -84,7 +84,7 @@
     </ThingDef>
 
 	<ThingDef Name="BANC_Apparel_Base_Tow" ParentName="ApparelNoQualityBase" Abstract="true">
-        <smeltable/>
+        <smeltable />
 		<useHitPoints>false</useHitPoints>
 		<graphicData>
 			<drawSize>0.8</drawSize>
@@ -141,7 +141,7 @@
     </ThingDef>
 
 	<ThingDef Name="BANC_Apparel_Shields" ParentName="ApparelNoQualityBase" Abstract="true">
-        <smeltable/>
+        <smeltable />
 		<useHitPoints>false</useHitPoints>
 		<graphicData>
 			<drawSize>0.8</drawSize>

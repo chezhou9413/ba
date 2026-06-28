@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
 <AbilityDef>
 <defName>BAWN_Suzumi_A_EXX</defName>
@@ -80,7 +80,7 @@
          <stages>
           <li>     
            <statOffsets>
-            <BANW_RangedWeapon_Damage>+0.26</BANW_RangedWeapon_Damage>
+            <BANW_AttackLevelMultiplier>+0.26</BANW_AttackLevelMultiplier>
            <BANW_FinalDamageMultiplier>+0.47</BANW_FinalDamageMultiplier>
             </statOffsets>
            </li>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
   <FactionDef Name="BANW_PlayerFactionBase" ParentName="FactionBase" Abstract="True">
     <colorSpectrum>
@@ -50,7 +50,7 @@
     <defName>BANW_NamerInitialSettlementColony</defName>
     <rulePack>
       <rulesStrings>
-        <li>r_name->殖民地</li>
+        <li>r_name-&gt;殖民地</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -59,7 +59,7 @@
     <defName>BANW_NamerFaction</defName>
     <rulePack>
       <rulesStrings>
-        <li>r_name->夏莱</li>
+        <li>r_name-&gt;夏莱</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -67,7 +67,7 @@
     <defName>BANW_NamerSettlement</defName>
     <rulePack>
       <rulesStrings>
-        <li>r_name->夏莱</li>
+        <li>r_name-&gt;夏莱</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>

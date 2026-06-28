@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+
 <Defs>
    <AbilityDef>
 <defName>BAWN_Hiyori_EX</defName>
@@ -64,7 +64,7 @@
       <texPath>Projectile/Bullet_Hiyori</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  </ThingDef>
+  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>3.02</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
  <AbilityDef>
     <defName>BAWN_Hiyori_EXX</defName>
     <label>我，我来支援了！</label>
@@ -105,7 +105,7 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>0</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hiyori_EXX</damageType>
                 <!-- 穿透 --> 
@@ -113,12 +113,12 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hiyori_Ef_A</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>0</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>60</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>244</damageAmount>
+                
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hiyori_EXX</damageType>
                 <!-- 穿透 --> 
@@ -126,7 +126,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hiyori_Ef_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            </li>
+            <attackPowerRatio>2.44</attackPowerRatio></li>
         </damages>
     </JobDef>
     <DamageDef ParentName="BANC_Damage_baofa">

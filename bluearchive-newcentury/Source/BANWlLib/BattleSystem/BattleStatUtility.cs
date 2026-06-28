@@ -19,16 +19,28 @@ namespace BANWlLib.BattleSystem
             return pawn?.kindDef?.GetModExtension<BattleBaseStatExtension>();
         }
 
-        // 获取学生基础生命尺度百分比，负责接入 HealthScale 计算。
+        // 获取学生基础生命值加成，负责接入最终生命值加成乘区。
         public static float GetBaseHealthPercent(Pawn pawn)
         {
             return GetBaseStatExtension(pawn)?.healthPercent ?? 0f;
+        }
+
+        // 获取学生基础固定生命值，负责接入生命值公式的基础乘算项。
+        public static float GetBaseHealthFlat(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.healthFlat ?? 0f;
         }
 
         // 获取学生基础攻击力百分比，负责接入最终攻击力计算。
         public static float GetBaseAttackPercent(Pawn pawn)
         {
             return GetBaseStatExtension(pawn)?.attackPercent ?? 0f;
+        }
+
+        // 获取学生基础攻击力平加，负责接入最终攻击力计算。
+        public static float GetBaseAttackFlat(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.attackFlat ?? 0f;
         }
 
         // 获取学生基础治疗力百分比，负责接入最终治疗力计算。
@@ -97,6 +109,54 @@ namespace BANWlLib.BattleSystem
             return extension.healPercent.Evaluate(GetCurrentRankLevel(pawn));
         }
 
+        // 获取当前阶级基础攻击力成长，负责让阶级成长进入最终攻击力。
+        public static float GetRankAttackFlat(Pawn pawn)
+        {
+            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
+            if (extension == null)
+            {
+                return 0f;
+            }
+
+            return extension.attackFlat.Evaluate(GetCurrentRankLevel(pawn));
+        }
+
+        // 获取当前阶级攻击力百分比成长，负责让阶级成长进入攻击力加成。
+        public static float GetRankAttackPercent(Pawn pawn)
+        {
+            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
+            if (extension == null)
+            {
+                return 0f;
+            }
+
+            return extension.attackPercent.Evaluate(GetCurrentRankLevel(pawn));
+        }
+
+        // 获取当前阶级固定生命值成长，负责让星级成长进入生命值固定加算项。
+        public static float GetRankHealthFlat(Pawn pawn)
+        {
+            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
+            if (extension == null)
+            {
+                return 0f;
+            }
+
+            return extension.healthFlat.Evaluate(GetCurrentRankLevel(pawn));
+        }
+
+        // 获取当前阶级生命值百分比成长，负责让星级成长进入升星生命值倍率。
+        public static float GetRankHealthPercent(Pawn pawn)
+        {
+            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
+            if (extension == null)
+            {
+                return 0f;
+            }
+
+            return extension.healthPercent.Evaluate(GetCurrentRankLevel(pawn));
+        }
+
         // 获取 PawnKind 基础战斗属性对指定 Stat 的额外加成，负责让 PawnKind 固有属性注入原版 StatWorker 显示。
         public static float GetBaseStatOffset(Pawn pawn, StatDef statDef)
         {
@@ -116,7 +176,7 @@ namespace BANWlLib.BattleSystem
                 return ext.attackPercent;
             }
 
-            if (statDef == BattleStatDefOf.BANW_HealPowerMultiplier)
+            if (statDef == BattleStatDefOf.BANW_HealBonusMultiplier)
             {
                 return ext.healPercent;
             }
@@ -131,7 +191,7 @@ namespace BANWlLib.BattleSystem
                 return ext.exSkillMultiplierOffset;
             }
 
-            if (statDef == BattleStatDefOf.BANW_HealthScalePercentOffset)
+            if (statDef == BattleStatDefOf.BANW_HealthBonusMultiplier)
             {
                 return ext.healthPercent;
             }
@@ -160,7 +220,7 @@ namespace BANWlLib.BattleSystem
             return total;
         }
 
-        // 获取攻击力倍率，负责把基础攻击百分比、装备加成和叠层状态合并为最终倍率。
+        // 获取攻击力加成倍率，负责把装备、状态和阶级成长合并为最终伤害乘区。
         public static float GetAttackMultiplier(Pawn pawn)
         {
             if (pawn == null)
@@ -168,58 +228,101 @@ namespace BANWlLib.BattleSystem
                 return 1f;
             }
 
-            float bonus = GetBaseAttackPercent(pawn) +
-                          pawn.GetStatValue(BattleStatDefOf.BANW_FinalDamageMultiplier) +
+            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_FinalDamageMultiplier) +
                           GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_FinalDamageMultiplier);
             return Mathf.Max(0f, 1f + bonus);
         }
 
-        // 获取基础攻击倍率，负责把基础攻击力百分比加成转成 100% 起步的倍率。
-        public static float GetAttackPowerBaseMultiplier(Pawn pawn)
+        // 获取升级攻击力倍率，负责把等级状态里的攻击成长转为角色自身攻击力乘区。
+        public static float GetAttackLevelMultiplier(Pawn pawn)
         {
             if (pawn == null)
             {
                 return 1f;
             }
 
-            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_RangedWeapon_Damage) +
-                          GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_RangedWeapon_Damage);
+            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_AttackLevelMultiplier) +
+                          GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_AttackLevelMultiplier);
             return Mathf.Max(0f, 1f + bonus);
         }
 
-        // 获取最终攻击力，负责统一组合基础攻击倍率和最终攻击力倍率。
-        public static float GetFinalAttackPower(Pawn pawn)
+        // 获取升星攻击力倍率，负责让 PawnKind 和阶级成长进入武器初始攻击力乘区。
+        public static float GetAttackStarMultiplier(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 1f;
+            }
+
+            float bonus = GetBaseAttackPercent(pawn) + GetRankAttackPercent(pawn);
+            return Mathf.Max(0f, 1f + bonus);
+        }
+
+        // 获取固定攻击力，负责把学生基础值、状态平加和阶级成长合并为角色自身攻击力加算项。
+        public static float GetAttackFlatBonus(Pawn pawn)
         {
             if (pawn == null)
             {
                 return 0f;
             }
 
-            return Mathf.Max(0f, GetAttackPowerBaseMultiplier(pawn) * GetAttackMultiplier(pawn));
+            float attackFlat = GetBaseAttackFlat(pawn) +
+                               GetRankAttackFlat(pawn);
+            return Mathf.Max(0f, attackFlat);
         }
 
-        // 获取最终攻击倍率，负责统一组合基础攻击倍率和最终攻击力加成。
-        public static float GetTotalAttackMultiplier(Pawn pawn)
+        // 获取武器初始攻击力，负责读取当前主武器默认子弹的原始伤害。
+        public static float GetWeaponBaseAttack(Pawn pawn)
+        {
+            ThingWithComps primary = pawn?.equipment?.Primary;
+            ThingDef projectileDef = GetPrimaryProjectileDef(pawn);
+            if (projectileDef?.projectile == null)
+            {
+                return 0f;
+            }
+
+            return Mathf.Max(0f, projectileDef.projectile.GetDamageAmount(primary));
+        }
+
+        // 获取角色自身攻击力，负责按武器初始攻击力、升级倍率、升星倍率和固定攻击力结算。
+        public static float GetFinalAttackPower(Pawn pawn)
+        {
+            return GetFinalAttackPower(pawn, GetWeaponBaseAttack(pawn));
+        }
+
+        // 获取角色自身攻击力，负责按指定武器初始攻击力结算普通攻击和技能伤害基数。
+        public static float GetFinalAttackPower(Pawn pawn, float weaponBaseAttack)
         {
             if (pawn == null)
             {
-                return 1f;
+                return 0f;
             }
 
-            return Mathf.Max(0f, GetAttackPowerBaseMultiplier(pawn) * GetAttackMultiplier(pawn));
+            return Mathf.Max(0f, Mathf.Max(0f, weaponBaseAttack) * GetAttackLevelMultiplier(pawn) * GetAttackStarMultiplier(pawn) + GetAttackFlatBonus(pawn));
         }
 
-        public static float ScaleDamageBase(Pawn pawn, float baseAmount)
+        // 获取主武器默认投射物，负责为技能和普通攻击提供统一武器攻击力来源。
+        private static ThingDef GetPrimaryProjectileDef(Pawn pawn)
         {
-            if (pawn == null)
+            ThingWithComps primary = pawn?.equipment?.Primary;
+            if (primary?.def?.Verbs == null)
             {
-                return Mathf.Max(0f, baseAmount);
+                return null;
             }
 
-            return Mathf.Max(0f, Mathf.Max(0f, baseAmount) * GetTotalAttackMultiplier(pawn));
+            for (int i = 0; i < primary.def.Verbs.Count; i++)
+            {
+                ThingDef projectileDef = primary.def.Verbs[i]?.defaultProjectile;
+                if (projectileDef?.projectile != null)
+                {
+                    return projectileDef;
+                }
+            }
+
+            return null;
         }
 
-        // 缩放普通武器伤害，负责让武器弹丸按武器原始伤害、基础攻击倍率和最终攻击倍率结算。
+        // 缩放普通武器伤害，负责让武器弹丸按角色自身攻击力和攻击力加成显示。
         public static float ScaleWeaponDamageBase(Pawn pawn, float weaponBaseDamage)
         {
             if (pawn == null)
@@ -227,37 +330,58 @@ namespace BANWlLib.BattleSystem
                 return Mathf.Max(0f, weaponBaseDamage);
             }
 
-            return Mathf.Max(0f, Mathf.Max(0f, weaponBaseDamage) * GetTotalAttackMultiplier(pawn));
+            return Mathf.Max(0f, GetFinalAttackPower(pawn, weaponBaseDamage) * GetAttackMultiplier(pawn));
         }
 
-        // 获取治疗力倍率，负责把基础治疗百分比、装备加成和叠层状态合并为最终倍率。
-        public static float GetHealMultiplier(Pawn pawn)
+        // 获取升级治愈力倍率，负责把等级状态和叠层状态转为治愈力升级乘区。
+        public static float GetHealLevelMultiplier(Pawn pawn)
         {
             if (pawn == null)
             {
                 return 1f;
             }
 
-            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerMultiplier) +
-                          GetRankHealPercent(pawn);
+            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_HealLevelMultiplier);
             return Mathf.Max(0f, 1f + bonus);
         }
 
-        // 获取基础治愈力，负责把属性、学生基础值和阶级成长合并为治疗公式的基础项。
-        public static float GetHealPowerBase(Pawn pawn)
+        // 获取升星治愈力倍率，负责让阶级成长进入治愈力升星乘区。
+        public static float GetHealStarMultiplier(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 1f;
+            }
+
+            return Mathf.Max(0f, 1f + GetRankHealPercent(pawn));
+        }
+
+        // 获取固定治愈力加算，负责把装备、状态和阶级固定成长合并到乘算后的固定项。
+        public static float GetHealFlatBonus(Pawn pawn)
         {
             if (pawn == null)
             {
                 return 0f;
             }
 
-            float basePower = pawn.GetStatValue(BattleStatDefOf.BANW_HealPowerBase) +
-                              GetBaseHealFlat(pawn) +
+            float flatBonus = pawn.GetStatValue(BattleStatDefOf.BANW_HealFlatBonus) +
                               GetRankHealFlat(pawn);
-            return Mathf.Max(0f, basePower);
+            return Mathf.Max(0f, flatBonus);
         }
 
-        // 获取最终治愈力，负责统一组合基础治愈力和治愈力加成。
+        // 获取治愈力加成，负责把 PawnKind、装备、状态和叠层加成合并为最终乘区。
+        public static float GetHealBonusMultiplier(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 1f;
+            }
+
+            float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_HealBonusMultiplier);
+            return Mathf.Max(0f, 1f + bonus);
+        }
+
+        // 获取最终治愈力，负责按基础固定治愈力、升级倍率、升星倍率、固定加算和最终加成结算。
         public static float GetFinalHealPower(Pawn pawn)
         {
             if (pawn == null)
@@ -265,15 +389,15 @@ namespace BANWlLib.BattleSystem
                 return 0f;
             }
 
-            return Mathf.Max(0f, GetHealPowerBase(pawn) * GetHealMultiplier(pawn));
+            float baseHeal = GetBaseHealFlat(pawn);
+            float levelMultiplier = GetHealLevelMultiplier(pawn);
+            float starMultiplier = GetHealStarMultiplier(pawn);
+            float flatBonus = GetHealFlatBonus(pawn);
+            float bonusMultiplier = GetHealBonusMultiplier(pawn);
+            return Mathf.Max(0f, (baseHeal * levelMultiplier * starMultiplier + flatBonus) * bonusMultiplier);
         }
 
-        // 缩放治疗基础值，负责兼容旧调用；严格治疗公式下固定治疗值不再参与结算。
-        public static float ScaleHealBase(Pawn pawn, float baseAmount)
-        {
-            return 0f;
-        }
-
+        // 获取受回复率，负责在治疗量完成后按目标状态和装备计算最终受疗倍率。
         public static float GetHealReceivedMultiplier(Pawn pawn)
         {
             if (pawn == null)
@@ -281,10 +405,30 @@ namespace BANWlLib.BattleSystem
                 return 1f;
             }
 
-            float multiplier = pawn.GetStatValue(BattleStatDefOf.BANW_HealReceivedMultiplier) +
-                               GetBaseHealReceivedMultiplierOffset(pawn) +
-                               GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_HealReceivedMultiplier);
+            float multiplier = pawn.GetStatValue(BattleStatDefOf.BANW_HealReceivedMultiplier);
             return Mathf.Max(0f, multiplier);
+        }
+
+        // 获取暴击抵抗率，负责从目标属性和叠层状态读取暴击率减算值。
+        public static float GetCriticalChanceResistance(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 0f;
+            }
+
+            return Mathf.Max(0f, pawn.GetStatValue(BattleStatDefOf.BANW_CriticalChanceResistance));
+        }
+
+        // 获取暴击伤害抵抗率，负责从目标属性和叠层状态读取暴击伤害减算值。
+        public static float GetCriticalDamageResistance(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 0f;
+            }
+
+            return Mathf.Max(0f, pawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamageResistance));
         }
 
         // 获取角色 EX 技能倍率，负责把属性和叠层状态加成合并为最终倍率。
@@ -324,18 +468,19 @@ namespace BANWlLib.BattleSystem
                 return null;
             }
 
-            float attackPowerBase = GetAttackPowerBaseMultiplier(pawn);
             float attackMultiplier = GetAttackMultiplier(pawn);
-            float healMultiplier = GetHealMultiplier(pawn);
+            float healMultiplier = GetHealBonusMultiplier(pawn);
+            float weaponBaseAttack = GetWeaponBaseAttack(pawn);
             return new BattleCasterSnapshot
             {
-                attackPowerBase = attackPowerBase,
+                attackLevelMultiplier = GetAttackLevelMultiplier(pawn),
                 attackMultiplier = attackMultiplier,
-                attackPower = attackPowerBase * attackMultiplier,
+                weaponBaseAttack = weaponBaseAttack,
+                attackPower = GetFinalAttackPower(pawn, weaponBaseAttack),
                 healMultiplier = healMultiplier,
                 healPower = GetFinalHealPower(pawn),
-                criticalChance = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalChance) + GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_CriticalChance),
-                criticalDamage = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamage) + GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_CriticalDamage),
+                criticalChance = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalChance),
+                criticalDamage = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamage),
                 exSkillMultiplier = GetExSkillMultiplier(pawn),
                 damageType = TryGetDamageType(pawn)
             };
@@ -350,26 +495,15 @@ namespace BANWlLib.BattleSystem
             }
 
             Pawn casterPawn = request.instigator as Pawn;
-            float amount = Mathf.Max(0f, request.baseAmount);
-            if (request.snapshot != null)
-            {
-                amount = Mathf.Max(0f, request.baseAmount) * request.snapshot.attackPowerBase * request.snapshot.attackMultiplier;
-                if (request.attackPowerRatio > 0f)
-                {
-                    amount += request.snapshot.attackPower * request.attackPowerRatio;
-                }
-            }
-            else if (casterPawn != null)
-            {
-                amount = ScaleDamageBase(casterPawn, request.baseAmount);
-                if (request.attackPowerRatio > 0f)
-                {
-                    amount += GetFinalAttackPower(casterPawn) * request.attackPowerRatio;
-                }
-            }
+            float weaponBaseAttack = ResolveWeaponBaseAttack(request, casterPawn);
+            float attackPower = request.snapshot != null ? request.snapshot.attackPower : GetFinalAttackPower(casterPawn, weaponBaseAttack);
+            float attackMultiplier = request.snapshot != null ? request.snapshot.attackMultiplier : GetAttackMultiplier(casterPawn);
+            float actionMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.normalAttackMultiplier) : Mathf.Max(0f, request.attackPowerRatio);
+            float masteryMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.baseMasteryMultiplier) : 1f;
+            float amount = attackPower * actionMultiplier * attackMultiplier * masteryMultiplier;
 
             float critMultiplier = 1f;
-            result.isCrit = TryRollCrit(casterPawn, request.snapshot, request.canCrit, out critMultiplier);
+            result.isCrit = TryRollCrit(casterPawn, request.target as Pawn, request.snapshot, request.canCrit, out critMultiplier);
             amount *= critMultiplier;
 
             if (request.applyAffinity)
@@ -383,6 +517,22 @@ namespace BANWlLib.BattleSystem
 
             result.finalAmount = Mathf.Max(0f, amount);
             return result;
+        }
+
+        // 解析本次攻击的武器初始攻击力，负责优先使用投射物伤害，其次使用施法者主武器子弹。
+        private static float ResolveWeaponBaseAttack(BattleDamageRequest request, Pawn casterPawn)
+        {
+            if (request == null)
+            {
+                return 0f;
+            }
+
+            if (request.weaponBaseAttack > 0f)
+            {
+                return request.weaponBaseAttack;
+            }
+
+            return GetWeaponBaseAttack(casterPawn);
         }
 
         public static BattleHealResult BuildHealResult(BattleHealRequest request)
@@ -427,7 +577,7 @@ namespace BANWlLib.BattleSystem
             BattleDamageResult result = BuildDamageResult(request);
             bool instigatorGuilty = !(request.instigator is Pawn launcherPawn) || !launcherPawn.Drafted;
             BattleDamageDisplayState.RegisterManualDamage(request.target, request.instigator, result.isCrit);
-            BattleDamageDisplayState.RegisterCriticalFloatText(request.target, result.isCrit);
+            BattleDamageDisplayState.RegisterCriticalFloatText(request.target, result.isCrit || request.alwaysShowCriticalText);
             DamageInfo damageInfo = new DamageInfo(
                 request.damageDef,
                 result.finalAmount,
@@ -466,7 +616,67 @@ namespace BANWlLib.BattleSystem
             {
                 CriticalObjPool.showHealShow(result.actualHealedAmount, request.target, result.isCrit);
             }
+            else if (request.alwaysShowHealText && result.finalAmount > 0.01f)
+            {
+                CriticalObjPool.showHealShow(result.finalAmount, request.target, result.isCrit);
+            }
 
+            return result;
+        }
+
+        // 结算护盾结果，负责按施法者最终治愈力和护盾倍率得到护盾值。
+        public static BattleHealResult BuildShieldResult(BattleShieldRequest request)
+        {
+            BattleHealResult result = new BattleHealResult();
+            if (request == null || request.target == null)
+            {
+                return result;
+            }
+
+            float healPower = request.snapshot != null ? request.snapshot.healPower : GetFinalHealPower(request.instigator as Pawn);
+            result.finalAmount = Mathf.Max(0f, healPower * Mathf.Max(0f, request.shieldPowerRatio));
+            result.isCrit = false;
+            result.exSkillMultiplier = 1f;
+            return result;
+        }
+
+        // 应用护盾，负责创建或叠加目标身上的战斗护盾 Hediff。
+        public static BattleHealResult ApplyShield(BattleShieldRequest request)
+        {
+            BattleHealResult result = BuildShieldResult(request);
+            if (request == null || request.target == null || result.finalAmount <= 0f)
+            {
+                return result;
+            }
+
+            if (request.shieldHediffDef == null)
+            {
+                Log.Error("[BANW] 护盾动作缺少 shieldHediffDef，无法应用护盾。");
+                return result;
+            }
+
+            Hediff shieldHediff = request.target.health.hediffSet.GetFirstHediffOfDef(request.shieldHediffDef);
+            if (shieldHediff == null)
+            {
+                shieldHediff = HediffMaker.MakeHediff(request.shieldHediffDef, request.target);
+                request.target.health.AddHediff(shieldHediff);
+            }
+
+            HediffComp_BattleShield shieldComp = shieldHediff.TryGetComp<HediffComp_BattleShield>();
+            if (shieldComp == null)
+            {
+                Log.Error("[BANW] 护盾 Hediff " + request.shieldHediffDef.defName + " 缺少 HediffComp_BattleShield。");
+                return result;
+            }
+
+            shieldComp.AddShield(result.finalAmount);
+            HediffComp_Disappears disappears = shieldHediff.TryGetComp<HediffComp_Disappears>();
+            if (disappears != null)
+            {
+                disappears.ResetElapsedTicks();
+            }
+
+            CriticalObjPool.showHealShow(result.finalAmount, request.target, false);
             return result;
         }
 
@@ -484,37 +694,50 @@ namespace BANWlLib.BattleSystem
                 effecter.Cleanup();
             }
 
-            if (action.isHealing && target is Pawn pawnTarget)
-            {
-                ApplyHealing(new BattleHealRequest
-                {
-                    instigator = instigator,
-                    target = pawnTarget,
-                    baseAmount = action.baseAmount,
-                    healPowerRatio = action.healPowerRatio,
-                    canCrit = action.canCrit,
-                    allowPermanentInjuryHealing = action.allowPermanentInjuryHealing,
-                    isExSkill = action.isExSkill,
-                    snapshot = snapshot
-                });
-            }
-            else if (!action.isHealing && action.damageDef != null)
+            if (action.damageDef != null)
             {
                 ApplyDamage(new BattleDamageRequest
                 {
                     instigator = instigator,
                     target = target,
                     damageDef = action.damageDef,
-                    baseAmount = action.baseAmount,
                     attackPowerRatio = action.attackPowerRatio,
+                    normalAttackMultiplier = action.normalAttackMultiplier,
+                    baseMasteryMultiplier = action.baseMasteryMultiplier,
                     penetration = action.penetration,
+                    isNormalAttack = action.isNormalAttack,
                     canCrit = action.canCrit,
+                    alwaysShowCriticalText = action.alwaysShowCriticalText,
                     applyAffinity = action.applyAffinity,
                     isExSkill = action.isExSkill,
                     snapshot = snapshot
                 });
             }
-
+            else if (action.isShield && target is Pawn shieldTarget)
+            {
+                ApplyShield(new BattleShieldRequest
+                {
+                    instigator = instigator,
+                    target = shieldTarget,
+                    shieldPowerRatio = action.shieldPowerRatio,
+                    shieldHediffDef = action.shieldHediffDef,
+                    snapshot = snapshot
+                });
+            }
+            else if (action.isHealing && target is Pawn pawnTarget)
+            {
+                ApplyHealing(new BattleHealRequest
+                {
+                    instigator = instigator,
+                    target = pawnTarget,
+                    healPowerRatio = action.healPowerRatio,
+                    canCrit = action.canCrit,
+                    alwaysShowHealText = action.alwaysShowHealText,
+                    allowPermanentInjuryHealing = action.allowPermanentInjuryHealing,
+                    isExSkill = action.isExSkill,
+                    snapshot = snapshot
+                });
+            }
             if (action.triggerHediff != null && target is Pawn hediffPawn)
             {
                 if (action.triggerHediff.CompProps<HediffCompProperties_BattleStack>() != null)
@@ -536,13 +759,29 @@ namespace BANWlLib.BattleSystem
                 return false;
             }
 
-            if (target is Building)
+            bool isDamageAction = action.damageDef != null;
+            if (target is Building building)
             {
-                return action.canHitBuilding;
+                if (!action.canHitBuilding)
+                {
+                    return false;
+                }
+
+                if (isDamageAction && IsOwnFaction(caster, building) && !action.canHitOwnBuilding)
+                {
+                    return false;
+                }
+
+                return true;
             }
 
             Pawn targetPawn = target as Pawn;
             if (targetPawn == null || targetPawn.Dead)
+            {
+                return false;
+            }
+
+            if (isDamageAction && IsOwnFaction(caster, targetPawn) && !action.canHitOwnPawn)
             {
                 return false;
             }
@@ -558,6 +797,12 @@ namespace BANWlLib.BattleSystem
             }
 
             return action.affectFriendly;
+        }
+
+        //判断目标是否属于施法者阵营，负责阻止伤害动作误伤己方建筑和己方 Pawn。
+        private static bool IsOwnFaction(Pawn caster, Thing target)
+        {
+            return caster?.Faction != null && target?.Faction != null && target.Faction == caster.Faction;
         }
 
         public static float GetAffinityMultiplier(Thing instigator, Thing target, BattleCasterSnapshot snapshot = null)
@@ -657,7 +902,8 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        private static bool TryRollCrit(Pawn casterPawn, BattleCasterSnapshot snapshot, bool canCrit, out float critMultiplier)
+        // 判定暴击，负责把目标暴击抵抗和暴击伤害抵抗纳入最终暴击乘区。
+        private static bool TryRollCrit(Pawn casterPawn, Pawn targetPawn, BattleCasterSnapshot snapshot, bool canCrit, out float critMultiplier)
         {
             critMultiplier = 1f;
             if (!canCrit)
@@ -674,14 +920,17 @@ namespace BANWlLib.BattleSystem
             }
             else if (casterPawn != null)
             {
-                critChance = casterPawn.GetStatValue(BattleStatDefOf.BANW_CriticalChance) + GetAdditionalBattleStatOffset(casterPawn, BattleStatDefOf.BANW_CriticalChance);
-                critDamage = casterPawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamage) + GetAdditionalBattleStatOffset(casterPawn, BattleStatDefOf.BANW_CriticalDamage);
+                critChance = casterPawn.GetStatValue(BattleStatDefOf.BANW_CriticalChance);
+                critDamage = casterPawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamage);
             }
 
-            bool isCrit = Rand.Value < Mathf.Clamp01(critChance);
+            critChance = Mathf.Clamp01(critChance - GetCriticalChanceResistance(targetPawn));
+            critDamage = Mathf.Max(1f, critDamage - GetCriticalDamageResistance(targetPawn));
+
+            bool isCrit = Rand.Value < critChance;
             if (isCrit)
             {
-                critMultiplier = Mathf.Max(1f, critDamage);
+                critMultiplier = critDamage;
             }
 
             return isCrit;
