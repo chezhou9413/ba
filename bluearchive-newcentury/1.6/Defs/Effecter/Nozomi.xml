@@ -123,7 +123,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Nozomi/B/Nozomi_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>6.5</drawSize><!-- 绘制尺寸 -->   
@@ -145,7 +145,7 @@
 <fadeOutUnmaintained>True</fadeOutUnmaintained>
 </mote>
 <graphicData>
-<graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
 <shaderType>TransparentAnimated</shaderType><!-- TransparentAnimated是透明动画着色器 -->
 <texPath>Effect/Nozomi/B/Nozomi_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
 <drawSize>6.5</drawSize><!-- 绘制尺寸 -->   
@@ -266,7 +266,7 @@
         <moteDef>BAWN_Nozomi_4_Mote</moteDef>
         <initialDelayTicks>0</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
-        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
         <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
         <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
         <positionOffset>(0, 0.5, 0.1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
@@ -274,13 +274,14 @@
         <spawnLocType>OnSource</spawnLocType>
         <speed>0</speed>
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
       </li>
       <li>
         <subEffecterClass>BANWlLib.Projectiles.SubEffecter_AttachedProjectileMote</subEffecterClass>
         <moteDef>BAWN_Nozomi_5_Mote</moteDef>
          <initialDelayTicks>60</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
-        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
         <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
         <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
         <positionOffset>(0, 0.5, 0.1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
@@ -288,7 +289,7 @@
         <spawnLocType>OnSource</spawnLocType>
         <speed>0</speed>
         <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 -->
-        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
       </li>
 </children>
 </EffecterDef>

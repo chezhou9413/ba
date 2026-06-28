@@ -187,14 +187,14 @@
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <healAmount>0</healAmount>
-        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <!-- 每 tick 回复最终治疗力的 228%。 -->
         <healPowerRatio>2.28</healPowerRatio>
         <!-- 每 tick 触发一次治疗。 -->
         <healIntervalTicks>6</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
         <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
-        <isExSkill>false</isExSkill>
+        <isExSkill>true</isExSkill>
       </li>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>

@@ -374,6 +374,11 @@
                 <li>BANC_Badge_Ten</li>
             </tags>
         </apparel>
+        <equippedStatOffsets>
+         <BANW_HealthScaleOffset>16</BANW_HealthScaleOffset>
+        <BANW_HealthScalePercentOffset>0.25</BANW_HealthScalePercentOffset> 
+        <BANW_Miss>0.30</BANW_Miss>
+        </equippedStatOffsets>
     </ThingDef>
 
     <!-- ==================== Bags ==================== -->

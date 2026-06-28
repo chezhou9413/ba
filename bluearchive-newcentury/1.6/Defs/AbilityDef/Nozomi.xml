@@ -100,7 +100,7 @@
   <verbProperties>
     <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
     <!-- 发射投射物的技能动词，实际命中逻辑由 projectileDef 上的 Projectile_PiercingArea 执行。 -->
-    <soundCast>BANW_Wp_HG_At</soundCast>
+    <soundCast>Nozomi_Skill_EX_D</soundCast>
     <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
     <range>44</range>
     <warmupTime>2.0</warmupTime>
@@ -142,9 +142,9 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>81</baseAmount>
+          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>3.13</attackPowerRatio>
+          <attackPowerRatio>15.67</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
           <!-- 是否允许暴击。 -->
@@ -167,10 +167,10 @@
       <!-- 统一战斗层使用的伤害类型。 -->
       <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
       <!-- 固定基础伤害交给扩展字段配置，这里保持 0。 -->
-      <damageAmountBase>81</damageAmountBase>
+      <damageAmountBase>30</damageAmountBase>
       <stoppingPower>3</stoppingPower>
       <armorPenetrationBase>2</armorPenetrationBase>
-      <speed>70</speed>
+      <speed>72</speed>
       <flyOverhead>true</flyOverhead>
     </projectile>
     <graphicData>
@@ -182,21 +182,21 @@
     <modExtensions>
       <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
         <!-- 同一目标每隔多少 tick 可再次受到该穿透弹伤害。 -->
-        <damageIntervalTicks>5</damageIntervalTicks>
+        <damageIntervalTicks>2</damageIntervalTicks>
         <!-- 判定宽度，垂直于飞行方向。 -->
-        <damageWidth>3</damageWidth>
+        <damageWidth>2</damageWidth>
         <!-- 判定长度，沿飞行方向。 -->
         <damageLength>8</damageLength>
         <!-- true 表示即使点击近处，也按 maxRange 沿点击方向飞到最大距离。 -->
         <extendToMaxRange>true</extendToMaxRange>
         <!-- 最大飞行距离，应与技能 range 保持一致。 -->
-        <maxRange>44</maxRange>
+        <maxRange>49</maxRange>
         <!-- 是否跳过同阵营和盟友。 -->
         <immuneFriendlyFire>true</immuneFriendlyFire>
         <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
         <baseAmount>0</baseAmount>
         <!-- 最终攻击力倍率，15.67 表示造成 1567% 攻击力伤害。 -->
-        <attackPowerRatio>3.13</attackPowerRatio>
+        <attackPowerRatio>15.57</attackPowerRatio>
         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
         <isExSkill>true</isExSkill>
         <!-- 是否允许暴击。 -->
@@ -210,7 +210,7 @@
         <!-- 是否命中友方目标。 -->
         <affectFriendly>false</affectFriendly>
         <!-- 飞行中持续绑定到子弹上的特效。 -->
-        <flightEffecter>BANW_Effecter_Nozomi_Train_Flight_Test</flightEffecter>
+        <flightEffecter>BANW_Nozomi_Ef_D</flightEffecter>
         <!-- true 表示飞行特效跟随投射物 Thing。 -->
         <flightEffectAttachToProjectile>true</flightEffectAttachToProjectile>
         <!-- true 表示附着 Mote 按投射物朝向同步旋转。 -->
@@ -220,7 +220,7 @@
         <!-- 飞行特效向弹道右侧偏移。 -->
         <flightEffectOffsetRight>0</flightEffectOffsetRight>
         <!-- 飞行特效向上偏移。 -->
-        <flightEffectOffsetUp>0.4</flightEffectOffsetUp>
+        <flightEffectOffsetUp>0</flightEffectOffsetUp>
         <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
         <directionalImpactEffect></directionalImpactEffect>
         <!-- 是否对 Pawn 触发方向命中特效。 -->
@@ -382,7 +382,7 @@
           <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
-          <isExSkill>false</isExSkill>
+          <isExSkill>true</isExSkill>
         </li>
       </previewActions>
     </li>

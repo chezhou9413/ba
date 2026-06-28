@@ -30,6 +30,9 @@
         </apparel>
         <tradeTags>
     </tradeTags>
+        <equippedStatOffsets>
+         <BANW_FinalDamageMultiplier>+0.08</BANW_FinalDamageMultiplier>
+        </equippedStatOffsets>
     </ThingDef>
 
      <ThingDef ParentName="BANC_Apparel_Base_Tow">
@@ -483,6 +486,7 @@
         <equippedStatOffsets>
             <BANW_FinalDamageMultiplier>+0.20</BANW_FinalDamageMultiplier>
             <BANW_CriticalChance>+0.04</BANW_CriticalChance>
+          <BANW_FinalDamageMultiplier>+0.20</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Glove_Three>1</BANC_Glove_Three>

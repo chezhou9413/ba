@@ -62,7 +62,7 @@
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>7.07</attackPowerRatio>
           <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <damageDef>BANC_Damage_zhendong</damageDef>
           <!-- 是否允许暴击。 -->
           <canCrit>true</canCrit>
           <!-- 是否应用攻击类型与护甲类型克制。 -->
