@@ -19,6 +19,7 @@ namespace BANWlLib.BattleSystem
             }
 
             BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(targetPawn, hediff.def, dinfo.Value.Instigator);
+            BattleHediffSnapshotUtility.ApplySnapshotIfNeeded(hediff, dinfo.Value.Instigator);
         }
     }
 }

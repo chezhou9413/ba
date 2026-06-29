@@ -17,6 +17,23 @@ namespace BANWlLib.BattleSystem
             HealProjectileContext.Register(target, snapshot);
         }
 
+        // 向已经创建的 Hediff 写入快照，负责覆盖 DamageDef.additionalHediffs 这类创建后才带 DamageInfo 的路径。
+        public static void ApplySnapshotIfNeeded(Hediff hediff, BattleCasterSnapshot snapshot)
+        {
+            if (hediff == null || snapshot == null)
+            {
+                return;
+            }
+
+            Hediff_Regeneration regeneration = hediff.TryGetComp<Hediff_Regeneration>();
+            if (regeneration == null)
+            {
+                return;
+            }
+
+            regeneration.SetCasterSnapshot(snapshot);
+        }
+
         // 按施法者即时属性注册 Hediff 上下文，负责给没有显式快照的入口补上施法者结算来源。
         public static void RegisterSnapshotIfNeeded(Pawn target, HediffDef hediffDef, Thing instigator)
         {
@@ -39,6 +56,30 @@ namespace BANWlLib.BattleSystem
             }
 
             HealProjectileContext.Register(target, snapshot);
+        }
+
+        // 按施法者即时属性写入已创建 Hediff，负责让伤害附加 Hediff 立即获得施法者属性。
+        public static void ApplySnapshotIfNeeded(Hediff hediff, Thing instigator)
+        {
+            if (hediff == null || hediff.def?.CompProps<HediffCompProps_Regeneration>() == null)
+            {
+                return;
+            }
+
+            Pawn casterPawn = instigator as Pawn;
+            if (casterPawn == null)
+            {
+                return;
+            }
+
+            BattleCasterSnapshot snapshot = BattleStatUtility.CreateSnapshot(casterPawn);
+            if (snapshot == null)
+            {
+                Log.Error("[BANW] 再生 Hediff 无法写入施法者快照：" + casterPawn.LabelShortCap + " -> " + hediff.def.defName);
+                return;
+            }
+
+            ApplySnapshotIfNeeded(hediff, snapshot);
         }
     }
 }

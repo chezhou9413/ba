@@ -39,6 +39,15 @@ namespace BANWlLib.comp
             }
         }
 
+        // 写入施法者快照，负责处理 Hediff 已经创建后才拿到 DamageInfo 施法者的附加状态链路。
+        public void SetCasterSnapshot(BattleCasterSnapshot snapshot)
+        {
+            if (snapshot != null)
+            {
+                casterSnapshot = snapshot;
+            }
+        }
+
         // 周期执行治疗，负责让持续回复也能吃治疗力与受疗率规则。
         public override void CompPostTick(ref float severityAdjustment)
         {
