@@ -39,6 +39,11 @@ public class DamageFontSystemPatche
                 return;
             }
 
+            if (TryApplyNormalRangedDamage(__instance, ref dinfo))
+            {
+                return;
+            }
+
             DisableCriticalComp comp = Current.Game.GetComponent<DisableCriticalComp>();
             Pawn attacker = dinfo.Instigator as Pawn;
             if (attacker == null)
@@ -157,9 +162,73 @@ public class DamageFontSystemPatche
                 isExSkill = data.isExSkill
             });
 
-            BattleDamageDisplayState.RegisterManualDamage(target, attacker, result.isCrit);
             BattleDamageDisplayState.RegisterCriticalFloatText(target, result.isCrit || data.alwaysShowCriticalText);
             dinfo.SetAmount(result.finalAmount);
             return true;
+        }
+
+        // 应用普通远程武器伤害，负责让原版子弹命中也使用角色最终攻击力公式。
+        private static bool TryApplyNormalRangedDamage(Pawn target, ref DamageInfo dinfo)
+        {
+            Pawn attacker = dinfo.Instigator as Pawn;
+            if (attacker == null || target == null || dinfo.Def == null)
+            {
+                return false;
+            }
+
+            ThingWithComps weapon = attacker.equipment?.Primary;
+            ThingDef projectileDef = FindMatchingProjectileDef(weapon, dinfo.Def);
+            if (projectileDef?.projectile == null)
+            {
+                return false;
+            }
+
+            float baseDamage = Mathf.Max(0f, projectileDef.projectile.GetDamageAmount(weapon));
+            if (baseDamage <= 0f)
+            {
+                return false;
+            }
+
+            BattleDamageRequest request = new BattleDamageRequest
+            {
+                instigator = attacker,
+                target = target,
+                damageDef = dinfo.Def,
+                weaponBaseAttack = baseDamage,
+                normalAttackMultiplier = 1f,
+                baseMasteryMultiplier = 1f,
+                penetration = dinfo.ArmorPenetrationInt,
+                isNormalAttack = true,
+                canCrit = true,
+                alwaysShowCriticalText = false,
+                applyAffinity = true,
+                isExSkill = false
+            };
+
+            BattleDamageResult result = BattleStatUtility.BuildDamageResult(request);
+            BattleFormulaDebugUtility.LogDamagePreview(request, result);
+            BattleDamageDisplayState.RegisterCriticalFloatText(target, result.isCrit);
+            dinfo.SetAmount(result.finalAmount);
+            return true;
+        }
+
+        // 查找本次 DamageDef 对应的主武器子弹，负责避免近战和非当前武器伤害误入普通远程公式。
+        private static ThingDef FindMatchingProjectileDef(ThingWithComps weapon, DamageDef damageDef)
+        {
+            if (weapon?.def?.Verbs == null || !weapon.def.IsRangedWeapon || damageDef == null)
+            {
+                return null;
+            }
+
+            for (int i = 0; i < weapon.def.Verbs.Count; i++)
+            {
+                ThingDef projectileDef = weapon.def.Verbs[i]?.defaultProjectile;
+                if (projectileDef?.projectile?.damageDef == damageDef)
+                {
+                    return projectileDef;
+                }
+            }
+
+            return null;
         }
     }

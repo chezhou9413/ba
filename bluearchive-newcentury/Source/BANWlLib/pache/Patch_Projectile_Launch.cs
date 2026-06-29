@@ -96,8 +96,6 @@ namespace BANWlLib
                     field.SetValue(__instance, newLabel);
                 }      
             }
-
-            WeaponDamageDisplayUtility.TryOverrideValueString(__instance, optionalReq);
         }
 
         public static void Postfix(StatDrawEntry __instance, StatRequest optionalReq, ref string __result)
@@ -124,7 +122,6 @@ namespace BANWlLib
             }
         }
     }
-
 
     // 投射物护穿补丁，负责让技能弹安全读取基础护穿并叠加角色护穿属性。
     [HarmonyPatch(typeof(Projectile), "get_ArmorPenetration")]

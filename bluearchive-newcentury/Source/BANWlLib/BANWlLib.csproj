@@ -206,6 +206,7 @@
     <Compile Include="BattleSystem\StarGrowthDisplayUtility.cs" />
     <Compile Include="BattleSystem\Thing_BattleFieldController.cs" />
     <Compile Include="BattleSystem\WeaponDamageDisplayUtility.cs" />
+    <Compile Include="BattleSystem\WeaponDamageStatWorkerPatch.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="comp\CompSpawnPawnWithEffect.cs" />
     <Compile Include="comp\DropPosComp.cs" />

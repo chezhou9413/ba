@@ -1,7 +1,5 @@
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
-using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -11,18 +9,17 @@ namespace BANWlLib.BattleSystem
     // 武器伤害显示工具，负责在武器信息卡中显示攻击属性加成后的当前伤害。
     public static class WeaponDamageDisplayUtility
     {
-        private static readonly FieldInfo ValueStringField = AccessTools.Field(typeof(StatDrawEntry), "valueStringInt");
-
-        // 尝试改写武器伤害显示值，负责让 UI 直接显示当前持有者加成后的伤害。
-        public static void TryOverrideValueString(StatDrawEntry entry, StatRequest request)
+        // 尝试读取远程武器最终伤害，负责给 StatWorker 主数值和信息卡说明共用同一套计算。
+        public static bool TryGetFinalWeaponDamage(Thing weapon, out float finalDamage)
         {
-            if (!TryGetContext(entry, request, out Pawn pawn, out float baseDamage))
+            finalDamage = 0f;
+            if (!TryGetWeaponContext(weapon, out Pawn pawn, out float baseDamage))
             {
-                return;
+                return false;
             }
 
-            float finalDamage = BattleStatUtility.ScaleWeaponDamageBase(pawn, baseDamage);
-            ValueStringField?.SetValue(entry, FormatDamage(finalDamage));
+            finalDamage = BattleStatUtility.ScaleWeaponDamageBase(pawn, baseDamage);
+            return true;
         }
 
         // 构建武器伤害解释，负责追加当前攻击力加成和算法。
@@ -62,13 +59,20 @@ namespace BANWlLib.BattleSystem
                 return false;
             }
 
-            Thing weapon = request.Thing;
-            if (weapon.def == null || !weapon.def.IsRangedWeapon)
+            if (!IsDamageRow(entry))
             {
                 return false;
             }
 
-            if (!IsDamageRow(entry))
+            return TryGetWeaponContext(request.Thing, out pawn, out baseDamage);
+        }
+
+        // 尝试读取远程武器和持有者上下文，负责确认这件武器可以按角色属性显示最终伤害。
+        private static bool TryGetWeaponContext(Thing weapon, out Pawn pawn, out float baseDamage)
+        {
+            pawn = null;
+            baseDamage = 0f;
+            if (weapon?.def == null || !weapon.def.IsRangedWeapon)
             {
                 return false;
             }
