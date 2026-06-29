@@ -17,6 +17,7 @@ namespace BANWlLib.BaJob
         private List<LocalTargetInfo> Cells;
         private List<Effecter> activeEffecters = new List<Effecter>();
         private List<PendingDamageAction> pendingActions = new List<PendingDamageAction>();
+        private BattleCasterSnapshot snapshot;
 
         private BaJobDef_SphereAreaAttack def => (BaJobDef_SphereAreaAttack)job.def;
 
@@ -48,7 +49,7 @@ namespace BANWlLib.BaJob
                         continue;
                     }
 
-                    BattleStatUtility.ApplyAction(pawn, thing, action);
+                    BattleStatUtility.ApplyAction(pawn, thing, action, snapshot);
                 }
             }
         }
@@ -82,6 +83,7 @@ namespace BANWlLib.BaJob
                 pendingActions.Clear();
                 activeEffecters.Clear();
                 Cells = job.targetQueueA;
+                snapshot = BattleStatUtility.CreateSnapshot(pawn);
                 pawn.pather.StopDead();
             };
 
@@ -165,6 +167,7 @@ namespace BANWlLib.BaJob
         {
             base.ExposeData();
             Scribe_Collections.Look(ref pendingActions, "pendingActions", LookMode.Deep);
+            Scribe_Deep.Look(ref snapshot, "snapshot");
             if (Scribe.mode == LoadSaveMode.PostLoadInit && pendingActions == null)
             {
                 pendingActions = new List<PendingDamageAction>();

@@ -49,7 +49,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>7.07</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -118,7 +117,6 @@
      <previewActions>
        <li>
          <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
-         <baseAmount>0</baseAmount>
          <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
          <healPowerRatio>0.43</healPowerRatio>
          <!-- true 表示该段是治疗。 -->
@@ -155,7 +153,6 @@
       </li>
         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
-        <healAmount>0</healAmount>
         <!-- 每 tick 回复最终治疗力的 4%。 -->
         <healPowerRatio>0.43</healPowerRatio>
         <!-- 每 tick 触发一次治疗。 -->
@@ -251,7 +248,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>0</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>40</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <!-- 穿透 --> 
@@ -263,7 +259,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>30</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>40</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <!-- 穿透 --> 
@@ -285,7 +280,6 @@
             <attackPowerRatio>0</attackPowerRatio></li>
             <li>
                 <tick>120</tick>
-                <damageAmount>40</damageAmount>
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <penetration>2</penetration>
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>

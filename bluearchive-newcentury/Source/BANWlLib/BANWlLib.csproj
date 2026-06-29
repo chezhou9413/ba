@@ -179,11 +179,14 @@
     <Compile Include="BattleSystem\BattleDamageDisplayState.cs" />
     <Compile Include="BattleSystem\BattleDamageRequest.cs" />
     <Compile Include="BattleSystem\BattleFieldControllerExtension.cs" />
+    <Compile Include="BattleSystem\BattleFormulaDebugUtility.cs" />
+    <Compile Include="BattleSystem\BattleHediffSnapshotUtility.cs" />
     <Compile Include="BattleSystem\BattleHealRequest.cs" />
     <Compile Include="BattleSystem\BattleShieldRequest.cs" />
     <Compile Include="BattleSystem\BattleProjectilePatches.cs" />
     <Compile Include="BattleSystem\BattleProjectileExtension.cs" />
     <Compile Include="BattleSystem\ProjectileBattleContext.cs" />
+    <Compile Include="BattleSystem\PawnHealthTrackerRegenerationPatch.cs" />
     <Compile Include="BattleSystem\BattleResult.cs" />
     <Compile Include="BattleSystem\BattleStarGrowthExtension.cs" />
     <Compile Include="BattleSystem\BattleStatDefOf.cs" />

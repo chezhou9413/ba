@@ -72,7 +72,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>4.54</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -105,7 +104,6 @@
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
-        <healAmount>0</healAmount>
         <!-- 每 tick 回复最终治疗力的 4%。 -->
         <healPowerRatio>0.98</healPowerRatio>
         <!-- 每 tick 触发一次治疗。 -->

@@ -76,7 +76,7 @@ namespace BANWlLib.BattleSystem
                 }
                 else if (action.isHealing)
                 {
-                    AppendHealAction(builder, pawn, action);
+                    AppendHealAction(builder, ability.def, pawn, action);
                 }
                 else
                 {
@@ -93,6 +93,38 @@ namespace BANWlLib.BattleSystem
         private static bool ShouldUseCompactActions(List<BattleActionConfig> actions)
         {
             return actions != null && actions.Count >= CompactActionThreshold;
+        }
+
+        // 判断治疗技能是否只会作用于自身，负责让 tooltip 在自疗场景直接显示最终治疗量。
+        private static bool IsSelfOnlyHealAbility(AbilityDef abilityDef)
+        {
+            if (abilityDef?.comps == null)
+            {
+                return false;
+            }
+
+            bool foundGiveHediff = false;
+            for (int i = 0; i < abilityDef.comps.Count; i++)
+            {
+                if (!(abilityDef.comps[i] is CompProperties_AbilityGiveHediff giveHediff))
+                {
+                    continue;
+                }
+
+                HediffCompProps_Regeneration regeneration = giveHediff.hediffDef?.CompProps<HediffCompProps_Regeneration>();
+                if (regeneration == null || regeneration.healPowerRatio <= 0f)
+                {
+                    continue;
+                }
+
+                foundGiveHediff = true;
+                if (!giveHediff.onlyApplyToSelf)
+                {
+                    return false;
+                }
+            }
+
+            return foundGiveHediff;
         }
 
         //解析预览战斗段，负责让投射物、场地和范围 Job 技能优先读取真实配置，避免悬浮预估和实际结算分离。
@@ -130,7 +162,7 @@ namespace BANWlLib.BattleSystem
             return abilityDef.GetModExtension<AbilityBattleTooltipExtension>()?.previewActions;
         }
 
-        //从技能附加的再生 Hediff 构建预览段，负责让持续治疗技能自动显示治愈量公式。
+        //从技能附加的再生 Hediff 构建预览段，负责让持续治疗技能自动显示单次或多次触发的治愈量公式。
         private static List<BattleActionConfig> TryBuildGiveHediffHealActions(AbilityDef abilityDef)
         {
             if (abilityDef?.comps == null)
@@ -148,7 +180,7 @@ namespace BANWlLib.BattleSystem
                     continue;
                 }
 
-                actions.Add(new BattleActionConfig
+                BattleActionConfig action = new BattleActionConfig
                 {
                     isHealing = true,
                     healPowerRatio = regeneration.healPowerRatio,
@@ -158,10 +190,34 @@ namespace BANWlLib.BattleSystem
                     affectHostile = false,
                     allowPermanentInjuryHealing = regeneration.isHeatScar,
                     isExSkill = regeneration.isExSkill
-                });
+                };
+
+                int triggerCount = ResolveRegenerationTriggerCount(giveHediff.hediffDef, regeneration);
+                for (int repeatIndex = 0; repeatIndex < triggerCount; repeatIndex++)
+                {
+                    actions.Add(action);
+                }
             }
 
             return actions.Count > 0 ? actions : null;
+        }
+
+        //解析持续治疗触发次数，负责在 Hediff 明确写出持续时间时把悬浮预估展开为总触发段数。
+        private static int ResolveRegenerationTriggerCount(HediffDef hediffDef, HediffCompProps_Regeneration regeneration)
+        {
+            if (hediffDef == null || regeneration == null || regeneration.healIntervalTicks <= 0)
+            {
+                return 1;
+            }
+
+            HediffCompProperties_Disappears disappears = hediffDef.CompProps<HediffCompProperties_Disappears>();
+            int durationTicks = disappears?.disappearsAfterTicks.min ?? 0;
+            if (durationTicks <= 0)
+            {
+                return 1;
+            }
+
+            return Mathf.Max(1, durationTicks / regeneration.healIntervalTicks);
         }
 
         //从范围 Job 构建预览段，负责支持圆形脱手、持续圆形、扇形和直线 AOE 技能自动显示预计伤害。
@@ -420,12 +476,12 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine(("多段总览（" + actions.Count + "段）").Colorize(ColoredText.TipSectionTitleColor));
             if (totals.damageCount > 0)
             {
-                builder.AppendLine("伤害段：" + totals.damageCount + "段，倍率合计 " + FormatColor(FormatPercent(totals.damageRatioTotal), DamageColor) + "，预估合计 " + FormatColor(FormatNumber(totals.damageTotal), DamageColor));
+                builder.AppendLine("伤害段：" + totals.damageCount + "段，倍率合计 " + FormatColor(FormatPercent(totals.damageRatioTotal), DamageColor) + "，基础预估合计 " + FormatColor(FormatNumber(totals.damageTotal), DamageColor));
             }
 
             if (totals.healCount > 0)
             {
-                builder.AppendLine("治疗段：" + totals.healCount + "段，倍率合计 " + FormatColor(FormatPercent(totals.healRatioTotal), HealColor) + "，基础预估 " + FormatColor(FormatNumber(totals.healTotal), HealColor));
+                builder.AppendLine("治疗段：" + totals.healCount + "段，倍率合计 " + FormatColor(FormatPercent(totals.healRatioTotal), HealColor) + "，单次/多次基础预估合计 " + FormatColor(FormatNumber(totals.healTotal), HealColor));
             }
 
             if (totals.shieldCount > 0)
@@ -639,7 +695,7 @@ namespace BANWlLib.BattleSystem
             float attackFlat = BattleStatUtility.GetAttackFlatBonus(pawn);
             float attackMultiplier = BattleStatUtility.GetAttackMultiplier(pawn);
             float finalAttack = BattleStatUtility.GetFinalAttackPower(pawn, weaponBaseAttack);
-            float healBase = BattleStatUtility.GetBaseHealFlat(pawn);
+            float healBase = BattleStatUtility.GetInitialHeal(pawn) + pawn.GetStatValue(BattleStatDefOf.BANW_InitialHeal);
             float healLevelMultiplier = BattleStatUtility.GetHealLevelMultiplier(pawn);
             float healStarMultiplier = BattleStatUtility.GetHealStarMultiplier(pawn);
             float healFlatBonus = BattleStatUtility.GetHealFlatBonus(pawn);
@@ -678,23 +734,34 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("属性克制：" + FormatSwitch(action.applyAffinity, AffinityColor));
             builder.AppendLine("EX倍率：" + FormatEx(action.isExSkill, result.exSkillMultiplier));
             AppendDamageFormula(builder, action);
-            builder.AppendLine("预估伤害：" + FormatColor(FormatNumber(result.finalAmount), DamageColor));
+            builder.AppendLine("基础预估伤害：" + FormatColor(FormatNumber(result.finalAmount), DamageColor));
             builder.AppendLine(FormatFormulaHint(action.applyAffinity));
         }
 
         // 写入治疗段公式，负责展示最终治愈力、技能倍率、受回复率和非暴击规则。
-        private static void AppendHealAction(StringBuilder builder, Pawn pawn, BattleActionConfig action)
+        private static void AppendHealAction(StringBuilder builder, AbilityDef abilityDef, Pawn pawn, BattleActionConfig action)
         {
             float estimatedHealBeforeTargetReceived = BattleStatUtility.GetFinalHealPower(pawn) * Mathf.Max(0f, action.healPowerRatio);
+            bool selfOnlyHeal = IsSelfOnlyHealAbility(abilityDef);
+            float selfFinalHeal = estimatedHealBeforeTargetReceived * BattleStatUtility.GetHealReceivedMultiplier(pawn);
 
             builder.AppendLine("类型：" + FormatColor("治疗", HealColor));
             builder.AppendLine("最终治愈力：" + FormatColor(FormatNumber(BattleStatUtility.GetFinalHealPower(pawn)), HealColor));
             builder.AppendLine("技能治疗量乘数：" + FormatColor(FormatPercent(action.healPowerRatio), HealColor));
-            builder.AppendLine("目标受回复倍率：" + FormatColor("命中目标后按被治疗者结算", HealColor));
+            builder.AppendLine("目标受回复倍率：" + FormatColor(selfOnlyHeal ? FormatPercent(BattleStatUtility.GetHealReceivedMultiplier(pawn)) : "命中目标后按被治疗者结算", HealColor));
             builder.AppendLine("暴击：" + FormatColor("不参与", DisabledColor));
             builder.AppendLine("EX倍率：" + FormatColor("不参与", DisabledColor));
             AppendHealFormula(builder, action);
-            builder.AppendLine("基础预估治疗：" + FormatColor(FormatNumber(estimatedHealBeforeTargetReceived), HealColor));
+            builder.AppendLine("单次基础预估治疗：" + FormatColor(FormatNumber(estimatedHealBeforeTargetReceived), HealColor));
+            if (selfOnlyHeal)
+            {
+                builder.AppendLine("单次最终预估治疗：" + FormatColor(FormatNumber(selfFinalHeal), HealColor));
+            }
+            else
+            {
+                builder.AppendLine(FormatColor("该技能需要先选目标，按钮悬浮阶段无法预知目标当前受回复率，所以这里只显示按100%受回复率计算的基础值。", HealColor));
+            }
+            builder.AppendLine(FormatColor("实际回复还会受目标受回复率和可治疗伤势剩余量影响。", HealColor));
         }
 
         // 写入护盾段公式，负责展示护盾倍率和预计护盾值。
@@ -726,7 +793,7 @@ namespace BANWlLib.BattleSystem
         private static void AppendHealFormula(StringBuilder builder, BattleActionConfig action)
         {
             builder.AppendLine("算法：");
-            builder.AppendLine(FormatColor("  治愈：((基础固定治愈力 x 升级倍率 x 升星倍率) + 固定加算) x 治愈力加成", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  治愈：((初始治愈力 x 升级倍率 x 升星倍率) + 固定治愈力) x 治愈力加成", ColoredText.SubtleGrayColor));
             builder.AppendLine(FormatColor("  技能：最终治愈力 x 技能治疗量乘数", ColoredText.SubtleGrayColor));
             builder.AppendLine(FormatColor("  合计：技能治疗量 x 目标受回复率", ColoredText.SubtleGrayColor));
             builder.AppendLine(FormatColor("  修正：暴击和 EX 不参与治疗", ColoredText.SubtleGrayColor));
@@ -786,10 +853,10 @@ namespace BANWlLib.BattleSystem
         {
             if (!applyAffinity)
             {
-                return FormatColor("属性克制未参与。", DisabledColor);
+                return FormatColor("属性克制未参与；命中后仍会继续经过护甲、减伤和承伤系数。", DisabledColor);
             }
 
-            return FormatColor("命中目标后按目标护甲类型结算克制。", AffinityColor);
+            return FormatColor("命中目标后会按目标护甲类型结算克制，并继续经过护甲、减伤和承伤系数。", AffinityColor);
         }
 
         // 格式化开关文本，负责把启用和禁用状态染成不同颜色。

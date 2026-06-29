@@ -151,7 +151,6 @@
      <previewActions>
        <li>
          <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
-         <baseAmount>0</baseAmount>
          <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
          <healPowerRatio>1.78</healPowerRatio>
          <!-- true 表示该段是治疗。 -->

@@ -50,7 +50,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>7.72</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -136,7 +135,6 @@
           <attackPowerRatio>0.01</attackPowerRatio></li>
           <li>
             <Delaytick>10</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -144,7 +142,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>20</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -152,7 +149,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>30</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -160,7 +156,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>40</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -168,7 +163,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>50</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -176,7 +170,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>60</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -184,7 +177,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>70</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -192,7 +184,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>80</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -200,7 +191,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>90</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -208,7 +198,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>100</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -216,7 +205,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>110</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -224,7 +212,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>120</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -232,7 +219,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>130</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -240,7 +226,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>140</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -248,7 +233,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>150</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -256,7 +240,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>160</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -264,7 +247,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>170</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -272,7 +254,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>180</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -280,7 +261,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>190</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -288,7 +268,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>200</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>
@@ -296,7 +275,6 @@
           <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <Delaytick>210</Delaytick>
-            <damageAmount>11</damageAmount>
             <damageType>BANC_Damage_baofa</damageType>
             <penetration>0.15</penetration>
             <isAttackBuilding>false</isAttackBuilding>

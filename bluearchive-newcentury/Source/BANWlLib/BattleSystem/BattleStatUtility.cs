@@ -19,16 +19,10 @@ namespace BANWlLib.BattleSystem
             return pawn?.kindDef?.GetModExtension<BattleBaseStatExtension>();
         }
 
-        // 获取学生基础生命值加成，负责接入最终生命值加成乘区。
-        public static float GetBaseHealthPercent(Pawn pawn)
+        // 获取学生初始生命值，负责从 PawnKindDef 读取生命值公式的基础乘算项。
+        public static float GetInitialHealth(Pawn pawn)
         {
-            return GetBaseStatExtension(pawn)?.healthPercent ?? 0f;
-        }
-
-        // 获取学生基础固定生命值，负责接入生命值公式的基础乘算项。
-        public static float GetBaseHealthFlat(Pawn pawn)
-        {
-            return GetBaseStatExtension(pawn)?.healthFlat ?? 0f;
+            return GetBaseStatExtension(pawn)?.initialHealth ?? 0f;
         }
 
         // 获取学生基础攻击力百分比，负责接入最终攻击力计算。
@@ -43,16 +37,10 @@ namespace BANWlLib.BattleSystem
             return GetBaseStatExtension(pawn)?.attackFlat ?? 0f;
         }
 
-        // 获取学生基础治疗力百分比，负责接入最终治疗力计算。
-        public static float GetBaseHealPercent(Pawn pawn)
+        // 获取学生初始治愈力，负责从 PawnKindDef 读取治愈力公式的基础乘算项。
+        public static float GetInitialHeal(Pawn pawn)
         {
-            return GetBaseStatExtension(pawn)?.healPercent ?? 0f;
-        }
-
-        // 获取学生基础治疗力平加，负责接入最终治愈力计算。
-        public static float GetBaseHealFlat(Pawn pawn)
-        {
-            return GetBaseStatExtension(pawn)?.healFlat ?? 0f;
+            return GetBaseStatExtension(pawn)?.initialHeal ?? 0f;
         }
 
         // 获取学生基础受回复倍率平加，负责接入受疗倍率计算。
@@ -83,18 +71,6 @@ namespace BANWlLib.BattleSystem
         public static BattleStarGrowthExtension GetStarGrowthExtension(Pawn pawn)
         {
             return pawn?.kindDef?.GetModExtension<BattleStarGrowthExtension>();
-        }
-
-        // 获取当前阶级基础治愈力成长，负责让阶级成长进入最终治愈力。
-        public static float GetRankHealFlat(Pawn pawn)
-        {
-            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
-            if (extension == null)
-            {
-                return 0f;
-            }
-
-            return extension.healFlat.Evaluate(GetCurrentRankLevel(pawn));
         }
 
         // 获取当前阶级治愈力百分比成长，负责让阶级成长进入治愈力加成。
@@ -133,18 +109,6 @@ namespace BANWlLib.BattleSystem
             return extension.attackPercent.Evaluate(GetCurrentRankLevel(pawn));
         }
 
-        // 获取当前阶级固定生命值成长，负责让星级成长进入生命值固定加算项。
-        public static float GetRankHealthFlat(Pawn pawn)
-        {
-            BattleStarGrowthExtension extension = GetStarGrowthExtension(pawn);
-            if (extension == null)
-            {
-                return 0f;
-            }
-
-            return extension.healthFlat.Evaluate(GetCurrentRankLevel(pawn));
-        }
-
         // 获取当前阶级生命值百分比成长，负责让星级成长进入升星生命值倍率。
         public static float GetRankHealthPercent(Pawn pawn)
         {
@@ -176,11 +140,6 @@ namespace BANWlLib.BattleSystem
                 return ext.attackPercent;
             }
 
-            if (statDef == BattleStatDefOf.BANW_HealBonusMultiplier)
-            {
-                return ext.healPercent;
-            }
-
             if (statDef == BattleStatDefOf.BANW_HealReceivedMultiplier)
             {
                 return ext.healReceivedMultiplierOffset;
@@ -189,11 +148,6 @@ namespace BANWlLib.BattleSystem
             if (statDef == BattleStatDefOf.BANW_ExSkillMultiplier)
             {
                 return ext.exSkillMultiplierOffset;
-            }
-
-            if (statDef == BattleStatDefOf.BANW_HealthBonusMultiplier)
-            {
-                return ext.healthPercent;
             }
 
             return 0f;
@@ -364,8 +318,7 @@ namespace BANWlLib.BattleSystem
                 return 0f;
             }
 
-            float flatBonus = pawn.GetStatValue(BattleStatDefOf.BANW_HealFlatBonus) +
-                              GetRankHealFlat(pawn);
+            float flatBonus = pawn.GetStatValue(BattleStatDefOf.BANW_HealFlatBonus);
             return Mathf.Max(0f, flatBonus);
         }
 
@@ -389,7 +342,7 @@ namespace BANWlLib.BattleSystem
                 return 0f;
             }
 
-            float baseHeal = GetBaseHealFlat(pawn);
+            float baseHeal = GetInitialHeal(pawn) + pawn.GetStatValue(BattleStatDefOf.BANW_InitialHeal);
             float levelMultiplier = GetHealLevelMultiplier(pawn);
             float starMultiplier = GetHealStarMultiplier(pawn);
             float flatBonus = GetHealFlatBonus(pawn);
@@ -473,6 +426,7 @@ namespace BANWlLib.BattleSystem
             float weaponBaseAttack = GetWeaponBaseAttack(pawn);
             return new BattleCasterSnapshot
             {
+                casterLabel = pawn.LabelShortCap,
                 attackLevelMultiplier = GetAttackLevelMultiplier(pawn),
                 attackMultiplier = attackMultiplier,
                 weaponBaseAttack = weaponBaseAttack,
@@ -575,9 +529,14 @@ namespace BANWlLib.BattleSystem
             }
 
             BattleDamageResult result = BuildDamageResult(request);
+            BattleFormulaDebugUtility.LogDamagePreview(request, result);
             bool instigatorGuilty = !(request.instigator is Pawn launcherPawn) || !launcherPawn.Drafted;
             BattleDamageDisplayState.RegisterManualDamage(request.target, request.instigator, result.isCrit);
             BattleDamageDisplayState.RegisterCriticalFloatText(request.target, result.isCrit || request.alwaysShowCriticalText);
+            if (request.alwaysShowCriticalText)
+            {
+                BattleDamageDisplayState.RegisterForcedCriticalFloatAmount(request.target, result.finalAmount);
+            }
             DamageInfo damageInfo = new DamageInfo(
                 request.damageDef,
                 result.finalAmount,
@@ -621,6 +580,7 @@ namespace BANWlLib.BattleSystem
                 CriticalObjPool.showHealShow(result.finalAmount, request.target, result.isCrit);
             }
 
+            BattleFormulaDebugUtility.LogHealing(request, result);
             return result;
         }
 
@@ -740,6 +700,7 @@ namespace BANWlLib.BattleSystem
             }
             if (action.triggerHediff != null && target is Pawn hediffPawn)
             {
+                BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(hediffPawn, action.triggerHediff, snapshot);
                 if (action.triggerHediff.CompProps<HediffCompProperties_BattleStack>() != null)
                 {
                     BattleStackHediffUtility.ApplyStackedHediff(hediffPawn, action.triggerHediff);

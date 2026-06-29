@@ -47,7 +47,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>3.64</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -135,7 +134,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>3.53</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -213,7 +211,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>120</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>95</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_guantong</damageType>
             <!-- 穿透 -->

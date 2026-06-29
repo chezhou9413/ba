@@ -7,6 +7,7 @@ namespace BANWlLib.BattleSystem
     {
         private static readonly Dictionary<int, bool> ManualCritStates = new Dictionary<int, bool>();
         private static readonly Dictionary<int, bool> PendingCriticalFloatTexts = new Dictionary<int, bool>();
+        private static readonly Dictionary<int, float> PendingForcedCriticalFloatAmounts = new Dictionary<int, float>();
 
         // 注册统一战斗层伤害，负责阻止原版伤害补丁重复暴击。
         public static void RegisterManualDamage(Thing target, Thing instigator, bool isCrit)
@@ -35,6 +36,17 @@ namespace BANWlLib.BattleSystem
             {
                 PendingCriticalFloatTexts.Remove(target.thingIDNumber);
             }
+        }
+
+        // 注册强制暴击文字显示的固定数值，负责让必定弹字技能显示公式伤害而不是部位实际受伤值。
+        public static void RegisterForcedCriticalFloatAmount(Thing target, float amount)
+        {
+            if (target == null || !(target is Pawn))
+            {
+                return;
+            }
+
+            PendingForcedCriticalFloatAmounts[target.thingIDNumber] = amount;
         }
 
         public static bool TryConsumeManualCritState(Thing target, out bool isCrit)
@@ -66,6 +78,24 @@ namespace BANWlLib.BattleSystem
             if (PendingCriticalFloatTexts.TryGetValue(target.thingIDNumber, out isCrit))
             {
                 PendingCriticalFloatTexts.Remove(target.thingIDNumber);
+                return true;
+            }
+
+            return false;
+        }
+
+        // 读取强制暴击文字显示的固定数值，负责在实际伤害回调后优先使用公式伤害弹字。
+        public static bool TryConsumeForcedCriticalFloatAmount(Thing target, out float amount)
+        {
+            amount = 0f;
+            if (target == null)
+            {
+                return false;
+            }
+
+            if (PendingForcedCriticalFloatAmounts.TryGetValue(target.thingIDNumber, out amount))
+            {
+                PendingForcedCriticalFloatAmounts.Remove(target.thingIDNumber);
                 return true;
             }
 

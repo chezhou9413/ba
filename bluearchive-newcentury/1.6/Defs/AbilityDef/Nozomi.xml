@@ -84,7 +84,7 @@
 <AbilityDef>
   <defName>BAWN_Nozomi_EXX</defName>
   <label>助推启动！</label>
-  <description>对直线范围内的1名指定敌方单位造成1567%自身攻击力的伤害</description>
+  <description>对直线范围内的1名指定敌方单位造成1557%自身攻击力的伤害</description>
   <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
   <cooldownTicksRange>3600</cooldownTicksRange>
   <hotKey>Misc11</hotKey>
@@ -142,9 +142,8 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>15.67</attackPowerRatio>
+          <attackPowerRatio>15.57</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
           <!-- 是否允许暴击。 -->
@@ -197,7 +196,7 @@
         <immuneFriendlyFire>true</immuneFriendlyFire>
         
         
-        <!-- 最终攻击力倍率，15.67 表示造成 1567% 攻击力伤害。 -->
+        <!-- 最终攻击力倍率，15.57 表示造成 1557% 攻击力伤害。 -->
         <attackPowerRatio>15.57</attackPowerRatio>
         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
         <isExSkill>true</isExSkill>

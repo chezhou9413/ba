@@ -58,7 +58,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>30</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>7.07</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -125,8 +124,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>70</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
-                <baseAmount>30</baseAmount>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -146,8 +143,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
-                <baseAmount>30</baseAmount>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -165,8 +160,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>90</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>0</damageAmount>
-                <baseAmount>300</baseAmount>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -182,8 +175,6 @@
             </li>
             <li>
                 <tick>100</tick>
-                <damageAmount>0</damageAmount>
-                <baseAmount>30</baseAmount>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -196,8 +187,6 @@
             </li>
         <li>
                 <tick>110</tick>
-                <damageAmount>0</damageAmount>
-                <baseAmount>30</baseAmount>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
@@ -210,8 +199,6 @@
             </li>
               <li>
                 <tick>120</tick>
-                <damageAmount>0</damageAmount>
-                <baseAmount>30</baseAmount>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
                 <attackPowerRatio>1.18</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->

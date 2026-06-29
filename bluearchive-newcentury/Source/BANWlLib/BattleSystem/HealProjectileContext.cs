@@ -38,5 +38,16 @@ namespace BANWlLib.BattleSystem
 
             return false;
         }
+
+        // 清理目标残留快照，负责避免 Hediff 未成功创建时把旧快照留到下一次治疗。
+        public static void Clear(Pawn target)
+        {
+            if (target == null)
+            {
+                return;
+            }
+
+            snapshotByTargetId.Remove(target.thingIDNumber);
+        }
     }
 }

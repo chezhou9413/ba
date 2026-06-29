@@ -30,11 +30,9 @@ namespace BANWlLib.BattleSystem
                 return false;
             }
 
-            return BattleStatUtility.GetRankHealthFlat(pawn) != 0f ||
-                   BattleStatUtility.GetRankHealthPercent(pawn) != 0f ||
+            return BattleStatUtility.GetRankHealthPercent(pawn) != 0f ||
                    BattleStatUtility.GetRankAttackFlat(pawn) != 0f ||
                    BattleStatUtility.GetRankAttackPercent(pawn) != 0f ||
-                   BattleStatUtility.GetRankHealFlat(pawn) != 0f ||
                    BattleStatUtility.GetRankHealPercent(pawn) != 0f;
         }
 
@@ -48,11 +46,9 @@ namespace BANWlLib.BattleSystem
 
             StringBuilder builder = new StringBuilder();
             builder.AppendLine("星级成长总加成：");
-            AppendNonZeroLine(builder, "固定生命值", BattleStatUtility.GetRankHealthFlat(pawn));
             AppendNonZeroPercentLine(builder, "生命值倍率", BattleStatUtility.GetRankHealthPercent(pawn));
             AppendNonZeroLine(builder, "固定攻击力", BattleStatUtility.GetRankAttackFlat(pawn));
             AppendNonZeroPercentLine(builder, "攻击力倍率", BattleStatUtility.GetRankAttackPercent(pawn));
-            AppendNonZeroLine(builder, "固定治愈力", BattleStatUtility.GetRankHealFlat(pawn));
             AppendNonZeroPercentLine(builder, "治愈力倍率", BattleStatUtility.GetRankHealPercent(pawn));
             return builder.ToString().TrimEnd();
         }

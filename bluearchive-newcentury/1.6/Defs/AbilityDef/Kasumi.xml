@@ -50,7 +50,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>4.32</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -116,7 +115,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>4.32</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -207,7 +205,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>54</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>13</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX_A</damageType>
             <!-- 穿透 -->
@@ -221,7 +218,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>66</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>13</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX_A</damageType>
             <!-- 穿透 -->
@@ -235,7 +231,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>78</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>13</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX_A</damageType>
             <!-- 穿透 -->
@@ -249,7 +244,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>90</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>13</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX_A</damageType>
             <!-- 穿透 -->
@@ -263,7 +257,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>102</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>13</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX_A</damageType>
             <!-- 穿透 -->
@@ -277,7 +270,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>114</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>13</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX_A</damageType>
             <!-- 穿透 -->
@@ -291,7 +283,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>126</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>13</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_Kasumi_EXX_A</damageType>
             <!-- 穿透 -->
@@ -338,7 +329,6 @@
             <!-- 伤害延迟 -->
             <Delaytick>0</Delaytick>
             <!-- 伤害量 -->
-            <damageAmount>91</damageAmount>
             <!-- 伤害类型 -->
             <damageType>BANC_Damage_zhendong</damageType>
             <!-- 穿透 -->

@@ -93,6 +93,14 @@ public class DamageFontSystemPatche
         {
             if (!DamageFontMod.settings.enableDamageFloat)
             {
+                BattleFormulaDebugUtility.LogDamageActual(__instance, dinfo, totalDamageDealt);
+                return;
+            }
+
+            if (BattleDamageDisplayState.TryConsumeForcedCriticalFloatAmount(__instance, out float forcedAmount))
+            {
+                CriticalObjPool.showFixedDamageShow(forcedAmount, __instance);
+                BattleFormulaDebugUtility.LogDamageActual(__instance, dinfo, totalDamageDealt);
                 return;
             }
 
@@ -109,10 +117,12 @@ public class DamageFontSystemPatche
 
             if (!isCrit || totalDamageDealt <= 0.01f)
             {
+                BattleFormulaDebugUtility.LogDamageActual(__instance, dinfo, totalDamageDealt);
                 return;
             }
 
             CriticalObjPool.showCriticalShow(totalDamageDealt, __instance);
+            BattleFormulaDebugUtility.LogDamageActual(__instance, dinfo, totalDamageDealt);
             }
         }
 

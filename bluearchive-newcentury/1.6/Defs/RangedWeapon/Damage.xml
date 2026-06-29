@@ -109,9 +109,22 @@
   </StatDef>
 
   <StatDef>
+    <defName>BANW_InitialHealth</defName>
+    <label>初始生命值</label>
+    <description>生命值公式的基础乘算项，1 表示 100 点生命值。</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <category>BANW_BattleStats</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showOnAnimals>true</showOnAnimals>
+    <showOnMechanoids>true</showOnMechanoids>
+    <showIfUndefined>true</showIfUndefined>
+    <displayPriorityInCategory>510</displayPriorityInCategory>
+  </StatDef>
+  <StatDef>
     <defName>BANW_HealthLevelMultiplier</defName>
     <label>升级生命值倍率</label>
-    <description>按等级成长提高生命值，参与基础固定生命值的升级乘区。</description>
+    <description>生命值公式中的升级生命值倍率，按百分比参与初始生命值乘算。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
     <category>BANW_BattleStats</category>
@@ -124,7 +137,7 @@
   <StatDef>
     <defName>BANW_HealthFlatBonus</defName>
     <label>固定生命值</label>
-    <description>在升级和升星乘算后增加固定生命值，1 表示 100 点生命值。</description>
+    <description>生命值公式中的固定生命值，在初始生命值乘算完成后加算，1 表示 100 点生命值。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>FloatOne</toStringStyle>
     <category>BANW_BattleStats</category>
@@ -137,7 +150,7 @@
   <StatDef>
     <defName>BANW_HealthBonusMultiplier</defName>
     <label>生命值加成</label>
-    <description>按百分比提高最终生命值，在固定生命值加算之后计算。</description>
+    <description>生命值公式中的最终生命值加成，按百分比乘算整个结果。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
     <category>BANW_BattleStats</category>
@@ -149,26 +162,48 @@
   </StatDef>
 
   <StatDef>
-    <defName>BANW_HealLevelMultiplier</defName>
-    <label>升级治愈力倍率</label>
-    <description>按等级成长提高治愈力，参与基础固定治愈力的升级乘区。</description>
+    <defName>BANW_InitialHeal</defName>
+    <label>初始治愈力</label>
+    <description>治愈力公式的基础乘算项，直接参与升级倍率和升星倍率乘算。</description>
     <defaultBaseValue>0</defaultBaseValue>
-    <toStringStyle>PercentZero</toStringStyle>
+    <toStringStyle>FloatOne</toStringStyle>
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
     <displayPriorityInCategory>520</displayPriorityInCategory>
   </StatDef>
   <StatDef>
+    <defName>BANW_HealLevelMultiplier</defName>
+    <label>升级治愈力倍率</label>
+    <description>治愈力公式中的升级治愈力倍率，按百分比参与初始治愈力乘算。</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <category>BANW_BattleStats</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showIfUndefined>true</showIfUndefined>
+    <displayPriorityInCategory>521</displayPriorityInCategory>
+  </StatDef>
+  <StatDef>
     <defName>BANW_HealFlatBonus</defName>
     <label>固定治愈力</label>
-    <description>在升级和升星乘算后增加固定治愈力。</description>
+    <description>治愈力公式中的固定治愈力，在初始治愈力乘算完成后加算。</description>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>FloatOne</toStringStyle>
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
-    <displayPriorityInCategory>521</displayPriorityInCategory>
+    <displayPriorityInCategory>522</displayPriorityInCategory>
+  </StatDef>
+  <StatDef>
+    <defName>BANW_HealBonusMultiplier</defName>
+    <label>治愈力加成</label>
+    <description>治愈力公式中的最终治愈力加成，按百分比乘算整个结果。</description>
+    <defaultBaseValue>0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <category>BANW_BattleStats</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showIfUndefined>true</showIfUndefined>
+    <displayPriorityInCategory>523</displayPriorityInCategory>
   </StatDef>
   <StatDef>
     <defName>BANW_HealReceivedMultiplier</defName>
@@ -179,18 +214,7 @@
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
-    <displayPriorityInCategory>522</displayPriorityInCategory>
-  </StatDef>
-  <StatDef>
-    <defName>BANW_HealReceivedMultiplier</defName>
-    <label>受回复率</label>
-    <description>受到治疗时在最终治疗量之后计算的倍率。</description>
-    <defaultBaseValue>1</defaultBaseValue>
-    <toStringStyle>PercentZero</toStringStyle>
-    <category>BANW_BattleStats</category>
-    <showOnHumanlikes>true</showOnHumanlikes>
-    <showIfUndefined>true</showIfUndefined>
-    <displayPriorityInCategory>523</displayPriorityInCategory>
+    <displayPriorityInCategory>524</displayPriorityInCategory>
   </StatDef>
 
   <StatDef>
@@ -202,7 +226,7 @@
     <category>BANW_BattleStats</category>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
-    <displayPriorityInCategory>524</displayPriorityInCategory>
+    <displayPriorityInCategory>525</displayPriorityInCategory>
   </StatDef>
 
   <StatDef>

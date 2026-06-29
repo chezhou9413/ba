@@ -548,7 +548,7 @@
         <MarketValue>2500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealthScalePercentOffset>0.05</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.05</BANW_HealthBonusMultiplier>
             <BANW_CriticalChance>+0.17</BANW_CriticalChance>
             <BANW_CriticalDamage>0.15</BANW_CriticalDamage>
         </equippedStatOffsets>
@@ -586,7 +586,7 @@
         <MarketValue>3000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealthScalePercentOffset>0.07</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.07</BANW_HealthBonusMultiplier>
             <BANW_CriticalChance>+0.19</BANW_CriticalChance>
             <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
         </equippedStatOffsets>
@@ -624,7 +624,7 @@
         <MarketValue>3500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealthScalePercentOffset>0.09</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.09</BANW_HealthBonusMultiplier>
             <BANW_CriticalChance>+0.22</BANW_CriticalChance>
             <BANW_CriticalDamage>0.21</BANW_CriticalDamage>
         </equippedStatOffsets>
@@ -662,7 +662,7 @@
         <MarketValue>4000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealthScalePercentOffset>0.11</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.11</BANW_HealthBonusMultiplier>
             <BANW_CriticalChance>+0.24</BANW_CriticalChance>
             <BANW_CriticalDamage>0.24</BANW_CriticalDamage>
         </equippedStatOffsets>
@@ -700,7 +700,7 @@
         <MarketValue>4500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealthScalePercentOffset>0.13</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.13</BANW_HealthBonusMultiplier>
             <BANW_CriticalChance>+0.26</BANW_CriticalChance>
             <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
         </equippedStatOffsets>
@@ -738,7 +738,7 @@
         <MarketValue>6000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.15</BANW_HealthBonusMultiplier>
             <BANW_CriticalChance>+0.28</BANW_CriticalChance>
             <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
         </equippedStatOffsets>
@@ -776,7 +776,7 @@
          <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.08</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.08</BANW_HealBonusMultiplier>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -810,7 +810,7 @@
         <MarketValue>1000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.13</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.13</BANW_HealBonusMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_One>1</BANC_Necklace_One>
@@ -846,7 +846,7 @@
         <MarketValue>1500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.18</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.18</BANW_HealBonusMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_Tow>1</BANC_Necklace_Tow>
@@ -882,7 +882,7 @@
         <MarketValue>2000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.25</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.25</BANW_HealBonusMultiplier>
         </equippedStatOffsets>
         <costList>
         <BANC_Necklace_Three>1</BANC_Necklace_Three>
@@ -919,7 +919,7 @@
         <MarketValue>2500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.28</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.28</BANW_HealBonusMultiplier>
             <BANW_FinalDamageMultiplier>+0.04</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
          <costList>
@@ -962,7 +962,7 @@
         <MarketValue>3000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.32</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.32</BANW_HealBonusMultiplier>
             <BANW_FinalDamageMultiplier>+0.06</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
         <costList>
@@ -1001,7 +1001,7 @@
         <MarketValue>3500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.35</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.35</BANW_HealBonusMultiplier>
             <BANW_FinalDamageMultiplier>+0.08</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
         <costList>
@@ -1040,7 +1040,7 @@
         <MarketValue>4000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.38</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.38</BANW_HealBonusMultiplier>
             <BANW_FinalDamageMultiplier>+0.1</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
          <costList>
@@ -1079,7 +1079,7 @@
         <MarketValue>4500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.40</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.40</BANW_HealBonusMultiplier>
             <BANW_FinalDamageMultiplier>+0.14</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
         <costList>
@@ -1118,7 +1118,7 @@
         <MarketValue>6000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_HealPowerMultiplier>0.42</BANW_HealPowerMultiplier>
+            <BANW_HealBonusMultiplier>0.42</BANW_HealBonusMultiplier>
             <BANW_FinalDamageMultiplier>+0.18</BANW_FinalDamageMultiplier>
         </equippedStatOffsets>
          <costList>

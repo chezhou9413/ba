@@ -32,6 +32,11 @@
             <texPath>Pawns/General/Apparel_Generic</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
+        <equippedStatOffsets>
+            <BANW_HealReceivedMultiplier>0.2</BANW_HealReceivedMultiplier>
+            <BANW_CriticalChanceResistance>0.4</BANW_CriticalChanceResistance>
+            <BANW_CriticalDamageResistance>0.4</BANW_CriticalDamageResistance>
+        </equippedStatOffsets>
         <apparel>
             <wornGraphicPath>Pawns/Highland/Nozomi/Apparel/Nozomi_Apparel</wornGraphicPath>
             <bodyPartGroups>

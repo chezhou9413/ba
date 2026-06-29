@@ -42,8 +42,28 @@ namespace BANWlLib.BattleSystem
                 isExSkill = data.isExSkill
             });
 
+            BattleFormulaDebugUtility.LogDamagePreview(new BattleDamageRequest
+            {
+                instigator = launcher,
+                target = target,
+                damageDef = __instance.DamageDef,
+                weaponBaseAttack = data.weaponBaseAttack,
+                attackPowerRatio = data.attackPowerRatio,
+                normalAttackMultiplier = data.normalAttackMultiplier,
+                baseMasteryMultiplier = data.baseMasteryMultiplier,
+                penetration = __instance.ArmorPenetration,
+                isNormalAttack = data.isNormalAttack,
+                canCrit = data.canCrit,
+                alwaysShowCriticalText = data.alwaysShowCriticalText,
+                applyAffinity = data.applyAffinity,
+                isExSkill = data.isExSkill
+            }, result);
             BattleDamageDisplayState.RegisterManualDamage(target, launcher, result.isCrit);
             BattleDamageDisplayState.RegisterCriticalFloatText(target, result.isCrit || data.alwaysShowCriticalText);
+            if (data.alwaysShowCriticalText)
+            {
+                BattleDamageDisplayState.RegisterForcedCriticalFloatAmount(target, result.finalAmount);
+            }
             __result = Mathf.Max(0, Mathf.RoundToInt(result.finalAmount));
         }
     }

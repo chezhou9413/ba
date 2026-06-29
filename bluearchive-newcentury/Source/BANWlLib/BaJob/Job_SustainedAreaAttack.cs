@@ -16,6 +16,7 @@ namespace BANWlLib.BaJob
         private int nextActionIndex;
         private List<LocalTargetInfo> Cells;
         private List<Effecter> activeEffecters = new List<Effecter>();
+        private BattleCasterSnapshot snapshot;
 
         private BaJobDef_SustainedAttack def
         {
@@ -40,6 +41,7 @@ namespace BANWlLib.BaJob
                 damageSequence = def.damages.OrderBy(d => d.tick).ToList();
                 nextActionIndex = 0;
                 Cells = job.targetQueueA;
+                snapshot = BattleStatUtility.CreateSnapshot(pawn);
                 pawn.pather.StopDead();
             };
             channelingToil.tickAction = () =>
@@ -98,7 +100,7 @@ namespace BANWlLib.BaJob
                             continue;
                         }
 
-                        BattleStatUtility.ApplyAction(pawn, thing, action);
+                        BattleStatUtility.ApplyAction(pawn, thing, action, snapshot);
                     }
                 }
 
@@ -120,6 +122,13 @@ namespace BANWlLib.BaJob
             Effecter effecter = effecterDef.Spawn();
             activeEffecters.Add(effecter);
             effecter.Trigger(pawn, targetInfo);
+        }
+
+        // 保存和读取 Job 状态，负责让持续范围技能在读档后继续使用原施法者快照。
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Deep.Look(ref snapshot, "snapshot");
         }
     }
 }

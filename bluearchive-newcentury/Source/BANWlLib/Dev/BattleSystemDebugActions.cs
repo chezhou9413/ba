@@ -206,6 +206,15 @@ namespace BANWlLib.Dev
             LogBattleStats(pawn, "选中 Pawn");
         }
 
+        // 切换公式调试日志，负责把每次伤害和治疗的预估、最终值与实际值输出到控制台。
+        [DebugAction(Category, "切换公式调试日志", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void ToggleBattleFormulaDebugLog()
+        {
+            bool nextState = !BattleFormulaDebugUtility.IsEnabled();
+            BattleFormulaDebugUtility.SetEnabled(nextState);
+            Messages.Message("公式调试日志已" + (nextState ? "开启" : "关闭") + "。", MessageTypeDefOf.NeutralEvent, false);
+        }
+
         // 生成学生 Pawn，负责统一学生测试对象的创建和落点。
         private static Pawn SpawnStudent(string pawnKindDefName, Faction faction, IntVec3 cell, Map map, string label)
         {

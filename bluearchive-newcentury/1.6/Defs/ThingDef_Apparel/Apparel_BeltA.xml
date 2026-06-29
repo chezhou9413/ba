@@ -852,7 +852,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_FinalDamageMultiplier>+0.12</BANW_FinalDamageMultiplier>
-            <BANW_HealthScalePercentOffset>0.06</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.06</BANW_HealthBonusMultiplier>
             <MoveSpeed>+1.0</MoveSpeed>
             <PainShockThreshold>+0.06</PainShockThreshold>
 		</equippedStatOffsets>
@@ -892,7 +892,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_FinalDamageMultiplier>+0.20</BANW_FinalDamageMultiplier>
-            <BANW_HealthScalePercentOffset>0.09</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.09</BANW_HealthBonusMultiplier>
             <MoveSpeed>+1.4</MoveSpeed>
             <PainShockThreshold>+0.09</PainShockThreshold>
 		</equippedStatOffsets>
@@ -932,7 +932,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_FinalDamageMultiplier>+0.25</BANW_FinalDamageMultiplier>
-            <BANW_HealthScalePercentOffset>0.12</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.12</BANW_HealthBonusMultiplier>
             <MoveSpeed>+1.8</MoveSpeed>
             <PainShockThreshold>+0.12</PainShockThreshold>
 		</equippedStatOffsets>
@@ -972,7 +972,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_FinalDamageMultiplier>+0.30</BANW_FinalDamageMultiplier>
-            <BANW_HealthScalePercentOffset>0.13</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.13</BANW_HealthBonusMultiplier>
             <MoveSpeed>+2.2</MoveSpeed>
             <PainShockThreshold>+0.13</PainShockThreshold>
 		</equippedStatOffsets>
@@ -1012,7 +1012,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_FinalDamageMultiplier>+0.35</BANW_FinalDamageMultiplier>
-            <BANW_HealthScalePercentOffset>0.15</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.15</BANW_HealthBonusMultiplier>
             <MoveSpeed>+2.8</MoveSpeed>
             <PainShockThreshold>+0.15</PainShockThreshold>
 		</equippedStatOffsets>
@@ -1052,7 +1052,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_FinalDamageMultiplier>+0.42</BANW_FinalDamageMultiplier>
-            <BANW_HealthScalePercentOffset>0.17</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.17</BANW_HealthBonusMultiplier>
             <MoveSpeed>+3.6</MoveSpeed>
             <PainShockThreshold>+0.18</PainShockThreshold>
 		</equippedStatOffsets>
@@ -1092,7 +1092,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_FinalDamageMultiplier>+0.46</BANW_FinalDamageMultiplier>
-            <BANW_HealthScalePercentOffset>0.20</BANW_HealthScalePercentOffset>
+            <BANW_HealthBonusMultiplier>0.20</BANW_HealthBonusMultiplier>
             <MoveSpeed>+4.0</MoveSpeed>
             <PainShockThreshold>+0.25</PainShockThreshold>
 		</equippedStatOffsets>

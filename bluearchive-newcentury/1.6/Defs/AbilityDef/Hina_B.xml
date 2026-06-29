@@ -50,7 +50,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>0</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>25.24</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -74,7 +73,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_B_EXX_A</damageType>
                 <!-- 穿透 --> 
@@ -87,7 +85,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
@@ -100,7 +97,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>80</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
@@ -113,7 +109,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_B_EXX_B</damageType>
                 <!-- 穿透 --> 
@@ -126,7 +121,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
@@ -139,7 +133,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>200</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>72</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
@@ -152,7 +145,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>150</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hina_B_EXX_C</damageType>
                 <!-- 穿透 --> 
@@ -165,7 +157,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>150</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 
@@ -178,7 +169,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>350</tick>
                  <!-- 伤害量 --> 
-                <damageAmount>150</damageAmount>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_baofa</damageType>
                 <!-- 穿透 --> 

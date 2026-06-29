@@ -125,7 +125,6 @@
       <previewActions>
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <baseAmount>19</baseAmount>
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
           <attackPowerRatio>4.35</attackPowerRatio>
           <!-- 伤害类型。 -->
@@ -170,7 +169,6 @@
           <attackPowerRatio>0</attackPowerRatio></li>
           <li>
             <Delaytick>60</Delaytick>
-            <damageAmount>83</damageAmount>
               <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
             <damageType>BANC_Damage_baofa</damageType>
             <attackPowerRatio>4.35</attackPowerRatio>

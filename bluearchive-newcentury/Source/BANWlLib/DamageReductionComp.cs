@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using BANWlLib.BattleSystem;
 using UnityEngine;
 using Verse;
 using BANWlLib.Tool;
@@ -356,6 +357,8 @@ namespace BANWlLib
 
                 //继续原版的伤害处理逻辑
                 float injuryDamage = dinfo.Amount;
+                float beforeArmorDamage = injuryDamage;
+                float afterArmorDamage = injuryDamage;
                 bool shouldCheckArmor = !dinfo.InstantPermanentInjury && !dinfo.IgnoreArmor;
                 bool deflectedByMetalArmor = false;
                 if (shouldCheckArmor)
@@ -369,12 +372,17 @@ namespace BANWlLib
                         result.diminishedByMetalArmor = diminishedByMetalArmor;
                     }
                 }
+                afterArmorDamage = injuryDamage;
 
                 // 承伤系数计算
+                float incomingDamageFactor = 1f;
                 if (dinfo.Def.ExternalViolenceFor(pawn))
                 {
-                    injuryDamage *= pawn.GetStatValue(StatDefOf.IncomingDamageFactor);
+                    incomingDamageFactor = pawn.GetStatValue(StatDefOf.IncomingDamageFactor);
+                    injuryDamage *= incomingDamageFactor;
                 }
+
+                BattleFormulaDebugUtility.LogDamagePipeline(pawn, dinfo, dinfo.HitPart, beforeArmorDamage, afterArmorDamage, incomingDamageFactor, injuryDamage, deflectedByMetalArmor);
 
                 // 检查是否完全格挡
                 if (injuryDamage <= 0f)

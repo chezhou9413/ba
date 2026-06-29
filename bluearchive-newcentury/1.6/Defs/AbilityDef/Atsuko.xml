@@ -90,7 +90,6 @@
      <previewActions>
        <li>
          <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
-         <baseAmount>0</baseAmount>
          <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
          <healPowerRatio>0.54</healPowerRatio>
          <!-- true 表示该段是治疗。 -->
@@ -118,18 +117,11 @@
     <!-- 组件列表 -->
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-<<<<<<< HEAD
-        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
-        <healAmount>0</healAmount>
-        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <!-- 该持续治疗只使用 healPowerRatio，不配置额外固定回复值。 -->
+        <!-- 每次触发回复最终治愈力的 54%。 -->
         <healPowerRatio>0.54</healPowerRatio>
-        <!-- 每 tick 触发一次治疗。 -->
+        <!-- 每 300 tick 触发一次治疗。 -->
         <healIntervalTicks>300</healIntervalTicks>
-        <!-- 是否允许治疗永久伤。 -->
-=======
-        <healPowerRatio>12</healPowerRatio>
-        <healIntervalTicks>30</healIntervalTicks>
->>>>>>> 2afde9faefb1d8a327eb06524d3d5471af779638
         <isHeatScar>true</isHeatScar>
         <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
         <isExSkill>false</isExSkill>
@@ -184,20 +176,12 @@
     <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
     <!-- 组件列表 -->
     <comps>
-<<<<<<< HEAD
-     <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
-        <healAmount>0</healAmount>
-        <!-- 每 tick 回复最终治疗力的 4%。 -->
-        <healPowerRatio>0.54</healPowerRatio>
-        <!-- 每 tick 触发一次治疗。 -->
-        <healIntervalTicks>300</healIntervalTicks>
-        <!-- 是否允许治疗永久伤。 -->
-=======
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healPowerRatio>12</healPowerRatio>
-        <healIntervalTicks>30</healIntervalTicks>
->>>>>>> 2afde9faefb1d8a327eb06524d3d5471af779638
+        <!-- 该持续治疗只使用 healPowerRatio，不配置额外固定回复值。 -->
+        <!-- 每次触发回复最终治愈力的 54%。 -->
+        <healPowerRatio>0.54</healPowerRatio>
+        <!-- 每 300 tick 触发一次治疗。 -->
+        <healIntervalTicks>300</healIntervalTicks>
         <isHeatScar>true</isHeatScar>
         <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
         <isExSkill>false</isExSkill>

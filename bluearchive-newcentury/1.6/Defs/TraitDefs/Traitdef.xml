@@ -12,7 +12,7 @@
                     <Flammability>-1.0</Flammability>
                     <PainShockThreshold>+0.15</PainShockThreshold>
                     <IncomingDamageFactor>-0.05</IncomingDamageFactor>
-                    <BANW_HealthScalePercentOffset>0.55</BANW_HealthScalePercentOffset>
+                    <BANW_HealthBonusMultiplier>0.55</BANW_HealthBonusMultiplier>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -64,7 +64,7 @@
                 <description>{PAWN_nameDef}的职位是辅助，拥有支援相关的技能，工作相关的能力会比较高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                   <BANW_HealPowerBase>50</BANW_HealPowerBase>
+                   <BANW_InitialHeal>50</BANW_InitialHeal>
                    <WorkSpeedGlobal>+0.30</WorkSpeedGlobal>
                    <GlobalLearningFactor>+0.25</GlobalLearningFactor>
                    <MoveSpeed>+2.0</MoveSpeed>

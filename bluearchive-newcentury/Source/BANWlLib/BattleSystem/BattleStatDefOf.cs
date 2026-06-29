@@ -7,6 +7,8 @@ namespace BANWlLib.BattleSystem
     [DefOf]
     public static class BattleStatDefOf
     {
+        public static StatDef BANW_InitialHealth;
+        public static StatDef BANW_InitialHeal;
         public static StatDef BANW_AttackLevelMultiplier;
         public static StatDef BANW_FinalDamageMultiplier;
         public static StatDef BANW_CriticalChance;

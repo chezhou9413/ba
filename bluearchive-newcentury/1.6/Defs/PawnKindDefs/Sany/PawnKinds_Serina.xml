@@ -101,8 +101,7 @@
 						<li>0.50</li>
 					</starValues>
 				</attackPercent>
-				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
-				<!-- 升星固定治愈力成长，进入治愈力公式的固定加算项。 -->
+				<!-- 星级治愈力倍率成长，参与最终治愈力计算。 -->
 				<healPercent>
 					<starValues>
 						<li>0</li>
@@ -178,38 +177,6 @@
 						<ReplacePath>Pawns/Sany/Serina/Hair/Serina_BackHair</ReplacePath>
 					</li>
 				</bodyAddonRules>
-			</li>
-			<li Class="BANWlLib.BattleSystem.BattleStarGrowthExtension">
-				<!-- 星级生命百分比成长，starValues 从 1 星到 5 星依次读取。 -->
-				<healthPercent>
-					<starValues>
-						<li>0</li>
-						<li>0.05</li>
-						<li>0.10</li>
-						<li>0.18</li>
-						<li>0.25</li>
-					</starValues>
-				</healthPercent>
-				<!-- 升星固定治愈力成长，进入治愈力公式的固定加算项。 -->
-				<healFlat>
-					<starValues>
-						<li>0</li>
-						<li>8</li>
-						<li>16</li>
-						<li>28</li>
-						<li>45</li>
-					</starValues>
-				</healFlat>
-				<!-- 星级治愈力百分比成长，参与最终治愈力计算。 -->
-				<healPercent>
-					<starValues>
-						<li>0</li>
-						<li>0.05</li>
-						<li>0.10</li>
-						<li>0.16</li>
-						<li>0.25</li>
-					</starValues>
-				</healPercent>
 			</li>
 		</modExtensions>
 	</PawnKindDef>

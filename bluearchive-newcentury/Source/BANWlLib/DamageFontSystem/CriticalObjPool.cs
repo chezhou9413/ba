@@ -39,6 +39,12 @@ namespace BANWlLib.DamageFontSystem
             ShowFloatText((int)amount, pawn, Color.white, null);
         }
 
+        // 显示固定伤害飘字，负责让强制暴击文字技能按公式伤害显示数值但不改变真实暴击链。
+        public static void showFixedDamageShow(float amount, Pawn pawn)
+        {
+            ShowFloatText((int)amount, pawn, Color.white, null);
+        }
+
         // 显示治疗飘字，负责使用治疗颜色并支持暴疗文本。
         public static void showHealShow(float amount, Pawn pawn, bool isCrit = false)
         {

@@ -49,7 +49,7 @@ namespace BANWlLib.comp
             }
 
             // 有施法者快照时用施法者属性结算，否则用自身属性。
-            Thing instigator = casterSnapshot != null ? Pawn : Pawn;
+            Thing instigator = casterSnapshot != null ? null : Pawn;
             BattleStatUtility.ApplyHealing(new BattleHealRequest
             {
                 instigator = instigator,

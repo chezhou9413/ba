@@ -1,3 +1,4 @@
+using BANWlLib.comp;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -18,6 +19,8 @@ namespace BANWlLib.BattleSystem
                 return true;
             }
 
+            RegisterRegenerationSnapshot(__instance, target, hediffDef);
+
             // 只拦截配置了 BattleStack 组件的 HediffDef，其余走原版逻辑。
             if (hediffDef.CompProps<HediffCompProperties_BattleStack>() == null)
             {
@@ -31,6 +34,30 @@ namespace BANWlLib.BattleSystem
 
             BattleStackHediffUtility.ApplyStackedHediff(target, hediffDef);
             return false;
+        }
+
+        // 命中目标后置清理，负责避免 GiveHediff 失败时把施法者快照残留到后续治疗。
+        static void Postfix(Pawn target)
+        {
+            HealProjectileContext.Clear(target);
+        }
+
+        // 给持续治疗 Hediff 注册施法者快照，负责让目标 tick 治疗时继续使用施法者的治愈力。
+        private static void RegisterRegenerationSnapshot(CompAbilityEffect_GiveHediff effectComp, Pawn target, HediffDef hediffDef)
+        {
+            if (target == null)
+            {
+                return;
+            }
+
+            Pawn caster = effectComp?.parent?.pawn;
+            if (caster == null)
+            {
+                Log.Error("[BANW] CompAbilityEffect_GiveHediff 缺少施法者，无法为持续治疗注册施法者快照。");
+                return;
+            }
+
+            BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(target, hediffDef, caster);
         }
     }
 }

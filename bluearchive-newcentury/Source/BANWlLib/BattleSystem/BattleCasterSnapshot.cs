@@ -6,6 +6,7 @@ namespace BANWlLib.BattleSystem
     // 施法者属性快照，负责让脱手场地和延迟效果保存施放瞬间的战斗属性。
     public class BattleCasterSnapshot : IExposable
     {
+        public string casterLabel;
         public float attackLevelMultiplier = 1f;
         public float attackMultiplier = 1f;
         public float weaponBaseAttack;
@@ -20,6 +21,7 @@ namespace BANWlLib.BattleSystem
         // 保存和读取快照数据，负责让存档后的场地继续使用同一套施法属性。
         public void ExposeData()
         {
+            Scribe_Values.Look(ref casterLabel, "casterLabel");
             Scribe_Values.Look(ref attackLevelMultiplier, "attackLevelMultiplier", 1f);
             Scribe_Values.Look(ref attackMultiplier, "attackMultiplier", 1f);
             Scribe_Values.Look(ref weaponBaseAttack, "weaponBaseAttack", 0f);
