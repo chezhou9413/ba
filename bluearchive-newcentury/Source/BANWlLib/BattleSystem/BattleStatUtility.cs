@@ -686,6 +686,7 @@ namespace BANWlLib.BattleSystem
                     instigator = instigator,
                     target = target,
                     damageDef = action.damageDef,
+                    weaponBaseAttack = action.weaponBaseAttack,
                     attackPowerRatio = action.attackPowerRatio,
                     normalAttackMultiplier = action.normalAttackMultiplier,
                     baseMasteryMultiplier = action.baseMasteryMultiplier,
