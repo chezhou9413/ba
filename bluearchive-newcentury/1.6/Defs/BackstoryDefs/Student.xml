@@ -2123,4 +2123,19 @@
 			<li>BANW_BackstoryWakamo_A</li>
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMika_A</defName>
+		<title>七囚人</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是三一综合学园所属，茶会的一员，
+主谋了这次度假计划的少女。
+为了让朋友享受大海而奋斗中，但感觉有些徒劳。计划进行得不是很顺利，最近似乎经常失眠。
+"久等了，老师。嘿嘿，怎么样？"。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMika_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
 </Defs>
