@@ -529,6 +529,7 @@ namespace BANWlLib.BattleSystem
                 damageDef = projectileDef.projectile?.damageDef,
                 penetration = projectileDef.projectile?.GetArmorPenetration() ?? 0f,
                 canCrit = extension.canCrit,
+                alwaysCrit = extension.alwaysCrit,
                 alwaysShowCriticalText = extension.alwaysShowCriticalText,
                 applyAffinity = extension.applyAffinity,
                 canHitBuilding = extension.canHitBuilding,

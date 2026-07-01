@@ -17,6 +17,8 @@ namespace BANWlLib.Projectiles
         public float baseMasteryMultiplier = 1f;
         public bool isExSkill = false;
         public bool canCrit = true;
+        // 是否强制暴击，负责让穿透弹本体伤害跳过随机暴击判定。
+        public bool alwaysCrit = false;
         public bool alwaysShowCriticalText = false;
         public bool applyAffinity = true;
         public bool canHitBuilding = true;
