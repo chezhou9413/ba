@@ -619,4 +619,236 @@
   </modExtensions>
 </ThingDef>
 
+<DamageDef ParentName="BANC_Damage_guantong">
+  <defName>BANC_Damage_Nozomi_MultiHit_01</defName>
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+  <buildingDamageFactor>0.4</buildingDamageFactor>
+</DamageDef>
+
+<DamageDef ParentName="BANC_Damage_baofa">
+  <defName>BANC_Damage_Nozomi_MultiHit_02</defName>
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+  <buildingDamageFactor>0.4</buildingDamageFactor>
+</DamageDef>
+
+<DamageDef ParentName="BANC_Damage_zhendong">
+  <defName>BANC_Damage_Nozomi_MultiHit_03</defName>
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+  <buildingDamageFactor>0.4</buildingDamageFactor>
+</DamageDef>
+
+<DamageDef ParentName="BANC_Damage_shenmi">
+  <defName>BANC_Damage_Nozomi_MultiHit_04</defName>
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+  <buildingDamageFactor>0.4</buildingDamageFactor>
+</DamageDef>
+
+<DamageDef ParentName="BANC_Damage_guantong">
+  <defName>BANC_Damage_Nozomi_MultiHit_05</defName>
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+  <buildingDamageFactor>0.4</buildingDamageFactor>
+</DamageDef>
+
+<DamageDef ParentName="BANC_Damage_baofa">
+  <defName>BANC_Damage_Nozomi_MultiHit_06</defName>
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+  <buildingDamageFactor>0.4</buildingDamageFactor>
+</DamageDef>
+
+<DamageDef ParentName="BANC_Damage_zhendong">
+  <defName>BANC_Damage_Nozomi_MultiHit_07</defName>
+  <damageEffecter>BANW_Effecter_ShakeNozomi</damageEffecter>
+  <soundExplosion>BANW_Sound_Kong</soundExplosion>
+  <buildingDamageFactor>0.4</buildingDamageFactor>
+</DamageDef>
+
+<AbilityDef>
+  <defName>BAWN_Nozomi_MultiHitShot_Test</defName>
+  <label>多段射击·测试</label>
+  <description>发射一枚单体子弹，命中后保留原始子弹伤害，并追加7段从低到高递增的必定暴击伤害。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
+  <cooldownTicksRange>1800</cooldownTicksRange>
+  <hotKey>Misc4</hotKey>
+  <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
+  <showPsycastEffects>False</showPsycastEffects>
+  <stunTargetWhileCasting>false</stunTargetWhileCasting>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <showWhenDrafted>True</showWhenDrafted>
+  <hostile>true</hostile>
+  <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
+  <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <verbProperties>
+    <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
+    <soundCast>BANW_Wp_HG_At</soundCast>
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>30</range>
+    <warmupTime>1.0</warmupTime>
+    <requireLineOfSight>true</requireLineOfSight>
+    <targetParams>
+      <canTargetLocations>false</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="CompProperties_AbilityLaunchProjectile">
+      <projectileDef>BANC_Bullet_Nozomi_MultiHitShot_Test</projectileDef>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <shape>Circle</shape>
+      <range>30</range>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+      <previewActions>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_MultiHit_01</damageDef>
+          <normalAttackMultiplier>1.0</normalAttackMultiplier>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+        </li>
+      </previewActions>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
+<ThingDef ParentName="BaseBullet">
+  <defName>BANC_Bullet_Nozomi_MultiHitShot_Test</defName>
+  <label>多段射击·测试子弹</label>
+  <thingClass>Bullet</thingClass>
+  <projectile>
+    <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+    <damageAmountBase>30</damageAmountBase>
+    <stoppingPower>1</stoppingPower>
+    <armorPenetrationBase>2</armorPenetrationBase>
+    <speed>120</speed>
+  </projectile>
+  <graphicData>
+    <shaderType>MoteGlow</shaderType>
+    <drawSize>(1,3)</drawSize>
+    <texPath>Projectile/kongbai</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+  </graphicData>
+  <modExtensions>
+    <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+      <isNormalAttack>true</isNormalAttack>
+      <normalAttackMultiplier>1.0</normalAttackMultiplier>
+      <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+    </li>
+    <li Class="BANWlLib.BattleSystem.ProjectileMultiHitExtension">
+      <damageIntervalTicks>6</damageIntervalTicks>
+      <!-- 多段追加伤害是否允许命中同阵营 Pawn。 -->
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <!-- 多段追加伤害是否允许命中同阵营建筑。 -->
+      <canHitOwnBuilding>false</canHitOwnBuilding>
+      <extraDamages>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_MultiHit_01</damageDef>
+          <normalAttackMultiplier>1.0</normalAttackMultiplier>
+          <delayTicks>0</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>false</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_MultiHit_02</damageDef>
+          <normalAttackMultiplier>2.0</normalAttackMultiplier>
+          <delayTicks>4</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>false</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_MultiHit_03</damageDef>
+          <normalAttackMultiplier>3.0</normalAttackMultiplier>
+          <delayTicks>8</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>false</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_MultiHit_04</damageDef>
+          <normalAttackMultiplier>4.0</normalAttackMultiplier>
+          <delayTicks>12</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>false</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_MultiHit_05</damageDef>
+          <normalAttackMultiplier>5.0</normalAttackMultiplier>
+          <delayTicks>16</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>false</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_MultiHit_06</damageDef>
+          <normalAttackMultiplier>6.0</normalAttackMultiplier>
+          <delayTicks>20</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>false</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_MultiHit_07</damageDef>
+          <normalAttackMultiplier>7.0</normalAttackMultiplier>
+          <delayTicks>24</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>false</isExSkill>
+        </li>
+      </extraDamages>
+    </li>
+  </modExtensions>
+</ThingDef>
+
 </Defs>

@@ -1,4 +1,5 @@
 using HarmonyLib;
+using BANWlLib.BattleSystem;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -7,6 +8,7 @@ namespace DodgeMod
 {
     // 受伤前闪避补丁，负责在目标拥有闪避概率时拦截本次伤害。
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
+    [HarmonyPriority(Priority.Last)]
     public static class Pawn_PreApplyDamage_Patch
     {
         // 处理受伤前判定，负责跳过带 IgnoreDodgeExtension 的伤害并在闪避成功时显示 MISS。
@@ -29,6 +31,7 @@ namespace DodgeMod
                 MoteMaker.ThrowText(__instance.DrawPos, __instance.Map, "MISS", Color.white, 3.9f);
             }
 
+            BattleDamageDisplayState.DiscardPendingDamageDisplay(__instance);
             dinfo.SetAmount(0f);
             return false;
         }

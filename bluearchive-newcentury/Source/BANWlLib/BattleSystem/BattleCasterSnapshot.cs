@@ -9,6 +9,7 @@ namespace BANWlLib.BattleSystem
         public string casterLabel;
         public float attackLevelMultiplier = 1f;
         public float attackMultiplier = 1f;
+        public float baseMasteryMultiplier = 1f;
         public float weaponBaseAttack;
         public float attackPower;
         public float healMultiplier = 1f;
@@ -24,6 +25,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref casterLabel, "casterLabel");
             Scribe_Values.Look(ref attackLevelMultiplier, "attackLevelMultiplier", 1f);
             Scribe_Values.Look(ref attackMultiplier, "attackMultiplier", 1f);
+            Scribe_Values.Look(ref baseMasteryMultiplier, "baseMasteryMultiplier", 1f);
             Scribe_Values.Look(ref weaponBaseAttack, "weaponBaseAttack", 0f);
             Scribe_Values.Look(ref attackPower, "attackPower", 0f);
             Scribe_Values.Look(ref healMultiplier, "healMultiplier", 1f);

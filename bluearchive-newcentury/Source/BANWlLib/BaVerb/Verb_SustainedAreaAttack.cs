@@ -1,3 +1,4 @@
+using BANWlLib.BattleSystem;
 using RimWorld;
 using System.Collections.Generic;
 using Verse;
@@ -72,7 +73,9 @@ namespace BANWlLib.BaVerb
             {
                 if (VerbProperties.TiggerHediff != null)
                 {
+                    BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(caster, VerbProperties.TiggerHediff, caster);
                     Hediff hediff = HediffMaker.MakeHediff(VerbProperties.TiggerHediff, caster);
+                    BattleHediffSnapshotUtility.ApplySnapshotIfNeeded(hediff, caster);
                     caster.health.AddHediff(hediff);
                 }
 

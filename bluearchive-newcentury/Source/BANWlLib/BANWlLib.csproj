@@ -185,6 +185,8 @@
     <Compile Include="BattleSystem\BattleShieldRequest.cs" />
     <Compile Include="BattleSystem\BattleProjectilePatches.cs" />
     <Compile Include="BattleSystem\BattleProjectileExtension.cs" />
+    <Compile Include="BattleSystem\ProjectileMultiHitDelayComponent.cs" />
+    <Compile Include="BattleSystem\ProjectileMultiHitExtension.cs" />
     <Compile Include="BattleSystem\ProjectileBattleContext.cs" />
     <Compile Include="BattleSystem\PawnHealthTrackerRegenerationPatch.cs" />
     <Compile Include="BattleSystem\BattleResult.cs" />

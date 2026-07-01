@@ -1,6 +1,7 @@
 using HarmonyLib;
 using BANWlLib.Projectiles;
 using RimWorld;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -104,6 +105,7 @@ namespace BANWlLib.BattleSystem
             {
                 ProjectileBattleContext.RegisterSkillDamage(launcher, __instance.DamageDef, data);
             }
+
         }
     }
 
@@ -151,6 +153,158 @@ namespace BANWlLib.BattleSystem
                 {
                     HealProjectileContext.Register(targetPawn, snapshot);
                 }
+            }
+        }
+    }
+
+    // 普通子弹多段命中补丁，负责在 Bullet 原本伤害后按配置追加多段统一战斗伤害。
+    [HarmonyPatch(typeof(Bullet), "Impact", typeof(Thing), typeof(bool))]
+    public static class ProjectileMultiHitImpactPatch
+    {
+        // 命中前保存多段伤害上下文，负责避免 Bullet 原始 Impact 销毁弹体后丢失施法者和配置。
+        public static void Prefix(Bullet __instance, Thing hitThing, ref ProjectileMultiHitImpactState __state)
+        {
+            __state = null;
+            if (__instance == null || hitThing == null || !(__instance.Launcher is Pawn launcher))
+            {
+                return;
+            }
+
+            ProjectileBattleContext.RegisterImpactTarget(__instance, hitThing);
+            if (hitThing is Pawn targetPawn)
+            {
+                BattleCasterSnapshot snapshot = BattleStatUtility.CreateSnapshot(launcher);
+                if (snapshot != null)
+                {
+                    HealProjectileContext.Register(targetPawn, snapshot);
+                }
+            }
+
+            ProjectileMultiHitExtension extension = __instance.def.GetModExtension<ProjectileMultiHitExtension>();
+            List<ProjectileExtraDamageConfig> extraDamages = extension?.extraDamages;
+            if (extraDamages == null || extraDamages.Count == 0)
+            {
+                return;
+            }
+
+            __state = new ProjectileMultiHitImpactState
+            {
+                projectileDef = __instance.def,
+                launcher = launcher,
+                target = hitThing,
+                extraDamages = extraDamages,
+                damageIntervalTicks = extension.damageIntervalTicks,
+                canHitOwnPawn = extension.canHitOwnPawn,
+                canHitOwnBuilding = extension.canHitOwnBuilding,
+                weaponBaseAttack = Mathf.Max(0f, __instance.def?.projectile?.GetDamageAmount(null) ?? 0f),
+                armorPenetration = __instance.ArmorPenetration
+            };
+        }
+
+        // 命中后入队多段伤害，负责让原始子弹伤害先完成，再由地图组件逐段执行追加结算。
+        public static void Postfix(ProjectileMultiHitImpactState __state)
+        {
+            ProjectileMultiHitDelayComponent.Queue(__state);
+        }
+
+        // 应用一段追加伤害，负责把 XML 段配置转为统一伤害请求。
+        public static void ApplyExtraDamage(ProjectileMultiHitImpactState state, ProjectileExtraDamageConfig config)
+        {
+            if (config == null)
+            {
+                return;
+            }
+
+            DamageDef damageDef = config.ResolveDamageDef();
+            if (damageDef == null)
+            {
+                Log.Error("[BANW] 投射物 " + state.projectileDef.defName + " 的多段追加伤害缺少 damageDef。");
+                return;
+            }
+
+            if (IsBlockedOwnTarget(state, config))
+            {
+                return;
+            }
+
+            float penetration = config.penetration >= 0f ? config.penetration : state.armorPenetration;
+            BattleStatUtility.ApplyDamage(new BattleDamageRequest
+            {
+                instigator = state.launcher,
+                target = state.target,
+                damageDef = damageDef,
+                weaponBaseAttack = state.weaponBaseAttack,
+                attackPowerRatio = config.attackPowerRatio,
+                normalAttackMultiplier = config.normalAttackMultiplier,
+                baseMasteryMultiplier = config.baseMasteryMultiplier,
+                penetration = penetration,
+                isNormalAttack = config.isNormalAttack,
+                canCrit = config.canCrit,
+                alwaysCrit = config.alwaysCrit,
+                alwaysShowCriticalText = config.alwaysShowCriticalText,
+                applyAffinity = config.applyAffinity,
+                isExSkill = config.isExSkill
+            });
+        }
+
+        // 判断追加伤害是否被己方过滤，负责避免多段伤害误伤己方 Pawn 或建筑。
+        private static bool IsBlockedOwnTarget(ProjectileMultiHitImpactState state, ProjectileExtraDamageConfig config)
+        {
+            Pawn launcher = state?.launcher;
+            Thing target = state?.target;
+            if (launcher?.Faction == null || target?.Faction == null || launcher.Faction != target.Faction)
+            {
+                return false;
+            }
+
+            if (target is Building)
+            {
+                return !config.canHitOwnBuilding && !state.canHitOwnBuilding;
+            }
+
+            if (target is Pawn)
+            {
+                return !config.canHitOwnPawn && !state.canHitOwnPawn;
+            }
+
+            return false;
+        }
+
+        // 普通子弹多段命中上下文，负责跨过 Bullet 原始 Impact 保存追加段所需数据。
+        public class ProjectileMultiHitImpactState
+        {
+            public ThingDef projectileDef;
+            public Pawn launcher;
+            public Thing target;
+            public List<ProjectileExtraDamageConfig> extraDamages;
+            public int damageIntervalTicks;
+            public bool canHitOwnPawn;
+            public bool canHitOwnBuilding;
+            public float weaponBaseAttack;
+            public float armorPenetration;
+
+            // 判断是否需要延迟队列，负责支持外层统一间隔和单段独立延迟两种配置。
+            public bool ShouldUseDelayQueue()
+            {
+                if (damageIntervalTicks > 0)
+                {
+                    return true;
+                }
+
+                if (extraDamages == null)
+                {
+                    return false;
+                }
+
+                for (int i = 0; i < extraDamages.Count; i++)
+                {
+                    if (extraDamages[i]?.delayTicks > 0)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
             }
         }
     }

@@ -15,6 +15,7 @@ namespace BANWlLib.BattleSystem
         public float penetration;
         public bool isNormalAttack = false;
         public bool canCrit = true;
+        public bool alwaysCrit = false;
         public bool alwaysShowCriticalText = false;
         public bool applyAffinity = true;
         public bool isExSkill = false;
