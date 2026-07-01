@@ -417,7 +417,9 @@ namespace BANWlLib.BattleSystem
             BattleActionConfig piercingAction = TryBuildPiercingProjectileAction(projectileDef);
             if (piercingAction != null)
             {
-                return new List<BattleActionConfig> { piercingAction };
+                List<BattleActionConfig> piercingActions = new List<BattleActionConfig> { piercingAction };
+                AddMultiHitPreviewActions(projectileDef, piercingActions);
+                return piercingActions;
             }
 
             List<BattleActionConfig> normalProjectileActions = TryBuildNormalProjectileActions(projectileDef);
@@ -465,6 +467,22 @@ namespace BANWlLib.BattleSystem
             }
 
             return actions.Count > 0 ? actions : null;
+        }
+
+        // 追加投射物多段预览，负责让穿透弹和普通弹共用同一套额外伤害显示。
+        private static void AddMultiHitPreviewActions(ThingDef projectileDef, List<BattleActionConfig> actions)
+        {
+            ProjectileMultiHitExtension multiHitExtension = projectileDef?.GetModExtension<ProjectileMultiHitExtension>();
+            if (multiHitExtension?.extraDamages == null || actions == null)
+            {
+                return;
+            }
+
+            float weaponBaseAttack = projectileDef.projectile?.GetDamageAmount(null) ?? 0f;
+            for (int i = 0; i < multiHitExtension.extraDamages.Count; i++)
+            {
+                AddPreviewAction(actions, BuildExtraProjectilePreviewAction(projectileDef, multiHitExtension, multiHitExtension.extraDamages[i], weaponBaseAttack));
+            }
         }
 
         // 从投射物追加伤害配置构建预览段，负责复用多段子弹运行时的字段语义。
