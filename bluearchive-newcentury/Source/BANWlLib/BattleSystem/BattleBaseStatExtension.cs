@@ -23,6 +23,9 @@ namespace BANWlLib.BattleSystem
         // 基础 EX 技能倍率平加，0.5 表示 EX 技能倍率从默认 100% 提高到 150%。
         public float exSkillMultiplierOffset = 0f;
 
+        // 基础精通倍率平加，0.2 表示普通攻击口径伤害的基础精通从默认 100% 提高到 120%。
+        public float baseMasteryMultiplierOffset = 0f;
+
         // 攻击类型配置，填写 Explosion、Mysterious、Vibration、Through 或 Composite。
         public string damageType;
 

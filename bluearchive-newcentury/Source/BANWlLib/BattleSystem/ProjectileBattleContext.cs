@@ -132,4 +132,5 @@ namespace BANWlLib.BattleSystem
         public bool hasCustomExtension = false;
         public int expireTick;
     }
+
 }

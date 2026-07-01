@@ -130,11 +130,11 @@ namespace BANWlLib.BattleSystem
         //解析预览战斗段，负责让投射物、场地和范围 Job 技能优先读取真实配置，避免悬浮预估和实际结算分离。
         private static List<BattleActionConfig> ResolvePreviewActions(AbilityDef abilityDef, out bool hasAutomaticActions)
         {
-            BattleActionConfig projectileAction = TryBuildPiercingProjectileAction(abilityDef);
-            if (projectileAction != null)
+            List<BattleActionConfig> projectileActions = TryBuildProjectileActions(abilityDef);
+            if (projectileActions != null)
             {
                 hasAutomaticActions = true;
-                return new List<BattleActionConfig> { projectileAction };
+                return projectileActions;
             }
 
             List<BattleActionConfig> fieldActions = TryBuildBattleFieldActions(abilityDef);
@@ -323,7 +323,7 @@ namespace BANWlLib.BattleSystem
                     return;
                 }
             }
-            else if (action.attackPowerRatio <= 0f || action.damageDef == null)
+            else if (action.damageDef == null || (action.isNormalAttack ? action.normalAttackMultiplier <= 0f : action.attackPowerRatio <= 0f))
             {
                 return;
             }
@@ -367,6 +367,7 @@ namespace BANWlLib.BattleSystem
                     isShield = source.isShield,
                     isNormalAttack = source.isNormalAttack,
                     canCrit = source.canCrit,
+                    alwaysCrit = source.alwaysCrit,
                     alwaysShowCriticalText = source.alwaysShowCriticalText,
                     alwaysShowHealText = source.alwaysShowHealText,
                     applyAffinity = source.applyAffinity,
@@ -376,7 +377,8 @@ namespace BANWlLib.BattleSystem
                     affectHostile = source.affectHostile,
                     affectFriendly = source.affectFriendly,
                     allowPermanentInjuryHealing = source.allowPermanentInjuryHealing,
-                    isExSkill = source.isExSkill
+                    isExSkill = source.isExSkill,
+                    previewWeaponBaseAttack = source.previewWeaponBaseAttack
                 });
             }
 
@@ -403,10 +405,98 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        //从直线穿透弹构建预览段，负责把 ThingDef 扩展里的真实伤害参数同步到技能公式显示。
-        private static BattleActionConfig TryBuildPiercingProjectileAction(AbilityDef abilityDef)
+        // 从技能投射物构建预览段，负责把直线弹、普通弹和多段追加伤害同步到技能公式显示。
+        private static List<BattleActionConfig> TryBuildProjectileActions(AbilityDef abilityDef)
         {
             ThingDef projectileDef = FindLaunchProjectileDef(abilityDef);
+            if (projectileDef == null)
+            {
+                return null;
+            }
+
+            BattleActionConfig piercingAction = TryBuildPiercingProjectileAction(projectileDef);
+            if (piercingAction != null)
+            {
+                return new List<BattleActionConfig> { piercingAction };
+            }
+
+            List<BattleActionConfig> normalProjectileActions = TryBuildNormalProjectileActions(projectileDef);
+            return normalProjectileActions;
+        }
+
+        // 从普通投射物构建预览段，负责把原始子弹伤害和命中追加多段伤害按真实配置展开。
+        private static List<BattleActionConfig> TryBuildNormalProjectileActions(ThingDef projectileDef)
+        {
+            BattleProjectileExtension battleExtension = projectileDef?.GetModExtension<BattleProjectileExtension>();
+            ProjectileMultiHitExtension multiHitExtension = projectileDef?.GetModExtension<ProjectileMultiHitExtension>();
+            if (battleExtension == null && multiHitExtension?.extraDamages.NullOrEmpty() != false)
+            {
+                return null;
+            }
+
+            List<BattleActionConfig> actions = new List<BattleActionConfig>();
+            float weaponBaseAttack = projectileDef.projectile?.GetDamageAmount(null) ?? 0f;
+            if (battleExtension != null)
+            {
+                AddPreviewAction(actions, new BattleActionConfig
+                {
+                    attackPowerRatio = battleExtension.attackPowerRatio,
+                    normalAttackMultiplier = battleExtension.normalAttackMultiplier,
+                    baseMasteryMultiplier = battleExtension.baseMasteryMultiplier,
+                    damageDef = projectileDef.projectile?.damageDef,
+                    penetration = projectileDef.projectile?.GetArmorPenetration() ?? 0f,
+                    isNormalAttack = battleExtension.isNormalAttack,
+                    canCrit = battleExtension.canCrit,
+                    alwaysShowCriticalText = battleExtension.alwaysShowCriticalText,
+                    applyAffinity = battleExtension.applyAffinity,
+                    canHitOwnBuilding = battleExtension.canHitOwnBuilding,
+                    canHitOwnPawn = battleExtension.canHitOwnPawn,
+                    isExSkill = battleExtension.isExSkill,
+                    previewWeaponBaseAttack = weaponBaseAttack
+                });
+            }
+
+            if (multiHitExtension?.extraDamages != null)
+            {
+                for (int i = 0; i < multiHitExtension.extraDamages.Count; i++)
+                {
+                    AddPreviewAction(actions, BuildExtraProjectilePreviewAction(projectileDef, multiHitExtension, multiHitExtension.extraDamages[i], weaponBaseAttack));
+                }
+            }
+
+            return actions.Count > 0 ? actions : null;
+        }
+
+        // 从投射物追加伤害配置构建预览段，负责复用多段子弹运行时的字段语义。
+        private static BattleActionConfig BuildExtraProjectilePreviewAction(ThingDef projectileDef, ProjectileMultiHitExtension extension, ProjectileExtraDamageConfig config, float weaponBaseAttack)
+        {
+            if (config == null)
+            {
+                return null;
+            }
+
+            return new BattleActionConfig
+            {
+                attackPowerRatio = config.attackPowerRatio,
+                normalAttackMultiplier = config.normalAttackMultiplier,
+                baseMasteryMultiplier = config.baseMasteryMultiplier,
+                damageDef = config.ResolveDamageDef(),
+                penetration = config.penetration >= 0f ? config.penetration : projectileDef.projectile?.GetArmorPenetration() ?? 0f,
+                isNormalAttack = config.isNormalAttack,
+                canCrit = config.canCrit,
+                alwaysCrit = config.alwaysCrit,
+                alwaysShowCriticalText = config.alwaysShowCriticalText,
+                applyAffinity = config.applyAffinity,
+                canHitOwnBuilding = config.canHitOwnBuilding || extension?.canHitOwnBuilding == true,
+                canHitOwnPawn = config.canHitOwnPawn || extension?.canHitOwnPawn == true,
+                isExSkill = config.isExSkill,
+                previewWeaponBaseAttack = weaponBaseAttack
+            };
+        }
+
+        //从直线穿透弹构建预览段，负责把 ThingDef 扩展里的真实伤害参数同步到技能公式显示。
+        private static BattleActionConfig TryBuildPiercingProjectileAction(ThingDef projectileDef)
+        {
             PiercingProjectileExtension extension = projectileDef?.GetModExtension<PiercingProjectileExtension>();
             if (extension == null)
             {
@@ -427,7 +517,8 @@ namespace BANWlLib.BattleSystem
                 affectHostile = extension.affectHostile,
                 affectFriendly = extension.affectFriendly,
                 isExSkill = extension.isExSkill,
-                isProjectilePreview = true
+                isProjectilePreview = true,
+                previewWeaponBaseAttack = projectileDef.projectile?.GetDamageAmount(null) ?? 0f
             };
         }
 
@@ -540,9 +631,10 @@ namespace BANWlLib.BattleSystem
                 }
 
                 totals.damageCount++;
-                totals.damageRatioTotal += Mathf.Max(0f, action.attackPowerRatio);
+                totals.damageRatioTotal += GetDamageActionMultiplier(action);
                 totals.damageTotal += EstimateDamage(pawn, action);
                 totals.canCrit |= action.canCrit;
+                totals.alwaysCrit |= action.alwaysCrit;
                 totals.alwaysShowCriticalText |= action.alwaysShowCriticalText;
                 totals.applyAffinity |= action.applyAffinity;
                 totals.isExSkill |= action.isExSkill;
@@ -608,7 +700,7 @@ namespace BANWlLib.BattleSystem
             }
 
             float damage = EstimateDamage(pawn, action) * group.repeatCount;
-            builder.AppendLine("  " + title + "：" + FormatColor("伤害", DamageColor) + " " + FormatPercent(action.attackPowerRatio) + " x" + group.repeatCount + " = " + FormatColor(FormatNumber(damage), DamageColor) + "，" + FormatFormulaModifiers(action.canCrit, action.applyAffinity, action.isExSkill));
+            builder.AppendLine("  " + title + "：" + FormatColor("伤害", DamageColor) + " " + FormatPercent(GetDamageActionMultiplier(action)) + " x" + group.repeatCount + " = " + FormatColor(FormatNumber(damage), DamageColor) + "，" + FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill));
         }
 
         // 估算单段伤害，负责复用战斗属性工具的真实伤害计算。
@@ -619,12 +711,14 @@ namespace BANWlLib.BattleSystem
                 instigator = pawn,
                 target = pawn,
                 damageDef = action.damageDef,
+                weaponBaseAttack = action.previewWeaponBaseAttack,
                 attackPowerRatio = action.attackPowerRatio,
                 normalAttackMultiplier = action.normalAttackMultiplier,
                 baseMasteryMultiplier = action.baseMasteryMultiplier,
                 penetration = action.penetration,
                 isNormalAttack = action.isNormalAttack,
-                canCrit = false,
+                canCrit = action.alwaysCrit && action.canCrit,
+                alwaysCrit = action.alwaysCrit,
                 applyAffinity = false,
                 isExSkill = action.isExSkill
             });
@@ -663,11 +757,13 @@ namespace BANWlLib.BattleSystem
                    left.isShield == right.isShield &&
                    left.isNormalAttack == right.isNormalAttack &&
                    left.canCrit == right.canCrit &&
+                   left.alwaysCrit == right.alwaysCrit &&
                    left.alwaysShowCriticalText == right.alwaysShowCriticalText &&
                    left.alwaysShowHealText == right.alwaysShowHealText &&
                    left.applyAffinity == right.applyAffinity &&
                    left.isExSkill == right.isExSkill &&
-                   left.isProjectilePreview == right.isProjectilePreview;
+                   left.isProjectilePreview == right.isProjectilePreview &&
+                   left.previewWeaponBaseAttack == right.previewWeaponBaseAttack;
         }
 
         //格式化段落标题，负责把连续相同段压缩成短标题。
@@ -717,19 +813,22 @@ namespace BANWlLib.BattleSystem
                 instigator = pawn,
                 target = pawn,
                 damageDef = action.damageDef,
+                weaponBaseAttack = action.previewWeaponBaseAttack,
                 attackPowerRatio = action.attackPowerRatio,
                 normalAttackMultiplier = action.normalAttackMultiplier,
                 baseMasteryMultiplier = action.baseMasteryMultiplier,
                 penetration = action.penetration,
                 isNormalAttack = action.isNormalAttack,
-                canCrit = false,
+                canCrit = action.alwaysCrit && action.canCrit,
+                alwaysCrit = action.alwaysCrit,
                 applyAffinity = false,
                 isExSkill = action.isExSkill
             });
 
             builder.AppendLine("类型：" + FormatColor("伤害", DamageColor));
-            builder.AppendLine("技能倍率：" + FormatColor(FormatPercent(action.attackPowerRatio), DamageColor));
+            builder.AppendLine("伤害倍率：" + FormatColor(FormatPercent(GetDamageActionMultiplier(action)), DamageColor));
             builder.AppendLine("暴击：" + FormatSwitch(action.canCrit, CritColor));
+            builder.AppendLine("强制暴击：" + FormatSwitch(action.alwaysCrit, CritColor));
             builder.AppendLine("暴击文字：" + FormatSwitch(action.alwaysShowCriticalText, CritColor));
             builder.AppendLine("属性克制：" + FormatSwitch(action.applyAffinity, AffinityColor));
             builder.AppendLine("EX倍率：" + FormatEx(action.isExSkill, result.exSkillMultiplier));
@@ -786,7 +885,7 @@ namespace BANWlLib.BattleSystem
         {
             builder.AppendLine("算法：");
             builder.AppendLine(FormatColor("  攻击：角色自身攻击力 x 技能倍率 x 攻击力加成", ColoredText.SubtleGrayColor));
-            builder.AppendLine(FormatColor("  修正：" + FormatFormulaModifiers(action.canCrit, action.applyAffinity, action.isExSkill), ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  修正：" + FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill), ColoredText.SubtleGrayColor));
         }
 
         //写入治疗算法，负责用短行展示实际结算顺序，避免 tooltip 横向撑开。
@@ -800,12 +899,12 @@ namespace BANWlLib.BattleSystem
         }
 
         //格式化公式修正项，负责把暴击、克制和 EX 这些附加步骤压缩成一行。
-        private static string FormatFormulaModifiers(bool canCrit, bool applyAffinity, bool isExSkill)
+        private static string FormatFormulaModifiers(bool canCrit, bool alwaysCrit, bool applyAffinity, bool isExSkill)
         {
             List<string> modifiers = new List<string>();
             if (canCrit)
             {
-                modifiers.Add("暴击");
+                modifiers.Add(alwaysCrit ? "强制暴击" : "暴击");
             }
 
             if (applyAffinity)
@@ -821,6 +920,17 @@ namespace BANWlLib.BattleSystem
             return modifiers.Count > 0 ? string.Join("、", modifiers.ToArray()) : "无";
         }
 
+        // 获取伤害段显示倍率，负责区分技能倍率和普通攻击倍率两种配置口径。
+        private static float GetDamageActionMultiplier(BattleActionConfig action)
+        {
+            if (action == null)
+            {
+                return 0f;
+            }
+
+            return Mathf.Max(0f, action.isNormalAttack ? action.normalAttackMultiplier : action.attackPowerRatio);
+        }
+
         // 格式化紧凑总览修正项，负责把整套多段技能的参与机制合并成一行。
         private static string FormatCompactModifiers(CompactActionTotals totals)
         {
@@ -833,6 +943,11 @@ namespace BANWlLib.BattleSystem
             if (totals.alwaysShowCriticalText)
             {
                 modifiers.Add(FormatColor("暴击文字", CritColor));
+            }
+
+            if (totals.alwaysCrit)
+            {
+                modifiers.Add(FormatColor("强制暴击", CritColor));
             }
 
             if (totals.applyAffinity)
@@ -910,6 +1025,7 @@ namespace BANWlLib.BattleSystem
             public float healTotal;
             public float shieldTotal;
             public bool canCrit;
+            public bool alwaysCrit;
             public bool alwaysShowCriticalText;
             public bool applyAffinity;
             public bool isExSkill;

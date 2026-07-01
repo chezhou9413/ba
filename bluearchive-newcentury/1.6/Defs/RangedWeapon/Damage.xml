@@ -27,6 +27,18 @@
     <showIfUndefined>true</showIfUndefined>
   </StatDef>
   <StatDef>
+    <defName>BANW_BaseMasteryMultiplier</defName>
+    <label>基础精通倍率</label>
+    <description>标记为普通攻击口径的伤害会额外乘以该倍率，可由角色、装备和状态提供。</description>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <category>BANW_BattleStats</category>
+    <showOnHumanlikes>true</showOnHumanlikes>
+    <showIfUndefined>true</showIfUndefined>
+    <displayPriorityInCategory>503</displayPriorityInCategory>
+  </StatDef>
+  <StatDef>
     <defName>BANW_Miss</defName>
     <label>闪避率</label>
     <description>躲避攻击的几率。来自特性、装备和特殊状态的效果。</description>

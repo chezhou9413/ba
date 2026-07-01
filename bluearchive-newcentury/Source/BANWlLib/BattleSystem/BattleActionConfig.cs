@@ -19,6 +19,7 @@ namespace BANWlLib.BattleSystem
         public bool isShield = false;
         public bool isNormalAttack = false;
         public bool canCrit = true;
+        public bool alwaysCrit = false;
         public bool alwaysShowCriticalText = false;
         public bool alwaysShowHealText = false;
         public bool applyAffinity = true;
@@ -30,6 +31,7 @@ namespace BANWlLib.BattleSystem
         public bool allowPermanentInjuryHealing = false;
         public bool isExSkill = false;
         public bool isProjectilePreview = false;
+        public float previewWeaponBaseAttack = 0f;
 
         // 保存和读取战斗动作配置，负责支持场地控制器等可存档对象。
         public void ExposeData()
@@ -44,6 +46,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref isShield, "isShield", false);
             Scribe_Values.Look(ref isNormalAttack, "isNormalAttack", false);
             Scribe_Values.Look(ref canCrit, "canCrit", true);
+            Scribe_Values.Look(ref alwaysCrit, "alwaysCrit", false);
             Scribe_Values.Look(ref alwaysShowCriticalText, "alwaysShowCriticalText", false);
             Scribe_Values.Look(ref alwaysShowHealText, "alwaysShowHealText", false);
             Scribe_Values.Look(ref applyAffinity, "applyAffinity", true);
@@ -55,6 +58,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref allowPermanentInjuryHealing, "allowPermanentInjuryHealing", false);
             Scribe_Values.Look(ref isExSkill, "isExSkill", false);
             Scribe_Values.Look(ref isProjectilePreview, "isProjectilePreview", false);
+            Scribe_Values.Look(ref previewWeaponBaseAttack, "previewWeaponBaseAttack", 0f);
             Scribe_Defs.Look(ref damageDef, "damageDef");
             Scribe_Defs.Look(ref triggerHediff, "triggerHediff");
             Scribe_Defs.Look(ref shieldHediffDef, "shieldHediffDef");

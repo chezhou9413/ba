@@ -55,6 +55,12 @@ namespace BANWlLib.BattleSystem
             return GetBaseStatExtension(pawn)?.exSkillMultiplierOffset ?? 0f;
         }
 
+        // 获取学生基础精通倍率平加，负责接入普通攻击口径伤害的基础精通属性。
+        public static float GetBaseMasteryMultiplierOffset(Pawn pawn)
+        {
+            return GetBaseStatExtension(pawn)?.baseMasteryMultiplierOffset ?? 0f;
+        }
+
         // 获取当前阶级，负责兼容外部调用。
         public static int GetCurrentRankLevel(Pawn pawn)
         {
@@ -150,6 +156,11 @@ namespace BANWlLib.BattleSystem
                 return ext.exSkillMultiplierOffset;
             }
 
+            if (statDef == BattleStatDefOf.BANW_BaseMasteryMultiplier)
+            {
+                return ext.baseMasteryMultiplierOffset;
+            }
+
             return 0f;
         }
 
@@ -185,6 +196,18 @@ namespace BANWlLib.BattleSystem
             float bonus = pawn.GetStatValue(BattleStatDefOf.BANW_FinalDamageMultiplier) +
                           GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_FinalDamageMultiplier);
             return Mathf.Max(0f, 1f + bonus);
+        }
+
+        // 获取基础精通倍率，负责把角色、装备和状态上的基础精通属性接入普通攻击口径伤害。
+        public static float GetBaseMasteryMultiplier(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 1f;
+            }
+
+            float multiplier = pawn.GetStatValue(BattleStatDefOf.BANW_BaseMasteryMultiplier);
+            return Mathf.Max(0f, multiplier);
         }
 
         // 获取升级攻击力倍率，负责把等级状态里的攻击成长转为角色自身攻击力乘区。
@@ -429,6 +452,7 @@ namespace BANWlLib.BattleSystem
                 casterLabel = pawn.LabelShortCap,
                 attackLevelMultiplier = GetAttackLevelMultiplier(pawn),
                 attackMultiplier = attackMultiplier,
+                baseMasteryMultiplier = GetBaseMasteryMultiplier(pawn),
                 weaponBaseAttack = weaponBaseAttack,
                 attackPower = GetFinalAttackPower(pawn, weaponBaseAttack),
                 healMultiplier = healMultiplier,
@@ -453,11 +477,12 @@ namespace BANWlLib.BattleSystem
             float attackPower = request.snapshot != null ? request.snapshot.attackPower : GetFinalAttackPower(casterPawn, weaponBaseAttack);
             float attackMultiplier = request.snapshot != null ? request.snapshot.attackMultiplier : GetAttackMultiplier(casterPawn);
             float actionMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.normalAttackMultiplier) : Mathf.Max(0f, request.attackPowerRatio);
-            float masteryMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.baseMasteryMultiplier) : 1f;
+            float baseMasteryMultiplier = request.snapshot != null ? request.snapshot.baseMasteryMultiplier : GetBaseMasteryMultiplier(casterPawn);
+            float masteryMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.baseMasteryMultiplier) * baseMasteryMultiplier : 1f;
             float amount = attackPower * actionMultiplier * attackMultiplier * masteryMultiplier;
 
             float critMultiplier = 1f;
-            result.isCrit = TryRollCrit(casterPawn, request.target as Pawn, request.snapshot, request.canCrit, out critMultiplier);
+            result.isCrit = TryRollCrit(casterPawn, request.target as Pawn, request.snapshot, request.canCrit, request.alwaysCrit, out critMultiplier);
             amount *= critMultiplier;
 
             if (request.applyAffinity)
@@ -667,6 +692,7 @@ namespace BANWlLib.BattleSystem
                     penetration = action.penetration,
                     isNormalAttack = action.isNormalAttack,
                     canCrit = action.canCrit,
+                    alwaysCrit = action.alwaysCrit,
                     alwaysShowCriticalText = action.alwaysShowCriticalText,
                     applyAffinity = action.applyAffinity,
                     isExSkill = action.isExSkill,
@@ -863,8 +889,8 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        // 判定暴击，负责把目标暴击抵抗和暴击伤害抵抗纳入最终暴击乘区。
-        private static bool TryRollCrit(Pawn casterPawn, Pawn targetPawn, BattleCasterSnapshot snapshot, bool canCrit, out float critMultiplier)
+        // 判定暴击，负责把目标暴击抵抗和强制暴击标记纳入最终暴击乘区。
+        private static bool TryRollCrit(Pawn casterPawn, Pawn targetPawn, BattleCasterSnapshot snapshot, bool canCrit, bool alwaysCrit, out float critMultiplier)
         {
             critMultiplier = 1f;
             if (!canCrit)
@@ -888,7 +914,7 @@ namespace BANWlLib.BattleSystem
             critChance = Mathf.Clamp01(critChance - GetCriticalChanceResistance(targetPawn));
             critDamage = Mathf.Max(1f, critDamage - GetCriticalDamageResistance(targetPawn));
 
-            bool isCrit = Rand.Value < critChance;
+            bool isCrit = alwaysCrit || Rand.Value < critChance;
             if (isCrit)
             {
                 critMultiplier = critDamage;

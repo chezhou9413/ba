@@ -18,6 +18,7 @@
         <li>BAWN_Nozomi_StackBuff_Test</li>
         <li>BAWN_Nozomi_MultiStackBuff_Test</li>
         <li>BAWN_Nozomi_Shield_Test</li>
+        <li>BAWN_Nozomi_MultiHitShot_Test</li>
         </abilities>
 		<startingHediffs>
 		<li>
@@ -155,6 +156,8 @@
 				<healReceivedMultiplierOffset>0</healReceivedMultiplierOffset>
 				<!-- 学生基础 EX 技能倍率平加，0.5 表示 EX 技能倍率提高到 150%。 -->
 				<exSkillMultiplierOffset>0</exSkillMultiplierOffset>
+				<!-- 学生基础精通倍率平加，0.2 表示普通攻击口径伤害的基础精通提高到 120%。 -->
+				<baseMasteryMultiplierOffset>0.2</baseMasteryMultiplierOffset>
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->
 				<damageType>Vibration</damageType>
 				<!-- 护甲类型，作为属性克制矩阵的列。 -->

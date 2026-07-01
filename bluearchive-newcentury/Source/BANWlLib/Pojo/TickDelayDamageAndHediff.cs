@@ -17,13 +17,21 @@ namespace BANWlLib.Pojo
     {
         public int Delaytick;
         public EffecterDef effecterDef = null;
+        public HediffDef triggerHediff = null;
         public HediffDef tiggerHediff = null;
 
         // 保存和读取延迟状态数据，负责支持存读档。
         public void ExposeData()
         {
             Scribe_Values.Look(ref Delaytick, "Delaytick", 0);
+            Scribe_Defs.Look(ref triggerHediff, "triggerHediff");
             Scribe_Defs.Look(ref tiggerHediff, "tiggerHediff");
+        }
+
+        // 获取实际触发状态，负责兼容 triggerHediff 和旧拼写 tiggerHediff。
+        public HediffDef ResolveHediff()
+        {
+            return triggerHediff ?? tiggerHediff;
         }
     }
 

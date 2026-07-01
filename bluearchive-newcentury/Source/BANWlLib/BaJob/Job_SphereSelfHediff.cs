@@ -1,4 +1,5 @@
 ﻿using BANWlLib.BaDef;
+using BANWlLib.BattleSystem;
 using BANWlLib.Pojo;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,16 +44,19 @@ namespace BANWlLib.BaJob
                     {
                         if (targetPawn.Faction.IsPlayer)
                         {
-                            if (damage.tiggerHediff != null)
+                            HediffDef hediffDef = damage.ResolveHediff();
+                            if (hediffDef != null)
                             {
-                                Hediff hediff = HediffMaker.MakeHediff(damage.tiggerHediff, targetPawn);
+                                BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(targetPawn, hediffDef, pawn);
+                                Hediff hediff = HediffMaker.MakeHediff(hediffDef, targetPawn);
                                 if (hediff != null)
                                 {
+                                    BattleHediffSnapshotUtility.ApplySnapshotIfNeeded(hediff, pawn);
                                     targetPawn.health.AddHediff(hediff);
                                 }
                                 else
                                 {
-                                    Log.Error("初始化hediff失败：" + damage.tiggerHediff.defName);
+                                    Log.Error("初始化hediff失败：" + hediffDef.defName);
                                 }
                             }
                         }
