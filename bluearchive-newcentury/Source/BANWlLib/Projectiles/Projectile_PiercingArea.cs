@@ -491,6 +491,7 @@ namespace BANWlLib.Projectiles
             return new BattleActionConfig
             {
                 attackPowerRatio = Extension?.attackPowerRatio ?? 0f,
+                weaponBaseAttack = Mathf.Max(0f, def?.projectile?.GetDamageAmount(null) ?? 0f),
                 normalAttackMultiplier = Extension?.normalAttackMultiplier ?? 1f,
                 baseMasteryMultiplier = Extension?.baseMasteryMultiplier ?? 1f,
                 healPowerRatio = 0f,
