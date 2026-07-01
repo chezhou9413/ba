@@ -399,7 +399,31 @@ namespace BANWlLib.Projectiles
 
             BattleStatUtility.ApplyAction(launcher, target, BuildBattleAction());
             TryTriggerDirectionalImpact(target);
+            QueueMultiHitDamages(target);
             ApplyExtraDamages(target);
+        }
+
+        // 追加多段战斗伤害，负责让穿透弹也能复用普通子弹的 ProjectileMultiHitExtension 配置。
+        private void QueueMultiHitDamages(Thing target)
+        {
+            ProjectileMultiHitExtension multiHitExtension = def.GetModExtension<ProjectileMultiHitExtension>();
+            if (multiHitExtension?.extraDamages.NullOrEmpty() != false)
+            {
+                return;
+            }
+
+            ProjectileMultiHitDelayComponent.Queue(new ProjectileMultiHitImpactPatch.ProjectileMultiHitImpactState
+            {
+                projectileDef = def,
+                launcher = launcher as Pawn,
+                target = target,
+                extraDamages = multiHitExtension.extraDamages,
+                damageIntervalTicks = multiHitExtension.damageIntervalTicks,
+                canHitOwnPawn = multiHitExtension.canHitOwnPawn,
+                canHitOwnBuilding = multiHitExtension.canHitOwnBuilding,
+                weaponBaseAttack = Mathf.Max(0f, def?.projectile?.GetDamageAmount(null) ?? 0f),
+                armorPenetration = ArmorPenetration
+            });
         }
 
         // 追加额外伤害，负责保留原有额外伤害 Def 的触发能力。
