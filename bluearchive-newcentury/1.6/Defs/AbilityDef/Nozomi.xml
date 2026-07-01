@@ -143,7 +143,7 @@
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>15.57</attackPowerRatio>
+          <attackPowerRatio>3.11</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
           <!-- 是否允许暴击。 -->
@@ -194,10 +194,8 @@
         <maxRange>49</maxRange>
         <!-- 是否跳过同阵营和盟友。 -->
         <immuneFriendlyFire>true</immuneFriendlyFire>
-        
-        
         <!-- 最终攻击力倍率，15.57 表示造成 1557% 攻击力伤害。 -->
-        <attackPowerRatio>15.57</attackPowerRatio>
+        <attackPowerRatio>3.11</attackPowerRatio>
         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
         <isExSkill>true</isExSkill>
         <!-- 是否允许暴击。 -->
@@ -244,6 +242,68 @@
         <fadeInTicks>2</fadeInTicks>
         <!-- 淡出 tick 数。 -->
         <fadeOutTicks>5</fadeOutTicks>
+        <extraDamages>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <normalAttackMultiplier>3.11</normalAttackMultiplier>
+          <delayTicks>0</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>true</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <normalAttackMultiplier>3.11</normalAttackMultiplier>
+          <delayTicks>4</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>true</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <normalAttackMultiplier>3.11</normalAttackMultiplier>
+          <delayTicks>8</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>true</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <normalAttackMultiplier>3.11</normalAttackMultiplier>
+          <delayTicks>12</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>true</isExSkill>
+        </li>
+        <li>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <normalAttackMultiplier>3.11</normalAttackMultiplier>
+          <delayTicks>16</delayTicks>
+          <penetration>2</penetration>
+          <isNormalAttack>true</isNormalAttack>
+          <canCrit>true</canCrit>
+          <alwaysCrit>true</alwaysCrit>
+          <alwaysShowCriticalText>true</alwaysShowCriticalText>
+          <applyAffinity>true</applyAffinity>
+          <isExSkill>true</isExSkill>
+        </li>
+      </extraDamages>
       </li>
       <li Class="BANWlLib.BattleSystem.ProjectileMultiHitExtension">
         <!-- 穿透弹每次实际命中目标后追加多段伤害的统一间隔。 -->
@@ -463,7 +523,6 @@
       <showBattleFormula>true</showBattleFormula>
       <previewActions>
         <li>
-          
           <!-- 500% 攻击力伤害。 -->
           <attackPowerRatio>5.0</attackPowerRatio>
           <damageDef>BANC_Damage_Nozomi_EXX</damageDef>

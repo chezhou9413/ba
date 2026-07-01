@@ -29,7 +29,6 @@
                 <statOffsets>
                     <AimingDelayFactor>-0.20</AimingDelayFactor>
                     <RangedWeapon_Cooldown>-0.15</RangedWeapon_Cooldown>
-                    <BANW_FinalDamageMultiplier>+0.15</BANW_FinalDamageMultiplier>
                     <ShootingAccuracyPawn>5</ShootingAccuracyPawn><!--	■射撃命中補正-->
                 </statOffsets>
             </li>
@@ -45,7 +44,6 @@
                 <description>{PAWN_nameDef}的职位是医疗，拥有医疗技能，治疗速度和手术成功率会比较高。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    <BANW_HealFlatBonus>200</BANW_HealFlatBonus>
                     <DrugSynthesisSpeed>+0.25</DrugSynthesisSpeed>
                     <MedicalOperationSpeed>+0.15</MedicalOperationSpeed>
 		            <MedicalSurgerySuccessChance>+0.30</MedicalSurgerySuccessChance>

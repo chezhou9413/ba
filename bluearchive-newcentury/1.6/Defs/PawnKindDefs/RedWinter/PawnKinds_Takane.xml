@@ -83,6 +83,18 @@
 				<damageType>Explosion</damageType>
 				<!-- 护甲类型，作为属性克制矩阵的列。 -->
 				<defenseType>Explosion</defenseType>
+<!-- 学生初始生命值，参与生命值公式的基础乘算项，1 表示 100 点生命值。 -->
+				<initialHealth>2.27</initialHealth>
+				<!-- 学生基础攻击力平加，进入技能、武器显示和统一伤害结算。 -->
+				<attackFlat>0</attackFlat>
+				<!-- 学生基础攻击力百分比，0.26 表示最终攻击力额外增加 26%。 -->
+				<attackPercent>0</attackPercent>
+				<!-- 学生初始治愈力，参与治愈力公式的基础乘算项。 -->
+				<initialHeal>229</initialHeal>
+				<!-- 学生基础受回复倍率平加，0.2 表示额外增加 20% 受疗。 -->
+				<healReceivedMultiplierOffset>0</healReceivedMultiplierOffset>
+				<!-- 学生基础 EX 技能倍率平加，0.5 表示 EX 技能倍率提高到 150%。 -->
+				<exSkillMultiplierOffset>0</exSkillMultiplierOffset>
 			</li>
 			<li Class="BANWlLib.BattleSystem.BattleStarGrowthExtension">
 				<!-- 星级生命百分比成长，starValues 从 1 星到 5 星依次读取。 -->

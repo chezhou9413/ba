@@ -226,7 +226,7 @@
         <!-- 每 tick 回复最终治疗力的 4%。 -->
         <healPowerRatio>0.51</healPowerRatio>
         <!-- 每 tick 触发一次治疗。 -->
-        <healIntervalTicks>60</healIntervalTicks>
+        <healIntervalTicks>50</healIntervalTicks>
         <!-- 是否允许治疗永久伤。 -->
         <isHeatScar>true</isHeatScar>
         <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
