@@ -200,6 +200,8 @@
         <isExSkill>true</isExSkill>
         <!-- 是否允许暴击。 -->
         <canCrit>true</canCrit>
+        <!-- 是否强制暴击。 -->
+        <alwaysCrit>true</alwaysCrit>
         <!-- 是否无论实际暴击判定都显示暴击文字。 -->
         <alwaysShowCriticalText>true</alwaysShowCriticalText>
         <!-- 是否应用攻击类型与护甲类型克制。 -->
@@ -242,68 +244,6 @@
         <fadeInTicks>2</fadeInTicks>
         <!-- 淡出 tick 数。 -->
         <fadeOutTicks>5</fadeOutTicks>
-        <extraDamages>
-        <li>
-          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
-          <normalAttackMultiplier>3.11</normalAttackMultiplier>
-          <delayTicks>0</delayTicks>
-          <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
-          <canCrit>true</canCrit>
-          <alwaysCrit>true</alwaysCrit>
-          <alwaysShowCriticalText>true</alwaysShowCriticalText>
-          <applyAffinity>true</applyAffinity>
-          <isExSkill>true</isExSkill>
-        </li>
-        <li>
-          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
-          <normalAttackMultiplier>3.11</normalAttackMultiplier>
-          <delayTicks>4</delayTicks>
-          <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
-          <canCrit>true</canCrit>
-          <alwaysCrit>true</alwaysCrit>
-          <alwaysShowCriticalText>true</alwaysShowCriticalText>
-          <applyAffinity>true</applyAffinity>
-          <isExSkill>true</isExSkill>
-        </li>
-        <li>
-          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
-          <normalAttackMultiplier>3.11</normalAttackMultiplier>
-          <delayTicks>8</delayTicks>
-          <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
-          <canCrit>true</canCrit>
-          <alwaysCrit>true</alwaysCrit>
-          <alwaysShowCriticalText>true</alwaysShowCriticalText>
-          <applyAffinity>true</applyAffinity>
-          <isExSkill>true</isExSkill>
-        </li>
-        <li>
-          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
-          <normalAttackMultiplier>3.11</normalAttackMultiplier>
-          <delayTicks>12</delayTicks>
-          <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
-          <canCrit>true</canCrit>
-          <alwaysCrit>true</alwaysCrit>
-          <alwaysShowCriticalText>true</alwaysShowCriticalText>
-          <applyAffinity>true</applyAffinity>
-          <isExSkill>true</isExSkill>
-        </li>
-        <li>
-          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
-          <normalAttackMultiplier>3.11</normalAttackMultiplier>
-          <delayTicks>16</delayTicks>
-          <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
-          <canCrit>true</canCrit>
-          <alwaysCrit>true</alwaysCrit>
-          <alwaysShowCriticalText>true</alwaysShowCriticalText>
-          <applyAffinity>true</applyAffinity>
-          <isExSkill>true</isExSkill>
-        </li>
-      </extraDamages>
       </li>
       <li Class="BANWlLib.BattleSystem.ProjectileMultiHitExtension">
         <!-- 穿透弹每次实际命中目标后追加多段伤害的统一间隔。 -->
@@ -314,8 +254,8 @@
         <canHitOwnBuilding>false</canHitOwnBuilding>
         <extraDamages>
           <li>
-            <damageDef>BANC_Damage_Nozomi_MultiHit_01</damageDef>
-            <normalAttackMultiplier>1.0</normalAttackMultiplier>
+            <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+            <normalAttackMultiplier>3.11</normalAttackMultiplier>
             <delayTicks>0</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>true</isNormalAttack>
@@ -326,9 +266,45 @@
             <isExSkill>false</isExSkill>
           </li>
           <li>
-            <damageDef>BANC_Damage_Nozomi_MultiHit_02</damageDef>
-            <normalAttackMultiplier>2.0</normalAttackMultiplier>
+            <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+            <normalAttackMultiplier>3.11</normalAttackMultiplier>
+            <delayTicks>4</delayTicks>
+            <penetration>2</penetration>
+            <isNormalAttack>true</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>false</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+            <normalAttackMultiplier>3.11</normalAttackMultiplier>
             <delayTicks>6</delayTicks>
+            <penetration>2</penetration>
+            <isNormalAttack>true</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>false</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+            <normalAttackMultiplier>3.11</normalAttackMultiplier>
+            <delayTicks>8</delayTicks>
+            <penetration>2</penetration>
+            <isNormalAttack>true</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>false</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+            <normalAttackMultiplier>3.11</normalAttackMultiplier>
+            <delayTicks>10</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>true</isNormalAttack>
             <canCrit>true</canCrit>

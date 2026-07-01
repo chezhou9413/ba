@@ -499,6 +499,7 @@ namespace BANWlLib.Projectiles
                 isHealing = false,
                 isNormalAttack = false,
                 canCrit = Extension?.canCrit ?? true,
+                alwaysCrit = Extension?.alwaysCrit ?? false,
                 alwaysShowCriticalText = Extension?.alwaysShowCriticalText ?? false,
                 applyAffinity = Extension?.applyAffinity ?? true,
                 canHitBuilding = Extension?.canHitBuilding ?? true,
