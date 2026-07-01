@@ -143,7 +143,7 @@
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>15.57</attackPowerRatio>
+          <attackPowerRatio>3.11</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
           <!-- 是否允许暴击。 -->
@@ -197,7 +197,7 @@
         
         
         <!-- 最终攻击力倍率，15.57 表示造成 1557% 攻击力伤害。 -->
-        <attackPowerRatio>15.57</attackPowerRatio>
+        <attackPowerRatio>3.11</attackPowerRatio>
         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
         <isExSkill>true</isExSkill>
         <!-- 是否允许暴击。 -->

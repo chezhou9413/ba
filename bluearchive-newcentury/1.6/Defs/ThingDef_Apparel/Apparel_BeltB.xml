@@ -15,7 +15,7 @@
             <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>0.8</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>0.8</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -44,7 +44,7 @@
             <MarketValue>1000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>1.3</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>1.3</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <costList>
             <BANC_Badge_One>1</BANC_Badge_One>
@@ -78,7 +78,7 @@
             <MarketValue>1500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>1.8</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>1.8</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <costList>
             <BANC_Badge_Tow>1</BANC_Badge_Tow>
@@ -112,7 +112,7 @@
             <MarketValue>2000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>2.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>2.5</BANW_HealthFlatBonus>
             <BANW_HealReceivedMultiplier>0.1</BANW_HealReceivedMultiplier>
         </equippedStatOffsets>
         <costList>
@@ -148,7 +148,7 @@
             <MarketValue>2500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>4.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>4.5</BANW_HealthFlatBonus>
             <BANW_HealthBonusMultiplier>0.10</BANW_HealthBonusMultiplier>
             <BANW_HealReceivedMultiplier>0.2</BANW_HealReceivedMultiplier>
         </equippedStatOffsets>
@@ -186,7 +186,7 @@
             <MarketValue>3000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>6.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>6.5</BANW_HealthFlatBonus>
             <BANW_HealthBonusMultiplier>0.18</BANW_HealthBonusMultiplier>
             <BANW_HealReceivedMultiplier>0.3</BANW_HealReceivedMultiplier>
         </equippedStatOffsets>
@@ -224,7 +224,7 @@
             <MarketValue>3500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>9.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>9.5</BANW_HealthFlatBonus>
             <BANW_HealthBonusMultiplier>0.22</BANW_HealthBonusMultiplier>
             <BANW_HealReceivedMultiplier>0.32</BANW_HealReceivedMultiplier>
             <BANW_Miss>0.10</BANW_Miss>
@@ -263,7 +263,7 @@
             <MarketValue>4000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>12.0</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>12.0</BANW_HealthFlatBonus>
             <BANW_HealthBonusMultiplier>0.24</BANW_HealthBonusMultiplier>
             <BANW_Miss>0.15</BANW_Miss>
             <BANW_HealReceivedMultiplier>0.34</BANW_HealReceivedMultiplier>
@@ -307,7 +307,7 @@
             <MarketValue>4500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>14</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>14</BANW_HealthFlatBonus>
             <BANW_HealthBonusMultiplier>0.25</BANW_HealthBonusMultiplier>
             <BANW_Miss>0.20</BANW_Miss>
             <BANW_HealReceivedMultiplier>0.35</BANW_HealReceivedMultiplier>
@@ -351,7 +351,7 @@
             <MarketValue>6000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>16</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>16</BANW_HealthFlatBonus>
             <BANW_HealthBonusMultiplier>0.25</BANW_HealthBonusMultiplier>
             <BANW_Miss>0.30</BANW_Miss>
             <BANW_HealReceivedMultiplier>0.35</BANW_HealReceivedMultiplier>
@@ -391,7 +391,7 @@
             <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>0.6</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>0.6</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -424,7 +424,7 @@
             <MarketValue>1000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>0.97</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>0.97</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <costList>
             <BANC_Bag_One>1</BANC_Bag_One>
@@ -459,7 +459,7 @@
             <MarketValue>1500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>1.35</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>1.35</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <costList>
             <BANC_Bag_Tow>1</BANC_Bag_Tow>
@@ -497,7 +497,7 @@
             <ArmorRating_Heat>1.0</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>1.87</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>1.87</BANW_HealthFlatBonus>
             <IncomingDamageFactor>-0.1</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -537,7 +537,7 @@
             <ArmorRating_Heat>1.1</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>3.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>3.5</BANW_HealthFlatBonus>
             <IncomingDamageFactor>-0.11</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -578,7 +578,7 @@
             <ArmorRating_Heat>1.2</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>5.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>5.5</BANW_HealthFlatBonus>
             <IncomingDamageFactor>-0.12</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -619,7 +619,7 @@
             <ArmorRating_Heat>1.3</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>7.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>7.5</BANW_HealthFlatBonus>
             <IncomingDamageFactor>-0.13</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -660,7 +660,7 @@
             <ArmorRating_Heat>1.4</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>9.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>9.5</BANW_HealthFlatBonus>
             <IncomingDamageFactor>-0.14</IncomingDamageFactor>
         </equippedStatOffsets>
         <costList>
@@ -701,7 +701,7 @@
             <ArmorRating_Heat>1.6</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>12</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>12</BANW_HealthFlatBonus>
             <BANW_HealthBonusMultiplier>0.05</BANW_HealthBonusMultiplier>
             <IncomingDamageFactor>-0.16</IncomingDamageFactor>
         </equippedStatOffsets>
@@ -743,7 +743,7 @@
             <ArmorRating_Heat>1.7</ArmorRating_Heat>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>14</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>14</BANW_HealthFlatBonus>
             <BANW_HealthBonusMultiplier>0.05</BANW_HealthBonusMultiplier>
             <IncomingDamageFactor>-0.17</IncomingDamageFactor>
         </equippedStatOffsets>
@@ -781,7 +781,7 @@
             <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>0.4</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>0.4</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -813,7 +813,7 @@
             <MarketValue>1000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>0.65</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>0.65</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <costList>
             <BANC_Hairpin_One>1</BANC_Hairpin_One>
@@ -847,7 +847,7 @@
             <MarketValue>1500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>0.9</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>0.9</BANW_HealthFlatBonus>
         </equippedStatOffsets>
         <costList>
             <BANC_Hairpin_Tow>1</BANC_Hairpin_Tow>
@@ -881,7 +881,7 @@
             <MarketValue>2000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>1.25</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>1.25</BANW_HealthFlatBonus>
             <StaggerDurationFactor>-0.1</StaggerDurationFactor>
             <Flammability>-0.1</Flammability>
         </equippedStatOffsets>
@@ -918,7 +918,7 @@
             <MarketValue>2500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>3</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>3</BANW_HealthFlatBonus>
             <StaggerDurationFactor>-0.2</StaggerDurationFactor>
             <Flammability>-0.2</Flammability>
         </equippedStatOffsets>
@@ -956,7 +956,7 @@
             <MarketValue>3000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>4.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>4.5</BANW_HealthFlatBonus>
             <StaggerDurationFactor>-0.24</StaggerDurationFactor>
             <Flammability>-0.24</Flammability>
         </equippedStatOffsets>
@@ -994,7 +994,7 @@
             <MarketValue>3500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>6.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>6.5</BANW_HealthFlatBonus>
             <StaggerDurationFactor>-0.28</StaggerDurationFactor>
             <Flammability>-0.28</Flammability>
         </equippedStatOffsets>
@@ -1032,7 +1032,7 @@
             <MarketValue>4000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>8.5</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>8.5</BANW_HealthFlatBonus>
             <StaggerDurationFactor>-0.32</StaggerDurationFactor>
             <Flammability>-0.32</Flammability>
         </equippedStatOffsets>
@@ -1070,7 +1070,7 @@
             <MarketValue>4500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>11</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>11</BANW_HealthFlatBonus>
             <StaggerDurationFactor>-0.34</StaggerDurationFactor>
             <Flammability>-0.34</Flammability>
             <BANW_CriticalChance>+0.09</BANW_CriticalChance>
@@ -1109,7 +1109,7 @@
             <MarketValue>6000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_InitialHealth>13</BANW_InitialHealth>
+            <BANW_HealthFlatBonus>13</BANW_HealthFlatBonus>
             <StaggerDurationFactor>-0.36</StaggerDurationFactor>
             <Flammability>-0.36</Flammability>
             <BANW_CriticalChance>+0.09</BANW_CriticalChance>
