@@ -482,7 +482,9 @@ namespace BANWlLib.BattleSystem
             float amount = attackPower * actionMultiplier * attackMultiplier * masteryMultiplier;
 
             float critMultiplier = 1f;
-            result.isCrit = TryRollCrit(casterPawn, request.target as Pawn, request.snapshot, request.canCrit, request.alwaysCrit, out critMultiplier);
+            bool canCrit = request.canCrit && !DamageFontRuleUtility.IsCriticalDisabled(request.damageDef);
+            bool alwaysCrit = request.alwaysCrit || DamageFontRuleUtility.IsCriticalEnsured(request.damageDef);
+            result.isCrit = TryRollCrit(casterPawn, request.target as Pawn, request.snapshot, canCrit, alwaysCrit, out critMultiplier);
             amount *= critMultiplier;
 
             if (request.applyAffinity)
@@ -558,10 +560,6 @@ namespace BANWlLib.BattleSystem
             bool instigatorGuilty = !(request.instigator is Pawn launcherPawn) || !launcherPawn.Drafted;
             BattleDamageDisplayState.RegisterManualDamage(request.target, request.instigator, result.isCrit);
             BattleDamageDisplayState.RegisterCriticalFloatText(request.target, result.isCrit || request.alwaysShowCriticalText);
-            if (request.alwaysShowCriticalText)
-            {
-                BattleDamageDisplayState.RegisterForcedCriticalFloatAmount(request.target, result.finalAmount);
-            }
             DamageInfo damageInfo = new DamageInfo(
                 request.damageDef,
                 result.finalAmount,

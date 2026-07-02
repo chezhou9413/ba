@@ -93,6 +93,12 @@ namespace BANWlLib.BattleSystem
             return ImpactTargetByProjectileId.TryGetValue(projectile.thingIDNumber, out target);
         }
 
+        // 判断投射物是否已经进入命中流程，负责避免 Bullet 在原版 base.Impact 销毁时过早丢失伤害上下文。
+        public static bool HasImpactTarget(Projectile projectile)
+        {
+            return projectile != null && ImpactTargetByProjectileId.ContainsKey(projectile.thingIDNumber);
+        }
+
         // 清理投射物战斗数据，负责避免投射物销毁后残留上下文。
         public static void Clear(Projectile projectile)
         {
@@ -125,6 +131,7 @@ namespace BANWlLib.BattleSystem
         public bool isShield;
         public bool isExSkill;
         public bool canCrit = true;
+        public bool alwaysCrit = false;
         public bool alwaysShowCriticalText = false;
         public bool applyAffinity = true;
         public bool canHitOwnBuilding = false;

@@ -156,47 +156,47 @@
             <!-- 触发特效 -->
             <effecterDef></effecterDef>
             <!-- 触发hediff -->
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
           <li>
             <Delaytick>60</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
           <li>
             <Delaytick>120</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
           <li>
             <Delaytick>180</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
           <li>
             <Delaytick>240</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
           <li>
             <Delaytick>300</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
           <li>
             <Delaytick>360</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
           <li>
             <Delaytick>420</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
           <li>
             <Delaytick>480</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff>BAWN_Hanako_Buff_B</tiggerHediff>
+            <triggerHediff>BAWN_Hanako_Buff_B</triggerHediff>
           </li>
         </damages>
       </li>

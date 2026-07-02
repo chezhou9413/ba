@@ -14,7 +14,7 @@
     <warmupEffecter></warmupEffecter>
     <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
     <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SustainedAreaAttack">
-      <TiggerHediff>BAWN_Hina_buff_A</TiggerHediff>
+      <triggerHediff>BAWN_Hina_buff_A</triggerHediff>
       <!-- 扇形弧度 --> 
       <fanArc>30</fanArc>
       <verbClass>BANWlLib.BaVerb.Verb_SustainedAreaAttack</verbClass>

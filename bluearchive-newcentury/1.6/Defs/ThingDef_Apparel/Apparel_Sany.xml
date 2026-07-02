@@ -94,6 +94,29 @@
     </ThingDef>
 
     <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Mika_A</defName>
+        <label>泳装未花的衣服</label>
+        <description>泳装未花的衣服</description>
+        <graphicData>
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Sany/Mika/Apparel/Mika_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Mika_A</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
         <defName>BANW_Body_Mashiro</defName>
         <label>真白的衣服</label>
         <description>未花的衣服</description>

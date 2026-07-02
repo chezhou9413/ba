@@ -177,7 +177,7 @@
             <!-- 触发特效 -->
             <effecterDef></effecterDef>
             <!-- 触发hediff -->
-            <tiggerHediff>BAWN_Kotama_Buff_A</tiggerHediff>
+            <triggerHediff>BAWN_Kotama_Buff_A</triggerHediff>
           </li>
         </damages>
       </li>

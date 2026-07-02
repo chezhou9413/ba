@@ -38,6 +38,7 @@ namespace BANWlLib.BattleSystem
                 penetration = __instance.ArmorPenetration,
                 isNormalAttack = data.isNormalAttack,
                 canCrit = data.canCrit,
+                alwaysCrit = data.alwaysCrit,
                 alwaysShowCriticalText = data.alwaysShowCriticalText,
                 applyAffinity = data.applyAffinity,
                 isExSkill = data.isExSkill
@@ -55,16 +56,13 @@ namespace BANWlLib.BattleSystem
                 penetration = __instance.ArmorPenetration,
                 isNormalAttack = data.isNormalAttack,
                 canCrit = data.canCrit,
+                alwaysCrit = data.alwaysCrit,
                 alwaysShowCriticalText = data.alwaysShowCriticalText,
                 applyAffinity = data.applyAffinity,
                 isExSkill = data.isExSkill
             }, result);
             BattleDamageDisplayState.RegisterManualDamage(target, launcher, result.isCrit);
             BattleDamageDisplayState.RegisterCriticalFloatText(target, result.isCrit || data.alwaysShowCriticalText);
-            if (data.alwaysShowCriticalText)
-            {
-                BattleDamageDisplayState.RegisterForcedCriticalFloatAmount(target, result.finalAmount);
-            }
             __result = Mathf.Max(0, Mathf.RoundToInt(result.finalAmount));
         }
     }
@@ -94,6 +92,7 @@ namespace BANWlLib.BattleSystem
                 isShield = extension?.isShield ?? false,
                 isExSkill = extension?.isExSkill ?? false,
                 canCrit = extension?.canCrit ?? true,
+                alwaysCrit = extension?.alwaysCrit ?? false,
                 alwaysShowCriticalText = extension?.alwaysShowCriticalText ?? false,
                 applyAffinity = extension?.applyAffinity ?? true,
                 canHitOwnBuilding = extension?.canHitOwnBuilding ?? false,
@@ -202,9 +201,10 @@ namespace BANWlLib.BattleSystem
         }
 
         // 命中后入队多段伤害，负责让原始子弹伤害先完成，再由地图组件逐段执行追加结算。
-        public static void Postfix(ProjectileMultiHitImpactState __state)
+        public static void Postfix(Bullet __instance, ProjectileMultiHitImpactState __state)
         {
             ProjectileMultiHitDelayComponent.Queue(__state);
+            ProjectileBattleContext.Clear(__instance);
         }
 
         // 应用一段追加伤害，负责把 XML 段配置转为统一伤害请求。
@@ -318,6 +318,11 @@ namespace BANWlLib.BattleSystem
         {
             if (__instance is Projectile projectile)
             {
+                if (ProjectileBattleContext.HasImpactTarget(projectile))
+                {
+                    return;
+                }
+
                 ProjectileBattleContext.Clear(projectile);
             }
         }

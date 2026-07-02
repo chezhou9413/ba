@@ -75,17 +75,17 @@
             <!-- 触发特效 -->
             <effecterDef></effecterDef>
             <!-- 触发hediff -->
-            <tiggerHediff>BAWN_Ayane_Buff_A</tiggerHediff>
+            <triggerHediff>BAWN_Ayane_Buff_A</triggerHediff>
           </li>
           <li>
             <Delaytick>60</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff></tiggerHediff>
+            <triggerHediff></triggerHediff>
           </li>
           <li>
             <Delaytick>120</Delaytick>
             <effecterDef></effecterDef>
-            <tiggerHediff></tiggerHediff>
+            <triggerHediff></triggerHediff>
           </li>
 
         </damages>

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BANWlLib.DamageFontSystem;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -41,8 +42,10 @@ namespace BANWlLib.BattleSystem
             float actionMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.normalAttackMultiplier) : Mathf.Max(0f, request.attackPowerRatio);
             float baseMasteryMultiplier = request.snapshot != null ? request.snapshot.baseMasteryMultiplier : BattleStatUtility.GetBaseMasteryMultiplier(casterPawn);
             float masteryMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.baseMasteryMultiplier) * baseMasteryMultiplier : 1f;
-            float critChance = request.canCrit ? ResolveCritChance(casterPawn, targetPawn, request.snapshot) : 0f;
-            float critDamage = request.canCrit ? ResolveCritDamage(casterPawn, targetPawn, request.snapshot) : 1f;
+            bool canCrit = request.canCrit && !DamageFontRuleUtility.IsCriticalDisabled(request.damageDef);
+            bool alwaysCrit = request.alwaysCrit || DamageFontRuleUtility.IsCriticalEnsured(request.damageDef);
+            float critChance = canCrit ? ResolveCritChance(casterPawn, targetPawn, request.snapshot) : 0f;
+            float critDamage = canCrit ? ResolveCritDamage(casterPawn, targetPawn, request.snapshot) : 1f;
             float critMultiplier = result.isCrit ? critDamage : 1f;
             int traceId = nextTraceId++;
 
@@ -63,7 +66,7 @@ namespace BANWlLib.BattleSystem
                 + "，DamageDef=" + (request.damageDef?.defName ?? "空")
                 + "，是否普通攻击=" + request.isNormalAttack
                 + "，是否EX=" + request.isExSkill
-                + "，是否强制暴击=" + request.alwaysCrit);
+                + "，是否强制暴击=" + alwaysCrit);
 
             if (request.snapshot != null)
             {

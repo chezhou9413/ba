@@ -18,7 +18,6 @@ namespace BANWlLib.Pojo
         public float shieldPowerRatio = 0f;
         public HediffDef shieldHediffDef;
         public HediffDef triggerHediff;
-        public HediffDef tiggerHediff;
         public bool isHealing = false;
         public bool isShield = false;
         public bool canCrit = true;
@@ -40,7 +39,7 @@ namespace BANWlLib.Pojo
                 healPowerRatio = healPowerRatio,
                 shieldPowerRatio = shieldPowerRatio,
                 damageDef = damageType,
-                triggerHediff = triggerHediff ?? tiggerHediff,
+                triggerHediff = triggerHediff,
                 shieldHediffDef = shieldHediffDef,
                 effecterDef = effecterDef,
                 penetration = penetration,

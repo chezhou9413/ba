@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using BANWlLib.BattleSystem;
+using BANWlLib.DamageFontSystem;
 using UnityEngine;
 using Verse;
 using BANWlLib.Tool;
@@ -376,7 +377,7 @@ namespace BANWlLib
 
                 // 承伤系数计算
                 float incomingDamageFactor = 1f;
-                if (dinfo.Def.ExternalViolenceFor(pawn))
+                if (dinfo.Def.ExternalViolenceFor(pawn) && !DamageFontRuleUtility.ShouldSkipIncomingDamageFactor(dinfo.Def))
                 {
                     incomingDamageFactor = pawn.GetStatValue(StatDefOf.IncomingDamageFactor);
                     injuryDamage *= incomingDamageFactor;

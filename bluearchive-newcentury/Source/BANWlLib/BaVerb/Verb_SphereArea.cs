@@ -11,7 +11,7 @@ namespace BANWlLib.BaVerb
     {
         public float Sphereradius = 3f;
         public JobDef JobDef;
-        public HediffDef TiggerHediff = null;
+        public HediffDef triggerHediff = null;
     }
 
     // 圆形范围动词，负责显示目标点圆形预览并把受影响格子交给范围 Job。
@@ -45,10 +45,10 @@ namespace BANWlLib.BaVerb
             bool castSuccess = base.TryCastShot();
             if (castSuccess)
             {
-                if (Props.TiggerHediff != null)
+                if (Props.triggerHediff != null)
                 {
-                    BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(caster, Props.TiggerHediff, caster);
-                    Hediff hediff = HediffMaker.MakeHediff(Props.TiggerHediff, caster);
+                    BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(caster, Props.triggerHediff, caster);
+                    Hediff hediff = HediffMaker.MakeHediff(Props.triggerHediff, caster);
                     BattleHediffSnapshotUtility.ApplySnapshotIfNeeded(hediff, caster);
                     caster.health.AddHediff(hediff);
                 }
