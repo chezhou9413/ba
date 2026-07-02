@@ -3,8 +3,8 @@
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
-		<defName>BANW_Mika</defName>
-		<label>-未花-</label>
+		<defName>BANW_Mika_A</defName>
+		<label>-泳装未花-</label>
 		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
@@ -38,9 +38,9 @@
 		<maxGenerationAge>18</maxGenerationAge>
 		<weaponTags>
          <li>BANC_Mika</li>
-        </weaponTags>
+		</weaponTags>
 		<apparelRequired Inherit="False">
-			<li>BANW_Body_Mika</li>
+			<li>BANW_Body_Mika_A</li>
 		</apparelRequired>
 		<forcedHair>Bald</forcedHair>
 
@@ -199,54 +199,4 @@
 		</modExtensions>
 	</PawnKindDef>
 
-	<TraitDef>
-        <defName>BAWC_TraitDef_Mika_A</defName>
-        <commonality>0</commonality>
-        <degreeDatas>
-            <li>
-                <label>&lt;color=#FFBB00&gt;格洛丽亚·帕特里&lt;/color&gt;</label>
-                <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的攻击力。</description>
-                <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statOffsets>
-					<BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
-                </statOffsets>
-            </li>
-        </degreeDatas>
-    </TraitDef>
-	<TraitDef>
-        <defName>BAWC_TraitDef_Mika_B</defName>
-        <commonality>0</commonality>
-        <degreeDatas>
-            <li>
-                <label>&lt;color=#FFBB00&gt;本尼迪克特&lt;/color&gt;</label>
-                <description>子技能:所有攻击必定暴击，增加自身&lt;color=#DC143C&gt;24%的&lt;/color&gt;基础攻击力和减少&lt;color=#DC143C&gt;12%的乘伤系数&lt;/color&gt;。</description>
-                <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statOffsets>
-					<BANW_AttackLevelMultiplier>+0.24</BANW_AttackLevelMultiplier>
-					<IncomingDamageFactor>-0.12</IncomingDamageFactor>
-                </statOffsets>
-            </li>
-        </degreeDatas>
-    </TraitDef>
-	<TraitDef>
-        <defName>BAWC_TraitDef_Mika</defName>
-        <commonality>0</commonality>
-        <degreeDatas>
-            <li>
-                <label>&lt;color=#FFC0CB&gt;圣猿未花&lt;/color&gt;</label>
-                <description>{PAWN_nameDef}是茶话会的一员，拥有天生的怪力，天真的性格，容易被其他人的话语影响自己的判断，她表面上天真烂漫、活泼开朗，但内心也有着复杂的一面</description>
-                <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statOffsets>
-					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.3</CertaintyLossFactor>
-                    <CarryingCapacity>300</CarryingCapacity> 
-</statOffsets>
-				<statFactors>
-                <MeleeDamageFactor>5.5</MeleeDamageFactor>
-				<MeleeArmorPenetration>4.5</MeleeArmorPenetration>
-				<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
-				
-				</statFactors>
-            </li>
-        </degreeDatas>
-    </TraitDef>
 </Defs>

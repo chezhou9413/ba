@@ -14,6 +14,7 @@ namespace BANWlLib.BattleSystem
         public bool isShield = false;
         public bool isExSkill = false;
         public bool canCrit = true;
+        public bool alwaysCrit = false;
         public bool alwaysShowCriticalText = false;
         public bool applyAffinity = true;
         public bool canHitOwnBuilding = false;

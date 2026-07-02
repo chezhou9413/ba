@@ -14,7 +14,7 @@
     <warmupEffecter></warmupEffecter>
     <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
     <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SustainedAreaAttack">
-      <TiggerHediff>BAWN_Reisa_Hedi_B</TiggerHediff>
+      <triggerHediff>BAWN_Reisa_Hedi_B</triggerHediff>
       <!-- 扇形弧度 --> 
       <soundCast></soundCast>
       <fanArc>90</fanArc>

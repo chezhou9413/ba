@@ -21,7 +21,6 @@
     <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SustainedAreaAttack">
       <!-- 扇形弧度 --> 
       <soundCast></soundCast>
-      <TiggerHediff></TiggerHediff>
       <fanArc>60</fanArc>
       <verbClass>BANWlLib.BaVerb.Verb_SustainedAreaAttack</verbClass>
       <label>喷出来了好多呢♡</label>

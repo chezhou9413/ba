@@ -18,20 +18,18 @@ namespace BANWlLib.Pojo
         public int Delaytick;
         public EffecterDef effecterDef = null;
         public HediffDef triggerHediff = null;
-        public HediffDef tiggerHediff = null;
 
         // 保存和读取延迟状态数据，负责支持存读档。
         public void ExposeData()
         {
             Scribe_Values.Look(ref Delaytick, "Delaytick", 0);
             Scribe_Defs.Look(ref triggerHediff, "triggerHediff");
-            Scribe_Defs.Look(ref tiggerHediff, "tiggerHediff");
         }
 
-        // 获取实际触发状态，负责兼容 triggerHediff 和旧拼写 tiggerHediff。
+        // 获取实际触发状态，负责返回延迟配置指定的 Hediff。
         public HediffDef ResolveHediff()
         {
-            return triggerHediff ?? tiggerHediff;
+            return triggerHediff;
         }
     }
 
@@ -49,7 +47,7 @@ namespace BANWlLib.Pojo
         public int Delaytick;
         public DamageDef damageType;
         public EffecterDef effecterDef = null;
-        public HediffDef tiggerHediff = null;
+        public HediffDef triggerHediff = null;
         public float penetration = 0f;
         public bool isAttackBuilding = false;
         public bool canHitOwnBuilding = false;
@@ -92,7 +90,7 @@ namespace BANWlLib.Pojo
             Scribe_Values.Look(ref isExSkill, "isExSkill", false);
             Scribe_Defs.Look(ref damageType, "damageType");
             Scribe_Defs.Look(ref effecterDef, "effecterDef");
-            Scribe_Defs.Look(ref tiggerHediff, "tiggerHediff");
+            Scribe_Defs.Look(ref triggerHediff, "triggerHediff");
             Scribe_Defs.Look(ref shieldHediffDef, "shieldHediffDef");
         }
 
@@ -106,7 +104,7 @@ namespace BANWlLib.Pojo
                 healPowerRatio = healPowerRatio,
                 shieldPowerRatio = shieldPowerRatio,
                 damageDef = damageType,
-                triggerHediff = tiggerHediff,
+                triggerHediff = triggerHediff,
                 shieldHediffDef = shieldHediffDef,
                 effecterDef = effecterDef,
                 penetration = penetration,

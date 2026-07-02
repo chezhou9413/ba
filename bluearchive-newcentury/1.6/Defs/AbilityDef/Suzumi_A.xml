@@ -57,7 +57,7 @@
             <!-- 触发特效 -->
             <effecterDef></effecterDef>
             <!-- 触发hediff -->
-            <tiggerHediff>BAWN_Suzumi_A_Buff_A</tiggerHediff>
+            <triggerHediff>BAWN_Suzumi_A_Buff_A</triggerHediff>
           </li>
         </damages>
       </li>

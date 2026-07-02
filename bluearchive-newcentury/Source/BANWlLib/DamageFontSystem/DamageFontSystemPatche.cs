@@ -1,14 +1,13 @@
 using BANWlLib.BattleSystem;
 using BANWlLib.DamageFontSystem;
-using BANWlLib.DamageFontSystem.Comp;
 using BANWlLib.DamageFontSystem.Setting;
 using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Verse;
 
+// 伤害字体系统补丁，负责处理旧暴击规则、统一战斗伤害飘字和原版远程伤害接入。
 public class DamageFontSystemPatche
 {
     public static Dictionary<int, bool> CritState = new Dictionary<int, bool>();
@@ -44,16 +43,14 @@ public class DamageFontSystemPatche
                 return;
             }
 
-            DisableCriticalComp comp = Current.Game.GetComponent<DisableCriticalComp>();
             Pawn attacker = dinfo.Instigator as Pawn;
             if (attacker == null)
             {
                 return;
             }
 
-            string damageType = dinfo.Def.defName;
-            bool disableCrit = comp != null && comp.DisableCritical.Any(p => p.defName == damageType);
-            bool isForcedCrit = comp != null && comp.EnsureCritical.Any(p => p.defName == damageType);
+            bool disableCrit = DamageFontRuleUtility.IsCriticalDisabled(dinfo.Def);
+            bool isForcedCrit = DamageFontRuleUtility.IsCriticalEnsured(dinfo.Def);
             float finalAmount = dinfo.Amount;
             bool isCrit = false;
             if (!disableCrit)
@@ -98,13 +95,6 @@ public class DamageFontSystemPatche
         {
             if (!DamageFontMod.settings.enableDamageFloat)
             {
-                BattleFormulaDebugUtility.LogDamageActual(__instance, dinfo, totalDamageDealt);
-                return;
-            }
-
-            if (BattleDamageDisplayState.TryConsumeForcedCriticalFloatAmount(__instance, out float forcedAmount))
-            {
-                CriticalObjPool.showFixedDamageShow(forcedAmount, __instance);
                 BattleFormulaDebugUtility.LogDamageActual(__instance, dinfo, totalDamageDealt);
                 return;
             }
@@ -157,6 +147,7 @@ public class DamageFontSystemPatche
                 penetration = dinfo.ArmorPenetrationInt,
                 isNormalAttack = data.isNormalAttack,
                 canCrit = data.canCrit,
+                alwaysCrit = data.alwaysCrit,
                 alwaysShowCriticalText = data.alwaysShowCriticalText,
                 applyAffinity = data.applyAffinity,
                 isExSkill = data.isExSkill

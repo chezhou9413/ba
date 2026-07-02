@@ -11,7 +11,7 @@ namespace BANWlLib.BaVerb
     {
         public int boxsize = 0;
         public JobDef JobDef;
-        public HediffDef TiggerHediff = null;
+        public HediffDef triggerHediff = null;
     }
 
     // 矩形持续攻击动词，负责显示长条预览并把受影响格子交给持续攻击 Job。
@@ -79,10 +79,10 @@ namespace BANWlLib.BaVerb
 
             if (castSuccess)
             {
-                if (VerbProperties.TiggerHediff != null)
+                if (VerbProperties.triggerHediff != null)
                 {
-                    BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(caster, VerbProperties.TiggerHediff, caster);
-                    Hediff hediff = HediffMaker.MakeHediff(VerbProperties.TiggerHediff, caster);
+                    BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(caster, VerbProperties.triggerHediff, caster);
+                    Hediff hediff = HediffMaker.MakeHediff(VerbProperties.triggerHediff, caster);
                     BattleHediffSnapshotUtility.ApplySnapshotIfNeeded(hediff, caster);
                     caster.health.AddHediff(hediff);
                 }

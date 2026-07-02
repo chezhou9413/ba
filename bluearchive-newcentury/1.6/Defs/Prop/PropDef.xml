@@ -562,6 +562,42 @@
   </ThingDef>
 
   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mika_A_Proplevel</defName>
+    <label>泳装未花的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Mika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用泳装未花的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mika_A</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
     <defName>BANW_Moe_Proplevel</defName>
     <label>萌绘的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>

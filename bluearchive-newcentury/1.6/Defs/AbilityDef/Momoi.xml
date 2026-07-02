@@ -14,7 +14,7 @@
     <warmupEffecter></warmupEffecter>
     <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
     <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SustainedAreaAttack">
-      <TiggerHediff>BAWN_Momoi_buff_A</TiggerHediff>
+      <triggerHediff>BAWN_Momoi_buff_A</triggerHediff>
       <!-- 扇形弧度 --> 
       <soundCast>Momoi_Skill_EX_A</soundCast>
       <fanArc>45</fanArc>

@@ -222,6 +222,7 @@
     <Compile Include="DamageFontSystem\DamageFloatText.cs" />
     <Compile Include="DamageFontSystem\FontDataBase.cs" />
     <Compile Include="DamageFontSystem\FontDef.cs" />
+    <Compile Include="DamageFontSystem\DamageFontRuleUtility.cs" />
     <Compile Include="DamageFontSystem\InitializeFontSystem.cs" />
     <Compile Include="DamageFontSystem\DamageFontSystemPatche.cs" />
     <Compile Include="DamageFontSystem\Setting\DamageFontMod.cs" />

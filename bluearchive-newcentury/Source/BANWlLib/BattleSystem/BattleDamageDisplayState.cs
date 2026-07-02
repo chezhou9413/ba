@@ -8,7 +8,6 @@ namespace BANWlLib.BattleSystem
     {
         private static readonly Dictionary<int, Queue<bool>> ManualCritStates = new Dictionary<int, Queue<bool>>();
         private static readonly Dictionary<int, Queue<bool>> PendingCriticalFloatTexts = new Dictionary<int, Queue<bool>>();
-        private static readonly Dictionary<int, Queue<float>> PendingForcedCriticalFloatAmounts = new Dictionary<int, Queue<float>>();
 
         // 注册统一战斗层伤害，负责阻止原版伤害补丁重复暴击。
         public static void RegisterManualDamage(Thing target, Thing instigator, bool isCrit)
@@ -30,17 +29,6 @@ namespace BANWlLib.BattleSystem
             }
 
             EnqueueValue(PendingCriticalFloatTexts, target.thingIDNumber, isCrit);
-        }
-
-        // 注册强制暴击文字显示的固定数值，负责让必定弹字技能显示公式伤害而不是部位实际受伤值。
-        public static void RegisterForcedCriticalFloatAmount(Thing target, float amount)
-        {
-            if (target == null || !(target is Pawn))
-            {
-                return;
-            }
-
-            EnqueueValue(PendingForcedCriticalFloatAmounts, target.thingIDNumber, amount);
         }
 
         // 读取统一战斗层暴击状态，负责按伤害进入 PreApplyDamage 的顺序消费队列。
@@ -67,18 +55,6 @@ namespace BANWlLib.BattleSystem
             return TryDequeueValue(PendingCriticalFloatTexts, target.thingIDNumber, out isCrit);
         }
 
-        // 读取强制暴击文字显示的固定数值，负责在实际伤害回调后优先使用公式伤害弹字。
-        public static bool TryConsumeForcedCriticalFloatAmount(Thing target, out float amount)
-        {
-            amount = 0f;
-            if (target == null)
-            {
-                return false;
-            }
-
-            return TryDequeueValue(PendingForcedCriticalFloatAmounts, target.thingIDNumber, out amount);
-        }
-
         // 丢弃一次未落地伤害的显示状态，负责处理闪避、护盾或其他 PreApplyDamage 阶段取消伤害的情况。
         public static void DiscardPendingDamageDisplay(Thing target)
         {
@@ -90,7 +66,6 @@ namespace BANWlLib.BattleSystem
             int targetId = target.thingIDNumber;
             TryDequeueValue(ManualCritStates, targetId, out bool _);
             TryDequeueValue(PendingCriticalFloatTexts, targetId, out bool _);
-            TryDequeueValue(PendingForcedCriticalFloatAmounts, targetId, out float _);
         }
 
         // 入队指定目标的显示状态，负责保留同一目标连续多次伤害的先后顺序。
