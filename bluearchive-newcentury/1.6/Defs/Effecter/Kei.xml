@@ -1,0 +1,781 @@
+
+<Defs>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_1_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.98</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_2_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_3_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.60</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>18</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_4_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_5_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_6_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_7_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_7</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_8_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_8</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_9_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_9</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_10_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.70</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_10</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>21</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_11_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_11</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_12_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_12</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_13_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_13</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_14_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_14</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_15_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_15</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_16_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_16</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>15</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_17_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_17</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_18_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_18</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_19_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_19</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_20_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_20</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_21_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_21</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Kei_22_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>GlowAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Kei/A/Kei_22</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>12</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>15</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<EffecterDef>
+<defName>BANW_Kei_Ef_A</defName>
+<children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Kei_Skill_EX_A</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Kei_9_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0,0.8,0.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_10_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <ticksBetweenMotes>42</ticksBetweenMotes>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0,0.8,0.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Kei_1_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>0</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0,0.8,0.0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_2_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <ticksBetweenMotes>96</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_3_Mote</moteDef>
+        <initialDelayTicks>120</initialDelayTicks>
+        <ticksBetweenMotes>96</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+   <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_4_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_5_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_6_Mote</moteDef>
+        <initialDelayTicks>120</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_7_Mote</moteDef>
+        <initialDelayTicks>180</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_8_Mote</moteDef>
+        <initialDelayTicks>240</initialDelayTicks>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_11_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_12_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_13_Mote</moteDef>
+        <initialDelayTicks>120</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_14_Mote</moteDef>
+        <initialDelayTicks>180</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_15_Mote</moteDef>
+        <initialDelayTicks>240</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_16_Mote</moteDef>
+        <initialDelayTicks>300</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+       <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_17_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_18_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_19_Mote</moteDef>
+        <initialDelayTicks>120</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_20_Mote</moteDef>
+        <initialDelayTicks>180</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_21_Mote</moteDef>
+        <initialDelayTicks>240</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Kei_22_Mote</moteDef>
+        <initialDelayTicks>300</initialDelayTicks>
+        <ticksBetweenMotes>310</ticksBetweenMotes>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0,0.8,0.0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <absoluteAngle>true</absoluteAngle>
+      </li> 
+</children>
+</EffecterDef>
+</Defs>

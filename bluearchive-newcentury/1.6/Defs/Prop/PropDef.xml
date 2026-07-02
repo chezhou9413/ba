@@ -4791,4 +4791,38 @@
       </li>
     </comps>
   </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mika_A_Proplevel</defName>
+    <label>未花(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Mika_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用未花(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mika_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
 </Defs>

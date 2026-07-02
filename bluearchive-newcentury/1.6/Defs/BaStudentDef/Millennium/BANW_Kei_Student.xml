@@ -69,13 +69,11 @@
 				<WapenTypeText>电磁炮</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Kei/Kei_A</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>存在于此的我</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[圆形范围内我方的攻击力增加<color=#00FFFF>42.9%</color>神秘属性克制倍率增加<color=#00FFFF>70.6%</color>（持续25秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -105,11 +103,9 @@
 			<Ability4>
 				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
-				<AbilityTitle>测试技能4</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>共同前行的伙伴</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[EX范围内的我方获得 <color=#00FFFF>26%</color> 的暴击率加成。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

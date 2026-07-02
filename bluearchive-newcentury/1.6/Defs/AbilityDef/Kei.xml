@@ -1,0 +1,146 @@
+<Defs>
+<AbilityDef>
+    <defName>BAWN_Kei_EXX</defName>
+    <label>存在于此的我</label>
+    <description>圆形范围内我方的攻击力增加42.9%神秘属性克制倍率增加70.6%（持续25秒）</description>
+    <iconPath>Ability/Icon/Kei/Kei_A</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hotKey>Misc6</hotKey>
+    <warmupStartSound>Kei_Skill_EXX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>True</showWhenDrafted>
+    <hostile>true</hostile>
+    <warmupEffecter></warmupEffecter>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <warmupEffecter></warmupEffecter>
+      <soundCast>BANW_Wp_HG_At</soundCast>
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+      <range>40</range>
+      <warmupTime>1.0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.CompProperties_AbilitySpawnBattleField">
+        <!-- 场地控制器 ThingDef。 -->
+        <fieldThingDef>BANW_BattleField_Kei_Test</fieldThingDef>
+        <!-- 场地持续 600 tick（约 10 秒）。 -->
+        <durationTicksOverride>1500</durationTicksOverride>
+      </li>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Kei_Ef_A</effecterDef>
+        <maintainForTicks>1500</maintainForTicks>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <!-- 圆形预览，从场地控制器读取半径。 -->
+        <shape>Circle</shape>
+        <range>40</range>
+        <useBattleFieldRadius>true</useBattleFieldRadius>
+        <drawCasterRange>true</drawCasterRange>
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <!-- 场地控制器 ThingDef：每 60 tick 脉冲一次，对范围内敌方造成伤害并触发叠层 Hediff。 -->
+  <ThingDef>
+    <defName>BANW_BattleField_Kei_Test</defName>
+    <label>存在于此的我</label>
+    <thingClass>BANWlLib.BattleSystem.Thing_BattleFieldController</thingClass>
+    <category>Mote</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>UI/StarIcon</texPath>
+      <drawSize>0.01</drawSize>
+    </graphicData>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleFieldControllerExtension">
+        <!-- 场地存在时间，单位 tick。 -->
+        <durationTicks>1500</durationTicks>
+        <!-- 每 60 tick（约 1 秒）结算一次。 -->
+        <intervalTicks>348</intervalTicks>
+        <!-- 场地半径。 -->
+        <radius>4.9</radius>
+        <!-- 快照施法者属性。 -->
+        <useCasterSnapshot>true</useCasterSnapshot>
+        <!-- 每次脉冲播放的范围提示特效。 -->
+        <pulseEffecter></pulseEffecter>
+        <!-- 场地每次脉冲执行的战斗动作。 -->
+        <actions>
+          <li>
+            <!-- 200% 攻击力伤害。 -->
+            <attackPowerRatio>0.0</attackPowerRatio>
+            <!-- 伤害类型，复用 Nozomi EXX 的振动伤害。 -->
+            <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+            <!-- 护甲穿透。 -->
+            <penetration>0</penetration>
+            <!-- 允许暴击。 -->
+            <!-- 应用属性克制。 -->
+             <canCrit>true</canCrit>
+            <applyAffinity>true</applyAffinity>
+            <!-- 影响敌对目标。 -->
+            <affectHostile>false</affectHostile>
+            <!-- 不影响友方。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 不命中建筑。 -->
+            <canHitBuilding>false</canHitBuilding>
+            <!-- 每次脉冲对命中目标触发叠层攻击 Hediff，重复施加时叠层并刷新时间。 -->
+            <triggerHediff>BAWN_Kei_buff</triggerHediff>
+          </li>
+        </actions>
+      </li>
+    </modExtensions>
+  </ThingDef>
+    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Kei_buff</defName>
+        <!-- 显示名称 -->
+        <label>存在于此的我</label>
+        <!-- 效果描述 -->
+        <description>攻击力增加51%,神秘克制率增加84%，暴击率增加22%持续25秒</description>
+        <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+            <statOffsets>
+           <BANW_FinalDamageMultiplier>0.51</BANW_FinalDamageMultiplier>
+           <BANW_AffinityBonus_Mysterious>0.84</BANW_AffinityBonus_Mysterious>
+           <BANW_CriticalChance>0.22</BANW_CriticalChance>
+            </statOffsets>
+           <statFactors>
+           </statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1500</disappearsAfterTicks>
+      </li>
+    </comps>
+    </HediffDef>
+  
+</Defs>

@@ -351,7 +351,7 @@
         <defaultProjectile>BANC_Bullet_Nonomi</defaultProjectile>
         <burstShotCount>5</burstShotCount>
         <warmupTime>2.0</warmupTime>
-        <ticksBetweenBurstShots>3.0</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>5.0</ticksBetweenBurstShots>
         <range>36.9</range>
         <soundCast>BANW_Wp_MG_At</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>

@@ -1066,7 +1066,7 @@
         <defaultProjectile>BANC_Bullet_Kazusa</defaultProjectile><!--子弹-->
         <burstShotCount>4</burstShotCount><!--连射次数-->
         <warmupTime>1.3</warmupTime><!--瞄准时间-->
-        <ticksBetweenBurstShots>4.5</ticksBetweenBurstShots><!--射速-->
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots><!--射速-->
         <range>35.9</range><!--射距-->
         <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
         <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
@@ -2192,5 +2192,86 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
+
+    <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Mika_A</defName>
+    <label>Quis ut Deus</label>
+    <description>未花爱用的冲锋枪。受到饱含真心的保养，在海边也如同星辰一般闪亮。</description>
+    <graphicData>
+      <texPath>Weapon/Sany/Mika</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.0</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Mika_A</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_SMG_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>1</AccuracyMedium><!--中-->
+      <AccuracyLong>1</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Mika_A</defaultProjectile><!--子弹-->
+        <burstShotCount>5</burstShotCount><!--连射次数-->
+        <warmupTime>1.3</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots><!--射速-->
+        <range>22.9</range><!--射距-->
+        <soundCast>BANW_Wp_SMG_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Mika_A</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Mika_A</defName>
+    <label>Quis ut Deus子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_Mika_A_None</damageDef><!--子弹类型-->
+      <damageAmountBase>6</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>(0.5,1)</drawSize>
+      <texPath>Projectile/Bullet_Mika_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+<DamageDef ParentName="BANC_Damage_zhendong">
+    <defName>BANC_Damage_Mika_A_None</defName><!--通用贯通-->
+  </DamageDef>
 
 </Defs>

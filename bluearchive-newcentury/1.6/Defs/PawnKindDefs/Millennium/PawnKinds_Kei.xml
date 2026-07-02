@@ -6,8 +6,10 @@
 		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
-
 		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+			<li>BAWN_Kei_EXX</li>
+        </abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>

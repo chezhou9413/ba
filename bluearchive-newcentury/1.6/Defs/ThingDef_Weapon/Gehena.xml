@@ -930,7 +930,7 @@
         <defaultProjectile>BANC_Bullet_Mutsuki</defaultProjectile><!--子弹-->
         <burstShotCount>3</burstShotCount><!--连射次数-->
         <warmupTime>1.4</warmupTime><!--瞄准时间-->
-        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots><!--射速-->
         <range>35.9</range><!--射距-->
         <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
         <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
@@ -1390,7 +1390,7 @@
         <defaultProjectile>BANC_Bullet_Izumi</defaultProjectile><!--子弹-->
         <burstShotCount>3</burstShotCount><!--连射次数-->
         <warmupTime>1.7</warmupTime><!--瞄准时间-->
-        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots><!--射速-->
         <range>35.9</range><!--射距-->
         <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
         <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
@@ -1764,13 +1764,26 @@
     <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
        <!-- 伤害间隔 Tick 数：飞行中每经过 10 ticks (约 0.16秒) 造成一次范围伤害 -->
       <damageIntervalTicks>1</damageIntervalTicks>
+      <maxRange>12.9</maxRange>
       <!-- 伤害宽度：垂直于飞行方向的判定范围宽度，单位为格 (10格宽) -->
       <damageWidth>5</damageWidth>
       <!-- 伤害长度：沿飞行方向的判定范围长度，单位为格 (10格长) -->
       <damageLength>5</damageLength>
-      <maxRange>12.9</maxRange>
       <!-- 免疫友军伤害：true 表示跳过友方单位，不会误伤队友 -->
       <immuneFriendlyFire>true</immuneFriendlyFire>
+      <attackPowerRatio>1.0</attackPowerRatio>
+       <isExSkill>false</isExSkill>
+      <canCrit>true</canCrit>
+       <!-- 是否无论实际暴击判定都显示暴击文字。 -->
+        <alwaysShowCriticalText>false</alwaysShowCriticalText>
+        <!-- 是否应用攻击类型与护甲类型克制。 -->
+        <applyAffinity>true</applyAffinity>
+        <!-- 是否允许命中墙体等建筑。 -->
+        <canHitBuilding>false</canHitBuilding>
+        <!-- 是否命中敌对目标。 -->
+        <affectHostile>true</affectHostile>
+        <!-- 是否命中友方目标。 -->
+        <affectFriendly>false</affectFriendly>
       <!-- 起始贴图缩放：飞行开始时贴图的缩放比例 (0.3倍大小) -->
       <startDrawScale>0.3</startDrawScale>
       <!-- 结束贴图缩放：飞行结束时贴图的缩放比例 (2.0倍大小) -->
@@ -1779,8 +1792,7 @@
       <fadeInTicks>2</fadeInTicks>
       <!-- 淡出 Tick 数：贴图从完全显示到消失所需的 tick 数 (10 ticks) -->
       <fadeOutTicks>5</fadeOutTicks>
-       <!-- true 表示即使点击近处，也按 maxRange 沿点击方向飞到最大距离。 -->
-        <extendToMaxRange>true</extendToMaxRange>
+      <extendToMaxRange>true</extendToMaxRange>
     </li>
   </modExtensions>
   </ThingDef>

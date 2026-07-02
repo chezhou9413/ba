@@ -163,7 +163,7 @@
         <!-- 每隔多少 tick 结算一次 actions。 -->
         <intervalTicks>120</intervalTicks>
         <!-- 场地半径，使用圆形格子范围。 -->
-        <radius>4.9</radius>
+        <radius>3.5</radius>
         <!-- true 表示生成场地时快照施法者属性，后续 Buff 变化不影响已生成场地。 -->
         <useCasterSnapshot>true</useCasterSnapshot>
         <!-- 每次结算时播放的范围提示特效。 -->

@@ -1,34 +1,33 @@
-
 <Defs>
 
 
 	<PawnKindDef ParentName="BANW_BasePawn">
-		<defName>BANW_Mika</defName>
-		<label>-未花-</label>
+		<defName>BANW_Mika_A</defName>
+		<label>-未花(泳装)-</label>
 		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
 
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
-		
+
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
 		<startingHediffs>
-		<li>
-			<def>BANW_LevelTrait</def>
-			<severity>0.001</severity>
-		</li>
-        </startingHediffs>
+			<li>
+				<def>BANW_LevelTrait</def>
+				<severity>0.001</severity>
+			</li>
+		</startingHediffs>
 		<abilities>
-        <li>BAWN_Mika_EXX</li>
-		<li>BAWN_Mika_EX</li>
-        </abilities>
+			<li>BAWN_Mika_A_EX</li>
+			<li>BAWN_Mika_A_EXX</li>
+		</abilities>
 		<backstoryFiltersOverride>
 			<li>
 				<categories>
 					<li>BANW_BackstorySany</li>
-					<li>BANW_BackstoryMika</li>
+					<li>BANW_BackstoryMika_A</li>
 				</categories>
 			</li>
 		</backstoryFiltersOverride>
@@ -37,25 +36,25 @@
 		<minGenerationAge>17</minGenerationAge>
 		<maxGenerationAge>18</maxGenerationAge>
 		<weaponTags>
-         <li>BANC_Mika</li>
-        </weaponTags>
+			<li>BANC_Mika_A</li>
+		</weaponTags>
 		<apparelRequired Inherit="False">
-			<li>BANW_Body_Mika</li>
+			<li>BANW_Body_Mika_A</li>
 		</apparelRequired>
 		<forcedHair>Bald</forcedHair>
 
 		<skills>
 			<li>
 				<skill>Shooting</skill>
-				<range>16</range>
+				<range>17</range>
 			</li>
 			<li>
 				<skill>Melee</skill>
-				<range>15</range>
+				<range>16</range>
 			</li>
 			<li>
 				<skill>Mining</skill>
-				<range>10~15</range>
+				<range>12</range>
 			</li>
 			<li>
 				<skill>Plants</skill>
@@ -65,24 +64,32 @@
 				<skill>Crafting</skill>
 				<range>4</range>
 			</li>
+			<li>
+				<skill>Social</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>4</range>
+			</li>
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
-			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
+			<BAWC_TraitDef_zhendong>0</BAWC_TraitDef_zhendong>
+			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
 			<BAWC_TraitDef_Mika>0</BAWC_TraitDef_Mika>
-			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
-			<BAWC_TraitDef_Mika_A>0</BAWC_TraitDef_Mika_A>
-			<BAWC_TraitDef_Mika_B>0</BAWC_TraitDef_Mika_B>
+			<BAWC_TraitDef_Mika_A_A>0</BAWC_TraitDef_Mika_A_A>
+			<BAWC_TraitDef_Mika_A_B>0</BAWC_TraitDef_Mika_A_B>
 		</forcedTraits>
 		<modExtensions>
-			
+
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->
-				<damageType>Through</damageType>
+				<damageType>Vibration</damageType>
 				<!-- 护甲类型，作为属性克制矩阵的列。 -->
-				<defenseType>Explosion</defenseType>
-<!-- 学生初始生命值，参与生命值公式的基础乘算项，1 表示 100 点生命值。 -->
-				<initialHealth>2.46</initialHealth>
+				<defenseType>Mysterious</defenseType>
+				<!-- 学生初始生命值，参与生命值公式的基础乘算项，1 表示 100 点生命值。 -->
+				<initialHealth>1.94</initialHealth>
 				<!-- 学生基础攻击力平加，进入技能、武器显示和统一伤害结算。 -->
 				<attackFlat>0</attackFlat>
 				<!-- 学生基础攻击力百分比，0.26 表示最终攻击力额外增加 26%。 -->
@@ -126,7 +133,8 @@
 						<li>0.45</li>
 					</starValues>
 				</healPercent>
-			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
+			</li>
+			<li Class="BANWlLib.PawnProgressBarKindExtension">
 				<starInterval>0.5</starInterval>
 				<showProgressBar>false</showProgressBar>
 				<starProgressRatios>
@@ -139,29 +147,29 @@
 				<starSize>28</starSize>
 				<starTexturePath>UI/StarIcon</starTexturePath>
 				<!-- 起始星星经验：用于没有存档数据的新生成学生 -->
-                <initialExperience>110</initialExperience>
-                <!-- 升星特效占位：后续可替换为学生专属 EffecterDef -->
-                <starUpEffects>
-                    <li>BANW_Effecter_B</li>
-                </starUpEffects>
-                <!-- 升星语音占位：后续可替换为学生专属 SoundDef -->
-                <starUpSounds>
-                    <li>Mika_levelup_A</li>
-                    <li>Mika_levelup_B</li>
-					<li>Mika_levelup_C</li>
-					<li>Mika_levelup_D</li>
-                </starUpSounds>
-                <!-- 升级特效占位：后续可替换为学生专属 EffecterDef -->
-                <levelUpEffects>
-                    <li>BANW_Effecter_LevelUp</li>
-                </levelUpEffects>
-                <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
-                <levelUpSounds>
-                     <li>Mika_levelup_A</li>
-                    <li>Mika_levelup_B</li>
-					<li>Mika_levelup_C</li>
-					<li>Mika_levelup_D</li>
-                </levelUpSounds>
+				<initialExperience>110</initialExperience>
+				<!-- 升星特效占位：后续可替换为学生专属 EffecterDef -->
+				<starUpEffects>
+					<li>BANW_Effecter_B</li>
+				</starUpEffects>
+				<!-- 升星语音占位：后续可替换为学生专属 SoundDef -->
+				<starUpSounds>
+					<li>Mika_A_levelup_A</li>
+					<li>Mika_A_levelup_B</li>
+					<li>Mika_A_levelup_C</li>
+					<li>Mika_A_levelup_D</li>
+				</starUpSounds>
+				<!-- 升级特效占位：后续可替换为学生专属 EffecterDef -->
+				<levelUpEffects>
+					<li>BANW_Effecter_LevelUp</li>
+				</levelUpEffects>
+				<!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
+				<levelUpSounds>
+					<li>Mika_A_levelup_A</li>
+					<li>Mika_A_levelup_B</li>
+					<li>Mika_A_levelup_C</li>
+					<li>Mika_A_levelup_D</li>
+				</levelUpSounds>
 			</li>
 			<li Class="ChezhouLib.Extension.kindRule">
 				<kindName>未花</kindName>
@@ -170,8 +178,8 @@
 				<kindAge>17</kindAge>
 			</li>
 			<li Class="BANWlLib.KindStats.BANWKindStatExtension">
-        <worldCargoCapacityOffset>100</worldCargoCapacityOffset>
-      </li>
+				<worldCargoCapacityOffset>100</worldCargoCapacityOffset>
+			</li>
 			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
 				<bodyAddonRules>
 					<li>
@@ -180,19 +188,19 @@
 					</li>
 					<li>
 						<BodyAddonName>KivotosStudent_head</BodyAddonName>
-						<ReplacePath>Pawns/Sany/Mika/Head/Mika_Head</ReplacePath>
+						<ReplacePath>Pawns/Sany/Mika_A/Head/Mika_Head</ReplacePath>
 					</li>
 					<li>
 						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
-						<ReplacePath>Pawns/Sany/Mika/Body/Mika_Body</ReplacePath>
+						<ReplacePath>Pawns/Sany/Mika_A/Body/Mika_Body</ReplacePath>
 					</li>
 					<li>
 						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
-						<ReplacePath>Pawns/Sany/Mika/Hair/Mika_FrontHair</ReplacePath>
+						<ReplacePath>Pawns/Sany/Mika_A/Hair/Mika_FrontHair</ReplacePath>
 					</li>
 					<li>
 						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
-						<ReplacePath>Pawns/Sany/Mika/Hair/Mika_BackHair</ReplacePath>
+						<ReplacePath>Pawns/Sany/Mika_A/Hair/Mika_BackHair</ReplacePath>
 					</li>
 				</bodyAddonRules>
 			</li>
@@ -200,53 +208,33 @@
 	</PawnKindDef>
 
 	<TraitDef>
-        <defName>BAWC_TraitDef_Mika_A</defName>
-        <commonality>0</commonality>
-        <degreeDatas>
-            <li>
-                <label>&lt;color=#FFBB00&gt;格洛丽亚·帕特里&lt;/color&gt;</label>
-                <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的攻击力。</description>
-                <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statOffsets>
-					<BANW_FinalDamageMultiplier>+0.26</BANW_FinalDamageMultiplier>
-                </statOffsets>
-            </li>
-        </degreeDatas>
-    </TraitDef>
+		<defName>BAWC_TraitDef_Mika_A_A</defName>
+		<commonality>0</commonality>
+		<degreeDatas>
+			<li>
+				<label>&lt;color=#990099&gt;愿你平安&lt;/color&gt;</label>
+				<description>被动技能:增加自身10格攻击距离&lt;color=#DC143C&gt;21%&lt;/color&gt;的攻击力。</description>
+				<marketValueFactorOffset>1</marketValueFactorOffset>
+				<statOffsets>
+					<BANW_RangedWeapon_RangeOffset>+10</BANW_RangedWeapon_RangeOffset>
+					<BANW_FinalDamageMultiplier>+0.21</BANW_FinalDamageMultiplier>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
 	<TraitDef>
-        <defName>BAWC_TraitDef_Mika_B</defName>
-        <commonality>0</commonality>
-        <degreeDatas>
-            <li>
-                <label>&lt;color=#FFBB00&gt;本尼迪克特&lt;/color&gt;</label>
-                <description>子技能:所有攻击必定暴击，增加自身&lt;color=#DC143C&gt;24%的&lt;/color&gt;基础攻击力和减少&lt;color=#DC143C&gt;12%的乘伤系数&lt;/color&gt;。</description>
-                <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statOffsets>
-					<BANW_AttackLevelMultiplier>+0.24</BANW_AttackLevelMultiplier>
-					<IncomingDamageFactor>-0.12</IncomingDamageFactor>
-                </statOffsets>
-            </li>
-        </degreeDatas>
-    </TraitDef>
-	<TraitDef>
-        <defName>BAWC_TraitDef_Mika</defName>
-        <commonality>0</commonality>
-        <degreeDatas>
-            <li>
-                <label>&lt;color=#FFC0CB&gt;圣猿未花&lt;/color&gt;</label>
-                <description>{PAWN_nameDef}是茶话会的一员，拥有天生的怪力，天真的性格，容易被其他人的话语影响自己的判断，她表面上天真烂漫、活泼开朗，但内心也有着复杂的一面</description>
-                <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statOffsets>
-					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.3</CertaintyLossFactor>
-                    <CarryingCapacity>300</CarryingCapacity> 
-</statOffsets>
-				<statFactors>
-                <MeleeDamageFactor>5.5</MeleeDamageFactor>
-				<MeleeArmorPenetration>4.5</MeleeArmorPenetration>
-				<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
-				
-				</statFactors>
-            </li>
-        </degreeDatas>
-    </TraitDef>
+		<defName>BAWC_TraitDef_Mika_A_B</defName>
+		<commonality>0</commonality>
+		<degreeDatas>
+			<li>
+				<label>&lt;color=#990099&gt;高举你心&lt;/color&gt;</label>
+				<description>子技能:所有攻击必定暴击，增加自身振动克制率&lt;color=#DC143C&gt;49%&lt;/color&gt;</description>
+				<marketValueFactorOffset>1</marketValueFactorOffset>
+				<statOffsets>
+					<BANW_AffinityBonus_Vibration>+0.49</BANW_AffinityBonus_Vibration>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
 </Defs>

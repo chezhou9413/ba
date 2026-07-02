@@ -852,7 +852,7 @@
         <defaultProjectile>BANC_Bullet_Pina</defaultProjectile><!--子弹-->
         <burstShotCount>5</burstShotCount><!--连射次数-->
         <warmupTime>1.8</warmupTime><!--瞄准时间-->
-        <ticksBetweenBurstShots>4.0</ticksBetweenBurstShots><!--射速-->
+        <ticksBetweenBurstShots>5.0</ticksBetweenBurstShots><!--射速-->
         <range>36.9</range><!--射距-->
         <soundCast>BANW_Wp_MG_At</soundCast><!--射击音效-->
         <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
