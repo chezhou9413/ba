@@ -2,11 +2,10 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 普通投射物战斗配置，负责让原版 Projectile 接入技能倍率、普通攻击倍率和 EX 标记。
+    // 普通投射物战斗配置，负责让原版 Projectile 接入技能倍率、护盾和 EX 标记。
     public class BattleProjectileExtension : DefModExtension
     {
         public float attackPowerRatio = 0f;
-        public float normalAttackMultiplier = 1f;
         public float baseMasteryMultiplier = 1f;
         public float shieldPowerRatio = 0f;
         public HediffDef shieldHediffDef;

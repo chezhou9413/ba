@@ -176,11 +176,11 @@ namespace BANWlLib.BattleSystem
             {
                 weaponBaseAttack = projectileDef.projectile?.GetDamageAmount(null) ?? 0f,
                 attackPowerRatio = extension?.attackPowerRatio ?? 0f,
-                normalAttackMultiplier = extension?.normalAttackMultiplier ?? 1f,
                 baseMasteryMultiplier = extension?.baseMasteryMultiplier ?? 1f,
                 shieldPowerRatio = extension?.shieldPowerRatio ?? 0f,
                 shieldHediffDef = extension?.shieldHediffDef,
-                isNormalAttack = extension?.isNormalAttack ?? (extension == null || extension.attackPowerRatio <= 0f),
+                isNormalAttack = extension?.isNormalAttack ?? false,
+                useNormalAttackStat = false,
                 isShield = extension?.isShield ?? false,
                 isExSkill = extension?.isExSkill ?? false,
                 canCrit = extension?.canCrit ?? true,

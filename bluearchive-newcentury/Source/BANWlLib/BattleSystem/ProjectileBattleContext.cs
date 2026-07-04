@@ -123,11 +123,11 @@ namespace BANWlLib.BattleSystem
     {
         public float weaponBaseAttack;
         public float attackPowerRatio;
-        public float normalAttackMultiplier = 1f;
         public float baseMasteryMultiplier = 1f;
         public float shieldPowerRatio;
         public HediffDef shieldHediffDef;
         public bool isNormalAttack;
+        public bool useNormalAttackStat;
         public bool isShield;
         public bool isExSkill;
         public bool canCrit = true;

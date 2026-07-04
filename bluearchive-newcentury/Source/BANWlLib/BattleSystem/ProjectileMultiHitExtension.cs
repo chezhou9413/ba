@@ -18,7 +18,6 @@ namespace BANWlLib.BattleSystem
         public DamageDef damageDef;
         public DamageDef damageType;
         public float attackPowerRatio = 0f;
-        public float normalAttackMultiplier = 1f;
         public float baseMasteryMultiplier = 1f;
         public int delayTicks = -1;
         public float penetration = -1f;
@@ -37,7 +36,6 @@ namespace BANWlLib.BattleSystem
             Scribe_Defs.Look(ref damageDef, "damageDef");
             Scribe_Defs.Look(ref damageType, "damageType");
             Scribe_Values.Look(ref attackPowerRatio, "attackPowerRatio", 0f);
-            Scribe_Values.Look(ref normalAttackMultiplier, "normalAttackMultiplier", 1f);
             Scribe_Values.Look(ref baseMasteryMultiplier, "baseMasteryMultiplier", 1f);
             Scribe_Values.Look(ref delayTicks, "delayTicks", -1);
             Scribe_Values.Look(ref penetration, "penetration", -1f);

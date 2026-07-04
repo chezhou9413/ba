@@ -11,6 +11,7 @@ namespace BANWlLib.BattleSystem
         public static StatDef BANW_InitialHeal;
         public static StatDef BANW_AttackLevelMultiplier;
         public static StatDef BANW_FinalDamageMultiplier;
+        public static StatDef BANW_NormalAttackMultiplier;
         public static StatDef BANW_BaseMasteryMultiplier;
         public static StatDef BANW_CriticalChance;
         public static StatDef BANW_CriticalDamage;

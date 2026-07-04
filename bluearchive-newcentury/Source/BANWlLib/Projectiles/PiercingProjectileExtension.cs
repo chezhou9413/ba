@@ -13,7 +13,6 @@ namespace BANWlLib.Projectiles
         public float maxRange = 0f;
         public bool immuneFriendlyFire = true;
         public float attackPowerRatio = 0f;
-        public float normalAttackMultiplier = 1f;
         public float baseMasteryMultiplier = 1f;
         public bool isExSkill = false;
         public bool canCrit = true;

@@ -33,10 +33,10 @@ namespace BANWlLib.BattleSystem
                 damageDef = __instance.DamageDef,
                 weaponBaseAttack = data.weaponBaseAttack,
                 attackPowerRatio = data.attackPowerRatio,
-                normalAttackMultiplier = data.normalAttackMultiplier,
                 baseMasteryMultiplier = data.baseMasteryMultiplier,
                 penetration = __instance.ArmorPenetration,
                 isNormalAttack = data.isNormalAttack,
+                useNormalAttackStat = data.useNormalAttackStat,
                 canCrit = data.canCrit,
                 alwaysCrit = data.alwaysCrit,
                 alwaysShowCriticalText = data.alwaysShowCriticalText,
@@ -51,10 +51,10 @@ namespace BANWlLib.BattleSystem
                 damageDef = __instance.DamageDef,
                 weaponBaseAttack = data.weaponBaseAttack,
                 attackPowerRatio = data.attackPowerRatio,
-                normalAttackMultiplier = data.normalAttackMultiplier,
                 baseMasteryMultiplier = data.baseMasteryMultiplier,
                 penetration = __instance.ArmorPenetration,
                 isNormalAttack = data.isNormalAttack,
+                useNormalAttackStat = data.useNormalAttackStat,
                 canCrit = data.canCrit,
                 alwaysCrit = data.alwaysCrit,
                 alwaysShowCriticalText = data.alwaysShowCriticalText,
@@ -74,21 +74,27 @@ namespace BANWlLib.BattleSystem
         // 发射后注册战斗上下文，负责让原版 Projectile 命中时也能使用统一攻击公式。
         public static void Postfix(Projectile __instance, Thing launcher)
         {
-            if (__instance == null || __instance is Projectile_PiercingArea || !(launcher is Pawn))
+            if (__instance == null || __instance is Projectile_PiercingArea || !(launcher is Pawn launcherPawn))
             {
                 return;
             }
 
             BattleProjectileExtension extension = __instance.def.GetModExtension<BattleProjectileExtension>();
+            bool isPlainWeaponAttack = extension == null && IsCurrentWeaponProjectile(launcherPawn, __instance.def);
+            if (extension == null && !isPlainWeaponAttack)
+            {
+                return;
+            }
+
             ProjectileBattleData data = new ProjectileBattleData
             {
                 weaponBaseAttack = __instance.def?.projectile?.GetDamageAmount(null) ?? 0f,
                 attackPowerRatio = extension?.attackPowerRatio ?? 0f,
-                normalAttackMultiplier = extension?.normalAttackMultiplier ?? 1f,
                 baseMasteryMultiplier = extension?.baseMasteryMultiplier ?? 1f,
                 shieldPowerRatio = extension?.shieldPowerRatio ?? 0f,
                 shieldHediffDef = extension?.shieldHediffDef,
-                isNormalAttack = extension?.isNormalAttack ?? (extension == null || extension.attackPowerRatio <= 0f),
+                isNormalAttack = extension?.isNormalAttack ?? isPlainWeaponAttack,
+                useNormalAttackStat = isPlainWeaponAttack,
                 isShield = extension?.isShield ?? false,
                 isExSkill = extension?.isExSkill ?? false,
                 canCrit = extension?.canCrit ?? true,
@@ -105,6 +111,26 @@ namespace BANWlLib.BattleSystem
                 ProjectileBattleContext.RegisterSkillDamage(launcher, __instance.DamageDef, data);
             }
 
+        }
+
+        // 判断投射物是否来自当前主武器，负责把普通攻击倍率限制在原版武器平A。
+        private static bool IsCurrentWeaponProjectile(Pawn launcher, ThingDef projectileDef)
+        {
+            ThingWithComps weapon = launcher?.equipment?.Primary;
+            if (weapon?.def?.Verbs == null || !weapon.def.IsRangedWeapon || projectileDef == null)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < weapon.def.Verbs.Count; i++)
+            {
+                if (weapon.def.Verbs[i]?.defaultProjectile == projectileDef)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 
@@ -235,7 +261,6 @@ namespace BANWlLib.BattleSystem
                 damageDef = damageDef,
                 weaponBaseAttack = state.weaponBaseAttack,
                 attackPowerRatio = config.attackPowerRatio,
-                normalAttackMultiplier = config.normalAttackMultiplier,
                 baseMasteryMultiplier = config.baseMasteryMultiplier,
                 penetration = penetration,
                 isNormalAttack = config.isNormalAttack,

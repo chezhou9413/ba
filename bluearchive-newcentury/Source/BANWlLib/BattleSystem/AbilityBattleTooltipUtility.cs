@@ -330,7 +330,7 @@ namespace BANWlLib.BattleSystem
                     return;
                 }
             }
-            else if (action.damageDef == null || (action.isNormalAttack ? action.normalAttackMultiplier <= 0f : action.attackPowerRatio <= 0f))
+            else if (action.damageDef == null || GetDamageActionMultiplier(action) <= 0f)
             {
                 return;
             }
@@ -361,7 +361,6 @@ namespace BANWlLib.BattleSystem
                 copies.Add(new BattleActionConfig
                 {
                     attackPowerRatio = source.attackPowerRatio,
-                    normalAttackMultiplier = source.normalAttackMultiplier,
                     baseMasteryMultiplier = source.baseMasteryMultiplier,
                     healPowerRatio = source.healPowerRatio,
                     shieldPowerRatio = source.shieldPowerRatio,
@@ -489,7 +488,6 @@ namespace BANWlLib.BattleSystem
                 AddPreviewAction(actions, new BattleActionConfig
                 {
                     attackPowerRatio = battleExtension.attackPowerRatio,
-                    normalAttackMultiplier = battleExtension.normalAttackMultiplier,
                     baseMasteryMultiplier = battleExtension.baseMasteryMultiplier,
                     damageDef = projectileDef.projectile?.damageDef,
                     penetration = projectileDef.projectile?.GetArmorPenetration() ?? 0f,
@@ -542,7 +540,6 @@ namespace BANWlLib.BattleSystem
             return new BattleActionConfig
             {
                 attackPowerRatio = config.attackPowerRatio,
-                normalAttackMultiplier = config.normalAttackMultiplier,
                 baseMasteryMultiplier = config.baseMasteryMultiplier,
                 damageDef = config.ResolveDamageDef(),
                 penetration = config.penetration >= 0f ? config.penetration : projectileDef.projectile?.GetArmorPenetration() ?? 0f,
@@ -570,7 +567,6 @@ namespace BANWlLib.BattleSystem
             return new BattleActionConfig
             {
                 attackPowerRatio = extension.attackPowerRatio,
-                normalAttackMultiplier = extension.normalAttackMultiplier,
                 baseMasteryMultiplier = extension.baseMasteryMultiplier,
                 damageDef = projectileDef.projectile?.damageDef,
                 penetration = projectileDef.projectile?.GetArmorPenetration() ?? 0f,
@@ -778,7 +774,6 @@ namespace BANWlLib.BattleSystem
                 damageDef = action.damageDef,
                 weaponBaseAttack = action.previewWeaponBaseAttack,
                 attackPowerRatio = action.attackPowerRatio,
-                normalAttackMultiplier = action.normalAttackMultiplier,
                 baseMasteryMultiplier = action.baseMasteryMultiplier,
                 penetration = action.penetration,
                 isNormalAttack = action.isNormalAttack,
@@ -811,7 +806,6 @@ namespace BANWlLib.BattleSystem
             }
 
             return left.attackPowerRatio == right.attackPowerRatio &&
-                   left.normalAttackMultiplier == right.normalAttackMultiplier &&
                    left.baseMasteryMultiplier == right.baseMasteryMultiplier &&
                    left.healPowerRatio == right.healPowerRatio &&
                    left.shieldPowerRatio == right.shieldPowerRatio &&
@@ -855,6 +849,7 @@ namespace BANWlLib.BattleSystem
             float starMultiplier = BattleStatUtility.GetAttackStarMultiplier(pawn);
             float attackFlat = BattleStatUtility.GetAttackFlatBonus(pawn);
             float attackMultiplier = BattleStatUtility.GetAttackMultiplier(pawn);
+            float normalAttackStatMultiplier = BattleStatUtility.GetNormalAttackMultiplier(pawn);
             float finalAttack = BattleStatUtility.GetFinalAttackPower(pawn, weaponBaseAttack);
             float healBase = BattleStatUtility.GetInitialHeal(pawn) + pawn.GetStatValue(BattleStatDefOf.BANW_InitialHeal);
             float healLevelMultiplier = BattleStatUtility.GetHealLevelMultiplier(pawn);
@@ -866,6 +861,7 @@ namespace BANWlLib.BattleSystem
 
             builder.AppendLine("角色攻击力：" + FormatNumber(weaponBaseAttack) + " x " + FormatPercent(levelMultiplier) + " x " + FormatPercent(starMultiplier) + " + " + FormatNumber(attackFlat) + " = " + FormatColor(FormatNumber(finalAttack), DamageColor));
             builder.AppendLine("攻击力加成：" + FormatColor(FormatPercent(attackMultiplier), DamageColor));
+            builder.AppendLine("普通攻击倍率：" + FormatColor(FormatPercent(normalAttackStatMultiplier), DamageColor));
             builder.AppendLine("治愈力：((" + FormatNumber(healBase) + " x " + FormatPercent(healLevelMultiplier) + " x " + FormatPercent(healStarMultiplier) + ") + " + FormatNumber(healFlatBonus) + ") x " + FormatPercent(healBonusMultiplier) + " = " + FormatColor(FormatNumber(finalHeal), HealColor));
             builder.AppendLine("EX技能倍率：" + FormatColor(FormatPercent(exMultiplier), ExColor));
         }
@@ -880,7 +876,6 @@ namespace BANWlLib.BattleSystem
                 damageDef = action.damageDef,
                 weaponBaseAttack = action.previewWeaponBaseAttack,
                 attackPowerRatio = action.attackPowerRatio,
-                normalAttackMultiplier = action.normalAttackMultiplier,
                 baseMasteryMultiplier = action.baseMasteryMultiplier,
                 penetration = action.penetration,
                 isNormalAttack = action.isNormalAttack,
@@ -949,7 +944,7 @@ namespace BANWlLib.BattleSystem
         private static void AppendDamageFormula(StringBuilder builder, BattleActionConfig action)
         {
             builder.AppendLine("算法：");
-            builder.AppendLine(FormatColor("  攻击：角色自身攻击力 x 技能倍率 x 攻击力加成", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  攻击：角色自身攻击力 x 攻击力加成 x 技能倍率", ColoredText.SubtleGrayColor));
             builder.AppendLine(FormatColor("  修正：" + FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill), ColoredText.SubtleGrayColor));
         }
 
@@ -985,7 +980,7 @@ namespace BANWlLib.BattleSystem
             return modifiers.Count > 0 ? string.Join("、", modifiers.ToArray()) : "无";
         }
 
-        // 获取伤害段显示倍率，负责区分技能倍率和普通攻击倍率两种配置口径。
+        // 获取伤害段显示倍率，负责区分技能倍率和普通攻击口径。
         private static float GetDamageActionMultiplier(BattleActionConfig action)
         {
             if (action == null)
@@ -993,7 +988,7 @@ namespace BANWlLib.BattleSystem
                 return 0f;
             }
 
-            return Mathf.Max(0f, action.isNormalAttack ? action.normalAttackMultiplier : action.attackPowerRatio);
+            return Mathf.Max(0f, action.isNormalAttack ? 1f : action.attackPowerRatio);
         }
 
         // 格式化紧凑总览修正项，负责把整套多段技能的参与机制合并成一行。

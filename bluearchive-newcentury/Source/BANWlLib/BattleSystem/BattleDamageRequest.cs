@@ -10,10 +10,10 @@ namespace BANWlLib.BattleSystem
         public DamageDef damageDef;
         public float attackPowerRatio;
         public float weaponBaseAttack;
-        public float normalAttackMultiplier = 1f;
         public float baseMasteryMultiplier = 1f;
         public float penetration;
         public bool isNormalAttack = false;
+        public bool useNormalAttackStat = false;
         public bool canCrit = true;
         public bool alwaysCrit = false;
         public bool alwaysShowCriticalText = false;

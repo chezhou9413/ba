@@ -156,6 +156,11 @@ namespace BANWlLib.BattleSystem
                 return ext.exSkillMultiplierOffset;
             }
 
+            if (statDef == BattleStatDefOf.BANW_NormalAttackMultiplier)
+            {
+                return ext.normalAttackStatOffset;
+            }
+
             if (statDef == BattleStatDefOf.BANW_BaseMasteryMultiplier)
             {
                 return ext.baseMasteryMultiplierOffset;
@@ -208,6 +213,17 @@ namespace BANWlLib.BattleSystem
 
             float multiplier = pawn.GetStatValue(BattleStatDefOf.BANW_BaseMasteryMultiplier);
             return Mathf.Max(0f, multiplier);
+        }
+
+        // 获取普通攻击倍率，负责让原版武器平A读取角色面板上的普通攻击倍率 StatDef。
+        public static float GetNormalAttackMultiplier(Pawn pawn)
+        {
+            if (pawn == null)
+            {
+                return 1f;
+            }
+
+            return Mathf.Max(0f, pawn.GetStatValue(BattleStatDefOf.BANW_NormalAttackMultiplier));
         }
 
         // 获取升级攻击力倍率，负责把等级状态里的攻击成长转为角色自身攻击力乘区。
@@ -299,7 +315,7 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        // 缩放普通武器伤害，负责让武器弹丸按角色自身攻击力和攻击力加成显示。
+        // 缩放普通武器伤害，负责让武器弹丸按角色自身攻击力、攻击力加成和普通攻击倍率显示。
         public static float ScaleWeaponDamageBase(Pawn pawn, float weaponBaseDamage)
         {
             if (pawn == null)
@@ -307,7 +323,7 @@ namespace BANWlLib.BattleSystem
                 return Mathf.Max(0f, weaponBaseDamage);
             }
 
-            return Mathf.Max(0f, GetFinalAttackPower(pawn, weaponBaseDamage) * GetAttackMultiplier(pawn));
+            return Mathf.Max(0f, GetFinalAttackPower(pawn, weaponBaseDamage) * GetAttackMultiplier(pawn) * GetNormalAttackMultiplier(pawn));
         }
 
         // 获取升级治愈力倍率，负责把等级状态和叠层状态转为治愈力升级乘区。
@@ -452,6 +468,7 @@ namespace BANWlLib.BattleSystem
                 casterLabel = pawn.LabelShortCap,
                 attackLevelMultiplier = GetAttackLevelMultiplier(pawn),
                 attackMultiplier = attackMultiplier,
+                normalAttackStatMultiplier = GetNormalAttackMultiplier(pawn),
                 baseMasteryMultiplier = GetBaseMasteryMultiplier(pawn),
                 weaponBaseAttack = weaponBaseAttack,
                 attackPower = GetFinalAttackPower(pawn, weaponBaseAttack),
@@ -476,10 +493,11 @@ namespace BANWlLib.BattleSystem
             float weaponBaseAttack = ResolveWeaponBaseAttack(request, casterPawn);
             float attackPower = request.snapshot != null ? request.snapshot.attackPower : GetFinalAttackPower(casterPawn, weaponBaseAttack);
             float attackMultiplier = request.snapshot != null ? request.snapshot.attackMultiplier : GetAttackMultiplier(casterPawn);
-            float actionMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.normalAttackMultiplier) : Mathf.Max(0f, request.attackPowerRatio);
+            float actionMultiplier = request.isNormalAttack ? 1f : Mathf.Max(0f, request.attackPowerRatio);
+            float normalAttackStatMultiplier = request.useNormalAttackStat ? ResolveNormalAttackMultiplier(request, casterPawn) : 1f;
             float baseMasteryMultiplier = request.snapshot != null ? request.snapshot.baseMasteryMultiplier : GetBaseMasteryMultiplier(casterPawn);
             float masteryMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.baseMasteryMultiplier) * baseMasteryMultiplier : 1f;
-            float amount = attackPower * actionMultiplier * attackMultiplier * masteryMultiplier;
+            float amount = attackPower * attackMultiplier * normalAttackStatMultiplier * actionMultiplier * masteryMultiplier;
 
             float critMultiplier = 1f;
             bool canCrit = request.canCrit && !DamageFontRuleUtility.IsCriticalDisabled(request.damageDef);
@@ -498,6 +516,17 @@ namespace BANWlLib.BattleSystem
 
             result.finalAmount = Mathf.Max(0f, amount);
             return result;
+        }
+
+        // 解析普通攻击倍率，负责让平A请求优先使用施法快照，其次读取当前角色 StatDef。
+        private static float ResolveNormalAttackMultiplier(BattleDamageRequest request, Pawn casterPawn)
+        {
+            if (request?.snapshot != null)
+            {
+                return Mathf.Max(0f, request.snapshot.normalAttackStatMultiplier);
+            }
+
+            return GetNormalAttackMultiplier(casterPawn);
         }
 
         // 解析本次攻击的武器初始攻击力，负责优先使用投射物伤害，其次使用施法者主武器子弹。
@@ -642,7 +671,6 @@ namespace BANWlLib.BattleSystem
             if (shieldHediff == null)
             {
                 shieldHediff = HediffMaker.MakeHediff(request.shieldHediffDef, request.target);
-                request.target.health.AddHediff(shieldHediff);
             }
 
             HediffComp_BattleShield shieldComp = shieldHediff.TryGetComp<HediffComp_BattleShield>();
@@ -653,6 +681,11 @@ namespace BANWlLib.BattleSystem
             }
 
             shieldComp.AddShield(result.finalAmount);
+            if (!request.target.health.hediffSet.HasHediff(request.shieldHediffDef))
+            {
+                request.target.health.AddHediff(shieldHediff);
+            }
+
             HediffComp_Disappears disappears = shieldHediff.TryGetComp<HediffComp_Disappears>();
             if (disappears != null)
             {
@@ -686,7 +719,6 @@ namespace BANWlLib.BattleSystem
                     damageDef = action.damageDef,
                     weaponBaseAttack = action.weaponBaseAttack,
                     attackPowerRatio = action.attackPowerRatio,
-                    normalAttackMultiplier = action.normalAttackMultiplier,
                     baseMasteryMultiplier = action.baseMasteryMultiplier,
                     penetration = action.penetration,
                     isNormalAttack = action.isNormalAttack,

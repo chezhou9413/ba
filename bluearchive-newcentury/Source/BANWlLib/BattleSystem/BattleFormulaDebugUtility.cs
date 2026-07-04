@@ -39,7 +39,8 @@ namespace BANWlLib.BattleSystem
             float weaponBaseAttack = ResolveWeaponBaseAttack(request, casterPawn);
             float attackPower = request.snapshot != null ? request.snapshot.attackPower : BattleStatUtility.GetFinalAttackPower(casterPawn, weaponBaseAttack);
             float attackMultiplier = request.snapshot != null ? request.snapshot.attackMultiplier : BattleStatUtility.GetAttackMultiplier(casterPawn);
-            float actionMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.normalAttackMultiplier) : Mathf.Max(0f, request.attackPowerRatio);
+            float actionMultiplier = request.isNormalAttack ? 1f : Mathf.Max(0f, request.attackPowerRatio);
+            float normalAttackStatMultiplier = request.useNormalAttackStat ? ResolveNormalAttackMultiplier(request, casterPawn) : 1f;
             float baseMasteryMultiplier = request.snapshot != null ? request.snapshot.baseMasteryMultiplier : BattleStatUtility.GetBaseMasteryMultiplier(casterPawn);
             float masteryMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.baseMasteryMultiplier) * baseMasteryMultiplier : 1f;
             bool canCrit = request.canCrit && !DamageFontRuleUtility.IsCriticalDisabled(request.damageDef);
@@ -65,6 +66,7 @@ namespace BANWlLib.BattleSystem
                 + "，目标=" + (request.target?.LabelShortCap ?? "空")
                 + "，DamageDef=" + (request.damageDef?.defName ?? "空")
                 + "，是否普通攻击=" + request.isNormalAttack
+                + "，是否平A倍率=" + request.useNormalAttackStat
                 + "，是否EX=" + request.isExSkill
                 + "，是否强制暴击=" + alwaysCrit);
 
@@ -74,6 +76,7 @@ namespace BANWlLib.BattleSystem
                     + FormatNumber(weaponBaseAttack)
                     + "，快照攻击力=" + FormatNumber(attackPower)
                     + "，快照攻击力加成=" + FormatNumber(attackMultiplier)
+                    + "，快照普通攻击倍率=" + FormatNumber(request.snapshot.normalAttackStatMultiplier)
                     + "，快照基础精通=" + FormatNumber(baseMasteryMultiplier));
             }
             else
@@ -89,8 +92,9 @@ namespace BANWlLib.BattleSystem
 
             Log.Message("[BANW公式][伤害#" + traceId + "][预估] 结算="
                 + FormatNumber(attackPower)
-                + " x 技能倍率" + FormatNumber(actionMultiplier)
                 + " x 攻击力加成" + FormatNumber(attackMultiplier)
+                + (request.useNormalAttackStat ? " x 普通攻击倍率Stat" + FormatNumber(normalAttackStatMultiplier) : "")
+                + " x 技能倍率" + FormatNumber(actionMultiplier)
                 + " x 熟练补正(" + FormatNumber(request.baseMasteryMultiplier) + " x " + FormatNumber(baseMasteryMultiplier) + ")=" + FormatNumber(masteryMultiplier)
                 + " x 暴击" + FormatNumber(critMultiplier)
                 + " x 克制" + FormatNumber(result.affinityMultiplier)
@@ -98,6 +102,17 @@ namespace BANWlLib.BattleSystem
                 + " = 送入伤害" + FormatNumber(result.finalAmount)
                 + "；暴击率(扣抵抗后)=" + FormatPercent(critChance)
                 + "；暴击伤害(扣抵抗后)=" + FormatNumber(critDamage));
+        }
+
+        // 解析普通攻击倍率日志值，负责让调试输出和真实结算保持同一口径。
+        private static float ResolveNormalAttackMultiplier(BattleDamageRequest request, Pawn casterPawn)
+        {
+            if (request?.snapshot != null)
+            {
+                return Mathf.Max(0f, request.snapshot.normalAttackStatMultiplier);
+            }
+
+            return BattleStatUtility.GetNormalAttackMultiplier(casterPawn);
         }
 
         // 记录统一伤害实际结果，负责在真正受伤后补上 DamageInfo 和最终生效值。
