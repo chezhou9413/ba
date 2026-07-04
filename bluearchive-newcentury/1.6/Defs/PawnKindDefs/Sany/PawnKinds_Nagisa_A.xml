@@ -1,0 +1,219 @@
+
+<Defs>
+
+
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Nagisa_A</defName>
+		<label>-渚(泳装)-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
+		
+		<humanPregnancyChance>0.0</humanPregnancyChance>
+		<fixedGender>Female</fixedGender>
+		<abilities>
+        <li>BAWN_Nagisa_EXX</li>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstorySany</li>
+					<li>BANW_BackstoryNagisa</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Nagisa_A</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Nagisa_A</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>2</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>14~15</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>7~8</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>15</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
+			<BAWC_TraitDef_zhendong>0</BAWC_TraitDef_zhendong>
+			<BAWC_TraitDef_tanli>0</BAWC_TraitDef_tanli>
+			<BAWC_TraitDef_Nagisa_A_A>0</BAWC_TraitDef_Nagisa_A_A>
+		</forcedTraits>
+		<modExtensions>
+			
+			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
+				<!-- 攻击类型，作为属性克制矩阵的行。 -->
+				<damageType>Vibration</damageType>
+				<!-- 护甲类型，作为属性克制矩阵的列。 -->
+				<defenseType>Vibration</defenseType>
+<!-- 学生初始生命值，参与生命值公式的基础乘算项，1 表示 100 点生命值。 -->
+				<initialHealth>2.94</initialHealth>
+				<!-- 学生基础攻击力平加，进入技能、武器显示和统一伤害结算。 -->
+				<attackFlat>0</attackFlat>
+				<!-- 学生基础攻击力百分比，0.26 表示最终攻击力额外增加 26%。 -->
+				<attackPercent>0</attackPercent>
+				<!-- 学生初始治愈力，参与治愈力公式的基础乘算项。 -->
+				<initialHeal>178</initialHeal>
+				<!-- 学生基础受回复倍率平加，0.2 表示额外增加 20% 受疗。 -->
+				<healReceivedMultiplierOffset>0</healReceivedMultiplierOffset>
+				<!-- 学生基础 EX 技能倍率平加，0.5 表示 EX 技能倍率提高到 150%。 -->
+				<exSkillMultiplierOffset>0</exSkillMultiplierOffset>
+			</li>
+			<li Class="BANWlLib.BattleSystem.BattleStarGrowthExtension">
+				<!-- 星级生命百分比成长，starValues 从 1 星到 5 星依次读取。 -->
+				<healthPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.08</li>
+						<li>0.16</li>
+						<li>0.25</li>
+						<li>0.35</li>
+					</starValues>
+				</healthPercent>
+				<!-- 星级攻击百分比成长，参与 BattleStatUtility 的最终攻击力计算。 -->
+				<attackPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.12</li>
+						<li>0.25</li>
+						<li>0.35</li>
+						<li>0.50</li>
+					</starValues>
+				</attackPercent>
+				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
+				<!-- 升星固定治愈力成长，进入治愈力公式的固定加算项。 -->
+				<healPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.1</li>
+						<li>0.2</li>
+						<li>0.3</li>
+						<li>0.45</li>
+					</starValues>
+				</healPercent>
+			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
+				<starInterval>0.5</starInterval>
+				<showProgressBar>false</showProgressBar>
+				<starProgressRatios>
+					<li>0.0</li>
+					<li>0.09</li>
+					<li>0.33</li>
+					<li>0.63</li>
+					<li>1.0</li>
+				</starProgressRatios>
+				<starSize>28</starSize>
+				<starTexturePath>UI/StarIcon</starTexturePath>
+				<!-- 起始星星经验：用于没有存档数据的新生成学生 -->
+                <initialExperience>110</initialExperience>
+                <!-- 升星特效占位：后续可替换为学生专属 EffecterDef -->
+                <starUpEffects>
+                    <li>BANW_Effecter_B</li>
+                </starUpEffects>
+                <!-- 升星语音占位：后续可替换为学生专属 SoundDef -->
+                <starUpSounds>
+                    <li>Nagisa_A_levelup_A</li>
+                    <li>Nagisa_A_levelup_B</li>
+					<li>Nagisa_A_levelup_C</li>
+					<li>Nagisa_A_levelup_D</li>
+                </starUpSounds>
+                <!-- 升级特效占位：后续可替换为学生专属 EffecterDef -->
+                <levelUpEffects>
+                    <li>BANW_Effecter_LevelUp</li>
+                </levelUpEffects>
+                <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
+                <levelUpSounds>
+                     <li>NNagisa_A_levelup_A</li>
+                    <li>Nagisa_A_levelup_B</li>
+					<li>Nagisa_A_levelup_C</li>
+					<li>Nagisa_A_levelup_D</li>
+                </levelUpSounds>
+			</li>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>渚</kindName>
+				<kindDesName>桐藤 渚</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>17</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Nagisa/Halo/Nagisa_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Nagisa_A/Head/Nagisa_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Nagisa_A/Body/Nagisa_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Nagisa_A/Hair/Nagisa_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Sany/Nagisa_A/Hair/Nagisa_BackHair</ReplacePath>
+					</li>
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Nagisa_A_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;工作海滨平衡&lt;/color&gt;</label>
+                <description>被动技能:自身暴击伤害增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_CriticalDamage>0.26</BANW_CriticalDamage>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+</Defs>

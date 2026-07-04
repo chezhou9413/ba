@@ -207,7 +207,6 @@
 		</modExtensions>
 	</PawnKindDef>
 
-<<<<<<< HEAD
 	<TraitDef>
 		<defName>BAWC_TraitDef_Mika_A_A</defName>
 		<commonality>0</commonality>
@@ -239,6 +238,3 @@
 	</TraitDef>
 	
 </Defs>
-=======
-</Defs>
->>>>>>> aac035979ce2bd30bc0be50b998501f26a6b693e

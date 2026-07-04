@@ -18,6 +18,7 @@
       <li>
         <minSeverity>0.001</minSeverity>
         <label>等级 1</label>
+        <totalBleedFactor>1.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.0000</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.0</ArmorRating_Sharp>
@@ -26,11 +27,13 @@
           <BANW_HealthLevelMultiplier>0.0000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.00</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.0000</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.05</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.010</minSeverity>
         <label>等级 2</label>
+        <totalBleedFactor>0.99</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.0913</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.01</ArmorRating_Sharp>
@@ -39,11 +42,13 @@
           <BANW_HealthLevelMultiplier>0.0900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.02</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.0202</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.06</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.035</minSeverity>
         <label>等级 3</label>
+        <totalBleedFactor>0.98</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.1827</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.02</ArmorRating_Sharp>
@@ -52,11 +57,13 @@
           <BANW_HealthLevelMultiplier>0.1800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.03</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.0404</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.06</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.075</minSeverity>
         <label>等级 4</label>
+        <totalBleedFactor>0.96</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.2740</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.02</ArmorRating_Sharp>
@@ -65,11 +72,13 @@
           <BANW_HealthLevelMultiplier>0.2700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.05</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.0607</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.07</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.130</minSeverity>
         <label>等级 5</label>
+        <totalBleedFactor>0.95</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.3654</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
@@ -78,11 +87,13 @@
           <BANW_HealthLevelMultiplier>0.3600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.07</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.0809</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.08</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.200</minSeverity>
         <label>等级 6</label>
+        <totalBleedFactor>0.93</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.4567</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
@@ -91,11 +102,13 @@
           <BANW_HealthLevelMultiplier>0.4500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.08</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.1011</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.08</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.275</minSeverity>
         <label>等级 7</label>
+        <totalBleedFactor>0.92</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.5481</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
@@ -104,11 +117,13 @@
           <BANW_HealthLevelMultiplier>0.5400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.10</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.1213</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.09</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.355</minSeverity>
         <label>等级 8</label>
+        <totalBleedFactor>0.90</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.6394</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.04</ArmorRating_Sharp>
@@ -117,11 +132,13 @@
           <BANW_HealthLevelMultiplier>0.6300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.12</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.1416</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.10</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.445</minSeverity>
         <label>等级 9</label>
+        <totalBleedFactor>0.89</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.7308</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.04</ArmorRating_Sharp>
@@ -130,11 +147,13 @@
           <BANW_HealthLevelMultiplier>0.7200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.13</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.1618</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.10</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.540</minSeverity>
         <label>等级 10</label>
+        <totalBleedFactor>0.88</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.8221</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.04</ArmorRating_Sharp>
@@ -143,11 +162,13 @@
           <BANW_HealthLevelMultiplier>0.8100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.15</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.1820</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.11</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.645</minSeverity>
         <label>等级 11</label>
+        <totalBleedFactor>0.86</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>0.9135</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
@@ -156,11 +177,13 @@
           <BANW_HealthLevelMultiplier>0.9000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.17</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.2022</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.12</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.760</minSeverity>
         <label>等级 12</label>
+        <totalBleedFactor>0.85</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.0048</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
@@ -169,11 +192,13 @@
           <BANW_HealthLevelMultiplier>0.9900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.19</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.2225</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.12</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>0.890</minSeverity>
         <label>等级 13</label>
+        <totalBleedFactor>0.84</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.0962</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
@@ -182,11 +207,13 @@
           <BANW_HealthLevelMultiplier>1.0800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.20</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.2427</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.13</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>1.035</minSeverity>
         <label>等级 14</label>
+        <totalBleedFactor>0.82</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.1875</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
@@ -195,11 +222,13 @@
           <BANW_HealthLevelMultiplier>1.1700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.22</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.2629</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.14</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>1.195</minSeverity>
         <label>等级 15</label>
+        <totalBleedFactor>0.81</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.2789</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
@@ -208,11 +237,13 @@
           <BANW_HealthLevelMultiplier>1.2600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.24</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.2831</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.14</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>1.370</minSeverity>
         <label>等级 16</label>
+        <totalBleedFactor>0.80</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.3702</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
@@ -221,11 +252,13 @@
           <BANW_HealthLevelMultiplier>1.3500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.25</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.3034</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.15</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>1.555</minSeverity>
         <label>等级 17</label>
+        <totalBleedFactor>0.78</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.4616</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
@@ -234,11 +267,13 @@
           <BANW_HealthLevelMultiplier>1.4400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.27</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.3236</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.16</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>1.755</minSeverity>
         <label>等级 18</label>
+        <totalBleedFactor>0.77</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.5529</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
@@ -247,11 +282,13 @@
           <BANW_HealthLevelMultiplier>1.5300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.29</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.3438</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.16</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>1.970</minSeverity>
         <label>等级 19</label>
+        <totalBleedFactor>0.76</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.6443</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.08</ArmorRating_Sharp>
@@ -260,11 +297,13 @@
           <BANW_HealthLevelMultiplier>1.6200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.30</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.3640</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.17</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>2.200</minSeverity>
         <label>等级 20</label>
+        <totalBleedFactor>0.74</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.7356</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.09</ArmorRating_Sharp>
@@ -273,11 +312,13 @@
           <BANW_HealthLevelMultiplier>1.7100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.32</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.3843</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.18</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>2.585</minSeverity>
         <label>等级 21</label>
+        <totalBleedFactor>0.73</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.8270</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.09</ArmorRating_Sharp>
@@ -286,11 +327,13 @@
           <BANW_HealthLevelMultiplier>1.8000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.34</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.4045</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.18</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>3.010</minSeverity>
         <label>等级 22</label>
+        <totalBleedFactor>0.72</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>1.9183</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
@@ -299,11 +342,13 @@
           <BANW_HealthLevelMultiplier>1.8900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.35</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.4247</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.19</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>3.490</minSeverity>
         <label>等级 23</label>
+        <totalBleedFactor>0.70</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.0097</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.11</ArmorRating_Sharp>
@@ -312,11 +357,13 @@
           <BANW_HealthLevelMultiplier>1.9800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.37</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.4449</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.20</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>4.025</minSeverity>
         <label>等级 24</label>
+        <totalBleedFactor>0.69</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.1010</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.12</ArmorRating_Sharp>
@@ -325,11 +372,13 @@
           <BANW_HealthLevelMultiplier>2.0700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.39</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.4652</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.20</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>4.605</minSeverity>
         <label>等级 25</label>
+        <totalBleedFactor>0.68</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.1924</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.12</ArmorRating_Sharp>
@@ -338,11 +387,13 @@
           <BANW_HealthLevelMultiplier>2.1600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.40</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.4854</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.21</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>5.240</minSeverity>
         <label>等级 26</label>
+        <totalBleedFactor>0.66</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.2837</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.14</ArmorRating_Sharp>
@@ -351,11 +402,13 @@
           <BANW_HealthLevelMultiplier>2.2500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.42</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.5056</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.22</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>6.025</minSeverity>
         <label>等级 27</label>
+        <totalBleedFactor>0.65</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.3751</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
@@ -364,11 +417,13 @@
           <BANW_HealthLevelMultiplier>2.3400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.44</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.5258</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.22</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>6.870</minSeverity>
         <label>等级 28</label>
+        <totalBleedFactor>0.64</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.4664</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
@@ -377,11 +432,13 @@
           <BANW_HealthLevelMultiplier>2.4300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.45</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.5461</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.23</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>7.765</minSeverity>
         <label>等级 29</label>
+        <totalBleedFactor>0.62</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.5578</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
@@ -390,11 +447,13 @@
           <BANW_HealthLevelMultiplier>2.5200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.47</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.5663</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.24</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>8.690</minSeverity>
         <label>等级 30</label>
+        <totalBleedFactor>0.61</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.6491</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.16</ArmorRating_Sharp>
@@ -403,11 +462,13 @@
           <BANW_HealthLevelMultiplier>2.6100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.49</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.5865</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.24</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>9.665</minSeverity>
         <label>等级 31</label>
+        <totalBleedFactor>0.60</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.7405</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.17</ArmorRating_Sharp>
@@ -416,11 +477,13 @@
           <BANW_HealthLevelMultiplier>2.7000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.51</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.6067</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.25</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>10.675</minSeverity>
         <label>等级 32</label>
+        <totalBleedFactor>0.58</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.8318</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
@@ -429,11 +492,13 @@
           <BANW_HealthLevelMultiplier>2.7900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.52</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.6270</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.26</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>11.770</minSeverity>
         <label>等级 33</label>
+        <totalBleedFactor>0.57</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>2.9232</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.19</ArmorRating_Sharp>
@@ -442,11 +507,13 @@
           <BANW_HealthLevelMultiplier>2.8800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.54</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.6472</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.26</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>12.935</minSeverity>
         <label>等级 34</label>
+        <totalBleedFactor>0.56</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.0145</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
@@ -455,11 +522,13 @@
           <BANW_HealthLevelMultiplier>2.9700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.56</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.6674</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.27</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>14.185</minSeverity>
         <label>等级 35</label>
+        <totalBleedFactor>0.54</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.1059</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.21</ArmorRating_Sharp>
@@ -468,11 +537,13 @@
           <BANW_HealthLevelMultiplier>3.0600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.57</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.6876</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.28</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>15.520</minSeverity>
         <label>等级 36</label>
+        <totalBleedFactor>0.53</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.1972</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.23</ArmorRating_Sharp>
@@ -481,11 +552,13 @@
           <BANW_HealthLevelMultiplier>3.1500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.59</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.7079</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.28</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>16.945</minSeverity>
         <label>等级 37</label>
+        <totalBleedFactor>0.52</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.2886</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
@@ -494,11 +567,13 @@
           <BANW_HealthLevelMultiplier>3.2400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.61</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.7281</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.29</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>18.490</minSeverity>
         <label>等级 38</label>
+        <totalBleedFactor>0.50</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.3800</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.29</ArmorRating_Sharp>
@@ -507,11 +582,13 @@
           <BANW_HealthLevelMultiplier>3.3300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.62</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.7483</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.30</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>20.115</minSeverity>
         <label>等级 39</label>
+        <totalBleedFactor>0.49</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.4713</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.33</ArmorRating_Sharp>
@@ -520,11 +597,13 @@
           <BANW_HealthLevelMultiplier>3.4200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.64</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.7685</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.30</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>21.800</minSeverity>
         <label>等级 40</label>
+        <totalBleedFactor>0.48</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.5627</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
@@ -533,11 +612,13 @@
           <BANW_HealthLevelMultiplier>3.5100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.66</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.7888</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.31</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>23.535</minSeverity>
         <label>等级 41</label>
+        <totalBleedFactor>0.46</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.6540</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.38</ArmorRating_Sharp>
@@ -546,11 +627,13 @@
           <BANW_HealthLevelMultiplier>3.6000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.67</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.8090</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.32</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>25.335</minSeverity>
         <label>等级 42</label>
+        <totalBleedFactor>0.45</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.7454</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.39</ArmorRating_Sharp>
@@ -559,11 +642,13 @@
           <BANW_HealthLevelMultiplier>3.6900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.69</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.8292</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.32</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>27.310</minSeverity>
         <label>等级 43</label>
+        <totalBleedFactor>0.44</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.8368</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
@@ -572,11 +657,13 @@
           <BANW_HealthLevelMultiplier>3.7800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.71</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.8494</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.33</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>29.475</minSeverity>
         <label>等级 44</label>
+        <totalBleedFactor>0.42</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>3.9281</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.41</ArmorRating_Sharp>
@@ -585,11 +672,13 @@
           <BANW_HealthLevelMultiplier>3.8700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.72</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.8697</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.34</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>31.845</minSeverity>
         <label>等级 45</label>
+        <totalBleedFactor>0.41</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.0195</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.41</ArmorRating_Sharp>
@@ -598,11 +687,13 @@
           <BANW_HealthLevelMultiplier>3.9600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.74</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.8899</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.34</PainShockThreshold>
         </statOffsets>
       </li>
       <li>
         <minSeverity>34.430</minSeverity>
         <label>等级 46</label>
+        <totalBleedFactor>0.40</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.1109</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.41</ArmorRating_Sharp>
@@ -611,6 +702,7 @@
           <BANW_HealthLevelMultiplier>4.0500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.76</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.9101</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.35</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -622,6 +714,7 @@
       <li>
         <minSeverity>37.245</minSeverity>
         <label>等级 47</label>
+        <totalBleedFactor>0.38</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.2022</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
@@ -630,6 +723,7 @@
           <BANW_HealthLevelMultiplier>4.1400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.77</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.9303</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.36</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -641,6 +735,7 @@
       <li>
         <minSeverity>40.310</minSeverity>
         <label>等级 48</label>
+        <totalBleedFactor>0.37</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.2936</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.47</ArmorRating_Sharp>
@@ -649,6 +744,7 @@
           <BANW_HealthLevelMultiplier>4.2300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.79</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.9506</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.36</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -660,6 +756,7 @@
       <li>
         <minSeverity>43.650</minSeverity>
         <label>等级 49</label>
+        <totalBleedFactor>0.36</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.3849</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.52</ArmorRating_Sharp>
@@ -668,6 +765,7 @@
           <BANW_HealthLevelMultiplier>4.3200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.81</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.9708</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.37</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -679,6 +777,7 @@
       <li>
         <minSeverity>47.295</minSeverity>
         <label>等级 50</label>
+        <totalBleedFactor>0.34</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.4763</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
@@ -687,6 +786,7 @@
           <BANW_HealthLevelMultiplier>4.4100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.82</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>0.9910</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.38</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -699,6 +799,7 @@
         <minSeverity>51.280</minSeverity>
         <label>等级 51</label>
         <painFactor>0.88</painFactor>
+        <totalBleedFactor>0.33</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.5677</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
@@ -707,6 +808,7 @@
           <BANW_HealthLevelMultiplier>4.5000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.84</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.0112</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.38</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -719,6 +821,7 @@
         <minSeverity>55.645</minSeverity>
         <label>等级 52</label>
         <painFactor>0.87</painFactor>
+        <totalBleedFactor>0.32</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.6590</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.56</ArmorRating_Sharp>
@@ -727,6 +830,7 @@
           <BANW_HealthLevelMultiplier>4.5900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.86</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.0315</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.39</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -739,6 +843,7 @@
         <minSeverity>60.435</minSeverity>
         <label>等级 53</label>
         <painFactor>0.86</painFactor>
+        <totalBleedFactor>0.30</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.7504</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.57</ArmorRating_Sharp>
@@ -747,6 +852,7 @@
           <BANW_HealthLevelMultiplier>4.6800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.87</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.0517</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.40</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -759,6 +865,7 @@
         <minSeverity>65.700</minSeverity>
         <label>等级 54</label>
         <painFactor>0.85</painFactor>
+        <totalBleedFactor>0.29</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.8418</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
@@ -767,6 +874,7 @@
           <BANW_HealthLevelMultiplier>4.7700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.89</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.0719</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.41</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -779,6 +887,7 @@
         <minSeverity>71.495</minSeverity>
         <label>等级 55</label>
         <painFactor>0.84</painFactor>
+        <totalBleedFactor>0.28</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>4.9331</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.61</ArmorRating_Sharp>
@@ -787,6 +896,7 @@
           <BANW_HealthLevelMultiplier>4.8600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.91</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.0921</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.41</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -799,6 +909,7 @@
         <minSeverity>77.880</minSeverity>
         <label>等级 56</label>
         <painFactor>0.83</painFactor>
+        <totalBleedFactor>0.27</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.0245</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.62</ArmorRating_Sharp>
@@ -807,6 +918,7 @@
           <BANW_HealthLevelMultiplier>4.9500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.92</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.1124</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.42</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -819,6 +931,7 @@
         <minSeverity>84.920</minSeverity>
         <label>等级 57</label>
         <painFactor>0.82</painFactor>
+        <totalBleedFactor>0.26</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.1158</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.67</ArmorRating_Sharp>
@@ -827,6 +940,7 @@
           <BANW_HealthLevelMultiplier>5.0400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.94</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.1326</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.43</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -839,6 +953,7 @@
         <minSeverity>92.685</minSeverity>
         <label>等级 58</label>
         <painFactor>0.81</painFactor>
+        <totalBleedFactor>0.25</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.2072</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.67</ArmorRating_Sharp>
@@ -847,6 +962,7 @@
           <BANW_HealthLevelMultiplier>5.1300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.96</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.1528</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.43</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -859,6 +975,7 @@
         <minSeverity>101.250</minSeverity>
         <label>等级 59</label>
         <painFactor>0.80</painFactor>
+        <totalBleedFactor>0.24</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.2985</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.69</ArmorRating_Sharp>
@@ -867,6 +984,7 @@
           <BANW_HealthLevelMultiplier>5.2200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.97</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.1730</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.44</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -879,6 +997,7 @@
         <minSeverity>110.695</minSeverity>
         <label>等级 60</label>
         <painFactor>0.75</painFactor>
+        <totalBleedFactor>0.22</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.3899</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.70</ArmorRating_Sharp>
@@ -887,6 +1006,7 @@
           <BANW_HealthLevelMultiplier>5.3100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>0.99</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.1933</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.45</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -899,6 +1019,7 @@
         <minSeverity>121.105</minSeverity>
         <label>等级 61</label>
         <painFactor>0.74</painFactor>
+        <totalBleedFactor>0.21</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.4812</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.73</ArmorRating_Sharp>
@@ -907,6 +1028,7 @@
           <BANW_HealthLevelMultiplier>5.4000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.01</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.2135</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.45</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -919,6 +1041,7 @@
         <minSeverity>132.570</minSeverity>
         <label>等级 62</label>
         <painFactor>0.73</painFactor>
+        <totalBleedFactor>0.20</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.5726</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.76</ArmorRating_Sharp>
@@ -927,6 +1050,7 @@
           <BANW_HealthLevelMultiplier>5.4900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.02</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.2337</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.46</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -939,6 +1063,7 @@
         <minSeverity>145.185</minSeverity>
         <label>等级 63</label>
         <painFactor>0.72</painFactor>
+        <totalBleedFactor>0.18</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.6639</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.77</ArmorRating_Sharp>
@@ -947,6 +1072,7 @@
           <BANW_HealthLevelMultiplier>5.5800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.04</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.2539</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.47</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -959,6 +1085,7 @@
         <minSeverity>159.050</minSeverity>
         <label>等级 64</label>
         <painFactor>0.71</painFactor>
+        <totalBleedFactor>0.17</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.7553</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
@@ -967,6 +1094,7 @@
           <BANW_HealthLevelMultiplier>5.6700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.06</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.2742</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.47</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -979,6 +1107,7 @@
         <minSeverity>174.270</minSeverity>
         <label>等级 65</label>
         <painFactor>0.70</painFactor>
+        <totalBleedFactor>0.16</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.8466</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
@@ -987,6 +1116,7 @@
           <BANW_HealthLevelMultiplier>5.7600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.08</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.2944</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.48</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -999,6 +1129,7 @@
         <minSeverity>190.955</minSeverity>
         <label>等级 66</label>
         <painFactor>0.69</painFactor>
+        <totalBleedFactor>0.15</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>5.9380</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
@@ -1007,6 +1138,7 @@
           <BANW_HealthLevelMultiplier>5.8500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.1</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.3146</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.49</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1019,6 +1151,7 @@
         <minSeverity>209.220</minSeverity>
         <label>等级 67</label>
         <painFactor>0.68</painFactor>
+        <totalBleedFactor>0.14</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.0293</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.87</ArmorRating_Sharp>
@@ -1027,6 +1160,7 @@
           <BANW_HealthLevelMultiplier>5.9400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.13</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.3348</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.49</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1039,6 +1173,7 @@
         <minSeverity>229.185</minSeverity>
         <label>等级 68</label>
         <painFactor>0.67</painFactor>
+        <totalBleedFactor>0.13</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.1207</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
@@ -1047,6 +1182,7 @@
           <BANW_HealthLevelMultiplier>6.0300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.15</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.3551</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.50</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1059,6 +1195,7 @@
         <minSeverity>250.975</minSeverity>
         <label>等级 69</label>
         <painFactor>0.66</painFactor>
+        <totalBleedFactor>0.12</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.2121</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
@@ -1067,6 +1204,7 @@
           <BANW_HealthLevelMultiplier>6.1200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.18</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.3753</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.50</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1079,6 +1217,7 @@
         <minSeverity>274.720</minSeverity>
         <label>等级 70</label>
         <painFactor>0.65</painFactor>
+        <totalBleedFactor>0.10</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.3034</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
@@ -1087,6 +1226,7 @@
           <BANW_HealthLevelMultiplier>6.2100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.2</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.3955</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.51</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1099,6 +1239,7 @@
         <minSeverity>300.420</minSeverity>
         <label>等级 71</label>
         <painFactor>0.64</painFactor>
+        <totalBleedFactor>0.09</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.3948</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.91</ArmorRating_Sharp>
@@ -1107,6 +1248,7 @@
           <BANW_HealthLevelMultiplier>6.3000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.22</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.4157</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.51</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1119,6 +1261,7 @@
         <minSeverity>328.075</minSeverity>
         <label>等级 72</label>
         <painFactor>0.63</painFactor>
+        <totalBleedFactor>0.08</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.4861</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.94</ArmorRating_Sharp>
@@ -1127,6 +1270,7 @@
           <BANW_HealthLevelMultiplier>6.3900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.24</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.4360</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.52</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1139,6 +1283,7 @@
         <minSeverity>357.685</minSeverity>
         <label>等级 73</label>
         <painFactor>0.62</painFactor>
+        <totalBleedFactor>0.07</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.5775</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.94</ArmorRating_Sharp>
@@ -1147,6 +1292,7 @@
           <BANW_HealthLevelMultiplier>6.4800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.26</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.4562</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.53</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1159,6 +1305,7 @@
         <minSeverity>389.250</minSeverity>
         <label>等级 74</label>
         <painFactor>0.61</painFactor>
+        <totalBleedFactor>0.06</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.6689</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.94</ArmorRating_Sharp>
@@ -1167,6 +1314,7 @@
           <BANW_HealthLevelMultiplier>6.5700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.30</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.4764</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.53</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1179,6 +1327,7 @@
         <minSeverity>422.770</minSeverity>
         <label>等级 75</label>
         <painFactor>0.60</painFactor>
+        <totalBleedFactor>0.05</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.7602</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.95</ArmorRating_Sharp>
@@ -1187,6 +1336,7 @@
           <BANW_HealthLevelMultiplier>6.6600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.32</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.4966</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.54</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1199,6 +1349,7 @@
         <minSeverity>458.245</minSeverity>
         <label>等级 76</label>
         <painFactor>0.59</painFactor>
+        <totalBleedFactor>0.04</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.8516</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.97</ArmorRating_Sharp>
@@ -1208,6 +1359,7 @@
           <BANW_HealthLevelMultiplier>6.7500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.36</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.5169</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.55</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1220,6 +1372,7 @@
         <minSeverity>495.675</minSeverity>
         <label>等级 77</label>
         <painFactor>0.58</painFactor>
+        <totalBleedFactor>0.03</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>6.9430</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.97</ArmorRating_Sharp>
@@ -1229,6 +1382,7 @@
           <BANW_HealthLevelMultiplier>6.8400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.38</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.5371</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.55</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1241,6 +1395,7 @@
         <minSeverity>535.060</minSeverity>
         <label>等级 78</label>
         <painFactor>0.57</painFactor>
+        <totalBleedFactor>0.02</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.0343</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>0.99</ArmorRating_Sharp>
@@ -1250,6 +1405,7 @@
           <BANW_HealthLevelMultiplier>6.9300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.4</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.5573</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.56</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1262,6 +1418,7 @@
         <minSeverity>574.445</minSeverity>
         <label>等级 79</label>
         <painFactor>0.56</painFactor>
+        <totalBleedFactor>0.01</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.1257</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
@@ -1271,6 +1428,7 @@
           <BANW_HealthLevelMultiplier>7.0200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.43</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.5775</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.56</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1283,6 +1441,7 @@
         <minSeverity>613.830</minSeverity>
         <label>等级 80</label>
         <painFactor>0.55</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.2170</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
@@ -1292,6 +1451,7 @@
           <BANW_HealthLevelMultiplier>7.1100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.45</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.5978</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.57</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1304,6 +1464,7 @@
         <minSeverity>653.215</minSeverity>
         <label>等级 81</label>
         <painFactor>0.54</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.3084</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
@@ -1313,6 +1474,7 @@
           <BANW_HealthLevelMultiplier>7.2000</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.47</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.6180</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.58</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1325,6 +1487,7 @@
         <minSeverity>692.600</minSeverity>
         <label>等级 82</label>
         <painFactor>0.53</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.3997</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
@@ -1334,6 +1497,7 @@
           <BANW_HealthLevelMultiplier>7.2900</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.49</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.6382</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.58</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1346,6 +1510,7 @@
         <minSeverity>731.985</minSeverity>
         <label>等级 83</label>
         <painFactor>0.52</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.4911</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
@@ -1355,6 +1520,7 @@
           <BANW_HealthLevelMultiplier>7.3800</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.5</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.6584</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.59</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1367,6 +1533,7 @@
         <minSeverity>771.370</minSeverity>
         <label>等级 84</label>
         <painFactor>0.51</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.5824</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.08</ArmorRating_Sharp>
@@ -1376,6 +1543,7 @@
           <BANW_HealthLevelMultiplier>7.4700</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.52</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.6787</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.60</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1388,6 +1556,7 @@
         <minSeverity>814.665</minSeverity>
         <label>等级 85</label>
         <painFactor>0.50</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.6738</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.08</ArmorRating_Sharp>
@@ -1397,6 +1566,7 @@
           <BANW_HealthLevelMultiplier>7.5600</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.55</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.6989</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.60</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1409,6 +1579,7 @@
         <minSeverity>866.930</minSeverity>
         <label>等级 86</label>
         <painFactor>0.49</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.7651</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.14</ArmorRating_Sharp>
@@ -1418,6 +1589,7 @@
           <BANW_HealthLevelMultiplier>7.6500</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.7191</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.61</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1430,6 +1602,7 @@
         <minSeverity>936.130</minSeverity>
         <label>等级 87</label>
         <painFactor>0.48</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.8565</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.17</ArmorRating_Sharp>
@@ -1439,6 +1612,7 @@
           <BANW_HealthLevelMultiplier>7.7400</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.7393</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.61</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1451,6 +1625,7 @@
         <minSeverity>1020.550</minSeverity>
         <label>等级 88</label>
         <painFactor>0.47</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>7.9479</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.17</ArmorRating_Sharp>
@@ -1460,6 +1635,7 @@
           <BANW_HealthLevelMultiplier>7.8300</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.7596</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.62</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1472,6 +1648,7 @@
         <minSeverity>1123.540</minSeverity>
         <label>等级 89</label>
         <painFactor>0.46</painFactor>
+        <totalBleedFactor>0.00</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>8.0392</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.17</ArmorRating_Sharp>
@@ -1481,6 +1658,7 @@
           <BANW_HealthLevelMultiplier>7.9200</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.57</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.7798</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.62</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>
@@ -1493,6 +1671,7 @@
         <minSeverity>1249.185</minSeverity>
         <label>等级 90</label>
         <painFactor>0.45</painFactor>
+        <totalBleedFactor>0.30</totalBleedFactor>
         <statOffsets>
           <BANW_AttackLevelMultiplier>8.1300</BANW_AttackLevelMultiplier>
           <ArmorRating_Sharp>1.20</ArmorRating_Sharp>
@@ -1503,6 +1682,7 @@
           <BANW_HealthLevelMultiplier>8.0100</BANW_HealthLevelMultiplier>
           <BANW_RangedWeapon_Penetration>1.6</BANW_RangedWeapon_Penetration>
           <BANW_HealLevelMultiplier>1.8000</BANW_HealLevelMultiplier>
+          <PainShockThreshold>0.63</PainShockThreshold>
         </statOffsets>
         <capMods>
           <li>

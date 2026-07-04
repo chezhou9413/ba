@@ -101,7 +101,7 @@
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_EX</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>共同前行的伙伴</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>

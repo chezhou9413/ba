@@ -206,7 +206,6 @@
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
         <isNormalAttack>true</isNormalAttack>
         <normalAttackMultiplier>5.5</normalAttackMultiplier>
-        <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
         <canCrit>true</canCrit>
         <alwaysCrit>true</alwaysCrit>
         <applyAffinity>true</applyAffinity>

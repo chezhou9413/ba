@@ -67,7 +67,7 @@
     <label>有些令人意外呢</label>
     <projectile>
       <damageDef>BANC_Damage_Himari</damageDef><!--子弹类型-->
-      <damageAmountBase> 53</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>22</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>150</speed><!--子弹速度-->

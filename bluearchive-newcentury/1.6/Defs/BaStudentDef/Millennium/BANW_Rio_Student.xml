@@ -83,7 +83,7 @@
 				<AbilityTypeText>基本技能</AbilityTypeText>
 				<AbilityTitle>唯一解</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>297%</color>的伤害并且护甲减少<color=#00FFFF>25%</color>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>297%</color>的伤害并且乘伤系数增加<color=#00FFFF>25%</color>
 (持续<color=#00FFFF>19</color>秒)]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>

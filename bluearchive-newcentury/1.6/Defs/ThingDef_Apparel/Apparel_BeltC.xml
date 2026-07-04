@@ -5,7 +5,7 @@
         <defName>BANC_Amulet_One</defName>
         <label>Lv.1-交通安全护身符</label>
         <description>怀着交通安全的祈愿而制成的护身符。摇一摇护身符就可以听到里边有某种金属制品在叮当作响。
-        提供疼痛忍耐率</description>
+        提供暴击抵抗率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -15,7 +15,7 @@
          <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.08</PainShockThreshold> 
+        <BANW_CriticalChanceResistance>0.08</BANW_CriticalChanceResistance> 
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -37,7 +37,7 @@
         <defName>BANC_Amulet_Tow</defName>
         <label>Lv.2-暖手贴</label>
         <description>揉搓几下再摇晃下，就会变热的暖手贴。在酷寒的环境下，没有比这更有用的护身符了。
-提供疼痛忍耐率</description>
+提供暴击抵抗率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -48,7 +48,7 @@
         <MarketValue>1000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.13</PainShockThreshold>
+        <BANW_CriticalChanceResistance>0.13</BANW_CriticalChanceResistance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_One>1</BANC_Amulet_One>
@@ -72,7 +72,7 @@
         <defName>BANC_Amulet_Three</defName>
         <label>Lv.3-佩洛洛的羽毛</label>
         <description>用又大又白的羽毛制成的护身符。至于羽毛的出处，是MomoFriends的重大商业机密。
-提供疼痛忍耐率</description>
+提供暴击抵抗率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -83,7 +83,7 @@
         <MarketValue>1500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.18</PainShockThreshold>
+        <BANW_CriticalChanceResistance>0.18</BANW_CriticalChanceResistance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Tow>1</BANC_Amulet_Tow>
@@ -107,7 +107,7 @@
         <defName>BANC_Amulet_Four</defName>
         <label>Lv.4-十字架</label>
         <description>崔尼蒂的女生们喜欢的十字架形状护身符。也适合挂在包上当装饰品。
-减少疼痛值和承伤系数</description>
+提供暴击抵抗率和暴击伤害抵抗率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_4</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -118,8 +118,8 @@
         <MarketValue>2000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>+0.25</PainShockThreshold>
-        <IncomingDamageFactor>-0.05</IncomingDamageFactor>
+        <BANW_CriticalChanceResistance>0.25</BANW_CriticalChanceResistance>
+        <BANW_CriticalDamageResistance>0.10</BANW_CriticalDamageResistance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Three>1</BANC_Amulet_Three>
@@ -144,24 +144,20 @@
         <defName>BANC_Amulet_Five</defName>
         <label>Lv.5-迷彩不倒翁</label>
         <description>拥有迷彩涂层的不倒翁。无论放在什么地方，都可以自然地融入背景中……
-减少疼痛值和承伤系数增加少量暴击率</description>
+提供暴击抵抗率和暴击伤害抵抗率增加少量暴击率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_5</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothAmulet_Five</hediff>
-            </li>
-        </comps>
+
         <statBases>
          <WorkToMake>1800</WorkToMake>
         <MarketValue>2500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.28</PainShockThreshold>
-        <IncomingDamageFactor>-0.08</IncomingDamageFactor>
-        <BANW_CriticalChance>+0.10</BANW_CriticalChance>
+        <BANW_CriticalChanceResistance>0.28</BANW_CriticalChanceResistance>
+        <BANW_CriticalDamageResistance>0.15</BANW_CriticalDamageResistance>
+        <BANW_CriticalChance>+0.12</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Four>1</BANC_Amulet_Four>
@@ -187,24 +183,20 @@
         <defName>BANC_Amulet_Six</defName>
         <label>Lv.6-诅咒娃娃</label>
         <description>想着怨恨的人并把怨念注入进去的诅咒娃娃。因为可以当作针线包，所以深受手艺部成员的喜爱。
-减少疼痛值和承伤系数增加少量暴击率</description>
+提供暴击抵抗率和暴击伤害抵抗率增加少量暴击率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_6</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothAmulet_Six</hediff>
-            </li>
-        </comps>
+
         <statBases>
          <WorkToMake>2000</WorkToMake>
         <MarketValue>3000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.32</PainShockThreshold>
-        <IncomingDamageFactor>-0.09</IncomingDamageFactor>
-        <BANW_CriticalChance>+0.11</BANW_CriticalChance>
+        <BANW_CriticalChanceResistance>0.32</BANW_CriticalChanceResistance>
+        <BANW_CriticalDamageResistance>0.18</BANW_CriticalDamageResistance>
+        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
         </equippedStatOffsets>
          <costList>
         <BANC_Amulet_Five>1</BANC_Amulet_Five>
@@ -230,24 +222,19 @@
         <defName>BANC_Amulet_Seven</defName>
         <label>Lv.7-便携式除臭剂</label>
         <description>与功能性化妆品制造商"Seaside"联名生产的便携式除臭剂。 因为设计时尚，很多学员会把它挂在钥匙圈上，当成装饰品。
-减少疼痛值和承伤系数增加少量暴击率</description>
+提供暴击抵抗率和暴击伤害抵抗率增加少量暴击率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_7</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothAmulet_Seven</hediff>
-            </li>
-        </comps>
         <statBases>
          <WorkToMake>2200</WorkToMake>
         <MarketValue>3500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.36</PainShockThreshold>
-        <IncomingDamageFactor>-0.11</IncomingDamageFactor>
-        <BANW_CriticalChance>+0.12</BANW_CriticalChance>
+        <BANW_CriticalChanceResistance>0.36</BANW_CriticalChanceResistance>
+        <BANW_CriticalDamageResistance>0.21</BANW_CriticalDamageResistance>
+        <BANW_CriticalChance>+0.18</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Six>1</BANC_Amulet_Six>
@@ -273,24 +260,19 @@
         <defName>BANC_Amulet_Eight</defName>
         <label>Lv.8-捕梦网</label>
         <description>具有消除恶梦的咒术意义。闻起来有一股树木独特的香气。
-减少疼痛值和承伤系数增加少量暴击率</description>
+提供暴击抵抗率和暴击伤害抵抗率增加少量暴击率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_8</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothAmulet_Eight</hediff>
-            </li>
-        </comps>
         <statBases>
          <WorkToMake>2400</WorkToMake>
         <MarketValue>4000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.38</PainShockThreshold>
-        <IncomingDamageFactor>-0.12</IncomingDamageFactor>
-        <BANW_CriticalChance>+0.13</BANW_CriticalChance>  
+        <BANW_CriticalChanceResistance>0.38</BANW_CriticalChanceResistance>
+        <BANW_CriticalDamageResistance>0.24</BANW_CriticalDamageResistance>
+        <BANW_CriticalChance>+0.20</BANW_CriticalChance>  
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Seven>1</BANC_Amulet_Seven>
@@ -316,24 +298,19 @@
         <defName>BANC_Amulet_Nine</defName>
         <label>Lv.9-鲨齿护符</label>
         <description>系上锐利的鲨鱼牙齿制成的护符。传说只要戴着这个护符，就能防止航海事故的发生。
-减少疼痛值和承伤系数增加少量暴击率</description>
+提供暴击抵抗率和暴击伤害抵抗率增加少量暴击率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_9</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothAmulet_Nine</hediff>
-            </li>
-        </comps>
         <statBases>
          <WorkToMake>2600</WorkToMake>
         <MarketValue>4500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.40</PainShockThreshold>
-        <IncomingDamageFactor>-0.13</IncomingDamageFactor>
-        <BANW_CriticalChance>+0.14</BANW_CriticalChance>
+        <BANW_CriticalChanceResistance>0.40</BANW_CriticalChanceResistance>
+        <BANW_CriticalDamageResistance>0.27</BANW_CriticalDamageResistance>
+        <BANW_CriticalChance>+0.25</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Eight>1</BANC_Amulet_Eight>
@@ -359,24 +336,19 @@
         <defName>BANC_Amulet_Ten</defName>
         <label>Lv.10-键帽玩具</label>
         <description>用键盘键帽制作的玩具。咔嚓一声的触感让人上瘾。
-减少疼痛值和承伤系数增加少量暴击率</description>
+提供暴击抵抗率和暴击伤害抵抗率增加少量暴击率</description>
         <graphicData><!--需要一个衣服的通用物品贴图-->
             <texPath>Belt/Amulet/Amulet_10</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <comps>
-            <li Class="CompProperties_CauseHediff_Apparel">
-                <hediff>BANC_BluetoothAmulet_Ten</hediff>
-            </li>
-        </comps>
         <statBases>
           <WorkToMake>3000</WorkToMake>
         <MarketValue>6000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-        <PainShockThreshold>-0.42</PainShockThreshold>
-        <IncomingDamageFactor>-0.18</IncomingDamageFactor>
-        <BANW_CriticalChance>+0.15</BANW_CriticalChance>
+        <BANW_CriticalChanceResistance>0.42</BANW_CriticalChanceResistance>
+        <BANW_CriticalDamageResistance>0.30</BANW_CriticalDamageResistance>
+        <BANW_CriticalChance>+0.30</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Amulet_Nine>1</BANC_Amulet_Nine>
@@ -412,7 +384,7 @@
          <MarketValue>500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.05</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.08</BANW_CriticalChance>
         </equippedStatOffsets>
         <apparel>
             <wornGraphicPath></wornGraphicPath>
@@ -444,7 +416,7 @@
         <MarketValue>1000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.08</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.13</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_One>1</BANC_Watch_One>
@@ -478,7 +450,7 @@
         <MarketValue>1500</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.11</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.18</BANW_CriticalChance>
         </equippedStatOffsets>
         <costList>
         <BANC_Watch_Tow>1</BANC_Watch_Tow>
@@ -512,7 +484,7 @@
         <MarketValue>2000</MarketValue>
         </statBases>
         <equippedStatOffsets>
-            <BANW_CriticalChance>+0.15</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.25</BANW_CriticalChance>
             <BANW_CriticalDamage>0.10</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
@@ -549,7 +521,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_HealthBonusMultiplier>0.05</BANW_HealthBonusMultiplier>
-            <BANW_CriticalChance>+0.17</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.28</BANW_CriticalChance>
             <BANW_CriticalDamage>0.15</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
@@ -587,7 +559,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_HealthBonusMultiplier>0.07</BANW_HealthBonusMultiplier>
-            <BANW_CriticalChance>+0.19</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.32</BANW_CriticalChance>
             <BANW_CriticalDamage>0.18</BANW_CriticalDamage>
         </equippedStatOffsets>
          <costList>
@@ -625,7 +597,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_HealthBonusMultiplier>0.09</BANW_HealthBonusMultiplier>
-            <BANW_CriticalChance>+0.22</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.36</BANW_CriticalChance>
             <BANW_CriticalDamage>0.21</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
@@ -663,7 +635,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_HealthBonusMultiplier>0.11</BANW_HealthBonusMultiplier>
-            <BANW_CriticalChance>+0.24</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.40</BANW_CriticalChance>
             <BANW_CriticalDamage>0.24</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
@@ -701,7 +673,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_HealthBonusMultiplier>0.13</BANW_HealthBonusMultiplier>
-            <BANW_CriticalChance>+0.26</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.44</BANW_CriticalChance>
             <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>
@@ -739,7 +711,7 @@
         </statBases>
         <equippedStatOffsets>
             <BANW_HealthBonusMultiplier>0.15</BANW_HealthBonusMultiplier>
-            <BANW_CriticalChance>+0.28</BANW_CriticalChance>
+            <BANW_CriticalChance>+0.48</BANW_CriticalChance>
             <BANW_CriticalDamage>0.26</BANW_CriticalDamage>
         </equippedStatOffsets>
         <costList>

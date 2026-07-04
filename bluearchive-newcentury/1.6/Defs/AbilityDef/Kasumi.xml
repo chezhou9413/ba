@@ -51,7 +51,7 @@
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>4.32</attackPowerRatio>
+          <attackPowerRatio>8.64</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>BANC_Damage_zhendong</damageDef>
           <!-- 是否允许暴击。 -->
@@ -116,7 +116,7 @@
         <li>
           <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
           <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>4.32</attackPowerRatio>
+          <attackPowerRatio>8.64</attackPowerRatio>
           <!-- 伤害类型。 -->
           <damageDef>BANC_Damage_zhendong</damageDef>
           <!-- 是否允许暴击。 -->
@@ -213,7 +213,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef>BANW_Kasumi_Ef_B</effecterDef>
-          <attackPowerRatio>0.3</attackPowerRatio></li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
           <li>
             <!-- 伤害延迟 -->
             <Delaytick>66</Delaytick>
@@ -226,7 +226,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          <attackPowerRatio>0.3</attackPowerRatio></li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>78</Delaytick>
@@ -239,7 +239,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          <attackPowerRatio>0.3</attackPowerRatio></li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>90</Delaytick>
@@ -252,7 +252,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          <attackPowerRatio>0.3</attackPowerRatio></li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>102</Delaytick>
@@ -265,7 +265,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          <attackPowerRatio>0.3</attackPowerRatio></li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>114</Delaytick>
@@ -278,6 +278,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
+            <attackPowerRatio>0.6</attackPowerRatio>
           </li>
           <li>
             <!-- 伤害延迟 -->
@@ -291,7 +292,7 @@
             <isAttackBuilding>true</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          <attackPowerRatio>0.3</attackPowerRatio></li>
+          <attackPowerRatio>0.6</attackPowerRatio></li>
            <li>
             <!-- 伤害延迟 -->
             <Delaytick>172</Delaytick>
@@ -337,7 +338,7 @@
             <isAttackBuilding>false</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-          <attackPowerRatio>2.07</attackPowerRatio></li>
+          <attackPowerRatio>8.64</attackPowerRatio></li>
     </damages>
     </li>
     </damages>

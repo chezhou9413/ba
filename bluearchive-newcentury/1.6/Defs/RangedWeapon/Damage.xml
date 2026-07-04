@@ -70,7 +70,7 @@
     <category>BANW_BattleStats</category>
     <minValue>0</minValue>
     <maxValue>1</maxValue>
-    <defaultBaseValue>0</defaultBaseValue>
+    <defaultBaseValue>0.15</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
   </StatDef>
   <StatDef>
@@ -88,7 +88,7 @@
     <description>被攻击时减算攻击者的暴击率。</description>
     <category>BANW_BattleStats</category>
     <minValue>0</minValue>
-    <defaultBaseValue>0</defaultBaseValue>
+    <defaultBaseValue>0.1</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>
@@ -100,7 +100,7 @@
     <description>被暴击时减算攻击者的暴击伤害倍率，最终暴击伤害最低为100%。</description>
     <category>BANW_BattleStats</category>
     <minValue>0</minValue>
-    <defaultBaseValue>0</defaultBaseValue>
+    <defaultBaseValue>0.5</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
     <showOnHumanlikes>true</showOnHumanlikes>
     <showIfUndefined>true</showIfUndefined>

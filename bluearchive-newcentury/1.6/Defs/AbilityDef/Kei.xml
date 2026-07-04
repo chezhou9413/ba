@@ -13,14 +13,14 @@
     <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
     <showWhenDrafted>True</showWhenDrafted>
     <hostile>true</hostile>
-    <warmupEffecter></warmupEffecter>
+    <warmupEffecter>BANW_Kei_Ef_D</warmupEffecter>
     <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
     <verbProperties>
-      <warmupEffecter></warmupEffecter>
+      <warmupEffecter>BANW_Kei_Ef_B</warmupEffecter>
       <soundCast>BANW_Wp_HG_At</soundCast>
       <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
       <range>40</range>
-      <warmupTime>1.0</warmupTime>
+      <warmupTime>2.0</warmupTime>
       <requireLineOfSight>false</requireLineOfSight>
       <targetParams>
         <canTargetLocations>true</canTargetLocations>
@@ -139,6 +139,9 @@
         <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1500</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Kei_Ef_C</stateEffecter>
       </li>
     </comps>
     </HediffDef>

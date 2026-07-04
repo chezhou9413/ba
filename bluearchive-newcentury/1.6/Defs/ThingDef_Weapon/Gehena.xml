@@ -1667,7 +1667,7 @@
     <label>红色莱克特子弹</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>21</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>10</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->

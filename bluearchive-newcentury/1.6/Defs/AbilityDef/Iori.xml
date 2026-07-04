@@ -67,7 +67,7 @@
     <label>悬赏通缉</label>
     <projectile>
       <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
-      <damageAmountBase>140</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>32</damageAmountBase><!--子弹伤害-->
       <stoppingPower>10</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>140</speed><!--子弹速度-->

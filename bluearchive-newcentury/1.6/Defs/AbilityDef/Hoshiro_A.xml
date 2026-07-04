@@ -185,7 +185,7 @@
       <!-- 能力持续时间 -->
       <Ability_Duration>50</Ability_Duration>
       <!-- 能力效果半径 -->
-      <Ability_EffectRadius>9.9</Ability_EffectRadius>
+      <Ability_EffectRadius>5.9</Ability_EffectRadius>
     </statBases>
     <!-- 动作属性 -->
     <verbProperties>
@@ -196,7 +196,7 @@
       <!-- 前摇时间（秒） -->
       <warmupTime>0.1</warmupTime>
       <!-- 作用范围 -->
-      <range>9.9</range>
+      <range>5.9</range>
       <!-- 是否绘制瞄准饼图 -->
       <drawAimPie>False</drawAimPie>
       <!-- 是否需要视线 -->

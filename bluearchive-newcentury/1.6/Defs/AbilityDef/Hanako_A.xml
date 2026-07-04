@@ -21,7 +21,7 @@
     <verbProperties Class="BANWlLib.BaVerb.VerbProperties_SustainedAreaAttack">
       <!-- 扇形弧度 --> 
       <soundCast></soundCast>
-      <fanArc>60</fanArc>
+      <fanArc>40</fanArc>
       <verbClass>BANWlLib.BaVerb.Verb_SustainedAreaAttack</verbClass>
       <label>喷出来了好多呢♡</label>
       <!-- 绑定的JOB -->
@@ -29,7 +29,7 @@
       <violent>true</violent> <!-- 是否为暴力行为 -->
       <forceNormalTimeSpeed>false</forceNormalTimeSpeed> <!-- 是否强制正常时间速度 -->
       <warmupTime>0.1</warmupTime> <!-- 预热时间（秒） -->
-      <range>44</range> <!-- 作用范围 -->
+      <range>33.9</range> <!-- 作用范围 -->
       <requireLineOfSight>false</requireLineOfSight> <!-- 是否需要视线 -->
       <targetParams>
         <canTargetLocations>true</canTargetLocations> <!-- 是否可以瞄准位置 -->
@@ -42,9 +42,9 @@
         <!-- 预览形状：Fan 表示从施法者朝目标方向显示扇形范围。 -->
         <shape>Fan</shape>
         <!-- 最大预览距离，小于等于 0 时使用技能当前有效射程。 -->
-        <range>44</range>
+        <range>33.9</range>
         <!-- 扇形角度，需要和 verbProperties 里的 fanArc 保持一致。 -->
-        <fanArc>60</fanArc>
+        <fanArc>30</fanArc>
         <!-- 是否显示施法者最大射程圈。 -->
         <drawCasterRange>true</drawCasterRange>
         <!-- 是否显示鼠标目标格高亮。 -->
@@ -124,7 +124,7 @@
                 <tick>70</tick>
                  <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1.18</attackPowerRatio>
+                <attackPowerRatio>3.21</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
@@ -143,7 +143,7 @@
                 <tick>80</tick>
                  <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1.18</attackPowerRatio>
+                <attackPowerRatio>3.21</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
@@ -160,7 +160,7 @@
                 <tick>90</tick>
                  <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1.18</attackPowerRatio>
+                <attackPowerRatio>3.21</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
@@ -175,7 +175,7 @@
             <li>
                 <tick>100</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1.18</attackPowerRatio>
+                <attackPowerRatio>3.21</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
@@ -187,7 +187,7 @@
         <li>
                 <tick>110</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1.18</attackPowerRatio>
+                <attackPowerRatio>3.21</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
@@ -199,7 +199,7 @@
               <li>
                 <tick>120</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1.18</attackPowerRatio>
+                <attackPowerRatio>3.21</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->

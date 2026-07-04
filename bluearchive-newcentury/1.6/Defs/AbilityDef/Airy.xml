@@ -138,6 +138,26 @@
       <!-- 是否显示鼠标目标格高亮。 -->
       <drawTargetHighlight>true</drawTargetHighlight>
     </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+      <showBattleFormula>true</showBattleFormula>
+      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <previewActions>
+        <li>
+          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+          <attackPowerRatio>4.64</attackPowerRatio>
+          <!-- 伤害类型。 -->
+          <damageDef>BANC_Damage_baofa</damageDef>
+          <!-- 是否允许暴击。 -->
+          <canCrit>true</canCrit>
+          <!-- 是否应用攻击类型与护甲类型克制。 -->
+          <applyAffinity>true</applyAffinity>
+          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+          <isExSkill>true</isExSkill>
+        </li>
+      </previewActions>
+    </li>
   </modExtensions>
 </AbilityDef>
 <ThingDef>
@@ -170,9 +190,7 @@
         <pulseEffecter></pulseEffecter>
         <!-- 场地每次脉冲执行的统一战斗动作列表。 -->
         <actions>
-          <li>
-            
-            
+          <li>  
             <!-- 攻击力倍率，1.2 表示造成最终攻击力 120% 的伤害。 -->
             <attackPowerRatio>1.0</attackPowerRatio>
             <!-- 伤害 Def，决定伤害类型、命中特效和原版伤害表现。 -->

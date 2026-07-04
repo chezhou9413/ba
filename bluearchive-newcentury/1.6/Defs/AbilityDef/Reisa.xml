@@ -254,7 +254,7 @@
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
-            <attackPowerRatio>0.8</attackPowerRatio></li>
+            <attackPowerRatio>4.71</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>30</tick>
@@ -265,7 +265,7 @@
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
-            <attackPowerRatio>0.8</attackPowerRatio></li>
+            <attackPowerRatio>4.71</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>75</tick>
@@ -283,7 +283,7 @@
                 <damageType>BANC_Damage_Reisa_EXX</damageType>
                 <penetration>2</penetration>
                 <effecterDef>BANW_Reisa_Ef_B</effecterDef>
-            <attackPowerRatio>0.8</attackPowerRatio></li>
+            <attackPowerRatio>4.71</attackPowerRatio></li>
         <li>
                 <tick>180</tick>
                 

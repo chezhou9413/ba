@@ -188,7 +188,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Momoi_Ef_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            <attackPowerRatio>1.02</attackPowerRatio></li>
+            <attackPowerRatio>5.41</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>90</tick>
@@ -200,14 +200,14 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            <attackPowerRatio>1.02</attackPowerRatio></li>
+            <attackPowerRatio>5.41</attackPowerRatio></li>
             <li>
                 <tick>120</tick>
                 <damageType>BANC_Damage_Momoi_EXX</damageType>
                 <penetration>2</penetration>
                 <effecterDef></effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
-            <attackPowerRatio>1.02</attackPowerRatio></li>
+            <attackPowerRatio>5.41</attackPowerRatio></li>
         
         </damages>
     </JobDef>

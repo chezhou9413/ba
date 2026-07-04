@@ -133,7 +133,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile>
-      <damageAmountBase>103</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>28</damageAmountBase><!--子弹伤害-->
       <explosionRadius>2.9</explosionRadius >
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <damageDef>BANC_Damage_Shiroko_EX</damageDef>

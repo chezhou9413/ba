@@ -137,7 +137,7 @@
     <label>佩洛洛大人的助威</label>
     <projectile>
       <damageDef>BANC_Damage_Hifumi_EX</damageDef><!--子弹类型-->
-      <damageAmountBase>40</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>20</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->

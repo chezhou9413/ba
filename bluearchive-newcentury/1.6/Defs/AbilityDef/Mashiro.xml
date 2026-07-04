@@ -128,7 +128,7 @@
     <projectile>
       <explosionRadius>1.9</explosionRadius>
       <damageDef>BANC_Damage_Shiroko_EX</damageDef><!--子弹类型-->
-      <damageAmountBase>80</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>28</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>100</speed><!--子弹速度-->
@@ -169,14 +169,14 @@
     <label>正义的显现子弹</label>
     <projectile>
       <damageDef>BANC_Damage_Mashiro</damageDef><!--子弹类型-->
-      <damageAmountBase>186</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>28</damageAmountBase><!--子弹伤害-->
       <stoppingPower>50</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>150</speed><!--子弹速度-->
     <extraDamages>
       <li>
         <def>BANC_Damage_Mashiro</def>
-        <amount>200</amount>
+        <amount>34</amount>
         <chance>0.75</chance>
       </li>
     </extraDamages>
