@@ -165,8 +165,8 @@
         <previewActions>
           <li>
             <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
-            <normalAttackMultiplier>5.5</normalAttackMultiplier>
-            <isNormalAttack>true</isNormalAttack>
+            <attackPowerRatio>5.5</attackPowerRatio>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -204,8 +204,8 @@
     </graphicData>
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-        <isNormalAttack>true</isNormalAttack>
-        <normalAttackMultiplier>5.5</normalAttackMultiplier>
+        <isNormalAttack>false</isNormalAttack>
+        <attackPowerRatio>5.5</attackPowerRatio>
         <canCrit>true</canCrit>
         <alwaysCrit>true</alwaysCrit>
         <applyAffinity>true</applyAffinity>
@@ -220,10 +220,10 @@
         <extraDamages>
           <li>
             <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
-            <normalAttackMultiplier>2.04</normalAttackMultiplier>
+            <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>0</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -232,10 +232,10 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
-            <normalAttackMultiplier>2.04</normalAttackMultiplier>
+            <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>4</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -244,10 +244,10 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
-            <normalAttackMultiplier>2.04</normalAttackMultiplier>
+            <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>8</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -256,10 +256,10 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
-            <normalAttackMultiplier>2.04</normalAttackMultiplier>
+            <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>12</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -268,10 +268,10 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
-            <normalAttackMultiplier>2.04</normalAttackMultiplier>
+            <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>16</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>

@@ -100,7 +100,7 @@
             <!-- 影响敌对目标。 -->
             <affectHostile>false</affectHostile>
             <!-- 不影响友方。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 不命中建筑。 -->
             <canHitBuilding>false</canHitBuilding>
             <!-- 每次脉冲对命中目标触发叠层攻击 Hediff，重复施加时叠层并刷新时间。 -->

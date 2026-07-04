@@ -775,7 +775,7 @@
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_01</damageDef>
             <normalAttackMultiplier>1.0</normalAttackMultiplier>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -805,7 +805,7 @@
     </graphicData>
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-        <isNormalAttack>true</isNormalAttack>
+        <isNormalAttack>false</isNormalAttack>
         <normalAttackMultiplier>1.0</normalAttackMultiplier>
         <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
         <canCrit>true</canCrit>
@@ -823,7 +823,7 @@
             <normalAttackMultiplier>1.0</normalAttackMultiplier>
             <delayTicks>0</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -835,7 +835,7 @@
             <normalAttackMultiplier>2.0</normalAttackMultiplier>
             <delayTicks>4</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -847,7 +847,7 @@
             <normalAttackMultiplier>3.0</normalAttackMultiplier>
             <delayTicks>8</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -859,7 +859,7 @@
             <normalAttackMultiplier>4.0</normalAttackMultiplier>
             <delayTicks>12</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -871,7 +871,7 @@
             <normalAttackMultiplier>5.0</normalAttackMultiplier>
             <delayTicks>16</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -883,7 +883,7 @@
             <normalAttackMultiplier>6.0</normalAttackMultiplier>
             <delayTicks>20</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -895,7 +895,7 @@
             <normalAttackMultiplier>7.0</normalAttackMultiplier>
             <delayTicks>24</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
