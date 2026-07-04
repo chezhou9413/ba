@@ -12,9 +12,22 @@ namespace BANWlLib.BaClass
         {
         }
 
-        // 触发子特效，负责根据 Pawn 到目标点的方向旋转配置偏移。
+        // 触发子特效，负责根据 Pawn 到目标点的方向旋转配置偏移，并按 initialDelayTicks 决定立即生成或延迟生成。
         public override void SubTrigger(TargetInfo A, TargetInfo B, int overrideSpawnTick = -1, bool force = false)
         {
+            if (def.moteDef == null)
+            {
+                Log.Error("[BANW] 旋转偏移喷射特效缺少 moteDef。");
+                return;
+            }
+
+            Map map = A.Map ?? B.Map;
+            if (map == null)
+            {
+                Log.Error("[BANW] 旋转偏移喷射特效缺少地图，无法生成 Mote。");
+                return;
+            }
+
             Vector3 rotatedOffset = def.positionOffset;
             float? rotationAngle = null;
 
@@ -48,23 +61,37 @@ namespace BANWlLib.BaClass
             }
 
             Vector3 pos = A.Cell.ToVector3Shifted() + rotatedOffset;
-            MakeMote(pos, A.Map, rotationAngle);
+            if (def.initialDelayTicks > 0)
+            {
+                RotatedOffsetMoteDelayComponent.Queue(map, def.moteDef, pos, def.scale.RandomInRange, rotationAngle, def.initialDelayTicks);
+                return;
+            }
+
+            SpawnMote(def.moteDef, pos, map, def.scale.RandomInRange, rotationAngle);
         }
 
         // 生成 Mote，负责应用缩放、位置和旋转角度。
-        private void MakeMote(Vector3 pos, Map map, float? rotationAngle)
+        public static void SpawnMote(ThingDef moteDef, Vector3 pos, Map map, float scale, float? rotationAngle)
         {
-            if (!pos.ShouldSpawnMotesAt(map, false))
+            if (moteDef == null)
+            {
+                Log.Error("[BANW] 旋转偏移喷射特效生成任务缺少 moteDef。");
+                return;
+            }
+
+            if (!pos.ShouldSpawnMotesAt(map, moteDef.drawOffscreen))
             {
                 return;
             }
-            Mote mote = (Mote)ThingMaker.MakeThing(def.moteDef);
-            mote.Scale = def.scale.RandomInRange;
+
+            Mote mote = (Mote)ThingMaker.MakeThing(moteDef);
+            mote.Scale = scale;
             mote.exactPosition = pos;
             if (rotationAngle.HasValue)
             {
                 mote.exactRotation = rotationAngle.Value;
             }
+
             GenSpawn.Spawn(mote, pos.ToIntVec3(), map);
         }
     }

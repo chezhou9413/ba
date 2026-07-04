@@ -87,20 +87,10 @@
         <!-- 场地每次脉冲执行的战斗动作。 -->
         <actions>
           <li>
-            <!-- 200% 攻击力伤害。 -->
-            <attackPowerRatio>0.0</attackPowerRatio>
-            <!-- 伤害类型，复用 Nozomi EXX 的振动伤害。 -->
-            <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
-            <!-- 护甲穿透。 -->
-            <penetration>0</penetration>
-            <!-- 允许暴击。 -->
-            <!-- 应用属性克制。 -->
-             <canCrit>true</canCrit>
-            <applyAffinity>true</applyAffinity>
             <!-- 影响敌对目标。 -->
             <affectHostile>false</affectHostile>
-            <!-- 不影响友方。 -->
-            <affectFriendly>false</affectFriendly>
+            <!-- 影响友方。 -->
+            <affectFriendly>true</affectFriendly>
             <!-- 不命中建筑。 -->
             <canHitBuilding>false</canHitBuilding>
             <!-- 每次脉冲对命中目标触发叠层攻击 Hediff，重复施加时叠层并刷新时间。 -->
