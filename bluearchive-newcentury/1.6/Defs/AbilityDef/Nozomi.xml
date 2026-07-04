@@ -257,7 +257,7 @@
             <attackPowerRatio>3.11</attackPowerRatio>
             <delayTicks>6</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -269,7 +269,7 @@
             <attackPowerRatio>3.11</attackPowerRatio>
             <delayTicks>6</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -281,7 +281,7 @@
             <attackPowerRatio>3.11</attackPowerRatio>
             <delayTicks>6</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -293,7 +293,7 @@
             <attackPowerRatio>3.11</attackPowerRatio>
             <delayTicks>6</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>true</isNormalAttack>
+            <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -774,8 +774,8 @@
       <previewActions>
         <li>
           <damageDef>BANC_Damage_Nozomi_MultiHit_01</damageDef>
-          <normalAttackMultiplier>1.0</normalAttackMultiplier>
-          <isNormalAttack>true</isNormalAttack>
+          <attackPowerRatio>1.0</attackPowerRatio>
+          <isNormalAttack>false</isNormalAttack>
           <canCrit>true</canCrit>
           <alwaysCrit>true</alwaysCrit>
           <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -805,8 +805,8 @@
   </graphicData>
   <modExtensions>
     <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-      <isNormalAttack>true</isNormalAttack>
-      <normalAttackMultiplier>1.0</normalAttackMultiplier>
+      <attackPowerRatio>1.0</attackPowerRatio>
+      <isNormalAttack>false</isNormalAttack>
       <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
       <canCrit>true</canCrit>
       <applyAffinity>true</applyAffinity>
@@ -820,10 +820,10 @@
       <extraDamages>
         <li>
           <damageDef>BANC_Damage_Nozomi_MultiHit_01</damageDef>
-          <normalAttackMultiplier>1.0</normalAttackMultiplier>
+          <attackPowerRatio>1.0</attackPowerRatio>
           <delayTicks>0</delayTicks>
           <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
+          <isNormalAttack>false</isNormalAttack>
           <canCrit>true</canCrit>
           <alwaysCrit>true</alwaysCrit>
           <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -832,10 +832,10 @@
         </li>
         <li>
           <damageDef>BANC_Damage_Nozomi_MultiHit_02</damageDef>
-          <normalAttackMultiplier>2.0</normalAttackMultiplier>
+          <attackPowerRatio>2.0</attackPowerRatio>
           <delayTicks>4</delayTicks>
           <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
+          <isNormalAttack>false</isNormalAttack>
           <canCrit>true</canCrit>
           <alwaysCrit>true</alwaysCrit>
           <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -844,10 +844,10 @@
         </li>
         <li>
           <damageDef>BANC_Damage_Nozomi_MultiHit_03</damageDef>
-          <normalAttackMultiplier>3.0</normalAttackMultiplier>
+          <attackPowerRatio>3.0</attackPowerRatio>
           <delayTicks>8</delayTicks>
           <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
+          <isNormalAttack>false</isNormalAttack>
           <canCrit>true</canCrit>
           <alwaysCrit>true</alwaysCrit>
           <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -856,10 +856,10 @@
         </li>
         <li>
           <damageDef>BANC_Damage_Nozomi_MultiHit_04</damageDef>
-          <normalAttackMultiplier>4.0</normalAttackMultiplier>
+          <attackPowerRatio>4.0</attackPowerRatio>
           <delayTicks>12</delayTicks>
           <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
+          <isNormalAttack>false</isNormalAttack>
           <canCrit>true</canCrit>
           <alwaysCrit>true</alwaysCrit>
           <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -868,10 +868,10 @@
         </li>
         <li>
           <damageDef>BANC_Damage_Nozomi_MultiHit_05</damageDef>
-          <normalAttackMultiplier>5.0</normalAttackMultiplier>
+          <attackPowerRatio>5.0</attackPowerRatio>
           <delayTicks>16</delayTicks>
           <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
+          <isNormalAttack>false</isNormalAttack>
           <canCrit>true</canCrit>
           <alwaysCrit>true</alwaysCrit>
           <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -880,10 +880,10 @@
         </li>
         <li>
           <damageDef>BANC_Damage_Nozomi_MultiHit_06</damageDef>
-          <normalAttackMultiplier>6.0</normalAttackMultiplier>
+          <attackPowerRatio>6.0</attackPowerRatio>
           <delayTicks>20</delayTicks>
           <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
+          <isNormalAttack>false</isNormalAttack>
           <canCrit>true</canCrit>
           <alwaysCrit>true</alwaysCrit>
           <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -892,10 +892,10 @@
         </li>
         <li>
           <damageDef>BANC_Damage_Nozomi_MultiHit_07</damageDef>
-          <normalAttackMultiplier>7.0</normalAttackMultiplier>
+          <attackPowerRatio>7.0</attackPowerRatio>
           <delayTicks>24</delayTicks>
           <penetration>2</penetration>
-          <isNormalAttack>true</isNormalAttack>
+          <isNormalAttack>false</isNormalAttack>
           <canCrit>true</canCrit>
           <alwaysCrit>true</alwaysCrit>
           <alwaysShowCriticalText>true</alwaysShowCriticalText>

@@ -8,7 +8,6 @@ namespace BANWlLib.BattleSystem
         public float attackPowerRatio = 0f;
         // 本次动作指定的武器基础攻击力，0 表示由施法者当前主武器解析。
         public float weaponBaseAttack = 0f;
-        public float normalAttackMultiplier = 1f;
         public float baseMasteryMultiplier = 1f;
         public float healPowerRatio = 0f;
         public float shieldPowerRatio = 0f;
@@ -40,7 +39,6 @@ namespace BANWlLib.BattleSystem
         {
             Scribe_Values.Look(ref attackPowerRatio, "attackPowerRatio", 0f);
             Scribe_Values.Look(ref weaponBaseAttack, "weaponBaseAttack", 0f);
-            Scribe_Values.Look(ref normalAttackMultiplier, "normalAttackMultiplier", 1f);
             Scribe_Values.Look(ref baseMasteryMultiplier, "baseMasteryMultiplier", 1f);
             Scribe_Values.Look(ref healPowerRatio, "healPowerRatio", 0f);
             Scribe_Values.Look(ref shieldPowerRatio, "shieldPowerRatio", 0f);

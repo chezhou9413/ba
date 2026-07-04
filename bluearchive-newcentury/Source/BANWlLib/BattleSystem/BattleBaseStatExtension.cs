@@ -26,6 +26,12 @@ namespace BANWlLib.BattleSystem
         // 基础精通倍率平加，0.2 表示普通攻击口径伤害的基础精通从默认 100% 提高到 120%。
         public float baseMasteryMultiplierOffset = 0f;
 
+        // 普通攻击倍率平加，0.2 表示武器平A伤害的普通攻击倍率从默认 100% 提高到 120%。
+        public float normalAttackStatOffset = 0f;
+
+        // 护盾存在时持续维护的跟随特效，负责让每个 PawnKind 配置自己的护盾表现。
+        public EffecterDef shieldEffecterDef;
+
         // 攻击类型配置，填写 Explosion、Mysterious、Vibration、Through 或 Composite。
         public string damageType;
 

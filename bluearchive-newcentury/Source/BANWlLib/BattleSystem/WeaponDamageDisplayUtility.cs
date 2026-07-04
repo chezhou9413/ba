@@ -34,6 +34,7 @@ namespace BANWlLib.BattleSystem
             float starMultiplier = BattleStatUtility.GetAttackStarMultiplier(pawn);
             float attackFlat = BattleStatUtility.GetAttackFlatBonus(pawn);
             float attackMultiplier = BattleStatUtility.GetAttackMultiplier(pawn);
+            float normalAttackMultiplier = BattleStatUtility.GetNormalAttackMultiplier(pawn);
             float characterAttack = BattleStatUtility.GetFinalAttackPower(pawn, baseDamage);
             float finalDamage = BattleStatUtility.ScaleWeaponDamageBase(pawn, baseDamage);
 
@@ -45,7 +46,8 @@ namespace BANWlLib.BattleSystem
                    "固定攻击力：" + FormatDamage(attackFlat) + "\n" +
                    "角色自身攻击力：" + FormatDamage(characterAttack) + "\n" +
                    "攻击力加成：" + attackMultiplier.ToString("P0") + "\n" +
-                   "算法：((" + FormatDamage(baseDamage) + " x " + levelMultiplier.ToString("P1") + ") x " + starMultiplier.ToString("P1") + " + " + FormatDamage(attackFlat) + ") x " + attackMultiplier.ToString("P0") + "\n" +
+                   "普通攻击倍率：" + normalAttackMultiplier.ToString("P0") + "\n" +
+                   "算法：((" + FormatDamage(baseDamage) + " x " + levelMultiplier.ToString("P1") + ") x " + starMultiplier.ToString("P1") + " + " + FormatDamage(attackFlat) + ") x " + attackMultiplier.ToString("P0") + " x " + normalAttackMultiplier.ToString("P0") + "\n" +
                    "当前显示伤害：" + FormatDamage(finalDamage).Colorize(new Color(1f, 0.35f, 0.28f));
         }
 

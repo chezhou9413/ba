@@ -26,6 +26,8 @@
     <label>护盾</label>
     <description>吸收下一次受到的伤害，护盾不足时也会完整抵住本次伤害。</description>
     <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <makesSickThought>false</makesSickThought>
     <initialSeverity>1</initialSeverity>
     <maxSeverity>1</maxSeverity>
     <comps>

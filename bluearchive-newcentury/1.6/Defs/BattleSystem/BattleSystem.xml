@@ -237,4 +237,24 @@
       </li>
     </children>
   </EffecterDef>
+
+  <EffecterDef>
+    <defName>BANW_Effecter_BattleShield_Test</defName>
+    <children>
+      <li>
+        <!-- 护盾存在时持续生成并附着到 Pawn 的蓝色光效。 -->
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Bl_GP</moteDef>
+        <scale>0.85</scale>
+        <ticksBetweenMotes>20</ticksBetweenMotes>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0.75)</positionOffset>
+        <positionRadius>0.05</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+    </children>
+  </EffecterDef>
 </Defs>

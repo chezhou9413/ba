@@ -20,6 +20,7 @@ namespace BANWlLib.BattleSystem
     public class HediffComp_BattleShield : HediffComp
     {
         private float remainingShield;
+        private Effecter shieldEffecter;
 
         // 护盾耗尽时移除状态，负责避免空护盾残留在健康面板。
         public override bool CompShouldRemove => remainingShield <= 0.01f;
@@ -34,6 +35,20 @@ namespace BANWlLib.BattleSystem
         public void AddShield(float amount)
         {
             remainingShield = Mathf.Max(0f, remainingShield + amount);
+        }
+
+        // 状态 Tick 后维护跟随特效，负责让 PawnKind 配置的护盾表现持续贴在 Pawn 身上。
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            base.CompPostTick(ref severityAdjustment);
+            TickShieldEffecter();
+        }
+
+        // 状态移除后清理跟随特效，负责避免护盾结束后残留持续 Mote。
+        public override void CompPostPostRemoved()
+        {
+            base.CompPostPostRemoved();
+            CleanupShieldEffecter();
         }
 
         // 吸收本次伤害，负责按护盾规则完整抵住一次伤害。
@@ -54,6 +69,44 @@ namespace BANWlLib.BattleSystem
             base.CompExposeData();
             Scribe_Values.Look(ref remainingShield, "remainingShield", 0f);
         }
+
+        // 维护护盾跟随特效，负责读 PawnKind 配置并每 Tick 续命 Effecter。
+        private void TickShieldEffecter()
+        {
+            Pawn pawn = Pawn;
+            EffecterDef effecterDef = ShieldEffecterDef(pawn);
+            if (effecterDef == null || pawn?.Map == null || pawn.Destroyed || !pawn.Spawned)
+            {
+                CleanupShieldEffecter();
+                return;
+            }
+
+            if (shieldEffecter == null)
+            {
+                shieldEffecter = effecterDef.Spawn();
+            }
+
+            TargetInfo targetInfo = new TargetInfo(pawn);
+            shieldEffecter.EffectTick(targetInfo, targetInfo);
+        }
+
+        // 读取 PawnKind 护盾特效配置，负责让不同 Kind 使用不同表现。
+        private static EffecterDef ShieldEffecterDef(Pawn pawn)
+        {
+            return pawn?.kindDef?.GetModExtension<BattleBaseStatExtension>()?.shieldEffecterDef;
+        }
+
+        // 清理护盾跟随特效，负责在无配置、离图或护盾结束时释放 Effecter。
+        private void CleanupShieldEffecter()
+        {
+            if (shieldEffecter == null)
+            {
+                return;
+            }
+
+            shieldEffecter.Cleanup();
+            shieldEffecter = null;
+        }
     }
 
     // 护盾伤害吸收补丁，负责在 Pawn 受伤前消耗战斗护盾。
@@ -65,6 +118,11 @@ namespace BANWlLib.BattleSystem
         public static bool Prefix(Pawn __instance, ref DamageInfo dinfo, ref bool absorbed)
         {
             if (__instance?.health?.hediffSet?.hediffs == null || dinfo.Amount <= 0f)
+            {
+                return true;
+            }
+
+            if (IsFriendlyDamage(__instance, dinfo.Instigator))
             {
                 return true;
             }
@@ -89,6 +147,22 @@ namespace BANWlLib.BattleSystem
             }
 
             return true;
+        }
+
+        // 判断是否是友军伤害，负责让护盾不消耗在自己人造成的攻击上。
+        private static bool IsFriendlyDamage(Pawn target, Thing instigator)
+        {
+            if (target == null || instigator == null)
+            {
+                return false;
+            }
+
+            if (instigator == target)
+            {
+                return true;
+            }
+
+            return target.Faction != null && instigator.Faction != null && target.Faction == instigator.Faction;
         }
     }
 }
