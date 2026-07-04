@@ -12,6 +12,7 @@ namespace BANWlLib.BaVerb
         public float fanArc = 30;
         public JobDef JobDef;
         public HediffDef triggerHediff = null;
+        public EffecterDef effecterDef = null;
     }
 
     // 扇形持续攻击动词，负责显示扇形预览并把受影响格子交给持续攻击 Job。
@@ -71,6 +72,8 @@ namespace BANWlLib.BaVerb
             bool castSuccess = base.TryCastShot();
             if (castSuccess)
             {
+                VerbCastEffecterUtility.TriggerCastEffecter(VerbProperties.effecterDef, caster, currentTarget);
+
                 if (VerbProperties.triggerHediff != null)
                 {
                     BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(caster, VerbProperties.triggerHediff, caster);

@@ -171,6 +171,11 @@
     <Compile Include="BaVerb\Verb_SphereArea.cs" />
     <Compile Include="BaVerb\Verb_SustainedAreaAttack.cs" />
     <Compile Include="BaVerb\Verb_SustainedAreaAttackBox.cs" />
+    <Compile Include="BattleMovement\BattleMovementKnockbackConfig.cs" />
+    <Compile Include="BattleMovement\BattleMovementMode.cs" />
+    <Compile Include="BattleMovement\BattleMovementPawnFlyer.cs" />
+    <Compile Include="BattleMovement\BattleMovementPathUtility.cs" />
+    <Compile Include="BattleMovement\CompAbilityEffect_BattleMovement.cs" />
     <Compile Include="BattleSystem\AbilityBattleTooltipExtension.cs" />
     <Compile Include="BattleSystem\AbilityBattleTooltipUtility.cs" />
     <Compile Include="BattleSystem\BattleActionConfig.cs" />
@@ -199,12 +204,14 @@
     <Compile Include="BattleSystem\CommandAbilityBattleTooltipPatch.cs" />
     <Compile Include="BattleSystem\CompAbilityEffectGiveHediffPatch.cs" />
     <Compile Include="BattleSystem\CompAbilityEffect_ApplyBattleAction.cs" />
+    <Compile Include="BattleSystem\CompAbilityEffect_MultiShotProjectile.cs" />
     <Compile Include="BattleSystem\CompAbilityEffect_SpawnBattleField.cs" />
     <Compile Include="BattleSystem\DamageAffinityMatrixDef.cs" />
     <Compile Include="BattleSystem\Hediff_BattleStack.cs" />
     <Compile Include="BattleSystem\Hediff_StarGrowthDisplay.cs" />
     <Compile Include="BattleSystem\HediffComp_BattleShield.cs" />
     <Compile Include="BattleSystem\HediffComp_BattleStack.cs" />
+    <Compile Include="BattleSystem\MultiShotProjectileDelayComponent.cs" />
     <Compile Include="BattleSystem\StarGrowthDisplayUtility.cs" />
     <Compile Include="BattleSystem\Thing_BattleFieldController.cs" />
     <Compile Include="BattleSystem\WeaponDamageDisplayUtility.cs" />

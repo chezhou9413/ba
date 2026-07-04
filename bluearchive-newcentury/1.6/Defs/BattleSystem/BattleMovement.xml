@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 战斗位移飞行器：供 BattleMovement 的 Slide 和 Jump 模式复用原版 PawnFlyer 起飞和落地流程。 -->
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>BANW_BattleMovement_JumpFlyer</defName>
+    <label>战斗位移飞行器</label>
+    <thingClass>BANWlLib.BattleMovement.BattleMovementPawnFlyer</thingClass>
+    <pawnFlyer>
+      <!-- 原版基础飞行速度，实际持续时间由技能 speed 覆盖。 -->
+      <flightSpeed>12</flightSpeed>
+      <!-- 原版进度曲线，负责让起跳阶段略快一点。 -->
+      <workerClass>PawnFlyerWorker</workerClass>
+      <!-- 原版最短飞行时间，避免短距离跳跃瞬间结束。 -->
+      <flightDurationMin>0.25</flightDurationMin>
+      <!-- 高度由 BattleMovementPawnFlyer 读取技能配置计算，平面冲刺传 0，跳跃传 jumpHeight。 -->
+      <heightFactor>0</heightFactor>
+    </pawnFlyer>
+  </ThingDef>
+</Defs>

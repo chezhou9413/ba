@@ -130,6 +130,13 @@ namespace BANWlLib.BattleSystem
         //解析预览战斗段，负责让投射物、场地和范围 Job 技能优先读取真实配置，避免悬浮预估和实际结算分离。
         private static List<BattleActionConfig> ResolvePreviewActions(AbilityDef abilityDef, out bool hasAutomaticActions)
         {
+            List<BattleActionConfig> multiShotProjectileActions = TryBuildMultiShotProjectileActions(abilityDef);
+            if (multiShotProjectileActions != null)
+            {
+                hasAutomaticActions = true;
+                return multiShotProjectileActions;
+            }
+
             List<BattleActionConfig> projectileActions = TryBuildProjectileActions(abilityDef);
             if (projectileActions != null)
             {
@@ -414,6 +421,12 @@ namespace BANWlLib.BattleSystem
                 return null;
             }
 
+            return TryBuildProjectileActions(projectileDef);
+        }
+
+        // 从投射物 Def 构建预览段，负责让单发技能和延迟多发技能复用同一套投射物公式解析。
+        private static List<BattleActionConfig> TryBuildProjectileActions(ThingDef projectileDef)
+        {
             BattleActionConfig piercingAction = TryBuildPiercingProjectileAction(projectileDef);
             if (piercingAction != null)
             {
@@ -424,6 +437,39 @@ namespace BANWlLib.BattleSystem
 
             List<BattleActionConfig> normalProjectileActions = TryBuildNormalProjectileActions(projectileDef);
             return normalProjectileActions;
+        }
+
+        // 从延迟多发投射物组件构建预览段，负责把每发子弹的 BA 战斗配置展开到悬浮说明。
+        private static List<BattleActionConfig> TryBuildMultiShotProjectileActions(AbilityDef abilityDef)
+        {
+            if (abilityDef?.comps == null)
+            {
+                return null;
+            }
+
+            List<BattleActionConfig> actions = new List<BattleActionConfig>();
+            for (int i = 0; i < abilityDef.comps.Count; i++)
+            {
+                CompProperties_AbilityMultiShotProjectile multiShot = abilityDef.comps[i] as CompProperties_AbilityMultiShotProjectile;
+                if (multiShot?.shots == null)
+                {
+                    continue;
+                }
+
+                for (int shotIndex = 0; shotIndex < multiShot.shots.Count; shotIndex++)
+                {
+                    ThingDef projectileDef = multiShot.shots[shotIndex]?.projectileDef ?? multiShot.projectileDef;
+                    List<BattleActionConfig> projectileActions = TryBuildProjectileActions(projectileDef);
+                    if (projectileActions.NullOrEmpty())
+                    {
+                        continue;
+                    }
+
+                    actions.AddRange(projectileActions);
+                }
+            }
+
+            return actions.Count > 0 ? actions : null;
         }
 
         // 从普通投射物构建预览段，负责把原始子弹伤害和命中追加多段伤害按真实配置展开。
