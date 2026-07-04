@@ -19,6 +19,10 @@
         <li>BAWN_Nozomi_MultiStackBuff_Test</li>
         <li>BAWN_Nozomi_Shield_Test</li>
         <li>BAWN_Nozomi_MultiHitShot_Test</li>
+        <li>BAWN_Nozomi_MoveSlide_Test</li>
+        <li>BAWN_Nozomi_MoveJump_Test</li>
+        <li>BAWN_Nozomi_MoveBlink_Test</li>
+        <li>BAWN_Nozomi_DelayedMultiShot_Test</li>
         </abilities>
 		<startingHediffs>
 		<li>

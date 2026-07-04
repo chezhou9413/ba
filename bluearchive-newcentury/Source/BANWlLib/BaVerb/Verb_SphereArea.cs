@@ -6,12 +6,32 @@ using Verse.AI;
 
 namespace BANWlLib.BaVerb
 {
+    // 施法特效工具，负责让自定义范围 Verb 在施法成功时触发 EffecterDef。
+    internal static class VerbCastEffecterUtility
+    {
+        // 触发施法特效，负责以施法者为锚点并把当前目标传给子特效计算方向。
+        public static void TriggerCastEffecter(EffecterDef effecterDef, Pawn caster, LocalTargetInfo target)
+        {
+            if (effecterDef == null || caster?.Map == null)
+            {
+                return;
+            }
+
+            Effecter effecter = effecterDef.Spawn();
+            TargetInfo casterTarget = new TargetInfo(caster);
+            TargetInfo focusTarget = target.IsValid ? target.ToTargetInfo(caster.Map) : TargetInfo.Invalid;
+            effecter.Trigger(casterTarget, focusTarget);
+            effecter.Cleanup();
+        }
+    }
+
     // 圆形范围动词参数，负责声明圆形半径、执行 Job 和施法触发状态。
     public class VerbProperties_SphereArea : VerbProperties
     {
         public float Sphereradius = 3f;
         public JobDef JobDef;
         public HediffDef triggerHediff = null;
+        public EffecterDef effecterDef = null;
     }
 
     // 圆形范围动词，负责显示目标点圆形预览并把受影响格子交给范围 Job。
@@ -45,6 +65,8 @@ namespace BANWlLib.BaVerb
             bool castSuccess = base.TryCastShot();
             if (castSuccess)
             {
+                VerbCastEffecterUtility.TriggerCastEffecter(Props.effecterDef, caster, currentTarget);
+
                 if (Props.triggerHediff != null)
                 {
                     BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(caster, Props.triggerHediff, caster);

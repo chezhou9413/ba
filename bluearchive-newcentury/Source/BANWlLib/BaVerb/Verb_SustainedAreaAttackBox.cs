@@ -12,6 +12,7 @@ namespace BANWlLib.BaVerb
         public int boxsize = 0;
         public JobDef JobDef;
         public HediffDef triggerHediff = null;
+        public EffecterDef effecterDef = null;
     }
 
     // 矩形持续攻击动词，负责显示长条预览并把受影响格子交给持续攻击 Job。
@@ -79,6 +80,8 @@ namespace BANWlLib.BaVerb
 
             if (castSuccess)
             {
+                VerbCastEffecterUtility.TriggerCastEffecter(VerbProperties.effecterDef, caster, currentTarget);
+
                 if (VerbProperties.triggerHediff != null)
                 {
                     BattleHediffSnapshotUtility.RegisterSnapshotIfNeeded(caster, VerbProperties.triggerHediff, caster);

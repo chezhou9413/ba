@@ -907,4 +907,372 @@
     </modExtensions>
   </ThingDef>
 
+<!-- 延迟多发子弹测试技能：一次施法后按配置延迟逐发向锁定目标发射原版子弹。 -->
+<AbilityDef>
+  <defName>BAWN_Nozomi_DelayedMultiShot_Test</defName>
+  <label>延迟连射·测试</label>
+  <description>锁定一个目标，按 0/6/12/18/24 tick 依次发射 5 发子弹。每发子弹命中时使用 BA 战斗公式结算 100% 攻击力 EX 伤害，可测试友军和建筑命中。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
+  <cooldownTicksRange>1800</cooldownTicksRange>
+  <hotKey>Misc1</hotKey>
+  <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
+  <showPsycastEffects>False</showPsycastEffects>
+  <stunTargetWhileCasting>false</stunTargetWhileCasting>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <showWhenDrafted>True</showWhenDrafted>
+  <hostile>true</hostile>
+  <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
+  <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <verbProperties>
+    <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
+    <soundCast>BANW_Wp_HG_At</soundCast>
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>30</range>
+    <warmupTime>1.0</warmupTime>
+    <requireLineOfSight>true</requireLineOfSight>
+    <targetParams>
+      <canTargetLocations>false</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>true</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
+      <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
+      <projectileDef>BANC_Bullet_Nozomi_DelayedMultiShot_Test</projectileDef>
+      <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
+      <shots>
+        <li>
+          <delayTicks>0</delayTicks>
+        </li>
+        <li>
+          <delayTicks>6</delayTicks>
+        </li>
+        <li>
+          <delayTicks>12</delayTicks>
+        </li>
+        <li>
+          <delayTicks>18</delayTicks>
+        </li>
+        <li>
+          <delayTicks>24</delayTicks>
+        </li>
+      </shots>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <shape>Circle</shape>
+      <range>30</range>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
+<ThingDef ParentName="BaseBullet">
+  <defName>BANC_Bullet_Nozomi_DelayedMultiShot_Test</defName>
+  <label>延迟连射·测试子弹</label>
+  <thingClass>Bullet</thingClass>
+  <projectile>
+    <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+    <damageAmountBase>30</damageAmountBase>
+    <stoppingPower>1</stoppingPower>
+    <armorPenetrationBase>2</armorPenetrationBase>
+    <speed>120</speed>
+  </projectile>
+  <graphicData>
+    <shaderType>MoteGlow</shaderType>
+    <drawSize>(1.2,1.2)</drawSize>
+    <texPath>Ability/Icon/Nozomi/Nozomi_B</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+  </graphicData>
+  <modExtensions>
+    <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+      <!-- 每发子弹按 100% 攻击力 EX 伤害进入 BA 战斗公式。 -->
+      <attackPowerRatio>1.0</attackPowerRatio>
+      <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
+      <isExSkill>true</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+    </li>
+  </modExtensions>
+</ThingDef>
+
+<!-- 平面冲撞位移测试技能：沿直线位移，被墙挡住，路径敌人受到一次伤害并沿冲撞方向击退。 -->
+<AbilityDef>
+  <defName>BAWN_Nozomi_MoveSlide_Test</defName>
+  <label>平面冲撞·测试</label>
+  <description>向目标方向进行平面冲撞，被墙体和不可站立格挡住。路径宽度 1 格内敌方受到 100% 攻击力振动伤害并击退 3 格。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
+  <cooldownTicksRange>1800</cooldownTicksRange>
+  <hotKey>Misc7</hotKey>
+  <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
+  <showPsycastEffects>False</showPsycastEffects>
+  <stunTargetWhileCasting>false</stunTargetWhileCasting>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <showWhenDrafted>True</showWhenDrafted>
+  <hostile>true</hostile>
+  <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
+  <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <verbProperties>
+    <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
+    <soundCast>BANW_Wp_HG_At</soundCast>
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>12</range>
+    <warmupTime>0.2</warmupTime>
+    <requireLineOfSight>false</requireLineOfSight>
+    <targetParams>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.BattleMovement.CompProperties_AbilityBattleMovement">
+      <!-- 平面冲撞模式，视觉上按直线平移。 -->
+      <mode>Slide</mode>
+      <!-- 每 tick 推进 0.35 格。 -->
+      <speed>0.35</speed>
+      <!-- 只命中中心直线路径。 -->
+      <pathWidth>1</pathWidth>
+      <!-- 路径中的敌方目标受到一次战斗框架伤害。 -->
+      <pathAction>
+        <attackPowerRatio>1.0</attackPowerRatio>
+        <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+        <penetration>2</penetration>
+        <canCrit>true</canCrit>
+        <applyAffinity>true</applyAffinity>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+        <canHitBuilding>false</canHitBuilding>
+      </pathAction>
+      <!-- 路径命中目标沿冲撞方向后退，阻挡前停止。 -->
+      <knockback>
+        <enabled>true</enabled>
+        <distance>3</distance>
+        <speed>0.35</speed>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+      </knockback>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <shape>Line</shape>
+      <range>12</range>
+      <length>12</length>
+      <width>1</width>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+      <previewActions>
+        <li>
+          <attackPowerRatio>1.0</attackPowerRatio>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <penetration>2</penetration>
+          <canCrit>true</canCrit>
+          <applyAffinity>true</applyAffinity>
+        </li>
+      </previewActions>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
+<!-- 跳跃位移测试技能：弧线位移到终点，落地后结算范围伤害和击退。 -->
+<AbilityDef>
+  <defName>BAWN_Nozomi_MoveJump_Test</defName>
+  <label>跳跃落地·测试</label>
+  <description>跳跃到目标位置，被墙体和不可站立格挡住。落地后对 3.9 格内敌方造成 200% 攻击力振动伤害并击退 2 格。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
+  <cooldownTicksRange>1800</cooldownTicksRange>
+  <hotKey>Misc3</hotKey>
+  <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
+  <showPsycastEffects>False</showPsycastEffects>
+  <stunTargetWhileCasting>false</stunTargetWhileCasting>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <showWhenDrafted>True</showWhenDrafted>
+  <hostile>true</hostile>
+  <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
+  <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <verbProperties>
+    <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
+    <soundCast>BANW_Wp_HG_At</soundCast>
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>12</range>
+    <warmupTime>0.2</warmupTime>
+    <requireLineOfSight>false</requireLineOfSight>
+    <targetParams>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.BattleMovement.CompProperties_AbilityBattleMovement">
+      <!-- 跳跃模式，视觉位移会按高度弧线抬起。 -->
+      <mode>Jump</mode>
+      <!-- 每 tick 推进 0.25 格。 -->
+      <speed>0.25</speed>
+      <!-- 跳跃最高点高度。 -->
+      <jumpHeight>2.5</jumpHeight>
+      <!-- 落地范围伤害半径。 -->
+      <landingRadius>3.9</landingRadius>
+      <!-- 落地后才对范围内敌方执行战斗框架伤害。 -->
+      <landingAction>
+        <attackPowerRatio>2.0</attackPowerRatio>
+        <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+        <penetration>2</penetration>
+        <canCrit>true</canCrit>
+        <applyAffinity>true</applyAffinity>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+        <canHitBuilding>false</canHitBuilding>
+      </landingAction>
+      <!-- 落地命中目标从落点向外后退，阻挡前停止。 -->
+      <knockback>
+        <enabled>true</enabled>
+        <distance>2</distance>
+        <speed>0.35</speed>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+      </knockback>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <shape>Circle</shape>
+      <range>12</range>
+      <radius>3.9</radius>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+      <previewActions>
+        <li>
+          <attackPowerRatio>2.0</attackPowerRatio>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <penetration>2</penetration>
+          <canCrit>true</canCrit>
+          <applyAffinity>true</applyAffinity>
+        </li>
+      </previewActions>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
+<!-- 瞬移落点测试技能：立即移动到终点，并在终点结算伤害、击退和脱手场地。 -->
+<AbilityDef>
+  <defName>BAWN_Nozomi_MoveBlink_Test</defName>
+  <label>瞬移落点·测试</label>
+  <description>瞬移到目标位置，被墙体和不可站立格挡住。落点 2.9 格内敌方受到 100% 攻击力振动伤害，并生成持续场地。</description>
+  <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
+  <cooldownTicksRange>1800</cooldownTicksRange>
+  <hotKey>Misc2</hotKey>
+  <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
+  <showPsycastEffects>False</showPsycastEffects>
+  <stunTargetWhileCasting>false</stunTargetWhileCasting>
+  <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+  <showWhenDrafted>True</showWhenDrafted>
+  <hostile>true</hostile>
+  <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
+  <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <verbProperties>
+    <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
+    <soundCast>BANW_Wp_HG_At</soundCast>
+    <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+    <range>15</range>
+    <warmupTime>0.2</warmupTime>
+    <requireLineOfSight>false</requireLineOfSight>
+    <targetParams>
+      <canTargetLocations>true</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.BattleMovement.CompProperties_AbilityBattleMovement">
+      <!-- 瞬移模式，立即把自身放置到直线可达终点。 -->
+      <mode>Blink</mode>
+      <!-- 落点范围伤害半径。 -->
+      <landingRadius>2.9</landingRadius>
+      <!-- 瞬移完成后对落点范围敌方执行战斗框架伤害。 -->
+      <landingAction>
+        <attackPowerRatio>1.0</attackPowerRatio>
+        <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+        <penetration>2</penetration>
+        <canCrit>true</canCrit>
+        <applyAffinity>true</applyAffinity>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+        <canHitBuilding>false</canHitBuilding>
+      </landingAction>
+      <!-- 落点命中目标从落点向外后退，阻挡前停止。 -->
+      <knockback>
+        <enabled>true</enabled>
+        <distance>2</distance>
+        <speed>0.35</speed>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+      </knockback>
+      <!-- 位移结束后在终点生成脱手圈形持续状态。 -->
+      <fieldThingDef>BANW_BattleField_Nozomi_Test</fieldThingDef>
+      <durationTicksOverride>600</durationTicksOverride>
+    </li>
+  </comps>
+  <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <shape>Circle</shape>
+      <range>15</range>
+      <radius>2.9</radius>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+      <previewActions>
+        <li>
+          <attackPowerRatio>1.0</attackPowerRatio>
+          <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+          <penetration>2</penetration>
+          <canCrit>true</canCrit>
+          <applyAffinity>true</applyAffinity>
+        </li>
+      </previewActions>
+    </li>
+  </modExtensions>
+</AbilityDef>
+
 </Defs>

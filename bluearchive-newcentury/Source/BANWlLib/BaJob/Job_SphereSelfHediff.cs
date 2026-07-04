@@ -1,6 +1,7 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.BattleSystem;
 using BANWlLib.Pojo;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -8,6 +9,7 @@ using Verse.AI;
 
 namespace BANWlLib.BaJob
 {
+    // 球形范围友方状态 Job，负责按延迟配置给自身和友方 Pawn 附加 Hediff。
     public class Job_SphereSelfHediff : JobDriver
     {
         private List<TickDelaySelfHediff> HediffSequence;
@@ -18,11 +20,13 @@ namespace BANWlLib.BaJob
 
         private BaJobDef_SphereSelfHediff def => (BaJobDef_SphereSelfHediff)this.job.def;
 
+        // 预约 Job，负责允许该技能直接开始执行。
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
         }
 
+        // 执行单段 Hediff 配置，负责给范围内自身和友方 Pawn 附加状态。
         private void actionDamageSetting(SelfHediffSetting damage, Map map)
         {
             if (damage.effecterDef != null)
@@ -42,7 +46,7 @@ namespace BANWlLib.BaJob
                     Thing t = thingsInCell[i];
                     if (t is Pawn targetPawn)
                     {
-                        if (targetPawn.Faction.IsPlayer)
+                        if (CanApplyHediffToTarget(targetPawn))
                         {
                             HediffDef hediffDef = damage.ResolveHediff();
                             if (hediffDef != null)
@@ -65,6 +69,33 @@ namespace BANWlLib.BaJob
             }
         }
 
+        // 判断状态目标是否合法，负责放行施法者自身、同阵营 Pawn 和盟友阵营 Pawn。
+        private bool CanApplyHediffToTarget(Pawn targetPawn)
+        {
+            if (targetPawn == null || targetPawn.Dead)
+            {
+                return false;
+            }
+
+            if (targetPawn == pawn)
+            {
+                return true;
+            }
+
+            if (pawn?.Faction == null || targetPawn.Faction == null)
+            {
+                return false;
+            }
+
+            if (targetPawn.Faction == pawn.Faction)
+            {
+                return true;
+            }
+
+            return pawn.Faction.RelationKindWith(targetPawn.Faction) == FactionRelationKind.Ally;
+        }
+
+        // 生成 Toil，负责维护状态时间轴、延迟执行列表和施法朝向。
         protected override IEnumerable<Toil> MakeNewToils()
         {
             Toil channelingToil = new Toil();
@@ -77,7 +108,8 @@ namespace BANWlLib.BaJob
                 this.HediffSequence = def.damages.OrderBy(d => d.tick).ToList();
                 this.nextActionIndex = 0;
                 this.pendingActions.Clear();
-                this.activeEffecters.Clear(); // 确保重置
+                // 清理上一次执行遗留的特效引用。
+                this.activeEffecters.Clear();
                 Cells = this.job.targetQueueA;
                 pawn.pather.StopDead();
             };
@@ -108,11 +140,12 @@ namespace BANWlLib.BaJob
                     }
                 }
 
-                // 处理待执行的伤害 (Pending Actions)
+                // 处理等待触发的状态动作。
                 for (int i = pendingActions.Count - 1; i >= 0; i--)
                 {
                     PendingHediffAction pendingAction = pendingActions[i];
-                    pendingActions[i].fireAtTick--; // 倒计时
+                    // 每 tick 减少等待时间，归零后立即执行。
+                    pendingActions[i].fireAtTick--;
 
                     if (pendingActions[i].fireAtTick <= 0)
                     {
@@ -121,8 +154,7 @@ namespace BANWlLib.BaJob
                     }
                 }
 
-                // 处理主序列
-                // 只要还有动作没执行，就检查时间
+                // 检查主时间轴，把到达触发时间的配置加入等待列表。
                 if (this.HediffSequence != null && this.nextActionIndex < this.HediffSequence.Count)
                 {
                     TickDelaySelfHediff nextAction = this.HediffSequence[this.nextActionIndex];
@@ -158,6 +190,7 @@ namespace BANWlLib.BaJob
             yield return channelingToil;
         }
 
+        // 保存和读取 Job 状态，负责让待触发状态支持读档续跑。
         public override void ExposeData()
         {
             base.ExposeData();

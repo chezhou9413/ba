@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 
 namespace BANWlLib.BaClass
 {
+    // 触发式旋转偏移喷射特效，负责按施法者朝向或目标方向旋转位置偏移后生成 Mote。
     public class SubEffecter_SprayerTriggeredRotatedOffset : SubEffecter_Sprayer
     {
+        // 创建旋转偏移喷射子特效，负责绑定 SubEffecterDef 和父 Effecter。
         public SubEffecter_SprayerTriggeredRotatedOffset(SubEffecterDef def, Effecter parent)
             : base(def, parent)
         {
         }
 
+        // 触发子特效，负责根据 Pawn 到目标点的方向旋转配置偏移。
         public override void SubTrigger(TargetInfo A, TargetInfo B, int overrideSpawnTick = -1, bool force = false)
         {
             Vector3 rotatedOffset = def.positionOffset;
@@ -32,11 +30,18 @@ namespace BANWlLib.BaClass
 
             if (pawn != null)
             {
-                float angle = pawn.Rotation.AsAngle; // Default to 4-direction rotation
-                var stance = pawn.stances?.curStance as Stance_Busy;
-                if (stance != null && stance.focusTarg.IsValid)
+                float angle = pawn.Rotation.AsAngle;
+                if (B.IsValid)
                 {
-                    angle = (stance.focusTarg.CenterVector3 - pawn.DrawPos).AngleFlat();
+                    angle = (B.CenterVector3 - pawn.DrawPos).AngleFlat();
+                }
+                else
+                {
+                    Stance_Busy stance = pawn.stances?.curStance as Stance_Busy;
+                    if (stance != null && stance.focusTarg.IsValid)
+                    {
+                        angle = (stance.focusTarg.CenterVector3 - pawn.DrawPos).AngleFlat();
+                    }
                 }
                 rotatedOffset = def.positionOffset.RotatedBy(angle);
                 rotationAngle = angle;
@@ -46,6 +51,7 @@ namespace BANWlLib.BaClass
             MakeMote(pos, A.Map, rotationAngle);
         }
 
+        // 生成 Mote，负责应用缩放、位置和旋转角度。
         private void MakeMote(Vector3 pos, Map map, float? rotationAngle)
         {
             if (!pos.ShouldSpawnMotesAt(map, false))
