@@ -774,7 +774,6 @@
         <previewActions>
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_01</damageDef>
-            <normalAttackMultiplier>1.0</normalAttackMultiplier>
             <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
@@ -806,7 +805,6 @@
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
         <isNormalAttack>false</isNormalAttack>
-        <normalAttackMultiplier>1.0</normalAttackMultiplier>
         <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
         <canCrit>true</canCrit>
         <applyAffinity>true</applyAffinity>
@@ -820,7 +818,6 @@
         <extraDamages>
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_01</damageDef>
-            <normalAttackMultiplier>1.0</normalAttackMultiplier>
             <delayTicks>0</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>false</isNormalAttack>
@@ -832,7 +829,6 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_02</damageDef>
-            <normalAttackMultiplier>2.0</normalAttackMultiplier>
             <delayTicks>4</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>false</isNormalAttack>
@@ -844,7 +840,6 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_03</damageDef>
-            <normalAttackMultiplier>3.0</normalAttackMultiplier>
             <delayTicks>8</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>false</isNormalAttack>
@@ -856,7 +851,6 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_04</damageDef>
-            <normalAttackMultiplier>4.0</normalAttackMultiplier>
             <delayTicks>12</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>false</isNormalAttack>
@@ -868,7 +862,6 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_05</damageDef>
-            <normalAttackMultiplier>5.0</normalAttackMultiplier>
             <delayTicks>16</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>false</isNormalAttack>
@@ -880,7 +873,6 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_06</damageDef>
-            <normalAttackMultiplier>6.0</normalAttackMultiplier>
             <delayTicks>20</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>false</isNormalAttack>
@@ -892,7 +884,6 @@
           </li>
           <li>
             <damageDef>BANC_Damage_Nozomi_MultiHit_07</damageDef>
-            <normalAttackMultiplier>7.0</normalAttackMultiplier>
             <delayTicks>24</delayTicks>
             <penetration>2</penetration>
             <isNormalAttack>false</isNormalAttack>

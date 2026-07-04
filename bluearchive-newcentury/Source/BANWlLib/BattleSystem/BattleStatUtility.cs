@@ -770,6 +770,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
+        // 判断战斗动作是否能作用到目标，负责统一处理敌方、友方、建筑和己方误伤开关。
         public static bool ShouldAffectTarget(Pawn caster, Thing target, BattleActionConfig action)
         {
             if (action == null || target == null)
@@ -812,6 +813,11 @@ namespace BANWlLib.BattleSystem
             if (targetPawn.HostileTo(caster))
             {
                 return action.affectHostile;
+            }
+
+            if (IsOwnFaction(caster, targetPawn) && action.canHitOwnPawn)
+            {
+                return true;
             }
 
             return action.affectFriendly;
