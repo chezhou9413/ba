@@ -20,8 +20,7 @@
  <verbProperties>
  <warmupEffecter></warmupEffecter>
  <soundCast></soundCast>
- <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
- <defaultProjectile>BANC_Bullet_Mika_EXX</defaultProjectile>
+ <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
  <range>24.9</range><!-- 作用范围：-1 表示只能近战接触 -->
  <warmupTime>0.1</warmupTime><!-- 前摇时间（单位：秒） -->
  <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
@@ -48,6 +47,32 @@
   <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
   <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
 </li>
+   <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
+      <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
+      <projectileDef>BANC_Bullet_Mika_EXX</projectileDef>
+      <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
+      <shots>
+        <li>
+          <delayTicks>0</delayTicks>
+        </li>
+        <li>
+          <delayTicks>6</delayTicks>
+        </li>
+        <li>
+          <delayTicks>12</delayTicks>
+        </li>
+        <li>
+          <delayTicks>18</delayTicks>
+        </li>
+        <li>
+          <delayTicks>24</delayTicks>
+        </li>
+      </shots>
+    </li>
 </comps>
 <modExtensions>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
@@ -69,6 +94,12 @@
           <isExSkill>true</isExSkill>
         </li>
       </previewActions>
+    </li>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <shape>Circle</shape>
+      <range>30</range>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
     </li>
     </modExtensions>
 </AbilityDef>

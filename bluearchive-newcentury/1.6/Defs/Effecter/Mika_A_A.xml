@@ -546,14 +546,14 @@
         <absoluteAngle>true</absoluteAngle>
       </li>
       <li>
-        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Mika_A_13_Mote</moteDef>
         <initialDelayTicks>80</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
         <rotation>-90</rotation><!-- 初始旋转角度 -->
         <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
         <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
-        <positionOffset>(0,0.5,0.5)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <positionOffset>(0,0.5,0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
         <angle>0</angle><!-- 发射角度 -->
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
         <spawnLocType>OnSource</spawnLocType>

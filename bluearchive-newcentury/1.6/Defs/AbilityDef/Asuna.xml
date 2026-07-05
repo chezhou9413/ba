@@ -19,17 +19,11 @@
  <verbProperties>
  <warmupEffecter>BANW_Effecter_A</warmupEffecter>
  <soundCast>BANW_Asuna_gun</soundCast>
- <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
- <defaultProjectile>BANC_Bullet_Asuna_EX</defaultProjectile>
+ <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
  <range>33.9</range><!-- 作用范围：-1 表示只能近战接触 -->
  <warmupTime>0.5</warmupTime><!-- 前摇时间（单位：秒） -->
  <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
  <ticksBetweenBurstShots>6</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
-<burstShotCount>11</burstShotCount> <!--连发射击的数量为 12 发。-->
-<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
-<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
-<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
-<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
 <ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
  <targetParams><!-- 目标参数设置 -->
   <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
@@ -41,14 +35,69 @@
   </targetParams>
   </verbProperties>
   <comps>
+     <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
+      <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
+      <projectileDef>BANC_Bullet_Asuna_EX</projectileDef>
+      <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
+      <shots>
+        <li>
+          <delayTicks>0</delayTicks>
+        </li>
+        <li>
+          <delayTicks>6</delayTicks>
+        </li>
+        <li>
+          <delayTicks>12</delayTicks>
+        </li>
+        <li>
+          <delayTicks>18</delayTicks>
+        </li>
+        <li>
+          <delayTicks>24</delayTicks>
+        </li>
+        <li>
+          <delayTicks>30</delayTicks>
+        </li>
+        <li>
+          <delayTicks>36</delayTicks>
+        </li>
+        <li>
+          <delayTicks>42</delayTicks>
+        </li>
+        <li>
+          <delayTicks>48</delayTicks>
+        </li>
+        <li>
+          <delayTicks>54</delayTicks>
+        </li>
+        <li>
+          <delayTicks>60</delayTicks>
+        </li>
+      </shots>
+    </li>
 </comps>
+<modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <shape>Circle</shape>
+      <range>33.9</range>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+    </li>
+  </modExtensions>
 </AbilityDef>
 <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Asuna_EX</defName>
     <label>惊喜派对子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
-      <damageAmountBase>10</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>27</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>70</speed><!--子弹速度-->
@@ -59,7 +108,17 @@
       <texPath>Projectile/Bullet_Asuna</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>0.26</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
+  <modExtensions>
+    <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+      <attackPowerRatio>0.38</attackPowerRatio>
+      <isNormalAttack>false</isNormalAttack>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+    </li>
+  </modExtensions>
+</ThingDef>
 <AbilityDef>
 <defName>BAWN_Asuna_EXX</defName>
  <label>要冲了哦！</label>
@@ -83,9 +142,9 @@
  <verbProperties>
   <warmupEffecter></warmupEffecter>
  <soundCast>Asuna_Skill_EXX_A</soundCast>
- <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+ <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
  <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
- <range>3.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+ <range>9.9</range><!-- 作用范围：-1 表示只能近战接触 -->
  <requireLineOfSight>False</requireLineOfSight>
  <warmupTime>0.3</warmupTime><!-- 前摇时间（单位：秒） -->
  <targetParams><!-- 目标参数设置 -->
@@ -110,7 +169,38 @@
        <effecterDef>BANW_Asuna_Ef_A</effecterDef>
         <maintainForTicks>60</maintainForTicks>
       </li>
+      <li Class="BANWlLib.BattleMovement.CompProperties_AbilityBattleMovement">
+      <!-- 平面冲撞模式，视觉上按直线平移。 -->
+      <mode>Slide</mode>
+      <!-- 每 tick 推进 0.35 格。 -->
+      <speed>0.35</speed>
+      <!-- 只命中中心直线路径。 -->
+      <pathWidth>1</pathWidth>
+      <!-- 路径中的敌方目标受到一次战斗框架伤害。 -->
+      <pathAction>
+        <attackPowerRatio>0.0</attackPowerRatio>
+        <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+        <penetration>2</penetration>
+        <canCrit>true</canCrit>
+        <applyAffinity>true</applyAffinity>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+        <canHitBuilding>false</canHitBuilding>
+      </pathAction>
+      <!-- 路径命中目标沿冲撞方向后退，阻挡前停止。 -->
+     
+    </li>
 </comps>
+<modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">  <!-- 目标预览扩展：技能施放前显示范围指示 -->
+      <shape>Line</shape>           <!-- 范围形状：Line=直线、Circle=圆形、Rectangle=矩形 -->
+      <range>9.9</range>             <!-- 最大射程（格） -->
+      <length>9.9</length>           <!-- 直线长度（格），仅 Line 形状用 -->
+      <width>1</width>              <!-- 直线宽度（格），仅 Line 形状用 -->
+      <drawCasterRange>true</drawCasterRange>      <!-- 是否绘制施法者射程圈 -->
+      <drawTargetHighlight>true</drawTargetHighlight>  <!-- 是否高亮目标格子 -->
+    </li>
+  </modExtensions>
 </AbilityDef>
     
     <HediffDef>

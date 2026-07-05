@@ -58,7 +58,7 @@
         <!-- 显示名称 -->
         <label>来，笑一个！</label>
         <!-- 效果描述 -->
-        <description>增加自身63%的护甲穿透（持续25秒）</description>
+        <description>增加自身63%的振动克制率（持续25秒）</description>
         <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
         <!-- 是否为负面效果（会影响心情等） -->
         <isBad>false</isBad>

@@ -216,7 +216,7 @@
         <!-- 多段追加伤害是否允许命中同阵营 Pawn。 -->
         <canHitOwnPawn>true</canHitOwnPawn>
         <!-- 多段追加伤害是否允许命中同阵营建筑。 -->
-        <canHitOwnBuilding>false</canHitOwnBuilding>
+        <canHitOwnBuilding>true</canHitOwnBuilding>
         <extraDamages>
           <li>
             <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
