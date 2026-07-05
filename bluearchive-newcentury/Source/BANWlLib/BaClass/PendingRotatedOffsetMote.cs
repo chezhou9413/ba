@@ -21,7 +21,7 @@ namespace BANWlLib.BaClass
                 position,
                 map,
                 scale,
-                hasRotation ? rotationAngle : (float?)null);
+                hasRotation ? rotationAngle : 0f);
         }
 
         // 保存和读取延迟 Mote，负责支持延迟期间存读档。
