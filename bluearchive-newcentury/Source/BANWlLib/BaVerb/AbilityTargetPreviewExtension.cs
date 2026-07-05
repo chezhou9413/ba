@@ -34,5 +34,8 @@ namespace BANWlLib.BaVerb
 
         // 是否从穿透投射物 ThingDef 的 PiercingProjectileExtension 读取宽度，直线长度默认使用施法射程。
         public bool usePiercingProjectileSize = false;
+
+        // 是否在技能前摇期间强制绘制主武器朝目标瞄准。
+        public bool drawPrimaryWeaponAim = false;
     }
 }

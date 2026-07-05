@@ -10,6 +10,11 @@ namespace BANWlLib.BattleSystem
         public ThingDef projectileDef;
         public bool canHitOwnPawn = false;
         public bool canHitOwnBuilding = false;
+        public bool cancelWhenCasterMoved = false;
+        public bool requireCasterCanShoot = false;
+        public bool requireLineOfSightEachShot = false;
+        public bool lockCasterDuringSequence = false;
+        public bool drawPrimaryWeaponAimDuringSequence = false;
         public List<MultiShotProjectileShotConfig> shots = new List<MultiShotProjectileShotConfig>();
 
         // 初始化组件类型，负责把 XML 配置绑定到多发投射物执行组件。
@@ -19,11 +24,12 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 多发投射物单发配置，负责描述某一发子弹的延迟和可选子弹覆盖。
+    // 多发投射物单发配置，负责描述某一发子弹的延迟、可选子弹覆盖和倍率覆盖。
     public class MultiShotProjectileShotConfig
     {
         public int delayTicks = 0;
         public ThingDef projectileDef;
+        public float attackPowerRatio = -1f;
     }
 
     // 多发投射物技能组件，负责在施法时把每发子弹注册到地图延迟队列。

@@ -18,6 +18,8 @@ namespace BANWlLib.BattleMovement
         public int pathWidth = 1;
         public float landingRadius = 0f;
         public EffecterDef selfEffecterDef;
+        public bool canPassWalls = false;
+        public bool canPassCover = false;
         public BattleActionConfig pathAction;
         public BattleActionConfig landingAction;
         public BattleMovementKnockbackConfig knockback = new BattleMovementKnockbackConfig();
@@ -54,7 +56,7 @@ namespace BANWlLib.BattleMovement
             }
 
             Map map = caster.Map;
-            IntVec3 destination = BattleMovementPathUtility.ResolveBlockedDestination(caster, target.Cell);
+            IntVec3 destination = BattleMovementPathUtility.ResolveBlockedDestination(caster, target.Cell, Props.canPassWalls, Props.canPassCover);
             if (!destination.IsValid || destination == caster.Position)
             {
                 return;
