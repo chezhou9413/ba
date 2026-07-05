@@ -902,10 +902,11 @@
 <AbilityDef>
   <defName>BAWN_Nozomi_DelayedMultiShot_Test</defName>
   <label>延迟连射·测试</label>
-  <description>锁定一个目标，按 0/6/12/18/24 tick 依次发射 5 发子弹。每发子弹命中时使用 BA 战斗公式结算 100% 攻击力 EX 伤害，可测试友军和建筑命中。</description>
+  <description>锁定一个目标，按 0/60/120/180/240 tick 依次发射 5 发子弹。连射期间禁止移动并保持主武器瞄准，施法者被拉走、无法射击或失去视线时中断剩余子弹，每发子弹命中时使用 BA 战斗公式结算 EX 伤害，可测试友军和建筑命中。</description>
   <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
   <cooldownTicksRange>1800</cooldownTicksRange>
   <hotKey>Misc1</hotKey>
+  <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
   <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
   <showPsycastEffects>False</showPsycastEffects>
   <stunTargetWhileCasting>false</stunTargetWhileCasting>
@@ -940,22 +941,42 @@
       <canHitOwnPawn>true</canHitOwnPawn>
       <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
       <canHitOwnBuilding>true</canHitOwnBuilding>
+      <!-- 施法者离开施法完成时所在格后，中断同一轮剩余子弹。 -->
+      <cancelWhenCasterMoved>true</cancelWhenCasterMoved>
+      <!-- 施法者倒地、死亡、眩晕或失去基础射击能力后，中断同一轮剩余子弹。 -->
+      <requireCasterCanShoot>true</requireCasterCanShoot>
+      <!-- 每发子弹到点时重新检查视线，视线被墙体或遮挡切断后中断同一轮剩余子弹。 -->
+      <requireLineOfSightEachShot>true</requireLineOfSightEachShot>
+      <!-- 连射队列未结束前每 tick 停止寻路，禁止施法者移动。 -->
+      <lockCasterDuringSequence>true</lockCasterDuringSequence>
+      <!-- 连射队列未结束前持续绘制主武器朝目标瞄准。 -->
+      <drawPrimaryWeaponAimDuringSequence>true</drawPrimaryWeaponAimDuringSequence>
       <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
       <shots>
         <li>
           <delayTicks>0</delayTicks>
+          <projectileDef>BANC_Bullet_Nozomi_DelayedMultiShot_Test</projectileDef>
+          <attackPowerRatio>1.0</attackPowerRatio>
         </li>
         <li>
-          <delayTicks>6</delayTicks>
+          <delayTicks>60</delayTicks>
+          <projectileDef>BANC_Bullet_Nozomi_DelayedMultiShot_Test_B</projectileDef>
+          <attackPowerRatio>1.2</attackPowerRatio>
         </li>
         <li>
-          <delayTicks>12</delayTicks>
+          <delayTicks>120</delayTicks>
+          <projectileDef>BANC_Bullet_Nozomi_DelayedMultiShot_Test</projectileDef>
+          <attackPowerRatio>1.4</attackPowerRatio>
         </li>
         <li>
-          <delayTicks>18</delayTicks>
+          <delayTicks>180</delayTicks>
+          <projectileDef>BANC_Bullet_Nozomi_DelayedMultiShot_Test_B</projectileDef>
+          <attackPowerRatio>1.6</attackPowerRatio>
         </li>
         <li>
-          <delayTicks>24</delayTicks>
+          <delayTicks>240</delayTicks>
+          <projectileDef>BANC_Bullet_Nozomi_DelayedMultiShot_Test</projectileDef>
+          <attackPowerRatio>1.8</attackPowerRatio>
         </li>
       </shots>
     </li>
@@ -966,12 +987,23 @@
       <range>30</range>
       <drawCasterRange>true</drawCasterRange>
       <drawTargetHighlight>true</drawTargetHighlight>
+      <drawPrimaryWeaponAim>true</drawPrimaryWeaponAim>
     </li>
     <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
       <showBattleFormula>true</showBattleFormula>
     </li>
   </modExtensions>
 </AbilityDef>
+
+<JobDef>
+  <defName>BANW_Job_Nozomi_DelayedMultiShot_Test</defName>
+  <driverClass>BANWlLib.BattleSystem.JobDriver_MultiShotProjectileCasting</driverClass>
+  <reportString>正在连射。</reportString>
+  <playerInterruptible>false</playerInterruptible>
+  <forceCompleteBeforeNextJob>true</forceCompleteBeforeNextJob>
+  <abilityCasting>true</abilityCasting>
+  <neverShowWeapon>true</neverShowWeapon>
+</JobDef>
 
 <ThingDef ParentName="BaseBullet">
   <defName>BANC_Bullet_Nozomi_DelayedMultiShot_Test</defName>
@@ -1004,11 +1036,42 @@
   </modExtensions>
 </ThingDef>
 
+<ThingDef ParentName="BaseBullet">
+  <defName>BANC_Bullet_Nozomi_DelayedMultiShot_Test_B</defName>
+  <label>延迟连射·测试子弹B</label>
+  <thingClass>Bullet</thingClass>
+  <projectile>
+    <damageDef>BANC_Damage_Nozomi_EXX</damageDef>
+    <damageAmountBase>45</damageAmountBase>
+    <stoppingPower>2</stoppingPower>
+    <armorPenetrationBase>3</armorPenetrationBase>
+    <speed>80</speed>
+  </projectile>
+  <graphicData>
+    <shaderType>MoteGlow</shaderType>
+    <drawSize>(1.8,1.8)</drawSize>
+    <texPath>Ability/Icon/Nozomi/Nozomi_A</texPath>
+    <graphicClass>Graphic_Single</graphicClass>
+  </graphicData>
+  <modExtensions>
+    <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+      <!-- 子弹B默认倍率更高；单发配置写 attackPowerRatio 时会覆盖这里。 -->
+      <attackPowerRatio>1.5</attackPowerRatio>
+      <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
+      <isExSkill>true</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+    </li>
+  </modExtensions>
+</ThingDef>
+
 <!-- 平面冲撞位移测试技能：沿直线位移，被墙挡住，路径敌人受到一次伤害并沿冲撞方向击退。 -->
 <AbilityDef>
   <defName>BAWN_Nozomi_MoveSlide_Test</defName>
   <label>平面冲撞·测试</label>
-  <description>向目标方向进行平面冲撞，被墙体和不可站立格挡住。路径宽度 1 格内敌方受到 100% 攻击力振动伤害并击退 3 格。</description>
+  <description>向目标方向进行平面冲撞，可越过墙体和掩体，终点仍需可站立。路径宽度 1 格内敌方受到 100% 攻击力振动伤害并击退 3 格。</description>
   <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
   <cooldownTicksRange>1800</cooldownTicksRange>
   <hotKey>Misc7</hotKey>
@@ -1046,6 +1109,10 @@
       <speed>0.35</speed>
       <!-- 只命中中心直线路径。 -->
       <pathWidth>1</pathWidth>
+      <!-- 位移路径可穿过墙体。 -->
+      <canPassWalls>true</canPassWalls>
+      <!-- 位移路径可穿过掩体。 -->
+      <canPassCover>true</canPassCover>
       <!-- 路径中的敌方目标受到一次战斗框架伤害。 -->
       <pathAction>
         <attackPowerRatio>1.0</attackPowerRatio>
@@ -1095,7 +1162,7 @@
 <AbilityDef>
   <defName>BAWN_Nozomi_MoveJump_Test</defName>
   <label>跳跃落地·测试</label>
-  <description>跳跃到目标位置，被墙体和不可站立格挡住。落地后对 3.9 格内敌方造成 200% 攻击力振动伤害并击退 2 格。</description>
+  <description>跳跃到目标位置，可越过墙体和掩体，终点仍需可站立。落地后对 3.9 格内敌方造成 200% 攻击力振动伤害并击退 2 格。</description>
   <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
   <cooldownTicksRange>1800</cooldownTicksRange>
   <hotKey>Misc3</hotKey>
@@ -1133,6 +1200,10 @@
       <speed>0.25</speed>
       <!-- 跳跃最高点高度。 -->
       <jumpHeight>2.5</jumpHeight>
+      <!-- 位移路径可穿过墙体。 -->
+      <canPassWalls>true</canPassWalls>
+      <!-- 位移路径可穿过掩体。 -->
+      <canPassCover>true</canPassCover>
       <!-- 落地范围伤害半径。 -->
       <landingRadius>3.9</landingRadius>
       <!-- 落地后才对范围内敌方执行战斗框架伤害。 -->
@@ -1183,7 +1254,7 @@
 <AbilityDef>
   <defName>BAWN_Nozomi_MoveBlink_Test</defName>
   <label>瞬移落点·测试</label>
-  <description>瞬移到目标位置，被墙体和不可站立格挡住。落点 2.9 格内敌方受到 100% 攻击力振动伤害，并生成持续场地。</description>
+  <description>瞬移到目标位置，可越过墙体和掩体，终点仍需可站立。落点 2.9 格内敌方受到 100% 攻击力振动伤害，并生成持续场地。</description>
   <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
   <cooldownTicksRange>1800</cooldownTicksRange>
   <hotKey>Misc2</hotKey>
@@ -1217,6 +1288,10 @@
     <li Class="BANWlLib.BattleMovement.CompProperties_AbilityBattleMovement">
       <!-- 瞬移模式，立即把自身放置到直线可达终点。 -->
       <mode>Blink</mode>
+      <!-- 位移路径可穿过墙体。 -->
+      <canPassWalls>true</canPassWalls>
+      <!-- 位移路径可穿过掩体。 -->
+      <canPassCover>true</canPassCover>
       <!-- 落点范围伤害半径。 -->
       <landingRadius>2.9</landingRadius>
       <!-- 瞬移完成后对落点范围敌方执行战斗框架伤害。 -->

@@ -457,18 +457,34 @@ namespace BANWlLib.BattleSystem
 
                 for (int shotIndex = 0; shotIndex < multiShot.shots.Count; shotIndex++)
                 {
-                    ThingDef projectileDef = multiShot.shots[shotIndex]?.projectileDef ?? multiShot.projectileDef;
+                    MultiShotProjectileShotConfig shot = multiShot.shots[shotIndex];
+                    ThingDef projectileDef = shot?.projectileDef ?? multiShot.projectileDef;
                     List<BattleActionConfig> projectileActions = TryBuildProjectileActions(projectileDef);
                     if (projectileActions.NullOrEmpty())
                     {
                         continue;
                     }
 
+                    ApplyMultiShotShotOverrides(projectileActions, shot);
                     actions.AddRange(projectileActions);
                 }
             }
 
             return actions.Count > 0 ? actions : null;
+        }
+
+        // 应用连射单发覆盖参数，负责让悬浮公式和运行时每发倍率保持一致。
+        private static void ApplyMultiShotShotOverrides(List<BattleActionConfig> projectileActions, MultiShotProjectileShotConfig shot)
+        {
+            if (projectileActions.NullOrEmpty() || shot == null)
+            {
+                return;
+            }
+
+            if (shot.attackPowerRatio >= 0f)
+            {
+                projectileActions[0].attackPowerRatio = shot.attackPowerRatio;
+            }
         }
 
         // 从普通投射物构建预览段，负责把原始子弹伤害和命中追加多段伤害按真实配置展开。

@@ -166,6 +166,7 @@
     <Compile Include="BaJob\Job_SustainedAreaAttack.cs" />
     <Compile Include="BANWGamecomp\Gamecomp_gakaAction.cs" />
     <Compile Include="BaVerb\AbilityTargetPreviewExtension.cs" />
+    <Compile Include="BaVerb\AbilityPrimaryWeaponAimPatch.cs" />
     <Compile Include="BaVerb\AbilityTargetPreviewShape.cs" />
     <Compile Include="BaVerb\BattleTargetPreviewData.cs" />
     <Compile Include="BaVerb\BattleTargetPreviewUtility.cs" />
@@ -213,7 +214,9 @@
     <Compile Include="BattleSystem\Hediff_StarGrowthDisplay.cs" />
     <Compile Include="BattleSystem\HediffComp_BattleShield.cs" />
     <Compile Include="BattleSystem\HediffComp_BattleStack.cs" />
+    <Compile Include="BattleSystem\JobDriver_MultiShotProjectileCasting.cs" />
     <Compile Include="BattleSystem\MultiShotProjectileDelayComponent.cs" />
+    <Compile Include="BattleSystem\MultiShotAimStance.cs" />
     <Compile Include="BattleSystem\StarGrowthDisplayUtility.cs" />
     <Compile Include="BattleSystem\Thing_BattleFieldController.cs" />
     <Compile Include="BattleSystem\WeaponDamageDisplayUtility.cs" />
