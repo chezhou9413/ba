@@ -66,6 +66,7 @@
     <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
     <stages>
       <li>
+        <becomeVisible>true</becomeVisible>
         <statOffsets>
           <BANW_AffinityBonus_Vibration>0.54</BANW_AffinityBonus_Vibration>
         </statOffsets>
@@ -916,6 +917,9 @@
   <hostile>true</hostile>
   <warmupEffecter>BANW_Nozomi_Ef_C</warmupEffecter>
   <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+  <statBases>
+    <Ability_Duration>26</Ability_Duration>
+  </statBases>
   <verbProperties>
     <warmupEffecter>BANW_Nozomi_Ef_B</warmupEffecter>
     <soundCast>BANW_Wp_HG_At</soundCast>
@@ -934,6 +938,21 @@
     </targetParams>
   </verbProperties>
   <comps>
+    <li Class="CompProperties_AbilityGiveHediff">
+      <!-- 施法完成后给望自己添加状态，用来测试原版 GiveHediff 与延迟连射能否共存。 -->
+      <compClass>CompAbilityEffect_GiveHediff</compClass>
+      <hediffDef>BAWN_Nozomi_buff</hediffDef>
+      <applyToSelf>true</applyToSelf>
+      <applyToTarget>false</applyToTarget>
+      <onlyApplyToSelf>true</onlyApplyToSelf>
+      <replaceExisting>true</replaceExisting>
+      <severity>1</severity>
+    </li>
+    <li Class="CompProperties_AbilityEffecterOnCaster">
+      <!-- 施法完成后在望身上播放原版自身特效，用来测试 EffecterOnCaster 的 PostApplied 链路。 -->
+      <effecterDef>BANW_Nozomi_Ef_B</effecterDef>
+      <maintainTicks>120</maintainTicks>
+    </li>
     <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
       <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
       <projectileDef>BANC_Bullet_Nozomi_DelayedMultiShot_Test</projectileDef>

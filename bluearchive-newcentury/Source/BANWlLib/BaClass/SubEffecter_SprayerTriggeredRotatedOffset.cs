@@ -6,30 +6,66 @@ namespace BANWlLib.BaClass
     // 触发式旋转偏移喷射特效，负责按施法者朝向或目标方向旋转位置偏移后生成 Mote。
     public class SubEffecter_SprayerTriggeredRotatedOffset : SubEffecter_Sprayer
     {
+        private int ticksLeft = -1;
+
+        private int delayedOverrideSpawnTick = -1;
+
+        private bool hasDelayedTrigger;
+
         // 创建旋转偏移喷射子特效，负责绑定 SubEffecterDef 和父 Effecter。
         public SubEffecter_SprayerTriggeredRotatedOffset(SubEffecterDef def, Effecter parent)
             : base(def, parent)
         {
         }
 
-        // 触发子特效，负责根据 Pawn 到目标点的方向旋转配置偏移，并按 initialDelayTicks 决定立即生成或延迟生成。
+        // 触发子特效，负责按原版延迟子特效语义记录倒计时或立即生成。
         public override void SubTrigger(TargetInfo A, TargetInfo B, int overrideSpawnTick = -1, bool force = false)
         {
-            if (def.moteDef == null)
+            if (def.initialDelayTicks > 0)
             {
-                Log.Error("[BANW] 旋转偏移喷射特效缺少 moteDef。");
+                ticksLeft = def.initialDelayTicks;
+                delayedOverrideSpawnTick = overrideSpawnTick;
+                hasDelayedTrigger = true;
                 return;
             }
 
-            Map map = A.Map ?? B.Map;
-            if (map == null)
+            SpawnFromTargets(A, B, overrideSpawnTick);
+        }
+
+        // 维护子特效，负责在原版 warmup 生命周期内处理延迟生成。
+        public override void SubEffectTick(TargetInfo A, TargetInfo B)
+        {
+            bool waiting = hasDelayedTrigger && ticksLeft > 0;
+            if (waiting)
             {
-                Log.Error("[BANW] 旋转偏移喷射特效缺少地图，无法生成 Mote。");
-                return;
+                ticksLeft--;
             }
 
+            if (waiting && ticksLeft <= 0)
+            {
+                hasDelayedTrigger = false;
+                SpawnFromTargets(A, B, delayedOverrideSpawnTick);
+            }
+
+            base.SubEffectTick(A, B);
+        }
+
+        // 清理子特效，负责取消尚未生成的延迟特效。
+        public override void SubCleanup()
+        {
+            hasDelayedTrigger = false;
+            ticksLeft = -1;
+            delayedOverrideSpawnTick = -1;
+            base.SubCleanup();
+        }
+
+        // 按目标信息生成 Mote，负责根据 Pawn 到目标点的方向旋转配置偏移。
+        private void SpawnFromTargets(TargetInfo A, TargetInfo B, int overrideSpawnTick)
+        {
             Vector3 rotatedOffset = def.positionOffset;
-            float? rotationAngle = null;
+            float rotationBase = def.rotation.RandomInRange;
+            float targetAngle = 0f;
+            bool shouldRotateByTarget = !def.absoluteAngle;
 
             Pawn pawn = null;
             if (A.HasThing && A.Thing is Pawn)
@@ -43,39 +79,43 @@ namespace BANWlLib.BaClass
 
             if (pawn != null)
             {
-                float angle = pawn.Rotation.AsAngle;
+                targetAngle = pawn.Rotation.AsAngle;
                 if (B.IsValid)
                 {
-                    angle = (B.CenterVector3 - pawn.DrawPos).AngleFlat();
+                    targetAngle = (B.CenterVector3 - pawn.DrawPos).AngleFlat();
                 }
                 else
                 {
                     Stance_Busy stance = pawn.stances?.curStance as Stance_Busy;
                     if (stance != null && stance.focusTarg.IsValid)
                     {
-                        angle = (stance.focusTarg.CenterVector3 - pawn.DrawPos).AngleFlat();
+                        targetAngle = (stance.focusTarg.CenterVector3 - pawn.DrawPos).AngleFlat();
                     }
                 }
-                rotatedOffset = def.positionOffset.RotatedBy(angle);
-                rotationAngle = angle;
             }
 
-            Vector3 pos = A.Cell.ToVector3Shifted() + rotatedOffset;
-            if (def.initialDelayTicks > 0)
+            if (shouldRotateByTarget)
             {
-                RotatedOffsetMoteDelayComponent.Queue(map, def.moteDef, pos, def.scale.RandomInRange, rotationAngle, def.initialDelayTicks);
-                return;
+                rotatedOffset = def.positionOffset.RotatedBy(targetAngle);
             }
 
-            SpawnMote(def.moteDef, pos, map, def.scale.RandomInRange, rotationAngle);
+            float rotationAngle = rotationBase + (shouldRotateByTarget ? targetAngle : 0f);
+            Vector3 pos = A.Cell.ToVector3Shifted() + rotatedOffset;
+            SpawnMote(def.moteDef, pos, A.Map ?? B.Map, def.scale.RandomInRange, rotationAngle, overrideSpawnTick);
         }
 
         // 生成 Mote，负责应用缩放、位置和旋转角度。
-        public static void SpawnMote(ThingDef moteDef, Vector3 pos, Map map, float scale, float? rotationAngle)
+        public static void SpawnMote(ThingDef moteDef, Vector3 pos, Map map, float scale, float rotationAngle, int overrideSpawnTick = -1)
         {
             if (moteDef == null)
             {
                 Log.Error("[BANW] 旋转偏移喷射特效生成任务缺少 moteDef。");
+                return;
+            }
+
+            if (map == null)
+            {
+                Log.Error("[BANW] 旋转偏移喷射特效缺少地图，无法生成 Mote。");
                 return;
             }
 
@@ -87,12 +127,13 @@ namespace BANWlLib.BaClass
             Mote mote = (Mote)ThingMaker.MakeThing(moteDef);
             mote.Scale = scale;
             mote.exactPosition = pos;
-            if (rotationAngle.HasValue)
-            {
-                mote.exactRotation = rotationAngle.Value;
-            }
+            mote.exactRotation = rotationAngle;
 
             GenSpawn.Spawn(mote, pos.ToIntVec3(), map);
+            if (overrideSpawnTick != -1)
+            {
+                mote.ForceSpawnTick(overrideSpawnTick);
+            }
         }
     }
 }

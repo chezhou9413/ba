@@ -185,6 +185,9 @@
       </li>
     </additionalHediffs>
   </DamageDef>
+  <DamageDef ParentName="BANC_Damage_zhendong">
+    <defName>BANC_Damage_Mika_A_EXX_Extra</defName><!--通用贯通-->
+  </DamageDef>
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Mika_A_EXX</defName>
     <label>星之轨迹</label>
@@ -219,7 +222,7 @@
         <canHitOwnBuilding>true</canHitOwnBuilding>
         <extraDamages>
           <li>
-            <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
+            <damageDef>BANC_Damage_Mika_A_EXX_Extra</damageDef>
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>0</delayTicks>
             <penetration>2</penetration>
@@ -231,7 +234,7 @@
             <isExSkill>true</isExSkill>
           </li>
           <li>
-            <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
+            <damageDef>BANC_Damage_Mika_A_EXX_Extra</damageDef>
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>4</delayTicks>
             <penetration>2</penetration>
@@ -243,7 +246,7 @@
             <isExSkill>true</isExSkill>
           </li>
           <li>
-            <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
+            <damageDef>BANC_Damage_Mika_A_EXX_Extra</damageDef>
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>8</delayTicks>
             <penetration>2</penetration>
@@ -255,7 +258,7 @@
             <isExSkill>true</isExSkill>
           </li>
           <li>
-            <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
+            <damageDef>BANC_Damage_Mika_A_EXX_Extra</damageDef>
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>12</delayTicks>
             <penetration>2</penetration>
@@ -267,7 +270,7 @@
             <isExSkill>true</isExSkill>
           </li>
           <li>
-            <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
+            <damageDef>BANC_Damage_Mika_A_EXX_Extra</damageDef>
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>16</delayTicks>
             <penetration>2</penetration>
