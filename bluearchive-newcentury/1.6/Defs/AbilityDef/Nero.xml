@@ -6,6 +6,7 @@
     <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
     <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
+    <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
     <warmupStartSound>Nero_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
     <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
@@ -49,9 +50,19 @@
         <projectileDef>BANC_Bullet_Nero_EXX</projectileDef>
         <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
         <canHitOwnPawn>true</canHitOwnPawn>
-        <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
-        <canHitOwnBuilding>true</canHitOwnBuilding>
-        <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
+       <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      <!-- 施法者离开施法完成时所在格后，中断同一轮剩余子弹。 -->
+      <cancelWhenCasterMoved>true</cancelWhenCasterMoved>
+      <!-- 施法者倒地、死亡、眩晕或失去基础射击能力后，中断同一轮剩余子弹。 -->
+      <requireCasterCanShoot>true</requireCasterCanShoot>
+      <!-- 每发子弹到点时重新检查视线，视线被墙体或遮挡切断后中断同一轮剩余子弹。 -->
+      <requireLineOfSightEachShot>true</requireLineOfSightEachShot>
+      <!-- 连射队列未结束前每 tick 停止寻路，禁止施法者移动。 -->
+      <lockCasterDuringSequence>true</lockCasterDuringSequence>
+      <!-- 连射队列未结束前持续绘制主武器朝目标瞄准。 -->
+      <drawPrimaryWeaponAimDuringSequence>true</drawPrimaryWeaponAimDuringSequence>
+      <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
         <shots>
           <li><delayTicks>0</delayTicks></li>
           <li><delayTicks>4</delayTicks></li>
