@@ -78,10 +78,10 @@
   <StatDef>
     <defName>BANW_CriticalChance</defName>
     <label>暴击率</label>
-    <description>暴击率会影响暴击的概率,最高为100%暴击</description>
+    <description>暴击率会影响暴击的概率</description>
     <category>BANW_BattleStats</category>
     <minValue>0</minValue>
-    <maxValue>1</maxValue>
+    <maxValue>99</maxValue>
     <defaultBaseValue>0.15</defaultBaseValue>
     <toStringStyle>PercentZero</toStringStyle>
   </StatDef>

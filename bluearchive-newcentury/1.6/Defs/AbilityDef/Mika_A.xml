@@ -119,7 +119,7 @@
     <AbilityDef>
     <defName>BAWN_Mika_A_EXX</defName>
     <label>星之轨迹</label>
-    <description>对一名敌人一共造成自身子弹攻击力的1571%的伤害</description>
+    <description>对一名敌人一共造成自身攻击力的1571%的伤害</description>
     <iconPath>Ability/Icon/Reisa_A/Reisa_EX</iconPath>
     <cooldownTicksRange>2400</cooldownTicksRange>
     <hotKey>Misc4</hotKey>
@@ -166,7 +166,7 @@
           <li>
             <damageDef>BANC_Damage_Mika_A_EXX</damageDef>
             <attackPowerRatio>5.5</attackPowerRatio>
-            <isNormalAttack>false</isNormalAttack>
+             <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -207,7 +207,7 @@
     </graphicData>
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-        <isNormalAttack>false</isNormalAttack>
+         <isNormalAttack>false</isNormalAttack>
         <attackPowerRatio>5.5</attackPowerRatio>
         <canCrit>true</canCrit>
         <alwaysCrit>true</alwaysCrit>
@@ -226,7 +226,7 @@
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>0</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>false</isNormalAttack>
+             <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -238,7 +238,7 @@
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>4</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>false</isNormalAttack>
+             <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -250,7 +250,7 @@
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>8</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>false</isNormalAttack>
+             <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -262,7 +262,7 @@
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>12</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>false</isNormalAttack>
+             <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>
@@ -274,7 +274,7 @@
             <attackPowerRatio>2.04</attackPowerRatio>
             <delayTicks>16</delayTicks>
             <penetration>2</penetration>
-            <isNormalAttack>false</isNormalAttack>
+             <isNormalAttack>false</isNormalAttack>
             <canCrit>true</canCrit>
             <alwaysCrit>true</alwaysCrit>
             <alwaysShowCriticalText>true</alwaysShowCriticalText>

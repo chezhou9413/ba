@@ -1,47 +1,52 @@
-
 <Defs>
   <AbilityDef>
-<defName>BAWN_Reisa_A_EX</defName>
- <label>铝热剂重拳！</label>
- <description>对一名敌人造成自身攻击力265%的伤害并回复自身治愈力54%的生命值</description>
- <iconPath>Ability/Icon/Reisa_A/Reisa_EX</iconPath>
- <cooldownTicksRange>480</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Reisa_A_Skill_EX</warmupStartSound>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>true</hostile><!-- 是否是敌对行为 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <verbProperties>
- <warmupEffecter>BANW_Reisa_A_Ef_B</warmupEffecter>
- <soundCast>BANW_Wp_SG_At</soundCast>
- <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
- <defaultProjectile>BANC_Bullet_Reisa_A_EX</defaultProjectile>
- <range>33.9</range><!-- 作用范围：-1 表示只能近战接触 -->
- <warmupTime>1</warmupTime><!-- 前摇时间（单位：秒） -->
- <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
- <ticksBetweenBurstShots>7</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
-<burstShotCount>2</burstShotCount> <!--连发射击的数量为 12 发。-->
-<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
-<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
-<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
-<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
-<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
- <targetParams><!-- 目标参数设置 -->
-  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
-  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
-  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
-  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
-  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
-  </targetParams>
-  </verbProperties>
-  <comps>
-     <!-- 给予健康状态效果的组件 -->
+    <defName>BAWN_Reisa_A_EX</defName>
+    <label>铝热剂重拳！</label>
+    <description>对一名敌人造成自身攻击力265%的伤害并回复自身治愈力54%的生命值</description>
+    <iconPath>Ability/Icon/Reisa_A/Reisa_EX</iconPath>
+    <cooldownTicksRange>480</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Reisa_A_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <verbProperties>
+      <warmupEffecter>BANW_Reisa_A_Ef_B</warmupEffecter>
+      <soundCast>BANW_Wp_SG_At</soundCast>
+      <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <defaultProjectile>BANC_Bullet_Reisa_A_EX</defaultProjectile>
+      <range>33.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>1</warmupTime><!-- 前摇时间（单位：秒） -->
+      <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+      <ticksBetweenBurstShots>7</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+      <burstShotCount>2</burstShotCount> <!--连发射击的数量为
+      12 发。-->
+      <accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为
+      90%。-->
+      <accuracyShort>1</accuracyShort> <!--短距离射击的命中率为
+      80%。-->
+      <accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为
+      70%。-->
+      <accuracyLong>1</accuracyLong><!--长距离射击的命中率为
+      60%。-->
+      <ai_IsWeapon>false</ai_IsWeapon> <!--AI
+      不将此能力视为武器。-->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <!-- 给予健康状态效果的组件 -->
       <li Class="CompProperties_AbilityGiveHediff">
         <!-- 组件类 -->
         <compClass>CompAbilityEffect_GiveHediff</compClass>
@@ -52,32 +57,32 @@
         <!-- 是否替换已存在的同种效果 -->
         <replaceExisting>true</replaceExisting>
       </li>
-</comps>
-<modExtensions>
+    </comps>
+    <modExtensions>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-      <showBattleFormula>true</showBattleFormula>
-      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
-      <previewActions>
-        <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>2.65</attackPowerRatio>
-          <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_zhendong</damageDef>
-          <!-- 是否允许暴击。 -->
-          <canCrit>true</canCrit>
-          <!-- 是否应用攻击类型与护甲类型克制。 -->
-          <applyAffinity>true</applyAffinity>
-          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-          <isExSkill>true</isExSkill>
-        </li>
-      </previewActions>
-    </li>
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>2.65</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_zhendong</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>true</isExSkill>
+          </li>
+        </previewActions>
+      </li>
     </modExtensions>
-</AbilityDef>
+  </AbilityDef>
 
-<HediffDef>
+  <HediffDef>
     <!-- 范围内目标应用的健康状态标识符 -->
     <defName>BAWN_Reisa_A_EXX_buff_C</defName>
     <!-- 显示标签 -->
@@ -91,7 +96,7 @@
     <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
     <!-- 组件列表 -->
     <comps>
-         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <!-- 每 tick 回复最终治疗力的 4%。 -->
         <healPowerRatio>0.54</healPowerRatio>
@@ -107,7 +112,7 @@
         <disappearsAfterTicks>6</disappearsAfterTicks>
       </li>
       <!-- 自动消失组件 -->
-       <li Class="HediffCompProperties_Effecter">
+      <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>
       </li>
     </comps>
@@ -123,12 +128,12 @@
     </stages>
   </HediffDef>
 
- <ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Reisa_A_EX</defName>
     <label>铝热剂重拳！</label>
     <projectile>
       <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
-      <damageAmountBase>66</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>25</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>60</speed><!--子弹速度-->
@@ -139,9 +144,17 @@
       <texPath>Projectile/Bullet_Reisa_A</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>1.43</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>1.33</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>false</isExSkill>
+      </li>
+    </modExtensions>
+  </ThingDef>
   <AbilityDef>
-     <!-- 能力的唯一标识符 -->
+    <!-- 能力的唯一标识符 -->
     <defName>BAWN_Reisa_A_EXX</defName>
     <!-- 能力显示名称 -->
     <label>铝热剂粉红，登场！</label>
@@ -207,7 +220,7 @@
         <canTargetMechs>false</canTargetMechs>
       </targetParams>
     </verbProperties>
-    
+
     <!-- 能力组件 -->
     <comps>
       <!-- 给予健康状态效果的组件 -->
@@ -223,28 +236,28 @@
       </li>
     </comps>
     <modExtensions>
-   <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-     <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-     <showBattleFormula>true</showBattleFormula>
-     <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
-     <previewActions>
-       <li>
-         <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
-         <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
-         <healPowerRatio>0.56</healPowerRatio>
-         <!-- true 表示该段是治疗。 -->
-         <isHealing>true</isHealing>
-         <!-- 治疗是否允许暴击。 -->
-         <canCrit>false</canCrit>
-         <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-         <isExSkill>false</isExSkill>
-       </li>
-     </previewActions>
-   </li>
- </modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的治疗段配置，只用于显示公式，不直接治疗。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础治疗，0 表示只吃治疗力倍率。 -->
+            <!-- 最终治疗力倍率，0.04 表示每次回复 4% 治疗力。 -->
+            <healPowerRatio>0.56</healPowerRatio>
+            <!-- true 表示该段是治疗。 -->
+            <isHealing>true</isHealing>
+            <!-- 治疗是否允许暴击。 -->
+            <canCrit>false</canCrit>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>false</isExSkill>
+          </li>
+        </previewActions>
+      </li>
+    </modExtensions>
   </AbilityDef>
 
-<HediffDef>
+  <HediffDef>
     <!-- 健康状态唯一标识符 -->
     <defName>BAWN_Reisa_A_EXX_buff_A</defName>
     <!-- 显示标签 -->
@@ -306,7 +319,7 @@
     <defaultLabelColor>(90, 255, 112)</defaultLabelColor>
     <!-- 组件列表 -->
     <comps>
-         <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
+      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
         <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
         <!-- 每 tick 回复最终治疗力的 4%。 -->
         <healPowerRatio>0.56</healPowerRatio>
@@ -318,7 +331,7 @@
         <isExSkill>false</isExSkill>
       </li>
       <!-- 自动消失组件 -->
-       <li Class="HediffCompProperties_Effecter">
+      <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Chinatsu_Ef_A</stateEffecter>
       </li>
       <li Class="HediffCompProperties_Disappears">
@@ -335,7 +348,7 @@
       <li>
         <!-- 属性加成 -->
         <statOffsets>
-         <BANW_FinalDamageMultiplier>0.22</BANW_FinalDamageMultiplier>
+          <BANW_FinalDamageMultiplier>0.22</BANW_FinalDamageMultiplier>
         </statOffsets>
       </li>
     </stages>

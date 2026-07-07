@@ -17,6 +17,7 @@
     <targetRequired>true</targetRequired><!-- 对自己使用 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
     <verbProperties>
+      <warmupEffecter>BANW_Effecter_A</warmupEffecter>
       <soundCast>BANW_Wp_MG_At</soundCast>
       <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!--
       动词类，这里是触发型技能 -->
@@ -99,7 +100,9 @@
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
         <attackPowerRatio>0.373</attackPowerRatio>
-        <isNormalAttack>false</isNormalAttack>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>false</isExSkill>
       </li>
     </modExtensions>
   </ThingDef>

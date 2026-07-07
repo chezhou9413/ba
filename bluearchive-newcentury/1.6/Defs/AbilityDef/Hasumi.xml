@@ -1,147 +1,146 @@
-
 <Defs>
-<AbilityDef>
-<defName>BAWN_Hasumi_EXX</defName>
- <label>穿甲弹</label>
- <description>对一名敌人造成自身子弹攻击力的1100%的伤害</description>
- <iconPath>Ability/Icon/Hasumi/Hasumi_EXX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Hasumi_ExxSkill</warmupStartSound>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>true</hostile><!-- 是否是敌对行为 -->
- <targetRequired>true</targetRequired><!-- 需要选择目标 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <verbProperties>
- <warmupEffecter></warmupEffecter>
- <soundCast>Hasumi_Gun_EX</soundCast>
- <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
- <drawAimPie>true</drawAimPie><!-- 绘制瞄准圈 -->
- <range>59.9</range><!-- 作用范围：-1 表示只能近战接触 -->
- <warmupTime>2.0</warmupTime><!-- 前摇时间（单位：秒） -->
- <targetParams><!-- 目标参数设置 -->
-  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
-  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
-  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
-  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
-  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
-  </targetParams>
-  </verbProperties>
-  <comps>
-<li Class="CompProperties_AbilityLaunchProjectile">
+  <AbilityDef>
+    <defName>BAWN_Hasumi_EXX</defName>
+    <label>穿甲弹</label>
+    <description>对一名敌人造成自身子弹攻击力的1100%的伤害</description>
+    <iconPath>Ability/Icon/Hasumi/Hasumi_EXX</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Hasumi_ExxSkill</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <targetRequired>true</targetRequired><!-- 需要选择目标 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <verbProperties>
+      <warmupEffecter></warmupEffecter>
+      <soundCast>Hasumi_Gun_EX</soundCast>
+      <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <drawAimPie>true</drawAimPie><!-- 绘制瞄准圈 -->
+      <range>59.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>2.0</warmupTime><!-- 前摇时间（单位：秒） -->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
         <projectileDef>BANC_Bullet_Hasumi_EX</projectileDef>
       </li>
-  </comps>
-  <modExtensions>
+    </comps>
+    <modExtensions>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-      <showBattleFormula>true</showBattleFormula>
-      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
-      <previewActions>
-        <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>11.0</attackPowerRatio>
-          <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_Hasumi</damageDef>
-          <!-- 是否允许暴击。 -->
-          <canCrit>true</canCrit>
-          <!-- 是否应用攻击类型与护甲类型克制。 -->
-          <applyAffinity>true</applyAffinity>
-          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-          <isExSkill>true</isExSkill>
-        </li>
-      </previewActions>
-    </li>
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>11.0</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_Hasumi</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>true</isExSkill>
+          </li>
+        </previewActions>
+      </li>
     </modExtensions>
-</AbilityDef>
-<AbilityDef>
-<defName>BAWN_Hasumi_EX</defName>
- <label>冷静的心</label>
-<description>减少自身50%的装填时间和增加57%的暴击伤害持续13秒</description>
- <iconPath>Ability/Icon/Hasumi/Hasumi_EX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Hasumi_ExSkill</warmupStartSound>
- <warmupEffecter>BANW_Effecter_A</warmupEffecter>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <targetRequired>false</targetRequired><!-- 对自己使用 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>false</hostile><!-- 是否是敌对行为 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <statBases>
-<!-- 持续时间：20 秒 = 1200 ticks -->
-  <Ability_Duration>13</Ability_Duration>
- </statBases>
- <verbProperties>
- <soundCast>Aoba_Skill_EX</soundCast>
- <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
- <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
- <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
- <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
- <targetParams><!-- 目标参数设置 -->
-  <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
-  <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
-  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
-  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
-  <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
-  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
-  </targetParams>
-  </verbProperties>
-  <comps>
-    <li Class="CompProperties_AbilityEffecterOnTarget">
+  </AbilityDef>
+  <AbilityDef>
+    <defName>BAWN_Hasumi_EX</defName>
+    <label>冷静的心</label>
+    <description>减少自身50%的装填时间和增加57%的暴击伤害持续13秒</description>
+    <iconPath>Ability/Icon/Hasumi/Hasumi_EX</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Hasumi_ExSkill</warmupStartSound>
+    <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <targetRequired>false</targetRequired><!-- 对自己使用 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>false</hostile><!-- 是否是敌对行为 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <statBases>
+      <!-- 持续时间：20 秒 = 1200 ticks -->
+      <Ability_Duration>13</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <soundCast>Aoba_Skill_EX</soundCast>
+      <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+      <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
         <effecterDef>BANW_Effecter_B</effecterDef>
         <maintainForTicks>60</maintainForTicks>
       </li>
-<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
-  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
-  <hediffDef>BAWN_Hasumi_hediff</hediffDef><!-- 要添加的状态效果定义名 -->
-  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
-  <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
-</li>
+      <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+        <hediffDef>BAWN_Hasumi_hediff</hediffDef><!-- 要添加的状态效果定义名 -->
+        <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+        <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+      </li>
 
-</comps>
-</AbilityDef>
-<HediffDef>
-        <!-- 状态的唯一标识符 -->
-        <defName>BAWN_Hasumi_hediff</defName>
-        <!-- 显示名称 -->
-        <label> </label>
-        <!-- 效果描述 -->
-        <description>减少自身50%的射击冷却时间并提高57%的暴击伤害持续13秒</description>
-        <defaultLabelColor>(255, 255, 0)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
-        <isBad>false</isBad>
-        <hediffClass>HediffWithComps</hediffClass>
-        <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
-          <stages>
-          <li>     
-           <statOffsets>
-           <RangedCooldownFactor>-0.50</RangedCooldownFactor>
-           <BANW_CriticalDamage>+0.57</BANW_CriticalDamage>
-            </statOffsets>
-           </li>
-          </stages>
-        <comps>
-        <li Class="HediffCompProperties_Disappears">
+    </comps>
+  </AbilityDef>
+  <HediffDef>
+    <!-- 状态的唯一标识符 -->
+    <defName>BAWN_Hasumi_hediff</defName>
+    <!-- 显示名称 -->
+    <label> </label>
+    <!-- 效果描述 -->
+    <description>减少自身50%的射击冷却时间并提高57%的暴击伤害持续13秒</description>
+    <defaultLabelColor>(255, 255, 0)</defaultLabelColor>
+    <!-- 是否为负面效果（会影响心情等） -->
+    <isBad>false</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+    <stages>
+      <li>
+        <statOffsets>
+          <RangedCooldownFactor>-0.50</RangedCooldownFactor>
+          <BANW_CriticalDamage>+0.57</BANW_CriticalDamage>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1200</disappearsAfterTicks>
       </li>
-      
+
     </comps>
-    </HediffDef>
-<ThingDef ParentName="BaseBullet">
+  </HediffDef>
+  <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Hasumi_EX</defName>
     <label>穿甲弹</label>
     <projectile>
@@ -157,10 +156,18 @@
       <texPath>Projectile/Bullet_Hasumi_EX</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>12.54</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
-    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
-    
-     <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>11.00</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>true</isExSkill>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BAWN_Hasumi_EX_A</defName>
     <thingClass>MoteThrown</thingClass>
     <drawOffscreen>true</drawOffscreen>
@@ -184,16 +191,16 @@
   <EffecterDef>
     <defName>BAWN_Hasumi_Ef_A</defName>
     <children>
-     <li>
+      <li>
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <moteDef>BAWN_Hasumi_EX_A</moteDef>
         <scale>1</scale>
-         <positionRadius>0.5</positionRadius><!-- 生成范围 -->
+        <positionRadius>0.5</positionRadius><!-- 生成范围 -->
         <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
         <positionOffset>(0, 0, 0)</positionOffset>
         <angle>0~360</angle><!-- 发射角度 -->
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
-       <rotation>90</rotation><!-- 初始旋转角度（无偏转） -->
+        <rotation>90</rotation><!-- 初始旋转角度（无偏转） -->
         <spawnLocType>OnSource</spawnLocType>
         <speed>6</speed>
       </li>
@@ -201,12 +208,12 @@
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <moteDef>BAWN_Hasumi_EX_A</moteDef>
         <scale>1</scale>
-         <positionRadius>0.5</positionRadius><!-- 生成范围 -->
+        <positionRadius>0.5</positionRadius><!-- 生成范围 -->
         <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
         <positionOffset>(0, 0, 0)</positionOffset>
         <angle>0~360</angle><!-- 发射角度 -->
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
-       <rotation>180</rotation><!-- 初始旋转角度（无偏转） -->
+        <rotation>180</rotation><!-- 初始旋转角度（无偏转） -->
         <spawnLocType>OnSource</spawnLocType>
         <speed>6</speed>
       </li>
@@ -214,12 +221,12 @@
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <moteDef>BAWN_Hasumi_EX_A</moteDef>
         <scale>1</scale>
-         <positionRadius>0.5</positionRadius><!-- 生成范围 -->
+        <positionRadius>0.5</positionRadius><!-- 生成范围 -->
         <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
         <positionOffset>(0, 0, 0)</positionOffset>
         <angle>0~360</angle><!-- 发射角度 -->
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
-       <rotation>270</rotation><!-- 初始旋转角度（无偏转） -->
+        <rotation>270</rotation><!-- 初始旋转角度（无偏转） -->
         <spawnLocType>OnSource</spawnLocType>
         <speed>6</speed>
       </li>
@@ -240,7 +247,8 @@
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside><!--是否对所有层级造成伤害，直到穿透到外部-->
     <impactSoundType>Bullet</impactSoundType><!--撞击音效-->
     <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart><!--过度杀伤百分比以摧毁部件-->
-    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal><!--设置强制将伤害转为内部伤害的概率为 60%-->
+    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal><!--设置强制将伤害转为内部伤害的概率为
+    60%-->
     <isRanged>true</isRanged><!--是否为远程武器-->
     <makesAnimalsFlee>true</makesAnimalsFlee><!--是否使动物逃跑-->
     <damageEffecter>BAWN_Hasumi_Ef_A</damageEffecter>

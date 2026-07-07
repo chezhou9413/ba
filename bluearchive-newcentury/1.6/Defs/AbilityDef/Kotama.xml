@@ -70,7 +70,7 @@
     <label>监听弱点</label>
     <projectile>
       <damageDef>BANC_Damage_Kotama</damageDef><!--子弹类型-->
-      <damageAmountBase>63</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>14</damageAmountBase><!--子弹伤害-->
       <stoppingPower>5.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>200</speed><!--子弹速度-->
@@ -81,6 +81,14 @@
       <texPath>Projectile/kongbai</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>4.5</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>false</isExSkill>
+      </li>
+    </modExtensions>
   </ThingDef>
 <DamageDef ParentName="BANC_Damage_baofa">
     <defName>BANC_Damage_Kotama</defName><!--通用贯通-->

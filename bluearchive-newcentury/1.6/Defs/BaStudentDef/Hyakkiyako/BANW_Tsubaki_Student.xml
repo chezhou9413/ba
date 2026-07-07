@@ -69,7 +69,7 @@
 			<Ability1>
 				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
+				<AbilityTitle>EX技能</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
 可以包含<b>多行</b>文本。
@@ -79,11 +79,11 @@
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Chinatsu/Chinatsu_EXX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
-				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilityTitle>睡眠，大补</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>1</color>天]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[回复自身治愈力663%的生命值]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -99,11 +99,11 @@
                 <offSetY>0</offSetY>
 			</Ability4>
 			<Ability4>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Akane/Akane_A</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
-				<AbilityTitle>子技能</AbilityTitle>
+				<AbilityTitle>娴熟的装弹动作</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilityIntroduction><![CDATA[自身乘伤系数减少<color=#00FFFF>17%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

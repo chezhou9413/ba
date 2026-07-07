@@ -218,13 +218,13 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#4169E1&gt;形态：阿比舒&lt;/color&gt;</label>
-                <description>被动技能:解放所有的可能性，所有攻击必定暴击，普通攻击不会有冷却时间，暴击伤害增加&lt;color=#DC143C&gt;40%&lt;/color&gt;</description>
+                <description>被动技能:解放所有的可能性，造成的所有伤害视为EX伤害，基础精通倍率增加40%，EX技能伤害率增加15%</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<BANW_CriticalDamage>0.40</BANW_CriticalDamage>
+					<BANW_BaseMasteryMultiplier>0.40</BANW_BaseMasteryMultiplier>
+					<BANW_ExSkillMultiplier>0.15</BANW_ExSkillMultiplier>
                 </statOffsets>
 				<statFactors>
-              <RangedCooldownFactor>0</RangedCooldownFactor>
 				</statFactors>
             </li>
         </degreeDatas>

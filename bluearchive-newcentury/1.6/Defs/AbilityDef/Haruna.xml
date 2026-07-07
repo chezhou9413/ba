@@ -1,69 +1,68 @@
-
 <Defs>
   <AbilityDef>
-<defName>BAWN_Haruna_EX</defName>
- <label>爆炸的异国风情</label>
- <description>对一名敌人造成攻击力380%的伤害</description>
- <iconPath>Ability/Icon/Asuna/Asuna_EX</iconPath>
- <cooldownTicksRange>1800</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Haruna_Skill_EX</warmupStartSound>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>true</hostile><!-- 是否是敌对行为 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <verbProperties>
-<warmupEffecter>BANW_Effecter_A</warmupEffecter>
- <soundCast>BANW_Wp_SR_At_A</soundCast>
- <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
- <range>95.9</range><!-- 投掷范围 -->
- <warmupTime>1</warmupTime><!-- 前摇时间 -->
- <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
- <targetParams><!-- 目标参数设置 -->
-  <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
-  <canTargetSelf>false</canTargetSelf>
-  <canTargetPawns>true</canTargetPawns>
-  <canTargetBuildings>true</canTargetBuildings>
-  <canTargetAnimals>true</canTargetAnimals>
-  <canTargetHumans>true</canTargetHumans>
-  <canTargetMechs>true</canTargetMechs>
-  </targetParams>
-  </verbProperties>
-  <comps>
-    <li Class="CompProperties_AbilityLaunchProjectile">
+    <defName>BAWN_Haruna_EX</defName>
+    <label>爆炸的异国风情</label>
+    <description>对一名敌人造成攻击力380%的伤害</description>
+    <iconPath>Ability/Icon/Asuna/Asuna_EX</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Haruna_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+      <soundCast>BANW_Wp_SR_At_A</soundCast>
+      <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+      <range>95.9</range><!-- 投掷范围 -->
+      <warmupTime>1</warmupTime><!-- 前摇时间 -->
+      <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
         <projectileDef>BANC_Bullet_Haruna_EX</projectileDef>
       </li>
-  </comps>
-  
+    </comps>
+
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-      <showBattleFormula>true</showBattleFormula>
-      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
-      <previewActions>
-        <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>3.8</attackPowerRatio>
-          <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_shenmi</damageDef>
-          <!-- 是否允许暴击。 -->
-          <canCrit>true</canCrit>
-          <!-- 是否应用攻击类型与护甲类型克制。 -->
-          <applyAffinity>true</applyAffinity>
-          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-          <isExSkill>true</isExSkill>
-        </li>
-      </previewActions>
-    </li>
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>3.8</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>false</isExSkill>
+          </li>
+        </previewActions>
+      </li>
     </modExtensions>
-</AbilityDef>
+  </AbilityDef>
 
- <ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Haruna_EX</defName>
     <label>爆炸的异国风情</label>
     <projectile>
@@ -79,5 +78,13 @@
       <texPath>Projectile/Bullet_Haruna</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>4.25</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>3.8</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+         <isExSkill>false</isExSkill>
+      </li>
+    </modExtensions>
+  </ThingDef>
 </Defs>

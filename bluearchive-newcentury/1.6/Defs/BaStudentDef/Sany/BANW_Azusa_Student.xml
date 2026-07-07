@@ -67,13 +67,11 @@
 				<WapenTypeText>步枪</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Serika/Serika_EX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>Intulit Mortem</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名敌人造成自身攻击力<color=#00FFFF>2023%</color>的伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -104,7 +102,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>瞄准弱点</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[子技能:自身攻击时有<color=#00FFFF>20%</color>的概率造成<color=#00FFFF>50%</color>攻击力的追加伤害]]>
+				<AbilityIntroduction><![CDATA[子技能:EX技能额外造成自身攻击力<color=#00FFFF>88.5%</color>的追加伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

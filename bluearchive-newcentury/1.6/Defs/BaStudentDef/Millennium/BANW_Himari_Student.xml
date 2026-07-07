@@ -99,7 +99,7 @@
 			<Ability4>
 				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
-				<AbilityTitle>测试技能2</AbilityTitle>
+				<AbilityTitle>基本技能</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[]]>
 				</AbilityIntroduction>

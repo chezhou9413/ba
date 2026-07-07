@@ -1,76 +1,75 @@
-
 <Defs>
-   <AbilityDef>
-<defName>BAWN_Hiyori_EX</defName>
- <label>会，会很疼哦！</label>
- <description>对一名敌人造成自身攻击力409%的伤害，并增加10%的乘伤系数（持续30秒）</description>
- <iconPath>Ability/Icon/Airy/Airy_EX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Hiyori_Skill_EX</warmupStartSound>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>true</hostile><!-- 是否是敌对行为 -->
- <targetRequired>true</targetRequired><!-- 对自己使用 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <verbProperties>
- <warmupEffecter>BANW_Effecter_NewA</warmupEffecter>
- <soundCast>BANW_Wp_SR_At_A</soundCast>
- <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
- <drawAimPie>true</drawAimPie><!-- 不绘制瞄准圈 -->
- <range>64.9</range><!-- 作用范围：-1 表示只能近战接触 -->
- <warmupTime>0.8</warmupTime><!-- 前摇时间（单位：秒） -->
- <targetParams><!-- 目标参数设置 -->
-  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
-  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
-  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
-  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
-  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
-  </targetParams>
-  </verbProperties>
-  <modExtensions>
+  <AbilityDef>
+    <defName>BAWN_Hiyori_EX</defName>
+    <label>会，会很疼哦！</label>
+    <description>对一名敌人造成自身攻击力409%的伤害，并增加10%的乘伤系数（持续30秒）</description>
+    <iconPath>Ability/Icon/Airy/Airy_EX</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Hiyori_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <targetRequired>true</targetRequired><!-- 对自己使用 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_NewA</warmupEffecter>
+      <soundCast>BANW_Wp_SR_At_A</soundCast>
+      <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <drawAimPie>true</drawAimPie><!-- 不绘制瞄准圈 -->
+      <range>64.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>0.8</warmupTime><!-- 前摇时间（单位：秒） -->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-      <showBattleFormula>true</showBattleFormula>
-      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
-      <previewActions>
-        <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>4.09</attackPowerRatio>
-          <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_baofa</damageDef>
-          <!-- 是否允许暴击。 -->
-          <canCrit>true</canCrit>
-          <!-- 是否应用攻击类型与护甲类型克制。 -->
-          <applyAffinity>true</applyAffinity>
-          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-          <isExSkill>true</isExSkill>
-        </li>
-      </previewActions>
-    </li>
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>4.09</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>true</isExSkill>
+          </li>
+        </previewActions>
+      </li>
     </modExtensions>
-  <comps>
-<li Class="CompProperties_AbilityLaunchProjectile">
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
         <projectileDef>BANC_Bullet_Hiyori_EX</projectileDef>
       </li>
-  </comps>
-</AbilityDef>
-<DamageDef ParentName="BANC_Damage_baofa">
+    </comps>
+  </AbilityDef>
+  <DamageDef ParentName="BANC_Damage_baofa">
     <defName>BANC_Damage_Hiyori_EX</defName><!--通用贯通-->
-<additionalHediffs><!--额外健康-->
+    <additionalHediffs><!--额外健康-->
       <li>
         <hediff>BAWN_Hiyori_Buff_B</hediff><!--健康类型-->
         <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
       </li>
     </additionalHediffs>
   </DamageDef>
-<ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Hiyori_EX</defName>
     <label>会，会很疼哦！</label>
     <projectile>
@@ -86,15 +85,23 @@
       <texPath>Projectile/Bullet_Hiyori</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>3.02</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
- <AbilityDef>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>3.02</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+         <isExSkill>false</isExSkill>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <AbilityDef>
     <defName>BAWN_Hiyori_EXX</defName>
     <label>我，我来支援了！</label>
     <description>发射子弹，对直线范围内的敌方单位造成自身攻击力331%的伤害，并增加30%的乘伤系数(持续30秒)</description>
     <iconPath>Ability/Icon/Airy/Airy_EX</iconPath>
     <cooldownTicksRange>1800</cooldownTicksRange>
-   <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
     <hostile>true</hostile>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Hiyori_Skill_EXX</warmupStartSound>
@@ -120,60 +127,62 @@
     <comps></comps>
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-      <showBattleFormula>true</showBattleFormula>
-      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
-      <previewActions>
-        <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>3.31</attackPowerRatio>
-          <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_baofa</damageDef>
-          <!-- 是否允许暴击。 -->
-          <canCrit>true</canCrit>
-          <!-- 是否应用攻击类型与护甲类型克制。 -->
-          <applyAffinity>true</applyAffinity>
-          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-          <isExSkill>true</isExSkill>
-        </li>
-      </previewActions>
-    </li>
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>3.31</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>true</isExSkill>
+          </li>
+        </previewActions>
+      </li>
     </modExtensions>
   </AbilityDef>
-    <JobDef Class="BANWlLib.BaDef.BaJobDef_SustainedAttack">
-        <defName>Ba_TestGunfireJob_Hiyori</defName>
-        <driverClass>BANWlLib.BaJob.Job_SustainedAreaAttack</driverClass>
-        <damages>
-            <li>
-                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
-                <tick>0</tick>
-                 <!-- 伤害量 --> 
-                
-                <!-- 伤害类型 --> 
-                <damageType>BANC_Damage_Hiyori_EXX</damageType>
-                <!-- 穿透 --> 
-                <penetration>0</penetration>
-                <!-- 触发此伤害时播放的效果 --> 
-                <effecterDef>BANW_Hiyori_Ef_A</effecterDef>
-                <isAttackBuilding>true</isAttackBuilding>
-            <attackPowerRatio>0</attackPowerRatio></li>
-            <li>
-                <!-- 伤害间隔的TICK,写0会立刻执行 --> 
-                <tick>60</tick>
-                 <!-- 伤害量 --> 
-                
-                <!-- 伤害类型 --> 
-                <damageType>BANC_Damage_Hiyori_EXX</damageType>
-                <!-- 穿透 --> 
-                <penetration>2</penetration>
-                <!-- 触发此伤害时播放的效果 --> 
-                <effecterDef>BANW_Hiyori_Ef_B</effecterDef>
-                <isAttackBuilding>true</isAttackBuilding>
-            <attackPowerRatio>3.31</attackPowerRatio></li>
-        </damages>
-    </JobDef>
-    <DamageDef ParentName="BANC_Damage_baofa">
+  <JobDef Class="BANWlLib.BaDef.BaJobDef_SustainedAttack">
+    <defName>Ba_TestGunfireJob_Hiyori</defName>
+    <driverClass>BANWlLib.BaJob.Job_SustainedAreaAttack</driverClass>
+    <damages>
+      <li>
+        <!-- 伤害间隔的TICK,写0会立刻执行 -->
+        <tick>0</tick>
+        <!-- 伤害量 -->
+
+        <!-- 伤害类型 -->
+        <damageType>BANC_Damage_Hiyori_EXX</damageType>
+        <!-- 穿透 -->
+        <penetration>0</penetration>
+        <!-- 触发此伤害时播放的效果 -->
+        <effecterDef>BANW_Hiyori_Ef_A</effecterDef>
+        <isAttackBuilding>true</isAttackBuilding>
+        <attackPowerRatio>0</attackPowerRatio>
+      </li>
+      <li>
+        <!-- 伤害间隔的TICK,写0会立刻执行 -->
+        <tick>60</tick>
+        <!-- 伤害量 -->
+        <isExSkill>true</isExSkill>
+        <!-- 伤害类型 -->
+        <damageType>BANC_Damage_Hiyori_EXX</damageType>
+        <!-- 穿透 -->
+        <penetration>2</penetration>
+        <!-- 触发此伤害时播放的效果 -->
+        <effecterDef>BANW_Hiyori_Ef_B</effecterDef>
+        <isAttackBuilding>true</isAttackBuilding>
+        <attackPowerRatio>3.31</attackPowerRatio>
+      </li>
+    </damages>
+  </JobDef>
+  <DamageDef ParentName="BANC_Damage_baofa">
     <defName>BANC_Damage_Hiyori_EXX</defName><!--命名格式-->
     <additionalHediffs><!--额外健康-->
       <li>
@@ -182,67 +191,67 @@
       </li>
     </additionalHediffs>
     <soundExplosion>BANW_Sound_Kong</soundExplosion>
-      <modExtensions>
+    <modExtensions>
     </modExtensions>
   </DamageDef>
-   <HediffDef>
-        <!-- 状态的唯一标识符 -->
-        <defName>BAWN_Hiyori_Buff_A</defName>
-        <!-- 显示名称 -->
-        <label>我，我来支援了！</label>
-        <!-- 效果描述 -->
-        <description>乘伤系数增加30%</description>
-        <defaultLabelColor>(0,0,128)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
-        <isBad>true</isBad>
-        <hediffClass>HediffWithComps</hediffClass>
-        <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
-          <stages>
-          <li>     
-           <statOffsets>
-        <IncomingDamageFactor>0.30</IncomingDamageFactor>
-           </statOffsets>
-           </li>
-          </stages>
-        <comps>
-        <li Class="HediffCompProperties_Disappears">
+  <HediffDef>
+    <!-- 状态的唯一标识符 -->
+    <defName>BAWN_Hiyori_Buff_A</defName>
+    <!-- 显示名称 -->
+    <label>我，我来支援了！</label>
+    <!-- 效果描述 -->
+    <description>乘伤系数增加30%</description>
+    <defaultLabelColor>(0,0,128)</defaultLabelColor>
+    <!-- 是否为负面效果（会影响心情等） -->
+    <isBad>true</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+    <stages>
+      <li>
+        <statOffsets>
+          <IncomingDamageFactor>0.30</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1800</disappearsAfterTicks>
       </li>
-       <li Class="HediffCompProperties_Effecter">
+      <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Effecter_Azusa</stateEffecter>
       </li>
     </comps>
-    </HediffDef>
-    <HediffDef>
-        <!-- 状态的唯一标识符 -->
-        <defName>BAWN_Hiyori_Buff_B</defName>
-        <!-- 显示名称 -->
-        <label>会，会很疼哦！</label>
-        <!-- 效果描述 -->
-        <description>护甲减少10%</description>
-        <defaultLabelColor>(0,0,128)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
-        <isBad>true</isBad>
-        <hediffClass>HediffWithComps</hediffClass>
-        <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
-          <stages>
-          <li>     
-           <statOffsets>
-       <IncomingDamageFactor>0.10</IncomingDamageFactor>
-            </statOffsets>
-           </li>
-          </stages>
-        <comps>
-        <li Class="HediffCompProperties_Disappears">
+  </HediffDef>
+  <HediffDef>
+    <!-- 状态的唯一标识符 -->
+    <defName>BAWN_Hiyori_Buff_B</defName>
+    <!-- 显示名称 -->
+    <label>会，会很疼哦！</label>
+    <!-- 效果描述 -->
+    <description>护甲减少10%</description>
+    <defaultLabelColor>(0,0,128)</defaultLabelColor>
+    <!-- 是否为负面效果（会影响心情等） -->
+    <isBad>true</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+    <stages>
+      <li>
+        <statOffsets>
+          <IncomingDamageFactor>0.10</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1800</disappearsAfterTicks>
       </li>
-       <li Class="HediffCompProperties_Effecter">
+      <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Effecter_Azusa</stateEffecter>
       </li>
     </comps>
-    </HediffDef>
+  </HediffDef>
 </Defs>

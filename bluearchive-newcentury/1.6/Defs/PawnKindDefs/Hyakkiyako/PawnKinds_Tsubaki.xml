@@ -13,6 +13,7 @@
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
 		<abilities>
+			<li>BAWN_Tsubaki_EX</li>
         </abilities>
 		<startingHediffs>
 		<li>
@@ -98,6 +99,7 @@
 			<BAWC_TraitDef_guantong>0</BAWC_TraitDef_guantong>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
 			<BAWC_TraitDef_Tsubaki_A>0</BAWC_TraitDef_Tsubaki_A>
+			<BAWC_TraitDef_Tsubaki_B>0</BAWC_TraitDef_Tsubaki_B>
 		</forcedTraits>
 		<modExtensions>
 			
@@ -236,6 +238,20 @@
 		        <ArmorRating_Blunt>1.26</ArmorRating_Blunt>
 	            <ArmorRating_Heat>1.26</ArmorRating_Heat>
 				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Tsubaki_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;娴熟的装弹动作&lt;/color&gt;</label>
+                <description>子技能:自身乘伤系数减少&lt;color=#DC143C&gt;17%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <IncomingDamageFactor>-0.17</IncomingDamageFactor>
+                </statOffsets>
             </li>
         </degreeDatas>
 </TraitDef>

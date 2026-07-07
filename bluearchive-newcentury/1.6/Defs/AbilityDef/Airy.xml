@@ -199,6 +199,7 @@
             <penetration>2</penetration>
             <!-- 是否允许暴击。 -->
             <canCrit>true</canCrit>
+            <isExSkill>true</isExSkill>
             <!-- 是否应用攻击类型与护甲类型克制。 -->
             <applyAffinity>true</applyAffinity>
             <!-- 是否影响敌对目标。 -->

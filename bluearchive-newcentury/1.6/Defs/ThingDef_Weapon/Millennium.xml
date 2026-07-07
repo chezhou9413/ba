@@ -1843,6 +1843,17 @@
       <texPath>Projectile/Bullet_Arisu_B</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <applyAffinity>true</applyAffinity>
+        <canHitOwnPawn>true</canHitOwnPawn>
+        <canHitOwnBuilding>true</canHitOwnBuilding>
+        <attackPowerRatio>1</attackPowerRatio>
+        <isNormalAttack>true</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>true</isExSkill>
+      </li>
+    </modExtensions>
   </ThingDef>
   <DamageDef ParentName="BANC_Damage_shenmi">
     <defName>BANC_Damage_Arisu_None</defName><!--通用贯通-->

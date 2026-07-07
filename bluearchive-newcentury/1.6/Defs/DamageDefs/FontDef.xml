@@ -13,7 +13,6 @@
             <li>BANC_Damage_Mika_A_None</li>
             <li>BANC_Damage_Nozomi_None</li>
             <li>BANC_Damage_Nozomi_EXX</li>
-            <li>BANC_Damage_Arisu_None</li>
         </EnsureCritical>
         <DisableIncomingDamageFactorCritical>
             <li>BANC_Damage_shenmi</li>

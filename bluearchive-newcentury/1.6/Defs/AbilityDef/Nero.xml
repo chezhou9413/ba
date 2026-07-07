@@ -17,6 +17,9 @@
     <hostile>true</hostile><!-- 是否是敌对行为 -->
     <targetRequired>true</targetRequired><!-- 对自己使用 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <statBases>
+    <Ability_Duration>3</Ability_Duration>
+  </statBases>
     <verbProperties>
       <soundCast></soundCast>
       <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
@@ -65,65 +68,65 @@
       <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
         <shots>
           <li><delayTicks>0</delayTicks></li>
-          <li><delayTicks>4</delayTicks></li>
-          <li><delayTicks>8</delayTicks></li>
+          <li><delayTicks>3</delayTicks></li>
+          <li><delayTicks>6</delayTicks></li>
+          <li><delayTicks>9</delayTicks></li>
           <li><delayTicks>12</delayTicks></li>
-          <li><delayTicks>16</delayTicks></li>
-          <li><delayTicks>20</delayTicks></li>
+          <li><delayTicks>15</delayTicks></li>
+          <li><delayTicks>18</delayTicks></li>
+          <li><delayTicks>21</delayTicks></li>
           <li><delayTicks>24</delayTicks></li>
-          <li><delayTicks>28</delayTicks></li>
-          <li><delayTicks>32</delayTicks></li>
+          <li><delayTicks>27</delayTicks></li>
+          <li><delayTicks>30</delayTicks></li>
+          <li><delayTicks>33</delayTicks></li>
           <li><delayTicks>36</delayTicks></li>
-          <li><delayTicks>40</delayTicks></li>
-          <li><delayTicks>44</delayTicks></li>
+          <li><delayTicks>39</delayTicks></li>
+          <li><delayTicks>42</delayTicks></li>
+          <li><delayTicks>45</delayTicks></li>
           <li><delayTicks>48</delayTicks></li>
-          <li><delayTicks>52</delayTicks></li>
-          <li><delayTicks>56</delayTicks></li>
+          <li><delayTicks>51</delayTicks></li>
+          <li><delayTicks>54</delayTicks></li>
+          <li><delayTicks>57</delayTicks></li>
           <li><delayTicks>60</delayTicks></li>
-          <li><delayTicks>64</delayTicks></li>
-          <li><delayTicks>68</delayTicks></li>
+          <li><delayTicks>63</delayTicks></li>
+          <li><delayTicks>66</delayTicks></li>
+          <li><delayTicks>69</delayTicks></li>
           <li><delayTicks>72</delayTicks></li>
-          <li><delayTicks>76</delayTicks></li>
-          <li><delayTicks>80</delayTicks></li>
+          <li><delayTicks>75</delayTicks></li>
+          <li><delayTicks>78</delayTicks></li>
+          <li><delayTicks>81</delayTicks></li>
           <li><delayTicks>84</delayTicks></li>
-          <li><delayTicks>88</delayTicks></li>
-          <li><delayTicks>92</delayTicks></li>
+          <li><delayTicks>87</delayTicks></li>
+          <li><delayTicks>90</delayTicks></li>
+          <li><delayTicks>93</delayTicks></li>
           <li><delayTicks>96</delayTicks></li>
-          <li><delayTicks>100</delayTicks></li>
-          <li><delayTicks>104</delayTicks></li>
+          <li><delayTicks>99</delayTicks></li>
+          <li><delayTicks>102</delayTicks></li>
+          <li><delayTicks>105</delayTicks></li>
           <li><delayTicks>108</delayTicks></li>
-          <li><delayTicks>112</delayTicks></li>
-          <li><delayTicks>116</delayTicks></li>
+          <li><delayTicks>111</delayTicks></li>
+          <li><delayTicks>114</delayTicks></li>
+          <li><delayTicks>117</delayTicks></li>
           <li><delayTicks>120</delayTicks></li>
-          <li><delayTicks>124</delayTicks></li>
-          <li><delayTicks>128</delayTicks></li>
+          <li><delayTicks>123</delayTicks></li>
+          <li><delayTicks>126</delayTicks></li>
+          <li><delayTicks>129</delayTicks></li>
           <li><delayTicks>132</delayTicks></li>
-          <li><delayTicks>136</delayTicks></li>
-          <li><delayTicks>140</delayTicks></li>
+          <li><delayTicks>135</delayTicks></li>
+          <li><delayTicks>138</delayTicks></li>
+          <li><delayTicks>141</delayTicks></li>
           <li><delayTicks>144</delayTicks></li>
-          <li><delayTicks>148</delayTicks></li>
-          <li><delayTicks>152</delayTicks></li>
+          <li><delayTicks>147</delayTicks></li>
+          <li><delayTicks>150</delayTicks></li>
+          <li><delayTicks>153</delayTicks></li>
           <li><delayTicks>156</delayTicks></li>
-          <li><delayTicks>160</delayTicks></li>
-          <li><delayTicks>164</delayTicks></li>
+          <li><delayTicks>159</delayTicks></li>
+          <li><delayTicks>162</delayTicks></li>
+          <li><delayTicks>165</delayTicks></li>
           <li><delayTicks>168</delayTicks></li>
-          <li><delayTicks>172</delayTicks></li>
-          <li><delayTicks>176</delayTicks></li>
-          <li><delayTicks>180</delayTicks></li>
-          <li><delayTicks>184</delayTicks></li>
-          <li><delayTicks>188</delayTicks></li>
-          <li><delayTicks>192</delayTicks></li>
-          <li><delayTicks>196</delayTicks></li>
-          <li><delayTicks>200</delayTicks></li>
-          <li><delayTicks>204</delayTicks></li>
-          <li><delayTicks>208</delayTicks></li>
-          <li><delayTicks>212</delayTicks></li>
-          <li><delayTicks>216</delayTicks></li>
-          <li><delayTicks>220</delayTicks></li>
-          <li><delayTicks>224</delayTicks></li>
-          <li><delayTicks>228</delayTicks></li>
-          <li><delayTicks>232</delayTicks></li>
-          <li><delayTicks>236</delayTicks></li>
+          <li><delayTicks>171</delayTicks></li>
+          <li><delayTicks>174</delayTicks></li>
+          <li><delayTicks>177</delayTicks></li>
         </shots>
       </li>
     </comps>
@@ -159,11 +162,12 @@
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
         <attackPowerRatio>0.217</attackPowerRatio>
-        <isNormalAttack>false</isNormalAttack>
+          <isNormalAttack>false</isNormalAttack>
         <canCrit>true</canCrit>
       <applyAffinity>true</applyAffinity>
       <canHitOwnPawn>true</canHitOwnPawn>
       <canHitOwnBuilding>true</canHitOwnBuilding>
+      <isExSkill>true</isExSkill>
       </li>
     </modExtensions>
   </ThingDef>

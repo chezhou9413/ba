@@ -1,73 +1,72 @@
-
 <Defs>
-    <AbilityDef>
-  <defName>BAWN_Rio_EX</defName>
- <label>唯一解</label>
- <description>对1名敌方单位造成自身攻击力297%的伤害并且乘伤系数增加25%。(持续19秒)</description>
- <iconPath>Ability/Icon/Ibuki/Ibuki_EX</iconPath>
- <cooldownTicksRange>1800</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Rio_Skill_EX</warmupStartSound>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>true</hostile><!-- 是否是敌对行为 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <statBases>
+  <AbilityDef>
+    <defName>BAWN_Rio_EX</defName>
+    <label>唯一解</label>
+    <description>对1名敌方单位造成自身攻击力297%的伤害并且乘伤系数增加25%。(持续19秒)</description>
+    <iconPath>Ability/Icon/Ibuki/Ibuki_EX</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Rio_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <statBases>
     </statBases>
- <verbProperties>
-<warmupEffecter>BANW_Effecter_A</warmupEffecter>
- <soundCast></soundCast>
- <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
- <range>34.9</range><!-- 投掷范围 -->
- <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
- <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
- <targetParams><!-- 目标参数设置 -->
-  <canTargetLocations>false</canTargetLocations> <!-- 可以瞄准地面位置 -->
-  <canTargetSelf>false</canTargetSelf>
-  <canTargetPawns>true</canTargetPawns>
-  <canTargetBuildings>true</canTargetBuildings>
-  <canTargetAnimals>true</canTargetAnimals>
-  <canTargetHumans>true</canTargetHumans>
-  <canTargetMechs>true</canTargetMechs>
-  </targetParams>
-  </verbProperties>
-  <comps>
- <li Class="CompProperties_AbilityEffecterOnTarget">
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+      <soundCast></soundCast>
+      <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+      <range>34.9</range><!-- 投掷范围 -->
+      <warmupTime>0.5</warmupTime><!-- 前摇时间 -->
+      <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetLocations>false</canTargetLocations> <!-- 可以瞄准地面位置 -->
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
         <effecterDef>BANW_Effecter_C</effecterDef>
         <maintainForTicks>60</maintainForTicks>
       </li>
-       <li Class="CompProperties_AbilityLaunchProjectile">
+      <li Class="CompProperties_AbilityLaunchProjectile">
         <projectileDef>BANC_Bullet_Rio_EX</projectileDef>
       </li>
-  </comps>
-  <modExtensions>
+    </comps>
+    <modExtensions>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-      <showBattleFormula>true</showBattleFormula>
-      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
-      <previewActions>
-        <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>2.97</attackPowerRatio>
-          <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_shenmi</damageDef>
-          <!-- 是否允许暴击。 -->
-          <canCrit>true</canCrit>
-          <!-- 是否应用攻击类型与护甲类型克制。 -->
-          <applyAffinity>true</applyAffinity>
-          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-          <isExSkill>true</isExSkill>
-        </li>
-      </previewActions>
-    </li>
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>2.97</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>false</isExSkill>
+          </li>
+        </previewActions>
+      </li>
     </modExtensions>
-</AbilityDef>
-<DamageDef ParentName="BANC_Damage_shenmi">
+  </AbilityDef>
+  <DamageDef ParentName="BANC_Damage_shenmi">
     <defName>BANC_Damage_Rio_EX</defName><!--通用贯通-->
     <hasForcefulImpact>false</hasForcefulImpact><!--击退。-->
     <additionalHediffs><!--额外健康-->
@@ -77,7 +76,7 @@
       </li>
     </additionalHediffs>
   </DamageDef>
-<ThingDef ParentName="BaseBullet">
+  <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Rio_EX</defName>
     <label>唯一解</label>
     <projectile>
@@ -92,29 +91,37 @@
       <texPath>Projectile/kongbai</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>0.89</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
- <HediffDef>
-        <!-- 状态的唯一标识符 -->
-        <defName>BAWN_Rio_Buff_A</defName>
-        <!-- 显示名称 -->
-        <label>唯一解</label>
-        <!-- 效果描述 -->
-        <description>乘伤系数增加25%。</description>
-        <defaultLabelColor>(0,0,128)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
-        <isBad>true</isBad>
-        <hediffClass>HediffWithComps</hediffClass>
-        <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
-         <stages>
-          <li>     
-          <statOffsets>
-        <IncomingDamageFactor>0.25</IncomingDamageFactor>
-           </statOffsets>
-           </li>
-          </stages>
-        <comps>
-        <li Class="HediffCompProperties_Disappears">
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>2.97</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>false</isExSkill>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <HediffDef>
+    <!-- 状态的唯一标识符 -->
+    <defName>BAWN_Rio_Buff_A</defName>
+    <!-- 显示名称 -->
+    <label>唯一解</label>
+    <!-- 效果描述 -->
+    <description>乘伤系数增加25%。</description>
+    <defaultLabelColor>(0,0,128)</defaultLabelColor>
+    <!-- 是否为负面效果（会影响心情等） -->
+    <isBad>true</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+    <stages>
+      <li>
+        <statOffsets>
+          <IncomingDamageFactor>0.25</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1140</disappearsAfterTicks>
       </li>
@@ -122,6 +129,6 @@
         <stateEffecter>BANW_Rio_Ef_A</stateEffecter>
       </li>
     </comps>
-    </HediffDef>
-    
+  </HediffDef>
+
 </Defs>

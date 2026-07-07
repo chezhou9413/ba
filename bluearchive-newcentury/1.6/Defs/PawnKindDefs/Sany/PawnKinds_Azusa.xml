@@ -9,6 +9,7 @@
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<abilities>
 			<li>BAWN_Azusa_EX</li>
+			<li>BAWN_Azusa_EXX</li>
 		</abilities>
 		<startingHediffs>
 		<li>

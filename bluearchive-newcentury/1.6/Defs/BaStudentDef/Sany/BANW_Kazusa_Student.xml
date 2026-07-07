@@ -70,7 +70,7 @@
 				<AbilityImagePath>Ability/Icon/Mika/Mika_EXX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>甜蜜炮火</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能1 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对1名敌方单位造成自身攻击力<color=#00FFFF>1770%</color>的伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>

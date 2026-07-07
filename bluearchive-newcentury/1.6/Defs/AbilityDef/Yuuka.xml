@@ -1,77 +1,163 @@
-
 <Defs>
-<AbilityDef>
-<defName>BAWN_Yuuka_EX</defName>
- <label>I.F.F</label>
- <description>对一名敌人造成自身攻击力573%的伤害</description>
- <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
- <cooldownTicksRange>900</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Yuuka_Skill_EX</warmupStartSound>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>true</hostile><!-- 是否是敌对行为 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <verbProperties>
- <warmupEffecter>BANW_Effecter_A</warmupEffecter>
- <soundCast>BANW_Wp_SMG_At</soundCast>
- <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
- <defaultProjectile>BANC_Bullet_Yuuka_EX</defaultProjectile>
- <range>30.9</range><!-- 作用范围：-1 表示只能近战接触 -->
- <warmupTime>0.7</warmupTime><!-- 前摇时间（单位：秒） -->
- <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
- <ticksBetweenBurstShots>3</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
-<burstShotCount>9</burstShotCount> <!--连发射击的数量为 12 发。-->
-<accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为 90%。-->
-<accuracyShort>1</accuracyShort> <!--短距离射击的命中率为 80%。-->
-<accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为 70%。-->
-<accuracyLong>1</accuracyLong><!--长距离射击的命中率为 60%。-->
-<ai_IsWeapon>false</ai_IsWeapon> <!--AI 不将此能力视为武器。-->
- <targetParams><!-- 目标参数设置 -->
-  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
-  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
-  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
-  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
-  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
-  </targetParams>
-  </verbProperties>
-  <comps>
-</comps>
- <modExtensions>
-      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-      <showBattleFormula>true</showBattleFormula>
-      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
-      <previewActions>
-        <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>5.73</attackPowerRatio>
-          <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_baofa</damageDef>
-          <!-- 是否允许暴击。 -->
-          <canCrit>true</canCrit>
-          <!-- 是否应用攻击类型与护甲类型克制。 -->
-          <applyAffinity>true</applyAffinity>
-          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-          <isExSkill>true</isExSkill>
-        </li>
-      </previewActions>
-    </li>
+  <AbilityDef>
+    <defName>BAWN_Yuuka_EXX</defName>
+    <label>Q.E.D</label>
+    <description>赋予自身治愈力248%的护盾(持续25秒)</description>
+    <iconPath>Ability/Icon/Yuuka/Yuuka_EXX</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hotKey>Misc5</hotKey>
+    <targetRequired>false</targetRequired>
+    <warmupEffecter>BANW_Yuuka_Ef_A</warmupEffecter>
+    <warmupStartSound>Yuuka_Skill_EXX</warmupStartSound>
+    <hostile>false</hostile>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>1.0</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.CompProperties_AbilityApplyBattleAction">  <!--
+        战斗动作应用组件：技能触发时执行指定的战斗动作 -->
+        <applyToSelf>true</applyToSelf>  <!-- true=对施法者自身生效（自我护盾） -->
+        <action>
+          <isShield>true</isShield>  <!-- 标记为护盾效果 -->
+          <shieldPowerRatio>2.48</shieldPowerRatio>  <!-- 护盾量倍率：护盾值 = 攻击力 × 2.0 -->
+          <shieldHediffDef>BANW_BattleShield_Yuuka</shieldHediffDef>  <!-- 护盾对应的 Hediff 定义（承载护盾值的健康状态） -->
+          <affectFriendly>true</affectFriendly>  <!-- 对友方生效 -->
+          <affectHostile>false</affectHostile>  <!-- 不对敌方生效 -->
+        </action>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">  <!-- 战斗公式预览扩展：技能图标悬浮时显示护盾量预览 -->
+        <showBattleFormula>true</showBattleFormula>  <!-- 是否在 Tooltip 中展开战斗公式 -->
+        <previewActions>  <!-- 预览用动作配置，仅用于显示，不实际触发 -->
+          <li>
+            <isShield>true</isShield>
+            <shieldPowerRatio>2.48</shieldPowerRatio>
+            <shieldHediffDef>BANW_BattleShield_Yuuka</shieldHediffDef>
+            <affectFriendly>true</affectFriendly>
+            <affectHostile>false</affectHostile>
+          </li>
+        </previewActions>
+      </li>
     </modExtensions>
-</AbilityDef>
+  </AbilityDef>
+  <HediffDef>
+    <defName>BANW_BattleShield_Yuuka</defName>
+    <label>护盾</label>
+    <defaultLabelColor>(0,255,255)</defaultLabelColor>
+    <description>吸收下一次受到的伤害，护盾不足时也会完整抵住本次伤害。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <makesSickThought>false</makesSickThought>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleShield" />
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>
+          <min>1500</min>
+          <max>1500</max>
+        </disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Shield_Ef_A</stateEffecter>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>护盾</label>
+      </li>
+    </stages>
+  </HediffDef>
+  <AbilityDef>
+    <defName>BAWN_Yuuka_EX</defName>
+    <label>I.F.F</label>
+    <description>对一名敌人造成自身攻击力573%的伤害</description>
+    <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
+    <cooldownTicksRange>900</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Yuuka_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+      <soundCast>BANW_Wp_SMG_At</soundCast>
+      <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <defaultProjectile>BANC_Bullet_Yuuka_EX</defaultProjectile>
+      <range>30.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>0.7</warmupTime><!-- 前摇时间（单位：秒） -->
+      <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
+      <ticksBetweenBurstShots>3</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
+      <burstShotCount>9</burstShotCount> <!--连发射击的数量为
+      12 发。-->
+      <accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为
+      90%。-->
+      <accuracyShort>1</accuracyShort> <!--短距离射击的命中率为
+      80%。-->
+      <accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为
+      70%。-->
+      <accuracyLong>1</accuracyLong><!--长距离射击的命中率为
+      60%。-->
+      <ai_IsWeapon>false</ai_IsWeapon> <!--AI
+      不将此能力视为武器。-->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>5.73</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>true</isExSkill>
+          </li>
+        </previewActions>
+      </li>
+    </modExtensions>
+  </AbilityDef>
 
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Yuuka_EX</defName>
     <label>逻辑与理性子弹</label>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
-      <damageAmountBase>7</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>11</damageAmountBase><!--子弹伤害-->
       <stoppingPower>2.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->
@@ -82,7 +168,14 @@
       <texPath>Projectile/Bullet_Yuuka</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>0.52</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
-  
-    
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>0.07</attackPowerRatio>
+        <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+
 </Defs>

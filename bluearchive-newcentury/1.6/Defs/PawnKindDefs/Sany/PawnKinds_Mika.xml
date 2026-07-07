@@ -219,10 +219,10 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#FFBB00&gt;本尼迪克特&lt;/color&gt;</label>
-                <description>子技能:所有攻击必定暴击，增加自身&lt;color=#DC143C&gt;24%的&lt;/color&gt;基础攻击力和减少&lt;color=#DC143C&gt;12%的乘伤系数&lt;/color&gt;。</description>
+                <description>子技能:所有攻击必定暴击，增加自身&lt;color=#DC143C&gt;24%&lt;/color&gt;的基础精通倍率和减少&lt;color=#DC143C&gt;12%的乘伤系数&lt;/color&gt;。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<BANW_AttackLevelMultiplier>+0.24</BANW_AttackLevelMultiplier>
+					<BANW_BaseMasteryMultiplier>+0.24</BANW_BaseMasteryMultiplier>
 					<IncomingDamageFactor>-0.12</IncomingDamageFactor>
                 </statOffsets>
             </li>

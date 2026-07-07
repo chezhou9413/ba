@@ -3,7 +3,7 @@
 <AbilityDef>
 <defName>BAWN_Suzumi_A_EXX</defName>
  <label>这是基础魔法！</label>
- <description>对圆形范围内的友方单位攻击力增加51%基础攻击力增加26%(持续41秒)</description>
+ <description>对圆形范围内的友方单位攻击力增加51%基础精通倍率增加26%(持续41秒)</description>
  <iconPath>Ability/Icon/Suzumi_A/Suzumi_EX</iconPath>
  <cooldownTicksRange>3000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
@@ -80,8 +80,8 @@
          <stages>
           <li>     
            <statOffsets>
-            <BANW_AttackLevelMultiplier>+0.26</BANW_AttackLevelMultiplier>
-           <BANW_FinalDamageMultiplier>+0.47</BANW_FinalDamageMultiplier>
+            <BANW_BaseMasteryMultiplier>+0.26</BANW_BaseMasteryMultiplier>
+           <BANW_FinalDamageMultiplier>+0.51</BANW_FinalDamageMultiplier>
             </statOffsets>
            </li>
           </stages>

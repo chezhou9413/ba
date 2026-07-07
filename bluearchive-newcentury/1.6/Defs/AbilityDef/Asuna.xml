@@ -111,11 +111,12 @@
   <modExtensions>
     <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
       <attackPowerRatio>0.38</attackPowerRatio>
-      <isNormalAttack>false</isNormalAttack>
-      <canCrit>true</canCrit>
+       <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
       <applyAffinity>true</applyAffinity>
       <canHitOwnPawn>true</canHitOwnPawn>
       <canHitOwnBuilding>true</canHitOwnBuilding>
+       <isExSkill>false</isExSkill>
     </li>
   </modExtensions>
 </ThingDef>

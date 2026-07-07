@@ -90,7 +90,7 @@
 				<AbilityImagePath>Ability/Icon/Mika/Mika_A</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>武装强化，完成</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能3 / <color=black>COST: </color><color=blue>20</color>]]></AbilitySubtitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>

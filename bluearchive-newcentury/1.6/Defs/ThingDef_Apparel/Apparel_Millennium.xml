@@ -540,7 +540,7 @@
         </graphicData>
         <tickerType>Normal</tickerType>
         <equippedStatOffsets>
-			<MoveSpeed>2.5</MoveSpeed>
+			<MoveSpeed>12.5</MoveSpeed>
             <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.20</ArmorRating_Heat>

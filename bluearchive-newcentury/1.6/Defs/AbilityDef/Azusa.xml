@@ -1,68 +1,467 @@
-
 <Defs>
-<AbilityDef>
-<defName>BAWN_Azusa_EX</defName>
- <label>死亡之箭</label>
- <description>对一名敌人造成攻击力468%的伤害，并且目标乘伤系数减少增加24%（持续20秒）</description>
- <iconPath>Ability/Icon/Airy/Airy_EX</iconPath>
- <cooldownTicksRange>1800</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Azusa_Skill_EX</warmupStartSound>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>true</hostile><!-- 是否是敌对行为 -->
- <targetRequired>true</targetRequired><!-- 对自己使用 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <verbProperties>
- <warmupEffecter>BANW_Effecter_A</warmupEffecter>
- <soundCast>BANW_Wp_AR_At</soundCast>
- <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
- <drawAimPie>true</drawAimPie><!-- 不绘制瞄准圈 -->
- <range>33.9</range><!-- 作用范围：-1 表示只能近战接触 -->
- <warmupTime>0.8</warmupTime><!-- 前摇时间（单位：秒） -->
- <targetParams><!-- 目标参数设置 -->
-  <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
-  <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
-  <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
-  <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
-  <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-  <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
-  </targetParams>
-  </verbProperties>
-  <comps>
-<li Class="CompProperties_AbilityLaunchProjectile">
+  <AbilityDef>
+    <defName>BAWN_Azusa_EXX</defName>
+    <label>intulit mortem</label>
+    <description>对一名敌人造成自身攻击力2023%的伤害</description>
+    <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hotKey>Misc4</hotKey>
+    <warmupStartSound>Azusa_Skill_EXX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>True</showWhenDrafted>
+    <hostile>true</hostile>
+    <warmupEffecter></warmupEffecter>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <warmupEffecter></warmupEffecter>
+      <soundCast>Azusa_Skill_EX_A</soundCast>
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+      <range>30</range>
+      <warmupTime>1.0</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BANC_Bullet_Azusa_EXX</projectileDef>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <shape>Circle</shape>
+        <range>30</range>
+        <drawCasterRange>true</drawCasterRange>
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+        <showBattleFormula>true</showBattleFormula>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Azusa_EXX</defName>
+    <label>intulit mortem子弹</label>
+    <thingClass>Bullet</thingClass>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef>
+      <damageAmountBase>19</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <armorPenetrationBase>2</armorPenetrationBase>
+      <speed>120</speed>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1,3)</drawSize>
+      <texPath>Projectile/Bullet_Azusa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+         <isNormalAttack>false</isNormalAttack>
+        <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
+        <canCrit>true</canCrit>
+        <applyAffinity>true</applyAffinity>
+        <isExSkill>true</isExSkill>
+      </li>
+      <li Class="BANWlLib.BattleSystem.ProjectileMultiHitExtension">
+        <damageIntervalTicks>6</damageIntervalTicks>
+        <!-- 多段追加伤害是否允许命中同阵营 Pawn。 -->
+        <canHitOwnPawn>true</canHitOwnPawn>
+        <!-- 多段追加伤害是否允许命中同阵营建筑。 -->
+        <canHitOwnBuilding>false</canHitOwnBuilding>
+        <extraDamages>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>0</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>0</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>4</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>4</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>8</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>8</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>12</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>12</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>16</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>16</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>20</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>20</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>24</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>24</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>28</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>28</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>32</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>32</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>36</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>36</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>40</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>40</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.844</attackPowerRatio>
+            <delayTicks>44</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>44</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>10.12</attackPowerRatio>
+            <delayTicks>55</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+          <li>
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <attackPowerRatio>0.885</attackPowerRatio>
+            <delayTicks>55</delayTicks>
+            <penetration>2</penetration>
+             <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <alwaysCrit>true</alwaysCrit>
+            <alwaysShowCriticalText>true</alwaysShowCriticalText>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>true</isExSkill>
+          </li>
+
+        </extraDamages>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <AbilityDef>
+    <defName>BAWN_Azusa_EX</defName>
+    <label>死亡之箭</label>
+    <description>对一名敌人造成攻击力468%的伤害，并且目标乘伤系数增加增加24%（持续20秒）</description>
+    <iconPath>Ability/Icon/Airy/Airy_EX</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Azusa_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <targetRequired>true</targetRequired><!-- 对自己使用 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+      <soundCast>BANW_Wp_AR_At</soundCast>
+      <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <drawAimPie>true</drawAimPie><!-- 不绘制瞄准圈 -->
+      <range>33.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>0.8</warmupTime><!-- 前摇时间（单位：秒） -->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
         <projectileDef>BANC_Bullet_Azusa_EX</projectileDef>
       </li>
-  </comps>
-  <modExtensions>
+    </comps>
+    <modExtensions>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-      <showBattleFormula>true</showBattleFormula>
-      <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
-      <previewActions>
-        <li>
-          <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
-          <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-          <attackPowerRatio>4.68</attackPowerRatio>
-          <!-- 伤害类型。 -->
-          <damageDef>BANC_Damage_baofa</damageDef>
-          <!-- 是否允许暴击。 -->
-          <canCrit>true</canCrit>
-          <!-- 是否应用攻击类型与护甲类型克制。 -->
-          <applyAffinity>true</applyAffinity>
-          <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-          <isExSkill>true</isExSkill>
-        </li>
-      </previewActions>
-    </li>
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>4.68</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_baofa</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>true</isExSkill>
+          </li>
+        </previewActions>
+      </li>
     </modExtensions>
-</AbilityDef>
-  
-<ThingDef ParentName="BaseBullet">
+  </AbilityDef>
+
+  <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Azusa_EX</defName>
     <label>万事皆虚子弹</label>
     <projectile>
@@ -78,10 +477,17 @@
       <texPath>Projectile/Bullet_Azusa</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-  <modExtensions><li Class="BANWlLib.BattleSystem.BattleProjectileExtension"><attackPowerRatio>2.3</attackPowerRatio><isNormalAttack>false</isNormalAttack></li></modExtensions></ThingDef>
-<DamageDef ParentName="BANC_Damage_baofa">
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>4.68</attackPowerRatio>
+          <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <DamageDef ParentName="BANC_Damage_baofa">
     <defName>BANC_Damage_Azusa</defName><!--通用贯通-->
-<additionalHediffs><!--额外健康-->
+    <additionalHediffs><!--额外健康-->
       <li>
         <hediff>BAWN_Azusa_buff</hediff><!--健康类型-->
         <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
@@ -89,45 +495,45 @@
     </additionalHediffs>
   </DamageDef>
 
-   <HediffDef>
-        <!-- 状态的唯一标识符 -->
-        <defName>BAWN_Azusa_buff</defName>
-        <!-- 显示名称 -->
-        <label>死亡之箭</label>
-        <!-- 效果描述 -->
-        <description>乘伤系数增加26%（持续20秒）</description>
-        <defaultLabelColor>(0,0,128)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
-        <isBad>true</isBad>
-        <hediffClass>HediffWithComps</hediffClass>
-        <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
-         <stages>
-          <li>     
-           <statOffsets>
-        <IncomingDamageFactor>0.26</IncomingDamageFactor>
-            </statOffsets>
-           </li>
-          </stages>
-        <comps>
-        <li Class="HediffCompProperties_Disappears">
+  <HediffDef>
+    <!-- 状态的唯一标识符 -->
+    <defName>BAWN_Azusa_buff</defName>
+    <!-- 显示名称 -->
+    <label>死亡之箭</label>
+    <!-- 效果描述 -->
+    <description>乘伤系数增加26%（持续20秒）</description>
+    <defaultLabelColor>(0,0,128)</defaultLabelColor>
+    <!-- 是否为负面效果（会影响心情等） -->
+    <isBad>true</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+    <stages>
+      <li>
+        <statOffsets>
+          <IncomingDamageFactor>0.26</IncomingDamageFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1200</disappearsAfterTicks>
       </li>
-            <li Class="HediffCompProperties_Effecter">
+      <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Effecter_Azusa</stateEffecter>
       </li>
     </comps>
-    </HediffDef>
+  </HediffDef>
 
-    <EffecterDef ParentName="BANW_Effecter_C">
-<defName>BANW_Effecter_Azusa</defName>
-<children>
+  <EffecterDef ParentName="BANW_Effecter_C">
+    <defName>BANW_Effecter_Azusa</defName>
+    <children>
       <li>
         <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
         <soundDef>BANW_Skill_A</soundDef>
         <spawnLocType>OnSource</spawnLocType>
       </li>
-</children>
-</EffecterDef>
+    </children>
+  </EffecterDef>
 </Defs>

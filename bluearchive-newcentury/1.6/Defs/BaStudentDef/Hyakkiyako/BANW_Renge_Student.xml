@@ -69,7 +69,7 @@
 			<Ability1>
 				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
+				<AbilityTitle>EX技能</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
 可以包含<b>多行</b>文本。
@@ -81,7 +81,7 @@
 			<Ability2>
 				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
+				<AbilityTitle>EX技能</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[]]>
 				</AbilityIntroduction>

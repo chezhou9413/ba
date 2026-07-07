@@ -15,9 +15,9 @@
 			<!-- 背景图片路径，用于学生详情界面的背景 -->
 			<BackgroundPath>ManuaUI/Bg/BG_Hyakkiyako</BackgroundPath>
 			<!-- 角色立绘的缩放倍数，1.2表示放大1.2倍 -->
-			<CharacterimageOffsetSize>1.4</CharacterimageOffsetSize>
+			<CharacterimageOffsetSize>1.8</CharacterimageOffsetSize>
 			<!-- 角色立绘在X轴上的偏移量，单位像素 -->
-			<CharacterimageOffsetX>50</CharacterimageOffsetX>
+			<CharacterimageOffsetX>70</CharacterimageOffsetX>
 			<!-- 角色立绘在Y轴上的偏移量，单位像素 -->
 			<CharacterimageOffsetY>-100</CharacterimageOffsetY>
 			<!-- 角色类型标签路径，用于显示学生的类型标签 -->
@@ -67,23 +67,21 @@
 				<WapenTypeText>狙击枪</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Hasumi/Hasumi_EXX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>测试技能1</AbilityTitle>
-				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>翡翠花占</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身子弹攻击力的<color=#00FFFF>1074%</color>的伤害,并且每一击造成1秒眩晕，最后一击造成4秒眩晕]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Wakamo_A/Wakamo_EX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>基本技能</AbilityTitle>
+				<AbilityTitle>只为您一人</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>25</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilityIntroduction><![CDATA[根据自身使用该技能的次数，对自身造成以下效果中的1种\n第1次：攻击力增加<color=#00FFFF>31%</color>.承伤率减少<color=#00FFFF>9%</color>.\n第2次：攻击力增加<color=#00FFFF>62%</color>.承伤率减少<color=#00FFFF>19%</color>\n第3次：攻击力增加<color=#00FFFF>99%</color>.承伤率减少<color=#00FFFF>29%</color>（持续120秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

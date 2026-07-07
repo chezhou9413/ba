@@ -9,6 +9,7 @@
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<abilities>
         <li>BAWN_Yuuka_EX</li>
+		<li>BAWN_Yuuka_EXX</li>
         </abilities>
 		<startingHediffs>
 		<li>
@@ -217,7 +218,7 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#DC143C&gt;高速演算&lt;/color&gt;</label>
-                <description>子技能:自身获得每10秒回复&lt;color=#DC143C&gt;52&lt;/color&gt;点生命值</description>
+                <description>子技能:自身获得每10秒回复自身治愈力&lt;color=#DC143C&gt;142%&lt;/color&gt;的生命值</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
                 </statOffsets>
@@ -230,7 +231,7 @@
 <HediffDef>
     <defName>BANW_Yuuka_HpBuff</defName>
     <label>高速演算</label>
-    <description>子技能:自身获得每10秒回复&lt;color=#DC143C&gt;100&lt;/color&gt;点生命值</description>
+    <description>子技能:自身获得每10秒回复自身治愈力&lt;color=#DC143C&gt;142%&lt;/color&gt;的生命值</description>
     <defaultLabelColor>(0, 94, 255)</defaultLabelColor>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
@@ -244,8 +245,15 @@
           </stages>
     <comps>
       <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healPowerRatio>100</healPowerRatio>
+        <!-- 固定治疗量，设为 0 表示主要由治疗力倍率提供回复。 -->
+        <!-- 每 tick 回复最终治疗力的 4%。 -->
+        <healPowerRatio>1.42</healPowerRatio>
+        <!-- 每 tick 触发一次治疗。 -->
         <healIntervalTicks>600</healIntervalTicks>
+        <!-- 是否允许治疗永久伤。 -->
+        <isHeatScar>true</isHeatScar>
+        <!-- true 表示该持续治疗会额外乘施法者 EX技能倍率。 -->
+        <isExSkill>false</isExSkill>
       </li>
     </comps>
   </HediffDef>

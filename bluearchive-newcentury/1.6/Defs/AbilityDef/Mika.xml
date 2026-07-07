@@ -17,6 +17,9 @@
     <hostile>true</hostile><!-- 是否是敌对行为 -->
     <targetRequired>true</targetRequired><!-- 对自己使用 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <statBases>
+    <Ability_Duration>4</Ability_Duration>
+  </statBases>
     <verbProperties>
       <warmupEffecter></warmupEffecter>
       <soundCast></soundCast>
@@ -151,7 +154,7 @@
     <verbProperties>
       <warmupEffecter>BANW_Effecter_A</warmupEffecter>
       <soundCast>BANW_Wp_SMG_At</soundCast>
-      <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
       <defaultProjectile>BANC_Bullet_Mika_EX</defaultProjectile>
       <range>24.9</range><!-- 作用范围：-1 表示只能近战接触 -->
       <warmupTime>0.4</warmupTime><!-- 前摇时间（单位：秒） -->
@@ -194,17 +197,17 @@
         <shots>
           <li>
             <delayTicks>0</delayTicks>
-            <projectileDef>BANC_Bullet_Mika_EXX</projectileDef>
+            <projectileDef>BANC_Bullet_Mika_EX</projectileDef>
             <attackPowerRatio>0.94</attackPowerRatio>
           </li>
           <li>
             <delayTicks>6</delayTicks>
-            <projectileDef>BANC_Bullet_Mika_EXX</projectileDef>
+            <projectileDef>BANC_Bullet_Mika_EX</projectileDef>
             <attackPowerRatio>0.94</attackPowerRatio>
           </li>
           <li>
             <delayTicks>12</delayTicks>
-            <projectileDef>BANC_Bullet_Mika_EXX</projectileDef>
+            <projectileDef>BANC_Bullet_Mika_EX</projectileDef>
             <attackPowerRatio>0.94</attackPowerRatio>
           </li>
         </shots>
@@ -289,8 +292,10 @@
     </graphicData>
   <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-        <isNormalAttack>false</isNormalAttack>
-        <canCrit>true</canCrit>
+      <attackPowerRatio>1.155</attackPowerRatio>
+       <isNormalAttack>false</isNormalAttack>
+      <canCrit>true</canCrit>
+      <isExSkill>true</isExSkill>
       <applyAffinity>true</applyAffinity>
       <canHitOwnPawn>true</canHitOwnPawn>
       <canHitOwnBuilding>true</canHitOwnBuilding>
@@ -315,8 +320,10 @@
     </graphicData>
   <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-        <isNormalAttack>false</isNormalAttack>
+        <attackPowerRatio>1.55</attackPowerRatio>
+          <isNormalAttack>false</isNormalAttack>
         <canCrit>true</canCrit>
+        <isExSkill>true</isExSkill>
       <applyAffinity>true</applyAffinity>
       <canHitOwnPawn>true</canHitOwnPawn>
       <canHitOwnBuilding>true</canHitOwnBuilding>
@@ -341,10 +348,12 @@
     </graphicData>
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-        <isNormalAttack>false</isNormalAttack>
+        <attackPowerRatio>1.55</attackPowerRatio>
+          <isNormalAttack>false</isNormalAttack>
         <canCrit>true</canCrit>
       <applyAffinity>true</applyAffinity>
       <canHitOwnPawn>true</canHitOwnPawn>
+      <isExSkill>false</isExSkill>
       <canHitOwnBuilding>true</canHitOwnBuilding>
       </li>
     </modExtensions>

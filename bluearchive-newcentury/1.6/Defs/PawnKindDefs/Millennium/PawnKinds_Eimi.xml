@@ -14,9 +14,6 @@
 			<def>BANW_LevelTrait</def>
 			<severity>0.001</severity>
 		</li>
-		<li>
-			<def>BANW_Eimi_HpBuff</def>
-		</li>
         </startingHediffs>
 		<backstoryFiltersOverride>
 			<li>
@@ -234,9 +231,10 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#DC143C&gt;专家的休憩&lt;/color&gt;</label>
-                <description>被动技能:自身获得每10秒回复&lt;color=#DC143C&gt;52&lt;/color&gt;点生命值</description>
+                <description>被动技能:自身受回复率增加&lt;color=#DC143C&gt;38%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_HealReceivedMultiplier>0.26</BANW_HealReceivedMultiplier>
                 </statOffsets>
 				<statFactors>
 				</statFactors>
@@ -261,26 +259,4 @@
         </degreeDatas>
 </TraitDef>
 
-<HediffDef>
-    <defName>BANW_Eimi_HpBuff</defName>
-    <label>专家的休憩</label>
-    <description>被动技能:自身获得每10秒回复&lt;color=#DC143C&gt;100&lt;/color&gt;点生命值</description>
-    <defaultLabelColor>(0, 94, 255)</defaultLabelColor>
-    <hediffClass>HediffWithComps</hediffClass>
-    <isBad>false</isBad>
-	<everCurableByItem>false</everCurableByItem>
-        
-		 <stages>
-          <li>     
-           <statOffsets>
-            </statOffsets>
-           </li>
-          </stages>
-    <comps>
-      <li Class="BANWlLib.comp.HediffCompProps_Regeneration">
-        <healPowerRatio>100</healPowerRatio>
-        <healIntervalTicks>600</healIntervalTicks>
-      </li>
-    </comps>
-  </HediffDef>
 </Defs>
