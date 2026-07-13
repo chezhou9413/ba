@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SandWorm_Risk_SmallWorm1.label>小沙虫增援 I</SandWorm_Risk_SmallWorm1.label>
+  <SandWorm_Risk_SmallWorm1.description>挑战开始时，沙海巨虫会额外召来一条小型沙虫。</SandWorm_Risk_SmallWorm1.description>
+  <SandWorm_Risk_SmallWorm2.label>小沙虫增援 II</SandWorm_Risk_SmallWorm2.label>
+  <SandWorm_Risk_SmallWorm2.description>在前置增援的基础上，再额外召来一条小型沙虫。</SandWorm_Risk_SmallWorm2.description>
+  <SandWorm_Risk_SmallWorm3.label>小沙虫凶化 III</SandWorm_Risk_SmallWorm3.label>
+  <SandWorm_Risk_SmallWorm3.description>所有由词条追加的小型沙虫获得头部秒杀能力，并提升 30% 生命值。</SandWorm_Risk_SmallWorm3.description>
+  <SandWorm_Risk_ChargeFrenzy1.label>沙虫狂暴化 I</SandWorm_Risk_ChargeFrenzy1.label>
+  <SandWorm_Risk_ChargeFrenzy1.description>沙海巨虫的冲锋冷却间隔降低 20%，更快进入下一次狂暴追击。</SandWorm_Risk_ChargeFrenzy1.description>
+  <SandWorm_Risk_ChargeFrenzy2.label>沙虫狂暴化 II</SandWorm_Risk_ChargeFrenzy2.label>
+  <SandWorm_Risk_ChargeFrenzy2.description>沙海巨虫的冲锋冷却间隔降低 40%，狂暴追击会更频繁地压迫战场。</SandWorm_Risk_ChargeFrenzy2.description>
+  <SandWorm_Risk_ChargeFrenzy3.label>沙虫狂暴化 III</SandWorm_Risk_ChargeFrenzy3.label>
+  <SandWorm_Risk_ChargeFrenzy3.description>沙海巨虫的冲锋冷却间隔降低 60%，会以极短间隔连续发动狂暴追击。</SandWorm_Risk_ChargeFrenzy3.description>
+  <SandWorm_Risk_DamageCap1.label>厚重甲壳 I</SandWorm_Risk_DamageCap1.label>
+  <SandWorm_Risk_DamageCap1.description>沙海巨虫单次受到的最高伤害不超过 60 点。</SandWorm_Risk_DamageCap1.description>
+  <SandWorm_Risk_DamageCap2.label>厚重甲壳 II</SandWorm_Risk_DamageCap2.label>
+  <SandWorm_Risk_DamageCap2.description>沙海巨虫单次受到的最高伤害不超过 40 点。</SandWorm_Risk_DamageCap2.description>
+  <SandWorm_Risk_DamageCap3.label>厚重甲壳 III</SandWorm_Risk_DamageCap3.label>
+  <SandWorm_Risk_DamageCap3.description>沙海巨虫单次受到的最高伤害不超过 20 点。</SandWorm_Risk_DamageCap3.description>
+  <SandWorm_Risk_PawnRange1.label>压制火线 I</SandWorm_Risk_PawnRange1.label>
+  <SandWorm_Risk_PawnRange1.description>参战小人的远程武器射程降低 10%。</SandWorm_Risk_PawnRange1.description>
+  <SandWorm_Risk_PawnRange2.label>压制火线 II</SandWorm_Risk_PawnRange2.label>
+  <SandWorm_Risk_PawnRange2.description>参战小人的远程武器射程降低 30%。</SandWorm_Risk_PawnRange2.description>
+  <SandWorm_Risk_PawnRange3.label>压制火线 III</SandWorm_Risk_PawnRange3.label>
+  <SandWorm_Risk_PawnRange3.description>参战小人的远程武器射程降低 50%。</SandWorm_Risk_PawnRange3.description>
+  <SandWorm_Risk_PawnMove1.label>深砂迟滞 I</SandWorm_Risk_PawnMove1.label>
+  <SandWorm_Risk_PawnMove1.description>参战小人的移动速度降低 20%。</SandWorm_Risk_PawnMove1.description>
+  <SandWorm_Risk_PawnMove2.label>深砂迟滞 II</SandWorm_Risk_PawnMove2.label>
+  <SandWorm_Risk_PawnMove2.description>参战小人的移动速度降低 40%。</SandWorm_Risk_PawnMove2.description>
+  <SandWorm_Risk_PawnMove3.label>深砂迟滞 III</SandWorm_Risk_PawnMove3.label>
+  <SandWorm_Risk_PawnMove3.description>参战小人的移动速度降低 60%。</SandWorm_Risk_PawnMove3.description>
+  <SandWorm_Risk_ShockwaveAttack1.label>地脉冲击 I</SandWorm_Risk_ShockwaveAttack1.label>
+  <SandWorm_Risk_ShockwaveAttack1.description>沙海巨虫获得周期性全图径向冲击波。释放前会隆起碎石墙作为掩体，未被遮挡的小人受到 100 点钝器伤害。</SandWorm_Risk_ShockwaveAttack1.description>
+  <SandWorm_Risk_ShockwaveAttack2.label>地脉共振 II</SandWorm_Risk_ShockwaveAttack2.label>
+  <SandWorm_Risk_ShockwaveAttack2.description>地脉冲击的蓄能节奏加快，危险带更宽。沙海巨虫的冲击波冷却降低 25%，危险带宽度提高 15%。</SandWorm_Risk_ShockwaveAttack2.description>
+  <SandWorm_Risk_ShockwaveAttack3.label>地脉裂变 III</SandWorm_Risk_ShockwaveAttack3.label>
+  <SandWorm_Risk_ShockwaveAttack3.description>地层回响进入失控裂变。冲击波冷却降低 45%，危险带宽度提高 30%，冲击波伤害提高 25%。</SandWorm_Risk_ShockwaveAttack3.description>
+  <SandWorm_Risk_SandBlind1.label>沙幕干扰 I</SandWorm_Risk_SandBlind1.label>
+  <SandWorm_Risk_SandBlind1.description>辛迪加空间内的高密度沙幕干扰瞄准。参战小人的射击精度降低 10%，瞄准时间增加 10%。</SandWorm_Risk_SandBlind1.description>
+  <SandWorm_Risk_SandBlind2.label>沙幕干扰 II</SandWorm_Risk_SandBlind2.label>
+  <SandWorm_Risk_SandBlind2.description>沙幕干扰进一步压低远程火力。参战小人的射击精度降低 22%，瞄准时间增加 25%。</SandWorm_Risk_SandBlind2.description>
+  <SandWorm_Risk_ResonancePressure1.label>共振倒计时 I</SandWorm_Risk_ResonancePressure1.label>
+  <SandWorm_Risk_ResonancePressure1.description>战斗拖得越久，地下回响越容易引来增援。沙海巨虫出现 4800 tick 后，每 3600 tick 召来一条小型沙虫，最多触发 3 次。</SandWorm_Risk_ResonancePressure1.description>
+  <SandWorm_Risk_ResonancePressure2.label>共振倒计时 II</SandWorm_Risk_ResonancePressure2.label>
+  <SandWorm_Risk_ResonancePressure2.description>地下共振更早失控。沙海巨虫出现 3600 tick 后，每 2400 tick 召来一条小型沙虫，最多触发 5 次；若已启用地脉冲击，会压缩下一次冲击波冷却。</SandWorm_Risk_ResonancePressure2.description>
+</LanguageData>

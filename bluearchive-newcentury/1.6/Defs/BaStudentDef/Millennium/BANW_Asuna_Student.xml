@@ -102,7 +102,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>测试技能4</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身使用EX技能时瞄准速度减少<color=#00FFFF>38%</color>]]>
+				<AbilityIntroduction><![CDATA[自身使用EX技能时攻击速度增加<color=#00FFFF>38%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

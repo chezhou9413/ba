@@ -4,11 +4,11 @@
     <defName>SR_StopMaintenance</defName>
     <label>碧蓝档案新世界公测公告2.1</label>
     <description>碧蓝档案新世界超级超级大更新，这次版本修复了非常多的代码问题！详细请看公告！
-&lt;color=#66FFFF&gt;7月10日更新公告：&lt;/color&gt;
+&lt;color=#66FFFF&gt;7月07日更新公告：&lt;/color&gt;
 &lt;color=#00FF00&gt;新角色&lt;/color&gt;
 新增 FES 角色：渚（泳装）、未花（泳装）
-新增 EX 技能：望 EX、优香 EX、玛丽 EX、若藻（泳装）EX、未花（泳装）EX，凯伊 EX
-新增 NS 技能：椿 NS、未花（泳装）NS
+新增 EX 技能：望 EX、优香 EX、玛丽 EX、若藻（泳装）EX、未花（泳装）EX，凯伊 EX 青叶 EX 红叶 EX
+新增 NS 技能：椿 NS、未花（泳装）NS 红叶 NS
 &lt;color=#00FF00&gt;新机制&lt;/color&gt;
 护盾系统：新增护盾技能机制，可吸收伤害直至耗尽
 攻击力加成技能：技能伤害现在受攻击力加成影响，提升攻击力即可增强技能伤害
@@ -48,11 +48,12 @@ AOE 技能和普通攻击不再对己方建筑造成伤害
 修复某些抽卡红叉bug
 修复文本错误
 修复水花子卡池抽不到水花子的问题
+修复fes卡池只能抽到fes角色问题
+修复爱丽丝攻击不能穿墙
+修复慧的攻击只有一段伤害
 暂未修复：
 爱丽丝负重问题
-fes卡池只能抽到fes角色问题
-爱丽丝攻击不能穿墙
-慧的攻击只有一段伤害
+部分学生技能没有实装特效
 &lt;color=#66FFFF&gt;6月16日更新公告：&lt;/color&gt;
 必看！请下载新的前置去掉旧的ve拓展，本mod已经脱离了ve拓展功能
 优化底层代码，学生不再是一个学生一个种族，优化了后期性能与内存消耗
@@ -276,6 +277,6 @@ Performance Optimizer不兼容的bug已经修复
 加强帽子的攻击力
 加强了鞋子的护甲值，移动速度
 削弱手套的精准和攻速</description>
-    <key>2026007010</key>
+    <key>2026007007</key>
   </Notice.NoticeDef>
 </Defs>

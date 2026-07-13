@@ -12,6 +12,10 @@
 		<generateInitialNonFamilyRelations>false</generateInitialNonFamilyRelations>
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
+		<abilities>
+			<li>BAWN_Momiji_EX</li>
+			<li>BAWN_Momiji_EXX</li>
+		</abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>

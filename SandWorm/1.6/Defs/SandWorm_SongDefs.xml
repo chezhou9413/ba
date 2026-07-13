@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SongDef>
+    <defName>SandWorm_LeviathanEntranceSong</defName>
+    <playOnMap>false</playOnMap>
+    <clipPath>SandWorm/LeviathanEntranceLoop</clipPath>
+    <volume>1.25</volume>
+  </SongDef>
+</Defs>

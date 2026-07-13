@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WeatherDef>
+    <defName>SandWorm_AbnormalSandstorm</defName>
+    <label>abnormal sandstorm</label>
+    <isBad>true</isBad>
+    <description>The sky turns a sickly ocher as violent winds drive sand across the entire map.</description>
+    <temperatureRange>-999~999</temperatureRange>
+    <windSpeedFactor>3.5</windSpeedFactor>
+    <windSpeedOffset>2.5</windSpeedOffset>
+    <favorability>VeryBad</favorability>
+    <perceivePriority>2</perceivePriority>
+    <accuracyMultiplier>0.8</accuracyMultiplier>
+    <moveSpeedMultiplier>0.8</moveSpeedMultiplier>
+    <ambientSounds>
+      <li>Ambient_Wind_Storm</li>
+    </ambientSounds>
+    <durationRange>12000~30000</durationRange>
+    <commonalityRainfallFactor>
+      <points>
+        <li>(0, 1.4)</li>
+        <li>(1300, 0.6)</li>
+        <li>(4000, 0.15)</li>
+      </points>
+    </commonalityRainfallFactor>
+    <skyColorsDay>
+      <sky>(1.0,0.82,0.38)</sky>
+      <shadow>(0.95,0.88,0.7)</shadow>
+      <overlay>(0.82,0.68,0.3)</overlay>
+      <saturation>0.86</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(0.95,0.72,0.28)</sky>
+      <shadow>(0.88,0.78,0.62)</shadow>
+      <overlay>(0.78,0.56,0.2)</overlay>
+      <saturation>0.82</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.42,0.34,0.2)</sky>
+      <shadow>(0.66,0.58,0.45)</shadow>
+      <overlay>(0.4,0.32,0.18)</overlay>
+      <saturation>0.76</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.3,0.25,0.16)</sky>
+      <shadow>(0.54,0.48,0.36)</shadow>
+      <overlay>(0.32,0.25,0.14)</overlay>
+      <saturation>0.7</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+</Defs>

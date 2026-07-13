@@ -139,13 +139,12 @@
       <warmupTime>1.5</warmupTime>
       <requireLineOfSight>true</requireLineOfSight>
       <targetParams>
-        <canTargetLocations>false</canTargetLocations>
-        <canTargetSelf>false</canTargetSelf>
-        <canTargetPawns>true</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetAnimals>true</canTargetAnimals>
-        <canTargetHumans>true</canTargetHumans>
-        <canTargetMechs>true</canTargetMechs>
+        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
       </targetParams>
     </verbProperties>
     <comps>

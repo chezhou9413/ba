@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>LEVIATHANS:SANDWORM</name>
+  <author>代码: 追踪虫，建筑贴图与封面：噶笑斯基</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>来自辛迪加的神秘委托已经送达：他们在深砂带锁定了一头利维坦级沙虫，并提供了一台能够模拟沙虫交配信号的沙锤。将沙锤带往世界地图上的深砂回响区，部署后等待地脉震动积累，巨型沙虫将会在异常沙尘暴中从地图边缘现身。猎杀它，撑过这场来自沙海深处的灾厄，并领取辛迪加承诺的报酬。</description>
+  <packageId>chezhou.creature.sandworm</packageId>
+  <modDependencies>
+    <li>
+      <packageId>Chezhou.ChezhouLib.lib</packageId>
+      <displayName>ChezhouLib</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3595247479</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Chezhou.ChezhouLib.lib</li>
+  </loadAfter>
+</ModMetaData>

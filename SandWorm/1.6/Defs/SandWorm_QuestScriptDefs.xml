@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <QuestScriptDef>
+    <defName>SandWorm_LeviathanQuest</defName>
+    <defaultChallengeRating>4</defaultChallengeRating>
+    <isRootSpecial>true</isRootSpecial>
+    <questAvailableLetterLabel>沙漠中的巨虫</questAvailableLetterLabel>
+    <questAvailableLetterTextIsDescription>true</questAvailableLetterTextIsDescription>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Syndicate Contract: The Desert Leviathan</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->A mysterious organization calling itself the Syndicate has contacted the colony through an encrypted channel. They claim to have located a leviathan-class sandworm in the deep sands. This creature has long lurked beneath the desert and is drawn to large-scale industrial noise, shifting wealth, and underground vibrations. The Syndicate refuses to intervene openly and will only hire you as contractors to remove the threat.
+
+If you accept, the Syndicate will drop-pod a sand hammer for luring the beast and mark a deep-sand echo zone on the world map. Deploy the sand hammer in the target area and it will repeatedly strike the ground, imitating the low-frequency seismic mating signal of a sandworm. After ten hours of accumulated vibration, the leviathan beneath the sand will surface. The Syndicate promises that the final payment will be delivered to your colony by drop pod after the kill.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="SandWormLib.QuestNode_Root_SandWormLeviathan" />
+  </QuestScriptDef>
+</Defs>
+

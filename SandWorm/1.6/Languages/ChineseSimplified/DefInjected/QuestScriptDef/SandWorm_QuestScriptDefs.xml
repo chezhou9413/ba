@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SandWorm_LeviathanQuest.questAvailableLetterLabel>沙漠中的巨虫</SandWorm_LeviathanQuest.questAvailableLetterLabel>
+  <SandWorm_LeviathanQuest.questNameRules.rulesStrings.0>questName-&gt;辛迪加委托：沙漠中的巨虫</SandWorm_LeviathanQuest.questNameRules.rulesStrings.0>
+  <SandWorm_LeviathanQuest.questDescriptionRules.rulesStrings.0>questDescription-&gt;一个自称“辛迪加”的神秘组织通过加密信道联系了殖民地。他们声称已经在深砂带锁定一头利维坦级沙虫：这头巨虫长期潜伏于沙海之下，会被大规模工业噪声、财富流动和地下震动吸引。辛迪加不愿公开介入，只愿以委托形式雇佣你们处理这项威胁。
+
+接受委托后，辛迪加会空投一台用于诱捕巨虫的沙锤，并在世界地图上标定一片深砂回响区。将沙锤部署在目标区域后，它会持续敲击地层，模拟沙虫交配时的低频地脉信号。经过十小时震动积累，沙海深处的巨虫将被引出。辛迪加承诺：完成猎杀后，后续报酬会通过空投送达你的殖民地。</SandWorm_LeviathanQuest.questDescriptionRules.rulesStrings.0>
+</LanguageData>

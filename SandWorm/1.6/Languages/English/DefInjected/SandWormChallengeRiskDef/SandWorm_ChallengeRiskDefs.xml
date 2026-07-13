@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SandWorm_Risk_SmallWorm1.label>Small sandworm reinforcement I</SandWorm_Risk_SmallWorm1.label>
+  <SandWorm_Risk_SmallWorm1.description>When the challenge begins, the sand leviathan calls in one additional small sandworm.</SandWorm_Risk_SmallWorm1.description>
+  <SandWorm_Risk_SmallWorm2.label>Small sandworm reinforcement II</SandWorm_Risk_SmallWorm2.label>
+  <SandWorm_Risk_SmallWorm2.description>Based on the previous reinforcement, one more small sandworm is called in.</SandWorm_Risk_SmallWorm2.description>
+  <SandWorm_Risk_SmallWorm3.label>Small sandworm ferocity III</SandWorm_Risk_SmallWorm3.label>
+  <SandWorm_Risk_SmallWorm3.description>All small sandworms added by risk tags gain head instant-kill capability and 30% more hit points.</SandWorm_Risk_SmallWorm3.description>
+  <SandWorm_Risk_ChargeFrenzy1.label>Sandworm frenzy I</SandWorm_Risk_ChargeFrenzy1.label>
+  <SandWorm_Risk_ChargeFrenzy1.description>The sand leviathan's charge cooldown is reduced by 20%, letting it enter its next frenzied pursuit sooner.</SandWorm_Risk_ChargeFrenzy1.description>
+  <SandWorm_Risk_ChargeFrenzy2.label>Sandworm frenzy II</SandWorm_Risk_ChargeFrenzy2.label>
+  <SandWorm_Risk_ChargeFrenzy2.description>The sand leviathan's charge cooldown is reduced by 40%, making frenzied pursuits pressure the battlefield more often.</SandWorm_Risk_ChargeFrenzy2.description>
+  <SandWorm_Risk_ChargeFrenzy3.label>Sandworm frenzy III</SandWorm_Risk_ChargeFrenzy3.label>
+  <SandWorm_Risk_ChargeFrenzy3.description>The sand leviathan's charge cooldown is reduced by 60%, allowing rapid repeated frenzied pursuits.</SandWorm_Risk_ChargeFrenzy3.description>
+  <SandWorm_Risk_DamageCap1.label>Heavy carapace I</SandWorm_Risk_DamageCap1.label>
+  <SandWorm_Risk_DamageCap1.description>The sand leviathan cannot take more than 60 damage from a single hit.</SandWorm_Risk_DamageCap1.description>
+  <SandWorm_Risk_DamageCap2.label>Heavy carapace II</SandWorm_Risk_DamageCap2.label>
+  <SandWorm_Risk_DamageCap2.description>The sand leviathan cannot take more than 40 damage from a single hit.</SandWorm_Risk_DamageCap2.description>
+  <SandWorm_Risk_DamageCap3.label>Heavy carapace III</SandWorm_Risk_DamageCap3.label>
+  <SandWorm_Risk_DamageCap3.description>The sand leviathan cannot take more than 20 damage from a single hit.</SandWorm_Risk_DamageCap3.description>
+  <SandWorm_Risk_PawnRange1.label>Suppressed firing line I</SandWorm_Risk_PawnRange1.label>
+  <SandWorm_Risk_PawnRange1.description>Participating pawns' ranged weapon range is reduced by 10%.</SandWorm_Risk_PawnRange1.description>
+  <SandWorm_Risk_PawnRange2.label>Suppressed firing line II</SandWorm_Risk_PawnRange2.label>
+  <SandWorm_Risk_PawnRange2.description>Participating pawns' ranged weapon range is reduced by 30%.</SandWorm_Risk_PawnRange2.description>
+  <SandWorm_Risk_PawnRange3.label>Suppressed firing line III</SandWorm_Risk_PawnRange3.label>
+  <SandWorm_Risk_PawnRange3.description>Participating pawns' ranged weapon range is reduced by 50%.</SandWorm_Risk_PawnRange3.description>
+  <SandWorm_Risk_PawnMove1.label>Deep sand drag I</SandWorm_Risk_PawnMove1.label>
+  <SandWorm_Risk_PawnMove1.description>Participating pawns' movement speed is reduced by 20%.</SandWorm_Risk_PawnMove1.description>
+  <SandWorm_Risk_PawnMove2.label>Deep sand drag II</SandWorm_Risk_PawnMove2.label>
+  <SandWorm_Risk_PawnMove2.description>Participating pawns' movement speed is reduced by 40%.</SandWorm_Risk_PawnMove2.description>
+  <SandWorm_Risk_PawnMove3.label>Deep sand drag III</SandWorm_Risk_PawnMove3.label>
+  <SandWorm_Risk_PawnMove3.description>Participating pawns' movement speed is reduced by 60%.</SandWorm_Risk_PawnMove3.description>
+  <SandWorm_Risk_ShockwaveAttack1.label>Seismic shock I</SandWorm_Risk_ShockwaveAttack1.label>
+  <SandWorm_Risk_ShockwaveAttack1.description>The sand leviathan gains a periodic full-map radial shockwave. Before release, stone walls rise as cover; uncovered pawns take 100 blunt damage.</SandWorm_Risk_ShockwaveAttack1.description>
+  <SandWorm_Risk_ShockwaveAttack2.label>Seismic resonance II</SandWorm_Risk_ShockwaveAttack2.label>
+  <SandWorm_Risk_ShockwaveAttack2.description>The seismic shock charges faster and its danger lanes widen. Shockwave cooldown is reduced by 25%, and lane width increases by 15%.</SandWorm_Risk_ShockwaveAttack2.description>
+  <SandWorm_Risk_ShockwaveAttack3.label>Seismic fission III</SandWorm_Risk_ShockwaveAttack3.label>
+  <SandWorm_Risk_ShockwaveAttack3.description>The underground resonance becomes unstable. Shockwave cooldown is reduced by 45%, lane width increases by 30%, and shockwave damage increases by 25%.</SandWorm_Risk_ShockwaveAttack3.description>
+  <SandWorm_Risk_SandBlind1.label>Sand veil interference I</SandWorm_Risk_SandBlind1.label>
+  <SandWorm_Risk_SandBlind1.description>Dense sand inside the Syndicate space disrupts aiming. Participating pawns have 10% lower shooting accuracy and 10% longer aiming time.</SandWorm_Risk_SandBlind1.description>
+  <SandWorm_Risk_SandBlind2.label>Sand veil interference II</SandWorm_Risk_SandBlind2.label>
+  <SandWorm_Risk_SandBlind2.description>The sand veil suppresses ranged fire even harder. Participating pawns have 22% lower shooting accuracy and 25% longer aiming time.</SandWorm_Risk_SandBlind2.description>
+  <SandWorm_Risk_ResonancePressure1.label>Resonance countdown I</SandWorm_Risk_ResonancePressure1.label>
+  <SandWorm_Risk_ResonancePressure1.description>The longer the fight drags on, the more easily underground echoes attract reinforcements. 4800 ticks after the leviathan appears, one small sandworm arrives every 3600 ticks, up to 3 times.</SandWorm_Risk_ResonancePressure1.description>
+  <SandWorm_Risk_ResonancePressure2.label>Resonance countdown II</SandWorm_Risk_ResonancePressure2.label>
+  <SandWorm_Risk_ResonancePressure2.description>The underground resonance destabilizes sooner. 3600 ticks after the leviathan appears, one small sandworm arrives every 2400 ticks, up to 5 times; if seismic shock is enabled, the next shockwave cooldown is compressed.</SandWorm_Risk_ResonancePressure2.description>
+</LanguageData>

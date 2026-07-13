@@ -214,8 +214,8 @@
                 <description>子技能:自身攻击速度增加&lt;color=#DC143C&gt;29%&lt;/color&gt;。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<AimingDelayFactor>-0.29</AimingDelayFactor>
-                    <RangedCooldownFactor>-0.29</RangedCooldownFactor>
+					<AimingDelayFactor>-0.145</AimingDelayFactor>
+                    <RangedCooldownFactor>-0.145</RangedCooldownFactor>
                 </statOffsets>
             </li>
         </degreeDatas>

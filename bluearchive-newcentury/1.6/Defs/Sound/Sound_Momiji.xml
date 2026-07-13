@@ -1,5 +1,45 @@
 
 <Defs>
+	<SoundDef>
+	<defName>Momiji_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Momiji/SkillEX/Momiji_ExxSkill_1</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Momiji/SkillEX/Momiji_ExxSkill_2</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Momiji/SkillEX/Momiji_ExxSkill_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+	<SoundDef>
+	<defName>Momiji_Skill_EX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Momiji/Momiji_ExSkill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
 <SoundDef>
 	<defName>Momiji_levelup_A</defName>  <!--二技能语音-->  
 	<maxVoices>1</maxVoices>

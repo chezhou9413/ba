@@ -1,91 +1,224 @@
-
 <Defs>
-<AbilityDef>
-<defName>BAWN_Aoba_EX</defName>
- <label>准、准备完成了</label>
- <description>增加自身防御力39%持续32秒</description>
- <iconPath>Ability/Icon/Aoba/Aoba_EX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
- <hotKey>Misc12</hotKey>
- <warmupStartSound>Aoba_Skill</warmupStartSound>
- <warmupEffecter>BANW_Effecter_A</warmupEffecter>
- <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
- <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->  
- <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
- <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
- <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
- <targetRequired>false</targetRequired><!-- 对自己使用 -->
- <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
- <hostile>false</hostile><!-- 是否是敌对行为 -->
- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
- <statBases>
-<!-- 持续时间：20 秒 = 1200 ticks -->
-  <Ability_Duration>32</Ability_Duration>
- </statBases>
- <verbProperties>
- <soundCast>Aoba_Skill_EX</soundCast>
- <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
- <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
- <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
- <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
- <targetParams><!-- 目标参数设置 -->
-  <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
-  <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
-  <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
-  <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
-  <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
-  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
-  </targetParams>
-  </verbProperties>
-  <comps>
-    <li Class="CompProperties_AbilityEffecterOnTarget">
+  <AbilityDef>
+    <defName>BAWN_Aoba_EXX</defName>
+    <label>得、得赶紧去修理……！</label>
+    <description>位移至指定位置,自身攻击力增加28%，攻击速度增加67%(持续22秒),位移期间碰到的单位造成自身攻击力127%的伤害并击退.</description>
+    <iconPath>Ability/Icon/Aoba/Aoba_EXX</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hotKey>Misc7</hotKey>
+    <warmupStartSound>Aoba_Skill_EXX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>True</showWhenDrafted>
+    <hostile>true</hostile>
+    <warmupEffecter></warmupEffecter>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <statBases>
+      <!-- 持续时间：20 秒 = 1200 ticks -->
+      <Ability_Duration>22</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <soundCast>Aoba_Skill_A</soundCast>
+      <warmupEffecter></warmupEffecter>
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+      <range>12</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.BattleMovement.CompProperties_AbilityBattleMovement">
+        <!-- 平面冲撞模式，视觉上按直线平移。 -->
+        <mode>Slide</mode>
+        <!-- 每 tick 推进 0.35 格。 -->
+        <speed>0.25</speed>
+        <!-- 只命中中心直线路径。 -->
+        <pathWidth>1</pathWidth>
+        <!-- 位移路径可穿过墙体。 -->
+        <canPassWalls>false</canPassWalls>
+        <!-- 位移路径可穿过掩体。 -->
+        <canPassCover>true</canPassCover>
+        <!-- 路径中的敌方目标受到一次战斗框架伤害。 -->
+        <pathAction>
+          <attackPowerRatio>1.27</attackPowerRatio>
+          <damageDef>BANC_Damage_zhendong</damageDef>
+          <penetration>2</penetration>
+          <canCrit>true</canCrit>
+          <isExSkill>true</isExSkill>
+          <applyAffinity>true</applyAffinity>
+          <affectHostile>true</affectHostile>
+          <affectFriendly>false</affectFriendly>
+          <canHitBuilding>true</canHitBuilding>
+        </pathAction>
+        <!-- 路径命中目标沿冲撞方向后退，阻挡前停止。 -->
+        <knockback>  <!-- 击退组件：命中目标时将其向后推离 -->
+          <enabled>true</enabled>  <!-- 是否启用击退 -->
+          <distance>1</distance>  <!-- 击退距离（格） -->
+          <speed>0.35</speed>  <!-- 击退飞行速度（格/tick） -->
+          <affectHostile>true</affectHostile>  <!-- 对敌方生效 -->
+          <affectFriendly>false</affectFriendly>  <!-- 不对友方生效 -->
+        </knockback>
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+        <hediffDef>BAWN_Aoba_Buff</hediffDef><!-- 要添加的状态效果定义名 -->
+        <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+        <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">  <!-- 目标预览扩展：技能施放前显示范围指示 -->
+        <shape>Line</shape>           <!-- 范围形状：Line=直线 -->
+        <range>12</range>             <!-- 最大射程（格） -->
+        <length>12</length>           <!-- 直线长度（格），仅 Line 形状用 -->
+        <width>1</width>              <!-- 直线宽度（格），仅 Line 形状用 -->
+        <drawCasterRange>true</drawCasterRange>      <!-- 是否绘制施法者射程圈 -->
+        <drawTargetHighlight>true</drawTargetHighlight>  <!-- 是否高亮目标格子 -->
+      </li>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">  <!-- 战斗公式预览扩展：技能图标悬浮时显示伤害预览 -->
+        <showBattleFormula>true</showBattleFormula>  <!-- 是否在 Tooltip 中展开战斗公式 -->
+        <previewActions>  <!-- 预览用动作配置，仅用于显示，不实际触发 -->
+          <li>
+            <attackPowerRatio>1.27</attackPowerRatio>  <!-- 攻击力倍率：伤害 = 攻击力 × 1.0 -->
+            <damageDef>BANC_Damage_Nozomi_EXX</damageDef>  <!-- 伤害类型定义 -->
+            <penetration>2</penetration>  <!-- 护甲穿透值 -->
+            <canCrit>true</canCrit>       <!-- 是否可以暴击 -->
+            <applyAffinity>true</applyAffinity>  <!-- 是否应用属性克制系统 -->
+            <isExSkill>true</isExSkill>
+          </li>
+        </previewActions>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <AbilityDef>
+    <defName>BAWN_Aoba_EX</defName>
+    <label>准、准备完成了</label>
+    <description>增加自身防御力39%持续32秒</description>
+    <iconPath>Ability/Icon/Aoba/Aoba_EX</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Aoba_Skill</warmupStartSound>
+    <warmupEffecter>BANW_Effecter_A</warmupEffecter>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <targetRequired>false</targetRequired><!-- 对自己使用 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>false</hostile><!-- 是否是敌对行为 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <statBases>
+      <!-- 持续时间：20 秒 = 1200 ticks -->
+      <Ability_Duration>32</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <soundCast>Aoba_Skill_EX</soundCast>
+      <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+      <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
         <effecterDef>BANW_Effecter_B</effecterDef>
         <maintainForTicks>60</maintainForTicks>
       </li>
-<li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
-  <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
-  <hediffDef>BAWN_Aoba_Hpup</hediffDef><!-- 要添加的状态效果定义名 -->
-  <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
-  <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
-</li>
+      <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+        <hediffDef>BAWN_Aoba_Hpup</hediffDef><!-- 要添加的状态效果定义名 -->
+        <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+        <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+      </li>
 
-</comps>
-</AbilityDef>
-    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
-    <HediffDef>
-        <!-- 状态的唯一标识符 -->
-        <defName>BAWN_Aoba_Hpup</defName>
-        <!-- 显示名称 -->
-        <label>准、准备完成了</label>
-        <!-- 效果描述 -->
-        <description>增加自身防御力39%。持续32秒</description>
-        <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
-        <!-- 是否为负面效果（会影响心情等） -->
-        <isBad>false</isBad>
-        <hediffClass>HediffWithComps</hediffClass>
-        <everCurableByItem>false</everCurableByItem>
-        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
-          <stages>
-          <li>     
-            <statOffsets>
-        <ArmorRating_Sharp>0.38</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>0.38</ArmorRating_Blunt>
-	      <ArmorRating_Heat>0.38</ArmorRating_Heat>
-            </statOffsets>
-           <statFactors>
-        <ArmorRating_Sharp>1.39</ArmorRating_Sharp>
-		    <ArmorRating_Blunt>1.39</ArmorRating_Blunt>
-	      <ArmorRating_Heat>1.39</ArmorRating_Heat>
-           </statFactors>
-           </li>
-          </stages>
-        <comps>
-        <li Class="HediffCompProperties_Disappears">
+    </comps>
+  </AbilityDef>
+  <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+  <HediffDef>
+    <!-- 状态的唯一标识符 -->
+    <defName>BAWN_Aoba_Hpup</defName>
+    <!-- 显示名称 -->
+    <label>准、准备完成了</label>
+    <!-- 效果描述 -->
+    <description>增加自身防御力39%。持续32秒</description>
+    <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
+    <!-- 是否为负面效果（会影响心情等） -->
+    <isBad>false</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+    <stages>
+      <li>
+        <statOffsets>
+          <ArmorRating_Sharp>0.38</ArmorRating_Sharp>
+          <ArmorRating_Blunt>0.38</ArmorRating_Blunt>
+          <ArmorRating_Heat>0.38</ArmorRating_Heat>
+        </statOffsets>
+        <statFactors>
+          <ArmorRating_Sharp>1.39</ArmorRating_Sharp>
+          <ArmorRating_Blunt>1.39</ArmorRating_Blunt>
+          <ArmorRating_Heat>1.39</ArmorRating_Heat>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
         <showRemainingTime>true</showRemainingTime>
         <disappearsAfterTicks>1200</disappearsAfterTicks>
       </li>
-      
+
     </comps>
-    </HediffDef>
-  
+  </HediffDef>
+  <HediffDef>
+    <!-- 状态的唯一标识符 -->
+    <defName>BAWN_Aoba_Buff</defName>
+    <!-- 显示名称 -->
+    <label>得、得赶紧去修理……！</label>
+    <!-- 效果描述 -->
+    <description>增加自身攻击力28%，攻击速度67%.持续22秒</description>
+    <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
+    <!-- 是否为负面效果（会影响心情等） -->
+    <isBad>false</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+    <stages>
+      <li>
+        <statOffsets>
+          <BANW_FinalDamageMultiplier>0.28</BANW_FinalDamageMultiplier>
+          <AimingDelayFactor>-0.33</AimingDelayFactor>
+          <RangedCooldownFactor>-0.33</RangedCooldownFactor>
+        </statOffsets>
+        <statFactors>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+<li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Aoba_Ef_A</stateEffecter>
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>

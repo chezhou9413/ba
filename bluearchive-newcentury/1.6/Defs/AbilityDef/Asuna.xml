@@ -220,8 +220,8 @@
           <stages>
           <li>     
            <statOffsets>
-           <AimingDelayFactor>-0.95</AimingDelayFactor>
-           <RangedCooldownFactor>-0.57</RangedCooldownFactor>
+           <AimingDelayFactor>-0.48</AimingDelayFactor>
+           <RangedCooldownFactor>-0.48</RangedCooldownFactor>
            <BANW_Miss>0.3</BANW_Miss>
             </statOffsets>
            </li>

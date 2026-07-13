@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SandWorm_Thing.label>沙虫</SandWorm_Thing.label>
+  <SandWorm_Thing.description>一只在地图上游荡的沙虫。</SandWorm_Thing.description>
+  <SandWorm_SmallThing.label>小型沙虫</SandWorm_SmallThing.label>
+  <SandWorm_SmallThing.description>体型较小的沙虫，会用身体碾压目标，但没有利维坦级沙虫的头部秒杀能力。</SandWorm_SmallThing.description>
+  <SandWorm_HitProxy.label>沙虫</SandWorm_HitProxy.label>
+  <SandWorm_HitProxy.description>沙虫节段代理体。</SandWorm_HitProxy.description>
+  <SandWorm_SmallHitProxy.label>小型沙虫</SandWorm_SmallHitProxy.label>
+  <SandWorm_SmallHitProxy.description>小型沙虫节段代理体。</SandWorm_SmallHitProxy.description>
+  <SandHammer.label>沙锤</SandHammer.label>
+  <SandHammer.description>用于诱导深砂巨虫的震动装置。沙锤会向地下持续敲击并释放低频回响，模拟沙虫交配时的地脉信号；将其部署在目标沙漠区域后，经过一段时间会引出潜伏于地下的沙虫。</SandHammer.description>
+  <SandWorm_ShockwaveRockWall.label>冲击碎石墙</SandWorm_ShockwaveRockWall.label>
+  <SandWorm_ShockwaveRockWall.description>沙海巨虫释放地脉冲击前隆起的临时碎石掩体。</SandWorm_ShockwaveRockWall.description>
+</LanguageData>

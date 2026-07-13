@@ -8,8 +8,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
-<needsMaintenance>True</needsMaintenance>
-<fadeOutUnmaintained>True</fadeOutUnmaintained>
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
@@ -30,8 +30,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
-<needsMaintenance>True</needsMaintenance>
-<fadeOutUnmaintained>True</fadeOutUnmaintained>
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
@@ -52,8 +52,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
-<needsMaintenance>True</needsMaintenance>
-<fadeOutUnmaintained>True</fadeOutUnmaintained>
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
@@ -74,8 +74,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.90</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
-<needsMaintenance>True</needsMaintenance>
-<fadeOutUnmaintained>True</fadeOutUnmaintained>
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
@@ -191,6 +191,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -211,6 +213,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.70</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -258,6 +262,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -278,6 +284,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.70</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -298,6 +306,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -318,6 +328,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.70</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -400,66 +412,6 @@
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-         <li>
-        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
-        <moteDef>BAWN_Wakamo_A_11_Mote</moteDef>
-         <initialDelayTicks>160</initialDelayTicks>
-        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
-        <rotation>0</rotation><!-- 初始旋转角度 -->
-        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
-        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
-        <positionOffset>(0, 0.5, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
-        <angle>0</angle><!-- 发射角度 -->
-        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
-        <spawnLocType>OnSource</spawnLocType>
-        <speed>0</speed>
-        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
-        <absoluteAngle>true</absoluteAngle>
-      </li>
-      <li>
-        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
-        <moteDef>BAWN_Wakamo_A_12_Mote</moteDef>
-         <initialDelayTicks>160</initialDelayTicks>
-        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
-        <rotation>0</rotation><!-- 初始旋转角度 -->
-        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
-        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
-        <positionOffset>(0, 0.5, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
-        <angle>0</angle><!-- 发射角度 -->
-        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
-        <spawnLocType>OnSource</spawnLocType>
-        <speed>0</speed>
-        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
-        <absoluteAngle>true</absoluteAngle>
-      </li>
-      <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
-        <moteDef>BAWN_Wakamo_A_13_Mote</moteDef>
-        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
-        <initialDelayTicks>214</initialDelayTicks><!-- 60tick1秒 -->
-        <rotation>-90</rotation><!-- 初始旋转角度 -->
-        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
-        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
-        <positionOffset>(0, 0.5, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
-        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
-        <angle>0</angle><!-- 发射角度 -->
-        <spawnLocType>OnSource</spawnLocType>
-        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
-      </li>
-      <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
-        <moteDef>BAWN_Wakamo_A_14_Mote</moteDef>
-        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
-        <initialDelayTicks>190</initialDelayTicks><!-- 60tick1秒 -->
-        <rotation>-90</rotation><!-- 初始旋转角度 -->
-        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
-        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
-        <positionOffset>(0, 0.5, 0)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
-        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
-        <angle>0</angle><!-- 发射角度 -->
-        <spawnLocType>OnSource</spawnLocType>
-        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
-      </li>
     </children>
   </EffecterDef>
   <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
@@ -470,6 +422,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.90</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -490,6 +444,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.90</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -509,6 +465,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.90</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -528,6 +486,8 @@
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
 <fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
 </mote>
 <graphicData>
 <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
@@ -547,6 +507,66 @@
         <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
         <soundDef>Wakamo_A_Skill_EX_C</soundDef>
         <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Wakamo_A_11_Mote</moteDef>
+         <initialDelayTicks>160</initialDelayTicks>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Wakamo_A_12_Mote</moteDef>
+         <initialDelayTicks>160</initialDelayTicks>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 0)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Wakamo_A_13_Mote</moteDef>
+        <scale>1</scale>
+        <initialDelayTicks>214</initialDelayTicks>
+        <rotation>-90</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 0)</positionOffset>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <angle>0</angle>
+        <spawnLocType>OnSource</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Wakamo_A_14_Mote</moteDef>
+        <scale>1</scale>
+        <initialDelayTicks>190</initialDelayTicks>
+        <rotation>-90</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 0)</positionOffset>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <angle>0</angle>
+        <spawnLocType>OnSource</spawnLocType>
+        <attachToSpawnThing>true</attachToSpawnThing>
       </li>
     </children>
   </EffecterDef>

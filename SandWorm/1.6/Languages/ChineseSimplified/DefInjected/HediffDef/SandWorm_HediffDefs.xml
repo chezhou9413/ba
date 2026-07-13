@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SandWorm_SyndicateMoveSuppression.label>辛迪加沙阻</SandWorm_SyndicateMoveSuppression.label>
+  <SandWorm_SyndicateMoveSuppression.description>辛迪加挑战空间里的深砂干扰正在拖慢这个小人的行动。</SandWorm_SyndicateMoveSuppression.description>
+  <SandWorm_SyndicateMoveSuppression.stages.0.label>轻度沙阻</SandWorm_SyndicateMoveSuppression.stages.0.label>
+  <SandWorm_SyndicateMoveSuppression.stages.1.label>中度沙阻</SandWorm_SyndicateMoveSuppression.stages.1.label>
+  <SandWorm_SyndicateMoveSuppression.stages.2.label>重度沙阻</SandWorm_SyndicateMoveSuppression.stages.2.label>
+  <SandWorm_SyndicateAimSuppression.label>辛迪加沙幕</SandWorm_SyndicateAimSuppression.label>
+  <SandWorm_SyndicateAimSuppression.description>辛迪加挑战空间里的高密度沙幕正在干扰这个小人的瞄准。</SandWorm_SyndicateAimSuppression.description>
+  <SandWorm_SyndicateAimSuppression.stages.0.label>轻度沙幕</SandWorm_SyndicateAimSuppression.stages.0.label>
+  <SandWorm_SyndicateAimSuppression.stages.1.label>重度沙幕</SandWorm_SyndicateAimSuppression.stages.1.label>
+</LanguageData>

@@ -1,10 +1,10 @@
-
 <Defs>
-<ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Kazusa_Ef_AA</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Kazusa/D/Kazusa_1</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Kazusa/D/Kazusa_1</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>0.5</drawSize>
     </graphicData>
@@ -21,7 +21,8 @@
     <defName>BANW_Kazusa_Ef_AB</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Kazusa/D/Kazusa_2</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Kazusa/D/Kazusa_2</texPath><!-- 纹理图片路径 -->
       <drawSize>1.8</drawSize>
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -36,7 +37,8 @@
     <defName>BANW_Kazusa_Ef_AC</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Kazusa/D/Kazusa_3</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Kazusa/D/Kazusa_3</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>0.3</drawSize>
     </graphicData>
@@ -52,7 +54,8 @@
     <defName>BANW_Kazusa_Ef_AD</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Kazusa/D/Kazusa_4</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Kazusa/D/Kazusa_4</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>0.3</drawSize>
     </graphicData>
@@ -65,9 +68,9 @@
     </mote>
   </ThingDef>
   <EffecterDef>
-<defName>BANW_Kazusa_Ef_B</defName>
-<children>
-   <li>
+    <defName>BANW_Kazusa_Ef_B</defName>
+    <children>
+      <li>
         <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
         <fleckDef>BAWN_Effect_BA_A</fleckDef>
         <burstCount>1</burstCount>
@@ -86,7 +89,7 @@
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-<li>
+      <li>
         <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
         <moteDef>BANW_Kazusa_Ef_AA</moteDef>
         <initialDelayTicks>20</initialDelayTicks>
@@ -137,7 +140,7 @@
         <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-<li>
+      <li>
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <moteDef>BANW_Kazusa_Ef_AD</moteDef>
         <ticksBetweenMotes>30</ticksBetweenMotes>
@@ -154,6 +157,6 @@
         <attachToSpawnThing>false</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-</children>
-</EffecterDef>
+    </children>
+  </EffecterDef>
 </Defs>

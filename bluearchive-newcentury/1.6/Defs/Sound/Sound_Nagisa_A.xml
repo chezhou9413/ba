@@ -41,6 +41,40 @@
 	</subSounds>
 </SoundDef>
 <SoundDef>
+	<defName>Nagisa_A_Skill_EX_B</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Nagisa_A/Nagisa_B</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Nagisa_A_Skill_EX_C</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Nagisa_A/Nagisa_C</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
 	<defName>Nagisa_A_levelup_A</defName>  <!--二技能语音-->  
 	<maxVoices>1</maxVoices>
   <context>MapOnly</context>  

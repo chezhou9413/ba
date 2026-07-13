@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef>
+    <defName>SandWorm_LeviathanRockMove</defName>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Building/PitBurrow/Collapse</clipPath>
+          </li>
+        </grains>
+        <volumeRange>22~30</volumeRange>
+        <pitchRange>0.75~0.95</pitchRange>
+        <distRange>35~75</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>SandWorm_LeviathanRockCharge</defName>
+    <context>MapOnly</context>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>Building/PitBurrow/Collapse</clipPath>
+          </li>
+        </grains>
+        <volumeRange>35~45</volumeRange>
+        <pitchRange>0.65~0.85</pitchRange>
+        <distRange>45~95</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

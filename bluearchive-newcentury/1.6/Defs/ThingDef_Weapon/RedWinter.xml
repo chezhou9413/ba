@@ -765,7 +765,7 @@
         <soundCast>ThumpCannon_Fire</soundCast><!--射击音效-->
         <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
         <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
-        <forcedMissRadius>2.5</forcedMissRadius>
+        <forcedMissRadius>2.0</forcedMissRadius>
       </li>
     </verbs>
     <comps>

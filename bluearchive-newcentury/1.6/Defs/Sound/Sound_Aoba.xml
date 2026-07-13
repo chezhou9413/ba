@@ -1,5 +1,43 @@
 
 <Defs>
+	<SoundDef>
+    <defName>Aoba_Skill_EXX</defName><!--二技能伤害-->  
+    <maxVoices>1</maxVoices> 
+    <context>MapOnly</context> 
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Aoba/SkillEX/Aoba_ExxSkill_1</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Aoba/SkillEX/Aoba_ExxSkill_2</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Aoba/SkillEX/Aoba_ExxSkill_3</clipPath>
+          </li>
+        </grains>
+        <volumeRange>40</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+	<SoundDef>
+    <defName>Aoba_Skill_A</defName><!--一技能语音-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Aoba/Aoba_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>70~70</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 <SoundDef>
     <defName>Aoba_Skill</defName><!--一技能语音-->
     <maxVoices>1</maxVoices>

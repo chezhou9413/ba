@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SandWorm_SyndicateMoveSuppression.label>Syndicate sand drag</SandWorm_SyndicateMoveSuppression.label>
+  <SandWorm_SyndicateMoveSuppression.description>Deep-sand interference inside the Syndicate challenge space is slowing this pawn's movement.</SandWorm_SyndicateMoveSuppression.description>
+  <SandWorm_SyndicateMoveSuppression.stages.0.label>light sand drag</SandWorm_SyndicateMoveSuppression.stages.0.label>
+  <SandWorm_SyndicateMoveSuppression.stages.1.label>moderate sand drag</SandWorm_SyndicateMoveSuppression.stages.1.label>
+  <SandWorm_SyndicateMoveSuppression.stages.2.label>heavy sand drag</SandWorm_SyndicateMoveSuppression.stages.2.label>
+  <SandWorm_SyndicateAimSuppression.label>Syndicate sand veil</SandWorm_SyndicateAimSuppression.label>
+  <SandWorm_SyndicateAimSuppression.description>Dense sand inside the Syndicate challenge space is disrupting this pawn's aim.</SandWorm_SyndicateAimSuppression.description>
+  <SandWorm_SyndicateAimSuppression.stages.0.label>light sand veil</SandWorm_SyndicateAimSuppression.stages.0.label>
+  <SandWorm_SyndicateAimSuppression.stages.1.label>heavy sand veil</SandWorm_SyndicateAimSuppression.stages.1.label>
+</LanguageData>

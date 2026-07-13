@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MapGeneratorDef>
+    <defName>SandWorm_SyndicateChallengeArena</defName>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>SandWorm_SyndicateChallengeFlattenArena</li>
+      <li>Terrain</li>
+      <li>Roads</li>
+      <li>Plants</li>
+      <li>Snow</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>SandWorm_SyndicateChallengeFlattenArena</defName>
+    <order>205</order>
+    <genStep Class="SandWormLib.GenStep_SyndicateChallengeFlattenArena" />
+  </GenStepDef>
+</Defs>

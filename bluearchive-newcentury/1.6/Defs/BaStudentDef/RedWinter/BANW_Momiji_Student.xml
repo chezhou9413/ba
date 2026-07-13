@@ -67,25 +67,21 @@
 				<WapenTypeText>火箭筒</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Kasumi/Kasumi_EXX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>EX技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>伟大的沟通方式</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>364%</color>的伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Chiaki/Chiaki_A</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>基本技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>知识的力量</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[增加自身攻击力<color=#00FFFF>22%</color>持续20秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
