@@ -652,7 +652,7 @@ namespace BANWlLib.BattleSystem
             return result;
         }
 
-        // 应用护盾，负责创建或叠加目标身上的战斗护盾 Hediff。
+        //应用护盾，负责替换其他战斗护盾并刷新本次护盾值和持续时间。
         public static BattleHealResult ApplyShield(BattleShieldRequest request)
         {
             BattleHealResult result = BuildShieldResult(request);
@@ -680,7 +680,8 @@ namespace BANWlLib.BattleSystem
                 return result;
             }
 
-            shieldComp.AddShield(result.finalAmount);
+            RemoveOtherBattleShields(request.target, shieldHediff);
+            shieldComp.RefreshShield(result.finalAmount);
             if (!request.target.health.hediffSet.HasHediff(request.shieldHediffDef))
             {
                 request.target.health.AddHediff(shieldHediff);
@@ -696,6 +697,23 @@ namespace BANWlLib.BattleSystem
             return result;
         }
 
+        //移除目标身上的其他战斗护盾，负责保证不同来源和不同 HediffDef 的护盾只能生效一个。
+        private static void RemoveOtherBattleShields(Pawn target, Hediff retainedShield)
+        {
+            List<Hediff> hediffs = target.health.hediffSet.hediffs;
+            for (int i = hediffs.Count - 1; i >= 0; i--)
+            {
+                Hediff hediff = hediffs[i];
+                if (hediff == retainedShield || hediff.TryGetComp<HediffComp_BattleShield>() == null)
+                {
+                    continue;
+                }
+
+                target.health.RemoveHediff(hediff);
+            }
+        }
+
+        //应用战斗动作，负责根据动作类型向目标结算伤害、治疗、护盾或状态效果。
         public static void ApplyAction(Thing instigator, Thing target, BattleActionConfig action, BattleCasterSnapshot snapshot = null)
         {
             if (action == null || target == null)

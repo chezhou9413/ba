@@ -952,7 +952,8 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("EX倍率：" + FormatColor("不参与", DisabledColor));
             builder.AppendLine("算法：");
             builder.AppendLine(FormatColor("  护盾：最终治愈力 x 护盾倍率", ColoredText.SubtleGrayColor));
-            builder.AppendLine(FormatColor("  同类护盾：数值叠加并刷新持续时间", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  再次获得：新护盾值覆盖旧值并刷新持续时间", ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  不同护盾：后获得的护盾替换当前护盾", ColoredText.SubtleGrayColor));
             builder.AppendLine("预估护盾：" + FormatColor(FormatNumber(estimatedShield), ShieldColor));
         }
 
