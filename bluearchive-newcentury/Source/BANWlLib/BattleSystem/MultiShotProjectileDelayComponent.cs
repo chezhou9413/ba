@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
+using Verse.Sound;
 
 namespace BANWlLib.BattleSystem
 {
@@ -37,7 +38,7 @@ namespace BANWlLib.BattleSystem
         }
 
         // 入队多发投射物，负责把技能配置转换为地图上的待发射任务。
-        public static void Queue(Pawn caster, LocalTargetInfo target, CompProperties_AbilityMultiShotProjectile props, bool preventFriendlyFire)
+        public static void Queue(Pawn caster, LocalTargetInfo target, CompProperties_AbilityMultiShotProjectile props, bool preventFriendlyFire, SoundDef repeatedShotSound)
         {
             if (caster?.Map == null || props == null)
             {
@@ -83,7 +84,8 @@ namespace BANWlLib.BattleSystem
                     requireLineOfSightEachShot = props.requireLineOfSightEachShot,
                     lockCasterDuringSequence = props.lockCasterDuringSequence,
                     drawPrimaryWeaponAimDuringSequence = props.drawPrimaryWeaponAimDuringSequence,
-                    preventFriendlyFire = preventFriendlyFire
+                    preventFriendlyFire = preventFriendlyFire,
+                    shotSoundDef = shot?.soundDef ?? (i > 0 ? repeatedShotSound : null)
                 });
             }
 
@@ -132,7 +134,7 @@ namespace BANWlLib.BattleSystem
             return false;
         }
 
-        // 触发到期投射物，负责倒序移除已处理任务。
+        //触发到期投射物，负责安全移除已处理任务并统一清理被取消的发射序列。
         private void FireDueProjectiles(int currentTick)
         {
             if (pendingProjectiles.NullOrEmpty())
@@ -140,9 +142,16 @@ namespace BANWlLib.BattleSystem
                 return;
             }
 
+            HashSet<int> cancelledSequenceIds = new HashSet<int>();
             for (int i = pendingProjectiles.Count - 1; i >= 0; i--)
             {
                 PendingMultiShotProjectile pendingProjectile = pendingProjectiles[i];
+                if (pendingProjectile != null && cancelledSequenceIds.Contains(pendingProjectile.sequenceId))
+                {
+                    pendingProjectiles.RemoveAt(i);
+                    continue;
+                }
+
                 if (pendingProjectile == null || pendingProjectile.fireAtTick > currentTick)
                 {
                     continue;
@@ -152,8 +161,13 @@ namespace BANWlLib.BattleSystem
                 PendingMultiShotProjectileResult result = pendingProjectile.Fire();
                 if (result == PendingMultiShotProjectileResult.CancelSequence)
                 {
-                    RemoveSequence(pendingProjectile.sequenceId);
+                    cancelledSequenceIds.Add(pendingProjectile.sequenceId);
                 }
+            }
+
+            foreach (int sequenceId in cancelledSequenceIds)
+            {
+                RemoveSequence(sequenceId);
             }
         }
 
@@ -198,6 +212,7 @@ namespace BANWlLib.BattleSystem
         public bool lockCasterDuringSequence;
         public bool drawPrimaryWeaponAimDuringSequence;
         public bool preventFriendlyFire;
+        public SoundDef shotSoundDef;
 
         // 维持施法者锁定，负责在延迟发射等待期间停止移动并刷新主武器瞄准姿态。
         public void MaintainCasterLock()
@@ -268,6 +283,7 @@ namespace BANWlLib.BattleSystem
             }
 
             projectile.Launch(caster, caster.DrawPos, fireTarget, fireTarget, ProjectileHitFlags.IntendedTarget, preventFriendlyFire);
+            shotSoundDef?.PlayOneShot(SoundInfo.InMap(caster));
             RegisterBattleContext(projectile);
             return PendingMultiShotProjectileResult.Fired;
         }
@@ -382,6 +398,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref lockCasterDuringSequence, "lockCasterDuringSequence", false);
             Scribe_Values.Look(ref drawPrimaryWeaponAimDuringSequence, "drawPrimaryWeaponAimDuringSequence", false);
             Scribe_Values.Look(ref preventFriendlyFire, "preventFriendlyFire", false);
+            Scribe_Defs.Look(ref shotSoundDef, "shotSoundDef");
         }
     }
 }

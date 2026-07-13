@@ -31,10 +31,10 @@ namespace BANWlLib.BattleSystem
         // 健康面板提示文本，负责显示完整护盾说明。
         public override string CompTipStringExtra => "剩余护盾值：" + remainingShield.ToString("0.#");
 
-        // 添加护盾值，负责同类护盾重复获得时数值叠加。
-        public void AddShield(float amount)
+        //刷新护盾值，负责用本次计算结果覆盖当前剩余护盾量。
+        public void RefreshShield(float amount)
         {
-            remainingShield = Mathf.Max(0f, remainingShield + amount);
+            remainingShield = Mathf.Max(0f, amount);
         }
 
         // 状态 Tick 后维护跟随特效，负责让 PawnKind 配置的护盾表现持续贴在 Pawn 身上。

@@ -133,8 +133,8 @@
         <applyToSelf>false</applyToSelf>  <!-- false=对目标生效（对友军施加护盾） -->
         <action>
           <isShield>true</isShield>  <!-- 标记为护盾效果 -->
-          <shieldPowerRatio>3.28</shieldPowerRatio>  <!-- 护盾量倍率：护盾值 = 攻击力 × 2.0 -->
-          <shieldHediffDef>BANW_BattleShield_Yuuka</shieldHediffDef>  <!-- 护盾对应的 Hediff 定义（承载护盾值的健康状态） -->
+          <shieldPowerRatio>3.28</shieldPowerRatio>  <!-- 护盾量倍率：护盾值 = 最终治愈力 × 3.28 -->
+          <shieldHediffDef>BANW_BattleShield_Mari</shieldHediffDef>  <!-- 护盾对应的 Hediff 定义（承载护盾值的健康状态） -->
           <affectFriendly>true</affectFriendly>  <!-- 对友方生效 -->
           <affectHostile>false</affectHostile>  <!-- 不对敌方生效 -->
         </action>
@@ -147,7 +147,7 @@
           <li>
             <isShield>true</isShield>
             <shieldPowerRatio>3.28</shieldPowerRatio>
-            <shieldHediffDef>BANW_BattleShield_Yuuka</shieldHediffDef>
+            <shieldHediffDef>BANW_BattleShield_Mari</shieldHediffDef>
             <affectFriendly>true</affectFriendly>
             <affectHostile>false</affectHostile>
           </li>
