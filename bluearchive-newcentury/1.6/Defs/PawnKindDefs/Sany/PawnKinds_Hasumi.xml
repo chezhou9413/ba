@@ -76,6 +76,11 @@
 			<BAWC_TraitDef_Hasumi_B>0</BAWC_TraitDef_Hasumi_B>
 		</forcedTraits>
 		<modExtensions>
+			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
+				<allowedWeapons>
+					<li>BANC_Hasumi</li>
+				</allowedWeapons>
+			</li>
 			
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->

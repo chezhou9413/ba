@@ -83,6 +83,11 @@
 			<BAWC_TraitDef_Nodoka_A>0</BAWC_TraitDef_Nodoka_A>
 		</forcedTraits>
 		<modExtensions>
+			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
+				<allowedWeapons>
+					<li>BANC_Nodoka</li>
+				</allowedWeapons>
+			</li>
 			
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->

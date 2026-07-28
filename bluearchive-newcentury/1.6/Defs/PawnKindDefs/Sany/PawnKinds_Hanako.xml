@@ -72,6 +72,11 @@
 			<BAWC_TraitDef_Hanako_A>0</BAWC_TraitDef_Hanako_A>
 		</forcedTraits>
 		<modExtensions>
+			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
+				<allowedWeapons>
+					<li>BANC_Hanako</li>
+				</allowedWeapons>
+			</li>
 			
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->

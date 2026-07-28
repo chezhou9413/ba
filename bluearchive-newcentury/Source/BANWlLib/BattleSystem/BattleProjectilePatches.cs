@@ -163,9 +163,17 @@ namespace BANWlLib.BattleSystem
     [HarmonyPatch(typeof(Projectile), "Impact")]
     public static class ProjectileImpactHealContextPatch
     {
-        // 在原版 Impact 执行前注册施法者快照，负责在 DamageDef.additionalHediffs 附加 Hediff 时让 HealProjectileContext 有数据可读。
+        // 在原版 Impact 执行前处理命中特效与施法者快照，负责保留投射物地图并让治疗 Hediff 读取施法者数据。
         public static void Prefix(Projectile __instance, Thing hitThing)
         {
+            if (!(__instance is Projectile_PiercingArea))
+            {
+                DirectionalImpactEffectUtility.TryTrigger(
+                    __instance,
+                    hitThing,
+                    DirectionalImpactEffectUtility.GetTravelDirection(__instance));
+            }
+
             if (__instance != null && hitThing != null)
             {
                 ProjectileBattleContext.RegisterImpactTarget(__instance, hitThing);

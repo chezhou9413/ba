@@ -451,38 +451,7 @@ namespace BANWlLib.Projectiles
         // 触发方向命中特效，负责让特效沿子弹前进方向从命中点继续喷出。
         private void TryTriggerDirectionalImpact(Thing target)
         {
-            if (Map == null || target == null || Extension?.directionalImpactEffect == null)
-            {
-                return;
-            }
-
-            if (target is Pawn && !Extension.directionalImpactOnPawn)
-            {
-                return;
-            }
-
-            if (target is Building && !Extension.directionalImpactOnBuilding)
-            {
-                return;
-            }
-
-            DirectionalImpactEffectContext.Register(
-                target,
-                GetTravelDirection(),
-                Extension.directionalImpactSpeed,
-                Extension.directionalImpactOffsetForward,
-                Extension.directionalImpactOffsetUp);
-
-            try
-            {
-                Effecter effecter = Extension.directionalImpactEffect.Spawn();
-                effecter.Trigger(new TargetInfo(Position, Map), new TargetInfo(target));
-                effecter.Cleanup();
-            }
-            finally
-            {
-                DirectionalImpactEffectContext.Clear(target);
-            }
+            DirectionalImpactEffectUtility.TryTrigger(this, target, GetTravelDirection());
         }
 
         // 构建统一战斗动作，负责把投射物 XML 参数转成统一结算请求。
