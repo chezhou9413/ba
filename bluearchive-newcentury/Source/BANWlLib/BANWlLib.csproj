@@ -329,6 +329,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Projectiles\PiercingProjectileExtension.cs" />
     <Compile Include="Projectiles\DirectionalImpactEffectContext.cs" />
+    <Compile Include="Projectiles\DirectionalImpactEffectUtility.cs" />
+    <Compile Include="Projectiles\DirectionalImpactMoteDelayComponent.cs" />
+    <Compile Include="Projectiles\PendingDirectionalImpactMote.cs" />
     <Compile Include="Projectiles\ProjectileFlightEffectContext.cs" />
     <Compile Include="Projectiles\Projectile_PiercingArea.cs" />
     <Compile Include="Projectiles\SubEffecter_AttachedProjectileMote.cs" />
@@ -342,6 +345,12 @@
     <Compile Include="Tool\StudentIdentityUtility.cs" />
     <Compile Include="Tool\StudentRankUtility.cs" />
     <Compile Include="Tool\StudentRosterUtility.cs" />
+    <Compile Include="WeaponRestrictions\EquipmentUtilityCanEquipPatch.cs" />
+    <Compile Include="WeaponRestrictions\JobDriverEquipPatch.cs" />
+    <Compile Include="WeaponRestrictions\PawnEquipmentSpawnPatch.cs" />
+    <Compile Include="WeaponRestrictions\WeaponWhitelistGameComponent.cs" />
+    <Compile Include="WeaponRestrictions\WeaponWhitelistKindExtension.cs" />
+    <Compile Include="WeaponRestrictions\WeaponWhitelistUtility.cs" />
     <Compile Include="uicreater\GameComponent_LateInit.cs" />
     <Compile Include="uicreater\LongPressDraggableButton.cs" />
     <Compile Include="uicreater\pojo\poit.cs" />

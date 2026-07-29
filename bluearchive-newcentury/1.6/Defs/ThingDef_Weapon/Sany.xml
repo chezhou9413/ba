@@ -1540,7 +1540,7 @@
     <comps>
       <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
         <requiredPawnKindDefName>
-          <li>BANW_Hanako</li>
+          <li>BANW_Hifumi</li>
         </requiredPawnKindDefName>
       </li>
     </comps>

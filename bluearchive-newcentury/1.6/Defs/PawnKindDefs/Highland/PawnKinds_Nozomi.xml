@@ -72,6 +72,11 @@
 			<BAWC_TraitDef_Nozomi_B>0</BAWC_TraitDef_Nozomi_B>
 		</forcedTraits>
 		<modExtensions>
+			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
+				<allowedWeapons>
+					<li>BANC_Nozomi</li>
+				</allowedWeapons>
+			</li>
 			<li Class="BANWlLib.PawnProgressBarKindExtension">
 				<starInterval>0.5</starInterval>
 				<showProgressBar>false</showProgressBar>

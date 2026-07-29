@@ -75,6 +75,11 @@
 			<BAWC_TraitDef_Sakurako_A>0</BAWC_TraitDef_Sakurako_A>
 		</forcedTraits>
 		<modExtensions>
+			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
+				<allowedWeapons>
+					<li>BANC_Sakurako</li>
+				</allowedWeapons>
+			</li>
 			
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->

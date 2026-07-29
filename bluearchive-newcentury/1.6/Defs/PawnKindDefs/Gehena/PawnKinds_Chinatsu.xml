@@ -64,6 +64,11 @@
 			<BAWC_TraitDef_Chinatsu_B>0</BAWC_TraitDef_Chinatsu_B>
 		</forcedTraits>
 		<modExtensions>
+			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
+				<allowedWeapons>
+					<li>BANC_Chinatsu</li>
+				</allowedWeapons>
+			</li>
 			
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->

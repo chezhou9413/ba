@@ -29,24 +29,7 @@ namespace BANWlLib.Projectiles
             }
 
             Vector3 spawnPosition = target.DrawPos + data.direction * data.offsetForward + Vector3.up * data.offsetUp;
-            if (!spawnPosition.ShouldSpawnMotesAt(map, false))
-            {
-                return;
-            }
-
-            Mote mote = (Mote)ThingMaker.MakeThing(def.moteDef);
-            mote.Scale = def.scale.RandomInRange;
-            mote.exactPosition = spawnPosition;
-            mote.exactRotation = data.direction.AngleFlat();
-
-            MoteThrown thrown = mote as MoteThrown;
-            if (thrown != null)
-            {
-                thrown.rotationRate = def.rotationRate.RandomInRange;
-                thrown.SetVelocity(data.direction.AngleFlat(), data.speed);
-            }
-
-            GenSpawn.Spawn(mote, spawnPosition.ToIntVec3(), map);
+            DirectionalImpactMoteDelayComponent.SpawnOrQueue(map, spawnPosition, data, def, overrideSpawnTick);
         }
     }
 }
