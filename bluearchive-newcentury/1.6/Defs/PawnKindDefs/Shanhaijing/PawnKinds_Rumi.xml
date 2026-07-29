@@ -2,7 +2,7 @@
 <Defs>
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Rumi</defName>
-		<label>-瞬-</label>
+		<label>-瑠海-</label>
 		<race>BANW_KivotosStudent</race>
 	<combatPower>100</combatPower>
 		<isFighter>true</isFighter>

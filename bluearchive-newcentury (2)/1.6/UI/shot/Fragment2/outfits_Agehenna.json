@@ -1,0 +1,112 @@
+[
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 5,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Stone/Sensei",
+        "ProductDefName": "BANW_Head_Sensei",
+        "ProductName": "奇怪的面具",
+        "ProductDescription": "一个滑稽的面具，可能会有人喜欢它",
+        "ProductQuality": "epic"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Hat/Hat_1",
+        "ProductDefName": "BANC_Hat_One",
+        "ProductName": "单色鸭舌帽",
+        "ProductDescription": "运动品牌“薮猫”推出的蓝色鸭舌帽。可以添加各种不同种类的徽章以展现自己的个性，是非常受欢迎的时尚单品。可以提供大量的攻击力",
+        "ProductQuality": "medium"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Glove/Glove_1",
+        "ProductDefName": "BANC_Glove_One",
+        "ProductName": "运动手套",
+        "ProductDescription": "为了防止打滑，接触面上加上了凹凸不平的面料。因材质中混有阻燃材料，可安心触摸发热的枪身。可以提供中量的攻击力和射击精度",
+        "ProductQuality": "medium"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Shoes/Shoes_1",
+        "ProductDefName": "BANC_Shoes_One",
+        "ProductName": "粉色休闲鞋",
+        "ProductDescription": "运动品牌“薮猫”推出的粉色休闲鞋。鞋底采用了柔软的材质，非常适合跑步。可以提供中量的攻击力和移动速度",
+        "ProductQuality": "medium"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Badge/Badge_1",
+        "ProductDefName": "BANC_Badge_One",
+        "ProductName": "薮猫金属徽章",
+        "ProductDescription": "印有著名运动品牌“薮猫”标识的金属徽章。使用结实的金属制成，因此不用担心会被刮花。提供高额的利器护甲",
+        "ProductQuality": "medium"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Bag/Bag_1",
+        "ProductDefName": "BANC_Bag_One",
+        "ProductName": "防水运动包",
+        "ProductDescription": "“薮猫”制作的防水运动包。采用了防水材质，因此可以放心带到河边或者海边。提供高额的护甲",
+        "ProductQuality": "medium"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Hairpin/Hairpin_1",
+        "ProductDefName": "BANC_Hairpin_One",
+        "ProductName": "网球发带",
+        "ProductDescription": "运动品牌“薮猫”的网球发带。具有高吸水性，以防止在运动中被汗水干扰视野。提供高额的护甲",
+        "ProductQuality": "medium"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Amulet/Amulet_1",
+        "ProductDefName": "BANC_Amulet_One",
+        "ProductName": "交通安全护身符",
+        "ProductDescription": "怀着交通安全的祈愿而制成的护身符。摇一摇护身符就可以听到里边有某种金属制品在叮当作响。提供疼痛忍耐率",
+        "ProductQuality": "medium"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Watch/Watch_1",
+        "ProductDefName": "BANC_Watch_One",
+        "ProductName": "防水数码手表",
+        "ProductDescription": "运动品牌“薮猫”出品的数码手表。因为是防水手表，所以在游泳的时候也可以佩戴，不用担心出现故障。可以增加攻击速度",
+        "ProductQuality": "medium"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Belt/Necklace/Necklace_1",
+        "ProductDefName": "BANC_Necklace_One",
+        "ProductName": "蓝牙项链",
+        "ProductDescription": "可以测量佩戴者的体温和心率的蓝牙项链。可以通过项链轻易掌握运动量，因此对减肥的人来说是必需品。可以增加意识和生命恢复",
+        "ProductQuality": "medium"
+    }
+] 

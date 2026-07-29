@@ -1,0 +1,47 @@
+[
+    {
+        "CurrencyDefName": "Silver",
+        "CurrencyAmount": 15,
+        "CurrencyImage": "Stone/XYDS",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Huodongbaogao/Icon_ExpItem_0",
+        "ProductDefName": "BANW_Huodongbaogao_A",
+        "ProductName": "初级活动报告书",
+        "ProductDescription": "可获得一个初级活动报告书，记录学员们进行社团活动情况的报告。内含众多学员的经验。提供50点经验值",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Silver",
+        "CurrencyAmount": 150,
+        "CurrencyImage": "Stone/XYDS",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Huodongbaogao/Icon_ExpItem_1",
+        "ProductDefName": "BANW_Huodongbaogao_B",
+        "ProductName": "中级活动报告书",
+        "ProductDescription": "可获得一个中级活动报告书，记录学员们进行社团活动情况的报告。内含众多学员的经验。提供500点经验值",
+        "ProductQuality": "medium"
+    },
+     {
+        "CurrencyDefName": "Silver",
+        "CurrencyAmount": 600,
+        "CurrencyImage": "Stone/XYDS",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Huodongbaogao/Icon_ExpItem_2",
+        "ProductDefName": "BANW_Huodongbaogao_C",
+        "ProductName": "高级活动报告书",
+        "ProductDescription": "可获得一个高级活动报告书，记录学员们进行社团活动情况的报告。内含众多学员的经验。提供2000点经验值",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Silver",
+        "CurrencyAmount": 3000,
+        "CurrencyImage": "Stone/XYDS",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Huodongbaogao/Icon_ExpItem_3",
+        "ProductDefName": "BANW_Huodongbaogao_D",
+        "ProductName": "特级活动报告书",
+        "ProductDescription": "可获得一个特级活动报告书，记录学员们进行社团活动情况的报告。内含众多学员的经验。提供10000点经验值",
+        "ProductQuality": "epic"
+    }
+     
+]

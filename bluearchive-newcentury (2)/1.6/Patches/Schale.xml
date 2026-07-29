@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <!-- 条件：检查 BANW_Start 剧本是否存在 -->
+    <Operation Class="PatchOperationConditional">
+        <xpath>/Defs/ScenarioDef[defName = "BANW_Start"]</xpath>
+        <!-- 当条件匹配时执行的操作 -->
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!-- 将帝国与夏莱玩家派系设为非敌对 -->
+                <li Class="PatchOperationAdd">
+                    <xpath>/Defs/FactionDef[defName = "Empire"]/permanentEnemyToEveryoneExcept</xpath>
+                    <value>
+                        <li>BANW_PlayerFaction</li>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

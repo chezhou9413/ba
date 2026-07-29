@@ -511,7 +511,7 @@
       <li>
         <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
         <moteDef>BAWN_Wakamo_A_11_Mote</moteDef>
-         <initialDelayTicks>160</initialDelayTicks>
+         <initialDelayTicks>100</initialDelayTicks>
         <scale>1</scale>
         <rotation>0</rotation>
         <rotationRate>0</rotationRate>
@@ -527,7 +527,7 @@
       <li>
         <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
         <moteDef>BAWN_Wakamo_A_12_Mote</moteDef>
-         <initialDelayTicks>160</initialDelayTicks>
+         <initialDelayTicks>100</initialDelayTicks>
         <scale>1</scale>
         <rotation>0</rotation>
         <rotationRate>0</rotationRate>
@@ -544,7 +544,7 @@
         <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Wakamo_A_13_Mote</moteDef>
         <scale>1</scale>
-        <initialDelayTicks>214</initialDelayTicks>
+        <initialDelayTicks>154</initialDelayTicks>
         <rotation>-90</rotation>
         <rotationRate>0</rotationRate>
         <burstCount>1</burstCount>
@@ -558,7 +558,7 @@
         <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Wakamo_A_14_Mote</moteDef>
         <scale>1</scale>
-        <initialDelayTicks>190</initialDelayTicks>
+        <initialDelayTicks>130</initialDelayTicks>
         <rotation>-90</rotation>
         <rotationRate>0</rotationRate>
         <burstCount>1</burstCount>
