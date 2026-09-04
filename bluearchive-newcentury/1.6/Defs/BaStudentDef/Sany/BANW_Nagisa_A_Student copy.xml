@@ -71,7 +71,7 @@
 				<AbilityTypeText>EX技能</AbilityTypeText>
 				<AbilityTitle>战时茶点时间</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对一名我方单位赋予暴击伤害增加<color=#00FFFF>79%</color>]]>
+				<AbilityIntroduction><![CDATA[对一名友方赋予费用超载（Cost over）状态，暴击伤害率增加78.6%（持续26秒）（Cost over: 可以超额花费最大5点保有费用，超过保有部分的费用会扣为负数）。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -131,7 +131,7 @@
 			<PosType>Assist</PosType>
 			
 			<StarCont>3</StarCont>
-			<DraggableAudio>Common\Sounds\Fight\Nagisa</DraggableAudio>
+			<DraggableAudio>Common\Sounds\Fight\Nagisa_A</DraggableAudio>
 		
     <GakaStudentThingData>
                 <li>

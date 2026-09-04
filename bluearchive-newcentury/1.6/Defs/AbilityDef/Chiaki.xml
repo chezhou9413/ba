@@ -87,7 +87,7 @@
     <label>是真的吗？</label>
     <description>对一名敌人造成自身攻击力2770%的伤害(必不暴击)</description>
     <iconPath>Ability/Icon/Reisa_A/Reisa_EX</iconPath>
-    <cooldownTicksRange>3600</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Chiaki_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

@@ -85,7 +85,7 @@
     <label>甜蜜炮火</label>
     <description>对1名敌方单位造成自身攻击力1770%的伤害</description>
     <iconPath>Ability/Icon/Maki/Maki_EXX</iconPath>
-    <cooldownTicksRange>1200</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Kazusa_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

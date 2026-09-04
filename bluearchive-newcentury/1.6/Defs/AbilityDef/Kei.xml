@@ -4,7 +4,7 @@
     <label>存在于此的我</label>
     <description>圆形范围内我方的攻击力增加42.9%神秘属性克制倍率增加70.6%（持续25秒）</description>
     <iconPath>Ability/Icon/Kei/Kei_A</iconPath>
-    <cooldownTicksRange>1800</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc6</hotKey>
     <warmupStartSound>Kei_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects>

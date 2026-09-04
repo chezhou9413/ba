@@ -2150,5 +2150,18 @@
 		<spawnCategories>
 			<li>BANW_BackstoryNagisa_A</li>
 		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>|
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentSeia_A</defName>
+		<title>茶话会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是悠然自得享受暑假的圣三一综合学园所属，构成圣三一的学生联合「桑库特斯」分派的领导。
+切换到休假模式，做好万全准备享受夏日。原本她就是我行我素的性格，而更加自由奔放的一面也若隐若现。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstorySeia_A</li>
+		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
 </Defs>

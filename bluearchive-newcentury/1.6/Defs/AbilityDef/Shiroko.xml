@@ -67,7 +67,7 @@
     <label>召唤无人机：火力支援，开始</label>
     <description>造成自身攻击力760%的伤害</description>
     <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
-    <cooldownTicksRange>2400</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Aoba_Skill</warmupStartSound>
     <warmupEffecter>BANW_Effecter_A</warmupEffecter>

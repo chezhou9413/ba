@@ -5,9 +5,9 @@
     <label>喷出来了好多呢♡</label>
     <description>对扇形范围的敌方单位造成自身攻击力707%的伤害</description>
     <iconPath>Ability/Icon/Hanako_A/Hanako_EXX</iconPath>
-    <cooldownTicksRange>1200</cooldownTicksRange>
+    <cooldownTicksRange>720</cooldownTicksRange>
     <charges>3</charges> <!-- 设置该能力有 5 次充能次数。-->
-    <cooldownPerCharge>true</cooldownPerCharge> <!-- 每次使用后单独计算冷却时间。。-->
+    <cooldownPerCharge>false</cooldownPerCharge> <!-- 每次使用后单独计算冷却时间。。-->
     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
     <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
     <hostile>true</hostile>

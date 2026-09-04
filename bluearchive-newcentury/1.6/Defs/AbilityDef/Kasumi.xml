@@ -70,7 +70,7 @@
  <label>巨踵冲击</label>
  <description>对圆形范围内的敌方单位造成自身攻击力432%的伤害并且范围内的敌人乘伤系数增加33%（持续25秒）</description>
  <iconPath>Ability/Icon/Kasumi/Kasumi_EXX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
+ <cooldownTicksRange>0</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Kasumi_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

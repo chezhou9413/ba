@@ -86,7 +86,7 @@
  <label>来玩禁忌的游戏吧？</label>
  <description>对圆形范围内的友方单位每秒恢复自身治愈力51%的生命值(持续8秒)</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
- <cooldownTicksRange>3000</cooldownTicksRange>
+ <cooldownTicksRange>0</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Hanako_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

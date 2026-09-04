@@ -609,7 +609,7 @@ Assets:
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Millennium/Chihiro/Head/Chihiro_Head_north.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Millennium/Karlin/Halo/Karlin_Halo_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Hyakkiyako/Kikyou/Hair/Kikyou_FrontHair_north.png
-- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Hat/Sensei_Apparel_Thin_north.png
+- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Hat/SenSeia_Apparel_Thin_north.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Millennium/Maki/Body/Maki_Body_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Shanhaijing/Rumi/Apparel/Rumi_Apparel_Thin_west.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Sany/Mine/Body/Mine_Body_north.png
@@ -780,7 +780,7 @@ Assets:
 - Assets/Data/Archive.NewWorld/Textures/Pawns/RedWinter/Yakumo/Hair/Yakumo_BackHair_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/RedWinter/Cherino/Apparel/Cherino_Apparel_A.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Sany/Hasumi/Body/Hasumi_Body_east.png
-- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Apparel/Sensei_Apparel_Thin_north.png
+- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Apparel/SenSeia_Apparel_Thin_north.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Arian/Hiyori/Hair/Hiyori_BackHair_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Sany/Shimiko/Head/Shimiko_Head_north.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Shanhaijing/Rumi/Hair/Rumi_FrontHair_east.png
@@ -792,7 +792,7 @@ Assets:
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Gehena/Kasumi/Head/Kasumi_Head_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Hyakkiyako/Nagusa/Halo/Nagusa_Halo_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Sany/Sakurako/Hair/Sakurako_BackHair_north.png
-- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Hat/Sensei_Apparel_Thin_east.png
+- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Hat/SenSeia_Apparel_Thin_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Gehena/Ibuki/Hair/Ibuki_BackHair_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Hyakkiyako/Tsubaki/Body/Tsubaki_Body_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Gehena/Akari/Apparel/Akari_Apparel_Thin_west.png
@@ -883,7 +883,7 @@ Assets:
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Abydos/Serika/Head/Serika_Head_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Hyakkiyako/Chise/Halo/Chise_Halo_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Millennium/Arisu_B/Apparel/Arisu_Bag_Apparel_south.png
-- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Apparel/Sensei_Apparel_Thin_south.png
+- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Apparel/SenSeia_Apparel_Thin_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Millennium/Midori/Hair/Midori_BackHair_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/RedWinter/Minori/Apparel/Minori_Apparel_Thin_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Sany/Hifumi/Hair/Hifumi_BackHair_south.png
@@ -1296,7 +1296,7 @@ Assets:
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Highland/Aoba/Halo/Aoba_Halo_north.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Hyakkiyako/Renge/Apparel/Renge_Apparel_Thin_north.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Millennium/Nero/Body/Nero_Body_north.png
-- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Apparel/Sensei_Apparel_Thin_east.png
+- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Apparel/SenSeia_Apparel_Thin_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Hyakkiyako/Chise/Halo/Chise_Halo_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Shanhaijing/Rumi/Hair/Rumi_FrontHair_north.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/RedWinter/Nodoka/Halo/Nodoka_Halo_north.png
@@ -1436,7 +1436,7 @@ Assets:
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Sany/Mari/Halo/Mari_Halo_east.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Abydos/Hoshiro_A/Halo/Hoshiro_Halo_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Millennium/Akane/Apparel/Akane_Apparel_Thin_east.png
-- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Hat/Sensei_Apparel_Thin_south.png
+- Assets/Data/Archive.NewWorld/Textures/Pawns/Sensei/Hat/SenSeia_Apparel_Thin_south.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Shanhaijing/Kokona/Apparel/Kokona_Apparel_Thin_west.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Hyakkiyako/Michiru/Hair/Michiru_FrontHair_north.png
 - Assets/Data/Archive.NewWorld/Textures/Pawns/Abydos/Nonomi/Hair/Nonomi_FrontHair_south.png

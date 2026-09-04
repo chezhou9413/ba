@@ -5,7 +5,7 @@
  <label>很好吃的哦……</label>
  <description>赋予自身每4秒回复自身治愈力96%的生命值(持续20秒).</description>
  <iconPath>Ability/Icon/Natsu/Natsu_EXX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
+ <cooldownTicksRange>0</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Kanoe_Skill_EXX</warmupStartSound>
  <warmupEffecter>BANW_Effecter_Kanoe</warmupEffecter>

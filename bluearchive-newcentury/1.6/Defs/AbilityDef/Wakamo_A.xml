@@ -4,7 +4,7 @@
     <label>翡翠花占</label>
     <description>对一名敌人造成自身子弹攻击力的1074%的伤害,并且每一击造成1秒眩晕，最后一击造成4秒眩晕</description>
     <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
-    <cooldownTicksRange>3000</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
     <warmupStartSound>Wakamo_A_Skill_EXX</warmupStartSound>
@@ -171,11 +171,23 @@
         <!-- 是否对 Building 触发方向命中特效。 -->
         <directionalImpactOnBuilding>true</directionalImpactOnBuilding>
         <!-- 方向命中特效飞出速度。 -->
-        <directionalImpactSpeed>10</directionalImpactSpeed>
+        <directionalImpactSpeed>1</directionalImpactSpeed>
         <!-- 方向命中特效沿弹道方向向前偏移。 -->
-        <directionalImpactOffsetForward>0.3</directionalImpactOffsetForward>
+        <directionalImpactOffsetForward>0</directionalImpactOffsetForward>
         <!-- 方向命中特效向上偏移，避免埋进地面。 -->
-        <directionalImpactOffsetUp>0.5</directionalImpactOffsetUp>
+        <directionalImpactOffsetUp>0</directionalImpactOffsetUp>
+        <!-- 飞行开始时的绘制缩放。 -->
+        <startDrawScale>0.5</startDrawScale>
+        <!-- 飞行结束时的绘制缩放。 -->
+        <endDrawScale>1.2</endDrawScale>
+        <!-- 淡入 tick 数。 -->
+        <fadeInTicks>2</fadeInTicks>
+        <!-- 淡出 tick 数。 -->
+        <fadeOutTicks>5</fadeOutTicks>
+        <!-- true 表示飞行特效跟随投射物 Thing。 -->
+        <flightEffectAttachToProjectile>true</flightEffectAttachToProjectile>
+        <!-- true 表示附着 Mote 按投射物朝向同步旋转。 -->
+        <flightEffectRotateWithProjectile>true</flightEffectRotateWithProjectile>
       </li>
     </modExtensions>
   </ThingDef>

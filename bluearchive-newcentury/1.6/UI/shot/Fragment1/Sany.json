@@ -274,6 +274,17 @@
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
     },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Seia_A",
+        "ProductDefName": "BANW_Seia_A_Proplevel",
+        "ProductName": "圣娅(泳装)的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
     {
         "CurrencyDefName": "Kami_Proplevel",
         "CurrencyAmount": 4,

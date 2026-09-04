@@ -82,7 +82,7 @@
  <label>启动EMP无人机</label>
  <description>对圆形范围内的敌方单位造成自身攻击力435%的伤害,并且眩晕4秒（如果目标为机械族则追加5秒EMP眩晕）</description>
  <iconPath>Ability/Icon/Hare/Hare_EXX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
+ <cooldownTicksRange>0</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Hare_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

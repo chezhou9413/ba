@@ -100,7 +100,7 @@
     <label>自制闪光弹</label>
     <description>对圆形范围内的敌方单位造成自身518%的伤害并眩晕4秒</description>
     <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
-    <cooldownTicksRange>2400</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Suzumi_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

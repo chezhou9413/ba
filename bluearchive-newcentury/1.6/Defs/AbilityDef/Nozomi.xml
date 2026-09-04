@@ -86,7 +86,7 @@
     <label>助推启动！</label>
     <description>对直线范围内的1名指定敌方单位造成1557%自身攻击力的伤害</description>
     <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
-    <cooldownTicksRange>3600</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc11</hotKey>
     <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects>

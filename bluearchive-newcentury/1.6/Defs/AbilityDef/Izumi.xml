@@ -123,7 +123,7 @@
     <label>芝士巧克力汉堡~</label>
     <description>对自身造成每2秒回复自身治愈力25.4%的生命值,增加38%的攻击速度（持续21秒）</description>
     <iconPath>Ability/Icon/Yuuka/Yuuka_A</iconPath>
-    <cooldownTicksRange>1800</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Izumi_Skill_EXX</warmupStartSound>
     <warmupEffecter></warmupEffecter>

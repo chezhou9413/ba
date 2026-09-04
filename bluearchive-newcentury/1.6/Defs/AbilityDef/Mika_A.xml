@@ -121,7 +121,7 @@
     <label>星之轨迹</label>
     <description>对一名敌人一共造成自身攻击力的1571%的伤害</description>
     <iconPath>Ability/Icon/Reisa_A/Reisa_EX</iconPath>
-    <cooldownTicksRange>2400</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc4</hotKey>
     <warmupStartSound>Mika_A_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects>

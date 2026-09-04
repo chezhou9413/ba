@@ -5,7 +5,7 @@
     <label>一发榴弹，分量满满！</label>
     <description>对圆形范围内的敌方单位造成自身攻击力744%的伤害</description>
     <iconPath>Ability/Icon/Mashiro/Mashiro_EX</iconPath>
-    <cooldownTicksRange>1800</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Akari_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

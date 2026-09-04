@@ -138,7 +138,7 @@
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <apparel>
-            <wornGraphicPath>Pawns/Sensei/Apparel/Sensei_Apparel</wornGraphicPath>
+            <wornGraphicPath>Pawns/Sensei/Apparel/SenSeia_Apparel</wornGraphicPath>
             <bodyPartGroups>
                 <li>Torso</li>
             </bodyPartGroups>
@@ -162,7 +162,7 @@
         </graphicData>
         <apparel>
 			<parentTagDef>ApparelHead</parentTagDef>
-            <wornGraphicPath>Pawns/Sensei/Hat/Sensei_Apparel_Thin</wornGraphicPath>
+            <wornGraphicPath>Pawns/Sensei/Hat/SenSeia_Apparel_Thin</wornGraphicPath>
             <bodyPartGroups Inherit="False">
                 <li>Eyes</li>
             </bodyPartGroups>

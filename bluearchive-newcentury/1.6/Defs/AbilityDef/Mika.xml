@@ -4,7 +4,7 @@
     <label>凯里·埃利森</label>
     <description>对一名敌人一共造成自身子弹攻击力的2310%的伤害</description>
     <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
-    <cooldownTicksRange>3000</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
     <warmupStartSound>Mika_Skill_EXX</warmupStartSound>

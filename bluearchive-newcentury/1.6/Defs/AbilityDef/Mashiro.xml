@@ -65,7 +65,7 @@
     <label>正义的一击</label>
     <description>对一名敌人造成攻击力664%的伤害，有75%机率造成716%的追加伤害</description>
     <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
-    <cooldownTicksRange>3000</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Mashiro_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

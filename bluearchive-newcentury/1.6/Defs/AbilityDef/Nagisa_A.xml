@@ -3,9 +3,9 @@
 <AbilityDef>
 <defName>BAWN_Nagisa_A_EXX</defName>
  <label>战时茶点时间</label>
- <description>对1名我方单位造成暴击伤害增加79%。（持续26秒）</description>
+ <description>对一名友方赋予费用超载（Cost over）状态，暴击伤害率增加78.6%（持续26秒）（Cost over: 可以超额花费最大5点保有费用，超过保有部分的费用会扣为负数）。</description>
  <iconPath>Ability/Icon/Nagisa_A/Nagisa_EXX</iconPath>
- <cooldownTicksRange>1200</cooldownTicksRange>
+ <cooldownTicksRange>0</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
   <warmupEffecter>BANW_Nagisa_A_Ef_A</warmupEffecter>
  <warmupStartSound>Nagisa_A_Skill_EXX</warmupStartSound>
@@ -47,6 +47,7 @@
   <onlyApplyToSelf>false</onlyApplyToSelf> <!-- 仅对自己生效 -->
   <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
 </li>
+ 
 </comps>
 </AbilityDef>
     <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
@@ -77,6 +78,9 @@
       </li>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Effecter_B</stateEffecter>
+      </li>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostOverdraft">
+        <overdraftLimit>5</overdraftLimit>
       </li>
     </comps>
     </HediffDef>

@@ -5,7 +5,7 @@
  <label>集中治疗方案A</label>
  <description>对1名我方单位恢复自身治愈力228%的生命值</description>
  <iconPath>Ability/Icon/Serina/Serina_EXX</iconPath>
- <cooldownTicksRange>2400</cooldownTicksRange>
+ <cooldownTicksRange>0</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Serina_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

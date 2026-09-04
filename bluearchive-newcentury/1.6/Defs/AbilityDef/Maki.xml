@@ -107,7 +107,7 @@
     <label>让世界更加鲜艳！</label>
     <description>对1名敌方单位造成自身攻击力1081%的伤害，并且自身攻击力增加55%持续30秒</description>
     <iconPath>Ability/Icon/Maki/Maki_EXX</iconPath>
-    <cooldownTicksRange>2400</cooldownTicksRange>
+    <cooldownTicksRange>0</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Maki_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

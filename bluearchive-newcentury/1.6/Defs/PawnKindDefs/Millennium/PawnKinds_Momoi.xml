@@ -208,9 +208,6 @@
 					<PsychicSensitivity>0</PsychicSensitivity>
 					<ShootingAccuracyPawn>-0.2</ShootingAccuracyPawn>
                 </statOffsets>
-                <statBases>
-					<MoodOffset>12</MoodOffset>
-                </statBases>
             </li>
         </degreeDatas>
     </TraitDef>
