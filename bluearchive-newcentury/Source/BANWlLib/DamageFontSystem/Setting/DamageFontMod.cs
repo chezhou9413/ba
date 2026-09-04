@@ -1,4 +1,5 @@
 ﻿using BANWlLib.DamageFontSystem.Comp;
+using BANWlLib.CostSystem;
 using newpro;
 using UnityEngine;
 using Verse;
@@ -17,7 +18,7 @@ namespace BANWlLib.DamageFontSystem.Setting
             settings = GetSettings<DamageFontSettings>();
         }
 
-        // ✅ 显示设置界面
+        //绘制伤害字体、入口位置和COST轮盘位置设置。
         public override void DoSettingsWindowContents(Rect inRect)
         {
             Listing_Standard list = new Listing_Standard();
@@ -65,11 +66,23 @@ namespace BANWlLib.DamageFontSystem.Setting
 
                 Find.WindowStack.Add(new Dialog_MessageBox("UI 位置已重置为默认"));
             }
+            if (list.ButtonText("重置COST轮盘位置", "点击此按钮把COST轮盘恢复到什亭之匣入口上方"))
+            {
+                string reason;
+                if (!CostUiDragController.TryResetSavedPosition(out reason))
+                {
+                    Find.WindowStack.Add(new Dialog_MessageBox(reason));
+                }
+                else
+                {
+                    Find.WindowStack.Add(new Dialog_MessageBox("COST轮盘位置已重置为默认"));
+                }
+            }
             list.End();
             base.DoSettingsWindowContents(inRect);
         }
 
-        // ✅ 设置界面标题
+        //返回模组设置页标题。
         public override string SettingsCategory() => "BlueArchive-NewWorld";
     }
 }

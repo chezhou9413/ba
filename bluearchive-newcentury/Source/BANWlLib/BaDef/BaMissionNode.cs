@@ -1,13 +1,11 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BANWlLib.CostSystem;
 using Verse;
 
 namespace BANWlLib.BaDef
 {
-    public class BaMissionNode:Def
+    //任务节点Def负责描述任务入口、地图、奖励、敌人和任务专属COST规则。
+    public class BaMissionNode : Def
     {
         public float oder;
         public string MissionID;
@@ -20,7 +18,30 @@ namespace BANWlLib.BaDef
         public List<EnemyList> EnemyList = new List<EnemyList>();
         public BaMapDef missionMapDef;
         public BaMissionRunTime missionRunTimeDef;
+        public BACostRules costRules = new BACostRules();
+
+        //检查任务专属COST上限与回复倍率是否合法。
+        public override IEnumerable<string> ConfigErrors()
+        {
+            foreach (string error in base.ConfigErrors())
+            {
+                yield return error;
+            }
+
+            if (costRules == null)
+            {
+                yield return defName + " 缺少 costRules。";
+                yield break;
+            }
+
+            foreach (string error in costRules.ConfigErrors(defName))
+            {
+                yield return error;
+            }
+        }
     }
+
+    //任务奖励品质枚举负责表达任务界面与结算使用的奖励等级。
     public enum BaMissionQuality
     {
         Low,
@@ -28,6 +49,8 @@ namespace BANWlLib.BaDef
         High,
         Epic
     }
+
+    //任务奖励配置负责绑定奖励物品、品质与数量。
     public class MissionReward
     {
         public ThingDef thingDef;
@@ -35,6 +58,7 @@ namespace BANWlLib.BaDef
         public int count;
     }
 
+    //任务敌人配置负责绑定敌人种类与界面分类标签。
     public class EnemyList
     {
         public PawnKindDef pawnKindDef;

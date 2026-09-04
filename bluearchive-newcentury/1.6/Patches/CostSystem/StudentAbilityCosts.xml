@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AbilityDef[defName=&quot;BAWN_Akane_EX&quot; or defName=&quot;BAWN_Akane_EXX&quot; or defName=&quot;BAWN_Asuna_EX&quot; or defName=&quot;BAWN_Asuna_EXX&quot; or defName=&quot;BAWN_Hanako_A_EXX&quot; or defName=&quot;BAWN_Hikali_EX&quot; or defName=&quot;BAWN_Hikali_EXX&quot; or defName=&quot;BAWN_Kei_EXX&quot; or defName=&quot;BAWN_Kokona_EXX&quot; or defName=&quot;BAWN_Mari_EX&quot; or defName=&quot;BAWN_Mari_EXX&quot; or defName=&quot;BAWN_Nero_EX&quot; or defName=&quot;BAWN_Nero_EXX&quot; or defName=&quot;BAWN_Nonomi_EX&quot; or defName=&quot;BAWN_Serika_EX&quot; or defName=&quot;BAWN_Serika_EXX&quot; or defName=&quot;BAWN_Serina_EX&quot; or defName=&quot;BAWN_Serina_EXX&quot;]/comps</xpath>
+    <value>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <cost>2</cost>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AbilityDef[defName=&quot;BAWN_Ako_EX&quot; or defName=&quot;BAWN_Ako_EXX&quot; or defName=&quot;BAWN_Aoba_EX&quot; or defName=&quot;BAWN_Aoba_EXX&quot; or defName=&quot;BAWN_Atsuko_EXX&quot; or defName=&quot;BAWN_Chise_EX&quot; or defName=&quot;BAWN_Haruka_EX&quot; or defName=&quot;BAWN_Haruna_EX&quot; or defName=&quot;BAWN_Hifumi_EX&quot; or defName=&quot;BAWN_Himari_EX&quot; or defName=&quot;BAWN_Himari_EXX&quot; or defName=&quot;BAWN_Hiyori_EX&quot; or defName=&quot;BAWN_Hiyori_EXX&quot; or defName=&quot;BAWN_Hoshiro_Treat&quot; or defName=&quot;BAWN_Ibuki_EX&quot; or defName=&quot;BAWN_Ibuki_EXX&quot; or defName=&quot;BAWN_Ichika_EX&quot; or defName=&quot;BAWN_Iori_EX&quot; or defName=&quot;BAWN_Izumi_EX&quot; or defName=&quot;BAWN_Izumi_EXX&quot; or defName=&quot;BAWN_Juri_EX&quot; or defName=&quot;BAWN_Kanoe_EXX&quot; or defName=&quot;BAWN_Kotama_EX&quot; or defName=&quot;BAWN_Kotama_EXX&quot; or defName=&quot;BAWN_Koyuki_EX&quot; or defName=&quot;BAWN_Mashiro_EX&quot; or defName=&quot;BAWN_Mashiro_EXX&quot; or defName=&quot;BAWN_Michiru_EX&quot; or defName=&quot;BAWN_Momoi_EX&quot; or defName=&quot;BAWN_Momoi_EXX&quot; or defName=&quot;BAWN_Nagisa_EXX&quot; or defName=&quot;BAWN_Nagisa_A_EXX&quot; or defName=&quot;BAWN_Natsu_EXX&quot; or defName=&quot;BAWN_Natsu_EX&quot; or defName=&quot;BAWN_Noa_EX&quot; or defName=&quot;BAWN_Noa_EXX&quot; or defName=&quot;BAWN_Nozomi_EX&quot; or defName=&quot;BAWN_Nozomi_EXX&quot; or defName=&quot;BAWN_Pina_EX&quot; or defName=&quot;BAWN_Reisa_EX&quot; or defName=&quot;BAWN_Reisa_EXX&quot; or defName=&quot;BAWN_Rio_EX&quot; or defName=&quot;BAWN_Shiroko_EX&quot; or defName=&quot;BAWN_Shun_EXX&quot; or defName=&quot;BAWN_Tsubaki_EX&quot; or defName=&quot;BAWN_Wakamo_A_EX&quot; or defName=&quot;BAWN_Wakamo_A_EXX&quot; or defName=&quot;BAWN_Yuuka_EX&quot; or defName=&quot;BAWN_Yuuka_EXX&quot;]/comps</xpath>
+    <value>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <cost>3</cost>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AbilityDef[defName=&quot;BAWN_Akari_EXX&quot; or defName=&quot;BAWN_Ayane_EXX&quot; or defName=&quot;BAWN_Chinatsu_EX&quot; or defName=&quot;BAWN_Chinatsu_EXX&quot; or defName=&quot;BAWN_Hanae_EX&quot; or defName=&quot;BAWN_Hanae_EXX&quot; or defName=&quot;BAWN_Hare_EX&quot; or defName=&quot;BAWN_Hare_EXX&quot; or defName=&quot;BAWN_Karlin_EX&quot; or defName=&quot;BAWN_Karlin_EXX&quot; or defName=&quot;BAWN_Kasumi_EX&quot; or defName=&quot;BAWN_Kasumi_EXX&quot; or defName=&quot;BAWN_Kazusa_EX&quot; or defName=&quot;BAWN_Kazusa_EXX&quot; or defName=&quot;BAWN_Mika_A_EX&quot; or defName=&quot;BAWN_Mika_A_EXX&quot; or defName=&quot;BAWN_Momiji_EX&quot; or defName=&quot;BAWN_Momiji_EXX&quot; or defName=&quot;BAWN_Reisa_A_EX&quot; or defName=&quot;BAWN_Reisa_A_EXX&quot; or defName=&quot;BAWN_Suzumi_EX&quot; or defName=&quot;BAWN_Suzumi_EXX&quot; or defName=&quot;BAWN_Yoshimi_EX&quot; or defName=&quot;BAWN_Yoshimi_EXX&quot;]/comps</xpath>
+    <value>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <cost>4</cost>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AbilityDef[defName=&quot;BAWN_Airy_EX&quot; or defName=&quot;BAWN_Airy_EXX&quot; or defName=&quot;BAWN_Azusa_EX&quot; or defName=&quot;BAWN_Azusa_EXX&quot; or defName=&quot;BAWN_Hanako_EX&quot; or defName=&quot;BAWN_Hanako_EXX&quot; or defName=&quot;BAWN_Hasumi_EXX&quot; or defName=&quot;BAWN_Hasumi_EX&quot; or defName=&quot;BAWN_Hoshiro_A_EX&quot; or defName=&quot;BAWN_Hoshiro_A_EXX&quot; or defName=&quot;BAWN_Maki_EX&quot; or defName=&quot;BAWN_Maki_EXX&quot; or defName=&quot;BAWN_Suzumi_A_EXX&quot;]/comps</xpath>
+    <value>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <cost>5</cost>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AbilityDef[defName=&quot;BAWN_Chiaki_EX&quot; or defName=&quot;BAWN_Chiaki_EXX&quot; or defName=&quot;BAWN_Hina_B_EX&quot; or defName=&quot;BAWN_Hina_B_EXX&quot; or defName=&quot;BAWN_Mika_EXX&quot; or defName=&quot;BAWN_Mika_EX&quot;]/comps</xpath>
+    <value>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <cost>6</cost>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AbilityDef[defName=&quot;BAWN_Hina_EXX&quot; or defName=&quot;BAWN_Hina_EX&quot;]/comps</xpath>
+    <value>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <cost>7</cost>
+      </li>
+    </value>
+  </Operation>
+</Patch>

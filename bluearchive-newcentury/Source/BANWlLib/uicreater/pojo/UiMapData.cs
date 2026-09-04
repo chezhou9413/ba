@@ -12,6 +12,7 @@ using Verse;
 
 namespace newpro
 {
+    //地图UI数据中心负责保存主界面、入口、资源包与各功能面板的运行时引用。
     [StaticConstructorOnStartup]
     public static class UiMapData
     {
@@ -35,6 +36,7 @@ namespace newpro
         public static VideoClip aluolavideoA;
         public static List<VideoClip> aluolavideoB = new List<VideoClip>();
         public static GameObject showUI;
+        public static GameObject costUI;
         public static AssetBundle bundle;
         public static UnityEngine.UI.Text qinghuishitext1;
         public static UnityEngine.UI.Text huangpiaotext1;
@@ -60,10 +62,12 @@ namespace newpro
         public static AudioSource mainAudioPlay;
         public static bool isLocKBack = false;
 
+        //触发静态数据中心初始化并保留字段的声明默认值。
         static UiMapData()
         {
         }
 
+        //卸载已载入资源包并清理通过资源包生成的Sprite缓存。
         public static void uplodorBundle()
         {
             if (bundle != null)
@@ -74,6 +78,7 @@ namespace newpro
             BAUIRimWorldSpriteLoader.ClearAll();
         }
 
+        //销毁地图UI对象并重置所有跨地图静态引用。
         public static void Reset()
         {
             isLocKBack = false;
@@ -93,6 +98,10 @@ namespace newpro
             {
                 Object.Destroy(showUI);
             }
+            if (costUI != null)
+            {
+                Object.Destroy(costUI);
+            }
 
             mainBgmPlay = null;
             mainAudioPlay = null;
@@ -111,6 +120,7 @@ namespace newpro
             modRootPath = null;
             isOpenShop = false;
             showUI = null;
+            costUI = null;
             aluolavideoB.Clear();
             aluolavideoA = null;
             xiaokongvideoA = null;

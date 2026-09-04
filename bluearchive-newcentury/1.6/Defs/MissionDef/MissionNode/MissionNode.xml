@@ -16,6 +16,11 @@
         <missionMapDef>BANC_taskMap_QSJ</missionMapDef>
         
         <missionRunTimeDef>MissionRunTimeTest</missionRunTimeDef>
+
+        <costRules>
+            <maximumCost>20</maximumCost>
+            <recoveryMultiplier>2</recoveryMultiplier>
+        </costRules>
         
         <oder>2</oder>
     </BANWlLib.BaDef.BaMissionNode>
