@@ -64,6 +64,7 @@
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Momoi>0</BAWC_TraitDef_Momoi>
 			<BAWC_TraitDef_Momoi_A>0</BAWC_TraitDef_Momoi_A>
 			<BAWC_TraitDef_Momoi_B>0</BAWC_TraitDef_Momoi_B>
 		</forcedTraits>
@@ -193,7 +194,26 @@
 			</li>
 		</modExtensions>
 	</PawnKindDef>
-
+<TraitDef>
+        <defName>BAWC_TraitDef_Momoi</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;千年学院游戏开发部编剧&lt;/color&gt;</label>
+                <description>心思单纯，满脑子游戏，是游戏部的开心果。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<SocialImpact>0.3</SocialImpact>
+					<ReadingSpeed>-0.3</ReadingSpeed>
+					<PsychicSensitivity>0</PsychicSensitivity>
+					<ShootingAccuracyPawn>-0.2</ShootingAccuracyPawn>
+                </statOffsets>
+                <statBases>
+					<MoodOffset>12</MoodOffset>
+                </statBases>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 	<TraitDef>
         <defName>BAWC_TraitDef_Momoi_A</defName>
         <commonality>0</commonality>
@@ -203,7 +223,9 @@
                 <description>被动技能:增加自身&lt;color=#DC143C&gt;26%&lt;/color&gt;的暴击率。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<BANW_CriticalChance>0.26</BANW_CriticalChance>
+					<SocialImpact>0.3</SocialImpact>
+					<ReadingSpeed>-0.3</ReadingSpeed>
+					<ShootingAccuracyPawn>-0.2</ShootingAccuracyPawn>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -223,4 +245,32 @@
             </li>
         </degreeDatas>
     </TraitDef>
+
+	<ThoughtDef>
+    
+    <defName>BAWC_TraitDef_Momoi_ThoughtDef</defName>
+    
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    
+    <validWhileDespawned>true</validWhileDespawned>
+    
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    
+    <requiredTraits>
+      <li>BAWC_TraitDef_Momoi</li>
+    </requiredTraits>
+    
+    <requiredTraitsDegree>0</requiredTraitsDegree>
+    
+    <stages>
+      <li>
+        
+        <label>王小桃</label>
+        
+        <description>来自"千年学院游戏开发部编剧"特质的自然加成。</description>
+        
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

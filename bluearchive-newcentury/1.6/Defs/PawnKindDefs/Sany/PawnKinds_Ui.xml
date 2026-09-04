@@ -68,6 +68,7 @@
 			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant>
 			<BAWC_TraitDef_baofa>0</BAWC_TraitDef_baofa>
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
+			<BAWC_TraitDef_Ui>0</BAWC_TraitDef_Ui>
 			<BAWC_TraitDef_Ui_A>0</BAWC_TraitDef_Ui_A>
 		</forcedTraits>
 		<modExtensions>
@@ -207,6 +208,25 @@
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 					<BANW_CriticalChance>0.26</BANW_CriticalChance>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Ui</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;古书馆的魔术师&lt;/color&gt;</label>
+                <description>忧是圣三一古书馆里的“宅女”，她精通古书的解读、管理与修复，因而被称作”古书馆的魔术师“。她对待书籍如同对待生命，若有人粗暴对待她珍爱的“孩子”，她的“殖轮脸”会打破所有宁静。</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_CriticalChance>0.26</BANW_CriticalChance>
+					<GlobalLearningFactor>1.5</GlobalLearningFactor>
+					<ReadingSpeed>3</ReadingSpeed>
+					<ResearchSpeed>1.5</ResearchSpeed>
+					<EntityStudyRate>1.3</EntityStudyRate>
                 </statOffsets>
             </li>
         </degreeDatas>
