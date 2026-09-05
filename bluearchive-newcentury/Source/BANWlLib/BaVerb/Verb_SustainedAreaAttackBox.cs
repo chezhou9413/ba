@@ -73,10 +73,6 @@ namespace BANWlLib.BaVerb
             job.SetTarget(TargetIndex.A, currentTarget);
             job.targetQueueA = new List<LocalTargetInfo>(cellTargetsList);
             bool castSuccess = base.TryCastShot();
-            if (Ability != null)
-            {
-                castSuccess = Ability.Activate(currentTarget, currentDestination);
-            }
 
             if (castSuccess)
             {

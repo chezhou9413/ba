@@ -12,6 +12,7 @@ namespace BANWlLib.Projectiles
         public Vector3 direction;
         public float speed;
         public float scale;
+        public float rotationOffset;
         public float rotationRate;
         public int overrideSpawnTick = -1;
 
@@ -27,7 +28,8 @@ namespace BANWlLib.Projectiles
             GenSpawn.Spawn(mote, spawnPosition.ToIntVec3(), map);
             mote.Scale = scale;
             mote.exactPosition = spawnPosition;
-            mote.exactRotation = direction.AngleFlat();
+            //贴图朝向叠加自身轴向偏移，运动方向仍沿命中弹道。
+            mote.exactRotation = direction.AngleFlat() + rotationOffset;
             mote.rotationRate = rotationRate;
 
             if (mote is MoteThrown thrown)
@@ -50,6 +52,7 @@ namespace BANWlLib.Projectiles
             Scribe_Values.Look(ref direction, "direction");
             Scribe_Values.Look(ref speed, "speed", 0f);
             Scribe_Values.Look(ref scale, "scale", 1f);
+            Scribe_Values.Look(ref rotationOffset, "rotationOffset", 0f);
             Scribe_Values.Look(ref rotationRate, "rotationRate", 0f);
             Scribe_Values.Look(ref overrideSpawnTick, "overrideSpawnTick", -1);
         }

@@ -236,6 +236,8 @@
         <!-- 实际飞出的 Mote。 -->
          <initialDelayTicks>0</initialDelayTicks>
         <moteDef>BAWN_Wakamo_A_5_Mote</moteDef>
+        <!-- 将横向贴图的轴向对齐本次打击方向。 -->
+        <rotation>-90</rotation>
         <!-- Mote 缩放倍率。 -->
         <scale>1</scale>
         <!-- Mote 自转速度。 -->
@@ -247,6 +249,8 @@
         <!-- 实际飞出的 Mote。 -->
          <initialDelayTicks>60</initialDelayTicks>
         <moteDef>BAWN_Wakamo_A_6_Mote</moteDef>
+        <!-- 延迟特效沿用命中时的打击方向和贴图轴向偏移。 -->
+        <rotation>-90</rotation>
         <!-- Mote 缩放倍率。 -->
         <scale>1</scale>
         <!-- Mote 自转速度。 -->
