@@ -8,7 +8,7 @@
     <!-- 能力描述，说明效果和持续时间 -->
     <description>对以自身为中心的圆形范围内的我方单位每5秒回复自身治愈力54%的生命值(持续30秒)</description>
     <!-- 是否需要特定目标，False表示为范围效果 -->
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <targetRequired>False</targetRequired>
     <!-- 是否可以使用AOE范围来获取目标 -->
     <canUseAoeToGetTargets>False</canUseAoeToGetTargets>

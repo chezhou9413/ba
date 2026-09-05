@@ -86,7 +86,7 @@
     <label>助推启动！</label>
     <description>对直线范围内的1名指定敌方单位造成1557%自身攻击力的伤害</description>
     <iconPath>Ability/Icon/Nozomi/Nozomi_B</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc11</hotKey>
     <warmupStartSound>Nozomi_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects>
@@ -310,7 +310,7 @@
     <label>叠层攻击测试</label>
     <description>每次使用获得一层攻击力状态，按30%、70%、100%递增，并刷新持续时间。</description>
     <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
-    <cooldownTicksRange>300</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc9</hotKey>
     <targetRequired>false</targetRequired>
     <hostile>false</hostile>
@@ -344,7 +344,7 @@
     <label>叠层多属性测试</label>
     <description>每次使用获得一层多属性状态，同时提高最终伤害、暴击率、暴击伤害和EX技能倍率，最多3层。</description>
     <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
-    <cooldownTicksRange>300</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc8</hotKey>
     <targetRequired>false</targetRequired>
     <hostile>false</hostile>
@@ -378,7 +378,7 @@
     <label>护盾测试</label>
     <description>给自己添加200%最终治愈力的护盾，重复使用会叠加护盾值并刷新持续时间。</description>
     <iconPath>Ability/Icon/Ichika/Ichika_EX</iconPath>
-    <cooldownTicksRange>300</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc5</hotKey>
     <targetRequired>false</targetRequired>
     <hostile>false</hostile>

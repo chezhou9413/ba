@@ -4,7 +4,7 @@
     <label>得、得赶紧去修理……！</label>
     <description>位移至指定位置,自身攻击力增加28%，攻击速度增加67%(持续22秒),位移期间碰到的单位造成自身攻击力127%的伤害并击退.</description>
     <iconPath>Ability/Icon/Aoba/Aoba_EXX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc7</hotKey>
     <warmupStartSound>Aoba_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects>

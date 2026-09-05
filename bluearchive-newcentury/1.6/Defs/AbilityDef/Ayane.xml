@@ -5,7 +5,7 @@
  <label>特级快递：战斗支援物资</label>
  <description>对圆形范围内的友方单位回复自身治愈力224%的生命值</description>
  <iconPath>Ability/Icon/Chinatsu/Chinatsu_EXX</iconPath>
- <cooldownTicksRange>0</cooldownTicksRange>
+ <cooldownTicksRange>1000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Ayane_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

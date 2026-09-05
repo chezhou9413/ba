@@ -4,7 +4,7 @@
     <label>intulit mortem</label>
     <description>对一名敌人造成自身攻击力2023%的伤害</description>
     <iconPath>Ability/Icon/Serika/Serika_EX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc4</hotKey>
     <warmupStartSound>Azusa_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects>

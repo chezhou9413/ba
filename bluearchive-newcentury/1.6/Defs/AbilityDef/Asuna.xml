@@ -125,7 +125,7 @@
  <label>要冲了哦！</label>
  <description>向目标处位移一段距离并为自己提供30%的闪避率和增加57%的攻击速度（持续30秒）</description>
  <iconPath>Ability/Icon/Asuna/Asuna_EXX</iconPath>
- <cooldownTicksRange>0</cooldownTicksRange>
+ <cooldownTicksRange>1000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Asuna_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

@@ -5,7 +5,7 @@
  <label>为了这种时候准备的</label>
  <description>回复自身治愈力338%的生命值。</description>
  <iconPath>Ability/Icon/Natsu/Natsu_EXX</iconPath>
- <cooldownTicksRange>0</cooldownTicksRange>
+ <cooldownTicksRange>1000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Natsu_Skill_EXX</warmupStartSound>
  <warmupEffecter>BANW_Natsu_Ef_B</warmupEffecter>

@@ -99,7 +99,7 @@
     <label>我，我来支援了！</label>
     <description>发射子弹，对直线范围内的敌方单位造成自身攻击力331%的伤害，并增加30%的乘伤系数(持续30秒)</description>
     <iconPath>Ability/Icon/Airy/Airy_EX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
     <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
     <hostile>true</hostile>

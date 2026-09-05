@@ -85,7 +85,7 @@
  <label>虽然有点可惜……嘿！</label>
  <description>对圆形范围内的敌方单位造成自身攻击力464%的伤害并且范围内的敌人移速减少23%，攻速减少26%（持续20秒）</description>
  <iconPath>Ability/Icon/Airy/Airy_EXX</iconPath>
- <cooldownTicksRange>0</cooldownTicksRange>
+ <cooldownTicksRange>1000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Airy_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

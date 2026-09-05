@@ -131,7 +131,7 @@
     <label>呵呵，见识一下我的实力吧</label>
     <description>对1名我方单位增加102%的攻击力（持续13秒）</description>
     <iconPath>Ability/Icon/Mika/Mika_A</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupEffecter>BANW_Himari_Ef_A</warmupEffecter>
     <warmupStartSound>Himari_Skill_EXX</warmupStartSound>

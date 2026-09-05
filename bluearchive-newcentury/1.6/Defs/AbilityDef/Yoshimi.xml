@@ -93,7 +93,7 @@
     <label>谁，谁慌了？！</label>
     <description>对圆形范围内的敌方单位造成自身攻击力353%的伤害并且眩晕3秒</description>
     <iconPath>Ability/Icon/Yoshimi/Yoshimi_EXX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Yoshimi_Skill_EXX</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

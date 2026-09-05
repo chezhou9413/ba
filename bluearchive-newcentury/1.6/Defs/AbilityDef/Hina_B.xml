@@ -5,7 +5,7 @@
     <label>开演：伊施波设</label>
     <description>发射3发子弹，对直线范围内的敌方单位造成自身攻击力2524%的伤害</description>
     <iconPath>Ability/Icon/Hina/Hina_B</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 --> 
  <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
     <hostile>true</hostile>

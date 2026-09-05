@@ -85,7 +85,7 @@
  <label>清除，要优雅</label>
  <description>对1名敌人造成自身攻击力890%的伤害，并且目标乘伤系数增加30%，(持续30秒)</description>
  <iconPath>Ability/Icon/Akane/Akane_EXX</iconPath>
- <cooldownTicksRange>0</cooldownTicksRange>
+ <cooldownTicksRange>1000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Akane_ExSkill</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

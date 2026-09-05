@@ -135,7 +135,7 @@
  <label>开始监听</label>
  <description>对圆形范围内的友方单位攻击力增加47%(持续30秒)</description>
  <iconPath>Ability/Icon/Airy/Airy_A</iconPath>
- <cooldownTicksRange>0</cooldownTicksRange>
+ <cooldownTicksRange>1000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Kotama_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

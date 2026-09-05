@@ -5,7 +5,7 @@
  <label>这是基础魔法！</label>
  <description>对圆形范围内的友方单位攻击力增加51%基础精通倍率增加26%(持续41秒)</description>
  <iconPath>Ability/Icon/Suzumi_A/Suzumi_EX</iconPath>
- <cooldownTicksRange>0</cooldownTicksRange>
+ <cooldownTicksRange>1000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Suzumi_A_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

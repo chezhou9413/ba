@@ -4,7 +4,7 @@
     <label>翡翠花占</label>
     <description>对一名敌人造成自身子弹攻击力的1074%的伤害,并且每一击造成1秒眩晕，最后一击造成4秒眩晕</description>
     <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
     <warmupStartSound>Wakamo_A_Skill_EXX</warmupStartSound>

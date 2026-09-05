@@ -4,7 +4,7 @@
     <label>Q.E.D</label>
     <description>赋予自身治愈力248%的护盾(持续25秒)</description>
     <iconPath>Ability/Icon/Yuuka/Yuuka_EXX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc5</hotKey>
     <targetRequired>false</targetRequired>
     <warmupEffecter>BANW_Yuuka_Ef_A</warmupEffecter>

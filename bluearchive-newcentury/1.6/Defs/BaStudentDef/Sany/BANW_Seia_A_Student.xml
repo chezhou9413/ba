@@ -15,11 +15,11 @@
 			
 			<BackgroundPath>ManuaUI/Bg/BG_PrivateBeach_Campfire_Collection</BackgroundPath>
 			
-			<CharacterimageOffsetSize>1.6</CharacterimageOffsetSize>
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
 			
-			<CharacterimageOffsetX>30</CharacterimageOffsetX>
+			<CharacterimageOffsetX>50</CharacterimageOffsetX>
 			
-			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			<CharacterimageOffsetY>-60</CharacterimageOffsetY>
 			
 			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
 			
@@ -62,7 +62,7 @@
 		    
 			<WapenUI>
 			   
-				<WapenUIImagePath>ManuaUI/Wapen/Sei</WapenUIImagePath>
+				<WapenUIImagePath>ManuaUI/Wapen/Seia</WapenUIImagePath>
 			    
 				<WapenTypeText>手枪</WapenTypeText>
 			</WapenUI>

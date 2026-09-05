@@ -161,7 +161,7 @@
     <!-- 能力描述，说明效果和持续时间 -->
     <description>赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加22%；每4秒，赋予以自身为中心的圆形范围内除自身外的友方自身治愈力56.5%的生命值回复(持续22秒)</description>
     <!-- 是否需要特定目标，False表示为范围效果 -->
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <targetRequired>False</targetRequired>
     <!-- 是否可以使用AOE范围来获取目标 -->
     <canUseAoeToGetTargets>False</canUseAoeToGetTargets>

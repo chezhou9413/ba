@@ -103,7 +103,7 @@
     <label>神圣的庇护</label>
     <description>赋予一名友军单位自身治愈力328%的护盾(持续20秒)</description>
     <iconPath>Ability/Icon/Mari/Mari_EXX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc5</hotKey>
     <targetRequired>true</targetRequired><!-- 需要一个目标，不能对地面使用 -->
     <warmupStartSound>Mari_Skill_EXX</warmupStartSound>

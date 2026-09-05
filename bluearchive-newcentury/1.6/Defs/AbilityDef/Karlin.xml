@@ -96,7 +96,7 @@
     <label>目标，排除</label>
     <description>对一名敌人造成攻击力1100%的伤害，有50%机率造成625%的追加伤害</description>
     <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupEffecter>BANW_Karlin_Ef_A</warmupEffecter>
     <warmupStartSound>Karlin_Skill_EXX</warmupStartSound>

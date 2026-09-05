@@ -118,7 +118,7 @@
  <label>共享侦察数据</label>
  <description>对1名我方单位造成暴击率增加39%，暴击伤害增加73%。（持续16秒）</description>
  <iconPath>Ability/Icon/Natsu/Natsu_EX</iconPath>
- <cooldownTicksRange>0</cooldownTicksRange>
+ <cooldownTicksRange>1000</cooldownTicksRange>
  <hotKey>Misc12</hotKey>
  <warmupStartSound>Ako_Skill_EXX</warmupStartSound>
  <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

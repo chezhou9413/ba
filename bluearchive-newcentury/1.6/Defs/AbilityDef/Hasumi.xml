@@ -4,7 +4,7 @@
     <label>穿甲弹</label>
     <description>对一名敌人造成自身子弹攻击力的1100%的伤害</description>
     <iconPath>Ability/Icon/Hasumi/Hasumi_EXX</iconPath>
-    <cooldownTicksRange>0</cooldownTicksRange>
+    <cooldownTicksRange>1000</cooldownTicksRange>
     <hotKey>Misc12</hotKey>
     <warmupStartSound>Hasumi_ExxSkill</warmupStartSound>
     <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->

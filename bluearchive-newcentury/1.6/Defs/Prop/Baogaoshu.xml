@@ -175,6 +175,8 @@
           <li>BANW_Wakamo_A</li>
           <li>BANW_Mika_A</li>
           <li>BANW_Nagisa_A</li>
+          <li>BANW_Seia_A</li>
+          <li>BANW_Shiroko_C</li>
         </Race>
         <updateHediffSeverity>0.05</updateHediffSeverity>
         <batchUseCount>
@@ -362,6 +364,8 @@
           <li>BANW_Wakamo_A</li>
           <li>BANW_Mika_A</li>
           <li>BANW_Nagisa_A</li>
+          <li>BANW_Seia_A</li>
+          <li>BANW_Shiroko_C</li>
         </Race>
         <updateHediffSeverity>0.5</updateHediffSeverity>
         <batchUseCount>
@@ -548,6 +552,8 @@
           <li>BANW_Wakamo_A</li>
           <li>BANW_Mika_A</li>
           <li>BANW_Nagisa_A</li>
+          <li>BANW_Seia_A</li>
+          <li>BANW_Shiroko_C</li>
         </Race>
         <updateHediffSeverity>2.0</updateHediffSeverity>
         <batchUseCount>
@@ -734,6 +740,8 @@
           <li>BANW_Wakamo_A</li>
           <li>BANW_Mika_A</li>
           <li>BANW_Nagisa_A</li>
+          <li>BANW_Seia_A</li>
+          <li>BANW_Shiroko_C</li>
         </Race>
         <updateHediffSeverity>10.0</updateHediffSeverity>
         <batchUseCount>

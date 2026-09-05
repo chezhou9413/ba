@@ -1,0 +1,167 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Shiroko_C_Student</defName>
+    <label>白子(恐怖)</label>
+    <studentId>BANW_Shiroko_C</studentId>
+    <kindDef>BANW_Shiroko_C</kindDef>
+
+    <BaStudentUI>
+            
+            <StudentAvatar>ManuaUI/Avatar/Shiroko_C</StudentAvatar>
+            
+            <StudentName>Auto</StudentName>
+            
+            <CharacterimagePath>ManuaUI/Live/Shiroko_C</CharacterimagePath>
+            
+            <BackgroundPath>ManuaUI/Bg/BG_AbydosResidence2_Collection</BackgroundPath>
+            
+            <CharacterimageOffsetSize>1.4</CharacterimageOffsetSize>
+            
+            <CharacterimageOffsetX>5</CharacterimageOffsetX>
+            
+            <CharacterimageOffsetY>-50</CharacterimageOffsetY>
+            
+            <CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+            
+            <CharacterStarCount>3</CharacterStarCount>
+            
+            <infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+            
+            <infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+            
+            <infotagImagePath3>ManuaUI/Type/神秘</infotagImagePath3>
+            
+            <infotagImagePath4>ManuaUI/Type/特殊装甲</infotagImagePath4>
+            
+            <Skills>
+                
+                <Shooting>14</Shooting>
+                
+                <Melee>11</Melee>
+                
+                <Construction>7</Construction>
+                
+                <Mining>7</Mining>
+                
+                <Cooking>0</Cooking>
+                
+                <Plants>7</Plants>
+                
+                <Animals>8</Animals>
+                
+                <Crafting>0</Crafting>
+                
+                <Artistic>0</Artistic>
+                
+                <Medical>0</Medical>
+                
+                <Social>6</Social>
+                
+                <Intellectual>5</Intellectual>
+            </Skills>
+            
+            <WapenUI>
+                
+                <WapenUIImagePath>ManuaUI/Wapen/Shiroko_C</WapenUIImagePath>
+                
+                <WapenTypeText>步枪</WapenTypeText>
+            </WapenUI>
+            <Ability1>
+                <AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+                <AbilityTypeText>EX技能</AbilityTypeText>
+                <AbilityTitle>EX技能</AbilityTitle>
+                <AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+                </AbilityIntroduction>
+                <offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+            </Ability1>
+            <Ability2>
+                <AbilityImagePath>Ability/Icon/Asuna/Asuna_EX</AbilityImagePath>
+                <AbilityTypeText>基本技能</AbilityTypeText>
+                <AbilityTitle>投掷手榴弹·改</AbilityTitle>
+                <AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>368%</color>的伤害]]>
+                </AbilityIntroduction>
+                <offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+            </Ability2>
+            <Ability3>
+                <AbilityImagePath>Ability/Icon/Natsu/Natsu_EX</AbilityImagePath>
+                <AbilityTypeText>被动技能</AbilityTypeText>
+                <AbilityTitle>精密瞄准</AbilityTitle>
+                <AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+                </AbilityIntroduction>
+                <offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+            </Ability3>
+            <Ability4>
+                <AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+                <AbilityTypeText>子技能</AbilityTypeText>
+                <AbilityTitle>测试技能4</AbilityTitle>
+                <AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[这里是技能4的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+                </AbilityIntroduction>
+                <offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+            </Ability4>
+            <StudentBio>
+                
+                <StudentDesp><![CDATA[阿拜多斯高等学院
+2年级
+社团 对策委员会]]>
+                </StudentDesp>
+                
+                <StudentBioName>砂狼 白子</StudentBioName>
+                
+                <AcademyLogoPath>ManuaUI/AcademyLogo/Abydos</AcademyLogoPath>
+                
+                <StudentCard>与弗雷纳帕提斯一同从异世界穿越至此的另一个白子。虽与本世界的白子是同一存在，却呈现出经历更多时光的模样。和原版白子一样深爱着阿拜多斯，偶尔也会为了学院与自管区的复兴展现出不择手段的脱线一面。</StudentCard>
+            </StudentBio>
+        </BaStudentUI>
+    <baStudentData>
+            <!-- 伤害类型：Explosion(爆发), Mysterious(神秘/特殊), Vibration(振动), Through(穿透) -->
+            <DamageType>Mysterious</DamageType>
+            
+            <DefenseType>Mysterious</DefenseType>
+            <!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+            <PosType>Henc</PosType>
+            
+            <StarCont>3</StarCont>
+            <DraggableAudio>Common\Sounds\Fight\Shiroko_C</DraggableAudio>
+            <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Shiroko_C_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+            <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Shiroko_C_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+            <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Shiroko_C_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+            
+            <avtTexPath>Gacha/Student/Shiroko_C</avtTexPath>
+        </baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>
