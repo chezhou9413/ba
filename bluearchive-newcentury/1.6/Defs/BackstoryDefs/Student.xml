@@ -2177,4 +2177,18 @@
 			<li>BANW_BackstoryShiroko_C</li>
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHoshiro_B</defName>
+		<title>停办对策委员会</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是阿拜多斯理事会长兼对策委员会会长。是个十足的懒虫少女。
+现在的状态是装备了自己另行保管的武装，呈现出更适合战斗的姿态。虽然还是那个星野，但光是武装起来就比平时认真了几分。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHoshiro_B</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
 </Defs>

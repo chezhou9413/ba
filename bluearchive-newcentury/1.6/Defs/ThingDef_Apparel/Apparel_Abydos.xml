@@ -160,4 +160,27 @@
             </tags>
         </apparel>
     </ThingDef> 
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Hoshiro_B</defName>
+        <label>星野（武装）的衣服</label>
+        <description>星野（武装）的衣服</description>
+        <graphicData><!--需要一个衣服的通用物品贴图-->
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Abydos/Hoshiro_B/Apparel/Hoshiro_B_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Hoshiro_B</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef> 
 </Defs>

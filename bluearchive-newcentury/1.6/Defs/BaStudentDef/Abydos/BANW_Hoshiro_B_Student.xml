@@ -1,22 +1,22 @@
 <Defs>
   <BANWlLib.BaDef.BaStudentDef>
-    <defName>BANW_Hoshiro_Student</defName>
-    <label>星野</label>
+    <defName>BANW_Hoshiro_B_Student</defName>
+    <label>星野（武装）</label>
     <studentId>BANW_Hoshiro</studentId>
     <kindDef>BANW_Hoshiro</kindDef>
     <BaStudentUI>
 			
-			<StudentAvatar>ManuaUI/Avatar/Hoshiro</StudentAvatar>
+			<StudentAvatar>ManuaUI/Avatar/Hoshiro_B</StudentAvatar>
 			
 			<StudentName>Auto</StudentName>
 			
-			<CharacterimagePath>ManuaUI/Live/Hoshiro</CharacterimagePath>
+			<CharacterimagePath>ManuaUI/Live/Hoshiro_B</CharacterimagePath>
 			
-			<BackgroundPath>ManuaUI/Bg/BG_Abydos</BackgroundPath>
+			<BackgroundPath>ManuaUI/Bg/BG_AbydosCouncilRoom3_Sunset_Collection</BackgroundPath>
 			
 			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
 			
-			<CharacterimageOffsetX>50</CharacterimageOffsetX>
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
 			
 			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
 			
@@ -28,7 +28,7 @@
 			
 			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
 			
-			<infotagImagePath3>ManuaUI/Type/贯通</infotagImagePath3>
+			<infotagImagePath3>ManuaUI/Type/神秘</infotagImagePath3>
 			
 			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
 			
@@ -40,7 +40,7 @@
 				
 				<Construction>0</Construction>
 				
-				<Mining>10</Mining>
+				<Mining>15</Mining>
 				
 				<Cooking>0</Cooking>
 				
@@ -54,13 +54,15 @@
 				
 				<Medical>0</Medical>
 				
-				<Social>5</Social>
+				<Social>2</Social>
 				
-				<Intellectual>6</Intellectual>
+				<Intellectual>8</Intellectual>
 			</Skills>
 			
 			<WapenUI>
+				
 				<WapenUIImagePath>ManuaUI/Wapen/Hoshiro</WapenUIImagePath>
+				
 				<WapenTypeText>霰弹</WapenTypeText>
 			</WapenUI>
 			<Ability1>
@@ -78,20 +80,19 @@
 			<Ability2>
 				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>应急处理</AbilityTitle><!--不会改-->
+				<AbilityTitle>基本技能</AbilityTitle><!--不会改-->
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>800</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[赋予自身每4秒回复自身治愈力<color=#00FFFF>191</color>的生命值的持续回复状态
-(持续<color=#00FFFF>20</color>秒)]]>
+				<AbilityIntroduction><![CDATA[]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
-				<AbilityImagePath>Ability/Icon/Hoshiro_B/Hoshiro_B_A</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>近战战斗系统</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>16%<color=#00FFFF>生命值增加<color=#00FFFF>16%<color=#00FFFF>]]>
+				<AbilityIntroduction><![CDATA[自身攻击力与防御力增加<color=#00FFFF>16%</color>]]><!--不确定是不是这样改-->
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
@@ -123,15 +124,15 @@
 			</StudentBio>
 		</BaStudentUI>
     <baStudentData>
+			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘/特殊), Vibration(振动), Through(穿透) -->
+			<DamageType>Mysterious</DamageType>
 			
-			<DamageType>Through</DamageType>
-			
-			<DefenseType>Through</DefenseType>
-			
+			<DefenseType>Explosion</DefenseType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
 			<PosType>Tank</PosType>
 			
 			<StarCont>3</StarCont>
-			<DraggableAudio>Common\Sounds\Fight\Hoshiro</DraggableAudio>
+			<DraggableAudio>Common\Sounds\Fight\Hoshiro_B</DraggableAudio>
 		    
 			<stuSchool>阿拜多斯高等学院</stuSchool>
 				
@@ -145,7 +146,7 @@
 					<value>50</value>
 				</li>
 				<li>
-					<key>BANW_Hoshiro_Proplevel</key>
+					<key>BANW_Hoshiro_B_Proplevel</key>
 					<value>30</value>
 				</li>
 			</GakaStudentThingData>
@@ -155,18 +156,18 @@
 					<value>50</value>
 				</li>
 				<li>
-					<key>BANW_Hoshiro_Proplevel</key>
+					<key>BANW_Hoshiro_B_Proplevel</key>
 					<value>100</value>
 				</li>
 			</UpGakaStudentThingData>
 			<OneGakaStudentThingData>
 				<li>
-					<key>BANW_Hoshiro_Proplevel</key>
+					<key>BANW_Hoshiro_B_Proplevel</key>
 					<value>100</value>
 				</li>
 			</OneGakaStudentThingData>
 			
-			<avtTexPath>Gacha/Student/Hoshiro</avtTexPath>
+			<avtTexPath>Gacha/Student/Hoshiro_B</avtTexPath>
 		</baStudentData>
   </BANWlLib.BaDef.BaStudentDef>
 </Defs>
