@@ -186,6 +186,8 @@
         <subEffecterClass>BANWlLib.Projectiles.SubEffecter_DirectionalImpactMote</subEffecterClass>
         <!-- 实际飞出的 Mote。 -->
         <moteDef>BANW_Mote_DirectionalImpact_Test</moteDef>
+        <!-- 纵向贴图直接对齐弹道，避免使用原版随机初始旋转。 -->
+        <rotation>0</rotation>
         <!-- Mote 缩放倍率。 -->
         <scale>1</scale>
         <!-- Mote 自转速度。 -->

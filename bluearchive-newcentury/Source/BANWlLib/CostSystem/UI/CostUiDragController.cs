@@ -11,6 +11,7 @@ namespace BANWlLib.CostSystem
     public sealed class CostUiDragController : MonoBehaviour,
         IPointerDownHandler,
         IPointerUpHandler,
+        IPointerClickHandler,
         IBeginDragHandler,
         IDragHandler,
         IEndDragHandler
@@ -62,6 +63,12 @@ namespace BANWlLib.CostSystem
         //截获轮盘区域的抬起事件，保持轮盘点击与入口按钮点击互相独立。
         public void OnPointerUp(PointerEventData eventData)
         {
+        }
+
+        //消费轮盘点击，让点击目标停留在轮盘而不查找父级入口按钮。
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            eventData.Use();
         }
 
         //记录拖动开始时的指针和轮盘坐标，并暂停地图框选输入。
@@ -165,7 +172,6 @@ namespace BANWlLib.CostSystem
                     typeof(CanvasRenderer),
                     typeof(Image));
                 surfaceObject.transform.SetParent(hitArea, false);
-                surfaceObject.transform.SetAsFirstSibling();
             }
             else
             {
@@ -182,6 +188,8 @@ namespace BANWlLib.CostSystem
             Image surface = surfaceObject.GetComponent<Image>();
             surface.color = Color.clear;
             surface.raycastTarget = true;
+            //透明命中层覆盖装饰节点，统一由轮盘控制器处理指针事件。
+            surfaceObject.transform.SetAsLastSibling();
         }
 
         //读取当前存档保存的轮盘相对坐标，没有游戏组件时采用默认位置。

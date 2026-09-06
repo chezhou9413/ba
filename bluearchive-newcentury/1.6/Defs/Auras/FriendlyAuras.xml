@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 后勤光环源：赋予角色此状态即可为附近友军持续提供搬运支持。 -->
+  <HediffDef>
+    <defName>BANW_LogisticsAura</defName>
+    <label>后勤支援光环</label>
+    <description>向8格内自身、同阵营成员和盟友持续提供后勤支持。离开范围或光环源失效后，支持效果自动消失。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="BANWlLib.Auras.HediffCompProperties_FriendlyAura">
+        <effectHediff>BANW_LogisticsAuraEffect</effectHediff>
+        <radius>8</radius>
+        <severity>1</severity>
+        <includeSelf>true</includeSelf>
+        <affectAnimals>true</affectAnimals>
+      </li>
+    </comps>
+  </HediffDef>
+  <!-- 后勤受益由地图自动维护，不直接通过普通技能或装备施加。 -->
+  <HediffDef>
+    <defName>BANW_LogisticsAuraEffect</defName>
+    <label>后勤支援</label>
+    <description>单次搬运容量提高50%，质量负重增加15公斤后再提高25%。同名后勤光环不重复叠加。</description>
+    <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>10</maxSeverity>
+    <modExtensions>
+      <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+        <stackSeverity>false</stackSeverity>
+        <maximumSeverity>10</maximumSeverity>
+      </li>
+    </modExtensions>
+    <stages>
+      <li>
+        <statOffsets>
+          <BANW_HaulingCapacityMultiplier>0.5</BANW_HaulingCapacityMultiplier>
+          <BANW_CarryMassOffset>15</BANW_CarryMassOffset>
+          <BANW_CarryMassMultiplier>0.25</BANW_CarryMassMultiplier>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

@@ -236,11 +236,25 @@
         <!-- 实际飞出的 Mote。 -->
          <initialDelayTicks>0</initialDelayTicks>
         <moteDef>BAWN_Wakamo_A_5_Mote</moteDef>
+        <!-- 将横向贴图的轴向对齐本次打击方向。 -->
+        <rotation>-90</rotation>
         <!-- Mote 缩放倍率。 -->
         <scale>1</scale>
         <!-- Mote 自转速度。 -->
         <rotationRate>0</rotationRate>
-        <rotation>-180</rotation><!-- 初始旋转角度 -->
+      </li>
+      <li>
+        <!-- 从穿透弹命中上下文读取弹道方向，并生成沿该方向飞出的 MoteThrown。 -->
+        <subEffecterClass>BANWlLib.Projectiles.SubEffecter_DirectionalImpactMote</subEffecterClass>
+        <!-- 实际飞出的 Mote。 -->
+         <initialDelayTicks>60</initialDelayTicks>
+        <moteDef>BAWN_Wakamo_A_6_Mote</moteDef>
+        <!-- 延迟特效沿用命中时的打击方向和贴图轴向偏移。 -->
+        <rotation>-90</rotation>
+        <!-- Mote 缩放倍率。 -->
+        <scale>1</scale>
+        <!-- Mote 自转速度。 -->
+        <rotationRate>0</rotationRate>
       </li>
     </children>
   </EffecterDef>

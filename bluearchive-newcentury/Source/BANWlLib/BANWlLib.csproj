@@ -148,6 +148,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaClass\PendingRotatedOffsetMote.cs" />
+    <Compile Include="Auras\Definitions\HediffCompProperties_FriendlyAura.cs" />
+    <Compile Include="Auras\Definitions\FriendlyAuraEffectExtension.cs" />
+    <Compile Include="Auras\Runtime\HediffComp_FriendlyAura.cs" />
+    <Compile Include="Auras\Runtime\FriendlyAuraTargetUtility.cs" />
+    <Compile Include="Auras\Runtime\FriendlyAuraSource.cs" />
+    <Compile Include="Auras\Runtime\Hediff_FriendlyAuraEffect.cs" />
+    <Compile Include="Auras\Runtime\MapComponent_FriendlyAuras.cs" />
+    <Compile Include="Carrying\CarryStatDefOf.cs" />
+    <Compile Include="Carrying\CarryStatInitializer.cs" />
+    <Compile Include="Carrying\MassUtilityCapacityPatch.cs" />
     <Compile Include="BaClass\RotatedOffsetMoteDelayComponent.cs" />
     <Compile Include="BaClass\SubEffecter_SprayerTriggeredRotatedOffset.cs" />
     <Compile Include="BaDef\AronaSpine.cs" />

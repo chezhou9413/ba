@@ -59,6 +59,7 @@ namespace BANWlLib.Projectiles
                 direction = data.direction,
                 speed = data.speed,
                 scale = def.scale.RandomInRange,
+                rotationOffset = def.rotation.RandomInRange,
                 rotationRate = def.rotationRate.RandomInRange,
                 overrideSpawnTick = overrideSpawnTick < 0 ? -1 : overrideSpawnTick + Mathf.Max(0, def.initialDelayTicks)
             };
