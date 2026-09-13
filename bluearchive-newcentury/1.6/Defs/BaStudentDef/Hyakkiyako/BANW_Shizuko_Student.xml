@@ -99,11 +99,11 @@
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_EX</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
-				<AbilityTitle>子技能</AbilityTitle>
+				<AbilityTitle>来自看板娘的助威哦！喵喵！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成暴击率增加<color=#00FFFF>17%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

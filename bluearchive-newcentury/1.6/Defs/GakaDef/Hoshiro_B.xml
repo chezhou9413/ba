@@ -1,8 +1,7 @@
-
 <Defs>
-<BANWlLib.BaDef.Gacha>
+    <BANWlLib.BaDef.Gacha>
         <!-- 卡池唯一标识符 -->
-        <defName>Gacha_Standard_Hoshiro_B</defName> 
+        <defName>Gacha_Standard_Hoshiro_B</defName>
         <!-- UI资源路径 -->
         <gachaTexPath>UI/cardHead/Hoshiro_B</gachaTexPath>          <!-- 卡池头图/封面图片 -->
         <gachaVidPath>UI/Video/Hoshiro_B.webm</gachaVidPath>        <!-- 卡池宣传视频 -->
@@ -12,8 +11,8 @@
         <gachaDesc>招募10次时，保证获得1名★2以上学生！\n※已招募过的学生會变换成神名文字碎片与该学生的神名文字。</gachaDesc>  <!-- 详细描述 -->
         <!-- UP三星池配置 -->
         <!-- Weight=70 表示在三星出货时，有70%概率从UP池抽取 -->
-         <isFes>true</isFes>
-         <FESupthreeStarPool>
+        <isFes>true</isFes>
+        <FESupthreeStarPool>
             <Weight>0.7</Weight>
             <StudentList>
                 <li>BANW_Hoshiro_B_Student</li>
@@ -24,6 +23,7 @@
             <StudentList>
                 <li>BANW_Hina_B_Student</li>
                 <li>BANW_Hoshiro_A_Student</li>
+                <li>BANW_Nero_B_Student</li>
                 <li>BANW_Hanako_A_Student</li>
                 <li>BANW_Mika_Student</li>
                 <li>BANW_Rio_Student</li>
@@ -32,7 +32,7 @@
                 <li>BANW_Wakamo_Student</li>
                 <li>BANW_Nagisa_A_Student</li>
                 <li>BANW_Mika_A_Student</li>
-<li>BANW_Shiroko_C_Student</li>
+                <li>BANW_Shiroko_C_Student</li>
             </StudentList>
         </FESthreeStarPool>
         <!-- 普通三星池配置 -->
@@ -91,6 +91,10 @@
                 <li>BANW_Rumi_Student</li>
                 <li>BANW_Shun_Student</li>
                 <li>BANW_Saya_Student</li>
+                <li>BANW_Rena_Student</li>
+<li>BANW_Noa_A_Student</li>
+
+                <li>BANW_Fuyu_Student</li>
                 <li>BANW_Wakamo_A_Student</li>
                 <li>BANW_Mina_Student</li>
                 <li>BANW_Kanna_Student</li>
@@ -136,19 +140,19 @@
                 <li>BANW_Junko_Student</li>                      <!-- �的子 -->
                 <li>BANW_Airy_Student</li>
                 <li>BANW_Chise_Student</li>
-               <li>BANW_Hasumi_Student</li>
-               <li>BANW_Akari_Student</li>
-               <li>BANW_Kayako_Student</li>
+                <li>BANW_Hasumi_Student</li>
+                <li>BANW_Akari_Student</li>
+                <li>BANW_Kayako_Student</li>
                 <li>BANW_Fuuka_Student</li>
                 <li>BANW_Hanae_Student</li>
-                <li>BANW_Mari_Student</li>  
-                <li>BANW_Yuuka_Student</li> 
-                <li>BANW_Utaha_Student</li> 
-                <li>BANW_Akane_Student</li> 
-                <li>BANW_Momiji_Student</li> 
+                <li>BANW_Mari_Student</li>
+                <li>BANW_Yuuka_Student</li>
+                <li>BANW_Utaha_Student</li>
+                <li>BANW_Akane_Student</li>
+                <li>BANW_Momiji_Student</li>
                 <li>BANW_Kirino_Student</li>
-                <li>BANW_Tsubaki_Student</li> 
-                <li>BANW_Shizuko_Student</li>            
+                <li>BANW_Tsubaki_Student</li>
+                <li>BANW_Shizuko_Student</li>
             </StudentList>
         </twoStarPool>
 
@@ -173,7 +177,7 @@
                 <li>BANW_Fubuki_Student</li>
                 <li>BANW_Michiru_Student</li>
                 <li>BANW_Aoba_Student</li>
-<li>BANW_Chinatsu_Student</li>
+                <li>BANW_Chinatsu_Student</li>
             </StudentList>
         </oneStarPool>
     </BANWlLib.BaDef.Gacha>

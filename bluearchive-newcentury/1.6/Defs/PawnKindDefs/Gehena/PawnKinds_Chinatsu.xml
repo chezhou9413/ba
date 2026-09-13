@@ -19,6 +19,10 @@
 			<def>BANW_LevelTrait</def>
 			<severity>0.001</severity>
 		</li>
+		<li>
+			<def>BAWC_HediffDef_Chinatsu_B</def>
+			<severity>1</severity>
+		</li>
         </startingHediffs>
 		<backstoryFiltersOverride>
 			<li>
@@ -211,19 +215,32 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#FFBB00&gt;强化防御支援&lt;/color&gt;</label>
-                <description>被动技能:自身护甲值增加&lt;color=#DC143C&gt;17%&lt;/color&gt;</description>
+                <description>子技能:对我方全体学生造成护甲增加&lt;color=#DC143C&gt;17%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<ArmorRating_Sharp>0.17</ArmorRating_Sharp>
-		        <ArmorRating_Blunt>0.17</ArmorRating_Blunt>
-	            <ArmorRating_Heat>0.17</ArmorRating_Heat>
                 </statOffsets>
 				<statFactors>
-				<ArmorRating_Sharp>1.17</ArmorRating_Sharp>
-		        <ArmorRating_Blunt>1.17</ArmorRating_Blunt>
-	            <ArmorRating_Heat>1.17</ArmorRating_Heat>
 				</statFactors>
             </li>
         </degreeDatas>
 </TraitDef>
+
+<HediffDef>
+    <defName>BAWC_HediffDef_Chinatsu_B</defName>  <!-- 光环源状态定义名 -->
+    <label>强化防御支援</label>  <!-- 显示名称 -->
+	<defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <description>对我方全体学生造成护甲增加17%</description>
+    <hediffClass>HediffWithComps</hediffClass>  <!-- 使用带组件的 Hediff 类 -->
+    <isBad>false</isBad>  <!-- 非负面效果，不影响心情 -->
+    <initialSeverity>1</initialSeverity>  <!-- 初始严重度，1 表示光环生效 -->
+    <comps>
+      <li Class="BANWlLib.Auras.HediffCompProperties_FriendlyAura">  <!-- 友方光环组件：向范围内友军施加效果状态 -->
+        <effectHediff>BANW_HJ_Buff_A</effectHediff>  <!-- 被施加给范围内友军的 Hediff 定义名（实际提供搬运效果的状态） -->
+        <radius>40</radius>  <!-- 光环影响半径（格） -->
+        <severity>1</severity>  <!-- 施加给友军的效果严重度 -->
+        <includeSelf>true</includeSelf>  <!-- 是否对施法者自身生效 -->
+        <affectAnimals>false</affectAnimals>  <!-- 是否对动物生效 -->
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>

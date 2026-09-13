@@ -104,7 +104,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>构筑防火墙</AbilityTitle>
 				<AbilitySubtitle><![CDATA[构筑防火墙]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身疼痛感受降低<color=#00FFFF>17%</color>。]]>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成易燃性增加<color=#00FFFF>17%</color>。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

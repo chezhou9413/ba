@@ -75,6 +75,7 @@
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
 			<BAWC_TraitDef_Hoshiro>0</BAWC_TraitDef_Hoshiro>
 			<BAWC_TraitDef_Hoshiro_A_A>0</BAWC_TraitDef_Hoshiro_A_A>
+			<BAWC_TraitDef_Hoshiro_A_B>0</BAWC_TraitDef_Hoshiro_A_B>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
@@ -218,6 +219,23 @@
 			    <ArmorRating_Sharp>1.16</ArmorRating_Sharp>
 		        <ArmorRating_Blunt>1.16</ArmorRating_Blunt>
 	            <ArmorRating_Heat>1.16</ArmorRating_Heat>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+	
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hoshiro_A_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;海边的乐趣&lt;/color&gt;</label>
+                <description>子技能:自身EX技能效果持续期间自身cost回复力增加&lt;color=#DC143C&gt;20%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					
+                </statOffsets>
+				<statFactors>
 				</statFactors>
             </li>
         </degreeDatas>

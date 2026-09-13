@@ -2191,4 +2191,86 @@
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
 
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentFuyu</defName>
+		<title>特殊交易部（第5宿舍402室）</title>
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是狂猎艺术学院所属，作为非公认社团特殊交易部的营业以及技术担当。
+负责接收委托或者与委托人直接交涉，作为特殊交易部的窗口发挥着重要作用。虽然时常透露着自信满满的样子......一旦面对意料之外的状况，也会受到打击变得软弱</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryFuyu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNero_B</defName>
+		<title>C&amp;C</title> <!-- C&C  <![CDATA[&]]>-->
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年科技的特工组织——“C&amp;C”的部长。
+乍一看只是个在女仆装外面套了件刺绣夹克的小太妹，其实是千禧年任务执行能力最强的特工。
+她的代号00在整个千禧年已经成了必胜的象征。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNero_B</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNoa_A</defName>
+		<title>研讨会</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是千禧年科技学院理事会【研讨会】的秘书，为了享受安稳的休息换上了睡衣。
+平时淡于社交的秘书，休息日也总是安静的，但和研讨会成员们的相处时刻则是个例外。即使可爱的后辈与热情的发小不断产生误会，
+引发骚动，诺亚也只是默默地注视着这一切，带着微笑，记录着。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNoa_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentKurumi</defName>
+		<title>FOX小队</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是SRT特殊学院所属、FOX小队的斥候。代号「FOX3」。
+拥有出色的身体素质，现场应变能力极强。战斗特化型尖兵。容易意气用事，性格直率，但正因为此多次克服难关，立下战功。
+虽然很少提及，但对自己的体型怀有自卑感。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryKurumi</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentHasumi_B</defName>
+		<title>正义实现委员会</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是圣三一综合学园所属，作为茶会的护卫来到沙滩的正义实现委员会副委员长。
+秉着公私分明的原则，脸上虽然不露声色，内心却因为来到海边而暗自欢喜。说不定，她才是这次假期里最享受的人。
+多亏她的不懈努力，即使穿着泳装也完全不必担心......应该。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryHasumi_B</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentRena</defName>
+		<title>神秘学研究会（第4宿舍404室）</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是狂猎艺术学院所属，研究蕴藏在艺术中的神秘学的神秘学研究会的成员。
+偶然之中被分配进了第4宿舍404室，因此不得已参与起了神秘学研究会的活动。虽然本人坚称神秘学都是糊弄人的，
+但本人貌似在不知不觉中也陷入其中了。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryRena</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
 </Defs>

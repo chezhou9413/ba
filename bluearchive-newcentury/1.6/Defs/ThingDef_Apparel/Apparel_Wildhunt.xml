@@ -46,6 +46,52 @@
 			</tags>
         </apparel>
        </ThingDef>
+
+        <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Fuyu</defName>
+        <label>冬的衣服</label>
+        <description>冬的衣服</description>
+        <graphicData>
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Wildhunt/Fuyu/Apparel/Fuyu_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Fuyu</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
+
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Rena</defName>
+        <label>莱娜的衣服</label>
+        <description>莱娜的衣服</description>
+        <graphicData>
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Wildhunt/Rena/Apparel/Rena_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Rena</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
        
        
 

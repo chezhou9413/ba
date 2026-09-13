@@ -600,4 +600,50 @@
             </tags>
         </apparel>
     </ThingDef>
+        <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Nero_B</defName>
+        <label>妮露（制服）的衣服</label>
+        <description>妮露（制服）的衣服</description>
+        <graphicData>
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Millennium/Nero_B/Apparel/Nero_B_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Nero_B</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Noa_A</defName>
+        <label>诺亚的衣服</label>
+        <description>诺亚的衣服</description>
+        <graphicData>
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Millennium/Noa_A/Apparel/Noa_A_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Noa_A</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
 </Defs>

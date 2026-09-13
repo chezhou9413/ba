@@ -101,7 +101,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>战术辅助，开始</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成暴击伤害增加<color=#00FFFF>17%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

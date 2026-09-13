@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 后勤受益由地图自动维护，不直接通过普通技能或装备施加。 -->
+    <HediffDef>
+        <defName>BANW_HP_Buff_A</defName>
+        <label>生命值光环</label>
+        <description>生命值提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_HealthBonusMultiplier>0.17</BANW_HealthBonusMultiplier>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANW_ATK_Buff_A</defName>
+        <label>攻击力光环</label>
+        <description>攻击力提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+  
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_FinalDamageMultiplier>0.17</BANW_FinalDamageMultiplier>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANW_BG_Buff_A</defName>
+        <label>暴击抵抗率光环</label>
+        <description>暴击抵抗率提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_CriticalChanceResistance>0.17</BANW_CriticalChanceResistance>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANW_HJ_Buff_A</defName>
+        <label>护甲光环</label>
+        <description>护甲提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ArmorRating_Sharp>0.17</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.17</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.17</ArmorRating_Heat>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANW_BS_Buff_A</defName>
+        <label>暴击伤害光环</label>
+        <description>暴击伤害提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_CriticalDamage>0.17</BANW_CriticalDamage>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+     <HediffDef>
+        <defName>BANW_GT_Buff_A</defName>
+        <label>贯通克制率光环</label>
+        <description>贯通克制率提升30%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_AffinityBonus_Through>0.30</BANW_AffinityBonus_Through>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANW_BL_Buff_A</defName>
+        <label>暴击率光环</label>
+        <description>暴击率提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_CriticalChance>0.17</BANW_CriticalChance>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANW_SHF_Buff_A</defName>
+        <label>受回复率光环</label>
+        <description>受回复率提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_HealReceivedMultiplier>0.17</BANW_HealReceivedMultiplier>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+     <HediffDef>
+        <defName>BANW_FH_Buff_A</defName>
+        <label>易燃性光环</label>
+        <description>易燃性提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+  
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <Flammability>0.17</Flammability>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>BANW_SB_Buff_A</defName>
+        <label>闪避率光环</label>
+        <description>闪避率提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_Miss>0.17</BANW_Miss>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+    <HediffDef>
+        <defName>BANW_MZ_Buff_A</defName>
+        <label>命中率光环</label>
+        <description>命中率提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ShootingAccuracyPawn>17</ShootingAccuracyPawn>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+     <HediffDef>
+        <defName>BANW_BZ_Buff_A</defName>
+        <label>爆炸克制率光环</label>
+        <description>爆炸克制率提升30%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_AffinityBonus_Explosion>0.30</BANW_AffinityBonus_Explosion>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+     <HediffDef>
+        <defName>BANW_GS_Buff_A</defName>
+        <label>攻速光环</label>
+        <description>攻速提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <AimingDelayFactor>-0.17</AimingDelayFactor>
+                    <RangedCooldownFactor>-0.17</RangedCooldownFactor>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+     <HediffDef>
+        <defName>BANW_ZY_Buff_A</defName>
+        <label>治愈力光环</label>
+        <description>治愈力提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <BANW_HealBonusMultiplier>0.17</BANW_HealBonusMultiplier>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+     <HediffDef>
+        <defName>BANW_SJ_Buff_A</defName>
+        <label>受击抗性光环</label>
+        <description>受击抗性提升17%</description>
+        <defaultLabelColor>(255,255,0)</defaultLabelColor>
+        <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>10</maxSeverity>
+        <modExtensions>
+            <li Class="BANWlLib.Auras.FriendlyAuraEffectExtension">
+                <stackSeverity>false</stackSeverity>
+                <maximumSeverity>10</maximumSeverity>
+            </li>
+        </modExtensions>
+        <stages>
+            <li>
+                <statOffsets>
+                    <StaggerDurationFactor>-0.17</StaggerDurationFactor><!-- 受击踉跄时长 ×0（免疫踉跄） -->
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

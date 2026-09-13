@@ -219,24 +219,24 @@
                 <label>&lt;color=#FFA500&gt;最强的小个子女仆&lt;/color&gt;</label>
                 <description>{PAWN_nameDef}表面是穿着女仆装搭配刺绣夹克的不良少女，操着混混腔调、行事暴力直接，甚至会用冲锋枪威胁他人。但作为千年学园秘密组织「CC」的部长，她实则是代号「Double O」的顶级特工，拥有「千年最强战力」，被视为「胜利的象征」。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
-                <statOffsets>
-				<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
-		        <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
-	            <ArmorRating_Heat>0.5</ArmorRating_Heat>
-				<MeleeDodgeChance>20</MeleeDodgeChance>
-				<IncomingDamageFactor>-0.1</IncomingDamageFactor>
-				<MoveSpeed>5.80</MoveSpeed>
-				<Flammability>-0.6</Flammability>
-				<AimingDelayFactor>-0.80</AimingDelayFactor>
-				<CarryingCapacity>100</CarryingCapacity> 
-				<ShootingAccuracyPawn>30</ShootingAccuracyPawn>
+                <statOffsets><!-- 加法偏移：数值直接叠加到基础值上 -->
+				<ArmorRating_Sharp>0.5</ArmorRating_Sharp><!-- 锐器护甲 +0.5（+50%） -->
+		        <ArmorRating_Blunt>0.5</ArmorRating_Blunt><!-- 钝器护甲 +0.5（+50%） -->
+	            <ArmorRating_Heat>0.5</ArmorRating_Heat><!-- 热能护甲 +0.5（+50%） -->
+				<MeleeDodgeChance>20</MeleeDodgeChance><!-- 近战闪避几率 +20 -->
+				<IncomingDamageFactor>-0.1</IncomingDamageFactor><!-- 受到伤害倍率 -0.1（受伤降低 10%） -->
+				<MoveSpeed>5.80</MoveSpeed><!-- 移动速度 +5.8 格/秒 -->
+				<Flammability>-0.6</Flammability><!-- 易燃性 -0.6（更不易被点燃） -->
+				<AimingDelayFactor>-0.80</AimingDelayFactor><!-- 瞄准延迟 -0.8（基础 1.0，大幅加快瞄准） -->
+				<CarryingCapacity>100</CarryingCapacity> <!-- 负重上限 +100 -->
+				<ShootingAccuracyPawn>30</ShootingAccuracyPawn><!-- 射击精度 +30 -->
                 </statOffsets>
-				<statFactors>
-				<ShootingAccuracyPawn>2.0</ShootingAccuracyPawn>
-				<StaggerDurationFactor>0</StaggerDurationFactor>
-				<MeleeDamageFactor>5.5</MeleeDamageFactor>
-				<MeleeArmorPenetration>5.5</MeleeArmorPenetration>
-				<MeleeCooldownFactor>0.2</MeleeCooldownFactor>
+				<statFactors><!-- 乘法倍率：与计算后的数值相乘 -->
+				<ShootingAccuracyPawn>2.0</ShootingAccuracyPawn><!-- 射击精度 ×2 -->
+				<StaggerDurationFactor>0</StaggerDurationFactor><!-- 受击踉跄时长 ×0（免疫踉跄） -->
+				<MeleeDamageFactor>5.5</MeleeDamageFactor><!-- 近战伤害 ×5.5 -->
+				<MeleeArmorPenetration>5.5</MeleeArmorPenetration><!-- 近战护甲穿透 ×5.5 -->
+				<MeleeCooldownFactor>0.2</MeleeCooldownFactor><!-- 近战冷却 ×0.2（冷却缩短 80%） -->
 				</statFactors>
             </li>
         </degreeDatas>

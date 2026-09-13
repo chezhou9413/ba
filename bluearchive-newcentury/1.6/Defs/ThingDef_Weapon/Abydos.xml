@@ -1,6 +1,5 @@
-
 <Defs>
-  
+
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Hoshiro</defName>
     <label>荷鲁斯之眼</label>
@@ -25,13 +24,13 @@
       <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-     
+
     </equippedStatOffsets>
     <costList>
       <Steel>1</Steel>
     </costList>
     <recipeMaker>
-      
+
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -74,7 +73,7 @@
       <texPath>Projectile/Bullet_Hoshiro</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    
+
   </ThingDef>
 
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
@@ -101,13 +100,13 @@
       <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-     
+
     </equippedStatOffsets>
     <costList>
       <Steel>1</Steel>
     </costList>
     <recipeMaker>
-      
+
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -178,13 +177,13 @@
       <RangedWeapon_Cooldown>0.3</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-     
+
     </equippedStatOffsets>
     <costList>
       <Steel>1</Steel>
     </costList>
     <recipeMaker>
-      
+
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -255,13 +254,13 @@
       <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-     
+
     </equippedStatOffsets>
     <costList>
       <Steel>1</Steel>
     </costList>
     <recipeMaker>
-      
+
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -332,13 +331,13 @@
       <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-     
+
     </equippedStatOffsets>
     <costList>
       <Steel>1</Steel>
     </costList>
     <recipeMaker>
-      
+
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -378,21 +377,21 @@
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>90</speed>
       <extraDamages>
-      <li>
-        <def>BANC_Damage_guantong</def>
-        <amount>1</amount>
-      </li>
-    </extraDamages>
+        <li>
+          <def>BANC_Damage_guantong</def>
+          <amount>1</amount>
+        </li>
+      </extraDamages>
     </projectile>
     <graphicData>
-     <shaderType>MoteGlow</shaderType>
+      <shaderType>MoteGlow</shaderType>
       <drawSize>1.5</drawSize>
       <texPath>Projectile/Bullet_Nonomi</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
 
-    <!--星野-->
+  <!--星野-->
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Hoshiro_A</defName>
     <label>荷鲁斯之眼</label>
@@ -417,7 +416,7 @@
       <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-     <!-- <SocialImpact>-0.35</SocialImpact>-->
+      <!-- <SocialImpact>-0.35</SocialImpact>-->
     </equippedStatOffsets>
     <costList>
       <Steel>1</Steel><!--材料-->
@@ -441,7 +440,7 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
-     <comps>
+    <comps>
       <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
         <requiredPawnKindDefName>
           <li>BANW_Hoshiro_A</li>
@@ -466,7 +465,7 @@
       <texPath>Projectile/Bullet_Hoshiro_A</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    
+
   </ThingDef>
 
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
@@ -493,13 +492,13 @@
       <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-     
+
     </equippedStatOffsets>
     <costList>
       <Steel>1</Steel>
     </costList>
     <recipeMaker>
-      
+
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -546,7 +545,7 @@
     </graphicData>
   </ThingDef>
 
-    <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Hoshiro_B</defName>
     <label>荷鲁斯之眼</label>
     <description>星野喜欢用的简约风格霰弹枪。是星野操控的武装系统的核心部分。</description>
@@ -565,18 +564,18 @@
       <Mass>3.5</Mass>
       <AccuracyTouch>1</AccuracyTouch>
       <AccuracyShort>1</AccuracyShort>
-      <AccuracyMedium>0.8</AccuracyMedium>
-      <AccuracyLong>0.8</AccuracyLong>
-      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-     
+
     </equippedStatOffsets>
     <costList>
       <Steel>1</Steel>
     </costList>
     <recipeMaker>
-      
+
       <skillRequirements>
         <Crafting>8</Crafting>
       </skillRequirements>
@@ -584,11 +583,13 @@
     </recipeMaker>
     <verbs>
       <li>
+        <burstShotCount>6</burstShotCount>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>BANC_Bullet_Hoshiro_B</defaultProjectile>
-        <warmupTime>0.8</warmupTime>
+        <warmupTime>0.9</warmupTime>
         <range>17.9</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
         <soundCast>BANW_Wp_SG_At</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -608,7 +609,7 @@
     <label>荷鲁斯之眼子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <damageAmountBase>12</damageAmountBase>
+      <damageAmountBase>5</damageAmountBase>
       <stoppingPower>8</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>
@@ -619,7 +620,7 @@
       <texPath>Projectile/Bullet_Hoshiro_B</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    
+
   </ThingDef>
 
 </Defs>

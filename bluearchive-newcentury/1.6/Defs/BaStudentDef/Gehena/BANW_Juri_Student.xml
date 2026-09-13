@@ -104,7 +104,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>用餐时间到！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身生命值增加<color=#00FFFF>17%</color>。]]>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成生命值增加<color=#00FFFF>17%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

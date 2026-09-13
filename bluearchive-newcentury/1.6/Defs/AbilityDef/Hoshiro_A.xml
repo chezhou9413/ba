@@ -291,7 +291,19 @@
         <!-- 应用的健康状态 -->
         <hediff>BAWN_Hoshiro_A_EXX_buff_B</hediff>
       </li>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostRecoveryRate">
+        <rateOffset>0.2</rateOffset>
+      </li>
     </comps>
+    <stages>
+      <li>
+        <!-- 属性加成 -->
+        <statOffsets>
+          <BANW_FinalDamageMultiplier>0.39</BANW_FinalDamageMultiplier>
+          <BANW_AffinityBonus_Explosion>0.99</BANW_AffinityBonus_Explosion>
+        </statOffsets>
+      </li>
+    </stages>
     <!-- 是否为负面效果 -->
     <isBad>false</isBad>
   </HediffDef>

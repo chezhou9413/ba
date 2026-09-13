@@ -263,6 +263,28 @@
         "ProductName": "晴的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Nero_B",
+        "ProductDefName": "BANW_Nero_B_Proplevel",
+        "ProductName": "妮露（制服）的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Noa_A",
+        "ProductDefName": "BANW_Noa_A_Proplevel",
+        "ProductName": "诺亚（睡衣）的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
     }
     
 ]

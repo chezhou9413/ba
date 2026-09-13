@@ -12,6 +12,10 @@
 			<def>BANW_LevelTrait</def>
 			<severity>0.001</severity>
 		</li>
+		<li>
+			<def>BAWC_HediffDef_Satsuki_B</def>
+			<severity>1</severity>
+		</li>
         </startingHediffs>
 		<abilities>
         </abilities>
@@ -60,6 +64,7 @@
 			<BAWC_TraitDef_baofa>0</BAWC_TraitDef_baofa>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Satsuki_A>0</BAWC_TraitDef_Satsuki_A>
+			<BAWC_TraitDef_Satsuki_B>0</BAWC_TraitDef_Satsuki_B>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
@@ -207,4 +212,38 @@
             </li>
         </degreeDatas>
 </TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Satsuki_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;宣誓效忠万魔殿吧&lt;/color&gt;</label>
+                <description>子技能:对我方全体学生造成攻击力增加&lt;color=#DC143C&gt;17%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+
+<HediffDef>
+    <defName>BAWC_HediffDef_Satsuki_B</defName>  <!-- 光环源状态定义名 -->
+    <label>宣誓效忠万魔殿吧</label>  <!-- 显示名称 -->
+	<defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <description>对我方全体学生造成攻击力增加17%</description>
+    <hediffClass>HediffWithComps</hediffClass>  <!-- 使用带组件的 Hediff 类 -->
+    <isBad>false</isBad>  <!-- 非负面效果，不影响心情 -->
+    <initialSeverity>1</initialSeverity>  <!-- 初始严重度，1 表示光环生效 -->
+    <comps>
+      <li Class="BANWlLib.Auras.HediffCompProperties_FriendlyAura">  <!-- 友方光环组件：向范围内友军施加效果状态 -->
+        <effectHediff>BANW_ATK_Buff_A</effectHediff>  <!-- 被施加给范围内友军的 Hediff 定义名（实际提供搬运效果的状态） -->
+        <radius>40</radius>  <!-- 光环影响半径（格） -->
+        <severity>1</severity>  <!-- 施加给友军的效果严重度 -->
+        <includeSelf>true</includeSelf>  <!-- 是否对施法者自身生效 -->
+        <affectAnimals>false</affectAnimals>  <!-- 是否对动物生效 -->
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>

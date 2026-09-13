@@ -92,7 +92,7 @@
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>正义的气息</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身暴击率提升<color=#00FFFF>17%</color>]]>
+				<AbilityIntroduction><![CDATA[自身暴击率提升<color=#00FFFF>26%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -102,7 +102,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>正义的纽带</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身命中率提升<color=#00FFFF>17%</color>]]>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成命中率增加<color=#00FFFF>17%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

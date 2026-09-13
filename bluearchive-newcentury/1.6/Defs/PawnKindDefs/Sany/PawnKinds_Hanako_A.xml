@@ -156,7 +156,7 @@
                 </levelUpEffects>
                 <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
                 <levelUpSounds>
-                     <li>Hanako_levelup_A</li>
+                    <li>Hanako_levelup_A</li>
                     <li>Hanako_levelup_B</li>
 					<li>Hanako_levelup_C</li>
 					<li>Hanako_levelup_D</li>

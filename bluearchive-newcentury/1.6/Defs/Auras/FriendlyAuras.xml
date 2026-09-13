@@ -2,19 +2,19 @@
 <Defs>
   <!-- 后勤光环源：赋予角色此状态即可为附近友军持续提供搬运支持。 -->
   <HediffDef>
-    <defName>BANW_LogisticsAura</defName>
-    <label>后勤支援光环</label>
+    <defName>BANW_LogisticsAura</defName>  <!-- 光环源状态定义名 -->
+    <label>后勤支援光环</label>  <!-- 显示名称 -->
     <description>向8格内自身、同阵营成员和盟友持续提供后勤支持。离开范围或光环源失效后，支持效果自动消失。</description>
-    <hediffClass>HediffWithComps</hediffClass>
-    <isBad>false</isBad>
-    <initialSeverity>1</initialSeverity>
+    <hediffClass>HediffWithComps</hediffClass>  <!-- 使用带组件的 Hediff 类 -->
+    <isBad>false</isBad>  <!-- 非负面效果，不影响心情 -->
+    <initialSeverity>1</initialSeverity>  <!-- 初始严重度，1 表示光环生效 -->
     <comps>
-      <li Class="BANWlLib.Auras.HediffCompProperties_FriendlyAura">
-        <effectHediff>BANW_LogisticsAuraEffect</effectHediff>
-        <radius>8</radius>
-        <severity>1</severity>
-        <includeSelf>true</includeSelf>
-        <affectAnimals>true</affectAnimals>
+      <li Class="BANWlLib.Auras.HediffCompProperties_FriendlyAura">  <!-- 友方光环组件：向范围内友军施加效果状态 -->
+        <effectHediff>BANW_LogisticsAuraEffect</effectHediff>  <!-- 被施加给范围内友军的 Hediff 定义名（实际提供搬运效果的状态） -->
+        <radius>8</radius>  <!-- 光环影响半径（格） -->
+        <severity>1</severity>  <!-- 施加给友军的效果严重度 -->
+        <includeSelf>true</includeSelf>  <!-- 是否对施法者自身生效 -->
+        <affectAnimals>false</affectAnimals>  <!-- 是否对动物生效 -->
       </li>
     </comps>
   </HediffDef>

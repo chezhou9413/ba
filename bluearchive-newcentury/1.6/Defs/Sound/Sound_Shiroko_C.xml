@@ -2,7 +2,7 @@
 <Defs>
 
     <SoundDef>
-	<defName>Shiroko_C_levelup_A</defName>  <!--本文件报错，具体表现为语音无法正常应用加载-->
+	<defName>Shiroko_C_levelup_A</defName>  
 	<maxVoices>1</maxVoices>
   <context>MapOnly</context>  
 	<maxSimultaneous>1</maxSimultaneous>  

@@ -255,7 +255,7 @@
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 					<FoodPoisonChance>100</FoodPoisonChance>
-					<ToxicResistance>-100</ToxicResistance>
+					<ToxicResistance>100</ToxicResistance>
                 </statOffsets>
 				<statFactors>
 					<MaxNutrition>20</MaxNutrition>

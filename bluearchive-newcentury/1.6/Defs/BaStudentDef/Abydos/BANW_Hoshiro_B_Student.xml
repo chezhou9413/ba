@@ -24,7 +24,7 @@
 			
 			<CharacterStarCount>3</CharacterStarCount>
 			
-			<infotagImagePath1>ManuaUI/Type/坦克</infotagImagePath1>
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
 			
 			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
 			
@@ -88,11 +88,11 @@
 				<offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
-				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_EX</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
-				<AbilityTitle>近战战斗系统</AbilityTitle>
+				<AbilityTitle>战术视野扩大</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身攻击力与防御力增加<color=#00FFFF>16%</color>]]><!--不确定是不是这样改-->
+				<AbilityIntroduction><![CDATA[自身射程增加<color=#00FFFF>30</color>暴击伤害增加<color=#00FFFF>21%</color>]]><!--不确定是不是这样改-->
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
@@ -129,7 +129,7 @@
 			
 			<DefenseType>Explosion</DefenseType>
 			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
-			<PosType>Tank</PosType>
+			<PosType>Henc</PosType>
 			
 			<StarCont>3</StarCont>
 			<DraggableAudio>Common\Sounds\Fight\Hoshiro_B</DraggableAudio>

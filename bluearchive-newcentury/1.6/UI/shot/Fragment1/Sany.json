@@ -126,7 +126,7 @@
         "CurrencyImage": "Prop/Proplevel/Hanako_A",
         "ProductAmount": 1,
         "ProductImage": "Prop/Proplevel/Hanako_A",
-        "ProductDefName": "BANW_Hanako_Proplevel",
+        "ProductDefName": "BANW_Hanako_A_Proplevel",
         "ProductName": "花子(泳装)的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
@@ -326,6 +326,17 @@
         "ProductImage": "Prop/Proplevel/Turugi",
         "ProductDefName": "BANW_Turugi_Proplevel",
         "ProductName": "鹤城的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    } ,
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Hasumi_B",
+        "ProductDefName": "BANW_Hasumi_B_Proplevel",
+        "ProductName": "莲见（泳装）的神明文字",
         "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
         "ProductQuality": "low"
     } 

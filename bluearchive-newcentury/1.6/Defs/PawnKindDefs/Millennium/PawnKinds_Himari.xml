@@ -16,6 +16,10 @@
 			<def>BANW_LevelTrait</def>
 			<severity>0.001</severity>
 		</li>
+		<li>
+			<def>BAWC_HediffDef_Himari_B</def>
+			<severity>1</severity>
+		</li>
 		<li MayRequire="Ludeon.RimWorld.Biotech">
 			<def>MechlinkImplant</def>
 		</li>
@@ -74,6 +78,7 @@
 			<BAWC_TraitDef_qing>0</BAWC_TraitDef_qing>
 			<BAWC_TraitDef_Himari>0</BAWC_TraitDef_Himari>
 			<BAWC_TraitDef_Himari_A>0</BAWC_TraitDef_Himari_A>
+			<BAWC_TraitDef_Himari_B>0</BAWC_TraitDef_Himari_B>
 			
 		</forcedTraits>
 		<modExtensions>
@@ -243,5 +248,33 @@
             </li>
         </degreeDatas>
 </TraitDef>
+<TraitDef>
+        <defName>BAWC_TraitDef_Himari_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#FFBB00&gt;超天才病弱美少女黑客的真本事&lt;/color&gt;</label>
+                <description>子技能：全局COST回复力提高&lt;color=#DC143C&gt;20%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 
+	 <HediffDef>
+    <defName>BAWC_HediffDef_Himari_B</defName>
+    <label>超天才病弱美少女黑客的真本事</label>
+	<defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <description>全局COST回复力提高20%</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostRecoveryRate">
+        <rateOffset>0.2</rateOffset>
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>

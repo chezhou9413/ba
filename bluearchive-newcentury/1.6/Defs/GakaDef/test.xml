@@ -111,6 +111,9 @@
             <li>Gacha_Standard_Yuzu</li>
             <li>Gacha_Standard_Mina</li>
             <li>Gacha_Standard_Wakamo_A</li>
+            <li>Gacha_Standard_Fuyu</li>
+            <li>Gacha_Standard_Noa_A</li>
+            
         </StandardPool>
 
         <!-- ========================================================== -->
@@ -144,6 +147,9 @@
             <li>Gacha_Standard_Miku</li>
             <li>Gacha_Standard_Shizumi_A</li>
             <li>Gacha_Standard_Hoshiro_B</li>
+            <li>Gacha_Standard_Kurumi</li>
+            <li>Gacha_Standard_Hasumi_B</li>
+            <li>Gacha_Standard_Rena</li>
             
         </LimitedPool>
 
@@ -214,6 +220,7 @@
                     <li>Gacha_Standard_Hoshiro_A</li>
                     <li>Gacha_Standard_Wakamo</li>
                     <li>Gacha_Standard_Shiroko_C</li>
+                    <li>Gacha_Standard_Nero_B</li>
                 </forcedPool>
             </li>
         </SpecialQueues>

@@ -178,6 +178,11 @@
           <li>BANW_Seia_A</li>
           <li>BANW_Shiroko_C</li>
           <li>BANW_Hoshiro_B</li>
+          <li>BANW_Fuyu</li>
+          <li>BANW_Nero_B</li>
+          <li>BANW_Kurumi</li>
+          <li>BANW_Hasumi_B</li>
+
         </Race>
         <updateHediffSeverity>0.05</updateHediffSeverity>
         <batchUseCount>
@@ -368,6 +373,10 @@
           <li>BANW_Seia_A</li>
           <li>BANW_Shiroko_C</li>
           <li>BANW_Hoshiro_B</li>
+          <li>BANW_Fuyu</li>
+          <li>BANW_Nero_B</li>
+          <li>BANW_Kurumi</li>
+          <li>BANW_Hasumi_B</li>
         </Race>
         <updateHediffSeverity>0.5</updateHediffSeverity>
         <batchUseCount>
@@ -557,6 +566,10 @@
           <li>BANW_Seia_A</li>
           <li>BANW_Shiroko_C</li>
           <li>BANW_Hoshiro_B</li>
+          <li>BANW_Fuyu</li>
+          <li>BANW_Nero_B</li>
+          <li>BANW_Kurumi</li>
+          <li>BANW_Hasumi_B</li>
         </Race>
         <updateHediffSeverity>2.0</updateHediffSeverity>
         <batchUseCount>
@@ -746,6 +759,10 @@
           <li>BANW_Seia_A</li>
           <li>BANW_Shiroko_C</li>
           <li>BANW_Hoshiro_B</li>
+          <li>BANW_Fuyu</li>
+          <li>BANW_Nero_B</li>
+          <li>BANW_Kurumi</li>
+          <li>BANW_Hasumi_B</li>
         </Race>
         <updateHediffSeverity>10.0</updateHediffSeverity>
         <batchUseCount>

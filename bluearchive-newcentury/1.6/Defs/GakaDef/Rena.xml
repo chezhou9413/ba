@@ -2,20 +2,20 @@
 <Defs>
 <BANWlLib.BaDef.Gacha>
         <!-- 卡池唯一标识符 -->
-        <defName>Gacha_Standard_changzh1u</defName> 
+        <defName>Gacha_Standard_Rena</defName> 
         <!-- UI资源路径 -->
-        <gachaTexPath>UI/cardHead/Miku</gachaTexPath>          <!-- 卡池头图/封面图片 -->
-        <gachaVidPath>UI/Video/Miku.webm</gachaVidPath>        <!-- 卡池宣传视频 -->
+        <gachaTexPath>UI/cardHead/Rena</gachaTexPath>          <!-- 卡池头图/封面图片 -->
+        <gachaVidPath>UI/Video/Rena.webm</gachaVidPath>        <!-- 卡池宣传视频 -->
         <!-- 显示信息 -->
-        <gachaTitle>限定招募</gachaTitle>            <!-- 卡池标题 -->
-        <gachaUp>★3初音出现概率Up！\n首次奖励可获得[初音的神名文字x100]！</gachaUp>                 <!-- UP内容说明 -->
+        <gachaTitle>常驻招募</gachaTitle>            <!-- 卡池标题 -->
+        <gachaUp>★3莱娜出现概率Up！\n首次奖励可获得[莱娜的神名文字x100]！</gachaUp>                 <!-- UP内容说明 -->
         <gachaDesc>招募10次时，保证获得1名★2以上学生！\n※已招募过的学生會变换成神名文字碎片与该学生的神名文字。</gachaDesc>  <!-- 详细描述 -->
         <!-- UP三星池配置 -->
         <!-- Weight=70 表示在三星出货时，有70%概率从UP池抽取 -->
         <upthreeStarPool>
             <Weight>0.7</Weight>
             <StudentList>
-                <li>BANW_Miku_Student</li>
+                <li>BANW_Rena_Student</li>
             </StudentList>
         </upthreeStarPool>
         <!-- 普通三星池配置 -->
@@ -74,6 +74,9 @@
                 <li>BANW_Rumi_Student</li>
                 <li>BANW_Shun_Student</li>
                 <li>BANW_Saya_Student</li>
+                <li>BANW_Noa_A_Student</li>
+
+                <li>BANW_Fuyu_Student</li>
                 <li>BANW_Wakamo_A_Student</li>
                 <li>BANW_Mina_Student</li>
                 <li>BANW_Kanna_Student</li>

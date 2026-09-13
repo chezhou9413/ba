@@ -183,4 +183,51 @@
             </tags>
         </apparel>
     </ThingDef> 
+
+        <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Hoshiro_Bag</defName>
+        <label>梦的防爆盾牌</label>
+        <description>梦前辈的遗物</description>
+        <graphicData>
+            <texPath>Pawns/Abydos/Hoshiro_B/Apparel/Hoshiro_Bag</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <equippedStatOffsets>
+            <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.20</ArmorRating_Heat>
+		</equippedStatOffsets>
+        <apparel>
+            <wornGraphicData>
+                <renderUtilityAsPack>true</renderUtilityAsPack>
+            </wornGraphicData>
+            <wornGraphicPath>Pawns/Abydos/Hoshiro_B/Apparel/Hoshiro_Bag_Apparel</wornGraphicPath>
+            <bodyPartGroups Inherit="False">
+                <li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>FullHead</li> 
+				<li>Feet</li>
+				<li>Waist</li>
+				<li>Hands</li>
+            </bodyPartGroups>
+            <layers Inherit="False">
+                <li>Belt</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Hoshiro_Bag</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+        <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Hoshiro_B</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+    </ThingDef>
 </Defs>

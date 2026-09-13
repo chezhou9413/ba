@@ -19,6 +19,10 @@
 			<def>BANW_LevelTrait</def>
 			<severity>0.001</severity>
 		</li>
+		<li>
+			<def>BANW_HediffDef_Niya</def>
+			<severity>1</severity>
+		</li>
         </startingHediffs>
 		<abilities>
 		</abilities>
@@ -89,6 +93,7 @@
 			<BAWC_TraitDef_zhendong>0</BAWC_TraitDef_zhendong>
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Niya_A>0</BAWC_TraitDef_Niya_A>
+			<BAWC_TraitDef_Niya_B>0</BAWC_TraitDef_Niya_B>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
@@ -232,5 +237,35 @@
             </li>
         </degreeDatas>
     </TraitDef>
+	
+<TraitDef>
+        <defName>BAWC_TraitDef_Niya_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;急急如律令&lt;/color&gt;</label>
+                <description>子技能：全局COST回复力提高&lt;color=#DC143C&gt;20%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+	 <HediffDef>
+    <defName>BANW_HediffDef_Niya</defName>
+    <label>急急如律令</label>
+	<defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <description>全局COST回复力提高20%</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostRecoveryRate">
+        <rateOffset>0.2</rateOffset>
+      </li>
+    </comps>
+  </HediffDef>
 	
 </Defs>
