@@ -354,6 +354,8 @@ namespace BANWlLib.BattleSystem
             ProjectileBattleData data = new ProjectileBattleData
             {
                 weaponBaseAttack = projectileDef.projectile?.GetDamageAmount(null) ?? 0f,
+                useBattleStats = extension?.useBattleStats ?? true,
+                basePower = extension?.basePower ?? 100f,
                 attackPowerRatio = attackPowerRatio >= 0f ? attackPowerRatio : extension?.attackPowerRatio ?? 0f,
                 baseMasteryMultiplier = extension?.baseMasteryMultiplier ?? 1f,
                 shieldPowerRatio = extension?.shieldPowerRatio ?? 0f,

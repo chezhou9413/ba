@@ -5,6 +5,9 @@ namespace BANWlLib.BattleSystem
     // 统一战斗动作配置，负责描述一次伤害、治疗或附加状态效果的可配置参数。
     public class BattleActionConfig : IExposable
     {
+        public bool useBattleStats = true;
+        public float basePower = 100f;
+        public BattleShieldSource shieldSource = BattleShieldSource.HealPower;
         public float attackPowerRatio = 0f;
         // 本次动作指定的武器基础攻击力，0 表示由施法者当前主武器解析。
         public float weaponBaseAttack = 0f;
@@ -35,8 +38,11 @@ namespace BANWlLib.BattleSystem
         public float previewWeaponBaseAttack = 0f;
 
         // 保存和读取战斗动作配置，负责支持场地控制器等可存档对象。
-        public void ExposeData()
+        public virtual void ExposeData()
         {
+            Scribe_Values.Look(ref useBattleStats, "useBattleStats", true);
+            Scribe_Values.Look(ref basePower, "basePower", 100f);
+            Scribe_Values.Look(ref shieldSource, "shieldSource", BattleShieldSource.HealPower);
             Scribe_Values.Look(ref attackPowerRatio, "attackPowerRatio", 0f);
             Scribe_Values.Look(ref weaponBaseAttack, "weaponBaseAttack", 0f);
             Scribe_Values.Look(ref baseMasteryMultiplier, "baseMasteryMultiplier", 1f);

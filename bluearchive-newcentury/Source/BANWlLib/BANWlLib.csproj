@@ -147,6 +147,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Skills\**\*.cs" />
     <Compile Include="BaClass\PendingRotatedOffsetMote.cs" />
     <Compile Include="Auras\Definitions\HediffCompProperties_FriendlyAura.cs" />
     <Compile Include="Auras\Definitions\FriendlyAuraEffectExtension.cs" />

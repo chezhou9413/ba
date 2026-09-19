@@ -1,4 +1,4 @@
-﻿using BANWlLib.mainUI.Mission.GameComp;
+using BANWlLib.mainUI.Mission.GameComp;
 using HarmonyLib;
 using RimWorld;
 using System;
@@ -11,11 +11,13 @@ using Verse;
 
 namespace BANWlLib.pache
 {
+    //任务免死入口，负责保护活动任务中指定的角色。
     public class Pawn_disDaed
     {
         public static GameComp_TaskQuest comp_TaskQuest;
         [HarmonyPatch(typeof(Pawn), "Kill")]
         [HarmonyPatch(new Type[] { typeof(DamageInfo?), typeof(Hediff) })]
+        //任务死亡保护补丁，负责恢复任务角色必要部位并使其暂时倒地。
         public static class PreventDeathPatch
         {
             private static readonly MethodInfo MakeDownedMethod2 = AccessTools.Method(
@@ -29,8 +31,12 @@ namespace BANWlLib.pache
                 new Type[] { typeof(DamageInfo?), typeof(Hediff), typeof(HediffDef) }
             );
 
+            //按任务保护与特殊技能强制死亡规则决定是否允许死亡。
             public static bool Prefix(Pawn __instance, [HarmonyArgument("dinfo")] DamageInfo? dinfo, [HarmonyArgument("exactCulprit")] Hediff exactCulprit)
             {
+                //特殊技能层数耗尽的死亡属于明确结算，不进入任务免死恢复。
+                if (Skills.Hediff_SpecialSkillState.Find(__instance, Skills.SpecialSkillRole.Shiroko)?.forceDeath == true)
+                    return true;
                 if (!IsUndyingTarget(__instance))
                 {
                     return true;
@@ -45,12 +51,12 @@ namespace BANWlLib.pache
                 {
                     if (MakeDownedMethod3 != null)
                     {
-                        // MakeDowned(DamageInfo? dinfo, Hediff hediff, HediffDef cause)
+                        //通过包含原因状态的接口使角色倒地。
                         MakeDownedMethod3.Invoke(__instance.health, new object[] { dinfo, exactCulprit, null });
                     }
                     else if (MakeDownedMethod2 != null)
                     {
-                        // MakeDowned(DamageInfo? dinfo, Hediff hediff)
+                        //通过伤害和状态参数使角色倒地。
                         MakeDownedMethod2.Invoke(__instance.health, new object[] { dinfo, exactCulprit });
                     }
                     else
@@ -99,6 +105,7 @@ namespace BANWlLib.pache
 
                 return false; // 阻止原始的Kill方法执行
             }
+            //判断角色是否登记在当前任务的免死集合中。
             private static bool IsUndyingTarget(Pawn p)
             {
                 if (Current.Game == null) return false;
@@ -106,6 +113,7 @@ namespace BANWlLib.pache
                 if (comp == null || comp.NoDie == null) return false;
                 return comp.NoDie.Contains(p);
             }
+            //恢复任务免死角色丢失的必要生命器官。
             private static void RestoreVitalParts(Pawn p)
             {
                 var hediffSet = p.health.hediffSet;
@@ -118,6 +126,7 @@ namespace BANWlLib.pache
                     }
                 }
             }
+            //将达到致死阈值的状态降低到可存活范围。
             private static void ReduceLethalHediffSeverity(Pawn p)
             {
                 var hediffs = p.health.hediffSet.hediffs;
@@ -130,6 +139,7 @@ namespace BANWlLib.pache
                     }
                 }
             }
+            //判断身体部位是否承担意识、循环或呼吸职责。
             private static bool IsVitalPart(BodyPartRecord part)
             {
                 if (part == null) return false;

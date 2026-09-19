@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 运行状态与大亢奋使用独立实例，数值通过当前版本存档保存。 -->
+  <HediffDef>
+    <defName>BANW_SpecialSkillRuntime</defName><label>测试新技能状态</label>
+    <description>记录角色特殊技能的阶段、层数、剩余命中次数和伤害蓄积。选中此状态可查看当前技能进度。</description>
+    <hediffClass>BANWlLib.Skills.Hediff_SpecialSkillState</hediffClass>
+    <isBad>false</isBad><initialSeverity>1</initialSeverity><everCurableByItem>false</everCurableByItem>
+  </HediffDef>
+  <HediffDef>
+    <defName>BANW_SpecialExMechanism</defName><label>大亢奋</label>
+    <description>在持续期间提高EX技能的伤害倍率。妮露自身的大亢奋结束时，二阶段EX与锐气层数一并重置。</description>
+    <hediffClass>BANWlLib.Skills.ExMechanismBuff</hediffClass>
+    <isBad>false</isBad><initialSeverity>1</initialSeverity>
+  </HediffDef>
+  <HediffDef>
+    <defName>BANW_SpecialRioBuff</defName><label>莉音攻击支援</label>
+    <description>受到莉音的攻击支援，暂时提高攻击力。</description>
+    <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass><isBad>false</isBad><initialSeverity>1</initialSeverity>
+    <stages><li><statOffsets><BANW_FinalDamageMultiplier>0.5</BANW_FinalDamageMultiplier></statOffsets></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>BANW_SpecialHoshinoBuff</defName><label>星野坦克形态增益</label>
+    <description>星野抵达坦克EX的指定位置后暂时提高攻击力。持续时间结束或切换形态时解除。</description>
+    <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass><isBad>false</isBad><initialSeverity>1</initialSeverity>
+    <stages><li><statOffsets><BANW_FinalDamageMultiplier>1.56</BANW_FinalDamageMultiplier></statOffsets></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>BANW_SpecialHoshinoCount</defName><label>星野二十五次命中状态</label>
+    <description>星野的坦克普通技能状态，每次有效普攻命中消耗一次，次数耗尽或切换形态时解除。剩余次数可在特殊技能状态中查看。</description>
+    <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass><isBad>false</isBad><initialSeverity>1</initialSeverity>
+    <!-- 在此填写需要的属性加成，计数归零由角色技能移除状态。 -->
+    <stages><li><statOffsets /></li></stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>BANW_SpecialHoshinoShield</defName><label>星野个人护盾</label>
+    <description>星野坦克EX提供的个人护盾，吸收受到的攻击。护盾耗尽、持续时间结束或切换形态时解除。</description>
+    <hediffClass>HediffWithComps</hediffClass><isBad>false</isBad><initialSeverity>1</initialSeverity>
+    <comps><li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleShield" /></comps>
+  </HediffDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANW_SpecialSkillBullet</defName><label>测试技能弹丸</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData><texPath>Projectile/Bullet_Nero</texPath><graphicClass>Graphic_Single</graphicClass><shaderType>MoteGlow</shaderType><drawSize>(0.4,0.8)</drawSize></graphicData>
+    <projectile><damageDef>BANC_Damage_shenmi</damageDef><damageAmountBase>1</damageAmountBase><speed>70</speed></projectile>
+  </ThingDef>
+  <ThingDef ParentName="PawnFlyerBase">
+    <defName>BANW_SpecialHoshinoFlyer</defName><label>星野技能位移</label>
+    <thingClass>BANWlLib.Skills.HoshinoMovementFlyer</thingClass>
+    <pawnFlyer><flightSpeed>12</flightSpeed><workerClass>PawnFlyerWorker</workerClass><flightDurationMin>0.1</flightDurationMin><heightFactor>0</heightFactor></pawnFlyer>
+  </ThingDef>
+  <ThingDef>
+    <defName>BANW_SpecialKeiField</defName><label>凯伊测试增益场地</label>
+    <thingClass>BANWlLib.BattleSystem.Thing_BattleFieldController</thingClass>
+    <category>Mote</category><drawerType>MapMeshOnly</drawerType><tickerType>Normal</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer><useHitPoints>false</useHitPoints><selectable>false</selectable>
+    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>UI/StarIcon</texPath><drawSize>0.01</drawSize></graphicData>
+    <modExtensions><li Class="BANWlLib.BattleSystem.BattleFieldControllerExtension">
+      <durationTicks>1500</durationTicks><intervalTicks>30</intervalTicks><radius>4.9</radius>
+      <useCasterSnapshot>true</useCasterSnapshot>
+      <actions><li><affectHostile>false</affectHostile><affectFriendly>true</affectFriendly><triggerHediff>BAWN_Kei_buff</triggerHediff></li></actions>
+    </li></modExtensions>
+  </ThingDef>
+</Defs>

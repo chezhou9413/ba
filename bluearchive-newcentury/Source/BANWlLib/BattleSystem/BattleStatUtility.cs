@@ -9,6 +9,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
+    //统一战斗公式工具，负责解析角色属性并执行伤害、治疗和护盾结算。
     public static class BattleStatUtility
     {
         private static DamageAffinityMatrixDef cachedAffinityMatrix;
@@ -22,6 +23,8 @@ namespace BANWlLib.BattleSystem
         // 获取学生初始生命值，负责从 PawnKindDef 读取生命值公式的基础乘算项。
         public static float GetInitialHealth(Pawn pawn)
         {
+            float formHealth = Skills.HoshinoSkills.BaseHealth(pawn);
+            if (formHealth >= 0f) return formHealth;
             return GetBaseStatExtension(pawn)?.initialHealth ?? 0f;
         }
 
@@ -169,6 +172,7 @@ namespace BANWlLib.BattleSystem
             return 0f;
         }
 
+        //计算叠层状态对指定战斗属性的当前加值。
         public static float GetAdditionalBattleStatOffset(Pawn pawn, StatDef statDef)
         {
             if (pawn?.health?.hediffSet?.hediffs == null || statDef == null)
@@ -267,6 +271,8 @@ namespace BANWlLib.BattleSystem
         // 获取武器初始攻击力，负责读取当前主武器默认子弹的原始伤害。
         public static float GetWeaponBaseAttack(Pawn pawn)
         {
+            float formAttack = Skills.HoshinoSkills.BaseAttack(pawn);
+            if (formAttack >= 0f) return formAttack;
             ThingWithComps primary = pawn?.equipment?.Primary;
             ThingDef projectileDef = GetPrimaryProjectileDef(pawn);
             if (projectileDef?.projectile == null)
@@ -286,6 +292,8 @@ namespace BANWlLib.BattleSystem
         // 获取角色自身攻击力，负责按指定武器初始攻击力结算普通攻击和技能伤害基数。
         public static float GetFinalAttackPower(Pawn pawn, float weaponBaseAttack)
         {
+            float formAttack = Skills.HoshinoSkills.BaseAttack(pawn);
+            if (formAttack >= 0f) weaponBaseAttack = formAttack;
             if (pawn == null)
             {
                 return 0f;
@@ -434,7 +442,7 @@ namespace BANWlLib.BattleSystem
             float multiplier = pawn.GetStatValue(BattleStatDefOf.BANW_ExSkillMultiplier) +
                                GetBaseExSkillMultiplierOffset(pawn) +
                                GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_ExSkillMultiplier);
-            return Mathf.Max(0f, multiplier);
+            return Mathf.Max(0f, multiplier) * Skills.ExMechanismBuff.Factor(pawn);
         }
 
         // 获取本次动作的 EX 技能倍率，负责在普通动作和 EX 动作之间选择正确倍率。
@@ -453,6 +461,7 @@ namespace BANWlLib.BattleSystem
             return GetExSkillMultiplier(instigator as Pawn);
         }
 
+        //保存施放瞬间的攻击、治疗、暴击和克制属性。
         public static BattleCasterSnapshot CreateSnapshot(Pawn pawn)
         {
             if (pawn == null)
@@ -481,11 +490,19 @@ namespace BANWlLib.BattleSystem
             };
         }
 
+        //按请求选择BA、独立基数或已确定金额并构造伤害结果。
         public static BattleDamageResult BuildDamageResult(BattleDamageRequest request)
         {
             BattleDamageResult result = new BattleDamageResult();
             if (request == null)
             {
+                return result;
+            }
+
+            if (request.resolvedAmount >= 0f || !request.useBattleStats)
+            {
+                result.finalAmount = request.resolvedAmount >= 0f ? request.resolvedAmount :
+                    Mathf.Max(0f, request.basePower * (request.isNormalAttack ? 1f : request.attackPowerRatio) * request.mechanismMultiplier);
                 return result;
             }
 
@@ -514,7 +531,7 @@ namespace BANWlLib.BattleSystem
             result.exSkillMultiplier = GetExSkillMultiplier(request.instigator, request.snapshot, request.isExSkill);
             amount *= result.exSkillMultiplier;
 
-            result.finalAmount = Mathf.Max(0f, amount);
+            result.finalAmount = Mathf.Max(0f, amount * request.mechanismMultiplier);
             return result;
         }
 
@@ -545,6 +562,7 @@ namespace BANWlLib.BattleSystem
             return GetWeaponBaseAttack(casterPawn);
         }
 
+        //计算治疗基础金额与目标受疗修正。
         public static BattleHealResult BuildHealResult(BattleHealRequest request)
         {
             BattleHealResult result = new BattleHealResult();
@@ -555,7 +573,11 @@ namespace BANWlLib.BattleSystem
 
             Pawn casterPawn = request.instigator as Pawn;
             float amount = 0f;
-            if (request.snapshot != null)
+            if (!request.useBattleStats)
+            {
+                amount = Mathf.Max(0f, request.basePower * request.healPowerRatio);
+            }
+            else if (request.snapshot != null)
             {
                 if (request.healPowerRatio > 0f)
                 {
@@ -577,6 +599,7 @@ namespace BANWlLib.BattleSystem
             return result;
         }
 
+        //执行统一伤害并在原版伤害期间保留事件来源。
         public static void ApplyDamage(BattleDamageRequest request)
         {
             if (request == null || request.target == null || request.damageDef == null)
@@ -600,9 +623,11 @@ namespace BANWlLib.BattleSystem
                 DamageInfo.SourceCategory.ThingOrUnknown,
                 request.target,
                 instigatorGuilty);
-            request.target.TakeDamage(damageInfo);
+            using (Skills.SpecialDamageScope.Enter(request))
+                request.target.TakeDamage(damageInfo);
         }
 
+        //按治疗金额恢复可治疗伤口并显示实际治疗结果。
         public static BattleHealResult ApplyHealing(BattleHealRequest request)
         {
             BattleHealResult result = BuildHealResult(request);
@@ -645,7 +670,9 @@ namespace BANWlLib.BattleSystem
                 return result;
             }
 
-            float healPower = request.snapshot != null ? request.snapshot.healPower : GetFinalHealPower(request.instigator as Pawn);
+            float healPower = !request.useBattleStats || request.source == BattleShieldSource.Independent ? request.basePower :
+                request.source == BattleShieldSource.MaxHealth ? Skills.SpecialHealthUtility.MaximumHealth(request.instigator as Pawn) :
+                request.snapshot != null ? request.snapshot.healPower : GetFinalHealPower(request.instigator as Pawn);
             result.finalAmount = Mathf.Max(0f, healPower * Mathf.Max(0f, request.shieldPowerRatio));
             result.isCrit = false;
             result.exSkillMultiplier = 1f;
@@ -735,6 +762,8 @@ namespace BANWlLib.BattleSystem
                     instigator = instigator,
                     target = target,
                     damageDef = action.damageDef,
+                    useBattleStats = action.useBattleStats,
+                    basePower = action.basePower,
                     weaponBaseAttack = action.weaponBaseAttack,
                     attackPowerRatio = action.attackPowerRatio,
                     baseMasteryMultiplier = action.baseMasteryMultiplier,
@@ -755,6 +784,9 @@ namespace BANWlLib.BattleSystem
                     instigator = instigator,
                     target = shieldTarget,
                     shieldPowerRatio = action.shieldPowerRatio,
+                    useBattleStats = action.useBattleStats,
+                    basePower = action.basePower,
+                    source = action.shieldSource,
                     shieldHediffDef = action.shieldHediffDef,
                     snapshot = snapshot
                 });
@@ -766,6 +798,8 @@ namespace BANWlLib.BattleSystem
                     instigator = instigator,
                     target = pawnTarget,
                     healPowerRatio = action.healPowerRatio,
+                    useBattleStats = action.useBattleStats,
+                    basePower = action.basePower,
                     canCrit = action.canCrit,
                     alwaysShowHealText = action.alwaysShowHealText,
                     allowPermanentInjuryHealing = action.allowPermanentInjuryHealing,
@@ -847,6 +881,7 @@ namespace BANWlLib.BattleSystem
             return caster?.Faction != null && target?.Faction != null && target.Faction == caster.Faction;
         }
 
+        //根据攻击与防御类型查询克制矩阵及额外克制加成。
         public static float GetAffinityMultiplier(Thing instigator, Thing target, BattleCasterSnapshot snapshot = null)
         {
             DamageAffinityMatrixDef matrix = GetAffinityMatrix();
@@ -894,6 +929,7 @@ namespace BANWlLib.BattleSystem
             return matrix.defaultMultiplier;
         }
 
+        //取得当前战斗使用的属性克制矩阵。
         public static DamageAffinityMatrixDef GetAffinityMatrix()
         {
             if (cachedAffinityMatrix == null)
@@ -904,6 +940,7 @@ namespace BANWlLib.BattleSystem
             return cachedAffinityMatrix;
         }
 
+        //解析学生配置的攻击属性类型。
         public static damageType? TryGetDamageType(Pawn pawn)
         {
             if (pawn == null)
@@ -915,6 +952,7 @@ namespace BANWlLib.BattleSystem
             return ParseConfiguredDamageType(pawn, GetBaseStatExtension(pawn)?.damageType, "damageType");
         }
 
+        //解析学生配置的防御属性类型。
         public static damageType? TryGetDefenseType(Pawn pawn)
         {
             if (pawn == null)
@@ -1010,6 +1048,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
+        //按永久伤口规则筛选并整理可恢复伤口。
         private static List<Hediff_Injury> GetHealableInjuries(Pawn pawn, bool allowPermanent)
         {
             return pawn.health.hediffSet.hediffs
