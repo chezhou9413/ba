@@ -1,4 +1,5 @@
-﻿using BANWlLib.BANWGamecomp;
+using BANWlLib.Dev.Menus;
+using BANWlLib.BANWGamecomp;
 using BANWlLib.mainUI.Gaka;
 using LudeonTK;
 using RimWorld;
@@ -11,9 +12,11 @@ using Verse;
 
 namespace BANWlLib.Dev
 {
+    //提供抽卡结果控制与招募点数调整操作。
     public static class GachaDebugActions
     {
-        [DebugAction("BA", "抽卡必出三星", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.Playing)]
+        //切换抽卡必出三星状态并向玩家显示当前状态。
+        [BADebugAction("抽卡与招募", "抽卡必出三星", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.Playing)]
         private static void ToggleGuarantee3Star()
         {
             GachaSystem.DebugGuarantee3Star = !GachaSystem.DebugGuarantee3Star;
@@ -21,7 +24,8 @@ namespace BANWlLib.Dev
             Messages.Message($"抽卡必出三星: {status}", MessageTypeDefOf.NeutralEvent, false);
         }
 
-        [DebugAction("BA", "增加100点招募点数", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.Playing)]
+        //向当前存档增加一百点招募点数。
+        [BADebugAction("抽卡与招募", "增加100点招募点数", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.Playing)]
         private static void addpoit()
         {
             Gamecomp_gakaAction gamecomp_Gaka = Current.Game.GetComponent<Gamecomp_gakaAction>();

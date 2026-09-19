@@ -1,0 +1,38 @@
+ManifestFileVersion: 0
+CRC: 1759897429
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4e27fccafdb4a11895a8088c6c79c04a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 4e27fccafdb4a11895a8088c6c79c04a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u5766\u514B.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u8D2F\u901A.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u8F93\u51FA.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u6CBB\u7597.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u8F7D\u5177\u652F\u63F4.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u590D\u5408\u88C5\u7532.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u652F\u63F4.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u7206\u53D1.png"
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/Assault.png
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u4E2D\u6392.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u524D\u6392.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u632F\u52A8.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u795E\u79D8.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u91CD\u88C5\u7532.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u7279\u6B8A\u88C5\u7532.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u5F39\u529B\u88C5\u7532.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u8F85\u52A9.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u8F7B\u88C5\u7532.png"
+- "Assets/BAUIImages/Common/UIAssets/ManuaUI/Type/\u540E\u6392.png"
+Dependencies: []

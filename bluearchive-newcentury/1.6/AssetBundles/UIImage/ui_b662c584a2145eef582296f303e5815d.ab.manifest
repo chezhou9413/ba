@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2900647927
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: acf798a528c62d38c1e17e6cdee9c0b3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: acf798a528c62d38c1e17e6cdee9c0b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Abydos.png
+Dependencies: []

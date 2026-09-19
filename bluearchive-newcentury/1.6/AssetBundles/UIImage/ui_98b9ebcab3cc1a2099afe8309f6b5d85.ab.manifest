@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1413002181
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d1526cf621847a57cfe1e6ba9dab583c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d1526cf621847a57cfe1e6ba9dab583c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_CH0066_Collection.png
+Dependencies: []

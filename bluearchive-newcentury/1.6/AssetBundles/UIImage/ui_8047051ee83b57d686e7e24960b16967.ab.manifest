@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1278569430
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 40cf7e610ec929c1e71b183f68ec947d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 40cf7e610ec929c1e71b183f68ec947d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Ayane.png
+Dependencies: []

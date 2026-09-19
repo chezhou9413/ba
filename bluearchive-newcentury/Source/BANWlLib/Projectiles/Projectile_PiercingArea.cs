@@ -74,6 +74,7 @@ namespace BANWlLib.Projectiles
                 return;
             }
 
+            Vector3 previousExactPosition = ExactPosition;
             ticksToImpact -= delta;
             if (!ExactPosition.InBounds(Map))
             {
@@ -84,6 +85,7 @@ namespace BANWlLib.Projectiles
             }
 
             Vector3 newExactPosition = ExactPosition;
+            if (Skills.HoshinoInterceptor.TryIntercept(this, previousExactPosition, newExactPosition)) return;
             Position = newExactPosition.ToIntVec3();
             TickFlightEffecter();
             TickDamage(delta);
@@ -459,6 +461,8 @@ namespace BANWlLib.Projectiles
         {
             return new BattleActionConfig
             {
+                useBattleStats = Extension?.useBattleStats ?? true,
+                basePower = Extension?.basePower ?? 100f,
                 attackPowerRatio = Extension?.attackPowerRatio ?? 0f,
                 weaponBaseAttack = Mathf.Max(0f, def?.projectile?.GetDamageAmount(null) ?? 0f),
                 baseMasteryMultiplier = Extension?.baseMasteryMultiplier ?? 1f,

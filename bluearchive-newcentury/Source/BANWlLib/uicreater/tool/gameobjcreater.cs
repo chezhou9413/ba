@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using MyCoolMusicMod;
 using RimWorld;
 using System;
@@ -15,8 +15,10 @@ using Verse;
 using Verse.AI;
 namespace newpro
 {
+    //创建抽卡结算与点数商店控件，绑定显示数据及交互行为。
     public class gameobjcreater
     {
+        //生成单次或十次抽卡的结果控件，按可见性加载头像。
         public static void carddataspwn(GameObject petui,string imagepath)
         {
             GameObject one = UiMapData.shilianjiesuan.transform.Find("one").gameObject;       
@@ -39,15 +41,7 @@ namespace newpro
                 one.SetActive(true);
                 if (UiMapData.ImagraceMap.TryGetValue(UiMapData.carddata[0], out string raceimage) && !string.IsNullOrEmpty(raceimage))
                 {
-                    Sprite sprite = imgcvT2d.LoadSpriteFromFile(raceimage);
-                    if (sprite != null)
-                    {
-                        Image image = one.GetComponentInChildren<Image>();
-                        if (image != null)
-                        {
-                            image.sprite = sprite;
-                        }
-                    }
+                    imgcvT2d.SetImage(one.GetComponentInChildren<Image>(), raceimage);
                 }
             }
             else if (UiMapData.carddata.Count == 10)
@@ -61,15 +55,7 @@ namespace newpro
                     childInstance.transform.SetParent(list.transform, false);
                     if (UiMapData.ImagraceMap.TryGetValue(item, out string raceimage) && !string.IsNullOrEmpty(raceimage))
                     {
-                        Sprite sprite = imgcvT2d.LoadSpriteFromFile(raceimage);
-                        if (sprite != null)
-                        {
-                            Image image = childInstance.GetComponentInChildren<Image>();
-                            if (image != null)
-                            {
-                                image.sprite = sprite;
-                            }
-                        }
+                        imgcvT2d.SetImage(childInstance.GetComponentInChildren<Image>(), raceimage);
                     }
                 }
             }
@@ -90,6 +76,7 @@ namespace newpro
 
         }
 
+        //定位抽卡面板并刷新角色信息控件。
         public static void UIBodychek(string defname)
         {
             GameObject BauiUI = GameObject.Find("BauiUI");
@@ -148,6 +135,7 @@ namespace newpro
             Text_dexshow.text = uIbody.dexshow;
         }
 
+        //根据点数商店配置生成条目并绑定购买按钮与头像。
         public static void listPoitshot(string petpath, string poitjson, GameObject poitcont)
         {
        
@@ -168,9 +156,8 @@ namespace newpro
                 childInstance.transform.SetParent(poitcont.transform);
                 UnityEngine.UI.Text text = childInstance.transform.Find("avtname").GetComponent<UnityEngine.UI.Text>();
                 text.text = poit.characterName;
-                Sprite texture2D = imgcvT2d.LoadSpriteFromFile(petpath + "\\" + poit.characterImage + ".png");
                 Image image = childInstance.transform.Find("avt").GetComponent<Image>();
-                image.sprite = texture2D;
+                imgcvT2d.SetImage(image, petpath + "\\" + poit.characterImage + ".png");
                 Button button = childInstance.transform.Find("goumai").GetComponent<Button>();
                 if (button == null)
                 {
@@ -198,6 +185,7 @@ namespace newpro
             }
         }
 
+        //根据配置初始化抽卡面板内容。
         public static void InitBody(List<string> bodyjson)
         {
             List<UIbody> UIheads = new List<UIbody>();

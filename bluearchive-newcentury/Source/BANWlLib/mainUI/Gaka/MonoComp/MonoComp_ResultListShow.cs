@@ -1,4 +1,4 @@
-﻿using BANWlLib.Tool;
+using BANWlLib.Tool;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +9,7 @@ using Verse;
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
 {
+    //展示抽卡结果卡片及兑换道具，头像引用随实际显示状态释放。
     public class MonoComp_ResultListShow : MonoBehaviour
     {
         public gacaData gacaData;
@@ -16,6 +17,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         public GameObject CharacteShow;
         public GameObject ItemShow;
         public Dictionary<ThingDef, int> goodThings = new Dictionary<ThingDef, int>();
+        //初始化抽卡结果卡片并启动展示动画。
         void Start()
         {
             if (gacaData?.BaStudentData != null)
@@ -46,6 +48,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 StartCoroutine(IterateForever());
             }
         }
+        //循环展示重复学生兑换的道具奖励。
         IEnumerator IterateForever()
         {
             yield return new WaitForSeconds(2f);
@@ -86,6 +89,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
         }
 
+        //播放卡牌翻转并在头像显示时绑定资源路径。
         IEnumerator showStudnt()
         {
             yield return new WaitForSeconds(0.1f);
@@ -98,7 +102,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 Image.transform.localRotation = Quaternion.Euler(0, -90, 0);
                 CharacteShow.SetActive(true);
                 Image star = CharacteShow.transform.Find("StarShow").GetComponent<Image>();
-                CharacteShow.transform.Find("Mask/Avatar").GetComponent<Image>().sprite = gacaData.gakaAvt;
+                global::newpro.imgcvT2d.SetImage(CharacteShow.transform.Find("Mask/Avatar").GetComponent<Image>(), gacaData.AvatarPath);
                 switch (gacaData.starNum)
                 {
                     case 1:

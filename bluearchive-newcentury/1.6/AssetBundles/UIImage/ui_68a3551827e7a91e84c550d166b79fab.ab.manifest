@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 2806164709
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: bd8ab0af1eee5951dc66e2a429746a24
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: bd8ab0af1eee5951dc66e2a429746a24
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Gehena.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Hyakkiyako.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Arian.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Wildhunt.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Sany.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/RedWinter.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Vocaloid.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Highland.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Abydos.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Srt.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Millennium.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Shanhaijing.png
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/AcademyLogo/Valkyrie.png
+Dependencies: []

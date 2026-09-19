@@ -1,4 +1,4 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.mainUI.MonoComp;
 using newpro;
 using System;
@@ -12,17 +12,13 @@ using Verse;
 
 namespace BANWlLib.mainUI.Mission.MonoComp
 {
-    /// <summary>
-    /// 负责处理任务类型按钮点击，并切换任务节点列表与背景图。
-    /// </summary>
+    //负责处理任务类型按钮点击，并切换任务节点列表与背景图。
     public class MonoComp_BaMissionType:MonoBehaviour
     {
         public BaMissionType baMissionType;
         public Button button;
 
-        /// <summary>
-        /// 负责绑定按钮点击事件，并在任务界面未完整初始化时跳过本次点击。
-        /// </summary>
+        //负责绑定按钮点击事件，并在任务界面未完整初始化时跳过本次点击。
         void Start()
         {
             button = GetComponent<Button>();
@@ -55,16 +51,14 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 Image mainImage = MissionMapData.mianImage.GetComponent<Image>();
                 if (mainImage != null && !string.IsNullOrEmpty(baMissionType.UIShowImagePath))
                 {
-                    mainImage.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(baMissionType.UIShowImagePath));
+                    imgcvT2d.SetImage(mainImage, imgcvT2d.getRimWorldImgPath(baMissionType.UIShowImagePath));
                 }
 
                 showSelfTypeNode(baMissionType);
             });
         }
 
-        /// <summary>
-        /// 负责通知全部任务节点按当前任务类型刷新显示状态。
-        /// </summary>
+        //负责通知全部任务节点按当前任务类型刷新显示状态。
         void showSelfTypeNode(BaMissionType type)
         {
             if (MissionMapData.AllBaMissionNode == null)

@@ -119,8 +119,10 @@ namespace BANWlLib.BattleSystem
     }
 
     // 投射物战斗数据，负责记录普通攻击或技能弹的伤害公式参数。
-    public class ProjectileBattleData
+    public class ProjectileBattleData : IExposable
     {
+        public bool useBattleStats = true;
+        public float basePower = 100f;
         public float weaponBaseAttack;
         public float attackPowerRatio;
         public float baseMasteryMultiplier = 1f;
@@ -138,6 +140,30 @@ namespace BANWlLib.BattleSystem
         public bool canHitOwnPawn = false;
         public bool hasCustomExtension = false;
         public int expireTick;
+
+        //保存普通弹丸的配置，使飞行中存档后仍保持结算开关与普攻身份。
+        public void ExposeData()
+        {
+            Scribe_Values.Look(ref useBattleStats, "useBattleStats", true);
+            Scribe_Values.Look(ref basePower, "basePower", 100f);
+            Scribe_Values.Look(ref weaponBaseAttack, "weaponBaseAttack", 0f);
+            Scribe_Values.Look(ref attackPowerRatio, "attackPowerRatio", 0f);
+            Scribe_Values.Look(ref baseMasteryMultiplier, "baseMasteryMultiplier", 1f);
+            Scribe_Values.Look(ref shieldPowerRatio, "shieldPowerRatio", 0f);
+            Scribe_Values.Look(ref isNormalAttack, "isNormalAttack", false);
+            Scribe_Values.Look(ref useNormalAttackStat, "useNormalAttackStat", false);
+            Scribe_Values.Look(ref isShield, "isShield", false);
+            Scribe_Values.Look(ref isExSkill, "isExSkill", false);
+            Scribe_Values.Look(ref canCrit, "canCrit", true);
+            Scribe_Values.Look(ref alwaysCrit, "alwaysCrit", false);
+            Scribe_Values.Look(ref alwaysShowCriticalText, "alwaysShowCriticalText", false);
+            Scribe_Values.Look(ref applyAffinity, "applyAffinity", true);
+            Scribe_Values.Look(ref canHitOwnBuilding, "canHitOwnBuilding", false);
+            Scribe_Values.Look(ref canHitOwnPawn, "canHitOwnPawn", false);
+            Scribe_Values.Look(ref hasCustomExtension, "hasCustomExtension", false);
+            Scribe_Values.Look(ref expireTick, "expireTick", 0);
+            Scribe_Defs.Look(ref shieldHediffDef, "shieldHediffDef");
+        }
     }
 
 }

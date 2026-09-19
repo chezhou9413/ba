@@ -8,8 +8,10 @@ using Verse;
 namespace BANWlLib.BattleSystem
 {
     [HarmonyPatch(typeof(Projectile), "get_DamageAmount")]
+    //普通弹丸伤害补丁，负责把命中目标与发射配置接入统一公式。
     public static class BattleProjectileDamagePatch
     {
+        //按实际命中目标计算弹丸伤害并登记飘字信息。
         public static void Postfix(Projectile __instance, ref int __result)
         {
             if (__instance is Projectile_PiercingArea ||
@@ -32,6 +34,8 @@ namespace BANWlLib.BattleSystem
                 target = target,
                 damageDef = __instance.DamageDef,
                 weaponBaseAttack = data.weaponBaseAttack,
+                useBattleStats = data.useBattleStats,
+                basePower = data.basePower,
                 attackPowerRatio = data.attackPowerRatio,
                 baseMasteryMultiplier = data.baseMasteryMultiplier,
                 penetration = __instance.ArmorPenetration,
@@ -50,6 +54,8 @@ namespace BANWlLib.BattleSystem
                 target = target,
                 damageDef = __instance.DamageDef,
                 weaponBaseAttack = data.weaponBaseAttack,
+                useBattleStats = data.useBattleStats,
+                basePower = data.basePower,
                 attackPowerRatio = data.attackPowerRatio,
                 baseMasteryMultiplier = data.baseMasteryMultiplier,
                 penetration = __instance.ArmorPenetration,
@@ -89,6 +95,8 @@ namespace BANWlLib.BattleSystem
             ProjectileBattleData data = new ProjectileBattleData
             {
                 weaponBaseAttack = __instance.def?.projectile?.GetDamageAmount(null) ?? 0f,
+                useBattleStats = extension?.useBattleStats ?? true,
+                basePower = extension?.basePower ?? 100f,
                 attackPowerRatio = extension?.attackPowerRatio ?? 0f,
                 baseMasteryMultiplier = extension?.baseMasteryMultiplier ?? 1f,
                 shieldPowerRatio = extension?.shieldPowerRatio ?? 0f,
@@ -268,6 +276,8 @@ namespace BANWlLib.BattleSystem
                 target = state.target,
                 damageDef = damageDef,
                 weaponBaseAttack = state.weaponBaseAttack,
+                useBattleStats = config.useBattleStats,
+                basePower = config.basePower,
                 attackPowerRatio = config.attackPowerRatio,
                 baseMasteryMultiplier = config.baseMasteryMultiplier,
                 penetration = penetration,

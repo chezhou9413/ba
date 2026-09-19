@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2479213621
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: af391c088c1d31f0ff715ffb9c87bd83
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: af391c088c1d31f0ff715ffb9c87bd83
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Hanako_A.png
+Dependencies: []

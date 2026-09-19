@@ -1,4 +1,4 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.BANWGamecomp;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,9 +7,7 @@ using Verse;
 
 namespace BANWlLib.mainUI.Gaka
 {
-    /// <summary>
-    /// 抽卡结果数据，负责保存学生身份、PawnKind 和界面展示数据。
-    /// </summary>
+    //抽卡结果数据，负责保存学生身份、PawnKind 和界面展示数据。
     public class gacaData
     {
         public BaStudentDef BaStudentDef;
@@ -18,13 +16,11 @@ namespace BANWlLib.mainUI.Gaka
         public BaStudentUI StudentUI;
         public BaStudentData BaStudentData;
         public int starNum;
-        public Sprite gakaAvt;
+        public string AvatarPath;
         public bool isNew = false;
         public bool isUp = false;
     }
-    /// <summary>
-    /// 抽卡界面运行时缓存，负责保存界面预制体、当前卡池和抽卡结果。
-    /// </summary>
+    //抽卡界面运行时缓存，负责保存界面预制体、当前卡池和抽卡结果。
     public static class GakaMapData
     {
         public static GameObject Content;
@@ -64,6 +60,7 @@ namespace BANWlLib.mainUI.Gaka
 
         public static GameObject ShotMaskBack;
         public static GameObject GakaShotList;
+        //清空抽卡界面的静态对象和结果引用。
         public static void Reset()
         {
             isP3 = false;

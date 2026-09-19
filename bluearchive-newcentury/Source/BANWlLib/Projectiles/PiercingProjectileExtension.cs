@@ -5,6 +5,8 @@ namespace BANWlLib.Projectiles
     // 穿透抛射体配置扩展，负责提供统一伤害参数、命中规则、飞行特效和方向特效参数。
     public class PiercingProjectileExtension : DefModExtension
     {
+        public bool useBattleStats = true;
+        public float basePower = 100f;
         public int damageIntervalTicks = 1;
         public float damageWidth = 1f;
         public float damageLength = 1f;

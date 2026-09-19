@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3918581920
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fe2577211b678a1a00ece626070e9126
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: fe2577211b678a1a00ece626070e9126
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_ShanSquarePark_Night_Collection.png
+Dependencies: []

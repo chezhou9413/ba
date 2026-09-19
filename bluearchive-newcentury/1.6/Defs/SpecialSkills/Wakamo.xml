@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 若藻技能配置：伤害标记、蓄积上限、持续时间与特效。 -->
+  <BANWlLib.Skills.SpecialSkillProfileDef>
+    <defName>BANW_Special_Wakamo</defName><label>若藻</label><role>Wakamo</role>
+    <primaryAbility>BANW_Special_Wakamo_Ex</primaryAbility>
+    <range>25</range><normalIntervalTicks>1800</normalIntervalTicks>
+    <radius>3</radius>
+    <durationTicks>600</durationTicks>
+    <recordRatio>1</recordRatio>
+    <recordCapRatio>13.22</recordCapRatio>
+    <casterEffecter>BANW_Effecter_A</casterEffecter>
+    <targetEffecter>BANW_Effecter_C</targetEffecter>
+    <stageEffecter>BANW_Effecter_B</stageEffecter>
+    <endEffecter>BANW_Effecter_C</endEffecter>
+    <stateEffecter>BANW_Effecter_B</stateEffecter>
+    <exAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>1</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>true</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>0</radius>
+      <shots>1</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      
+    </exAttack>
+    <burstAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>1</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>false</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>0</radius>
+      <shots>1</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 此段直接结算，不生成弹丸。 -->
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      
+    </burstAttack>
+  </BANWlLib.Skills.SpecialSkillProfileDef>
+  <AbilityDef>
+    <defName>BANW_Special_Wakamo_Ex</defName>
+    <label>测试新技能·若藻</label>
+    <description>对25格内的敌人造成攻击力100%的伤害，随后标记目标10秒。标记期间，记录自己与同阵营友军对该目标造成的实际伤害；本次EX的首段不计入。
+
+标记结束时释放累计伤害，上限为施法时攻击力的1322%。蓄积爆发不会再次被蓄积，也不会再次计算暴击和攻击加成。
+
+再次施放会重新开始记录，不提前引爆旧记录。目标死亡或离开地图时取消记录。
+
+基础消耗：4 COST。冷却：1秒。</description>
+    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <iconPath>UI/StarIcon</iconPath>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <showWhenDrafted>true</showWhenDrafted>
+    <showPsycastEffects>false</showPsycastEffects>
+    <hostile>false</hostile>
+    <targetRequired>true</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>25</range><warmupTime>0</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+        <profile>BANW_Special_Wakamo</profile><command>Ex</command>
+      </li>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+    </comps>
+  </AbilityDef>
+</Defs>

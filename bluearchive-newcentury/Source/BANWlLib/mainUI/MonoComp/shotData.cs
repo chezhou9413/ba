@@ -1,4 +1,4 @@
-﻿using BANWlLib.mainUI.pojo;
+using BANWlLib.mainUI.pojo;
 using MyCoolMusicMod;
 using newpro;
 using System.IO;
@@ -8,9 +8,7 @@ using Verse;
 using System.Text.RegularExpressions;
 using BANWlLib.mainUI.MonoComp;
 
-/// <summary>
-/// 商品条目组件负责把商店配置绑定到单个商品预制体，并处理显示、购买按钮和刷新状态。
-/// </summary>
+//商品条目组件负责把商店配置绑定到单个商品预制体，并处理显示、购买按钮和刷新状态。
 public class shotData : MonoBehaviour
 {
     public shot shot;
@@ -27,17 +25,13 @@ public class shotData : MonoBehaviour
     private UnityEngine.UI.Text titleText; // 标题文本缓存
     private string lastTitle;              // 上次计算过的标题内容
 
-    /// <summary>
-    /// 销毁当前商品条目对象，用于商店列表重建时清理旧 UI。
-    /// </summary>
+    //销毁当前商品条目对象，用于商店列表重建时清理旧 UI。
     public void delect()
     {
         Destroy(this.gameObject);
     }
 
-    /// <summary>
-    /// Unity 生命周期入口，负责在商品数据已经绑定后初始化显示内容和按钮事件。
-    /// </summary>
+    //Unity 生命周期入口，负责在商品数据已经绑定后初始化显示内容和按钮事件。
     void Start()
     {
         if (shot == null)
@@ -58,9 +52,9 @@ public class shotData : MonoBehaviour
         this.transform.Find("cont").GetComponent<UnityEngine.UI.Text>().text = "x" + shot.ProductAmount;
         this.transform.Find("pingzhi/" + shot.ProductQuality).gameObject.SetActive(true);
         string bodytitlepath = UiMapData.modRootPath + "/Common/Textures/" + shot.ProductImage + ".png";
-        this.transform.Find("bodytitle").GetComponent<UnityEngine.UI.Image>().sprite = imgcvT2d.LoadSpriteFromFile(bodytitlepath);
+        imgcvT2d.SetImage(this.transform.Find("bodytitle").GetComponent<UnityEngine.UI.Image>(), bodytitlepath);
         string shotimagpath = UiMapData.modRootPath + "/Common/Textures/" + shot.CurrencyImage + ".png";
-        this.transform.Find("goumai/jiageback/shotimag").GetComponent<UnityEngine.UI.Image>().sprite = imgcvT2d.LoadSpriteFromFile(shotimagpath);
+        imgcvT2d.SetImage(this.transform.Find("goumai/jiageback/shotimag").GetComponent<UnityEngine.UI.Image>(), shotimagpath);
         this.transform.Find("goumai/jiageback/JIAGESHOW").GetComponent<UnityEngine.UI.Text>().text = shot.CurrencyAmount.ToString();
 
         this.GetComponent<Button>().onClick.AddListener(() =>
@@ -81,9 +75,7 @@ public class shotData : MonoBehaviour
         ValidateParticlePrefab();
     }
 
-    /// <summary>
-    /// Unity 尺寸变化回调，负责在布局尺寸改变后重新计算标题字号。
-    /// </summary>
+    //Unity 尺寸变化回调，负责在布局尺寸改变后重新计算标题字号。
     void OnRectTransformDimensionsChange()
     {
         if (titleText != null && gameObject.activeInHierarchy)
@@ -92,9 +84,7 @@ public class shotData : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 刷新标题文本，并立即应用字号适配。
-    /// </summary>
+    //刷新标题文本，并立即应用字号适配。
     public void RefreshTitle(string newTitle)
     {
         if (titleText == null)
@@ -104,9 +94,7 @@ public class shotData : MonoBehaviour
         ApplyTitleAutoFit(true);
     }
 
-    /// <summary>
-    /// 自适应标题字号（阈值 + 容器宽度双重约束）
-    /// </summary>
+    //自适应标题字号（阈值 + 容器宽度双重约束）
     private void ApplyTitleAutoFit(bool force = false)
     {
         if (titleText == null) return;
@@ -151,9 +139,7 @@ public class shotData : MonoBehaviour
         titleText.fontSize = targetFontSize;
     }
 
-    /// <summary>
-    /// 验证粒子预制体是否正确加载
-    /// </summary>
+    //验证粒子预制体是否正确加载
     private void ValidateParticlePrefab()
     {
         if (UiMapData.buyParticle == null)
@@ -185,9 +171,7 @@ public class shotData : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 在购买按钮位置播放购买粒子效果。
-    /// </summary>
+    //在购买按钮位置播放购买粒子效果。
     public void SpawnParticleAtButton(RectTransform btnRect)
     {
 
@@ -293,9 +277,7 @@ public class shotData : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 把粒子渲染排序同步到当前 Canvas，确保粒子显示在购买界面上方。
-    /// </summary>
+    //把粒子渲染排序同步到当前 Canvas，确保粒子显示在购买界面上方。
     private void ApplySortingToParticles(GameObject root, Canvas canvas, int orderOffset)
     {
         try
@@ -329,9 +311,7 @@ public class shotData : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 根据玩家持有货币数量刷新购买按钮可用状态。
-    /// </summary>
+    //根据玩家持有货币数量刷新购买按钮可用状态。
     private void setLockButtton()
     {
         if (shot == null || gounauvbutton == null || goumaiback == null)
@@ -352,17 +332,13 @@ public class shotData : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Unity 销毁回调，负责解除商店刷新事件订阅。
-    /// </summary>
+    //Unity 销毁回调，负责解除商店刷新事件订阅。
     void OnDestroy()
     {
         ShopEvents.OnRefreshAllButtons -= setLockButtton;
     }
 
-    /// <summary>
-    /// Unity 启用回调，负责订阅商店刷新事件并在数据可用时刷新排序。
-    /// </summary>
+    //Unity 启用回调，负责订阅商店刷新事件并在数据可用时刷新排序。
     void OnEnable()
     {
         ShopEvents.OnRefreshAllButtons += setLockButtton;
@@ -372,9 +348,7 @@ public class shotData : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Unity 禁用回调，负责解除商店刷新事件订阅。
-    /// </summary>
+    //Unity 禁用回调，负责解除商店刷新事件订阅。
     void OnDisable()
     {
         ShopEvents.OnRefreshAllButtons -= setLockButtton;

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3567817952
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 58dae13dfffe87fccc84e81b2418bbac
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 58dae13dfffe87fccc84e81b2418bbac
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Onsen_Collection.png
+Dependencies: []

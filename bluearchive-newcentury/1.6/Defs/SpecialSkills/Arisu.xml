@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 临战爱丽丝技能配置：充能阶段、命中触发、伤害与特效。 -->
+  <BANWlLib.Skills.SpecialSkillProfileDef>
+    <defName>BANW_Special_Arisu</defName><label>临战爱丽丝</label><role>Arisu</role>
+    <primaryAbility>BANW_Special_Arisu_Ex</primaryAbility>
+    <range>25</range><normalIntervalTicks>1800</normalIntervalTicks>
+    <radius>3</radius>
+    <requiredHits>3</requiredHits>
+    <casterEffecter>BANW_Effecter_A</casterEffecter>
+    <targetEffecter>BANW_Effecter_C</targetEffecter>
+    <stageEffecter>BANW_Effecter_B</stageEffecter>
+    <endEffecter>BANW_Effecter_C</endEffecter>
+    <stateEffecter>BANW_Effecter_B</stateEffecter>
+    <chargeCastEffecters><li>BANW_Effecter_A</li><li>BANW_Effecter_B</li><li>BANW_Effecter_C</li></chargeCastEffecters>
+    <chargeImpactEffecters><li>BANW_Effecter_A</li><li>BANW_Effecter_B</li><li>BANW_Effecter_C</li></chargeImpactEffecters>
+    <chargeStateEffecters><li>BANW_Effecter_A</li><li>BANW_Effecter_B</li><li>BANW_Effecter_C</li></chargeStateEffecters>
+    <exAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>13</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>true</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>3</radius>
+      <shots>1</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      
+    </exAttack>
+    <normalAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>1</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>false</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>0</radius>
+      <shots>1</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      
+    </normalAttack>
+  </BANWlLib.Skills.SpecialSkillProfileDef>
+  <AbilityDef>
+    <defName>BANW_Special_Arisu_Ex</defName>
+    <label>测试新技能·临战爱丽丝</label>
+    <description>对自己使用时获得一档充能，最多两档；满档后不能继续充能。
+
+对25格内的敌人使用时，攻击目标周围3格范围内的敌人。未充能、一档、二档分别造成攻击力1300%、2600%、3900%的伤害，成功发动后清空充能。
+
+普通技能：每累计3次有效普攻命中，自动对敌人追加一次攻击力100%的攻击，不消耗COST；多余命中次数保留。完全闪避或完全吸收的攻击不计数。
+
+每次EX基础消耗：4 COST。冷却：1秒。</description>
+    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <iconPath>UI/StarIcon</iconPath>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <showWhenDrafted>true</showWhenDrafted>
+    <showPsycastEffects>false</showPsycastEffects>
+    <hostile>false</hostile>
+    <targetRequired>true</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>25</range><warmupTime>0</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+        <profile>BANW_Special_Arisu</profile><command>Ex</command>
+      </li>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+    </comps>
+  </AbilityDef>
+</Defs>

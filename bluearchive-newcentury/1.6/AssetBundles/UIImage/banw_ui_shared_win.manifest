@@ -1,0 +1,126 @@
+ManifestFileVersion: 0
+CRC: 450020368
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 02eb185953452cca81cf7a4359ec4a32
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 02eb185953452cca81cf7a4359ec4a32
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Himari.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Mina.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Megu.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_8.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Moe.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Minori.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hikali.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Nagusa.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Takane.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Miku.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Yokari.png
+- Assets/Data/Archive.NewWorld/Textures/UI/MissionUI/type/CreditRetrieval.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Mimori.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Umika.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Noa.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/XYDS.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Karlin.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kokona.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Makoto.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hoshiro.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Saori.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Ui.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_3.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Gold_c.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Chiaki.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_4.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_7.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Mika.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Tsukuyo.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hoshiro_A.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Shun.png
+- Assets/Data/Archive.NewWorld/Textures/UI/MissionUI/Node/test.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_9.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Reijo.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Eri.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Izuna.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kisaki.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Rio.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_5.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_6.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Iroha.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kanoe.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Rumi.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Miyu.png
+- Assets/Data/Archive.NewWorld/Textures/UI/MissionUI/Node/1333.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kazusa.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Reisa_A.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Arisu_B.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hiyori.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Natsu.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Satsuki.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Yakumo.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Seia.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Cangzhu.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Miyako.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Midori.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Mine.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Nozomi.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Meru.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Turugi.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Koharu.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Maki.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Shigure.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Arisu.png
+- Assets/Data/Archive.NewWorld/Textures/QinghuiStone.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hibiki.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kaede.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Wakamo_A.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Saki.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Yuzu.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_1.png
+- Assets/Data/Archive.NewWorld/Textures/UI/MissionUI/type/BaseDefense.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Haruna.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Shizumi_A.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Chihiro.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hinata.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Wakamo.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Koyuki.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Nagisa.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Azusa.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hina_B.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Stone_2.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Mashiro.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Renge.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Sena.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Iori.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Mika_A.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kaho.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kei.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Misaki.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Ako.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Niya.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hina.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Ichika.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Toki.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Shiroko.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Reisa.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kikyou.png
+- Assets/Data/Archive.NewWorld/Textures/Stone/Sensei.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Hanako_A.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kanna.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Atsuko.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Kasumi.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Sakurako.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Cherino.png
+- Assets/Data/Archive.NewWorld/Textures/UI/StarIcon.png
+- Assets/Data/Archive.NewWorld/Textures/UI/cardHead/Nagisa_A.png
+Dependencies: []

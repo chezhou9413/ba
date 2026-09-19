@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 双形态星野技能配置：形态属性、范围攻击、护盾与弹丸拦截。 -->
+  <BANWlLib.Skills.SpecialSkillProfileDef>
+    <defName>BANW_Special_Hoshino</defName><label>双形态星野</label><role>Hoshino</role>
+    <primaryAbility>BANW_Special_Hoshino_Ex</primaryAbility>
+    <alternateAbility>BANW_Special_Hoshino_AlternateEx</alternateAbility>
+    <switchAbility>BANW_Special_Hoshino_SwitchForm</switchAbility>
+    <range>25</range><normalIntervalTicks>1800</normalIntervalTicks>
+    <radius>3</radius>
+    <durationTicks>2400</durationTicks>
+    <outputBaseAttack>30</outputBaseAttack>
+    <tankBaseAttack>10</tankBaseAttack>
+    <outputBaseHealth>1000</outputBaseHealth>
+    <tankBaseHealth>3000</tankBaseHealth>
+    <outputCastTicks>60</outputCastTicks>
+    <damageTakenReduction>0.85</damageTakenReduction>
+    <empoweredHits>6</empoweredHits>
+    <tankHits>25</tankHits>
+    <empoweredMultiplier>1.5</empoweredMultiplier>
+    <shieldRatio>0.691</shieldRatio>
+    <shieldUseBattleStats>true</shieldUseBattleStats>
+    <shieldBasePower>1000</shieldBasePower>
+    <moveSpeed>0.35</moveSpeed>
+    <interceptRadius>3</interceptRadius>
+    <buffHediff>BANW_SpecialHoshinoBuff</buffHediff>
+    <countHediff>BANW_SpecialHoshinoCount</countHediff>
+    <shieldHediff>BANW_SpecialHoshinoShield</shieldHediff>
+    <casterEffecter>BANW_Effecter_A</casterEffecter>
+    <targetEffecter>BANW_Effecter_C</targetEffecter>
+    <stageEffecter>BANW_Effecter_B</stageEffecter>
+    <endEffecter>BANW_Effecter_C</endEffecter>
+    <stateEffecter>BANW_Effecter_B</stateEffecter>
+    <exAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>5</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>true</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>3</radius>
+      <shots>1</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 此段直接结算，不生成弹丸。 -->
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly>
+    </exAttack>
+    <normalAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>1</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>false</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>3</radius>
+      <shots>1</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 此段直接结算，不生成弹丸。 -->
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      
+    </normalAttack>
+  </BANWlLib.Skills.SpecialSkillProfileDef>
+  <AbilityDef>
+    <defName>BANW_Special_Hoshino_Ex</defName>
+    <label>测试新技能·双形态星野·输出EX</label>
+    <description>选择25格内的位置，准备1秒后对目标周围3格内的所有角色造成攻击力500%的伤害，包括自己和友军。
+
+准备期间，当前承伤系数减去0.85，最低为0。例如承伤系数从2.0降至1.15。
+
+输出形态普通技能：每30秒获得6次强化普攻命中额度，伤害为攻击力的150%，并攻击命中目标周围3格内的敌人。每个受到有效伤害的目标分别消耗1次额度；完全闪避或完全吸收不消耗。
+
+基础消耗：4 COST。冷却：1秒。</description>
+    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <iconPath>UI/StarIcon</iconPath>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <showWhenDrafted>true</showWhenDrafted>
+    <showPsycastEffects>false</showPsycastEffects>
+    <hostile>false</hostile>
+    <targetRequired>true</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>25</range><warmupTime>0</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+        <profile>BANW_Special_Hoshino</profile><command>Ex</command>
+      </li>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef>
+    <defName>BANW_Special_Hoshino_AlternateEx</defName>
+    <label>测试新技能·双形态星野·坦克EX</label>
+    <description>移动到25格内的指定位置，抵达后获得持续40秒的战斗增益：攻击力增加156%，获得最大生命69.1%的个人护盾，并拦截从外侧穿过前方3格半圆边界的敌方弹丸。
+
+拦截方向随朝向变化；背面、友军及从内部射出的弹丸可以通过。瞬间伤害不受弹丸拦截影响。
+
+坦克形态普通技能：每30秒获得25次命中状态，每次有效普攻命中消耗1次。当前该状态不提供额外属性加成。切换形态会结束本形态的增益、护盾、拦截和命中状态。
+
+基础消耗：4 COST。冷却：1秒。</description>
+    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <iconPath>UI/StarIcon</iconPath>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <showWhenDrafted>true</showWhenDrafted>
+    <showPsycastEffects>false</showPsycastEffects>
+    <hostile>false</hostile>
+    <targetRequired>true</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>25</range><warmupTime>0</warmupTime>
+      <targetParams>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+        <profile>BANW_Special_Hoshino</profile><command>AlternateEx</command>
+      </li>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+    </comps>
+  </AbilityDef>
+  <AbilityDef>
+    <defName>BANW_Special_Hoshino_SwitchForm</defName>
+    <label>测试新技能·双形态星野·切换形态</label>
+    <description>在输出形态与坦克形态之间切换，同时切换对应的EX与普通技能。初始为输出形态。
+
+输出形态：基础攻击30，基础生命1000，擅长范围伤害与强化普攻。
+坦克形态：基础攻击10，基础生命3000，擅长护盾与正面弹丸拦截。
+两种形态均正常享受成长和属性加成。
+
+切换保持当前生命百分比、装备和身份，结束原形态的专属增益、护盾与命中次数；不会重置普通技能计时。
+
+不消耗COST。冷却：1秒。</description>
+    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <iconPath>UI/StarIcon</iconPath>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <showWhenDrafted>true</showWhenDrafted>
+    <showPsycastEffects>false</showPsycastEffects>
+    <hostile>false</hostile>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>25</range><warmupTime>0</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+        <profile>BANW_Special_Hoshino</profile><command>SwitchForm</command>
+      </li>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>0</cost></li>
+    </comps>
+  </AbilityDef>
+</Defs>

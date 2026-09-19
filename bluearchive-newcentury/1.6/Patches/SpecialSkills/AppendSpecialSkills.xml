@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- 只追加技能与配置，保留正式角色原有能力和扩展。 -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Nero"]/abilities</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Nero"]/abilities</xpath><value><li>BANW_Special_Nero_Ex</li><li>BANW_Special_Nero_AlternateEx</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Nero"]</xpath><value><abilities><li>BANW_Special_Nero_Ex</li><li>BANW_Special_Nero_AlternateEx</li></abilities></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Nero"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Nero"]/modExtensions</xpath><value><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Nero</profile><copyableEx>BANW_Special_Nero_Ex</copyableEx></li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Nero"]</xpath><value><modExtensions><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Nero</profile><copyableEx>BANW_Special_Nero_Ex</copyableEx></li></modExtensions></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Arisu_B"]/abilities</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Arisu_B"]/abilities</xpath><value><li>BANW_Special_Arisu_Ex</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Arisu_B"]</xpath><value><abilities><li>BANW_Special_Arisu_Ex</li></abilities></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Arisu_B"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Arisu_B"]/modExtensions</xpath><value><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Arisu</profile><copyableEx>BANW_Special_Arisu_Ex</copyableEx></li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Arisu_B"]</xpath><value><modExtensions><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Arisu</profile><copyableEx>BANW_Special_Arisu_Ex</copyableEx></li></modExtensions></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]/abilities</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]/abilities</xpath><value><li>BANW_Special_Shiroko_Ex</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]</xpath><value><abilities><li>BANW_Special_Shiroko_Ex</li></abilities></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]/modExtensions</xpath><value><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Shiroko</profile><copyableEx>BANW_Special_Shiroko_Ex</copyableEx></li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]</xpath><value><modExtensions><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Shiroko</profile><copyableEx>BANW_Special_Shiroko_Ex</copyableEx></li></modExtensions></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Wakamo"]/abilities</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Wakamo"]/abilities</xpath><value><li>BANW_Special_Wakamo_Ex</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Wakamo"]</xpath><value><abilities><li>BANW_Special_Wakamo_Ex</li></abilities></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Wakamo"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Wakamo"]/modExtensions</xpath><value><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Wakamo</profile><copyableEx>BANW_Special_Wakamo_Ex</copyableEx></li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Wakamo"]</xpath><value><modExtensions><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Wakamo</profile><copyableEx>BANW_Special_Wakamo_Ex</copyableEx></li></modExtensions></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Hoshiro"]/abilities</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Hoshiro"]/abilities</xpath><value><li>BANW_Special_Hoshino_Ex</li><li>BANW_Special_Hoshino_AlternateEx</li><li>BANW_Special_Hoshino_SwitchForm</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Hoshiro"]</xpath><value><abilities><li>BANW_Special_Hoshino_Ex</li><li>BANW_Special_Hoshino_AlternateEx</li><li>BANW_Special_Hoshino_SwitchForm</li></abilities></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Hoshiro"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Hoshiro"]/modExtensions</xpath><value><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Hoshino</profile><copyableEx>BANW_Special_Hoshino_Ex</copyableEx></li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Hoshiro"]</xpath><value><modExtensions><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Hoshino</profile><copyableEx>BANW_Special_Hoshino_Ex</copyableEx></li></modExtensions></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Kei"]/abilities</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Kei"]/abilities</xpath><value><li>BANW_Special_Kei_Ex</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Kei"]</xpath><value><abilities><li>BANW_Special_Kei_Ex</li></abilities></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Kei"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Kei"]/modExtensions</xpath><value><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Kei</profile><copyableEx>BANW_Special_Kei_Ex</copyableEx></li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Kei"]</xpath><value><modExtensions><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Kei</profile><copyableEx>BANW_Special_Kei_Ex</copyableEx></li></modExtensions></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Rio"]/abilities</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Rio"]/abilities</xpath><value><li>BANW_Special_Rio_Ex</li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Rio"]</xpath><value><abilities><li>BANW_Special_Rio_Ex</li></abilities></value></nomatch>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/PawnKindDef[defName="BANW_Rio"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Rio"]/modExtensions</xpath><value><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Rio</profile></li></value></match>
+    <nomatch Class="PatchOperationAdd"><xpath>Defs/PawnKindDef[defName="BANW_Rio"]</xpath><value><modExtensions><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Rio</profile></li></modExtensions></value></nomatch>
+  </Operation>
+</Patch>
+

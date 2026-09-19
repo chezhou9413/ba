@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 826046791
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fecfc0ffd0fc3f872348dfcb54d84aa1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: fecfc0ffd0fc3f872348dfcb54d84aa1
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Natsu.png
+Dependencies: []

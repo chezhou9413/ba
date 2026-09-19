@@ -1,4 +1,4 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.mainUI.MonoComp;
 using BANWlLib.Tool;
 using MyCoolMusicMod.MyCoolMusicMod;
@@ -9,6 +9,7 @@ using Verse;
 
 namespace BANWlLib.mainUI.Mission.MonoComp
 {
+    //展示选中任务的信息、目标、奖励和敌方单位。
     public class MonoComp_BaMissionInfo : MonoBehaviour
     {
         public BaMissionNode BaMissionNode;
@@ -19,12 +20,14 @@ namespace BANWlLib.mainUI.Mission.MonoComp
         public GameObject RewardContent;
         public GameObject EnemyContent;
 
+        //缓存任务详情控件引用。
         void Awake()
         {
             EnemyContent = this.transform.Find("EnemyList/Scroll View/Viewport/Content").gameObject;
             RewardContent = this.transform.Find("MissionReward/Viewport/Content").gameObject;
             TargetContent = this.transform.Find("MissionTarget/Viewport/Content").gameObject;
         }
+        //初始化任务详情按钮与交互。
         void Start()
         {
             this.transform.Find("ColseButtom").GetComponent<Button>().onClick.AddListener(() =>
@@ -41,6 +44,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 ColseMissInfo();
             });
         }
+        //在任务详情启用时刷新显示数据。
         void OnEnable()
         {
             DeleteAllChildren(TargetContent);
@@ -49,16 +53,19 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             SetMissInfoAndShowUI(BaMissionNode);
         }
 
+        //关闭任务详情面板。
         public void ColseMissInfo()
         {
             UiMapData.isLocKBack = false;
             this.gameObject.SetActive(false);
         }
+        //选择任务并显示其详情。
         public void ShowMissInfo(BaMissionNode mission)
         {
             BaMissionNode = mission;
             this.gameObject.SetActive(true);
         }
+        //刷新任务说明、目标、奖励及敌方信息。
         void SetMissInfoAndShowUI(BaMissionNode mission)
         {
             this.gameObject.transform.Find("MissionID").GetComponent<UnityEngine.UI.Text>().text = mission.MissionID;
@@ -69,6 +76,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             spawnRewardEnemy();
         }
 
+        //清除列表中已有的子控件。
         private void DeleteAllChildren(GameObject parentObj)
         {
             Transform parentTrans = parentObj.transform;
@@ -79,6 +87,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             }
         }
 
+        //创建任务目标条目。
         private void spawMissionTarget()
         {
             foreach (string a in BaMissionNode.MissionTarget)
@@ -96,6 +105,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             }
         }
 
+        //创建任务奖励条目。
         private void spawnRewardTarget()
         {
             foreach (MissionReward a in BaMissionNode.Reward)
@@ -107,6 +117,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             }
         }
 
+        //创建敌方单位条目并按需绑定其标签图标。
         private void spawnRewardEnemy()
         {
             foreach (EnemyList a in BaMissionNode.EnemyList)
@@ -121,12 +132,12 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 if(a.tagPath1 != null)
                 {
                     tag1.SetActive(true);
-                    tag1.GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(a.tagPath1));
+                    imgcvT2d.SetImage(tag1.GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(a.tagPath1));
                 }
                 if(a.tagPath2 != null)
                 {
                     tag2.SetActive(true);
-                    tag2.GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(a.tagPath2));
+                    imgcvT2d.SetImage(tag2.GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(a.tagPath2));
                 }
             }
         }

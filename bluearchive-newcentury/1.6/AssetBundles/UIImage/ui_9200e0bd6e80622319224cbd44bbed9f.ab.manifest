@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2427793484
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 28d9d186efb8e989cc7e64136c76e317
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 28d9d186efb8e989cc7e64136c76e317
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Izumi.png
+Dependencies: []

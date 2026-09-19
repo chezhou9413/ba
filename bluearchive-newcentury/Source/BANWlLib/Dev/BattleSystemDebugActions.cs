@@ -1,3 +1,4 @@
+using BANWlLib.Dev.Menus;
 using System;
 using System.Collections.Generic;
 using BANWlLib.BattleSystem;
@@ -12,10 +13,10 @@ namespace BANWlLib.Dev
     // 战斗系统测试入口，负责在开发者模式下快速生成可复现的战斗场景。
     public static class BattleSystemDebugActions
     {
-        private const string Category = "BA测试/战斗系统";
+        private const string Category = "战斗测试";
 
         // 生成完整测试场景，负责一次性摆放常用测试对象。
-        [DebugAction(Category, "生成完整战斗测试场景", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "生成完整战斗测试场景", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SpawnFullBattleTestScene()
         {
             Map map = Find.CurrentMap;
@@ -41,7 +42,7 @@ namespace BANWlLib.Dev
         }
 
         // 生成直线穿墙测试，负责摆放施法者、墙体和墙后目标。
-        [DebugAction(Category, "场景：直线穿墙弹", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "场景：直线穿墙弹", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SpawnPiercingProjectileScene()
         {
             Map map = Find.CurrentMap;
@@ -60,7 +61,7 @@ namespace BANWlLib.Dev
         }
 
         // 生成脱手场地测试，负责摆放施法者和密集敌人。
-        [DebugAction(Category, "场景：脱手场地", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "场景：脱手场地", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SpawnBattleFieldScene()
         {
             Map map = Find.CurrentMap;
@@ -79,7 +80,7 @@ namespace BANWlLib.Dev
         }
 
         // 生成叠层 Buff 测试，负责生成 Nozomi 并提示技能连放验证层数。
-        [DebugAction(Category, "场景：叠层攻击Buff", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "场景：叠层攻击Buff", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SpawnStackBuffScene()
         {
             Map map = Find.CurrentMap;
@@ -96,7 +97,7 @@ namespace BANWlLib.Dev
         }
 
         // 直接施加叠层 Buff，负责不用手动点技能也能验证层数。
-        [DebugAction(Category, "执行：给选中Pawn叠1层攻击Buff", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "执行：给选中Pawn叠1层攻击Buff", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void AddOneAttackStackToSelectedPawn()
         {
             Pawn pawn = Find.Selector.SingleSelectedThing as Pawn;
@@ -113,7 +114,7 @@ namespace BANWlLib.Dev
         }
 
         // 生成治疗测试，负责摆放 Serina 和一个受伤友方。
-        [DebugAction(Category, "场景：治疗力与受回复", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "场景：治疗力与受回复", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SpawnHealingScene()
         {
             Map map = Find.CurrentMap;
@@ -133,7 +134,7 @@ namespace BANWlLib.Dev
         }
 
         // 直接设置受回复测试状态，负责验证目标受疗率倍率。
-        [DebugAction(Category, "执行：给选中Pawn造成测试伤口", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "执行：给选中Pawn造成测试伤口", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void InjureSelectedPawn()
         {
             Pawn pawn = Find.Selector.SingleSelectedThing as Pawn;
@@ -148,7 +149,7 @@ namespace BANWlLib.Dev
         }
 
         // 生成属性克制测试，负责摆放贯通攻击者、重装目标和轻装目标。
-        [DebugAction(Category, "场景：属性克制", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "场景：属性克制", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SpawnAffinityScene()
         {
             Map map = Find.CurrentMap;
@@ -169,7 +170,7 @@ namespace BANWlLib.Dev
         }
 
         // 生成阶级成长测试，负责生成同角色并设置不同阶级输出属性。
-        [DebugAction(Category, "场景：阶级成长", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "场景：阶级成长", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SpawnStarGrowthScene()
         {
             Map map = Find.CurrentMap;
@@ -193,7 +194,7 @@ namespace BANWlLib.Dev
         }
 
         // 输出选中 Pawn 的战斗属性，负责快速核对 Buff、星级和治疗力。
-        [DebugAction(Category, "查看选中Pawn战斗属性", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "查看选中Pawn战斗属性", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void LogSelectedPawnBattleStats()
         {
             Pawn pawn = Find.Selector.SingleSelectedThing as Pawn;
@@ -207,7 +208,7 @@ namespace BANWlLib.Dev
         }
 
         // 切换公式调试日志，负责把每次伤害和治疗的预估、最终值与实际值输出到控制台。
-        [DebugAction(Category, "切换公式调试日志", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        [BADebugAction(Category, "切换公式调试日志", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void ToggleBattleFormulaDebugLog()
         {
             bool nextState = !BattleFormulaDebugUtility.IsEnabled();

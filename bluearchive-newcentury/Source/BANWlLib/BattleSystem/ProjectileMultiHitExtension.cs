@@ -17,6 +17,8 @@ namespace BANWlLib.BattleSystem
     {
         public DamageDef damageDef;
         public DamageDef damageType;
+        public bool useBattleStats = true;
+        public float basePower = 100f;
         public float attackPowerRatio = 0f;
         public float baseMasteryMultiplier = 1f;
         public int delayTicks = -1;
@@ -33,6 +35,8 @@ namespace BANWlLib.BattleSystem
         // 保存和读取单段追加伤害配置，负责支持延迟多段子弹在存读档后继续触发。
         public void ExposeData()
         {
+            Scribe_Values.Look(ref useBattleStats, "useBattleStats", true);
+            Scribe_Values.Look(ref basePower, "basePower", 100f);
             Scribe_Defs.Look(ref damageDef, "damageDef");
             Scribe_Defs.Look(ref damageType, "damageType");
             Scribe_Values.Look(ref attackPowerRatio, "attackPowerRatio", 0f);

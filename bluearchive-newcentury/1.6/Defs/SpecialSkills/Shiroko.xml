@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 黑子技能配置：无人机、生命消耗、不死层数与特效。 -->
+  <BANWlLib.Skills.SpecialSkillProfileDef>
+    <defName>BANW_Special_Shiroko</defName><label>黑子</label><role>Shiroko</role>
+    <primaryAbility>BANW_Special_Shiroko_Ex</primaryAbility>
+    <range>25</range><normalIntervalTicks>1800</normalIntervalTicks>
+    <radius>3</radius>
+    <durationTicks>2400</durationTicks>
+    <lifeCostRatio>0.2</lifeCostRatio>
+    <immortalityCooldownTicks>5400</immortalityCooldownTicks>
+    <lethalStackLimit>15</lethalStackLimit>
+    <casterEffecter>BANW_Effecter_A</casterEffecter>
+    <targetEffecter>BANW_Effecter_C</targetEffecter>
+    <stageEffecter>BANW_Effecter_B</stageEffecter>
+    <endEffecter>BANW_Effecter_C</endEffecter>
+    <stateEffecter>BANW_Effecter_B</stateEffecter>
+    <!-- 不指定droneTexturePath时绘制简易测试无人机；填写贴图后必须确保资源存在。 -->
+    <droneDrawSize>(0.7,0.5)</droneDrawSize><droneOffset>(0.8,0,0.5)</droneOffset>
+    <normalAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>4</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>false</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>0</radius>
+      <shots>1</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      
+    </normalAttack>
+    <droneAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>0.5</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>false</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>0</radius>
+      <shots>1</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      
+    </droneAttack>
+    <burstAttack>
+      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <useBattleStats>true</useBattleStats>
+      <basePower>100</basePower>
+      <attackPowerRatio>5</attackPowerRatio>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <isExSkill>false</isExSkill>
+      <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <radius>0</radius>
+      <shots>10</shots>
+      <shotIntervalTicks>6</shotIntervalTicks>
+      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      
+    </burstAttack>
+  </BANWlLib.Skills.SpecialSkillProfileDef>
+  <AbilityDef>
+    <defName>BANW_Special_Shiroko_Ex</defName>
+    <label>测试新技能·黑子</label>
+    <description>消耗最大生命的20%，召唤持续40秒的跟随无人机。生命不足时只扣除安全允许的部分，不会因此死亡。无人机无法被攻击；每次自身有效普攻命中后，无人机对该目标追加攻击力50%的攻击。再次施放会刷新无人机持续时间。
+
+普通技能：每30秒对敌人造成攻击力400%的伤害；无人机存在时额外连射10发，每发50%，合计900%。
+
+不死被动：首次承受致命伤时获得1层不死，此后每次致命伤再增加1层；第15层强制死亡。满血时解除不死并清空层数。被动冷却90秒，从首次触发开始计算；不会治疗已有伤口或阻止倒地。
+
+基础消耗：4 COST。EX冷却：1秒。</description>
+    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <iconPath>UI/StarIcon</iconPath>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <showWhenDrafted>true</showWhenDrafted>
+    <showPsycastEffects>false</showPsycastEffects>
+    <hostile>false</hostile>
+    <targetRequired>false</targetRequired>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>25</range><warmupTime>0</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+        <profile>BANW_Special_Shiroko</profile><command>Ex</command>
+      </li>
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+    </comps>
+  </AbilityDef>
+</Defs>

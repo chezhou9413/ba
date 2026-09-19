@@ -17,6 +17,7 @@ namespace BANWlLib.CostSystem
             }
 
             int baseCost = Mathf.Max(0, costComp.Props.cost);
+            baseCost = Skills.RioSkills.BaseCost(ability, baseCost);
             int flatReduction = 0;
             float remainingMultiplier = 1f;
             List<HediffComp_CostDiscount> discounts = BACostStatusUtility.GetMatchingDiscounts(ability);

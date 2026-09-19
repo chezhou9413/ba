@@ -360,10 +360,13 @@ namespace BANWlLib.BattleSystem
                 BattleActionConfig source = extension.actions[i];
                 copies.Add(new BattleActionConfig
                 {
+                    useBattleStats = source.useBattleStats,
+                    basePower = source.basePower,
                     attackPowerRatio = source.attackPowerRatio,
                     baseMasteryMultiplier = source.baseMasteryMultiplier,
                     healPowerRatio = source.healPowerRatio,
                     shieldPowerRatio = source.shieldPowerRatio,
+                    shieldSource = source.shieldSource,
                     damageDef = source.damageDef,
                     triggerHediff = source.triggerHediff,
                     shieldHediffDef = source.shieldHediffDef,
@@ -503,6 +506,8 @@ namespace BANWlLib.BattleSystem
             {
                 AddPreviewAction(actions, new BattleActionConfig
                 {
+                    useBattleStats = battleExtension.useBattleStats,
+                    basePower = battleExtension.basePower,
                     attackPowerRatio = battleExtension.attackPowerRatio,
                     baseMasteryMultiplier = battleExtension.baseMasteryMultiplier,
                     damageDef = projectileDef.projectile?.damageDef,
@@ -555,6 +560,8 @@ namespace BANWlLib.BattleSystem
 
             return new BattleActionConfig
             {
+                useBattleStats = config.useBattleStats,
+                basePower = config.basePower,
                 attackPowerRatio = config.attackPowerRatio,
                 baseMasteryMultiplier = config.baseMasteryMultiplier,
                 damageDef = config.ResolveDamageDef(),
@@ -582,6 +589,8 @@ namespace BANWlLib.BattleSystem
 
             return new BattleActionConfig
             {
+                useBattleStats = extension.useBattleStats,
+                basePower = extension.basePower,
                 attackPowerRatio = extension.attackPowerRatio,
                 baseMasteryMultiplier = extension.baseMasteryMultiplier,
                 damageDef = projectileDef.projectile?.damageDef,
@@ -777,7 +786,7 @@ namespace BANWlLib.BattleSystem
             }
 
             float damage = EstimateDamage(pawn, action) * group.repeatCount;
-            builder.AppendLine("  " + title + "：" + FormatColor("伤害", DamageColor) + " " + FormatPercent(GetDamageActionMultiplier(action)) + " x" + group.repeatCount + " = " + FormatColor(FormatNumber(damage), DamageColor) + "，" + FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill));
+            builder.AppendLine("  " + title + "：" + FormatColor("伤害", DamageColor) + " " + FormatPercent(GetDamageActionMultiplier(action)) + " x" + group.repeatCount + " = " + FormatColor(FormatNumber(damage), DamageColor) + "，" + (action.useBattleStats ? FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill) : "独立基数，不应用BA输出属性"));
         }
 
         // 估算单段伤害，负责复用战斗属性工具的真实伤害计算。
@@ -789,6 +798,8 @@ namespace BANWlLib.BattleSystem
                 target = pawn,
                 damageDef = action.damageDef,
                 weaponBaseAttack = action.previewWeaponBaseAttack,
+                useBattleStats = action.useBattleStats,
+                basePower = action.basePower,
                 attackPowerRatio = action.attackPowerRatio,
                 baseMasteryMultiplier = action.baseMasteryMultiplier,
                 penetration = action.penetration,
@@ -804,13 +815,14 @@ namespace BANWlLib.BattleSystem
         // 估算目标受疗前的单段治疗，负责和详细治疗段使用同一口径。
         private static float EstimateHealBeforeTargetReceived(Pawn pawn, BattleActionConfig action)
         {
-            return BattleStatUtility.GetFinalHealPower(pawn) * Mathf.Max(0f, action.healPowerRatio);
+            return (action.useBattleStats ? BattleStatUtility.GetFinalHealPower(pawn) : action.basePower) * Mathf.Max(0f, action.healPowerRatio);
         }
 
         // 估算单段护盾量，负责让护盾技能在悬浮说明里显示预计护盾值。
         private static float EstimateShield(Pawn pawn, BattleActionConfig action)
         {
-            return BattleStatUtility.GetFinalHealPower(pawn) * Mathf.Max(0f, action.shieldPowerRatio);
+            return BattleStatUtility.BuildShieldResult(new BattleShieldRequest
+            { instigator = pawn, target = pawn, source = action.shieldSource, useBattleStats = action.useBattleStats, basePower = action.basePower, shieldPowerRatio = action.shieldPowerRatio }).finalAmount;
         }
 
         //比较两个预览战斗段，负责判断它们是否可以在显示上合并。
@@ -821,7 +833,8 @@ namespace BANWlLib.BattleSystem
                 return false;
             }
 
-            return left.attackPowerRatio == right.attackPowerRatio &&
+            return left.useBattleStats == right.useBattleStats && left.basePower == right.basePower &&
+                   left.shieldSource == right.shieldSource && left.attackPowerRatio == right.attackPowerRatio &&
                    left.baseMasteryMultiplier == right.baseMasteryMultiplier &&
                    left.healPowerRatio == right.healPowerRatio &&
                    left.shieldPowerRatio == right.shieldPowerRatio &&
@@ -891,6 +904,8 @@ namespace BANWlLib.BattleSystem
                 target = pawn,
                 damageDef = action.damageDef,
                 weaponBaseAttack = action.previewWeaponBaseAttack,
+                useBattleStats = action.useBattleStats,
+                basePower = action.basePower,
                 attackPowerRatio = action.attackPowerRatio,
                 baseMasteryMultiplier = action.baseMasteryMultiplier,
                 penetration = action.penetration,
@@ -962,7 +977,7 @@ namespace BANWlLib.BattleSystem
         {
             builder.AppendLine("算法：");
             builder.AppendLine(FormatColor("  攻击：角色自身攻击力 x 攻击力加成 x 技能倍率", ColoredText.SubtleGrayColor));
-            builder.AppendLine(FormatColor("  修正：" + FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill), ColoredText.SubtleGrayColor));
+            builder.AppendLine(FormatColor("  修正：" + (action.useBattleStats ? FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill) : "独立基数，不应用BA输出属性"), ColoredText.SubtleGrayColor));
         }
 
         //写入治疗算法，负责用短行展示实际结算顺序，避免 tooltip 横向撑开。

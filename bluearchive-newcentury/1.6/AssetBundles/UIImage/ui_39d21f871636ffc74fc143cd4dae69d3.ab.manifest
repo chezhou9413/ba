@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2497428249
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 70eb3c9191a57f5f2a26e8d649aa56fe
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 70eb3c9191a57f5f2a26e8d649aa56fe
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Nero.png
+Dependencies: []

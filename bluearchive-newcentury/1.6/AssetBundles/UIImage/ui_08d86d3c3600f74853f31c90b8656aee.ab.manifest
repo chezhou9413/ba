@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2155073938
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 122190f49ad37f9a5de5f655d7d9acb0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 122190f49ad37f9a5de5f655d7d9acb0
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Newyear_Collection.png
+Dependencies: []

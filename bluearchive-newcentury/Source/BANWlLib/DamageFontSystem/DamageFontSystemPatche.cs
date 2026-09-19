@@ -13,6 +13,7 @@ public class DamageFontSystemPatche
     public static Dictionary<int, bool> CritState = new Dictionary<int, bool>();
 
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
+    //角色受伤前补丁，负责为未结算伤害补充BA输出属性。
     public static class Patch_Pawn_PreApplyDamage
     {
         // 受伤前处理，负责给原版伤害补上暴击与属性克制，同时跳过已走统一战斗层的手动结算。
@@ -32,6 +33,8 @@ public class DamageFontSystemPatche
                 }
                 return;
             }
+
+            if (BANWlLib.Skills.SpecialDamageScope.Current?.damagePrepared == true) return;
 
             if (TryApplySkillProjectileDamage(__instance, ref dinfo))
             {
@@ -89,8 +92,10 @@ public class DamageFontSystemPatche
     }
 
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PostApplyDamage))]
+    //角色受伤后补丁，负责显示实际暴击并输出结算日志。
     public static class Patch_Pawn_PostApplyDamage
     {
+        //读取实际受伤结果并消耗对应飘字状态。
         public static void Postfix(Pawn __instance, DamageInfo dinfo, float totalDamageDealt)
         {
             if (!DamageFontMod.settings.enableDamageFloat)
@@ -141,6 +146,8 @@ public class DamageFontSystemPatche
                 target = target,
                 damageDef = dinfo.Def,
                 weaponBaseAttack = data.weaponBaseAttack,
+                useBattleStats = data.useBattleStats,
+                basePower = data.basePower,
                 attackPowerRatio = data.attackPowerRatio,
                 baseMasteryMultiplier = data.baseMasteryMultiplier,
                 penetration = dinfo.ArmorPenetrationInt,

@@ -15,6 +15,7 @@ using Verse.Noise;
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
 {
+   //展示抽卡兑换点数与商店条目，并管理兑换界面生命周期。
    public class MonoComp_updataPoit:MonoBehaviour
     {
         public static MonoComp_updataPoit instance;
@@ -23,6 +24,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         public GameObject gakashot;
         public List<GameObject> gakashotList = new List<GameObject>();
         public ManualDataGameComp tracker;
+        //初始化点数显示并绑定商店入口。
         void Start()
         {
             instance = this;
@@ -35,6 +37,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             });
         }
 
+        //打开兑换商店并绑定关闭操作。
         void openGakaShot()
         {
             if (gakashot != null)
@@ -56,6 +59,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             });
         }
 
+        //重建兑换条目并为可见条目绑定学院标志。
         public void RefreshShopList()
         {
             if (gakashot == null)
@@ -86,7 +90,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                     GameObject obj = Instantiate(GakaMapData.GakaShotList);
                     obj.transform.Find("StuName").GetComponent<UnityEngine.UI.Text>().text = studentUI.StudentBio.StudentBioName;
                     obj.transform.Find("shouchouback/Text").GetComponent<UnityEngine.UI.Text>().text = "首次奖励可获得["+ studentUI.StudentBio.StudentBioName + "]的神名文字x100]！";
-                    obj.transform.Find("StuXuexiaoIcon").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(studentUI.StudentBio.AcademyLogoPath));
+                    imgcvT2d.SetImage(obj.transform.Find("StuXuexiaoIcon").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(studentUI.StudentBio.AcademyLogoPath));
                     obj.transform.Find("selectList/avt").GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetHeadShotSpriteFromKind(kindDef);
                     obj.transform.Find("selectList/box").GetComponent<Image>().sprite = MissionMapData.MissionSprite[studentData.DamageType + "_box"];
                     obj.transform.Find("selectList/pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[studentData.PosType + "_min"];
@@ -146,6 +150,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             return redeemPool.StudentList;
         }
 
+        //刷新兑换点数显示和商店可用状态。
         void Update()
         {
             if(GakaMapData.gamecomp_GakaAction != null)
@@ -169,6 +174,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
         }
 
+        //销毁商店时清理控制器引用。
         void OnDestroy()
         {
             if (instance == this)

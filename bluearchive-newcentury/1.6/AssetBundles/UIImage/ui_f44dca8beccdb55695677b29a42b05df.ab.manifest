@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 282521000
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c80e3e84631a7cd75e7c6a3e9312c418
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: c80e3e84631a7cd75e7c6a3e9312c418
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Pina.png
+Dependencies: []

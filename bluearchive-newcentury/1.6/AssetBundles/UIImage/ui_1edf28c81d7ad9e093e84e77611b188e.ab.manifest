@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3641061364
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 712be5988a402db409f6246abed6fb6c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 712be5988a402db409f6246abed6fb6c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Yuzu.png
+Dependencies: []

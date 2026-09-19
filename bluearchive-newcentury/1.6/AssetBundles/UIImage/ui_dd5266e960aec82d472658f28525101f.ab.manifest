@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1490535503
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: faca87c85e97a3e81da80445995cc0dd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: faca87c85e97a3e81da80445995cc0dd
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Sakurako.png
+Dependencies: []
