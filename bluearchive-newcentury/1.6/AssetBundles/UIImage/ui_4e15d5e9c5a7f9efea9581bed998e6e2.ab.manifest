@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 147574156
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c3d4e6f0755ff4e533507d3113fd87b0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: c3d4e6f0755ff4e533507d3113fd87b0
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Kanna.png
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 532376050
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3fe97263b3b5b8a9855180cb7be1b2d1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3fe97263b3b5b8a9855180cb7be1b2d1
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Arian.png
+Dependencies: []

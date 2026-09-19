@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2141701877
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6e44ab91f76da3ce9cd516b8184a41fd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6e44ab91f76da3ce9cd516b8184a41fd
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Yokari.png
+Dependencies: []

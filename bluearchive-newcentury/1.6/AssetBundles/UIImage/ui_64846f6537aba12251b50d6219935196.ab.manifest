@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3717652564
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 73a451add0b1306d32bfac556ad40e92
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 73a451add0b1306d32bfac556ad40e92
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Miku.png
+Dependencies: []

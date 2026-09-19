@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3792564212
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 04f5f9e6c9f096f9670977fc5f697850
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 04f5f9e6c9f096f9670977fc5f697850
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Yakumo.png
+Dependencies: []

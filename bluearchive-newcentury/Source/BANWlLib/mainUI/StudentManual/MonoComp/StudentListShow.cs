@@ -9,6 +9,7 @@ using Verse;
 
 namespace BANWlLib.mainUI.StudentManual.MonoComp
 {
+    //展示学生列表条目并响应收集、出击与筛选状态。
     public class StudentListShow : MonoBehaviour
     {
         public Image avt;
@@ -23,6 +24,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
 
         private readonly ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
 
+        //缓存学生列表条目的图片、文字和按钮。
         void Awake()
         {
             AvtButtom = transform.Find("avt").GetComponent<Button>();
@@ -33,11 +35,12 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             Collect = transform.Find("Collect").GetComponent<Button>();
         }
 
+        //绑定头像路径、星级与学生详情页交互。
         void Start()
         {
             StudentManualEvents.OnRefreshAllStudentData += UpDataStudentData;
 
-            avt.sprite = imgcvT2d.LoadSpriteFromFile(BaStudentUI.StudentAvatar);
+            imgcvT2d.SetImage(avt, BaStudentUI.StudentAvatar);
             studentNameText.text = BaStudentUI.StudentName;
             Collect.interactable = true;
 
@@ -71,6 +74,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             UpDataStudentData();
         }
 
+        //同步学生等级、解锁、收藏和筛选显示。
         void UpDataStudentData()
         {
             StudentRosterUtility.SyncAllStudentRuntimeState(tracker);
@@ -93,6 +97,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             UpdateVisibleState();
         }
 
+        //条目重新启用时同步学生状态。
         void OnEnable()
         {
             if (BaStudentUI == null)
@@ -103,17 +108,20 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             UpDataStudentData();
         }
 
+        //解除学生状态刷新事件订阅。
         void OnDestroy()
         {
             StudentManualEvents.OnRefreshAllStudentData -= UpDataStudentData;
         }
 
+        //同步学生收藏状态与收藏按钮。
         private void UpdateCollectState()
         {
             SelfisCollect = tracker.StudentCollect.Contains(BaStudentUI.StudentId);
             Collect.gameObject.GetComponent<Image>().color = SelfisCollect ? Color.yellow : Color.white;
         }
 
+        //按当前手册筛选规则更新条目显示。
         private void UpdateVisibleState()
         {
             switch (ManualMapData.selectStudentIndex)

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4029500070
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 74acd2b81ac283f5ac26157948b2daaa
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 74acd2b81ac283f5ac26157948b2daaa
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Ridingsuit_Collection.png
+Dependencies: []

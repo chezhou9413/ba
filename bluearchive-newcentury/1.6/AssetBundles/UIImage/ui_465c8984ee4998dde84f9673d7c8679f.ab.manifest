@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4251733181
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9dcda8edcd3dc71ad98d1f6e8503c6dd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9dcda8edcd3dc71ad98d1f6e8503c6dd
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Shun.png
+Dependencies: []

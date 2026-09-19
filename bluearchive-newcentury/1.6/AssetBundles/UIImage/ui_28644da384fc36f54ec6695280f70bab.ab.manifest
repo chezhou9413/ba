@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 71384279
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 26a5aa3b09e39332b3b9404a2bc122bc
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 26a5aa3b09e39332b3b9404a2bc122bc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Kazusa.png
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1445575795
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5f0a10e5560423f34f446dda919efe43
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5f0a10e5560423f34f446dda919efe43
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Valkyrie.png
+Dependencies: []

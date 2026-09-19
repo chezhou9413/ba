@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Skills\**\*.cs" />
+    <Compile Include="mainUI\Images\**\*.cs" />
     <Compile Include="BaClass\PendingRotatedOffsetMote.cs" />
     <Compile Include="Auras\Definitions\HediffCompProperties_FriendlyAura.cs" />
     <Compile Include="Auras\Definitions\FriendlyAuraEffectExtension.cs" />
@@ -381,6 +382,11 @@
     <Compile Include="WeaponRestrictions\WeaponWhitelistKindExtension.cs" />
     <Compile Include="WeaponRestrictions\WeaponWhitelistUtility.cs" />
     <Compile Include="uicreater\GameComponent_LateInit.cs" />
+    <Compile Include="mainUI\Audio\BADialogueAudioPlayer.cs" />
+    <Compile Include="mainUI\Audio\BADialoguePlaybackPatch.cs" />
+    <Compile Include="mainUI\Audio\SpineAnimation.cs" />
+    <Compile Include="mainUI\Initialization\BAUIInitializationTiming.cs" />
+    <Compile Include="mainUI\Initialization\UICoreStart.Initialization.cs" />
     <Compile Include="uicreater\LongPressDraggableButton.cs" />
     <Compile Include="uicreater\pojo\poit.cs" />
     <Compile Include="uicreater\pojo\poitlist.cs" />

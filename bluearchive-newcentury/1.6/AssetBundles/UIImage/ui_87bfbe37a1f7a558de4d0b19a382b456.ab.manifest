@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1172657941
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: dd2aa14e1f45b956957d131417363740
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: dd2aa14e1f45b956957d131417363740
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Fubuki.png
+Dependencies: []

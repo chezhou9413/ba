@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3206141745
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e6274a0959dae6919473ec8000e871fa
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: e6274a0959dae6919473ec8000e871fa
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Iroha.png
+Dependencies: []

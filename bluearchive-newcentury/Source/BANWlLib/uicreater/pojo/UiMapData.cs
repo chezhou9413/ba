@@ -82,12 +82,12 @@ namespace newpro
         public static void Reset()
         {
             isLocKBack = false;
-            BAManualUIImageLoader.ClearAll();
-            BAUIRimWorldSpriteLoader.ClearAll();
+            BANWlLib.mainUI.Images.BAUIImageCache.Reset();
             RimWorldUISpriteUtil.ClearGeneratedSpriteCache();
 
             if (mainUI != null)
             {
+                mainUI.SetActive(false);
                 Object.Destroy(mainUI);
             }
             if (uiCamera != null)

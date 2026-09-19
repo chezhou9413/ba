@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 581036912
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9e0cee792ad377e63401d1599cf8f365
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9e0cee792ad377e63401d1599cf8f365
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Mimori.png
+Dependencies: []

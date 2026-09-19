@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3122848645
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: eb8d20ed35103e5822130eba1ff9ccbc
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: eb8d20ed35103e5822130eba1ff9ccbc
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Aru.png
+Dependencies: []

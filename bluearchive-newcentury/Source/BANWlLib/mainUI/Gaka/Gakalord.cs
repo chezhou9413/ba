@@ -17,8 +17,10 @@ using Verse;
 
 namespace BANWlLib.mainUI.Gaka
 {
+    //协调卡池选择、抽取、结果生成及抽卡界面显示。
     public static class Gakalord
     {
+        //加载抽卡界面模板并初始化卡池控件。
         public static void lordGaka(AssetBundle bundle)
         {
             if (bundle == null)
@@ -71,6 +73,7 @@ namespace BANWlLib.mainUI.Gaka
             SettingButtomData();
         }
 
+        //绑定单抽、十连与抽卡界面按钮事件。
         public static void SettingButtomData()
         {
             GakaMapData.GakaUIPet.transform.Find("MainBack/box/Button_one").GetComponent<Button>().onClick.AddListener(() =>
@@ -146,12 +149,14 @@ namespace BANWlLib.mainUI.Gaka
             });
         }
 
+        //根据学生标识执行指定抽取流程。
         public static void SelectStu(string defname)
         {
             BaStudentDef studentDef;
             StudentIdentityUtility.TryGetStudentDef(defname, out studentDef);
             ExtGakaData(studentDef);
         }
+        //执行当前卡池的单次抽取并显示结果。
         public static void danchou()
         {
             GakaMapData.gamecomp_GakaAction.updataGacaPoit(1);
@@ -189,6 +194,7 @@ namespace BANWlLib.mainUI.Gaka
             game.AddComponent<MonoComp_GakaAnimationPofab>();
         }
 
+        //执行当前卡池的十次抽取并显示结果。
         public static void shilianchou()
         {
             GakaMapData.gamecomp_GakaAction.updataGacaPoit(10);
@@ -226,6 +232,7 @@ namespace BANWlLib.mainUI.Gaka
             game.GetComponent<Canvas>().worldCamera = UiMapData.mainUI.GetComponent<Canvas>().worldCamera;
             game.AddComponent<MonoComp_GakaAnimationPofab>();
         }
+        //生成学生抽卡结果，仅保存头像路径，显示时再加载图片。
         public static gacaData creatGacaData(BaStudentDef studentDef)
         {
             if (studentDef == null)
@@ -247,17 +254,7 @@ namespace BANWlLib.mainUI.Gaka
             gacaData.StudentUI = studentUI;
             gacaData.BaStudentData = studentData;
             gacaData.starNum = studentUI != null ? studentUI.CharacterStarCount : 1;
-            Texture2D texture = null;
-            string path = studentData?.avtTexPath;
-            if (!string.IsNullOrEmpty(path))
-            {
-                texture = ContentFinder<Texture2D>.Get(path);
-            }
-            if (texture == null)
-            {
-                texture = BaseContent.BadTex;
-            }
-            gacaData.gakaAvt = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            gacaData.AvatarPath = studentData?.avtTexPath;
             if (!StudentRosterUtility.IsStudentDef(tracker, studentId))
             {
                 tracker.HaveStudent.Add(new BANWlLib.mainUI.pojo.StudentData(studentId));
@@ -271,6 +268,7 @@ namespace BANWlLib.mainUI.Gaka
             gacaData.isUp = upPool != null && upPool.Any(def => def != null && StudentIdentityUtility.GetStudentId(def) == studentId);
             return gacaData;
         }
+        //把外部抽取结果转换成界面结果数据。
         public static void ExtGakaData(List<BaStudentDef> extlist)
         {
             GakaMapData.gacaDatas.Clear();
@@ -286,6 +284,7 @@ namespace BANWlLib.mainUI.Gaka
             spawStudentThing();
         }
 
+        //把外部抽取结果转换成界面结果数据。
         public static void ExtGakaData(BaStudentDef extlist)
         {
             ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
@@ -302,6 +301,7 @@ namespace BANWlLib.mainUI.Gaka
             spawStudentThing();
         }
 
+        //结算抽卡获得的学生和重复兑换物品。
         public static void spawStudentThing()
         {
             Map map = Find.CurrentMap;
@@ -356,6 +356,7 @@ namespace BANWlLib.mainUI.Gaka
                 }
             }
         }
+        //打开抽卡界面并刷新当前卡池信息。
         public static void OpenGakaUI()
         {
             // 默认选中第一个卡池（优先固定池，没有则取随机池第一个）
@@ -375,6 +376,7 @@ namespace BANWlLib.mainUI.Gaka
             SwitchGacha(GakaMapData.selectGachaDef);
         }
 
+        //为可选卡池创建选择按钮。
         public static void creategakaHead()
         {
             GakaMapData.GachaType.Clear();
@@ -406,10 +408,11 @@ namespace BANWlLib.mainUI.Gaka
             }
         }
 
+        //创建卡池选择按钮，图片随按钮可见状态加载。
         private static void CreateGachaButton(Gacha gacha)
         {
             GameObject gakaHead = GameObject.Instantiate(GakaMapData.GachaPofab);
-            gakaHead.GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(gacha.gachaTexPath));
+            imgcvT2d.SetImage(gakaHead.GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(gacha.gachaTexPath));
             gakaHead.GetComponent<Button>().onClick.AddListener(delegate
             {
                 GakaMapData.selectGachaDef = gacha;
@@ -418,6 +421,7 @@ namespace BANWlLib.mainUI.Gaka
             gakaHead.transform.SetParent(GakaMapData.Content.transform, false);
         }
 
+        //切换当前卡池并更新展示内容。
         public static void SwitchGacha(Gacha gacha)
         {
             if (gacha == null) return;
@@ -430,6 +434,7 @@ namespace BANWlLib.mainUI.Gaka
             SettingGakaTextForRandPool(gacha);
             MonoComp_updataPoit.instance?.RefreshShopList();
         }
+        //准备并播放指定路径的抽卡视频。
         public static void PlayLocalVideo(VideoPlayer videoPlayer, string videoPath)
         {
             if (videoPlayer == null || string.IsNullOrEmpty(videoPath)) return;
@@ -447,12 +452,14 @@ namespace BANWlLib.mainUI.Gaka
             videoPlayer.Prepare();
         }
 
+        //在视频准备完成后开始播放。
         private static void OnVideoPrepared(VideoPlayer source)
         {
             source.prepareCompleted -= OnVideoPrepared;
             source.Play();
         }
 
+        //根据卡池类型设置抽取信息文字。
         public static void SettingGakaTextForRandPool(Gacha gacha)
         {
             var gameComp = GakaMapData.gamecomp_GakaAction;

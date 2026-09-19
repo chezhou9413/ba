@@ -14,6 +14,7 @@ using Verse;
 
 namespace BANWlLib.mainUI.StudentManual.MonoComp
 {
+    //绑定学生详情、能力和出击数据，图片引用由对应控件管理。
     public class StudentDetailsController : MonoBehaviour
     {
         public static bool isWring = false;
@@ -36,6 +37,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         //原生偏移和缩放二维向量
         private Vector2 originalSize = Vector2.zero;
         private Vector2 originalOffset = Vector2.zero;
+        //缓存学生详情控件并绑定出击交互。
         void Awake()
         {
             StudentBioContent = transform.Find("Background").transform.Find("mainInfo").transform.Find("StudentBio").transform.Find("Background").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Content").gameObject;
@@ -52,11 +54,13 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             infoObj = transform.Find("Background").transform.Find("Info").gameObject;
             SetDeployButtomLogin();
         }
+        //保留手册控制器的显式启用入口。
         void Enable()
         {
 
         }
 
+        //取得手册存档组件并同步学生运行状态。
         private static ManualDataGameComp GetTracker()
         {
             tracker = Current.Game?.GetComponent<ManualDataGameComp>();
@@ -64,14 +68,15 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             return tracker;
         }
 
+        //将当前学生资料与图片路径绑定到详情控件。
         public void setData()
         {
             try
             {
                 tracker = GetTracker();
-                BackgroundImage.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.BackgroundPath));
-                Characterimage.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.CharacterimagePath));
-                CharacterType.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.CharacterTypePath));
+                imgcvT2d.SetImage(BackgroundImage, imgcvT2d.getRimWorldImgPath(BaStudentUI.BackgroundPath));
+                imgcvT2d.SetImage(Characterimage, imgcvT2d.getRimWorldImgPath(BaStudentUI.CharacterimagePath));
+                imgcvT2d.SetImage(CharacterType, imgcvT2d.getRimWorldImgPath(BaStudentUI.CharacterTypePath));
                 CharacterName.text = BaStudentUI.StudentName;
                 studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.StudentId);
                 if (studentData != null)
@@ -118,6 +123,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                    PawnDropHelper.HasPendingPawnForDefName(BaStudentUI.StudentId);
         }
 
+        //根据学生状态刷新出击与撤回按钮。
         void SetDeployButton()
         {
             tracker = GetTracker();
@@ -157,6 +163,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             }
         }
 
+        //立即显示学生撤回后的按钮状态。
         void ShowWithdrawStateImmediately()
         {
             DeployButton.interactable = false;
@@ -164,10 +171,12 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             WithdrawButton.gameObject.SetActive(true);
         }
 
+        //保留学生详情控制器的启动入口。
         void Start()
         {
 
         }
+        //绑定学生出击与撤回按钮事件。
         void SetDeployButtomLogin()
         {
             DeployButton.onClick.AddListener(() =>
@@ -263,6 +272,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             });
         }
 
+        //绑定定位、武器伤害类型和防御类型等标签图片。
         void SetInfoObj()
         {
             if (BaStudentUI.infotagImagePath1 == null || BaStudentUI.infotagImagePath1 == "")
@@ -272,7 +282,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             else
             {
                 infoObj.transform.Find("InfoTag1").gameObject.SetActive(true);
-                infoObj.transform.Find("InfoTag1").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.infotagImagePath1));
+                imgcvT2d.SetImage(infoObj.transform.Find("InfoTag1").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(BaStudentUI.infotagImagePath1));
             }
             if (BaStudentUI.infotagImagePath2 == null || BaStudentUI.infotagImagePath2 == "")
             {
@@ -281,7 +291,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             else
             {
                 infoObj.transform.Find("InfoTag2").gameObject.SetActive(true);
-                infoObj.transform.Find("InfoTag2").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.infotagImagePath2));
+                imgcvT2d.SetImage(infoObj.transform.Find("InfoTag2").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(BaStudentUI.infotagImagePath2));
             }
             if (BaStudentUI.infotagImagePath3 == null || BaStudentUI.infotagImagePath3 == "")
             {
@@ -290,7 +300,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             else
             {
                 infoObj.transform.Find("InfoTag3").gameObject.SetActive(true);
-                infoObj.transform.Find("InfoTag3").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.infotagImagePath3));
+                imgcvT2d.SetImage(infoObj.transform.Find("InfoTag3").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(BaStudentUI.infotagImagePath3));
             }
             if (BaStudentUI.infotagImagePath4 == null || BaStudentUI.infotagImagePath4 == "")
             {
@@ -299,9 +309,10 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             else
             {
                 infoObj.transform.Find("InfoTag4").gameObject.SetActive(true);
-                infoObj.transform.Find("InfoTag4").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.infotagImagePath4));
+                imgcvT2d.SetImage(infoObj.transform.Find("InfoTag4").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(BaStudentUI.infotagImagePath4));
             }
         }
+        //应用学生立绘的尺寸和位置配置。
         void SetCharacterimageSizeAndOffset()
         {
             if (originalSize == Vector2.zero)
@@ -319,6 +330,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
 
         }
 
+        //按学生星级居中创建星标。
         void SpawnStarCentered()
         {
             // 首先，清空现有的星星。这部分代码是正确的。
@@ -353,6 +365,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             }
         }
 
+        //根据学生资料生成技能展示内容。
         void SetSkills()
         {
             // 射击 (Shooting)
@@ -404,6 +417,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             SkillsBar.transform.Find("Intellectual").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Intellectual / 20f;
         }
 
+        //把角色运行信息同步到手册学生数据。
         public static void lordStudentPawninfo(Pawn pawn,StudentData studentDataref)
         {
             tracker = GetTracker();
@@ -421,6 +435,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             }
         }
 
+        //显示当前学生的主动及被动技能信息与图标。
         void SetActiveAbilitySet()
         {
             GameObject Abilityinfo = mainInfo.transform.Find("StudentInfo").transform.Find("Abilityinfo").gameObject;
@@ -442,7 +457,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 activeInfo.penter = Ability1;
                 activeInfo.ID = "A1";
                 Image back = Ability1.transform.Find("back").GetComponent<Image>();
-                back.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability1.AbilityImagePath));
+                imgcvT2d.SetImage(back, imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability1.AbilityImagePath));
                 back.rectTransform.anchoredPosition = petPos + new Vector2(BaStudentUI.Ability1.offSetX, BaStudentUI.Ability1.offSetY);
                 Ability1.transform.Find("AbilityType").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Ability1.AbilityTypeText;
 
@@ -465,7 +480,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 activeInfo2.penter = Ability2;
                 activeInfo2.ID = "A2";
                 Image back = Ability2.transform.Find("back").GetComponent<Image>();
-                back.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability2.AbilityImagePath));
+                imgcvT2d.SetImage(back, imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability2.AbilityImagePath));
                 back.rectTransform.anchoredPosition = petPos + new Vector2(BaStudentUI.Ability2.offSetX, BaStudentUI.Ability2.offSetY);
                 Ability2.transform.Find("AbilityType").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Ability2.AbilityTypeText;
             }
@@ -490,7 +505,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 activeInfo3.penter = Ability3;
                 activeInfo3.ID = "A3";
                 Image back = Ability3.transform.Find("back").GetComponent<Image>();
-                back.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability3.AbilityImagePath));
+                imgcvT2d.SetImage(back, imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability3.AbilityImagePath));
                 back.rectTransform.anchoredPosition = petPos + new Vector2(BaStudentUI.Ability3.offSetX, BaStudentUI.Ability3.offSetY);
                 Ability3.transform.Find("AbilityType").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Ability3.AbilityTypeText;
             }
@@ -513,18 +528,19 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 activeInfo4.penter = Ability4;
                 activeInfo4.ID = "A4";
                 Image back = Ability4.transform.Find("back").GetComponent<Image>();
-                back.sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability4.AbilityImagePath));
+                imgcvT2d.SetImage(back, imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability4.AbilityImagePath));
                 back.rectTransform.anchoredPosition = petPos + new Vector2(BaStudentUI.Ability4.offSetX, BaStudentUI.Ability4.offSetY);
                 Ability4.transform.Find("AbilityType").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Ability4.AbilityTypeText;
             }
         }
 
+        //绑定学生武器图片与文字信息。
         void SetWapenUI()
         {
             if (BaStudentUI.WapenUI.WapenTypeText != null)
             {
                 mainInfo.transform.Find("StudentInfo").transform.Find("wapen").gameObject.SetActive(true);
-                mainInfo.transform.Find("StudentInfo").transform.Find("wapen").transform.Find("wapenImage").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.WapenUI.WapenUIImagePath));
+                imgcvT2d.SetImage(mainInfo.transform.Find("StudentInfo").transform.Find("wapen").transform.Find("wapenImage").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(BaStudentUI.WapenUI.WapenUIImagePath));
                 mainInfo.transform.Find("StudentInfo").transform.Find("wapen").transform.Find("TypeBack").transform.Find("Text").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.WapenUI.WapenTypeText;
             }
             else
@@ -533,15 +549,16 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             }
         }
 
+        //绑定头像、学院标志与个人资料。
         void SetStudentBio()
         {
             if (BaStudentUI.StudentBio.StudentBioName != null)
             {
                 GameObject gameObject = StudentBioContent.transform.Find("StudentAvatar").gameObject;
-                gameObject.GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(BaStudentUI.StudentAvatar);
+                imgcvT2d.SetImage(gameObject.GetComponent<Image>(), BaStudentUI.StudentAvatar);
                 gameObject.transform.Find("StudentDesp").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.StudentBio.StudentDesp;
                 gameObject.transform.Find("StudentName").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.StudentBio.StudentBioName;
-                gameObject.transform.Find("AcademyLogo").GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(BaStudentUI.StudentBio.AcademyLogoPath));
+                imgcvT2d.SetImage(gameObject.transform.Find("AcademyLogo").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(BaStudentUI.StudentBio.AcademyLogoPath));
                 StudentBioContent.transform.Find("StudentCard").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.StudentBio.StudentCard;
                 LayoutRebuilder.ForceRebuildLayoutImmediate(StudentBioContent.transform.Find("StudentCard").GetComponent<UnityEngine.UI.Text>().rectTransform);
                 LayoutRebuilder.ForceRebuildLayoutImmediate(StudentBioContent.transform.Find("StudentAvatar").GetComponent<RectTransform>());

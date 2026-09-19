@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1109199265
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e3b86bda05685aa4f42cb8cc557583ef
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: e3b86bda05685aa4f42cb8cc557583ef
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Chise.png
+Dependencies: []

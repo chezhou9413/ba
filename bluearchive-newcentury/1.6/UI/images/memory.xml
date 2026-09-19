@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIImageMemory>
+  <!--小图不再显示后最多保留的时间，单位为实际秒。-->
+  <idleSeconds>30</idleSeconds>
+  <!--闲置图片缓存上限；正在显示的图片不受此上限强制回收。-->
+  <idleMegabytes>32</idleMegabytes>
+</UIImageMemory>

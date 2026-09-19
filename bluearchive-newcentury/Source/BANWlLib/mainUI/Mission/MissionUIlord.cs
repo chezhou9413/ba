@@ -1,4 +1,4 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
 using BANWlLib.mainUI.Mission.MonoComp;
 using BANWlLib.mainUI.StudentManual;
 using BANWlLib.Tool;
@@ -13,8 +13,10 @@ using static UnityEngine.Networking.UnityWebRequest;
 
 namespace BANWlLib.mainUI.Mission
 {
+    //初始化任务界面预制体、分类与节点数据。
     public static class MissionUIlord
     {
+        //初始化任务界面的模板与配置数据。
         public static void lord()
         {
             lordMissionPrefab(UiMapData.bundle);
@@ -23,6 +25,7 @@ namespace BANWlLib.mainUI.Mission
             lordPawnHead();
         }
 
+        //创建任务分类按钮并绑定按需显示的图标。
         private static void LordMissionTypeDef()
         {
             MissionMapData.MissionUI = UiMapData.mainUI.transform.Find("Mission").gameObject;
@@ -38,13 +41,14 @@ namespace BANWlLib.mainUI.Mission
                 GameObject typeObj = GameObject.Instantiate(MissionMapData.MissionTypeObj, MissionMapData.typeContent.transform);
                 if (!string.IsNullOrEmpty(missionType.UIIconPath))
                 {
-                    typeObj.GetComponent<Image>().sprite = imgcvT2d.LoadSpriteFromFile(imgcvT2d.getRimWorldImgPath(missionType.UIIconPath));
+                    imgcvT2d.SetImage(typeObj.GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(missionType.UIIconPath));
                 }
                 MonoComp_BaMissionType monoComp = typeObj.AddComponent<MonoComp_BaMissionType>();
                 monoComp.baMissionType = missionType;
             }
         }
 
+        //创建各任务节点并绑定其配置。
         private static void LordMissionNodeDef()
         {
             MissionMapData.NodeContent = MissionMapData.MissionUI.transform.Find("back2/MissionNodeBack/Scroll View/Viewport/Content").gameObject;
@@ -62,6 +66,7 @@ namespace BANWlLib.mainUI.Mission
             }
         }
 
+        //为任务界面生成角色头像控件。
         private static void lordPawnHead()
         {
              List<BaStudentDef> StudentList = DefDatabase<BaStudentDef>.AllDefsListForReading;
@@ -81,6 +86,7 @@ namespace BANWlLib.mainUI.Mission
                 MissionMapData.pawnBigHardSprite[studentId] = sprite;
             }
         }
+        //从资源包加载任务界面所需预制体。
         private static void lordMissionPrefab(AssetBundle bundle)
         {
             MissionMapData.MissionTypeObj = bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/MissionGameObj/MissionType.prefab");

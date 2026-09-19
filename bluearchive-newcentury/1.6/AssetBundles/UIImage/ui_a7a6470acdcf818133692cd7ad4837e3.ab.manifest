@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1538875102
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2080a86d97a741aaa45b4e36c46347a6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 2080a86d97a741aaa45b4e36c46347a6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Noa.png
+Dependencies: []

@@ -1,134 +1,67 @@
-﻿using BANWlLib.BaDef;
+using BANWlLib.BaDef;
+using BANWlLib.mainUI.Audio;
 using newpro;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using UnityEngine;
-using UnityEngine.Networking;
 using Verse;
 
 namespace BANWlLib.mainUI
 {
-    /// <summary>
-    /// 负责把阿洛娜与普拉娜的 Spine 对话配置加载到 UI 控制器。
-    /// </summary>
+    //把阿洛娜与普拉娜的对话配置绑定到控制器，音频由播放请求按需取得。
     public static class lordHudong
     {
-        /// <summary>
-        /// 负责加载阿洛娜的启动与点击对话动画配置。
-        /// </summary>
-        public static void LordArona(aronaSpineUIController aronaSpineUIController)
+        //读取阿洛娜的启动与点击对话配置。
+        public static void LordArona(aronaSpineUIController controller)
         {
-            AronaSpine aronaSpine = DefDatabase<AronaSpine>.AllDefs.FirstOrDefault();
-            if (aronaSpine == null || aronaSpineUIController == null)
+            AronaSpine config = DefDatabase<AronaSpine>.AllDefs.FirstOrDefault();
+            if (config == null || controller == null)
             {
-                Log.Warning("[BAUI] 阿洛娜 Spine 配置或控制器为空。");
+                Log.Error("[BAUI] 阿洛娜 Spine 配置或控制器为空。");
                 return;
             }
-
-            foreach (SpineAnimation spineAnimation in aronaSpine.startClickspineAnimationNames)
-            {
-                string audioClipPath = Path.Combine(UiMapData.modRootPath, spineAnimation.aronaAudioClipPath);
-                Log.Message(audioClipPath);
-                AudioClip audioClip = LoadAudioClipBlocking(audioClipPath);
-                aronaAnimation aronaAnimation = new aronaAnimation();
-                aronaAnimation.spineAnimationName = spineAnimation.spineAnimationName;
-                aronaAnimation.Mouth_Tex = spineAnimation.Mouth_Tex;
-                aronaAnimation.defMouse_Tex = spineAnimation.defMouse_Tex;
-                aronaAnimation.aronaAudioClip = audioClip;
-                aronaAnimation.isBlink = false;
-                aronaAnimation.text = spineAnimation.text;
-                aronaSpineUIController.start.Add(aronaAnimation);
-            }
-            foreach (SpineAnimation spineAnimation in aronaSpine.onClickspineAnimationNames)
-            {
-                string audioClipPath = Path.Combine(UiMapData.modRootPath, spineAnimation.aronaAudioClipPath);
-                Log.Message(audioClipPath);
-                AudioClip audioClip = LoadAudioClipBlocking(audioClipPath);
-                aronaAnimation aronaAnimation = new aronaAnimation();
-                aronaAnimation.spineAnimationName = spineAnimation.spineAnimationName;
-                aronaAnimation.Mouth_Tex = spineAnimation.Mouth_Tex;
-                aronaAnimation.defMouse_Tex = spineAnimation.defMouse_Tex;
-                aronaAnimation.aronaAudioClip = audioClip;
-                aronaAnimation.isBlink = false;
-                aronaAnimation.text = spineAnimation.text;
-                aronaSpineUIController.oneClick.Add(aronaAnimation);
-            }
+            Bind(controller, config.startClickspineAnimationNames, config.onClickspineAnimationNames);
         }
 
-        /// <summary>
-        /// 负责加载普拉娜的启动与点击对话动画配置。
-        /// </summary>
-        public static void LordPunara(aronaSpineUIController aronaSpineUIController)
+        //读取普拉娜的启动与点击对话配置。
+        public static void LordPunara(aronaSpineUIController controller)
         {
-            PunaraSpine PunaraSpine = DefDatabase<PunaraSpine>.AllDefs.FirstOrDefault();
-            if (PunaraSpine == null || aronaSpineUIController == null)
+            PunaraSpine config = DefDatabase<PunaraSpine>.AllDefs.FirstOrDefault();
+            if (config == null || controller == null)
             {
-                Log.Warning("[BAUI] 普拉娜 Spine 配置或控制器为空。");
+                Log.Error("[BAUI] 普拉娜 Spine 配置或控制器为空。");
                 return;
             }
-
-            foreach (SpineAnimation spineAnimation in PunaraSpine.startClickspineAnimationNames)
-            {
-                string audioClipPath = Path.Combine(UiMapData.modRootPath, spineAnimation.aronaAudioClipPath);
-                Log.Message(audioClipPath);
-                AudioClip audioClip = LoadAudioClipBlocking(audioClipPath);
-                aronaAnimation aronaAnimation = new aronaAnimation();
-                aronaAnimation.spineAnimationName = spineAnimation.spineAnimationName;
-                aronaAnimation.Mouth_Tex = spineAnimation.Mouth_Tex;
-                aronaAnimation.defMouse_Tex = spineAnimation.defMouse_Tex;
-                aronaAnimation.aronaAudioClip = audioClip;
-                aronaAnimation.isBlink = false;
-                aronaAnimation.text = spineAnimation.text;
-                aronaSpineUIController.start.Add(aronaAnimation);
-            }
-            foreach (SpineAnimation spineAnimation in PunaraSpine.onClickspineAnimationNames)
-            {
-                string audioClipPath = Path.Combine(UiMapData.modRootPath, spineAnimation.aronaAudioClipPath);
-                Log.Message(audioClipPath);
-                AudioClip audioClip = LoadAudioClipBlocking(audioClipPath);
-                aronaAnimation aronaAnimation = new aronaAnimation();
-                aronaAnimation.spineAnimationName = spineAnimation.spineAnimationName;
-                aronaAnimation.Mouth_Tex = spineAnimation.Mouth_Tex;
-                aronaAnimation.defMouse_Tex = spineAnimation.defMouse_Tex;
-                aronaAnimation.aronaAudioClip = audioClip;
-                aronaAnimation.isBlink = false;
-                aronaAnimation.text = spineAnimation.text;
-                aronaSpineUIController.oneClick.Add(aronaAnimation);
-            }
+            Bind(controller, config.startClickspineAnimationNames, config.onClickspineAnimationNames);
         }
 
-        /// <summary>
-        /// 负责同步读取本地 OGG 音频文件并返回 Unity 音频对象。
-        /// </summary>
-        public static AudioClip LoadAudioClipBlocking(string filePath)
+        //登记动画和音频路径，不在界面初始化阶段解码全部语音。
+        private static void Bind(aronaSpineUIController controller, List<SpineAnimation> start, List<SpineAnimation> clicks)
         {
-            string uri = new System.Uri(filePath).AbsoluteUri;
-            using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip(uri, AudioType.OGGVORBIS))
+            BADialogueAudioPlayer audio = controller.gameObject.AddComponent<BADialogueAudioPlayer>();
+            audio.Initialize(controller);
+            controller.start.Clear();
+            controller.oneClick.Clear();
+            AddAnimations(audio, start, controller.start);
+            AddAnimations(audio, clicks, controller.oneClick);
+        }
+
+        //创建每个控制器独立的动画数据，并把原始 Def 中的语音路径交给加载器。
+        private static void AddAnimations(BADialogueAudioPlayer audio, List<SpineAnimation> source, List<aronaAnimation> target)
+        {
+            foreach (SpineAnimation config in source)
             {
-                var asyncOp = request.SendWebRequest();
-                while (!asyncOp.isDone){}
-                if (request.result == UnityWebRequest.Result.Success)
+                var animation = new aronaAnimation
                 {
-                    return DownloadHandlerAudioClip.GetContent(request);
-                }
-                else
-                {
-                    return null;
-                }
+                    spineAnimationName = config.spineAnimationName,
+                    Mouth_Tex = config.Mouth_Tex,
+                    defMouse_Tex = config.defMouse_Tex,
+                    isBlink = false,
+                    text = config.text
+                };
+                audio.Register(animation, Path.Combine(UiMapData.modRootPath, config.aronaAudioClipPath));
+                target.Add(animation);
             }
         }
-    }
-
-    /// <summary>
-    /// 负责保存单条 Spine 对话动画、口型、音频与文本配置。
-    /// </summary>
-    public class SpineAnimation
-    {
-        public string spineAnimationName;
-        public string Mouth_Tex;
-        public string defMouse_Tex;
-        public string aronaAudioClipPath;
-        public bool isBlink = true;
-        public string text;
     }
 }

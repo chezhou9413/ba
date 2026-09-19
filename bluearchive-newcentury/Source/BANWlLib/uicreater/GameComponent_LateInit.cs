@@ -1,6 +1,7 @@
-﻿using BANWlLib;
+using BANWlLib;
 using BANWlLib.mainUI.Mission;
 using BANWlLib.mainUI.MonoComp;
+using BANWlLib.mainUI.Initialization;
 using BANWlLib.mainUI.StudentManual;
 using HarmonyLib;
 using MyCoolMusicMod.MyCoolMusicMod;
@@ -14,41 +15,31 @@ using UnityEngine.Video;
 using Verse;
 namespace newpro
 {
-    /// <summary>
-    /// 游戏级 UI 初始化组件负责在地图可用后延迟创建 BA 主界面，并在读档或新游戏时清理旧 UI 缓存。
-    /// </summary>
+    //游戏级 UI 初始化组件负责在地图可用后延迟创建 BA 主界面，并在读档或新游戏时清理旧 UI 缓存。
     public class GameComponent_LateInit : GameComponent
     {
         private bool hasInitializedThisSession = false;
         private bool needReinitUI = false;
         private bool initializationQueued = false;
         private bool initializationFailed = false;
+        //由游戏创建当前存档的 UI 初始化状态。
         public GameComponent_LateInit(Game game) { }
         public static GameObject uiInstance = null;
 
         public List<string> UIheads;
         public List<string> UIbodys;
         public string UIimgPath;
-
-        /// <summary>
-        /// 保存和读取 UI 初始化组件的运行状态。
-        /// </summary>
+        //保存和读取 UI 初始化组件的运行状态。
         public override void ExposeData()
         {
             base.ExposeData();
         }
-
-        /// <summary>
-        /// 游戏初始化完成回调，保留给后续需要在存档加载后补充初始化的逻辑。
-        /// </summary>
+        //游戏初始化完成回调，保留给后续需要在存档加载后补充初始化的逻辑。
         public override void FinalizeInit()
         {
             base.FinalizeInit();
         }
-
-        /// <summary>
-        /// 每 tick 检查地图是否可用，并在合适时机排队执行一次 UI 初始化。
-        /// </summary>
+        //每 tick 检查地图是否可用，并在合适时机排队执行一次 UI 初始化。
         public override void GameComponentTick()
         {
             if (needReinitUI)
@@ -79,46 +70,51 @@ namespace newpro
                 Find.TickManager.CurTimeSpeed = TimeSpeed.Normal;
             }
         }
-
-        /// <summary>
-        /// 初始化抽卡 UI 系统，负责加载资源路径、事件系统、主界面、图鉴和任务界面。
-        /// </summary>
-        /// <returns>是否成功初始化</returns>
+        //初始化抽卡 UI 系统，负责加载资源路径、事件系统、主界面、图鉴和任务界面。
         public static bool InitializeGachaUI()
         {
             try
             {
-                if (UiMapData.modRootPath == null)
+                using (var timing = new BAUIInitializationTiming("整套界面"))
                 {
-                    UiMapData.modRootPath = LoadedModManager.GetMod<BANWlLib.newpro>().Content.RootDir;
+                    if (UiMapData.modRootPath == null)
+                    {
+                        UiMapData.modRootPath = LoadedModManager.GetMod<BANWlLib.newpro>().Content.RootDir;
+                    }
+
+                    string UIimgPath = Path.Combine(UiMapData.modRootPath, "Common", "Textures");
+                    UiMapData.UIraceimg = Path.Combine(UiMapData.modRootPath, "1.6", "Defs", "GameDefs", "raceimg");
+
+                    if (UiMapData.ImagraceMap == null || UiMapData.ImagraceMap.Count == 0)
+                    {
+                        UiMapData.ImagraceMap = imgcvT2d.GetPngMap(UiMapData.UIraceimg);
+                    }
+
+                    UiMapData.uiclose = false;
+
+                    if (UnityEngine.Object.FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null)
+                    {
+                        GameObject eventSystem = new GameObject("EventSystem");
+                        eventSystem.AddComponent<UnityEngine.EventSystems.EventSystem>();
+                        eventSystem.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
+                        UnityEngine.Object.DontDestroyOnLoad(eventSystem);
+                    }
+                    timing.Mark("路径与事件系统");
+                    if (!UICoreStart.InitializeMianUI())
+                    {
+                        Log.Error("[抽卡UI] 主 UI 初始化失败，已停止本轮初始化，避免加载界面反复重试。");
+                        return false;
+                    }
+                    timing.Mark("主界面");
+                    LoopBGMManager.EnsureAudioLoaded();
+                    timing.Mark("启动背景音频请求");
+                    ManualLord.lord();
+                    timing.Mark("学生手册");
+                    MissionUIlord.lord();
+                    UiMapData.mainUI.SetActive(false);
+                    timing.Mark("任务界面");
+                    return true;
                 }
-
-                string UIimgPath = Path.Combine(UiMapData.modRootPath, "Common", "Textures");
-                UiMapData.UIraceimg = Path.Combine(UiMapData.modRootPath, "1.6", "Defs", "GameDefs", "raceimg");
-
-                if (UiMapData.ImagraceMap == null || UiMapData.ImagraceMap.Count == 0)
-                {
-                    UiMapData.ImagraceMap = imgcvT2d.GetPngMap(UiMapData.UIraceimg);
-                }
-
-                UiMapData.uiclose = false;
-
-                if (UnityEngine.Object.FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null)
-                {
-                    GameObject eventSystem = new GameObject("EventSystem");
-                    eventSystem.AddComponent<UnityEngine.EventSystems.EventSystem>();
-                    eventSystem.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
-                    UnityEngine.Object.DontDestroyOnLoad(eventSystem);
-                }           
-                if (!UICoreStart.InitializeMianUI())
-                {
-                    Log.Error("[抽卡UI] 主 UI 初始化失败，已停止本轮初始化，避免加载界面反复重试。");
-                    return false;
-                }
-                LoopBGMManager.EnsureAudioLoaded();
-                ManualLord.lord();
-                MissionUIlord.lord();
-                return true;
             }
             catch (System.Exception ex)
             {
@@ -126,11 +122,7 @@ namespace newpro
                 return false;
             }
         }
-
-        /// <summary>
-        /// 获取UI图片路径
-        /// </summary>
-        /// <returns>UI图片路径</returns>
+        //获取UI图片路径
         private static string GetUIImagePath()
         {
             return Path.Combine(
@@ -141,14 +133,10 @@ namespace newpro
 
 
         [HarmonyPatch(typeof(UIRoot), "UIRootOnGUI")]
-        /// <summary>
-        /// Harmony 补丁负责在 BA 全屏 UI 打开时拦截基础 UIRoot 的 OnGUI。
-        /// </summary>
+        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截基础 UIRoot 的 OnGUI。
         public static class PatchDisableUIRootOnGUI
         {
-            /// <summary>
-            /// Prefix 根据 BA UI 是否接管输入决定是否继续执行原版 OnGUI。
-            /// </summary>
+            //Prefix 根据 BA UI 是否接管输入决定是否继续执行原版 OnGUI。
             [HarmonyPrefix]
             public static bool prefix()
             {
@@ -161,14 +149,10 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot), "UIRootUpdate")]
-        /// <summary>
-        /// Harmony 补丁负责在 BA 全屏 UI 打开时拦截基础 UIRoot 的 Update。
-        /// </summary>
+        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截基础 UIRoot 的 Update。
         public static class PatchDisableUIRootUpdate
         {
-            /// <summary>
-            /// Prefix 根据 BA UI 是否接管输入决定是否继续执行原版 Update。
-            /// </summary>
+            //Prefix 根据 BA UI 是否接管输入决定是否继续执行原版 Update。
             [HarmonyPrefix]
             public static bool prefix()
             {
@@ -182,14 +166,10 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot_Entry), "UIRootOnGUI")]
-        /// <summary>
-        /// Harmony 补丁负责在 BA 全屏 UI 打开时拦截入口界面的 OnGUI。
-        /// </summary>
+        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截入口界面的 OnGUI。
         public static class PatchDisableUIRootOnGUIE
         {
-            /// <summary>
-            /// Prefix 根据 BA UI 是否接管输入决定是否继续执行入口界面 OnGUI。
-            /// </summary>
+            //Prefix 根据 BA UI 是否接管输入决定是否继续执行入口界面 OnGUI。
             [HarmonyPrefix]
             public static bool prefix()
             {
@@ -202,14 +182,10 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot_Entry), "UIRootUpdate")]
-        /// <summary>
-        /// Harmony 补丁负责在 BA 全屏 UI 打开时拦截入口界面的 Update。
-        /// </summary>
+        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截入口界面的 Update。
         public static class PatchDisableUIRootUpdateE
         {
-            /// <summary>
-            /// Prefix 根据 BA UI 是否接管输入决定是否继续执行入口界面 Update。
-            /// </summary>
+            //Prefix 根据 BA UI 是否接管输入决定是否继续执行入口界面 Update。
             [HarmonyPrefix]
             public static bool prefix()
             {
@@ -223,14 +199,10 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot_Play), "UIRootOnGUI")]
-        /// <summary>
-        /// Harmony 补丁负责在 BA 全屏 UI 打开时拦截游戏内界面的 OnGUI。
-        /// </summary>
+        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截游戏内界面的 OnGUI。
         public static class PatchDisableUIRootOnGUIP
         {
-            /// <summary>
-            /// Prefix 根据 BA UI 是否接管输入决定是否继续执行游戏内界面 OnGUI。
-            /// </summary>
+            //Prefix 根据 BA UI 是否接管输入决定是否继续执行游戏内界面 OnGUI。
             [HarmonyPrefix]
             public static bool prefix()
             {
@@ -243,14 +215,10 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot_Play), "UIRootUpdate")]
-        /// <summary>
-        /// Harmony 补丁负责在 BA 全屏 UI 打开时拦截游戏内界面的 Update。
-        /// </summary>
+        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截游戏内界面的 Update。
         public static class PatchDisableUIRootUpdateP
         {
-            /// <summary>
-            /// Prefix 根据 BA UI 是否接管输入决定是否继续执行游戏内界面 Update。
-            /// </summary>
+            //Prefix 根据 BA UI 是否接管输入决定是否继续执行游戏内界面 Update。
             [HarmonyPrefix]
             public static bool prefix()
             {
@@ -267,15 +235,11 @@ namespace newpro
 
 namespace newpro
 {
-    /// <summary>
-    /// 新游戏创建补丁负责在创建新存档时标记 BA UI 需要重建。
-    /// </summary>
+    //新游戏创建补丁负责在创建新存档时标记 BA UI 需要重建。
     [HarmonyPatch(typeof(Game), "InitNewGame")]
     public static class Patch_GameInitNewGame
     {
-        /// <summary>
-        /// Postfix 在新游戏初始化后通知 UI 组件清理旧缓存。
-        /// </summary>
+        //Postfix 在新游戏初始化后通知 UI 组件清理旧缓存。
         [HarmonyPostfix]
         public static void Postfix()
         {
@@ -297,15 +261,11 @@ namespace newpro
 
 namespace newpro
 {
-    /// <summary>
-    /// 存档加载补丁负责在读档后标记 BA UI 需要重建。
-    /// </summary>
+    //存档加载补丁负责在读档后标记 BA UI 需要重建。
     [HarmonyPatch(typeof(Game), "LoadGame")]
     public static class Patch_GameLoadGame
     {
-        /// <summary>
-        /// Postfix 在读档完成后通知 UI 组件清理旧缓存。
-        /// </summary>
+        //Postfix 在读档完成后通知 UI 组件清理旧缓存。
         [HarmonyPostfix]
         public static void Postfix()
         {
@@ -324,4 +284,3 @@ namespace newpro
         }
     }
 }
-

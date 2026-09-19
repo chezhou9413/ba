@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3399915853
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b8591b64c6787a16fd06d0b0c7cdcc86
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b8591b64c6787a16fd06d0b0c7cdcc86
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Cherino.png
+Dependencies: []
