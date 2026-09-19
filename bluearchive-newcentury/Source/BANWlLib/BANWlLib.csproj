@@ -275,6 +275,7 @@
     <Compile Include="DodgeMod\StatWorker_GetValueUnfinalized_Patch.cs" />
     <Compile Include="BaDef\BaStudentUIDef.cs" />
     <Compile Include="Dev\GachaDebugActions.cs" />
+    <Compile Include="Dev\Menus\*.cs" />
     <Compile Include="Dev\BattleSystemDebugActions.cs" />
     <Compile Include="Dev\MissionDebug.cs" />
     <Compile Include="Dev\StudentListShow.cs" />

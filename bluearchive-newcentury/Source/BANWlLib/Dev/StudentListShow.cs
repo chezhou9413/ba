@@ -1,4 +1,5 @@
-﻿using BANWlLib.mainUI.pojo;
+using BANWlLib.Dev.Menus;
+using BANWlLib.mainUI.pojo;
 using BANWlLib.mainUI.StudentManual;
 using LudeonTK;
 using Newtonsoft.Json.Linq;
@@ -12,9 +13,11 @@ using Verse;
 
 namespace BANWlLib.Dev
 {
+    //提供已获得学生、收藏名单与学生存档数据的查看操作。
     public static class StudentListShow
     {
-        [DebugAction("BA", "查看当前学生列表", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //将当前存档已获得的学生资料输出到日志。
+        [BADebugAction("学生档案", "查看当前学生列表", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void LogMyTrackerValues()
         {
             // 获取你的 GameComponent
@@ -33,7 +36,8 @@ namespace BANWlLib.Dev
             }
         }
 
-        [DebugAction("BA", "查看当前收藏的学生", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //将学生收藏名单输出到日志。
+        [BADebugAction("学生档案", "查看当前收藏的学生", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void LogCollectTrackerValues()
         {
             // 获取你的 GameComponent
@@ -51,7 +55,8 @@ namespace BANWlLib.Dev
             }
         }
 
-        [DebugAction("BA", "选择一个学生查看序列化的数据", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //进入角色选择模式，并显示所选学生的存档资料。
+        [BADebugAction("学生档案", "选择一个学生查看序列化的数据", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SelectStudentData()
         {
             // 获取你的 GameComponent

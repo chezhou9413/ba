@@ -1,3 +1,4 @@
+using BANWlLib.Dev.Menus;
 using BANWlLib.BaDef;
 using BANWlLib.BANWGamecomp;
 using BANWlLib.mainUI.Mission.GameComp;
@@ -12,9 +13,11 @@ using Verse;
 
 namespace BANWlLib.Dev
 {
+    //提供卡池刷新及任务完成记录的查看和调整操作。
     public static class MissionDebug
     {
-        [DebugAction("BA", "强制刷新卡池", actionType = DebugActionType.Action)]
+        //调用存档组件强制切换到下一组卡池。
+        [BADebugAction("抽卡与招募", "强制刷新卡池", actionType = DebugActionType.Action)]
         public static void Debug_ForceRefreshPool()
         {
             var comp = Current.Game.GetComponent<Gamecomp_gakaAction>();
@@ -25,10 +28,8 @@ namespace BANWlLib.Dev
             }
             comp.Debug_ForceNextPool();
         }
-        /// <summary>
-        /// 查看所有任务节点信息
-        /// </summary>
-        [DebugAction("BA", "查看所有任务节点", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //查看所有任务节点信息
+        [BADebugAction("任务进度", "查看所有任务节点", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void LogAllMissionNodes()
         {
             List<BaMissionNode> allMissions = DefDatabase<BaMissionNode>.AllDefs.OrderBy(x => x.oder).ToList();
@@ -53,10 +54,8 @@ namespace BANWlLib.Dev
             Log.Warning("========== 任务节点信息查看完毕 ==========");
         }
 
-        /// <summary>
-        /// 完成指定的任务
-        /// </summary>
-        [DebugAction("BA", "完成指定任务", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //完成指定的任务
+        [BADebugAction("任务进度", "完成指定任务", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void CompleteMission()
         {
             List<BaMissionNode> allMissions = DefDatabase<BaMissionNode>.AllDefs.OrderBy(x => x.oder).ToList();
@@ -84,9 +83,7 @@ namespace BANWlLib.Dev
             Find.WindowStack.Add(new FloatMenu(options));
         }
 
-        /// <summary>
-        /// 内部方法：完成任务的具体逻辑
-        /// </summary>
+        //内部方法：完成任务的具体逻辑
         public static void CompleteMissionInternal(BaMissionNode mission)
         {
             GameComp_TaskQuest taskComp = Current.Game.GetComponent<GameComp_TaskQuest>();
@@ -111,10 +108,8 @@ namespace BANWlLib.Dev
             Log.Message($"  - 任务类型: {mission.MissionType?.defName ?? "未设置"}");
         }
 
-        /// <summary>
-        /// 查看已完成的任务列表
-        /// </summary>
-        [DebugAction("BA", "查看已完成的任务", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //查看已完成的任务列表
+        [BADebugAction("任务进度", "查看已完成的任务", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void LogCompletedMissions()
         {
             GameComp_TaskQuest taskComp = Current.Game.GetComponent<GameComp_TaskQuest>();
@@ -141,10 +136,8 @@ namespace BANWlLib.Dev
             Log.Warning($"========== 共完成 {taskComp.MissionQuest.Count} 个任务 ==========");
         }
 
-        /// <summary>
-        /// 重置所有任务（清空已完成列表）
-        /// </summary>
-        [DebugAction("BA", "重置所有任务", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //重置所有任务（清空已完成列表）
+        [BADebugAction("任务进度", "重置所有任务", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void ResetAllMissions()
         {
             GameComp_TaskQuest taskComp = Current.Game.GetComponent<GameComp_TaskQuest>();
@@ -160,10 +153,8 @@ namespace BANWlLib.Dev
             Log.Message($"✓ 已重置所有任务，清空了 {count} 个已完成的任务记录");
         }
 
-        /// <summary>
-        /// 完成所有任务
-        /// </summary>
-        [DebugAction("BA", "完成所有任务", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //完成所有任务
+        [BADebugAction("任务进度", "完成所有任务", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void CompleteAllMissions()
         {
             GameComp_TaskQuest taskComp = Current.Game.GetComponent<GameComp_TaskQuest>();
@@ -197,10 +188,8 @@ namespace BANWlLib.Dev
             Log.Message($"  - 总计: {taskComp.MissionQuest.Count} 个任务");
         }
 
-        /// <summary>
-        /// 删除指定任务的完成记录
-        /// </summary>
-        [DebugAction("BA", "删除指定任务的完成记录", allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        //删除指定任务的完成记录
+        [BADebugAction("任务进度", "删除指定任务的完成记录", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void RemoveMissionCompletion()
         {
             GameComp_TaskQuest taskComp = Current.Game.GetComponent<GameComp_TaskQuest>();
