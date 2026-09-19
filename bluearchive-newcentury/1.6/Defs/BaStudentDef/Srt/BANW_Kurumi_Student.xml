@@ -13,7 +13,7 @@
 			
 			<CharacterimagePath>ManuaUI/Live/Kurumi</CharacterimagePath>
 			
-			<BackgroundPath>ManuaUI/Bg/BG_Srt</BackgroundPath>
+			<BackgroundPath>ManuaUI/Bg/BG_FoxHQRoom_Collection</BackgroundPath>
 			
 			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
 			
@@ -35,29 +35,29 @@
 			
 			<Skills>
 				
-				<Shooting>15</Shooting>
+				<Shooting>10</Shooting>
 				
-				<Melee>8</Melee>
+				<Melee>18</Melee>
 				
-				<Construction>10</Construction>
+				<Construction>15</Construction>
 				
-				<Mining>10</Mining>
+				<Mining>15</Mining>
 				
-				<Cooking>6</Cooking>
+				<Cooking>0</Cooking>
 				
-				<Plants>12</Plants>
+				<Plants>0</Plants>
 				
-				<Animals>0</Animals>
+				<Animals>13</Animals>
 				
 				<Crafting>5</Crafting>
 				
-				<Artistic>0</Artistic>
+				<Artistic>6</Artistic>
 				
-				<Medical>0</Medical>
+				<Medical>8</Medical>
 				
 				<Social>5</Social>
 				
-				<Intellectual>5</Intellectual>
+				<Intellectual>8</Intellectual>
 			</Skills>
 		    
 			<WapenUI>

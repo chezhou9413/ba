@@ -160,7 +160,7 @@
     <graphicData>
       <texPath>Weapon/Wildhunt/Fuyu</texPath><!--贴图路径-->
       <graphicClass>Graphic_Single</graphicClass><!--贴图-->
-      <drawSize>0.5</drawSize><!--贴图大小-->
+      <drawSize>1.0</drawSize><!--贴图大小-->
     </graphicData>
     <weaponTags>
       <li>BANC_Fuyu</li><!--武器Tag-->
@@ -233,7 +233,8 @@
   <ThingDef ParentName="BANC_BaseHumanMakeableGun">
     <defName>BANC_Rena</defName>
     <label>护身用缝纫机枪</label>
-    <description>冬使用的一把制造商不明的可疑自动手枪。只要提起这个，大部分的顾客都会接受她的忠告。</description>
+    <description>对莱娜的手来说大小正好的小手枪。
+虽然用的是莱娜自己的设计，但是打在身上造成的痛感和其他的枪是一样的。</description>
     <graphicData>
       <texPath>Weapon/Wildhunt/Rena</texPath><!--贴图路径-->
       <graphicClass>Graphic_Single</graphicClass><!--贴图-->
@@ -303,6 +304,161 @@
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>1</drawSize>
       <texPath>Projectile/Bullet_Rena</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Ritsu</defName>
+    <label>移动穿孔机</label>
+    <description>律一直带在身上的冲锋枪。好像经常被拿来往石材上开枪进行穿孔。</description>
+    <graphicData>
+      <texPath>Weapon/Wildhunt/Ritsu</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.1</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Ritsu</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>0</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_HG_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>0.99</AccuracyMedium><!--中-->
+      <AccuracyLong>0.69</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Ritsu</defaultProjectile><!--子弹-->
+        <burstShotCount>4</burstShotCount><!--连射次数-->
+        <warmupTime>1.2</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots><!--射速-->
+        <range>25.9</range><!--射距-->
+        <soundCast>BANW_Wp_HG_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Light</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Ritsu</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Ritsu</defName>
+    <label>移动穿孔机子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_shenmi</damageDef><!--子弹类型-->
+      <damageAmountBase>6</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <speed>60</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize>
+      <texPath>Projectile/Bullet_Ritsu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+<ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Miyo</defName>
+    <label>基沃托斯打字机</label>
+    <description>美代总是随身携带的步枪。她几乎很少使用这把枪，也有一部分的原因是她的性格使然。目前……用作记录名为弹痕的文本的手段。</description>
+    <graphicData>
+      <texPath>Weapon/Wildhunt/Miyo</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.2</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Miyo</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>0</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_SR_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0.71</AccuracyTouch>
+      <AccuracyShort>0.68</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.89</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Miyo</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.2</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>41.9</range><!--射距-->
+        <soundCast>BANW_Wp_SR_At_B</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Medium</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Miyo</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Miyo</defName>
+    <label>基沃托斯打字机子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
+      <damageAmountBase>39</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <speed>100</speed><!--子弹速度-->
+      
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>(1,3)</drawSize>
+      <texPath>Projectile/Bullet_Miyo</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>

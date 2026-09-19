@@ -41,15 +41,15 @@
 		<skills>
 			<li>
 				<skill>Shooting</skill>
-				<range>15</range>
+				<range>10</range>
 			</li>
 			<li>
 				<skill>Melee</skill>
-				<range>8</range>
+				<range>18</range>
 			</li>
 			<li>
 				<skill>Cooking</skill>
-				<range>6</range>
+				<range>0</range>
 			</li>
 			<li>
 				<skill>Crafting</skill>
@@ -57,7 +57,7 @@
 			</li>
 			<li>
 				<skill>Construction</skill>
-				<range>10</range>
+				<range>15</range>
 			</li>
 			<li>
 				<skill>Social</skill>
@@ -65,15 +65,19 @@
 			</li>
 			<li>
 				<skill>Mining</skill>
-				<range>10</range>
+				<range>15</range>
 			</li>
 			<li>
 				<skill>Plants</skill>
-				<range>12</range>
+				<range>0</range>
 			</li>
 			<li>
 				<skill>Medicine</skill>
-				<range>5</range>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>8</range>
 			</li>
 		</skills>
 		<forcedTraits>

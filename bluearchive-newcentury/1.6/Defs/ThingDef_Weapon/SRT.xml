@@ -383,5 +383,80 @@
     </graphicData>
   </ThingDef>
 
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Niko</defName>
+    <label>FOX-870式霰弹枪</label>
+    <description>由 SRT 特殊学园配发的正式规格霰弹枪。采用泵动式设计，在进行破障行动时也能发挥出卓越的性能。</description>
+    <graphicData>
+      <texPath>Weapon/Srt/Niko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.3</drawSize>
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Niko</li>
+    </weaponTags>
+    <equippedAngleOffset>0</equippedAngleOffset>
+    <soundInteract>BANW_Wp_SG_De</soundInteract>
+    <statBases>
+      <WorkToMake>80000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>0.77</AccuracyMedium>
+      <AccuracyLong>0.61</AccuracyLong>
+      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>440</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BANC_Bullet_Niko</defaultProjectile>
+        <warmupTime>1.2</warmupTime>
+        <range>16.9</range>
+        <soundCast>BANW_Wp_SG_At</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Niko</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Niko</defName>
+    <label>FOX-870式霰弹枪子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--伤害类型-->
+      <damageAmountBase>18</damageAmountBase>
+      <stoppingPower>3</stoppingPower>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
+      <speed>60</speed>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>(1,3)</drawSize>
+      <texPath>Projectile/Bullet_Niko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
 
 </Defs>

@@ -15,6 +15,10 @@
 			<def>BANW_LevelTrait</def>
 			<severity>0.001</severity>
 		</li>
+		<li>
+			<def>BANW_HediffDef_Kisaki_B</def>
+			<severity>1</severity>
+		</li>
         </startingHediffs>
 		<backstoryFiltersOverride>
 			<li>
@@ -61,6 +65,7 @@
 			<BAWC_TraitDef_zhendong>0</BAWC_TraitDef_zhendong>
 			<BAWC_TraitDef_tanli>0</BAWC_TraitDef_tanli>
 			<BAWC_TraitDef_Kisaki_A>0</BAWC_TraitDef_Kisaki_A>
+			<BAWC_TraitDef_Kisaki_B>0</BAWC_TraitDef_Kisaki_B>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
@@ -206,4 +211,34 @@
             </li>
         </degreeDatas>
     </TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Kisaki_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#990099&gt;布告天下&lt;/color&gt;</label>
+                <description>子技能：全局COST回复力提高&lt;color=#DC143C&gt;20%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets> 
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+	 <HediffDef>
+    <defName>BANW_HediffDef_Kisaki_B</defName>
+    <label>布告天下</label>
+	<defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <description>全局COST回复力提高20%</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostRecoveryRate">
+        <rateOffset>0.2</rateOffset>
+      </li>
+    </comps>
+  </HediffDef>
 </Defs>

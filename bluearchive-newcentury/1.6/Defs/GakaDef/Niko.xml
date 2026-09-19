@@ -2,10 +2,10 @@
 <Defs>
 <BANWlLib.BaDef.Gacha>
         <!-- 卡池唯一标识符 -->
-        <defName>Gacha_Standard_changzh1u</defName> 
+        <defName>Gacha_Standard_Niko</defName> 
         <!-- UI资源路径 -->
-        <gachaTexPath>UI/cardHead/Miku</gachaTexPath>          <!-- 卡池头图/封面图片 -->
-        <gachaVidPath>UI/Video/Miku.webm</gachaVidPath>        <!-- 卡池宣传视频 -->
+        <gachaTexPath>UI/cardHead/Niko</gachaTexPath>          <!-- 卡池头图/封面图片 -->
+        <gachaVidPath>UI/Video/Niko.webm</gachaVidPath>        <!-- 卡池宣传视频 -->
         <!-- 显示信息 -->
         <gachaTitle>限定招募</gachaTitle>            <!-- 卡池标题 -->
         <gachaUp>★3初音出现概率Up！\n首次奖励可获得[初音的神名文字x100]！</gachaUp>                 <!-- UP内容说明 -->
@@ -15,7 +15,7 @@
         <upthreeStarPool>
             <Weight>0.7</Weight>
             <StudentList>
-                <li>BANW_Miku_Student</li>
+                <li>BANW_Niko_Student</li>
             </StudentList>
         </upthreeStarPool>
         <!-- 普通三星池配置 -->
@@ -73,7 +73,10 @@
                 <li>BANW_Kokona_Student</li>
                 <li>BANW_Rumi_Student</li>
                 <li>BANW_Shun_Student</li>
-                <li>BANW_Saya_Student</li>
+                <li>BANW_Saya_Student</li>               
+                <li>BANW_Miyo_Student</li>
+                <li>BANW_Erika_Student</li>
+                <li>BANW_Ritsu_Student</li>
                 <li>BANW_Rena_Student</li>
                 <li>BANW_Noa_A_Student</li>
                 <li>BANW_Fuyu_Student</li>

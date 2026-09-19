@@ -471,7 +471,7 @@
     <comps>
       <li Class="CompProperties_AbilityLaunchProjectile">
         <!-- 普通子弹投射物，disablePiercing=true 使命中即销毁。 -->
-        <projectileDef>BANC_Bullet_Nozomi_NormalShot_Test</projectileDef>
+         <projectileDef>BANC_Bullet_Nozomi_NormalShot_Test</projectileDef>
       </li>
     </comps>
     <modExtensions>

@@ -182,6 +182,11 @@
           <li>BANW_Nero_B</li>
           <li>BANW_Kurumi</li>
           <li>BANW_Hasumi_B</li>
+          <li>BANW_Ritsu</li>
+          <li>BANW_Miyo</li>
+          <li>BANW_Erika</li>
+          <li>BANW_Niko</li>
+          
 
         </Race>
         <updateHediffSeverity>0.05</updateHediffSeverity>
@@ -377,6 +382,10 @@
           <li>BANW_Nero_B</li>
           <li>BANW_Kurumi</li>
           <li>BANW_Hasumi_B</li>
+          <li>BANW_Ritsu</li>
+          <li>BANW_Miyo</li>
+          <li>BANW_Erika</li>
+          <li>BANW_Niko</li>
         </Race>
         <updateHediffSeverity>0.5</updateHediffSeverity>
         <batchUseCount>
@@ -570,6 +579,10 @@
           <li>BANW_Nero_B</li>
           <li>BANW_Kurumi</li>
           <li>BANW_Hasumi_B</li>
+          <li>BANW_Ritsu</li>
+          <li>BANW_Miyo</li>
+          <li>BANW_Erika</li>
+          <li>BANW_Niko</li>
         </Race>
         <updateHediffSeverity>2.0</updateHediffSeverity>
         <batchUseCount>
@@ -763,6 +776,11 @@
           <li>BANW_Nero_B</li>
           <li>BANW_Kurumi</li>
           <li>BANW_Hasumi_B</li>
+          <li>BANW_Ritsu</li>
+          <li>BANW_Miyo</li>
+          <li>BANW_Erika</li>
+          <li>BANW_Niko</li>
+          
         </Race>
         <updateHediffSeverity>10.0</updateHediffSeverity>
         <batchUseCount>

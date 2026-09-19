@@ -92,6 +92,52 @@
 			</tags>
         </apparel>
        </ThingDef>
+
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Ritsu</defName>
+        <label>律的衣服</label>
+        <description>律的衣服</description>
+        <graphicData>
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Wildhunt/Ritsu/Apparel/Ritsu_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Ritsu</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
+
+       <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Miyo</defName>
+        <label>美代的衣服</label>
+        <description>美代的衣服</description>
+        <graphicData>
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Wildhunt/Miyo/Apparel/Miyo_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+				<li>BANW_Body_Miyo</li>
+				<li>BANW_Body</li>
+			</tags>
+        </apparel>
+       </ThingDef>
        
        
 

@@ -35,11 +35,11 @@
 			
 			<Skills>
 				
-				<Shooting>12</Shooting>
+				<Shooting>5</Shooting>
 				
 				<Melee>0</Melee>
 				
-				<Construction>4</Construction>
+				<Construction>0</Construction>
 				
 				<Mining>0</Mining>
 				
@@ -51,13 +51,13 @@
 				
 				<Crafting>15</Crafting>
 				
-				<Artistic>15</Artistic>
+				<Artistic>20</Artistic>
 				
-				<Medical>5</Medical>
+				<Medical>0</Medical>
 				
-				<Social>10</Social>
+				<Social>20</Social>
 				
-				<Intellectual>18</Intellectual>
+				<Intellectual>20</Intellectual>
 			</Skills>
 		    
 			<WapenUI>

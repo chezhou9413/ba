@@ -84,6 +84,166 @@
       </li>
     </comps>
     </HediffDef>
+
+     <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Nagisa_A_Buff_B</defName>
+        <!-- 显示名称 -->
+        <label>压碎、撕裂、揉卷</label>
+        <!-- 效果描述 -->
+        <description>暴击伤害抵抗率下降38%</description>
+        <defaultLabelColor>(0,0,128)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+         <stages>
+          <li>     
+            <statOffsets>
+            <BANW_CriticalDamageResistance>-0.38</BANW_CriticalDamageResistance>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1620</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Effecter_C</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
     
+  <AbilityDef>
+    <defName>BAWN_Nagisa_A_EX</defName>
+    <label>压碎、撕裂、揉卷</label>
+    <description>对一名敌人一共造成自身攻击力的376%的伤害并且暴击伤害抵抗率下降38%(持续27秒)</description>
+    <iconPath>Ability/Icon/Nagisa_A/Nagisa_EX</iconPath>
+    <cooldownTicksRange>2100</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
+    <warmupStartSound>Nagisa_A_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <targetRequired>true</targetRequired><!-- 对自己使用 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <statBases>
+    <Ability_Duration>3</Ability_Duration>
+  </statBases>
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_NewA</warmupEffecter>
+      <soundCast>Nagisa_A_Skill_EX_D</soundCast>
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <range>44.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>0.5</warmupTime><!-- 前摇时间（单位：秒） -->
+      <ai_IsWeapon>false</ai_IsWeapon> <!--AI
+      不将此能力视为武器。-->
+      <sprayEffecterDef>BANW_Nero_Ef_B</sprayEffecterDef>
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+        <hediffDef>BAWN_Nagisa_A_Buff_B</hediffDef><!-- 要添加的状态效果定义名 -->
+        <onlyApplyToSelf>false</onlyApplyToSelf> <!-- 仅对自己生效 -->
+        <replaceExisting>true</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+      </li>
+      <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
+         <repeatShotSound>true</repeatShotSound>
+        <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
+        <projectileDef>BANC_Bullet_Nagisa_EX</projectileDef>
+        <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
+        <canHitOwnPawn>true</canHitOwnPawn>
+       <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      <!-- 施法者离开施法完成时所在格后，中断同一轮剩余子弹。 -->
+      <cancelWhenCasterMoved>true</cancelWhenCasterMoved>
+      <!-- 施法者倒地、死亡、眩晕或失去基础射击能力后，中断同一轮剩余子弹。 -->
+      <requireCasterCanShoot>true</requireCasterCanShoot>
+      <!-- 每发子弹到点时重新检查视线，视线被墙体或遮挡切断后中断同一轮剩余子弹。 -->
+      <requireLineOfSightEachShot>true</requireLineOfSightEachShot>
+      <!-- 连射队列未结束前每 tick 停止寻路，禁止施法者移动。 -->
+      <lockCasterDuringSequence>true</lockCasterDuringSequence>
+      <!-- 连射队列未结束前持续绘制主武器朝目标瞄准。 -->
+      <drawPrimaryWeaponAimDuringSequence>true</drawPrimaryWeaponAimDuringSequence>
+      <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
+        <shots>
+         <li><delayTicks>0</delayTicks></li>
+          <li><delayTicks>5</delayTicks></li>
+          <li><delayTicks>10</delayTicks></li>
+          <li><delayTicks>15</delayTicks></li>
+          <li><delayTicks>20</delayTicks></li>
+          <li><delayTicks>25</delayTicks></li>
+          <li><delayTicks>30</delayTicks></li>
+          <li><delayTicks>35</delayTicks></li>
+          <li><delayTicks>40</delayTicks></li>
+          <li><delayTicks>45</delayTicks></li>
+          <li><delayTicks>50</delayTicks></li>
+          <li><delayTicks>55</delayTicks></li>
+          <li><delayTicks>60</delayTicks></li>
+          <li><delayTicks>65</delayTicks></li>
+          <li><delayTicks>70</delayTicks></li>
+          <li><delayTicks>75</delayTicks></li>
+          <li><delayTicks>80</delayTicks></li>
+          <li><delayTicks>85</delayTicks></li>
+          <li><delayTicks>90</delayTicks></li>
+          <li><delayTicks>95</delayTicks></li>
+        </shots>
+      </li>
+    </comps>
+    <modExtensions>
+    <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+      <shape>Circle</shape>
+      <range>44.9</range>
+      <drawCasterRange>true</drawCasterRange>
+      <drawTargetHighlight>true</drawTargetHighlight>
+    </li>
+    <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+      <showBattleFormula>true</showBattleFormula>
+    </li>
+  </modExtensions>
+  </AbilityDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Nagisa_EX</defName>
+    <label>皇室调制</label>
+    <projectile>
+      <damageDef>BANC_Damage_zhendong</damageDef><!--子弹类型-->
+      <damageAmountBase>24</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>5.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
+      <speed>90</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <drawSize>(2,5)</drawSize>
+      <texPath>Effect/Nagisa_A/Nagisa_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>0.188</attackPowerRatio>
+          <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+      <applyAffinity>true</applyAffinity>
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      <isExSkill>false</isExSkill>
+      </li>
+    </modExtensions>
+  </ThingDef>
 
 </Defs>

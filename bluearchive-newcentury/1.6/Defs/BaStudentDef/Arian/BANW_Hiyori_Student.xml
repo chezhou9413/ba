@@ -101,7 +101,7 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>这是附录的力量！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[对我方全体学生造成攻击力增加<color=#00FFFF>17%</color>攻击力]]>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成攻击力增加<color=#00FFFF>17%</color>]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>

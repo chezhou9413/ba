@@ -1,0 +1,277 @@
+
+<Defs>
+	<PawnKindDef ParentName="BANW_BasePawn">
+		<defName>BANW_Ritsu</defName>
+		<label>-律-</label>
+		<race>BANW_KivotosStudent</race>
+		<combatPower>100</combatPower>
+		<isFighter>true</isFighter>
+
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<abilities>
+        </abilities>
+		<startingHediffs>
+		<li>
+			<def>BANW_LevelTrait</def>
+			<severity>0.001</severity>
+		</li>
+		<li>
+			<def>BAWC_HediffDef_Ritsu_B</def>
+			<severity>1</severity>
+		</li>
+        </startingHediffs>
+		<backstoryFiltersOverride>
+			<li>
+				<categories>
+					<li>BANW_BackstoryWildhunt</li>
+					<li>BANW_BackstoryRitsu</li>
+				</categories>
+			</li>
+		</backstoryFiltersOverride>
+		<weaponMoney>9999~9999</weaponMoney>
+		<minGenerationAge>15</minGenerationAge>
+		<maxGenerationAge>16</maxGenerationAge>
+		<weaponTags>
+         <li>BANC_Ritsu</li>
+        </weaponTags>
+		<apparelRequired Inherit="False">
+			<li>BANW_Body_Ritsu</li>
+		</apparelRequired>
+		<forcedHair>Bald</forcedHair>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Melee</skill>
+				<range>20</range>
+			</li>
+			<li>
+				<skill>Construction</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Artistic</skill>
+				<range>16</range>
+			</li>
+			<li>
+				<skill>Mining</skill>
+				<range>15</range>
+			</li>
+			<li>
+				<skill>Cooking</skill>
+				<range>0</range>
+			</li>
+			<li>
+				<skill>Medicine</skill>
+				<range>5</range>
+			</li>
+			<li>
+				<skill>Plants</skill>
+				<range>12</range>
+			</li>
+			<li>
+				<skill>Crafting</skill>
+				<range>8</range>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<range>10</range>
+			</li>
+			<li>
+				<skill>Intellectual</skill>
+				<range>10</range>
+			</li>
+		</skills>
+		<forcedTraits>
+			<BAWC_TraitDef_Assistant>0</BAWC_TraitDef_Assistant><!-- 不确定-->
+			<BAWC_TraitDef_shenmi>0</BAWC_TraitDef_shenmi>
+			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+			<BAWC_TraitDef_Ritsu_A>0</BAWC_TraitDef_Ritsu_A>
+			<BAWC_TraitDef_Ritsu_B>0</BAWC_TraitDef_Ritsu_B>
+		</forcedTraits>
+		<modExtensions>
+			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
+				<allowedWeapons>
+					<li>BANC_Ritsu</li>
+				</allowedWeapons>
+			</li>
+			
+			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
+				<!-- 攻击类型，作为属性克制矩阵的行。 -->
+				<damageType>Mysterious</damageType>
+				<!-- 护甲类型，作为属性克制矩阵的列。 -->
+				<defenseType>Mysterious</defenseType>
+<!-- 学生初始生命值，参与生命值公式的基础乘算项，1 表示 100 点生命值。 -->
+				<initialHealth>2.96</initialHealth>
+				<!-- 学生基础攻击力平加，进入技能、武器显示和统一伤害结算。 -->
+				<attackFlat>0</attackFlat>
+				<!-- 学生基础攻击力百分比，0.26 表示最终攻击力额外增加 26%。 -->
+				<attackPercent>0</attackPercent>
+				<!-- 学生初始治愈力，参与治愈力公式的基础乘算项。 -->
+				<initialHeal>121</initialHeal>
+				<!-- 学生基础受回复倍率平加，0.2 表示额外增加 20% 受疗。 -->
+				<healReceivedMultiplierOffset>0</healReceivedMultiplierOffset>
+				<!-- 学生基础 EX 技能倍率平加，0.5 表示 EX 技能倍率提高到 150%。 -->
+				<exSkillMultiplierOffset>0</exSkillMultiplierOffset>
+			</li>
+			<li Class="BANWlLib.BattleSystem.BattleStarGrowthExtension">
+				<!-- 星级生命百分比成长，starValues 从 1 星到 5 星依次读取。 -->
+				<healthPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.08</li>
+						<li>0.16</li>
+						<li>0.25</li>
+						<li>0.35</li>
+					</starValues>
+				</healthPercent>
+				<!-- 星级攻击百分比成长，参与 BattleStatUtility 的最终攻击力计算。 -->
+				<attackPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.12</li>
+						<li>0.25</li>
+						<li>0.35</li>
+						<li>0.50</li>
+					</starValues>
+				</attackPercent>
+				<!-- 星级攻击平加成长，先加入基础攻击力再乘百分比。 -->
+				<!-- 升星固定治愈力成长，进入治愈力公式的固定加算项。 -->
+				<healPercent>
+					<starValues>
+						<li>0</li>
+						<li>0.1</li>
+						<li>0.2</li>
+						<li>0.3</li>
+						<li>0.45</li>
+					</starValues>
+				</healPercent>
+			</li><li Class="BANWlLib.PawnProgressBarKindExtension">
+				<starInterval>0.5</starInterval>
+				<showProgressBar>false</showProgressBar>
+				<starProgressRatios>
+					<li>0.0</li>
+					<li>0.09</li>
+					<li>0.33</li>
+					<li>0.63</li>
+					<li>1.0</li>
+				</starProgressRatios>
+				<starSize>28</starSize>
+				<starTexturePath>UI/StarIcon</starTexturePath>
+				<!-- 起始星星经验：用于没有存档数据的新生成学生 -->
+                <initialExperience>110</initialExperience>
+                <!-- 升星特效占位：后续可替换为学生专属 EffecterDef -->
+                <starUpEffects>
+                    <li>BANW_Effecter_B</li>
+                </starUpEffects>
+                <!-- 升星语音占位：后续可替换为学生专属 SoundDef -->
+                <starUpSounds>
+                    <li>Ritsu_levelup_A</li>
+                    <li>Ritsu_levelup_B</li>
+					<li>Ritsu_levelup_C</li>
+					<li>Ritsu_levelup_D</li>
+                </starUpSounds>
+                <!-- 升级特效占位：后续可替换为学生专属 EffecterDef -->
+                <levelUpEffects>
+                    <li>BANW_Effecter_LevelUp</li>
+                </levelUpEffects>
+                <!-- 升级语音占位：后续可替换为学生专属 SoundDef -->
+                <levelUpSounds>
+                     <li>Ritsu_levelup_A</li>
+                    <li>Ritsu_levelup_B</li>
+					<li>Ritsu_levelup_C</li>
+					<li>Ritsu_levelup_D</li>
+                </levelUpSounds>
+			</li>
+			<li Class="ChezhouLib.Extension.kindRule">
+				<kindName>律</kindName>
+				<kindDesName>薄叶 律</kindDesName>
+				<Gender>Female</Gender>
+				<kindAge>16</kindAge>
+			</li>
+			<li Class="ChezhouLib.HAR.Extension.kindRuleHAR">
+				<bodyAddonRules>
+					<li>
+						<BodyAddonName>KivotosStudent_halo</BodyAddonName>
+						<ReplacePath>Pawns/Wildhunt/Ritsu/Halo/Ritsu_Halo</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
+						<ReplacePath>Pawns/Wildhunt/Ritsu/Head/Ritsu_Head</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_Body</BodyAddonName>
+						<ReplacePath>Pawns/Wildhunt/Ritsu/Body/Ritsu_Body</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
+						<ReplacePath>Pawns/Wildhunt/Ritsu/Hair/Ritsu_FrontHair</ReplacePath>
+					</li>
+					<li>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
+						<ReplacePath>Pawns/Wildhunt/Ritsu/Hair/Ritsu_BackHair</ReplacePath>
+					</li>
+					
+				</bodyAddonRules>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Ritsu_A</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;试着雕刻一下吧！&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					 <BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+	<TraitDef>
+        <defName>BAWC_TraitDef_Ritsu_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;形象解放&lt;/color&gt;</label>
+                <description>子技能:对我方全体学生造成暴击伤害增加&lt;color=#DC143C&gt;17%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					
+                </statOffsets>
+				<statFactors>
+
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+	
+		 <HediffDef>
+    <defName>BAWC_HediffDef_Ritsu_B</defName>  <!-- 光环源状态定义名 -->
+    <label>形象解放</label>  <!-- 显示名称 -->
+	<defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <description>对我方全体学生造成暴击伤害增加17%</description>
+    <hediffClass>HediffWithComps</hediffClass>  <!-- 使用带组件的 Hediff 类 -->
+    <isBad>false</isBad>  <!-- 非负面效果，不影响心情 -->
+    <initialSeverity>1</initialSeverity>  <!-- 初始严重度，1 表示光环生效 -->
+    <comps>
+      <li Class="BANWlLib.Auras.HediffCompProperties_FriendlyAura">  <!-- 友方光环组件：向范围内友军施加效果状态 -->
+        <effectHediff>BANW_BS_Buff_A</effectHediff>  <!-- 被施加给范围内友军的 Hediff 定义名（实际提供搬运效果的状态） -->
+        <radius>40</radius>  <!-- 光环影响半径（格） -->
+        <severity>1</severity>  <!-- 施加给友军的效果严重度 -->
+        <includeSelf>true</includeSelf>  <!-- 是否对施法者自身生效 -->
+        <affectAnimals>false</affectAnimals>  <!-- 是否对动物生效 -->
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

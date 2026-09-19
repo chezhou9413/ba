@@ -37,11 +37,11 @@
 		<skills>
 			<li>
 				<skill>Shooting</skill>
-				<range>8</range>
+				<range>0</range>
 			</li>
 			<li>
 				<skill>Social</skill>
-				<range>6</range>
+				<range>8</range>
 			</li>
 			<li>
 				<skill>Artistic</skill>
@@ -52,8 +52,8 @@
 				<range>0</range>
 			</li>
 			<li>
-				<skill>Cooking</skill>
-				<range>0</range>
+				<skill>Construction</skill>
+				<range>4</range>
 			</li>
 			<li>
 				<skill>Medicine</skill>
@@ -65,11 +65,11 @@
 			</li>
 			<li>
 				<skill>Crafting</skill>
-				<range>15</range>
+				<range>20</range>
 			</li>
 			<li>
 				<skill>Intellectual</skill>
-				<range>10</range>
+				<range>14</range>
 			</li>
 		</skills>
 		<forcedTraits>

@@ -113,6 +113,11 @@
             <li>Gacha_Standard_Wakamo_A</li>
             <li>Gacha_Standard_Fuyu</li>
             <li>Gacha_Standard_Noa_A</li>
+            <li>Gacha_Standard_Ritsu</li>
+            <li>Gacha_Standard_Miyo</li>
+            <li>Gacha_Standard_Erika</li>
+            
+            
             
         </StandardPool>
 
@@ -150,6 +155,7 @@
             <li>Gacha_Standard_Kurumi</li>
             <li>Gacha_Standard_Hasumi_B</li>
             <li>Gacha_Standard_Rena</li>
+            <li>Gacha_Standard_Niko</li>
             
         </LimitedPool>
 

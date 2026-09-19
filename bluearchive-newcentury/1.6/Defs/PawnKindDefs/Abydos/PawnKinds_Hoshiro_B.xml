@@ -4,7 +4,7 @@
 
 	<PawnKindDef ParentName="BANW_BasePawn">
 		<defName>BANW_Hoshiro_B</defName>
-		<label>-星野（武装）-</label>
+		<label>-星野(武装)-</label>
 		<race>BANW_KivotosStudent</race>
 		<combatPower>100</combatPower>
 		<isFighter>true</isFighter>
@@ -66,7 +66,7 @@
 			</li>
 			<li>
 				<skill>Intellectual</skill>
-				<range>8</range>
+				<range>9</range>
 			</li>
 		</skills>
 		   <forcedTraits>
@@ -87,7 +87,7 @@
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->
 				<damageType>Mysterious</damageType>
 				<!-- 护甲类型，作为属性克制矩阵的列。 -->
-				<defenseType>Explosion</defenseType>
+				<defenseType>Through</defenseType>
 <!-- 学生初始生命值，参与生命值公式的基础乘算项，1 表示 100 点生命值。 -->
 				<initialHealth>1.0</initialHealth>
 				<!-- 学生基础攻击力平加，进入技能、武器显示和统一伤害结算。 -->
@@ -145,7 +145,7 @@
 				</starProgressRatios>
 				<starSize>28</starSize>
 				<starTexturePath>UI/StarIcon</starTexturePath>
-								<!-- 起始星星经验：用于没有存档数据的新生成学生 -->
+				<!-- 起始星星经验：用于没有存档数据的新生成学生 -->
                 <initialExperience>110</initialExperience>
                 <!-- 升星特效占位：后续可替换为学生专属 EffecterDef -->
                 <starUpEffects>

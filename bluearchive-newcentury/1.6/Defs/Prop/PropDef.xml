@@ -5133,7 +5133,7 @@
     </comps>
   </ThingDef>
 
-    <ThingDef ParentName="BANW_Proplevel">
+  <ThingDef ParentName="BANW_Proplevel">
     <defName>BANW_Hasumi_B_Proplevel</defName>
     <label>莲见（泳装）的神明文字</label>
     <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
@@ -5155,6 +5155,150 @@
       <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
         <updateValue>1</updateValue>
         <Race>BANW_Hasumi_B</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Ritsu_Proplevel</defName>
+    <label>律的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Ritsu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用律的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Ritsu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Miyo_Proplevel</defName>
+    <label>美代的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Miyo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用美代的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Miyo</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Erika_Proplevel</defName>
+    <label>绘梨香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Erika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用绘梨香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Erika</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Niko_Proplevel</defName>
+    <label>妮可的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Niko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用妮可的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Niko</Race>  
         <checkMaxLimit>true</checkMaxLimit>
         <checkMinLimit>true</checkMinLimit>
         <batchUseCount>

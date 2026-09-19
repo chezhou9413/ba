@@ -2273,4 +2273,59 @@
 			<li>BANW_BackstoryRena</li>
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
+
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentRitsu</defName>
+		<title>特殊交易部（第5宿舍402室）</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是狂猎艺术学院所属，非正式社团“特殊交易部”的业务负责人。
+如今的特殊交易部的创始成员，凭着怪力承担起了交易部的体力活。因为性格乐观天真，所以纯粹地享受着社团活动。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryRitsu</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentMiyo</defName>
+		<title>特殊交易部（第5宿舍402室）</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是隶属于狂猎艺术学院的非官方社团“特殊交易部”的部长。
+活动目标是让社团废部。因为性格软弱，没办法很好地阻止其他社团成员，只得拖延不定地持续着社团活动。看来要实现她的目标暂时还很困难。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryMiyo</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentErika</defName>
+		<title>亮闪闪部</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是格赫娜学园所属，有着温柔性格的女高中生。
+与她理智、冷酷的外表截然相反，十分擅长社交，有着和谁都能打成一片的温柔性格。现在，她正和自己无可替代的好闺蜜绮良一起，每天到处寻找着好玩的事情。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryErika</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentNiko</defName>
+		<title>FOX小队</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是SRT 特殊学园所属，FOX 小队的副小队长。代号为“FOX2”。
+性格温柔稳重，能和任何人迅速打成一片。因此在 SRT 学园里，有很多跨小队的后辈都非常信赖她。擅长潜入和伪装工作，同时也兼任小队的管理运营职责。
+特长是制作稻荷寿司。经常将其作为小队成员的便当，由于味道极佳，在 SRT 学园内部也广受好评。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryNiko</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
+	
 </Defs>

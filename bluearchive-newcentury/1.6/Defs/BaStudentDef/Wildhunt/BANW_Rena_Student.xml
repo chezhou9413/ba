@@ -35,7 +35,7 @@
 			
 			<Skills>
 				
-				<Shooting>8</Shooting>
+				<Shooting>0</Shooting>
 				
 				<Melee>0</Melee>
 				
@@ -49,15 +49,15 @@
 				
 				<Animals>0</Animals>
 				
-				<Crafting>15</Crafting>
+				<Crafting>20</Crafting>
 				
 				<Artistic>20</Artistic>
 				
 				<Medical>5</Medical>
 				
-				<Social>6</Social>
+				<Social>8</Social>
 				
-				<Intellectual>10</Intellectual>
+				<Intellectual>14</Intellectual>
 			</Skills>
 		    
 			<WapenUI>

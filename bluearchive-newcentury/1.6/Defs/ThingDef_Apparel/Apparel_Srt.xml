@@ -234,5 +234,28 @@
         </comps>
     </ThingDef>
 
+    <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Niko</defName>
+        <label>妮可的衣服</label>
+        <description>妮可的衣服</description>
+        <graphicData>
+            <texPath>Pawns/General/Apparel_Generic</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Pawns/Srt/Niko/Apparel/Niko_Apparel</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Niko</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
 
 </Defs>
