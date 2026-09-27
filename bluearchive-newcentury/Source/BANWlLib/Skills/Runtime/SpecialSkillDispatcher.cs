@@ -30,15 +30,17 @@ namespace BANWlLib.Skills
             switch (s.profile.role)
             {
                 case SpecialSkillRole.Nero: NeroSkills.Tick(s); break;
+                case SpecialSkillRole.Arisu: ArisuSkills.Tick(s); break;
                 case SpecialSkillRole.Shiroko: ShirokoSkills.Tick(s); break;
                 case SpecialSkillRole.Wakamo: WakamoSkills.Tick(s); break;
                 case SpecialSkillRole.Hoshino: HoshinoSkills.Tick(s); break;
                 case SpecialSkillRole.Kei: KeiSkills.Tick(s); break;
+                case SpecialSkillRole.Rio: RioSkills.Tick(s); break;
             }
             if (!s.native || !SpecialCombatUtility.CanAct(s.pawn) || s.Now < s.nextNormalTick) return;
-            if (s.profile.role == SpecialSkillRole.Shiroko || s.profile.role == SpecialSkillRole.Hoshino)
+            if (s.profile.role == SpecialSkillRole.Shiroko)
                 TryNormal(s);
-            if (s.profile.role == SpecialSkillRole.Arisu && s.hits >= s.profile.requiredHits)
+            if (s.profile.role == SpecialSkillRole.Arisu && s.hits >= s.profile.arisu.normalSkill.requiredHits)
                 TryNormal(s);
         }
 
@@ -46,22 +48,21 @@ namespace BANWlLib.Skills
         public static bool TryNormal(Hediff_SpecialSkillState s)
         {
             if (!SpecialCombatUtility.CanAct(s.pawn)) return false;
+            if (s.profile.role == SpecialSkillRole.Arisu) return ArisuNormalSkill.TryCast(s);
+            if (s.profile.role == SpecialSkillRole.Kei) return KeiNormalSkill.TryStart(s);
+            if (s.profile.role == SpecialSkillRole.Hoshino &&
+                (s.stage != 0 || s.castEndTick >= s.Now || s.hits < s.profile.hoshino.normalRequiredShots)) return false;
             Pawn target = SpecialCombatUtility.FindEnemy(s.pawn, s.profile.range);
             if (target == null) return false;
             switch (s.profile.role)
             {
-                case SpecialSkillRole.Arisu:
-                    ArisuSkills.Normal(s, target); break;
                 case SpecialSkillRole.Shiroko:
                     ShirokoSkills.Normal(s, target); break;
                 case SpecialSkillRole.Hoshino:
-                    HoshinoSkills.Normal(s, target); break;
-                case SpecialSkillRole.Kei:
-                    if (!s.releaseReady) return false;
-                    KeiSkills.Release(s, target); break;
+                    HoshinoNormalSkill.Attack(s, target); break;
                 default: return false;
             }
-            s.nextNormalTick = s.profile.role == SpecialSkillRole.Arisu ? s.Now + 1 : s.Now + s.profile.normalIntervalTicks;
+            s.nextNormalTick = s.Now + s.profile.normalIntervalTicks;
             return true;
         }
 
@@ -71,11 +72,7 @@ namespace BANWlLib.Skills
             if (s.profile.role == SpecialSkillRole.Arisu && s.native)
             {
                 s.hits++;
-                if (s.hits == s.profile.requiredHits) s.nextNormalTick = s.Now + 1;
             }
-            if (s.profile.role == SpecialSkillRole.Shiroko && s.Active)
-                SpecialCombatUtility.Schedule(s, target, s.profile.droneAttack, 1f, true);
-            if (s.profile.role == SpecialSkillRole.Hoshino && s.native) HoshinoSkills.OnHit(s, target);
         }
 
         //角色离图时清理地图实体和表现，并终止依赖当前地图的记录。
@@ -83,16 +80,22 @@ namespace BANWlLib.Skills
         {
             s.CleanupEffect();
             s.activeMap?.GetComponent<MapComponent_SpecialSkills>().Unregister(s);
-            if (s.field != null && !s.field.Destroyed) s.field.Destroy();
-            s.field = null;
-            if (s.profile.role == SpecialSkillRole.Wakamo) { s.recordTarget = null; s.endTick = -1; }
-            if (s.profile.role == SpecialSkillRole.Kei && s.endTick > 0) { s.endTick = -1; s.releaseReady = true; }
-            if (s.profile.role == SpecialSkillRole.Hoshino) HoshinoSkills.ClearFormEffects(s);
+            //凯伊引用的场地属于实际EX，角色离图不能销毁场地或提前触发普通技能。
+            if (s.profile.role != SpecialSkillRole.Kei)
+            {
+                if (s.field != null && !s.field.Destroyed) s.field.Destroy();
+                s.field = null;
+            }
+            if (s.profile.role == SpecialSkillRole.Wakamo) WakamoSkills.Clear(s);
+            if (s.profile.role == SpecialSkillRole.Hoshino && (!s.hoshino.moving || s.pawn.Dead))
+                HoshinoSkills.ClearFormEffects(s);
         }
 
         //调试重置只清理本模块拥有的状态和技能，不碰角色原有技能。
         public static void Reset(Hediff_SpecialSkillState s)
         {
+            if (s.profile.role == SpecialSkillRole.Kei && s.pawn.CurJob?.def == s.profile.kei.normalJob)
+                s.pawn.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced);
             s.pawn.Map?.GetComponent<MapComponent_SpecialSkills>().Cancel(s.pawn);
             foreach (var buff in s.pawn.health.hediffSet.hediffs.OfType<ExMechanismBuff>().ToList())
                 s.pawn.health.RemoveHediff(buff);
@@ -108,10 +111,14 @@ namespace BANWlLib.Skills
             s.endTick = s.castEndTick = -1;
             s.recorded = s.recordCap = 0;
             s.releaseReady = s.forceDeath = false;
+            s.field = null;
+            s.keiNormalJob = null;
             s.passiveReadyTick = 0;
-            s.nextNormalTick = s.Now + s.profile.normalIntervalTicks;
+            s.nextNormalTick = s.Now + (s.profile.role == SpecialSkillRole.Arisu
+                ? s.profile.arisu.normalSkill.cooldownTicks : s.profile.normalIntervalTicks);
             foreach (Ability ability in s.pawn.abilities.abilities)
-                if (ability.def == s.profile.primaryAbility || ability.def == s.profile.alternateAbility || ability.def == s.profile.switchAbility)
+                if (ability.def == s.profile.primaryAbility || ability.def == s.profile.alternateAbility ||
+                    ability.def == s.profile.switchAbility || ability.def == s.profile.hoshino?.tankNormalAbility)
                     ability.ResetCooldown();
         }
     }

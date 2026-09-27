@@ -84,7 +84,13 @@ namespace BANWlLib.Skills
         {
             foreach (var state in SelectedStates())
             {
-                if (state.profile.role == SpecialSkillRole.Arisu) state.hits = state.profile.requiredHits;
+                if (state.profile.role == SpecialSkillRole.Arisu)
+                {
+                    state.hits = state.profile.arisu.normalSkill.requiredHits;
+                    state.nextNormalTick = state.Now;
+                }
+                if (state.profile.role == SpecialSkillRole.Hoshino && state.stage == 0)
+                    state.hits = state.profile.hoshino.normalRequiredShots;
                 if (!SpecialSkillDispatcher.TryNormal(state))
                     Messages.Message("没有可执行的普通技能、角色不能行动或没有有效敌人。", MessageTypeDefOf.RejectInput, false);
             }

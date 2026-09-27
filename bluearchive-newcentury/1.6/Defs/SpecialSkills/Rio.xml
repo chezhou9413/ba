@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- 莉音技能配置：独立EX复制、友军攻击增益与特效。 -->
+  <!-- 复制入口不造成伤害；复制EX的每个伤害段沿用原技能对应攻击配置的penetration。 -->
   <BANWlLib.Skills.SpecialSkillProfileDef>
     <defName>BANW_Special_Rio</defName><label>莉音</label><role>Rio</role>
     <primaryAbility>BANW_Special_Rio_Ex</primaryAbility>
@@ -17,9 +18,11 @@
   <AbilityDef>
     <defName>BANW_Special_Rio_Ex</defName>
     <label>测试新技能·莉音</label>
-    <description>选择25格内的一名其他友军，复制其默认EX，并使目标攻击力增加50%，持续30秒。仅能选择具有可复制EX的友军，不能复制莉音的复制技能。
+    <description>选择25格内的一名其他友军，为目标提供一次EX复制机会，并使目标攻击力增加50%，持续30秒。所有具有COST组件的技能都视为EX，无需角色复制白名单。
 
-复制技能使用莉音自己的属性，从默认阶段开始，不继承目标的冷却、充能、层数或已有无人机。复制技能的基础费用减1，最低为0，之后再计算其他减费。
+复制按钮出现在目标本体身上，由目标本人施法；射程、前摇、语音、特效、伤害属性与技能逻辑均沿用目标本体。当前阶段、充能、层数与持续机制也使用本体状态：妮露处于二段时复制二段EX，阶段变化时同步。复制实例拥有独立冷却，不重置原技能的冷却。
+
+默认选取目标当前形态的测试EX；有多个EX时，可右键复制按钮选择其他当前阶段可见的COST技能。复制技能的基础费用减1，最低为0，之后按目标本体的减费状态计算。
 
 复制技能可成功使用一次，发动后恢复复制入口。取消瞄准、目标失效或费用不足不会消耗机会；已经发出的攻击与持续效果继续生效。
 
@@ -52,4 +55,11 @@
       <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
     </comps>
   </AbilityDef>
+  <HediffDef>
+    <defName>BANW_RioCopy</defName>
+    <label>莉音EX复制机会</label>
+    <description>由本体执行一次复制EX，沿用当前阶段与属性，基础COST减1。右键复制技能按钮可选择其他EX。</description>
+    <hediffClass>BANWlLib.Skills.Hediff_RioCopy</hediffClass>
+    <isBad>false</isBad><initialSeverity>1</initialSeverity><everCurableByItem>false</everCurableByItem>
+  </HediffDef>
 </Defs>

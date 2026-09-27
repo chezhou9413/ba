@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 临战爱丽丝技能配置：充能阶段、命中触发、伤害与特效。 -->
+  <!-- 临战爱丽丝EX：三档对敌表现、两档自身充能与固定直线多段伤害。 -->
   <BANWlLib.Skills.SpecialSkillProfileDef>
     <!-- 技能档案唯一标识，供 AbilityDef 的 comps 引用。 -->
     <defName>BANW_Special_Arisu</defName>
@@ -10,43 +10,24 @@
     <role>Arisu</role>
     <!-- 该档案绑定的主技能 Def。 -->
     <primaryAbility>BANW_Special_Arisu_Ex</primaryAbility>
-    <!-- 技能射程（格）。 -->
     <range>25</range>
-    <!-- 普通攻击（命中计数）的间隔 tick 数，1800 = 30 秒。 -->
-    <normalIntervalTicks>1800</normalIntervalTicks>
-    <!-- 命中触发的范围半径（格）。 -->
-    <radius>3</radius>
-    <!-- 累计多少次有效普攻命中后触发一次追加攻击。 -->
-    <requiredHits>3</requiredHits>
-    <!-- 施法者自身特效。 -->
-    <casterEffecter>BANW_Effecter_A</casterEffecter>
-    <!-- 目标命中特效。 -->
-    <targetEffecter>BANW_Effecter_C</targetEffecter>
-    <!-- 各充能阶段切换时播放的特效。 -->
-    <stageEffecter>BANW_Effecter_B</stageEffecter>
-    <!-- 技能结束时播放的特效。 -->
-    <endEffecter>BANW_Effecter_C</endEffecter>
-    <!-- 充能期间持续播放的状态特效。 -->
-    <stateEffecter>BANW_Effecter_B</stateEffecter>
-    <!-- 逐档充能施法特效：索引对应充能档位。 -->
-    <chargeCastEffecters>
-      <li>BANW_Effecter_A</li>
-      <li>BANW_Effecter_B</li>
-      <li>BANW_Effecter_C</li>
-    </chargeCastEffecters>
-    <!-- 逐档充能命中特效：索引对应充能档位。 -->
-    <chargeImpactEffecters>
-      <li>BANW_Effecter_A</li>
-      <li>BANW_Effecter_B</li>
-      <li>BANW_Effecter_C</li>
-    </chargeImpactEffecters>
-    <!-- 逐档充能状态特效：索引对应充能档位。 -->
-    <chargeStateEffecters>
-      <li>BANW_Effecter_A</li>
-      <li>BANW_Effecter_B</li>
-      <li>BANW_Effecter_C</li>
-    </chargeStateEffecters>
-    <!-- EX 攻击参数：实际由施法时的充能档位决定倍率。 -->
+    <arisu>
+      <lineLength>25</lineLength><lineWidth>3</lineWidth>
+      <!-- 首段额外延迟；实际首段在施法后的第1加damageDelayTicks个tick结算。 -->
+      <damageDelayTicks>0</damageDelayTicks>
+      <!-- 对敌使用时按当前0、1、2档选择A、B、C，仅触发所选一项。 -->
+      <attackEffecters>
+        <li>BANW_SpecialArisu_Attack_A</li>
+        <li>BANW_SpecialArisu_Attack_B</li>
+        <li>BANW_SpecialArisu_Attack_C</li>
+      </attackEffecters>
+      <!-- 对自己使用时按升至第1档、第2档分别播放，不使用对敌特效。 -->
+      <chargeEffecters><li>BANW_Effecter_B</li><li>BANW_Effecter_C</li></chargeEffecters>
+      <attackSound>BANW_Sound_At_Aris</attackSound>
+      <chargeSound>BANW_Skill_NewA</chargeSound>
+      <!-- 自动普通技能拥有独立Def、伤害、触发次数、冷却、声音和特效。 -->
+      <normalSkill>BANW_Special_Arisu_Normal</normalSkill>
+    </arisu>
     <exAttack>
       <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
       <useBattleStats>true</useBattleStats>
@@ -56,65 +37,31 @@
       <attackPowerRatio>13</attackPowerRatio>
       <!-- 使用的伤害 Def。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 标记为 EX 技能（影响结算/显示）。 -->
+      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
+      <penetration>0</penetration>
       <isExSkill>true</isExSkill>
       <!-- 允许暴击。 -->
       <canCrit>true</canCrit>
       <!-- 结算时应用属性克制/亲和加成。 -->
       <applyAffinity>true</applyAffinity>
-      <!-- 命中后的溅射半径（格），3 = 攻击目标周围3格。 -->
-      <radius>3</radius>
-      <!-- 弹丸数量（倍率会在此均分）。 -->
-      <shots>1</shots>
-      <!-- 多段弹丸之间的发射间隔 tick。 -->
-      <shotIntervalTicks>6</shotIntervalTicks>
-      <!-- 使用的弹丸 Def。 -->
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <!-- 命中播放的特效。 -->
-      <effecterDef>BANW_Effecter_C</effecterDef>
-
-    </exAttack>
-    <!-- 普通攻击参数：每累计 requiredHits 次命中后自动追加一次。 -->
-    <normalAttack>
-      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
-      <useBattleStats>true</useBattleStats>
-      <!-- 未启用 BA 战斗数值时使用的固定攻击基数。 -->
-      <basePower>100</basePower>
-      <!-- 攻击力倍率，1 = 100%。 -->
-      <attackPowerRatio>1</attackPowerRatio>
-      <!-- 使用的伤害 Def。 -->
-      <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 标记为非 EX 技能。 -->
-      <isExSkill>false</isExSkill>
-      <!-- 允许暴击。 -->
-      <canCrit>true</canCrit>
-      <!-- 结算时应用属性克制/亲和加成。 -->
-      <applyAffinity>true</applyAffinity>
-      <!-- 无溅射伤害。 -->
+      <!-- 直线范围由arisu配置；直接范围结算，不生成追踪弹丸。 -->
       <radius>0</radius>
-      <!-- 弹丸数量。 -->
-      <shots>1</shots>
-      <!-- 多段弹丸之间的发射间隔 tick。 -->
+      <shots>5</shots>
       <shotIntervalTicks>6</shotIntervalTicks>
-      <!-- 使用的弹丸 Def。 -->
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <!-- 命中播放的特效。 -->
-      <effecterDef>BANW_Effecter_C</effecterDef>
-
-    </normalAttack>
+      <canHitOwnPawn>false</canHitOwnPawn><affectFriendly>false</affectFriendly><affectHostile>true</affectHostile>
+    </exAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
   <AbilityDef>
     <!-- 技能唯一标识。 -->
     <defName>BANW_Special_Arisu_Ex</defName>
-    <!-- 技能显示名。 -->
-    <label>测试新技能·临战爱丽丝</label>
-    <!-- 技能说明文本（充能机制、溅射、追加攻击与消耗）。 -->
-    <description>对自己使用时获得一档充能，最多两档；满档后不能继续充能。
-      对25格内的敌人使用时，攻击目标周围3格范围内的敌人。未充能、一档、二档分别造成攻击力1300%、2600%、3900%的伤害，成功发动后清空充能。
-      普通技能：每累计3次有效普攻命中，自动对敌人追加一次攻击力100%的攻击，不消耗COST；多余命中次数保留。完全闪避或完全吸收的攻击不计数。
+    <label>测试新技能·临战爱丽丝·EX</label>
+    <description>对自己使用时获得一档充能，最多两档；两档使用不同的自身充能特效，满档后不能继续充能。
 
-      每次EX基础消耗：4 COST。冷却：1秒。</description>
-    <!-- 自定义技能行为类。 -->
+对25格内的敌人使用时，沿瞄准方向对长度25格、宽度3格的直线区域造成5段AOE，段间隔0.1秒。未充能、一档、二档分别使用A、B、C定向特效，总伤害分别为攻击力1300%、2600%、3900%。伤害区域在施法时固定，每段重新判断区域内的敌人，成功发动后清空充能。
+
+独立普通技能：每累计3次有效普攻命中，自动对敌人追加一次攻击力100%的攻击，不消耗COST；多余命中次数保留。完全闪避或完全吸收的攻击不计数。普通技能拥有独立的声音、特效与伤害配置，不消费EX充能，不能主动施放。
+
+每次EX基础消耗：4 COST。冷却：1秒。</description>
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
     <!-- 技能图标路径。 -->
     <iconPath>UI/StarIcon</iconPath>
@@ -135,12 +82,8 @@
     <!-- 施法者无需具备暴力能力也可使用。 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <verbProperties>
-      <!-- 基础施法 Verb 类。 -->
-      <verbClass>Verb_CastAbility</verbClass>
-      <!-- 施法射程（格）。 -->
-      <range>25</range>
-      <!-- 前摇时间（tick），0 = 瞬发。 -->
-      <warmupTime>0</warmupTime>
+      <verbClass>BANWlLib.Skills.Verb_ArisuSpecialSkill</verbClass>
+      <range>25</range><warmupTime>0</warmupTime>
       <targetParams>
         <!-- 可对自己释放（用于充能）。 -->
         <canTargetSelf>true</canTargetSelf>

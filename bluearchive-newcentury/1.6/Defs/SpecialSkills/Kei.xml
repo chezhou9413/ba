@@ -4,30 +4,43 @@
   <BANWlLib.Skills.SpecialSkillProfileDef>
     <defName>BANW_Special_Kei</defName><label>凯伊</label><role>Kei</role>
     <primaryAbility>BANW_Special_Kei_Ex</primaryAbility>
-    <range>25</range><normalIntervalTicks>1800</normalIntervalTicks>
-    <durationTicks>1500</durationTicks>
-    <radius>4.9</radius>
+    <range>25</range>
+    <kei>
+      <!-- 场地半径、持续时间和增益动作都读取这个现有EX的实际配置。 -->
+      <sourceExAbility>BAWN_Kei_EXX</sourceExAbility>
+      <contributionHediff>BAWN_Kei_buff</contributionHediff>
+      <normalJob>BANW_Job_KeiNormalSkill</normalJob>
+      <!-- 普通技能前摇，60 tick为1秒；语音与前摇特效在前摇开始时播放。 -->
+      <warmupTicks>60</warmupTicks>
+      <warmupSound>Kei_Skill_EXX</warmupSound>
+      <warmupEffecter>BANW_Kei_Ef_B</warmupEffecter>
+      <castSound>BANW_Wp_HG_At</castSound>
+      <casterEffecter>BANW_Effecter_B</casterEffecter>
+      <targetEffecter>BANW_Effecter_A</targetEffecter>
+    </kei>
     <recordRatio>0.1</recordRatio>
     <recordCapRatio>50</recordCapRatio>
-    <fieldThingDef>BANW_SpecialKeiField</fieldThingDef>
     <casterEffecter>BANW_Effecter_A</casterEffecter>
     <targetEffecter>BANW_Effecter_C</targetEffecter>
     <stageEffecter>BANW_Effecter_B</stageEffecter>
     <endEffecter>BANW_Effecter_C</endEffecter>
     <stateEffecter>BANW_Effecter_B</stateEffecter>
     <burstAttack>
-      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+      <!-- 此段释放已蓄积伤害，不另加基础伤害；攻击基数用于计算蓄积上限。 -->
       <useBattleStats>true</useBattleStats>
       <basePower>100</basePower>
       <attackPowerRatio>1</attackPowerRatio>
       <damageDef>BANC_Damage_shenmi</damageDef>
+      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
+      <penetration>0</penetration>
       <isExSkill>false</isExSkill>
       <canCrit>true</canCrit>
       <applyAffinity>true</applyAffinity>
       <radius>0</radius>
       <shots>1</shots>
       <shotIntervalTicks>6</shotIntervalTicks>
-      <!-- 此段直接结算，不生成弹丸。 -->
+      <!-- 单发单体实体弹丸在命中时结算蓄积伤害，shots固定为1、radius固定为0。 -->
+      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
       <effecterDef>BANW_Effecter_C</effecterDef>
       
     </burstAttack>
@@ -37,9 +50,9 @@
     <label>测试新技能·凯伊</label>
     <description>在25格内的指定位置创建持续25秒、半径4.9格的增益场地，为范围内友军提供攻击力＋51%、神秘克制加成＋84%、暴击率＋22%的增益。
 
-场地存在期间，其他同阵营友军在范围内对敌人造成的实际伤害，按10%计入蓄积；自身伤害不计入，友军离开范围后停止贡献。蓄积上限为施法时攻击力的5000%。
+场地范围和持续时间沿用现有EX“存在于此的我”的配置；使用现有EX也会触发相同蓄积与普通技能。场地存在期间，其他同阵营友军获得增益后，在范围内对敌人造成的实际伤害按10%计入蓄积；自身伤害不计入，友军离开范围后停止贡献。蓄积上限为施法时攻击力的5000%。
 
-场地结束后，普通技能自动对合法敌人释放全部蓄积伤害，不附加基础伤害，也不消耗COST。没有目标时保留释放机会。场地存在或蓄积尚未释放时，不能再次施放EX。
+场地结束后，普通技能自动停步瞄准，经过1秒前摇并播放语音与特效，再发射一颗单体子弹，命中时释放全部蓄积伤害，不附加基础伤害，也不消耗COST。没有目标或前摇中断时保留释放机会。场地存在或蓄积尚未释放时，不能再次施放本测试EX。
 
 基础消耗：4 COST。冷却：1秒。</description>
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
@@ -53,7 +66,7 @@
     <targetRequired>true</targetRequired>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
+      <verbClass>BANWlLib.Skills.Verb_KeiSpecialSkill</verbClass>
       <range>25</range><warmupTime>0</warmupTime>
       <targetParams>
         <canTargetSelf>false</canTargetSelf>
@@ -70,4 +83,11 @@
       <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
     </comps>
   </AbilityDef>
+  <!-- 普通技能工作不提供主动按钮，只能在场地到期后自动执行。 -->
+  <JobDef>
+    <defName>BANW_Job_KeiNormalSkill</defName>
+    <driverClass>BANWlLib.Skills.JobDriver_KeiNormalSkill</driverClass>
+    <reportString>正在瞄准并释放蓄积伤害。</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
 </Defs>

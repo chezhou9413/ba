@@ -4,5 +4,5 @@ namespace BANWlLib.Skills
     public enum SpecialSkillRole { Nero, Arisu, Shiroko, Wakamo, Hoshino, Kei, Rio }
 
     //技能按钮行为，负责区分同一角色的主动技能和形态切换。
-    public enum SpecialSkillCommand { Ex, AlternateEx, SwitchForm }
+    public enum SpecialSkillCommand { Ex, AlternateEx, SwitchForm, Normal }
 }

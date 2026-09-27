@@ -965,10 +965,10 @@
       </li>
     </tools>
     <race>
-      <!-- 学生共用种族的名字生成器；实际姓名由各 PawnKindDef 的 kindRule.kindName 生成后覆盖，
-           这里必须有值，否则原版名字生成会报 "No name making method for BANW_KivotosStudent"。 -->
-      <nameGenerator>NamerStudent</nameGenerator>
-      <nameGeneratorFemale>NamerStudent</nameGeneratorFemale>
+      <!--为原版姓名生成阶段提供人类命名类别，角色固定姓名由 ChezhouLib 的种类规则设置。-->
+      <nameCategory>HumanStandard</nameCategory>
+      <nameGenerator>NamerHikali</nameGenerator>
+      <nameGeneratorFemale>NamerHikali</nameGeneratorFemale>
       <hasCorpse>false</hasCorpse>
       
       <renderTree>Humanlike</renderTree>

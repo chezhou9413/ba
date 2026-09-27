@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 独立自动普通技能，不注册AbilityDef或主动按钮，不共用EX的表现与伤害配置。 -->
+  <BANWlLib.Skills.ArisuNormalSkillDef>
+    <defName>BANW_Special_Arisu_Normal</defName><label>临战爱丽丝普通技能</label>
+    <description>每累计3次有效普攻命中自动追加一次单体技能攻击，不消耗EX充能。</description>
+    <requiredHits>3</requiredHits>
+    <cooldownTicks>1</cooldownTicks><range>25</range>
+    <!-- 可分别替换施法音效、自身特效、目标施法特效及attack内的命中特效。 -->
+    <castSound>BANW_Wp_AR_Arisu_At</castSound>
+    <casterEffecter>BANW_Effecter_B</casterEffecter>
+    <targetEffecter>BANW_Effecter_A</targetEffecter>
+    <attack>
+      <useBattleStats>true</useBattleStats><basePower>100</basePower>
+      <attackPowerRatio>1</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+      <!-- 每发使用完整护甲穿透，0.5为50%。 -->
+      <penetration>0</penetration>
+      <isExSkill>false</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
+      <radius>0</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
+      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <effecterDef>BANW_Effecter_C</effecterDef>
+      <canHitOwnPawn>false</canHitOwnPawn><affectFriendly>false</affectFriendly><affectHostile>true</affectHostile>
+    </attack>
+  </BANWlLib.Skills.ArisuNormalSkillDef>
+</Defs>

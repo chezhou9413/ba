@@ -22,12 +22,22 @@
       <basePower>100</basePower>
       <attackPowerRatio>13</attackPowerRatio>
       <damageDef>BANC_Damage_shenmi</damageDef>
+      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
+      <penetration>0</penetration>
       <isExSkill>true</isExSkill>
       <canCrit>true</canCrit>
       <applyAffinity>true</applyAffinity>
       <radius>0</radius>
       <shots>10</shots>
+      <!-- 配置shotTicks时使用逐发时间表；删除整段列表后才使用统一shotIntervalTicks。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 每个数值为相对本次EX生效的tick，最小为1，条目数必须等于shots。 -->
+      <shotTicks>
+        <li>1</li><li>7</li><li>13</li><li>19</li><li>25</li>
+        <li>31</li><li>37</li><li>43</li><li>49</li><li>55</li>
+      </shotTicks>
+      <!-- 二段每发射击的音效，独立于一段施法音效。 -->
+      <shotSound>BANW_Nero_ExShot</shotSound>
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
       <effecterDef>BANW_Effecter_C</effecterDef>
       
@@ -53,6 +63,8 @@
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
+      <!-- 一段成功施放时播放的独立音效。 -->
+      <soundCast>Nero_Skill_EX</soundCast>
       <range>25</range><warmupTime>0</warmupTime>
       <targetParams>
         <canTargetSelf>false</canTargetSelf>
@@ -72,7 +84,7 @@
   <AbilityDef>
     <defName>BANW_Special_Nero_AlternateEx</defName>
     <label>测试新技能·妮露·锐气攻击</label>
-    <description>向25格内的敌人连续发射10发子弹，基础总伤害为攻击力的1300%。
+    <description>向25格内的敌人连续发射10发子弹，基础总伤害为攻击力的1300%。整轮保持停步瞄准与持续施法，不能同时进行武器平A；每次射击播放独立射击音效，逐发时间可配置。施法被打断时停止未发出的子弹，已发出的弹丸继续命中结算。
 
 发动前先获得1层锐气，最多5层。锐气伤害倍率为「1＋0.35×层数」，并与大亢奋的1.2倍倍率相乘；5层时合计为基础伤害的3.3倍。
 
@@ -80,6 +92,7 @@
 
 基础消耗：4 COST。冷却：1秒。</description>
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <jobDef>BANW_Job_NeroExChannel</jobDef>
     <iconPath>UI/StarIcon</iconPath>
     <cooldownTicksRange>60</cooldownTicksRange>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
@@ -107,4 +120,11 @@
       <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
     </comps>
   </AbilityDef>
+  <JobDef>
+    <defName>BANW_Job_NeroExChannel</defName>
+    <driverClass>BANWlLib.Skills.JobDriver_NeroExChannel</driverClass>
+    <reportString>正在持续施放妮露二段EX。</reportString>
+    <abilityCasting>true</abilityCasting>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
 </Defs>

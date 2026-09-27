@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- A/B/C暂用项目现有水花子资源占位；三个独立EffecterDef可分别替换成正式资源。 -->
+  <EffecterDef>
+    <defName>BANW_SpecialArisu_Attack_A</defName>
+    <children>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Hanako_A_3_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks><scale>0.625</scale><rotation>0</rotation>
+        <positionOffset>(0,0.5,12.5)</positionOffset><absoluteAngle>false</absoluteAngle>
+      </li>
+    </children>
+  </EffecterDef>
+  <EffecterDef>
+    <defName>BANW_SpecialArisu_Attack_B</defName>
+    <children>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Hanako_A_4_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks><scale>0.625</scale><rotation>0</rotation>
+        <positionOffset>(0,0.5,12.5)</positionOffset><absoluteAngle>false</absoluteAngle>
+      </li>
+    </children>
+  </EffecterDef>
+  <EffecterDef>
+    <defName>BANW_SpecialArisu_Attack_C</defName>
+    <children>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Hanako_A_3_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks><scale>0.625</scale><rotation>0</rotation>
+        <positionOffset>(0,0.5,12.5)</positionOffset><absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Hanako_A_4_Mote</moteDef>
+        <!-- 延迟子节点沿用施法瞬间的瞄准方向，与直线伤害区域保持一致。 -->
+        <initialDelayTicks>12</initialDelayTicks><scale>0.625</scale><rotation>0</rotation>
+        <positionOffset>(0,0.5,12.5)</positionOffset><absoluteAngle>false</absoluteAngle>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>

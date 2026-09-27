@@ -502,13 +502,17 @@ namespace BANWlLib.BattleSystem
             if (request.resolvedAmount >= 0f || !request.useBattleStats)
             {
                 result.finalAmount = request.resolvedAmount >= 0f ? request.resolvedAmount :
-                    Mathf.Max(0f, request.basePower * (request.isNormalAttack ? 1f : request.attackPowerRatio) * request.mechanismMultiplier);
+                    Mathf.Max(0f, (request.baseDamageOverride >= 0f ? request.baseDamageOverride : request.basePower) *
+                        (request.isNormalAttack ? 1f : request.attackPowerRatio) * request.mechanismMultiplier);
+                result.isCrit = request.resolvedAmount >= 0f && request.resolvedCritical;
                 return result;
             }
 
             Pawn casterPawn = request.instigator as Pawn;
             float weaponBaseAttack = ResolveWeaponBaseAttack(request, casterPawn);
-            float attackPower = request.snapshot != null ? request.snapshot.attackPower : GetFinalAttackPower(casterPawn, weaponBaseAttack);
+            //蓄积爆发使用累计伤害替代攻击基数，其余BA输出乘区保持统一结算。
+            float attackPower = request.baseDamageOverride >= 0f ? request.baseDamageOverride :
+                request.snapshot != null ? request.snapshot.attackPower : GetFinalAttackPower(casterPawn, weaponBaseAttack);
             float attackMultiplier = request.snapshot != null ? request.snapshot.attackMultiplier : GetAttackMultiplier(casterPawn);
             float actionMultiplier = request.isNormalAttack ? 1f : Mathf.Max(0f, request.attackPowerRatio);
             float normalAttackStatMultiplier = request.useNormalAttackStat ? ResolveNormalAttackMultiplier(request, casterPawn) : 1f;
@@ -599,12 +603,12 @@ namespace BANWlLib.BattleSystem
             return result;
         }
 
-        //执行统一伤害并在原版伤害期间保留事件来源。
-        public static void ApplyDamage(BattleDamageRequest request)
+        //执行统一伤害并返回实际扣血，保留来源供状态附加与伤害记录使用。
+        public static float ApplyDamage(BattleDamageRequest request)
         {
             if (request == null || request.target == null || request.damageDef == null)
             {
-                return;
+                return 0f;
             }
 
             BattleDamageResult result = BuildDamageResult(request);
@@ -624,7 +628,7 @@ namespace BANWlLib.BattleSystem
                 request.target,
                 instigatorGuilty);
             using (Skills.SpecialDamageScope.Enter(request))
-                request.target.TakeDamage(damageInfo);
+                return request.target.TakeDamage(damageInfo).totalDamageDealt;
         }
 
         //按治疗金额恢复可治疗伤口并显示实际治疗结果。

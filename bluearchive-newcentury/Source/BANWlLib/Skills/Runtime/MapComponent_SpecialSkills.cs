@@ -24,6 +24,20 @@ namespace BANWlLib.Skills
         //安排下一游戏时刻或指定时刻执行的攻击。
         public void Enqueue(SpecialPendingAttack attack) { pending.Add(attack); }
 
+        //判断本次持续施法是否还有未射出的子弹，不等待已经发出的弹丸命中。
+        public bool HasPendingCast(Verse.AI.Job job) => pending.Any(a => a.castingJob == job);
+
+        //取消被打断施法尚未发射的攻击，已飞出的弹丸继续结算。
+        public void CancelCast(Verse.AI.Job job)
+        {
+            for (int i = pending.Count - 1; i >= 0; i--)
+            {
+                if (pending[i].castingJob != job) continue;
+                pending[i].Complete();
+                pending.RemoveAt(i);
+            }
+        }
+
         //调试重置时取消指定角色尚未完成的特殊技能攻击。
         public void Cancel(Pawn pawn)
         {
@@ -50,8 +64,15 @@ namespace BANWlLib.Skills
                 pending.RemoveAt(i);
                 if (attack.caster == null || attack.caster.Dead || attack.caster.Map != map)
                 { attack.Complete(); continue; }
-                if (attack.droneOrigin && (attack.state == null || !attack.state.Active))
+                //发射前再次检查施法工作，避免同一tick内的倒地、离图或中断留下后台射击。
+                if (attack.castingJob != null && (attack.caster.CurJob != attack.castingJob ||
+                    !SpecialCombatUtility.CanAct(attack.caster) ||
+                    !SpecialCombatUtility.ValidEnemy(attack.caster, attack.target as Pawn, attack.state.profile.range)))
                 { attack.Complete(); continue; }
+                if (attack.droneOrigin && (attack.state == null || !ShirokoSkills.DronePresent(attack.state)))
+                { attack.Complete(); continue; }
+                //飞出的弹丸不再依赖施法工作，避免结束后的Job引用进入弹丸存档。
+                attack.castingJob = null;
                 SpecialCombatUtility.Launch(attack, map);
             }
         }
@@ -62,7 +83,7 @@ namespace BANWlLib.Skills
             foreach (Hediff_SpecialSkillState state in states)
             {
                 if (!state.pawn.Spawned || state.pawn.Dead) continue;
-                if (state.profile.role == SpecialSkillRole.Shiroko && state.Active) DroneRenderer.Draw(state);
+                if (state.profile.role == SpecialSkillRole.Shiroko && ShirokoSkills.DronePresent(state)) DroneRenderer.Draw(state);
                 if (state.profile.role == SpecialSkillRole.Hoshino && state.stage == 1 && state.Active)
                     HoshinoInterceptor.Draw(state);
             }

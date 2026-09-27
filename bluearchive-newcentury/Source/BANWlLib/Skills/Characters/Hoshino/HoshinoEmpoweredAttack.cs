@@ -1,41 +1,56 @@
+using System.Linq;
 using BANWlLib.BattleSystem;
+using BANWlLib.Projectiles;
 using UnityEngine;
 using Verse;
 
 namespace BANWlLib.Skills
 {
-    //星野强化普攻，负责替换原始命中伤害并限制范围伤害不递归扩散。
+    //星野强化普攻，负责用定向特效和单次范围伤害替代每一发武器弹丸。
     public static class HoshinoEmpoweredAttack
     {
-        //原始普攻命中使用强化配置，范围次级命中只消耗剩余额度。
-        public static void Prepare(SpecialDamageEvent e, ref DamageInfo damage)
+        //按当前射击方向播放指定特效，每个范围目标只接受本发的一次普攻伤害。
+        public static bool Fire(Verb_LaunchProjectile verb, Hediff_SpecialSkillState s)
         {
-            if (!e.normalHit) return;
-            var s = Hediff_SpecialSkillState.Find(e.attacker, SpecialSkillRole.Hoshino);
-            if (s == null || s.stage != 0) return;
-            bool secondary = SpecialDamageScope.Current?.areaSecondary == true;
-            e.expandArea = !secondary;
-            if (secondary)
+            LocalTargetInfo target = verb.CurrentTarget;
+            Pawn pawn = s.pawn;
+            if (!target.IsValid || (target.HasThing && target.Thing.Map != pawn.Map) ||
+                !target.Cell.InBounds(pawn.Map) || !verb.TryFindShootLineFromTo(pawn.Position, target, out ShootLine line)) return false;
+            HoshinoSkillConfig config = s.profile.hoshino;
+            SpecialAttackConfig attack = config.empoweredAttack;
+            IntVec3 center = target.Cell;
+            PlayEffect(pawn, target, config);
+            SpecialEffects.Trigger(attack.effecterDef, center, pawn.Map);
+            //目标列表在伤害前固定，死亡或其他伤害事件不会改变本轮枚举。
+            foreach (Pawn victim in pawn.Map.mapPawns.AllPawnsSpawned.ToArray())
             {
-                if (s.remainingHits <= 0) damage.SetAmount(0f);
-                return;
+                if (victim.Dead || victim.Position.DistanceTo(center) > attack.radius ||
+                    !BattleStatUtility.ShouldAffectTarget(pawn, victim, attack)) continue;
+                BattleStatUtility.ApplyDamage(new BattleDamageRequest
+                {
+                    instigator = pawn, target = victim, damageDef = attack.damageDef,
+                    useBattleStats = attack.useBattleStats, basePower = attack.basePower,
+                    weaponBaseAttack = attack.weaponBaseAttack, baseMasteryMultiplier = attack.baseMasteryMultiplier,
+                    penetration = attack.penetration, mechanismMultiplier = attack.attackPowerRatio,
+                    isNormalAttack = true, useNormalAttackStat = true, normalHit = true,
+                    canCrit = attack.canCrit, alwaysCrit = attack.alwaysCrit, applyAffinity = attack.applyAffinity
+                });
             }
-            if (s.remainingHits <= 0) return;
-            SpecialAttackConfig a = s.profile.normalAttack;
-            var request = new BattleDamageRequest
+            return true;
+        }
+
+        //从施法者位置沿目标方向生成特效，方向上下文仅在本次触发期间有效。
+        private static void PlayEffect(Pawn pawn, LocalTargetInfo target, HoshinoSkillConfig config)
+        {
+            Vector3 direction = (target.CenterVector3 - pawn.DrawPos).Yto0().normalized;
+            DirectionalImpactEffectContext.Register(pawn, direction, config.effectSpeed, config.effectOffsetForward, config.effectOffsetUp);
+            try
             {
-                instigator = e.attacker, target = e.target, damageDef = a.damageDef,
-                attackPowerRatio = a.attackPowerRatio, useBattleStats = a.useBattleStats,
-                basePower = a.basePower, mechanismMultiplier = s.profile.empoweredMultiplier,
-                canCrit = a.canCrit, applyAffinity = a.applyAffinity, normalHit = true
-            };
-            BattleDamageResult result = BattleStatUtility.BuildDamageResult(request);
-            damage.Def = a.damageDef;
-            damage.SetAmount(result.finalAmount);
-            e.scope = SpecialDamageScope.Enter(request);
-            BattleDamageDisplayState.RegisterManualDamage(e.target, e.attacker, result.isCrit);
-            BattleDamageDisplayState.RegisterCriticalFloatText(e.target, result.isCrit);
+                Effecter effect = config.empoweredShotEffecter.Spawn();
+                effect.Trigger(new TargetInfo(pawn), new TargetInfo(pawn));
+                effect.Cleanup();
+            }
+            finally { DirectionalImpactEffectContext.Clear(pawn); }
         }
     }
 }
-

@@ -34,6 +34,9 @@ namespace BANWlLib.Skills
         public Hediff countBuff;
         public int lastLethalEvent = -1;
         public int pendingAttacks;
+        public HoshinoRuntimeState hoshino = new HoshinoRuntimeState();
+        public WakamoRuntimeState wakamo = new WakamoRuntimeState();
+        public Verse.AI.Job keiNormalJob;
         private Effecter maintainedEffect;
         private EffecterDef maintainedDef;
         public int Now => Verse.Find.TickManager.TicksGame;
@@ -42,9 +45,11 @@ namespace BANWlLib.Skills
         //每个施法来源保留独立运行状态，禁止原版按同名Hediff合并。
         public override bool TryMergeWith(Hediff other) => false;
         public override string LabelBase => profile == null ? base.LabelBase : "测试新技能·" + profile.label;
-        public override string TipStringExtra => $"阶段：{stage}　层数：{stacks}　命中：{hits}\n剩余次数：{remainingHits}　蓄积：{recorded:0.##}/{recordCap:0.##}\n持续：{Mathf.Max(0, endTick - Now) / 60f:0.0}秒　待释放：{releaseReady}";
+        public override string TipStringExtra => profile?.role == SpecialSkillRole.Hoshino
+            ? $"形态：{(stage == 0 ? "攻击" : "防御")}　普攻发数：{hits}/{profile.hoshino.normalRequiredShots}\n下轮强化：{hoshino.empoweredReady}　当前轮强化：{hoshino.empoweredBurst}\n防御状态剩余受伤次数：{remainingHits}　EX持续：{Mathf.Max(0, endTick - Now) / 60f:0.0}秒"
+            : $"阶段：{stage}　层数：{stacks}　命中：{hits}\n剩余次数：{remainingHits}　蓄积：{recorded:0.##}/{recordCap:0.##}\n持续：{Mathf.Max(0, endTick - Now) / 60f:0.0}秒　待释放：{releaseReady}";
 
-        //取得指定配置的原生技能状态，复制技能使用独立的新状态。
+        //取得指定配置的本体技能状态，原生施法和复制施法共用该状态。
         public static Hediff_SpecialSkillState Find(Pawn pawn, SpecialSkillProfileDef profile)
         {
             return pawn?.health?.hediffSet.hediffs.OfType<Hediff_SpecialSkillState>()
@@ -64,7 +69,8 @@ namespace BANWlLib.Skills
             var state = (Hediff_SpecialSkillState)HediffMaker.MakeHediff(DefDatabase<HediffDef>.GetNamed("BANW_SpecialSkillRuntime"), pawn);
             state.profile = profile;
             state.native = native;
-            state.nextNormalTick = Verse.Find.TickManager.TicksGame + profile.normalIntervalTicks;
+            state.nextNormalTick = Verse.Find.TickManager.TicksGame +
+                (profile.role == SpecialSkillRole.Arisu ? profile.arisu.normalSkill.cooldownTicks : profile.normalIntervalTicks);
             state.activeMap = pawn.Map;
             pawn.health.AddHediff(state);
             return state;
@@ -89,8 +95,10 @@ namespace BANWlLib.Skills
         //维护一份持续特效，避免每次命中或层数变化反复创建特效。
         private void UpdateEffect()
         {
+            //若藻的蓄积特效由敌人身上的标记维护。
+            if (profile.role == SpecialSkillRole.Wakamo) { CleanupEffect(); return; }
             bool charged = profile.role == SpecialSkillRole.Arisu && stage > 0;
-            EffecterDef effect = charged ? SpecialEffects.Charge(profile.chargeStateEffecters, stage) : profile.stateEffecter;
+            EffecterDef effect = charged ? profile.arisu.chargeStateEffecters?[stage - 1] : profile.stateEffecter;
             if (maintainedDef != effect) CleanupEffect();
             if (pawn.Spawned && !pawn.Dead && (Active || charged) && effect != null)
             {
@@ -114,7 +122,13 @@ namespace BANWlLib.Skills
         }
 
         //删除状态时释放持续表现。
-        public override void PostRemoved() { CleanupEffect(); base.PostRemoved(); }
+        public override void PostRemoved()
+        {
+            if (copiedAbility != null) RioSkills.RemoveCopy(this);
+            if (profile?.role == SpecialSkillRole.Wakamo) WakamoSkills.Clear(this);
+            CleanupEffect();
+            base.PostRemoved();
+        }
 
         //序列化全部运行数据，支持当前版本存读档继续施法和计数。
         public override void ExposeData()
@@ -144,6 +158,9 @@ namespace BANWlLib.Skills
             Scribe_References.Look(ref appliedShield, "appliedShield");
             Scribe_References.Look(ref countBuff, "countBuff");
             Scribe_Deep.Look(ref snapshot, "snapshot");
+            Scribe_Deep.Look(ref hoshino, "hoshino");
+            Scribe_Deep.Look(ref wakamo, "wakamo");
+            Scribe_References.Look(ref keiNormalJob, "keiNormalJob");
         }
     }
 }

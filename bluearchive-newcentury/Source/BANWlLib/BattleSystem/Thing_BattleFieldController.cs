@@ -4,6 +4,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
+    //战斗场地实体，负责按范围和间隔应用效果，并在持续时间结束时销毁。
     public class Thing_BattleFieldController : ThingWithComps
     {
         private Pawn caster;
@@ -12,6 +13,10 @@ namespace BANWlLib.BattleSystem
         private int ticksUntilPulse;
         private bool initialized;
 
+        //公开实际剩余时间，供依赖场地的技能建立到期计时。
+        public int RemainingTicks => ticksRemaining;
+
+        //取得该场地定义的范围、脉冲和持续时间配置。
         private BattleFieldControllerExtension Extension
         {
             get
@@ -20,6 +25,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
+        //初始化施法者、实际持续时间和可选属性快照。
         public void Setup(Pawn casterPawn, int durationTicksOverride = -1)
         {
             caster = casterPawn;
@@ -32,6 +38,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
+        //推进场地脉冲并处理持续时间结束。
         protected override void Tick()
         {
             base.Tick();
@@ -54,6 +61,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
+        //按场地格子范围筛选目标并应用配置的战斗效果。
         private void DoPulse()
         {
             if (Map == null)
@@ -93,6 +101,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
+        //保存施法者、快照和场地运行时间。
         public override void ExposeData()
         {
             base.ExposeData();

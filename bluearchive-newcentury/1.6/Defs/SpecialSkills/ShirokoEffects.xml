@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 无人机射击音效复用现有步枪素材，允许连续枪声重叠播放。 -->
+  <SoundDef>
+    <defName>BANW_Shiroko_DroneShot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>32</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Folder"><clipFolderPath>Weapon/AR/AR_At</clipFolderPath></li></grains>
+        <volumeRange>45.2941~45.2941</volumeRange>
+        <pitchRange>1~1.091765</pitchRange>
+        <sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>
