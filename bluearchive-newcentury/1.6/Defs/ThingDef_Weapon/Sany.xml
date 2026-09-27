@@ -799,7 +799,7 @@
     <graphicData>
       <texPath>Weapon/Sany/Shimiko</texPath><!--贴图路径-->
       <graphicClass>Graphic_Single</graphicClass><!--贴图-->
-      <drawSize>1.5</drawSize><!--贴图大小-->
+      <drawSize>1.4</drawSize><!--贴图大小-->
     </graphicData>
     <weaponTags>
       <li>BANC_Shimiko</li><!--武器Tag-->
@@ -876,7 +876,7 @@
     <graphicData>
       <texPath>Weapon/Sany/Airy</texPath><!--贴图路径-->
       <graphicClass>Graphic_Single</graphicClass><!--贴图-->
-      <drawSize>1.3</drawSize><!--贴图大小-->
+      <drawSize>1.1</drawSize><!--贴图大小-->
     </graphicData>
     <weaponTags>
       <li>BANC_Airy</li><!--武器Tag-->
@@ -2503,4 +2503,209 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
   </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Yoshimi_A</defName>
+    <label>出色的司机</label>
+    <description>好美随身携带的突击步枪。平时她常用它在争夺甜点的战斗中取得胜利。它的枪声，就像好美演奏的吉他音符一样轻快。</description>
+    <graphicData>
+      <texPath>Weapon/Sany/Yoshimi</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.0</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Yoshimi_A</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_AR_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0.8</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>0.9</AccuracyMedium><!--中-->
+      <AccuracyLong>0.8</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+   <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Yoshimi_A</defaultProjectile><!--子弹-->
+        <burstShotCount>3</burstShotCount><!--连射次数-->
+        <warmupTime>1.1</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots><!--射速-->
+        <range>33.9</range><!--射距-->
+        <soundCast>BANW_Wp_AR_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Medium</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Yoshimi_A</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Yoshimi_A</defName>
+    <label>出色的司机子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
+      <damageAmountBase>9</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.3</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <speed>80</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>BANC_Damage_baofa</def>
+        <amount>3</amount>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>(1,3)</drawSize>
+      <texPath>Projectile/Bullet_Yoshimi_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+    <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Airy_A</defName>
+    <label>甜爽风味</label>
+    <description>爱理十分珍惜的冲锋枪。与平常无异的装饰，提醒着爱理那些自己也会无意忽略的回忆。</description>
+    <graphicData>
+      <texPath>Weapon/Sany/Airy</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.1</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Airy_A</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_SMG_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>1</AccuracyTouch><!--贴近-->
+      <AccuracyShort>1</AccuracyShort><!--近-->
+      <AccuracyMedium>1</AccuracyMedium><!--中-->
+      <AccuracyLong>0.6</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.2</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+   <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Airy_A</defaultProjectile><!--子弹-->
+        <burstShotCount>3</burstShotCount><!--连射次数-->
+        <warmupTime>1.3</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots><!--射速-->
+        <range>22.9</range><!--射距-->
+        <soundCast>BANW_Wp_SMG_At</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Light</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Airy_A</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Airy_A</defName>
+    <label>甜爽风味子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
+      <damageAmountBase>9</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>0.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <speed>70</speed><!--子弹速度-->
+      <extraDamages>
+      <li>
+        <def>BANC_Damage_Airy_A</def>
+        <amount>1</amount>
+        <chance>0.1</chance>
+      </li>
+    </extraDamages>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>1.0</drawSize>
+      <texPath>Projectile/Bullet_Airy_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      
+    </graphicData>
+  </ThingDef>
+
+  <DamageDef ParentName="BANC_Damage_guantong">
+    <defName>BANC_Damage_Airy_A</defName>
+   <additionalHediffs>
+      <li>
+        <hediff>BAWN_Airy_A_HediffDef_Common</hediff>
+        <severityPerDamageDealt>1</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+  <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Airy_A_HediffDef_Common</defName>
+        <!-- 显示名称 -->
+        <label>流进心田的感情</label>
+        <!-- 效果描述 -->
+        <description>减少24%的暴伤抵抗率</description>
+        <defaultLabelColor>(255, 0, 0)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <BANW_CriticalDamageResistance>-0.24</BANW_CriticalDamageResistance>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>960</disappearsAfterTicks>
+        </li>
+    </comps>
+    </HediffDef>
 </Defs>

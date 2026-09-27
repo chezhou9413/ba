@@ -64,8 +64,8 @@
          <stages>
           <li>     
             <statOffsets>
-            <AimingDelayFactor>0.35</AimingDelayFactor>
-            <RangedCooldownFactor>0.35</RangedCooldownFactor>
+            <AimingDelayFactor>0.175</AimingDelayFactor>
+            <RangedCooldownFactor>0.175</RangedCooldownFactor>
             </statOffsets>
            </li>
           </stages>
@@ -116,7 +116,7 @@
   <comps>
     <li Class="BANWlLib.BattleSystem.CompProperties_AbilitySpawnBattleField">
       <!-- 要生成的场地控制器 ThingDef。 -->
-      <fieldThingDef>BANW_BattleField_Damage_Ariy</fieldThingDef>
+      <fieldThingDef>BANW_BattleField_Damage_Airy</fieldThingDef>
       <!-- 覆盖场地默认持续时间，小于等于 0 时使用 ThingDef 扩展里的 durationTicks。 -->
       <durationTicksOverride>1200</durationTicksOverride>
     </li>
@@ -161,7 +161,7 @@
   </modExtensions>
 </AbilityDef>
 <ThingDef>
-    <defName>BANW_BattleField_Damage_Ariy</defName>
+    <defName>BANW_BattleField_Damage_Airy</defName>
     <label>虽然有点可惜……嘿！</label>
     <!-- 场地控制器实体，生成后独立 Tick，不再依赖施法者持续施法。 -->
     <thingClass>BANWlLib.BattleSystem.Thing_BattleFieldController</thingClass>
@@ -240,8 +240,8 @@
          <stages>
           <li>     
             <statOffsets>
-            <AimingDelayFactor>0.26</AimingDelayFactor>
-            <RangedCooldownFactor>0.26</RangedCooldownFactor>
+            <AimingDelayFactor>0.13</AimingDelayFactor>
+            <RangedCooldownFactor>0.13</RangedCooldownFactor>
             </statOffsets>
             <statFactors>
               <MoveSpeed>0.74</MoveSpeed>

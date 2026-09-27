@@ -1,10 +1,10 @@
-
 <Defs>
   <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Ibuki_Ef_AA</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/tong/G_P</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/tong/G_P</texPath><!-- 纹理图片路径 -->
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>3</drawSize>
     </graphicData>
@@ -16,11 +16,12 @@
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
     </mote>
   </ThingDef>
-    <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Ibuki_Ef_A</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/A/Ibuki_A</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Ibuki/A/Ibuki_A</texPath><!-- 纹理图片路径 -->
       <drawSize>1.8</drawSize>
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -31,11 +32,12 @@
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
     </mote>
   </ThingDef>
-<ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Ibuki_Ef_B</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/A/Ibuki_B</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Ibuki/A/Ibuki_B</texPath><!-- 纹理图片路径 -->
       <drawSize>1.8</drawSize>
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -46,11 +48,12 @@
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
     </mote>
   </ThingDef>
-<ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
+  <ThingDef ParentName="MoteBase"><!-- Mote向上浮动 -->
     <defName>BANW_Ibuki_Ef_C</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/A/Ibuki_C</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Ibuki/A/Ibuki_C</texPath><!-- 纹理图片路径 -->
       <drawSize>1.5</drawSize>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
@@ -67,7 +70,8 @@
     <defName>BANW_Ibuki_Ef_D</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/A/Ibuki_D</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Ibuki/A/Ibuki_D</texPath><!-- 纹理图片路径 -->
       <drawSize>1.5</drawSize>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
@@ -84,7 +88,8 @@
     <defName>BANW_Ibuki_Ef_E</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/A/Ibuki_E</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Ibuki/A/Ibuki_E</texPath><!-- 纹理图片路径 -->
       <drawSize>1.5</drawSize>
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
     </graphicData>
@@ -101,7 +106,8 @@
     <defName>BANW_Ibuki_Ef_G</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/A/Ibuki_G</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Ibuki/A/Ibuki_G</texPath><!-- 纹理图片路径 -->
       <drawSize>0.4</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
@@ -116,22 +122,23 @@
     <defName>BANW_Ibuki_Ef_H</defName>
     <thingClass>MoteAttached</thingClass><!-- 附着 -->
     <graphicData><!-- 图形数据配置 -->
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass><texPath>Effect/Ibuki/A/Ibuki_H</texPath><!-- 纹理图片路径 -->
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/Ibuki/A/Ibuki_H</texPath><!-- 纹理图片路径 -->
       <drawSize>0.4</drawSize>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer><!-- 显示层级，设置为最顶层 -->
     <mote>
-     <fadeInTime>0.1</fadeInTime><!-- 淡入时间（秒） -->
+      <fadeInTime>0.1</fadeInTime><!-- 淡入时间（秒） -->
       <solidTime>0.4</solidTime><!-- 固定显示时间（秒） -->
       <fadeOutTime>0.1</fadeOutTime> <!-- 淡出时间（秒） -->
       <collide>false</collide><!-- 是否与其它物体碰撞 -->
     </mote>
   </ThingDef>
 
-   <EffecterDef>
-<defName>BANW_Effecter_Ibuki</defName>
-<children>
-  <li>
+  <EffecterDef>
+    <defName>BANW_Effecter_Ibuki</defName>
+    <children>
+      <li>
         <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
         <moteDef>BANW_Ibuki_Ef_H</moteDef>
         <ticksBetweenMotes>40</ticksBetweenMotes>
@@ -197,7 +204,7 @@
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-       <li>
+      <li>
         <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
         <moteDef>BANW_Ibuki_Ef_B</moteDef>
         <initialDelayTicks>24</initialDelayTicks><!-- 60tick1秒 -->
@@ -260,7 +267,7 @@
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-       <li>
+      <li>
         <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
         <moteDef>BANW_Ibuki_Ef_C</moteDef>
         <initialDelayTicks>12</initialDelayTicks><!-- 60tick1秒 -->
@@ -308,7 +315,7 @@
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-       <li>
+      <li>
         <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
         <moteDef>BANW_Ibuki_Ef_E</moteDef>
         <initialDelayTicks>30</initialDelayTicks><!-- 60tick1秒 -->
@@ -324,7 +331,7 @@
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-       <li>
+      <li>
         <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
         <moteDef>BANW_Ibuki_Ef_D</moteDef>
         <initialDelayTicks>36</initialDelayTicks><!-- 60tick1秒 -->
@@ -404,6 +411,6 @@
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-</children>
-</EffecterDef>
+    </children>
+  </EffecterDef>
 </Defs>

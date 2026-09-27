@@ -24,7 +24,7 @@
       <warmupEffecter>BANW_Wakamo_A_Ef_C</warmupEffecter>
       <soundCast></soundCast>
       <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
-      <range>24.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <range>40.9</range><!-- 作用范围：-1 表示只能近战接触 -->
       <warmupTime>1.7</warmupTime><!-- 前摇时间（单位：秒） -->
       <ai_IsWeapon>false</ai_IsWeapon> <!--AI
       不将此能力视为武器。-->
@@ -131,7 +131,7 @@
       </li>
       <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
         <shape>Circle</shape>
-        <range>30</range>
+        <range>40.9</range>
         <drawCasterRange>true</drawCasterRange>
         <drawTargetHighlight>true</drawTargetHighlight>
       </li>
@@ -158,7 +158,7 @@
         <attackPowerRatio>1</attackPowerRatio>
          <isNormalAttack>false</isNormalAttack>
         <canCrit>true</canCrit>
-        <isExSkill>false</isExSkill>
+        <isExSkill>true</isExSkill>
       <applyAffinity>true</applyAffinity>
       <canHitOwnPawn>true</canHitOwnPawn>
       <canHitOwnBuilding>true</canHitOwnBuilding>

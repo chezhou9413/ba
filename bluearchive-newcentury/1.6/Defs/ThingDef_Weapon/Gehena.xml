@@ -1914,7 +1914,7 @@
     <graphicData>
       <texPath>Weapon/Gehena/Erika</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.3</drawSize>
+      <drawSize>1.2</drawSize>
     </graphicData>
     <weaponTags>
       <li>BANC_Erika</li>

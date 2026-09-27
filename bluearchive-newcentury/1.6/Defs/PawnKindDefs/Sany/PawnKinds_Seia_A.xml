@@ -182,15 +182,15 @@
 						<ReplacePath>Pawns/Sany/Seia_A/Body/Seia_A_Body</ReplacePath>
 					</li>
 					<li>
-						<BodyAddonName>KivotosStudent_head_layer5</BodyAddonName>
+						<BodyAddonName>KivotosStudent_head</BodyAddonName>
 						<ReplacePath>Pawns/Sany/Seia_A/Head/Seia_A_Head</ReplacePath>
 					</li>
 					<li>
-						<BodyAddonName>KivotosStudent_hairfront_layer3</BodyAddonName>
+						<BodyAddonName>KivotosStudent_hairfront</BodyAddonName>
 						<ReplacePath>Pawns/Sany/Seia_A/Hair/Seia_A_FrontHair</ReplacePath>
 					</li>
 					<li>
-						<BodyAddonName>KivotosStudent_hairback_layer3</BodyAddonName>
+						<BodyAddonName>KivotosStudent_hairback</BodyAddonName>
 						<ReplacePath>Pawns/Sany/Seia_A/Hair/Seia_A_BackHair</ReplacePath>
 					</li>
 				</bodyAddonRules>

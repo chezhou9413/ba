@@ -242,6 +242,7 @@
                 <description>{PAWN_nameDef}是茶话会的一员，拥有天生的怪力，天真的性格，容易被其他人的话语影响自己的判断，她表面上天真烂漫、活泼开朗，但内心也有着复杂的一面</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_CarryMassOffset>200</BANW_CarryMassOffset>
 					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.3</CertaintyLossFactor>
                     <CarryingCapacity>300</CarryingCapacity> 
 </statOffsets>

@@ -2,88 +2,168 @@
 <Defs>
   <!-- 临战爱丽丝技能配置：充能阶段、命中触发、伤害与特效。 -->
   <BANWlLib.Skills.SpecialSkillProfileDef>
-    <defName>BANW_Special_Arisu</defName><label>临战爱丽丝</label><role>Arisu</role>
+    <!-- 技能档案唯一标识，供 AbilityDef 的 comps 引用。 -->
+    <defName>BANW_Special_Arisu</defName>
+    <!-- 档案显示名。 -->
+    <label>临战爱丽丝</label>
+    <!-- 归属角色标识（用于匹配角色资源/图标）。 -->
+    <role>Arisu</role>
+    <!-- 该档案绑定的主技能 Def。 -->
     <primaryAbility>BANW_Special_Arisu_Ex</primaryAbility>
-    <range>25</range><normalIntervalTicks>1800</normalIntervalTicks>
+    <!-- 技能射程（格）。 -->
+    <range>25</range>
+    <!-- 普通攻击（命中计数）的间隔 tick 数，1800 = 30 秒。 -->
+    <normalIntervalTicks>1800</normalIntervalTicks>
+    <!-- 命中触发的范围半径（格）。 -->
     <radius>3</radius>
+    <!-- 累计多少次有效普攻命中后触发一次追加攻击。 -->
     <requiredHits>3</requiredHits>
+    <!-- 施法者自身特效。 -->
     <casterEffecter>BANW_Effecter_A</casterEffecter>
+    <!-- 目标命中特效。 -->
     <targetEffecter>BANW_Effecter_C</targetEffecter>
+    <!-- 各充能阶段切换时播放的特效。 -->
     <stageEffecter>BANW_Effecter_B</stageEffecter>
+    <!-- 技能结束时播放的特效。 -->
     <endEffecter>BANW_Effecter_C</endEffecter>
+    <!-- 充能期间持续播放的状态特效。 -->
     <stateEffecter>BANW_Effecter_B</stateEffecter>
-    <chargeCastEffecters><li>BANW_Effecter_A</li><li>BANW_Effecter_B</li><li>BANW_Effecter_C</li></chargeCastEffecters>
-    <chargeImpactEffecters><li>BANW_Effecter_A</li><li>BANW_Effecter_B</li><li>BANW_Effecter_C</li></chargeImpactEffecters>
-    <chargeStateEffecters><li>BANW_Effecter_A</li><li>BANW_Effecter_B</li><li>BANW_Effecter_C</li></chargeStateEffecters>
+    <!-- 逐档充能施法特效：索引对应充能档位。 -->
+    <chargeCastEffecters>
+      <li>BANW_Effecter_A</li>
+      <li>BANW_Effecter_B</li>
+      <li>BANW_Effecter_C</li>
+    </chargeCastEffecters>
+    <!-- 逐档充能命中特效：索引对应充能档位。 -->
+    <chargeImpactEffecters>
+      <li>BANW_Effecter_A</li>
+      <li>BANW_Effecter_B</li>
+      <li>BANW_Effecter_C</li>
+    </chargeImpactEffecters>
+    <!-- 逐档充能状态特效：索引对应充能档位。 -->
+    <chargeStateEffecters>
+      <li>BANW_Effecter_A</li>
+      <li>BANW_Effecter_B</li>
+      <li>BANW_Effecter_C</li>
+    </chargeStateEffecters>
+    <!-- EX 攻击参数：实际由施法时的充能档位决定倍率。 -->
     <exAttack>
       <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 未启用 BA 战斗数值时使用的固定攻击基数。 -->
       <basePower>100</basePower>
+      <!-- 攻击力倍率，13 = 1300%。 -->
       <attackPowerRatio>13</attackPowerRatio>
+      <!-- 使用的伤害 Def。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
+      <!-- 标记为 EX 技能（影响结算/显示）。 -->
       <isExSkill>true</isExSkill>
+      <!-- 允许暴击。 -->
       <canCrit>true</canCrit>
+      <!-- 结算时应用属性克制/亲和加成。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 命中后的溅射半径（格），3 = 攻击目标周围3格。 -->
       <radius>3</radius>
+      <!-- 弹丸数量（倍率会在此均分）。 -->
       <shots>1</shots>
+      <!-- 多段弹丸之间的发射间隔 tick。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 使用的弹丸 Def。 -->
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <!-- 命中播放的特效。 -->
       <effecterDef>BANW_Effecter_C</effecterDef>
-      
+
     </exAttack>
+    <!-- 普通攻击参数：每累计 requiredHits 次命中后自动追加一次。 -->
     <normalAttack>
       <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 未启用 BA 战斗数值时使用的固定攻击基数。 -->
       <basePower>100</basePower>
+      <!-- 攻击力倍率，1 = 100%。 -->
       <attackPowerRatio>1</attackPowerRatio>
+      <!-- 使用的伤害 Def。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
+      <!-- 标记为非 EX 技能。 -->
       <isExSkill>false</isExSkill>
+      <!-- 允许暴击。 -->
       <canCrit>true</canCrit>
+      <!-- 结算时应用属性克制/亲和加成。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 无溅射伤害。 -->
       <radius>0</radius>
+      <!-- 弹丸数量。 -->
       <shots>1</shots>
+      <!-- 多段弹丸之间的发射间隔 tick。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 使用的弹丸 Def。 -->
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <!-- 命中播放的特效。 -->
       <effecterDef>BANW_Effecter_C</effecterDef>
-      
+
     </normalAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
   <AbilityDef>
+    <!-- 技能唯一标识。 -->
     <defName>BANW_Special_Arisu_Ex</defName>
+    <!-- 技能显示名。 -->
     <label>测试新技能·临战爱丽丝</label>
+    <!-- 技能说明文本（充能机制、溅射、追加攻击与消耗）。 -->
     <description>对自己使用时获得一档充能，最多两档；满档后不能继续充能。
+      对25格内的敌人使用时，攻击目标周围3格范围内的敌人。未充能、一档、二档分别造成攻击力1300%、2600%、3900%的伤害，成功发动后清空充能。
+      普通技能：每累计3次有效普攻命中，自动对敌人追加一次攻击力100%的攻击，不消耗COST；多余命中次数保留。完全闪避或完全吸收的攻击不计数。
 
-对25格内的敌人使用时，攻击目标周围3格范围内的敌人。未充能、一档、二档分别造成攻击力1300%、2600%、3900%的伤害，成功发动后清空充能。
-
-普通技能：每累计3次有效普攻命中，自动对敌人追加一次攻击力100%的攻击，不消耗COST；多余命中次数保留。完全闪避或完全吸收的攻击不计数。
-
-每次EX基础消耗：4 COST。冷却：1秒。</description>
+      每次EX基础消耗：4 COST。冷却：1秒。</description>
+    <!-- 自定义技能行为类。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <!-- 技能图标路径。 -->
     <iconPath>UI/StarIcon</iconPath>
+    <!-- 冷却时间（tick），60 = 1 秒。 -->
     <cooldownTicksRange>60</cooldownTicksRange>
+    <!-- 未征召时也显示技能按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <!-- 未征召时按钮不可点击。 -->
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <!-- 征召状态下显示该技能。 -->
     <showWhenDrafted>true</showWhenDrafted>
+    <!-- 不显示心灵能力相关特效。 -->
     <showPsycastEffects>false</showPsycastEffects>
+    <!-- 非敌对技能（不会自动选中敌人为目标）。 -->
     <hostile>false</hostile>
+    <!-- 必须选择目标才能释放。 -->
     <targetRequired>true</targetRequired>
+    <!-- 施法者无需具备暴力能力也可使用。 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <verbProperties>
+      <!-- 基础施法 Verb 类。 -->
       <verbClass>Verb_CastAbility</verbClass>
-      <range>25</range><warmupTime>0</warmupTime>
+      <!-- 施法射程（格）。 -->
+      <range>25</range>
+      <!-- 前摇时间（tick），0 = 瞬发。 -->
+      <warmupTime>0</warmupTime>
       <targetParams>
+        <!-- 可对自己释放（用于充能）。 -->
         <canTargetSelf>true</canTargetSelf>
+        <!-- 可选中人类/动物/机械等 Pawn 类型。 -->
         <canTargetPawns>true</canTargetPawns>
-        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
-        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <!-- 不能选建筑或空地。 -->
+        <canTargetBuildings>false</canTargetBuildings>
         <canTargetLocations>false</canTargetLocations>
       </targetParams>
     </verbProperties>
     <comps>
+      <!-- 特殊技能组件：绑定档案并声明为 EX 指令。 -->
       <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
-        <profile>BANW_Special_Arisu</profile><command>Ex</command>
+        <profile>BANW_Special_Arisu</profile>
+        <command>Ex</command>
       </li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+      <!-- COST 消耗组件：每次 EX 消耗 4 点。 -->
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <cost>4</cost>
+      </li>
     </comps>
   </AbilityDef>
 </Defs>

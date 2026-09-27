@@ -213,6 +213,7 @@
 				<description>日奈平时是个觉得什么都很麻烦的懒虫少女，经常把 “好麻烦” 挂在嘴边。但在涉及校规和风纪的问题上，她会立刻展现出严格、认真的一面，对待违反校规扰乱风纪之人绝不留情。在战场上日奈从不迷茫，能够快速做出判断并采取行动，她的强大战斗力让与格黑娜敌对的组织十分害怕。</description>
 				<marketValueFactorOffset>1</marketValueFactorOffset>
 				<statOffsets>
+					<BANW_CarryMassOffset>25</BANW_CarryMassOffset>
 					<MentalBreakThreshold>+0.1</MentalBreakThreshold>
 					<MoveSpeed>3</MoveSpeed>
 					<GlobalLearningFactor>0.5</GlobalLearningFactor>
@@ -256,8 +257,8 @@
                 <description>被动技能:自身攻速增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<AimingDelayFactor>-0.26</AimingDelayFactor>
-                    <RangedCooldownFactor>-0.26</RangedCooldownFactor>
+					<AimingDelayFactor>-0.13</AimingDelayFactor>
+                    <RangedCooldownFactor>-0.13</RangedCooldownFactor>
                 </statOffsets>
 				<statFactors>
 

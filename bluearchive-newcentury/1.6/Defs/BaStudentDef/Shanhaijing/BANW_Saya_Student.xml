@@ -91,7 +91,7 @@
                 <offSetY>0</offSetY>
 			</Ability2>
 			<Ability3>
-				<AbilityImagePath>Ability/Icon/Ariy/Airy_A</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
 				<AbilityTitle>小爷我就是伟大！</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>

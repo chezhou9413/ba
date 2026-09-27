@@ -1,0 +1,146 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Airy_A_Student</defName>
+    <label>爱莉(乐队)</label>
+    <studentId>BANW_Airy_A</studentId>
+    <kindDef>BANW_Airy_A</kindDef>
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Airy_A</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Airy_A</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_PracticeRoom_Collection</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>0</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>0</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>1</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/爆发</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/特殊装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>6</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>8</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>0</Crafting>
+				
+				<Artistic>15</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>13</Social>
+				
+				<Intellectual>9</Intellectual>
+			</Skills>
+			
+			<WapenUI>
+				
+				<WapenUIImagePath>ManuaUI/Wapen/Airy</WapenUIImagePath>
+				
+				<WapenTypeText>冲锋枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Airy_A/Airy_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>虽然有点可惜……嘿！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>464%</color>的爆炸克制率并且获得一层「SugarRush」.（持续<color=#00FFFF>30</color>秒）]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+				<offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Serika/Serika_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>薄巧音阶</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身每进行12次普通攻击对一名敌方造成自身攻击力<color=#00FFFF>1349%</color>的伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+				<offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>甜点的力量</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身射程增加<color=#00FFFF>10</color>格，攻速增加<color=#00FFFF>21%</color>]]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+				<offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_EX</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>爱莉的助威</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击时有10%的概率对敌方造成暴伤抵抗率减少<color=#00FFFF>24%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+				<offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+				
+				<StudentDesp><![CDATA[圣三一综合学园
+1年级
+社团 甜点部]]>
+				</StudentDesp>
+				
+				<StudentBioName>栗村 爱莉</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Sany</AcademyLogoPath>
+				
+				<StudentCard>甜点部的成员，也是火速结成的乐队【Sugar Rush】的队长。她想要改变平凡的自己，于是带着大家参加了乐队活动。其实，她才是那个能让大家聚在一起的中心人物，只是她自己似乎并未意识到这一点。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Explosion</DamageType>
+			
+			<DefenseType>Mysterious</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>1</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Airy_A</DraggableAudio>
+			<GakaStudentThingData>
+				<li>
+					<key>Kami_Proplevel</key>
+					<value>1</value>
+				</li>
+				<li>
+					<key>BANW_Airy_Proplevel</key>
+					<value>1</value>
+				</li>
+			</GakaStudentThingData>
+			
+			<avtTexPath>Gacha/Student/Airy_A</avtTexPath>
+		</baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

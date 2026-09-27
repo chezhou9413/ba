@@ -798,6 +798,8 @@
           <li>BANW_Body_Miyo</li>
           <li>BANW_Body_Erika</li>
           <li>BANW_Body_Niko</li>
+          <li>BANW_Body_Yoshimi_A</li>
+          <li>BANW_Body_Airy_A</li>
           
 
 
@@ -963,8 +965,10 @@
       </li>
     </tools>
     <race>
-      <nameGenerator>NamerHikali</nameGenerator>
-      <nameGeneratorFemale>NamerHikali</nameGeneratorFemale>
+      <!-- 学生共用种族的名字生成器；实际姓名由各 PawnKindDef 的 kindRule.kindName 生成后覆盖，
+           这里必须有值，否则原版名字生成会报 "No name making method for BANW_KivotosStudent"。 -->
+      <nameGenerator>NamerStudent</nameGenerator>
+      <nameGeneratorFemale>NamerStudent</nameGeneratorFemale>
       <hasCorpse>false</hasCorpse>
       
       <renderTree>Humanlike</renderTree>

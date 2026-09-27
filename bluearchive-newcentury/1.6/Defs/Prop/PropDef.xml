@@ -5313,4 +5313,74 @@
     </comps>
   </ThingDef>
 
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Airy_A_Proplevel</defName>
+    <label>爱莉(乐队)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Airy_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用爱莉(乐队)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Airy_A</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Yoshimi_A_Proplevel</defName>
+    <label>好美(乐队)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Yoshimi_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用好美(乐队)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Yoshimi_A</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
 </Defs>

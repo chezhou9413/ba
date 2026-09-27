@@ -207,6 +207,7 @@
                 <description>{PAWN_nameDef}是在废墟发现的来历不明的少女。包含年龄在内的所有情报都无从得知。但是非常喜欢游戏</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_CarryMassOffset>500</BANW_CarryMassOffset>
 				<Flammability>-1.0</Flammability>
                 <ComfyTemperatureMax>100</ComfyTemperatureMax>
 			    <ComfyTemperatureMin>-100</ComfyTemperatureMin>   

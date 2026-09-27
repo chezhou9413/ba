@@ -23,7 +23,7 @@
 			
 			<CharacterTypePath>ManuaUI/Type/支援</CharacterTypePath>
 			
-			<CharacterStarCount>1  </CharacterStarCount>
+			<CharacterStarCount>1</CharacterStarCount>
 			
 			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
 			
@@ -126,7 +126,7 @@
 			
 			<DefenseType>Through</DefenseType>
 			
-			<PosType>Henc</PosType>
+			<PosType>Assist</PosType>
 			
 			<StarCont>1</StarCont>
 			<DraggableAudio>Common\Sounds\Fight\Yoshimi</DraggableAudio>

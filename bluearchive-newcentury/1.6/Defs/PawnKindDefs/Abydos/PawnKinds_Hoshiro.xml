@@ -211,6 +211,7 @@
                 <description>{PAWN_nameDef}是自称大叔而且怕麻烦的少女，平时比较懒散，相比工作更喜欢到处玩乐，被某人称为最高级的神秘，实力非常强大，被格黑那情报部列为了潜在对象，具日奈所言，以前的小鸟游星野非常好战，现在的性格可能跟前对策委员会会长“栀子梦”有关</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_CarryMassOffset>100</BANW_CarryMassOffset>
 					<ArmorRating_Sharp>1.0</ArmorRating_Sharp>
 		            <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
 	                <ArmorRating_Heat>1.0</ArmorRating_Heat>

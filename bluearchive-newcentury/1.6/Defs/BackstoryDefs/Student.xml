@@ -2327,5 +2327,32 @@
 			<li>BANW_BackstoryNiko</li>
 		</spawnCategories>
 	</AlienRace.AlienBackstoryDef>
+
+	<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentYoshimi_A</defName>
+		<title>甜点部</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是甜点部的成员，在火速结成的乐队【Sugar Rush】中担任吉他手。
+虽然是受其他人影响开始的，但她心怀着“既然要干就得干好”的志气。乐队的图案和标志，还有服装等外观方面的东西，都是她设计的。
+"好好看着吧！
+我可不会给你表演第二次！"</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryYoshimi_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
 	
+		<AlienRace.AlienBackstoryDef ParentName="BaseBANWBackStory">
+		<defName>BANW_StudentAiry_A</defName>
+		<title>甜点部</title> 
+		<titleShort>学生</titleShort>
+		<baseDesc>[PAWN_nameDef]是甜点部的成员，也是火速结成的乐队【Sugar Rush】的队长。
+她想要改变平凡的自己，于是带着大家参加了乐队活动。其实，她才是那个能让大家聚在一起的中心人物，只是她自己似乎并未意识到这一点。</baseDesc>
+		<bodyTypeGlobal>Thin</bodyTypeGlobal>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>BANW_BackstoryAiry_A</li>
+		</spawnCategories>
+	</AlienRace.AlienBackstoryDef>
 </Defs>

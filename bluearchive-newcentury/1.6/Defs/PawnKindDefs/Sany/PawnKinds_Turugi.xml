@@ -214,6 +214,7 @@
                 <description>{PAWN_nameDef}的性格核心是与生俱来的好战与暴躁，堪称 "行动先于思考" 的典型。面对不满的事物或违背她认知的状况，会第一时间选择用武力解决，甚至做出冲上去撞电车这类看似失控的举动。日常表情管理完全失控，给人极具冲击力的强势印象。这种狂躁并非无的放矢，更多是对 "正义" 的直接践行 —— 用最迅猛的方式扫清障碍。</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
+					<BANW_CarryMassOffset>100</BANW_CarryMassOffset>
 				<MeleeDodgeChance>5</MeleeDodgeChance>
 				<IncomingDamageFactor>-0.1</IncomingDamageFactor>
 				<MoveSpeed>2.80</MoveSpeed>

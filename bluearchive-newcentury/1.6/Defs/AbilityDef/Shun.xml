@@ -69,7 +69,8 @@
           <li>     
            <statOffsets>
            <BANW_NormalAttackMultiplier>+0.53</BANW_NormalAttackMultiplier>
-           <AimingDelayFactor>0.19</AimingDelayFactor>
+           <AimingDelayFactor>-0.095</AimingDelayFactor>
+           <RangedCooldownFactor>-0.095</RangedCooldownFactor>
            <BANW_CriticalChance>0.50</BANW_CriticalChance>
             <RangedCooldownFactor>0.19</RangedCooldownFactor>
             <BANW_RangedWeapon_RangeOffset>24</BANW_RangedWeapon_RangeOffset>

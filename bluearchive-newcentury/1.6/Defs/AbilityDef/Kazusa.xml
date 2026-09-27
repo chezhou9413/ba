@@ -233,16 +233,16 @@
             <!-- 暴击率加值：5% / 10% / 15%。 -->
             <targetStat>AimingDelayFactor</targetStat>
             <stackValues>
+              <li>0.08</li>
               <li>0.16</li>
-              <li>0.32</li>
             </stackValues>
           </li>
           <li>
             <!-- 暴击率加值：5% / 10% / 15%。 -->
             <targetStat>RangedCooldownFactor</targetStat>
             <stackValues>
+              <li>0.08</li>
               <li>0.16</li>
-              <li>0.32</li>
             </stackValues>
           </li>
         </statGroups>

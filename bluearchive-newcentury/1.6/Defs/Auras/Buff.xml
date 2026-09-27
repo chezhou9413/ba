@@ -315,8 +315,8 @@
         <stages>
             <li>
                 <statOffsets>
-                    <AimingDelayFactor>-0.17</AimingDelayFactor>
-                    <RangedCooldownFactor>-0.17</RangedCooldownFactor>
+                    <AimingDelayFactor>-0.085</AimingDelayFactor>
+                    <RangedCooldownFactor>-0.085</RangedCooldownFactor>
                 </statOffsets>
             </li>
         </stages>
