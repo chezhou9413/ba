@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 二段逐发射击音效复用现有冲锋枪素材，允许密集连射声音重叠。 -->
+  <SoundDef>
+    <defName>BANW_Nero_ExShot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>32</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains><li Class="AudioGrain_Folder"><clipFolderPath>Weapon/SMG/SMG_At</clipFolderPath></li></grains>
+        <volumeRange>45.2941~45.2941</volumeRange>
+        <pitchRange>1~1.091765</pitchRange>
+        <sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

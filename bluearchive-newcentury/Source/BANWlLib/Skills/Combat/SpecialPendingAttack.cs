@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using BANWlLib.BattleSystem;
 using Verse;
 
@@ -16,10 +17,14 @@ namespace BANWlLib.Skills
         public float resolvedAmount = -1f;
         public bool canAccumulate = true;
         public bool startRecord;
+        public int recordCastId;
+        public bool resolvedCritical;
         public bool droneOrigin;
         public bool normalHit;
+        public Verse.AI.Job castingJob;
         public Thing excludedTarget;
         public bool completed;
+        public List<IntVec3> areaCells;
 
         //归还延迟攻击占用的状态引用计数，允许临时复制状态安全清理。
         public void Complete()
@@ -44,12 +49,16 @@ namespace BANWlLib.Skills
             Scribe_Values.Look(ref resolvedAmount, "resolvedAmount", -1f);
             Scribe_Values.Look(ref canAccumulate, "canAccumulate", true);
             Scribe_Values.Look(ref startRecord, "startRecord");
+            Scribe_Values.Look(ref recordCastId, "recordCastId");
+            Scribe_Values.Look(ref resolvedCritical, "resolvedCritical");
             Scribe_Values.Look(ref droneOrigin, "droneOrigin");
             Scribe_Values.Look(ref normalHit, "normalHit");
+            Scribe_References.Look(ref castingJob, "castingJob");
             Scribe_References.Look(ref excludedTarget, "excludedTarget");
             Scribe_Values.Look(ref completed, "completed");
             Scribe_Values.Look(ref center, "center", IntVec3.Invalid);
             Scribe_Defs.Look(ref impactEffecter, "impactEffecter");
+            Scribe_Collections.Look(ref areaCells, "areaCells", LookMode.Value);
         }
     }
 }

@@ -26,8 +26,8 @@
     <stages><li><statOffsets><BANW_FinalDamageMultiplier>1.56</BANW_FinalDamageMultiplier></statOffsets></li></stages>
   </HediffDef>
   <HediffDef>
-    <defName>BANW_SpecialHoshinoCount</defName><label>星野二十五次命中状态</label>
-    <description>星野的坦克普通技能状态，每次有效普攻命中消耗一次，次数耗尽或切换形态时解除。剩余次数可在特殊技能状态中查看。</description>
+    <defName>BANW_SpecialHoshinoCount</defName><label>星野防御普通技能状态</label>
+    <description>星野主动施放防御普通技能后获得的独立状态，每次实际受到伤害消耗一次，25次耗尽或切换形态时解除。完全闪避和护盾完全吸收不计数，防御EX到期不会清除此状态。剩余受伤次数可在特殊技能状态中查看。</description>
     <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass><isBad>false</isBad><initialSeverity>1</initialSeverity>
     <!-- 在此填写需要的属性加成，计数归零由角色技能移除状态。 -->
     <stages><li><statOffsets /></li></stages>
@@ -48,17 +48,5 @@
     <defName>BANW_SpecialHoshinoFlyer</defName><label>星野技能位移</label>
     <thingClass>BANWlLib.Skills.HoshinoMovementFlyer</thingClass>
     <pawnFlyer><flightSpeed>12</flightSpeed><workerClass>PawnFlyerWorker</workerClass><flightDurationMin>0.1</flightDurationMin><heightFactor>0</heightFactor></pawnFlyer>
-  </ThingDef>
-  <ThingDef>
-    <defName>BANW_SpecialKeiField</defName><label>凯伊测试增益场地</label>
-    <thingClass>BANWlLib.BattleSystem.Thing_BattleFieldController</thingClass>
-    <category>Mote</category><drawerType>MapMeshOnly</drawerType><tickerType>Normal</tickerType>
-    <altitudeLayer>MoteOverhead</altitudeLayer><useHitPoints>false</useHitPoints><selectable>false</selectable>
-    <graphicData><graphicClass>Graphic_Single</graphicClass><texPath>UI/StarIcon</texPath><drawSize>0.01</drawSize></graphicData>
-    <modExtensions><li Class="BANWlLib.BattleSystem.BattleFieldControllerExtension">
-      <durationTicks>1500</durationTicks><intervalTicks>30</intervalTicks><radius>4.9</radius>
-      <useCasterSnapshot>true</useCasterSnapshot>
-      <actions><li><affectHostile>false</affectHostile><affectFriendly>true</affectFriendly><triggerHediff>BAWN_Kei_buff</triggerHediff></li></actions>
-    </li></modExtensions>
   </ThingDef>
 </Defs>

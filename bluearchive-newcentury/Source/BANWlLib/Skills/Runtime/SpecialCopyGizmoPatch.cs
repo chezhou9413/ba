@@ -1,23 +1,22 @@
-using System.Linq;
-using BANWlLib.KindStats;
+using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
 using Verse;
 
 namespace BANWlLib.Skills
 {
-    //复制技能按钮标记，负责在原有标题上清楚注明一次性用途。
+    //复制技能按钮补丁，负责为目标本体显示独立的一次性EX按钮。
     [HarmonyPatch(typeof(Ability), nameof(Ability.GetGizmos))]
     public static class SpecialCopyGizmoPatch
     {
-        //为独立复制能力添加测试标签，不改变共享AbilityDef。
-        public static void Postfix(Ability __instance, ref System.Collections.Generic.IEnumerable<Command> __result)
+        //提供带EX选择菜单的复制命令，消费后不再显示按钮。
+        public static bool Prefix(Ability __instance, ref IEnumerable<Command> __result)
         {
-            if (!RioSkills.IsCopied(__instance)) return;
-            var commands = __result.ToList();
-            foreach (Command command in commands)
-                command.defaultLabel = "测试新技能·复制：" + __instance.def.label;
-            __result = commands;
+            var link = RioSkills.Link(__instance);
+            if (link == null) return true;
+            __result = link.spent || (__instance.pawn.Drafted && !__instance.def.showWhenDrafted)
+                ? new Command[0] : new Command[] { link.Command };
+            return false;
         }
     }
 }

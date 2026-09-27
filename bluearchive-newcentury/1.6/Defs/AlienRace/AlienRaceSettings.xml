@@ -940,6 +940,8 @@
       </li>
     </tools>
     <race>
+      <!--为原版姓名生成阶段提供人类命名类别，角色固定姓名由 ChezhouLib 的种类规则设置。-->
+      <nameCategory>HumanStandard</nameCategory>
       <nameGenerator>NamerHikali</nameGenerator>
       <nameGeneratorFemale>NamerHikali</nameGeneratorFemale>
       <hasCorpse>false</hasCorpse>

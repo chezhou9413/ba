@@ -2,6 +2,7 @@ using BANWlLib.BattleSystem;
 using UnityEngine;
 using RimWorld;
 using Verse;
+using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
@@ -11,22 +12,18 @@ namespace BANWlLib.Skills
         //生成友军增益场地并锁定记录上限。
         public static void Cast(Hediff_SpecialSkillState s, IntVec3 cell)
         {
-            s.center = cell;
-            s.recorded = 0f;
-            s.recordCap = SpecialCombatUtility.Power(s.pawn, s.profile.burstAttack) * s.profile.recordCapRatio;
-            s.endTick = s.Now + s.profile.durationTicks;
-            s.releaseReady = false;
-            var field = (Thing_BattleFieldController)ThingMaker.MakeThing(s.profile.fieldThingDef);
+            var source = s.profile.kei.FieldProperties;
+            var field = (Thing_BattleFieldController)ThingMaker.MakeThing(source.fieldThingDef);
             GenSpawn.Spawn(field, cell, s.pawn.Map);
-            field.Setup(s.pawn, s.profile.durationTicks);
-            s.field = field;
+            field.Setup(s.pawn, source.durationTicksOverride);
+            KeiFieldBinding.Begin(s, field);
         }
 
         //只统计当前增益区域内其他友军对敌人的实际有效伤害。
         public static void Record(Hediff_SpecialSkillState s, Pawn attacker, Thing target, float amount)
         {
             if (!s.Active || attacker == null || attacker == s.pawn || attacker.Faction != s.pawn.Faction ||
-                attacker.Map != s.pawn.Map || attacker.Position.DistanceTo(s.center) > s.profile.radius ||
+                !KeiFieldBinding.Contains(s, attacker) ||
                 !target.HostileTo(attacker)) return;
             s.recorded = Mathf.Min(s.recordCap, s.recorded + amount * s.profile.recordRatio);
         }
@@ -37,6 +34,7 @@ namespace BANWlLib.Skills
             if (s.endTick > 0 && !s.Active)
             {
                 s.endTick = -1;
+                s.field = null;
                 s.releaseReady = true;
                 SpecialEffects.Trigger(s.profile.endEffecter, s.pawn);
             }
@@ -49,6 +47,10 @@ namespace BANWlLib.Skills
             float amount = Mathf.Min(s.recorded, s.recordCap);
             s.recorded = 0f;
             s.releaseReady = false;
+            var config = s.profile.kei;
+            config.castSound?.PlayOneShot(new TargetInfo(s.pawn));
+            SpecialDirectionalEffects.Trigger(config.casterEffecter, s.pawn, target);
+            SpecialEffects.Trigger(config.targetEffecter, target);
             SpecialCombatUtility.Schedule(s, target, s.profile.burstAttack, resolved: amount);
         }
     }

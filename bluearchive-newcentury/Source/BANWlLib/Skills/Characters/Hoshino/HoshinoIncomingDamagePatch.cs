@@ -15,7 +15,8 @@ namespace BANWlLib.Skills
         {
             if (___stat != StatDefOf.IncomingDamageFactor || !(req.Thing is Pawn pawn)) return;
             var state = pawn.health.hediffSet.hediffs.OfType<Hediff_SpecialSkillState>()
-                .FirstOrDefault(s => s.profile.role == SpecialSkillRole.Hoshino && s.stage == 0 && s.castEndTick >= s.Now);
+                .FirstOrDefault(s => s.profile.role == SpecialSkillRole.Hoshino && s.stage == 0 &&
+                    s.hoshino.outputExCasting && s.castEndTick >= s.Now);
             if (state != null && state.stage == 0 && state.castEndTick >= state.Now)
                 __result = Mathf.Max(0f, __result - state.profile.damageTakenReduction);
         }

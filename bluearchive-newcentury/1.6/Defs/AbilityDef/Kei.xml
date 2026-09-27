@@ -2,7 +2,7 @@
 <AbilityDef>
     <defName>BAWN_Kei_EXX</defName>
     <label>存在于此的我</label>
-    <description>圆形范围内我方的攻击力增加42.9%神秘属性克制倍率增加70.6%（持续25秒）</description>
+    <description>在目标位置形成持续25秒、半径4.9格的场地，为范围内友军提供攻击增益51%、神秘克制加成84%、暴击率22%。其他同阵营友军获得增益后，在场地范围内对敌人造成的实际伤害按10%蓄积，上限为施法时攻击力的5000%。场地结束后自动发动普通技能：经过1秒前摇，播放语音与特效并射出单发单体子弹，命中时释放蓄积伤害。没有合法敌人或前摇中断时保留释放机会。</description>
     <iconPath>Ability/Icon/Kei/Kei_A</iconPath>
     <cooldownTicksRange>1800</cooldownTicksRange>
     <hotKey>Misc6</hotKey>
@@ -36,7 +36,7 @@
       <li Class="BANWlLib.BattleSystem.CompProperties_AbilitySpawnBattleField">
         <!-- 场地控制器 ThingDef。 -->
         <fieldThingDef>BANW_BattleField_Kei_Test</fieldThingDef>
-        <!-- 场地持续 600 tick（约 10 秒）。 -->
+        <!-- 场地持续1500 tick，即25秒。 -->
         <durationTicksOverride>1500</durationTicksOverride>
       </li>
       <li Class="CompProperties_AbilityEffecterOnTarget">
@@ -56,7 +56,7 @@
     </modExtensions>
   </AbilityDef>
 
-  <!-- 场地控制器 ThingDef：每 60 tick 脉冲一次，对范围内敌方造成伤害并触发叠层 Hediff。 -->
+  <!-- 场地控制器：每100 tick为范围内友军刷新增益状态。 -->
   <ThingDef>
     <defName>BANW_BattleField_Kei_Test</defName>
     <label>存在于此的我</label>
@@ -76,7 +76,7 @@
       <li Class="BANWlLib.BattleSystem.BattleFieldControllerExtension">
         <!-- 场地存在时间，单位 tick。 -->
         <durationTicks>1500</durationTicks>
-        <!-- 每 60 tick（约 1 秒）结算一次。 -->
+        <!-- 每100 tick结算一次。 -->
         <intervalTicks>100</intervalTicks>
         <!-- 场地半径。 -->
         <radius>4.9</radius>
@@ -93,14 +93,14 @@
             <affectFriendly>true</affectFriendly>
             <!-- 不命中建筑。 -->
             <canHitBuilding>false</canHitBuilding>
-            <!-- 每次脉冲对命中目标触发叠层攻击 Hediff，重复施加时叠层并刷新时间。 -->
+            <!-- 每次脉冲为范围内友军施加增益并刷新剩余时间。 -->
             <triggerHediff>BAWN_Kei_buff</triggerHediff>
           </li>
         </actions>
       </li>
     </modExtensions>
   </ThingDef>
-    <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+    <!-- 场地增益状态，由场地脉冲刷新，离开场地后短暂保留表现与属性。 -->
     <HediffDef>
         <!-- 状态的唯一标识符 -->
         <defName>BAWN_Kei_buff</defName>

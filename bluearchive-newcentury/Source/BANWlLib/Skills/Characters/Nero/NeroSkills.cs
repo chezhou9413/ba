@@ -20,7 +20,8 @@ namespace BANWlLib.Skills
             s.stacks = UnityEngine.Mathf.Min(s.profile.maxStacks, s.stacks + 1);
             float multiplier = 1f + s.stacks * s.profile.stackMultiplier;
             if (!s.profile.exAttack.useBattleStats) multiplier *= s.profile.exMultiplier;
-            SpecialCombatUtility.Schedule(s, target, s.profile.exAttack, multiplier);
+            s.castEndTick = s.Now + s.profile.exAttack.ShotDelay(s.profile.exAttack.shots - 1);
+            SpecialCombatUtility.Schedule(s, target, s.profile.exAttack, multiplier, castingJob: s.pawn.CurJob);
         }
 
         //大亢奋结束后清空锐气并恢复默认EX入口。
@@ -33,4 +34,3 @@ namespace BANWlLib.Skills
         }
     }
 }
-

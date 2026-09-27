@@ -27,7 +27,6 @@ namespace BANWlLib.Skills
                 id = ++nextId, previous = CurrentDamage
             };
             CurrentDamage = e;
-            HoshinoEmpoweredAttack.Prepare(e, ref damage);
             return e;
         }
 
@@ -35,6 +34,7 @@ namespace BANWlLib.Skills
         public static void Complete(SpecialDamageEvent e, DamageWorker.DamageResult result)
         {
             e.amount = result.totalDamageDealt;
+            if (e.amount > 0) HoshinoNormalSkill.DamageTaken(e.target);
             if (e.amount <= 0 || e.attacker == null) return;
             Map map = e.target.MapHeld ?? e.attacker.Map;
             if (map == null) return;
@@ -55,8 +55,7 @@ namespace BANWlLib.Skills
         public static void Activated(Ability ability)
         {
             AbilityActivated?.Invoke(ability);
-            var owner = RioSkills.Owner(ability);
-            if (owner != null) RioSkills.RemoveCopy(owner);
+            RioSkills.Consume(ability);
         }
     }
 }

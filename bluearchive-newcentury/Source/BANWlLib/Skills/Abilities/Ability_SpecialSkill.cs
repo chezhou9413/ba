@@ -17,6 +17,13 @@ namespace BANWlLib.Skills
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest)
         {
             var effect = CompOfType<CompAbilityEffect_SpecialSkill>();
+            //持续施法必须绑定正式能力工作，不能直接调用效果后脱手射击。
+            if (effect.Props.profile.role == SpecialSkillRole.Nero && effect.Props.command == SpecialSkillCommand.AlternateEx &&
+                (!(pawn.jobs.curDriver is JobDriver_NeroExChannel) || pawn.CurJob.ability != this))
+            {
+                Log.Error("妮露二段EX必须通过JobDriver_NeroExChannel施法");
+                return false;
+            }
             if (effect.GizmoDisabled(out string reason) || !effect.Valid(target, true))
             {
                 if (!reason.NullOrEmpty()) Messages.Message(reason, MessageTypeDefOf.RejectInput, false);
@@ -26,4 +33,3 @@ namespace BANWlLib.Skills
         }
     }
 }
-

@@ -25,15 +25,24 @@ namespace BANWlLib.Skills
             return s == null ? -1f : (s.stage == 0 ? s.profile.outputBaseHealth : s.profile.tankBaseHealth) / 100f;
         }
 
-        //处理免费切换、输出延迟爆发或坦克平面位移。
+        //处理免费切换、攻击分段连射、防御普通技能和防御平面位移。
         public static void Cast(Hediff_SpecialSkillState s, SpecialSkillCommand command, LocalTargetInfo target)
         {
             if (command == SpecialSkillCommand.SwitchForm) { Switch(s); return; }
+            if (command == SpecialSkillCommand.Normal) { HoshinoNormalSkill.Defend(s); return; }
             if (command == SpecialSkillCommand.Ex)
             {
-                s.castEndTick = s.Now + s.profile.outputCastTicks;
-                SpecialCombatUtility.Schedule(s, null, s.profile.exAttack,
-                    extraDelay: s.profile.outputCastTicks - 1, center: target.Cell);
+                int lastShot = 0;
+                foreach (HoshinoAttackStage stage in s.profile.hoshino.exStages)
+                {
+                    int delay = s.profile.outputCastTicks + stage.delayTicks;
+                    SpecialCombatUtility.Schedule(s, stage.targetLocation ? null : target.Thing, stage.attack,
+                        extraDelay: delay - 1, center: stage.targetLocation ? (IntVec3?)target.Cell : null);
+                    lastShot = Mathf.Max(lastShot, delay + (stage.attack.shots - 1) * stage.attack.shotIntervalTicks);
+                }
+                s.castEndTick = s.Now + lastShot;
+                s.hoshino.grantAfterCast = s.native;
+                s.hoshino.outputExCasting = true;
                 return;
             }
             IntVec3 destination = BattleMovementPathUtility.ResolveBlockedDestination(s.pawn, target.Cell, false, false);
@@ -41,6 +50,8 @@ namespace BANWlLib.Skills
             Map map = s.pawn.Map;
             IntVec3 start = s.pawn.Position;
             s.castEndTick = s.Now + Mathf.CeilToInt(start.DistanceTo(destination) / s.profile.moveSpeed);
+            //位移载体暂时收纳角色，不应被当作真正离图而清除独立普通技能。
+            s.hoshino.moving = true;
             var flyer = (HoshinoMovementFlyer)PawnFlyer.MakeFlyer(
                 DefDatabase<ThingDef>.GetNamed("BANW_SpecialHoshinoFlyer"), s.pawn, destination, null, null);
             flyer.state = s;
@@ -52,6 +63,9 @@ namespace BANWlLib.Skills
         public static void Switch(Hediff_SpecialSkillState s)
         {
             float previousScale = s.pawn.HealthScale;
+            //终止旧形态已经开始的连射，使下一次攻击完整使用目标形态的发数。
+            foreach (Verb verb in s.pawn.equipment.Primary?.GetComp<CompEquippable>()?.AllVerbs ?? Enumerable.Empty<Verb>())
+                if (verb is Verb_LaunchProjectile) verb.Reset();
             ClearFormEffects(s);
             s.stage = s.stage == 0 ? 1 : 0;
             HealthScaleCache.Invalidate(s.pawn);
@@ -65,6 +79,7 @@ namespace BANWlLib.Skills
         //落地后启动属性增益、个人护盾和前向拦截。
         public static void Arrive(Hediff_SpecialSkillState s)
         {
+            s.hoshino.moving = false;
             s.activeMap = s.pawn.Map;
             s.castEndTick = -1;
             s.endTick = s.Now + s.profile.durationTicks;
@@ -78,49 +93,43 @@ namespace BANWlLib.Skills
             s.appliedShield = s.pawn.health.hediffSet.GetFirstHediffOfDef(s.profile.shieldHediff);
         }
 
-        //周期普通技能授予形态对应的有效命中次数。
-        public static void Normal(Hediff_SpecialSkillState s, Pawn target)
-        {
-            s.remainingHits = s.stage == 0 ? s.profile.empoweredHits : s.profile.tankHits;
-            if (s.stage == 1 && s.profile.countHediff != null)
-                s.countBuff = TimedSkillBuff.Apply(s.pawn, s.profile.countHediff, -1);
-            SpecialEffects.Trigger(s.profile.stageEffecter, s.pawn);
-        }
-
-        //有效命中消耗一次额度，输出形态安排不递归触发普攻的范围追伤。
-        public static void OnHit(Hediff_SpecialSkillState s, Thing target)
-        {
-            if (s.remainingHits <= 0) return;
-            s.remainingHits--;
-            if (s.stage == 0 && SpecialSkillEvents.CurrentDamage?.expandArea == true)
-                SpecialCombatUtility.Schedule(s, null, s.profile.normalAttack,
-                    multiplier: s.profile.empoweredMultiplier, normalHit: true, center: target.Position, excludedTarget: target);
-            if (s.remainingHits == 0 && s.countBuff != null)
-            {
-                s.pawn.health.RemoveHediff(s.countBuff);
-                s.countBuff = null;
-            }
-        }
-
         //结束持续状态，延迟伤害已经独立保存在地图调度器。
         public static void Tick(Hediff_SpecialSkillState s)
         {
-            if (s.castEndTick > 0 && s.Now > s.castEndTick) s.castEndTick = -1;
+            if (s.castEndTick > 0 && s.Now > s.castEndTick)
+            {
+                s.castEndTick = -1;
+                if (s.hoshino.grantAfterCast && s.stage == 0) s.hoshino.empoweredReady = true;
+                s.hoshino.grantAfterCast = false;
+                s.hoshino.outputExCasting = false;
+            }
             if (s.endTick > 0 && !s.Active)
             {
-                ClearFormEffects(s);
+                ClearExEffects(s);
                 SpecialEffects.Trigger(s.profile.endEffecter, s.pawn);
             }
+            HoshinoNormalSkill.Tick(s);
         }
 
-        //只清理当前形态拥有的状态和盾，不删除其他来源的增益。
+        //结束防御EX的增益与护盾，保留独立普通技能的受伤计数。
+        private static void ClearExEffects(Hediff_SpecialSkillState s)
+        {
+            foreach (Hediff h in new[] { s.appliedBuff, s.appliedShield })
+                if (h != null && s.pawn.health.hediffSet.hediffs.Contains(h)) s.pawn.health.RemoveHediff(h);
+            s.appliedBuff = s.appliedShield = null;
+            s.endTick = -1;
+        }
+
+        //切形态或离图时清理当前形态状态，保留普攻累计和技能冷却。
         public static void ClearFormEffects(Hediff_SpecialSkillState s)
         {
-            foreach (Hediff h in new[] { s.appliedBuff, s.appliedShield, s.countBuff })
-                if (h != null && s.pawn.health.hediffSet.hediffs.Contains(h)) s.pawn.health.RemoveHediff(h);
-            s.appliedBuff = s.appliedShield = s.countBuff = null;
-            s.endTick = s.castEndTick = -1;
+            ClearExEffects(s);
+            if (s.countBuff != null) s.pawn.health.RemoveHediff(s.countBuff);
+            s.countBuff = null;
+            s.castEndTick = -1;
             s.remainingHits = 0;
+            s.hoshino.empoweredReady = s.hoshino.empoweredBurst = s.hoshino.grantAfterCast = false;
+            s.hoshino.outputExCasting = s.hoshino.moving = false;
         }
     }
 }

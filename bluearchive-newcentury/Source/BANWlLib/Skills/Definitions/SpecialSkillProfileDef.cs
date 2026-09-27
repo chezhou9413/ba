@@ -16,6 +16,9 @@ namespace BANWlLib.Skills
         public SpecialAttackConfig normalAttack;
         public SpecialAttackConfig droneAttack;
         public SpecialAttackConfig burstAttack;
+        public HoshinoSkillConfig hoshino;
+        public ArisuSkillConfig arisu;
+        public KeiSkillConfig kei;
         public float range = 25f;
         public float radius = 3f;
         public int durationTicks = 2400;
@@ -39,9 +42,7 @@ namespace BANWlLib.Skills
         public float tankBaseHealth = 3000f;
         public int outputCastTicks = 60;
         public float damageTakenReduction = 0.85f;
-        public int empoweredHits = 6;
         public int tankHits = 25;
-        public float empoweredMultiplier = 1.5f;
         public float shieldRatio = 0.691f;
         public bool shieldUseBattleStats = true;
         public float shieldBasePower = 1000f;
@@ -55,9 +56,6 @@ namespace BANWlLib.Skills
         public EffecterDef stateEffecter;
         public EffecterDef stageEffecter;
         public EffecterDef endEffecter;
-        public List<EffecterDef> chargeCastEffecters;
-        public List<EffecterDef> chargeImpactEffecters;
-        public List<EffecterDef> chargeStateEffecters;
         public SoundDef castSound;
 
         //检查关键机制参数，负责将错误配置明确报告到游戏日志。
@@ -69,11 +67,56 @@ namespace BANWlLib.Skills
                 yield return defName + " 的持续时间、普通技能间隔和命中次数必须大于零";
             if (maxStacks <= 0 || lethalStackLimit < 2 || range <= 0 || radius < 0)
                 yield return defName + " 的层数、距离或范围无效";
+            if (role == SpecialSkillRole.Nero)
+            {
+                if (alternateAbility?.jobDef?.driverClass != typeof(JobDriver_NeroExChannel))
+                    yield return defName + " 的二段EX必须配置JobDriver_NeroExChannel持续施法工作";
+                if (exAttack?.shotSound == null) yield return defName + " 的二段EX必须配置逐发shotSound";
+            }
+            if (role == SpecialSkillRole.Wakamo)
+            {
+                if (buffHediff?.hediffClass != typeof(Hediff_WakamoMark))
+                    yield return defName + " 的buffHediff必须使用Hediff_WakamoMark";
+                if (exAttack == null || exAttack.projectileDef == null || exAttack.radius != 0f || exAttack.shots < 2)
+                    yield return defName + " 的若藻EX必须为单体连射弹丸";
+                if (burstAttack == null || burstAttack.radius != 0f || burstAttack.shots != 1 || burstAttack.isNormalAttack)
+                    yield return defName + " 的蓄积爆发必须为单次单体技能伤害";
+                if (recordRatio < 0f || recordCapRatio < 0f) yield return defName + " 的蓄积比例和上限不能为负数";
+            }
+            if (role == SpecialSkillRole.Arisu)
+            {
+                if (arisu == null) yield return defName + " 缺少arisu专属配置";
+                else foreach (string error in arisu.ConfigErrors()) yield return defName + "：" + error;
+                if (exAttack == null || exAttack.projectileDef != null || exAttack.radius != 0)
+                    yield return defName + " 的直线EX必须使用直接伤害且radius为0";
+            }
+            if (role == SpecialSkillRole.Kei)
+            {
+                if (kei == null) yield return defName + " 缺少kei专属配置";
+                else foreach (string error in kei.ConfigErrors()) yield return defName + "：" + error;
+                if (burstAttack == null || burstAttack.projectileDef == null || burstAttack.shots != 1 || burstAttack.radius != 0)
+                    yield return defName + " 的凯伊普通技能必须配置单发单体弹丸";
+            }
+            if (role == SpecialSkillRole.Shiroko)
+            {
+                foreach (SpecialAttackConfig attack in new[] { droneAttack, burstAttack })
+                    if (attack == null || !attack.isNormalAttack || attack.isExSkill || attack.shotSound == null)
+                        yield return defName + " 的无人机伤害段必须标记为普通攻击、关闭EX加成并配置逐发shotSound";
+            }
             if (role == SpecialSkillRole.Hoshino && (shieldHediff == null || buffHediff == null))
                 yield return defName + " 的星野配置缺少护盾或增益状态";
+            if (role == SpecialSkillRole.Hoshino)
+            {
+                if (hoshino == null) yield return defName + " 缺少hoshino专属配置";
+                else foreach (string error in hoshino.ConfigErrors()) yield return defName + "：" + error;
+                if (countHediff == null || tankHits <= 0) yield return defName + " 的防御普通技能状态或受伤次数无效";
+                if (normalAttack == null || normalAttack.radius != 0 || normalAttack.projectileDef == null)
+                    yield return defName + " 的攻击普通技能必须配置单体连射弹丸";
+            }
             foreach (SpecialAttackConfig action in new[] { exAttack, normalAttack, droneAttack, burstAttack })
             {
                 if (action == null) continue;
+                foreach (string error in action.TimingErrors()) yield return defName + "：" + error;
                 if (action.damageDef == null || action.shots <= 0 || action.shotIntervalTicks < 0)
                     yield return defName + " 的攻击段缺少伤害类型或连射参数无效";
                 if (action.projectileDef != null && !typeof(Projectile_SpecialSkill).IsAssignableFrom(action.projectileDef.thingClass))

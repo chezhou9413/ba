@@ -13,7 +13,7 @@ namespace BANWlLib.CostSystem
         public static bool Prefix(Ability __instance, ref bool __result)
         {
             string reason;
-            if (BACostPoolService.TrySpend(__instance, out reason))
+            if (Skills.RioSkills.CanActivateCopy(__instance, out reason) && BACostPoolService.TrySpend(__instance, out reason))
             {
                 return true;
             }
@@ -32,7 +32,7 @@ namespace BANWlLib.CostSystem
         public static bool Prefix(Ability __instance, ref bool __result)
         {
             string reason;
-            if (BACostPoolService.TrySpend(__instance, out reason))
+            if (Skills.RioSkills.CanActivateCopy(__instance, out reason) && BACostPoolService.TrySpend(__instance, out reason))
             {
                 return true;
             }

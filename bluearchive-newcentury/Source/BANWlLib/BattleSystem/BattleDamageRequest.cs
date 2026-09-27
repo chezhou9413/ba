@@ -7,8 +7,10 @@ namespace BANWlLib.BattleSystem
     {
         public bool useBattleStats = true;
         public float basePower = 100f;
+        public float baseDamageOverride = -1f;
         public float mechanismMultiplier = 1f;
         public float resolvedAmount = -1f;
+        public bool resolvedCritical;
         public bool canAccumulate = true;
         public bool normalHit;
         public bool areaSecondary;

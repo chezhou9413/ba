@@ -8,6 +8,14 @@ namespace BANWlLib.Skills
         public SpecialPendingAttack attack;
         public override int UpdateRateTicks => 1;
 
+        //无人机瞄准锁定对象，抵达后交给伤害链独立判定闪避，不额外执行原版倒地目标偏弹。
+        protected override void ImpactSomething()
+        {
+            if (attack?.droneOrigin == true && attack.target != null && CanHit(attack.target))
+                Impact(attack.target);
+            else base.ImpactSomething();
+        }
+
         //弹丸结束飞行时释放技能状态占用，包含拦截、越界和正常命中。
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {

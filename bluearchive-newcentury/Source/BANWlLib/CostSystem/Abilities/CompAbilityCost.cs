@@ -35,19 +35,20 @@ namespace BANWlLib.CostSystem
     {
         public CompProperties_AbilityCost Props => (CompProperties_AbilityCost)props;
 
+        //要求复制机会仍有效且费用足够，已消费实例只维护表现、不允许再次施法。
         public override bool CanCast
         {
             get
             {
                 string reason;
-                return BACostPoolService.CanSpend(parent, out reason);
+                return Skills.RioSkills.CanActivateCopy(parent, out reason) && BACostPoolService.CanSpend(parent, out reason);
             }
         }
 
         //向技能按钮返回共享池不足或负值时的禁用原因。
         public override bool GizmoDisabled(out string reason)
         {
-            return !BACostPoolService.CanSpend(parent, out reason);
+            return !Skills.RioSkills.CanActivateCopy(parent, out reason) || !BACostPoolService.CanSpend(parent, out reason);
         }
     }
 }
