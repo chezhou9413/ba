@@ -1,130 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 妮露技能配置：大亢奋、锐气层数、伤害与特效。 -->
-  <BANWlLib.Skills.SpecialSkillProfileDef>
-    <defName>BANW_Special_Nero</defName><label>妮露</label><role>Nero</role>
-    <primaryAbility>BANW_Special_Nero_Ex</primaryAbility>
-    <alternateAbility>BANW_Special_Nero_AlternateEx</alternateAbility>
-    <range>25</range><normalIntervalTicks>1800</normalIntervalTicks>
-    <radius>3</radius>
-    <durationTicks>4200</durationTicks>
-    <maxStacks>5</maxStacks>
-    <stackMultiplier>0.35</stackMultiplier>
-    <exMultiplier>1.2</exMultiplier>
-    <casterEffecter>BANW_Effecter_A</casterEffecter>
-    <targetEffecter>BANW_Effecter_C</targetEffecter>
-    <stageEffecter>BANW_Effecter_B</stageEffecter>
-    <endEffecter>BANW_Effecter_C</endEffecter>
-    <stateEffecter>BANW_Effecter_B</stateEffecter>
-    <exAttack>
-      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
-      <useBattleStats>true</useBattleStats>
-      <basePower>100</basePower>
-      <attackPowerRatio>13</attackPowerRatio>
-      <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>0</penetration>
-      <isExSkill>true</isExSkill>
-      <canCrit>true</canCrit>
-      <applyAffinity>true</applyAffinity>
-      <radius>0</radius>
-      <shots>10</shots>
-      <!-- 配置shotTicks时使用逐发时间表；删除整段列表后才使用统一shotIntervalTicks。 -->
-      <shotIntervalTicks>6</shotIntervalTicks>
-      <!-- 每个数值为相对本次EX生效的tick，最小为1，条目数必须等于shots。 -->
-      <shotTicks>
-        <li>1</li><li>7</li><li>13</li><li>19</li><li>25</li>
-        <li>31</li><li>37</li><li>43</li><li>49</li><li>55</li>
-      </shotTicks>
-      <!-- 二段每发射击的音效，独立于一段施法音效。 -->
-      <shotSound>BANW_Nero_ExShot</shotSound>
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <effecterDef>BANW_Effecter_C</effecterDef>
-      
-    </exAttack>
-  </BANWlLib.Skills.SpecialSkillProfileDef>
-  <AbilityDef>
-    <defName>BANW_Special_Nero_Ex</defName>
-    <label>测试新技能·妮露·大亢奋</label>
-    <description>选择25格内的一名其他友军，使自己与目标获得70秒「大亢奋」，EX伤害倍率提高至1.2倍。
-
-大亢奋持续期间，自身EX切换为「锐气攻击」。自身大亢奋结束时，恢复此技能并清空锐气层数。
-
-基础消耗：2 COST。冷却：1秒。</description>
-    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
-    <iconPath>UI/StarIcon</iconPath>
-    <cooldownTicksRange>60</cooldownTicksRange>
-    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
-    <showWhenDrafted>true</showWhenDrafted>
-    <showPsycastEffects>false</showPsycastEffects>
-    <hostile>false</hostile>
-    <targetRequired>true</targetRequired>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <!-- 一段成功施放时播放的独立音效。 -->
-      <soundCast>Nero_Skill_EX</soundCast>
-      <range>25</range><warmupTime>0</warmupTime>
-      <targetParams>
+ <BANWlLib.Skills.SpecialSkillProfileDef>
+  <defName>BANW_Special_Nero</defName><!-- 特殊技能配置的唯一标识 -->
+  <label>妮露</label><!-- 显示名称 -->
+  <role>Nero</role><!-- 角色标识，代码按此匹配妮露的技能逻辑 -->
+  <primaryAbility>BANW_Special_Nero_Ex</primaryAbility><!-- 一阶段（默认）EX -->
+  <alternateAbility>BANW_Special_Nero_AlternateEx</alternateAbility><!-- 二阶段（大亢奋期间）切换的EX -->
+  <range>34.9</range><!-- 技能作用距离（格） -->
+  <normalIntervalTicks>1000</normalIntervalTicks><!-- 普通技能触发间隔，1800 tick = 30 秒 -->
+  <radius>3</radius><!-- 技能效果半径（格） -->
+  <durationTicks>4200</durationTicks><!-- 大亢奋持续时间，4200 tick = 70 秒 -->
+  <maxStacks>5</maxStacks><!-- 锐气最大层数 -->
+  <stackMultiplier>0.35</stackMultiplier><!-- 每层锐气的伤害加成，1＋0.35×层数 -->
+  <exMultiplier>1.2</exMultiplier><!-- 大亢奋期间的 EX 伤害倍率 -->
+  <casterEffecter></casterEffecter><!-- 施法者身上的特效 -->
+  <targetEffecter></targetEffecter><!-- 目标身上的特效 -->
+  <stageEffecter></stageEffecter><!-- 阶段切换（一二段）时的特效 -->
+  <endEffecter></endEffecter><!-- 大亢奋结束时的特效 -->
+  <stateEffecter>BANW_Nero_B_Ef_C</stateEffecter><!-- 大亢奋持续期间挂在身上的状态特效 -->
+  <exAttack>
+    <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
+    <useBattleStats>true</useBattleStats><!-- 是否使用 BA 战斗属性结算 -->
+    <basePower>32</basePower><!-- 基础伤害值（关闭BA时作为攻击基数） -->
+    <attackPowerRatio>14.69</attackPowerRatio><!-- 攻击力总倍率，13 = 1300%，再按 shots 均分 -->
+    <damageDef>BANC_Damage_guantong</damageDef><!-- 伤害类型 -->
+    <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
+    <penetration>2</penetration><!-- 护甲穿透比例，0 = 不穿透 -->
+    <isExSkill>true</isExSkill><!-- 是否按 EX 技能计算（吃 EX 独立乘区） -->
+    <canCrit>true</canCrit><!-- 是否可暴击 -->
+    <applyAffinity>true</applyAffinity><!-- 是否应用攻击/护甲类型克制 -->
+    <radius>0</radius><!-- 溅射半径，0 = 单体 -->
+    <shots>92</shots><!-- 发射发数 -->
+    <!-- 配置shotTicks时使用逐发时间表；删除整段列表后才使用统一shotIntervalTicks。 -->
+    <shotIntervalTicks>2</shotIntervalTicks><!-- 统一发射间隔，2 tick = 0.033 秒 -->
+    <!-- 每个数值为相对本次EX生效的tick，最小为1，条目数必须等于shots。 -->
+    <shotTicks>
+      <!-- 第一段：20 发，每 3 tick 一发。 -->
+      <li>1</li>
+      <li>4</li>
+      <li>7</li>
+      <li>10</li>
+      <li>13</li>
+      <li>16</li>
+      <li>19</li>
+      <li>22</li>
+      <li>25</li>
+      <li>28</li>
+      <li>31</li>
+      <li>34</li>
+      <li>37</li>
+      <li>40</li>
+      <li>43</li>
+      <li>46</li>
+      <li>49</li>
+      <li>52</li>
+      <li>55</li>
+      <li>58</li>
+      <!-- 间隔 20 tick -->
+      <!-- 第二段：20 发，每 3 tick 一发。 -->
+      <li>78</li>
+      <li>81</li>
+      <li>84</li>
+      <li>87</li>
+      <li>90</li>
+      <li>93</li>
+      <li>96</li>
+      <li>99</li>
+      <li>102</li>
+      <li>105</li>
+      <li>108</li>
+      <li>111</li>
+      <li>114</li>
+      <li>117</li>
+      <li>120</li>
+      <li>123</li>
+      <li>126</li>
+      <li>129</li>
+      <li>132</li>
+      <li>135</li>
+      <!-- 间隔 30 tick -->
+      <!-- 第三段：52 发，每 2 tick 一发。 -->
+      <li>165</li>
+      <li>167</li>
+      <li>169</li>
+      <li>171</li>
+      <li>173</li>
+      <li>175</li>
+      <li>177</li>
+      <li>179</li>
+      <li>181</li>
+      <li>183</li>
+      <li>185</li>
+      <li>187</li>
+      <li>189</li>
+      <li>191</li>
+      <li>193</li>
+      <li>195</li>
+      <li>197</li>
+      <li>199</li>
+      <li>201</li>
+      <li>203</li>
+      <li>205</li>
+      <li>207</li>
+      <li>209</li>
+      <li>211</li>
+      <li>213</li>
+      <li>215</li>
+      <li>217</li>
+      <li>219</li>
+      <li>221</li>
+      <li>223</li>
+      <li>225</li>
+      <li>227</li>
+      <li>229</li>
+      <li>231</li>
+      <li>233</li>
+      <li>235</li>
+      <li>237</li>
+      <li>239</li>
+      <li>241</li>
+      <li>243</li>
+      <li>245</li>
+      <li>247</li>
+      <li>249</li>
+      <li>251</li>
+      <li>253</li>
+      <li>255</li>
+      <li>257</li>
+      <li>259</li>
+      <li>261</li>
+      <li>263</li>
+      <li>265</li>
+      <li>267</li>
+    </shotTicks><!-- 逐发时间表：20 发(每3tick，1-58) + 空20tick + 20 发(每3tick，78-135) + 空30tick + 52 发(每2tick，165-267)，共 92 发，总长 267 tick -->
+    <!-- 二段每发射击的音效，独立于一段施法音效。 -->
+    <shotSound>BANW_Wp_SMG_At</shotSound><!-- 每发射击的音效 -->
+    <projectileDef>BANW_Nero_B_EXX</projectileDef><!-- 弹丸 ThingDef -->
+    <effecterDef>BANW_Effecter_C</effecterDef><!-- 命中时的特效 -->
+  </exAttack>
+</BANWlLib.Skills.SpecialSkillProfileDef>
+<ThingDef ParentName="BaseBullet">
+    <defName>BANW_Nero_B_EXX</defName>
+    <label>这招可要疼了哦？</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData>
+      <texPath>Projectile/Bullet_Nero</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(3,5)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>BANC_Damage_guantong</damageDef>
+      <damageAmountBase>32</damageAmountBase>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+<AbilityDef>
+  <defName>BANW_Special_Nero_Ex</defName><!-- 一阶段EX标识 -->
+  <label>想试试看吗？</label>
+  <description>对自身及1名敌方单位造成以下效果(持续70秒)：
+- 获得对决状态.
+对自身造成以下效果：
+- 立即重新抓取1次EX技能牌.
+※ 自身攻击时，对拥有对决状态的敌方单位造成的伤害加算0.2倍.
+※ 自身拥有对决状态时，EX技能改为使用「这招可要疼了哦？」.</description>
+  <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass><!-- 特殊技能专用能力类 -->
+  <iconPath>Ability/Icon/Nero_B/Nero_EXX</iconPath><!-- 图标路径 -->
+  <cooldownTicksRange>1000</cooldownTicksRange><!-- 冷却，60 tick = 1 秒 -->
+  <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted><!-- 未征召时是否显示按钮 -->
+  <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted><!-- 未征召时是否禁用按钮 -->
+  <showWhenDrafted>true</showWhenDrafted><!-- 征召时是否显示 -->
+  <showPsycastEffects>false</showPsycastEffects><!-- 是否显示原版心灵施法特效 -->
+  <hostile>false</hostile><!-- 是否算敌对行为（对友军使用） -->
+  <targetRequired>true</targetRequired><!-- 是否必须选择目标 -->
+  <warmupStartSound>Nero_B_Skill_EXX_A</warmupStartSound>
+  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+  <warmupEffecter>BANW_Nero_B_Ef_B</warmupEffecter>
+  <verbProperties>
+    <warmupEffecter>BANW_Nero_B_Ef_A</warmupEffecter>
+    <verbClass>Verb_CastAbility</verbClass><!-- 动词类 -->
+    <!-- 一段成功施放时播放的独立音效。 -->
+    <soundCast></soundCast><!-- 一段施法音效 -->
+    <range>34.9</range><!-- 施法距离 -->
+    <warmupTime>3.5</warmupTime><!-- 前摇时间（秒），0 = 瞬间 -->
+    <targetParams><!-- 目标筛选 -->
+      <canTargetLocations>false</canTargetLocations>
         <canTargetSelf>false</canTargetSelf>
         <canTargetPawns>true</canTargetPawns>
-        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
-        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
-        <canTargetLocations>false</canTargetLocations>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
-        <profile>BANW_Special_Nero</profile><command>Ex</command>
-      </li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>2</cost></li>
-    </comps>
-  </AbilityDef>
-  <AbilityDef>
-    <defName>BANW_Special_Nero_AlternateEx</defName>
-    <label>测试新技能·妮露·锐气攻击</label>
-    <description>向25格内的敌人连续发射10发子弹，基础总伤害为攻击力的1300%。整轮保持停步瞄准与持续施法，不能同时进行武器平A；每次射击播放独立射击音效，逐发时间可配置。施法被打断时停止未发出的子弹，已发出的弹丸继续命中结算。
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+      <profile>BANW_Special_Nero</profile><!-- 引用上面的技能配置 -->
+      <command>Ex</command><!-- 对应一阶段EX分支 -->
+    </li>
+    <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+      <cost>2</cost><!-- 基础消耗 2 COST -->
+    </li>
+  </comps>
+</AbilityDef>
 
-发动前先获得1层锐气，最多5层。锐气伤害倍率为「1＋0.35×层数」，并与大亢奋的1.2倍倍率相乘；5层时合计为基础伤害的3.3倍。
-
-自身大亢奋结束时清空锐气，并恢复一阶段EX。
-
-基础消耗：4 COST。冷却：1秒。</description>
-    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
-    <jobDef>BANW_Job_NeroExChannel</jobDef>
-    <iconPath>UI/StarIcon</iconPath>
-    <cooldownTicksRange>60</cooldownTicksRange>
-    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
-    <showWhenDrafted>true</showWhenDrafted>
-    <showPsycastEffects>false</showPsycastEffects>
-    <hostile>false</hostile>
-    <targetRequired>true</targetRequired>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <range>25</range><warmupTime>0</warmupTime>
-      <targetParams>
+<AbilityDef>
+  <defName>BANW_Special_Nero_AlternateEx</defName><!-- 二阶段EX标识 -->
+  <label>这招可要疼了哦？</label>
+  <description>对自身造成以下效果：
+- 获得1层「锐气」.
+  ※ 最多5层.
+对1名敌方单位造成以下效果：
+- 造成自身攻击力1469%的伤害.</description>
+  <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass><!-- 特殊技能专用能力类 -->
+  <jobDef>BANW_Job_NeroExChannel</jobDef><!-- 持续引导用的 Job -->
+  <iconPath>Ability/Icon/Hasumi/Hasumi_EXX</iconPath>
+  <cooldownTicksRange>1000</cooldownTicksRange><!-- 冷却，60 tick = 1 秒 -->
+  <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+  <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+  <showWhenDrafted>true</showWhenDrafted>
+  <showPsycastEffects>false</showPsycastEffects>
+  <hostile>false</hostile>
+  <targetRequired>true</targetRequired><!-- 必须选择目标 -->
+  <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+  <warmupStartSound>Nero_B_Skill_EXX_B</warmupStartSound>
+  <verbProperties>
+    <verbClass>Verb_CastAbility</verbClass>
+    <range>34.9</range>
+    <warmupTime>0</warmupTime><!-- 无前摇，由 Job 负责逐发射击 -->
+    <targetParams>
+      <canTargetLocations>false</canTargetLocations>
         <canTargetSelf>false</canTargetSelf>
         <canTargetPawns>true</canTargetPawns>
-        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
-        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
-        <canTargetLocations>false</canTargetLocations>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
-        <profile>BANW_Special_Nero</profile><command>AlternateEx</command>
-      </li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
-    </comps>
-  </AbilityDef>
-  <JobDef>
-    <defName>BANW_Job_NeroExChannel</defName>
-    <driverClass>BANWlLib.Skills.JobDriver_NeroExChannel</driverClass>
-    <reportString>正在持续施放妮露二段EX。</reportString>
-    <abilityCasting>true</abilityCasting>
-    <alwaysShowWeapon>true</alwaysShowWeapon>
-  </JobDef>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+  </verbProperties>
+  <comps>
+    <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+      <profile>BANW_Special_Nero</profile>
+      <command>AlternateEx</command><!-- 对应二阶段EX分支 -->
+    </li>
+    <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+      <cost>4</cost><!-- 基础消耗 4 COST -->
+    </li>
+  </comps>
+</AbilityDef>
+
+<JobDef>
+  <defName>BANW_Job_NeroExChannel</defName><!-- 引导 Job 标识 -->
+  <driverClass>BANWlLib.Skills.JobDriver_NeroExChannel</driverClass><!-- 自定义 JobDriver，负责逐发射击与打断处理 -->
+  <reportString>正在持续施放妮露二段EX。</reportString><!-- 人物状态栏显示文字 -->
+  <abilityCasting>true</abilityCasting><!-- 视为施法中（受施法中断/动画影响） -->
+  <alwaysShowWeapon>true</alwaysShowWeapon><!-- 施法期间始终显示武器 -->
+</JobDef>
 </Defs>

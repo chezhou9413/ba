@@ -8,8 +8,10 @@
 		<isFighter>true</isFighter>
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<abilities>
-        
-        </abilities>
+  <!-- 保留原有li，在末尾追加。 -->
+  <li>BANW_Special_Nero_Ex</li>
+  <li>BANW_Special_Nero_AlternateEx</li>
+</abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>
@@ -82,7 +84,9 @@
 					<li>BANC_Nero_B</li>
 				</allowedWeapons>
 			</li>
-			
+			  <li Class="BANWlLib.Skills.SpecialSkillKindExtension">
+              <profile>BANW_Special_Nero</profile>
+              </li>
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">
 				<!-- 攻击类型，作为属性克制矩阵的行。 -->
 				 <!-- 伤害类型：Explosion(爆发), Mysterious(神秘/特殊), Vibration(振动), Through(穿透) -->
@@ -237,10 +241,10 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#4169E1&gt;一枪一个准&lt;/color&gt;</label>
-                <description>被动技能:自身基础精通倍率增加&lt;color=#DC143C&gt;24&lt;/color&gt;</description>
+                <description>被动技能:自身基础精通倍率增加&lt;color=#DC143C&gt;24%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<BANW_BaseMasteryMultiplier>10</BANW_BaseMasteryMultiplier>
+					<BANW_BaseMasteryMultiplier>0.24</BANW_BaseMasteryMultiplier>
                 </statOffsets>
 				<statFactors>
 				</statFactors>

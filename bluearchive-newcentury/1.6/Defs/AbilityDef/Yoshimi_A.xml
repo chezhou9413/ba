@@ -240,6 +240,7 @@
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Yoshimi_A_EX</defName>
     <label>视觉艺术家子弹</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
     <projectile>
       <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
       <damageAmountBase>26</damageAmountBase><!--子弹伤害-->
@@ -272,4 +273,36 @@
 
     </modExtensions>
   </ThingDef>
+
+  <BANWlLib.Skills.ArisuNormalSkillDef>
+  <defName>BAWN_Yoshimi_A_EXXX</defName><!-- 技能唯一标识 -->
+  <label>视觉艺术家</label><!-- 显示名称 -->
+  <description>每经过10次普通攻击，对1名敌人造成攻击力1352%的伤害</description>
+  <requiredHits>1</requiredHits><!-- 触发所需的累计有效普攻命中次数 -->
+  <cooldownTicks>1</cooldownTicks><!-- 触发后的冷却，单位 tick（1 tick 基本等于无冷却） -->
+  <range>34.9</range><!-- 技能有效距离（格） -->
+  <!-- 可分别替换施法音效、自身特效、目标施法特效及attack内的命中特效。 -->
+  <castSound>BANW_Wp_AR_At</castSound><!-- 施法音效 -->
+  <casterEffecter>BANW_Yoshimi_A_Ef_B</casterEffecter><!-- 施法者身上的特效 -->
+  <targetEffecter></targetEffecter><!-- 目标位置的特效 -->
+  <attack>
+    <useBattleStats>true</useBattleStats><!-- 是否使用 BA 战斗属性（攻击力/倍率等）结算 -->
+    <basePower>26</basePower><!-- 基础伤害值 -->
+    <attackPowerRatio>1</attackPowerRatio><!-- 攻击力倍率，1 = 100% 攻击力 -->
+    <damageDef>BANC_Damage_baofa</damageDef><!-- 伤害类型 -->
+    <!-- 每发使用完整护甲穿透，0.5为50%。 -->
+    <penetration>2</penetration><!-- 护甲穿透比例，0 = 不穿透，1 = 完全穿透 -->
+    <isExSkill>false</isExSkill><!-- 是否按 EX 技能计算（影响 EX 独立乘区） -->
+    <canCrit>true</canCrit><!-- 是否可暴击 -->
+    <applyAffinity>true</applyAffinity><!-- 是否应用攻击/护甲类型克制 -->
+    <radius>0</radius><!-- 溅射半径，0 = 单体 -->
+    <shots>1</shots><!-- 发射发数 -->
+    <shotIntervalTicks>6</shotIntervalTicks><!-- 每发之间的间隔 tick（6 tick = 0.1 秒） -->
+    <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef><!-- 弹丸 ThingDef -->
+    <effecterDef></effecterDef><!-- 命中时播放的特效 -->
+    <canHitOwnPawn>false</canHitOwnPawn><!-- 是否可命中施法者自己 -->
+    <affectFriendly>false</affectFriendly><!-- 是否可命中友军 -->
+    <affectHostile>true</affectHostile><!-- 是否可命中敌对单位 -->
+  </attack>
+</BANWlLib.Skills.ArisuNormalSkillDef>
 </Defs>

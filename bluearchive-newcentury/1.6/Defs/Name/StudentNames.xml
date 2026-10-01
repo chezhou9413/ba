@@ -10,4 +10,14 @@
       </rulesStrings>
     </rulePack>
   </RulePackDef>
+  <RulePackDef>
+		<defName>NamerHikali</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>name-&gt;[FirstName] [LastName]</li>
+				<li>FirstName-&gt;光</li>
+                <li>LastName-&gt;橘</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
 </Defs>

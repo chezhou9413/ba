@@ -18,7 +18,7 @@
 			
 			<CharacterimageOffsetX>0</CharacterimageOffsetX>
 			
-			<CharacterimageOffsetY>0</CharacterimageOffsetY>
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
 			
 			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
 			

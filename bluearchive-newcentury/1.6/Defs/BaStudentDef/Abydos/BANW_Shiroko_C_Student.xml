@@ -15,11 +15,11 @@
             
             <BackgroundPath>ManuaUI/Bg/BG_AbydosResidence2_Collection</BackgroundPath>
             
-            <CharacterimageOffsetSize>1.5</CharacterimageOffsetSize>
+            <CharacterimageOffsetSize>1.4</CharacterimageOffsetSize>
             
-            <CharacterimageOffsetX>5</CharacterimageOffsetX>
+            <CharacterimageOffsetX>-50</CharacterimageOffsetX>
             
-            <CharacterimageOffsetY>-80</CharacterimageOffsetY>
+            <CharacterimageOffsetY>-120</CharacterimageOffsetY>
             
             <CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
             

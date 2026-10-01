@@ -14,6 +14,10 @@
 		
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
+		<abilities>
+			<li>BAWN_Seia_A_EX</li>
+			<li>BAWN_Seia_A_EXX</li>
+        </abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>
