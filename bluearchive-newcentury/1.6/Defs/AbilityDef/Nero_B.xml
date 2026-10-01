@@ -13,7 +13,7 @@
   <maxStacks>5</maxStacks><!-- 锐气最大层数 -->
   <stackMultiplier>0.35</stackMultiplier><!-- 每层锐气的伤害加成，1＋0.35×层数 -->
   <exMultiplier>1.2</exMultiplier><!-- 大亢奋期间的 EX 伤害倍率 -->
-  <casterEffecter></casterEffecter><!-- 施法者身上的特效 -->
+  <casterEffecter>BANW_Nero_B_Ef_D</casterEffecter><!-- 施法者身上的特效 -->
   <targetEffecter></targetEffecter><!-- 目标身上的特效 -->
   <stageEffecter></stageEffecter><!-- 阶段切换（一二段）时的特效 -->
   <endEffecter></endEffecter><!-- 大亢奋结束时的特效 -->
@@ -226,7 +226,7 @@
   <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
   <warmupStartSound>Nero_B_Skill_EXX_B</warmupStartSound>
   <verbProperties>
-    <warmupEffecter>BANW_Wakamo_A_Ef_D</warmupEffecter>
+    <warmupEffecter></warmupEffecter>
     <verbClass>Verb_CastAbility</verbClass>
     <range>34.9</range>
     <warmupTime>0.1</warmupTime><!-- 无前摇，由 Job 负责逐发射击 -->
