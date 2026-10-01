@@ -7,8 +7,11 @@
       <li>
         <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Hanako_A_3_Mote</moteDef>
-        <initialDelayTicks>0</initialDelayTicks><scale>0.625</scale><rotation>0</rotation>
-        <positionOffset>(0,0.5,12.5)</positionOffset><absoluteAngle>false</absoluteAngle>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>0.625</scale>
+        <rotation>0</rotation>
+        <positionOffset>(0,0.5,12.5)</positionOffset>
+        <absoluteAngle>false</absoluteAngle>
       </li>
     </children>
   </EffecterDef>
@@ -18,8 +21,11 @@
       <li>
         <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Hanako_A_4_Mote</moteDef>
-        <initialDelayTicks>0</initialDelayTicks><scale>0.625</scale><rotation>0</rotation>
-        <positionOffset>(0,0.5,12.5)</positionOffset><absoluteAngle>false</absoluteAngle>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>0.625</scale>
+        <rotation>0</rotation>
+        <positionOffset>(0,0.5,12.5)</positionOffset>
+        <absoluteAngle>false</absoluteAngle>
       </li>
     </children>
   </EffecterDef>
@@ -29,15 +35,21 @@
       <li>
         <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Hanako_A_3_Mote</moteDef>
-        <initialDelayTicks>0</initialDelayTicks><scale>0.625</scale><rotation>0</rotation>
-        <positionOffset>(0,0.5,12.5)</positionOffset><absoluteAngle>false</absoluteAngle>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>0.625</scale>
+        <rotation>0</rotation>
+        <positionOffset>(0,0.5,12.5)</positionOffset>
+        <absoluteAngle>false</absoluteAngle>
       </li>
       <li>
         <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Hanako_A_4_Mote</moteDef>
         <!-- 延迟子节点沿用施法瞬间的瞄准方向，与直线伤害区域保持一致。 -->
-        <initialDelayTicks>12</initialDelayTicks><scale>0.625</scale><rotation>0</rotation>
-        <positionOffset>(0,0.5,12.5)</positionOffset><absoluteAngle>false</absoluteAngle>
+        <initialDelayTicks>12</initialDelayTicks>
+        <scale>0.625</scale>
+        <rotation>0</rotation>
+        <positionOffset>(0,0.5,12.5)</positionOffset>
+        <absoluteAngle>false</absoluteAngle>
       </li>
     </children>
   </EffecterDef>

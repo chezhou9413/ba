@@ -322,4 +322,289 @@
       </li>
 </children>
 </EffecterDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Nero_B_7_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.80</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Nero_B/B/Nero_1</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>24</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Nero_B_8_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Nero_B/B/Nero_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Nero_B_9_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Nero_B/B/Nero_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Nero_B_10_Mote</defName>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.2</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Nero_B/B/Nero_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>6</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Nero_B_11_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Nero_B/B/Nero_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Nero_B_12_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Nero_B/B/Nero_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>30</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Nero_B_13_Mote</defName>
+<altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>0.20</solidTime><!-- 特效持续可见时间（秒） -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+<needsMaintenance>false</needsMaintenance>
+<fadeOutUnmaintained>false</fadeOutUnmaintained>
+</mote>
+<graphicData>
+<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Nero_B/B/Nero_7</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>4</drawSize><!-- 绘制尺寸 -->   
+<shaderParameters>
+<_NumFrames>6</_NumFrames>
+<_FramesPerSec>30</_FramesPerSec>
+</shaderParameters>
+</graphicData>
+</ThingDef>
+<EffecterDef>
+<defName>BANW_Nero_B_Ef_D</defName>
+<children>
+   <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Nero_B_Skill_EX_E</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+<li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Nero_B_7_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Nero_B_7_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Nero_B_8_Mote</moteDef>
+        <initialDelayTicks>120</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Nero_B_9_Mote</moteDef>
+        <initialDelayTicks>180</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Nero_B_10_Mote</moteDef>
+        <initialDelayTicks>240</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Nero_B_11_Mote</moteDef>
+        <initialDelayTicks>120</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Nero_B_12_Mote</moteDef>
+        <initialDelayTicks>180</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <moteDef>BAWN_Nero_B_13_Mote</moteDef>
+        <initialDelayTicks>240</initialDelayTicks>
+        <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
+        <rotation>-90</rotation><!-- 初始旋转角度 -->
+        <rotationRate>0</rotationRate><!-- 每秒旋转角度（持续旋转） -->
+        <burstCount>1</burstCount>  <!-- 一次触发时生成的特效数量 -->
+        <positionOffset>(0, 0.5,1)</positionOffset>  <!-- 特效生成的位置偏移（X, Z, Y） -->
+        <angle>0</angle><!-- 发射角度 -->
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity><!-- 是否根据角度设置速度方向，true 表示启用 -->
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
+        <absoluteAngle>false</absoluteAngle>
+      </li>
+</children>
+</EffecterDef>
 </Defs>

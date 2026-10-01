@@ -7,7 +7,11 @@
     <maxSimultaneous>32</maxSimultaneous>
     <subSounds>
       <li>
-        <grains><li Class="AudioGrain_Folder"><clipFolderPath>Weapon/SMG/SMG_At</clipFolderPath></li></grains>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Weapon/SMG/SMG_At</clipFolderPath>
+          </li>
+        </grains>
         <volumeRange>45.2941~45.2941</volumeRange>
         <pitchRange>1~1.091765</pitchRange>
         <sustainLoop>false</sustainLoop>

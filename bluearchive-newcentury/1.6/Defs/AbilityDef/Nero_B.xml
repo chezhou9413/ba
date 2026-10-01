@@ -221,13 +221,15 @@
   <showWhenDrafted>true</showWhenDrafted>
   <showPsycastEffects>false</showPsycastEffects>
   <hostile>false</hostile>
+  
   <targetRequired>true</targetRequired><!-- 必须选择目标 -->
   <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
   <warmupStartSound>Nero_B_Skill_EXX_B</warmupStartSound>
   <verbProperties>
+    <warmupEffecter>BANW_Wakamo_A_Ef_D</warmupEffecter>
     <verbClass>Verb_CastAbility</verbClass>
     <range>34.9</range>
-    <warmupTime>0</warmupTime><!-- 无前摇，由 Job 负责逐发射击 -->
+    <warmupTime>0.1</warmupTime><!-- 无前摇，由 Job 负责逐发射击 -->
     <targetParams>
       <canTargetLocations>false</canTargetLocations>
         <canTargetSelf>false</canTargetSelf>
