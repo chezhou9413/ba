@@ -34,6 +34,7 @@
 		</weaponTags>
 		<apparelRequired Inherit="False">
 			<li>BANW_Body_Yoshimi_A</li>
+			<li>BANW_Body_Yoshimi_Bag</li>
 		</apparelRequired>
 		<forcedHair>Bald</forcedHair>
 

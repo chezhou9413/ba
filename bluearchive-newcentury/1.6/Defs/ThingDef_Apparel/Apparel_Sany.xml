@@ -1014,4 +1014,50 @@
             </tags>
         </apparel>
     </ThingDef>
+
+
+     <ThingDef ParentName="BANW_Apparel_Base">
+        <defName>BANW_Body_Yoshimi_Bag</defName>
+        <label>好美的贝斯</label>
+        <description>好美的贝斯</description>
+        <graphicData>
+            <texPath>Pawns/Sany/Yoshimi_A/Apparel/Yoshimi_A_Bag</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <equippedStatOffsets>
+            <SocialImpact>0.30</SocialImpact>
+		</equippedStatOffsets>
+        <apparel>
+            <wornGraphicData>
+                <renderUtilityAsPack>true</renderUtilityAsPack>
+            </wornGraphicData>
+            <wornGraphicPath>Pawns/Sany/Yoshimi_A/Apparel/Yoshimi_A_Bag_Apparel</wornGraphicPath>
+            <bodyPartGroups Inherit="False">
+                <li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>FullHead</li> 
+				<li>Feet</li>
+				<li>Waist</li>
+				<li>Hands</li>
+            </bodyPartGroups>
+            <layers Inherit="False">
+                <li>Belt</li>
+            </layers>
+            <tags>
+                <li>BANW_Body_Yoshimi_Bag</li>
+                <li>BANW_Body</li>
+            </tags>
+        </apparel>
+        <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Yoshimi_A</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+    </ThingDef>
 </Defs>
