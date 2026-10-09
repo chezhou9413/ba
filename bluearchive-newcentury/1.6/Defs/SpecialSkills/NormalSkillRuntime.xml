@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 每个通用普通技能使用独立状态，具体技能通过角色normalSkills列表绑定。 -->
+  <HediffDef>
+    <defName>BANW_NormalSkillRuntime</defName>
+    <label>自动普通技能</label>
+    <description>保存普攻累计次数和普通技能冷却，悬浮状态可查看真实配置的战斗公式。</description>
+    <hediffClass>BANWlLib.Skills.Hediff_NormalSkillState</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+  </HediffDef>
+</Defs>

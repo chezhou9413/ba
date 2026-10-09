@@ -8,6 +8,7 @@ namespace BANWlLib.Skills
         public Pawn attacker;
         public Thing target;
         public bool normalHit;
+        public bool countForNormalSkill;
         public bool canAccumulate;
         public float amount;
         public int id;
@@ -16,4 +17,3 @@ namespace BANWlLib.Skills
         public bool expandArea = true;
     }
 }
-

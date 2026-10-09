@@ -137,6 +137,8 @@
     <shotSound>BANW_Wp_SMG_At</shotSound><!-- 每发射击的音效 -->
     <projectileDef>BANW_Nero_B_EXX</projectileDef><!-- 弹丸 ThingDef -->
     <effecterDef>BANW_Effecter_C</effecterDef><!-- 命中时的特效 -->
+    <rotateImpactEffect>true</rotateImpactEffect><!-- 命中特效跟随弹道方向 -->
+    <impactRotationOffset>0</impactRotationOffset><!-- 命中特效贴图方向校正 -->
   </exAttack>
 </BANWlLib.Skills.SpecialSkillProfileDef>
 <ThingDef ParentName="BaseBullet">
@@ -197,6 +199,7 @@
     <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
       <profile>BANW_Special_Nero</profile><!-- 引用上面的技能配置 -->
       <command>Ex</command><!-- 对应一阶段EX分支 -->
+      <onlyTargetAllies>true</onlyTargetAllies><!-- 一阶段只能选择队友 -->
     </li>
     <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
       <cost>2</cost><!-- 基础消耗 2 COST -->

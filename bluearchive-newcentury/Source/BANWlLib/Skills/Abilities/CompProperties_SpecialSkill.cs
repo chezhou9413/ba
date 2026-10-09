@@ -7,9 +7,9 @@ namespace BANWlLib.Skills
     {
         public SpecialSkillProfileDef profile;
         public SpecialSkillCommand command;
+        public bool onlyTargetAllies;
 
         //绑定对应的技能执行组件。
         public CompProperties_SpecialSkill() { compClass = typeof(CompAbilityEffect_SpecialSkill); }
     }
 }
-

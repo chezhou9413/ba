@@ -16,7 +16,7 @@ namespace BANWlLib.Skills
             Map map = caster.Map;
             TargetInfo source = new TargetInfo(caster);
             TargetInfo focus = new TargetInfo(target.Cell, map);
-            float angle = (target.Cell - caster.Position).ToVector3().AngleFlat();
+            float angle = AimAngle(caster, target);
             Effecter effect = def.Spawn();
             for (int i = 0; i < effect.children.Count; i++)
             {
@@ -29,6 +29,19 @@ namespace BANWlLib.Skills
             //方向子节点由地图队列托管，其余延迟子节点保留原版EffectTick生命周期。
             int maintainTicks = Math.Max(def.maintainTicks, 1 + def.children.Max(child => child.initialDelayTicks));
             map.effecterMaintainer.AddEffecterToMaintain(effect, source, focus, maintainTicks);
+        }
+
+        //读取本次目标的视觉方向，自身施法时使用当前瞄准目标或角色朝向。
+        private static float AimAngle(Pawn caster, LocalTargetInfo target)
+        {
+            if (!target.IsValid || target.Thing == caster || target.Cell == caster.Position)
+            {
+                var stance = caster.stances.curStance as Stance_Busy;
+                target = stance?.focusTarg ?? LocalTargetInfo.Invalid;
+            }
+            return target.IsValid && target.Thing != caster && target.Cell != caster.Position
+                ? (target.CenterVector3 - caster.DrawPos).Yto0().AngleFlat()
+                : caster.Rotation.AsAngle;
         }
 
         //把旋转后的偏移和角度固定下来，避免目标移动或倒地改变后续特效方向。

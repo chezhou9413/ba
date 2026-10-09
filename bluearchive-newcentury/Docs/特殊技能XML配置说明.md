@@ -2,11 +2,13 @@
 
 七组特殊技能的按钮均以“测试新技能”开头，可以与角色原有技能同时使用。下文介绍技能操作、XML 参数、特效绑定和调试菜单用法。修改 XML 后需要重新启动游戏，使配置生效。
 
+通用普攻次数触发、最低生命队友Buff、真实伤害公式和妮露命中特效方向的入口，见同目录《通用普通技能与目标伤害特效配置说明.md》。通用技能通过角色扩展的normalSkills列表绑定，爱丽丝和星野继续使用自己的专属普通技能配置。
+
 ## 1. 文件与完整示例
 
 | 角色 | 正式 PawnKind | 完整配置与 AbilityDef |
 |---|---|---|
-| 妮露 | BANW_Nero | [Nero.xml](../1.6/Defs/SpecialSkills/Nero.xml) |
+| 妮露 | BANW_Nero | [Nero_B.xml](../1.6/Defs/AbilityDef/Nero_B.xml) |
 | 临战爱丽丝 | BANW_Arisu_B | [Arisu.xml](../1.6/Defs/SpecialSkills/Arisu.xml)、[ArisuNormal.xml](../1.6/Defs/SpecialSkills/ArisuNormal.xml)、[ArisuEffects.xml](../1.6/Defs/SpecialSkills/ArisuEffects.xml) |
 | 黑子 | BANW_Shiroko | [Shiroko.xml](../1.6/Defs/SpecialSkills/Shiroko.xml) |
 | 若藻 | BANW_Wakamo | [Wakamo.xml](../1.6/Defs/SpecialSkills/Wakamo.xml) |
@@ -82,7 +84,7 @@
 
 | 角色 | 护甲穿透配置位置 |
 |---|---|
-| 妮露 | `Nero.xml`：`exAttack.penetration` |
+| 妮露 | `1.6/Defs/AbilityDef/Nero_B.xml`：`exAttack.penetration` |
 | 爱丽丝 | `Arisu.xml`：`exAttack.penetration`；`ArisuNormal.xml`：`attack.penetration`；EX充能倍率不改变穿透 |
 | 黑子 | `Shiroko.xml`：`normalAttack.penetration`、`droneAttack.penetration`、`burstAttack.penetration` |
 | 若藻 | `Wakamo.xml`：`exAttack.penetration`、`burstAttack.penetration`，首段和蓄积爆发独立配置 |
@@ -117,7 +119,7 @@
 
 锐气倍率为 `1＋0.35×层数`；五层与大亢奋合计 `2.75×1.2=3.3`。大亢奋通过独立乘区影响该角色的 BA EX；独立模式的妮露新EX也显式保留该技能机制倍率。自身阶段到期清空锐气并切回一阶段。
 
-一段独立音效在 `BANW_Special_Nero_Ex/verbProperties/soundCast` 配置。二段每发枪声在 `exAttack.shotSound` 配置；`exAttack.shotTicks` 逐项指定相对技能生效的发射tick，默认 `1,7,13,19,25,31,37,43,49,55`，条目数必须等于 `shots`。删除整个列表后才改用 `shotIntervalTicks` 统一间隔。二段使用 `BANW_Job_NeroExChannel` 保持整轮停步瞄准，不能平A；中断、倒地或目标失效时取消未发射的子弹，已经射出的弹丸继续结算。详见[妮露EX技能配置说明](妮露EX技能配置说明.md)。
+一段独立音效在 `BANW_Special_Nero_Ex/verbProperties/soundCast` 配置。二段每发枪声在 `exAttack.shotSound` 配置；`exAttack.shotTicks` 逐项指定相对技能生效的发射tick，当前配置92发，最后一发在第267 tick，条目数必须等于 `shots`。删除整个列表后才改用 `shotIntervalTicks` 统一间隔。二段使用 `BANW_Job_NeroExChannel` 保持整轮停步瞄准，不能平A；`casterEffecter`由Job维护，`BANW_Nero_B_Ef_D`实时跟随瞄准方向。中断、倒地或目标失效时清理引导特效并取消未发射的子弹，已经射出的弹丸继续结算。详见[妮露EX技能配置说明](妮露EX技能配置说明.md)。
 
 ### 爱丽丝
 
@@ -204,7 +206,7 @@ AppendSpecialSkills.xml 配置了七个正式角色的技能追加。修改角�
 
 | 特效入口 | 配置位置与生命周期 |
 |---|---|
-| casterEffecter / targetEffecter | 角色配置；每次主动技能发动时触发 |
+| casterEffecter / targetEffecter | 角色配置；每次主动技能发动时触发；妮露二段的casterEffecter由引导Job维护并清理 |
 | stateEffecter | 角色配置；持续状态期间维护一份，结束或离图清理 |
 | stageEffecter / endEffecter | 角色配置；阶段变化或持续结束触发 |
 | effecterDef | 每个攻击段；实际命中位置触发 |

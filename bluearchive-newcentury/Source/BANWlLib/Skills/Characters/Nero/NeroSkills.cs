@@ -14,7 +14,7 @@ namespace BANWlLib.Skills
                 ExMechanismBuff.Apply(target, s.profile.exMultiplier, s.profile.durationTicks);
                 s.stage = 1;
                 s.endTick = s.Now + s.profile.durationTicks;
-                SpecialEffects.Trigger(s.profile.stageEffecter, s.pawn);
+                SpecialDirectionalEffects.Trigger(s.profile.stageEffecter, s.pawn, target);
                 return;
             }
             s.stacks = UnityEngine.Mathf.Min(s.profile.maxStacks, s.stacks + 1);

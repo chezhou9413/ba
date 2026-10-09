@@ -1,4 +1,5 @@
 using Verse;
+using BANWlLib.Projectiles;
 
 namespace BANWlLib.Skills
 {
@@ -27,7 +28,10 @@ namespace BANWlLib.Skills
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             if (!blockedByShield && attack != null)
+            {
+                attack.impactDirection = DirectionalImpactEffectUtility.GetTravelDirection(this);
                 SpecialCombatUtility.Impact(attack, hitThing, Position, Map);
+            }
             base.Impact(hitThing, blockedByShield);
         }
 

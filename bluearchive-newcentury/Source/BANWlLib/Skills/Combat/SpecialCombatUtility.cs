@@ -66,6 +66,18 @@ namespace BANWlLib.Skills
                 });
         }
 
+        //普通技能调度职责：不依赖角色专属状态，共用一个施法快照并按总倍率拆分每发动作。
+        public static void ScheduleNormal(Pawn caster, Thing target, SpecialAttackConfig action,
+            BattleCasterSnapshot snapshot, NormalSkillDef skill)
+        {
+            for (int i = 0; i < action.shots; i++)
+                caster.Map.GetComponent<MapComponent_SpecialSkills>().Enqueue(new SpecialPendingAttack
+                {
+                    caster = caster, target = target, action = action, snapshot = snapshot, normalSkill = skill,
+                    dueTick = Find.TickManager.TicksGame + action.ShotDelay(i), multiplier = 1f / action.shots
+                });
+        }
+
         //发射技能弹丸或直接执行配置中的伤害段。
         public static void Launch(SpecialPendingAttack attack, Map map)
         {
@@ -76,6 +88,7 @@ namespace BANWlLib.Skills
             IntVec3 cell = attack.center.IsValid ? attack.center : attack.target?.Position ?? IntVec3.Invalid;
             if (!cell.IsValid || !cell.InBounds(map)) { attack.Complete(); return; }
             Vector3 origin = attack.droneOrigin ? DroneRenderer.Position(attack.state) : attack.caster.DrawPos;
+            attack.impactDirection = (cell.ToVector3Shifted() - origin).Yto0().normalized;
             attack.action.shotSound?.PlayOneShot(new TargetInfo(origin.ToIntVec3(), map));
             if (attack.action.projectileDef == null)
             {
@@ -93,24 +106,32 @@ namespace BANWlLib.Skills
         //按实际命中位置处理单体或范围效果，伤害附加状态交给每次真实扣血处理。
         public static void Impact(SpecialPendingAttack attack, Thing hit, IntVec3 cell, Map map)
         {
-            SpecialEffects.Trigger(attack.impactEffecter ?? attack.action.effecterDef, cell, map);
+            SpecialImpactEffects.Trigger(attack.impactEffecter ?? attack.action.effecterDef, attack, hit, cell, map);
             if (attack.areaCells != null)
             {
                 //每段按当前站位重新筛选固定区域中的角色，一个角色本段只结算一次。
                 var cells = new HashSet<IntVec3>(attack.areaCells);
                 foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned.ToArray())
                     if (!pawn.Dead && cells.Contains(pawn.Position) &&
-                        BattleStatUtility.ShouldAffectTarget(attack.caster, pawn, attack.action)) Damage(attack, pawn);
+                        BattleStatUtility.ShouldAffectTarget(attack.caster, pawn, attack.action)) ApplyImpact(attack, pawn);
             }
             else if (attack.action.radius > 0f)
             {
                 foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned.ToArray())
                     if (!pawn.Dead && pawn != attack.excludedTarget && pawn.Position.DistanceTo(cell) <= attack.action.radius &&
                         BattleStatUtility.ShouldAffectTarget(attack.caster, pawn, attack.action))
-                        Damage(attack, pawn);
+                        ApplyImpact(attack, pawn);
             }
             else if (hit != null && BattleStatUtility.ShouldAffectTarget(attack.caster, hit, attack.action))
-                Damage(attack, hit);
+                ApplyImpact(attack, hit);
+        }
+
+        //动作分派职责：伤害仍沿用专属战斗请求，支援效果独立执行且不重复结算伤害。
+        private static void ApplyImpact(SpecialPendingAttack attack, Thing target)
+        {
+            if (attack.normalSkill != null && !NormalSkillTargetUtility.CanAffect(attack.caster, target, attack.normalSkill)) return;
+            if (attack.action.damageDef != null) Damage(attack, target);
+            SpecialSupportActionUtility.Apply(attack, target);
         }
 
         //使用统一请求结算伤害，明确区分普攻、额外攻击和已蓄积金额。
@@ -127,8 +148,10 @@ namespace BANWlLib.Skills
                 //普攻公式自身不读取技能倍率，因此在机制乘区保留本段总倍率与逐发分摊。
                 mechanismMultiplier = attack.multiplier * (normalAttack ? a.attackPowerRatio : 1f), snapshot = attack.snapshot,
                 canCrit = a.canCrit, alwaysCrit = a.alwaysCrit, applyAffinity = a.applyAffinity,
+                alwaysShowCriticalText = a.alwaysShowCriticalText,
                 isExSkill = !attack.droneOrigin && a.isExSkill, isNormalAttack = normalAttack,
                 useNormalAttackStat = normalAttack, normalHit = attack.normalHit,
+                countForNormalSkill = attack.normalHit && !attack.droneOrigin,
                 areaSecondary = attack.excludedTarget != null,
                 canAccumulate = attack.canAccumulate, resolvedAmount = attack.resolvedAmount,
                 resolvedCritical = attack.resolvedCritical
