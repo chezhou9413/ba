@@ -67,7 +67,7 @@ namespace BANWlLib.Skills
                 //发射前再次检查施法工作，避免同一tick内的倒地、离图或中断留下后台射击。
                 if (attack.castingJob != null && (attack.caster.CurJob != attack.castingJob ||
                     !SpecialCombatUtility.CanAct(attack.caster) ||
-                    !SpecialCombatUtility.ValidEnemy(attack.caster, attack.target as Pawn, attack.state.profile.range)))
+                    !attack.castingJob.ability.CompOfType<CompAbilityEffect_SpecialSkill>().Valid(new LocalTargetInfo(attack.target))))
                 { attack.Complete(); continue; }
                 if (attack.droneOrigin && (attack.state == null || !ShirokoSkills.DronePresent(attack.state)))
                 { attack.Complete(); continue; }

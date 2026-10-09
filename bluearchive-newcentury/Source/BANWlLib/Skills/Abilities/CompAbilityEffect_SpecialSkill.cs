@@ -59,8 +59,13 @@ namespace BANWlLib.Skills
             {
                 if (Props.command == SpecialSkillCommand.SwitchForm || Props.command == SpecialSkillCommand.Normal || role == SpecialSkillRole.Shiroko)
                     valid = target.Pawn == caster;
-                else if (role == SpecialSkillRole.Nero && Props.command == SpecialSkillCommand.Ex)
-                    valid = ally && target.Pawn != caster;
+                else if (role == SpecialSkillRole.Nero)
+                {
+                    valid = target.Pawn != null && target.Pawn.Spawned && !target.Pawn.Dead &&
+                        target.Pawn.Map == caster.Map && parent.verb.CanHitTarget(target);
+                    if (valid && Props.command == SpecialSkillCommand.AlternateEx)
+                        valid = BattleSystem.BattleStatUtility.ShouldAffectTarget(caster, target.Pawn, Props.profile.exAttack);
+                }
                 else if (role == SpecialSkillRole.Rio)
                     valid = ally && target.Pawn != caster && RioSkills.CopyDef(target.Pawn) != null;
                 else if (role == SpecialSkillRole.Arisu && target.Pawn == caster)
@@ -73,7 +78,9 @@ namespace BANWlLib.Skills
                 else valid = target.Pawn != null && SpecialCombatUtility.ValidEnemy(caster, target.Pawn, Props.profile.range);
             }
             if (!valid && throwMessages)
-                Messages.Message("当前目标不能使用此测试技能，或充能已满、目标没有当前阶段可见的COST技能。", MessageTypeDefOf.RejectInput, false);
+                Messages.Message(role == SpecialSkillRole.Nero
+                    ? "目标必须是射程和视线内的存活生物，并符合技能的目标类型与伤害配置。"
+                    : "当前目标不能使用此测试技能，或充能已满、目标没有当前阶段可见的COST技能。", MessageTypeDefOf.RejectInput, false);
             return valid;
         }
 
@@ -82,7 +89,7 @@ namespace BANWlLib.Skills
         {
             base.Apply(target, dest);
             Hediff_SpecialSkillState state = State;
-            if (state.profile.role != SpecialSkillRole.Arisu) SpecialEffects.Cast(state, target);
+            if (state.profile.role != SpecialSkillRole.Arisu) SpecialEffects.Cast(state, Props.command, target);
             SpecialSkillDispatcher.Cast(state, Props.command, target);
         }
 

@@ -38,9 +38,10 @@ namespace BANWlLib.Skills
         protected override IEnumerable<Toil> MakeNewToils()
         {
             var state = Hediff_SpecialSkillState.Find(pawn, SpecialSkillRole.Nero);
+            var effect = job.ability.CompOfType<CompAbilityEffect_SpecialSkill>();
             Map castMap = pawn.Map;
             this.FailOn(() => !SpecialCombatUtility.CanAct(pawn) ||
-                !SpecialCombatUtility.ValidEnemy(pawn, job.targetA.Pawn, state.profile.range));
+                !effect.Valid(job.targetA));
             AddFinishAction(condition =>
             {
                 channelEffect?.Cleanup();
