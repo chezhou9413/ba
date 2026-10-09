@@ -30,6 +30,7 @@
     <!-- 护盾用的 Hediff Def。 -->
     <shieldHediff>BANW_SpecialHoshinoShield</shieldHediff>
     <casterEffecter>BANW_Effecter_A</casterEffecter><targetEffecter>BANW_Effecter_C</targetEffecter>
+    <!-- 普通技能发动时的自身特效；输出普通技能、防御普通技能和形态切换共用。 -->
     <stageEffecter>BANW_Effecter_B</stageEffecter><endEffecter>BANW_Effecter_C</endEffecter><stateEffecter>BANW_Effecter_B</stateEffecter>
     <hoshino>
       <normalRequiredShots>30</normalRequiredShots>
@@ -37,6 +38,8 @@
       <tankNormalAbility>BANW_Special_Hoshino_TankNormal</tankNormalAbility>
       <!-- 每轮强化沿用武器连射节奏；每发只结算一次范围普攻，无武器弹丸贴图。 -->
       <empoweredShotEffecter>BANW_Effecter_Hoshino_EmpoweredShot</empoweredShotEffecter>
+      <!-- 强化普攻以星野为起点，朝射击方向展开；夹角单位为度，长度沿用主武器射程。 -->
+      <empoweredFanArc>60</empoweredFanArc>
       <effectSpeed>20</effectSpeed><effectOffsetForward>0.6</effectOffsetForward><effectOffsetUp>0</effectOffsetUp>
       <empoweredAttack>
         <useBattleStats>true</useBattleStats><basePower>100</basePower>
@@ -44,11 +47,13 @@
         <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
         <penetration>0</penetration>
         <canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-        <radius>3</radius><shots>1</shots>
+        <!-- 扇形由empoweredFanArc和武器射程决定，不使用命中点圆形溅射；每发只结算一次。 -->
+        <radius>0</radius><shots>1</shots>
         <effecterDef>BANW_Effecter_C</effecterDef>
         <canHitOwnPawn>false</canHitOwnPawn><affectFriendly>false</affectFriendly><affectHostile>true</affectHostile>
       </empoweredAttack>
       <!-- delayTicks相对准备结束；每个li独立配置伤害。shots大于1时均分该段倍率。 -->
+      <!-- 每段attack的affectHostile、affectFriendly、canHitOwnPawn决定可作用阵营；任一段允许即可选中，各段命中时独立过滤。 -->
       <exStages>
         <!-- 第1段：单体子弹，不结算爆炸。 -->
         <li>
@@ -159,6 +164,10 @@
       <isExSkill>false</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
       <radius>0</radius><shots>3</shots><shotIntervalTicks>6</shotIntervalTicks>
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <!-- 输出普通技能每发发射时的音效，填SoundDef的defName；留空不播放。 -->
+      <shotSound />
+      <!-- 输出普通技能每发命中时的特效，填EffecterDef的defName；留空不播放。 -->
+      <effecterDef />
       <canHitOwnPawn>false</canHitOwnPawn><affectFriendly>false</affectFriendly><affectHostile>true</affectHostile>
     </normalAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>

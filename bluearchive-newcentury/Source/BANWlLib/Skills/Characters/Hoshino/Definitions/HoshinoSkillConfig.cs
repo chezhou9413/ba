@@ -13,6 +13,7 @@ namespace BANWlLib.Skills
         public int tankBurstShots = 1;
         public AbilityDef tankNormalAbility;
         public SpecialAttackConfig empoweredAttack;
+        public float empoweredFanArc = 60f;
         public EffecterDef empoweredShotEffecter;
         public float effectSpeed = 20f;
         public float effectOffsetForward = 0.6f;
@@ -25,9 +26,11 @@ namespace BANWlLib.Skills
                 yield return "普攻触发次数和形态连射数必须大于零";
             if (tankNormalAbility == null) yield return "缺少防御普通技能按钮";
             if (empoweredShotEffecter == null) yield return "缺少强化普攻定向特效";
-            if (empoweredAttack == null || empoweredAttack.damageDef == null || empoweredAttack.radius <= 0 ||
+            if (empoweredFanArc <= 0f || empoweredFanArc > 360f)
+                yield return "强化普攻扇形夹角必须大于0且不超过360度";
+            if (empoweredAttack == null || empoweredAttack.damageDef == null || empoweredAttack.radius != 0 ||
                 empoweredAttack.shots != 1 || empoweredAttack.projectileDef != null || empoweredAttack.attackPowerRatio < 0)
-                yield return "强化普攻必须配置有伤害类型的单次直接范围伤害，不能配置弹丸";
+                yield return "强化普攻必须配置有伤害类型的单次直接扇形伤害，radius保持0且不能配置弹丸";
             if (exStages == null || exStages.Count == 0) { yield return "缺少EX伤害段"; yield break; }
             foreach (HoshinoAttackStage stage in exStages)
             {

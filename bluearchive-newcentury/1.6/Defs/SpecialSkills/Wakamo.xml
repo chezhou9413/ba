@@ -9,7 +9,7 @@
     <durationTicks>600</durationTicks>
     <recordRatio>1</recordRatio>
     <recordCapRatio>13.22</recordCapRatio>
-    <!-- 由EX实际伤害附加到敌人身上的蓄积状态。 -->
+    <!-- 由EX实际伤害附加到所选目标身上的蓄积状态。 -->
     <buffHediff>BANW_WakamoAccumulation</buffHediff>
     <casterEffecter>BANW_Effecter_A</casterEffecter>
     <targetEffecter>BANW_Effecter_C</targetEffecter>
@@ -32,7 +32,9 @@
       <shotIntervalTicks>6</shotIntervalTicks>
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
       <effecterDef>BANW_Effecter_C</effecterDef>
-      
+      <affectHostile>true</affectHostile><!-- 允许选择和伤害敌对及无阵营生物 -->
+      <affectFriendly>false</affectFriendly><!-- 改为true可选择和伤害中立及友好阵营生物 -->
+      <canHitOwnPawn>false</canHitOwnPawn><!-- 改为true可选择和伤害己方生物 -->
     </exAttack>
     <burstAttack>
       <!-- 累计伤害作为基础，按若藻BA输出、暴击、克制与EX倍率换算，再显示于敌方状态。 -->
@@ -50,13 +52,16 @@
       <shotIntervalTicks>6</shotIntervalTicks>
       <!-- 此段直接结算，不生成弹丸。 -->
       <effecterDef>BANW_Effecter_C</effecterDef>
-      
+      <!-- 蓄积爆发独立过滤目标；需要完整攻击同类目标时，与exAttack的阵营开关一起设置。 -->
+      <affectHostile>true</affectHostile>
+      <affectFriendly>false</affectFriendly>
+      <canHitOwnPawn>false</canHitOwnPawn>
     </burstAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
   <AbilityDef>
     <defName>BANW_Special_Wakamo_Ex</defName>
     <label>测试新技能·若藻</label>
-    <description>向25格内的敌人连续发射6发单体子弹，基础总伤害为攻击力100%，每发独立进行BA伤害结算。首次造成实际伤害时，在敌人身上附加持续10秒的蓄积状态；该发伤害、后续子弹及同阵营友军造成的实际扣血都会计入。闪避、护盾或护甲完全抵挡的伤害不计入。
+    <description>向25格内配置允许的生物连续发射6发单体子弹，基础总伤害为攻击力100%，每发独立进行BA伤害结算。首次造成实际伤害时，在目标身上附加持续10秒的蓄积状态；该发伤害、后续子弹及同阵营友军造成的实际扣血都会计入。闪避、护盾或护甲完全抵挡的伤害不计入。默认允许敌对及无阵营生物。
 
 原始累计上限为施法时攻击力的1322%。累计伤害作为爆发基础，再按若藻的BA输出倍率、暴击、克制和EX加成计算待释放值。标记建立时锁定本次换算与暴击结果，敌方状态实时显示待释放伤害、上限、类型和剩余时间。
 

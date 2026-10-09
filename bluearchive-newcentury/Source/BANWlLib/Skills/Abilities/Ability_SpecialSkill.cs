@@ -24,6 +24,12 @@ namespace BANWlLib.Skills
                 Log.Error("妮露二段EX必须通过JobDriver_NeroExChannel施法");
                 return false;
             }
+            if (effect.Props.profile.role == SpecialSkillRole.Arisu && target.Pawn != pawn &&
+                (!(pawn.jobs.curDriver is JobDriver_ArisuExChannel) || pawn.CurJob.ability != this))
+            {
+                Log.Error("爱丽丝攻击EX必须通过JobDriver_ArisuExChannel施法");
+                return false;
+            }
             if (effect.GizmoDisabled(out string reason) || !effect.Valid(target, true))
             {
                 if (!reason.NullOrEmpty()) Messages.Message(reason, MessageTypeDefOf.RejectInput, false);

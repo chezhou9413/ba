@@ -24,7 +24,7 @@ namespace BANWlLib.Skills
         //安排下一游戏时刻或指定时刻执行的攻击。
         public void Enqueue(SpecialPendingAttack attack) { pending.Add(attack); }
 
-        //判断本次持续施法是否还有未射出的子弹，不等待已经发出的弹丸命中。
+        //判断持续施法是否还有待执行伤害段，不等待已经飞出的弹丸命中。
         public bool HasPendingCast(Verse.AI.Job job) => pending.Any(a => a.castingJob == job);
 
         //取消被打断施法尚未发射的攻击，已飞出的弹丸继续结算。
@@ -67,7 +67,8 @@ namespace BANWlLib.Skills
                 //发射前再次检查施法工作，避免同一tick内的倒地、离图或中断留下后台射击。
                 if (attack.castingJob != null && (attack.caster.CurJob != attack.castingJob ||
                     !SpecialCombatUtility.CanAct(attack.caster) ||
-                    !attack.castingJob.ability.CompOfType<CompAbilityEffect_SpecialSkill>().Valid(new LocalTargetInfo(attack.target))))
+                    (attack.areaCells == null &&
+                     !attack.castingJob.ability.CompOfType<CompAbilityEffect_SpecialSkill>().Valid(new LocalTargetInfo(attack.target)))))
                 { attack.Complete(); continue; }
                 if (attack.droneOrigin && (attack.state == null || !ShirokoSkills.DronePresent(attack.state)))
                 { attack.Complete(); continue; }

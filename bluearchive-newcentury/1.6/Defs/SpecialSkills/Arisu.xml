@@ -48,7 +48,9 @@
       <radius>0</radius>
       <shots>5</shots>
       <shotIntervalTicks>6</shotIntervalTicks>
-      <canHitOwnPawn>false</canHitOwnPawn><affectFriendly>false</affectFriendly><affectHostile>true</affectHostile>
+      <affectHostile>true</affectHostile><!-- 允许选择和伤害敌对及无阵营生物 -->
+      <affectFriendly>false</affectFriendly><!-- 改为true可选择和伤害中立及友好阵营生物 -->
+      <canHitOwnPawn>false</canHitOwnPawn><!-- 改为true可选择和伤害己方生物；点击自己仍用于充能 -->
     </exAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
   <AbilityDef>
@@ -57,12 +59,13 @@
     <label>测试新技能·临战爱丽丝·EX</label>
     <description>对自己使用时获得一档充能，最多两档；两档使用不同的自身充能特效，满档后不能继续充能。
 
-对25格内的敌人使用时，沿瞄准方向对长度25格、宽度3格的直线区域造成5段AOE，段间隔0.1秒。未充能、一档、二档分别使用A、B、C定向特效，总伤害分别为攻击力1300%、2600%、3900%。伤害区域在施法时固定，每段重新判断区域内的敌人，成功发动后清空充能。
+对25格内配置允许的其他生物使用时，沿瞄准方向对长度25格、宽度3格的直线区域造成5段AOE，段间隔0.1秒。未充能、一档、二档分别使用A、B、C定向特效，总伤害分别为攻击力1300%、2600%、3900%。施法期间停步瞄准，直到最后一段伤害完成；中断施法取消剩余伤害。伤害区域在施法时固定，每段按伤害配置重新筛选区域内的生物，原目标死亡不打断引导，成功发动后清空充能。默认允许敌对及无阵营生物。
 
 独立普通技能：每累计3次有效普攻命中，自动对敌人追加一次攻击力100%的攻击，不消耗COST；多余命中次数保留。完全闪避或完全吸收的攻击不计数。普通技能拥有独立的声音、特效与伤害配置，不消费EX充能，不能主动施放。
 
 每次EX基础消耗：4 COST。冷却：1秒。</description>
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <jobDef>BANW_Job_ArisuExChannel</jobDef>
     <!-- 技能图标路径。 -->
     <iconPath>UI/StarIcon</iconPath>
     <!-- 冷却时间（tick），60 = 1 秒。 -->
@@ -109,4 +112,11 @@
       </li>
     </comps>
   </AbilityDef>
+  <JobDef>
+    <defName>BANW_Job_ArisuExChannel</defName>
+    <driverClass>BANWlLib.Skills.JobDriver_ArisuExChannel</driverClass>
+    <reportString>正在施放爱丽丝EX。</reportString>
+    <abilityCasting>true</abilityCasting>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
 </Defs>
