@@ -2,16 +2,16 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //妮露技能，负责大亢奋、锐气叠层和双阶段EX循环。
+    //妮露技能，负责对决、锐气叠层和双阶段EX循环。
     public static class NeroSkills
     {
-        //根据按钮阶段施加大亢奋或消耗COST后的攻击。
+        //一段给双方施加对决标记，二段叠加锐气后安排攻击。
         public static void Cast(Hediff_SpecialSkillState s, SpecialSkillCommand command, Pawn target)
         {
             if (command == SpecialSkillCommand.Ex)
             {
-                ExMechanismBuff.Apply(s.pawn, s.profile.exMultiplier, s.profile.durationTicks);
-                ExMechanismBuff.Apply(target, s.profile.exMultiplier, s.profile.durationTicks);
+                Hediff_NeroDuel.Apply(s.pawn, s.profile.durationTicks);
+                Hediff_NeroDuel.Apply(target, s.profile.durationTicks);
                 s.stage = 1;
                 s.endTick = s.Now + s.profile.durationTicks;
                 SpecialDirectionalEffects.Trigger(s.profile.stageEffecter, s.pawn, target);
@@ -19,12 +19,11 @@ namespace BANWlLib.Skills
             }
             s.stacks = UnityEngine.Mathf.Min(s.profile.maxStacks, s.stacks + 1);
             float multiplier = 1f + s.stacks * s.profile.stackMultiplier;
-            if (!s.profile.exAttack.useBattleStats) multiplier *= s.profile.exMultiplier;
             s.castEndTick = s.Now + s.profile.exAttack.ShotDelay(s.profile.exAttack.shots - 1);
             SpecialCombatUtility.Schedule(s, target, s.profile.exAttack, multiplier, castingJob: s.pawn.CurJob);
         }
 
-        //大亢奋结束后清空锐气并恢复默认EX入口。
+        //对决结束后清空锐气并恢复默认EX入口。
         public static void Tick(Hediff_SpecialSkillState s)
         {
             if (s.stage != 1 || s.Active) return;

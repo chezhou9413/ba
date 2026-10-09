@@ -97,7 +97,7 @@ namespace BANWlLib.Skills
             if (s.profile.role == SpecialSkillRole.Kei && s.pawn.CurJob?.def == s.profile.kei.normalJob)
                 s.pawn.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced);
             s.pawn.Map?.GetComponent<MapComponent_SpecialSkills>().Cancel(s.pawn);
-            foreach (var buff in s.pawn.health.hediffSet.hediffs.OfType<ExMechanismBuff>().ToList())
+            foreach (var buff in s.pawn.health.hediffSet.hediffs.OfType<Hediff_NeroDuel>().ToList())
                 s.pawn.health.RemoveHediff(buff);
             foreach (var temporary in s.pawn.health.hediffSet.hediffs.OfType<Hediff_SpecialSkillState>().Where(x => !x.native).ToList())
             {

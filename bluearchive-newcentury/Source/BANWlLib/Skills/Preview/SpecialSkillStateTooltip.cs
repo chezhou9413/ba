@@ -13,6 +13,9 @@ namespace BANWlLib.Skills
             if (profile == null || !profile.showNormalBattleFormula) return "";
             switch (profile.role)
             {
+                case SpecialSkillRole.Nero:
+                    return "\n对决：双方标记有效时，对带有对决标记的敌人造成伤害×" +
+                        profile.exMultiplier.ToString("0.##") + "（普攻与技能均生效；不提高目标的EX倍率）。";
                 case SpecialSkillRole.Arisu:
                     return "\n普通技能（每" + profile.arisu.normalSkill.requiredHits + "次有效普攻命中）：" +
                         Formula(state.pawn, profile.arisu.normalSkill.attack);

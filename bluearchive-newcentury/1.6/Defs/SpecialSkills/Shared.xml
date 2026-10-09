@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 运行状态与大亢奋使用独立实例，数值通过当前版本存档保存。 -->
+  <!-- 运行状态与对决标记使用独立实例，数值通过当前版本存档保存。 -->
   <HediffDef>
     <defName>BANW_SpecialSkillRuntime</defName>
     <label>测试新技能状态</label>
@@ -11,11 +11,11 @@
     <everCurableByItem>false</everCurableByItem>
   </HediffDef>
   <HediffDef>
-    <defName>BANW_SpecialExMechanism</defName>
+    <defName>BANW_NeroDuel</defName>
     <label>对决</label>
     <defaultLabelColor>(255,255,0)</defaultLabelColor>
-    <description>在持续期间提高EX技能的伤害倍率。妮露自身的大亢奋结束时，二阶段EX与锐气层数一并重置。</description>
-    <hediffClass>BANWlLib.Skills.ExMechanismBuff</hediffClass>
+    <description>对决标记本身不提高EX倍率。妮露处于对决阶段且双方标记有效时，攻击带有对决标记的敌人获得额外伤害；倍率由妮露技能配置决定。自身对决阶段结束时，二阶段EX与锐气层数一并重置。</description>
+    <hediffClass>BANWlLib.Skills.Hediff_NeroDuel</hediffClass>
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
   </HediffDef>

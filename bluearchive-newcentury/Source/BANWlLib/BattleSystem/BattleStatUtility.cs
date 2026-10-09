@@ -442,7 +442,7 @@ namespace BANWlLib.BattleSystem
             float multiplier = pawn.GetStatValue(BattleStatDefOf.BANW_ExSkillMultiplier) +
                                GetBaseExSkillMultiplierOffset(pawn) +
                                GetAdditionalBattleStatOffset(pawn, BattleStatDefOf.BANW_ExSkillMultiplier);
-            return Mathf.Max(0f, multiplier) * Skills.ExMechanismBuff.Factor(pawn);
+            return Mathf.Max(0f, multiplier);
         }
 
         // 获取本次动作的 EX 技能倍率，负责在普通动作和 EX 动作之间选择正确倍率。

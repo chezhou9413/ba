@@ -29,9 +29,10 @@ namespace BANWlLib.Skills
             return effects == null || effects.Count == 0 ? null : effects[Mathf.Clamp(stage, 0, effects.Count - 1)];
         }
 
-        //将妮露二段施法特效交给引导工作，其他入口按本次方向播放并保留落点与声音。
-        public static void Cast(Hediff_SpecialSkillState state, LocalTargetInfo target)
+        //妮露一段只使用自身前摇与阶段特效，二段施法特效交给引导工作维护。
+        public static void Cast(Hediff_SpecialSkillState state, SpecialSkillCommand command, LocalTargetInfo target)
         {
+            if (state.profile.role == SpecialSkillRole.Nero && command != SpecialSkillCommand.AlternateEx) return;
             var channel = state.pawn.jobs.curDriver as JobDriver_NeroExChannel;
             if (state.profile.role == SpecialSkillRole.Nero && channel != null)
                 channel.BeginChannelEffect(state.profile.casterEffecter);

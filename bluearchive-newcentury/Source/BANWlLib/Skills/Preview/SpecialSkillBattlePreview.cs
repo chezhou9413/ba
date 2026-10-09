@@ -23,7 +23,6 @@ namespace BANWlLib.Skills
                 case SpecialSkillRole.Nero:
                     if (props.command != SpecialSkillCommand.AlternateEx) return new List<BattleActionConfig>();
                     float multiplier = 1f + Mathf.Min(profile.maxStacks, (state?.stacks ?? 0) + 1) * profile.stackMultiplier;
-                    if (!profile.exAttack.useBattleStats) multiplier *= profile.exMultiplier;
                     return Expand(new[] { profile.exAttack }, multiplier);
                 case SpecialSkillRole.Arisu:
                     return Expand(new[] { profile.exAttack }, 1f + (state?.stage ?? 0));

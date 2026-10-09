@@ -5,19 +5,19 @@
   <label>妮露</label><!-- 显示名称 -->
   <role>Nero</role><!-- 角色标识，代码按此匹配妮露的技能逻辑 -->
   <primaryAbility>BANW_Special_Nero_Ex</primaryAbility><!-- 一阶段（默认）EX -->
-  <alternateAbility>BANW_Special_Nero_AlternateEx</alternateAbility><!-- 二阶段（大亢奋期间）切换的EX -->
-  <range>34.9</range><!-- 技能作用距离（格） -->
+  <alternateAbility>BANW_Special_Nero_AlternateEx</alternateAbility><!-- 二阶段（对决期间）切换的EX -->
+  <range>34.9</range><!-- 配置范围；两段EX实际射程各由verbProperties/range决定 -->
   <normalIntervalTicks>1000</normalIntervalTicks><!-- 普通技能触发间隔，1800 tick = 30 秒 -->
   <radius>3</radius><!-- 技能效果半径（格） -->
-  <durationTicks>4200</durationTicks><!-- 大亢奋持续时间，4200 tick = 70 秒 -->
+  <durationTicks>4200</durationTicks><!-- 对决持续时间，4200 tick = 70 秒 -->
   <maxStacks>5</maxStacks><!-- 锐气最大层数 -->
   <stackMultiplier>0.35</stackMultiplier><!-- 每层锐气的伤害加成，1＋0.35×层数 -->
-  <exMultiplier>1.2</exMultiplier><!-- 大亢奋期间的 EX 伤害倍率 -->
-  <casterEffecter>BANW_Nero_B_Ef_D</casterEffecter><!-- 施法者身上的特效 -->
-  <targetEffecter></targetEffecter><!-- 目标身上的特效 -->
-  <stageEffecter></stageEffecter><!-- 阶段切换（一二段）时的特效 -->
-  <endEffecter></endEffecter><!-- 大亢奋结束时的特效 -->
-  <stateEffecter>BANW_Nero_B_Ef_C</stateEffecter><!-- 大亢奋持续期间挂在身上的状态特效 -->
+  <exMultiplier>1.2</exMultiplier><!-- 对决期间攻击带标记敌人的伤害倍率，1.2表示额外20%，普攻与技能均生效 -->
+  <casterEffecter>BANW_Nero_B_Ef_D</casterEffecter><!-- 仅二段发动时在施法者身上播放，由引导工作维护 -->
+  <targetEffecter></targetEffecter><!-- 仅二段发动时在目标位置播放 -->
+  <stageEffecter></stageEffecter><!-- 仅一段成功进入对决时播放 -->
+  <endEffecter></endEffecter><!-- 对决结束时的特效 -->
+  <stateEffecter>BANW_Nero_B_Ef_C</stateEffecter><!-- 对决持续期间挂在身上的状态特效 -->
   <exAttack>
     <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
     <useBattleStats>true</useBattleStats><!-- 是否使用 BA 战斗属性结算 -->
@@ -30,7 +30,14 @@
     <canCrit>true</canCrit><!-- 是否可暴击 -->
     <applyAffinity>true</applyAffinity><!-- 是否应用攻击/护甲类型克制 -->
     <radius>0</radius><!-- 溅射半径，0 = 单体 -->
+<<<<<<< HEAD
     <shots>46</shots><!-- 发射发数 -->
+=======
+    <affectHostile>true</affectHostile><!-- 允许伤害敌对及无阵营生物 -->
+    <affectFriendly>true</affectFriendly><!-- 允许伤害中立及友好阵营生物 -->
+    <canHitOwnPawn>true</canHitOwnPawn><!-- 允许伤害己方生物，能否选择自身仍由targetParams决定 -->
+    <shots>92</shots><!-- 发射发数 -->
+>>>>>>> 39330e404bf43f66a60e278831347b4e198afdc4
     <!-- 配置shotTicks时使用逐发时间表；删除整段列表后才使用统一shotIntervalTicks。 -->
     <shotIntervalTicks>2</shotIntervalTicks><!-- 统一发射间隔，2 tick = 0.033 秒 -->
     <!-- 每个数值为相对本次EX生效的tick，最小为1，条目数必须等于shots。 -->
@@ -160,7 +167,7 @@
 <AbilityDef>
   <defName>BANW_Special_Nero_Ex</defName><!-- 一阶段EX标识 -->
   <label>想试试看吗？</label>
-  <description>对自身及1名敌方单位造成以下效果(持续70秒)：
+  <description>对自身及1名所选生物造成以下效果(持续70秒)：
 - 获得对决状态.
 对自身造成以下效果：
 - 立即重新抓取1次EX技能牌.
@@ -173,7 +180,7 @@
   <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted><!-- 未征召时是否禁用按钮 -->
   <showWhenDrafted>true</showWhenDrafted><!-- 征召时是否显示 -->
   <showPsycastEffects>false</showPsycastEffects><!-- 是否显示原版心灵施法特效 -->
-  <hostile>false</hostile><!-- 是否算敌对行为（对友军使用） -->
+  <hostile>false</hostile><!-- 一段只施加标记，不直接造成伤害 -->
   <targetRequired>true</targetRequired><!-- 是否必须选择目标 -->
   <warmupStartSound>Nero_B_Skill_EXX_A</warmupStartSound>
   <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
@@ -198,7 +205,11 @@
     <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
       <profile>BANW_Special_Nero</profile><!-- 引用上面的技能配置 -->
       <command>Ex</command><!-- 对应一阶段EX分支 -->
+<<<<<<< HEAD
       <onlyTargetAllies>false</onlyTargetAllies><!-- 一阶段只能选择队友 -->
+=======
+      <onlyTargetAllies>false</onlyTargetAllies><!-- 一段允许选择敌人、友军和中立生物 -->
+>>>>>>> 39330e404bf43f66a60e278831347b4e198afdc4
     </li>
     <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
       <cost>2</cost><!-- 基础消耗 2 COST -->
@@ -212,7 +223,7 @@
   <description>对自身造成以下效果：
 - 获得1层「锐气」.
   ※ 最多5层.
-对1名敌方单位造成以下效果：
+对1名所选生物造成以下效果（可选择敌人、友军和中立生物）：
 - 造成自身攻击力1469%的伤害.</description>
   <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass><!-- 特殊技能专用能力类 -->
   <jobDef>BANW_Job_NeroExChannel</jobDef><!-- 持续引导用的 Job -->
@@ -231,7 +242,7 @@
     <warmupEffecter></warmupEffecter>
     <verbClass>Verb_CastAbility</verbClass>
     <range>34.9</range>
-    <warmupTime>0.1</warmupTime><!-- 无前摇，由 Job 负责逐发射击 -->
+    <warmupTime>0.1</warmupTime><!-- 0.1秒前摇，之后由Job负责逐发射击 -->
     <targetParams>
       <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
         <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
