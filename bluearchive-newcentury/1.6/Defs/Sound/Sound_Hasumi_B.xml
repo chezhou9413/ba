@@ -1,6 +1,59 @@
 
 <Defs>
-
+	<SoundDef>
+    <defName>Hasumi_B_Skill_EX_A</defName><!--二技能伤害-->  
+    <maxVoices>1</maxVoices> 
+    <context>MapOnly</context> 
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Hasumi_B/Hasumi_A</clipPath>
+          </li>
+        </grains>
+        <volumeRange>70</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>Hasumi_B_Skill_EX_B</defName><!--二技能伤害-->  
+    <maxVoices>1</maxVoices> 
+    <context>MapOnly</context> 
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Hasumi_B/Hasumi_B</clipPath>
+          </li>
+        </grains>
+        <volumeRange>70</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+<SoundDef>
+    <defName>Hasumi_B_ExxSkill</defName><!--二技能语音-->  
+    <maxVoices>1</maxVoices> 
+    <context>MapOnly</context> 
+	<maxSimultaneous>1</maxSimultaneous> 
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Hasumi_B/SkillEX/Hasumi_ExxSkill_1</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Hasumi_B/SkillEX/Hasumi_ExxSkill_2</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Ability/Hasumi_B/SkillEX/Hasumi_ExxSkill_3</clipPath>
+          </li>
+        </grains>
+        <volumeRange>70</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
     <SoundDef>
 	<defName>Hasumi_B_levelup_A</defName>  <!--二技能语音-->  
 	<maxVoices>1</maxVoices>

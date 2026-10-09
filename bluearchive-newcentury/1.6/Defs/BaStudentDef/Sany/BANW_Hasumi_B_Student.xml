@@ -43,9 +43,9 @@
 				
 				<Mining>0</Mining>
 				
-				<Cooking>8</Cooking>
+				<Cooking>12</Cooking>
 				
-				<Plants>6</Plants>
+				<Plants>8</Plants>
 				
 				<Animals>7</Animals>
 				
@@ -57,7 +57,7 @@
 				
 				<Social>10</Social>
 				
-				<Intellectual>7</Intellectual>
+				<Intellectual>14</Intellectual>
 			</Skills>
 		    
 			<WapenUI>
@@ -67,13 +67,11 @@
 				<WapenTypeText>狙击枪</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Hoshiro/Hoshiro_EXX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>EX技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>必中穿甲射击</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对扇形的敌方单位造成自身攻击力<color=#00FFFF>866%</color>的伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -101,13 +99,11 @@
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Hasumi_B/Hasumi_EX</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
-				<AbilityTitle>测试技能4</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>自我奖励</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[每使用一次ex自身获得一层「西瓜片」，最多拥有4层持续43秒，暴击伤害增加(「西瓜片」层数x6.2%]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
