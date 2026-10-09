@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using BANWlLib.BattleSystem;
 using Verse;
+using UnityEngine;
 
 namespace BANWlLib.Skills
 {
@@ -24,6 +25,8 @@ namespace BANWlLib.Skills
         public Verse.AI.Job castingJob;
         public Thing excludedTarget;
         public bool completed;
+        public Vector3 impactDirection;
+        public NormalSkillDef normalSkill;
         public List<IntVec3> areaCells;
 
         //归还延迟攻击占用的状态引用计数，允许临时复制状态安全清理。
@@ -56,6 +59,8 @@ namespace BANWlLib.Skills
             Scribe_References.Look(ref castingJob, "castingJob");
             Scribe_References.Look(ref excludedTarget, "excludedTarget");
             Scribe_Values.Look(ref completed, "completed");
+            Scribe_Values.Look(ref impactDirection, "impactDirection");
+            Scribe_Defs.Look(ref normalSkill, "normalSkill");
             Scribe_Values.Look(ref center, "center", IntVec3.Invalid);
             Scribe_Defs.Look(ref impactEffecter, "impactEffecter");
             Scribe_Collections.Look(ref areaCells, "areaCells", LookMode.Value);

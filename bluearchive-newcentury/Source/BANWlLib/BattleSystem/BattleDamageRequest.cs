@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 统一伤害请求，负责把施法者、目标和技能参数传入战斗结算层。
+    //统一伤害请求，负责把施法者、目标和技能参数传入战斗结算层。
     public class BattleDamageRequest
     {
         public bool useBattleStats = true;
@@ -13,6 +13,7 @@ namespace BANWlLib.BattleSystem
         public bool resolvedCritical;
         public bool canAccumulate = true;
         public bool normalHit;
+        public bool countForNormalSkill = true;
         public bool areaSecondary;
         public bool damagePrepared = true;
         public Thing instigator;

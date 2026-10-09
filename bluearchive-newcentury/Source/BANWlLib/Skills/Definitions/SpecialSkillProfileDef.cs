@@ -16,6 +16,7 @@ namespace BANWlLib.Skills
         public SpecialAttackConfig normalAttack;
         public SpecialAttackConfig droneAttack;
         public SpecialAttackConfig burstAttack;
+        public bool showNormalBattleFormula = true;
         public HoshinoSkillConfig hoshino;
         public ArisuSkillConfig arisu;
         public KeiSkillConfig kei;

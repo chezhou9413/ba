@@ -324,6 +324,7 @@
 </EffecterDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_7_Mote</defName>
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -345,6 +346,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_8_Mote</defName>
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -366,6 +368,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_9_Mote</defName>
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -387,6 +390,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_10_Mote</defName>
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -408,6 +412,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_11_Mote</defName>
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -429,6 +434,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_12_Mote</defName>
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -450,6 +456,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_13_Mote</defName>
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -478,7 +485,7 @@
         <spawnLocType>OnSource</spawnLocType>
       </li>
 <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <subEffecterClass>BANWlLib.Skills.SubEffecter_ChannelRotatedMote</subEffecterClass>
         <moteDef>BAWN_Nero_B_7_Mote</moteDef>
         <initialDelayTicks>0</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
@@ -494,7 +501,7 @@
         <absoluteAngle>false</absoluteAngle>
       </li>
       <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <subEffecterClass>BANWlLib.Skills.SubEffecter_ChannelRotatedMote</subEffecterClass>
         <moteDef>BAWN_Nero_B_7_Mote</moteDef>
         <initialDelayTicks>60</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
@@ -510,7 +517,7 @@
         <absoluteAngle>false</absoluteAngle>
       </li>
       <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <subEffecterClass>BANWlLib.Skills.SubEffecter_ChannelRotatedMote</subEffecterClass>
         <moteDef>BAWN_Nero_B_8_Mote</moteDef>
         <initialDelayTicks>120</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
@@ -526,7 +533,7 @@
         <absoluteAngle>false</absoluteAngle>
       </li>
       <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <subEffecterClass>BANWlLib.Skills.SubEffecter_ChannelRotatedMote</subEffecterClass>
         <moteDef>BAWN_Nero_B_9_Mote</moteDef>
         <initialDelayTicks>180</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
@@ -542,7 +549,7 @@
         <absoluteAngle>false</absoluteAngle>
       </li>
        <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <subEffecterClass>BANWlLib.Skills.SubEffecter_ChannelRotatedMote</subEffecterClass>
         <moteDef>BAWN_Nero_B_10_Mote</moteDef>
         <initialDelayTicks>240</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
@@ -558,7 +565,7 @@
         <absoluteAngle>false</absoluteAngle>
       </li>
       <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <subEffecterClass>BANWlLib.Skills.SubEffecter_ChannelRotatedMote</subEffecterClass>
         <moteDef>BAWN_Nero_B_11_Mote</moteDef>
         <initialDelayTicks>120</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
@@ -574,7 +581,7 @@
         <absoluteAngle>false</absoluteAngle>
       </li>
       <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <subEffecterClass>BANWlLib.Skills.SubEffecter_ChannelRotatedMote</subEffecterClass>
         <moteDef>BAWN_Nero_B_12_Mote</moteDef>
         <initialDelayTicks>180</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
@@ -590,7 +597,7 @@
         <absoluteAngle>false</absoluteAngle>
       </li>
        <li>
-        <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
+        <subEffecterClass>BANWlLib.Skills.SubEffecter_ChannelRotatedMote</subEffecterClass>
         <moteDef>BAWN_Nero_B_13_Mote</moteDef>
         <initialDelayTicks>240</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->

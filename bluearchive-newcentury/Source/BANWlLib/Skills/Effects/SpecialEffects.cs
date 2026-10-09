@@ -29,13 +29,15 @@ namespace BANWlLib.Skills
             return effects == null || effects.Count == 0 ? null : effects[Mathf.Clamp(stage, 0, effects.Count - 1)];
         }
 
-        //播放施法者、目标和声音三个入口的表现。
+        //将妮露二段施法特效交给引导工作，其他入口按本次方向播放并保留落点与声音。
         public static void Cast(Hediff_SpecialSkillState state, LocalTargetInfo target)
         {
-            Trigger(state.profile.casterEffecter, state.pawn);
+            var channel = state.pawn.jobs.curDriver as JobDriver_NeroExChannel;
+            if (state.profile.role == SpecialSkillRole.Nero && channel != null)
+                channel.BeginChannelEffect(state.profile.casterEffecter);
+            else SpecialDirectionalEffects.Trigger(state.profile.casterEffecter, state.pawn, target);
             Trigger(state.profile.targetEffecter, target.Cell, state.pawn.Map);
             state.profile.castSound?.PlayOneShot(new TargetInfo(state.pawn));
         }
     }
 }
-

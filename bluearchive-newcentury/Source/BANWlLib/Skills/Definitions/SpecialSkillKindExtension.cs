@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Verse;
 
 namespace BANWlLib.Skills
@@ -6,5 +7,6 @@ namespace BANWlLib.Skills
     public class SpecialSkillKindExtension : DefModExtension
     {
         public SpecialSkillProfileDef profile;
+        public List<NormalSkillDef> normalSkills;
     }
 }

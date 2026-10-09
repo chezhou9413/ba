@@ -23,6 +23,7 @@ namespace BANWlLib.Skills
             {
                 attacker = damage.Instigator as Pawn, target = target,
                 normalHit = request != null && (request.normalHit || request.isNormalAttack),
+                countForNormalSkill = request?.countForNormalSkill == true,
                 canAccumulate = request?.canAccumulate ?? true,
                 id = ++nextId, previous = CurrentDamage
             };
@@ -36,6 +37,7 @@ namespace BANWlLib.Skills
             e.amount = result.totalDamageDealt;
             if (e.amount > 0) HoshinoNormalSkill.DamageTaken(e.target);
             if (e.amount <= 0 || e.attacker == null) return;
+            if (e.normalHit && e.countForNormalSkill) NormalSkillUtility.Notify(e.attacker, NormalSkillCountMode.EffectiveHit);
             Map map = e.target.MapHeld ?? e.attacker.Map;
             if (map == null) return;
             foreach (var state in map.GetComponent<MapComponent_SpecialSkills>().States.ToArray())

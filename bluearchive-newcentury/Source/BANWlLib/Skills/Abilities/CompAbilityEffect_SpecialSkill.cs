@@ -49,7 +49,12 @@ namespace BANWlLib.Skills
             bool valid = target.IsValid && caster.Map != null && target.Cell.InBounds(caster.Map);
             var role = Props.profile.role;
             bool ally = target.Pawn != null && !target.Pawn.Dead && target.Pawn.Map == caster.Map &&
-                target.Pawn.Faction == caster.Faction;
+                caster.Faction != null && target.Pawn.Faction == caster.Faction && !target.Pawn.HostileTo(caster);
+            var parameters = parent.def.verbProperties.targetParams;
+            if (valid && parameters != null)
+                valid = target.Thing == caster ? parameters.canTargetSelf :
+                    parameters.CanTarget(target.HasThing ? new TargetInfo(target.Thing) : new TargetInfo(target.Cell, caster.Map), parent.verb);
+            if (Props.onlyTargetAllies && !ally) valid = false;
             if (valid)
             {
                 if (Props.command == SpecialSkillCommand.SwitchForm || Props.command == SpecialSkillCommand.Normal || role == SpecialSkillRole.Shiroko)

@@ -13,6 +13,12 @@ namespace BANWlLib.Skills
         public int shotIntervalTicks = 6;
         public SoundDef shotSound;
         public List<int> shotTicks;
+        public int buffDurationTicks = -1;
+        public bool rotateImpactEffect;
+        public float impactRotationOffset;
+        public float impactEffectSpeed;
+        public float impactOffsetForward;
+        public float impactOffsetUp;
 
         //读取本发相对技能生效的tick，未指定逐发表时使用统一间隔。
         public int ShotDelay(int index) => shotTicks == null ? 1 + index * shotIntervalTicks : shotTicks[index];
@@ -37,6 +43,12 @@ namespace BANWlLib.Skills
             Scribe_Values.Look(ref shotIntervalTicks, "shotIntervalTicks", 6);
             Scribe_Defs.Look(ref shotSound, "shotSound");
             Scribe_Collections.Look(ref shotTicks, "shotTicks", LookMode.Value);
+            Scribe_Values.Look(ref buffDurationTicks, "buffDurationTicks", -1);
+            Scribe_Values.Look(ref rotateImpactEffect, "rotateImpactEffect");
+            Scribe_Values.Look(ref impactRotationOffset, "impactRotationOffset");
+            Scribe_Values.Look(ref impactEffectSpeed, "impactEffectSpeed");
+            Scribe_Values.Look(ref impactOffsetForward, "impactOffsetForward");
+            Scribe_Values.Look(ref impactOffsetUp, "impactOffsetUp");
         }
     }
 }

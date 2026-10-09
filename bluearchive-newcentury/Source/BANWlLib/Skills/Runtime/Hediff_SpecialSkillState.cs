@@ -45,9 +45,9 @@ namespace BANWlLib.Skills
         //每个施法来源保留独立运行状态，禁止原版按同名Hediff合并。
         public override bool TryMergeWith(Hediff other) => false;
         public override string LabelBase => profile == null ? base.LabelBase : "测试新技能·" + profile.label;
-        public override string TipStringExtra => profile?.role == SpecialSkillRole.Hoshino
+        public override string TipStringExtra => (profile?.role == SpecialSkillRole.Hoshino
             ? $"形态：{(stage == 0 ? "攻击" : "防御")}　普攻发数：{hits}/{profile.hoshino.normalRequiredShots}\n下轮强化：{hoshino.empoweredReady}　当前轮强化：{hoshino.empoweredBurst}\n防御状态剩余受伤次数：{remainingHits}　EX持续：{Mathf.Max(0, endTick - Now) / 60f:0.0}秒"
-            : $"阶段：{stage}　层数：{stacks}　命中：{hits}\n剩余次数：{remainingHits}　蓄积：{recorded:0.##}/{recordCap:0.##}\n持续：{Mathf.Max(0, endTick - Now) / 60f:0.0}秒　待释放：{releaseReady}";
+            : $"阶段：{stage}　层数：{stacks}　命中：{hits}\n剩余次数：{remainingHits}　蓄积：{recorded:0.##}/{recordCap:0.##}\n持续：{Mathf.Max(0, endTick - Now) / 60f:0.0}秒　待释放：{releaseReady}") + SpecialSkillStateTooltip.Build(this);
 
         //取得指定配置的本体技能状态，原生施法和复制施法共用该状态。
         public static Hediff_SpecialSkillState Find(Pawn pawn, SpecialSkillProfileDef profile)

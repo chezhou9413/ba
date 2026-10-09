@@ -13,6 +13,7 @@ namespace BANWlLib.Skills
         //生成或载入时安装缺失状态，并把已有状态注册到地图。
         public static void Postfix(Pawn __instance)
         {
+            NormalSkillUtility.Install(__instance);
             var profile = __instance.kindDef?.GetModExtension<SpecialSkillKindExtension>()?.profile;
             if (profile != null && Hediff_SpecialSkillState.Find(__instance, profile) == null)
             {

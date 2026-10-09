@@ -5,13 +5,14 @@ using BANWlLib.BaVerb;
 using BANWlLib.comp;
 using BANWlLib.Pojo;
 using BANWlLib.Projectiles;
+using BANWlLib.Skills;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 技能战斗悬浮工具，负责把配置化战斗参数格式化为地图技能按钮的说明文本。
+    //技能战斗悬浮工具，负责把配置化战斗参数格式化为地图技能按钮的说明文本。
     public static class AbilityBattleTooltipUtility
     {
         private static readonly Color DamageColor = new Color(1f, 0.35f, 0.28f);
@@ -35,18 +36,29 @@ namespace BANWlLib.BattleSystem
             }
 
             Pawn pawn = ability.pawn;
-            List<BattleActionConfig> actions = ResolvePreviewActions(ability.def, out bool hasAutomaticActions);
+            List<BattleActionConfig> actions = SpecialSkillBattlePreview.Resolve(ability);
+            bool specialActions = actions != null;
+            bool hasAutomaticActions = specialActions;
+            if (!specialActions) actions = ResolvePreviewActions(ability.def, out hasAutomaticActions);
             if (actions.NullOrEmpty())
             {
                 return string.Empty;
             }
 
             AbilityBattleTooltipExtension extension = ability.def.GetModExtension<AbilityBattleTooltipExtension>();
-            if (!hasAutomaticActions && (extension == null || !extension.showBattleFormula))
+            if ((specialActions && extension != null && !extension.showBattleFormula) ||
+                (!hasAutomaticActions && (extension == null || !extension.showBattleFormula)))
             {
                 return string.Empty;
             }
 
+            return BuildActionsTooltip(pawn, ability.def, actions);
+        }
+
+        //动作展示职责：让自动普通技能状态和地图按钮共用同一套真实战斗公式格式。
+        public static string BuildActionsTooltip(Pawn pawn, AbilityDef abilityDef, List<BattleActionConfig> actions)
+        {
+            if (actions.NullOrEmpty()) return string.Empty;
             StringBuilder builder = new StringBuilder();
             builder.AppendLine();
             builder.AppendLine("BA战斗公式".Colorize(ColoredText.TipSectionTitleColor));
@@ -76,7 +88,7 @@ namespace BANWlLib.BattleSystem
                 }
                 else if (action.isHealing)
                 {
-                    AppendHealAction(builder, ability.def, pawn, action);
+                    AppendHealAction(builder, abilityDef, pawn, action);
                 }
                 else
                 {
@@ -804,6 +816,8 @@ namespace BANWlLib.BattleSystem
                 baseMasteryMultiplier = action.baseMasteryMultiplier,
                 penetration = action.penetration,
                 isNormalAttack = action.isNormalAttack,
+                useNormalAttackStat = action.isNormalAttack,
+                mechanismMultiplier = action.previewMechanismMultiplier,
                 canCrit = action.alwaysCrit && action.canCrit,
                 alwaysCrit = action.alwaysCrit,
                 applyAffinity = false,
@@ -836,6 +850,7 @@ namespace BANWlLib.BattleSystem
             return left.useBattleStats == right.useBattleStats && left.basePower == right.basePower &&
                    left.shieldSource == right.shieldSource && left.attackPowerRatio == right.attackPowerRatio &&
                    left.baseMasteryMultiplier == right.baseMasteryMultiplier &&
+                   left.previewMechanismMultiplier == right.previewMechanismMultiplier &&
                    left.healPowerRatio == right.healPowerRatio &&
                    left.shieldPowerRatio == right.shieldPowerRatio &&
                    left.damageDef == right.damageDef &&
@@ -910,6 +925,8 @@ namespace BANWlLib.BattleSystem
                 baseMasteryMultiplier = action.baseMasteryMultiplier,
                 penetration = action.penetration,
                 isNormalAttack = action.isNormalAttack,
+                useNormalAttackStat = action.isNormalAttack,
+                mechanismMultiplier = action.previewMechanismMultiplier,
                 canCrit = action.alwaysCrit && action.canCrit,
                 alwaysCrit = action.alwaysCrit,
                 applyAffinity = false,
@@ -966,7 +983,9 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("暴击：" + FormatColor("不参与", DisabledColor));
             builder.AppendLine("EX倍率：" + FormatColor("不参与", DisabledColor));
             builder.AppendLine("算法：");
-            builder.AppendLine(FormatColor("  护盾：最终治愈力 x 护盾倍率", ColoredText.SubtleGrayColor));
+            string shieldBasis = !action.useBattleStats || action.shieldSource == BattleShieldSource.Independent ? "独立基数" :
+                action.shieldSource == BattleShieldSource.MaxHealth ? "施法者最大生命" : "最终治愈力";
+            builder.AppendLine(FormatColor("  护盾：" + shieldBasis + " x 护盾倍率", ColoredText.SubtleGrayColor));
             builder.AppendLine(FormatColor("  再次获得：新护盾值覆盖旧值并刷新持续时间", ColoredText.SubtleGrayColor));
             builder.AppendLine(FormatColor("  不同护盾：后获得的护盾替换当前护盾", ColoredText.SubtleGrayColor));
             builder.AppendLine("预估护盾：" + FormatColor(FormatNumber(estimatedShield), ShieldColor));
@@ -976,7 +995,12 @@ namespace BANWlLib.BattleSystem
         private static void AppendDamageFormula(StringBuilder builder, BattleActionConfig action)
         {
             builder.AppendLine("算法：");
-            builder.AppendLine(FormatColor("  攻击：角色自身攻击力 x 攻击力加成 x 技能倍率", ColoredText.SubtleGrayColor));
+            string basis = action.useBattleStats ?
+                (action.isNormalAttack ? "角色自身攻击力 x 攻击力加成 x 普通攻击倍率 x 熟练倍率" :
+                    "角色自身攻击力 x 攻击力加成 x 技能倍率") : "独立基数 x " + (action.isNormalAttack ? "机制倍率" : "技能倍率");
+            builder.AppendLine(FormatColor("  攻击：" + basis, ColoredText.SubtleGrayColor));
+            if (action.previewMechanismMultiplier != 1f)
+                builder.AppendLine(FormatColor("  机制与逐发分摊：x " + FormatNumber(action.previewMechanismMultiplier), ColoredText.SubtleGrayColor));
             builder.AppendLine(FormatColor("  修正：" + (action.useBattleStats ? FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill) : "独立基数，不应用BA输出属性"), ColoredText.SubtleGrayColor));
         }
 
@@ -1020,7 +1044,7 @@ namespace BANWlLib.BattleSystem
                 return 0f;
             }
 
-            return Mathf.Max(0f, action.isNormalAttack ? 1f : action.attackPowerRatio);
+            return Mathf.Max(0f, action.isNormalAttack ? 1f : action.attackPowerRatio) * action.previewMechanismMultiplier;
         }
 
         // 格式化紧凑总览修正项，负责把整套多段技能的参与机制合并成一行。
