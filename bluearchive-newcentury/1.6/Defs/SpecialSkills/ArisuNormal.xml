@@ -2,33 +2,55 @@
 <Defs>
   <!-- 独立自动普通技能，不注册AbilityDef或主动按钮，不共用EX的表现与伤害配置。 -->
   <BANWlLib.Skills.ArisuNormalSkillDef>
+    <!-- 技能 Def 唯一标识，供角色机制按名查找。 -->
     <defName>BANW_Special_Arisu_Normal</defName>
+    <!-- 显示名。 -->
     <label>临战爱丽丝普通技能</label>
+    <!-- 说明文本。 -->
     <description>每累计3次有效普攻命中自动追加一次单体技能攻击，不消耗EX充能。</description>
-    <requiredHits>3</requiredHits>
+    <!-- 触发一次自动技能所需的有效普攻命中次数。 -->
+    <requiredHits>20</requiredHits>
+    <!-- 两次自动触发之间的最短间隔，1 tick 表示命中数达标即立刻追加。 -->
     <cooldownTicks>1</cooldownTicks>
-    <range>25</range>
+    <!-- 技能可及距离（格），超出该距离不追加攻击。 -->
+    <range>39.9</range>
     <!-- 可分别替换施法音效、自身特效、目标施法特效及attack内的命中特效。 -->
     <castSound>BANW_Wp_AR_Arisu_At</castSound>
     <casterEffecter>BANW_Effecter_B</casterEffecter>
     <targetEffecter>BANW_Effecter_A</targetEffecter>
+    <!-- 自动技能的单体伤害配置；不配置主动按钮，全部参数在此声明。 -->
     <attack>
+      <!-- 是否使用 BA 战斗属性结算；false 时改用 basePower×attackPowerRatio。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
       <basePower>100</basePower>
+      <!-- 本段总倍率，shots 大于 1 时按发数均分；1 = 100%。 -->
       <attackPowerRatio>1</attackPowerRatio>
+      <!-- 伤害类型。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
       <!-- 每发使用完整护甲穿透，0.5为50%。 -->
       <penetration>0</penetration>
+      <!-- 是否按 EX 技能结算；普通技能为 false（不吃 EX 独立乘区）。 -->
       <isExSkill>false</isExSkill>
+      <!-- 是否可暴击。 -->
       <canCrit>true</canCrit>
+      <!-- 是否应用攻击/护甲类型克制。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 溅射半径（格），0 = 只结算弹丸命中的单体。 -->
       <radius>0</radius>
-      <shots>1</shots>
-      <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 本段发数。 -->
+      <shots>12</shots>
+      <!-- 段内多发时的发射间隔，6 tick = 0.1 秒。 -->
+      <shotIntervalTicks>15</shotIntervalTicks>
+      <!-- 弹丸 ThingDef，必须使用 Projectile_SpecialSkill。 -->
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <!-- 命中特效。 -->
       <effecterDef>BANW_Effecter_C</effecterDef>
+      <!-- 是否可以命中自己。 -->
       <canHitOwnPawn>false</canHitOwnPawn>
+      <!-- 是否影响友军。 -->
       <affectFriendly>false</affectFriendly>
+      <!-- 是否影响敌军。 -->
       <affectHostile>true</affectHostile>
     </attack>
   </BANWlLib.Skills.ArisuNormalSkillDef>

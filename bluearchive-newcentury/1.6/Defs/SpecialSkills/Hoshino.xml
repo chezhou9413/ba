@@ -14,152 +14,416 @@
     <alternateAbility>BANW_Special_Hoshino_AlternateEx</alternateAbility>
     <!-- 形态切换技能的 Def。 -->
     <switchAbility>BANW_Special_Hoshino_SwitchForm</switchAbility>
-    <range>25</range><radius>3</radius>
+    <!-- 技能可瞄准距离（格），目标超此距离无法施放。 -->
+    <range>39.9</range>
+    <!-- 默认效果半径（格），供范围结算与特效使用。 -->
+    <radius>3</radius>
+    <!-- 形态状态持续时间，2400 tick = 40 秒。 -->
     <durationTicks>2400</durationTicks>
-    <outputBaseAttack>30</outputBaseAttack><tankBaseAttack>10</tankBaseAttack>
-    <outputBaseHealth>1000</outputBaseHealth><tankBaseHealth>3000</tankBaseHealth>
+    <!-- 输出形态的基础攻击力（BA 战斗属性结算用）。 -->
+    <outputBaseAttack>5</outputBaseAttack>
+    <!-- 防御形态的基础攻击力。 -->
+    <tankBaseAttack>12</tankBaseAttack>
+    <!-- 输出形态的基础生命，除以 100 后作为生命倍率（1000 = 10 倍）。 -->
+    <outputBaseHealth>100</outputBaseHealth>
+    <!-- 防御形态的基础生命，除以 100 后作为生命倍率（3000 = 30 倍）。 -->
+    <tankBaseHealth>300</tankBaseHealth>
+    <!-- EX 准备时间，60 tick = 1 秒；exStages 的 delayTicks 以此为基准。 -->
     <outputCastTicks>60</outputCastTicks>
     <!-- 准备期间承伤系数减去的数值（0.85），最低为 0。 -->
     <damageTakenReduction>0.85</damageTakenReduction>
+    <!-- 防御普通技能状态的承受伤害次数，实际掉血满 25 次后解除。 -->
     <tankHits>25</tankHits>
-    <shieldRatio>0.691</shieldRatio><shieldUseBattleStats>true</shieldUseBattleStats><shieldBasePower>1000</shieldBasePower>
-    <moveSpeed>0.35</moveSpeed><interceptRadius>3</interceptRadius>
+    <!-- 护盾上限占最大生命的比例（0.691 = 69.1%）。 -->
+    <shieldRatio>0.691</shieldRatio>
+    <!-- 护盾是否走 BA 战斗属性结算。 -->
+    <shieldUseBattleStats>true</shieldUseBattleStats>
+    <!-- 不走 BA 时的护盾基础值。 -->
+    <shieldBasePower>1000</shieldBasePower>
+    <!-- 防御EX位移速度（格/tick），位移耗时 = 距离 ÷ 该值。 -->
+    <moveSpeed>0.35</moveSpeed>
+    <!-- 防御形态的弹丸拦截判定半径（格）。 -->
+    <interceptRadius>3</interceptRadius>
+    <!-- 防御形态增益状态用的 Hediff Def，随 durationTicks 一同到期。 -->
     <buffHediff>BANW_SpecialHoshinoBuff</buffHediff>
     <!-- 命中计数用的 Hediff Def。 -->
     <countHediff>BANW_SpecialHoshinoCount</countHediff>
     <!-- 护盾用的 Hediff Def。 -->
     <shieldHediff>BANW_SpecialHoshinoShield</shieldHediff>
-    <casterEffecter>BANW_Effecter_A</casterEffecter><targetEffecter>BANW_Effecter_C</targetEffecter>
-    <stageEffecter>BANW_Effecter_B</stageEffecter><endEffecter>BANW_Effecter_C</endEffecter><stateEffecter>BANW_Effecter_B</stateEffecter>
+    <!-- 施法者身上的特效（EX施法与引导表现）。 -->
+    <casterEffecter>BANW_Effecter_A</casterEffecter>
+    <!-- 目标身上的特效。 -->
+    <targetEffecter>BANW_Effecter_C</targetEffecter>
+    <!-- 阶段切换（形态切换）时播放一次的特效。 -->
+    <stageEffecter>BANW_Effecter_B</stageEffecter>
+    <!-- 形态状态结束时的特效。 -->
+    <endEffecter>BANW_Effecter_C</endEffecter>
+    <!-- 形态状态持续期间挂在身上的状态特效。 -->
+    <stateEffecter>BANW_Effecter_B</stateEffecter>
+    <!-- 星野专属机制配置。 -->
     <hoshino>
+      <!-- 触发一次普通技能所需的普攻发数（每发成功发射的主武器普攻计 1，强化普攻也计）。 -->
       <normalRequiredShots>30</normalRequiredShots>
-      <outputBurstShots>6</outputBurstShots><tankBurstShots>1</tankBurstShots>
+      <!-- 输出形态主武器每轮连射发数。 -->
+      <outputBurstShots>6</outputBurstShots>
+      <!-- 防御形态主武器每轮连射发数。 -->
+      <tankBurstShots>1</tankBurstShots>
+      <!-- 防御形态的普通技能按钮 Def。 -->
       <tankNormalAbility>BANW_Special_Hoshino_TankNormal</tankNormalAbility>
       <!-- 每轮强化沿用武器连射节奏；每发只结算一次范围普攻，无武器弹丸贴图。 -->
       <empoweredShotEffecter>BANW_Effecter_Hoshino_EmpoweredShot</empoweredShotEffecter>
-      <effectSpeed>20</effectSpeed><effectOffsetForward>0.6</effectOffsetForward><effectOffsetUp>0</effectOffsetUp>
+      <!-- 定向特效沿射击方向的运动速度（格/tick），0 为原地播放。 -->
+      <effectSpeed>20</effectSpeed>
+      <!-- 定向特效沿射击方向的生成偏移（格）。 -->
+      <effectOffsetForward>0.6</effectOffsetForward>
+      <!-- 定向特效的垂直绘制偏移。 -->
+      <effectOffsetUp>0</effectOffsetUp>
+      <!-- 强化普攻的每发范围伤害；必须为单次直接伤害且 shots=1。 -->
       <empoweredAttack>
-        <useBattleStats>true</useBattleStats><basePower>100</basePower>
-        <attackPowerRatio>1.5</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+        <!-- 是否使用 BA 战斗属性结算；false 时改用 basePower×attackPowerRatio。 -->
+        <useBattleStats>true</useBattleStats>
+        <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+        <basePower>100</basePower>
+        <!-- 每发普攻总倍率，1.5 = 150%。 -->
+        <attackPowerRatio>1.5</attackPowerRatio>
+        <!-- 伤害类型。 -->
+        <damageDef>BANC_Damage_shenmi</damageDef>
         <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-        <penetration>0</penetration>
-        <canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-        <radius>3</radius><shots>1</shots>
+        <penetration>2</penetration>
+        <!-- 是否可暴击。 -->
+        <canCrit>true</canCrit>
+        <!-- 是否应用攻击/护甲类型克制。 -->
+        <applyAffinity>true</applyAffinity>
+        <!-- 溅射半径（格），大于 0 时对范围内每个合法角色各结算一次。 -->
+        <radius>3</radius>
+        <!-- 发数，必须保持 1：每发普攻只结算一次范围伤害。 -->
+        <shots>1</shots>
+        <!-- 命中时的中心特效，可删除。 -->
         <effecterDef>BANW_Effecter_C</effecterDef>
-        <canHitOwnPawn>false</canHitOwnPawn><affectFriendly>false</affectFriendly><affectHostile>true</affectHostile>
+        <!-- 是否可以命中自己。 -->
+        <canHitOwnPawn>false</canHitOwnPawn>
+        <!-- 是否影响友军。 -->
+        <affectFriendly>false</affectFriendly>
+        <!-- 是否影响敌军。 -->
+        <affectHostile>true</affectHostile>
       </empoweredAttack>
       <!-- delayTicks相对准备结束；每个li独立配置伤害。shots大于1时均分该段倍率。 -->
       <exStages>
         <!-- 第1段：单体子弹，不结算爆炸。 -->
         <li>
-          <delayTicks>0</delayTicks><targetLocation>false</targetLocation>
+          <!-- 相对准备结束（outputCastTicks）的发射时刻，0 = 准备结束当 tick 发射。 -->
+          <delayTicks>0</delayTicks>
+          <!-- 是否锁定施法时目标所在格；false 表示每次发射使用目标当时位置。 -->
+          <targetLocation>false</targetLocation>
           <attack>
-            <useBattleStats>true</useBattleStats><basePower>100</basePower>
-            <attackPowerRatio>0.5</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否使用 BA 战斗属性结算；false 时改用 basePower×attackPowerRatio。 -->
+            <useBattleStats>true</useBattleStats>
+            <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+            <basePower>100</basePower>
+            <!-- 本段总倍率，shots 大于 1 时按发数均分；0.5 = 50%。 -->
+            <attackPowerRatio>0.5</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
             <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
             <penetration>0</penetration>
-            <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-            <radius>0</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 是否按 EX 技能结算（享用 EX 独立乘区）。 -->
+            <isExSkill>true</isExSkill>
+            <!-- 是否可暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击/护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- 溅射半径（格），0 = 只结算弹丸命中的单体。 -->
+            <radius>0</radius>
+            <!-- 本段发数。 -->
+            <shots>1</shots>
+            <!-- 段内多发时的发射间隔，6 tick = 0.1 秒。 -->
+            <shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 弹丸 ThingDef，必须使用 Projectile_SpecialSkill。 -->
             <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-            <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
+            <!-- 是否可以命中自己。 -->
+            <canHitOwnPawn>true</canHitOwnPawn>
+            <!-- 是否影响友军。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 是否影响敌军。 -->
+            <affectHostile>true</affectHostile>
           </attack>
         </li>
         <!-- 第2段：单体子弹，不结算爆炸。 -->
         <li>
-          <delayTicks>6</delayTicks><targetLocation>false</targetLocation>
+          <!-- 相对准备结束的发射时刻。 -->
+          <delayTicks>6</delayTicks>
+          <!-- 是否锁定施法时目标所在格。 -->
+          <targetLocation>false</targetLocation>
           <attack>
-            <useBattleStats>true</useBattleStats><basePower>100</basePower>
-            <attackPowerRatio>0.5</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否使用 BA 战斗属性结算。 -->
+            <useBattleStats>true</useBattleStats>
+            <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+            <basePower>100</basePower>
+            <!-- 本段总倍率，0.5 = 50%。 -->
+            <attackPowerRatio>0.5</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
             <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
             <penetration>0</penetration>
-            <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-            <radius>0</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 是否按 EX 技能结算。 -->
+            <isExSkill>true</isExSkill>
+            <!-- 是否可暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击/护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- 溅射半径（格），0 = 只结算单体。 -->
+            <radius>0</radius>
+            <!-- 本段发数。 -->
+            <shots>1</shots>
+            <!-- 段内多发时的发射间隔。 -->
+            <shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 弹丸 ThingDef。 -->
             <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-            <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
+            <!-- 是否可以命中自己。 -->
+            <canHitOwnPawn>true</canHitOwnPawn>
+            <!-- 是否影响友军。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 是否影响敌军。 -->
+            <affectHostile>true</affectHostile>
           </attack>
         </li>
         <!-- 第3段：单体子弹，不结算爆炸。 -->
         <li>
-          <delayTicks>12</delayTicks><targetLocation>false</targetLocation>
+          <!-- 相对准备结束的发射时刻。 -->
+          <delayTicks>12</delayTicks>
+          <!-- 是否锁定施法时目标所在格。 -->
+          <targetLocation>false</targetLocation>
           <attack>
-            <useBattleStats>true</useBattleStats><basePower>100</basePower>
-            <attackPowerRatio>0.5</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否使用 BA 战斗属性结算。 -->
+            <useBattleStats>true</useBattleStats>
+            <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+            <basePower>100</basePower>
+            <!-- 本段总倍率，0.5 = 50%。 -->
+            <attackPowerRatio>0.5</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
             <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
             <penetration>0</penetration>
-            <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-            <radius>0</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 是否按 EX 技能结算。 -->
+            <isExSkill>true</isExSkill>
+            <!-- 是否可暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击/护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- 溅射半径（格），0 = 只结算单体。 -->
+            <radius>0</radius>
+            <!-- 本段发数。 -->
+            <shots>1</shots>
+            <!-- 段内多发时的发射间隔。 -->
+            <shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 弹丸 ThingDef。 -->
             <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-            <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
+            <!-- 是否可以命中自己。 -->
+            <canHitOwnPawn>true</canHitOwnPawn>
+            <!-- 是否影响友军。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 是否影响敌军。 -->
+            <affectHostile>true</affectHostile>
           </attack>
         </li>
         <!-- 第4段：射向施法时目标所在格，命中后只结算一次AOE。 -->
         <li>
-          <delayTicks>18</delayTicks><targetLocation>true</targetLocation>
+          <!-- 相对准备结束的发射时刻。 -->
+          <delayTicks>18</delayTicks>
+          <!-- 是否锁定施法时目标所在格；true 时目标死亡后仍向该格发射。 -->
+          <targetLocation>true</targetLocation>
           <attack>
-            <useBattleStats>true</useBattleStats><basePower>100</basePower>
-            <attackPowerRatio>0.875</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否使用 BA 战斗属性结算。 -->
+            <useBattleStats>true</useBattleStats>
+            <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+            <basePower>100</basePower>
+            <!-- 本段总倍率，0.875 = 87.5%。 -->
+            <attackPowerRatio>0.875</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
             <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
             <penetration>0</penetration>
-            <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-            <radius>3</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
-            <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
+            <!-- 是否按 EX 技能结算。 -->
+            <isExSkill>true</isExSkill>
+            <!-- 是否可暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击/护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- 溅射半径（格），大于 0 时只结算范围伤害，中心目标不额外吃单体伤害。 -->
+            <radius>3</radius>
+            <!-- 本段发数。 -->
+            <shots>1</shots>
+            <!-- 段内多发时的发射间隔。 -->
+            <shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 弹丸 ThingDef。 -->
+            <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+            <!-- 命中特效，删除则不播放爆炸表现。 -->
+            <effecterDef>BANW_Effecter_C</effecterDef>
+            <!-- 是否可以命中自己。 -->
+            <canHitOwnPawn>true</canHitOwnPawn>
+            <!-- 是否影响友军。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 是否影响敌军。 -->
+            <affectHostile>true</affectHostile>
           </attack>
         </li>
         <!-- 第5段：射向施法时目标所在格，命中后只结算一次AOE。 -->
         <li>
-          <delayTicks>24</delayTicks><targetLocation>true</targetLocation>
+          <!-- 相对准备结束的发射时刻。 -->
+          <delayTicks>24</delayTicks>
+          <!-- 是否锁定施法时目标所在格。 -->
+          <targetLocation>true</targetLocation>
           <attack>
-            <useBattleStats>true</useBattleStats><basePower>100</basePower>
-            <attackPowerRatio>0.875</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否使用 BA 战斗属性结算。 -->
+            <useBattleStats>true</useBattleStats>
+            <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+            <basePower>100</basePower>
+            <!-- 本段总倍率，0.875 = 87.5%。 -->
+            <attackPowerRatio>0.875</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
             <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
             <penetration>0</penetration>
-            <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-            <radius>3</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
-            <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
+            <!-- 是否按 EX 技能结算。 -->
+            <isExSkill>true</isExSkill>
+            <!-- 是否可暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击/护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- 溅射半径（格）。 -->
+            <radius>3</radius>
+            <!-- 本段发数。 -->
+            <shots>1</shots>
+            <!-- 段内多发时的发射间隔。 -->
+            <shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 弹丸 ThingDef。 -->
+            <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+            <!-- 命中特效。 -->
+            <effecterDef>BANW_Effecter_C</effecterDef>
+            <!-- 是否可以命中自己。 -->
+            <canHitOwnPawn>true</canHitOwnPawn>
+            <!-- 是否影响友军。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 是否影响敌军。 -->
+            <affectHostile>true</affectHostile>
           </attack>
         </li>
         <!-- 第6段：射向施法时目标所在格，命中后只结算一次AOE。 -->
         <li>
-          <delayTicks>30</delayTicks><targetLocation>true</targetLocation>
+          <!-- 相对准备结束的发射时刻。 -->
+          <delayTicks>30</delayTicks>
+          <!-- 是否锁定施法时目标所在格。 -->
+          <targetLocation>true</targetLocation>
           <attack>
-            <useBattleStats>true</useBattleStats><basePower>100</basePower>
-            <attackPowerRatio>0.875</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否使用 BA 战斗属性结算。 -->
+            <useBattleStats>true</useBattleStats>
+            <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+            <basePower>100</basePower>
+            <!-- 本段总倍率，0.875 = 87.5%。 -->
+            <attackPowerRatio>0.875</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
             <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
             <penetration>0</penetration>
-            <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-            <radius>3</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
-            <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
+            <!-- 是否按 EX 技能结算。 -->
+            <isExSkill>true</isExSkill>
+            <!-- 是否可暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击/护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- 溅射半径（格）。 -->
+            <radius>3</radius>
+            <!-- 本段发数。 -->
+            <shots>1</shots>
+            <!-- 段内多发时的发射间隔。 -->
+            <shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 弹丸 ThingDef。 -->
+            <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+            <!-- 命中特效。 -->
+            <effecterDef>BANW_Effecter_C</effecterDef>
+            <!-- 是否可以命中自己。 -->
+            <canHitOwnPawn>true</canHitOwnPawn>
+            <!-- 是否影响友军。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 是否影响敌军。 -->
+            <affectHostile>true</affectHostile>
           </attack>
         </li>
         <!-- 第7段：射向施法时目标所在格，命中后只结算一次AOE。 -->
         <li>
-          <delayTicks>36</delayTicks><targetLocation>true</targetLocation>
+          <!-- 相对准备结束的发射时刻。 -->
+          <delayTicks>36</delayTicks>
+          <!-- 是否锁定施法时目标所在格。 -->
+          <targetLocation>true</targetLocation>
           <attack>
-            <useBattleStats>true</useBattleStats><basePower>100</basePower>
-            <attackPowerRatio>0.875</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否使用 BA 战斗属性结算。 -->
+            <useBattleStats>true</useBattleStats>
+            <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+            <basePower>100</basePower>
+            <!-- 本段总倍率，0.875 = 87.5%。 -->
+            <attackPowerRatio>0.875</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
             <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
             <penetration>0</penetration>
-            <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-            <radius>3</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
-            <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
+            <!-- 是否按 EX 技能结算。 -->
+            <isExSkill>true</isExSkill>
+            <!-- 是否可暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击/护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- 溅射半径（格）。 -->
+            <radius>3</radius>
+            <!-- 本段发数。 -->
+            <shots>1</shots>
+            <!-- 段内多发时的发射间隔。 -->
+            <shotIntervalTicks>6</shotIntervalTicks>
+            <!-- 弹丸 ThingDef。 -->
+            <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+            <!-- 命中特效。 -->
+            <effecterDef>BANW_Effecter_C</effecterDef>
+            <!-- 是否可以命中自己。 -->
+            <canHitOwnPawn>true</canHitOwnPawn>
+            <!-- 是否影响友军。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 是否影响敌军。 -->
+            <affectHostile>true</affectHostile>
           </attack>
         </li>
       </exStages>
     </hoshino>
     <!-- 攻击普通技能只做单体连射，总倍率按shots均分，不计入普攻触发次数。 -->
     <normalAttack>
-      <useBattleStats>true</useBattleStats><basePower>100</basePower>
-      <attackPowerRatio>1</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
+      <!-- 是否使用 BA 战斗属性结算；false 时改用 basePower×attackPowerRatio。 -->
+      <useBattleStats>true</useBattleStats>
+      <!-- 基础伤害值（关闭 BA 时作为攻击基数）。 -->
+      <basePower>100</basePower>
+      <!-- 本段总倍率，按 shots 均分；1 = 100%，3 发时每发约 33.33%。 -->
+      <attackPowerRatio>4</attackPowerRatio>
+      <!-- 伤害类型。 -->
+      <damageDef>BANC_Damage_shenmi</damageDef>
       <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
       <penetration>0</penetration>
-      <isExSkill>false</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
-      <radius>0</radius><shots>3</shots><shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 是否按 EX 技能结算；普通技能为 false。 -->
+      <isExSkill>false</isExSkill>
+      <!-- 是否可暴击。 -->
+      <canCrit>true</canCrit>
+      <!-- 是否应用攻击/护甲类型克制。 -->
+      <applyAffinity>true</applyAffinity>
+      <!-- 溅射半径（格），0 = 只结算单体。 -->
+      <radius>0</radius>
+      <!-- 本段发数。 -->
+      <shots>8</shots>
+      <!-- 段内多发时的发射间隔，6 tick = 0.1 秒。 -->
+      <shotIntervalTicks>15</shotIntervalTicks>
+      <!-- 弹丸 ThingDef。 -->
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <canHitOwnPawn>false</canHitOwnPawn><affectFriendly>false</affectFriendly><affectHostile>true</affectHostile>
+      <!-- 是否可以命中自己。 -->
+      <canHitOwnPawn>false</canHitOwnPawn>
+      <!-- 是否影响友军。 -->
+      <affectFriendly>false</affectFriendly>
+      <!-- 是否影响敌军。 -->
+      <affectHostile>true</affectHostile>
     </normalAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
 </Defs>

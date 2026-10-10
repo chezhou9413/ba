@@ -4,13 +4,19 @@
   <ThingDef ParentName="MoteBase">
     <defName>BANW_Mote_Hoshino_EmpoweredShot</defName>
     <thingClass>MoteThrown</thingClass>
-    <drawOffscreen>true</drawOffscreen><altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawOffscreen>true</drawOffscreen>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
     <graphicData>
       <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
-      <texPath>Effect/HPP</texPath><shaderType>MoteGlow</shaderType><drawSize>1.5</drawSize>
+      <texPath>Effect/HPP</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>1.5</drawSize>
     </graphicData>
     <mote>
-      <fadeInTime>0.02</fadeInTime><solidTime>0.20</solidTime><fadeOutTime>0.18</fadeOutTime><collide>false</collide>
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.20</solidTime>
+      <fadeOutTime>0.18</fadeOutTime>
+      <collide>false</collide>
     </mote>
   </ThingDef>
   <EffecterDef>
@@ -20,7 +26,9 @@
         <!-- 从星野位置沿本发瞄准方向生成特效，rotation为资源轴向校正角。 -->
         <subEffecterClass>BANWlLib.Projectiles.SubEffecter_DirectionalImpactMote</subEffecterClass>
         <moteDef>BANW_Mote_Hoshino_EmpoweredShot</moteDef>
-        <rotation>0</rotation><scale>1</scale><rotationRate>0</rotationRate>
+        <rotation>0</rotation>
+        <scale>1</scale>
+        <rotationRate>0</rotationRate>
       </li>
     </children>
   </EffecterDef>

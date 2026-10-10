@@ -30,14 +30,10 @@
     <canCrit>true</canCrit><!-- 是否可暴击 -->
     <applyAffinity>true</applyAffinity><!-- 是否应用攻击/护甲类型克制 -->
     <radius>0</radius><!-- 溅射半径，0 = 单体 -->
-<<<<<<< HEAD
-    <shots>46</shots><!-- 发射发数 -->
-=======
     <affectHostile>true</affectHostile><!-- 允许伤害敌对及无阵营生物 -->
     <affectFriendly>true</affectFriendly><!-- 允许伤害中立及友好阵营生物 -->
     <canHitOwnPawn>true</canHitOwnPawn><!-- 允许伤害己方生物，能否选择自身仍由targetParams决定 -->
     <shots>92</shots><!-- 发射发数 -->
->>>>>>> 39330e404bf43f66a60e278831347b4e198afdc4
     <!-- 配置shotTicks时使用逐发时间表；删除整段列表后才使用统一shotIntervalTicks。 -->
     <shotIntervalTicks>2</shotIntervalTicks><!-- 统一发射间隔，2 tick = 0.033 秒 -->
     <!-- 每个数值为相对本次EX生效的tick，最小为1，条目数必须等于shots。 -->
@@ -143,7 +139,7 @@
     <!-- 二段每发射击的音效，独立于一段施法音效。 -->
     <shotSound>BANW_Wp_SMG_At</shotSound><!-- 每发射击的音效 -->
     <projectileDef>BANW_Nero_B_EXX</projectileDef><!-- 弹丸 ThingDef -->
-    <effecterDef>BANW_Nero_B_Ef_D</effecterDef><!-- 命中时的特效 -->
+    <effecterDef>BANW_Nero_B_Ef_E</effecterDef><!-- 命中时的特效 -->
     <rotateImpactEffect>true</rotateImpactEffect><!-- 命中特效跟随弹道方向 -->
     <impactRotationOffset>0</impactRotationOffset><!-- 命中特效贴图方向校正 -->
   </exAttack>
@@ -205,11 +201,7 @@
     <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
       <profile>BANW_Special_Nero</profile><!-- 引用上面的技能配置 -->
       <command>Ex</command><!-- 对应一阶段EX分支 -->
-<<<<<<< HEAD
-      <onlyTargetAllies>false</onlyTargetAllies><!-- 一阶段只能选择队友 -->
-=======
       <onlyTargetAllies>false</onlyTargetAllies><!-- 一段允许选择敌人、友军和中立生物 -->
->>>>>>> 39330e404bf43f66a60e278831347b4e198afdc4
     </li>
     <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
       <cost>2</cost><!-- 基础消耗 2 COST -->
