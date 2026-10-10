@@ -50,17 +50,9 @@
     <countHediff>BANW_SpecialHoshinoCount</countHediff>
     <!-- 护盾用的 Hediff Def。 -->
     <shieldHediff>BANW_SpecialHoshinoShield</shieldHediff>
-    <!-- 施法者身上的特效（EX施法与引导表现）。 -->
-    <casterEffecter>BANW_Effecter_A</casterEffecter>
-    <!-- 目标身上的特效。 -->
-    <targetEffecter>BANW_Effecter_C</targetEffecter>
-    <!-- 阶段切换（形态切换）时播放一次的特效。 -->
-    <stageEffecter>BANW_Effecter_B</stageEffecter>
-    <!-- 形态状态结束时的特效。 -->
-    <endEffecter>BANW_Effecter_C</endEffecter>
-    <!-- 形态状态持续期间挂在身上的状态特效。 -->
-    <stateEffecter>BANW_Effecter_B</stateEffecter>
-    <!-- 星野专属机制配置。 -->
+    <casterEffecter>BANW_Effecter_A</casterEffecter><targetEffecter>BANW_Effecter_C</targetEffecter>
+    <!-- 普通技能发动时的自身特效；输出普通技能、防御普通技能和形态切换共用。 -->
+    <stageEffecter>BANW_Effecter_B</stageEffecter><endEffecter>BANW_Effecter_C</endEffecter><stateEffecter>BANW_Effecter_B</stateEffecter>
     <hoshino>
       <!-- 触发一次普通技能所需的普攻发数（每发成功发射的主武器普攻计 1，强化普攻也计）。 -->
       <normalRequiredShots>30</normalRequiredShots>
@@ -72,13 +64,9 @@
       <tankNormalAbility>BANW_Special_Hoshino_TankNormal</tankNormalAbility>
       <!-- 每轮强化沿用武器连射节奏；每发只结算一次范围普攻，无武器弹丸贴图。 -->
       <empoweredShotEffecter>BANW_Effecter_Hoshino_EmpoweredShot</empoweredShotEffecter>
-      <!-- 定向特效沿射击方向的运动速度（格/tick），0 为原地播放。 -->
-      <effectSpeed>20</effectSpeed>
-      <!-- 定向特效沿射击方向的生成偏移（格）。 -->
-      <effectOffsetForward>0.6</effectOffsetForward>
-      <!-- 定向特效的垂直绘制偏移。 -->
-      <effectOffsetUp>0</effectOffsetUp>
-      <!-- 强化普攻的每发范围伤害；必须为单次直接伤害且 shots=1。 -->
+      <!-- 强化普攻以星野为起点，朝射击方向展开；夹角单位为度，长度沿用主武器射程。 -->
+      <empoweredFanArc>60</empoweredFanArc>
+      <effectSpeed>20</effectSpeed><effectOffsetForward>0.6</effectOffsetForward><effectOffsetUp>0</effectOffsetUp>
       <empoweredAttack>
         <!-- 是否使用 BA 战斗属性结算；false 时改用 basePower×attackPowerRatio。 -->
         <useBattleStats>true</useBattleStats>
@@ -89,16 +77,10 @@
         <!-- 伤害类型。 -->
         <damageDef>BANC_Damage_shenmi</damageDef>
         <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-        <penetration>2</penetration>
-        <!-- 是否可暴击。 -->
-        <canCrit>true</canCrit>
-        <!-- 是否应用攻击/护甲类型克制。 -->
-        <applyAffinity>true</applyAffinity>
-        <!-- 溅射半径（格），大于 0 时对范围内每个合法角色各结算一次。 -->
-        <radius>3</radius>
-        <!-- 发数，必须保持 1：每发普攻只结算一次范围伤害。 -->
-        <shots>1</shots>
-        <!-- 命中时的中心特效，可删除。 -->
+        <penetration>0</penetration>
+        <canCrit>true</canCrit><applyAffinity>true</applyAffinity>
+        <!-- 扇形由empoweredFanArc和武器射程决定，不使用命中点圆形溅射；每发只结算一次。 -->
+        <radius>0</radius><shots>1</shots>
         <effecterDef>BANW_Effecter_C</effecterDef>
         <!-- 是否可以命中自己。 -->
         <canHitOwnPawn>false</canHitOwnPawn>
@@ -108,6 +90,7 @@
         <affectHostile>true</affectHostile>
       </empoweredAttack>
       <!-- delayTicks相对准备结束；每个li独立配置伤害。shots大于1时均分该段倍率。 -->
+      <!-- 每段attack的affectHostile、affectFriendly、canHitOwnPawn决定可作用阵营；任一段允许即可选中，各段命中时独立过滤。 -->
       <exStages>
         <!-- 第1段：单体子弹，不结算爆炸。 -->
         <li>
@@ -418,12 +401,11 @@
       <shotIntervalTicks>15</shotIntervalTicks>
       <!-- 弹丸 ThingDef。 -->
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <!-- 是否可以命中自己。 -->
-      <canHitOwnPawn>false</canHitOwnPawn>
-      <!-- 是否影响友军。 -->
-      <affectFriendly>false</affectFriendly>
-      <!-- 是否影响敌军。 -->
-      <affectHostile>true</affectHostile>
+      <!-- 输出普通技能每发发射时的音效，填SoundDef的defName；留空不播放。 -->
+      <shotSound />
+      <!-- 输出普通技能每发命中时的特效，填EffecterDef的defName；留空不播放。 -->
+      <effecterDef />
+      <canHitOwnPawn>false</canHitOwnPawn><affectFriendly>false</affectFriendly><affectHostile>true</affectHostile>
     </normalAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
 </Defs>

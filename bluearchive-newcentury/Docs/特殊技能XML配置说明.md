@@ -72,11 +72,34 @@
 | shots / shotIntervalTicks | 发数／发射间隔 |
 | projectileDef | 省略则直接伤害；填写时必须使用 Projectile_SpecialSkill 类 |
 | effecterDef | 本段命中特效 |
-| affectHostile / affectFriendly | 是否影响敌方／非敌方 |
+| affectHostile / affectFriendly | 是否影响敌对及无阵营生物／其他非敌对阵营生物；主动攻击也用它们筛选目标 |
 | canHitOwnPawn | 是否允许伤害同阵营Pawn，含自己 |
 | canHitBuilding / canHitOwnBuilding | 单体攻击的建筑允许规则；本组按钮默认只选择Pawn或位置 |
 
 若藻把原始蓄积金额作为基础，再按 `burstAttack` 和若藻BA属性计算敌方状态中显示的待释放值；到期释放该显示值，不重复乘算。凯伊直接释放已蓄积金额，不再乘输出属性或暴击。原始记录上限的基数：若藻看 `exAttack.useBattleStats`，凯伊看 `burstAttack.useBattleStats`；关闭时读取相应 `basePower`。
+
+### 主动攻击的生物与阵营筛选
+
+妮露二段、爱丽丝对外释放的EX、若藻EX和星野攻击形态EX，选目标时都会读取实际伤害段的阵营开关。允许其他阵营的生物时，在对应伤害段中填写：
+
+```xml
+<affectHostile>true</affectHostile><!-- 允许敌对及无阵营生物，包括普通野生动物 -->
+<affectFriendly>true</affectFriendly><!-- 允许中立及友好阵营生物 -->
+<canHitOwnPawn>true</canHitOwnPawn><!-- 允许伤害己方生物，包括范围内的自己 -->
+```
+
+这三个字段属于攻击段，不放在`AbilityDef/verbProperties/targetParams`里。它们同时决定命中伤害和范围伤害的阵营筛选，不只是放开鼠标选择。
+
+| 主动技能 | 阵营开关填写位置 |
+|---|---|
+| 妮露二段 | `Nero_B.xml`的`exAttack` |
+| 爱丽丝EX | `Arisu.xml`的`exAttack`，不影响`ArisuNormal.xml` |
+| 若藻EX | `Wakamo.xml`的`exAttack`；希望蓄积爆发也伤害同类目标时，同时设置`burstAttack` |
+| 星野攻击形态EX | `Hoshino.xml`的`hoshino/exStages/li/attack`，每段分别设置；至少一段允许即可选择目标，实际命中仍逐段过滤 |
+
+AbilityDef的`targetParams`继续控制生物类型：`canTargetPawns`是Pawn总开关，`canTargetHumans`、`canTargetAnimals`、`canTargetMechs`分别控制人类、动物和机械体。想选动物必须开启`canTargetPawns`与`canTargetAnimals`；想选己方动物还需要攻击段的`canHitOwnPawn=true`。`onlyTargetAllies=true`仍会额外限制为同阵营队友，允许敌人或中立生物时应关闭它。射程与视线使用该Ability的动词配置。
+
+当前爱丽丝、若藻保留`affectFriendly=false`、`canHitOwnPawn=false`；星野保留现有各EX段的配置。需要友军目标时按上表启用对应字段。爱丽丝点自己仍用于充能，满档后不能再次自充能；形态切换、莉音复制、白子自身EX、凯伊场地和星野防御位移继续使用各自的目标规则。自动普通技能与自动追击的找敌规则不受本节修改影响。
 
 ### 七组测试技能的护甲穿透
 
@@ -127,6 +150,8 @@
 
 EX为固定直线多段AOE，默认`arisu.lineLength=25`、`lineWidth=3`、`exAttack.shots=5`、`shotIntervalTicks=6`。总倍率1300%按5段均分；充能后总倍率2600%／3900%。预览与伤害共用同一套直线格子，施法时锁定起点和方向，各段重新筛选区域内敌人，原目标死亡不取消剩余伤害。定向特效沿用水花子的`SubEffecter_SprayerTriggeredRotatedOffset`，偏移与贴图一起旋转，延迟节点也固定施法方向。
 
+攻击EX通过`BANW_Job_ArisuExChannel`停步瞄准并持续施法，直到最后一段伤害结束；引导期间停止主武器普攻，中断施法取消剩余伤害。自身充能仍为瞬时施法。
+
 普通技能独立为`ArisuNormal.xml`中的`ArisuNormalSkillDef`，由`arisu.normalSkill`引用；不注册主动按钮。`requiredHits=3`控制每三次有效普攻命中自动施放，`cooldownTicks=1`为最小触发间隔。普通技能可独立设置`castSound`、`casterEffecter`、`targetEffecter`以及`attack.effecterDef`、伤害与穿透；不消费充能、也不按充能放大伤害。详细字段见[爱丽丝测试技能配置说明](爱丽丝测试技能配置说明.md)。
 
 ### 黑子
@@ -155,7 +180,7 @@ immortalityCooldownTicks=5400，lethalStackLimit=15。首次致命伤进入一�
 
 攻击EX：outputCastTicks=60，准备后执行 hoshino.exStages 中的独立伤害段。默认前3发各50%单体伤害，后4发各87.5%的3格AOE，总倍率500%。后4发射向施法时目标所在格，每发落点只结算一次AOE，不附加单体伤害；AOE沿用允许误伤自己的角色与友军配置。准备与连射期间 damageTakenReduction=0.85 从当前承伤系数中减去，最低0。每段参数见 [星野测试技能配置说明](星野测试技能配置说明.md)。
 
-攻击普通技能：每成功射出 hoshino.normalRequiredShots=30 发普攻后触发 normalAttack，默认3发单体技能弹，总倍率100%。技能弹和AOE受击人数不计入普攻发数；没有有效目标时保留触发进度。攻击EX或攻击普通技能发射结束后，下一整轮普攻强化，每发用定向特效替代原武器弹丸，对目标周围造成一次150%普攻AOE。6发连射对应6次AOE，受伤目标多少不影响次数。强化普攻本身每发仍计入30发进度。
+攻击普通技能：每成功射出 hoshino.normalRequiredShots=30 发普攻后触发 normalAttack，默认3发单体技能弹，总倍率100%。技能弹和AOE受击人数不计入普攻发数；没有有效目标时保留触发进度。每发音效配置`normalAttack.shotSound`，命中特效配置`normalAttack.effecterDef`，发动时自身特效使用共用的`stageEffecter`。攻击EX或攻击普通技能发射结束后，下一整轮普攻强化，每发用定向特效替代原武器弹丸，对自身前方扇形造成一次150%普攻AOE；`hoshino.empoweredFanArc=60`控制完整夹角，长度沿用主武器射程，`empoweredAttack.radius`保持0。6发连射对应6次AOE，受伤目标多少不影响次数。强化普攻本身每发仍计入30发进度。
 
 坦克 EX：moveSpeed 控制移动，抵达后持续40秒。buffHediff 默认攻击力＋156%，shieldRatio=0.691。interceptRadius=3，只拦截穿过前方半圆边界的敌方实体弹丸，背面、友军和内部向外射击放行；本项目穿透弹也接入。瞬间伤害没有弹丸，不参与拦截。
 

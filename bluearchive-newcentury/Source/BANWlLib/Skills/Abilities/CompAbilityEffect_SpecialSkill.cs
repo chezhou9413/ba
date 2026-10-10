@@ -1,3 +1,5 @@
+using System.Linq;
+using BANWlLib.BattleSystem;
 using RimWorld;
 using Verse;
 
@@ -64,7 +66,7 @@ namespace BANWlLib.Skills
                     valid = target.Pawn != null && target.Pawn.Spawned && !target.Pawn.Dead &&
                         target.Pawn.Map == caster.Map && parent.verb.CanHitTarget(target);
                     if (valid && Props.command == SpecialSkillCommand.AlternateEx)
-                        valid = BattleSystem.BattleStatUtility.ShouldAffectTarget(caster, target.Pawn, Props.profile.exAttack);
+                        valid = BattleStatUtility.ShouldAffectTarget(caster, target.Pawn, Props.profile.exAttack);
                 }
                 else if (role == SpecialSkillRole.Rio)
                     valid = ally && target.Pawn != caster && RioSkills.CopyDef(target.Pawn) != null;
@@ -72,16 +74,28 @@ namespace BANWlLib.Skills
                     valid = State != null && State.stage < 2;
                 else if (role == SpecialSkillRole.Kei)
                     valid = target.Cell.Standable(caster.Map);
-                else if (role == SpecialSkillRole.Hoshino)
-                    valid = Props.command == SpecialSkillCommand.AlternateEx ? target.Cell.Standable(caster.Map)
-                        : target.Pawn != null && SpecialCombatUtility.ValidEnemy(caster, target.Pawn, Props.profile.range);
-                else valid = target.Pawn != null && SpecialCombatUtility.ValidEnemy(caster, target.Pawn, Props.profile.range);
+                else if (role == SpecialSkillRole.Hoshino && Props.command == SpecialSkillCommand.AlternateEx)
+                    valid = target.Cell.Standable(caster.Map);
+                else valid = ValidAttackTarget(target);
             }
             if (!valid && throwMessages)
                 Messages.Message(role == SpecialSkillRole.Nero
                     ? "目标必须是射程和视线内的存活生物，并符合技能的目标类型与伤害配置。"
                     : "当前目标不能使用此测试技能，或充能已满、目标没有当前阶段可见的COST技能。", MessageTypeDefOf.RejectInput, false);
             return valid;
+        }
+
+        //主动攻击按实际伤害段选择阵营，星野任一EX段允许作用即可选中目标。
+        private bool ValidAttackTarget(LocalTargetInfo target)
+        {
+            Pawn caster = parent.pawn;
+            Pawn victim = target.Pawn;
+            if (victim == null || !victim.Spawned || victim.Dead || victim.Map != caster.Map ||
+                !parent.verb.CanHitTarget(target)) return false;
+            var profile = Props.profile;
+            if (profile.role == SpecialSkillRole.Hoshino)
+                return profile.hoshino.exStages.Any(stage => BattleStatUtility.ShouldAffectTarget(caster, victim, stage.attack));
+            return BattleStatUtility.ShouldAffectTarget(caster, victim, profile.exAttack);
         }
 
         //使用实际施法者的本体状态执行角色技能，复制施法同样推进本体机制。

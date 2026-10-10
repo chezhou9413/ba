@@ -1,4 +1,5 @@
 using System.Linq;
+using BANWlLib.BaVerb;
 using BANWlLib.BattleSystem;
 using BANWlLib.Projectiles;
 using UnityEngine;
@@ -18,13 +19,13 @@ namespace BANWlLib.Skills
                 !target.Cell.InBounds(pawn.Map) || !verb.TryFindShootLineFromTo(pawn.Position, target, out ShootLine line)) return false;
             HoshinoSkillConfig config = s.profile.hoshino;
             SpecialAttackConfig attack = config.empoweredAttack;
-            IntVec3 center = target.Cell;
+            var cells = BattleTargetPreviewUtility.CalculateFanCells(pawn, target, verb.EffectiveRange, config.empoweredFanArc);
             PlayEffect(pawn, target, config);
-            SpecialEffects.Trigger(attack.effecterDef, center, pawn.Map);
+            SpecialEffects.Trigger(attack.effecterDef, target.Cell, pawn.Map);
             //目标列表在伤害前固定，死亡或其他伤害事件不会改变本轮枚举。
             foreach (Pawn victim in pawn.Map.mapPawns.AllPawnsSpawned.ToArray())
             {
-                if (victim.Dead || victim.Position.DistanceTo(center) > attack.radius ||
+                if (victim.Dead || !cells.Contains(victim.Position) ||
                     !BattleStatUtility.ShouldAffectTarget(pawn, victim, attack)) continue;
                 BattleStatUtility.ApplyDamage(new BattleDamageRequest
                 {
