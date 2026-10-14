@@ -11,9 +11,10 @@
                 <statOffsets>
                     <Flammability>-1.0</Flammability>
                     <PainShockThreshold>+0.15</PainShockThreshold>
-                    <IncomingDamageFactor>-1.0</IncomingDamageFactor>
+                    <IncomingDamageFactor>-0.05</IncomingDamageFactor>
                     <BANW_HealthBonusMultiplier>0.55</BANW_HealthBonusMultiplier>
                 </statOffsets>
+                 
             </li>
         </degreeDatas>
     </TraitDef>

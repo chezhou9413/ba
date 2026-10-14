@@ -66,23 +66,22 @@
 				<WapenTypeText>霰弹</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Chise/Chise_EX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>EX技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>集中突破</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>6</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名敌方单位造成自身攻击力<color=#00FFFF>149%</color>的伤害。
+对以上述单位为中心的圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>503%</color>的伤害。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Asuna/Asuna_EX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>基本技能</AbilityTitle><!--不会改-->
-				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>800</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilityTitle>手枪速射</AbilityTitle><!--不会改-->
+				<AbilitySubtitle><![CDATA[基本技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[每普通攻击30次对敌人造成自身攻击力<color=#00FFFF>400%</color>的伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
@@ -98,13 +97,11 @@
 				<offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Hoshiro_B/Hoshiro_A</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
-				<AbilityTitle>测试技能4</AbilityTitle>
-				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>镇压攻击</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>14%</color>，所有攻击均无视85%乘伤系数，自身使用EX技能或普通技能时，下1次普通攻击的效果改为：对扇形范围内的敌方单位造成自身攻击力<color=#00FFFF>150%</color>的伤害.]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>

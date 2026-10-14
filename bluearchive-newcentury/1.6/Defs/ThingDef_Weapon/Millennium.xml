@@ -1832,7 +1832,7 @@
     <label>光之剑：超新星for阿比舒子弹</label>
     <projectile>
       <damageDef>BANC_Damage_Arisu_None</damageDef><!--子弹类型-->
-      <damageAmountBase>14</damageAmountBase><!--子弹伤害-->
+      <damageAmountBase>10</damageAmountBase><!--子弹伤害-->
       <stoppingPower>0.5</stoppingPower><!--抑制-->
       <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
       <speed>90</speed><!--子弹速度-->

@@ -222,7 +222,6 @@
 				<description>被动技能:自身防御力增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
 				<marketValueFactorOffset>1</marketValueFactorOffset>
 				<statOffsets>
-					<BANW_FinalDamageMultiplier>0.26</BANW_FinalDamageMultiplier>
 				</statOffsets>
 				<statFactors>
 					<ArmorRating_Sharp>1.26</ArmorRating_Sharp>

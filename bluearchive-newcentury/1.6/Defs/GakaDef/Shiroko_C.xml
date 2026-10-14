@@ -7,7 +7,7 @@
         <gachaVidPath>UI/Video/Shiroko_C.webm</gachaVidPath>        <!-- 卡池宣传视频 -->
         <!-- 显示信息 -->
         <gachaTitle>周年庆招募</gachaTitle>            <!-- 卡池标题 -->
-        <gachaUp>★3未花出现概率Up！\n首次奖励可获得[未花的神名文字x100]！</gachaUp>                 <!-- UP内容说明 -->
+        <gachaUp>★3黑子(恐怖)出现概率Up！\n首次奖励可获得[未花的神名文字x100]！</gachaUp>                 <!-- UP内容说明 -->
         <gachaDesc>招募10次时，保证获得1名★2以上学生！\n※已招募过的学生會变换成神名文字碎片与该学生的神名文字。</gachaDesc>  <!-- 详细描述 -->
         <!-- UP三星池配置 -->
         <!-- Weight=70 表示在三星出货时，有70%概率从UP池抽取 -->
@@ -19,7 +19,7 @@
             </StudentList>
         </FESupthreeStarPool>
         <FESthreeStarPool>
-            <Weight>0.3</Weight>
+            <Weight>0.9</Weight>
             <StudentList>
                 <li>BANW_Mika_Student</li>
                 <li>BANW_Hoshiro_A_Student</li>
@@ -39,7 +39,7 @@
         <!-- 普通三星池配置 -->
         <!-- Weight=0.7 表示每次抽卡有0.7%的基础概率抽中三星 -->
         <threeStarPool>
-            <Weight>2.0</Weight>
+            <Weight>4.4</Weight>
             <StudentList>
                 <li>BANW_Shiroko_Student</li>                    <!-- 白子 -->
                 <li>BANW_Hoshiro_Student</li>                    <!-- 星野 -->
@@ -161,7 +161,7 @@
         <!-- 一星池配置 -->
         <!-- Weight=60 表示每次抽卡有60%概率抽中一星 (保底最低稀有度) -->
         <oneStarPool>
-            <Weight>78.5</Weight>
+            <Weight>75.5</Weight>
             <StudentList>
                 <li>BANW_Juri_Student</li>                       <!-- 树里 -->
                 <li>BANW_Shimiko_Student</li>                    <!-- 志美子 -->
