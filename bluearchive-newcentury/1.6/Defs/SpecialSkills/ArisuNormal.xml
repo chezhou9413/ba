@@ -43,7 +43,7 @@
       <!-- 段内多发时的发射间隔，6 tick = 0.1 秒。 -->
       <shotIntervalTicks>7</shotIntervalTicks>
       <!-- 弹丸 ThingDef，必须使用 Projectile_SpecialSkill。 -->
-      <projectileDef>BANW_Bullet_Hoshiro_B_EX_A</projectileDef>
+      <projectileDef>BANW_Bullet_Arisu_B_EX</projectileDef>
       <!-- 命中特效。 -->
       <effecterDef>BANW_Effecter_Arisu_B_NSS</effecterDef>
       <shotSound>Arisu_B_Skill_NS</shotSound>
@@ -56,7 +56,21 @@
     </attack>
   </BANWlLib.Skills.ArisuNormalSkillDef>
 
- 
+ <ThingDef ParentName="BaseBullet">
+    <defName>BANW_Bullet_Arisu_B_EX</defName>
+    <label>导弹</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData>
+      <texPath>Projectile/Arisu_B_NS</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <damageAmountBase>2</damageAmountBase>
+      <speed>90</speed>
+    </projectile>
+  </ThingDef>
 <EffecterDef>
 <defName>BANW_Effecter_Arisu_B_NSS</defName>
 <children>

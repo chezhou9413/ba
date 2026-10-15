@@ -129,7 +129,7 @@
             <!-- 段内多发时的发射间隔，6 tick = 0.1 秒。 -->
             <shotIntervalTicks>6</shotIntervalTicks>
             <!-- 弹丸 ThingDef，必须使用 Projectile_SpecialSkill。 -->
-            <projectileDef>BANW_Bullet_Hoshiro_B_EX_A</projectileDef>
+            <projectileDef>BANW_Bullet_Hoshiro_B_EX_C</projectileDef>
             <!-- 是否可以命中自己。 -->
             <canHitOwnPawn>true</canHitOwnPawn>
             <!-- 是否影响友军。 -->
@@ -168,7 +168,7 @@
             <!-- 段内多发时的发射间隔。 -->
             <shotIntervalTicks>6</shotIntervalTicks>
             <!-- 弹丸 ThingDef。 -->
-            <projectileDef>BANW_Bullet_Hoshiro_B_EX_A</projectileDef>
+            <projectileDef>BANW_Bullet_Hoshiro_B_EX_C</projectileDef>
             <!-- 是否可以命中自己。 -->
             <canHitOwnPawn>true</canHitOwnPawn>
             <!-- 是否影响友军。 -->
@@ -207,7 +207,7 @@
             <!-- 段内多发时的发射间隔。 -->
             <shotIntervalTicks>6</shotIntervalTicks>
             <!-- 弹丸 ThingDef。 -->
-            <projectileDef>BANW_Bullet_Hoshiro_B_EX_A</projectileDef>
+            <projectileDef>BANW_Bullet_Hoshiro_B_EX_C</projectileDef>
             <!-- 是否可以命中自己。 -->
             <canHitOwnPawn>true</canHitOwnPawn>
             <!-- 是否影响友军。 -->
@@ -219,7 +219,7 @@
         <!-- 第4段：射向施法时目标所在格，命中后只结算一次AOE。 -->
         <li>
           <!-- 相对准备结束的发射时刻。 -->
-          <delayTicks>70</delayTicks>
+          <delayTicks>80</delayTicks>
           <!-- 是否锁定施法时目标所在格；true 时目标死亡后仍向该格发射。 -->
           <targetLocation>true</targetLocation>
           <attack>
@@ -260,7 +260,7 @@
         <!-- 第5段：射向施法时目标所在格，命中后只结算一次AOE。 -->
         <li>
           <!-- 相对准备结束的发射时刻。 -->
-          <delayTicks>78</delayTicks>
+          <delayTicks>88</delayTicks>
           <!-- 是否锁定施法时目标所在格。 -->
           <targetLocation>true</targetLocation>
           <attack>
@@ -301,7 +301,7 @@
         <!-- 第6段：射向施法时目标所在格，命中后只结算一次AOE。 -->
         <li>
           <!-- 相对准备结束的发射时刻。 -->
-          <delayTicks>86</delayTicks>
+          <delayTicks>96</delayTicks>
           <!-- 是否锁定施法时目标所在格。 -->
           <targetLocation>true</targetLocation>
           <attack>
@@ -342,7 +342,7 @@
         <!-- 第7段：射向施法时目标所在格，命中后只结算一次AOE。 -->
         <li>
           <!-- 相对准备结束的发射时刻。 -->
-          <delayTicks>230</delayTicks>
+          <delayTicks>250</delayTicks>
           <!-- 是否锁定施法时目标所在格。 -->
           <targetLocation>true</targetLocation>
           <attack>
@@ -369,7 +369,7 @@
             <!-- 段内多发时的发射间隔。 -->
             <shotIntervalTicks>6</shotIntervalTicks>
             <!-- 弹丸 ThingDef。 -->
-            <projectileDef>BANW_Bullet_Hoshiro_B_EX_A</projectileDef>
+            <projectileDef>BANW_Bullet_Hoshiro_B_EX_C</projectileDef>
             <!-- 命中特效。 -->
             <effecterDef>BANW_Effecter_C</effecterDef>
             <!-- 是否可以命中自己。 -->
@@ -457,7 +457,21 @@
       <affectHostile>true</affectHostile>
     </normalAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
-
+ <ThingDef ParentName="BaseBullet">
+    <defName>BANW_Bullet_Hoshiro_B_EX_C</defName>
+    <label>手枪速射</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData>
+      <texPath>Projectile/Hoshiro_B_EX</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <damageAmountBase>2</damageAmountBase>
+      <speed>110</speed>
+    </projectile>
+  </ThingDef>
   <ThingDef ParentName="BaseBullet">
     <defName>BANW_Bullet_Hoshiro_B_EX_A</defName>
     <label>手枪速射</label>
