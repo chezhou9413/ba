@@ -3,7 +3,7 @@
   <AbilityDef>
     <defName>BAWN_Hanako_A_EXX</defName>
     <label>喷出来了好多呢♡</label>
-    <description>对扇形范围的敌方单位造成自身攻击力707%的伤害</description>
+    <description>对扇形范围的敌方单位造成自身攻击力707%的伤害。</description>
     <iconPath>Ability/Icon/Hanako_A/Hanako_EXX</iconPath>
     <cooldownTicksRange>720</cooldownTicksRange>
     <charges>3</charges> <!-- 设置该能力有 5 次充能次数。-->
@@ -148,6 +148,7 @@
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
+                <isExSkill>true</isExSkill>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 
@@ -165,6 +166,7 @@
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
+                <isExSkill>true</isExSkill>
                 <!-- 伤害类型 --> 
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <!-- 穿透 --> 
@@ -180,6 +182,7 @@
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
+                <isExSkill>true</isExSkill>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <penetration>2.0</penetration>
                 <effecterDef></effecterDef>
@@ -192,6 +195,7 @@
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
+                <isExSkill>true</isExSkill>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <penetration>2.0</penetration>
                 <effecterDef></effecterDef>
@@ -204,6 +208,7 @@
                 <canCrit>true</canCrit>
                 <!-- 允许该段伤害应用属性克制。 -->
                 <applyAffinity>true</applyAffinity>
+                <isExSkill>true</isExSkill>
                 <damageType>BANC_Damage_Hanako_A_EXX</damageType>
                 <penetration>2.0</penetration>
                 <effecterDef></effecterDef>

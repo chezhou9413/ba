@@ -80,6 +80,7 @@
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
+                 <isExSkill>true</isExSkill>
             <attackPowerRatio>14.42</attackPowerRatio></li>
             <li>
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
@@ -91,6 +92,7 @@
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
+                 <isExSkill>true</isExSkill>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>14.42</attackPowerRatio></li>
             <li>
@@ -103,6 +105,7 @@
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
+                 <isExSkill>true</isExSkill>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>14.42</attackPowerRatio></li>
              <li>
@@ -114,6 +117,7 @@
                 <!-- 穿透 --> 
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
+                  <isExSkill>true</isExSkill>
                 <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>14.42</attackPowerRatio></li>
@@ -126,6 +130,7 @@
                 <!-- 穿透 --> 
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
+                  <isExSkill>true</isExSkill>
                 <effecterDef>BANW_Hina_B_SD_B</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>14.42</attackPowerRatio></li>
@@ -139,6 +144,7 @@
                 <penetration>2</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
+                 <isExSkill>true</isExSkill>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>14.42</attackPowerRatio></li>
               <li>
@@ -150,6 +156,7 @@
                 <!-- 穿透 --> 
                 <penetration>1.29</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
+                  <isExSkill>true</isExSkill>
                 <effecterDef>BANW_Hina_B_Ef_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>30.5</attackPowerRatio></li>
@@ -162,6 +169,7 @@
                 <!-- 穿透 --> 
                 <penetration>1.29</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
+                  <isExSkill>true</isExSkill>
                 <effecterDef>BANW_Hina_B_SD_C</effecterDef>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>30.5</attackPowerRatio></li>
@@ -175,6 +183,7 @@
                 <penetration>1.29</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
+                 <isExSkill>true</isExSkill>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>30.5</attackPowerRatio></li>
             <li>
@@ -188,6 +197,7 @@
                 <penetration>0</penetration>
                 <!-- 触发此伤害时播放的效果 --> 
                 <effecterDef></effecterDef>
+                 <isExSkill>true</isExSkill>
                 <isAttackBuilding>true</isAttackBuilding>
             <attackPowerRatio>0</attackPowerRatio></li>
         </damages>

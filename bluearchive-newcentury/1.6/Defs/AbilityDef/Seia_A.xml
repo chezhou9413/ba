@@ -41,7 +41,7 @@
   </verbProperties>
   <comps>
     <li Class="CompProperties_AbilityLaunchProjectile">
-        <projectileDef>BANC_Bullet_Seia_EXX</projectileDef>
+        <projectileDef>BANC_Bullet_Seia_EX</projectileDef>
       </li>
 <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
   <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
@@ -180,7 +180,7 @@
     <hasForcefulImpact>false</hasForcefulImpact>
     <additionalHediffs><!--额外健康-->
       <li>
-        <hediff>BAWN_Seia_A_Buff_B</hediff><!--健康类型-->
+        <hediff>BAWN_Seia_A_Buff_A</hediff><!--健康类型-->
         <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
       </li>
     </additionalHediffs>

@@ -1,38 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- 输出形态EX按钮：持续瞄准并发射追踪技能子弹，具体伤害段在 Hoshino.xml 的 exStages 中配置。 -->
   <AbilityDef>
+    <!-- 技能Def唯一标识，供 ProfileDef 的 primaryAbility 引用。 -->
     <defName>BANW_Special_Hoshino_Ex</defName>
-    <label>测试新技能·双形态星野·输出EX</label>
-    <description>选择25格内配置允许的生物，持续瞄准并准备1秒后连续射出7发追踪技能子弹。前3发各造成攻击力50%的单体伤害，不产生爆炸；后4发各造成攻击力87.5%的3格范围伤害，范围包含自己和友军。每段伤害和发射间隔均可独立配置。
-
-EX准备与连射期间，当前承伤系数减去0.85，最低为0。例如承伤系数从2.0降至1.15。
-
-攻击形态普通技能：每成功射出30发普攻，自动对敌人进行3发单体连射，总伤害为攻击力100%。技能弹不计入30发进度。
-
-被动：自身攻击EX或攻击普通技能发射完毕后，下一整轮普攻使用定向特效替代原武器弹丸，每发对自身前方60度扇形内的敌人造成一次150%普攻伤害，长度沿用主武器射程。攻击形态一轮6发，共6次AOE；命中人数不消耗额外次数。
-
-基础消耗：4 COST。冷却：1秒。</description>
+    <!-- 按钮显示名。 -->
+    <label>集中突破</label>
+    <!-- 技能说明文本，展示在按钮提示中。 -->
+    <description>对1名敌方单位造成自身攻击力149%的伤害。
+对以上述单位为中心的圆形范围内的敌方单位造成自身攻击力503%的伤害。</description>
+    <!-- 技能实现类，负责把施法请求交给特殊技能系统处理。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <!-- 前摇结束后保持瞄准，直到最后一段弹丸发射。 -->
     <jobDef>BANW_Job_HoshinoExChannel</jobDef>
-    <warmupStartSound>Hoshiro_ExSkill</warmupStartSound>
-    <iconPath>UI/StarIcon</iconPath>
-    <cooldownTicksRange>60</cooldownTicksRange>
+    <!-- 前摇开始时播放的语音。 -->
+    <warmupStartSound>Hoshiro_B_Skill_EXX</warmupStartSound>
+    <!-- 按钮图标路径。 -->
+    <iconPath>Ability/Icon/Chise/Chise_EX</iconPath>
+    <!-- 冷却时间，600 tick = 10 秒。 -->
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <!-- 未征召时也显示按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <!-- 未征召时按钮置灰不可点。 -->
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <!-- 征召状态下显示按钮。 -->
     <showWhenDrafted>true</showWhenDrafted>
+    <!-- 不播放心灵能力施法特效。 -->
     <showPsycastEffects>false</showPsycastEffects>
-    <hostile>false</hostile>
+    <!-- 非敌对技能。 -->
+    <hostile>true</hostile>
+    <!-- 必须选定目标才能施放。 -->
     <targetRequired>true</targetRequired>
+    <!-- 不要求施法者具有暴力能力。 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <!-- 施法动词参数：决定射程与可选目标类型。 -->
     <verbProperties>
+      <soundCast>Hoshiro_B_Skill_B</soundCast>
+      <!-- 显示主武器瞄准和范围预览的施法动词。 -->
       <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
-      <range>25</range><warmupTime>1</warmupTime>
-      <soundCast>Hoshiro_Skill_EX</soundCast>
+      <!-- 施法距离上限（格）。 -->
+      <range>39.9</range>
+      <!-- 瞄准时间（秒），0.1 秒对应 6 tick。 -->
+      <warmupTime>0.1</warmupTime>
+      <!-- 合法目标类型。 -->
       <targetParams>
+        <!-- 不能选择自己。 -->
         <canTargetSelf>false</canTargetSelf>
+        <!-- 可以选中角色。 -->
         <canTargetPawns>true</canTargetPawns>
-        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
-        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <!-- 可以选中人类。 -->
+        <canTargetHumans>true</canTargetHumans>
+        <!-- 可以选中动物。 -->
+        <canTargetAnimals>true</canTargetAnimals>
+        <!-- 可以选中机械族。 -->
+        <canTargetMechs>true</canTargetMechs>
+        <!-- 不能选中建筑。 -->
+        <canTargetBuildings>false</canTargetBuildings>
+        <!-- 不能直接选中空地。 -->
         <canTargetLocations>false</canTargetLocations>
       </targetParams>
     </verbProperties>
@@ -41,116 +65,218 @@ EX准备与连射期间，当前承伤系数减去0.85，最低为0。例如承�
         <drawPrimaryWeaponAim>true</drawPrimaryWeaponAim><radius>3</radius>
       </li>
     </modExtensions>
+    <!-- 技能组件：绑定技能档案与COST消耗。 -->
     <comps>
+      <!-- 特殊技能组件，profile 指向档案，command 指定执行的指令分支。 -->
       <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
-        <profile>BANW_Special_Hoshino</profile><command>Ex</command>
+        <!-- 引用的技能档案 Def。 -->
+        <profile>BANW_Special_Hoshino</profile>
+        <!-- 指令分支：Ex 为输出形态EX。 -->
+        <command>Ex</command>
       </li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+      <!-- COST消耗组件。 -->
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <!-- 施放消耗的 COST 值。 -->
+        <cost>6</cost>
+      </li>
     </comps>
   </AbilityDef>
+
+  <!-- 防御形态EX按钮：位移到指定位置后获得增益、护盾与弹丸拦截。 -->
   <AbilityDef>
+    <!-- 技能Def唯一标识，供 ProfileDef 的 alternateAbility 引用。 -->
     <defName>BANW_Special_Hoshino_AlternateEx</defName>
-    <label>测试新技能·双形态星野·坦克EX</label>
-    <description>移动到25格内的指定位置，抵达后获得持续40秒的战斗增益：攻击力增加156%，获得最大生命69.1%的个人护盾，并拦截从外侧穿过前方3格半圆边界的敌方弹丸。
-
-拦截方向随朝向变化，与个人护盾共用余额，按减伤后的伤害扣盾；破盾这一击仍完全抵挡，余额归零后立即停止拦截。背面、友军及从内部射出的弹丸可以通过。
-
-防御普通技能使用独立按钮主动施放，冷却40秒，星野实际受到25次伤害后解除。EX到期不清除普通技能状态；切换形态会结束本形态的增益、护盾、拦截和普通技能状态。
-
-基础消耗：4 COST。冷却：1秒。</description>
+    <!-- 按钮显示名。 -->
+    <label>加强防御态势</label>
+    <!-- 技能说明文本。 -->
+    <description>位移至指定位置后：攻击力增加156%（持续40秒）。举起具有掩体作用的盾牌进入掩体掩护状态(持续40秒).
+※ 掩体额外拥有星野（临战）生命值69.1%的生命值.
+  ※ 掩体的防御属性与星野(临战)相同.</description>
+    <!-- 技能实现类。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
-    <iconPath>UI/StarIcon</iconPath>
+    <!-- 按钮图标路径。 -->
+    <iconPath>Ability/Icon/Hoshiro_B/Hoshiro_EXXX</iconPath>
+    <!-- 冷却时间，60 tick = 1 秒。 -->
     <cooldownTicksRange>60</cooldownTicksRange>
+    <!-- 未征召时也显示按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <!-- 未征召时按钮置灰不可点。 -->
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <!-- 征召状态下显示按钮。 -->
     <showWhenDrafted>true</showWhenDrafted>
+    <!-- 不播放心灵能力施法特效。 -->
     <showPsycastEffects>false</showPsycastEffects>
+    <!-- 非敌对技能。 -->
     <hostile>false</hostile>
+    <!-- 必须选定目标才能施放。 -->
     <targetRequired>true</targetRequired>
+    <!-- 不要求施法者具有暴力能力。 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <!-- 施法动词参数：防御EX支持选点位移。 -->
     <verbProperties>
+      <!-- 标准施法动词。 -->
       <verbClass>Verb_CastAbility</verbClass>
-      <range>25</range><warmupTime>0</warmupTime>
+      <!-- 施法距离上限（格）。 -->
+      <range>29.9</range>
+      <!-- 瞄准时间（秒），0 表示点击即施放，位移耗时由 moveSpeed 决定。 -->
+      <warmupTime>0</warmupTime>
+      <!-- 合法目标类型。 -->
       <targetParams>
+        <!-- 不能选择自己。 -->
         <canTargetSelf>false</canTargetSelf>
+        <!-- 可以选中角色。 -->
         <canTargetPawns>true</canTargetPawns>
-        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
-        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <!-- 可以选中人类。 -->
+        <canTargetHumans>true</canTargetHumans>
+        <!-- 可以选中动物。 -->
+        <canTargetAnimals>true</canTargetAnimals>
+        <!-- 可以选中机械族。 -->
+        <canTargetMechs>true</canTargetMechs>
+        <!-- 不能选中建筑。 -->
+        <canTargetBuildings>false</canTargetBuildings>
+        <!-- 可以选中空地位移。 -->
         <canTargetLocations>true</canTargetLocations>
       </targetParams>
     </verbProperties>
+    <!-- 技能组件：绑定技能档案与COST消耗。 -->
     <comps>
+      <!-- 特殊技能组件。 -->
       <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
-        <profile>BANW_Special_Hoshino</profile><command>AlternateEx</command>
+        <!-- 引用的技能档案 Def。 -->
+        <profile>BANW_Special_Hoshino</profile>
+        <!-- 指令分支：AlternateEx 为防御形态EX。 -->
+        <command>AlternateEx</command>
       </li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+      <!-- COST消耗组件。 -->
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <!-- 施放消耗的 COST 值。 -->
+        <cost>4</cost>
+      </li>
     </comps>
   </AbilityDef>
+
+  <!-- 形态切换按钮：自身施放，在输出与防御形态之间切换。 -->
   <AbilityDef>
+    <!-- 技能Def唯一标识，供 ProfileDef 的 switchAbility 引用。 -->
     <defName>BANW_Special_Hoshino_SwitchForm</defName>
-    <label>测试新技能·双形态星野·切换形态</label>
-    <description>在输出形态与坦克形态之间切换，同时切换对应的EX与普通技能。初始为输出形态。
-
-攻击形态：基础攻击30，基础生命1000，主武器每轮连射6发。
-防御形态：基础攻击10，基础生命3000，主武器每轮射击1发。
-两种形态均正常享受成长和属性加成。
-
-切换时将职位特性同步为输出或坦克，武装星野的背包盾牌在防御形态移至身前，切回输出形态后恢复背负。保持当前生命百分比、装备和身份，终止当前连射并结束原形态专属状态与强化资格；保留攻击普通技能累计发数和防御普通技能冷却。
-
-不消耗COST。冷却：1秒。</description>
+    <!-- 按钮显示名。 -->
+    <label>切换战斗形态</label>
+    <!-- 技能说明文本。 -->
+    <description>在输出形态与坦克形态之间切换，同时切换对应的EX与普通技能。初始为输出形态。</description>
+    <!-- 技能实现类。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
-    <iconPath>UI/StarIcon</iconPath>
+    <!-- 按钮图标路径。 -->
+    <iconPath>Ability/Icon/Hoshiro_B/Hoshiro</iconPath>
+    <!-- 冷却时间，60 tick = 1 秒。 -->
     <cooldownTicksRange>60</cooldownTicksRange>
+    <!-- 未征召时也显示按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <!-- 未征召时按钮置灰不可点。 -->
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <!-- 征召状态下显示按钮。 -->
     <showWhenDrafted>true</showWhenDrafted>
+    <!-- 不播放心灵能力施法特效。 -->
     <showPsycastEffects>false</showPsycastEffects>
+    <!-- 非敌对技能。 -->
     <hostile>false</hostile>
+    <!-- 无需选定目标（自身施放）。 -->
     <targetRequired>false</targetRequired>
+    <!-- 不要求施法者具有暴力能力。 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <!-- 施法动词参数。 -->
     <verbProperties>
+      <!-- 标准施法动词。 -->
       <verbClass>Verb_CastAbility</verbClass>
-      <range>25</range><warmupTime>0</warmupTime>
+      <!-- 施法距离上限（格）。 -->
+      <range>25</range>
+      <!-- 瞄准时间（秒）。 -->
+      <warmupTime>0</warmupTime>
+      <!-- 合法目标类型：仅自身。 -->
       <targetParams>
+        <!-- 以自己为目标施放。 -->
         <canTargetSelf>true</canTargetSelf>
+        <!-- 不能选中角色。 -->
         <canTargetPawns>false</canTargetPawns>
-        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
-        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <!-- 可以选中人类（配合 canTargetSelf 使用）。 -->
+        <canTargetHumans>true</canTargetHumans>
+        <!-- 可以选中动物。 -->
+        <canTargetAnimals>true</canTargetAnimals>
+        <!-- 可以选中机械族。 -->
+        <canTargetMechs>true</canTargetMechs>
+        <!-- 不能选中建筑。 -->
+        <canTargetBuildings>false</canTargetBuildings>
+        <!-- 不能选中空地。 -->
         <canTargetLocations>false</canTargetLocations>
       </targetParams>
     </verbProperties>
+    <!-- 技能组件：绑定技能档案与COST消耗。 -->
     <comps>
+      <!-- 特殊技能组件。 -->
       <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
-        <profile>BANW_Special_Hoshino</profile><command>SwitchForm</command>
+        <!-- 引用的技能档案 Def。 -->
+        <profile>BANW_Special_Hoshino</profile>
+        <!-- 指令分支：SwitchForm 为形态切换。 -->
+        <command>SwitchForm</command>
       </li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>0</cost></li>
     </comps>
   </AbilityDef>
+
+  <!-- 防御形态普通技能按钮：主动获得受伤次数状态。 -->
   <AbilityDef>
+    <!-- 技能Def唯一标识，供 hoshino.tankNormalAbility 引用。 -->
     <defName>BANW_Special_Hoshino_TankNormal</defName>
-    <label>测试新技能·双形态星野·防御普通技能</label>
-    <description>主动获得防御普通技能状态，星野实际受到25次伤害后解除。完全闪避和护盾完全吸收不计数；不要求伤害来源必须为角色。
-
-此状态独立于防御EX，EX到期不会将其清除。切换形态时解除；再次施放刷新为25次。属性加成在对应Hediff中单独配置，当前默认不提供额外加成。
-
-不消耗COST。冷却：40秒。</description>
+    <!-- 按钮显示名。 -->
+    <label>更换护甲</label>
+    <!-- 技能说明文本。 -->
+    <description>装备防弹护板.防弹护板在自身受到25次伤害后解除.
+防弹护板效果：承伤率减少24.1%。</description>
+    <!-- 技能实现类。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
-    <iconPath>UI/StarIcon</iconPath>
+    <!-- 按钮图标路径。 -->
+    <iconPath>Ability/Icon/Hoshiro_B/Hoshiro_B</iconPath>
+    <!-- 冷却时间，2400 tick = 40 秒。 -->
     <cooldownTicksRange>2400</cooldownTicksRange>
+    <!-- 未征召时也显示按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <!-- 未征召时按钮置灰不可点。 -->
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <!-- 征召状态下显示按钮。 -->
     <showWhenDrafted>true</showWhenDrafted>
+    <!-- 不播放心灵能力施法特效。 -->
     <showPsycastEffects>false</showPsycastEffects>
+    <!-- 非敌对技能。 -->
     <hostile>false</hostile>
+    <!-- 无需选定目标（自身施放）。 -->
     <targetRequired>false</targetRequired>
+    <!-- 不要求施法者具有暴力能力。 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <!-- 施法动词参数。 -->
     <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass><range>25</range><warmupTime>0</warmupTime>
-      <targetParams><canTargetSelf>true</canTargetSelf><canTargetPawns>false</canTargetPawns><canTargetLocations>false</canTargetLocations></targetParams>
+      <!-- 标准施法动词。 -->
+      <verbClass>Verb_CastAbility</verbClass>
+      <!-- 施法距离上限（格）。 -->
+      <range>25</range>
+      <!-- 瞄准时间（秒）。 -->
+      <warmupTime>0</warmupTime>
+      <!-- 合法目标类型：仅自身。 -->
+      <targetParams>
+        <!-- 以自己为目标施放。 -->
+        <canTargetSelf>true</canTargetSelf>
+        <!-- 不能选中角色。 -->
+        <canTargetPawns>false</canTargetPawns>
+        <!-- 不能选中空地。 -->
+        <canTargetLocations>false</canTargetLocations>
+      </targetParams>
     </verbProperties>
+    <!-- 技能组件：绑定技能档案与COST消耗。 -->
     <comps>
-      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill"><profile>BANW_Special_Hoshino</profile><command>Normal</command></li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>0</cost></li>
+      <!-- 特殊技能组件。 -->
+      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+        <!-- 引用的技能档案 Def。 -->
+        <profile>BANW_Special_Hoshino</profile>
+        <!-- 指令分支：Normal 为防御形态普通技能。 -->
+        <command>Normal</command>
+      </li>
     </comps>
   </AbilityDef>
   <JobDef>

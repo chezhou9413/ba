@@ -43,9 +43,9 @@
 				
 				<Mining>0</Mining>
 				
-				<Cooking>8</Cooking>
+				<Cooking>12</Cooking>
 				
-				<Plants>6</Plants>
+				<Plants>8</Plants>
 				
 				<Animals>7</Animals>
 				
@@ -57,7 +57,7 @@
 				
 				<Social>10</Social>
 				
-				<Intellectual>7</Intellectual>
+				<Intellectual>14</Intellectual>
 			</Skills>
 		    
 			<WapenUI>
