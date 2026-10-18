@@ -1,108 +1,376 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 若藻技能配置：伤害标记、蓄积上限、持续时间与特效。 -->
+  <!-- 若藻技能配置：伤害标记、蓄积上限、持续时间与特效。本文件同时包含技能档案、EX 按钮与蓄积状态三种 Def。 -->
   <BANWlLib.Skills.SpecialSkillProfileDef>
-    <defName>BANW_Special_Wakamo</defName><label>若藻</label><role>Wakamo</role>
+    <!-- 技能档案唯一标识，供 AbilityDef 的 comps 引用。 -->
+    <defName>BANW_Special_Wakamo</defName>
+    <!-- 档案显示名。 -->
+    <label>若藻</label>
+    <!-- 归属角色标识，决定走哪套专属技能逻辑（SpecialSkillRole.Wakamo：单体积蓄爆发）。 -->
+    <role>Wakamo</role>
+    <!-- 主技能（EX）的 Def。 -->
     <primaryAbility>BANW_Special_Wakamo_Ex</primaryAbility>
-    <range>25</range><normalIntervalTicks>1800</normalIntervalTicks>
+    <!-- 技能可瞄准距离（格），与 AbilityDef 的 verbProperties.range 保持一致。 -->
+    <range>49</range>
+    <!-- 普通技能触发间隔，1800 tick = 30 秒（通用字段，必须大于 0）。 -->
+    <normalIntervalTicks>1800</normalIntervalTicks>
+    <!-- 默认效果半径（格），供范围结算与表现使用。 -->
     <radius>3</radius>
+    <!-- 蓄积状态持续时间，600 tick = 10 秒；到期后按显示值释放爆发。 -->
     <durationTicks>600</durationTicks>
+    <!-- 蓄积比例：实际扣血按该倍率计入原始累计，1 = 打多少记多少。 -->
     <recordRatio>1</recordRatio>
+    <!-- 蓄积上限倍率：上限 = 建立标记时的攻击力 × 13.22（即 1322%），建立时锁定不再变动。 -->
     <recordCapRatio>13.22</recordCapRatio>
     <!-- 由EX实际伤害附加到所选目标身上的蓄积状态。 -->
     <buffHediff>BANW_WakamoAccumulation</buffHediff>
-    <casterEffecter>BANW_Effecter_A</casterEffecter>
-    <targetEffecter>BANW_Effecter_C</targetEffecter>
-    <stageEffecter>BANW_Effecter_B</stageEffecter>
-    <endEffecter>BANW_Effecter_C</endEffecter>
-    <stateEffecter>BANW_Effecter_B</stateEffecter>
+    <!-- 施法者身上朝目标播放的指向性施法特效。 -->
+    <casterEffecter>BANW_Wakamo_Ef_A</casterEffecter>
+    <!-- 施放瞬间在目标位置播放的特效。 -->
+    <targetEffecter></targetEffecter>
+    <!-- 阶段特效槽位；若藻的存续表现交给 stateEffecter、爆发表现交给 endEffecter。 -->
+    <stageEffecter></stageEffecter>
+    <!-- 爆发结算时在目标身上播放的特效。 -->
+    <endEffecter></endEffecter>
+    <!-- 蓄积状态存续期间挂在被标记敌人身上的循环特效（由标记自行维护与清理）。 -->
+    <stateEffecter></stateEffecter>
     <exAttack>
       <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 不走BA战斗属性（useBattleStats=false）时使用的攻击基数。 -->
       <basePower>100</basePower>
-      <attackPowerRatio>1</attackPowerRatio>
-      <damageDef>BANC_Damage_shenmi</damageDef>
+      <!-- 本段伤害占攻击力的比例，1 = 100%。 -->
+      <attackPowerRatio>3.25</attackPowerRatio>
+      <!-- 本段伤害类型。 -->
+      <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
       <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>0</penetration>
+      <penetration>2</penetration>
+      <!-- 按EX技能结算，享受EX相关加成与统计。 -->
       <isExSkill>true</isExSkill>
+      <!-- 允许暴击（暴击结果与换算在建立标记时锁定）。 -->
       <canCrit>true</canCrit>
+      <!-- 应用克制（属性相性）加成。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 每发作用半径：0 为单体；若藻EX校验要求必须为 0。 -->
       <radius>0</radius>
+      <!-- 连射发数：6发，总倍率由这6发均分。 -->
       <shots>6</shots>
-      <shotIntervalTicks>6</shotIntervalTicks>
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <effecterDef>BANW_Effecter_C</effecterDef>
-      <affectHostile>true</affectHostile><!-- 允许选择和伤害敌对及无阵营生物 -->
-      <affectFriendly>false</affectFriendly><!-- 改为true可选择和伤害中立及友好阵营生物 -->
-      <canHitOwnPawn>false</canHitOwnPawn><!-- 改为true可选择和伤害己方生物 -->
+      <!-- 连射间隔：6 tick = 0.1秒一发；第n发在生效后 1 + n×6 tick 射出。 -->
+      <shotIntervalTicks>12</shotIntervalTicks>
+      <!-- 弹丸 Def；若藻EX校验要求必须配置弹丸（单体连射）。 -->
+      <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
+      <!-- 本段命中时在目标处播放的特效。 -->
+      <effecterDef></effecterDef>
+      <!-- 是否允许选择和伤害敌对及无阵营生物。 -->
+      <affectHostile>true</affectHostile>
+      <!-- 是否影响中立及友好阵营生物（false = 不误伤友方）。 -->
+      <affectFriendly>false</affectFriendly>
+      <!-- 是否允许选择和伤害己方生物（false = 不打自家人）。 -->
+      <canHitOwnPawn>false</canHitOwnPawn>
     </exAttack>
     <burstAttack>
       <!-- 累计伤害作为基础，按若藻BA输出、暴击、克制与EX倍率换算，再显示于敌方状态。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 不走BA战斗属性时的攻击基数。 -->
       <basePower>100</basePower>
+      <!-- 本段伤害占攻击力的比例，1 = 100%。 -->
       <attackPowerRatio>1</attackPowerRatio>
-      <damageDef>BANC_Damage_shenmi</damageDef>
+      <!-- 爆发段伤害类型，可与连射段分别配置。 -->
+      <damageDef>BANC_Damage_Wakamo_EX</damageDef>
       <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>0</penetration>
+      <penetration>2</penetration>
+      <!-- 按EX技能结算，享受EX相关加成与统计。 -->
       <isExSkill>true</isExSkill>
-      <canCrit>true</canCrit>
+      <!-- 允许暴击；实际暴击结果沿用建立标记时锁定的那次。 -->
+      <canCrit>false</canCrit>
+      <!-- 应用克制（属性相性）加成。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 作用半径：0 为单体；爆发校验要求必须为 0。 -->
       <radius>0</radius>
+      <!-- 发数：必须为 1（单次单体结算，由校验强制）。 -->
       <shots>1</shots>
+      <!-- 连射间隔：shots=1 时无实际作用，仅为字段完整性保留。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
       <!-- 此段直接结算，不生成弹丸。 -->
-      <effecterDef>BANW_Effecter_C</effecterDef>
+      <effecterDef>BANW_Wakamo_Ef_B</effecterDef>
       <!-- 蓄积爆发独立过滤目标；需要完整攻击同类目标时，与exAttack的阵营开关一起设置。 -->
       <affectHostile>true</affectHostile>
+      <!-- 是否影响中立及友好阵营生物（false = 爆发同样不误伤友方）。 -->
       <affectFriendly>false</affectFriendly>
+      <!-- 是否允许选择和伤害己方生物。 -->
       <canHitOwnPawn>false</canHitOwnPawn>
     </burstAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
   <AbilityDef>
+    <!-- 技能按钮唯一标识，被 profile 的 primaryAbility 与 comps 引用。 -->
     <defName>BANW_Special_Wakamo_Ex</defName>
-    <label>测试新技能·若藻</label>
-    <description>向25格内配置允许的生物连续发射6发单体子弹，基础总伤害为攻击力100%，每发独立进行BA伤害结算。首次造成实际伤害时，在目标身上附加持续10秒的蓄积状态；该发伤害、后续子弹及同阵营友军造成的实际扣血都会计入。闪避、护盾或护甲完全抵挡的伤害不计入。默认允许敌对及无阵营生物。
-
-原始累计上限为施法时攻击力的1322%。累计伤害作为爆发基础，再按若藻的BA输出倍率、暴击、克制和EX加成计算待释放值。标记建立时锁定本次换算与暴击结果，敌方状态实时显示待释放伤害、上限、类型和剩余时间。
-
-到期时按显示值释放一次单体伤害，不重复乘算BA倍率；目标仍可通过闪避、护甲与护盾影响最终扣血。连射和爆发的damageDef、护甲穿透均可分别配置。蓄积爆发不能再次被蓄积。
-
-再次施放会重新开始记录，不提前引爆旧记录。目标死亡或离开地图时取消记录。
-
-基础消耗：4 COST。冷却：1秒。</description>
+    <!-- 按钮显示名。 -->
+    <label>深红花占</label>
+    <!-- 鼠标悬停说明；文本必须紧跟标签，首字符不能是空白，否则报 description has leading whitespace。 -->
+    <description>对1名敌方单位造成自身攻击力325%的伤害，并施加积蓄(持续10秒)
+※ 该状态持续期间，以100%的系数蓄积我方单位对该目标造成的伤害，结束时对该目标造成等同于蓄积伤害量的神秘属性伤害，且无法暴击;伤害蓄积最大值为若藻1322%的攻击力。</description> 
+    <!-- 技能逻辑类：读取档案配置执行EX连射、标记记录与到期爆发流程。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
-    <iconPath>UI/StarIcon</iconPath>
-    <cooldownTicksRange>60</cooldownTicksRange>
+    <!-- 按钮图标路径。 -->
+    <iconPath>Ability/Icon/Wakamo/Wakamo_EXX</iconPath>
+    <!-- 技能冷却，60 tick = 1 秒。 -->
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <!-- 未征召时也显示按钮（便于和平时期查看）。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <!-- 未征召时按钮置灰不可点。 -->
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <!-- 征召状态下显示该技能按钮。 -->
     <showWhenDrafted>true</showWhenDrafted>
+    <!-- 不播放心灵相关特效（本技能不是灵能）。 -->
     <showPsycastEffects>false</showPsycastEffects>
+    <!-- 不作为敌对行为，施放不会引起阵营关系变化。 -->
     <hostile>false</hostile>
+    <!-- 必须选中目标才能施放。 -->
     <targetRequired>true</targetRequired>
+    <!-- 不因施法者缺乏施暴能力而禁用（可配合允许或无阵营目标使用）。 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <verbProperties>
+      <soundCast>Wakamo_Skill_EXX</soundCast>
+      <!-- 使用原版能力施放动作类，负责瞄准与射程校验。 -->
       <verbClass>Verb_CastAbility</verbClass>
-      <range>25</range><warmupTime>0</warmupTime>
+      <!-- 施放距离（格），与档案 range 一致。 -->
+      <range>49</range>
+      <!-- 预热时间：0 = 点下即进入技能流程，不额外等待。 -->
+      <warmupTime>0.5</warmupTime>
       <targetParams>
+        <!-- 不能以自己为目标。 -->
         <canTargetSelf>false</canTargetSelf>
+        <!-- 可选生物为目标。 -->
         <canTargetPawns>true</canTargetPawns>
-        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
-        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
+        <!-- 可选人形为目标。 -->
+        <canTargetHumans>true</canTargetHumans>
+        <!-- 可选动物为目标。 -->
+        <canTargetAnimals>true</canTargetAnimals>
+        <!-- 可选机械族为目标。 -->
+        <canTargetMechs>true</canTargetMechs>
+        <!-- 不可选建筑为目标。 -->
+        <canTargetBuildings>false</canTargetBuildings>
+        <!-- 不可直接点选空地施放。 -->
         <canTargetLocations>false</canTargetLocations>
       </targetParams>
     </verbProperties>
     <comps>
+      <!-- 技能组件：把按钮绑定到技能档案与触发指令。 -->
       <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
-        <profile>BANW_Special_Wakamo</profile><command>Ex</command>
+        <!-- 引用的技能档案 Def。 -->
+        <profile>BANW_Special_Wakamo</profile>
+        <!-- 按钮对应的指令：Ex = 主技能（EX）。 -->
+        <command>Ex</command>
       </li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
+      <!-- 费用组件：施放时消耗 COST。 -->
+      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
+        <!-- 每次施放消耗 4 COST，与说明文本一致。 -->
+        <cost>4</cost>
+      </li>
     </comps>
   </AbilityDef>
   <HediffDef>
+    <!-- 蓄积状态标识，由档案的 buffHediff 引用。 -->
     <defName>BANW_WakamoAccumulation</defName>
-    <label>若藻伤害蓄积</label>
+    <!-- 状态显示名。 -->
+    <label>蓄积</label>
+    <!-- 状态说明，显示在目标状态栏。 -->
     <description>累计实际受到的伤害，并显示按若藻BA属性计算后的待释放伤害。到期后爆发，最终扣血仍受闪避、护甲与护盾影响。</description>
+    <!-- 状态逻辑类：累计实际扣血、维护目标特效，并在失效时取消记录防止继续爆发。 -->
     <hediffClass>BANWlLib.Skills.Hediff_WakamoMark</hediffClass>
-    <isBad>true</isBad><initialSeverity>1</initialSeverity><everCurableByItem>false</everCurableByItem>
+    <defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <!-- 负面状态，按敌方减益显示。 -->
+    <isBad>true</isBad>
+    <!-- 初始严重度，作为显示与取值的基准值。 -->
+    <initialSeverity>1</initialSeverity>
+    <!-- 不能被道具治愈，只能到期或目标失效时移除。 -->
+    <everCurableByItem>false</everCurableByItem>
   </HediffDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANW_Bullet_Wakamo_EXX</defName>
+    <label>深红花占</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData>
+      <texPath>Projectile/Bullet_Wakamo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(2,4)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <speed>100</speed>
+    </projectile>
+  </ThingDef>
+   <DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Wakamo_EX</defName><!--通用贯通-->
+    <additionalHediffs><!--额外健康-->
+      <li>
+        <hediff>BANW_WakamoAccumulation</hediff><!--健康类型-->
+        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+  <DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Wakamo_EX_B</defName><!--通用贯通-->
+    <damageEffecter>BANW_Wakamo_Ef_C</damageEffecter>
+  </DamageDef>
+
+
+
+
+
+
+
+
+
+
+
+    <AbilityDef>
+    <defName>BAWN_Wakamo_EX</defName>
+    <label>随风凋谢的漫天花雨</label>
+    <description>对1名敌方单位造成自身攻击力369%的伤害</description>
+    <iconPath>Ability/Icon/Asuna/Asuna_EX</iconPath>
+    <cooldownTicksRange>1500</cooldownTicksRange>
+    <hotKey>Misc7</hotKey>
+    <warmupStartSound>Wakamo_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>True</showWhenDrafted>
+    <hostile>true</hostile>
+    <warmupEffecter></warmupEffecter>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <warmupEffecter>BANW_Wakamo_Ef_D</warmupEffecter>
+      <!-- 发射投射物的技能动词，命中逻辑由 projectileDef 上的 Projectile_PiercingArea 配合 disablePiercing 执行。 -->
+      <soundCast>BANW_Wp_SR_At_B</soundCast>
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+      <range>49</range>
+      <warmupTime>1.0</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <!-- 普通子弹只瞄准 Pawn，命中第一个目标即销毁。 -->
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <!-- 普通子弹投射物，disablePiercing=true 使命中即销毁。 -->
+         <projectileDef>BANW_Bullet_Wakamo_NS</projectileDef>
+      </li>
+    </comps>
+    <modExtensions>
+     
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <!-- 普通子弹不显示直线范围，Circle 且不设 radius 时只显示射程圈和目标点高亮。 -->
+        <shape>Circle</shape>
+        <range>49</range>
+        <!-- 不启用 usePiercingProjectileSize，因为不穿透时无需读取判定宽度。 -->
+        <drawCasterRange>true</drawCasterRange>
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+        <showBattleFormula>true</showBattleFormula>
+        <previewActions>
+          <li>
+            <!-- 500% 攻击力伤害。 -->
+            <attackPowerRatio>3.69</attackPowerRatio>
+            <damageDef>BANC_Damage_shenmi</damageDef>
+            <isNormalAttack>false</isNormalAttack>
+            <canCrit>true</canCrit>
+            <applyAffinity>true</applyAffinity>
+            <isExSkill>false</isExSkill>
+          </li>
+        </previewActions>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <!-- 不穿透普通子弹投射物：disablePiercing=true 时沿原版飞行命中第一个目标即销毁，仍走统一战斗系统结算一次。 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANW_Bullet_Wakamo_NS</defName>
+    <label>随风凋谢的漫天花雨</label>
+    <thingClass>BANWlLib.Projectiles.Projectile_PiercingArea</thingClass>
+    <projectile>
+      <!-- 统一战斗层使用的伤害类型。 -->
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <damageAmountBase>35</damageAmountBase>
+      <stoppingPower>1</stoppingPower>
+      <armorPenetrationBase>2</armorPenetrationBase>
+      <!-- 普通子弹飞行速度较快。 -->
+      <speed>120</speed>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1,3)</drawSize>
+      <texPath>Projectile/Bullet_Wakamo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <modExtensions>
+       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+      <!-- 主段攻击力倍率：7.5 = 750%。非普攻时缺这行伤害为 0 -->
+      <attackPowerRatio>3.69</attackPowerRatio>
+      <isNormalAttack>false</isNormalAttack>
+      <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
+      <canCrit>true</canCrit>
+      <isExSkill>false</isExSkill>
+      <applyAffinity>true</applyAffinity>
+    </li>
+      <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
+        <!-- 核心开关：true 时禁用穿透，子弹按原版飞行命中第一个目标即销毁。 -->
+        <disablePiercing>true</disablePiercing>
+
+        <!-- 以下穿透相关字段在 disablePiercing=true 时不生效，保留仅供对照。 -->
+        <damageIntervalTicks>5</damageIntervalTicks>
+        <damageWidth>3</damageWidth>
+        <damageLength>8</damageLength>
+        <extendToMaxRange>true</extendToMaxRange>
+        <maxRange>30</maxRange>
+
+        <!-- 以下统一战斗系统参数在 disablePiercing=true 时仍然生效，命中目标时结算一次。 -->
+        <immuneFriendlyFire>true</immuneFriendlyFire>
+
+        <!-- 500% 攻击力伤害。 -->
+        <attackPowerRatio>3.69</attackPowerRatio>
+        <isExSkill>false</isExSkill>
+        <canCrit>true</canCrit>
+        <applyAffinity>true</applyAffinity>
+        <canHitBuilding>true</canHitBuilding>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+       <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
+        <directionalImpactEffect>BANW_Wakamo_Ef_E</directionalImpactEffect>
+        <!-- 是否对 Pawn 触发方向命中特效。 -->
+        <directionalImpactOnPawn>true</directionalImpactOnPawn>
+        <!-- 是否对 Building 触发方向命中特效。 -->
+        <directionalImpactOnBuilding>true</directionalImpactOnBuilding>
+        <!-- 方向命中特效飞出速度。 -->
+        <directionalImpactSpeed>1</directionalImpactSpeed>
+        <!-- 方向命中特效沿弹道方向向前偏移。 -->
+        <directionalImpactOffsetForward>0</directionalImpactOffsetForward>
+        <!-- 方向命中特效向上偏移，避免埋进地面。 -->
+        <directionalImpactOffsetUp>0</directionalImpactOffsetUp>
+        <!-- 飞行开始时的绘制缩放。 -->
+        <startDrawScale>0.5</startDrawScale>
+        <!-- 飞行结束时的绘制缩放。 -->
+        <endDrawScale>1.2</endDrawScale>
+        <!-- 淡入 tick 数。 -->
+        <fadeInTicks>2</fadeInTicks>
+        <!-- 淡出 tick 数。 -->
+        <fadeOutTicks>5</fadeOutTicks>
+        <!-- true 表示飞行特效跟随投射物 Thing。 -->
+        <flightEffectAttachToProjectile>true</flightEffectAttachToProjectile>
+        <!-- true 表示附着 Mote 按投射物朝向同步旋转。 -->
+        <flightEffectRotateWithProjectile>true</flightEffectRotateWithProjectile>
+      </li>
+    </modExtensions>
+  </ThingDef>
 </Defs>

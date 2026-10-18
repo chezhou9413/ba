@@ -81,19 +81,33 @@
   </DamageDef>
 
   <DamageDef Name="BANC_Damage_shenmi">
+    <!-- 伤害定义名，供子弹、技能和特效引用 -->
     <defName>BANC_Damage_shenmi</defName>
+    <!-- 显示名称，出现在信息面板与战斗日志中 -->
     <label>神秘</label>
+    <!-- 伤害处理类：AddInjury 按部位造成常规伤口，走原版受伤流程（含护甲与承伤系数） -->
     <workerClass>DamageWorker_AddInjury</workerClass>
+    <!-- 是否视为外来暴力：影响承伤系数介入、仇恨归属、心情与社交判定 -->
     <externalViolence>true</externalViolence>
+    <!-- 致死时的死亡提示文本，{0} 会替换为死者名称 -->
     <deathMessage>{0} 死于神秘伤害</deathMessage>
+    <!-- 命中后附加的伤口类型，Gunshot 即枪伤 -->
     <hediff>Gunshot</hediff>
+    <!-- 护甲类别：Sharp 表示用锐器护甲抵挡（另有 Blunt 钝器、Heat 热能等） -->
     <armorCategory>Sharp</armorCategory>
+    <!-- 是否产生强力冲击：命中后可能造成击退与短暂失衡 -->
     <hasForcefulImpact>true</hasForcefulImpact>
+    <!-- 是否一路伤害到体外层为止，false 表示遇到有效护甲层就停止继续向内穿透 -->
     <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
+    <!-- 命中音效类型 -->
     <impactSoundType>Bullet</impactSoundType>
+    <!-- 超过部位生命值多少比例时摧毁该部位，0~0.1 表示伤害溢出 0% 到 10% 即可能毁伤部位 -->
     <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+    <!-- 单次命中强制造成内部器官伤害的概率 -->
     <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
+    <!-- 是否为远程伤害：影响战斗统计与部分交互判定 -->
     <isRanged>true</isRanged>
+    <!-- 是否使动物受惊逃跑 -->
     <makesAnimalsFlee>true</makesAnimalsFlee>
   </DamageDef>
 

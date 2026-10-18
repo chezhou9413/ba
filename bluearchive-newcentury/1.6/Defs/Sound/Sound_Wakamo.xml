@@ -1,5 +1,113 @@
 
 <Defs>
+	<SoundDef>
+	<defName>Wakamo_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Wakamo/SkillEX/Wakamo_ExSkill_Level_1</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Wakamo/SkillEX/Wakamo_ExSkill_Level_2</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Wakamo/SkillEX/Wakamo_ExSkill_Level_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+	<SoundDef>
+	<defName>Wakamo_Skill_EX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Wakamo/Wakamo_CommonSkill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Wakamo_Skill_EX_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Wakamo/SFX_Skill_Wakamo_Ex</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Wakamo_Skill_EX_B</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Wakamo/SFX_Wakamo_Ex_03</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>40</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Wakamo_Skill_EX_C</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Wakamo/SFX_Wakamo_Ex_02</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>40</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Wakamo_Skill_EX_D</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Wakamo/SFX_Wakamo_Ex_04</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>40</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
 <SoundDef>
 	<defName>Wakamo_levelup_A</defName>  <!--二技能语音-->  
 	<maxVoices>1</maxVoices>

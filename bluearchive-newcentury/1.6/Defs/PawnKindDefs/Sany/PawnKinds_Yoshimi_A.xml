@@ -10,7 +10,7 @@
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
 		<abilities>
-			<li>BAWN_Yoshimi_A_EX</li>
+			<!-- BAWN_Yoshimi_A_EX 现在是 NormalSkillDef（普攻连携），不是 AbilityDef，不能放在 abilities 里 -->
 			<li>BAWN_Yoshimi_A_EXX</li>
 		</abilities>
 		<startingHediffs>
@@ -76,6 +76,12 @@
 				<allowedWeapons>
 					<li>BANC_Yoshimi_A</li>
 				</allowedWeapons>
+			</li>
+			<!-- 绑定通用普通技能：角色生成时安装 BANW_NormalSkillRuntime 状态，普攻计数满足后自动触发 -->
+			<li Class="BANWlLib.Skills.SpecialSkillKindExtension">
+				<normalSkills>
+					<li>BAWN_Yoshimi_A_EX</li>
+				</normalSkills>
 			</li>
 
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">

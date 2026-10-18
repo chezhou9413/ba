@@ -87,156 +87,7 @@
       
     </comps>
     </HediffDef>
-  <AbilityDef>
-    <defName>BAWN_Yoshimi_A_EX</defName>
-    <label>视觉艺术家</label>
-    <description>对一名敌人造成自身子弹攻击力的1352%的伤害</description>
-    <iconPath>Ability/Icon/Yoshimi_A/Yoshimi_EX</iconPath>
-    <cooldownTicksRange>1000</cooldownTicksRange>
-    <hotKey>Misc12</hotKey>
-    <warmupStartSound>Yoshimi_A_Skill_EX</warmupStartSound>
-    
-    <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
-    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
-    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
-    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
-    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
-    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
-    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
-    <hostile>true</hostile><!-- 是否是敌对行为 -->
-    <targetRequired>true</targetRequired><!-- 对自己使用 -->
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
-    <statBases>
-    <Ability_Duration>4</Ability_Duration>
-  </statBases>
-    <verbProperties>
-      <warmupEffecter>BANW_Yoshimi_A_Ef_B</warmupEffecter>
-      <soundCast>BANW_Wp_AR_At</soundCast>
-      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
-      <range>34.9</range><!-- 作用范围：-1 表示只能近战接触 -->
-      <warmupTime>1.0</warmupTime><!-- 前摇时间（单位：秒） -->
-      <ai_IsWeapon>false</ai_IsWeapon> <!--AI
-      不将此能力视为武器。-->
-      <targetParams><!-- 目标参数设置 -->
-        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
-        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
-        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
-        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
-        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
-        <repeatShotSound>true</repeatShotSound>
-        <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
-        <projectileDef></projectileDef>
-        <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
-        <canHitOwnPawn>true</canHitOwnPawn>
-        <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
-        <canHitOwnBuilding>true</canHitOwnBuilding>
-        <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
-        <cancelWhenCasterMoved>true</cancelWhenCasterMoved>
-        <!-- 施法者倒地、死亡、眩晕或失去基础射击能力后，中断同一轮剩余子弹。 -->
-        <requireCasterCanShoot>true</requireCasterCanShoot>
-        <!-- 每发子弹到点时重新检查视线，视线被墙体或遮挡切断后中断同一轮剩余子弹。 -->
-        <requireLineOfSightEachShot>true</requireLineOfSightEachShot>
-        <!-- 连射队列未结束前每 tick 停止寻路，禁止施法者移动。 -->
-        <lockCasterDuringSequence>true</lockCasterDuringSequence>
-        <!-- 连射队列未结束前持续绘制主武器朝目标瞄准。 -->
-        <drawPrimaryWeaponAimDuringSequence>true</drawPrimaryWeaponAimDuringSequence>
-        <shots>
-          <li>
-            <delayTicks>0</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.12</attackPowerRatio>
-          </li>
-        
-          <li>
-            <delayTicks>7</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.12</attackPowerRatio>
-          </li>
-          
-          <li>
-            <delayTicks>14</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.12</attackPowerRatio>
-          </li>
-          
-          <li>
-            <delayTicks>21</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.12</attackPowerRatio>
-          </li>
-         
-          <li>
-            <delayTicks>28</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.13</attackPowerRatio>
-          </li>
-          
-          <li>
-            <delayTicks>35</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.13</attackPowerRatio>
-          </li>
-
-          <li>
-            <delayTicks>42</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.13</attackPowerRatio>
-          </li>
-
-          <li>
-            <delayTicks>49</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.13</attackPowerRatio>
-          </li>
-
-          <li>
-            <delayTicks>56</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.13</attackPowerRatio>
-          </li>
-
-          <li>
-            <delayTicks>63</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.13</attackPowerRatio>
-          </li>
-
-          <li>
-            <delayTicks>70</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.13</attackPowerRatio>
-          </li>
-
-          <li>
-            <delayTicks>77</delayTicks>
-            <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef>
-            <attackPowerRatio>1.13</attackPowerRatio>
-          </li>
-          
-        </shots>
-      </li>
-    </comps>
-    <modExtensions>
-      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-        <showBattleFormula>true</showBattleFormula>
-      </li>
-      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
-        <shape>Circle</shape>
-        <range>34.9</range>
-        <drawCasterRange>true</drawCasterRange>
-        <drawTargetHighlight>true</drawTargetHighlight>
-      </li>
-      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-      <showBattleFormula>true</showBattleFormula>
-    </li>
-    </modExtensions>
-  </AbilityDef>
+  
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Yoshimi_A_EX</defName>
     <label>视觉艺术家子弹</label>
@@ -274,35 +125,53 @@
     </modExtensions>
   </ThingDef>
 
-  <BANWlLib.Skills.ArisuNormalSkillDef>
-  <defName>BAWN_Yoshimi_A_EXXX</defName><!-- 技能唯一标识 -->
-  <label>视觉艺术家</label><!-- 显示名称 -->
-  <description>每经过10次普通攻击，对1名敌人造成攻击力1352%的伤害</description>
-  <requiredHits>1</requiredHits><!-- 触发所需的累计有效普攻命中次数 -->
-  <cooldownTicks>1</cooldownTicks><!-- 触发后的冷却，单位 tick（1 tick 基本等于无冷却） -->
-  <range>34.9</range><!-- 技能有效距离（格） -->
-  <!-- 可分别替换施法音效、自身特效、目标施法特效及attack内的命中特效。 -->
-  <castSound>BANW_Wp_AR_At</castSound><!-- 施法音效 -->
-  <casterEffecter>BANW_Yoshimi_A_Ef_B</casterEffecter><!-- 施法者身上的特效 -->
-  <targetEffecter></targetEffecter><!-- 目标位置的特效 -->
-  <attack>
-    <useBattleStats>true</useBattleStats><!-- 是否使用 BA 战斗属性（攻击力/倍率等）结算 -->
-    <basePower>26</basePower><!-- 基础伤害值 -->
-    <attackPowerRatio>1</attackPowerRatio><!-- 攻击力倍率，1 = 100% 攻击力 -->
-    <damageDef>BANC_Damage_baofa</damageDef><!-- 伤害类型 -->
-    <!-- 每发使用完整护甲穿透，0.5为50%。 -->
-    <penetration>2</penetration><!-- 护甲穿透比例，0 = 不穿透，1 = 完全穿透 -->
-    <isExSkill>false</isExSkill><!-- 是否按 EX 技能计算（影响 EX 独立乘区） -->
-    <canCrit>true</canCrit><!-- 是否可暴击 -->
-    <applyAffinity>true</applyAffinity><!-- 是否应用攻击/护甲类型克制 -->
-    <radius>0</radius><!-- 溅射半径，0 = 单体 -->
-    <shots>1</shots><!-- 发射发数 -->
-    <shotIntervalTicks>6</shotIntervalTicks><!-- 每发之间的间隔 tick（6 tick = 0.1 秒） -->
-    <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef><!-- 弹丸 ThingDef -->
-    <effecterDef></effecterDef><!-- 命中时播放的特效 -->
-    <canHitOwnPawn>false</canHitOwnPawn><!-- 是否可命中施法者自己 -->
-    <affectFriendly>false</affectFriendly><!-- 是否可命中友军 -->
-    <affectHostile>true</affectHostile><!-- 是否可命中敌对单位 -->
-  </attack>
-</BANWlLib.Skills.ArisuNormalSkillDef>
+  <!-- 普攻连携：每有效命中 1 次普攻，追加一轮 12 连射，整轮总倍率 1352%。 -->
+  <BANWlLib.Skills.NormalSkillDef>
+    <defName>BAWN_Yoshimi_A_EX</defName><!-- 技能唯一标识 -->
+    <label>视觉艺术家</label><!-- 显示名称 -->
+    <description>自身每进行30次普通攻击，对1名敌人造成自身1352%攻击力的伤害</description>
+    <countMode>EffectiveHit</countMode><!-- 计数方式：ShotFired=按射出计数，EffectiveHit=按造成非零伤害的命中计数 -->
+    <requiredCount>30</requiredCount><!-- 触发所需的累计次数，与描述“每10次普通攻击”一致 -->
+    <cooldownTicks>1</cooldownTicks><!-- 触发后的冷却，单位 tick（1 tick 基本等于无冷却） -->
+    <range>34.9</range><!-- 技能有效距离（格） -->
+    <onlyTargetAllies>false</onlyTargetAllies><!-- 是否只对同阵营目标生效 -->
+    <showBattleFormula>true</showBattleFormula><!-- 悬浮时是否显示 BA 战斗公式 -->
+    <targetParams><!-- 目标筛选，自动技能必须关闭空地目标 -->
+      <canTargetLocations>false</canTargetLocations><!-- 不可选空地，必须为 false -->
+      <canTargetSelf>false</canTargetSelf><!-- 不可选自己 -->
+      <canTargetPawns>true</canTargetPawns><!-- 可选生物 -->
+      <canTargetBuildings>true</canTargetBuildings><!-- 可选建筑 -->
+      <canTargetAnimals>true</canTargetAnimals><!-- 可选动物 -->
+      <canTargetHumans>true</canTargetHumans><!-- 可选人类 -->
+      <canTargetMechs>true</canTargetMechs><!-- 可选机械体 -->
+    </targetParams>
+    <castSound>Yoshimi_A_Skill_EX</castSound><!-- 施法音效 -->
+    <casterEffecter>BANW_Yoshimi_A_Ef_B</casterEffecter><!-- 施法者身上的特效 -->
+    <targetEffecter></targetEffecter><!-- 目标位置的特效 -->
+    <actions>
+      <li>
+        <!-- 攻击力倍率是本段全部发数的总倍率，不是每颗子弹的倍率。 -->
+        <useBattleStats>true</useBattleStats><!-- 是否使用 BA 战斗属性结算 -->
+        <attackPowerRatio>40.56</attackPowerRatio><!-- 整轮总倍率：12 发 × 约 1.1267 = 1352% -->
+        <damageDef>BANC_Damage_baofa</damageDef><!-- 伤害类型 -->
+        <canCrit>true</canCrit><!-- 是否可暴击 -->
+        <alwaysCrit>false</alwaysCrit><!-- 是否必定暴击 -->
+        <applyAffinity>true</applyAffinity><!-- 是否应用攻击/护甲类型克制 -->
+        <isExSkill>false</isExSkill><!-- 普通技能动作必须为 false -->
+        <isNormalAttack>false</isNormalAttack><!-- 普通技能动作必须为 false -->
+        <penetration>2</penetration><!-- 护甲穿透 -->
+        <radius>0</radius><!-- 溅射半径，0 = 单体 -->
+        <shots>12</shots><!-- 发射发数，与 attackPowerRatio 的总倍率配套 -->
+        <shotIntervalTicks>7</shotIntervalTicks><!-- 每发之间的间隔 tick -->
+        <projectileDef>BANC_Bullet_Yoshimi_A_EX</projectileDef><!-- 弹丸 ThingDef -->
+        <effecterDef></effecterDef><!-- 命中时播放的特效 -->
+        <shotSound>BANW_Wp_AR_At</shotSound>
+        <rotateImpactEffect>false</rotateImpactEffect><!-- 命中特效是否按弹道方向旋转 -->
+        <impactRotationOffset>0</impactRotationOffset><!-- 命中特效旋转偏移 -->
+        <affectHostile>true</affectHostile><!-- 是否可命中敌对单位 -->
+        <affectFriendly>false</affectFriendly><!-- 是否可命中友军 -->
+        <canHitOwnPawn>false</canHitOwnPawn><!-- 是否可命中施法者自己 -->
+      </li>
+    </actions>
+  </BANWlLib.Skills.NormalSkillDef>
 </Defs>

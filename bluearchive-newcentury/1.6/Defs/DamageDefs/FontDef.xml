@@ -15,9 +15,7 @@
             <li>BANC_Damage_Nozomi_EXX</li>
         </EnsureCritical>
         <DisableIncomingDamageFactorCritical>
-            <li>BANC_Damage_shenmi</li>
-            <li>BANC_Damage_Ibuki_EX</li>
-            <li>BANC_Damage_Rio_EX</li>
+            <li>BANC_Damage_Wakamo_EX</li>
         </DisableIncomingDamageFactorCritical>
     </BANWlLib.DamageFontSystem.FontDef>
 </Defs>

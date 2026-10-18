@@ -524,7 +524,7 @@
         <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
         <fleckDef>BAWN_Effect_BA_A</fleckDef>
         <burstCount>1</burstCount>
-        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <ticksBetweenMotes>360</ticksBetweenMotes>
         <initialDelayTicks>0</initialDelayTicks>
         <positionRadius>0</positionRadius>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
