@@ -1,0 +1,29 @@
+BlueArchive-NewWorld / RimUnity 1.7 配置
+
+加载配置
+1.6 加载根目录语音、Common 和 1.6。
+1.7 加载根目录语音、Common 和 1.7，依赖 Harmony、RimUnity、ChezhouLib 和 HAR 的 1.7 版本及 Royalty。
+RimUnity 必须在本模组和 ChezhouLib 之前；不要把旧版 DOTween、spine-unity、spine-csharp、spineMono 或 Notice DLL 复制进 1.7/Assemblies。
+RimUnity.Spine.dll 随 RimUnity 发布，模组不再携带 Unity Spine 渲染程序集。
+
+资源路径
+1.7/Data/RimUnity/catalog.json 是 Unity 预制体、材质、Shader、Spine 等资源的运行时入口。
+普通 Def 引用的角色、建筑、武器、弹丸和图标贴图由 Common/Textures 与 1.7/Textures 提供，保持原版 ContentFinder 路径。
+Tools/Build/Sync-GameTextures.ps1 从 UnityProject/Assets/Data/Archive.NewWorld/Textures 同步原先打入 AssetBundle 的普通贴图；Common 中已有的图片不重复发布。
+Prefabs：界面和伤害数字预制体；Atlases/card：抽卡图集；Sprites/Cost：COST 数字。
+UIImage：学生立绘、头像和图标，继续使用原图片索引与闲置释放策略。
+Effects：战斗特效图片，由 RimUnity 加载后交给原版材质绘制。
+Spine 图集、原始骨骼数据、字体、视频、音频、材质和 GLSL 均随标准清单导出。
+主界面与抽卡的 1.7 根画布使用独立 UI 相机，保留复杂粒子所需的顶点流。
+
+构建
+先运行 RimUnity/Tools/Build.ps1，包含 RimUnity.Core、RimUnity、RimUnity.Spine。
+再运行本模组 Tools/Build/Build-1.7.ps1，生成 1.7/Assemblies 并同步 Defs、Patches、Languages、UI 和普通贴图。
+共享玩法定义仍以 1.6 目录为源；公告的 1.7 类型由构建脚本转换为本模组类型。
+
+导出入口
+Tools/Build/BAUiRimUnityProbe.cs 对应 E:/mygame/BAUIMIAN。
+Tools/Build/BAImageRimUnityExport.cs 对应 E:/RimModDev/bluearchive-newcentury/UnityProject。
+两者都调用 RimUnity PrefabExporter；BAAssetPublish 使用 ExportStorage.CopyForPublish 整理并合并清单。
+后台导出需要图形设备读回贴图，不使用 -nographics。
+导出程序只整理暂存内容；检查完成后才复制到开发模组的 1.7/Data/RimUnity。

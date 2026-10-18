@@ -1,0 +1,166 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Kisaki_Student</defName>
+    <label>妃咲</label>
+    <studentId>BANW_Kisaki</studentId>
+    <kindDef>BANW_Kisaki</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Kisaki</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Kisaki</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Sanhaijing</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/支援</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/弹力装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>10</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>10</Crafting>
+				
+				<Artistic>15</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>18</Social>
+				
+				<Intellectual>20</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Kisaki</WapenUIImagePath>
+			    
+				<WapenTypeText>冲锋枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>基本技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Aoba/Aoba_EX</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>制令：克己复礼</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身治愈力增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Niya/Niya_EX</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>布告天下</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[全局COST回复力提高<color=#00FFFF>20%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[山海经高级中学
+3年级
+社团 玄龙门]]>
+				</StudentDesp>
+				
+				<StudentBioName>龙华 妃咲</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Shanhaijing</AcademyLogoPath>
+				
+				<StudentCard>山海经高级中学所属、学生会「玄龙门」门主。其言辞古雅威严，举手投足间透着一股神秘感，周身萦绕着难以靠近的氛围。然而，她巧妙地将这种印象活用于自己的职务之中。偶尔，她会"微服私访"下到寻常市井，能识破其真身者寥寥无几，而知晓的人只会向她投以微笑。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Vibration</DamageType>
+			
+			<DefenseType>Vibration</DefenseType>
+			
+			<PosType>Assist</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Kisaki</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kisaki_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kisaki_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Kisaki_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Kisaki</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

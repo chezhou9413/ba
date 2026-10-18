@@ -1,0 +1,165 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Kasumi_Student</defName>
+    <label>霞</label>
+    <studentId>BANW_Kasumi</studentId>
+    <kindDef>BANW_Kasumi</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Kasumi</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Kasumi</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Gehena</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.5</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>3</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>20</Construction>
+				
+				<Mining>20</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>10</Crafting>
+				
+				<Artistic>12</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>10</Social>
+				
+				<Intellectual>15</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Kasumi</WapenUIImagePath>
+			    
+				<WapenTypeText>手枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Kasumi/Kasumi_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>巨踵冲击</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>432%</color>的伤害并且范围内的敌人乘伤系数增加<color=#00FFFF>33%</color>（持续<color=#00FFFF>25</color>秒）]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Kasumi/Kasumi_EXX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>信息才是最重要的</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>432%</color>的伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Chiaki/Chiaki_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>狂人的战略</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身暴击率增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>测试技能4</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[格黑娜学院
+2年级
+社团 温泉开发部]]>
+				</StudentDesp>
+				
+				<StudentBioName>鬼怒川 霞</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Gehena</AcademyLogoPath>
+				
+				<StudentCard>歌赫娜温泉开发部的部长。她主张流着温泉水的地方都应该成为温泉，只要是她看上的地方，不管上面有什么都会爆破清理。虽然她有着成员们的全面支持，但实际上是一名正被悬赏通缉的罪犯。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Vibration</DamageType>
+			
+			<DefenseType>Mysterious</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Kasumi</DraggableAudio>
+			<GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kasumi_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+			<UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kasumi_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Kasumi_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+            
+            <avtTexPath>Gacha/Student/Kasumi</avtTexPath>
+		</baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

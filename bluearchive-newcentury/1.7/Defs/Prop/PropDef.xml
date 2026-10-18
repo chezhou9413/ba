@@ -1,0 +1,5386 @@
+
+<Defs>
+  <ThingDef Name="BANW_Proplevel" Abstract="True">
+    <category>Item</category> <!-- 添加这一行 -->
+    <thingClass>ThingWithComps</thingClass>
+    
+    <generateCommonality>0</generateCommonality>
+    
+    <generateAllowChance>0</generateAllowChance>
+    
+    <tradeability>None</tradeability>
+    
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    
+    <statBases>
+      
+      <Flammability>0</Flammability>
+      
+      <MarketValue>10</MarketValue>
+      
+      <Mass>0.5</Mass>
+    </statBases>
+    
+    <selectable>true</selectable>
+    
+    <fillPercent>0.25</fillPercent>
+    
+    <tradeability>None</tradeability>
+    
+    <useHitPoints>false</useHitPoints>
+    
+    <pathCost>15</pathCost>
+    
+    <alwaysHaulable>true</alwaysHaulable> 
+    
+    <drawGUIOverlay>true</drawGUIOverlay> 
+    
+    <thingCategories>
+      <li>BAWN_Proplevel_Piece</li>
+    </thingCategories>
+    
+    <tradeTags Inherit="False">
+      
+      <li>ExoticMisc</li>
+    </tradeTags>
+    
+    <thingSetMakerTags Inherit="False" />
+    
+    <tickerType>Never</tickerType>
+    
+    <rotatable>false</rotatable>
+    
+    <pathCost>14</pathCost>
+    
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <stackLimit>5000</stackLimit>
+    <comps>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>Kami_Proplevel</defName>
+    <label>神明精髓</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Kami</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Miyu_Proplevel</defName>
+    <label>美游的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Miyu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用美游的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Miyu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Miyako_Proplevel</defName>
+    <label>宫子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Miyako</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用宫子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Miyako</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Saki_Proplevel</defName>
+    <label>咲的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Saki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用咲的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Saki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hoshiro_Proplevel</defName>
+    <label>星野的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hoshiro</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用星野的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hoshiro</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Seia_Proplevel</defName>
+    <label>圣娅的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Seia</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用圣娅的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Seia</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Turugi_Proplevel</defName>
+    <label>鹤城的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Turugi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用鹤城的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Turugi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hasumi_Proplevel</defName>
+    <label>莲见的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hasumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用莲见的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hasumi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Asuna_Proplevel</defName>
+    <label>明日奈的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Asuna</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用明日奈的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Asuna</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Akane_Proplevel</defName>
+    <label>茜的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Akane</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用茜的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Akane</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Aoba_Proplevel</defName>
+    <label>青叶的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Aoba</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用青叶的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Aoba</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hikali_Proplevel</defName>
+    <label>光的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hikali</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用光的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hikali</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nozomi_Proplevel</defName>
+    <label>望的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Nozomi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用望的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nozomi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Shiroko_Proplevel</defName>
+    <label>白子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Shiroko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用白子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Shiroko</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mika_Proplevel</defName>
+    <label>未花的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Mika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用未花的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mika</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Moe_Proplevel</defName>
+    <label>萌绘的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Moe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用萌绘的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Moe</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mashiro_Proplevel</defName>
+    <label>真白的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Mashiro</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用真白的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mashiro</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nero_Proplevel</defName>
+    <label>妮露的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Nero</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用妮露的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nero</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Ichika_Proplevel</defName>
+    <label>一花的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Ichika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用一花的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Ichika</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Karlin_Proplevel</defName>
+    <label>花凛的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Karlin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用花凛的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Karlin</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Cherino_Proplevel</defName>
+    <label>切里诺的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Cherino</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用切里诺的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Cherino</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Makoto_Proplevel</defName>
+    <label>真琴的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Makoto</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用真琴的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Makoto</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hina_Proplevel</defName>
+    <label>日奈的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用日奈的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hina</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Natsu_Proplevel</defName>
+    <label>夏的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Natsu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用夏的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Natsu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Reisa_Proplevel</defName>
+    <label>玲纱的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Reisa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用玲纱的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Reisa</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Ibuki_Proplevel</defName>
+    <label>伊吹的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Ibuki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用伊吹的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Ibuki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Yuuka_Proplevel</defName>
+    <label>优香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Yuuka</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用优香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Yuuka</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Iori_Proplevel</defName>
+    <label>伊织的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Iori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用伊织的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Iori</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Suzumi_Proplevel</defName>
+    <label>铃美的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Suzumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用铃美的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Suzumi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Ui_Proplevel</defName>
+    <label>忧的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Ui</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用忧的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Ui</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Ako_Proplevel</defName>
+    <label>亚子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Ako</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用亚子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Ako</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Shimiko_Proplevel</defName>
+    <label>志美子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Shimiko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用志美子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Shimiko</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Iroha_Proplevel</defName>
+    <label>伊吕波的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Iroha</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用吕伊波的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Iroha</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Airy_Proplevel</defName>
+    <label>爱莉的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Airy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用爱莉的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Airy</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Momoi_Proplevel</defName>
+    <label>桃井的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Momoi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用桃井的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Momoi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Chinatsu_Proplevel</defName>
+    <label>千夏的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Chinatsu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用千夏的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Chinatsu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Midori_Proplevel</defName>
+    <label>绿的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Midori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用绿的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Midori</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Koharu_Proplevel</defName>
+    <label>小春的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Koharu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用小春的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Koharu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Yuzu_Proplevel</defName>
+    <label>柚子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Yuzu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用柚子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Yuzu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Atsuko_Proplevel</defName>
+    <label>亚津子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Atsuko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用亚津子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Atsuko</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Satsuki_Proplevel</defName>
+    <label>皋月的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Satsuki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用皋月的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Satsuki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Arisu_Proplevel</defName>
+    <label>爱丽丝的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Arisu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用爱丽丝的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Arisu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kayako_Proplevel</defName>
+    <label>佳代子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kayako</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用佳代子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kayako</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Koyuki_Proplevel</defName>
+    <label>小雪的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Koyuki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用小雪的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Koyuki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Saya_Proplevel</defName>
+    <label>纱凌的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Saya</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用纱凌的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Saya</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kazusa_Proplevel</defName>
+    <label>和纱的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kazusa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用和纱的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kazusa</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Saori_Proplevel</defName>
+    <label>纱织的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Saori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用纱织的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Saori</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Chiaki_Proplevel</defName>
+    <label>千秋的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Chiaki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用千秋的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Chiaki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mari_Proplevel</defName>
+    <label>玛丽的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Mari</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用玛丽的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mari</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Sakurako_Proplevel</defName>
+    <label>樱子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Sakurako</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用樱子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Sakurako</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kokona_Proplevel</defName>
+    <label>心奈的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kokona</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用心奈的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kokona</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hinata_Proplevel</defName>
+    <label>日向的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hinata</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用日向的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hinata</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Yoshimi_Proplevel</defName>
+    <label>好美的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Yoshimi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用好美的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Yoshimi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Shun_Proplevel</defName>
+    <label>瞬的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Shun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用瞬的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Shun</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Haruka_Proplevel</defName>
+    <label>遥香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Haruka</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用遥香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Haruka</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hanako_Proplevel</defName>
+    <label>花子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hanako</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用花子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hanako</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Ayane_Proplevel</defName>
+    <label>绫音的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Ayane</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用绫音的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Ayane</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kisaki_Proplevel</defName>
+    <label>妃咲的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kisaki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用妃咲的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kisaki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hiyori_Proplevel</defName>
+    <label>日和的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hiyori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用日和的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hiyori</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mutsuki_Proplevel</defName>
+    <label>睦月的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Mutsuki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用睦月的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mutsuki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Misaki_Proplevel</defName>
+    <label>美咲的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Misaki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用美咲的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Misaki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Junko_Proplevel</defName>
+    <label>淳子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Junko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用淳子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Junko</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hare_Proplevel</defName>
+    <label>晴的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hare</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用晴的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hare</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Aru_Proplevel</defName>
+    <label>阿露的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Aru</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用阿露的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Aru</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Serika_Proplevel</defName>
+    <label>芹香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Serika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用芹香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Serika</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Chihiro_Proplevel</defName>
+    <label>千寻的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Chihiro</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用千寻的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Chihiro</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hifumi_Proplevel</defName>
+    <label>日富美的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hifumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用日富美的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hifumi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kotama_Proplevel</defName>
+    <label>小玉的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kotama</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用小玉的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kotama</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Fuuka_Proplevel</defName>
+    <label>枫香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Fuuka</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用枫香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Fuuka</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Maki_Proplevel</defName>
+    <label>真纪的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Maki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用真纪的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Maki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Juri_Proplevel</defName>
+    <label>朱莉的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Juri</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用朱莉的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Juri</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Yokari_Proplevel</defName>
+    <label>紫的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Yokari</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用紫的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Yokari</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Noa_Proplevel</defName>
+    <label>诺亚的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Noa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用诺亚的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Noa</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Rio_Proplevel</defName>
+    <label>莉音的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Rio</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用莉音的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Rio</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kanoe_Proplevel</defName>
+    <label>鹿江的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kanoe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用鹿江的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kanoe</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kikyou_Proplevel</defName>
+    <label>桔梗的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kikyou</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用桔梗的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kikyou</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hanae_Proplevel</defName>
+    <label>花江的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hanae</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用花江的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hanae</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Azusa_Proplevel</defName>
+    <label>梓的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Azusa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用梓的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Azusa</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Serina_Proplevel</defName>
+    <label>芹娜的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Serina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用芹娜的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Serina</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Chise_Proplevel</defName>
+    <label>千世的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Chise</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用千世的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Chise</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mine_Proplevel</defName>
+    <label>美祢的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Mine</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用美祢的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mine</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Michiru_Proplevel</defName>
+    <label>满的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Michiru</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用满的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Michiru</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Renge_Proplevel</defName>
+    <label>莲华的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Renge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用莲华的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Renge</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Izuna_Proplevel</defName>
+    <label>泉奈的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Izuna</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用泉奈的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Izuna</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Eri_Proplevel</defName>
+    <label>绘里的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Eri</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用绘里的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Eri</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kotori_Proplevel</defName>
+    <label>琴里的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kotori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用琴里的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kotori</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Tsukuyo_Proplevel</defName>
+    <label>月脉的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Tsukuyo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用月脉的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Tsukuyo</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nagusa_Proplevel</defName>
+    <label>名草的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Nagusa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用名草的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nagusa</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nonomi_Proplevel</defName>
+    <label>野宫的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Nonomi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用野宫的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nonomi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nagisa_Proplevel</defName>
+    <label>渚的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Nagisa</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用渚的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nagisa</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Akari_Proplevel</defName>
+    <label>明里的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Akari</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用明里的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Akari</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Izumi_Proplevel</defName>
+    <label>泉的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Izumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用泉的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Izumi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Haruna_Proplevel</defName>
+    <label>晴奈的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Haruna</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用晴奈的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Haruna</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Umika_Proplevel</defName>
+    <label>海香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Umika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用海香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Umika</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Shizuko_Proplevel</defName>
+    <label>静子的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Shizuko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用静子的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Shizuko</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Pina_Proplevel</defName>
+    <label>菲娜的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Pina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用菲娜的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Pina</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_ReisaA_Proplevel</defName>
+    <label>玲纱(魔法)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Reisa_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用玲纱(魔法)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Reisa_A</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Toki_Proplevel</defName>
+    <label>时的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Toki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用时的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Toki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Sena_Proplevel</defName>
+    <label>濑名的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Sena</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用濑名的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Sena</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kanna_Proplevel</defName>
+    <label>康纳的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kanna</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用康纳的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kanna</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kirino_Proplevel</defName>
+    <label>桐乃的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kirino</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用桐乃的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kirino</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Fubuki_Proplevel</defName>
+    <label>吹雪的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Fubuki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用吹雪的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Fubuki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hibiki_Proplevel</defName>
+    <label>响的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hibiki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用响的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hibiki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Eimi_Proplevel</defName>
+    <label>艾米的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Eimi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用响的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Eimi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Himari_Proplevel</defName>
+    <label>日鞠的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Himari</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用日鞠的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Himari</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Utaha_Proplevel</defName>
+    <label>歌原的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Utaha</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用歌原的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Utaha</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_SuzumiA_Proplevel</defName>
+    <label>铃美(魔法)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Suzumi_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用铃美(魔法)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Suzumi_A</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mimori_Proplevel</defName>
+    <label>三森的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Mimori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用三森的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mimori</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kaede_Proplevel</defName>
+    <label>枫的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Kaede</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用枫的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kaede</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+    <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Tsubaki_Proplevel</defName>
+    <label>椿的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Tsubaki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用椿的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Tsubaki</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kaho_Proplevel</defName>
+    <label>果穗的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Kaho</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用果穗的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kaho</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Niya_Proplevel</defName>
+    <label>尼娅的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Niya</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用尼娅的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Niya</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Arisu_B_Proplevel</defName>
+    <label>爱丽丝(武装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Arisu_B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用爱丽丝(武装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Arisu_B</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kasumi_Proplevel</defName>
+    <label>霞的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Kasumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用霞的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kasumi</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Megu_Proplevel</defName>
+    <label>惠的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Megu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用惠的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Megu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Marina_Proplevel</defName>
+    <label>真里奈的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Marina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用真里奈的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Marina</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kei_Proplevel</defName>
+    <label>凯伊的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Kei</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用凯伊的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kei</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Tomoe_Proplevel</defName>
+    <label>巴的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Tomoe</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用巴的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Tomoe</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Shigure_Proplevel</defName>
+    <label>时雨的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Shigure</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用时雨的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Shigure</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nodoka_Proplevel</defName>
+    <label>和香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Nodoka</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用和香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nodoka</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Yakumo_Proplevel</defName>
+    <label>八云的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Yakumo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用八云的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Yakumo</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Minori_Proplevel</defName>
+    <label>实梨的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Minori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用实梨的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Minori</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Takane_Proplevel</defName>
+    <label>贵音的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Takane</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用贵音的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Takane</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Meru_Proplevel</defName>
+    <label>梅露的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Meru</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用梅露的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Meru</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Momiji_Proplevel</defName>
+    <label>红叶的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Momiji</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用红叶的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Momiji</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Reijo_Proplevel</defName>
+    <label>丽情的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Reijo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用丽情的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Reijo</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+<ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Rumi_Proplevel</defName>
+    <label>瑠海的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Rumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用瑠海的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Rumi</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mina_Proplevel</defName>
+    <label>南的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Mina</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用南的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mina</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Miku_Proplevel</defName>
+    <label>初音的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Miku</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用初音的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Miku</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Wakamo_Proplevel</defName>
+    <label>若藻的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Wakamo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用若藻的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Wakamo</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hoshiro_A_Proplevel</defName>
+    <label>星野(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hoshiro_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用星野(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hoshiro_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hina_B_Proplevel</defName>
+    <label>日奈(礼服)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hina_B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用日奈(礼服)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hina_B</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+   <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hanako_A_Proplevel</defName>
+    <label>花子(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hanako_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用花子(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hanako_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Wakamo_A_Proplevel</defName>
+    <label>若藻(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Wakamo_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用若藻(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Wakamo_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Mika_A_Proplevel</defName>
+    <label>未花(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Mika_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用未花(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Mika_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nagisa_A_Proplevel</defName>
+    <label>渚(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Nagisa_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用渚(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nagisa_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Seia_A_Proplevel</defName>
+    <label>圣娅(泳装)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Seia_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用圣娅(泳装)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Seia_A</Race>  <!-- 只有星野能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Shiroko_C_Proplevel</defName>
+    <label>白子(恐怖)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Shiroko_C</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用白子(恐怖)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Shiroko_C</Race>  <!-- 只有指定者能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hoshiro_B_Proplevel</defName>
+    <label>星野（武装）的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Hoshiro_B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用星野（武装）的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hoshiro_B</Race>  <!-- 只有指定者能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+    <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Fuyu_Proplevel</defName>
+    <label>冬的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Fuyu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用冬的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Fuyu</Race>  <!-- 只有指定者能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Kurumi_Proplevel</defName>
+    <label>胡桃的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Kurumi</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用胡桃的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加1点属性值，限制指定角色使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Kurumi</Race>  <!-- 只有指定者能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Rena_Proplevel</defName>
+    <label>莱娜的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Rena</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用莱娜的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加1点属性值，限制指定角色使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Rena</Race>  <!-- 只有指定者能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Nero_B_Proplevel</defName>
+    <label>妮露（制服）的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Nero_B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用妮露（制服）的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Nero_B</Race>  <!-- 只有指定者能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+    <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Noa_A_Proplevel</defName>
+    <label>诺亚（睡衣）的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+    <graphicData>
+      <texPath>Prop/Proplevel/Noa_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <comps>
+      <!-- 可使用道具组件 -->
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用诺亚（睡衣）的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      <!-- 道具使用效果组件 - 增加10点属性值，限制人类使用 -->
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Noa_A</Race>  <!-- 只有指定者能使用 -->
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Hasumi_B_Proplevel</defName>
+    <label>莲见（泳装）的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Hasumi_B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用莲见（泳装）的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Hasumi_B</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Ritsu_Proplevel</defName>
+    <label>律的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Ritsu</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用律的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Ritsu</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Miyo_Proplevel</defName>
+    <label>美代的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Miyo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用美代的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Miyo</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Erika_Proplevel</defName>
+    <label>绘梨香的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Erika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用绘梨香的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Erika</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Niko_Proplevel</defName>
+    <label>妮可的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Niko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用妮可的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Niko</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Airy_A_Proplevel</defName>
+    <label>爱莉(乐队)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Airy_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用爱莉(乐队)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Airy_A</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BANW_Proplevel">
+    <defName>BANW_Yoshimi_A_Proplevel</defName>
+    <label>好美(乐队)的神明文字</label>
+    <description>一种神秘的文字，蕴含着未知的力量。可以用来给学生升星</description>
+
+    <graphicData>
+      <texPath>Prop/Proplevel/Yoshimi_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+
+    <comps>
+      
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>使用好美(乐队)的神明文字</useLabel>
+        <useDuration>60</useDuration>
+      </li>
+      
+      <li Class="BANWlLib.CompProperties_UseEffectUpdateCustomInt">
+        <updateValue>1</updateValue>
+        <Race>BANW_Yoshimi_A</Race>  
+        <checkMaxLimit>true</checkMaxLimit>
+        <checkMinLimit>true</checkMinLimit>
+        <batchUseCount>
+          <li>5</li>
+          <li>10</li>
+          <li>20</li>
+          <li>50</li>
+          <li>100</li>
+          <li>150</li>
+        </batchUseCount>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,166 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Midori_Student</defName>
+    <label>绿</label>
+    <studentId>BANW_Midori</studentId>
+    <kindDef>BANW_Midori</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Midori</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Midori</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Millennium</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.4</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>100</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/贯通</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/轻装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>8</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>10</Crafting>
+				
+				<Artistic>12</Artistic>
+				
+				<Medical>6</Medical>
+				
+				<Social>6</Social>
+				
+				<Intellectual>12</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Midori</WapenUIImagePath>
+			    
+				<WapenTypeText>狙击枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>基本技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Mika/Mika_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>艺术家的灵感</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身暴击率增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Midori/Midori_A</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>开发者协同效应：桃</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击速度增加<color=#00FFFF>29%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[千禧年科学学院
+1年级
+社团 游戏开发部]]>
+				</StudentDesp>
+				
+				<StudentBioName>才羽 绿</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Millennium</AcademyLogoPath>
+				
+				<StudentCard>千禧科学学院所属，游戏开发部的插画家。是和双胞胎姐姐桃井一起在游戏开发部开发游戏的少女。个性害羞内向，本来和外向的姐姐处得不太好，但两人对游戏的热爱意气相投，现在相处得非常好。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Through</DamageType>
+			
+			<DefenseType>Explosion</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Midori</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Midori_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Midori_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Midori_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Midori</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

@@ -5,7 +5,7 @@ using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
-    //技能特效工具，负责一次性特效、阶段特效与施法声音。
+    //技能特效工具，一次性特效、阶段特效与施法声音。
     public static class SpecialEffects
     {
         //在角色当前位置触发一次特效。
@@ -32,6 +32,8 @@ namespace BANWlLib.Skills
         //妮露一段只使用自身前摇与阶段特效，二段施法特效交给引导工作维护。
         public static void Cast(Hediff_SpecialSkillState state, SpecialSkillCommand command, LocalTargetInfo target)
         {
+            if (state.profile.role == SpecialSkillRole.Hoshino &&
+                (command == SpecialSkillCommand.SwitchForm || command == SpecialSkillCommand.Normal)) return;
             if (state.profile.role == SpecialSkillRole.Nero && command != SpecialSkillCommand.AlternateEx) return;
             var channel = state.pawn.jobs.curDriver as JobDriver_NeroExChannel;
             if (state.profile.role == SpecialSkillRole.Nero && channel != null)

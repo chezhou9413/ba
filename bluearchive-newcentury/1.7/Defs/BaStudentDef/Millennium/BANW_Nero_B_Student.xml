@@ -1,0 +1,168 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Nero_B_Student</defName>
+    <label>妮露（制服）</label>
+    <studentId>BANW_Nero_B</studentId>
+    <kindDef>BANW_Nero_B</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Nero_B</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Nero_B</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_MilleniumExpo_Collection</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/贯通</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/弹力装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>20</Shooting>
+				
+				<Melee>20</Melee>
+				
+				<Construction>8</Construction>
+				
+				<Mining>10</Mining>
+				
+				<Cooking>9</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>9</Crafting>
+				
+				<Artistic>0</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>10</Social>
+				
+				<Intellectual>13</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Nero</WapenUIImagePath>
+			    
+				<WapenTypeText>冲锋枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>基本技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Mika/Mika_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>还早着呢！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>10</color>格的攻击射程<color=#00FFFF>21%</color>的攻击力。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Nero_B/Nero_EX</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>一枪一个准</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>24%</color>的基础精通倍率。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[千禧年科学学院
+3年级
+社团 CC]]>
+				</StudentDesp>
+				
+				<StudentBioName>美甘 妮露</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Millennium</AcademyLogoPath>
+				
+				<StudentCard>千禧年科技的特工组织——“C&amp;C”的部长。
+乍一看只是个在女仆装外面套了件刺绣夹克的小太妹，其实是千禧年任务执行能力最强的特工。
+她的代号00在整个千禧年已经成了必胜的象征。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Through</DamageType>
+			
+			<DefenseType>Explosion</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Nero_B</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Nero_B_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Nero_B_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Nero_B_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Nero_B</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

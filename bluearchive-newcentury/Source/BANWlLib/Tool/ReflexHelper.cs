@@ -4,12 +4,7 @@ namespace BANWlLib.Tool
 {
     public class ReflexHelper
     {
-        /// <summary>
-        /// 获取对象的 float? (可空浮点型) 属性值
-        /// </summary>
-        /// <param name="FieldName">属性名称</param>
-        /// <param name="obj">目标对象</param>
-        /// <returns>返回 float? 类型的值。如果属性不存在或发生转换错误，则返回 null。</returns>
+        //读取可空浮点属性；属性不存在或转换失败时返回 null。
         public static float? GetModelFloatValue(string FieldName, object obj)
         {
             try
@@ -40,13 +35,7 @@ namespace BANWlLib.Tool
             }
         }
 
-        /// <summary>
-        /// 设置对象的 float 属性值
-        /// </summary>
-        /// <param name="FieldName">属性名称</param>
-        /// <param name="Value">要设置的 float 值</param>
-        /// <param name="obj">目标对象</param>
-        /// <returns>成功返回 true，失败返回 false</returns>
+        //写入浮点属性，返回是否成功。
         public static bool SetModelFloatValue(string FieldName, float Value, object obj)
         {
             try
@@ -54,7 +43,6 @@ namespace BANWlLib.Tool
                 Type Ts = obj.GetType();
                 var prop = Ts.GetProperty(FieldName);
 
-                // 确保属性存在并且是可写的
                 if (prop == null || !prop.CanWrite)
                 {
                     return false;

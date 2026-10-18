@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //无人机表现，负责跟随宿主绘制可配置贴图或简易测试机体。
+    //无人机表现，跟随宿主绘制可配置贴图或简易测试机体。
     [StaticConstructorOnStartup]
     public static class DroneRenderer
     {

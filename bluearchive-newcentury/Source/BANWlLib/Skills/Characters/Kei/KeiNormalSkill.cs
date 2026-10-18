@@ -5,7 +5,7 @@ using Verse.AI;
 
 namespace BANWlLib.Skills
 {
-    //凯伊普通技能入口，负责在场地结束后寻找目标并启动自动施法工作。
+    //凯伊普通技能入口，在场地结束后寻找目标并启动自动施法工作。
     public static class KeiNormalSkill
     {
         //在可行动且未执行其他技能时启动前摇，目标缺失时保留蓄积。

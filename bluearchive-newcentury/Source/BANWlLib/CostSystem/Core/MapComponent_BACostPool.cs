@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //地图COST池负责保存共享费用、按征召状态回复费用并处理无人征召清零。
+    //地图COST池保存共享费用、按征召状态回复费用并处理无人征召清零。
     public sealed class MapComponent_BACostPool : MapComponent
     {
         //基础回复间隔为3.6个游戏秒，每秒60个tick。

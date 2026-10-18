@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    //战斗场地组件配置，负责指定生成实体和持续时间覆盖值。
+    //战斗场地组件配置，指定生成实体和持续时间覆盖值。
     public class CompProperties_AbilitySpawnBattleField : CompProperties_AbilityEffect
     {
         public ThingDef fieldThingDef;
@@ -16,7 +16,7 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    //战斗场地能力组件，负责创建、初始化场地并通知角色技能模块。
+    //战斗场地能力组件，创建、初始化场地并通知角色技能模块。
     public class CompAbilityEffect_SpawnBattleField : CompAbilityEffect
     {
         //读取当前组件的场地配置。

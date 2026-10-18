@@ -1,20 +1,30 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 
 namespace BANWlLib.Tool
 {
-    /// <summary>
-    /// RimWorld Pawn 与物品图标工具，负责把游戏对象渲染成 Unity UI 可用的 Sprite。
-    /// </summary>
+    //把 Pawn 和物品渲染为界面使用的 Sprite。
     public static class RimWorldUISpriteUtil
     {
         private static readonly Dictionary<string, Sprite> GeneratedSpriteCache = new Dictionary<string, Sprite>();
+#if RW_1_7
+        [System.ThreadStatic] internal static bool GeneratingPreview;
+#endif
 
-        //按 PawnKindDef 生成全身预览，负责展示任务队列中未实例化学生的默认外观。
+        //按 PawnKindDef 生成全身预览，展示任务队列中未实例化学生的默认外观。
         public static Sprite GetSpriteFromKind(PawnKindDef kindDef, int size = 128)
         {
             if (kindDef == null) return null;
@@ -39,7 +49,7 @@ namespace BANWlLib.Tool
             }
         }
 
-        //按真实 Pawn 生成全身预览，负责保留当前发型、衣服和装备外观。
+        //按真实 Pawn 生成全身预览，保留当前发型、衣服和装备外观。
         public static Sprite GetSpriteFromPawn(Pawn pawn, int size = 128)
         {
             if (pawn == null) return null;
@@ -55,7 +65,7 @@ namespace BANWlLib.Tool
             return sprite;
         }
 
-        //按 PawnKindDef 生成头像预览，负责展示未生成学生的默认头像。
+        //按 PawnKindDef 生成头像预览，展示未生成学生的默认头像。
         public static Sprite GetHeadShotSpriteFromKind(PawnKindDef kindDef, int size = 128)
         {
             if (kindDef == null) return null;
@@ -80,7 +90,7 @@ namespace BANWlLib.Tool
             }
         }
 
-        //按真实 Pawn 生成头像预览，负责保留当前穿戴状态。
+        //按真实 Pawn 生成头像预览，保留当前穿戴状态。
         public static Sprite GetHeadShotSpriteFromPawn(Pawn pawn, int size = 128)
         {
             if (pawn == null) return null;
@@ -99,11 +109,15 @@ namespace BANWlLib.Tool
         public static Sprite GetSpriteFromThingDef(ThingDef def)
         {
             if (def == null) return null;
+#if RW_1_7
+            Texture2D rimTexture = Texture2D.FromNative((def.uiIcon ?? BaseContent.BadTex).CoreTexture);
+#else
             Texture2D rimTexture = def.uiIcon;
             if (rimTexture == null)
             {
                 rimTexture = BaseContent.BadTex;
             }
+#endif
             return Sprite.Create(
                 rimTexture,
                 new Rect(0, 0, rimTexture.width, rimTexture.height),
@@ -121,6 +135,22 @@ namespace BANWlLib.Tool
             try
             {
                 PortraitsCache.SetDirty(pawn);
+#if RW_1_7
+                var renderTexture = PortraitsCache.Get(pawn, new global::UnityEngine.Vector2(requestSize, requestSize), Rot4.South,
+                    new global::UnityEngine.Vector3(offset.x, offset.y, offset.z), zoom);
+                var capture = new global::UnityEngine.Texture2D(renderTexture.width, renderTexture.height, global::UnityEngine.TextureFormat.RGBA32, false);
+                var oldActive = global::UnityEngine.RenderTexture.active;
+                try
+                {
+                    global::UnityEngine.RenderTexture.active = renderTexture;
+                    capture.ReadPixels(new global::UnityEngine.Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);
+                    capture.Apply();
+                    rawTexture = new Texture2D(renderTexture.width, renderTexture.height);
+                    rawTexture.SetPixels32(System.Array.ConvertAll(capture.GetPixels32(), p => new Color32(p.r, p.g, p.b, p.a)));
+                    rawTexture.Apply();
+                }
+                finally { global::UnityEngine.RenderTexture.active = oldActive; global::UnityEngine.Object.Destroy(capture); }
+#else
                 RenderTexture renderTexture = PortraitsCache.Get(pawn, new Vector2(requestSize, requestSize), Rot4.South, offset, zoom);
                 int actualWidth = renderTexture.width;
                 int actualHeight = renderTexture.height;
@@ -139,12 +169,13 @@ namespace BANWlLib.Tool
                 {
                     RenderTexture.active = oldActive;
                 }
+#endif
 
                 finalTexture = ProcessTextureFitHeightPriority(rawTexture, targetSize, padding: 0);
 
                 if (finalTexture != rawTexture)
                 {
-                    UnityEngine.Object.Destroy(rawTexture);
+                    Engine.Object.Destroy(rawTexture);
                 }
             }
             catch (System.Exception e)
@@ -152,7 +183,7 @@ namespace BANWlLib.Tool
                 Log.Error($"[RimWorldUISpriteUtil] Error: {e.Message}");
                 if (rawTexture != null)
                 {
-                    UnityEngine.Object.Destroy(rawTexture);
+                    Engine.Object.Destroy(rawTexture);
                 }
                 return null;
             }
@@ -227,7 +258,7 @@ namespace BANWlLib.Tool
             return result;
         }
 
-        //双线性采样源图像，负责在缩放截图时减少锯齿和模糊边缘。
+        //双线性采样源图像，在缩放截图时减少锯齿和模糊边缘。
         private static Color32 SampleBilinear(Color32[] pixels, int width, int height, float x, float y)
         {
             int x0 = Mathf.Clamp(Mathf.FloorToInt(x), 0, width - 1);
@@ -262,10 +293,10 @@ namespace BANWlLib.Tool
                 }
 
                 Texture2D texture = sprite.texture;
-                UnityEngine.Object.Destroy(sprite);
+                Engine.Object.Destroy(sprite);
                 if (texture != null)
                 {
-                    UnityEngine.Object.Destroy(texture);
+                    Engine.Object.Destroy(texture);
                 }
             }
 
@@ -277,7 +308,7 @@ namespace BANWlLib.Tool
             return category + ":" + id + ":" + size;
         }
 
-        //构建真实 Pawn 截图缓存键，负责在衣服和装备变化后重新生成头像。
+        //在衣服和装备变化后重新生成头像。
         private static string BuildPawnKey(string category, Pawn pawn, int size)
         {
             StringBuilder builder = new StringBuilder();
@@ -324,8 +355,21 @@ namespace BANWlLib.Tool
             }
         }
 
-        //生成任务 UI 使用的临时 Pawn，负责给未出击学生提供默认预览图。
+        //生成任务 UI 使用的临时 Pawn，给未出击学生提供默认预览图。
         private static Pawn GenerateTempPawn(PawnKindDef kindDef)
+        {
+#if RW_1_7
+            bool previous = GeneratingPreview;
+            GeneratingPreview = true;
+            try { return GenerateTempPawnCore(kindDef); }
+            finally { GeneratingPreview = previous; }
+#else
+            return GenerateTempPawnCore(kindDef);
+#endif
+        }
+
+        //保留角色外观生成规则，临时实例由截图调用者回收。
+        private static Pawn GenerateTempPawnCore(PawnKindDef kindDef)
         {
             Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
                 kindDef,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 输出形态EX按钮：7段技能子弹，具体伤害段在 Hoshino.xml 的 exStages 中配置。 -->
+  <!-- 输出形态EX按钮：持续瞄准并发射追踪技能子弹，具体伤害段在 Hoshino.xml 的 exStages 中配置。 -->
   <AbilityDef>
     <!-- 技能Def唯一标识，供 ProfileDef 的 primaryAbility 引用。 -->
     <defName>BANW_Special_Hoshino_Ex</defName>
@@ -11,10 +11,13 @@
 对以上述单位为中心的圆形范围内的敌方单位造成自身攻击力503%的伤害。</description>
     <!-- 技能实现类，负责把施法请求交给特殊技能系统处理。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
+    <!-- 前摇结束后保持瞄准，直到最后一段弹丸发射。 -->
+    <jobDef>BANW_Job_HoshinoExChannel</jobDef>
+    <!-- 前摇开始时播放的语音。 -->
+    <warmupStartSound>Hoshiro_B_Skill_EXX</warmupStartSound>
     <!-- 按钮图标路径。 -->
-     <warmupStartSound>Hoshiro_B_Skill_EXX</warmupStartSound>
     <iconPath>Ability/Icon/Chise/Chise_EX</iconPath>
-    <!-- 冷却时间，60 tick = 1 秒。 -->
+    <!-- 冷却时间，600 tick = 10 秒。 -->
     <cooldownTicksRange>600</cooldownTicksRange>
     <!-- 未征召时也显示按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
@@ -33,12 +36,12 @@
     <!-- 施法动词参数：决定射程与可选目标类型。 -->
     <verbProperties>
       <soundCast>Hoshiro_B_Skill_B</soundCast>
-      <!-- 标准施法动词。 -->
-      <verbClass>Verb_CastAbility</verbClass>
+      <!-- 显示主武器瞄准和范围预览的施法动词。 -->
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
       <!-- 施法距离上限（格）。 -->
       <range>39.9</range>
-      <!-- 瞄准时间（秒），实际EX准备时间由 outputCastTicks 决定。 -->
-      <warmupTime>0</warmupTime>
+      <!-- 瞄准时间（秒），0.1 秒对应 6 tick。 -->
+      <warmupTime>0.1</warmupTime>
       <!-- 合法目标类型。 -->
       <targetParams>
         <!-- 不能选择自己。 -->
@@ -57,6 +60,11 @@
         <canTargetLocations>false</canTargetLocations>
       </targetParams>
     </verbProperties>
+    <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <drawPrimaryWeaponAim>true</drawPrimaryWeaponAim><radius>3</radius>
+      </li>
+    </modExtensions>
     <!-- 技能组件：绑定技能档案与COST消耗。 -->
     <comps>
       <!-- 特殊技能组件，profile 指向档案，command 指定执行的指令分支。 -->
@@ -271,4 +279,12 @@
       </li>
     </comps>
   </AbilityDef>
+  <JobDef>
+    <defName>BANW_Job_HoshinoExChannel</defName>
+    <driverClass>BANWlLib.Skills.JobDriver_HoshinoExChannel</driverClass>
+    <reportString>正在瞄准并施放星野输出EX。</reportString>
+    <abilityCasting>true</abilityCasting>
+    <!-- 前摇和连射姿态各自绘制瞄准武器，避免重复绘制。 -->
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
 </Defs>

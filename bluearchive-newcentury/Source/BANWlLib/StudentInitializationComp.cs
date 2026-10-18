@@ -9,10 +9,10 @@ using Verse.Sound;
 
 namespace BANWlLib
 {
-    // 学生初始化调试工具，负责让测试生成的 Pawn 可以保留手动设置的经验值。
+    //学生初始化调试工具，让测试生成的 Pawn 可以保留手动设置的经验值。
     public static class StudentInitializationDebugUtility
     {
-        // 标记 Pawn 已完成测试初始化，负责跳过默认初始经验和同名存档经验覆盖。
+        //标记 Pawn 已完成测试初始化，跳过默认初始经验和同名存档经验覆盖。
         public static void MarkDebugInitialized(Pawn pawn)
         {
             StudentInitializationComp comp = pawn?.GetComp<StudentInitializationComp>();
@@ -50,7 +50,7 @@ namespace BANWlLib
             return Props.initialExperience;
         }
 
-        // 标记组件已完成测试初始化，负责防止延迟初始化覆盖 Debug 设置的阶级经验。
+        //标记组件已完成测试初始化，防止延迟初始化覆盖 Debug 设置的阶级经验。
         public void MarkInitializedFromDebug()
         {
             hasInitialized = true;

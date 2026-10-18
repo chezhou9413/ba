@@ -3,16 +3,16 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 方向命中 Mote 子特效，负责让命中特效沿投射物飞行方向从目标身体位置飞出。
+    //方向命中 Mote 子特效，让命中特效沿投射物飞行方向从目标身体位置飞出。
     public class SubEffecter_DirectionalImpactMote : SubEffecter
     {
-        // 初始化子特效，负责绑定 EffecterDef 中配置的 moteDef。
+        //绑定 EffecterDef 中配置的 moteDef。
         public SubEffecter_DirectionalImpactMote(SubEffecterDef def, Effecter parent)
             : base(def, parent)
         {
         }
 
-        // 触发子特效，负责在命中目标中心生成 MoteThrown 并设置弹道速度。
+        //在命中目标中心生成 MoteThrown 并设置弹道速度。
         public override void SubTrigger(TargetInfo A, TargetInfo B, int overrideSpawnTick = -1, bool force = false)
         {
             Thing target = B.Thing ?? A.Thing;

@@ -1,0 +1,170 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Niko_Student</defName>
+    <label>妮可</label>
+    <studentId>BANW_Niko</studentId>
+    <kindDef>BANW_Niko</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Niko</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Niko</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_FoxHQRoom_Collection</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/支援</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/爆发</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/弹力装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>10</Shooting>
+				
+				<Melee>8</Melee>
+				
+				<Construction>10</Construction>
+				
+				<Mining>6</Mining>
+				
+				<Cooking>18</Cooking>
+				
+				<Plants>10</Plants>
+				
+				<Animals>8</Animals>
+				
+				<Crafting>12</Crafting>
+				
+				<Artistic>0</Artistic>
+				
+				<Medical>8</Medical>
+				
+				<Social>15</Social>
+				
+				<Intellectual>8</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Niko</WapenUIImagePath>
+			    
+				<WapenTypeText>霰弹枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>基本技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>火器熟练</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>21%</color>射程增加<color=#00FFFF>20</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>测试技能4</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[SRT特殊学院
+3年级
+社团 RABBIT小队]]>
+				</StudentDesp>
+				
+				<StudentBioName>吉野 妮可</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Srt</AcademyLogoPath>
+				
+				<StudentCard>SRT 特殊学园所属，FOX 小队的副小队长。代号为“FOX2”。
+性格温柔稳重，能和任何人迅速打成一片。因此在 SRT 学园里，有很多跨小队的后辈都非常信赖她。擅长潜入和伪装工作，同时也兼任小队的管理运营职责。
+特长是制作稻荷寿司。经常将其作为小队成员的便当，由于味道极佳，在 SRT 学园内部也广受好评。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘/特殊), Vibration(振动), Through(穿透) -->
+			<DamageType>Explosion</DamageType>
+			
+			<DefenseType>Vibration</DefenseType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Niko</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Niko_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Niko_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Niko_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Niko</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

@@ -1,0 +1,54 @@
+<Defs>
+  <AbilityDef>
+    <defName>BANW_HealTextExample</defName>
+    <label>治疗数字显示示例</label>
+    <description>对自身恢复最终治愈力200%的生命值，并且即使没有实际治疗伤口也显示治疗数字。</description>
+    <iconPath>Ability/Icon/Serina/Serina_EXX</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <showPsycastEffects>false</showPsycastEffects>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <targetRequired>false</targetRequired>
+    <showWhenDrafted>true</showWhenDrafted>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>0.1</warmupTime>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.CompProperties_AbilityApplyBattleAction">
+        <applyToSelf>true</applyToSelf>
+        <action>
+          <isHealing>true</isHealing>
+          <healPowerRatio>2.0</healPowerRatio>
+          <alwaysShowHealText>true</alwaysShowHealText>
+          <affectFriendly>true</affectFriendly>
+          <affectHostile>false</affectHostile>
+        </action>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+        <showBattleFormula>true</showBattleFormula>
+        <previewActions>
+          <li>
+            <isHealing>true</isHealing>
+            <healPowerRatio>2.0</healPowerRatio>
+            <alwaysShowHealText>true</alwaysShowHealText>
+            <affectFriendly>true</affectFriendly>
+            <affectHostile>false</affectHostile>
+          </li>
+        </previewActions>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+</Defs>

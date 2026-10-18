@@ -3,13 +3,13 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 战斗伤害显示状态，负责按目标和伤害顺序缓存暴击结果，避免连发伤害互相覆盖。
+    //战斗伤害显示状态，按目标和伤害顺序缓存暴击结果，避免连发伤害互相覆盖。
     public static class BattleDamageDisplayState
     {
         private static readonly Dictionary<int, Queue<bool>> ManualCritStates = new Dictionary<int, Queue<bool>>();
         private static readonly Dictionary<int, Queue<bool>> PendingCriticalFloatTexts = new Dictionary<int, Queue<bool>>();
 
-        // 注册统一战斗层伤害，负责阻止原版伤害补丁重复暴击。
+        //注册统一战斗层伤害，阻止原版伤害补丁重复暴击。
         public static void RegisterManualDamage(Thing target, Thing instigator, bool isCrit)
         {
             if (target == null || !(target is Pawn))
@@ -20,7 +20,7 @@ namespace BANWlLib.BattleSystem
             EnqueueValue(ManualCritStates, target.thingIDNumber, isCrit);
         }
 
-        // 注册待显示暴击飘字，负责让 PostApplyDamage 使用真实造成伤害显示文本。
+        //注册待显示暴击飘字，让 PostApplyDamage 使用真实造成伤害显示文本。
         public static void RegisterCriticalFloatText(Thing target, bool isCrit)
         {
             if (target == null || !(target is Pawn))
@@ -31,7 +31,7 @@ namespace BANWlLib.BattleSystem
             EnqueueValue(PendingCriticalFloatTexts, target.thingIDNumber, isCrit);
         }
 
-        // 读取统一战斗层暴击状态，负责按伤害进入 PreApplyDamage 的顺序消费队列。
+        //按伤害进入 PreApplyDamage 的顺序消费队列。
         public static bool TryConsumeManualCritState(Thing target, out bool isCrit)
         {
             isCrit = false;
@@ -43,7 +43,7 @@ namespace BANWlLib.BattleSystem
             return TryDequeueValue(ManualCritStates, target.thingIDNumber, out isCrit);
         }
 
-        // 读取待显示暴击飘字状态，负责在真实伤害回调后消费状态。
+        //在真实伤害回调后消费状态。
         public static bool TryConsumeCriticalFloatText(Thing target, out bool isCrit)
         {
             isCrit = false;
@@ -55,7 +55,7 @@ namespace BANWlLib.BattleSystem
             return TryDequeueValue(PendingCriticalFloatTexts, target.thingIDNumber, out isCrit);
         }
 
-        // 丢弃一次未落地伤害的显示状态，负责处理闪避、护盾或其他 PreApplyDamage 阶段取消伤害的情况。
+        //丢弃一次未落地伤害的显示状态，处理闪避、护盾或其他 PreApplyDamage 阶段取消伤害的情况。
         public static void DiscardPendingDamageDisplay(Thing target)
         {
             if (target == null)
@@ -68,7 +68,7 @@ namespace BANWlLib.BattleSystem
             TryDequeueValue(PendingCriticalFloatTexts, targetId, out bool _);
         }
 
-        // 入队指定目标的显示状态，负责保留同一目标连续多次伤害的先后顺序。
+        //入队指定目标的显示状态，保留同一目标连续多次伤害的先后顺序。
         private static void EnqueueValue<T>(Dictionary<int, Queue<T>> states, int targetId, T value)
         {
             if (!states.TryGetValue(targetId, out Queue<T> queue))
@@ -80,7 +80,7 @@ namespace BANWlLib.BattleSystem
             queue.Enqueue(value);
         }
 
-        // 出队指定目标的一条显示状态，负责在队列清空后移除目标缓存。
+        //在队列清空后移除目标缓存。
         private static bool TryDequeueValue<T>(Dictionary<int, Queue<T>> states, int targetId, out T value)
         {
             value = default(T);

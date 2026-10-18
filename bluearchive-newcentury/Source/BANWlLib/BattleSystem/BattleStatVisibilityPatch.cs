@@ -4,11 +4,11 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 战斗属性显示补丁，负责接管 BANW_BattleStats 在角色和物品信息卡中的显示规则。
+    //战斗属性显示补丁，接管 BANW_BattleStats 在角色和物品信息卡中的显示规则。
     [HarmonyPatch(typeof(StatWorker), nameof(StatWorker.ShouldShowFor))]
     public static class BattleStatVisibilityPatch
     {
-        // 判断属性是否应该显示，负责避免原版 StatWorker 对自定义战斗属性输出未处理分支红字。
+        //判断属性是否应该显示，避免原版 StatWorker 对自定义战斗属性输出未处理分支红字。
         public static bool Prefix(StatRequest req, StatDef ___stat, ref bool __result)
         {
             if (!IsBattleStat(___stat))
@@ -20,13 +20,13 @@ namespace BANWlLib.BattleSystem
             return false;
         }
 
-        // 判断是否是战斗属性，负责限定补丁范围，避免影响原版和其他模组属性。
+        //判断是否是战斗属性，限定补丁范围，避免影响原版和其他模组属性。
         private static bool IsBattleStat(StatDef statDef)
         {
             return statDef?.category != null && statDef.category.defName == "BANW_BattleStats";
         }
 
-        // 判断是否是角色属性请求，负责让角色面板显示战斗属性。
+        //判断是否是角色属性请求，让角色面板显示战斗属性。
         private static bool IsPawnStatRequest(StatRequest req)
         {
             if (req.Empty)
@@ -43,7 +43,7 @@ namespace BANWlLib.BattleSystem
             return thingDef?.race != null;
         }
 
-        // 判断是否是已配置战斗属性的装备请求，负责让武器和衣服只显示自己实际配置的加成。
+        //判断是否是已配置战斗属性的装备请求，让武器和衣服只显示自己实际配置的加成。
         private static bool IsConfiguredEquipmentStatRequest(StatRequest req, StatDef statDef)
         {
             ThingDef thingDef = GetThingDef(req);
@@ -55,7 +55,7 @@ namespace BANWlLib.BattleSystem
             return HasStatBase(thingDef, statDef) || HasEquippedStatOffset(thingDef, statDef);
         }
 
-        // 读取属性请求对应的 ThingDef，负责兼容实物信息卡和 Def 信息卡。
+        //读取属性请求对应的 ThingDef，兼容实物信息卡和 Def 信息卡。
         private static ThingDef GetThingDef(StatRequest req)
         {
             if (req.Empty)
@@ -71,7 +71,7 @@ namespace BANWlLib.BattleSystem
             return req.Def as ThingDef;
         }
 
-        // 判断 ThingDef 是否是可装备物品，负责覆盖武器、服装和可作为装备使用的物品。
+        //判断 ThingDef 是否是可装备物品，覆盖武器、服装和可作为装备使用的物品。
         private static bool IsEquipmentThingDef(ThingDef thingDef)
         {
             if (thingDef == null)
@@ -82,7 +82,7 @@ namespace BANWlLib.BattleSystem
             return thingDef.IsWeapon || thingDef.apparel != null || thingDef.equipmentType != EquipmentType.None;
         }
 
-        // 判断 Def 本体属性里是否配置了目标战斗属性，负责显示物品自带数值。
+        //判断 Def 本体属性里是否配置了目标战斗属性，显示物品自带数值。
         private static bool HasStatBase(ThingDef thingDef, StatDef statDef)
         {
             if (thingDef?.statBases == null || statDef == null)
@@ -101,7 +101,7 @@ namespace BANWlLib.BattleSystem
             return false;
         }
 
-        // 判断装备加成里是否配置了目标战斗属性，负责显示穿戴后提供给 Pawn 的加成。
+        //判断装备加成里是否配置了目标战斗属性，显示穿戴后提供给 Pawn 的加成。
         private static bool HasEquippedStatOffset(ThingDef thingDef, StatDef statDef)
         {
             if (thingDef?.equippedStatOffsets == null || statDef == null)

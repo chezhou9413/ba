@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+  <!-- EX专用追踪弹，不改变其他角色使用的公共技能弹。 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANW_HoshinoSkillBullet</defName>
+    <label>星野技能弹丸</label>
+    <thingClass>BANWlLib.Skills.Projectile_HoshinoSkill</thingClass>
+    <graphicData>
+      <texPath>Projectile/Bullet_Nero</texPath><graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType><drawSize>(0.4,0.8)</drawSize>
+    </graphicData>
+    <projectile><damageDef>BANC_Damage_shenmi</damageDef><damageAmountBase>1</damageAmountBase><speed>70</speed></projectile>
+  </ThingDef>
   <!-- 强化普攻的方向表现独立于武器弹丸，贴图或材质资源在此替换。 -->
   <ThingDef ParentName="MoteBase">
     <defName>BANW_Mote_Hoshino_EmpoweredShot</defName>

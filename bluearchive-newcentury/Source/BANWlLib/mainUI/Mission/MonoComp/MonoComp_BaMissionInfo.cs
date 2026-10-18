@@ -1,10 +1,23 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.MonoComp;
 using BANWlLib.Tool;
 using MyCoolMusicMod.MyCoolMusicMod;
 using newpro;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Mission.MonoComp
@@ -68,9 +81,9 @@ namespace BANWlLib.mainUI.Mission.MonoComp
         //刷新任务说明、目标、奖励及敌方信息。
         void SetMissInfoAndShowUI(BaMissionNode mission)
         {
-            this.gameObject.transform.Find("MissionID").GetComponent<UnityEngine.UI.Text>().text = mission.MissionID;
-            this.gameObject.transform.Find("MissionType").GetComponent<UnityEngine.UI.Text>().text = mission.MissionTitle;
-            this.gameObject.transform.Find("MissionDes").GetComponent<UnityEngine.UI.Text>().text = mission.MissionDes;
+            this.gameObject.transform.Find("MissionID").GetComponent<Engine.UI.Text>().text = mission.MissionID;
+            this.gameObject.transform.Find("MissionType").GetComponent<Engine.UI.Text>().text = mission.MissionTitle;
+            this.gameObject.transform.Find("MissionDes").GetComponent<Engine.UI.Text>().text = mission.MissionDes;
             spawMissionTarget();
             spawnRewardTarget();
             spawnRewardEnemy();
@@ -101,7 +114,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                     Log.Error("MissionTargetNode 找不到预制体");
                 }
                 GameObject MissionTargetObj = GameObject.Instantiate(MissionMapData.MissionTargetNode, TargetContent.transform);
-                MissionTargetObj.GetComponent<UnityEngine.UI.Text>().text = a;
+                MissionTargetObj.GetComponent<Engine.UI.Text>().text = a;
             }
         }
 
@@ -113,7 +126,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 GameObject MissionTargetObj = GameObject.Instantiate(MissionMapData.MissionRewardNode, RewardContent.transform);
                 MissionTargetObj.transform.Find("pingzhi/" + a.quality.ToString().ToLower()).gameObject.SetActive(true);
                 MissionTargetObj.transform.Find("bodyMain").GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetSpriteFromThingDef(a.thingDef);
-                MissionTargetObj.transform.Find("cont").GetComponent<UnityEngine.UI.Text>().text = "X" + a.count;
+                MissionTargetObj.transform.Find("cont").GetComponent<Engine.UI.Text>().text = "X" + a.count;
             }
         }
 
@@ -124,7 +137,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             {
                 GameObject EnemyObj = GameObject.Instantiate(MissionMapData.EnemyListNode, EnemyContent.transform);
                 EnemyObj.transform.Find("EnemyImage").GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetSpriteFromKind(a.pawnKindDef);
-                EnemyObj.transform.Find("EnemyLable").GetComponent<UnityEngine.UI.Text>().text = a.pawnKindDef.label;
+                EnemyObj.transform.Find("EnemyLable").GetComponent<Engine.UI.Text>().text = a.pawnKindDef.label;
                 GameObject tag1 = EnemyObj.transform.Find("tag1").gameObject;
                 GameObject tag2 = EnemyObj.transform.Find("tag2").gameObject;
                 tag1.SetActive(false);

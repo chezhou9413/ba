@@ -1,14 +1,13 @@
 using System.Linq;
 using BANWlLib.BattleMovement;
 using BANWlLib.BattleSystem;
-using BANWlLib.KindStats;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace BANWlLib.Skills
 {
-    //星野形态技能，负责同一角色的基础属性、范围攻击、移动护盾和命中次数。
+    //星野形态技能，同一角色的基础属性、范围攻击、移动护盾和命中次数。
     public static class HoshinoSkills
     {
         //读取原生星野当前形态的基础攻击，不改变共享武器定义。
@@ -35,10 +34,10 @@ namespace BANWlLib.Skills
                 int lastShot = 0;
                 foreach (HoshinoAttackStage stage in s.profile.hoshino.exStages)
                 {
-                    int delay = s.profile.outputCastTicks + stage.delayTicks;
                     SpecialCombatUtility.Schedule(s, stage.targetLocation ? null : target.Thing, stage.attack,
-                        extraDelay: delay - 1, center: stage.targetLocation ? (IntVec3?)target.Cell : null);
-                    lastShot = Mathf.Max(lastShot, delay + (stage.attack.shots - 1) * stage.attack.shotIntervalTicks);
+                        extraDelay: stage.delayTicks, center: stage.targetLocation ? (IntVec3?)target.Cell : null,
+                        castingJob: s.pawn.CurJob);
+                    lastShot = Mathf.Max(lastShot, stage.delayTicks + stage.attack.ShotDelay(stage.attack.shots - 1));
                 }
                 s.castEndTick = s.Now + lastShot;
                 s.hoshino.grantAfterCast = s.native;
@@ -68,12 +67,8 @@ namespace BANWlLib.Skills
                 if (verb is Verb_LaunchProjectile) verb.Reset();
             ClearFormEffects(s);
             s.stage = s.stage == 0 ? 1 : 0;
-            HealthScaleCache.Invalidate(s.pawn);
-            float factor = s.pawn.HealthScale / previousScale;
-            foreach (Hediff_Injury injury in s.pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList())
-                injury.Severity *= factor;
-            s.pawn.health.summaryHealth.Notify_HealthChanged();
-            SpecialEffects.Trigger(s.profile.stageEffecter, s.pawn);
+            HoshinoFormUtility.Apply(s, previousScale);
+            (s.stage == 0 ? s.profile.hoshino.switchToOutput : s.profile.hoshino.switchToTank).Play(s.pawn);
         }
 
         //落地后启动属性增益、个人护盾和前向拦截。
@@ -96,7 +91,7 @@ namespace BANWlLib.Skills
         //结束持续状态，延迟伤害已经独立保存在地图调度器。
         public static void Tick(Hediff_SpecialSkillState s)
         {
-            if (s.castEndTick > 0 && s.Now > s.castEndTick)
+            if (s.castEndTick > 0 && s.Now > s.castEndTick && !(s.pawn.jobs.curDriver is JobDriver_HoshinoExChannel))
             {
                 s.castEndTick = -1;
                 if (s.hoshino.grantAfterCast && s.stage == 0) s.hoshino.empoweredReady = true;
@@ -130,6 +125,8 @@ namespace BANWlLib.Skills
             s.remainingHits = 0;
             s.hoshino.empoweredReady = s.hoshino.empoweredBurst = s.hoshino.grantAfterCast = false;
             s.hoshino.outputExCasting = s.hoshino.moving = false;
+            s.hoshino.empoweredTarget = null;
+            s.hoshino.empoweredAimCell = IntVec3.Invalid;
         }
     }
 }

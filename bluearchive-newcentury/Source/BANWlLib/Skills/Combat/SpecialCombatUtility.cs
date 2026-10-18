@@ -8,7 +8,7 @@ using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
-    //特殊技能战斗工具，负责建立快照、安排连射、发射实体弹丸与结算范围伤害。
+    //特殊技能战斗工具，建立快照、安排连射、发射实体弹丸与结算范围伤害。
     public static class SpecialCombatUtility
     {
         //读取当前配置口径的攻击基数，供伤害记录上限使用。
@@ -66,7 +66,7 @@ namespace BANWlLib.Skills
                 });
         }
 
-        //普通技能调度职责：不依赖角色专属状态，共用一个施法快照并按总倍率拆分每发动作。
+        //不依赖角色专属状态，共用一个施法快照并按总倍率拆分每发动作。
         public static void ScheduleNormal(Pawn caster, Thing target, SpecialAttackConfig action,
             BattleCasterSnapshot snapshot, NormalSkillDef skill)
         {
@@ -126,7 +126,7 @@ namespace BANWlLib.Skills
                 ApplyImpact(attack, hit);
         }
 
-        //动作分派职责：伤害仍沿用专属战斗请求，支援效果独立执行且不重复结算伤害。
+        //伤害仍沿用专属战斗请求，支援效果独立执行且不重复结算伤害。
         private static void ApplyImpact(SpecialPendingAttack attack, Thing target)
         {
             if (attack.normalSkill != null && !NormalSkillTargetUtility.CanAffect(attack.caster, target, attack.normalSkill)) return;
@@ -135,7 +135,7 @@ namespace BANWlLib.Skills
         }
 
         //使用统一请求结算伤害，明确区分普攻、额外攻击和已蓄积金额。
-        private static void Damage(SpecialPendingAttack attack, Thing target)
+        internal static void Damage(SpecialPendingAttack attack, Thing target)
         {
             BattleActionConfig a = attack.action;
             bool normalAttack = attack.droneOrigin || a.isNormalAttack;

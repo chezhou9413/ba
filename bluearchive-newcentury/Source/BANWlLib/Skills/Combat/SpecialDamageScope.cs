@@ -3,7 +3,7 @@ using BANWlLib.BattleSystem;
 
 namespace BANWlLib.Skills
 {
-    //同步伤害上下文，负责标记已结算伤害、普攻来源和蓄积资格，阻止旧补丁重复乘算。
+    //同步伤害上下文，标记已结算伤害、普攻来源和蓄积资格，阻止旧补丁重复乘算。
     public sealed class SpecialDamageScope : IDisposable
     {
         [ThreadStatic] private static BattleDamageRequest current;

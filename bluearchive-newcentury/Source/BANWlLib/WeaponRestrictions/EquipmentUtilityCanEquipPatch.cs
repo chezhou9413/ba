@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.WeaponRestrictions
 {
-    // 原版装备判定补丁，负责把 Kind 武器白名单接入右键装备和 AI 自动拾取入口。
+    //原版装备判定补丁，把 Kind 武器白名单接入右键装备和 AI 自动拾取入口。
     [HarmonyPatch]
     public static class EquipmentUtilityCanEquipPatch
     {

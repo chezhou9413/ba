@@ -1,0 +1,165 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Kikyou_Student</defName>
+    <label>桔梗</label>
+    <studentId>BANW_Kikyou</studentId>
+    <kindDef>BANW_Kikyou</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Kikyou</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Kikyou</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Hyakkiyako</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.3</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>100</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-150</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>8</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>6</Cooking>
+				
+				<Plants>6</Plants>
+				
+				<Animals>12</Animals>
+				
+				<Crafting>8</Crafting>
+				
+				<Artistic>12</Artistic>
+				
+				<Medical>6</Medical>
+				
+				<Social>7</Social>
+				
+				<Intellectual>15</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Kikyou</WapenUIImagePath>
+			    
+				<WapenTypeText>狙击枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Chiaki/Chiaki_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>作战参谋的素养</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>子技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[百鬼夜行联合学院
+2年级
+社团 百花缭乱纠纷调解委员会]]>
+				</StudentDesp>
+				
+				<StudentBioName>桐生 桔梗</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Hyakkiyako</AcademyLogoPath>
+				
+				<StudentCard>百鬼夜行学院百花缭乱纠纷调解委员会的1年成员，虽然是历史悠久的勘解由小路家族的继承人，但她选择了加入自己憧憬已久的百花缭乱，而不是继承家族事业。对此，她怀有强烈的自豪感，行动力无人能及。有时会遇到挫折而倒下，但她很快就会带着明朗的表情，重新站起来。她十分尊敬百花缭乱的前辈们，其中尤其敬仰的是名草。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Vibration</DamageType>
+			
+			<DefenseType>Through</DefenseType>
+			
+			<PosType>Assist</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Kikyou</DraggableAudio>
+			<GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kikyou_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+			<UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kikyou_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Kikyou_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+            
+            <avtTexPath>Gacha/Student/Kikyou</avtTexPath>
+		</baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    //统一战斗动作配置，负责描述一次伤害、治疗或附加状态效果的可配置参数。
+    //统一战斗动作配置，描述一次伤害、治疗或附加状态效果的可配置参数。
     public class BattleActionConfig : IExposable
     {
         public bool useBattleStats = true;
@@ -38,10 +38,10 @@ namespace BANWlLib.BattleSystem
         public float previewWeaponBaseAttack = 0f;
         public float previewMechanismMultiplier = 1f;
 
-        //复制职责：为预览和单次动作创建独立参数副本，不改变共享XML定义。
+        //为预览和单次动作创建独立参数副本，不改变共享XML定义。
         public BattleActionConfig Copy() => (BattleActionConfig)MemberwiseClone();
 
-        //保存和读取战斗动作配置，负责支持场地控制器等可存档对象。
+        //保存和读取战斗动作配置，支持场地控制器等可存档对象。
         public virtual void ExposeData()
         {
             Scribe_Values.Look(ref useBattleStats, "useBattleStats", true);

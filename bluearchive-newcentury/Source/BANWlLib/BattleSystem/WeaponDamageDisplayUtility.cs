@@ -6,10 +6,10 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 武器伤害显示工具，负责在武器信息卡中显示攻击属性加成后的当前伤害。
+    //武器伤害显示工具，在武器信息卡中显示攻击属性加成后的当前伤害。
     public static class WeaponDamageDisplayUtility
     {
-        // 尝试读取远程武器最终伤害，负责给 StatWorker 主数值和信息卡说明共用同一套计算。
+        //尝试读取远程武器最终伤害，给 StatWorker 主数值和信息卡说明共用同一套计算。
         public static bool TryGetFinalWeaponDamage(Thing weapon, out float finalDamage)
         {
             finalDamage = 0f;
@@ -22,7 +22,7 @@ namespace BANWlLib.BattleSystem
             return true;
         }
 
-        // 构建武器伤害解释，负责追加当前攻击力加成和算法。
+        //构建武器伤害解释，追加当前攻击力加成和算法。
         public static string BuildExplanation(StatDrawEntry entry, StatRequest request)
         {
             if (!TryGetContext(entry, request, out Pawn pawn, out float baseDamage))
@@ -51,7 +51,7 @@ namespace BANWlLib.BattleSystem
                    "当前显示伤害：" + FormatDamage(finalDamage).Colorize(new Color(1f, 0.35f, 0.28f));
         }
 
-        // 判断当前统计行是否是远程武器伤害行，负责避免影响护穿、射程和其他普通属性。
+        //判断当前统计行是否是远程武器伤害行，避免影响护穿、射程和其他普通属性。
         private static bool TryGetContext(StatDrawEntry entry, StatRequest request, out Pawn pawn, out float baseDamage)
         {
             pawn = null;
@@ -69,7 +69,7 @@ namespace BANWlLib.BattleSystem
             return TryGetWeaponContext(request.Thing, out pawn, out baseDamage);
         }
 
-        // 尝试读取远程武器和持有者上下文，负责确认这件武器可以按角色属性显示最终伤害。
+        //尝试读取远程武器和持有者上下文，确认这件武器可以按角色属性显示最终伤害。
         private static bool TryGetWeaponContext(Thing weapon, out Pawn pawn, out float baseDamage)
         {
             pawn = null;
@@ -95,7 +95,7 @@ namespace BANWlLib.BattleSystem
             return baseDamage > 0f;
         }
 
-        // 判断统计标签是否代表伤害，负责兼容中文和英文界面。
+        //判断统计标签是否代表伤害，兼容中文和英文界面。
         private static bool IsDamageRow(StatDrawEntry entry)
         {
             string label = entry.LabelCap;
@@ -114,7 +114,7 @@ namespace BANWlLib.BattleSystem
             return hasDamageWord && !excluded;
         }
 
-        // 查找武器持有者，负责从装备栏、衣物栏或容器里定位 Pawn。
+        //查找武器持有者，从装备栏、衣物栏或容器里定位 Pawn。
         private static Pawn GetHolderPawn(Thing thing)
         {
             if (thing?.ParentHolder is Pawn_EquipmentTracker equipmentTracker)
@@ -141,7 +141,7 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        // 格式化伤害数值，负责去掉无意义的小数位。
+        //格式化伤害数值，去掉无意义的小数位。
         private static string FormatDamage(float value)
         {
             return value.ToString("0.#", CultureInfo.InvariantCulture);

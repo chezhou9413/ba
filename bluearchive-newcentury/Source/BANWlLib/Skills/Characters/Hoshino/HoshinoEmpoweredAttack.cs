@@ -7,16 +7,20 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //星野强化普攻，负责用定向特效和单次范围伤害替代每一发武器弹丸。
+    //星野强化普攻，用定向特效和单次范围伤害替代每一发武器弹丸。
     public static class HoshinoEmpoweredAttack
     {
         //按当前射击方向播放指定特效，每个范围目标只接受本发的一次普攻伤害。
         public static bool Fire(Verb_LaunchProjectile verb, Hediff_SpecialSkillState s)
         {
-            LocalTargetInfo target = verb.CurrentTarget;
             Pawn pawn = s.pawn;
-            if (!target.IsValid || (target.HasThing && target.Thing.Map != pawn.Map) ||
-                !target.Cell.InBounds(pawn.Map) || !verb.TryFindShootLineFromTo(pawn.Position, target, out ShootLine line)) return false;
+            Thing tracked = s.hoshino.empoweredTarget;
+            if (tracked != null && tracked.Spawned && tracked.Map == pawn.Map && !(tracked is Pawn victimPawn && victimPawn.Dead))
+                s.hoshino.empoweredAimCell = tracked.Position;
+            LocalTargetInfo target = new LocalTargetInfo(s.hoshino.empoweredAimCell);
+            if (!SpecialCombatUtility.CanAct(pawn) || !target.IsValid || !target.Cell.InBounds(pawn.Map)) return false;
+            if (pawn.stances.curStance is Stance_Busy stance) stance.focusTarg = target;
+            pawn.rotationTracker.FaceTarget(target);
             HoshinoSkillConfig config = s.profile.hoshino;
             SpecialAttackConfig attack = config.empoweredAttack;
             var cells = BattleTargetPreviewUtility.CalculateFanCells(pawn, target, verb.EffectiveRange, config.empoweredFanArc);

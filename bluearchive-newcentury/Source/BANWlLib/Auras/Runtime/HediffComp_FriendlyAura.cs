@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Auras
 {
-    //光环发射组件负责提供有效半径、强度和当前发射条件，扫描由地图组件统一执行。
+    //光环发射组件提供有效半径、强度和当前发射条件，扫描由地图组件统一执行。
     public sealed class HediffComp_FriendlyAura : HediffComp
     {
         public HediffCompProperties_FriendlyAura Props => (HediffCompProperties_FriendlyAura)props;

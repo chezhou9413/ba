@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //特殊技能配置，负责集中声明角色机制、伤害段、持续时间和表现资源。
+    //特殊技能配置，集中声明角色机制、伤害段、持续时间和表现资源。
     public class SpecialSkillProfileDef : Def
     {
         public SpecialSkillRole role;
@@ -41,7 +41,6 @@ namespace BANWlLib.Skills
         public float tankBaseAttack = 10f;
         public float outputBaseHealth = 1000f;
         public float tankBaseHealth = 3000f;
-        public int outputCastTicks = 60;
         public float damageTakenReduction = 0.85f;
         public int tankHits = 25;
         public float shieldRatio = 0.691f;
@@ -59,7 +58,7 @@ namespace BANWlLib.Skills
         public EffecterDef endEffecter;
         public SoundDef castSound;
 
-        //检查关键机制参数，负责将错误配置明确报告到游戏日志。
+        //检查关键机制参数，将错误配置明确报告到游戏日志。
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (string error in base.ConfigErrors()) yield return error;

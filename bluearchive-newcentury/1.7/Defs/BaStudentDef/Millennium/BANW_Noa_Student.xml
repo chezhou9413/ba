@@ -1,0 +1,164 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Noa_Student</defName>
+    <label>诺亚</label>
+    <studentId>BANW_Noa</studentId>
+    <kindDef>BANW_Noa</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Noa</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Noa</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Millennium</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>150</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/神秘</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/特殊装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>5</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>8</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>5</Cooking>
+				
+				<Plants>6</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>12</Crafting>
+				
+				<Artistic>9</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>10</Social>
+				
+				<Intellectual>17</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Noa</WapenUIImagePath>
+			    
+				<WapenTypeText>手枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Ibuki/Ibuki_EX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>记录的关键在于速度</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名敌方单位造成护甲减少<color=#00FFFF>40%</color>。
+(持续<color=#00FFFF>40</color>秒)]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Asuna/Asuna_Ex</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>发现弱点！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>880%</color>的伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>秘书的从容</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身生命值增加<color=#00FFFF>26%</color>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_A</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>秘书的坚持</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[使用普通技能时自身乘伤系数减少<color=#00FFFF>32%</color>
+（持续<color=#00FFFF>13</color>秒）]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[千禧年科学学院
+2年级
+社团 研讨会]]>
+				</StudentDesp>
+				
+				<StudentBioName>生盐 诺亚</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Millennium</AcademyLogoPath>
+				
+				<StudentCard>干禧年科技学院的理事会【研讨会】的秘书。主要工作是记录研讨会的决定与会议内容,还负责为千禧年学员研发的产品进行专利注册与鉴定的专利代理人业务。记忆力异常优秀,拥有过目不忘的能力。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Mysterious</DamageType>
+			
+			<DefenseType>Mysterious</DefenseType>
+			
+			<PosType>Assist</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Noa</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Noa_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Noa_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Noa_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Noa</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

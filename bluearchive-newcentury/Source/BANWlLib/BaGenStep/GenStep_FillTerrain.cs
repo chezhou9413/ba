@@ -24,14 +24,14 @@ namespace BANWlLib.BaGenStep
         {
             TerrainDef targetTerrain = terrainDef ?? TerrainDefOf.Sand;
 
-            // 1. 填充地形
+            //填充地形。
             foreach (IntVec3 c in map.AllCells)
             {
                 map.terrainGrid.SetTerrain(c, targetTerrain);
             }
 
-            // 2. 暴力清除所有非玩家物品 (防止隐形的 GenStep 生成了墙或屋顶)
-            // 注意：这步操作要小心，确保是在你的建筑生成之前运行
+            //清除非玩家物品，避免其他 GenStep 留下墙体。
+            //此步骤必须在建筑生成前执行。
             List<Thing> toDestroy = new List<Thing>();
             foreach (Thing t in map.listerThings.AllThings)
             {
@@ -45,7 +45,7 @@ namespace BANWlLib.BaGenStep
                 t.Destroy(DestroyMode.Vanish);
             }
 
-            // 3. 清除屋顶 (遗迹通常带屋顶)
+            //清除遗迹屋顶。
             foreach (IntVec3 c in map.AllCells)
             {
                 if (map.roofGrid.RoofAt(c) != null)

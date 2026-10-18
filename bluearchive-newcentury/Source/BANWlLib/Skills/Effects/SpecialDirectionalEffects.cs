@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //技能定向特效工具，负责沿用水花子的旋转偏移规则并固定延迟表现的瞄准方向。
+    //技能定向特效工具，沿用水花子的旋转偏移规则并固定延迟表现的瞄准方向。
     public static class SpecialDirectionalEffects
     {
         //在施法者位置触发特效，旋转偏移子节点按本次瞄准角度生成或排队。

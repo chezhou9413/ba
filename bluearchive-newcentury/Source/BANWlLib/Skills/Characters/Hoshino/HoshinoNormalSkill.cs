@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //星野普通技能，负责普攻发数触发单体连射和防御状态的受伤次数。
+    //星野普通技能，普攻发数触发单体连射和防御状态的受伤次数。
     public static class HoshinoNormalSkill
     {
         //只累计原生攻击形态主武器实际成功发射的普攻。
@@ -14,7 +14,7 @@ namespace BANWlLib.Skills
         //达到触发次数后等待当前连射与技能结束，再寻找目标释放普通技能。
         public static void Tick(Hediff_SpecialSkillState s)
         {
-            if (!s.native || s.stage != 0 || s.castEndTick >= s.Now ||
+            if (!s.native || s.stage != 0 || s.castEndTick >= s.Now || s.pawn.jobs.curDriver is JobDriver_HoshinoExChannel ||
                 s.hits < s.profile.hoshino.normalRequiredShots || !SpecialCombatUtility.CanAct(s.pawn)) return;
             var weapon = s.pawn.equipment.Primary?.GetComp<CompEquippable>();
             if (weapon?.PrimaryVerb.Bursting == true) return;
@@ -27,9 +27,9 @@ namespace BANWlLib.Skills
         {
             s.hits -= s.profile.hoshino.normalRequiredShots;
             SpecialCombatUtility.Schedule(s, target, s.profile.normalAttack);
-            s.castEndTick = s.Now + 1 + (s.profile.normalAttack.shots - 1) * s.profile.normalAttack.shotIntervalTicks;
+            s.castEndTick = s.Now + s.profile.normalAttack.ShotDelay(s.profile.normalAttack.shots - 1);
             s.hoshino.grantAfterCast = true;
-            SpecialEffects.Trigger(s.profile.stageEffecter, s.pawn);
+            s.profile.hoshino.outputNormal.Play(s.pawn);
         }
 
         //主动施放防御普通技能，重新设置受伤额度和独立状态。
@@ -38,7 +38,7 @@ namespace BANWlLib.Skills
             if (s.countBuff != null) s.pawn.health.RemoveHediff(s.countBuff);
             s.remainingHits = s.profile.tankHits;
             s.countBuff = TimedSkillBuff.Apply(s.pawn, s.profile.countHediff, -1);
-            SpecialEffects.Trigger(s.profile.stageEffecter, s.pawn);
+            s.profile.hoshino.tankNormal.Play(s.pawn);
         }
 
         //每次实际受到伤害消耗一次防御额度，完全闪避或护盾完全吸收不计数。

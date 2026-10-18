@@ -342,7 +342,7 @@
     <collide>false</collide>
   </mote>
   <graphicData>
-    <!-- Graphic_BAAbMoteWithAgeSecs 负责在绘制时设置 AgeSecs，驱动 TransparentAnimated/GlowAnimated shader 按帧播放。 -->
+    <!-- Graphic_BAAbMoteWithAgeSecs 绘制时设置 AgeSecs，驱动 TransparentAnimated/GlowAnimated shader 按帧播放。 -->
     <graphicClass>BANWlLib.Effects.Graphic_BAAbMoteWithAgeSecs</graphicClass>
     <shaderType>GlowAnimated</shaderType>
     <texPath>Effect/Nozomi/A/Nozomi_1</texPath>

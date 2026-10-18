@@ -1,0 +1,69 @@
+[
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Miyu",
+        "ProductDefName": "BANW_Miyu_Proplevel",
+        "ProductName": "美游的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Saki",
+        "ProductDefName": "BANW_Saki_Proplevel",
+        "ProductName": "咲的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Moe",
+        "ProductDefName": "BANW_Moe_Proplevel",
+        "ProductName": "萌绘的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Miyako",
+        "ProductDefName": "BANW_Miyako_Proplevel",
+        "ProductName": "宫子的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Kurumi",
+        "ProductDefName": "BANW_Kurumi_Proplevel",
+        "ProductName": "胡桃的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 4,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 1,
+        "ProductImage": "Prop/Proplevel/Niko",
+        "ProductDefName": "BANW_Niko_Proplevel",
+        "ProductName": "妮可的神明文字",
+        "ProductDescription": "一种神秘的文字，蕴含着未知的力量。似乎只能用于某些特殊的用途",
+        "ProductQuality": "low"
+    }
+    
+]

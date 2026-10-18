@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //直接回复COST状态配置负责声明一次性加入共享池的精确数值。
+    //直接回复COST状态配置声明一次性加入共享池的精确数值。
     public sealed class HediffCompProperties_CostGrant : HediffCompProperties
     {
         public float amount = 1f;
@@ -35,7 +35,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //直接回复COST状态负责在获得状态时向所在地图共享池结算并请求移除自身。
+    //直接回复COST状态在获得状态时向所在地图共享池结算并请求移除自身。
     public sealed class HediffComp_CostGrant : HediffComp
     {
         private bool applied;

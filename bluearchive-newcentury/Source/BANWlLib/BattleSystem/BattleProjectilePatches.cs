@@ -8,7 +8,7 @@ using Verse;
 namespace BANWlLib.BattleSystem
 {
     [HarmonyPatch(typeof(Projectile), "get_DamageAmount")]
-    //普通弹丸伤害补丁，负责把命中目标与发射配置接入统一公式。
+    //普通弹丸伤害补丁，把命中目标与发射配置接入统一公式。
     public static class BattleProjectileDamagePatch
     {
         //按实际命中目标计算弹丸伤害并登记飘字信息。
@@ -73,11 +73,11 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 投射物发射补丁，负责把普通攻击和技能弹的战斗参数注册到命中上下文。
+    //投射物发射补丁，把普通攻击和技能弹的战斗参数注册到命中上下文。
     [HarmonyPatch(typeof(Projectile), "Launch", typeof(Thing), typeof(UnityEngine.Vector3), typeof(LocalTargetInfo), typeof(LocalTargetInfo), typeof(ProjectileHitFlags), typeof(bool), typeof(Thing), typeof(ThingDef))]
     public static class BattleProjectileLaunchPatch
     {
-        // 发射后注册战斗上下文，负责让原版 Projectile 命中时也能使用统一攻击公式。
+        //发射后注册战斗上下文，让原版 Projectile 命中时也能使用统一攻击公式。
         public static void Postfix(Projectile __instance, Thing launcher)
         {
             if (__instance == null || __instance is Projectile_PiercingArea || !(launcher is Pawn launcherPawn))
@@ -121,7 +121,7 @@ namespace BANWlLib.BattleSystem
 
         }
 
-        // 判断投射物是否来自当前主武器，负责把普通攻击倍率限制在原版武器平A。
+        //判断投射物是否来自当前主武器，把普通攻击倍率限制在原版武器平A。
         private static bool IsCurrentWeaponProjectile(Pawn launcher, ThingDef projectileDef)
         {
             ThingWithComps weapon = launcher?.equipment?.Primary;
@@ -142,10 +142,10 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    //投射物目标过滤，负责让配置过战斗扩展的伤害弹不误伤己方单位。
+    //投射物目标过滤，让配置过战斗扩展的伤害弹不误伤己方单位。
     public static class BattleProjectileTargetFilter
     {
-        //判断目标是否被己方过滤规则阻止，负责区分己方建筑和己方 Pawn。
+        //判断目标是否被己方过滤规则阻止，区分己方建筑和己方 Pawn。
         public static bool IsBlockedOwnTarget(Pawn launcher, Thing target, ProjectileBattleData data)
         {
             if (launcher?.Faction == null || target?.Faction == null || launcher.Faction != target.Faction)
@@ -167,11 +167,11 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 子弹命中前注册施法者快照，负责让子弹附加的治疗 Hediff 能使用施法者的治疗力加成和 EX 倍率。
+    //子弹命中前注册施法者快照，让子弹附加的治疗 Hediff 能使用施法者的治疗力加成和 EX 倍率。
     [HarmonyPatch(typeof(Projectile), "Impact")]
     public static class ProjectileImpactHealContextPatch
     {
-        // 在原版 Impact 执行前处理命中特效与施法者快照，负责保留投射物地图并让治疗 Hediff 读取施法者数据。
+        //在原版 Impact 执行前处理命中特效与施法者快照，保留投射物地图并让治疗 Hediff 读取施法者数据。
         public static void Prefix(Projectile __instance, Thing hitThing)
         {
             if (!(__instance is Projectile_PiercingArea))
@@ -198,11 +198,11 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 普通子弹多段命中补丁，负责在 Bullet 原本伤害后按配置追加多段统一战斗伤害。
+    //普通子弹多段命中补丁，在 Bullet 原本伤害后按配置追加多段统一战斗伤害。
     [HarmonyPatch(typeof(Bullet), "Impact", typeof(Thing), typeof(bool))]
     public static class ProjectileMultiHitImpactPatch
     {
-        // 命中前保存多段伤害上下文，负责避免 Bullet 原始 Impact 销毁弹体后丢失施法者和配置。
+        //命中前保存多段伤害上下文，避免 Bullet 原始 Impact 销毁弹体后丢失施法者和配置。
         public static void Prefix(Bullet __instance, Thing hitThing, ref ProjectileMultiHitImpactState __state)
         {
             __state = null;
@@ -242,14 +242,14 @@ namespace BANWlLib.BattleSystem
             };
         }
 
-        // 命中后入队多段伤害，负责让原始子弹伤害先完成，再由地图组件逐段执行追加结算。
+        //命中后入队多段伤害，让原始子弹伤害先完成，再由地图组件逐段执行追加结算。
         public static void Postfix(Bullet __instance, ProjectileMultiHitImpactState __state)
         {
             ProjectileMultiHitDelayComponent.Queue(__state);
             ProjectileBattleContext.Clear(__instance);
         }
 
-        // 应用一段追加伤害，负责把 XML 段配置转为统一伤害请求。
+        //把 XML 段配置转为统一伤害请求。
         public static void ApplyExtraDamage(ProjectileMultiHitImpactState state, ProjectileExtraDamageConfig config)
         {
             if (config == null)
@@ -290,7 +290,7 @@ namespace BANWlLib.BattleSystem
             });
         }
 
-        // 判断追加伤害是否被己方过滤，负责避免多段伤害误伤己方 Pawn 或建筑。
+        //判断追加伤害是否被己方过滤，避免多段伤害误伤己方 Pawn 或建筑。
         private static bool IsBlockedOwnTarget(ProjectileMultiHitImpactState state, ProjectileExtraDamageConfig config)
         {
             Pawn launcher = state?.launcher;
@@ -313,7 +313,7 @@ namespace BANWlLib.BattleSystem
             return false;
         }
 
-        // 普通子弹多段命中上下文，负责跨过 Bullet 原始 Impact 保存追加段所需数据。
+        //普通子弹多段命中上下文，跨过 Bullet 原始 Impact 保存追加段所需数据。
         public class ProjectileMultiHitImpactState
         {
             public ThingDef projectileDef;
@@ -326,7 +326,7 @@ namespace BANWlLib.BattleSystem
             public float weaponBaseAttack;
             public float armorPenetration;
 
-            // 判断是否需要延迟队列，负责支持外层统一间隔和单段独立延迟两种配置。
+            //判断是否需要延迟队列，支持外层统一间隔和单段独立延迟两种配置。
             public bool ShouldUseDelayQueue()
             {
                 if (damageIntervalTicks > 0)
@@ -352,11 +352,11 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 物体销毁补丁，负责在投射物销毁时清理普通投射物战斗上下文。
+    //物体销毁补丁，在投射物销毁时清理普通投射物战斗上下文。
     [HarmonyPatch(typeof(Thing), "Destroy", typeof(DestroyMode))]
     public static class BattleProjectileDestroyPatch
     {
-        // 投射物销毁时清理上下文，负责避免后续复用 thingID 时读到旧数据。
+        //投射物销毁时清理上下文，避免后续复用 thingID 时读到旧数据。
         public static void Prefix(Thing __instance, DestroyMode mode)
         {
             if (__instance is Projectile projectile)

@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 投射物附着 Mote 子特效，负责把持续特效绑定到飞行子弹并按弹道角度旋转，支持 initialDelayTicks 延迟生成。
+    //投射物附着 Mote 子特效，把持续特效绑定到飞行子弹并按弹道角度旋转，支持 initialDelayTicks 延迟生成。
     public class SubEffecter_AttachedProjectileMote : SubEffecter
     {
         private Mote mote;
@@ -11,13 +11,13 @@ namespace BANWlLib.Projectiles
         // 延迟生成倒计时，-1 表示尚未初始化，0 表示延迟结束可以生成。
         private int ticksUntilSpawn = -1;
 
-        // 初始化子特效，负责接收 EffecterDef 中配置的 Mote 参数。
+        //初始化子特效，接收 EffecterDef 中配置的 Mote 参数。
         public SubEffecter_AttachedProjectileMote(SubEffecterDef def, Effecter parent)
             : base(def, parent)
         {
         }
 
-        // 每 tick 维护子特效，负责在延迟结束后生成 Mote 并持续同步到投射物位置。
+        //每 tick 维护子特效，在延迟结束后生成 Mote 并持续同步到投射物位置。
         public override void SubEffectTick(TargetInfo A, TargetInfo B)
         {
             Projectile projectile = A.Thing as Projectile;
@@ -57,14 +57,14 @@ namespace BANWlLib.Projectiles
             mote.Position = drawPosition.ToIntVec3();
         }
 
-        // 清理子特效，负责在投射物销毁时移除附着 Mote。
+        //在投射物销毁时移除附着 Mote。
         public override void SubCleanup()
         {
             DestroyMote();
             base.SubCleanup();
         }
 
-        // 生成 Mote，负责使用 XML 中的缩放、颜色和初始位置。
+        //生成 Mote，使用 XML 中的缩放、颜色和初始位置。
         private void SpawnMote(Projectile projectile)
         {
             ProjectileFlightEffectData data = ResolveFlightData(projectile);
@@ -86,7 +86,7 @@ namespace BANWlLib.Projectiles
             mote.Maintain();
         }
 
-        // 解析飞行特效参数，负责在没有上下文时提供 XML 子特效自身的默认偏移。
+        //在没有上下文时提供 XML 子特效自身的默认偏移。
         private ProjectileFlightEffectData ResolveFlightData(Projectile projectile)
         {
             if (ProjectileFlightEffectContext.TryGet(projectile, out ProjectileFlightEffectData data))
@@ -103,7 +103,7 @@ namespace BANWlLib.Projectiles
             };
         }
 
-        // 构建世界偏移，负责把弹道前后、左右和高度偏移转换到投射物当前位置。
+        //把弹道前后、左右和高度偏移转换到投射物当前位置。
         private Vector3 BuildOffset(Projectile projectile, ProjectileFlightEffectData data)
         {
             Vector3 forward = projectile.ExactRotation * Vector3.forward;
@@ -121,14 +121,14 @@ namespace BANWlLib.Projectiles
                 + new Vector3(EffectiveOffset.x, 0f, EffectiveOffset.z);
         }
 
-        // 解析 Mote 旋转角，负责按配置决定是否跟随投射物弹道方向。
+        //按配置决定是否跟随投射物弹道方向。
         private float ResolveRotation(Projectile projectile, ProjectileFlightEffectData data)
         {
             float baseRotation = data.rotateWithProjectile ? projectile.ExactRotation.eulerAngles.y : 0f;
             return baseRotation + def.rotation.RandomInRange;
         }
 
-        // 销毁当前 Mote，负责处理已存在和已销毁两种状态。
+        //销毁当前 Mote，处理已存在和已销毁两种状态。
         private void DestroyMote()
         {
             if (mote != null && !mote.Destroyed)

@@ -1,0 +1,154 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Hasumi_B_Student</defName>
+    <label>莲见(泳装)</label>
+    <studentId>BANW_Hasumi_B</studentId>
+    <kindDef>BANW_Hasumi_B</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Hasumi_B</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Hasumi_B</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_PrivateBeach_Campfire_Collection</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.5</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>50</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-80</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/贯通</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/轻装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>15</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>8</Cooking>
+				
+				<Plants>6</Plants>
+				
+				<Animals>7</Animals>
+				
+				<Crafting>0</Crafting>
+				
+				<Artistic>0</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>10</Social>
+				
+				<Intellectual>7</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Hasumi</WapenUIImagePath>
+			    
+				<WapenTypeText>狙击枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>基本技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Mika/Mika_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>始终如一</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>测试技能4</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能4的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[圣三一综合学园
+3年级
+社团 正义实现委员会]]>
+				</StudentDesp>
+				
+				<StudentBioName>羽川 莲见</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Sany</AcademyLogoPath>
+				
+				<StudentCard>圣三一综合学园所属，作为茶会的护卫来到沙滩的正义实现委员会副委员长。
+秉着公私分明的原则，脸上虽然不露声色，内心却因为来到海边而暗自欢喜。说不定，她才是这次假期里最享受的人。
+多亏她的不懈努力，即使穿着泳装也完全不必担心......应该。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			<!-- 伤害类型：Explosion(爆发), Mysterious(神秘/特殊), Vibration(振动), Through(穿透) -->
+			<DamageType>Through</DamageType>
+			
+			<DefenseType>Through</DefenseType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Hasumi_B</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>10</value>
+                </li>
+                <li>
+                    <key>BANW_Hasumi_B_Proplevel</key>
+                    <value>5</value>
+                </li>
+            </GakaStudentThingData>
+    <avtTexPath>Gacha/Student/Hasumi_B</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

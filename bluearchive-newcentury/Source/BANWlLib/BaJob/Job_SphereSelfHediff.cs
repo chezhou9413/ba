@@ -9,7 +9,7 @@ using Verse.AI;
 
 namespace BANWlLib.BaJob
 {
-    // 球形范围友方状态 Job，负责按延迟配置给自身和友方 Pawn 附加 Hediff。
+    //球形范围友方状态 Job，按延迟配置给自身和友方 Pawn 附加 Hediff。
     public class Job_SphereSelfHediff : JobDriver
     {
         private List<TickDelaySelfHediff> HediffSequence;
@@ -20,13 +20,13 @@ namespace BANWlLib.BaJob
 
         private BaJobDef_SphereSelfHediff def => (BaJobDef_SphereSelfHediff)this.job.def;
 
-        // 预约 Job，负责允许该技能直接开始执行。
+        //预约 Job，允许该技能直接开始执行。
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
         }
 
-        // 执行单段 Hediff 配置，负责给范围内自身和友方 Pawn 附加状态。
+        //执行单段 Hediff 配置，给范围内自身和友方 Pawn 附加状态。
         private void actionDamageSetting(SelfHediffSetting damage, Map map)
         {
             if (damage.effecterDef != null)
@@ -69,7 +69,7 @@ namespace BANWlLib.BaJob
             }
         }
 
-        // 判断状态目标是否合法，负责放行施法者自身、同阵营 Pawn 和盟友阵营 Pawn。
+        //判断状态目标是否合法，放行施法者自身、同阵营 Pawn 和盟友阵营 Pawn。
         private bool CanApplyHediffToTarget(Pawn targetPawn)
         {
             if (targetPawn == null || targetPawn.Dead)
@@ -95,7 +95,7 @@ namespace BANWlLib.BaJob
             return pawn.Faction.RelationKindWith(targetPawn.Faction) == FactionRelationKind.Ally;
         }
 
-        // 生成 Toil，负责维护状态时间轴、延迟执行列表和施法朝向。
+        //生成 Toil，维护状态时间轴、延迟执行列表和施法朝向。
         protected override IEnumerable<Toil> MakeNewToils()
         {
             Toil channelingToil = new Toil();
@@ -190,7 +190,7 @@ namespace BANWlLib.BaJob
             yield return channelingToil;
         }
 
-        // 保存和读取 Job 状态，负责让待触发状态支持读档续跑。
+        //保存和读取 Job 状态，让待触发状态支持读档续跑。
         public override void ExposeData()
         {
             base.ExposeData();

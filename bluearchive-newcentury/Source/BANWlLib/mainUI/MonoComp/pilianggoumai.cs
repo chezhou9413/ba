@@ -1,4 +1,8 @@
-﻿using BANWlLib.BaDef;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using BANWlLib.BaDef;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.uicreater.tool;
 using MyCoolMusicMod;
@@ -10,8 +14,17 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.MonoComp
@@ -30,9 +43,9 @@ namespace BANWlLib.mainUI.MonoComp
         public int goodAmount;
 
         //显示购买数量
-        public UnityEngine.UI.Text amountText;
+        public Engine.UI.Text amountText;
         //显示总计
-        public UnityEngine.UI.Text totalText;
+        public Engine.UI.Text totalText;
         //滑条
         public Slider Slider;
         void Start()
@@ -41,14 +54,14 @@ namespace BANWlLib.mainUI.MonoComp
             goodPrice = shotData.shot.CurrencyAmount;
             currency = shotData.shot.CurrencyDefName;
             goodAmount = shotData.shot.ProductAmount;
-            this.transform.Find("pilianggoumai/shangpingname").GetComponent<UnityEngine.UI.Text>().text = shotData.gameObject.transform.Find("title").GetComponent<UnityEngine.UI.Text>().text;
+            this.transform.Find("pilianggoumai/shangpingname").GetComponent<Engine.UI.Text>().text = shotData.gameObject.transform.Find("title").GetComponent<Engine.UI.Text>().text;
             this.transform.Find("pilianggoumai/goodback/good").GetComponent<Image>().sprite = shotData.gameObject.transform.Find("bodytitle").GetComponent<Image>().sprite;
             this.transform.Find("pilianggoumai/buttommin2/huobiimage").GetComponent<Image>().sprite = shotData.gameObject.transform.Find("goumai/jiageback/shotimag").GetComponent<Image>().sprite;
             this.transform.Find("pilianggoumai/buttommin1/huobiimage").GetComponent<Image>().sprite = shotData.gameObject.transform.Find("goumai/jiageback/shotimag").GetComponent<Image>().sprite;
-            this.transform.Find("pilianggoumai/buttommin2/cont").GetComponent<UnityEngine.UI.Text>().text = goodPrice.ToString();
+            this.transform.Find("pilianggoumai/buttommin2/cont").GetComponent<Engine.UI.Text>().text = goodPrice.ToString();
             this.transform.Find("pilianggoumai/goodback").GetComponent<Image>().sprite = shotData.gameObject.transform.Find("pingzhi/" + shotData.shot.ProductQuality).GetComponent<Image>().sprite;
-            amountText = this.transform.Find("pilianggoumai/goodback/cont").GetComponent<UnityEngine.UI.Text>();
-            totalText = this.transform.Find("pilianggoumai/buttommin1/cont").GetComponent<UnityEngine.UI.Text>();
+            amountText = this.transform.Find("pilianggoumai/goodback/cont").GetComponent<Engine.UI.Text>();
+            totalText = this.transform.Find("pilianggoumai/buttommin1/cont").GetComponent<Engine.UI.Text>();
             Slider = this.transform.Find("pilianggoumai/Slider").GetComponent<Slider>();
             Slider.wholeNumbers = true;
             Slider.value = 1;

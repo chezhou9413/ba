@@ -4,17 +4,17 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 方向命中 Mote 延迟组件，负责按 SubEffecterDef 的 initialDelayTicks 托管待播放特效。
+    //方向命中 Mote 延迟组件，按 SubEffecterDef 的 initialDelayTicks 托管待播放特效。
     public class DirectionalImpactMoteDelayComponent : MapComponent
     {
         private List<PendingDirectionalImpactMote> pendingMotes = new List<PendingDirectionalImpactMote>();
 
-        // 创建延迟组件，负责绑定当前地图的方向命中特效队列。
+        //绑定当前地图的方向命中特效队列。
         public DirectionalImpactMoteDelayComponent(Map map) : base(map)
         {
         }
 
-        // 地图每 tick 更新，负责生成已经到达播放时间的 Mote。
+        //地图每 tick 更新，生成已经到达播放时间的 Mote。
         public override void MapComponentTick()
         {
             base.MapComponentTick();
@@ -37,7 +37,7 @@ namespace BANWlLib.Projectiles
             }
         }
 
-        // 保存和读取延迟队列，负责让尚未播放的方向命中特效支持存读档。
+        //保存和读取延迟队列，让尚未播放的方向命中特效支持存读档。
         public override void ExposeData()
         {
             base.ExposeData();
@@ -48,7 +48,7 @@ namespace BANWlLib.Projectiles
             }
         }
 
-        // 立即生成或排队 Mote，负责在触发时固定随机缩放、旋转速度、方向和命中位置。
+        //立即生成或排队 Mote，在触发时固定随机缩放、旋转速度、方向和命中位置。
         public static void SpawnOrQueue(Map map, Vector3 spawnPosition, DirectionalImpactEffectData data, SubEffecterDef def, int overrideSpawnTick)
         {
             PendingDirectionalImpactMote pendingMote = new PendingDirectionalImpactMote

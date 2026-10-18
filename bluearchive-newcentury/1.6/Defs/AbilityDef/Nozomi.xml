@@ -522,7 +522,7 @@
     </graphicData>
     <modExtensions>
       <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
-        <!-- 核心开关：true 时禁用穿透，子弹按原版飞行命中第一个目标即销毁。 -->
+        <!-- true 时禁用穿透，子弹命中第一个目标后销毁。 -->
         <disablePiercing>true</disablePiercing>
 
         <!-- 以下穿透相关字段在 disablePiercing=true 时不生效，保留仅供对照。 -->

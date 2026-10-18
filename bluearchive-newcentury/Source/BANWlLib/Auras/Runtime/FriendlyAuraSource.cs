@@ -1,6 +1,6 @@
 namespace BANWlLib.Auras
 {
-    //本轮光环快照负责固定一次结算中的半径与强度，避免为每个目标重复计算属性。
+    //本轮光环快照固定一次结算中的半径与强度，避免为每个目标重复计算属性。
     public sealed class FriendlyAuraSource
     {
         public readonly HediffComp_FriendlyAura aura;

@@ -1,0 +1,148 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Hare_Student</defName>
+    <label>晴</label>
+    <studentId>BANW_Hare</studentId>
+    <kindDef>BANW_Hare</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Hare</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Hare</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Millennium</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/支援</CharacterTypePath>
+			
+			<CharacterStarCount>2</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/爆发</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/轻装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>8</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>12</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>12</Crafting>
+				
+				<Artistic>5</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>6</Social>
+				
+				<Intellectual>16</Intellectual>
+			</Skills>
+			
+			<WapenUI>
+				
+				<WapenUIImagePath>ManuaUI/Wapen/Hare</WapenUIImagePath>
+				
+				<WapenTypeText>步枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Hare/Hare_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>启动EMP无人机</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>435%</color>的伤害,并且眩晕<color=#00FFFF>4</color>秒
+（如果目标为机械族则追加5秒EMP眩晕）]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+				<offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>破坏工作：A计划</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名敌方单位造成EMP抗性减少<color=#00FFFF>50%</color>（持续<color=#00FFFF>15</color>秒）]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+				<offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>强化武装：B计划</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身暴击率增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+				<offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Atsuko/Atsuko_A</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>启动阻击系统</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成闪避率增加<color=#00FFFF>17%</color>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+				<offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+				
+				<StudentDesp><![CDATA[千禧年科学学院
+2年级
+社团 真理部]]>
+				</StudentDesp>
+				
+				<StudentBioName>小钩 晴</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Millennium</AcademyLogoPath>
+				
+				<StudentCard>千禧科技学园所属，黑客集团【真理部】的工程师。以聪颖的人居多而闻名的千禧科学学院里，她也是屈指可数的天才少女。而其中最先进的仪器，也几乎都是由她一手开发出来的。尽管她实力非凡成果卓越，她也不会有一丁点儿的骄傲自负，是一位十分听话善良的温柔女孩。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Explosion</DamageType>
+			
+			<DefenseType>Explosion</DefenseType>
+			
+			<PosType>Assist</PosType>
+			
+			<StarCont>2</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Hare</DraggableAudio>
+
+			<GakaStudentThingData>
+				<li>
+					<key>Kami_Proplevel</key>
+					<value>10</value>
+				</li>
+				<li>
+					<key>BANW_Hare_Proplevel</key>
+					<value>5</value>
+				</li>
+			</GakaStudentThingData>
+			<avtTexPath>Gacha/Student/Hare</avtTexPath>
+		</baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

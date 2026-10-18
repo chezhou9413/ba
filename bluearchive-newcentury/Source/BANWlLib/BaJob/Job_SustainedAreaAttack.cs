@@ -9,7 +9,7 @@ using Verse.AI;
 
 namespace BANWlLib.BaJob
 {
-    // 持续区域攻击 Job，负责按 tick 序列对一组格子反复执行伤害或治疗。
+    //持续区域攻击 Job，按 tick 序列对一组格子反复执行伤害或治疗。
     public class Job_SustainedAreaAttack : JobDriver
     {
         private List<TickDamage> damageSequence;
@@ -23,13 +23,13 @@ namespace BANWlLib.BaJob
             get { return (BaJobDef_SustainedAttack)job.def; }
         }
 
-        // 预约 Job，负责允许该技能直接开始执行。
+        //预约 Job，允许该技能直接开始执行。
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
         }
 
-        // 生成 Toil，负责在持续引导期间按时间轴结算每段效果。
+        //在持续引导期间按时间轴结算每段效果。
         protected override IEnumerable<Toil> MakeNewToils()
         {
             Toil channelingToil = new Toil();
@@ -110,7 +110,7 @@ namespace BANWlLib.BaJob
             yield return channelingToil;
         }
 
-        // 播放范围段特效，负责让 AOE 技能在目标点显示技能特效而不是依赖命中目标触发。
+        //播放范围段特效，让 AOE 技能在目标点显示技能特效而不是依赖命中目标触发。
         private void TriggerAreaEffect(EffecterDef effecterDef, Map map)
         {
             if (effecterDef == null || map == null)
@@ -124,7 +124,7 @@ namespace BANWlLib.BaJob
             effecter.Trigger(pawn, targetInfo);
         }
 
-        // 保存和读取 Job 状态，负责让持续范围技能在读档后继续使用原施法者快照。
+        //保存和读取 Job 状态，让持续范围技能在读档后继续使用原施法者快照。
         public override void ExposeData()
         {
             base.ExposeData();

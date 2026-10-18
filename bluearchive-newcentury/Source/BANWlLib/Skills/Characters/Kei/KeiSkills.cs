@@ -6,7 +6,7 @@ using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
-    //凯伊技能，负责友军场地、输出蓄积和场地结束后的单次释放。
+    //凯伊技能，友军场地、输出蓄积和场地结束后的单次释放。
     public static class KeiSkills
     {
         //生成友军增益场地并锁定记录上限。

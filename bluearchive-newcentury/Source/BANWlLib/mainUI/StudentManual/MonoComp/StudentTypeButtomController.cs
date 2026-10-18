@@ -1,9 +1,23 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 
 namespace BANWlLib.mainUI.StudentManual.MonoComp
 {
+    //切换学生拥有状态筛选并更新对应按钮外观。
     public class StudentTypeButtomController : MonoBehaviour
     {
         public Button AllSelect;
@@ -49,14 +63,17 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             HasSelect.transform.Find("Text").GetComponent<Text>().color = color;
         }
 
+        //请求重新排列列表，虚拟网格按完整数据量计算滚动范围。
         public void setUiFix()
         {
+#if !RW_1_7
             int activeChildCount = ManualMapData.ManualScrollView.transform.Cast<Transform>().Count(t => t.gameObject.activeSelf);
             int hsiz = activeChildCount / 6 + 2;
             RectTransform rt = ManualMapData.ManualScrollView.GetComponent<RectTransform>();
             Vector2 size = rt.sizeDelta;
             size.y = 400f * hsiz;
             rt.sizeDelta = size;
+#endif
             StudentManualEvents.resetUIlistRefresh();
         }
 

@@ -1,11 +1,24 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System;
 using System.Collections.Generic;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 
 namespace BANWlLib.CostSystem
 {
-    //COST数字视图负责使用数字图集排版整数、小数和负号并播放数字弹跳。
+    //COST数字视图使用数字图集排版整数、小数和负号并播放数字弹跳。
     internal sealed class CostDigitView
     {
         private const float DigitHeight = 82f;

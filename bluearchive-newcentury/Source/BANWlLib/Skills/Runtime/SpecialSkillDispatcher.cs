@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //角色技能分派器，负责把按钮、时钟和有效命中交给对应角色模块。
+    //角色技能分派器，把按钮、时钟和有效命中交给对应角色模块。
     public static class SpecialSkillDispatcher
     {
         //分派主动技能，不在公共战斗公式中嵌入角色分支。

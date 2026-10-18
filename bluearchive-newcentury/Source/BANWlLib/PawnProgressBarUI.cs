@@ -7,9 +7,7 @@ using Verse;
 
 namespace BANWlLib
 {
-    /// <summary>
-    /// 小人进度条UI类 - 负责在信息面板上绘制进度条
-    /// </summary>
+    //在角色信息面板绘制成长进度条。
     public static class PawnProgressBarUI
     {
         // 进度条的样式配置
@@ -18,25 +16,15 @@ namespace BANWlLib
         public const float ProgressBarHeight = 6f;                           // 进度条高度
         public const float ProgressBarWidth = 200f;                           // 进度条宽度
         
-        // 性能优化：缓存进度计算结果
+        //缓存进度计算结果。
         public static Dictionary<Pawn, float> progressCache = new Dictionary<Pawn, float>();
         private static int lastCacheUpdateTick = 0;
 
-        /// <summary>
-        /// 绘制进度条
-        /// </summary>
-        /// <param name="showProgressBar">是否显示进度条</param>
-        /// <param name="rect">绘制区域</param>
-        /// <param name="progress">进度值(0.0-1.0)</param>
-        /// <param name="starProgressRatios">星星显示的进度比例列表</param>
-        /// <param name="starSize">星星尺寸</param>
-        /// <param name="starTexturePath">星星贴图路径</param>
-        /// <param name="label">标签文本</param>
+        //绘制进度条，progress 的范围为 0～1。
         public static void DrawProgressBar(bool showProgressBar, Rect rect, float progress, List<float> starProgressRatios, float starSize, string starTexturePath, string label = "进度")
         {
             try
             {
-                // 确保进度值在0-1之间
                 progress = Mathf.Clamp01(progress);
 
                 // 保存当前GUI状态
@@ -73,20 +61,13 @@ namespace BANWlLib
             }
             catch (Exception ex)
             {
-                // 确保GUI状态被恢复
+                //恢复 GUI 状态。
                 GUI.color = Color.white;
                 Text.Anchor = TextAnchor.UpperLeft;
             }
         }
 
-        /// <summary>
-        /// 在进度条上绘制星星标记
-        /// </summary>
-        /// <param name="starProgressRatios">星星显示的进度比例列表</param>
-        /// <param name="starSize">星星尺寸</param>
-        /// <param name="progressRect">进度条区域</param>
-        /// <param name="currentProgress">当前进度值</param>
-        /// <param name="starTexturePath">星星贴图路径</param>
+        //按进度比例在进度条上绘制星星。
         private static void DrawStarMarkers(List<float> starProgressRatios, float starSize, Rect progressRect, float currentProgress, string starTexturePath)
         {
             try
@@ -98,7 +79,7 @@ namespace BANWlLib
                 if (starTexture == null)
                 {
                     // 使用RimWorld内置的图标作为备用
-                    starTexture = TexUI.GrayTextBG; // 临时使用，你可以替换为其他内置图标
+                    starTexture = TexUI.GrayTextBG; //缺少星星贴图时使用灰色背景。
                 }
 
                 if (starTexture == null) return; // 如果还是没有贴图就不绘制
@@ -119,7 +100,7 @@ namespace BANWlLib
                     // 星星的Y位置（在进度条上方）
                     float starY = progressRect.y - 20f;
 
-                    // 确保星星不超出面板上边界
+                    //星星位置不超过面板上边界。
                     if (starY < 0) starY = progressRect.y + progressRect.height + 2.5f; // 如果超出上边界，放到进度条下方
 
                     // 创建星星的绘制区域
@@ -150,20 +131,14 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 获取小人的示例进度值
-        /// 这里可以根据实际需求修改为任何你想要显示的数值
-        /// 性能优化：使用缓存机制，避免重复计算
-        /// </summary>
-        /// <param name="pawn">小人对象</param>
-        /// <returns>进度值(0.0-1.0)</returns>
+        //获取缓存的成长进度，返回值为 0～1。
         public static float GetPawnProgress(Pawn pawn)
         {
             try
             {
                 if (pawn == null) return 0f;
 
-                // 性能优化：每60tick更新一次缓存
+                //每 60 tick 更新一次缓存。
                 int currentTick = Find.TickManager.TicksGame;
                 if (currentTick - lastCacheUpdateTick >= 60)
                 {
@@ -205,17 +180,11 @@ namespace BANWlLib
 
     }
 
-    /// <summary>
-    /// Harmony补丁类 - 修改小人信息面板以添加进度条
-    /// 使用硬编码方式，避免反射问题
-    /// </summary>
+    //向角色信息面板添加成长进度条。
     [HarmonyPatch(typeof(ITab_Pawn_Character), "FillTab")]
     public static class ITab_Pawn_Character_FillTab_Patch
     {
-        /// <summary>
-        /// 在小人角色信息面板中添加进度条
-        /// </summary>
-        /// <param name="__instance">ITab_Pawn_Character实例</param>
+        //绘制角色成长进度。
         static void Postfix(ITab_Pawn_Character __instance)
         {
             Pawn selectpawn = Find.Selector.SingleSelectedThing as Pawn;
@@ -241,7 +210,7 @@ namespace BANWlLib
                 PawnProgressBarUI.ProgressBarHeight    // 高度
             );
 
-            // 确保进度条在有效区域内
+            //限制进度条的绘制区域。
             if (progressRect.y < 0 || progressRect.width <= 0 || progressRect.height <= 0)
             {
                 return;

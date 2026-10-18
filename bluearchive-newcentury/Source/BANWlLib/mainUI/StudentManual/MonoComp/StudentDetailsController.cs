@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.Tool;
@@ -8,8 +12,17 @@ using RimWorld;
 using System;
 using System.Diagnostics;
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.StudentManual.MonoComp
@@ -24,8 +37,8 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         private GameObject infoObj;
         private Image BackgroundImage;
         private Image Characterimage;
-        private UnityEngine.UI.Text CharacterName;
-        private UnityEngine.UI.Text CharacterLv;
+        private Engine.UI.Text CharacterName;
+        private Engine.UI.Text CharacterLv;
         private Button DeployButton;
         private Button WithdrawButton;
         private static ManualDataGameComp tracker;
@@ -45,8 +58,8 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             SkillsBar = transform.Find("Background").transform.Find("mainInfo").transform.Find("StudentInfo").transform.Find("Skills").transform.Find("SkillsBar").gameObject;
             BackgroundImage = transform.Find("Background").GetComponent<Image>();
             Characterimage = transform.Find("Background").transform.Find("Characterimage").GetComponent<Image>();
-            CharacterName = transform.Find("Background").transform.Find("CharacterInfo").transform.Find("CharacterName").GetComponent<UnityEngine.UI.Text>();
-            CharacterLv = transform.Find("Background").transform.Find("CharacterInfo").transform.Find("CharacterLv").GetComponent<UnityEngine.UI.Text>();
+            CharacterName = transform.Find("Background").transform.Find("CharacterInfo").transform.Find("CharacterName").GetComponent<Engine.UI.Text>();
+            CharacterLv = transform.Find("Background").transform.Find("CharacterInfo").transform.Find("CharacterLv").GetComponent<Engine.UI.Text>();
             CharacterType = transform.Find("Background").transform.Find("CharacterInfo").transform.Find("CharacterType").GetComponent<Image>();
             CharacterStar = transform.Find("Background").transform.Find("CharacterInfo").transform.Find("CharacterStar").gameObject;
             DeployButton = transform.Find("Background").transform.Find("Info").transform.Find("DeployButton").GetComponent<Button>();
@@ -102,7 +115,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             }
         }
 
-        //判断当前学生是否已有存活 Pawn，负责控制出击和召回按钮状态。
+        //判断当前学生是否已有存活 Pawn，控制出击和召回按钮状态。
         private bool HasActiveStudentPawn()
         {
             return studentData != null &&
@@ -111,7 +124,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                    !studentData.StudentPawn.Dead;
         }
 
-        //判断当前学生是否已出击或正在空投，负责防止重复生成同一学生。
+        //判断当前学生是否已出击或正在空投，防止重复生成同一学生。
         private bool IsStudentDeployedOrPending()
         {
             if (HasActiveStudentPawn())
@@ -340,7 +353,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 Destroy(CharacterStar.transform.GetChild(i).gameObject);
             }
 
-            // --- 新的居中逻辑 ---
+            //居中排列。
             int totalStars = BaStudentUI.CharacterStarCount;
             float starSpacing = 50f; // 调整这个值来改变星星之间的间距
 
@@ -369,51 +382,51 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         void SetSkills()
         {
             // 射击 (Shooting)
-            SkillsBar.transform.Find("Shooting").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Shooting.ToString();
+            SkillsBar.transform.Find("Shooting").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Shooting.ToString();
             SkillsBar.transform.Find("Shooting").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Shooting / 20f;
 
             // 格斗 (Melee)
-            SkillsBar.transform.Find("Melee").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Melee.ToString();
+            SkillsBar.transform.Find("Melee").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Melee.ToString();
             SkillsBar.transform.Find("Melee").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Melee / 20f;
 
             // 建造 (Construction)
-            SkillsBar.transform.Find("Construction").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Construction.ToString();
+            SkillsBar.transform.Find("Construction").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Construction.ToString();
             SkillsBar.transform.Find("Construction").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Construction / 20f;
 
             // 采矿 (Mining)
-            SkillsBar.transform.Find("Mining").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Mining.ToString();
+            SkillsBar.transform.Find("Mining").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Mining.ToString();
             SkillsBar.transform.Find("Mining").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Mining / 20f;
 
             // 烹饪 (Cooking)
-            SkillsBar.transform.Find("Cooking").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Cooking.ToString();
+            SkillsBar.transform.Find("Cooking").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Cooking.ToString();
             SkillsBar.transform.Find("Cooking").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Cooking / 20f;
 
             // 种植 (Plants)
-            SkillsBar.transform.Find("Plants").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Plants.ToString();
+            SkillsBar.transform.Find("Plants").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Plants.ToString();
             SkillsBar.transform.Find("Plants").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Plants / 20f;
 
             // 动物 (Animals)
-            SkillsBar.transform.Find("Animals").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Animals.ToString();
+            SkillsBar.transform.Find("Animals").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Animals.ToString();
             SkillsBar.transform.Find("Animals").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Animals / 20f;
 
             // 手工 (Crafting)
-            SkillsBar.transform.Find("Crafting").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Crafting.ToString();
+            SkillsBar.transform.Find("Crafting").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Crafting.ToString();
             SkillsBar.transform.Find("Crafting").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Crafting / 20f;
 
             // 艺术 (Artistic)
-            SkillsBar.transform.Find("Artistic").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Artistic.ToString();
+            SkillsBar.transform.Find("Artistic").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Artistic.ToString();
             SkillsBar.transform.Find("Artistic").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Artistic / 20f;
 
             // 医疗 (Medical)
-            SkillsBar.transform.Find("Medical").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Medical.ToString();
+            SkillsBar.transform.Find("Medical").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Medical.ToString();
             SkillsBar.transform.Find("Medical").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Medical / 20f;
 
             // 社交 (Social)
-            SkillsBar.transform.Find("Social").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Social.ToString();
+            SkillsBar.transform.Find("Social").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Social.ToString();
             SkillsBar.transform.Find("Social").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Social / 20f;
 
             // 智识 (Intellectual)
-            SkillsBar.transform.Find("Intellectual").transform.Find("Value").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Skills.Intellectual.ToString();
+            SkillsBar.transform.Find("Intellectual").transform.Find("Value").GetComponent<Engine.UI.Text>().text = BaStudentUI.Skills.Intellectual.ToString();
             SkillsBar.transform.Find("Intellectual").transform.Find("bar").GetComponent<Image>().fillAmount = BaStudentUI.Skills.Intellectual / 20f;
         }
 
@@ -459,7 +472,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 Image back = Ability1.transform.Find("back").GetComponent<Image>();
                 imgcvT2d.SetImage(back, imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability1.AbilityImagePath));
                 back.rectTransform.anchoredPosition = petPos + new Vector2(BaStudentUI.Ability1.offSetX, BaStudentUI.Ability1.offSetY);
-                Ability1.transform.Find("AbilityType").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Ability1.AbilityTypeText;
+                Ability1.transform.Find("AbilityType").GetComponent<Engine.UI.Text>().text = BaStudentUI.Ability1.AbilityTypeText;
 
             }
 
@@ -482,10 +495,9 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 Image back = Ability2.transform.Find("back").GetComponent<Image>();
                 imgcvT2d.SetImage(back, imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability2.AbilityImagePath));
                 back.rectTransform.anchoredPosition = petPos + new Vector2(BaStudentUI.Ability2.offSetX, BaStudentUI.Ability2.offSetY);
-                Ability2.transform.Find("AbilityType").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Ability2.AbilityTypeText;
+                Ability2.transform.Find("AbilityType").GetComponent<Engine.UI.Text>().text = BaStudentUI.Ability2.AbilityTypeText;
             }
 
-            // ------------------- 以下是为您补充的代码 -------------------
 
             // 处理三号技能 (Ability3)
             GameObject Ability3 = mainInfo.transform.Find("StudentInfo").transform.Find("ActiveAbilitySet").transform.Find("Ability3").gameObject;
@@ -507,7 +519,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 Image back = Ability3.transform.Find("back").GetComponent<Image>();
                 imgcvT2d.SetImage(back, imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability3.AbilityImagePath));
                 back.rectTransform.anchoredPosition = petPos + new Vector2(BaStudentUI.Ability3.offSetX, BaStudentUI.Ability3.offSetY);
-                Ability3.transform.Find("AbilityType").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Ability3.AbilityTypeText;
+                Ability3.transform.Find("AbilityType").GetComponent<Engine.UI.Text>().text = BaStudentUI.Ability3.AbilityTypeText;
             }
 
             // 处理四号技能 (Ability4)
@@ -530,7 +542,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 Image back = Ability4.transform.Find("back").GetComponent<Image>();
                 imgcvT2d.SetImage(back, imgcvT2d.getRimWorldImgPath(BaStudentUI.Ability4.AbilityImagePath));
                 back.rectTransform.anchoredPosition = petPos + new Vector2(BaStudentUI.Ability4.offSetX, BaStudentUI.Ability4.offSetY);
-                Ability4.transform.Find("AbilityType").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.Ability4.AbilityTypeText;
+                Ability4.transform.Find("AbilityType").GetComponent<Engine.UI.Text>().text = BaStudentUI.Ability4.AbilityTypeText;
             }
         }
 
@@ -541,7 +553,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             {
                 mainInfo.transform.Find("StudentInfo").transform.Find("wapen").gameObject.SetActive(true);
                 imgcvT2d.SetImage(mainInfo.transform.Find("StudentInfo").transform.Find("wapen").transform.Find("wapenImage").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(BaStudentUI.WapenUI.WapenUIImagePath));
-                mainInfo.transform.Find("StudentInfo").transform.Find("wapen").transform.Find("TypeBack").transform.Find("Text").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.WapenUI.WapenTypeText;
+                mainInfo.transform.Find("StudentInfo").transform.Find("wapen").transform.Find("TypeBack").transform.Find("Text").GetComponent<Engine.UI.Text>().text = BaStudentUI.WapenUI.WapenTypeText;
             }
             else
             {
@@ -556,11 +568,11 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             {
                 GameObject gameObject = StudentBioContent.transform.Find("StudentAvatar").gameObject;
                 imgcvT2d.SetImage(gameObject.GetComponent<Image>(), BaStudentUI.StudentAvatar);
-                gameObject.transform.Find("StudentDesp").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.StudentBio.StudentDesp;
-                gameObject.transform.Find("StudentName").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.StudentBio.StudentBioName;
+                gameObject.transform.Find("StudentDesp").GetComponent<Engine.UI.Text>().text = BaStudentUI.StudentBio.StudentDesp;
+                gameObject.transform.Find("StudentName").GetComponent<Engine.UI.Text>().text = BaStudentUI.StudentBio.StudentBioName;
                 imgcvT2d.SetImage(gameObject.transform.Find("AcademyLogo").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(BaStudentUI.StudentBio.AcademyLogoPath));
-                StudentBioContent.transform.Find("StudentCard").GetComponent<UnityEngine.UI.Text>().text = BaStudentUI.StudentBio.StudentCard;
-                LayoutRebuilder.ForceRebuildLayoutImmediate(StudentBioContent.transform.Find("StudentCard").GetComponent<UnityEngine.UI.Text>().rectTransform);
+                StudentBioContent.transform.Find("StudentCard").GetComponent<Engine.UI.Text>().text = BaStudentUI.StudentBio.StudentCard;
+                LayoutRebuilder.ForceRebuildLayoutImmediate(StudentBioContent.transform.Find("StudentCard").GetComponent<Engine.UI.Text>().rectTransform);
                 LayoutRebuilder.ForceRebuildLayoutImmediate(StudentBioContent.transform.Find("StudentAvatar").GetComponent<RectTransform>());
             }
         }

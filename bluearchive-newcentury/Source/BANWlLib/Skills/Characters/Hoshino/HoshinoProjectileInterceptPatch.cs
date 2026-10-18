@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //原版弹丸拦截入口，负责把星野前向护盾加入实体弹丸飞行判定。
+    //原版弹丸拦截入口，把星野前向护盾加入实体弹丸飞行判定。
     [HarmonyPatch(typeof(Projectile), "CheckForFreeInterceptBetween")]
     public static class HoshinoProjectileInterceptPatch
     {

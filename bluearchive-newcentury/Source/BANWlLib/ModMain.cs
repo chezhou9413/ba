@@ -4,12 +4,12 @@ using Verse;
 
 namespace BANWlLib
 {
-    // Mod 补丁入口负责尽早安装 Harmony 补丁，避免 Def 解析阶段的小人贴图查询先走原版 PNG。
+    //Mod 补丁入口尽早安装 Harmony 补丁，避免 Def 解析阶段的小人贴图查询先走原版 PNG。
     public static class ModMain
     {
         private static bool patched;
 
-        // 安装 Harmony 补丁，负责保证所有运行时接管逻辑只执行一次。
+        //安装 Harmony 补丁，保证所有运行时接管逻辑只执行一次。
         public static void ApplyHarmonyPatches()
         {
             if (patched)
@@ -27,7 +27,7 @@ namespace BANWlLib
             }
             catch (Exception ex)
             {
-                // 【关键修改】如果PatchAll()失败，在日志中打印详细的错误信息
+                //记录补丁安装失败的完整异常。
                 Log.Error($"[BANW] Harmony 补丁应用失败: {ex.ToString()}");
             }
         }

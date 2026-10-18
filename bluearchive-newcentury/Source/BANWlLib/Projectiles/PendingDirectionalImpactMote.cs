@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 待播放方向命中 Mote，负责保存延迟生成所需的 Def、位置、方向和运动参数。
+    //待播放方向命中 Mote，保存延迟生成所需的 Def、位置、方向和运动参数。
     public class PendingDirectionalImpactMote : IExposable
     {
         public int fireAtTick;
@@ -16,7 +16,7 @@ namespace BANWlLib.Projectiles
         public float rotationRate;
         public int overrideSpawnTick = -1;
 
-        // 生成方向命中 Mote，负责应用命中时记录的精确位置、朝向和飞行速度。
+        //生成方向命中 Mote，应用命中时记录的精确位置、朝向和飞行速度。
         public void Spawn(Map map)
         {
             if (map == null || moteDef == null || !spawnPosition.ShouldSpawnMotesAt(map, moteDef.drawOffscreen))
@@ -43,7 +43,7 @@ namespace BANWlLib.Projectiles
             }
         }
 
-        // 保存和读取待播放数据，负责支持延迟期间存读档。
+        //保存和读取待播放数据，支持延迟期间存读档。
         public void ExposeData()
         {
             Scribe_Values.Look(ref fireAtTick, "fireAtTick", 0);

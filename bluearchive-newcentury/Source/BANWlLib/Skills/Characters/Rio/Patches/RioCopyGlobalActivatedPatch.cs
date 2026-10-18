@@ -4,7 +4,7 @@ using RimWorld.Planet;
 
 namespace BANWlLib.Skills
 {
-    //世界目标EX复制补丁，负责在跨地图技能成功施放后消费一次机会。
+    //世界目标EX复制补丁，在跨地图技能成功施放后消费一次机会。
     [HarmonyPatch(typeof(Ability), nameof(Ability.Activate), typeof(GlobalTargetInfo))]
     public static class RioCopyGlobalActivatedPatch
     {

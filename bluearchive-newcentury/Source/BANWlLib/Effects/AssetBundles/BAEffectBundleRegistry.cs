@@ -7,7 +7,7 @@ using Verse;
 
 namespace BANWlLib.Effects.AssetBundles
 {
-    // 特效 AB 注册表，负责按 texPath 加载贴图、创建材质并按空闲时间释放资源。
+    //特效 AB 注册表，按 texPath 加载贴图、创建材质并按空闲时间释放资源。
     public static class BAEffectBundleRegistry
     {
         private const int CleanupIntervalTicks = 300;
@@ -21,7 +21,7 @@ namespace BANWlLib.Effects.AssetBundles
         private static readonly FieldInfo shaderParameterValueTexField = typeof(ShaderParameter).GetField("valueTex", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
         private static int lastCleanupTick = int.MinValue / 2;
 
-        // 获取材质，负责从 AB 加载贴图并按 shader 参数创建材质。
+        //从 AB 加载贴图并按 shader 参数创建材质。
         public static Material AcquireMaterial(GraphicRequest request, string owner)
         {
             if (!BAEffectPathUtility.IsEffectTexPath(request.path))
@@ -60,7 +60,7 @@ namespace BANWlLib.Effects.AssetBundles
             return material;
         }
 
-        // 标记贴图正在使用，负责让清理器识别近期绘制过的特效。
+        //标记贴图正在使用，让清理器识别近期绘制过的特效。
         public static void TouchTexPath(string texPath)
         {
             if (string.IsNullOrWhiteSpace(texPath))
@@ -76,7 +76,7 @@ namespace BANWlLib.Effects.AssetBundles
             Touch(record);
         }
 
-        // 定期清理，负责释放空闲超过阈值的 AB、贴图和材质。
+        //定期清理，释放空闲超过阈值的 AB、贴图和材质。
         public static void CleanupIfNeeded()
         {
             if (!EnableRuntimeIdleUnload)
@@ -115,7 +115,7 @@ namespace BANWlLib.Effects.AssetBundles
             }
         }
 
-        // 重置全部缓存，负责在静态构造或必要清理时彻底释放资源。
+        //重置全部缓存，在静态构造或必要清理时彻底释放资源。
         public static void ResetAll()
         {
             foreach (BAEffectBundleRecord record in records.Values)
@@ -127,7 +127,7 @@ namespace BANWlLib.Effects.AssetBundles
             lastCleanupTick = int.MinValue / 2;
         }
 
-        // 加载或复用记录，负责创建 AB、读取包内贴图并记录路径。
+        //加载或复用记录，创建 AB、读取包内贴图并记录路径。
         private static BAEffectBundleRecord GetOrLoadRecord(string texPath)
         {
             CleanupIfNeeded();
@@ -137,6 +137,10 @@ namespace BANWlLib.Effects.AssetBundles
                 return existing;
             }
 
+#if RW_1_7
+            var owned = RimUnity.Assets.AssetLoader.LoadOwnedTexture(LoadedModManager.GetMod<BANWlLib.newpro>().Content, "Effects/" + texPath);
+            var record = new BAEffectBundleRecord { texPath = texPath, ownedTexture = owned, texture = RimUnity.Assets.HostAssets.ToHost(owned) };
+#else
             string bundlePath = BAEffectPathUtility.GetBundlePath(texPath);
             if (!File.Exists(bundlePath))
             {
@@ -175,12 +179,13 @@ namespace BANWlLib.Effects.AssetBundles
                 bundle = bundle,
                 texture = texture
             };
+#endif
             Touch(record);
             records[texPath] = record;
             return record;
         }
 
-        // 材质键生成，负责区分同一贴图在不同 shader 参数下的材质实例。
+        //材质键生成，区分同一贴图在不同 shader 参数下的材质实例。
         private static string BuildMaterialKey(GraphicRequest request)
         {
             string key = request.path + "|" + (request.shader != null ? request.shader.name : "null") + "|" + request.color + "|" + request.colorTwo + "|" + request.renderQueue;
@@ -197,7 +202,7 @@ namespace BANWlLib.Effects.AssetBundles
             return key;
         }
 
-        // Shader 参数键生成，负责把 RimWorld 的非公开参数字段稳定写入材质缓存键。
+        //Shader 参数键生成，把 RimWorld 的非公开参数字段稳定写入材质缓存键。
         private static string BuildShaderParameterKey(ShaderParameter parameter)
         {
             if (parameter == null)
@@ -213,7 +218,7 @@ namespace BANWlLib.Effects.AssetBundles
             return name + ":" + type + ":" + value + ":" + valueTexName;
         }
 
-        // Shader 参数应用，负责把 XML 中的 shaderParameters 写入 AB 材质。
+        //Shader 参数应用，把 XML 中的 shaderParameters 写入 AB 材质。
         private static void ApplyShaderParameters(Material material, List<ShaderParameter> parameters)
         {
             if (material == null || parameters == null)
@@ -227,7 +232,7 @@ namespace BANWlLib.Effects.AssetBundles
             }
         }
 
-        // 触碰记录，负责更新时间戳。
+        //触碰记录，更新时间戳。
         private static void Touch(BAEffectBundleRecord record)
         {
             if (record == null)
@@ -238,7 +243,7 @@ namespace BANWlLib.Effects.AssetBundles
             record.lastTouchTick = GetCurrentTickSafe();
         }
 
-        // 当前时间读取，负责在 Def 图标解析和长事件阶段避开未初始化的 TickManager。
+        //当前时间读取，在 Def 图标解析和长事件阶段避开未初始化的 TickManager。
         private static int GetCurrentTickSafe()
         {
             try
@@ -256,7 +261,7 @@ namespace BANWlLib.Effects.AssetBundles
             return 0;
         }
 
-        // 销毁记录，负责彻底释放 Unity 对象和 AB。
+        //销毁记录，彻底释放 Unity 对象和 AB。
         private static void DestroyRecord(BAEffectBundleRecord record)
         {
             if (record == null)
@@ -273,12 +278,17 @@ namespace BANWlLib.Effects.AssetBundles
             }
 
             record.materials.Clear();
+#if RW_1_7
+            RimUnity.Object.Destroy(record.ownedTexture);
+            record.ownedTexture = null;
+#else
             if (record.bundle != null)
             {
                 record.bundle.Unload(true);
             }
 
             record.bundle = null;
+#endif
             record.texture = null;
         }
     }

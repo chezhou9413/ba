@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>BANW_CostRecoveryRatePlus20</defName>
+    <label>COST回复提升</label>
+    <description>该学生被征召时，使所在地图的共享COST回复率提高20%。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostRecoveryRate">
+        <rateOffset>0.2</rateOffset>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_CostRecoveryRateMinus20</defName>
+    <label>COST回复降低</label>
+    <description>该学生被征召时，使所在地图的共享COST回复率降低20%。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostRecoveryRate">
+        <rateOffset>-0.2</rateOffset>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_CostGrant3_8</defName>
+    <label>直接回复3.8点COST</label>
+    <description>获得时立即为所在地图的共享COST池回复3.8点。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostGrant">
+        <amount>3.8</amount>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_CostDiscount50Once</defName>
+    <label>EX技能COST减半</label>
+    <description>下一次匹配的EX技能COST减少50%，成功使用后消失。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostDiscount">
+        <percentageReduction>0.5</percentageReduction>
+        <maxUses>1</maxUses>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_CostDiscount50Twice</defName>
+    <label>EX技能COST减半两次</label>
+    <description>接下来两次匹配的EX技能COST减少50%，次数耗尽后消失。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostDiscount">
+        <percentageReduction>0.5</percentageReduction>
+        <maxUses>2</maxUses>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_CostDiscount50Timed</defName>
+    <label>限时EX技能COST减半</label>
+    <description>持续时间内匹配的EX技能COST减少50%，不限制使用次数。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostDiscount">
+        <percentageReduction>0.5</percentageReduction>
+        <maxUses>-1</maxUses>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_CostDiscountFlat1Once</defName>
+    <label>EX技能固定减费</label>
+    <description>下一次匹配的EX技能先减少1点基础COST，成功使用后消失。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostDiscount">
+        <flatReduction>1</flatReduction>
+        <maxUses>1</maxUses>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_CostOverdraft5</defName>
+    <label>COST过载</label>
+    <description>允许该学生使用EX技能时将地图共享COST透支至最低-5点。</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="BANWlLib.CostSystem.HediffCompProperties_CostOverdraft">
+        <overdraftLimit>5</overdraftLimit>
+      </li>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+  </HediffDef>
+</Defs>

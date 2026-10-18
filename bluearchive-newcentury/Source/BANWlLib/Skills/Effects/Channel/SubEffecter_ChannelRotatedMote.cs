@@ -4,7 +4,7 @@ using Verse.AI;
 
 namespace BANWlLib.Skills
 {
-    //引导旋转子特效，负责延迟生成、实时瞄准、位置偏移与工作结束后的资源释放。
+    //引导旋转子特效，延迟生成、实时瞄准、位置偏移与工作结束后的资源释放。
     public class SubEffecter_ChannelRotatedMote : SubEffecter
     {
         private Pawn caster;

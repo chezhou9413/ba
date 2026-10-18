@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 统一护盾请求，负责把施法者、目标和护盾倍率传入护盾结算层。
+    //统一护盾请求，把施法者、目标和护盾倍率传入护盾结算层。
     public class BattleShieldRequest
     {
         public bool useBattleStats = true;
@@ -15,6 +15,6 @@ namespace BANWlLib.BattleSystem
         public BattleCasterSnapshot snapshot;
     }
 
-    //护盾基数来源，负责区分治疗力、最大生命和独立XML数值。
+    //护盾基数来源，区分治疗力、最大生命和独立XML数值。
     public enum BattleShieldSource { HealPower, MaxHealth, Independent }
 }

@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //白子武器射击通知，负责在普攻发射时触发无人机，不依赖弹丸的命中结果。
+    //白子武器射击通知，在普攻发射时触发无人机，不依赖弹丸的命中结果。
     [HarmonyPatch(typeof(Verb_LaunchProjectile), "TryCastShot")]
     public static class ShirokoWeaponShotPatch
     {

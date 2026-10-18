@@ -1,13 +1,22 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using BANWlLib.BANWGamecomp;
 using System.Collections;
 using System.Collections.Generic;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka
 {
-    //抽卡结果数据，负责保存学生身份、PawnKind 和界面展示数据。
+    //抽卡结果数据，保存学生身份、PawnKind 和界面展示数据。
     public class gacaData
     {
         public BaStudentDef BaStudentDef;
@@ -20,7 +29,7 @@ namespace BANWlLib.mainUI.Gaka
         public bool isNew = false;
         public bool isUp = false;
     }
-    //抽卡界面运行时缓存，负责保存界面预制体、当前卡池和抽卡结果。
+    //抽卡界面运行时缓存，保存界面预制体、当前卡池和抽卡结果。
     public static class GakaMapData
     {
         public static GameObject Content;

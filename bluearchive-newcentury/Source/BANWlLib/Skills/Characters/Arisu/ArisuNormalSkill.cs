@@ -3,7 +3,7 @@ using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
-    //爱丽丝普通技能执行器，负责按有效普攻命中自动触发独立声音、特效和攻击。
+    //爱丽丝普通技能执行器，按有效普攻命中自动触发独立声音、特效和攻击。
     public static class ArisuNormalSkill
     {
         //条件满足才消费命中次数，普通技能不读取或消费EX充能阶段。

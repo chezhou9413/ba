@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //本地目标技能补丁负责在实际发动前原子扣除共享COST。
+    //本地目标技能补丁在实际发动前原子扣除共享COST。
     [HarmonyPatch(typeof(Ability), nameof(Ability.Activate), typeof(LocalTargetInfo), typeof(LocalTargetInfo))]
     public static class AbilityActivateLocalCostPatch
     {
@@ -24,7 +24,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //世界目标技能补丁负责为跨地图目标技能执行同一套原子扣费。
+    //世界目标技能补丁为跨地图目标技能执行同一套原子扣费。
     [HarmonyPatch(typeof(Ability), nameof(Ability.Activate), typeof(GlobalTargetInfo))]
     public static class AbilityActivateGlobalCostPatch
     {
@@ -43,7 +43,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //技能按钮费用标签补丁负责显示经过状态修正后的实际COST。
+    //技能按钮费用标签补丁显示经过状态修正后的实际COST。
     [HarmonyPatch(typeof(Command_Ability), "get_TopRightLabel")]
     public static class CommandAbilityCostLabelPatch
     {
@@ -61,7 +61,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //技能按钮说明补丁负责展示基础费用、实际费用和减费顺序。
+    //技能按钮说明补丁展示基础费用、实际费用和减费顺序。
     [HarmonyPatch(typeof(Command_Ability), "get_Tooltip")]
     public static class CommandAbilityCostTooltipPatch
     {

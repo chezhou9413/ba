@@ -1,14 +1,31 @@
-﻿using BANWlLib.DamageFontSystem.Comp;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using BANWlLib.DamageFontSystem.Comp;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using System.Collections;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.EventSystems;
+#else
 using UnityEngine.EventSystems;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
-//入口按钮控制器负责长按拖动和保存位置，普通点击交由按钮组件处理。
+//入口按钮控制器长按拖动和保存位置，普通点击交由按钮组件处理。
 public class LongPressDraggableButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     public static bool isMove = false;               // 是否处于拖动状态（供外部Harmony使用）
@@ -140,10 +157,10 @@ public class LongPressDraggableButton : MonoBehaviour, IPointerDownHandler, IPoi
     }
 }
 
-//地图框选补丁容器负责在拖动模组按钮期间屏蔽框选。
+//地图框选补丁容器在拖动模组按钮期间屏蔽框选。
 public class CloseBoxDize
 {
-    //地图框选绘制补丁负责依据拖动状态决定是否绘制框选。
+    //地图框选绘制补丁依据拖动状态决定是否绘制框选。
     [HarmonyPatch(typeof(DragBox), nameof(DragBox.DragBoxOnGUI))]
     public static class DragBox_DragBoxOnGUI_Patch
     {
@@ -154,7 +171,7 @@ public class CloseBoxDize
         }
     }
 
-    //世界地图框选绘制补丁负责屏蔽按钮拖动期间的框选。
+    //世界地图框选绘制补丁屏蔽按钮拖动期间的框选。
     [HarmonyPatch(typeof(WorldDragBox), nameof(WorldDragBox.DragBoxOnGUI))]
     public static class WorldDragBox_DragBoxOnGUI_Patch
     {

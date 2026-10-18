@@ -28,8 +28,7 @@
     <outputBaseHealth>100</outputBaseHealth>
     <!-- 防御形态的基础生命，除以 100 后作为生命倍率（3000 = 30 倍）。 -->
     <tankBaseHealth>300</tankBaseHealth>
-    <!-- EX 准备时间，60 tick = 1 秒；exStages 的 delayTicks 以此为基准。 -->
-    <outputCastTicks>6</outputCastTicks>
+    <!-- EX 准备时间由 HoshinoAbilities.xml 的 warmupTime 设置，6 tick 对应 0.1 秒。 -->
     <!-- 准备期间承伤系数减去的数值（0.85），最低为 0。 -->
     <damageTakenReduction>0.85</damageTakenReduction>
     <!-- 防御普通技能状态的承受伤害次数，实际掉血满 25 次后解除。 -->
@@ -52,8 +51,7 @@
     <shieldHediff>BANW_SpecialHoshinoShield</shieldHediff>
     <casterEffecter>BANW_Effecter_A</casterEffecter>
     <targetEffecter>BANW_Effecter_C</targetEffecter>
-    <!-- 普通技能发动时的自身特效；输出普通技能、防御普通技能和形态切换共用。 -->
-    <stageEffecter>BANW_Effecter_Hoshiro_B_EX</stageEffecter>
+    <!-- 根节点表现供 EX 使用；形态切换和普通技能在 hoshino 中分别设置。 -->
     <endEffecter>BANW_Effecter_C</endEffecter>
     <stateEffecter>BANW_Effecter_B</stateEffecter>
     <hoshino>
@@ -65,6 +63,15 @@
       <tankBurstShots>1</tankBurstShots>
       <!-- 防御形态的普通技能按钮 Def。 -->
       <tankNormalAbility>BANW_Special_Hoshino_TankNormal</tankNormalAbility>
+      <outputTrait>BAWC_TraitDef_Attack</outputTrait><tankTrait>BAWC_TraitDef_Tank</tankTrait>
+      <shieldApparel>BANW_Body_Hoshiro_Bag</shieldApparel>
+      <interceptEffecter>BANW_Effecter_C</interceptEffecter>
+      <!-- 每个动作独立设置自身EffecterDef、SoundDef和维持tick；声音留空即不播放。 -->
+      <!-- 动作音效由该 Effecter 的声音子项播放，避免再叠加旧语音。 -->
+      <switchToOutput><effecter>BANW_Effecter_Hoshiro_B_EX</effecter><sound /><maintainTicks>60</maintainTicks></switchToOutput>
+      <switchToTank><effecter>BANW_Effecter_Hoshiro_B_EX</effecter><sound /><maintainTicks>60</maintainTicks></switchToTank>
+      <outputNormal><effecter>BANW_Effecter_Hoshiro_B_EX</effecter><sound /><maintainTicks>60</maintainTicks></outputNormal>
+      <tankNormal><effecter>BANW_Effecter_Hoshiro_B_EX</effecter><sound /><maintainTicks>60</maintainTicks></tankNormal>
       <!-- 每轮强化沿用武器连射节奏；每发只结算一次范围普攻，无武器弹丸贴图。 -->
       <empoweredShotEffecter>BANW_Effecter_Hoshino_EmpoweredShot</empoweredShotEffecter>
       <!-- 强化普攻以星野为起点，朝射击方向展开；夹角单位为度，长度沿用主武器射程。 -->
@@ -101,7 +108,7 @@
       <exStages>
         <!-- 第1段：单体子弹，不结算爆炸。 -->
         <li>
-          <!-- 相对准备结束（outputCastTicks）的发射时刻，0 = 准备结束当 tick 发射。 -->
+          <!-- 相对前摇结束的发射时刻，0 = 准备结束当 tick 发射。 -->
           <delayTicks>0</delayTicks>
           <!-- 是否锁定施法时目标所在格；false 表示每次发射使用目标当时位置。 -->
           <targetLocation>false</targetLocation>
@@ -216,12 +223,12 @@
             <affectHostile>true</affectHostile>
           </attack>
         </li>
-        <!-- 第4段：射向施法时目标所在格，命中后只结算一次AOE。 -->
+        <!-- 第4段：持续跟踪目标，命中后只结算一次AOE。 -->
         <li>
           <!-- 相对准备结束的发射时刻。 -->
           <delayTicks>80</delayTicks>
-          <!-- 是否锁定施法时目标所在格；true 时目标死亡后仍向该格发射。 -->
-          <targetLocation>true</targetLocation>
+          <!-- 保留目标实体，弹丸飞行时持续跟踪。 -->
+          <targetLocation>false</targetLocation>
           <attack>
             <!-- 是否使用 BA 战斗属性结算。 -->
             <useBattleStats>true</useBattleStats>
@@ -257,12 +264,12 @@
             <affectHostile>true</affectHostile>
           </attack>
         </li>
-        <!-- 第5段：射向施法时目标所在格，命中后只结算一次AOE。 -->
+        <!-- 第5段：持续跟踪目标，命中后只结算一次AOE。 -->
         <li>
           <!-- 相对准备结束的发射时刻。 -->
           <delayTicks>88</delayTicks>
-          <!-- 是否锁定施法时目标所在格。 -->
-          <targetLocation>true</targetLocation>
+          <!-- 保留目标实体，弹丸飞行时持续跟踪。 -->
+          <targetLocation>false</targetLocation>
           <attack>
             <!-- 是否使用 BA 战斗属性结算。 -->
             <useBattleStats>true</useBattleStats>
@@ -298,12 +305,12 @@
             <affectHostile>true</affectHostile>
           </attack>
         </li>
-        <!-- 第6段：射向施法时目标所在格，命中后只结算一次AOE。 -->
+        <!-- 第6段：持续跟踪目标，命中后只结算一次AOE。 -->
         <li>
           <!-- 相对准备结束的发射时刻。 -->
           <delayTicks>96</delayTicks>
-          <!-- 是否锁定施法时目标所在格。 -->
-          <targetLocation>true</targetLocation>
+          <!-- 保留目标实体，弹丸飞行时持续跟踪。 -->
+          <targetLocation>false</targetLocation>
           <attack>
             <!-- 是否使用 BA 战斗属性结算。 -->
             <useBattleStats>true</useBattleStats>
@@ -339,12 +346,12 @@
             <affectHostile>true</affectHostile>
           </attack>
         </li>
-        <!-- 第7段：射向施法时目标所在格，命中后只结算一次AOE。 -->
+        <!-- 第7段：持续跟踪目标，命中后只结算一次AOE。 -->
         <li>
           <!-- 相对准备结束的发射时刻。 -->
           <delayTicks>250</delayTicks>
-          <!-- 是否锁定施法时目标所在格。 -->
-          <targetLocation>true</targetLocation>
+          <!-- 保留目标实体，弹丸飞行时持续跟踪。 -->
+          <targetLocation>false</targetLocation>
           <attack>
             <!-- 是否使用 BA 战斗属性结算。 -->
             <useBattleStats>true</useBattleStats>
@@ -383,8 +390,8 @@
         <li>
           <!-- 相对准备结束的发射时刻。 -->
           <delayTicks>300</delayTicks>
-          <!-- 是否锁定施法时目标所在格。 -->
-          <targetLocation>true</targetLocation>
+          <!-- 收尾弹沿用同一目标，持续瞄准至该段发射结束。 -->
+          <targetLocation>false</targetLocation>
           <attack>
             <!-- 是否使用 BA 战斗属性结算。 -->
             <useBattleStats>true</useBattleStats>
@@ -460,7 +467,7 @@
  <ThingDef ParentName="BaseBullet">
     <defName>BANW_Bullet_Hoshiro_B_EX_C</defName>
     <label>手枪速射</label>
-    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <thingClass>BANWlLib.Skills.Projectile_HoshinoSkill</thingClass>
     <graphicData>
       <texPath>Projectile/Hoshiro_B_EX</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -508,7 +515,7 @@
   <ThingDef ParentName="BaseBullet">
     <defName>BANW_Bullet_Hoshiro_B_EX_B</defName>
     <label>手枪速射</label>
-    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <thingClass>BANWlLib.Skills.Projectile_HoshinoSkill</thingClass>
     <graphicData>
       <texPath>Projectile/Bullet_Natsu</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -524,7 +531,7 @@
   <ThingDef ParentName="BaseBullet">
     <defName>BANW_Bullet_Hoshiro_B_kongbai</defName>
     <label>手枪速射</label>
-    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <thingClass>BANWlLib.Skills.Projectile_HoshinoSkill</thingClass>
     <graphicData>
       <texPath>Projectile/kongbai</texPath>
       <graphicClass>Graphic_Single</graphicClass>

@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.mainUI;
 using BANWlLib.CostSystem;
 using BANWlLib.mainUI.Gaka;
@@ -9,15 +13,28 @@ using newpro;
 using RimWorld;
 using System.IO;
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.EventSystems;
+#else
 using UnityEngine.EventSystems;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 using BANWlLib.mainUI.Initialization;
 
 namespace BANWlLib
 {
-    //负责主界面资源加载、控件实例化与初始化分段计时。
+    //主界面资源加载、控件实例化与初始化分段计时。
     public static partial class UICoreStart
     {
         //加载主UI资源包并创建什亭之匣、入口按钮和独立COST界面。
@@ -28,17 +45,17 @@ namespace BANWlLib
                 if (UiMapData.mainUI != null)
                 {
                     UiMapData.mainUI.SetActive(false);
-                    UnityEngine.Object.Destroy(UiMapData.mainUI);
+                    Engine.Object.Destroy(UiMapData.mainUI);
                     UiMapData.mainUI = null;
                 }
                 if (UiMapData.uiCamera != null)
                 {
-                    UnityEngine.Object.Destroy(UiMapData.uiCamera.gameObject);
+                    Engine.Object.Destroy(UiMapData.uiCamera.gameObject);
                     UiMapData.uiCamera = null;
                 }
                 if (UiMapData.costUI != null)
                 {
-                    UnityEngine.Object.Destroy(UiMapData.costUI);
+                    Engine.Object.Destroy(UiMapData.costUI);
                     UiMapData.costUI = null;
                 }
                 UiMapData.uplodorBundle();
@@ -46,7 +63,11 @@ namespace BANWlLib
                       LoadedModManager.GetMod<newpro>().Content.RootDir,
                       "1.6", "AssetBundles", "bamainui.ab"
                   );
+#if RW_1_7
+                UiMapData.bundle = AssetBundle.Open();
+#else
                 UiMapData.bundle = AssetBundle.LoadFromFile(abPath);
+#endif
                 timing.Mark("主界面资源包");
                 if (UiMapData.bundle == null)
                 {
@@ -55,17 +76,22 @@ namespace BANWlLib
                 var prefab = UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/mainUI.prefab");
                 ManualMapData.messageUI = UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/messageUI.prefab");
                 ManualMapData.messageUIQuek = UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/messageUIQuek.prefab");
-                UiMapData.mainUI = UnityEngine.Object.Instantiate(prefab);
+                UiMapData.mainUI = Engine.Object.Instantiate(prefab);
                 GakaMapData.GakaUIPet = UiMapData.mainUI.transform.Find("GaKa").gameObject;
                 UiMapData.mainUI.AddComponent<keyevents>();
                 UiMapData.mainUI.transform.SetParent(null);
                 UiMapData.goumaiMack = UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/goumaiMack.prefab");
-                UiMapData.uiCamera = UnityEngine.Object.Instantiate(UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/Main Camera.prefab").GetComponent<Camera>());
+                UiMapData.uiCamera = Engine.Object.Instantiate(UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/Main Camera.prefab")).GetComponent<Camera>();
                 UiMapData.uiCamera.depth = 100f;
                 UiMapData.mainUI.GetComponent<Canvas>().worldCamera = UiMapData.uiCamera;
+#if RW_1_7
+                //复杂粒子需要场景顶点流，主界面与抽卡共用独立 UI 相机。
+                UiMapData.mainUI.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+                BAFullscreenLayout.ConfigureMain(UiMapData.mainUI);
+#endif
                 UiMapData.buyParticle = UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/lizi.prefab");
                 UiMapData.uiCamera.gameObject.SetActive(false);
-                UiMapData.showUI = UnityEngine.Object.Instantiate(UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/OpenUi.prefab"));
+                UiMapData.showUI = Engine.Object.Instantiate(UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/OpenUi.prefab"));
                 Button openMainButton = UiMapData.showUI.transform.Find("MainButtom").GetComponent<Button>();
                 Navigation navigation = openMainButton.navigation;
                 navigation.mode = Navigation.Mode.None;
@@ -78,8 +104,12 @@ namespace BANWlLib
                 UiMapData.openUIBUTT = openMainButton.gameObject;
                 UiMapData.openUIBUTT.AddComponent<LongPressDraggableButton>();
                 InitializeCostUI();
-                UnityEngine.Object.DontDestroyOnLoad(UiMapData.mainUI);
-                UnityEngine.Object.DontDestroyOnLoad(UiMapData.uiCamera.gameObject);
+#if !RW_1_7
+                Engine.Object.DontDestroyOnLoad(UiMapData.mainUI);
+#endif
+#if !RW_1_7
+                Engine.Object.DontDestroyOnLoad(UiMapData.uiCamera.gameObject);
+#endif
                 timing.Mark("界面实例与COST");
                 getShopButtonImage(UiMapData.bundle);
                 Setshopselectpage();
@@ -90,12 +120,12 @@ namespace BANWlLib
                 aronaSpineUIController PunaraSpineUI = UiMapData.mainUI.transform.Find("nightTime/Button").GetComponent<aronaSpineUIController>();
                 lordHudong.LordPunara(PunaraSpineUI);
                 timing.Mark("对话路径绑定");
-                UiMapData.qinghuishitext1 = UiMapData.mainUI.transform.Find("daohang").transform.Find("qinghuishishuliang").GetComponent<UnityEngine.UI.Text>();
-                UiMapData.huangpiaotext1 = UiMapData.mainUI.transform.Find("daohang").transform.Find("qianxianshi").GetComponent<UnityEngine.UI.Text>();
+                UiMapData.qinghuishitext1 = UiMapData.mainUI.transform.Find("daohang").transform.Find("qinghuishishuliang").GetComponent<Engine.UI.Text>();
+                UiMapData.huangpiaotext1 = UiMapData.mainUI.transform.Find("daohang").transform.Find("qianxianshi").GetComponent<Engine.UI.Text>();
                 UiMapData.mainUI.transform.Find("fanhui").gameObject.AddComponent<MonoComp_BackButton>();
                 UiMapData.mainBgmPlay = UiMapData.mainUI.transform.Find("BgmPlay").GetComponent<AudioSource>();
                 UiMapData.mainAudioPlay = UiMapData.mainUI.transform.Find("SoundEffectPlay").GetComponent<AudioSource>();
-                UiMapData.jingcuixianshi = UiMapData.mainUI.transform.Find("shangdian/showtextsuipian").GetComponent<UnityEngine.UI.Text>();
+                UiMapData.jingcuixianshi = UiMapData.mainUI.transform.Find("shangdian/showtextsuipian").GetComponent<Engine.UI.Text>();
                 UiMapData.mainUI.transform.Find("Buttom").transform.Find("zhaomu").GetComponent<Button>().onClick.AddListener(() =>
                 {
                     ShowGaka();
@@ -117,7 +147,7 @@ namespace BANWlLib
                     fanhuiyouxi();
                 });
                 UiMapData.shotpet = UiMapData.mainUI.transform.Find("shangdian/ScrollView/Viewport/Content").gameObject;
-                UiMapData.dsptext = UiMapData.mainUI.transform.Find("shangdian/dsp/Text").gameObject.GetComponent<UnityEngine.UI.Text>();
+                UiMapData.dsptext = UiMapData.mainUI.transform.Find("shangdian/dsp/Text").gameObject.GetComponent<Engine.UI.Text>();
                 UiMapData.shop = UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/shot.prefab");
                 Gakalord.lordGaka(UiMapData.bundle);
                 timing.Mark("抽卡界面资源");
@@ -137,7 +167,7 @@ namespace BANWlLib
                 throw new InvalidDataException("bamainui.ab 中缺少 CostUI.prefab。" );
             }
 
-            UiMapData.costUI = UnityEngine.Object.Instantiate(
+            UiMapData.costUI = Engine.Object.Instantiate(
                 prefab,
                 UiMapData.openUIBUTT.transform,
                 false);

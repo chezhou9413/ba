@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 投射物多段追加伤害配置，负责让单发子弹命中后按配置追加多段统一战斗伤害。
+    //投射物多段追加伤害配置，让单发子弹命中后按配置追加多段统一战斗伤害。
     public class ProjectileMultiHitExtension : DefModExtension
     {
         public int damageIntervalTicks = 0;
@@ -12,7 +12,7 @@ namespace BANWlLib.BattleSystem
         public List<ProjectileExtraDamageConfig> extraDamages = new List<ProjectileExtraDamageConfig>();
     }
 
-    // 投射物追加伤害段配置，负责描述单段追加伤害的公式参数、暴击和阵营过滤规则。
+    //投射物追加伤害段配置，描述单段追加伤害的公式参数、暴击和阵营过滤规则。
     public class ProjectileExtraDamageConfig : IExposable
     {
         public DamageDef damageDef;
@@ -32,7 +32,7 @@ namespace BANWlLib.BattleSystem
         public bool canHitOwnPawn = false;
         public bool canHitOwnBuilding = false;
 
-        // 保存和读取单段追加伤害配置，负责支持延迟多段子弹在存读档后继续触发。
+        //保存和读取单段追加伤害配置，支持延迟多段子弹在存读档后继续触发。
         public void ExposeData()
         {
             Scribe_Values.Look(ref useBattleStats, "useBattleStats", true);
@@ -53,7 +53,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref canHitOwnBuilding, "canHitOwnBuilding", false);
         }
 
-        // 获取实际伤害类型，负责兼容 damageDef 和持续伤害配置中的旧字段 damageType。
+        //获取实际伤害类型，兼容 damageDef 和持续伤害配置中的旧字段 damageType。
         public DamageDef ResolveDamageDef()
         {
             return damageDef ?? damageType;

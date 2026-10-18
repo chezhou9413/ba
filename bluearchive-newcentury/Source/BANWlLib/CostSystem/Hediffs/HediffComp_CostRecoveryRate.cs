@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //COST回复率状态配置负责声明该学生对地图共享回复速度的加算偏移。
+    //COST回复率状态配置声明该学生对地图共享回复速度的加算偏移。
     public sealed class HediffCompProperties_CostRecoveryRate : HediffCompProperties
     {
         public float rateOffset;
@@ -14,7 +14,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //COST回复率状态负责向地图汇总逻辑暴露当前回复率偏移。
+    //COST回复率状态向地图汇总逻辑暴露当前回复率偏移。
     public sealed class HediffComp_CostRecoveryRate : HediffComp
     {
         public HediffCompProperties_CostRecoveryRate Props => (HediffCompProperties_CostRecoveryRate)props;

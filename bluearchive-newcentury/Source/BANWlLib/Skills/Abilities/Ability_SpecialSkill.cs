@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //特殊技能实例，负责在原版扣费入口之前完成最终阶段和目标校验。
+    //特殊技能实例，在原版扣费入口之前完成最终阶段和目标校验。
     public class Ability_SpecialSkill : Ability
     {
         //支持存档创建独立技能实例。
@@ -17,6 +17,12 @@ namespace BANWlLib.Skills
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest)
         {
             var effect = CompOfType<CompAbilityEffect_SpecialSkill>();
+            if (effect.Props.profile.role == SpecialSkillRole.Hoshino && effect.Props.command == SpecialSkillCommand.Ex &&
+                (!(pawn.jobs.curDriver is JobDriver_HoshinoExChannel) || pawn.CurJob.ability != this))
+            {
+                Log.Error("星野输出EX必须通过JobDriver_HoshinoExChannel施法");
+                return false;
+            }
             //持续施法必须绑定正式能力工作，不能直接调用效果后脱手射击。
             if (effect.Props.profile.role == SpecialSkillRole.Nero && effect.Props.command == SpecialSkillCommand.AlternateEx &&
                 (!(pawn.jobs.curDriver is JobDriver_NeroExChannel) || pawn.CurJob.ability != this))

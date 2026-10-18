@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //角色离图清理，负责在健康系统停止更新前释放地图实体和持续特效。
+    //角色离图清理，在健康系统停止更新前释放地图实体和持续特效。
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.DeSpawn))]
     public static class SpecialSkillDespawnPatch
     {

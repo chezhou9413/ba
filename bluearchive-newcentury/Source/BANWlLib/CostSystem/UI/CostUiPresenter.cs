@@ -1,10 +1,19 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //COST界面Presenter负责把当前地图共享池平滑同步到双环、债务颜色和中央数字。
+    //COST界面Presenter把当前地图共享池平滑同步到双环、债务颜色和中央数字。
     [DisallowMultipleComponent]
     public sealed class CostUiPresenter : MonoBehaviour
     {

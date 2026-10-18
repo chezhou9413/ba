@@ -1,0 +1,165 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Makoto_Student</defName>
+    <label>真琴</label>
+    <studentId>BANW_Makoto</studentId>
+    <kindDef>BANW_Makoto</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Makoto</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Makoto</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Gehena</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/支援</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/贯通</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/特殊装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>10</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>6</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>0</Crafting>
+				
+				<Artistic>10</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>1</Social>
+				
+				<Intellectual>1</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Makoto</WapenUIImagePath>
+			    
+				<WapenTypeText>狙击枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>基本技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Mika/Mika_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>万魔殿的伟大议长</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Makoto/Makoto_EX</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>天下无敌！歌赫娜的真正领袖！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成贯通克制率增加<color=#00FFFF>30%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[格黑娜学院
+3年级
+社团 万魔殿]]>
+				</StudentDesp>
+				
+				<StudentBioName>羽沼 真琴</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Gehena</AcademyLogoPath>
+				
+				<StudentCard>格赫娜学园所属，「万魔殿」的议长。为达目的不择手段的，忠于内心欲望的野心家与阴谋家。尽管有时因其态度而经常遭受痛苦与挫折，但她是个很快能重新振作起来的内心坚强的少女。把伊吹当作可爱的妹妹而疼爱，同时也把伊吕波视作妹妹一般的存在。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Through</DamageType>
+			
+			<DefenseType>Mysterious</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Makoto</DraggableAudio>
+			<GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Makoto_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+			<UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Makoto_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Makoto_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+            
+            <avtTexPath>Gacha/Student/Makoto</avtTexPath>
+		</baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

@@ -5,7 +5,7 @@ using Verse.Sound;
 
 namespace BANWlLib.BattleSystem
 {
-    // 多发投射物技能配置，负责让 AbilityDef 声明按延迟逐发发射的子弹序列。
+    //多发投射物技能配置，让 AbilityDef 声明按延迟逐发发射的子弹序列。
     public class CompProperties_AbilityMultiShotProjectile : CompProperties_AbilityEffect
     {
         public ThingDef projectileDef;
@@ -19,14 +19,14 @@ namespace BANWlLib.BattleSystem
         public bool repeatShotSound = false;
         public List<MultiShotProjectileShotConfig> shots = new List<MultiShotProjectileShotConfig>();
 
-        // 初始化组件类型，负责把 XML 配置绑定到多发投射物执行组件。
+        //把 XML 配置绑定到多发投射物执行组件。
         public CompProperties_AbilityMultiShotProjectile()
         {
             compClass = typeof(CompAbilityEffect_MultiShotProjectile);
         }
     }
 
-    //多发投射物单发配置，负责描述某一发子弹的延迟、投射物、倍率和发射音效。
+    //多发投射物单发配置，描述某一发子弹的延迟、投射物、倍率和发射音效。
     public class MultiShotProjectileShotConfig
     {
         public int delayTicks = 0;
@@ -35,7 +35,7 @@ namespace BANWlLib.BattleSystem
         public SoundDef soundDef;
     }
 
-    // 多发投射物技能组件，负责在施法时把每发子弹注册到地图延迟队列。
+    //多发投射物技能组件，在施法时把每发子弹注册到地图延迟队列。
     public class CompAbilityEffect_MultiShotProjectile : CompAbilityEffect
     {
         public new CompProperties_AbilityMultiShotProjectile Props
@@ -46,7 +46,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 执行技能效果，负责按配置生成延迟发射任务。
+        //按配置生成延迟发射任务。
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);
@@ -76,7 +76,7 @@ namespace BANWlLib.BattleSystem
             MultiShotProjectileDelayComponent.Queue(caster, target, Props, parent.verb?.preventFriendlyFire ?? false, repeatedShotSound);
         }
 
-        // 判断 AI 是否能选择目标，负责让测试技能优先锁定 Pawn。
+        //判断 AI 是否能选择目标，让测试技能优先锁定 Pawn。
         public override bool AICanTargetNow(LocalTargetInfo target)
         {
             return target.Pawn != null;

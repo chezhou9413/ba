@@ -234,7 +234,7 @@
     <warmupEffecter></warmupEffecter>
     <verbClass>Verb_CastAbility</verbClass>
     <range>34.9</range>
-    <warmupTime>0.1</warmupTime><!-- 0.1秒前摇，之后由Job负责逐发射击 -->
+    <warmupTime>0.1</warmupTime><!-- 0.1 秒前摇，之后由 Job 逐发射击。 -->
     <targetParams>
       <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
         <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
@@ -257,7 +257,7 @@
 
 <JobDef>
   <defName>BANW_Job_NeroExChannel</defName><!-- 引导 Job 标识 -->
-  <driverClass>BANWlLib.Skills.JobDriver_NeroExChannel</driverClass><!-- 自定义 JobDriver，负责逐发射击与打断处理 -->
+  <driverClass>BANWlLib.Skills.JobDriver_NeroExChannel</driverClass><!-- 自定义 JobDriver 处理逐发射击与打断。 -->
   <reportString>正在持续施放妮露二段EX。</reportString><!-- 人物状态栏显示文字 -->
   <abilityCasting>true</abilityCasting><!-- 视为施法中（受施法中断/动画影响） -->
   <alwaysShowWeapon>true</alwaysShowWeapon><!-- 施法期间始终显示武器 -->

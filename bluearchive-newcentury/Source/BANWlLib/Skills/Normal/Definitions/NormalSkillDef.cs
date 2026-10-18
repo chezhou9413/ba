@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //定义职责：配置独立自动普通技能的触发、目标筛选、战斗动作和表现资源。
+    //配置独立自动普通技能的触发、目标筛选、战斗动作和表现资源。
     public class NormalSkillDef : Def
     {
         public NormalSkillCountMode countMode = NormalSkillCountMode.ShotFired;
@@ -23,7 +23,7 @@ namespace BANWlLib.Skills
         public EffecterDef targetEffecter;
         public List<SpecialAttackConfig> actions = new List<SpecialAttackConfig>();
 
-        //校验职责：明确报告不能执行的目标类型、触发参数和动作配置。
+        //明确报告不能执行的目标类型、触发参数和动作配置。
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (string error in base.ConfigErrors()) yield return error;

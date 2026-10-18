@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //原版子弹命中来源补丁，负责把发射时的普攻身份带入实际伤害事件。
+    //原版子弹命中来源补丁，把发射时的普攻身份带入实际伤害事件。
     [HarmonyPatch(typeof(Bullet), "Impact", typeof(Thing), typeof(bool))]
     public static class SpecialBulletImpactPatch
     {

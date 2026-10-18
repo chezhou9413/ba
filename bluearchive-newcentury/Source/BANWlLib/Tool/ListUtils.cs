@@ -8,12 +8,7 @@ namespace BANWlLib.Tool
 {
     public static class ListUtils
     {
-        /// <summary>
-        /// 从字符串列表中移除一个指定的字符串（全字匹配），并清除所有空、null或空白条目。
-        /// </summary>
-        /// <param name="stringList">要修改的字符串列表。</param>
-        /// <param name="stringToRemove">需要被移除的、完全匹配的字符串。</param>
-        /// <returns>被移除的元素总数。</returns>
+        //移除完全匹配的字符串及空白条目，返回移除数量。
         public static int RemoveStringAndClean(List<string> stringList, string stringToRemove)
         {
             if (stringList == null)

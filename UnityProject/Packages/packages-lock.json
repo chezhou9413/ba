@@ -1,5 +1,15 @@
 {
   "dependencies": {
+    "com.chezhou.rimunity": {
+      "version": "file:E:/RimModDev/RimUnity/UnityPackage",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.nuget.newtonsoft-json": "3.2.1",
+        "com.unity.textmeshpro": "3.0.6"
+      }
+    },
     "com.coplaydev.unity-mcp": {
       "version": "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity",
       "depth": 0,

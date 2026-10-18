@@ -1,0 +1,23 @@
+
+<Defs>
+    <BANWlLib.DamageFontSystem.FontDef>
+        <defName>BANW_FontDef</defName>
+        
+        <DisableCritical>
+           <li>BANC_Damage_Chiaki_EXX</li> 
+        </DisableCritical>
+        
+        <EnsureCritical>
+            <li>BANC_Damage_Mika_None</li>
+            <li>BANC_Damage_Mika</li>
+            <li>BANC_Damage_Mika_A_None</li>
+            <li>BANC_Damage_Nozomi_None</li>
+            <li>BANC_Damage_Nozomi_EXX</li>
+        </EnsureCritical>
+        <DisableIncomingDamageFactorCritical>
+            <li>BANC_Damage_shenmi</li>
+            <li>BANC_Damage_Ibuki_EX</li>
+            <li>BANC_Damage_Rio_EX</li>
+        </DisableIncomingDamageFactorCritical>
+    </BANWlLib.DamageFontSystem.FontDef>
+</Defs>

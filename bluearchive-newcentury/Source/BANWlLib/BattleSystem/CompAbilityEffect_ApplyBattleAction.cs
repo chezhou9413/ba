@@ -3,20 +3,20 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 战斗动作技能组件配置，负责让 AbilityDef 直接执行一段统一战斗动作。
+    //战斗动作技能组件配置，让 AbilityDef 直接执行一段统一战斗动作。
     public class CompProperties_AbilityApplyBattleAction : CompProperties_AbilityEffect
     {
         public BattleActionConfig action = new BattleActionConfig();
         public bool applyToSelf = true;
 
-        // 初始化组件类型，负责把 XML 配置绑定到战斗动作技能组件。
+        //把 XML 配置绑定到战斗动作技能组件。
         public CompProperties_AbilityApplyBattleAction()
         {
             compClass = typeof(CompAbilityEffect_ApplyBattleAction);
         }
     }
 
-    // 战斗动作技能组件，负责把技能施法者和目标交给统一战斗结算层。
+    //战斗动作技能组件，把技能施法者和目标交给统一战斗结算层。
     public class CompAbilityEffect_ApplyBattleAction : CompAbilityEffect
     {
         public new CompProperties_AbilityApplyBattleAction Props
@@ -27,7 +27,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 执行技能效果，负责让自护盾等即时技能直接使用 BattleStatUtility。
+        //执行技能效果，让自护盾等即时技能直接使用 BattleStatUtility。
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);

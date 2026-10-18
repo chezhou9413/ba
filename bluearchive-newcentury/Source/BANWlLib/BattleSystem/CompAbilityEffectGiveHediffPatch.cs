@@ -5,11 +5,11 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 原版技能施加 Hediff 拦截，负责让 CompAbilityEffect_GiveHediff 遇到叠层状态时走 BA 叠层逻辑。
+    //原版技能施加 Hediff 拦截，让 CompAbilityEffect_GiveHediff 遇到叠层状态时走 BA 叠层逻辑。
     [HarmonyPatch(typeof(CompAbilityEffect_GiveHediff), "ApplyInner")]
     public static class CompAbilityEffectGiveHediffPatch
     {
-        // 命中目标前置处理，负责检测叠层 Hediff 并替换原版每次新建的逻辑为叠层累加。
+        //命中目标前置处理，检测叠层 Hediff 并替换原版每次新建的逻辑为叠层累加。
         // target 对应原版 ApplyInner 的第一个参数，即实际承受 Hediff 的 Pawn。
         static bool Prefix(CompAbilityEffect_GiveHediff __instance, Pawn target)
         {
@@ -36,13 +36,13 @@ namespace BANWlLib.BattleSystem
             return false;
         }
 
-        // 命中目标后置清理，负责避免 GiveHediff 失败时把施法者快照残留到后续治疗。
+        //命中目标后置清理，避免 GiveHediff 失败时把施法者快照残留到后续治疗。
         static void Postfix(Pawn target)
         {
             HealProjectileContext.Clear(target);
         }
 
-        // 给持续治疗 Hediff 注册施法者快照，负责让目标 tick 治疗时继续使用施法者的治愈力。
+        //给持续治疗 Hediff 注册施法者快照，让目标 tick 治疗时继续使用施法者的治愈力。
         private static void RegisterRegenerationSnapshot(CompAbilityEffect_GiveHediff effectComp, Pawn target, HediffDef hediffDef)
         {
             if (target == null)

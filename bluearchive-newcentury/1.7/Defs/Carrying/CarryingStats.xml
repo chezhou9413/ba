@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <StatDef>
+    <defName>BANW_HaulingCapacityMultiplier</defName>
+    <label>单次搬运容量倍率</label>
+    <description>乘算原版搬运容量，保留物品原有堆叠上限。100%为原始容量；不改变背包和商队质量负重。</description>
+    <category>PawnMisc</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <cacheable>false</cacheable>
+  </StatDef>
+  <StatDef>
+    <defName>BANW_CarryMassOffset</defName>
+    <label>额外质量负重</label>
+    <description>增加背包和商队可承担的公斤数，在质量负重倍率之前计算。不改变单次搬运容量。</description>
+    <category>PawnMisc</category>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>-999999</minValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <formatString>{0} kg</formatString>
+    <cacheable>false</cacheable>
+  </StatDef>
+  <StatDef>
+    <defName>BANW_CarryMassMultiplier</defName>
+    <label>质量负重倍率</label>
+    <description>质量负重上限等于基础承重加额外质量负重后再乘本倍率。100%为原始倍率，不赋予原本不能负重的角色搬运资格。</description>
+    <category>PawnMisc</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <cacheable>false</cacheable>
+  </StatDef>
+</Defs>

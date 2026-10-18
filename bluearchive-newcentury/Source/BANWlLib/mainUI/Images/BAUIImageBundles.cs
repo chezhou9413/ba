@@ -1,13 +1,38 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System;
 using System.Collections.Generic;
 using System.IO;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 
 namespace BANWlLib.mainUI.Images
 {
     //管理 UI 专用资源包句柄，包内最后一张缓存图片释放时卸载整个包。
     internal static class BAUIImageBundles
     {
+#if RW_1_7
+        private static readonly Dictionary<string, int> counts = new(StringComparer.OrdinalIgnoreCase);
+        internal static int Count => counts.Count;
+        //标准清单路径与像素格式，本层继续持有可回收的独立纹理。
+        internal static Texture2D Load(BAUIImageRecord record)
+        {
+            var texture = RimUnity.Assets.AssetLoader.LoadOwnedTexture(Verse.LoadedModManager.GetMod<BANWlLib.newpro>().Content, "UIImage/" + record.Asset);
+            counts[record.Bundle] = counts.TryGetValue(record.Bundle, out int n) ? n + 1 : 1;
+            return texture;
+        }
+        internal static void Release(string name, Texture2D texture)
+        {
+            RimUnity.Object.Destroy(texture);
+            if (--counts[name] == 0) counts.Remove(name);
+        }
+#else
         private static readonly Dictionary<string, AssetBundle> bundles = new Dictionary<string, AssetBundle>(StringComparer.OrdinalIgnoreCase);
         private static readonly Dictionary<string, int> counts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         internal static int Count => bundles.Count;
@@ -49,5 +74,6 @@ namespace BANWlLib.mainUI.Images
             bundles.Remove(name);
             counts.Remove(name);
         }
+#endif
     }
 }

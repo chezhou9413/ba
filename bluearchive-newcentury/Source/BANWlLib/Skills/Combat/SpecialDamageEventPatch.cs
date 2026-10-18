@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //伤害生命周期补丁，负责一次TakeDamage对应一次事件且异常时恢复上下文。
+    //伤害生命周期补丁，一次TakeDamage对应一次事件且异常时恢复上下文。
     [HarmonyPatch(typeof(Thing), nameof(Thing.TakeDamage))]
     public static class SpecialDamageEventPatch
     {

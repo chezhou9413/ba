@@ -1,0 +1,179 @@
+
+<Defs>
+    
+    <ThingDef Name="BANW_Apparel_Base" ParentName="ApparelNoQualityBase" Abstract="True">
+        <smeltable />
+		<useHitPoints>false</useHitPoints>
+        <statBases>
+            <MarketValue>1</MarketValue>
+            <Mass>1.0</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.05</ArmorRating_Heat>
+			<Insulation_Cold>18</Insulation_Cold>
+			<Insulation_Heat>18</Insulation_Heat>
+        </statBases>
+		<equippedStatOffsets>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.odyssey">1</VacuumResistance>
+    </equippedStatOffsets>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>FullHead</li>
+				<li>Feet</li>
+				<li>Waist</li>
+				<li>Hands</li>
+			</bodyPartGroups>
+		    <layers>
+			    <li>Shell</li>
+		    </layers>
+		</apparel>
+		<thingCategories>
+			<li>BAWN_Costume</li>
+		</thingCategories>
+		<tradeability>None</tradeability>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+    </ThingDef>
+
+     <ThingDef Name="BANC_Apparel_Base" ParentName="ApparelNoQualityBase" Abstract="true">
+        <smeltable />
+		<useHitPoints>false</useHitPoints>
+		<graphicData>
+			<drawSize>0.8</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+		</graphicData>
+		<generateCommonality>0</generateCommonality>
+		<generateAllowChance>0</generateAllowChance>
+        <statBases>
+            <MarketValue>1</MarketValue>
+            <Mass>1.0</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
+			<Insulation_Cold>18</Insulation_Cold>
+			<Insulation_Heat>18</Insulation_Heat>
+        </statBases>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>FullHead</li>
+				<li>Feet</li>
+				<li>Waist</li>
+				<li>Hands</li>
+			</bodyPartGroups>
+
+		</apparel>
+		
+		<thingCategories>
+			<li>BAWN_Costume_Belt</li>
+		</thingCategories>
+		<tradeability>Sellable</tradeability>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+    </ThingDef>
+
+	<ThingDef Name="BANC_Apparel_Base_Tow" ParentName="ApparelNoQualityBase" Abstract="true">
+        <smeltable />
+		<useHitPoints>false</useHitPoints>
+		<graphicData>
+			<drawSize>0.8</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+		</graphicData>
+		<generateCommonality>0</generateCommonality>
+		<generateAllowChance>0</generateAllowChance>
+        <statBases>
+            <MarketValue>1</MarketValue>
+            <Mass>1.0</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
+			<Insulation_Cold>18</Insulation_Cold>
+			<Insulation_Heat>18</Insulation_Heat>
+        </statBases>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+				<li>FullHead</li>
+				<li>Feet</li>
+				<li>Waist</li>
+				<li>Hands</li>
+			</bodyPartGroups>
+
+		</apparel>
+		
+		<thingCategories>
+			<li>BAWN_Costume_Belt</li>
+		</thingCategories>
+		<tradeability>Sellable</tradeability>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+	<recipeMaker>
+      <unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>BANW_Workbench</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <skillRequirements>
+        <Crafting>1</Crafting>
+      </skillRequirements>
+      <displayPriority>300</displayPriority>
+    </recipeMaker>
+    </ThingDef>
+
+	<ThingDef Name="BANC_Apparel_Shields" ParentName="ApparelNoQualityBase" Abstract="true">
+        <smeltable />
+		<useHitPoints>false</useHitPoints>
+		<graphicData>
+			<drawSize>0.8</drawSize>
+			<drawOffset>(0,0,0)</drawOffset>
+		</graphicData>
+        <statBases>
+            <MarketValue>1</MarketValue>
+            <Mass>1.0</Mass>
+			<Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
+        </statBases>
+		<apparel>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<bodyPartGroups>
+				<li>Torso</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Belt</li>
+			</layers>
+		<countsAsClothingForNudity>false</countsAsClothingForNudity>
+		<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+		</apparel>
+		
+		<thingCategories>
+			<li>BAWN_Costume_Belt</li>
+		</thingCategories>
+		<tradeability>None</tradeability>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+    </ThingDef>
+</Defs>

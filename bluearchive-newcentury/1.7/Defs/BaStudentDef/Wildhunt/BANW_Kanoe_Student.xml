@@ -1,0 +1,162 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Kanoe_Student</defName>
+    <label>鹿江</label>
+    <studentId>BANW_Kanoe</studentId>
+    <kindDef>BANW_Kanoe</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Kanoe</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Kanoe</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Wildhunt</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/坦克</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/神秘</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>8</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>4</Construction>
+				
+				<Mining>3</Mining>
+				
+				<Cooking>5</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>13</Crafting>
+				
+				<Artistic>15</Artistic>
+				
+				<Medical>10</Medical>
+				
+				<Social>3</Social>
+				
+				<Intellectual>12</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Kanoe</WapenUIImagePath>
+			    
+				<WapenTypeText>霰弹枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>很好吃的哦……</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[赋予自身每4秒回复自身<color=#00FFFF>96%</color>的生命值
+(持续<color=#00FFFF>20</color>秒)]]></AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>这是我朋友</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>26%</color>的生命值。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>子技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[狂猎艺术学院
+3年级
+社团 神秘学研究会]]>
+				</StudentDesp>
+				
+				<StudentBioName>板垣 鹿江</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Wildhunt</AcademyLogoPath>
+				
+				<StudentCard>狂猎艺术学院神秘学研究会的成员，探索艺术中蕴含的神秘。是神秘学研究会中唯一的三年级学生，但不是会长，只是作为拥护者支持着其他成员。由于外表可疑，行为古怪，有人说她就是神秘本身……。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Mysterious</DamageType>
+			
+			<DefenseType>Through</DefenseType>
+			
+			<PosType>Tank</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\kanoe</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kanoe_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Kanoe_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Kanoe_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Kanoe</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

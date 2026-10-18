@@ -1,13 +1,20 @@
-﻿using BANWlLib.BaDef;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using BANWlLib.BaDef;
 using newpro;
 using System.Collections.Generic;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 
 namespace BANWlLib.mainUI.StudentManual
 {
-    /// <summary>
-    /// 学生图鉴运行时缓存，负责保存图鉴界面对象和按学生数据 Def 读取的列表。
-    /// </summary>
+    //学生图鉴运行时缓存，保存图鉴界面对象和按学生数据 Def 读取的列表。
     public static class ManualMapData
     {
         public static bool isOpenManual = false;

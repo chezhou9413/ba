@@ -8,11 +8,7 @@ using BANWlLib.Tool;
 
 namespace BANWlLib
 {
-    /// <summary>
-    /// 道具使用效果组件配置类
-    /// 这个类定义了道具使用时对HumanIntPropertyComp的影响
-    /// 可以在XML文件中配置这些属性
-    /// </summary>
+    //配置道具对 HumanIntPropertyComp 属性值的影响。
     public class CompProperties_UseEffectUpdateCustomInt : CompProperties_UseEffect
     {
         // 使用道具时增加或减少的数值（正数增加，负数减少）
@@ -32,33 +28,20 @@ namespace BANWlLib
         public List<int> batchUseCount = new List<int>();
 
 
-        /// <summary>
-        /// 构造函数
-        /// 告诉游戏这个配置对应哪个组件类
-        /// </summary>
+        //绑定道具使用组件。
         public CompProperties_UseEffectUpdateCustomInt()
         {
             this.compClass = typeof(CompUseEffect_UpdateCustomInt);
         }
     }
 
-    /// <summary>
-    /// 道具使用效果组件
-    /// 当道具被使用时，这个组件会修改使用者的HumanIntPropertyComp中的自定义属性值
-    /// </summary>
+    //使用道具时更新角色的自定义属性值。
     public class CompUseEffect_UpdateCustomInt : CompUseEffect
     {
-        /// <summary>
-        /// 获取组件配置属性
-        /// 这些配置来自XML文件中的设置
-        /// </summary>
+        //读取道具组件配置。
         public CompProperties_UseEffectUpdateCustomInt Props => (CompProperties_UseEffectUpdateCustomInt)this.props;
 
-        /// <summary>
-        /// 安全获取角色的学生身份或种族名称
-        /// </summary>
-        /// <param name="pawn">要检查的角色</param>
-        /// <returns>学生身份或种族名称，如果无法获取则返回"Unknown"</returns>
+        //获取学生身份或种族名称，无法识别时返回 Unknown。
         private string GetStudentIdentity(Pawn pawn)
         {
             try
@@ -84,17 +67,11 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 提供右键菜单选项
-        /// 当玩家右键点击道具时显示批量使用选项
-        /// 这个方法会在玩家右键点击道具时被游戏自动调用
-        /// </summary>
-        /// <param name="selPawn">选中的角色（即要使用道具的角色）</param>
-        /// <returns>右键菜单选项列表（每个选项都是一个FloatMenuOption对象）</returns>
+        //向道具右键菜单添加批量使用选项。
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
         {
             // 第一步：先返回基础的菜单选项
-            // 这确保了我们不会覆盖掉原有的菜单选项（比如"使用"选项）
+            //保留原有右键菜单选项。
             foreach (FloatMenuOption option in base.CompFloatMenuOptions(selPawn))
             {
                 yield return option; // yield return 表示逐个返回选项，而不是一次性返回所有选项
@@ -146,12 +123,7 @@ namespace BANWlLib
 
     
 
-        /// <summary>
-        /// 道具使用时的效果
-        /// 当玩家使用道具时，游戏会调用这个方法
-        /// 支持批量使用：检查当前任务的count值来决定使用数量
-        /// </summary>
-        /// <param name="usedBy">使用道具的角色</param>
+        //按当前任务的 count 批量使用道具。
         public override void DoEffect(Pawn usedBy)
         {
             base.DoEffect(usedBy);
@@ -170,7 +142,6 @@ namespace BANWlLib
                 useCount = usedBy.CurJob.count;
             }
             
-            // 确保不超过实际拥有的道具数量
             useCount = Math.Min(useCount, parent.stackCount);
             
             // 计算批量使用的总效果
@@ -196,7 +167,7 @@ namespace BANWlLib
                     (actualEffect + Props.updateValue - 1) / Props.updateValue : 
                     (actualEffect - Props.updateValue + 1) / Props.updateValue);
             
-            // 确保实际使用数量不超过请求数量和拥有数量
+            //使用数量不超过请求数量和库存。
             actualCount = Math.Min(actualCount, useCount);
             actualCount = Math.Min(actualCount, parent.stackCount);
             actualCount = Math.Max(actualCount, 0);
@@ -244,12 +215,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 检查是否可以使用道具
-        /// 在玩家尝试使用道具时，游戏会调用这个方法来检查是否允许使用
-        /// </summary>
-        /// <param name="p">要使用道具的角色</param>
-        /// <returns>是否可以使用道具</returns>
+        //检查角色能否使用道具。
         public override AcceptanceReport CanBeUsedBy(Pawn p)
         {
             // 检查基础使用条件
@@ -305,12 +271,7 @@ namespace BANWlLib
             return AcceptanceReport.WasAccepted;
         }
 
-        /// <summary>
-        /// 创建批量使用任务
-        /// 让角色走到道具处进行批量使用（更真实的模拟）
-        /// </summary>
-        /// <param name="usedBy">使用者</param>
-        /// <param name="count">使用数量</param>
+        //创建前往道具位置并批量使用的任务。
         private void CreateBatchUseJob(Pawn usedBy, int count)
         {
             try
@@ -356,7 +317,7 @@ namespace BANWlLib
 
                 // 创建使用道具的工作任务
                 Job useJob = JobMaker.MakeJob(useItemJob, parent);
-                useJob.count = Math.Min(count, parent.stackCount); // 确保不超过实际数量
+                useJob.count = Math.Min(count, parent.stackCount);
                 
                 // 预约道具，防止其他角色同时使用
                 if (usedBy.Reserve(parent, useJob))
@@ -371,11 +332,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 检查是否有新的使用任务
-        /// </summary>
-        /// <param name="pawn">角色</param>
-        /// <returns>是否有新的使用任务</returns>
+        //检查角色是否已有使用任务。
         private bool HasNewUseJob(Pawn pawn)
         {
             try
@@ -416,10 +373,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 取消当前的使用任务
-        /// </summary>
-        /// <param name="pawn">角色</param>
+        //取消角色当前的使用任务。
         private void CancelCurrentUseJob(Pawn pawn)
         {
             try

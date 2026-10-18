@@ -12,7 +12,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    //技能战斗悬浮工具，负责把配置化战斗参数格式化为地图技能按钮的说明文本。
+    //技能战斗悬浮工具，把配置化战斗参数格式化为地图技能按钮的说明文本。
     public static class AbilityBattleTooltipUtility
     {
         private static readonly Color DamageColor = new Color(1f, 0.35f, 0.28f);
@@ -27,7 +27,7 @@ namespace BANWlLib.BattleSystem
         private const int CompactHeadGroupCount = 6;
         private const int CompactTailGroupCount = 2;
 
-        // 构建技能公式悬浮文本，负责根据当前 Pawn 的实时属性给出预估数值。
+        //构建技能公式悬浮文本，根据当前 Pawn 的实时属性给出预估数值。
         public static string BuildTooltip(RimWorld.Ability ability)
         {
             if (ability?.def == null || ability.pawn == null)
@@ -55,7 +55,7 @@ namespace BANWlLib.BattleSystem
             return BuildActionsTooltip(pawn, ability.def, actions);
         }
 
-        //动作展示职责：让自动普通技能状态和地图按钮共用同一套真实战斗公式格式。
+        //让自动普通技能状态和地图按钮共用同一套真实战斗公式格式。
         public static string BuildActionsTooltip(Pawn pawn, AbilityDef abilityDef, List<BattleActionConfig> actions)
         {
             if (actions.NullOrEmpty()) return string.Empty;
@@ -101,13 +101,13 @@ namespace BANWlLib.BattleSystem
             return builder.ToString();
         }
 
-        // 判断是否使用紧凑显示，负责避免多段技能把悬浮说明撑得过长。
+        //判断是否使用紧凑显示，避免多段技能把悬浮说明撑得过长。
         private static bool ShouldUseCompactActions(List<BattleActionConfig> actions)
         {
             return actions != null && actions.Count >= CompactActionThreshold;
         }
 
-        // 判断治疗技能是否只会作用于自身，负责让 tooltip 在自疗场景直接显示最终治疗量。
+        //判断治疗技能是否只会作用于自身，让 tooltip 在自疗场景直接显示最终治疗量。
         private static bool IsSelfOnlyHealAbility(AbilityDef abilityDef)
         {
             if (abilityDef?.comps == null)
@@ -139,7 +139,7 @@ namespace BANWlLib.BattleSystem
             return foundGiveHediff;
         }
 
-        //解析预览战斗段，负责让投射物、场地和范围 Job 技能优先读取真实配置，避免悬浮预估和实际结算分离。
+        //解析预览战斗段，让投射物、场地和范围 Job 技能优先读取真实配置，避免悬浮预估和实际结算分离。
         private static List<BattleActionConfig> ResolvePreviewActions(AbilityDef abilityDef, out bool hasAutomaticActions)
         {
             List<BattleActionConfig> multiShotProjectileActions = TryBuildMultiShotProjectileActions(abilityDef);
@@ -181,7 +181,7 @@ namespace BANWlLib.BattleSystem
             return abilityDef.GetModExtension<AbilityBattleTooltipExtension>()?.previewActions;
         }
 
-        //从技能附加的再生 Hediff 构建预览段，负责让持续治疗技能自动显示单次或多次触发的治愈量公式。
+        //从技能附加的再生 Hediff 构建预览段，让持续治疗技能自动显示单次或多次触发的治愈量公式。
         private static List<BattleActionConfig> TryBuildGiveHediffHealActions(AbilityDef abilityDef)
         {
             if (abilityDef?.comps == null)
@@ -221,7 +221,7 @@ namespace BANWlLib.BattleSystem
             return actions.Count > 0 ? actions : null;
         }
 
-        //解析持续治疗触发次数，负责在 Hediff 明确写出持续时间时把悬浮预估展开为总触发段数。
+        //在 Hediff 明确写出持续时间时把悬浮预估展开为总触发段数。
         private static int ResolveRegenerationTriggerCount(HediffDef hediffDef, HediffCompProps_Regeneration regeneration)
         {
             if (hediffDef == null || regeneration == null || regeneration.healIntervalTicks <= 0)
@@ -239,7 +239,7 @@ namespace BANWlLib.BattleSystem
             return Mathf.Max(1, durationTicks / regeneration.healIntervalTicks);
         }
 
-        //从范围 Job 构建预览段，负责支持圆形脱手、持续圆形、扇形和直线 AOE 技能自动显示预计伤害。
+        //从范围 Job 构建预览段，支持圆形脱手、持续圆形、扇形和直线 AOE 技能自动显示预计伤害。
         private static List<BattleActionConfig> TryBuildJobActions(AbilityDef abilityDef)
         {
             JobDef jobDef = ResolveVerbJobDef(abilityDef);
@@ -256,7 +256,7 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        // 解析技能动词绑定的 JobDef，负责从不同 AOE VerbProperties 中取得真实执行 Job。
+        //从不同 AOE VerbProperties 中取得真实执行 Job。
         private static JobDef ResolveVerbJobDef(AbilityDef abilityDef)
         {
             if (abilityDef?.verbProperties is VerbProperties_SphereArea sphereArea)
@@ -277,7 +277,7 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        // 从圆形脱手 Job 构建预览段，负责展开主 tick 和延迟子段中的伤害配置。
+        //从圆形脱手 Job 构建预览段，展开主 tick 和延迟子段中的伤害配置。
         private static List<BattleActionConfig> BuildSphereAreaActions(BaJobDef_SphereAreaAttack jobDef)
         {
             if (jobDef?.damages == null || jobDef.damages.Count == 0)
@@ -303,7 +303,7 @@ namespace BANWlLib.BattleSystem
             return actions.Count > 0 ? actions : null;
         }
 
-        // 从持续 AOE Job 构建预览段，负责读取持续时间轴上的每段伤害或治疗。
+        //从持续 AOE Job 构建预览段，读取持续时间轴上的每段伤害或治疗。
         private static List<BattleActionConfig> BuildSustainedActions(BaJobDef_SustainedAttack jobDef)
         {
             if (jobDef?.damages == null || jobDef.damages.Count == 0)
@@ -320,7 +320,7 @@ namespace BANWlLib.BattleSystem
             return actions.Count > 0 ? actions : null;
         }
 
-        // 添加有效预览段，负责过滤纯特效或纯状态段，避免 tooltip 显示空伤害。
+        //添加有效预览段，过滤纯特效或纯状态段，避免 tooltip 显示空伤害。
         private static void AddPreviewAction(List<BattleActionConfig> actions, BattleActionConfig action)
         {
             if (actions == null || action == null)
@@ -350,7 +350,7 @@ namespace BANWlLib.BattleSystem
             actions.Add(action);
         }
 
-        //从场地脱手技能构建预览段，负责把 BattleFieldControllerExtension 的 actions 同步到技能公式显示。
+        //从场地脱手技能构建预览段，把 BattleFieldControllerExtension 的 actions 同步到技能公式显示。
         private static List<BattleActionConfig> TryBuildBattleFieldActions(AbilityDef abilityDef)
         {
             ThingDef fieldThingDef = FindBattleFieldThingDef(abilityDef);
@@ -406,7 +406,7 @@ namespace BANWlLib.BattleSystem
             return copies;
         }
 
-        //查找技能生成的场地控制器 ThingDef，负责支持 CompProperties_AbilitySpawnBattleField 配置。
+        //查找技能生成的场地控制器 ThingDef，支持 CompProperties_AbilitySpawnBattleField 配置。
         private static ThingDef FindBattleFieldThingDef(AbilityDef abilityDef)
         {
             if (abilityDef?.comps == null)
@@ -426,7 +426,7 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        // 从技能投射物构建预览段，负责把直线弹、普通弹和多段追加伤害同步到技能公式显示。
+        //从技能投射物构建预览段，把直线弹、普通弹和多段追加伤害同步到技能公式显示。
         private static List<BattleActionConfig> TryBuildProjectileActions(AbilityDef abilityDef)
         {
             ThingDef projectileDef = FindLaunchProjectileDef(abilityDef);
@@ -438,7 +438,7 @@ namespace BANWlLib.BattleSystem
             return TryBuildProjectileActions(projectileDef);
         }
 
-        // 从投射物 Def 构建预览段，负责让单发技能和延迟多发技能复用同一套投射物公式解析。
+        //从投射物 Def 构建预览段，让单发技能和延迟多发技能复用同一套投射物公式解析。
         private static List<BattleActionConfig> TryBuildProjectileActions(ThingDef projectileDef)
         {
             BattleActionConfig piercingAction = TryBuildPiercingProjectileAction(projectileDef);
@@ -453,7 +453,7 @@ namespace BANWlLib.BattleSystem
             return normalProjectileActions;
         }
 
-        // 从延迟多发投射物组件构建预览段，负责把每发子弹的 BA 战斗配置展开到悬浮说明。
+        //从延迟多发投射物组件构建预览段，把每发子弹的 BA 战斗配置展开到悬浮说明。
         private static List<BattleActionConfig> TryBuildMultiShotProjectileActions(AbilityDef abilityDef)
         {
             if (abilityDef?.comps == null)
@@ -488,7 +488,7 @@ namespace BANWlLib.BattleSystem
             return actions.Count > 0 ? actions : null;
         }
 
-        // 应用连射单发覆盖参数，负责让悬浮公式和运行时每发倍率保持一致。
+        //应用连射单发覆盖参数，让悬浮公式和运行时每发倍率保持一致。
         private static void ApplyMultiShotShotOverrides(List<BattleActionConfig> projectileActions, MultiShotProjectileShotConfig shot)
         {
             if (projectileActions.NullOrEmpty() || shot == null)
@@ -502,7 +502,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 从普通投射物构建预览段，负责把原始子弹伤害和命中追加多段伤害按真实配置展开。
+        //从普通投射物构建预览段，把原始子弹伤害和命中追加多段伤害按真实配置展开。
         private static List<BattleActionConfig> TryBuildNormalProjectileActions(ThingDef projectileDef)
         {
             BattleProjectileExtension battleExtension = projectileDef?.GetModExtension<BattleProjectileExtension>();
@@ -546,7 +546,7 @@ namespace BANWlLib.BattleSystem
             return actions.Count > 0 ? actions : null;
         }
 
-        // 追加投射物多段预览，负责让穿透弹和普通弹共用同一套额外伤害显示。
+        //追加投射物多段预览，让穿透弹和普通弹共用同一套额外伤害显示。
         private static void AddMultiHitPreviewActions(ThingDef projectileDef, List<BattleActionConfig> actions)
         {
             ProjectileMultiHitExtension multiHitExtension = projectileDef?.GetModExtension<ProjectileMultiHitExtension>();
@@ -562,7 +562,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 从投射物追加伤害配置构建预览段，负责复用多段子弹运行时的字段语义。
+        //从投射物追加伤害配置构建预览段，复用多段子弹运行时的字段语义。
         private static BattleActionConfig BuildExtraProjectilePreviewAction(ThingDef projectileDef, ProjectileMultiHitExtension extension, ProjectileExtraDamageConfig config, float weaponBaseAttack)
         {
             if (config == null)
@@ -590,7 +590,7 @@ namespace BANWlLib.BattleSystem
             };
         }
 
-        //从直线穿透弹构建预览段，负责把 ThingDef 扩展里的真实伤害参数同步到技能公式显示。
+        //从直线穿透弹构建预览段，把 ThingDef 扩展里的真实伤害参数同步到技能公式显示。
         private static BattleActionConfig TryBuildPiercingProjectileAction(ThingDef projectileDef)
         {
             PiercingProjectileExtension extension = projectileDef?.GetModExtension<PiercingProjectileExtension>();
@@ -620,7 +620,7 @@ namespace BANWlLib.BattleSystem
             };
         }
 
-        //查找技能发射的投射物，负责支持原版 CompProperties_AbilityLaunchProjectile 配置。
+        //查找技能发射的投射物，支持原版 CompProperties_AbilityLaunchProjectile 配置。
         private static ThingDef FindLaunchProjectileDef(AbilityDef abilityDef)
         {
             if (abilityDef?.comps == null)
@@ -640,7 +640,7 @@ namespace BANWlLib.BattleSystem
             return null;
         }
 
-        //统计连续相同战斗段，负责让多段相同伤害在悬浮说明里合并显示。
+        //统计连续相同战斗段，让多段相同伤害在悬浮说明里合并显示。
         private static int CountSameActions(List<BattleActionConfig> actions, int startIndex, BattleActionConfig action)
         {
             int count = 1;
@@ -657,7 +657,7 @@ namespace BANWlLib.BattleSystem
             return count;
         }
 
-        // 写入紧凑多段说明，负责用总览和短行展示高段数技能的关键战斗信息。
+        //用总览和短行展示高段数技能的关键战斗信息。
         private static void AppendCompactActions(StringBuilder builder, Pawn pawn, List<BattleActionConfig> actions)
         {
             CompactActionTotals totals = CalculateCompactTotals(pawn, actions);
@@ -700,7 +700,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 计算紧凑总览数值，负责统计总倍率和总预估量。
+        //计算紧凑总览数值，统计总倍率和总预估量。
         private static CompactActionTotals CalculateCompactTotals(Pawn pawn, List<BattleActionConfig> actions)
         {
             CompactActionTotals totals = new CompactActionTotals();
@@ -741,7 +741,7 @@ namespace BANWlLib.BattleSystem
             return totals;
         }
 
-        // 构建紧凑分组，负责按连续相同段压缩明细。
+        //按连续相同段压缩明细。
         private static List<CompactActionGroup> BuildCompactGroups(List<BattleActionConfig> actions)
         {
             List<CompactActionGroup> groups = new List<CompactActionGroup>();
@@ -767,7 +767,7 @@ namespace BANWlLib.BattleSystem
             return groups;
         }
 
-        // 判断紧凑分组是否需要折叠，负责保留头尾关键信息。
+        //判断紧凑分组是否需要折叠，保留头尾关键信息。
         private static bool ShouldSkipCompactGroup(int groupCount, int groupIndex)
         {
             if (groupCount <= CompactGroupLimit)
@@ -778,7 +778,7 @@ namespace BANWlLib.BattleSystem
             return groupIndex >= CompactHeadGroupCount && groupIndex < groupCount - CompactTailGroupCount;
         }
 
-        // 写入一组紧凑明细，负责用一行展示段号、次数、倍率、预估和修正。
+        //用一行展示段号、次数、倍率、预估和修正。
         private static void AppendCompactGroupLine(StringBuilder builder, Pawn pawn, CompactActionGroup group)
         {
             BattleActionConfig action = group.action;
@@ -801,7 +801,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("  " + title + "：" + FormatColor("伤害", DamageColor) + " " + FormatPercent(GetDamageActionMultiplier(action)) + " x" + group.repeatCount + " = " + FormatColor(FormatNumber(damage), DamageColor) + "，" + (action.useBattleStats ? FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill) : "独立基数，不应用BA输出属性"));
         }
 
-        // 估算单段伤害，负责复用战斗属性工具的真实伤害计算。
+        //估算单段伤害，复用战斗属性工具的真实伤害计算。
         private static float EstimateDamage(Pawn pawn, BattleActionConfig action)
         {
             BattleDamageResult result = BattleStatUtility.BuildDamageResult(new BattleDamageRequest
@@ -826,20 +826,20 @@ namespace BANWlLib.BattleSystem
             return result.finalAmount;
         }
 
-        // 估算目标受疗前的单段治疗，负责和详细治疗段使用同一口径。
+        //估算目标受疗前的单段治疗，和详细治疗段使用同一口径。
         private static float EstimateHealBeforeTargetReceived(Pawn pawn, BattleActionConfig action)
         {
             return (action.useBattleStats ? BattleStatUtility.GetFinalHealPower(pawn) : action.basePower) * Mathf.Max(0f, action.healPowerRatio);
         }
 
-        // 估算单段护盾量，负责让护盾技能在悬浮说明里显示预计护盾值。
+        //估算单段护盾量，让护盾技能在悬浮说明里显示预计护盾值。
         private static float EstimateShield(Pawn pawn, BattleActionConfig action)
         {
             return BattleStatUtility.BuildShieldResult(new BattleShieldRequest
             { instigator = pawn, target = pawn, source = action.shieldSource, useBattleStats = action.useBattleStats, basePower = action.basePower, shieldPowerRatio = action.shieldPowerRatio }).finalAmount;
         }
 
-        //比较两个预览战斗段，负责判断它们是否可以在显示上合并。
+        //比较两个预览战斗段，判断它们是否可以在显示上合并。
         private static bool IsSamePreviewAction(BattleActionConfig left, BattleActionConfig right)
         {
             if (left == null || right == null)
@@ -869,7 +869,7 @@ namespace BANWlLib.BattleSystem
                    left.previewWeaponBaseAttack == right.previewWeaponBaseAttack;
         }
 
-        //格式化段落标题，负责把连续相同段压缩成短标题。
+        //把连续相同段压缩成短标题。
         private static string FormatSegmentTitle(int startIndex, int repeatCount, BattleActionConfig action)
         {
             if (action?.isProjectilePreview == true)
@@ -885,7 +885,7 @@ namespace BANWlLib.BattleSystem
             return "第" + (startIndex + 1) + "-" + (startIndex + repeatCount) + "段（共" + repeatCount + "次）";
         }
 
-        // 写入施法者属性，负责让玩家看到公式里的实时基础值。
+        //写入施法者属性，让玩家看到公式里的实时基础值。
         private static void AppendCasterStats(StringBuilder builder, Pawn pawn)
         {
             float weaponBaseAttack = BattleStatUtility.GetWeaponBaseAttack(pawn);
@@ -910,7 +910,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("EX技能倍率：" + FormatColor(FormatPercent(exMultiplier), ExColor));
         }
 
-        // 写入伤害段公式，负责展示固定值、攻击力倍率、暴击、克制和 EX 倍率。
+        //写入伤害段公式，展示固定值、攻击力倍率、暴击、克制和 EX 倍率。
         private static void AppendDamageAction(StringBuilder builder, Pawn pawn, BattleActionConfig action)
         {
             BattleDamageResult result = BattleStatUtility.BuildDamageResult(new BattleDamageRequest
@@ -945,7 +945,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine(FormatFormulaHint(action.applyAffinity));
         }
 
-        // 写入治疗段公式，负责展示最终治愈力、技能倍率、受回复率和非暴击规则。
+        //写入治疗段公式，展示最终治愈力、技能倍率、受回复率和非暴击规则。
         private static void AppendHealAction(StringBuilder builder, AbilityDef abilityDef, Pawn pawn, BattleActionConfig action)
         {
             float estimatedHealBeforeTargetReceived = BattleStatUtility.GetFinalHealPower(pawn) * Mathf.Max(0f, action.healPowerRatio);
@@ -971,7 +971,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine(FormatColor("实际回复还会受目标受回复率和可治疗伤势剩余量影响。", HealColor));
         }
 
-        // 写入护盾段公式，负责展示护盾倍率和预计护盾值。
+        //写入护盾段公式，展示护盾倍率和预计护盾值。
         private static void AppendShieldAction(StringBuilder builder, Pawn pawn, BattleActionConfig action)
         {
             float estimatedShield = EstimateShield(pawn, action);
@@ -991,7 +991,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("预估护盾：" + FormatColor(FormatNumber(estimatedShield), ShieldColor));
         }
 
-        //写入伤害算法，负责用短行展示实际结算顺序，避免 tooltip 横向撑开。
+        //用短行展示实际结算顺序，避免 tooltip 横向撑开。
         private static void AppendDamageFormula(StringBuilder builder, BattleActionConfig action)
         {
             builder.AppendLine("算法：");
@@ -1004,7 +1004,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine(FormatColor("  修正：" + (action.useBattleStats ? FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill) : "独立基数，不应用BA输出属性"), ColoredText.SubtleGrayColor));
         }
 
-        //写入治疗算法，负责用短行展示实际结算顺序，避免 tooltip 横向撑开。
+        //用短行展示实际结算顺序，避免 tooltip 横向撑开。
         private static void AppendHealFormula(StringBuilder builder, BattleActionConfig action)
         {
             builder.AppendLine("算法：");
@@ -1014,7 +1014,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine(FormatColor("  修正：暴击和 EX 不参与治疗", ColoredText.SubtleGrayColor));
         }
 
-        //格式化公式修正项，负责把暴击、克制和 EX 这些附加步骤压缩成一行。
+        //把暴击、克制和 EX 这些附加步骤压缩成一行。
         private static string FormatFormulaModifiers(bool canCrit, bool alwaysCrit, bool applyAffinity, bool isExSkill)
         {
             List<string> modifiers = new List<string>();
@@ -1036,7 +1036,7 @@ namespace BANWlLib.BattleSystem
             return modifiers.Count > 0 ? string.Join("、", modifiers.ToArray()) : "无";
         }
 
-        // 获取伤害段显示倍率，负责区分技能倍率和普通攻击口径。
+        //获取伤害段显示倍率，区分技能倍率和普通攻击口径。
         private static float GetDamageActionMultiplier(BattleActionConfig action)
         {
             if (action == null)
@@ -1047,7 +1047,7 @@ namespace BANWlLib.BattleSystem
             return Mathf.Max(0f, action.isNormalAttack ? 1f : action.attackPowerRatio) * action.previewMechanismMultiplier;
         }
 
-        // 格式化紧凑总览修正项，负责把整套多段技能的参与机制合并成一行。
+        //把整套多段技能的参与机制合并成一行。
         private static string FormatCompactModifiers(CompactActionTotals totals)
         {
             List<string> modifiers = new List<string>();
@@ -1079,7 +1079,7 @@ namespace BANWlLib.BattleSystem
             return modifiers.Count > 0 ? string.Join("、", modifiers.ToArray()) : FormatColor("无", DisabledColor);
         }
 
-        // 格式化属性克制说明，负责避免在没有目标时误报具体克制倍率。
+        //格式化属性克制说明，避免在没有目标时误报具体克制倍率。
         private static string FormatFormulaHint(bool applyAffinity)
         {
             if (!applyAffinity)
@@ -1090,37 +1090,37 @@ namespace BANWlLib.BattleSystem
             return FormatColor("命中目标后会按目标护甲类型结算克制，并继续经过护甲、减伤和承伤系数。", AffinityColor);
         }
 
-        // 格式化开关文本，负责把启用和禁用状态染成不同颜色。
+        //把启用和禁用状态染成不同颜色。
         private static string FormatSwitch(bool enabled, Color enabledColor)
         {
             return enabled ? FormatColor("参与", enabledColor) : FormatColor("不参与", DisabledColor);
         }
 
-        // 格式化 EX 倍率文本，负责只在 EX 技能段高亮真实倍率。
+        //格式化 EX 倍率文本，只在 EX 技能段高亮真实倍率。
         private static string FormatEx(bool isExSkill, float multiplier)
         {
             return isExSkill ? FormatColor(FormatPercent(multiplier), ExColor) : FormatColor("不参与", DisabledColor);
         }
 
-        // 格式化数值，负责让 tooltip 中的计算结果保持短小稳定。
+        //格式化数值，让 tooltip 中的计算结果保持短小稳定。
         private static string FormatNumber(float value)
         {
             return value.ToString("0.#");
         }
 
-        // 格式化倍率，负责把 1.2 显示为 120%。
+        //把 1.2 显示为 120%。
         private static string FormatPercent(float value)
         {
             return value.ToString("P0");
         }
 
-        // 格式化彩色文本，负责统一 RimWorld 富文本颜色写法。
+        //格式化彩色文本，统一 RimWorld 富文本颜色写法。
         private static string FormatColor(string text, Color color)
         {
             return text.Colorize(color);
         }
 
-        // 紧凑段落分组，负责记录连续相同段的起点、次数和配置。
+        //紧凑段落分组，记录连续相同段的起点、次数和配置。
         private class CompactActionGroup
         {
             public int startIndex;
@@ -1128,7 +1128,7 @@ namespace BANWlLib.BattleSystem
             public BattleActionConfig action;
         }
 
-        // 紧凑总览统计，负责保存多段技能的合计倍率、合计预估和全局修正开关。
+        //紧凑总览统计，保存多段技能的合计倍率、合计预估和全局修正开关。
         private class CompactActionTotals
         {
             public int damageCount;

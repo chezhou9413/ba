@@ -1,10 +1,23 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.Tool;
 using MyCoolMusicMod.MyCoolMusicMod;
 using newpro;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.StudentManual.MonoComp
@@ -13,14 +26,28 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
     public class StudentListShow : MonoBehaviour
     {
         public Image avt;
-        public UnityEngine.UI.Text studentNameText;
-        public UnityEngine.UI.Text lvText;
+        public Engine.UI.Text studentNameText;
+        public Engine.UI.Text lvText;
         public GameObject back;
         public Button Collect;
         public StudentData studentData;
         public BaStudentUI BaStudentUI;
         public Button AvtButtom;
         public bool SelfisCollect = false;
+#if RW_1_7
+        private bool pooled;
+
+        //复用卡片时仅绑定当前学生；名册同步、筛选与排序由网格统一执行。
+        internal void BindStudent(BaStudentUI student, StudentData data)
+        {
+            pooled = true;
+            BaStudentUI = student;
+            studentData = data;
+            studentNameText.text = student.StudentName;
+            Images.BAUIImageCache.SetPooledImage(avt, student.StudentAvatar);
+            UpdateStudentState();
+        }
+#endif
 
         private readonly ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
 
@@ -29,8 +56,8 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         {
             AvtButtom = transform.Find("avt").GetComponent<Button>();
             avt = transform.Find("avt").GetComponent<Image>();
-            studentNameText = transform.Find("name").GetComponent<UnityEngine.UI.Text>();
-            lvText = transform.Find("lvBack/Text").GetComponent<UnityEngine.UI.Text>();
+            studentNameText = transform.Find("name").GetComponent<Engine.UI.Text>();
+            lvText = transform.Find("lvBack/Text").GetComponent<Engine.UI.Text>();
             back = transform.Find("back").gameObject;
             Collect = transform.Find("Collect").GetComponent<Button>();
         }
@@ -38,10 +65,17 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         //绑定头像路径、星级与学生详情页交互。
         void Start()
         {
+#if RW_1_7
+            if (!pooled)
+            {
+#endif
             StudentManualEvents.OnRefreshAllStudentData += UpDataStudentData;
 
             imgcvT2d.SetImage(avt, BaStudentUI.StudentAvatar);
             studentNameText.text = BaStudentUI.StudentName;
+#if RW_1_7
+            }
+#endif
             Collect.interactable = true;
 
             Collect.onClick.AddListener(() =>
@@ -71,15 +105,25 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 LoopBGMManager.playEffAudio("鼠标点击音效");
             });
 
-            UpDataStudentData();
+#if RW_1_7
+            if (!pooled)
+#endif
+                UpDataStudentData();
         }
 
         //同步学生等级、解锁、收藏和筛选显示。
         void UpDataStudentData()
         {
-            StudentRosterUtility.SyncAllStudentRuntimeState(tracker);
             studentData = StudentRosterUtility.GetStudentData(tracker, BaStudentUI.StudentId);
+            //每张卡片只同步自己的学生，避免整份名册被重复扫描。
+            StudentRosterUtility.SyncStudentRuntimeState(tracker, studentData);
+            UpdateStudentState();
+            UpdateVisibleState();
+        }
 
+        //根据已同步的数据更新卡片内容，不改变虚拟网格分配的显示位置。
+        private void UpdateStudentState()
+        {
             if (studentData != null)
             {
                 lvText.text = "Lv." + studentData.StudentLv;
@@ -94,12 +138,14 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             }
 
             UpdateCollectState();
-            UpdateVisibleState();
         }
 
         //条目重新启用时同步学生状态。
         void OnEnable()
         {
+#if RW_1_7
+            if (pooled) return;
+#endif
             if (BaStudentUI == null)
             {
                 return;

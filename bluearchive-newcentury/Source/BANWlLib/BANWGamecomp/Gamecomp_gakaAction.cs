@@ -7,7 +7,7 @@ using Verse;
 
 namespace BANWlLib.BANWGamecomp
 {
-    //招募卡池轮换组件，负责记录刷新次数、生成展示卡池并在轮换时通知玩家。
+    //招募卡池轮换组件，记录刷新次数、生成展示卡池并在轮换时通知玩家。
     public class Gamecomp_gakaAction : GameComponent
     {
         //当前最终展示给玩家的卡池，包含随机卡池和固定卡池。
@@ -25,18 +25,18 @@ namespace BANWlLib.BANWGamecomp
 
         public int gacaPoit = 0;
 
-        //创建招募卡池轮换组件，负责让 RimWorld GameComponent 系统实例化组件。
+        //创建招募卡池轮换组件，让 RimWorld GameComponent 系统实例化组件。
         public Gamecomp_gakaAction(Game game)
         {
         }
 
-        //获取当期的非固定卡池，负责给界面和逻辑读取本期随机部分。
+        //获取当期的非固定卡池，给界面和逻辑读取本期随机部分。
         public List<Gacha> GetCurrentRandomPool()
         {
             return LastGeneratedRandomPool?.ToList() ?? new List<Gacha>();
         }
 
-        //更新招募积分，负责增加积分或在积分足够时扣除消耗。
+        //更新招募积分，增加积分或在积分足够时扣除消耗。
         public bool updataGacaPoit(int value) {
             if (value >= 0)
             {
@@ -52,7 +52,7 @@ namespace BANWlLib.BANWGamecomp
             return true;
         }
 
-        //保存和读取招募系统数据，负责持久化积分、展示池、计时器和刷新次数。
+        //保存和读取招募系统数据，持久化积分、展示池、计时器和刷新次数。
         public override void ExposeData()
         {
             base.ExposeData();
@@ -80,10 +80,9 @@ namespace BANWlLib.BANWGamecomp
             }
         }
 
-        //游戏逐 tick 更新，负责在界面开启时推进轮换倒计时并触发卡池刷新。
+        //游戏逐 tick 更新，在界面开启时推进轮换倒计时并触发卡池刷新。
         public override void GameComponentTick()
         {
-            //确保配置存在。
             if (gachaSetting == null)
             {
                 gachaSetting = DefDatabase<GachaSetting>.AllDefs.FirstOrDefault();
@@ -106,7 +105,7 @@ namespace BANWlLib.BANWGamecomp
             base.GameComponentTick();
         }
 
-        //更新卡池，负责按刷新次数选择特殊队列或常规随机池并组装最终展示列表。
+        //更新卡池，按刷新次数选择特殊队列或常规随机池并组装最终展示列表。
         public void UpdateRotationPool()
         {
             if (gachaSetting == null) return;
@@ -156,7 +155,7 @@ namespace BANWlLib.BANWGamecomp
             SendRotationLetter();
         }
 
-        //判断特殊队列是否在本次刷新触发，负责把 triggerIndex 作为重复周期使用。
+        //判断特殊队列是否在本次刷新触发，把 triggerIndex 作为重复周期使用。
         private bool IsSpecialQueueTriggered(SpecialQueueConfig specialConfig)
         {
             return specialConfig != null &&
@@ -164,7 +163,7 @@ namespace BANWlLib.BANWGamecomp
                 TotalRefreshCount % specialConfig.triggerIndex == 0;
         }
 
-        //生成特殊队列卡池，负责从强制候选池中按槽位数量随机抽取并尽量避免连续重复。
+        //从强制候选池中按槽位数量随机抽取并尽量避免连续重复。
         private List<Gacha> GenerateSpecialPoolItems(List<Gacha> forcedPool)
         {
             List<Gacha> result = new List<Gacha>();
@@ -184,7 +183,7 @@ namespace BANWlLib.BANWGamecomp
             return result;
         }
 
-        //尝试从特殊候选池中抽取一个卡池，负责在候选不足时逐步放宽重复限制。
+        //尝试从特殊候选池中抽取一个卡池，在候选不足时逐步放宽重复限制。
         private Gacha TryPickForcedPoolItem(List<Gacha> forcedPool, List<Gacha> currentBatch)
         {
             if (forcedPool.NullOrEmpty()) return null;
@@ -210,7 +209,7 @@ namespace BANWlLib.BANWGamecomp
             return forcedPool.RandomElement();
         }
 
-        //生成常规随机卡池，负责按常驻和限定概率填充本期随机槽位。
+        //按常驻和限定概率填充本期随机槽位。
         private List<Gacha> GenerateRandomPoolItems()
         {
             List<Gacha> result = new List<Gacha>();
@@ -240,7 +239,7 @@ namespace BANWlLib.BANWGamecomp
             return result;
         }
 
-        //尝试从指定类型的池子中抽取一个卡池，负责避开上一期和本期已选内容。
+        //尝试从指定类型的池子中抽取一个卡池，避开上一期和本期已选内容。
         private Gacha TryPickItem(bool fromLimited, List<Gacha> currentBatch)
         {
             List<Gacha> sourcePool = fromLimited ? gachaSetting.LimitedPool : gachaSetting.StandardPool;
@@ -261,7 +260,7 @@ namespace BANWlLib.BANWGamecomp
             return candidates.RandomElement();
         }
 
-        //获取轮换剩余时间文本，负责把 tick 倒计时转换成玩家可读的天、小时或分钟。
+        //把 tick 倒计时转换成玩家可读的天、小时或分钟。
         public string GetRemainingTimeString(int currentCounter)
         {
             if (currentCounter <= 0) return "即将轮换";
@@ -277,7 +276,7 @@ namespace BANWlLib.BANWGamecomp
             }
         }
 
-        //调试强制刷新卡池，负责立即推进一次轮换并重置轮换倒计时。
+        //调试强制刷新卡池，立即推进一次轮换并重置轮换倒计时。
         public void Debug_ForceNextPool()
         {
             RotationTickCounter = 0;
@@ -286,7 +285,7 @@ namespace BANWlLib.BANWGamecomp
             Messages.Message($"[Debug] 已强制刷新卡池，当前第 {TotalRefreshCount} 期", MessageTypeDefOf.PositiveEvent, false);
         }
 
-        //发送卡池轮换信件，负责把当前展示卡池名称通知玩家。
+        //发送卡池轮换信件，把当前展示卡池名称通知玩家。
         private void SendRotationLetter()
         {
             if (CurrentDisplayPool.NullOrEmpty())

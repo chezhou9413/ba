@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //若藻蓄积换算器，负责将每点累计伤害按若藻BA属性换算为待释放伤害。
+    //若藻蓄积换算器，将每点累计伤害按若藻BA属性换算为待释放伤害。
     public static class WakamoBurstCalculator
     {
         //标记建立时锁定单位伤害的BA结算，界面读取和最终释放不重复掷暴击。

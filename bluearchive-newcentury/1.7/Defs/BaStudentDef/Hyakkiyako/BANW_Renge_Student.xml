@@ -1,0 +1,165 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Renge_Student</defName>
+    <label>莲华</label>
+    <studentId>BANW_Renge</studentId>
+    <kindDef>BANW_Renge</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Renge</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Renge</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Hyakkiyako</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.4</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>30</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>10</Shooting>
+				
+				<Melee>8</Melee>
+				
+				<Construction>4</Construction>
+				
+				<Mining>10</Mining>
+				
+				<Cooking>13</Cooking>
+				
+				<Plants>6</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>6</Crafting>
+				
+				<Artistic>10</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>12</Social>
+				
+				<Intellectual>10</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Renge</WapenUIImagePath>
+			    
+				<WapenTypeText>狙击枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Chiaki/Chiaki_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>百花缭乱的魔鬼教官</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>子技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[百鬼夜行联合学院
+2年级
+社团 百花缭乱纠纷调解委员会]]>
+				</StudentDesp>
+				
+				<StudentBioName>不破 莲华</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Hyakkiyako</AcademyLogoPath>
+				
+				<StudentCard>百鬼夜行学院百花缭乱纠纷调解委员会的突击队长。她充满正义感和责任感。虽然非常关爱后辈，但是在教育她们时绝不会手下留情，因此也是百花缭乱的魔鬼教官。她认为百花缭乱的活动非常有意义，所以并不后悔加入其中，但却因为没有享受青春而感到遗憾。正因如此，她渴望像漫画或小说中那样戏剧性的青春。今天，她依然怀揣梦想，努力训练，是个充满梦想的少女。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Vibration</DamageType>
+			
+			<DefenseType>Through</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Renge</DraggableAudio>
+			<GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Renge_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+			<UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Renge_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+			<OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Renge_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+            
+            <avtTexPath>Gacha/Student/Renge</avtTexPath>
+		</baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

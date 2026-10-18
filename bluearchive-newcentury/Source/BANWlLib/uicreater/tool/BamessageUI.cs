@@ -1,8 +1,21 @@
-﻿using BANWlLib.mainUI.MonoComp;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using BANWlLib.mainUI.MonoComp;
 using BANWlLib.mainUI.StudentManual;
+#if RW_1_7
+using RimUnity.Tweening;
+#else
 using DG.Tweening;
+#endif
 using System;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 
 namespace BANWlLib.uicreater.tool
 {
@@ -10,7 +23,10 @@ namespace BANWlLib.uicreater.tool
     {
         public static void ShowBaMessageUI(string title,string des,string Buttomtext)
         {
-            GameObject a = UnityEngine.Object.Instantiate(ManualMapData.messageUI);
+            GameObject a = Engine.Object.Instantiate(ManualMapData.messageUI);
+#if RW_1_7
+            BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureDialog(a);
+#endif
             messageUILord messageUILord = a.AddComponent<messageUILord>();
             messageUILord.title = title;
             messageUILord.des = des;
@@ -21,17 +37,13 @@ namespace BANWlLib.uicreater.tool
             rect.DOAnchorPos(Vector2.zero, 0.2f).SetEase(Ease.OutCubic);
         }
 
-        /// <summary>
-        /// 显示一个带有确认和取消按钮的消息窗口
-        /// </summary>
-        /// <param name="title">标题</param>
-        /// <param name="des">描述内容</param>
-        /// <param name="quekText">确认按钮文字</param>
-        /// <param name="closeText">关闭按钮文字（默认为“关闭”）</param>
-        /// <param name="onQuekAction">点击“确认”时执行的函数</param>
+        //显示确认／取消窗口，确认时调用 onQuekAction。
         public static void ShowBaMessageUIQuek(string title, string des, string quekText, string closeText = "关闭", Action onQuekAction = null)
         {
-            GameObject uiGo = UnityEngine.Object.Instantiate(ManualMapData.messageUIQuek);
+            GameObject uiGo = Engine.Object.Instantiate(ManualMapData.messageUIQuek);
+#if RW_1_7
+            BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureDialog(uiGo);
+#endif
             messageUILordQuek script = uiGo.GetComponent<messageUILordQuek>() ?? uiGo.AddComponent<messageUILordQuek>();
             script.title = title;
             script.des = des;

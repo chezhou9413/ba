@@ -1,0 +1,165 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Ichika_Student</defName>
+    <label>一花</label>
+    <studentId>BANW_Ichika</studentId>
+    <kindDef>BANW_Ichika</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Ichika</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Ichika</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Sany</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.5</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>100</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-100</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>10</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>8</Cooking>
+				
+				<Plants>9</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>0</Crafting>
+				
+				<Artistic>0</Artistic>
+				
+				<Medical>6</Medical>
+				
+				<Social>15</Social>
+				
+				<Intellectual>10</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Ichika</WapenUIImagePath>
+			    
+				<WapenTypeText>步枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Ichika/Ichika_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>正义实现部的联络网</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身振动克制率增加<color=#00FFFF>63%</color>
+(持续<color=#00FFFF>25</color>秒)]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Chiaki/Chiaki_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>敏锐本能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身命中率提升<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Ichika/Ichika_A</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>偶尔也会这样子的</AbilityTitle>
+				<AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身攻击时造成<color=#00FFFF>4.4%</color>总攻击力的追加伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[圣三一综合学园
+2年级
+社团 正义实现委员会]]>
+				</StudentDesp>
+				
+				<StudentBioName>仲正 一花</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Sany</AcademyLogoPath>
+				
+				<StudentCard>时刻都是一副稳重表情的圣三一综合学院所属的、正义实现委员会的一员。在各种各样学生组成的正义实现委员会中，主要担任着仲裁一职。与其他学院的关系也相对较好。擅长为人处事的性格并非与生俱来，而是努力而来的成果。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Vibration</DamageType>
+			
+			<DefenseType>Through</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Ichika</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Hinata_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Hinata_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Hinata_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Ichika</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

@@ -1,0 +1,147 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Asuna_Student</defName>
+    <label>明日奈</label>
+    <studentId>BANW_Asuna</studentId>
+    <kindDef>BANW_Asuna</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Asuna</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Asuna</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Millennium</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.3</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>50</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>1</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/神秘</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/轻装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>10</Shooting>
+				
+				<Melee>5</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>10</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>7</Animals>
+				
+				<Crafting>5</Crafting>
+				
+				<Artistic>0</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>20</Social>
+				
+				<Intellectual>7</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Asuna</WapenUIImagePath>
+			    
+				<WapenTypeText>步枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Asuna/Asuna_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>要冲了哦！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[向目标处位移一段距离并为自己提供<color=#00FFFF>30%</color>的闪避率和增加<color=#00FFFF>57%</color>的攻击速度
+（持续<color=#00FFFF>30</color>秒）]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Asuna/Asuna_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>要射击了哦！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>20</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>416%</color>的伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_EX</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>会很痛哦？</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身护甲穿透增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Natsu/Natsu_EX</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>测试技能4</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身使用EX技能时攻击速度增加<color=#00FFFF>38%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[千禧年科学学院
+3年级
+社团 CC]]>
+				</StudentDesp>
+				
+				<StudentBioName>一之濑 明日奈</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Millennium</AcademyLogoPath>
+				
+				<StudentCard>千禧科学学园所属，秘密组织【CC】的代理人。代号【零一】，是凭借卓越的野性直觉来克服重重难关的老手。虽然在任务中，擅自相信别人而暴露自己的真实身份，把可疑的东西全部弄坏等大量难以理解的行动，但最终还是取得了好的成果。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Mysterious</DamageType>
+			
+			<DefenseType>Explosion</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>1</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Asuna</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>1</value>
+                </li>
+                <li>
+                    <key>BANW_Asuna_Proplevel</key>
+                    <value>1</value>
+                </li>
+            </GakaStudentThingData>
+    <avtTexPath>Gacha/Student/Asuna</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

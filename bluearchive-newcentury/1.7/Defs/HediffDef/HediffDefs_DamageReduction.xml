@@ -1,0 +1,27 @@
+
+<Defs>
+  
+  <HediffDef>
+    <defName>DamageReductionStatus</defName>
+    <label>学生星级</label>
+    <description>基于学生星级提供的减伤保护状态。</description>
+    <hediffClass>BANWlLib.DamageReductionHediff</hediffClass>
+    
+    
+    <defaultLabelColor>(1.0, 0.84, 0.0)</defaultLabelColor>
+    
+    
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <initialSeverity>1.0</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <makesSickThought>false</makesSickThought>
+    
+    
+    <stages>
+      <li>
+        <label></label> 
+      </li>
+    </stages>
+  </HediffDef>
+</Defs> 

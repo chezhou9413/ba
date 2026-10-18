@@ -1,9 +1,18 @@
-﻿
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+
 using BANWlLib;
 using BANWlLib.mainUI.MonoComp;
 using BANWlLib.mainUI.StudentManual;
 using newpro;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 public class keyevents : MonoBehaviour
 {
@@ -13,15 +22,13 @@ public class keyevents : MonoBehaviour
         
     }
 
-    /// <summary>
-    /// 验证粒子预制体是否正确加载
-    /// </summary>
+    //验证粒子预制体是否正确加载
 
     void Update()
     {
         if (UiMapData.uiclose)
         {
-            if (Input.GetKeyDown(UnityEngine.KeyCode.Escape))
+            if (Input.GetKeyDown(global::UnityEngine.KeyCode.Escape))
             {
                 MonoComp_BackButton.instance.onback();
             }
@@ -35,10 +42,7 @@ public class keyevents : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 在指定的世界坐标播放粒子
-    /// </summary>
-    /// <param name="worldPos">目标世界坐标</param>
+    //在指定的世界坐标播放粒子
     public void SpawnParticleAtPosition(Vector3 worldPos)
     {
 

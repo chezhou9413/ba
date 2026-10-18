@@ -1,0 +1,168 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Noa_A_Student</defName>
+    <label>诺亚（睡衣）</label>
+    <studentId>BANW_Noa_A</studentId>
+    <kindDef>BANW_Noa_A</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Noa_A</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Noa_A</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_MillenniumPrison_Collection</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.3</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>100</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/贯通</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/轻装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>5</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>8</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>5</Cooking>
+				
+				<Plants>6</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>12</Crafting>
+				
+				<Artistic>9</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>10</Social>
+				
+				<Intellectual>17</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Noa_A</WapenUIImagePath>
+			    
+				<WapenTypeText>手枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+                <AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+                <AbilityTypeText>EX技能</AbilityTypeText>
+                <AbilityTitle>EX技能</AbilityTitle>
+                <AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+                </AbilityIntroduction>
+                <offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+            </Ability1>
+            <Ability2>
+                <AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+                <AbilityTypeText>EX技能</AbilityTypeText>
+                <AbilityTitle>EX技能</AbilityTitle>
+                <AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[这里是技能2的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+                </AbilityIntroduction>
+                <offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+            </Ability2>
+            <Ability3>
+                <AbilityImagePath>Ability/Icon/Mika/Mika_A</AbilityImagePath>
+                <AbilityTypeText>被动技能</AbilityTypeText>
+                <AbilityTitle>秘书的冷静</AbilityTitle>
+                <AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>26%</color>]]>
+                </AbilityIntroduction>
+                <offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+            </Ability3>
+            <Ability4>
+                <AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+                <AbilityTypeText>子技能</AbilityTypeText>
+                <AbilityTitle>测试技能4</AbilityTitle>
+                <AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[这里是技能4的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+                </AbilityIntroduction>
+                <offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+            </Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[千禧年科学学院
+2年级
+社团 研讨会]]>
+				</StudentDesp>
+				
+				<StudentBioName>生盐 诺亚</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Millennium</AcademyLogoPath>
+				
+				<StudentCard>干禧年科技学院的理事会【研讨会】的秘书。主要工作是记录研讨会的决定与会议内容,还负责为千禧年学员研发的产品进行专利注册与鉴定的专利代理人业务。记忆力异常优秀,拥有过目不忘的能力。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			 <!-- 伤害类型：Explosion(爆发), Mysterious(神秘/特殊), Vibration(振动), Through(穿透) -->
+			<DamageType>Through</DamageType>
+			<!-- 位置类型：Assist(辅助), Henc(前排), Medical(医疗), Tank(坦克), Vehicle(载具) -->
+			<DefenseType>Explosion</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Noa_A</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Noa_A_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Noa_A_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Noa_A_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Noa_A</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

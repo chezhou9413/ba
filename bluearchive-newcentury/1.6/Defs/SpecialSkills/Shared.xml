@@ -71,7 +71,7 @@
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
     <comps>
-      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleShield" />
+      <li Class="BANWlLib.Skills.HediffCompProperties_HoshinoShield" />
     </comps>
   </HediffDef>
   <ThingDef ParentName="BaseBullet">

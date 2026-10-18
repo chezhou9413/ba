@@ -3,10 +3,10 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //状态说明职责：为没有主动按钮的专属普通技能显示真实配置公式，并说明蓄积伤害的口径。
+    //为没有主动按钮的专属普通技能显示真实配置公式，并说明蓄积伤害的口径。
     public static class SpecialSkillStateTooltip
     {
-        //构建职责：按角色显示普通技能公式，已经确定的蓄积金额直接显示而不再次随机结算。
+        //按角色显示普通技能公式，已经确定的蓄积金额直接显示而不再次随机结算。
         public static string Build(Hediff_SpecialSkillState state)
         {
             var profile = state.profile;
@@ -34,7 +34,7 @@ namespace BANWlLib.Skills
             }
         }
 
-        //公式职责：复用按钮的公式格式化工具，专属普通技能仍使用自己的实际攻击配置。
+        //复用按钮的公式格式化工具，专属普通技能仍使用自己的实际攻击配置。
         private static string Formula(Pawn pawn, SpecialAttackConfig action)
         {
             return AbilityBattleTooltipUtility.BuildActionsTooltip(pawn, null,

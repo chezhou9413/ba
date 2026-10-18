@@ -8,7 +8,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //特殊技能调试菜单，负责生成正式角色及手动检查新技能运行数据。
+    //特殊技能调试菜单，生成正式角色及手动检查新技能运行数据。
     public static class SpecialSkillDebugActions
     {
         private const string Category = "特殊技能";

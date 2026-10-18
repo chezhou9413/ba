@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //COST减费状态配置负责声明目标技能、固定减费、百分比减费和可用次数。
+    //COST减费状态配置声明目标技能、固定减费、百分比减费和可用次数。
     public sealed class HediffCompProperties_CostDiscount : HediffCompProperties
     {
         public List<AbilityDef> affectedAbilities = new List<AbilityDef>();
@@ -43,7 +43,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //COST减费状态负责筛选目标技能、保存剩余次数并在成功施放后消费次数。
+    //COST减费状态筛选目标技能、保存剩余次数并在成功施放后消费次数。
     public sealed class HediffComp_CostDiscount : HediffComp
     {
         private int remainingUses = int.MinValue;

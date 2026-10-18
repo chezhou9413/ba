@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Carrying
 {
-    //质量负重补丁负责让背包、商队与装载系统读取装备、特性和状态修正后的承重。
+    //质量负重补丁让背包、商队与装载系统读取装备、特性和状态修正后的承重。
     [HarmonyPatch(typeof(MassUtility), nameof(MassUtility.Capacity))]
     public static class MassUtilityCapacityPatch
     {

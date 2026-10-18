@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 穿透抛射体配置扩展，负责提供统一伤害参数、命中规则、飞行特效和方向特效参数。
+    //穿透抛射体配置扩展，提供统一伤害参数、命中规则、飞行特效和方向特效参数。
     public class PiercingProjectileExtension : DefModExtension
     {
         public bool useBattleStats = true;
@@ -18,7 +18,7 @@ namespace BANWlLib.Projectiles
         public float baseMasteryMultiplier = 1f;
         public bool isExSkill = false;
         public bool canCrit = true;
-        // 是否强制暴击，负责让穿透弹本体伤害跳过随机暴击判定。
+        //是否强制暴击，让穿透弹本体伤害跳过随机暴击判定。
         public bool alwaysCrit = false;
         public bool alwaysShowCriticalText = false;
         public bool applyAffinity = true;

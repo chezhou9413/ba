@@ -3,14 +3,14 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 投射物战斗上下文缓存，负责把子弹发射瞬间的配置传递到命中伤害补丁。
+    //投射物战斗上下文缓存，把子弹发射瞬间的配置传递到命中伤害补丁。
     public static class ProjectileBattleContext
     {
         private static readonly Dictionary<int, ProjectileBattleData> ContextByProjectileId = new Dictionary<int, ProjectileBattleData>();
         private static readonly Dictionary<int, Thing> ImpactTargetByProjectileId = new Dictionary<int, Thing>();
         private static readonly Dictionary<string, ProjectileBattleData> SkillContextByInstigatorAndDamageDef = new Dictionary<string, ProjectileBattleData>();
 
-        // 注册投射物战斗数据，负责在 Launch 后保存普通攻击和技能弹的结算参数。
+        //在 Launch 后保存普通攻击和技能弹的结算参数。
         public static void Register(Projectile projectile, ProjectileBattleData data)
         {
             if (projectile == null || data == null)
@@ -21,7 +21,7 @@ namespace BANWlLib.BattleSystem
             ContextByProjectileId[projectile.thingIDNumber] = data;
         }
 
-        // 注册技能伤害类型上下文，负责让爆炸类投射物在实际伤害目标时也能读取技能倍率。
+        //注册技能伤害类型上下文，让爆炸类投射物在实际伤害目标时也能读取技能倍率。
         public static void RegisterSkillDamage(Thing instigator, DamageDef damageDef, ProjectileBattleData data)
         {
             if (instigator == null || damageDef == null || data == null)
@@ -33,7 +33,7 @@ namespace BANWlLib.BattleSystem
             SkillContextByInstigatorAndDamageDef[BuildSkillKey(instigator, damageDef)] = data;
         }
 
-        // 读取技能伤害类型上下文，负责给爆炸和延迟命中伤害提供统一公式参数。
+        //读取技能伤害类型上下文，给爆炸和延迟命中伤害提供统一公式参数。
         public static bool TryGetSkillDamage(Thing instigator, DamageDef damageDef, out ProjectileBattleData data)
         {
             data = null;
@@ -58,7 +58,7 @@ namespace BANWlLib.BattleSystem
             return true;
         }
 
-        // 读取投射物战斗数据，负责给命中前伤害补丁提供统一公式参数。
+        //读取投射物战斗数据，给命中前伤害补丁提供统一公式参数。
         public static bool TryGet(Thing projectile, out ProjectileBattleData data)
         {
             data = null;
@@ -70,7 +70,7 @@ namespace BANWlLib.BattleSystem
             return ContextByProjectileId.TryGetValue(projectile.thingIDNumber, out data);
         }
 
-        // 注册当前命中目标，负责让 DamageAmount 计算阶段可以读取暴击和克制目标。
+        //注册当前命中目标，让 DamageAmount 计算阶段可以读取暴击和克制目标。
         public static void RegisterImpactTarget(Projectile projectile, Thing target)
         {
             if (projectile == null || target == null)
@@ -81,7 +81,7 @@ namespace BANWlLib.BattleSystem
             ImpactTargetByProjectileId[projectile.thingIDNumber] = target;
         }
 
-        // 读取当前命中目标，负责让普通投射物完整进入战斗公式。
+        //读取当前命中目标，让普通投射物完整进入战斗公式。
         public static bool TryGetImpactTarget(Projectile projectile, out Thing target)
         {
             target = null;
@@ -93,13 +93,13 @@ namespace BANWlLib.BattleSystem
             return ImpactTargetByProjectileId.TryGetValue(projectile.thingIDNumber, out target);
         }
 
-        // 判断投射物是否已经进入命中流程，负责避免 Bullet 在原版 base.Impact 销毁时过早丢失伤害上下文。
+        //判断投射物是否已经进入命中流程，避免 Bullet 在原版 base.Impact 销毁时过早丢失伤害上下文。
         public static bool HasImpactTarget(Projectile projectile)
         {
             return projectile != null && ImpactTargetByProjectileId.ContainsKey(projectile.thingIDNumber);
         }
 
-        // 清理投射物战斗数据，负责避免投射物销毁后残留上下文。
+        //清理投射物战斗数据，避免投射物销毁后残留上下文。
         public static void Clear(Projectile projectile)
         {
             if (projectile == null)
@@ -111,14 +111,14 @@ namespace BANWlLib.BattleSystem
             ImpactTargetByProjectileId.Remove(projectile.thingIDNumber);
         }
 
-        // 构建技能上下文键，负责把施法者和 DamageDef 绑定到同一次技能弹配置。
+        //把施法者和 DamageDef 绑定到同一次技能弹配置。
         private static string BuildSkillKey(Thing instigator, DamageDef damageDef)
         {
             return instigator.thingIDNumber + ":" + damageDef.defName;
         }
     }
 
-    // 投射物战斗数据，负责记录普通攻击或技能弹的伤害公式参数。
+    //投射物战斗数据，记录普通攻击或技能弹的伤害公式参数。
     public class ProjectileBattleData : IExposable
     {
         public bool useBattleStats = true;

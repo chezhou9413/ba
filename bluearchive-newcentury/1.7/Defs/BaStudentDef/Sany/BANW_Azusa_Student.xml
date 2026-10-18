@@ -1,0 +1,163 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Azusa_Student</defName>
+    <label>梓</label>
+    <studentId>BANW_Azusa</studentId>
+    <kindDef>BANW_Azusa</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Azusa</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Azusa</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Sany</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.6</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>20</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/输出</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/中排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/爆发</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>18</Shooting>
+				
+				<Melee>15</Melee>
+				
+				<Construction>0</Construction>
+				
+				<Mining>12</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>6</Plants>
+				
+				<Animals>6</Animals>
+				
+				<Crafting>8</Crafting>
+				
+				<Artistic>5</Artistic>
+				
+				<Medical>5</Medical>
+				
+				<Social>1</Social>
+				
+				<Intellectual>7</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Azusa</WapenUIImagePath>
+			    
+				<WapenTypeText>步枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Serika/Serika_EX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>Intulit Mortem</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>5</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名敌人造成自身攻击力<color=#00FFFF>2023%</color>的伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>死亡之箭</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>25</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名敌人造成自身攻击力<color=#00FFFF>468%</color>的伤害，并且目标乘伤系数增加<color=#00FFFF>24%</color>
+（持续<color=#00FFFF>20</color>秒]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>严酷的训练</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身暴击率增加<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Suzumi/Suzumi_A</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>瞄准弱点</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[子技能:EX技能额外造成自身攻击力<color=#00FFFF>88.5%</color>的追加伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[圣三一综合学园
+2年级
+社团 补课部]]>
+				</StudentDesp>
+				
+				<StudentBioName>白洲 梓</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Sany</AcademyLogoPath>
+				
+				<StudentCard>崔尼蒂补习部的冰冷魔女。主动离开了曾经的学院，又因某种原因加入了崔尼蒂，目前正在努力习惯新的生活。害怕孤独，却因为不想给人添麻烦而主动远离所有人。这让补习部的成员们很是担心。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Explosion</DamageType>
+			
+			<DefenseType>Through</DefenseType>
+			
+			<PosType>Henc</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Azusa</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Azusa_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_Azusa_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_Azusa_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Azusa</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

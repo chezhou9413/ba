@@ -4,10 +4,10 @@ using Verse.AI;
 
 namespace BANWlLib.BattleSystem
 {
-    //延迟连射施法任务，负责按原版 Ability Job 链路锁定 pawn 到连射队列结束。
+    //延迟连射施法任务，按原版 Ability Job 链路锁定 pawn 到连射队列结束。
     public class JobDriver_MultiShotProjectileCasting : JobDriver_CastVerbOnce
     {
-        //生成施法步骤，负责先执行原版技能前摇和 Verb，再等待后台延迟子弹全部发完。
+        //生成施法步骤，先执行原版技能前摇和 Verb，再等待后台延迟子弹全部发完。
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedOrNull(TargetIndex.A);
@@ -32,14 +32,14 @@ namespace BANWlLib.BattleSystem
             yield return WaitForMultiShotProjectiles();
         }
 
-        //开始任务，负责通知 Ability 进入原版施法状态。
+        //开始任务，通知 Ability 进入原版施法状态。
         public override void Notify_Starting()
         {
             base.Notify_Starting();
             job.ability?.Notify_StartedCasting();
         }
 
-        //显示任务报告，负责复用原版技能施法文本和剩余前摇时间。
+        //显示任务报告，复用原版技能施法文本和剩余前摇时间。
         public override string GetReport()
         {
             string text = "";
@@ -60,7 +60,7 @@ namespace BANWlLib.BattleSystem
             return text;
         }
 
-        //等待延迟连射，负责在技能效果入队后保持当前 Job 不结束。
+        //等待延迟连射，在技能效果入队后保持当前 Job 不结束。
         private Toil WaitForMultiShotProjectiles()
         {
             Toil toil = ToilMaker.MakeToil("BANW_MultiShot_WaitForProjectiles");

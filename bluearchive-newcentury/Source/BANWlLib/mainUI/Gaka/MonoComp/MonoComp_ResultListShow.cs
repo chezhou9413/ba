@@ -1,10 +1,27 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.Tool;
+#if RW_1_7
+using RimUnity.Tweening;
+#else
 using DG.Tweening;
+#endif
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
@@ -70,7 +87,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
 
                     ItemShow.transform.localScale = Vector3.zero;
                     ItemShow.transform.Find("ItemIcon").GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetSpriteFromThingDef(thing);
-                    ItemShow.transform.Find("ItemCont").GetComponent<UnityEngine.UI.Text>().text = "X" + count;
+                    ItemShow.transform.Find("ItemCont").GetComponent<Engine.UI.Text>().text = "X" + count;
 
                     // 动画播放
                     ItemShow.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack);

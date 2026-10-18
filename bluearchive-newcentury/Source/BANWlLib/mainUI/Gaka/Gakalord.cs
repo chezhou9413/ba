@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using BANWlLib.BANWGamecomp;
 using BANWlLib.mainUI.Gaka.MonoComp;
@@ -9,10 +13,27 @@ using newpro;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.U2D;
+#else
 using UnityEngine.U2D;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
+#if RW_1_7
+using RimUnity.Video;
+#else
 using UnityEngine.Video;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka
@@ -191,6 +212,10 @@ namespace BANWlLib.mainUI.Gaka
             ExtGakaData(thingDefs);
             GameObject game = GameObject.Instantiate(GakaMapData.GakaAnimationPofab);
             game.GetComponent<Canvas>().worldCamera = UiMapData.mainUI.GetComponent<Canvas>().worldCamera;
+#if RW_1_7
+            game.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+            BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureGacha(game);
+#endif
             game.AddComponent<MonoComp_GakaAnimationPofab>();
         }
 
@@ -230,6 +255,10 @@ namespace BANWlLib.mainUI.Gaka
             ExtGakaData(thingDefs);
             GameObject game = GameObject.Instantiate(GakaMapData.GakaAnimationPofab);
             game.GetComponent<Canvas>().worldCamera = UiMapData.mainUI.GetComponent<Canvas>().worldCamera;
+#if RW_1_7
+            game.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+            BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureGacha(game);
+#endif
             game.AddComponent<MonoComp_GakaAnimationPofab>();
         }
         //生成学生抽卡结果，仅保存头像路径，显示时再加载图片。
@@ -392,13 +421,13 @@ namespace BANWlLib.mainUI.Gaka
             var fixedPool = gameComp.gachaSetting?.FixedPool ?? new List<Gacha>();
             var displayPool = gameComp.CurrentDisplayPool ?? new List<Gacha>();
 
-            // 1. 先渲染固定卡池（始终在前）
+            //先显示固定卡池。
             foreach (Gacha gacha in fixedPool)
             {
                 CreateGachaButton(gacha);
             }
 
-            // 2. 再渲染随机卡池（排除已在固定池中的）
+            //再显示未包含在固定池中的随机卡池。
             foreach (Gacha gacha in displayPool)
             {
                 if (!fixedPool.Contains(gacha))
@@ -463,12 +492,12 @@ namespace BANWlLib.mainUI.Gaka
         public static void SettingGakaTextForRandPool(Gacha gacha)
         {
             var gameComp = GakaMapData.gamecomp_GakaAction;
-            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Text_time").GetComponent<UnityEngine.UI.Text>().text =
+            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Text_time").GetComponent<Engine.UI.Text>().text =
                 gameComp.GetRemainingTimeString(gameComp.RotationTickCounter);
 
-            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Text_title").GetComponent<UnityEngine.UI.Text>().text = gacha.gachaTitle;
-            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Text_up").GetComponent<UnityEngine.UI.Text>().text = gacha.gachaUp;
-            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Text_dex").GetComponent<UnityEngine.UI.Text>().text = gacha.gachaDesc;
+            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Text_title").GetComponent<Engine.UI.Text>().text = gacha.gachaTitle;
+            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Text_up").GetComponent<Engine.UI.Text>().text = gacha.gachaUp;
+            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Text_dex").GetComponent<Engine.UI.Text>().text = gacha.gachaDesc;
         }
     }
 }

@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //COST过载状态配置负责声明该学生允许抵达的负COST下限。
+    //COST过载状态配置声明该学生允许抵达的负COST下限。
     public sealed class HediffCompProperties_CostOverdraft : HediffCompProperties
     {
         public float overdraftLimit = 5f;
@@ -35,7 +35,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //COST过载状态负责向施放校验暴露当前学生的透支额度。
+    //COST过载状态向施放校验暴露当前学生的透支额度。
     public sealed class HediffComp_CostOverdraft : HediffComp
     {
         public HediffCompProperties_CostOverdraft Props => (HediffCompProperties_CostOverdraft)props;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BANWlLib.CostSystem
 {
-    //技能费用计算器负责按固定减费、百分比乘算和最终向上取整生成费用快照。
+    //技能费用计算器按固定减费、百分比乘算和最终向上取整生成费用快照。
     public static class AbilityCostCalculator
     {
         //计算指定技能当前实际COST，没有费用组件时返回空值。

@@ -14,11 +14,7 @@ using static Verse.DamageWorker;
 
 namespace BANWlLib
 {
-    /// <summary>
-    /// 减伤组件配置属性类
-    /// 定义减伤的部位和基于自定义属性值的分级减伤系统
-    /// 新功能：减伤回复系统 - 当配置的部位受到伤害时，会根据减伤比例进行回复
-    /// </summary>
+    //按身体部位和自定义等级配置减伤与回复比例。
     public class DamageReductionCompProperties : CompProperties
     {
         // 受保护的身体部位，目前只支持单个部位
@@ -31,43 +27,30 @@ namespace BANWlLib
         // 每个等级对应的减伤比例
         public List<float> damageReductionRatios = new List<float> { 0.05f, 0.10f, 0.15f, 0.20f, 0.25f };
 
-        /// <summary>
-        /// 构造函数
-        /// 告诉游戏这个配置对应哪个组件类
-        /// </summary>
+        //绑定减伤组件。
         public DamageReductionCompProperties()
         {
             this.compClass = typeof(DamageReductionComp);
         }
     }
 
-    /// <summary>
-    /// 减伤组件实现类
-    /// 为角色提供指定部位的伤害减免功能
-    /// </summary>
+    //处理指定部位的伤害减免。
     public class DamageReductionComp : ThingComp
     {
-        // 性能优化：缓存上次检查的等级，避免重复更新
+        //缓存上次检查的等级，等级不变时无需更新。
         private int lastKnownLevel = -1;
         private int lastUpdateTick = 0;
         
-        /// <summary>
-        /// 获取组件配置属性
-        /// </summary>
+        //获取组件配置属性
         public DamageReductionCompProperties Props => (DamageReductionCompProperties)this.props;
 
-        /// <summary>
-        /// 判断当前组件父对象是否是已配置学生 Kind，负责让星级效果基于 PawnKindDef 生效。
-        /// </summary>
+        //判断当前组件父对象是否是已配置学生 Kind，让星级效果基于 PawnKindDef 生效。
         public bool IsStudentKindOwner()
         {
             return parent is Pawn pawn && StudentIdentityUtility.IsConfiguredStudentKind(pawn);
         }
 
-        /// <summary>
-        /// 获取当前减伤比例
-        /// 根据玩家的自定义属性值计算减伤比例
-        /// </summary>
+        //根据自定义属性值计算减伤比例。
         public float GetDamageReductionRatio()
         {
             try
@@ -104,10 +87,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 获取当前减伤等级
-        /// 根据玩家的自定义属性值计算当前等级
-        /// </summary>
+        //根据自定义属性值计算减伤等级。
         public int GetCurrentLevel()
         {
             try
@@ -144,11 +124,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 检查指定身体部位是否受到减伤保护
-        /// </summary>
-        /// <param name="bodyPart">身体部位对象</param>
-        /// <returns>是否受保护</returns>
+        //检查指定身体部位是否受到减伤保护
         public bool IsBodyPartProtected(BodyPartRecord bodyPart)
         {
             try
@@ -166,13 +142,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 计算实际伤害值
-        /// 根据减伤比例计算减伤后的伤害
-        /// </summary>
-        /// <param name="originalDamage">原始伤害值</param>
-        /// <param name="bodyPart">受伤部位</param>
-        /// <returns>减伤后的伤害值</returns>
+        //按受伤部位和减伤比例计算伤害。
         public float CalculateReducedDamage(float originalDamage, BodyPartRecord bodyPart)
         {
             try
@@ -189,7 +159,6 @@ namespace BANWlLib
                 // 计算减伤后的伤害
                 float reducedDamage = originalDamage * (1f - reductionRatio);
 
-                // 确保伤害不会变成负数
                 return Mathf.Max(0f, reducedDamage);
             }
             catch
@@ -198,10 +167,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 在角色信息面板中显示减伤回复系统的状态
-        /// 显示当前保护的部位、减伤等级和回复比例
-        /// </summary>
+        //显示保护部位、减伤等级和回复比例。
         public override string CompInspectStringExtra()
         {
             try
@@ -236,28 +202,20 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 组件初始化时调用
-        /// 添加减伤状态到健康面板
-        /// </summary>
+        //初始化健康面板中的减伤状态。
         public override void Initialize(CompProperties props)
         {
             base.Initialize(props);
 
-            // 确保角色有减伤状态显示
             UpdateHealthPanelStatus();
         }
 
-        /// <summary>
-        /// 每帧更新时调用
-        /// 保持健康面板状态同步
-        /// 性能优化：只在减伤等级变化时更新，减少不必要的计算
-        /// </summary>
+        //定期检查等级，变化时更新健康面板。
         public override void CompTick()
         {
             base.CompTick();
 
-            // 性能优化：每5秒检查一次，而不是每秒
+            //每 300 tick 检查一次。
             int currentTick = Find.TickManager.TicksGame;
             if (currentTick - lastUpdateTick >= 300) // 5秒 = 300 ticks
             {
@@ -274,9 +232,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 更新健康面板中的减伤状态显示
-        /// </summary>
+        //更新健康面板中的减伤状态显示
         private void UpdateHealthPanelStatus()
         {
             try
@@ -305,22 +261,17 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// Harmony 补丁：完全替换 ApplyDamageToPart 方法
-        /// 使用 Prefix 返回 false 跳过原方法，用我们自己的逻辑处理伤害
-        /// </summary>
+        //替换 ApplyDamageToPart，接入部位减伤。
         [HarmonyPatch(typeof(DamageWorker_AddInjury), "ApplyDamageToPart")]
         public static class Patch_ApplyDamageToPart_Replacement
         {
-            /// <summary>
-            /// 替换原方法，返回 false 跳过原方法执行
-            /// </summary>
+            //处理伤害并返回 false，跳过原方法。
             [HarmonyPrefix]
             public static bool Prefix(DamageWorker_AddInjury __instance, DamageInfo dinfo, Pawn pawn, DamageResult result)
             {
                 try
                 {
-                    // 调用我们自己的 ApplyDamageToPart 实现
+                    //使用部位减伤实现。
                     ApplyDamageToPartCustom(__instance, dinfo, pawn, result);
                     
                     // 返回 false 跳过原方法
@@ -383,6 +334,9 @@ namespace BANWlLib
                     injuryDamage *= incomingDamageFactor;
                 }
 
+                //星野护盾与实际扣血采用相同的减伤结果，完整吸收破盾的这一击。
+                if (BANWlLib.Skills.HediffComp_HoshinoShield.TryAbsorb(pawn, dinfo, injuryDamage))
+                    injuryDamage = 0f;
                 BattleFormulaDebugUtility.LogDamagePipeline(pawn, dinfo, dinfo.HitPart, beforeArmorDamage, afterArmorDamage, incomingDamageFactor, injuryDamage, deflectedByMetalArmor);
 
                 // 检查是否完全格挡
@@ -414,9 +368,7 @@ namespace BANWlLib
                 }
             }
 
-            /// <summary>
-            /// 获取确切的受伤部位（复制原版逻辑）
-            /// </summary>
+            //获取确切的受伤部位（复制原版逻辑）
             private static BodyPartRecord GetExactPartFromDamageInfo(DamageInfo dinfo, Pawn pawn)
             {
                 if (dinfo.HitPart != null)
@@ -435,9 +387,7 @@ namespace BANWlLib
                 return bodyPartRecord;
             }
 
-            /// <summary>
-            /// 检查是否爆头（复制原版逻辑）
-            /// </summary>
+            //检查是否爆头（复制原版逻辑）
             private static bool IsHeadshot(DamageInfo dinfo, Pawn pawn)
             {
                 if (dinfo.InstantPermanentInjury)
@@ -453,9 +403,7 @@ namespace BANWlLib
                 return false;
             }
 
-            /// <summary>
-            /// 应用特殊效果到部位（复制原版逻辑）
-            /// </summary>
+            //应用特殊效果到部位（复制原版逻辑）
             private static void ApplySpecialEffectsToPart(DamageWorker_AddInjury worker, Pawn pawn, float totalDamage, DamageInfo dinfo, DamageResult result)
             {
                 // 使用反射调用原版的受保护方法
@@ -469,9 +417,7 @@ namespace BANWlLib
                 CheckDuplicateDamageToOuterParts(worker, dinfo, pawn, totalDamage, result);
             }
 
-            /// <summary>
-            /// 最终化并添加伤害（使用反射调用原版方法）
-            /// </summary>
+            //最终化并添加伤害（使用反射调用原版方法）
             private static void FinalizeAndAddInjury(DamageWorker_AddInjury worker, Pawn pawn, float totalDamage, DamageInfo dinfo, DamageResult result)
             {
                 var method = typeof(DamageWorker_AddInjury).GetMethod("FinalizeAndAddInjury", BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(Pawn), typeof(float), typeof(DamageInfo), typeof(DamageResult) }, null);
@@ -481,9 +427,7 @@ namespace BANWlLib
                 }
             }
 
-            /// <summary>
-            /// 检查外部部位重复伤害（使用反射调用原版方法）
-            /// </summary>
+            //检查外部部位重复伤害（使用反射调用原版方法）
             private static void CheckDuplicateDamageToOuterParts(DamageWorker_AddInjury worker, DamageInfo dinfo, Pawn pawn, float totalDamage, DamageResult result)
             {
                 var method = typeof(DamageWorker_AddInjury).GetMethod("CheckDuplicateDamageToOuterParts", BindingFlags.NonPublic | BindingFlags.Instance);

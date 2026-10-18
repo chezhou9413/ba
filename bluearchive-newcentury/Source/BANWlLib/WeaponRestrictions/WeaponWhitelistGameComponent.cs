@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.WeaponRestrictions
 {
-    // 武器白名单读档组件，负责在游戏完整载入后清理地图 Pawn 的违规装备。
+    //武器白名单读档组件，在游戏完整载入后清理地图 Pawn 的违规装备。
     public sealed class WeaponWhitelistGameComponent : GameComponent
     {
         // 创建读档组件，供 RimWorld 的 GameComponent 系统自动实例化。

@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.DamageFontSystem.Comp
 {
-    //游戏级UI与暴击配置组件负责保存入口位置、COST轮盘位置和暴击规则列表。
+    //游戏级UI与暴击配置组件保存入口位置、COST轮盘位置和暴击规则列表。
     public class DisableCriticalComp : GameComponent
     {
         public List<DamageDef> DisableCritical = new List<DamageDef>();

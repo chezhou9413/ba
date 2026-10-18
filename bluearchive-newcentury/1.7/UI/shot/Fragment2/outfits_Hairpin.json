@@ -1,0 +1,102 @@
+[
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_2_Piece",
+        "ProductDefName": "BANW_Hairpin_2_Piece",
+        "ProductName": "Lv.2-发圈设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_3_Piece",
+        "ProductDefName": "BANW_Hairpin_3_Piece",
+        "ProductName": "Lv.3-桃信发夹设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_4_Piece",
+        "ProductDefName": "BANW_Hairpin_4_Piece",
+        "ProductName": "Lv.4-翅膀发夹设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_5_Piece",
+        "ProductDefName": "BANW_Hairpin_5_Piece",
+        "ProductName": "Lv.5-多功能发夹设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_6_Piece",
+        "ProductDefName": "BANW_Hairpin_6_Piece",
+        "ProductName": "Lv.6-蝙蝠发夹设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_7_Piece",
+        "ProductDefName": "BANW_Hairpin_7_Piece",
+        "ProductName": "Lv.7-艺术字发夹设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_8_Piece",
+        "ProductDefName": "BANW_Hairpin_8_Piece",
+        "ProductName": "Lv.8-树叶发夹设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_9_Piece",
+        "ProductDefName": "BANW_Hairpin_9_Piece",
+        "ProductName": "Lv.9-船锚发卡设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Hairpin/Hairpin_10_Piece",
+        "ProductDefName": "BANW_Hairpin_10_Piece",
+        "ProductName": "Lv.10-电磁波阻断发卡设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    }
+    
+] 

@@ -29,13 +29,13 @@ namespace BANWlLib.comp
                 {
                     _def = DefDatabase<stoneDrop>.GetNamed(DefName, errorOnFail: true);
 
-                    // 防呆：若 XML 写成 min > max，就自动交换
+                    //min 大于 max 时交换上下限。
                     if (_def.min > _def.max)
                     {
                         int t = _def.min; _def.min = _def.max; _def.max = t;
                     }
                     
-                    // 防呆：确保概率在有效范围内
+                    //限制概率范围。
                     if (_def.maxDropRate < 0f) _def.maxDropRate = 0f;
                     if (_def.maxDropRate > 1f) _def.maxDropRate = 1f;
                 }
@@ -49,10 +49,10 @@ namespace BANWlLib.comp
 
         public static int Random() { return Rand.RangeInclusive(Min, Max); }
 
-        // 为了兼容你补丁里的调用，顺手提供一个别名
+        //保留补丁调用的别名。
         public static int RandomCount() { return Random(); }
         
-        // 新增：检查是否应该掉落物品
+        //检查是否掉落物品。
         public static bool ShouldDrop()
         {
             // 如果概率为0，则永不掉落
@@ -95,7 +95,7 @@ namespace BANWlLib.comp
                 {
                     return; // 种族在排除列表中，不执行掉落
                 }
-                // 新增：概率检查，决定是否掉落
+                //按概率决定是否掉落。
                 if (!GreenstoneDrop.ShouldDrop())
                 {
                     return; // 概率未命中，不掉落物品

@@ -1,0 +1,146 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Yuuka_Student</defName>
+    <label>优香</label>
+    <studentId>BANW_Yuuka</studentId>
+    <kindDef>BANW_Yuuka</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Yuuka</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Yuuka</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Millennium</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>5</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>2</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/坦克</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/爆发</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>8</Shooting>
+				
+				<Melee>0</Melee>
+				
+				<Construction>9</Construction>
+				
+				<Mining>0</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>10</Crafting>
+				
+				<Artistic>0</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>15</Social>
+				
+				<Intellectual>18</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Yuuka</WapenUIImagePath>
+			    
+				<WapenTypeText>冲锋枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Yuuka/Yuuka_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>Q.E.D</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[赋予自身治愈力<color=#00FFFF>248%</color>的护盾]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Serika/Serika_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>I.F.F</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>15</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>573%</color>的伤害]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Atsuko/Atsuko_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>导出最优解</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身护甲增加<color=#00FFFF>26%</color>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Yuuka/Yuuka_A</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>高速演算</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身获得每10秒回复自身治愈力<color=#00FFFF>142%</color>的生命值]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[千禧年科学学院
+2年级
+社团 研讨会]]>
+				</StudentDesp>
+				
+				<StudentBioName>早濑 优香</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Millennium</AcademyLogoPath>
+				
+				<StudentCard>千禧科学学园所属，学生会「研讨会」的会计。在理科比例较高的千禧科学学院中也是首屈一指的数学奇才，总揽千禧科学学院的预算管理。专长珠算。有着烦恼复杂的事情或心理纠结时靠打算盘冷静下来的习惯。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Explosion</DamageType>
+			
+			<DefenseType>Through</DefenseType>
+			
+			<PosType>Tank</PosType>
+			
+			<StarCont>2</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Yuuka</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>10</value>
+                </li>
+                <li>
+                    <key>BANW_Yuuka_Proplevel</key>
+                    <value>5</value>
+                </li>
+            </GakaStudentThingData>
+    <avtTexPath>Gacha/Student/Yuuka</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

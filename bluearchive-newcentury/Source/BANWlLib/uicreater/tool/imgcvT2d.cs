@@ -1,7 +1,15 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.mainUI.Images;
 using System.Collections.Generic;
 using System.IO;
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 
 namespace newpro
 {

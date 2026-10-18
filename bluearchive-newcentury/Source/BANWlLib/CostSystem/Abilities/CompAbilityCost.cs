@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //技能费用配置负责在AbilityDef中声明基础COST。
+    //技能费用配置在AbilityDef中声明基础COST。
     public sealed class CompProperties_AbilityCost : AbilityCompProperties
     {
         public int cost = 3;
@@ -30,7 +30,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //技能费用组件负责在技能可用性检查阶段阻止无法支付的施放。
+    //技能费用组件在技能可用性检查阶段阻止无法支付的施放。
     public sealed class CompAbilityCost : AbilityComp
     {
         public CompProperties_AbilityCost Props => (CompProperties_AbilityCost)props;

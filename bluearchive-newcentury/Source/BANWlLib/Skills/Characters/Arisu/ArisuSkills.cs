@@ -5,7 +5,7 @@ using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
-    //爱丽丝技能，负责两档充能、阶段特效和按有效命中触发普通技能。
+    //爱丽丝技能，两档充能、阶段特效和按有效命中触发普通技能。
     public static class ArisuSkills
     {
         //点自己充能，点配置允许的其他生物时按当前档位攻击并消费全部充能。

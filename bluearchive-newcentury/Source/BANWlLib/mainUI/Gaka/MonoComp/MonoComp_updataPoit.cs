@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.Mission;
 using BANWlLib.mainUI.StudentManual;
@@ -8,8 +12,17 @@ using newpro;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 using Verse.Noise;
 
@@ -19,7 +32,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
    public class MonoComp_updataPoit:MonoBehaviour
     {
         public static MonoComp_updataPoit instance;
-        public UnityEngine.UI.Text poit_cont;
+        public Engine.UI.Text poit_cont;
         public Button openShot;
         public GameObject gakashot;
         public List<GameObject> gakashotList = new List<GameObject>();
@@ -30,7 +43,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             instance = this;
             tracker = Current.Game.GetComponent<ManualDataGameComp>();
             openShot = this.transform.Find("poit_buttom").GetComponent<Button>();
-            poit_cont = this.transform.Find("poit_cont").GetComponent<UnityEngine.UI.Text>();
+            poit_cont = this.transform.Find("poit_cont").GetComponent<Engine.UI.Text>();
             openShot.onClick.AddListener(() =>
             {
                 openGakaShot();
@@ -49,6 +62,9 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             UiMapData.isLocKBack = true;
             gakashot = GameObject.Instantiate(GakaMapData.ShotMaskBack);
             gakashot.transform.SetParent(GakaMapData.GakaUIPet.transform, false);
+#if RW_1_7
+            BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureModal(gakashot);
+#endif
             gakashot.transform.SetAsLastSibling();
             RefreshShopList();
             gakashot.transform.Find("Close").GetComponent<Button>().onClick.AddListener(() => {
@@ -88,15 +104,15 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                     }
 
                     GameObject obj = Instantiate(GakaMapData.GakaShotList);
-                    obj.transform.Find("StuName").GetComponent<UnityEngine.UI.Text>().text = studentUI.StudentBio.StudentBioName;
-                    obj.transform.Find("shouchouback/Text").GetComponent<UnityEngine.UI.Text>().text = "首次奖励可获得["+ studentUI.StudentBio.StudentBioName + "]的神名文字x100]！";
+                    obj.transform.Find("StuName").GetComponent<Engine.UI.Text>().text = studentUI.StudentBio.StudentBioName;
+                    obj.transform.Find("shouchouback/Text").GetComponent<Engine.UI.Text>().text = "首次奖励可获得["+ studentUI.StudentBio.StudentBioName + "]的神名文字x100]！";
                     imgcvT2d.SetImage(obj.transform.Find("StuXuexiaoIcon").GetComponent<Image>(), imgcvT2d.getRimWorldImgPath(studentUI.StudentBio.AcademyLogoPath));
                     obj.transform.Find("selectList/avt").GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetHeadShotSpriteFromKind(kindDef);
                     obj.transform.Find("selectList/box").GetComponent<Image>().sprite = MissionMapData.MissionSprite[studentData.DamageType + "_box"];
                     obj.transform.Find("selectList/pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[studentData.PosType + "_min"];
-                    obj.transform.Find("selectList/Start/StarCont").GetComponent<UnityEngine.UI.Text>().text = studentData.StarCont.ToString();
-                    obj.transform.Find("StuXuexiao").GetComponent<UnityEngine.UI.Text>().text =string.IsNullOrEmpty(studentData.stuSchool) ? "未配置学院" : studentData.stuSchool;
-                    obj.transform.Find("buttom_zhaomu/Poit").GetComponent <UnityEngine.UI.Text>().text = 200.ToString();
+                    obj.transform.Find("selectList/Start/StarCont").GetComponent<Engine.UI.Text>().text = studentData.StarCont.ToString();
+                    obj.transform.Find("StuXuexiao").GetComponent<Engine.UI.Text>().text =string.IsNullOrEmpty(studentData.stuSchool) ? "未配置学院" : studentData.stuSchool;
+                    obj.transform.Find("buttom_zhaomu/Poit").GetComponent <Engine.UI.Text>().text = 200.ToString();
                     obj.transform.Find("buttom_zhaomu").GetComponent<Button>().onClick.AddListener(() =>
                     {
                         LoopBGMManager.playEffAudio("鼠标点击音效");
@@ -169,7 +185,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                             go.transform.Find("weihuode").gameObject.SetActive(false);
                         }
                     }
-                    gakashot.transform.Find("Back/poit_back/Text_cont").GetComponent<UnityEngine.UI.Text>().text = GakaMapData.gamecomp_GakaAction.gacaPoit.ToString();
+                    gakashot.transform.Find("Back/poit_back/Text_cont").GetComponent<Engine.UI.Text>().text = GakaMapData.gamecomp_GakaAction.gacaPoit.ToString();
                 }
             }
         }

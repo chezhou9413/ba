@@ -1,12 +1,12 @@
-# BA 地图共享 COST 系统交付使用说明
+# BA 地图共享 COST 系统配置说明
 
 适用项目：`bluearchive-newcentury`
 适用版本：RimWorld 1.6
 核心命名空间：`BANWlLib.CostSystem`
 
-## 交付概览
+## 功能
 
-本系统已经接入学生技能、地图任务和什亭之匣入口 UI。交付版本包含以下能力：
+COST 由地图共享，技能和什亭之匣入口 UI 读取同一份余额：
 
 - 每张地图独立的共享 COST 池，普通上限 10 点，特殊任务上限 20 点。
 - 已征召学生驱动的自动回复、团队回复率加减算、直接回复和无人征召清零。
@@ -16,11 +16,11 @@
 - COST 轮盘独立拖动、随游戏存档保存位置，以及模组设置页一键复位。
 - 69 个学生种类的 112 个实际技能已完成费用绑定。
 
-接手开发者通常只需要修改 XML 配置。只有增加新的计算规则、扣费入口或 UI 表现时才需要修改 C# 或 Unity 资源。
+费用与状态通过 XML 配置；计算规则和界面表现分别由 C# 与 Unity 资源控制。
 
-## 交付文件
+## 文件位置
 
-| 职责 | 项目内位置 |
+| 内容 | 项目内位置 |
 |---|---|
 | COST 核心、技能、状态和 UI 运行时代码 | `Source/BANWlLib/CostSystem/` |
 | C# 项目编译入口 | `Source/BANWlLib/BANWlLib.csproj` |
@@ -34,47 +34,9 @@
 
 `mainUI.prefab` 没有被 COST 系统修改。运行时会单独加载 `CostUI.prefab`，再由模组 DLL 挂载 Presenter 和拖动控制器。
 
-## 快速接入
+## 代码结构
 
-### 给新技能配置 COST
-
-把费用组件加入 `AbilityDef/comps`。同一个技能只能存在一个费用组件：
-
-```xml
-<li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
-  <cost>5</cost>
-</li>
-```
-
-配置完成后不需要在技能代码中手动扣费。`Ability.Activate` 的两个目标重载已经统一执行最终检查和原子扣费。手动再次调用 `BACostPoolService.TrySpend` 会造成重复扣费。
-
-### 给学生施加 COST 状态
-
-状态通过普通 Hediff 接口添加。直接回复状态只会对地图上已征召、存活的玩家学生生效：
-
-```csharp
-HediffDef def = DefDatabase<HediffDef>.GetNamed("BANW_CostGrant3_8");
-pawn.health.AddHediff(def);
-```
-
-回复率、减费和过载状态也使用相同添加方式。技能成功施放后，参与本次计算的所有限次减费状态会各消费一次；费用不足或目标校验阶段未进入实际施放时不会消费次数。
-
-### 配置 20 点任务
-
-在 `BaMissionNode` 中配置：
-
-```xml
-<costRules>
-  <maximumCost>20</maximumCost>
-  <recoveryMultiplier>2</recoveryMultiplier>
-</costRules>
-```
-
-当前交付版本只允许 `maximumCost` 为 10 或 20。未配置时自动采用 10 点和 1 倍回复。
-
-## 模块职责
-
-| 类型 | 职责 |
+| 类型 | 内容 |
 |---|---|
 | `MapComponent_BACostPool` | 保存单张地图的十分位 COST、回复余数和无人征召计时 |
 | `BACostPoolService` | 对外提供查询、直接回复、费用计算、支付检查和原子扣费 |
@@ -106,7 +68,7 @@ pawn.health.AddHediff(def);
 
 - 每张地图各自持有一个 `MapComponent_BACostPool`，不同地图的 COST、回复余数和无人征召计时互不影响。
 - COST 以整数十分位保存。界面中的 `3.8` 实际保存为 `38`，不会使用浮点数作为存档主值。
-- 普通地图上限为 10 点，每 180 tick 回复 1 点。
+- 普通地图上限为 10 点，每 216 tick（3.6 游戏秒）回复 1 点。
 - `BaseDefenseNode2` 任务地图上限为 20 点，任务回复倍率为 2。
 - 回复倍率为 `任务倍率 × Max(0, 1 + 已征召学生回复率偏移总和)`。
 - 只有存活、已生成、玩家阵营、已征召的 `BANW_KivotosStudent` 才参与 COST 系统。
@@ -135,7 +97,7 @@ bool spent = BACostPoolService.TrySpend(ability, out reason);
 
 ### 任务规则
 
-不配置时采用 10 点上限和 1 倍回复。
+`maxCost` 只允许 10 或 20。不配置时采用 10 点上限和 1 倍回复。
 
 ```xml
 <costRules>
@@ -145,6 +107,8 @@ bool spent = BACostPoolService.TrySpend(ability, out reason);
 ```
 
 ### 技能基础费用
+
+同一个 AbilityDef 只能有一个费用组件。正常施放由 `Ability.Activate` 补丁扣费，不要在技能代码中重复调用 `TrySpend`。
 
 ```xml
 <comps>
@@ -347,58 +311,6 @@ bool spent = BACostPoolService.TrySpend(ability, out reason);
 
 统计：69 个学生种类、112 个 `AbilityDef`；其中 50 个种类、91 个技能来自可确认的 Ability1 COST，19 个种类、21 个技能暂定为 3 点。
 
-## 人工测试步骤
-
-### 普通地图与共享池
-
-1. 进入普通地图，确认只显示外圈，中央数字为 `0`。
-2. 征召一名基沃托斯学生，记录 180 tick 后正好增加 1 点；蓄满后保持 10 点且不预存额外回复。
-3. 同时选中两名拥有 COST 技能的学生，用其中一人施放 5 点技能，确认共享数字减少 5，另一人的技能按钮同步按新余额禁用或启用。
-4. 切换到另一张地图，确认两张地图的 COST 独立；切回后原地图数值不变。
-
-### 20 点任务
-
-1. 启动 `BaseDefenseNode2` 并进入对应任务地图。
-2. 确认内圈出现，基础回复速度为普通地图两倍，即约 90 tick 增加 1 点。
-3. 确认 0—10 点填充外圈，10—20 点填充内圈，上限停在 20。
-
-### 征召与清零
-
-1. 有 COST 时解除全场学生征召，等待少于 180 tick 后重新征召，确认原 COST 保留。
-2. 再次解除征召并等待满 180 tick，确认 COST 与未结算回复进度都清零。
-3. 验证未生成、死亡、非玩家阵营或非 `BANW_KivotosStudent` 的 Pawn 不触发回复。
-
-### 回复率与直接回复
-
-1. 给已征召学生添加 `BANW_CostRecoveryRatePlus20`，确认普通地图每点耗时约 150 tick。
-2. 添加 `BANW_CostRecoveryRateMinus20`，确认单独存在时每点耗时约 225 tick；正负 20% 同时存在时回到基础速度。
-3. 叠加总偏移不高于 -100%，确认回复停止且不发生反向扣费。
-4. 给已征召学生添加 `BANW_CostGrant3_8`，确认立即增加准确的 `3.8`，状态自动移除，超过上限的部分被截断。
-5. 从较低值一次跨越多个整数格，确认中央数字只弹跳一次，所有新满格同时播放白色完成光效。
-
-### 减费顺序、次数与持续时间
-
-1. 对基础 5 点技能添加 `BANW_CostDiscount50Once`，确认按钮显示 3，成功施放一次后状态消失；费用不足导致的失败施放不消耗次数。
-2. 同时添加固定减 1 与 50% 减费，确认最终费用为 2，而不是先乘算得到 3 后再减 1。
-3. 添加 `BANW_CostDiscount50Twice`，确认两次成功施放后才消失。
-4. 添加 `BANW_CostDiscount50Timed`，确认持续时间内不限次数，1800 tick 到时移除。
-5. 自定义同时配置 `maxUses` 和 `HediffCompProperties_Disappears` 的状态，分别验证次数先到和时间先到都会移除。
-6. 用 `affectedAbilities` 只填写一个 AbilityDef，确认同一学生的其他 COST 技能不享受该减费。
-
-### 过载与负值 UI
-
-1. 当前 COST 为 3，给施法者添加 `BANW_CostOverdraft5` 后使用 5 点技能，确认结果为 `-2`。
-2. 当前 COST 为 1，尝试使用 7 点技能，确认会达到 -6，因此被拒绝。
-3. COST 为负时确认普通学生全部 COST 技能禁用；拥有过载状态的学生只在扣费后不低于 -5 时可用。
-4. 确认负值隐藏内圈图片，外圈从零点反向显示最多 5 格，环、光效和数字为橙色，数字格式可显示 `-2` 和 `-2.4`。
-5. 让过载状态到期，确认负 COST 不被强制清零，并继续按正常回复规则逐步回到零。
-
-### 存档
-
-1. 在 `3.8`、负数、回复到半途和无人征召计时未满 180 tick 时分别保存并读档。
-2. 确认当前十分位 COST、回复余数和无人征召计时连续，不发生额外直接回复，也不会重置限次减费的剩余次数。
-3. 拖动COST轮盘到其他位置后保存并读档，确认轮盘恢复到保存位置；再从模组设置复位，确认立即回到入口按钮上方并保存新的默认坐标。
-
 ## 构建与部署
 
 ### 编译模组程序集
@@ -424,7 +336,7 @@ RimWorldTools/UI/Build and Deploy bamainui.ab
 - `1.6/AssetBundles/bamainui.ab`
 - `1.6/AssetBundles/bamainui.ab.manifest`
 
-构建前应确认 `CostUI.prefab` 的 AssetBundle 标记为 `bamainui.ab` 对应的现有项目配置，构建后检查 Unity Console 没有 Error。不要把 `Assembly-CSharp` 自定义脚本序列化进交付预制体；运行时代码全部来自 `BANWlLib.dll`。
+构建前应确认 `CostUI.prefab` 的 AssetBundle 标记为 `bamainui.ab` 对应的现有项目配置，构建后检查 Unity Console 没有 Error。不要把 `Assembly-CSharp` 自定义脚本序列化进预制体；运行时代码全部来自 `BANWlLib.dll`。
 
 ## 常见问题
 
@@ -451,22 +363,3 @@ RimWorldTools/UI/Build and Deploy bamainui.ab
 ### 轮盘位置丢失
 
 拖动结束后坐标只写入当前游戏的 `DisableCriticalComp`，需要正常保存游戏才能持久化。不同存档分别保存自己的轮盘位置。
-
-## 交付验收清单
-
-- [ ] `BANWlLib.csproj` Release 编译为 0 错误。
-- [ ] 新增或修改的 XML 能以 UTF-8 正常解析。
-- [ ] 每个 COST 技能仅有一个费用组件。
-- [ ] 普通地图、20 点任务和多地图隔离行为通过人工检查。
-- [ ] 回复率、3.8 直充、减费顺序、限次/限时和过载边界通过人工检查。
-- [ ] 正数、十分位、负数、双环、白光和数字弹跳显示正常。
-- [ ] 轮盘拖动、保存/读档恢复和设置页复位正常。
-- [ ] 如修改过 Unity 资源，AssetBundle 已覆盖部署且 Unity Console 为 0 Error。
-- [ ] 未把 Unity 工程预览脚本写入 `CostUI.prefab`。
-
-## 编译与静态检查结果
-
-- `BANWlLib.csproj` Release 编译：0 错误。
-- 技能补丁目标：112 个唯一 AbilityDef，重复 0，目标 Def 缺失 0，`comps` 节点缺失 0。
-- 费用分布：2 点 18 个、3 点 49 个、4 点 24 个、5 点 13 个、6 点 6 个、7 点 2 个。
-- 按项目约定未启动 RimWorld，也未进入 Unity Play Mode；运行行为由上面的人工步骤在游戏内确认。

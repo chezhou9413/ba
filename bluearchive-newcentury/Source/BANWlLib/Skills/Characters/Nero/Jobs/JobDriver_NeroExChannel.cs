@@ -7,7 +7,7 @@ using Verse.AI;
 
 namespace BANWlLib.Skills
 {
-    //妮露二段EX施法工作，负责整轮停步瞄准与中断时取消剩余射击。
+    //妮露二段EX施法工作，整轮停步瞄准与中断时取消剩余射击。
     public class JobDriver_NeroExChannel : JobDriver_CastAbility
     {
         private Effecter channelEffect;
@@ -16,7 +16,7 @@ namespace BANWlLib.Skills
         //提供本次生效时刻，让读档后的延迟特效继续使用原始相对时间。
         public int ChannelStartTick => channelStartTick;
 
-        //从实际发动入口接管施法特效，持续时间和清理由本工作负责。
+        //从实际发动入口接管施法特效，持续时间和清理由本工作。
         public void BeginChannelEffect(EffecterDef effectDef)
         {
             if (effectDef == null) return;
@@ -72,7 +72,7 @@ namespace BANWlLib.Skills
             yield return channel;
         }
 
-        //保存引导特效的起始时刻，原版工作负责保存目标和施法进度。
+        //保存引导特效的起始时刻，原版工作保存目标和施法进度。
         public override void ExposeData()
         {
             base.ExposeData();

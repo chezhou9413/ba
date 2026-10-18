@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // PawnKind 基础战斗属性扩展，负责让学生、敌人和普通 PawnKind 统一配置固有战斗属性。
+    //PawnKind 基础战斗属性扩展，让学生、敌人和普通 PawnKind 统一配置固有战斗属性。
     public class BattleBaseStatExtension : DefModExtension
     {
         // 初始生命值，参与生命值公式的基础乘算项，1 表示 100 点生命值。
@@ -29,7 +29,7 @@ namespace BANWlLib.BattleSystem
         // 普通攻击倍率平加，0.2 表示武器平A伤害的普通攻击倍率从默认 100% 提高到 120%。
         public float normalAttackStatOffset = 0f;
 
-        // 护盾存在时持续维护的跟随特效，负责让每个 PawnKind 配置自己的护盾表现。
+        //护盾存在时持续维护的跟随特效，让每个 PawnKind 配置自己的护盾表现。
         public EffecterDef shieldEffecterDef;
 
         // 攻击类型配置，填写 Explosion、Mysterious、Vibration、Through 或 Composite。

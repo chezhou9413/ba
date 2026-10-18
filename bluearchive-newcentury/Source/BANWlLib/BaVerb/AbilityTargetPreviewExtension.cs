@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.BaVerb
 {
-    // 技能目标预览配置，负责让 AbilityDef 直接声明施法时显示的范围。
+    //技能目标预览配置，让 AbilityDef 直接声明施法时显示的范围。
     public class AbilityTargetPreviewExtension : DefModExtension
     {
         // 预览形状，决定使用圆形、直线、扇形或矩形计算格子。

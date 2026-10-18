@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    //战斗场地实体，负责按范围和间隔应用效果，并在持续时间结束时销毁。
+    //战斗场地实体，按范围和间隔应用效果，并在持续时间结束时销毁。
     public class Thing_BattleFieldController : ThingWithComps
     {
         private Pawn caster;

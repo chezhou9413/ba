@@ -1,13 +1,26 @@
-﻿using newpro;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using newpro;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 public class ButtomEffect : MonoBehaviour
 {
     public Button ShangdianButt;
 
-    void Update() // ✅ Unity 正确的生命周期函数（大小写敏感）
+    void Update()
     {
         if (!UiMapData.uiclose) return; // 如果 UI 没有打开则不执行
         if (ShangdianButt == null) return;
@@ -24,9 +37,7 @@ public class ButtomEffect : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 将按钮整体变灰或恢复（图像 + 文字 + 子控件 + 交互）
-    /// </summary>
+    //将按钮整体变灰或恢复（图像 + 文字 + 子控件 + 交互）
     public static void SetButtonGray(GameObject buttonObj, bool gray)
     {
         Color targetColor = gray ? new Color(0.5f, 0.5f, 0.5f, 1f) : Color.white;
@@ -42,7 +53,7 @@ public class ButtomEffect : MonoBehaviour
             btn.interactable = !gray;
 
         // 设置所有子对象上的 UI 组件颜色（文字、图标等）
-        foreach (UnityEngine.UI.Graphic graphic in buttonObj.GetComponentsInChildren<UnityEngine.UI.Graphic>(true))
+        foreach (Engine.UI.Graphic graphic in buttonObj.GetComponentsInChildren<Engine.UI.Graphic>(true))
         {
             graphic.color = targetColor;
         }

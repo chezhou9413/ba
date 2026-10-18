@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 施法者属性快照，负责让脱手场地和延迟效果保存施放瞬间的战斗属性。
+    //施法者属性快照，让脱手场地和延迟效果保存施放瞬间的战斗属性。
     public class BattleCasterSnapshot : IExposable
     {
         public string casterLabel;
@@ -20,7 +20,7 @@ namespace BANWlLib.BattleSystem
         public float exSkillMultiplier = 1f;
         public damageType? damageType;
 
-        // 保存和读取快照数据，负责让存档后的场地继续使用同一套施法属性。
+        //保存和读取快照数据，让存档后的场地继续使用同一套施法属性。
         public void ExposeData()
         {
             Scribe_Values.Look(ref casterLabel, "casterLabel");

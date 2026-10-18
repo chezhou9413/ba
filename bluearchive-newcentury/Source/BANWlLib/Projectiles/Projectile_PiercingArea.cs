@@ -6,23 +6,23 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 飞行穿透范围抛射体，负责沿路径周期判定并把伤害交给统一战斗层处理。
+    //飞行穿透范围抛射体，沿路径周期判定并把伤害交给统一战斗层处理。
     public class Projectile_PiercingArea : Projectile
     {
         private readonly Dictionary<int, int> lastDamageTicksByThingId = new Dictionary<int, int>();
         private int ticksUntilDamage;
         private Effecter flightEffecter;
 
-        // 抛射体更新频率，负责让穿透伤害稳定按 tick 运行。
+        //抛射体更新频率，让穿透伤害稳定按 tick 运行。
         public override int UpdateRateTicks => 1;
 
-        // 穿透弹配置，负责从 ThingDef 扩展中读取参数。
+        //穿透弹配置，从 ThingDef 扩展中读取参数。
         private PiercingProjectileExtension Extension => def.GetModExtension<PiercingProjectileExtension>();
 
-        // 是否禁用穿透，负责让投递物按原版普通子弹飞行命中第一个目标即销毁。
+        //是否禁用穿透，让投递物按原版普通子弹飞行命中第一个目标即销毁。
         private bool DisablePiercing => Extension?.disablePiercing ?? false;
 
-        // 发射穿透弹，负责在需要时把近距离点击延长为按配置最大距离飞行；禁用穿透时保持原版飞行终点。
+        //发射穿透弹，在需要时把近距离点击延长为按配置最大距离飞行；禁用穿透时保持原版飞行终点。
         public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null)
         {
             base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
@@ -33,21 +33,21 @@ namespace BANWlLib.Projectiles
             StartFlightEffecter();
         }
 
-        // 保存飞行状态，负责让存档读档后继续按配置造成范围伤害。
+        //保存飞行状态，让存档读档后继续按配置造成范围伤害。
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref ticksUntilDamage, "ticksUntilDamage", 0);
         }
 
-        // 销毁抛射体，负责同步清理绑定在飞行弹体上的持续特效。
+        //销毁抛射体，同步清理绑定在飞行弹体上的持续特效。
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             CleanupFlightEffecter();
             base.Destroy(mode);
         }
 
-        // 命中目标结算，负责在禁用穿透模式下用统一战斗系统对命中目标结算一次后走原版销毁流程。
+        //命中目标结算，在禁用穿透模式下用统一战斗系统对命中目标结算一次后走原版销毁流程。
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             if (DisablePiercing && hitThing != null)
@@ -57,7 +57,7 @@ namespace BANWlLib.Projectiles
             base.Impact(hitThing, blockedByShield);
         }
 
-        // 飞行 tick，负责替代原版命中即销毁逻辑并执行穿透范围伤害；禁用穿透时走原版飞行命中第一个目标即销毁。
+        //飞行 tick，替代原版命中即销毁逻辑并执行穿透范围伤害；禁用穿透时走原版飞行命中第一个目标即销毁。
         protected override void TickInterval(int delta)
         {
             if (DisablePiercing)
@@ -101,7 +101,7 @@ namespace BANWlLib.Projectiles
             }
         }
 
-        // 绘制抛射体，负责让贴图按飞行进度缩放并淡入淡出。
+        //绘制抛射体，让贴图按飞行进度缩放并淡入淡出。
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             Quaternion rotation = ExactRotation;
@@ -124,7 +124,7 @@ namespace BANWlLib.Projectiles
             Comps_PostDraw();
         }
 
-        // 处理周期伤害，负责按配置 tick 间隔触发一次范围判定。
+        //处理周期伤害，按配置 tick 间隔触发一次范围判定。
         private void TickDamage(int delta)
         {
             ticksUntilDamage -= delta;
@@ -137,7 +137,7 @@ namespace BANWlLib.Projectiles
             ticksUntilDamage = DamageIntervalTicks();
         }
 
-        // 延长飞行终点，负责让直线技能点击近处时也沿方向飞到最大距离。
+        //延长飞行终点，让直线技能点击近处时也沿方向飞到最大距离。
         private void ExtendDestinationToMaxRange()
         {
             if (Extension == null || !Extension.extendToMaxRange)
@@ -176,7 +176,7 @@ namespace BANWlLib.Projectiles
             lifetime = ticksToImpact;
         }
 
-        // 开始飞行特效，负责在投射物发射后创建可持续维护的 Effecter。
+        //开始飞行特效，在投射物发射后创建可持续维护的 Effecter。
         private void StartFlightEffecter()
         {
             if (Extension?.flightEffecter == null)
@@ -196,7 +196,7 @@ namespace BANWlLib.Projectiles
             TickFlightEffecter();
         }
 
-        // 维护飞行特效，负责让持续 Mote 附着或跟随当前弹体位置。
+        //维护飞行特效，让持续 Mote 附着或跟随当前弹体位置。
         private void TickFlightEffecter()
         {
             if (flightEffecter == null || Map == null || Destroyed)
@@ -208,7 +208,7 @@ namespace BANWlLib.Projectiles
             flightEffecter.EffectTick(targetInfo, targetInfo);
         }
 
-        // 构建飞行特效目标，负责根据 XML 配置决定附着到子弹还是使用当前位置。
+        //构建飞行特效目标，根据 XML 配置决定附着到子弹还是使用当前位置。
         private TargetInfo FlightEffectTargetInfo()
         {
             if (Extension?.flightEffectAttachToProjectile ?? true)
@@ -219,14 +219,14 @@ namespace BANWlLib.Projectiles
             return new TargetInfo(FlightEffectCell(), Map);
         }
 
-        // 获取飞行特效格子，负责给非附着特效提供带偏移的生成位置。
+        //获取飞行特效格子，给非附着特效提供带偏移的生成位置。
         private IntVec3 FlightEffectCell()
         {
             Vector3 position = ExactPosition + FlightEffectOffset();
             return position.ToIntVec3();
         }
 
-        // 获取飞行特效偏移，负责把前后、左右和高度配置转换为世界坐标。
+        //把前后、左右和高度配置转换为世界坐标。
         private Vector3 FlightEffectOffset()
         {
             Vector3 forward = GetTravelDirection();
@@ -241,7 +241,7 @@ namespace BANWlLib.Projectiles
                 + Vector3.up * (Extension?.flightEffectOffsetUp ?? 0f);
         }
 
-        // 清理飞行特效，负责在弹体到达终点或异常销毁时结束持续 Mote。
+        //在弹体到达终点或异常销毁时结束持续 Mote。
         private void CleanupFlightEffecter()
         {
             if (flightEffecter == null)
@@ -254,7 +254,7 @@ namespace BANWlLib.Projectiles
             ProjectileFlightEffectContext.Clear(this);
         }
 
-        // 获取最大飞行距离，负责优先使用 XML 显式配置，其次使用判定长度。
+        //获取最大飞行距离，优先使用 XML 显式配置，其次使用判定长度。
         private float MaxTravelRange()
         {
             if (Extension?.maxRange > 0f)
@@ -265,7 +265,7 @@ namespace BANWlLib.Projectiles
             return Extension?.damageLength > 0f ? Extension.damageLength : 0f;
         }
 
-        // 限制终点到地图内，负责避免最大距离终点落到地图外导致立即销毁。
+        //限制终点到地图内，避免最大距离终点落到地图外导致立即销毁。
         private static IntVec3 ClampToMap(IntVec3 cell, Map map)
         {
             return new IntVec3(
@@ -274,7 +274,7 @@ namespace BANWlLib.Projectiles
                 Mathf.Clamp(cell.z, 0, map.Size.z - 1));
         }
 
-        // 对范围内目标造成伤害，负责同时处理 Pawn 和墙体等建筑目标。
+        //对范围内目标造成伤害，同时处理 Pawn 和墙体等建筑目标。
         private void DamagePawnsInArea()
         {
             if (Map == null)
@@ -306,7 +306,7 @@ namespace BANWlLib.Projectiles
             }
         }
 
-        // 判断 Pawn 是否可伤害，负责跳过发射者、死亡目标、友军和冷却中的重复目标。
+        //判断 Pawn 是否可伤害，跳过发射者、死亡目标、友军和冷却中的重复目标。
         private bool CanDamagePawn(Pawn pawn)
         {
             if (pawn == launcher || pawn.Dead)
@@ -335,7 +335,7 @@ namespace BANWlLib.Projectiles
             return true;
         }
 
-        // 判断建筑是否可伤害，负责让穿透弹命中墙体后继续飞行，并避免在冷却间隔内重复击中同一建筑。
+        //判断建筑是否可伤害，让穿透弹命中墙体后继续飞行，并避免在冷却间隔内重复击中同一建筑。
         private bool CanDamageBuilding(Building building)
         {
             if (building.Destroyed || building == launcher || !CanHitBuilding(building) || !BuildBattleAction().canHitBuilding)
@@ -359,7 +359,7 @@ namespace BANWlLib.Projectiles
             return true;
         }
 
-        // 判断目标是否属于友军保护范围，负责只保护同阵营和盟友，不保护中立目标。
+        //判断目标是否属于友军保护范围，只保护同阵营和盟友，不保护中立目标。
         private bool IsProtectedFriendlyPawn(Pawn pawn)
         {
             if (launcher == null || launcher.Faction == null || pawn.Faction == null)
@@ -375,7 +375,7 @@ namespace BANWlLib.Projectiles
             return launcher.Faction.RelationKindWith(pawn.Faction) == FactionRelationKind.Ally;
         }
 
-        // 判断建筑是否属于友军保护范围，负责避免穿透弹误伤己方或盟友建筑。
+        //判断建筑是否属于友军保护范围，避免穿透弹误伤己方或盟友建筑。
         private bool IsProtectedFriendlyThing(Thing thing)
         {
             if (launcher == null || launcher.Faction == null || thing.Faction == null)
@@ -391,7 +391,7 @@ namespace BANWlLib.Projectiles
             return launcher.Faction.RelationKindWith(thing.Faction) == FactionRelationKind.Ally;
         }
 
-        // 对命中的目标应用统一伤害，负责让穿透弹共享攻击力、暴击和克制逻辑。
+        //对命中的目标应用统一伤害，让穿透弹共享攻击力、暴击和克制逻辑。
         private void ApplyDamageToThing(Thing target)
         {
             if (target == null)
@@ -405,7 +405,7 @@ namespace BANWlLib.Projectiles
             ApplyExtraDamages(target);
         }
 
-        // 追加多段战斗伤害，负责让穿透弹也能复用普通子弹的 ProjectileMultiHitExtension 配置。
+        //追加多段战斗伤害，让穿透弹也能复用普通子弹的 ProjectileMultiHitExtension 配置。
         private void QueueMultiHitDamages(Thing target)
         {
             ProjectileMultiHitExtension multiHitExtension = def.GetModExtension<ProjectileMultiHitExtension>();
@@ -428,7 +428,7 @@ namespace BANWlLib.Projectiles
             });
         }
 
-        // 追加额外伤害，负责保留原有额外伤害 Def 的触发能力。
+        //追加额外伤害，保留原有额外伤害 Def 的触发能力。
         private void ApplyExtraDamages(Thing target)
         {
             IEnumerable<ExtraDamage> extraDamages = ExtraDamages;
@@ -450,14 +450,14 @@ namespace BANWlLib.Projectiles
             }
         }
 
-        // 触发方向命中特效，负责让特效沿子弹前进方向从命中点继续喷出。
+        //触发方向命中特效，让特效沿子弹前进方向从命中点继续喷出。
         private void TryTriggerDirectionalImpact(Thing target)
         {
             DirectionalImpactEffectUtility.TryTrigger(this, target, GetTravelDirection());
         }
 
-        // 构建统一战斗动作，负责把投射物 XML 参数转成统一结算请求。
-        private BattleActionConfig BuildBattleAction()
+        //把投射物 XML 参数转成统一结算请求。
+        internal BattleActionConfig BuildBattleAction()
         {
             return new BattleActionConfig
             {
@@ -482,7 +482,7 @@ namespace BANWlLib.Projectiles
             };
         }
 
-        // 计算范围格子，负责以当前弹体位置为中心生成沿飞行方向的矩形区域。
+        //计算范围格子，以当前弹体位置为中心生成沿飞行方向的矩形区域。
         private IEnumerable<IntVec3> DamageCells()
         {
             Vector3 forward = GetTravelDirection();
@@ -521,7 +521,7 @@ namespace BANWlLib.Projectiles
             }
         }
 
-        // 获取飞行方向，负责为判定区域和命中特效提供统一方向向量。
+        //获取飞行方向，为判定区域和命中特效提供统一方向向量。
         private Vector3 GetTravelDirection()
         {
             Vector3 forward = (destination - origin).Yto0();
@@ -533,37 +533,37 @@ namespace BANWlLib.Projectiles
             return forward;
         }
 
-        // 获取伤害间隔，负责对 XML 配置做安全下限。
+        //获取伤害间隔，对 XML 配置做安全下限。
         private int DamageIntervalTicks()
         {
             return Mathf.Max(1, Extension?.damageIntervalTicks ?? 1);
         }
 
-        // 获取友军免疫开关，负责在没有 XML 扩展时仍保持安全默认值。
+        //在没有 XML 扩展时仍保持安全默认值。
         private bool IsFriendlyFireImmune()
         {
             return Extension?.immuneFriendlyFire ?? true;
         }
 
-        // 获取伤害宽度，负责对 XML 配置做安全下限。
+        //获取伤害宽度，对 XML 配置做安全下限。
         private float DamageWidth()
         {
             return Mathf.Max(1f, Extension?.damageWidth ?? 1f);
         }
 
-        // 获取伤害长度，负责对 XML 配置做安全下限。
+        //获取伤害长度，对 XML 配置做安全下限。
         private float DamageLength()
         {
             return Mathf.Max(1f, Extension?.damageLength ?? 1f);
         }
 
-        // 判断建筑是否属于穿透弹可命中的实体，负责优先命中墙体和其他完整填充建筑。
+        //判断建筑是否属于穿透弹可命中的实体，优先命中墙体和其他完整填充建筑。
         private bool CanHitBuilding(Building building)
         {
             return building.def != null && (building.def.Fillage == FillCategory.Full || building.def.passability == Traversability.Impassable);
         }
 
-        // 获取绘制缩放，负责按飞行进度从起始尺寸插值到结束尺寸。
+        //按飞行进度从起始尺寸插值到结束尺寸。
         private float GetDrawScale()
         {
             float startScale = Mathf.Max(0.01f, Extension?.startDrawScale ?? 1f);
@@ -571,7 +571,7 @@ namespace BANWlLib.Projectiles
             return Mathf.Lerp(startScale, endScale, DistanceCoveredFraction);
         }
 
-        // 获取绘制透明度，负责按配置执行淡入和淡出。
+        //按配置执行淡入和淡出。
         private float GetDrawAlpha()
         {
             float alpha = 1f;

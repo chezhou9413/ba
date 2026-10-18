@@ -8,7 +8,7 @@ using Verse;
 
 namespace BANWlLib.pache
 {
-    //Pawn 死亡补丁，负责在学生真正死亡后保存养成数据并移出已拥有名册。
+    //Pawn 死亡补丁，在学生真正死亡后保存养成数据并移出已拥有名册。
     public class pawnKill
     {
         public static ManualDataGameComp tracker;
@@ -18,7 +18,7 @@ namespace BANWlLib.pache
         [HarmonyPatch(new Type[] { typeof(DamageInfo?), typeof(Hediff) })]
         public static class Patch_Pawn_Kill_DropGreenstone
         {
-            //Pawn.Kill 后置处理，负责只在死亡已经成立时执行学生死亡清册。
+            //Pawn.Kill 后置处理，只在死亡已经成立时执行学生死亡清册。
             public static void Postfix(Pawn __instance)
             {
                 try

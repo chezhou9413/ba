@@ -1,25 +1,30 @@
-﻿using BANWlLib.mainUI.pojo;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using BANWlLib.mainUI.pojo;
 using newpro;
 using System;
 using System.Collections.Generic;
 using System.IO;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 
 namespace BANWlLib
 {
-    /// <summary>
-    /// 商店商品加载器负责读取商品 JSON、创建商品 UI 条目，并按商店分页显示商品。
-    /// </summary>
+    //商店商品加载器读取商品 JSON、创建商品 UI 条目，并按商店分页显示商品。
     public static class shotlord
     {
         private static List<shot> ordinary = new List<shot>();
         private static List<shot> Fragment1 = new List<shot>();
         private static List<shot> Fragment2 = new List<shot>();
 
-        /// <summary>
-        /// 初始化商店商品数据和商品预制体。
-        /// </summary>
+        //初始化商店商品数据和商品预制体。
         public static bool Initializeshotlord()
         {
             ClearStaticShotLists();
@@ -29,9 +34,7 @@ namespace BANWlLib
             return true;
         }
 
-        /// <summary>
-        /// 清理静态商品列表，防止读档时重复创建商品
-        /// </summary>
+        //清理静态商品列表，防止读档时重复创建商品
         private static void ClearStaticShotLists()
         {
             ordinary.Clear();
@@ -42,14 +45,12 @@ namespace BANWlLib
             UiMapData.Fragment2OBJ.Clear();
         }
 
-        /// <summary>
-        /// 从商店 JSON 目录读取所有分页商品配置。
-        /// </summary>
+        //从商店 JSON 目录读取所有分页商品配置。
         private static void jsonlordshot()
         {
-            List<string> ordinaryjson = new List<string>(Directory.GetFiles(UiMapData.modRootPath + "/1.6/UI/shot/ordinary", "*.json"));
-            List<string> Fragment1json = new List<string>(Directory.GetFiles(UiMapData.modRootPath + "/1.6/UI/shot/Fragment1", "*.json"));
-            List<string> Fragment2json = new List<string>(Directory.GetFiles(UiMapData.modRootPath + "/1.6/UI/shot/Fragment2", "*.json"));
+            List<string> ordinaryjson = new List<string>(Directory.GetFiles(Path.Combine(UiMapData.modRootPath, UiMapData.ContentVersion, "UI/shot/ordinary"), "*.json"));
+            List<string> Fragment1json = new List<string>(Directory.GetFiles(Path.Combine(UiMapData.modRootPath, UiMapData.ContentVersion, "UI/shot/Fragment1"), "*.json"));
+            List<string> Fragment2json = new List<string>(Directory.GetFiles(Path.Combine(UiMapData.modRootPath, UiMapData.ContentVersion, "UI/shot/Fragment2"), "*.json"));
             foreach (string path in ordinaryjson)
             {
                 List<shot> loadedShots = jsoncvpojo.LoadShotFromJson(path);
@@ -76,9 +77,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 根据已加载的商品配置创建商品预制体实例。
-        /// </summary>
+        //根据已加载的商品配置创建商品预制体实例。
         private static void ceateShotPrefab()
         {
             if (UiMapData.shotpet == null)
@@ -99,9 +98,7 @@ namespace BANWlLib
             ShopEvents.RaiseRefresh();
         }
 
-        /// <summary>
-        /// 为单个商店分页创建商品条目，单个商品失败时跳过该商品并保留其他商品。
-        /// </summary>
+        //为单个商店分页创建商品条目，单个商品失败时跳过该商品并保留其他商品。
         private static void CreateShotPage(List<shot> shotList, string shopType, List<GameObject> outputObjects)
         {
             foreach (shot s in shotList)
@@ -126,15 +123,13 @@ namespace BANWlLib
                     Log.Error($"[shotlord] 创建商品条目失败，分页={shopType}，商品={name}，错误={ex}");
                     if (childInstance != null)
                     {
-                        UnityEngine.Object.Destroy(childInstance);
+                        Engine.Object.Destroy(childInstance);
                     }
                 }
             }
         }
 
-        /// <summary>
-        /// 清理商品列表父节点下的旧商品对象。
-        /// </summary>
+        //清理商品列表父节点下的旧商品对象。
         public static void ClearAllChildren(Transform parent)
         {
             foreach (Transform child in parent)
@@ -147,9 +142,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 按分页类型显示对应商品，并调整滚动内容高度。
-        /// </summary>
+        //按分页类型显示对应商品，并调整滚动内容高度。
         public static void showpageUI(string pagetype)
         {
             foreach (GameObject obj in UiMapData.ordinaryOBJ)

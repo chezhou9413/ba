@@ -12,10 +12,10 @@ namespace BANWlLib
         // 对应XML中的DamageReductionStatus
         public static HediffDef DamageReductionStatus;
 
-        // 阶级成长显示状态定义，负责在健康页显示当前阶级提供的成长属性。
+        //阶级成长显示状态定义，在健康页显示当前阶级提供的成长属性。
         public static HediffDef BANW_StarGrowthDisplayStatus;
 
-        // 静态构造函数，确保DefOf正确初始化
+        //初始化 DefOf 引用。
         static HediffDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf));

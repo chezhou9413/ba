@@ -1,0 +1,163 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Reisa_A_Student</defName>
+    <label>玲纱(魔法)</label>
+    <studentId>BANW_Reisa_A</studentId>
+    <kindDef>BANW_Reisa_A</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Reisa_A</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Reisa_A</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_BeachStage_Collection</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.2</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>20</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-50</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>3</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/辅助</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/振动</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/特殊装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>15</Shooting>
+				
+				<Melee>8</Melee>
+				
+				<Construction>7</Construction>
+				
+				<Mining>7</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>8</Plants>
+				
+				<Animals>10</Animals>
+				
+				<Crafting>8</Crafting>
+				
+				<Artistic>10</Artistic>
+				
+				<Medical>0</Medical>
+				
+				<Social>5</Social>
+				
+				<Intellectual>1</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Reisa_A</WapenUIImagePath>
+			    
+				<WapenTypeText>霰弹枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Reisa_A/Reisa_EXX</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>铝热剂粉红，登场！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[赋予以自身为中心的圆形范围内除自身外的友方单位攻击力增加<color=#00FFFF>22%</color>；每<color=#00FFFF>4</color>秒，赋予以自身为中心的圆形范围内除自身外的友方自身治愈力<color=#00FFFF>56.5%</color>的生命值回复
+(持续<color=#00FFFF>22</color>秒)]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Reisa_A/Reisa_EX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle />
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>8</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对一名敌人造成自身攻击力<color=#00FFFF>265%</color>的伤害并回复自身治愈力<color=#00FFFF>54%</color>的生命值]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability3>
+				<AbilityImagePath>Ability/Icon/Reisa_A/Reisa_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>魔法治愈TCCC！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身生命值提升<color=#00FFFF>26%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability3>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Reisa_A/Reisa_EX</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>火力是魔法！</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对我方全体学生造成攻击力增加<color=#00FFFF>17%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[圣三一综合学园
+1年级
+社团 圣三一自警团]]>
+				</StudentDesp>
+				
+				<StudentBioName>宇泽 玲纱</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Sany</AcademyLogoPath>
+				
+				<StudentCard>圣三一综合学园所属，为了执行自警团的潜行任务，穿上魔法少女服的少女。可能是因为从小就非常喜欢魔法少女题材的作品，所以看起来十分兴奋。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Vibration</DamageType>
+			
+			<DefenseType>Mysterious</DefenseType>
+			
+			<PosType>Assist</PosType>
+			
+			<StarCont>3</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Reisa_A</DraggableAudio>
+		
+    <GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_ReisaA_Proplevel</key>
+                    <value>30</value>
+                </li>
+            </GakaStudentThingData>
+    <UpGakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>50</value>
+                </li>
+                <li>
+                    <key>BANW_ReisaA_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </UpGakaStudentThingData>
+    <OneGakaStudentThingData>
+                <li>
+                    <key>BANW_ReisaA_Proplevel</key>
+                    <value>100</value>
+                </li>
+            </OneGakaStudentThingData>
+    <avtTexPath>Gacha/Student/Reisa_A</avtTexPath></baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

@@ -1,0 +1,14 @@
+
+<Defs>
+<EffecterDef>
+<defName>BANW_Yuuka_Ef_A</defName>
+<children>
+   <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Yuuka_Skill_EX_A</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+</children>
+</EffecterDef>
+
+</Defs>

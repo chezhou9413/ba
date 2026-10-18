@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.WeaponRestrictions
 {
-    // Pawn 生成补丁，负责在离图学生重新进入地图时卸下旧存档中的违规武器。
+    //Pawn 生成补丁，在离图学生重新进入地图时卸下旧存档中的违规武器。
     [HarmonyPatch(typeof(Pawn_EquipmentTracker), nameof(Pawn_EquipmentTracker.Notify_PawnSpawned))]
     public static class PawnEquipmentSpawnPatch
     {

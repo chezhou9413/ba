@@ -1,0 +1,104 @@
+
+<Defs>
+
+  
+  <PawnKindDef Name="BANW_Trinity_MechanoidBase" Abstract="True">
+    
+    <defaultFactionType>Mechanoid</defaultFactionType>
+    
+    <aiAvoidCover>false</aiAvoidCover>
+    
+    <destroyGearOnDrop>true</destroyGearOnDrop>
+    
+    <canStrip>false</canStrip>
+    
+    <minGenerationAge MayRequire="Ludeon.Rimworld.Biotech">200</minGenerationAge>
+    
+    <forceNormalGearQuality>true</forceNormalGearQuality>
+    
+    <allowInMechClusters>false</allowInMechClusters>
+	
+    
+    <techHediffsChance>1</techHediffsChance>
+    
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+    
+    <weaponMoney>9999~9999</weaponMoney>
+  </PawnKindDef>
+  
+  
+  <ThingDef ParentName="BaseMechanoidWalker" Name="BANW_Trinity_Mechanoid" Abstract="True">
+    <statBases>
+		
+		<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+        
+		<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+		
+		<BandwidthCost>1</BandwidthCost>
+		
+		<EMPResistance>0.7</EMPResistance>
+		
+		<MoveSpeed>4.7</MoveSpeed>
+        
+        <MechEnergyLossPerHP>0.25</MechEnergyLossPerHP>
+    </statBases>
+	
+    
+    <butcherProducts>
+      <Steel>1</Steel>
+    </butcherProducts>
+	
+    
+    <tools>
+      <li>
+        
+        <label>头</label>
+        
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        
+        <power>8.5</power>
+        
+        <cooldownTime>2</cooldownTime>
+        
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    
+    <race>
+      
+      <baseHealthScale>5.5</baseHealthScale>
+      
+      <body>Mech_Light</body>
+      
+      <soundMeleeHitPawn>Pawn_Melee_Punch_HitPawn</soundMeleeHitPawn>
+      
+      <soundMeleeHitBuilding>Pawn_Melee_Punch_HitBuilding_Generic</soundMeleeHitBuilding>
+      
+      <soundMeleeMiss>Pawn_Melee_Punch_Miss</soundMeleeMiss>
+      
+       <lifeStageAges Inherit="False">
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>BANW_Sound_Kong</soundWounded>
+          <soundDeath>BANW_Sound_Kong</soundDeath>
+          <soundCall>BANW_Sound_Kong</soundCall>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">
+          <def>MechanoidFullyFormed</def>
+          <minAge>100</minAge>
+          <soundWounded>BANW_Sound_Kong</soundWounded>
+          <soundDeath>BANW_Sound_Kong</soundDeath>
+          <soundCall>BANW_Sound_Kong</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+  </ThingDef>
+  
+</Defs>

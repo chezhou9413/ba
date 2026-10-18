@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // BA战斗属性引用，负责让代码安全访问 XML 中定义的战斗 StatDef。
+    //BA战斗属性引用，让代码安全访问 XML 中定义的战斗 StatDef。
     [DefOf]
     public static class BattleStatDefOf
     {
