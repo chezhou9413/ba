@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //爱丽丝自动普通技能定义，负责独立保存命中阈值、伤害、声音和表现，不提供主动按钮。
+    //爱丽丝自动普通技能定义，独立保存命中阈值、伤害、声音和表现，不提供主动按钮。
     public class ArisuNormalSkillDef : Def
     {
         public int requiredHits = 3;

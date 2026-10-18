@@ -1,9 +1,22 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using global::UnityEngine.Networking;
+#else
 using UnityEngine.Networking;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Audio
@@ -35,7 +48,7 @@ namespace BANWlLib.mainUI.Audio
         {
             if (animation == null || !paths.TryGetValue(animation, out string file)) return true;
             if (!isActiveAndEnabled || controller == null || !controller.isActiveAndEnabled) return false;
-            if (pending == animation && request != null) return false;
+            if (pending == animation) return false;
             CancelPending();
             if (clips.TryGetValue(file, out AudioClip clip))
             {
@@ -56,6 +69,12 @@ namespace BANWlLib.mainUI.Audio
                 pending = null;
                 yield break;
             }
+#if RW_1_7
+            yield return null;
+            AudioClip clip = AudioClip.LoadFromFile(file, streaming: true);
+            loading = null;
+            pending = null;
+#else
             request = UnityWebRequestMultimedia.GetAudioClip(new Uri(file).AbsoluteUri, AudioType.OGGVORBIS);
             request.timeout = 30;
             yield return request.SendWebRequest();
@@ -79,6 +98,7 @@ namespace BANWlLib.mainUI.Audio
                 Log.Error("[BA UI语音] 音频解码结果为空：" + file);
                 yield break;
             }
+#endif
             clip.name = Path.GetFileNameWithoutExtension(file);
             clips.Add(file, clip);
             animation.aronaAudioClip = clip;
@@ -98,7 +118,7 @@ namespace BANWlLib.mainUI.Audio
             CancelPending();
             if (controller != null && controller.audioSource != null) controller.audioSource.Stop();
             foreach (aronaAnimation animation in paths.Keys) animation.aronaAudioClip = null;
-            foreach (AudioClip clip in clips.Values) UnityEngine.Object.Destroy(clip);
+            foreach (AudioClip clip in clips.Values) Engine.Object.Destroy(clip);
             clips.Clear();
             paths.Clear();
         }

@@ -1,0 +1,125 @@
+
+<Defs>
+    
+    <BANWlLib.BaDef.BaMissionNode>
+        
+        <defName>BaseDefenseNode2</defName>
+        
+        <MissionID>02</MissionID>
+        
+        <MissionTitle>据点防御第二关</MissionTitle>
+        
+        <MissionType>BaseDefense</MissionType>
+        
+        <UnlockedOn>BaseDefenseNode1</UnlockedOn>
+        
+        <missionMapDef>BANC_taskMap_QSJ</missionMapDef>
+        
+        <missionRunTimeDef>MissionRunTimeTest</missionRunTimeDef>
+
+        <costRules>
+            <maximumCost>20</maximumCost>
+            <recoveryMultiplier>2</recoveryMultiplier>
+        </costRules>
+        
+        <oder>2</oder>
+    </BANWlLib.BaDef.BaMissionNode>
+    
+    
+    <BANWlLib.BaDef.BaMissionNode>
+        
+        <defName>BaseDefenseNode1</defName>
+        
+        <MissionID>01</MissionID>
+        
+        <MissionTitle>据点防御第一关</MissionTitle>
+        
+        <MissionType>BaseDefense</MissionType>
+        
+        <missionMapDef>BANC_taskMap_QSJ</missionMapDef>
+        
+        <missionRunTimeDef>MissionRunTimeTest</missionRunTimeDef>
+        
+        <MissionDes>此任务为半成品，难度比较大，可以测试伤害，和刷青辉石</MissionDes>
+        
+        <oder>1</oder>
+        
+        <MissionTarget>
+            
+            <li>击杀所有敌人</li>
+        </MissionTarget>
+        
+        <Reward>
+            
+            <li>
+                
+                <thingDef>BANW_Huodongbaogao_D</thingDef>
+                
+                <count>10</count>
+                
+                <quality>Epic</quality>
+            </li>
+        </Reward>
+        
+        <EnemyList>
+            
+            <li>
+                
+                <pawnKindDef>BANW_QSJ_A</pawnKindDef>
+                
+                <tagPath1>ManuaUI/Type/重装甲</tagPath1>
+                
+                <tagPath2>ManuaUI/Type/爆发</tagPath2>
+            </li>
+        </EnemyList>
+    </BANWlLib.BaDef.BaMissionNode>
+    
+    
+    <BANWlLib.BaDef.BaMissionNode>
+        
+        <defName>CreditRetrievalNode1</defName>
+        
+        <MissionID>01</MissionID>
+        
+        <MissionTitle>货币回收第一关</MissionTitle>
+        
+        <MissionType>CreditRetrieval</MissionType>
+        
+        <missionMapDef>BANC_taskMap_QSJ</missionMapDef>
+        
+        <missionRunTimeDef>MissionRunTimeTest</missionRunTimeDef>
+        
+        <oder>1</oder>
+        
+        <MissionTarget>
+            
+            <li>击杀所有敌人</li>
+        </MissionTarget>
+        
+        <Reward>
+            
+            <li>
+                
+                <thingDef>Kami_Proplevel</thingDef>
+                
+                <count>100</count>
+                
+                <quality>Medium</quality>
+            </li>
+            
+
+        </Reward>
+        
+        <EnemyList>
+            
+            <li>
+                
+                <pawnKindDef>BANW_Aoba</pawnKindDef>
+                
+                <tagPath1>ManuaUI/Type/坦克</tagPath1>
+                
+                <tagPath2>ManuaUI/Type/爆发</tagPath2>
+            </li>
+        </EnemyList>
+    </BANWlLib.BaDef.BaMissionNode>
+</Defs>

@@ -3,7 +3,7 @@ using Verse.AI;
 
 namespace BANWlLib.Skills
 {
-    //引导特效实例，负责让绑定工作的Mote保持可见并在工作失效时结束。
+    //引导特效实例，让绑定工作的Mote保持可见并在工作失效时结束。
     public class Mote_ChannelEffect : MoteAttached
     {
         public Pawn caster;

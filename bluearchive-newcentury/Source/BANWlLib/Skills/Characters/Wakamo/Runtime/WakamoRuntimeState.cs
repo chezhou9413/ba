@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //若藻记录身份，负责区分本次EX与旧的飞行弹丸，并保存敌方标记引用。
+    //若藻记录身份，区分本次EX与旧的飞行弹丸，并保存敌方标记引用。
     public class WakamoRuntimeState : IExposable
     {
         public int castId;

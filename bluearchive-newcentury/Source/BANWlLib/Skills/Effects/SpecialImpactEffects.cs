@@ -5,10 +5,10 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //命中特效职责：按攻击段开关固定弹道方向，保留原版粒子、音效和延迟生命周期。
+    //按攻击段开关固定弹道方向，保留原版粒子、音效和延迟生命周期。
     public static class SpecialImpactEffects
     {
-        //触发职责：普通攻击段沿用落点特效，定向段为每个喷射子节点创建独立旋转参数。
+        //普通攻击段沿用落点特效，定向段为每个喷射子节点创建独立旋转参数。
         public static void Trigger(EffecterDef def, SpecialPendingAttack attack, Thing hit, IntVec3 cell, Map map)
         {
             if (def == null) return;
@@ -38,7 +38,7 @@ namespace BANWlLib.Skills
             map.effecterMaintainer.AddEffecterToMaintain(effect, point, point, maintainTicks);
         }
 
-        //方向上下文职责：沿用已有定向命中子特效的队列，并在触发结束后释放临时目标记录。
+        //沿用已有定向命中子特效的队列，并在触发结束后释放临时目标记录。
         private static void TriggerDirectional(SubEffecter child, SubEffecterDef source,
             SpecialPendingAttack attack, Thing hit, TargetInfo point)
         {

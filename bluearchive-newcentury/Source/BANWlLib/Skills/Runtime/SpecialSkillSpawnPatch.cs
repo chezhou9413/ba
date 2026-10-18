@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //角色生成补丁，负责根据PawnKind扩展安装原生特殊技能状态。
+    //角色生成补丁，根据PawnKind扩展安装原生特殊技能状态。
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.SpawnSetup))]
     public static class SpecialSkillSpawnPatch
     {
@@ -17,8 +17,10 @@ namespace BANWlLib.Skills
             var profile = __instance.kindDef?.GetModExtension<SpecialSkillKindExtension>()?.profile;
             if (profile != null && Hediff_SpecialSkillState.Find(__instance, profile) == null)
             {
-                Hediff_SpecialSkillState.Create(__instance, profile);
+                float previousScale = __instance.HealthScale;
+                var state = Hediff_SpecialSkillState.Create(__instance, profile);
                 HealthScaleCache.Invalidate(__instance);
+                if (profile.role == SpecialSkillRole.Hoshino) HoshinoFormUtility.Apply(state, previousScale);
             }
             foreach (var state in __instance.health.hediffSet.hediffs.OfType<Hediff_SpecialSkillState>())
                 __instance.Map.GetComponent<MapComponent_SpecialSkills>().Register(state);

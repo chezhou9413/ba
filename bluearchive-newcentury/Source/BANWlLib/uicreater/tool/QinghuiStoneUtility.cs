@@ -1,33 +1,26 @@
-﻿using RimWorld;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using RimWorld;
 using System.Collections.Generic;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 
 namespace newpro
 {
-    /// <summary>
-    /// 通用物品工具类
-    /// 
-    /// 职责：
-    /// - 统计地图中玩家拥有的指定物品数量
-    /// - 扣除指定数量的物品
-    /// 
-    /// 适用场景：
-    /// - 抽卡消耗货币
-    /// - 商店购买
-    /// - 任何需要检查/消耗物品的系统
-    /// </summary>
+    //统计并扣除地图中玩家拥有的物品。
     public static class ItemUtility
     {
-        /// <summary>
-        /// ThingDef 缓存，避免重复查询 DefDatabase
-        /// Key: defName, Value: ThingDef
-        /// </summary>
+        //按 defName 缓存 ThingDef。
         private static readonly Dictionary<string, ThingDef> _defCache = new Dictionary<string, ThingDef>();
 
-        /// <summary>
-        /// 获取缓存的 ThingDef（性能优化）
-        /// </summary>
+        //读取缓存的 ThingDef。
         private static ThingDef GetCachedDef(string defName)
         {
             if (string.IsNullOrEmpty(defName))
@@ -44,9 +37,7 @@ namespace newpro
             return def;
         }
 
-        /// <summary>
-        /// 获取当前地图中指定物品的总数
-        /// </summary>
+        //获取当前地图中指定物品的总数
         public static int GetTotalItemCount(string defName)
         {
             Map map = Find.CurrentMap;
@@ -76,9 +67,7 @@ namespace newpro
             return total;
         }
 
-        /// <summary>
-        /// 扣除指定物品的数量
-        /// </summary>
+        //扣除指定物品的数量
         public static bool TryRemoveItem(string defName, int amount)
         {
             if (amount <= 0)
@@ -131,54 +120,36 @@ namespace newpro
             return true;
         }
 
-        /// <summary>
-        /// 清除 Def 缓存
-        /// </summary>
+        //清除 Def 缓存
         public static void ClearCache()
         {
             _defCache.Clear();
         }
     }
 
-    /// <summary>
-    /// 地图级别组件：每帧更新
-    /// 
-    /// 职责：
-    /// 1. 管理空投位置 (dropCell)
-    /// 2. 更新 UI 显示的资源数量
-    /// </summary>
+    //保存地图空投位置，定期更新 UI 资源数量。
     public class MapComponent_EveryFrame : MapComponent
     {
-        /// <summary>
-        /// 空投位置
-        /// </summary>
+        //空投位置
         public IntVec3 dropCell;
 
-        /// <summary>
-        /// 上次更新资源显示的 Tick
-        /// </summary>
+        //上次更新资源显示的 Tick
         private int lastUpdateTick = 0;
 
-        /// <summary>
-        /// 缓存的 PoitSaveComponent 引用
-        /// </summary>
+        //缓存的 PoitSaveComponent 引用
         private PoitSaveComponent _cachedPoitComp;
 
         public MapComponent_EveryFrame(Map map) : base(map)
         {
         }
 
-        /// <summary>
-        /// 存档序列化
-        /// </summary>
+        //存档序列化
         public override void ExposeData()
         {
             Scribe_Values.Look(ref dropCell, "dropCell");
         }
 
-        /// <summary>
-        /// 每帧更新
-        /// </summary>
+        //按间隔刷新资源数量。
         public override void MapComponentUpdate()
         {
             // UI 关闭时跳过资源更新
@@ -198,9 +169,7 @@ namespace newpro
             UpdateResourceDisplay();
         }
 
-        /// <summary>
-        /// 更新 UI 上的资源数量显示
-        /// </summary>
+        //更新 UI 上的资源数量显示
         private void UpdateResourceDisplay()
         {
             // 青辉石数量
@@ -238,9 +207,7 @@ namespace newpro
             }
         }
 
-        /// <summary>
-        /// 获取缓存的 PoitSaveComponent
-        /// </summary>
+        //获取缓存的 PoitSaveComponent
         private PoitSaveComponent GetCachedPoitComp()
         {
             if (_cachedPoitComp == null && Current.Game != null)

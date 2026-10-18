@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace BANWlLib.Skills
 {
-    //可配置限时增益，负责不修改共享HediffDef的绝对过期时间。
+    //可配置限时增益，不修改共享HediffDef的绝对过期时间。
     public class TimedSkillBuff : HediffWithComps
     {
         public int endTick = -1;

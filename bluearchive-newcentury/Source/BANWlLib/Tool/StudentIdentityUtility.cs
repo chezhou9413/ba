@@ -5,14 +5,10 @@ using Verse;
 
 namespace BANWlLib.Tool
 {
-    /// <summary>
-    /// 学生身份工具，负责按当前 BaStudentDef、studentId 和 PawnKindDef 解析学生身份。
-    /// </summary>
+    //学生身份工具，按当前 BaStudentDef、studentId 和 PawnKindDef 解析学生身份。
     public static class StudentIdentityUtility
     {
-        /// <summary>
-        /// 从 Pawn 获取学生身份，负责通过 PawnKindDef 找到当前学生 ID。
-        /// </summary>
+        //从 Pawn 获取学生身份，通过 PawnKindDef 找到当前学生 ID。
         public static string GetStudentId(Pawn pawn)
         {
             if (pawn == null)
@@ -23,9 +19,7 @@ namespace BANWlLib.Tool
             return GetStudentId(pawn.kindDef);
         }
 
-        /// <summary>
-        /// 从 PawnKindDef 获取学生身份，负责把绑定的 BaStudentDef 转成当前学生 ID。
-        /// </summary>
+        //从 PawnKindDef 获取学生身份，把绑定的 BaStudentDef 转成当前学生 ID。
         public static string GetStudentId(PawnKindDef kindDef)
         {
             if (kindDef == null)
@@ -43,9 +37,7 @@ namespace BANWlLib.Tool
             return kindDef.defName;
         }
 
-        /// <summary>
-        /// 从学生数据 Def 获取学生身份，负责优先使用当前 studentId 字段。
-        /// </summary>
+        //从学生数据 Def 获取学生身份，优先使用当前 studentId 字段。
         public static string GetStudentId(BaStudentDef studentDef)
         {
             if (studentDef == null)
@@ -71,9 +63,7 @@ namespace BANWlLib.Tool
             return null;
         }
 
-        /// <summary>
-        /// 从当前学生 Def 名称或学生 ID 获取学生身份，负责支持当前 XML 的两种新写法。
-        /// </summary>
+        //从当前学生 Def 名称或学生 ID 获取学生身份，支持当前 XML 的两种新写法。
         public static string GetStudentId(string studentDefNameOrStudentId)
         {
             if (string.IsNullOrEmpty(studentDefNameOrStudentId))
@@ -90,9 +80,7 @@ namespace BANWlLib.Tool
             return studentDefNameOrStudentId;
         }
 
-        /// <summary>
-        /// 尝试解析学生数据 Def，负责支持当前 studentId、BaStudentDef.defName 和 PawnKindDef.defName。
-        /// </summary>
+        //尝试解析学生数据 Def，支持当前 studentId、BaStudentDef.defName 和 PawnKindDef.defName。
         public static bool TryGetStudentDef(string studentDefNameOrStudentId, out BaStudentDef studentDef)
         {
             studentDef = null;
@@ -115,9 +103,7 @@ namespace BANWlLib.Tool
             return studentDef != null;
         }
 
-        /// <summary>
-        /// 尝试解析 PawnKindDef，负责按当前学生数据或 PawnKindDef.defName 查找。
-        /// </summary>
+        //尝试解析 PawnKindDef，按当前学生数据或 PawnKindDef.defName 查找。
         public static bool TryGetPawnKindDef(string studentDefNameOrStudentId, out PawnKindDef kindDef)
         {
             kindDef = null;
@@ -142,9 +128,7 @@ namespace BANWlLib.Tool
             return kindDef != null;
         }
 
-        /// <summary>
-        /// 判断 Pawn 是否属于已配置学生 Kind，负责区分同一种族下的真实学生和非学生 Kind。
-        /// </summary>
+        //判断 Pawn 是否属于已配置学生 Kind，区分同一种族下的真实学生和非学生 Kind。
         public static bool IsConfiguredStudentKind(Pawn pawn)
         {
             if (pawn == null)
@@ -155,9 +139,7 @@ namespace BANWlLib.Tool
             return IsConfiguredStudentKind(pawn.kindDef);
         }
 
-        /// <summary>
-        /// 判断 PawnKindDef 是否被学生数据 Def 显式绑定，负责作为星级系统的 Kind 级开关。
-        /// </summary>
+        //判断 PawnKindDef 是否被学生数据 Def 显式绑定，作为星级系统的 Kind 级开关。
         public static bool IsConfiguredStudentKind(PawnKindDef kindDef)
         {
             if (kindDef == null)
@@ -168,9 +150,7 @@ namespace BANWlLib.Tool
             return DefDatabase<BaStudentDef>.AllDefsListForReading.Any(def => def != null && def.kindDef == kindDef);
         }
 
-        /// <summary>
-        /// 获取学生显示名称，负责统一新学生 Def 和 PawnKind 的名称回退顺序。
-        /// </summary>
+        //获取学生显示名称，统一新学生 Def 和 PawnKind 的名称回退顺序。
         public static string GetStudentLabel(BaStudentDef studentDef, PawnKindDef kindDef)
         {
             if (!string.IsNullOrEmpty(studentDef?.label))

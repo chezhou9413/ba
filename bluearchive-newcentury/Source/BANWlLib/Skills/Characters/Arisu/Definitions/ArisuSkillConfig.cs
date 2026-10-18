@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //爱丽丝EX配置，负责直线尺寸、三档对敌特效和两档自身充能表现。
+    //爱丽丝EX配置，直线尺寸、三档对敌特效和两档自身充能表现。
     public class ArisuSkillConfig
     {
         public float lineLength = 25f;

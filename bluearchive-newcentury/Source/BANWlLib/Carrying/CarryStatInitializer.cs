@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Carrying
 {
-    //搬运属性初始化器负责把倍率接入原版容量计算和属性说明。
+    //搬运属性初始化器把倍率接入原版容量计算和属性说明。
     [StaticConstructorOnStartup]
     public static class CarryStatInitializer
     {

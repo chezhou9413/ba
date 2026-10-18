@@ -18,7 +18,7 @@ namespace BANWlLib.mainUI.Images
             if (records == null)
             {
                 records = new Dictionary<string, BAUIImageRecord>(StringComparer.OrdinalIgnoreCase);
-                string path = Path.Combine(BAUIImagePath.Root, "1.6/UI/images/bundles.xml");
+                string path = Path.Combine(BAUIImagePath.Root, global::newpro.UiMapData.ContentVersion, "UI/images/bundles.xml");
                 if (File.Exists(path))
                 {
                     XElement root = XDocument.Load(path).Root;
@@ -35,7 +35,7 @@ namespace BANWlLib.mainUI.Images
                         });
                     }
                 }
-                string settings = Path.Combine(BAUIImagePath.Root, "1.6/UI/images/memory.xml");
+                string settings = Path.Combine(BAUIImagePath.Root, global::newpro.UiMapData.ContentVersion, "UI/images/memory.xml");
                 if (File.Exists(settings))
                 {
                     XElement root = XDocument.Load(settings).Root;

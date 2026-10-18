@@ -1,22 +1,31 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BattleSystem;
 using BANWlLib.DamageFontSystem;
 using BANWlLib.DamageFontSystem.Setting;
 using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 
-// 伤害字体系统补丁，负责处理旧暴击规则、统一战斗伤害飘字和原版远程伤害接入。
+//伤害字体系统补丁，处理旧暴击规则、统一战斗伤害飘字和原版远程伤害接入。
 public class DamageFontSystemPatche
 {
     public static Dictionary<int, bool> CritState = new Dictionary<int, bool>();
 
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
-    //角色受伤前补丁，负责为未结算伤害补充BA输出属性。
+    //角色受伤前补丁，为未结算伤害补充BA输出属性。
     public static class Patch_Pawn_PreApplyDamage
     {
-        // 受伤前处理，负责给原版伤害补上暴击与属性克制，同时跳过已走统一战斗层的手动结算。
+        //受伤前处理，给原版伤害补上暴击与属性克制，同时跳过已走统一战斗层的手动结算。
         public static void Prefix(Pawn __instance, ref DamageInfo dinfo, out bool absorbed)
         {
             absorbed = false;
@@ -92,7 +101,7 @@ public class DamageFontSystemPatche
     }
 
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.PostApplyDamage))]
-    //角色受伤后补丁，负责显示实际暴击并输出结算日志。
+    //角色受伤后补丁，显示实际暴击并输出结算日志。
     public static class Patch_Pawn_PostApplyDamage
     {
         //读取实际受伤结果并消耗对应飘字状态。
@@ -126,7 +135,7 @@ public class DamageFontSystemPatche
             }
         }
 
-        // 应用技能投射物伤害，负责让爆炸和延迟命中的技能弹也进入新攻击力公式。
+        //应用技能投射物伤害，让爆炸和延迟命中的技能弹也进入新攻击力公式。
         private static bool TryApplySkillProjectileDamage(Pawn target, ref DamageInfo dinfo)
         {
             if (!(dinfo.Instigator is Pawn attacker) || !ProjectileBattleContext.TryGetSkillDamage(attacker, dinfo.Def, out ProjectileBattleData data))
@@ -165,7 +174,7 @@ public class DamageFontSystemPatche
             return true;
         }
 
-        // 应用普通远程武器伤害，负责让原版子弹命中也使用角色最终攻击力公式。
+        //应用普通远程武器伤害，让原版子弹命中也使用角色最终攻击力公式。
         private static bool TryApplyNormalRangedDamage(Pawn target, ref DamageInfo dinfo)
         {
             Pawn attacker = dinfo.Instigator as Pawn;
@@ -210,7 +219,7 @@ public class DamageFontSystemPatche
             return true;
         }
 
-        // 查找本次 DamageDef 对应的主武器子弹，负责避免近战和非当前武器伤害误入普通远程公式。
+        //查找本次 DamageDef 对应的主武器子弹，避免近战和非当前武器伤害误入普通远程公式。
         private static ThingDef FindMatchingProjectileDef(ThingWithComps weapon, DamageDef damageDef)
         {
             if (weapon?.def?.Verbs == null || !weapon.def.IsRangedWeapon || damageDef == null)

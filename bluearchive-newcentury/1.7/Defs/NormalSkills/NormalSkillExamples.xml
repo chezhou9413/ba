@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 这些技能定义只有被角色normalSkills引用时才生效。 -->
+  <BANWlLib.Skills.NormalSkillDef>
+    <defName>BANW_Normal_AttackExample</defName>
+    <label>普攻连携攻击</label>
+    <description>每成功射出3发主武器普攻，对合法敌人追加一次468%攻击力伤害。</description>
+    <countMode>ShotFired</countMode>
+    <requiredCount>3</requiredCount>
+    <cooldownTicks>60</cooldownTicks>
+    <range>25</range>
+    <onlyTargetAllies>false</onlyTargetAllies>
+    <showBattleFormula>true</showBattleFormula>
+    <targetParams>
+      <canTargetLocations>false</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+    <castSound>BANW_Wp_AR_Arisu_At</castSound>
+    <actions>
+      <li>
+        <!-- 攻击力倍率是本段全部发数的总倍率，不是每颗子弹的倍率。 -->
+        <useBattleStats>true</useBattleStats>
+        <attackPowerRatio>4.68</attackPowerRatio>
+        <damageDef>BANC_Damage_baofa</damageDef>
+        <canCrit>true</canCrit>
+        <alwaysCrit>false</alwaysCrit>
+        <applyAffinity>true</applyAffinity>
+        <isExSkill>false</isExSkill>
+        <isNormalAttack>false</isNormalAttack>
+        <penetration>0</penetration>
+        <radius>0</radius>
+        <shots>1</shots>
+        <shotIntervalTicks>6</shotIntervalTicks>
+        <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+        <effecterDef>BANW_Effecter_C</effecterDef>
+        <rotateImpactEffect>true</rotateImpactEffect>
+        <impactRotationOffset>0</impactRotationOffset>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+        <canHitOwnPawn>false</canHitOwnPawn>
+      </li>
+    </actions>
+  </BANWlLib.Skills.NormalSkillDef>
+
+  <HediffDef>
+    <defName>BANW_Normal_AllyAttackBuff</defName>
+    <label>普通技能攻击支援</label>
+    <description>在持续期间提高20%攻击力加成。</description>
+    <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <stages><li><statOffsets><BANW_FinalDamageMultiplier>0.2</BANW_FinalDamageMultiplier></statOffsets></li></stages>
+  </HediffDef>
+
+  <BANWlLib.Skills.NormalSkillDef>
+    <defName>BANW_Normal_AllyBuffExample</defName>
+    <label>普攻连携支援</label>
+    <description>每成功射出3发主武器普攻，为25格内生命比例最低的其他同阵营队友提供5秒攻击支援。</description>
+    <countMode>ShotFired</countMode>
+    <requiredCount>3</requiredCount>
+    <cooldownTicks>60</cooldownTicks>
+    <range>25</range>
+    <onlyTargetAllies>true</onlyTargetAllies>
+    <targetParams>
+      <canTargetLocations>false</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>false</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+    <targetEffecter>BANW_Effecter_C</targetEffecter>
+    <actions>
+      <li>
+        <!-- 纯增益不填写damageDef，也不需要伤害倍率或弹丸。 -->
+        <triggerHediff>BANW_Normal_AllyAttackBuff</triggerHediff>
+        <buffDurationTicks>300</buffDurationTicks>
+        <shots>1</shots>
+        <radius>0</radius>
+        <affectHostile>false</affectHostile>
+        <affectFriendly>true</affectFriendly>
+        <canHitOwnPawn>false</canHitOwnPawn>
+      </li>
+    </actions>
+  </BANWlLib.Skills.NormalSkillDef>
+</Defs>

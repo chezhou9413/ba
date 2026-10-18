@@ -1,0 +1,150 @@
+<Defs>
+  <BANWlLib.BaDef.BaStudentDef>
+    <defName>BANW_Tsubaki_Student</defName>
+    <label>椿</label>
+    <studentId>BANW_Tsubaki</studentId>
+    <kindDef>BANW_Tsubaki</kindDef>
+
+    <BaStudentUI>
+			
+			<StudentAvatar>ManuaUI/Avatar/Tsubaki</StudentAvatar>
+			
+			<StudentName>Auto</StudentName>
+			
+			<CharacterimagePath>ManuaUI/Live/Tsubaki</CharacterimagePath>
+			
+			<BackgroundPath>ManuaUI/Bg/BG_Hyakkiyako</BackgroundPath>
+			
+			<CharacterimageOffsetSize>1.4</CharacterimageOffsetSize>
+			
+			<CharacterimageOffsetX>50</CharacterimageOffsetX>
+			
+			<CharacterimageOffsetY>-5</CharacterimageOffsetY>
+			
+			<CharacterTypePath>ManuaUI/Type/Assault</CharacterTypePath>
+			
+			<CharacterStarCount>2</CharacterStarCount>
+			
+			<infotagImagePath1>ManuaUI/Type/坦克</infotagImagePath1>
+			
+			<infotagImagePath2>ManuaUI/Type/前排</infotagImagePath2>
+			
+			<infotagImagePath3>ManuaUI/Type/贯通</infotagImagePath3>
+			
+			<infotagImagePath4>ManuaUI/Type/特殊装甲</infotagImagePath4>
+			
+			<Skills>
+				
+				<Shooting>12</Shooting>
+				
+				<Melee>10</Melee>
+				
+				<Construction>5</Construction>
+				
+				<Mining>6</Mining>
+				
+				<Cooking>0</Cooking>
+				
+				<Plants>0</Plants>
+				
+				<Animals>0</Animals>
+				
+				<Crafting>8</Crafting>
+				
+				<Artistic>12</Artistic>
+				
+				<Medical>6</Medical>
+				
+				<Social>12</Social>
+				
+				<Intellectual>7</Intellectual>
+			</Skills>
+		    
+			<WapenUI>
+			   
+				<WapenUIImagePath>ManuaUI/Wapen/Tsubaki</WapenUIImagePath>
+			    
+				<WapenTypeText>冲锋枪</WapenTypeText>
+			</WapenUI>
+			<Ability1>
+				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityTypeText>EX技能</AbilityTypeText>
+				<AbilityTitle>EX技能</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
+可以包含<b>多行</b>文本。
+并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability1>
+			<Ability2>
+				<AbilityImagePath>Ability/Icon/Chinatsu/Chinatsu_EXX</AbilityImagePath>
+				<AbilityTypeText>基本技能</AbilityTypeText>
+				<AbilityTitle>睡眠，大补</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>1</color>天]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[回复自身治愈力663%的生命值]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability2>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Akane/Akane_A</AbilityImagePath>
+				<AbilityTypeText>被动技能</AbilityTypeText>
+				<AbilityTitle>韧性</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身护甲增加<color=#00FFFF>26%</color>。]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<Ability4>
+				<AbilityImagePath>Ability/Icon/Akane/Akane_A</AbilityImagePath>
+				<AbilityTypeText>子技能</AbilityTypeText>
+				<AbilityTitle>娴熟的装弹动作</AbilityTitle>
+				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[自身乘伤系数减少<color=#00FFFF>17%</color>]]>
+				</AbilityIntroduction>
+				<offSetX>12</offSetX>
+                <offSetY>0</offSetY>
+			</Ability4>
+			<StudentBio>
+			   
+				<StudentDesp><![CDATA[百鬼夜行联合学院
+2年级
+社团 修行部]]>
+				</StudentDesp>
+				
+				<StudentBioName>春日 椿</StudentBioName>
+				
+				<AcademyLogoPath>ManuaUI/AcademyLogo/Hyakkiyako</AcademyLogoPath>
+				
+				<StudentCard>百鬼夜行修行部部长。平时专注的修行是“更舒适和更完美的睡眠”。修行的成果是，她可以做到坐着、站着，甚至吃饭的时候睡觉。于是，大家都叫她睡美人。
+别看她平时爱打瞌睡，一到夜晚她就会为了守护街区的和平而悄悄活跃起来。</StudentCard>
+			</StudentBio>
+		</BaStudentUI>
+    <baStudentData>
+			
+			<DamageType>Through</DamageType>
+			
+			<DefenseType>Mysterious</DefenseType>
+			
+			<PosType>Tank</PosType>
+			
+			<StarCont>2</StarCont>
+			<DraggableAudio>Common\Sounds\Fight\Tsubaki</DraggableAudio>
+			<GakaStudentThingData>
+                <li>
+                    <key>Kami_Proplevel</key>
+                    <value>10</value>
+                </li>
+                <li>
+                    <key>BANW_Tsubaki_Proplevel</key>
+                    <value>5</value>
+                </li>
+            </GakaStudentThingData>
+            
+            <avtTexPath>Gacha/Student/Tsubaki</avtTexPath>
+		</baStudentData>
+  </BANWlLib.BaDef.BaStudentDef>
+</Defs>

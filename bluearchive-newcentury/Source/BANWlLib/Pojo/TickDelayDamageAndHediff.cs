@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Pojo
 {
-    // 延迟自我状态配置，负责在某个 tick 延迟后给自身附加 Hediff。
+    //延迟自我状态配置，在某个 tick 延迟后给自身附加 Hediff。
     public class TickDelaySelfHediff
     {
         public int tick;
@@ -12,28 +12,28 @@ namespace BANWlLib.Pojo
         public List<SelfHediffSetting> damages = new List<SelfHediffSetting>();
     }
 
-    // 单个自我状态配置，负责描述延迟和目标 Hediff。
+    //单个自我状态配置，描述延迟和目标 Hediff。
     public class SelfHediffSetting : IExposable
     {
         public int Delaytick;
         public EffecterDef effecterDef = null;
         public HediffDef triggerHediff = null;
 
-        // 保存和读取延迟状态数据，负责支持存读档。
+        //保存和读取延迟状态数据，支持存读档。
         public void ExposeData()
         {
             Scribe_Values.Look(ref Delaytick, "Delaytick", 0);
             Scribe_Defs.Look(ref triggerHediff, "triggerHediff");
         }
 
-        // 获取实际触发状态，负责返回延迟配置指定的 Hediff。
+        //获取实际触发状态，返回延迟配置指定的 Hediff。
         public HediffDef ResolveHediff()
         {
             return triggerHediff;
         }
     }
 
-    // 延迟范围效果配置，负责描述某个主 tick 下的一组延迟伤害或治疗。
+    //延迟范围效果配置，描述某个主 tick 下的一组延迟伤害或治疗。
     public class TickDelayDamageAndHediff
     {
         public int tick;
@@ -41,7 +41,7 @@ namespace BANWlLib.Pojo
         public List<DamageSetting> damages = new List<DamageSetting>();
     }
 
-    // 单个延迟效果配置，负责描述延迟伤害、治疗和附加状态参数。
+    //单个延迟效果配置，描述延迟伤害、治疗和附加状态参数。
     public class DamageSetting : IExposable
     {
         public int Delaytick;
@@ -67,7 +67,7 @@ namespace BANWlLib.Pojo
         public bool allowPermanentInjuryHealing = false;
         public bool isExSkill = false;
 
-        // 保存和读取延迟效果数据，负责支持存读档。
+        //保存和读取延迟效果数据，支持存读档。
         public void ExposeData()
         {
             Scribe_Values.Look(ref Delaytick, "Delaytick", 0);
@@ -94,7 +94,7 @@ namespace BANWlLib.Pojo
             Scribe_Defs.Look(ref shieldHediffDef, "shieldHediffDef");
         }
 
-        // 转成统一战斗配置，负责让范围伤害和场地伤害共用同一套入口。
+        //转成统一战斗配置，让范围伤害和场地伤害共用同一套入口。
         public BattleActionConfig ToBattleAction()
         {
             return new BattleActionConfig

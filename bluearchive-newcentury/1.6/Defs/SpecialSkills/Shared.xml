@@ -52,8 +52,7 @@
   <HediffDef>
     <defName>BANW_SpecialHoshinoCount</defName>
     <label>星野防御普通技能状态</label>
-    <description>
-      星野主动施放防御普通技能后获得的独立状态，每次实际受到伤害消耗一次，25次耗尽或切换形态时解除。完全闪避和护盾完全吸收不计数，防御EX到期不会清除此状态。剩余受伤次数可在特殊技能状态中查看。</description>
+    <description>星野主动施放防御普通技能后获得的独立状态，每次实际受到伤害消耗一次，25次耗尽或切换形态时解除。完全闪避和护盾完全吸收不计数，防御EX到期不会清除此状态。剩余受伤次数可在特殊技能状态中查看。</description>
     <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass>
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
@@ -72,7 +71,7 @@
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
     <comps>
-      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleShield" />
+      <li Class="BANWlLib.Skills.HediffCompProperties_HoshinoShield" />
     </comps>
   </HediffDef>
   <ThingDef ParentName="BaseBullet">

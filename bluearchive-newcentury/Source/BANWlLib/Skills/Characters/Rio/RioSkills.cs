@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //莉音技能，负责向目标本体授予一次EX复制机会、攻击支援和单次减费。
+    //莉音技能，向目标本体授予一次EX复制机会、攻击支援和单次减费。
     public static class RioSkills
     {
         //读取目标当前阶段的默认EX，所有候选均来自其实际持有的COST技能。

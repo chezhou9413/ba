@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Effects.AssetBundles
 {
-    // 特效路径工具，负责把 RimWorld texPath 映射到一张贴图一个 AB 的磁盘路径和包内资源路径。
+    //特效路径工具，把 RimWorld texPath 映射到一张贴图一个 AB 的磁盘路径和包内资源路径。
     internal static class BAEffectPathUtility
     {
         private const string EffectPrefix = "Effect/";
@@ -68,7 +68,7 @@ namespace BANWlLib.Effects.AssetBundles
             return normalized.Trim('/');
         }
 
-        // 获取当前 Mod 根目录，负责定位 Common/Textures/Effect。
+        //获取当前 Mod 根目录，定位 Common/Textures/Effect。
         private static string GetModRoot()
         {
             return LoadedModManager.GetMod<newpro>().Content.RootDir;

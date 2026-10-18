@@ -1,4 +1,8 @@
-﻿using RimWorld;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -31,7 +35,6 @@ namespace BANWlLib.MissionRunTime
 
                 if (mission.state == MissionState.Active)
                 {
-                    // --- 1. 数据准备 ---
                     int secondsLeft = mission.GetRemainingSeconds();
                     string timeStr = $"{secondsLeft / 60:D2}:{secondsLeft % 60:D2}";
                     string label = $"任务倒计时: {timeStr}";
@@ -39,7 +42,7 @@ namespace BANWlLib.MissionRunTime
                     Color textColor = Color.white;
                     if (secondsLeft < 30) textColor = Color.red;
 
-                    // --- 2. 第一行：绘制倒计时文本 ---
+                    //绘制倒计时。
                     Rect textRect = new Rect(startX, curY, width, lineHeight);
 
                     Text.Font = GameFont.Small;
@@ -50,22 +53,19 @@ namespace BANWlLib.MissionRunTime
 
                     GUI.color = Color.white; // 颜色还原
 
-                    // --- 3. 换行，准备画按钮 ---
                     curY += lineHeight; // Y轴向下移动一行
 
-                    // --- 4. 第二行：绘制按钮 ---
+                    //绘制操作按钮。
                     Rect btnRect = new Rect(startX, curY, width, lineHeight);
 
                     Text.Anchor = TextAnchor.MiddleCenter; // 按钮文字居中
 
-                    // 这里我把按钮改稍微小一点点或者颜色变一下也可以，但保持默认最简单
                     if (Widgets.ButtonText(btnRect, "强制结束任务"))
                     {
                         mission.colseMission();
                         SoundDefOf.Click.PlayOneShotOnCamera();
                     }
 
-                    // --- 5. 准备下一个任务的起始位置 ---
                     // 当前 Y + 按钮高度 + 额外的空隙
                     curY += lineHeight + itemSpacing;
                 }

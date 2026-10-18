@@ -5,18 +5,18 @@ using Verse.Sound;
 
 namespace BANWlLib.BattleSystem
 {
-    // 多发投射物延迟队列，负责在地图 tick 中按配置时间逐发生成原版子弹。
+    //多发投射物延迟队列，在地图 tick 中按配置时间逐发生成原版子弹。
     public class MultiShotProjectileDelayComponent : MapComponent
     {
         private List<PendingMultiShotProjectile> pendingProjectiles = new List<PendingMultiShotProjectile>();
         private int nextSequenceId = 1;
 
-        // 创建地图队列组件，负责绑定当前地图的延迟多发投射物任务。
+        //绑定当前地图的延迟多发投射物任务。
         public MultiShotProjectileDelayComponent(Map map) : base(map)
         {
         }
 
-        // 地图每 tick 更新，负责触发到期的待发射子弹。
+        //地图每 tick 更新，触发到期的待发射子弹。
         public override void MapComponentTick()
         {
             base.MapComponentTick();
@@ -25,7 +25,7 @@ namespace BANWlLib.BattleSystem
             FireDueProjectiles(currentTick);
         }
 
-        // 保存和读取发射队列，负责让延迟发射在存读档后继续执行。
+        //保存和读取发射队列，让延迟发射在存读档后继续执行。
         public override void ExposeData()
         {
             base.ExposeData();
@@ -37,7 +37,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 入队多发投射物，负责把技能配置转换为地图上的待发射任务。
+        //把技能配置转换为地图上的待发射任务。
         public static void Queue(Pawn caster, LocalTargetInfo target, CompProperties_AbilityMultiShotProjectile props, bool preventFriendlyFire, SoundDef repeatedShotSound)
         {
             if (caster?.Map == null || props == null)
@@ -93,7 +93,7 @@ namespace BANWlLib.BattleSystem
             component.FireDueProjectiles(currentTick);
         }
 
-        // 维持施法者锁定，负责让延迟连射剩余子弹存在时小人不能移动并保持瞄准。
+        //维持施法者锁定，让延迟连射剩余子弹存在时小人不能移动并保持瞄准。
         private void MaintainCasterLocks(int currentTick)
         {
             if (pendingProjectiles.NullOrEmpty())
@@ -115,7 +115,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 查询施法者是否还有待发射子弹，负责让原版 JobDriver 等待同一轮延迟连射结束。
+        //查询施法者是否还有待发射子弹，让原版 JobDriver 等待同一轮延迟连射结束。
         public bool HasPendingForCaster(Pawn caster)
         {
             if (caster == null || pendingProjectiles.NullOrEmpty())
@@ -134,7 +134,7 @@ namespace BANWlLib.BattleSystem
             return false;
         }
 
-        //触发到期投射物，负责安全移除已处理任务并统一清理被取消的发射序列。
+        //触发到期投射物，安全移除已处理任务并统一清理被取消的发射序列。
         private void FireDueProjectiles(int currentTick)
         {
             if (pendingProjectiles.NullOrEmpty())
@@ -171,7 +171,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 移除同一次施法的剩余投射物，负责在站桩连射被打断时清理后续子弹。
+        //移除同一次施法的剩余投射物，在站桩连射被打断时清理后续子弹。
         private void RemoveSequence(int sequenceId)
         {
             for (int i = pendingProjectiles.Count - 1; i >= 0; i--)
@@ -184,7 +184,7 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 延迟子弹处理结果，负责告诉地图队列是否继续保留同一轮后续子弹。
+    //延迟子弹处理结果，告诉地图队列是否继续保留同一轮后续子弹。
     public enum PendingMultiShotProjectileResult
     {
         Fired,
@@ -192,7 +192,7 @@ namespace BANWlLib.BattleSystem
         CancelSequence
     }
 
-    // 待发射多发投射物，负责保存单发延迟子弹的施法者、目标和发射参数。
+    //待发射多发投射物，保存单发延迟子弹的施法者、目标和发射参数。
     public class PendingMultiShotProjectile : IExposable
     {
         public int sequenceId;
@@ -214,7 +214,7 @@ namespace BANWlLib.BattleSystem
         public bool preventFriendlyFire;
         public SoundDef shotSoundDef;
 
-        // 维持施法者锁定，负责在延迟发射等待期间停止移动并刷新主武器瞄准姿态。
+        //维持施法者锁定，在延迟发射等待期间停止移动并刷新主武器瞄准姿态。
         public void MaintainCasterLock()
         {
             if (caster == null || caster.Map == null || !caster.Spawned)
@@ -245,7 +245,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 发射子弹，负责按目标当前状态生成原版 Projectile 并交给现有 BA 投射物链路处理。
+        //发射子弹，按目标当前状态生成原版 Projectile 并交给现有 BA 投射物链路处理。
         public PendingMultiShotProjectileResult Fire()
         {
             if (caster == null || caster.Map == null || !caster.Spawned)
@@ -288,7 +288,7 @@ namespace BANWlLib.BattleSystem
             return PendingMultiShotProjectileResult.Fired;
         }
 
-        // 检查施法者状态，负责决定站桩连射是否还能继续。
+        //检查施法者状态，决定站桩连射是否还能继续。
         private bool CanCasterContinue()
         {
             if (cancelWhenCasterMoved && casterStartCell.IsValid && caster.Position != casterStartCell)
@@ -321,7 +321,7 @@ namespace BANWlLib.BattleSystem
                 && caster.health.capacities.CapableOf(PawnCapacityDefOf.Consciousness);
         }
 
-        // 解析本发目标，负责让 Pawn 目标按当前所在位置发射，非 Pawn 目标按施法时格子发射。
+        //解析本发目标，让 Pawn 目标按当前所在位置发射，非 Pawn 目标按施法时格子发射。
         private LocalTargetInfo ResolveFireTarget(Map casterMap)
         {
             if (targetPawn != null)
@@ -347,7 +347,7 @@ namespace BANWlLib.BattleSystem
             return LocalTargetInfo.Invalid;
         }
 
-        // 注册本技能的投射物战斗参数，负责让友军和己方建筑命中开关能按技能配置覆盖。
+        //注册本技能的投射物战斗参数，让友军和己方建筑命中开关能按技能配置覆盖。
         private void RegisterBattleContext(Projectile projectile)
         {
             BattleProjectileExtension extension = projectileDef.GetModExtension<BattleProjectileExtension>();
@@ -380,7 +380,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 保存和读取待发射任务，负责支持延迟发射期间存读档。
+        //保存和读取待发射任务，支持延迟发射期间存读档。
         public void ExposeData()
         {
             Scribe_Values.Look(ref sequenceId, "sequenceId", 0);

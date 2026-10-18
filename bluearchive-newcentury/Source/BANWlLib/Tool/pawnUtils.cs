@@ -13,12 +13,12 @@ using Verse;
 
 namespace BANWlLib.Tool
 {
-    // Pawn 学生数据工具，负责读写学生等级、保存数据和运行时学生名册。
+    //Pawn 学生数据工具，读写学生等级、保存数据和运行时学生名册。
     public static class pawnUtils
     {
         private static HediffDef hediffDef;
 
-        // 获取学生当前等级，负责从等级 Hediff 的阶段换算显示等级。
+        //从等级 Hediff 的阶段换算显示等级。
         public static int getStudentLv(Pawn pawn)
         {
             int a = -1;
@@ -34,7 +34,7 @@ namespace BANWlLib.Tool
             return a;
         }
 
-        // 判断学生是否可按健康状态召回，负责忽略学生等级、星级这类养成显示状态。
+        //判断学生是否可按健康状态召回，忽略学生等级、星级这类养成显示状态。
         public static bool IsAtFullHealth_IgnoreBenign(Pawn pawn)
         {
             if (pawn == null || pawn.health == null || pawn.health.hediffSet == null)
@@ -44,7 +44,7 @@ namespace BANWlLib.Tool
             return pawn.health.hediffSet.hediffs.All(IsRecallAllowedHediff);
         }
 
-        // 判断单个 Hediff 是否允许召回，负责把养成状态和非负面状态排除在异常健康之外。
+        //判断单个 Hediff 是否允许召回，把养成状态和非负面状态排除在异常健康之外。
         private static bool IsRecallAllowedHediff(Hediff hediff)
         {
             if (hediff?.def == null)
@@ -63,7 +63,7 @@ namespace BANWlLib.Tool
                    defName == "BANW_StarGrowthDisplayStatus";
         }
 
-        //保存学生养成数据，负责记录等级严重度、等级、额外经验和技能等级，不覆盖已保存星级。
+        //保存学生养成数据，记录等级严重度、等级、额外经验和技能等级，不覆盖已保存星级。
         public static void setStudentSave(Pawn __instance, ManualDataGameComp tracker)
         {
             if (__instance == null || tracker?.studentSaves == null)
@@ -97,7 +97,7 @@ namespace BANWlLib.Tool
             }
         }
 
-        // 获取学生等级严重度，负责保存等级经验进度。
+        //保存等级经验进度。
         public static float getStudentLvSeverity(Pawn pawn)
         {
             float a = -1;
@@ -113,7 +113,7 @@ namespace BANWlLib.Tool
             return a;
         }
 
-        // 设置学生等级严重度，负责在重新出击时恢复等级经验进度。
+        //在重新出击时恢复等级经验进度。
         public static void SetStudentLv(Pawn pawn,float value)
         {
             if (hediffDef == null)
@@ -127,7 +127,7 @@ namespace BANWlLib.Tool
             }
         }
 
-        // 获取 Pawn 对应的学生数据，负责通过当前名册定位 UI 学生定义。
+        //获取 Pawn 对应的学生数据，通过当前名册定位 UI 学生定义。
         public static StudentData PawnGetStudentData(Pawn pawn) {
             ManualDataGameComp tracker = StudentRosterUtility.GetTracker();
             return StudentRosterUtility.GetStudentData(tracker, StudentIdentityUtility.GetStudentId(pawn));

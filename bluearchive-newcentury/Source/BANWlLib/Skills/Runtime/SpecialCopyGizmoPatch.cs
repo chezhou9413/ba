@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //复制技能按钮补丁，负责为目标本体显示独立的一次性EX按钮。
+    //复制技能按钮补丁，为目标本体显示独立的一次性EX按钮。
     [HarmonyPatch(typeof(Ability), nameof(Ability.GetGizmos))]
     public static class SpecialCopyGizmoPatch
     {

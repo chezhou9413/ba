@@ -3,7 +3,7 @@ using BANWlLib.Projectiles;
 
 namespace BANWlLib.Skills
 {
-    //特殊技能实体弹丸，负责保存独立数值上下文并在实际命中时调用统一结算。
+    //特殊技能实体弹丸，保存独立数值上下文并在实际命中时调用统一结算。
     public class Projectile_SpecialSkill : Projectile
     {
         public SpecialPendingAttack attack;

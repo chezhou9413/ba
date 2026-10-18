@@ -1,14 +1,35 @@
-﻿using BANWlLib.BANWGamecomp;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using BANWlLib.BANWGamecomp;
 using BANWlLib.DamageFontSystem.Setting;
 using BANWlLib.uicreater.tool;
+#if RW_1_7
+using RimUnity.Tweening;
+#else
 using DG.Tweening;
+#endif
 using MyCoolMusicMod.MyCoolMusicMod;
 using newpro;
 using System.Collections;
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
+#if RW_1_7
+using RimUnity.Video;
+#else
 using UnityEngine.Video;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
@@ -23,7 +44,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         public GameObject Clip35;
         public GameObject Clip55;
 
-        // 新增：视频相关
+        //视频组件。
         public GameObject Clip1;
         public VideoPlayer videoPlayer;
 
@@ -32,8 +53,10 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         private float doubleClickThreshold = 0.3f;
         private bool videoSkipped = false;
         private Tween delayedCallTween;
+        private Sequence flashSequence;
+        private Sequence resultTransitionSequence;
 
-        // ========== 预缓存引用 ==========
+        //缓存组件引用。
         private GameObject redStart;
         private GameObject blueStart;
         private GameObject redLoop;
@@ -53,7 +76,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         void Start()
         {
             Gamecomp_gakaAction gamecomp = Current.Game.GetComponent<Gamecomp_gakaAction>();
-            this.transform.Find("Clip55/poit/poit_cont").gameObject.GetComponent<UnityEngine.UI.Text>().text = gamecomp.gacaPoit.ToString();
+            this.transform.Find("Clip55/poit/poit_cont").gameObject.GetComponent<Engine.UI.Text>().text = gamecomp.gacaPoit.ToString();
             Flash2 = this.transform.Find("Clip25").GetComponent<Image>();
             clip2 = this.transform.Find("Clip2").gameObject;
             Card = this.transform.Find("Clip2/Card").GetComponent<Image>();
@@ -61,17 +84,17 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             Clip35 = this.transform.Find("Clip35").gameObject;
             Clip55 = this.transform.Find("Clip55").gameObject;
             showEnd.interactable = false;
-            // 新增：获取 Clip1 和 VideoPlayer
+            //获取 Clip1 和 VideoPlayer。
             Clip1 = this.transform.Find("Clip1").gameObject;
             videoPlayer = Clip1.GetComponent<VideoPlayer>();
 
-            // ========== 预缓存所有子对象引用 ==========
+            //缓存子对象引用。
             CacheChildReferences();
 
-            // ========== 预热 GameObject ==========
+            //预热 GameObject。
             PrewarmGameObjects();
 
-            // ========== 预加载卡面纹理 ==========
+            //预加载卡面纹理。
             PreloadSprites();
 
             Button tryAgainBtn = Clip55.transform.Find("TryAgainButtom").GetComponent<Button>();
@@ -85,7 +108,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
 
             if (!canAfford)
             {
-                var btnText = tryAgainBtn.GetComponentInChildren<UnityEngine.UI.Text>();
+                var btnText = tryAgainBtn.GetComponentInChildren<Engine.UI.Text>();
                 if (btnText != null)
                 {
                     btnText.text = $"青辉石不足 ({current}/{cost})";
@@ -249,31 +272,30 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             OnVideoEnd();
         }
 
+        //白幕完全遮住画面后再切换，使用同一动画时钟决定交接点。
         private void OnVideoEnd()
         {
             videoSkipped = true;
-
-            PlayFlashEffect(Flash2, 2f, 1f);
-            DOVirtual.DelayedCall(2f, () =>
-            {
-                // 用协程分帧激活 clip2 及其子对象，避免同一帧堆积过多操作
-                StartCoroutine(ActivateClip2AndSetup());
-            });
+            FadeToWhite(Flash2, 2f).OnComplete(() => StartCoroutine(ActivateClip2AndSetup()));
         }
 
-        /// <summary>
-        /// 分帧激活 clip2，但保持与原始代码完全一致的 DelayedCall 时序
-        /// </summary>
+        //分帧激活卡片场景，闪光覆盖完成后释放开场视频。
         private IEnumerator ActivateClip2AndSetup()
         {
-            // 第1帧：激活 clip2
+            //先激活下一幕，白幕在布局准备期间保持完全不透明。
             Card.transform.localScale = Vector3.one * 1.5f;
             Card.transform.localRotation = Quaternion.Euler(0, 0, -10);
             clip2.SetActive(true);
             Card.gameObject.SetActive(false);
             showEnd.gameObject.SetActive(false);
 
-            yield return null; // 等 clip2 的 Canvas rebuild 完成
+            yield return null; //等待下一幕完成首帧布局。
+
+#if RW_1_7
+            videoPlayer.Stop();
+            Clip1.SetActive(false);
+#endif
+            FadeOutFlash(Flash2, 1f);
 
             // 第2帧：激活循环粒子
             if (DamageFontMod.settings.enableBurstParticle)
@@ -339,8 +361,8 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 cardSeq.Append(Card.transform.DOLocalRotate(new Vector3(0, 90, 0), flipSpeed).SetEase(Ease.Linear));
                 cardSeq.AppendCallback(() =>
                 {
-                    PlayFlashEffect(Flash2, 0.5f, 0.3f);
-                    DOVirtual.DelayedCall(0.5f, () => clip2.SetActive(false));
+                    //保持白幕到下一幕就绪，不在两次闪光之间提前淡出。
+                    FadeToWhite(Flash2, 0.5f);
                     Card.sprite = GakaMapData.cardFan;
                     Card.transform.localRotation = Quaternion.Euler(0, -90, 0);
                 });
@@ -349,32 +371,12 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 cardSeq.Join(Card.transform.DOLocalMoveY(-700f, flipSpeed).SetEase(Ease.OutCubic));
                 cardSeq.AppendCallback(() =>
                 {
+                    //低帧率可能跨过淡入时段，换景前明确保持白幕全不透明。
+                    SetAlpha(Flash2, 1f);
                     Clip35.SetActive(true);
-                    if (GakaMapData.isP3)
-                    {
-                        if (redShow != null) redShow.SetActive(true);
-                    }
-                    else
-                    {
-                        if (blueShow != null) blueShow.SetActive(true);
-                    }
-                    if (!GakaMapData.tenGacha)
-                    {
-                        GameObject gameObject = Instantiate(GakaMapData.showGaList);
-                        gameObject.transform.SetParent(danTransform, false);
-                        MonoComp_CardshowList monoComp_CardshowList = gameObject.AddComponent<MonoComp_CardshowList>();
-                        monoComp_CardshowList.gacaData = GakaMapData.gacaDatas[0];
-                        GameObject resObj = Instantiate(GakaMapData.ResultList);
-                        resObj.transform.SetParent(danTransform55, false);
-                        MonoComp_ResultListShow monoComp_ResultListShow = resObj.AddComponent<MonoComp_ResultListShow>();
-                        monoComp_ResultListShow.gacaData = GakaMapData.gacaDatas[0];
-                    }
-                    else if (GakaMapData.tenGacha)
-                    {
-                        StartCoroutine(CreateCardsWithDelay());
-                    }
-                    PlayFlashEffect(Flash2, 1f, 0.5f);
-                    StartCoroutine(showResult());
+                    clip2.SetActive(false);
+                    //只让底板承接白幕，退场后才启动可见动画。
+                    FadeOutFlash(Flash2, 0.15f, BeginCardReveal);
                 });
             });
             DOVirtual.DelayedCall(0.5f, () =>
@@ -397,6 +399,36 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             });
         }
 
+        //白幕消失后再启动粒子和卡片入场，展示时长从实际可见时开始计算。
+        private void BeginCardReveal()
+        {
+            if (GakaMapData.isP3)
+            {
+                if (redShow != null) redShow.SetActive(true);
+            }
+            else
+            {
+                if (blueShow != null) blueShow.SetActive(true);
+            }
+            if (!GakaMapData.tenGacha)
+            {
+                GameObject gameObject = Instantiate(GakaMapData.showGaList);
+                gameObject.transform.SetParent(danTransform, false);
+                MonoComp_CardshowList cardShow = gameObject.AddComponent<MonoComp_CardshowList>();
+                cardShow.gacaData = GakaMapData.gacaDatas[0];
+                GameObject result = Instantiate(GakaMapData.ResultList);
+                result.transform.SetParent(danTransform55, false);
+                MonoComp_ResultListShow resultShow = result.AddComponent<MonoComp_ResultListShow>();
+                resultShow.gacaData = GakaMapData.gacaDatas[0];
+            }
+            else
+            {
+                StartCoroutine(CreateCardsWithDelay());
+            }
+            StartCoroutine(showResult());
+        }
+
+        //十连卡片按原有间隔入场，结果卡片分帧创建。
         IEnumerator CreateCardsWithDelay()
         {
             foreach (gacaData data in GakaMapData.gacaDatas)
@@ -419,40 +451,46 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
         }
 
+        //结果页在白幕峰值切入，黑色淡出层独立于即将销毁的上一幕。
         IEnumerator showResult()
         {
             yield return new WaitForSeconds(2f);
-            if (clip45Image != null)
+            clip45Image.transform.SetParent(transform, false);
+            PlayWhiteInBlackOut(clip45Image, 0.5f, 0.4f, () =>
             {
-                PlayWhiteInBlackOut(clip45Image, 0.5f, 0.4f);
-            }
-            yield return new WaitForSeconds(0.6f);
-            Destroy(Clip35);
-            Clip55.gameObject.SetActive(true);
+                Clip55.SetActive(true);
+                Destroy(Clip35);
+            });
         }
 
-        public void PlayFlashEffect(Image image, float flashInDuration, float fadeOutDuration)
+        //替换根序列并保留当前透明度，让连续白幕从上一段自然接续。
+        private Sequence FadeToWhite(Image image, float duration)
         {
-            if (image == null) return;
-            image.DOKill();
-            Color tempColor = image.color;
-            tempColor.a = 0f;
-            image.color = tempColor;
+            flashSequence?.Kill();
             image.gameObject.SetActive(true);
-            Sequence seq = DOTween.Sequence();
-            seq.Append(image.DOFade(1f, flashInDuration).SetEase(Ease.OutQuad));
-            seq.Append(image.DOFade(0f, fadeOutDuration).SetEase(Ease.InQuad))
-               .OnComplete(() =>
-               {
-                   image.gameObject.SetActive(false);
-               });
+            flashSequence = DOTween.Sequence().SetLink(gameObject, LinkBehaviour.KillOnDisable);
+            flashSequence.Append(image.DOFade(1f, duration).SetEase(Ease.OutQuad));
+            return flashSequence;
         }
 
-        public void PlayWhiteInBlackOut(Image image, float fadeInDuration, float fadeOutDuration)
+        //白幕完全退场后再通知调用方启动需要完整展示的动画。
+        private void FadeOutFlash(Image image, float duration, System.Action onRevealed = null)
+        {
+            flashSequence?.Kill();
+            flashSequence = DOTween.Sequence().SetLink(gameObject, LinkBehaviour.KillOnDisable);
+            flashSequence.Append(image.DOFade(0f, duration).SetEase(Ease.InQuad));
+            flashSequence.OnComplete(() =>
+            {
+                image.gameObject.SetActive(false);
+                onRevealed?.Invoke();
+            });
+        }
+
+        //在白幕完全遮挡时交接页面，再以独立黑幕淡出。
+        public void PlayWhiteInBlackOut(Image image, float fadeInDuration, float fadeOutDuration, System.Action switchScene)
         {
             if (image == null) return;
-
-            image.DOKill();
+            resultTransitionSequence?.Kill();
 
             Color tempColor = Color.white;
             tempColor.a = 0f;
@@ -460,12 +498,14 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
 
             image.gameObject.SetActive(true);
 
-            Sequence seq = DOTween.Sequence();
+            Sequence seq = DOTween.Sequence().SetLink(gameObject, LinkBehaviour.KillOnDisable);
+            resultTransitionSequence = seq;
 
             seq.Append(image.DOFade(1f, fadeInDuration).SetEase(Ease.OutQuad));
 
             seq.AppendCallback(() =>
             {
+                switchScene();
                 image.color = Color.black;
                 image.transform.SetAsLastSibling();
             });
@@ -477,6 +517,15 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                });
         }
 
+        //界面关闭时取消仍持有该界面的白幕序列和开场计时。
+        private void OnDestroy()
+        {
+            delayedCallTween?.Kill();
+            flashSequence?.Kill();
+            resultTransitionSequence?.Kill();
+        }
+
+        //设置初始透明度，不启动补间。
         private void SetAlpha(Image img, float alpha)
         {
             if (img != null)

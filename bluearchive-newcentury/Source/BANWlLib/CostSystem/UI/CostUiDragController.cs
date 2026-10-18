@@ -1,13 +1,30 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System;
 using BANWlLib.DamageFontSystem.Comp;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.EventSystems;
+#else
 using UnityEngine.EventSystems;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //COST轮盘拖动控制器负责接收鼠标拖动、保存相对入口按钮的位置并执行位置复位。
+    //COST轮盘拖动控制器接收鼠标拖动、保存相对入口按钮的位置并执行位置复位。
     public sealed class CostUiDragController : MonoBehaviour,
         IPointerDownHandler,
         IPointerUpHandler,
@@ -169,7 +186,9 @@ namespace BANWlLib.CostSystem
                 surfaceObject = new GameObject(
                     surfaceName,
                     typeof(RectTransform),
+#if !RW_1_7
                     typeof(CanvasRenderer),
+#endif
                     typeof(Image));
                 surfaceObject.transform.SetParent(hitArea, false);
             }

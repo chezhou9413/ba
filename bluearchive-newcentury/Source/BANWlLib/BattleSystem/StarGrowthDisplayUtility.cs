@@ -4,10 +4,10 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 星级成长显示工具，负责生成当前星级带来的总成长说明并清理旧的独立显示状态。
+    //星级成长显示工具，生成当前星级带来的总成长说明并清理旧的独立显示状态。
     public static class StarGrowthDisplayUtility
     {
-        // 清理旧版星级成长显示状态，负责让成长信息只显示在学生星级 Hediff 里面。
+        //清理旧版星级成长显示状态，让成长信息只显示在学生星级 Hediff 里面。
         public static void EnsureDisplayHediff(Pawn pawn)
         {
             if (pawn?.health?.hediffSet == null || HediffDefOf.BANW_StarGrowthDisplayStatus == null)
@@ -22,7 +22,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 判断是否需要显示星级成长状态，负责避免没有成长配置的 Pawn 出现空状态。
+        //判断是否需要显示星级成长状态，避免没有成长配置的 Pawn 出现空状态。
         public static bool ShouldDisplay(Pawn pawn)
         {
             if (pawn == null)
@@ -36,7 +36,7 @@ namespace BANWlLib.BattleSystem
                    BattleStatUtility.GetRankHealPercent(pawn) != 0f;
         }
 
-        // 构建健康状态悬浮说明，负责向玩家展示当前星级已经生效的总成长加成。
+        //构建健康状态悬浮说明，向玩家展示当前星级已经生效的总成长加成。
         public static string BuildTooltip(Pawn pawn)
         {
             if (pawn == null || !ShouldDisplay(pawn))
@@ -53,7 +53,7 @@ namespace BANWlLib.BattleSystem
             return builder.ToString().TrimEnd();
         }
 
-        // 追加非零固定加成行，负责让悬浮文本只显示真实生效的总固定值。
+        //追加非零固定加成行，让悬浮文本只显示真实生效的总固定值。
         private static void AppendNonZeroLine(StringBuilder builder, string label, float value)
         {
             if (value == 0f)
@@ -64,7 +64,7 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("• " + label + "：" + FormatSignedNumber(value));
         }
 
-        // 追加非零百分比加成行，负责让悬浮文本只显示真实生效的总百分比。
+        //追加非零百分比加成行，让悬浮文本只显示真实生效的总百分比。
         private static void AppendNonZeroPercentLine(StringBuilder builder, string label, float value)
         {
             if (value == 0f)
@@ -75,13 +75,13 @@ namespace BANWlLib.BattleSystem
             builder.AppendLine("• " + label + "：" + FormatSignedPercent(value));
         }
 
-        // 格式化带符号普通数值，负责让正负固定加成显示清晰。
+        //格式化带符号普通数值，让正负固定加成显示清晰。
         private static string FormatSignedNumber(float value)
         {
             return value.ToString("+#,0.#;-#,0.#;0", CultureInfo.InvariantCulture);
         }
 
-        // 格式化带符号百分比数值，负责把 0.2 显示为 +20%。
+        //把 0.2 显示为 +20%。
         private static string FormatSignedPercent(float value)
         {
             return value.ToString("+#,0%;-#,0%;0%", CultureInfo.InvariantCulture);

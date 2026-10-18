@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //若藻技能，负责单体连射、伤害附加敌方标记和BA蓄积爆发。
+    //若藻技能，单体连射、伤害附加敌方标记和BA蓄积爆发。
     public static class WakamoSkills
     {
         //开始独立施法批次，任一子弹首次造成实际伤害时建立标记。

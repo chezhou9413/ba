@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.mainUI;
 using BANWlLib.CostSystem;
 using BANWlLib.mainUI.Gaka;
@@ -9,21 +13,34 @@ using newpro;
 using RimWorld;
 using System.IO;
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.EventSystems;
+#else
 using UnityEngine.EventSystems;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib
 {
-    //主界面Spine引用表负责保存昼夜角色展示对象。
+    //主界面Spine引用表保存昼夜角色展示对象。
     public static class spineref
     {
         public static GameObject daySpine;
         public static GameObject nightSpine;
     }
 
-    //主界面入口负责加载资源包、创建独立界面并协调各页面开关。
+    //主界面入口加载资源包、创建独立界面并协调各页面开关。
     public static partial class UICoreStart
     {
         //检查拖动、任务和老师条件后决定是否允许打开什亭之匣。
@@ -208,7 +225,7 @@ namespace BANWlLib
         }
     }
 
-    //Mod 入口负责在 RimWorld 创建模组对象时安装轻量补丁，并记录全局资源根路径。
+    //Mod 入口在 RimWorld 创建模组对象时安装轻量补丁，并记录全局资源根路径。
     public class newpro : Mod
     {
         //构造函数只执行轻量初始化，避免在游戏启动初始化阶段加载 UI 音频或贴图资源。

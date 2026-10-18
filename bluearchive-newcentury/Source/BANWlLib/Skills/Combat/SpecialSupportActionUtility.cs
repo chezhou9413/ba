@@ -3,10 +3,10 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //支援动作职责：执行特殊技能中的治疗、护盾和附加状态，避免重复播放命中特效。
+    //执行特殊技能中的治疗、护盾和附加状态，避免重复播放命中特效。
     public static class SpecialSupportActionUtility
     {
-        //执行职责：分摊治疗倍率，护盾按每次授予值结算，限时增益刷新到期时间。
+        //分摊治疗倍率，护盾按每次授予值结算，限时增益刷新到期时间。
         public static void Apply(SpecialPendingAttack attack, Thing target)
         {
             SpecialAttackConfig source = attack.action;

@@ -6,27 +6,27 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 战斗公式调试工具，负责统一输出伤害与治疗的预估公式、最终结算和实际生效值。
+    //战斗公式调试工具，统一输出伤害与治疗的预估公式、最终结算和实际生效值。
     public static class BattleFormulaDebugUtility
     {
         private static int nextTraceId = 1;
         private static bool enabled;
         private static readonly Dictionary<int, Queue<PendingDamageLog>> pendingDamageLogsByTargetId = new Dictionary<int, Queue<PendingDamageLog>>();
 
-        // 设置公式调试开关，负责让开发者按需开启或关闭详细日志。
+        //设置公式调试开关，让开发者按需开启或关闭详细日志。
         public static void SetEnabled(bool value)
         {
             enabled = value;
             Log.Message("[BANW公式] 调试日志已" + (enabled ? "开启" : "关闭") + "。");
         }
 
-        // 获取公式调试开关状态，负责给调试入口显示当前状态。
+        //获取公式调试开关状态，给调试入口显示当前状态。
         public static bool IsEnabled()
         {
             return enabled;
         }
 
-        // 记录统一伤害预估，负责在真正受伤前输出完整公式并登记待完成日志。
+        //在真正受伤前输出完整公式并登记待完成日志。
         public static void LogDamagePreview(BattleDamageRequest request, BattleDamageResult result)
         {
             if (!enabled || request?.target == null || result == null)
@@ -104,7 +104,7 @@ namespace BANWlLib.BattleSystem
                 + "；暴击伤害(扣抵抗后)=" + FormatNumber(critDamage));
         }
 
-        // 解析普通攻击倍率日志值，负责让调试输出和真实结算保持同一口径。
+        //解析普通攻击倍率日志值，让调试输出和真实结算保持同一口径。
         private static float ResolveNormalAttackMultiplier(BattleDamageRequest request, Pawn casterPawn)
         {
             if (request?.snapshot != null)
@@ -115,7 +115,7 @@ namespace BANWlLib.BattleSystem
             return BattleStatUtility.GetNormalAttackMultiplier(casterPawn);
         }
 
-        // 记录统一伤害实际结果，负责在真正受伤后补上 DamageInfo 和最终生效值。
+        //在真正受伤后补上 DamageInfo 和最终生效值。
         public static void LogDamageActual(Thing target, DamageInfo dinfo, float actualDamage)
         {
             if (!enabled || target == null)
@@ -137,7 +137,7 @@ namespace BANWlLib.BattleSystem
                 + "，实际生效伤害=" + FormatNumber(actualDamage));
         }
 
-        // 记录统一治疗公式，负责输出治愈力、受回复率、最终治疗量和实际恢复量。
+        //输出治愈力、受回复率、最终治疗量和实际恢复量。
         public static void LogHealing(BattleHealRequest request, BattleHealResult result)
         {
             if (!enabled || request?.target == null || result == null)
@@ -181,7 +181,7 @@ namespace BANWlLib.BattleSystem
                 + "；实际恢复量=" + FormatNumber(result.actualHealedAmount));
         }
 
-        // 记录受伤链细分过程，负责输出命中部位、护甲后伤害与承伤系数后的最终伤害。
+        //输出命中部位、护甲后伤害与承伤系数后的最终伤害。
         public static void LogDamagePipeline(Pawn target, DamageInfo dinfo, BodyPartRecord hitPart, float beforeArmor, float afterArmor, float incomingDamageFactor, float afterIncomingDamageFactor, bool deflectedByMetalArmor)
         {
             if (!enabled || target == null)
@@ -199,7 +199,7 @@ namespace BANWlLib.BattleSystem
                 + "，DamageDef=" + (dinfo.Def?.defName ?? "空"));
         }
 
-        // 清理目标残留的伤害调试记录，负责防止异常中断后旧日志串到下一次伤害。
+        //清理目标残留的伤害调试记录，防止异常中断后旧日志串到下一次伤害。
         public static void ClearPendingDamage(Thing target)
         {
             if (target == null)
@@ -210,7 +210,7 @@ namespace BANWlLib.BattleSystem
             pendingDamageLogsByTargetId.Remove(target.thingIDNumber);
         }
 
-        // 解析本次伤害使用的武器基础攻击，负责让调试输出与正式结算保持一致。
+        //解析本次伤害使用的武器基础攻击，让调试输出与正式结算保持一致。
         private static float ResolveWeaponBaseAttack(BattleDamageRequest request, Pawn casterPawn)
         {
             if (request == null)
@@ -226,21 +226,21 @@ namespace BANWlLib.BattleSystem
             return BattleStatUtility.GetWeaponBaseAttack(casterPawn);
         }
 
-        // 解析最终暴击率，负责把目标暴击抵抗减算后的值输出到日志。
+        //把目标暴击抵抗减算后的值输出到日志。
         private static float ResolveCritChance(Pawn casterPawn, Pawn targetPawn, BattleCasterSnapshot snapshot)
         {
             float critChance = snapshot != null ? snapshot.criticalChance : casterPawn?.GetStatValue(BattleStatDefOf.BANW_CriticalChance) ?? 0f;
             return Mathf.Clamp01(critChance - BattleStatUtility.GetCriticalChanceResistance(targetPawn));
         }
 
-        // 解析最终暴击伤害，负责把目标暴击伤害抵抗减算后的值输出到日志。
+        //把目标暴击伤害抵抗减算后的值输出到日志。
         private static float ResolveCritDamage(Pawn casterPawn, Pawn targetPawn, BattleCasterSnapshot snapshot)
         {
             float critDamage = snapshot != null ? snapshot.criticalDamage : casterPawn?.GetStatValue(BattleStatDefOf.BANW_CriticalDamage) ?? 2f;
             return Mathf.Max(1f, critDamage - BattleStatUtility.GetCriticalDamageResistance(targetPawn));
         }
 
-        // 缓存待完成伤害日志，负责把预估日志与实际伤害回调关联起来。
+        //把预估日志与实际伤害回调关联起来。
         private static void EnqueuePendingDamageLog(Thing target, PendingDamageLog pending)
         {
             if (target == null || pending == null)
@@ -258,7 +258,7 @@ namespace BANWlLib.BattleSystem
             queue.Enqueue(pending);
         }
 
-        // 取出待完成伤害日志，负责按伤害实际落地顺序补全日志。
+        //按伤害实际落地顺序补全日志。
         private static PendingDamageLog DequeuePendingDamageLog(Thing target)
         {
             if (target == null)
@@ -281,19 +281,19 @@ namespace BANWlLib.BattleSystem
             return pending;
         }
 
-        // 格式化普通数值，负责让日志长度可读且保留关键小数位。
+        //格式化普通数值，让日志长度可读且保留关键小数位。
         private static string FormatNumber(float value)
         {
             return value.ToString("0.###");
         }
 
-        // 格式化百分比，负责把暴击率这类概率输出成人类可读文本。
+        //把暴击率这类概率输出成人类可读文本。
         private static string FormatPercent(float value)
         {
             return value.ToString("P1");
         }
 
-        // 待完成伤害日志，负责把预估阶段的核心数据带到实际伤害回调。
+        //待完成伤害日志，把预估阶段的核心数据带到实际伤害回调。
         private class PendingDamageLog
         {
             public int traceId;

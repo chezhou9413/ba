@@ -1,17 +1,26 @@
-﻿using BANWlLib.DamageFontSystem.Comp;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using BANWlLib.DamageFontSystem.Comp;
 using BANWlLib.CostSystem;
 using newpro;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 
 namespace BANWlLib.DamageFontSystem.Setting
 {
-    //伤害字体设置入口负责注册设置页，并在模组对象创建时安装全局 Harmony 补丁。
+    //伤害字体设置入口注册设置页，并在模组对象创建时安装全局 Harmony 补丁。
     public class DamageFontMod : Mod
     {
         public static DamageFontSettings settings;
 
-        //构造函数负责读取设置并触发轻量补丁安装，避免依赖其他 Mod 入口的实例化顺序。
+        //构造函数读取设置并触发轻量补丁安装，避免依赖其他 Mod 入口的实例化顺序。
         public DamageFontMod(ModContentPack content) : base(content)
         {
             BANWlLib.ModMain.ApplyHarmonyPatches();
@@ -19,7 +28,7 @@ namespace BANWlLib.DamageFontSystem.Setting
         }
 
         //绘制伤害字体、入口位置和COST轮盘位置设置。
-        public override void DoSettingsWindowContents(Rect inRect)
+        public override void DoSettingsWindowContents(global::UnityEngine.Rect inRect)
         {
             Listing_Standard list = new Listing_Standard();
             list.Begin(inRect);

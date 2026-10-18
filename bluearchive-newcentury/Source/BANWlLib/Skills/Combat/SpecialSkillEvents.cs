@@ -7,7 +7,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //技能公共事件入口，负责发布施法成功和已结算伤害并通知角色机制。
+    //技能公共事件入口，发布施法成功和已结算伤害并通知角色机制。
     public static class SpecialSkillEvents
     {
         public static event Action<Ability> AbilityActivated;

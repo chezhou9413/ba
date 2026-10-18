@@ -11,9 +11,7 @@ using Verse;
 
 namespace BANWlLib.Tool
 {
-    /// <summary>
-    /// 学生名册工具，负责读取学生存档数据并维护学生 Pawn 的运行时引用。
-    /// </summary>
+    //学生名册工具，读取学生存档数据并维护学生 Pawn 的运行时引用。
     public static class StudentRosterUtility
     {
         public static ManualDataGameComp GetTracker()
@@ -53,7 +51,7 @@ namespace BANWlLib.Tool
             return GetStudentData(tracker, defName) != null;
         }
 
-        //判断当前 Pawn 是否是已拥有且仍然存活的学生，负责给任务和殖民者列表排除学生本体。
+        //判断当前 Pawn 是否是已拥有且仍然存活的学生，给任务和殖民者列表排除学生本体。
         public static bool IsStudentPawn(ManualDataGameComp tracker, Pawn pawn)
         {
             if (tracker?.HaveStudent == null || pawn == null || pawn.DestroyedOrNull() || pawn.Dead)
@@ -128,7 +126,7 @@ namespace BANWlLib.Tool
             }
         }
 
-        //绑定学生 Pawn，负责同步出击状态和当前等级缓存。
+        //绑定学生 Pawn，同步出击状态和当前等级缓存。
         public static void BindStudentPawn(StudentData studentData, Pawn pawn)
         {
             if (studentData == null)
@@ -149,7 +147,7 @@ namespace BANWlLib.Tool
             }
         }
 
-        //清除学生 Pawn 运行时引用，负责把学生恢复为未出击状态。
+        //清除学生 Pawn 运行时引用，把学生恢复为未出击状态。
         public static void ClearStudentPawn(StudentData studentData)
         {
             if (studentData == null)
@@ -161,7 +159,7 @@ namespace BANWlLib.Tool
             studentData.isGoing = false;
         }
 
-        //获取当前所有存活学生 Pawn，负责给任务选择界面过滤普通殖民者。
+        //获取当前所有存活学生 Pawn，给任务选择界面过滤普通殖民者。
         public static HashSet<Pawn> GetRuntimeStudentPawnSet(ManualDataGameComp tracker)
         {
             HashSet<Pawn> pawns = new HashSet<Pawn>();
@@ -181,7 +179,7 @@ namespace BANWlLib.Tool
             return pawns;
         }
 
-        //处理学生真正死亡后的名册状态，负责保留养成存档并移除已拥有和可出击状态。
+        //处理学生真正死亡后的名册状态，保留养成存档并移除已拥有和可出击状态。
         public static void MarkStudentDeadAndUnowned(Pawn pawn)
         {
             ManualDataGameComp tracker = GetTracker();
@@ -208,7 +206,7 @@ namespace BANWlLib.Tool
             RemoveDeadStudentFromMissionSelection(pawn, studentId);
         }
 
-        //清理任务编队中的死亡学生，负责防止旧编队绕过名册继续出击。
+        //清理任务编队中的死亡学生，防止旧编队绕过名册继续出击。
         private static void RemoveDeadStudentFromMissionSelection(Pawn pawn, string studentId)
         {
             GameComp_TaskQuest quest = Current.Game?.GetComponent<GameComp_TaskQuest>();
@@ -221,7 +219,7 @@ namespace BANWlLib.Tool
             quest.selectDataList?.RemoveAll(data => IsDeadStudentSelection(data, pawn, studentId));
         }
 
-        //判断任务选择数据是否指向死亡学生，负责同时处理 Pawn 引用和学生身份引用。
+        //判断任务选择数据是否指向死亡学生，同时处理 Pawn 引用和学生身份引用。
         private static bool IsDeadStudentSelection(selectData data, Pawn pawn, string studentId)
         {
             if (data == null)

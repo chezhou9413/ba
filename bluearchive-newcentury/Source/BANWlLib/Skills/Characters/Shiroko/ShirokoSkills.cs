@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //白子技能，负责无人机生命周期、武器发射追击、锁定连射和不死状态解除。
+    //白子技能，无人机生命周期、武器发射追击、锁定连射和不死状态解除。
     public static class ShirokoSkills
     {
         //安全消耗自身生命并启动或刷新跟随无人机。

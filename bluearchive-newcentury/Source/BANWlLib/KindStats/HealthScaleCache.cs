@@ -3,13 +3,13 @@ using Verse;
 
 namespace BANWlLib.KindStats
 {
-    // 生命倍率缓存，负责把 Pawn.HealthScale 的高频重复计算限制到每个 Pawn 每个游戏 tick 一次。
+    //生命倍率缓存，把 Pawn.HealthScale 的高频重复计算限制到每个 Pawn 每个游戏 tick 一次。
     public static class HealthScaleCache
     {
         private static readonly Dictionary<int, HealthScaleCacheEntry> CacheByPawnId = new Dictionary<int, HealthScaleCacheEntry>();
         private static int lastCleanupTick = -1;
 
-        // 获取生命倍率，负责在同 tick 命中缓存时直接返回上次完整计算结果。
+        //在同 tick 命中缓存时直接返回上次完整计算结果。
         public static float GetOrCalculate(Pawn pawn, float originalHealthScale)
         {
             if (pawn == null)
@@ -36,7 +36,7 @@ namespace BANWlLib.KindStats
             return value;
         }
 
-        // 清除单个 Pawn 的缓存，负责在星级等主动变化时立即重新计算。
+        //清除单个 Pawn 的缓存，在星级等主动变化时立即重新计算。
         public static void Invalidate(Pawn pawn)
         {
             if (pawn == null)
@@ -47,19 +47,19 @@ namespace BANWlLib.KindStats
             CacheByPawnId.Remove(pawn.thingIDNumber);
         }
 
-        // 清理全部缓存，负责在批量状态变化或地图切换后移除旧数据。
+        //在批量状态变化或地图切换后移除旧数据。
         public static void Clear()
         {
             CacheByPawnId.Clear();
         }
 
-        // 获取当前游戏 tick，负责在非游戏态下提供稳定缓存键。
+        //在非游戏态下提供稳定缓存键。
         private static int CurrentTick()
         {
             return Current.Game?.tickManager?.TicksGame ?? -1;
         }
 
-        // 清理旧缓存项，负责避免长时间游戏后字典保留已销毁 Pawn 的数据。
+        //清理旧缓存项，避免长时间游戏后字典保留已销毁 Pawn 的数据。
         private static void CleanupOldEntries(int tick)
         {
             if (tick < 0 || lastCleanupTick == tick || tick - lastCleanupTick < 2500)
@@ -93,7 +93,7 @@ namespace BANWlLib.KindStats
             }
         }
 
-        // 生命倍率缓存项，负责保存某个 Pawn 在某个 tick 的计算结果。
+        //生命倍率缓存项，保存某个 Pawn 在某个 tick 的计算结果。
         private class HealthScaleCacheEntry
         {
             public int tick;

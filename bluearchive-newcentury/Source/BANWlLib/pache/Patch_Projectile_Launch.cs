@@ -22,7 +22,6 @@ namespace BANWlLib
         {
             float a = 0f;
             if (pawn != null) {
-                // 1. 获取自定义的穿透属性
                 StatDef penetrationStat = StatDef.Named("BANW_RangedWeapon_Penetration");
                 if (penetrationStat == null)
                 {
@@ -30,10 +29,10 @@ namespace BANWlLib
                     return 0f;
                 }
 
-                // 2. 以 Pawn 的该项属性作为基础（可能来自特性、能力等）
+                //以 Pawn 属性作为基础护穿。
                 float penetrationBonus = pawn.GetStatValue(penetrationStat);
 
-                // 2.1 再叠加装备（已穿戴服装）在该属性上的数值
+                //叠加已穿戴服装的护穿。
                 // 正确获取穿戴追踪器应为 pawn.apparel，而不是通过 ParentHolder
                 Pawn_ApparelTracker apparelTracker = pawn.apparel;
                 if (apparelTracker != null)
@@ -106,13 +105,13 @@ namespace BANWlLib
                 __result += weaponDamageExplanation;
             }
 
-            // 举例：针对护甲穿透，修改说明文字
+            //补充护甲穿透说明。
             if (__instance.LabelCap.Contains("护甲穿透"))
             {
                 Pawn pawn = null;
                 if (optionalReq.HasThing && optionalReq.Thing != null)
                 {
-                    pawn = GetHolderPawn(optionalReq.Thing); // 你之前写的获取 Pawn 的方法
+                    pawn = GetHolderPawn(optionalReq.Thing);
                 }
 
                 if (pawn != null)
@@ -123,14 +122,14 @@ namespace BANWlLib
         }
     }
 
-    // 投射物护穿补丁，负责让技能弹安全读取基础护穿并叠加角色护穿属性。
+    //投射物护穿补丁，让技能弹安全读取基础护穿并叠加角色护穿属性。
     [HarmonyPatch(typeof(Projectile), "get_ArmorPenetration")]
     public static class Projectile_ArmorPenetration_Patch
     {
         private static readonly FieldInfo EquipmentDefField = AccessTools.Field(typeof(Projectile), "equipmentDef");
         private static readonly FieldInfo ArmorPenetrationBaseField = AccessTools.Field(typeof(ProjectileProperties), "armorPenetrationBase");
 
-        // 读取投射物基础护穿，负责让技能弹没有武器来源时也能安全取得 Def 配置值。
+        //读取投射物基础护穿，让技能弹没有武器来源时也能安全取得 Def 配置值。
         public static bool Prefix(Projectile __instance, ref float __result)
         {
             if (__instance == null)
@@ -148,13 +147,13 @@ namespace BANWlLib
             return false;
         }
 
-        // 调整最终投射物护穿，负责叠加发射者身上的远程护穿属性。
+        //调整最终投射物护穿，叠加发射者身上的远程护穿属性。
         public static void Postfix(Projectile __instance, ref float __result)
         {
             ApplyPawnPenetrationBonus(__instance, ref __result);
         }
 
-        // 应用角色护穿加成，负责从发射者和装备上汇总 BANW_RangedWeapon_Penetration。
+        //从发射者和装备上汇总 BANW_RangedWeapon_Penetration。
         private static void ApplyPawnPenetrationBonus(Projectile __instance, ref float __result)
         {
             Thing launcher = __instance.Launcher;
@@ -181,7 +180,7 @@ namespace BANWlLib
             }
         }
 
-        // 读取投射物 Def 基础护穿，负责绕过原版需要 weapon 参数的计算路径。
+        //读取投射物 Def 基础护穿，绕过原版需要 weapon 参数的计算路径。
         private static float GetProjectileArmorPenetrationBase(ProjectileProperties projectileProperties)
         {
             if (projectileProperties == null || ArmorPenetrationBaseField == null)

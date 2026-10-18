@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //星野移动载体，负责可存档的平面位移和抵达后的坦克技能结算。
+    //星野移动载体，可存档的平面位移和抵达后的坦克技能结算。
     public class HoshinoMovementFlyer : PawnFlyer
     {
         public Hediff_SpecialSkillState state;

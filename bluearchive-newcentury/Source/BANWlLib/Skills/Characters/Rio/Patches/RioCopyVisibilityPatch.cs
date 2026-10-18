@@ -3,7 +3,7 @@ using RimWorld;
 
 namespace BANWlLib.Skills
 {
-    //复制能力可见性补丁，负责隐藏仍在维护持续效果的已消费实例。
+    //复制能力可见性补丁，隐藏仍在维护持续效果的已消费实例。
     [HarmonyPatch(typeof(Ability), nameof(Ability.GizmosVisible))]
     public static class RioCopyVisibilityPatch
     {

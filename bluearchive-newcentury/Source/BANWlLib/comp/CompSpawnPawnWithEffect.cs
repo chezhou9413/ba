@@ -4,21 +4,10 @@ using Verse;
 
 namespace BANWlLib.comp
 {
-    /// <summary>
-    /// 工具类：在任何地方调用，播放特效后1秒生成pawn
-    /// 不需要挂载在Thing上
-    /// </summary>
+    //播放特效后延迟生成 Pawn，无需挂载到 Thing。
     public static class SpawnPawnWithEffectUtility
     {
-        /// <summary>
-        /// 在指定位置播放特效，1秒后生成pawn
-        /// </summary>
-        /// <param name="position">生成位置</param>
-        /// <param name="map">地图</param>
-        /// <param name="effecterDef">特效定义</param>
-        /// <param name="pawnKindDef">要生成的pawn类型</param>
-        /// <param name="faction">pawn所属的派系（可选）</param>
-        /// <param name="spawnRadius">搜索可站立位置的半径</param>
+        //在指定位置播放特效，1 秒后在 spawnRadius 范围内生成 Pawn。
         public static void SpawnPawnWithEffect(IntVec3 position, Map map, EffecterDef effecterDef, IEnumerator<Thing> things, Faction faction = null, int spawnRadius = 3)
         {
             if (map == null)
@@ -56,9 +45,7 @@ namespace BANWlLib.comp
         }
     }
 
-    /// <summary>
-    /// 延迟生成任务数据
-    /// </summary>
+    //延迟生成任务数据
     public class DelayedSpawnTask
     {
         public IntVec3 position;
@@ -72,9 +59,7 @@ namespace BANWlLib.comp
         public bool completed = false;
     }
 
-    /// <summary>
-    /// GameComponent：管理所有延迟生成任务
-    /// </summary>
+    //GameComponent：管理所有延迟生成任务
     public class SpawnPawnWithEffectManager : GameComponent
     {
         private System.Collections.Generic.List<DelayedSpawnTask> activeTasks = new System.Collections.Generic.List<DelayedSpawnTask>();
@@ -83,9 +68,7 @@ namespace BANWlLib.comp
         {
         }
 
-        /// <summary>
-        /// 添加任务
-        /// </summary>
+        //添加任务
         public void AddTask(DelayedSpawnTask task)
         {
             if (task != null && !activeTasks.Contains(task))
@@ -94,9 +77,7 @@ namespace BANWlLib.comp
             }
         }
 
-        /// <summary>
-        /// 每帧更新
-        /// </summary>
+        //推进延迟生成任务。
         public override void GameComponentTick()
         {
             base.GameComponentTick();
@@ -141,9 +122,7 @@ namespace BANWlLib.comp
             }
         }
 
-        /// <summary>
-        /// 生成pawn
-        /// </summary>
+        //生成pawn
         private void SpawnPawn(DelayedSpawnTask task)
         {
             // 生成pawn
@@ -162,9 +141,7 @@ namespace BANWlLib.comp
             }
         }
 
-        /// <summary>
-        /// 查找pawn的生成位置
-        /// </summary>
+        //查找pawn的生成位置
         private IntVec3 FindSpawnPosition(IntVec3 center, Map map, int radius)
         {
             // 首先尝试中心位置
@@ -187,9 +164,7 @@ namespace BANWlLib.comp
             return center;
         }
 
-        /// <summary>
-        /// 保存/加载数据
-        /// </summary>
+        //保存/加载数据
         public override void ExposeData()
         {
             base.ExposeData();

@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 普通投射物战斗配置，负责让原版 Projectile 接入技能倍率、护盾和 EX 标记。
+    //普通投射物战斗配置，让原版 Projectile 接入技能倍率、护盾和 EX 标记。
     public class BattleProjectileExtension : DefModExtension
     {
         public bool useBattleStats = true;

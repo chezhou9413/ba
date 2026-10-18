@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //特殊技能攻击段，负责配置弹丸、范围、连射和基础战斗参数。
+    //特殊技能攻击段，配置弹丸、范围、连射和基础战斗参数。
     public class SpecialAttackConfig : BattleActionConfig
     {
         public ThingDef projectileDef;

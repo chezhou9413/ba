@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Auras
 {
-    //地图光环管理器负责统一扫描、汇总同名光环，并增删受益状态。
+    //地图光环管理器统一扫描、汇总同名光环，并增删受益状态。
     public sealed class MapComponent_FriendlyAuras : MapComponent
     {
         public const int RefreshIntervalTicks = 30;

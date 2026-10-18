@@ -5,10 +5,10 @@ using BANWlLib.Tool;
 
 namespace BANWlLib
 {
-    // 减伤状态 Hediff，负责在学生健康面板显示学生星级和星级成长总加成。
+    //减伤状态 Hediff，在学生健康面板显示学生星级和星级成长总加成。
     public class DamageReductionHediff : Hediff
     {
-        // 在健康面板中显示星级后缀，负责让状态名称后方直观看到当前星级。
+        //在健康面板中显示星级后缀，让状态名称后方直观看到当前星级。
         public override string LabelInBrackets
         {
             get
@@ -44,7 +44,7 @@ namespace BANWlLib
             }
         }
 
-        // 获取鼠标悬停时显示的星级详情，负责合并减伤保护和当前星级成长总加成。
+        //合并减伤保护和当前星级成长总加成。
         public override string GetTooltip(Pawn pawn, bool showHediffSource = true)
         {
             try
@@ -100,7 +100,7 @@ namespace BANWlLib
             }
         }
 
-        // 检查这个 Hediff 是否应该被移除，负责在非学生或缺少星级组件时清理状态。
+        //检查这个 Hediff 是否应该被移除，在非学生或缺少星级组件时清理状态。
         public override bool ShouldRemove
         {
             get

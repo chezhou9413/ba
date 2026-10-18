@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //角色死亡清理，负责只在真实死亡后结束无人机和地图效果。
+    //角色死亡清理，只在真实死亡后结束无人机和地图效果。
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.Kill), typeof(DamageInfo?), typeof(Hediff))]
     public static class SpecialSkillDeathPatch
     {

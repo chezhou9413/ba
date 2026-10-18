@@ -1,8 +1,17 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
 using Verse;
 using RimWorld;
 
@@ -14,7 +23,7 @@ namespace newpro
         private const float TWO_STAR_PROBABILITY = 18.5f;
         private const float THREE_STAR_PROBABILITY = 3.0f;
 
-        // 修改：UP 三星占三分之一的总三星概率
+        //UP 三星占总三星概率的三分之一。
         private const float UP_THREE_STAR_RATIO = 0.3f; // 即占 1.5%
 
         private static System.Random random = new System.Random();

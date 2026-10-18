@@ -1,10 +1,23 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System.Collections;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 
 namespace BANWlLib.DamageFontSystem
 {
-    // 飘字动画组件，负责控制飘字的移动、停留和淡出。
+    //飘字动画组件，控制飘字的移动、停留和淡出。
     public class DamageFloatText : MonoBehaviour
     {
         public float moveDistance = 1.1f;
@@ -13,7 +26,7 @@ namespace BANWlLib.DamageFontSystem
         public float fadeTime = 0.3f;
         private const float TextWidthPadding = 20f;
 
-        private UnityEngine.UI.Text text;
+        private Engine.UI.Text text;
         private Image image;
         private RectTransform textRect;
         private RectTransform selfRect;
@@ -26,10 +39,10 @@ namespace BANWlLib.DamageFontSystem
         private string configuredText;
         private bool hasConfiguredStyle;
 
-        // 初始化组件引用，负责缓存文字和背景图片组件。
+        //初始化组件引用，缓存文字和背景图片组件。
         void Awake()
         {
-            text = transform.Find("Text").GetComponent<UnityEngine.UI.Text>();
+            text = transform.Find("Text").GetComponent<Engine.UI.Text>();
             image = GetComponent<Image>();
             selfRect = GetComponent<RectTransform>();
             if (text != null)
@@ -44,7 +57,7 @@ namespace BANWlLib.DamageFontSystem
             }
         }
 
-        // 激活时重置动画状态，负责按当前样式开始播放飘字。
+        //激活时重置动画状态，按当前样式开始播放飘字。
         void OnEnable()
         {
             if (routine != null)
@@ -61,6 +74,8 @@ namespace BANWlLib.DamageFontSystem
                 if (hasConfiguredStyle)
                 {
                     text.text = configuredText;
+                    //首次激活前尚未执行 Awake，在引用就绪后应用治疗文本宽度。
+                    ApplyTextWidth();
                 }
             }
 
@@ -73,13 +88,13 @@ namespace BANWlLib.DamageFontSystem
             startPos = transform.position;
             Vector3 right = transform.right;
             Vector3 up = transform.up;
-            float angle = UnityEngine.Random.Range(35f, 90f) * Mathf.Deg2Rad;
+            float angle = global::UnityEngine.Random.Range(35f, 90f) * Mathf.Deg2Rad;
             Vector3 dir = right * Mathf.Cos(angle) + up * Mathf.Sin(angle);
             targetPos = startPos + dir * moveDistance;
             routine = StartCoroutine(PlayRoutine());
         }
 
-        // 配置飘字样式，负责在激活前设置文字内容和颜色。
+        //配置飘字样式，在激活前设置文字内容和颜色。
         public void ConfigureStyle(Color color, string textValue)
         {
             configuredColor = color;
@@ -94,7 +109,7 @@ namespace BANWlLib.DamageFontSystem
             }
         }
 
-        // 按当前文字内容扩宽飘字区域，负责让带加号的治疗数字不会被固定宽度截断。
+        //按当前文字内容扩宽飘字区域，让带加号的治疗数字不会被固定宽度截断。
         private void ApplyTextWidth()
         {
             if (text == null || textRect == null)
@@ -115,7 +130,7 @@ namespace BANWlLib.DamageFontSystem
             }
         }
 
-        // 播放飘字动画，负责执行上升、停留和淡出阶段。
+        //播放飘字动画，执行上升、停留和淡出阶段。
         private IEnumerator PlayRoutine()
         {
             float timer = 0f;

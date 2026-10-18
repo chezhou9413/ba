@@ -324,7 +324,7 @@
 </EffecterDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_7_Mote</defName>
-<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 特效随引导工作结束。 -->
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -346,7 +346,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_8_Mote</defName>
-<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 特效随引导工作结束。 -->
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -368,7 +368,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_9_Mote</defName>
-<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 特效随引导工作结束。 -->
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -390,7 +390,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_10_Mote</defName>
-<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 特效随引导工作结束。 -->
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -412,7 +412,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_11_Mote</defName>
-<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 特效随引导工作结束。 -->
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -434,7 +434,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_12_Mote</defName>
-<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 特效随引导工作结束。 -->
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
@@ -456,7 +456,7 @@
 </ThingDef>
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Nero_B_13_Mote</defName>
-<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 引导工作负责特效存活 -->
+<thingClass>BANWlLib.Skills.Mote_ChannelEffect</thingClass><!-- 特效随引导工作结束。 -->
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->

@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //地图特殊技能调度器，负责延迟攻击、状态索引和无人机绘制。
+    //地图特殊技能调度器，延迟攻击、状态索引和无人机绘制。
     public class MapComponent_SpecialSkills : MapComponent
     {
         private List<SpecialPendingAttack> pending = new List<SpecialPendingAttack>();
@@ -68,7 +68,8 @@ namespace BANWlLib.Skills
                 if (attack.castingJob != null && (attack.caster.CurJob != attack.castingJob ||
                     !SpecialCombatUtility.CanAct(attack.caster) ||
                     (attack.areaCells == null &&
-                     !attack.castingJob.ability.CompOfType<CompAbilityEffect_SpecialSkill>().Valid(new LocalTargetInfo(attack.target)))))
+                     !attack.castingJob.ability.CompOfType<CompAbilityEffect_SpecialSkill>().Valid(
+                         attack.center.IsValid ? attack.castingJob.targetA : new LocalTargetInfo(attack.target)))))
                 { attack.Complete(); continue; }
                 if (attack.droneOrigin && (attack.state == null || !ShirokoSkills.DronePresent(attack.state)))
                 { attack.Complete(); continue; }
@@ -85,7 +86,7 @@ namespace BANWlLib.Skills
             {
                 if (!state.pawn.Spawned || state.pawn.Dead) continue;
                 if (state.profile.role == SpecialSkillRole.Shiroko && ShirokoSkills.DronePresent(state)) DroneRenderer.Draw(state);
-                if (state.profile.role == SpecialSkillRole.Hoshino && state.stage == 1 && state.Active)
+                if (state.profile.role == SpecialSkillRole.Hoshino && state.stage == 1 && state.Active && HoshinoInterceptor.HasShield(state))
                     HoshinoInterceptor.Draw(state);
             }
         }

@@ -11,7 +11,7 @@ namespace BANWlLib.BaDef
         public int mapSizeX;
         public int mapSizeZ;
         // 建筑列表
-        public List<BuildPlace> buildPlaces; // 修正拼写
+        public List<BuildPlace> buildPlaces;
     }
 
     // 不需要继承 Def，只是一个数据节点

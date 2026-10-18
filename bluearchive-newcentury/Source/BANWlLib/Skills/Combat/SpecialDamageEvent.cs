@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //实际伤害事件，负责保存普攻身份、蓄积资格和单次致命伤去重编号。
+    //实际伤害事件，保存普攻身份、蓄积资格和单次致命伤去重编号。
     public class SpecialDamageEvent
     {
         public Pawn attacker;

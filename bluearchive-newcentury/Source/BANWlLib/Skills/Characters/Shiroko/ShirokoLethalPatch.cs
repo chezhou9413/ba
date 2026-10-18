@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //黑子致命伤保护补丁，负责在伤口破坏身体部位前检测和限制致死伤害。
+    //黑子致命伤保护补丁，在伤口破坏身体部位前检测和限制致死伤害。
     [HarmonyPatch(typeof(DamageWorker_AddInjury), "FinalizeAndAddInjury",
         typeof(Pawn), typeof(Hediff_Injury), typeof(DamageInfo), typeof(DamageWorker.DamageResult))]
     public static class ShirokoLethalPatch

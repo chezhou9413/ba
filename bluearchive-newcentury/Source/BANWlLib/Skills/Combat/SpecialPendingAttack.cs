@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BANWlLib.Skills
 {
-    //延迟攻击记录，负责保存发射时间、目标、数值快照和蓄积标记。
+    //延迟攻击记录，保存发射时间、目标、数值快照和蓄积标记。
     public class SpecialPendingAttack : IExposable
     {
         public Pawn caster;

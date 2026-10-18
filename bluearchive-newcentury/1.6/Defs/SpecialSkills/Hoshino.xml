@@ -18,7 +18,7 @@
     <durationTicks>2400</durationTicks>
     <outputBaseAttack>30</outputBaseAttack><tankBaseAttack>10</tankBaseAttack>
     <outputBaseHealth>1000</outputBaseHealth><tankBaseHealth>3000</tankBaseHealth>
-    <outputCastTicks>60</outputCastTicks>
+    <!-- 输出EX前摇使用HoshinoAbilities.xml的warmupTime，声音与原版前摇同步。 -->
     <!-- 准备期间承伤系数减去的数值（0.85），最低为 0。 -->
     <damageTakenReduction>0.85</damageTakenReduction>
     <tankHits>25</tankHits>
@@ -30,12 +30,20 @@
     <!-- 护盾用的 Hediff Def。 -->
     <shieldHediff>BANW_SpecialHoshinoShield</shieldHediff>
     <casterEffecter>BANW_Effecter_A</casterEffecter><targetEffecter>BANW_Effecter_C</targetEffecter>
-    <!-- 普通技能发动时的自身特效；输出普通技能、防御普通技能和形态切换共用。 -->
-    <stageEffecter>BANW_Effecter_B</stageEffecter><endEffecter>BANW_Effecter_C</endEffecter><stateEffecter>BANW_Effecter_B</stateEffecter>
+    <!-- 根节点表现仅供EX使用；形态切换和普通技能在hoshino中分别设置。 -->
+    <endEffecter>BANW_Effecter_C</endEffecter><stateEffecter>BANW_Effecter_B</stateEffecter>
     <hoshino>
       <normalRequiredShots>30</normalRequiredShots>
       <outputBurstShots>6</outputBurstShots><tankBurstShots>1</tankBurstShots>
       <tankNormalAbility>BANW_Special_Hoshino_TankNormal</tankNormalAbility>
+      <outputTrait>BAWC_TraitDef_Attack</outputTrait><tankTrait>BAWC_TraitDef_Tank</tankTrait>
+      <shieldApparel>BANW_Body_Hoshiro_Bag</shieldApparel>
+      <interceptEffecter>BANW_Effecter_C</interceptEffecter>
+      <!-- 每个动作独立设置自身EffecterDef、SoundDef和维持tick；声音留空即不播放。 -->
+      <switchToOutput><effecter>BANW_Effecter_B</effecter><sound /><maintainTicks>60</maintainTicks></switchToOutput>
+      <switchToTank><effecter>BANW_Effecter_B</effecter><sound /><maintainTicks>60</maintainTicks></switchToTank>
+      <outputNormal><effecter>BANW_Effecter_B</effecter><sound>Hoshiro_Skill</sound><maintainTicks>60</maintainTicks></outputNormal>
+      <tankNormal><effecter>BANW_Effecter_B</effecter><sound>Hoshiro_Skill</sound><maintainTicks>60</maintainTicks></tankNormal>
       <!-- 每轮强化沿用武器连射节奏；每发只结算一次范围普攻，无武器弹丸贴图。 -->
       <empoweredShotEffecter>BANW_Effecter_Hoshino_EmpoweredShot</empoweredShotEffecter>
       <!-- 强化普攻以星野为起点，朝射击方向展开；夹角单位为度，长度沿用主武器射程。 -->
@@ -65,7 +73,7 @@
             <penetration>0</penetration>
             <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
             <radius>0</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+            <projectileDef>BANW_HoshinoSkillBullet</projectileDef>
             <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
           </attack>
         </li>
@@ -79,7 +87,7 @@
             <penetration>0</penetration>
             <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
             <radius>0</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+            <projectileDef>BANW_HoshinoSkillBullet</projectileDef>
             <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
           </attack>
         </li>
@@ -93,13 +101,13 @@
             <penetration>0</penetration>
             <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
             <radius>0</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+            <projectileDef>BANW_HoshinoSkillBullet</projectileDef>
             <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
           </attack>
         </li>
-        <!-- 第4段：射向施法时目标所在格，命中后只结算一次AOE。 -->
+        <!-- 第4段：持续跟踪目标，命中后只结算一次AOE。 -->
         <li>
-          <delayTicks>18</delayTicks><targetLocation>true</targetLocation>
+          <delayTicks>18</delayTicks><targetLocation>false</targetLocation>
           <attack>
             <useBattleStats>true</useBattleStats><basePower>100</basePower>
             <attackPowerRatio>0.875</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
@@ -107,13 +115,13 @@
             <penetration>0</penetration>
             <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
             <radius>3</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
+            <projectileDef>BANW_HoshinoSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
             <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
           </attack>
         </li>
-        <!-- 第5段：射向施法时目标所在格，命中后只结算一次AOE。 -->
+        <!-- 第5段：持续跟踪目标，命中后只结算一次AOE。 -->
         <li>
-          <delayTicks>24</delayTicks><targetLocation>true</targetLocation>
+          <delayTicks>24</delayTicks><targetLocation>false</targetLocation>
           <attack>
             <useBattleStats>true</useBattleStats><basePower>100</basePower>
             <attackPowerRatio>0.875</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
@@ -121,13 +129,13 @@
             <penetration>0</penetration>
             <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
             <radius>3</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
+            <projectileDef>BANW_HoshinoSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
             <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
           </attack>
         </li>
-        <!-- 第6段：射向施法时目标所在格，命中后只结算一次AOE。 -->
+        <!-- 第6段：持续跟踪目标，命中后只结算一次AOE。 -->
         <li>
-          <delayTicks>30</delayTicks><targetLocation>true</targetLocation>
+          <delayTicks>30</delayTicks><targetLocation>false</targetLocation>
           <attack>
             <useBattleStats>true</useBattleStats><basePower>100</basePower>
             <attackPowerRatio>0.875</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
@@ -135,13 +143,13 @@
             <penetration>0</penetration>
             <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
             <radius>3</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
+            <projectileDef>BANW_HoshinoSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
             <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
           </attack>
         </li>
-        <!-- 第7段：射向施法时目标所在格，命中后只结算一次AOE。 -->
+        <!-- 第7段：持续跟踪目标，命中后只结算一次AOE。 -->
         <li>
-          <delayTicks>36</delayTicks><targetLocation>true</targetLocation>
+          <delayTicks>36</delayTicks><targetLocation>false</targetLocation>
           <attack>
             <useBattleStats>true</useBattleStats><basePower>100</basePower>
             <attackPowerRatio>0.875</attackPowerRatio><damageDef>BANC_Damage_shenmi</damageDef>
@@ -149,7 +157,7 @@
             <penetration>0</penetration>
             <isExSkill>true</isExSkill><canCrit>true</canCrit><applyAffinity>true</applyAffinity>
             <radius>3</radius><shots>1</shots><shotIntervalTicks>6</shotIntervalTicks>
-            <projectileDef>BANW_SpecialSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
+            <projectileDef>BANW_HoshinoSkillBullet</projectileDef><effecterDef>BANW_Effecter_C</effecterDef>
             <canHitOwnPawn>true</canHitOwnPawn><affectFriendly>true</affectFriendly><affectHostile>true</affectHostile>
           </attack>
         </li>

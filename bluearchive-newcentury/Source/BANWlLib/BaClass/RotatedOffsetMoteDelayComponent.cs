@@ -4,24 +4,24 @@ using Verse;
 
 namespace BANWlLib.BaClass
 {
-    // 旋转偏移 Mote 延迟组件，负责在地图 tick 中托管 SubEffecter_SprayerTriggeredRotatedOffset 的延迟生成任务。
+    //旋转偏移 Mote 延迟组件，在地图 tick 中托管 SubEffecter_SprayerTriggeredRotatedOffset 的延迟生成任务。
     public class RotatedOffsetMoteDelayComponent : MapComponent
     {
         private List<PendingRotatedOffsetMote> pendingMotes = new List<PendingRotatedOffsetMote>();
 
-        // 创建地图延迟组件，负责绑定当前地图的旋转偏移 Mote 队列。
+        //绑定当前地图的旋转偏移 Mote 队列。
         public RotatedOffsetMoteDelayComponent(Map map) : base(map)
         {
         }
 
-        // 地图每 tick 更新，负责生成到期的延迟 Mote。
+        //地图每 tick 更新，生成到期的延迟 Mote。
         public override void MapComponentTick()
         {
             base.MapComponentTick();
             SpawnDueMotes(Find.TickManager.TicksGame);
         }
 
-        // 保存和读取延迟队列，负责让延迟 Mote 在存读档后继续生成。
+        //保存和读取延迟队列，让延迟 Mote 在存读档后继续生成。
         public override void ExposeData()
         {
             base.ExposeData();
@@ -32,7 +32,7 @@ namespace BANWlLib.BaClass
             }
         }
 
-        // 入队延迟 Mote，负责记录触发时已经计算好的位置、缩放和旋转角度。
+        //记录触发时已经计算好的位置、缩放和旋转角度。
         public static void Queue(Map map, ThingDef moteDef, Vector3 position, float scale, float? rotationAngle, int delayTicks)
         {
             if (map == null || moteDef == null)
@@ -59,7 +59,7 @@ namespace BANWlLib.BaClass
             });
         }
 
-        // 生成到期 Mote，负责倒序移除已处理任务。
+        //生成到期 Mote，倒序移除已处理任务。
         private void SpawnDueMotes(int currentTick)
         {
             if (pendingMotes.NullOrEmpty())

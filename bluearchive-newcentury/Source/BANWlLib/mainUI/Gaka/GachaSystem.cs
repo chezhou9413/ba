@@ -4,16 +4,12 @@ using Verse;
 
 namespace BANWlLib.mainUI.Gaka
 {
-    /// <summary>
-    /// 抽卡系统静态工具类
-    /// </summary>
+    //抽卡系统静态工具类
     public static class GachaSystem
     {
         public static bool DebugGuarantee3Star = false;
 
-        /// <summary>
-        /// 纯随机单抽
-        /// </summary>
+        //纯随机单抽
         public static BaStudentDef Draw(List<BaStudentDef> p1, List<BaStudentDef> p2, List<BaStudentDef> p3, List<BaStudentDef> upList, float w1, float w2, float w3, float upRate)
         {
             if (DebugGuarantee3Star && Prefs.DevMode)
@@ -40,9 +36,7 @@ namespace BANWlLib.mainUI.Gaka
             return p2.NullOrEmpty() ? GetTier3Result(p3, upList, upRate) : p2.RandomElement();
         }
 
-        /// <summary>
-        /// FES池单抽 - 特殊概率分配
-        /// </summary>
+        //FES池单抽 - 特殊概率分配
         public static BaStudentDef DrawFES(List<BaStudentDef> p1, List<BaStudentDef> p2, List<BaStudentDef> p3,
             List<BaStudentDef> fesUpList, List<BaStudentDef> fesOtherList)
         {
@@ -73,9 +67,7 @@ namespace BANWlLib.mainUI.Gaka
             return p2.NullOrEmpty() ? GetFESTier3Result(p3, fesUpList, fesOtherList) : p2.RandomElement();
         }
 
-        /// <summary>
-        /// FES池十连抽
-        /// </summary>
+        //FES池十连抽
         public static List<BaStudentDef> MultiDrawFES10(List<BaStudentDef> p1, List<BaStudentDef> p2, List<BaStudentDef> p3,
             List<BaStudentDef> fesUpList, List<BaStudentDef> fesOtherList)
         {
@@ -115,9 +107,7 @@ namespace BANWlLib.mainUI.Gaka
             return results;
         }
 
-        /// <summary>
-        /// 十连抽：普通池保底逻辑
-        /// </summary>
+        //十连抽：普通池保底逻辑
         public static List<BaStudentDef> MultiDraw10(List<BaStudentDef> p1, List<BaStudentDef> p2, List<BaStudentDef> p3, List<BaStudentDef> upList, float w1, float w2, float w3, float upRate)
         {
             List<BaStudentDef> results = new List<BaStudentDef>();
@@ -153,10 +143,7 @@ namespace BANWlLib.mainUI.Gaka
             return results;
         }
 
-        /// <summary>
-        /// FES三星层级抽取逻辑
-        /// 当期FES: 0.7%, 其他FES: 0.3%, 常驻三星: 均分剩余概率
-        /// </summary>
+        //抽取 FES 三星：当期 0.7%，其他 FES 0.3%，常驻三星均分剩余概率。
         private static BaStudentDef GetFESTier3Result(List<BaStudentDef> p3, List<BaStudentDef> fesUpList, List<BaStudentDef> fesOtherList)
         {
             // 总三星概率 6%
@@ -188,15 +175,13 @@ namespace BANWlLib.mainUI.Gaka
                 return p3.RandomElement();
             }
 
-            // 兜底逻辑
+            //使用剩余候选池。
             if (!fesUpList.NullOrEmpty()) return fesUpList.RandomElement();
             if (!fesOtherList.NullOrEmpty()) return fesOtherList.RandomElement();
             return null;
         }
 
-        /// <summary>
-        /// 普通池三星层级内决定是UP还是普池
-        /// </summary>
+        //普通池三星层级内决定是UP还是普池
         private static BaStudentDef GetTier3Result(List<BaStudentDef> p3, List<BaStudentDef> upList, float upRate)
         {
             if (!upList.NullOrEmpty() && Rand.Value < upRate)
@@ -212,9 +197,7 @@ namespace BANWlLib.mainUI.Gaka
             return upList.NullOrEmpty() ? null : upList.RandomElement();
         }
 
-        /// <summary>
-        /// FES池保底抽取
-        /// </summary>
+        //FES池保底抽取
         private static BaStudentDef DrawFESGuaranteed(List<BaStudentDef> p2, List<BaStudentDef> p3,
             List<BaStudentDef> fesUpList, List<BaStudentDef> fesOtherList)
         {
@@ -230,9 +213,7 @@ namespace BANWlLib.mainUI.Gaka
             return p2.NullOrEmpty() ? GetFESTier3Result(p3, fesUpList, fesOtherList) : p2.RandomElement();
         }
 
-        /// <summary>
-        /// 普通池保底抽取
-        /// </summary>
+        //普通池保底抽取
         private static BaStudentDef DrawGuaranteed(List<BaStudentDef> p2, List<BaStudentDef> p3, List<BaStudentDef> upList, float w2, float w3, float upRate)
         {
             float totalWeight = w2 + w3;

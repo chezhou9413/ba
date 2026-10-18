@@ -34,7 +34,6 @@ namespace BANWlLib
         }
         
         // 保存和加载数据的方法
-        // 确保属性值能够正确保存到存档文件中
         public override void PostExposeData()
         {
             base.PostExposeData();

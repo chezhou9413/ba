@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace BANWlLib.Skills
 {
-    //预览职责：从实际特殊技能配置构造逐发公式，包含施放前可以确定的角色机制倍率。
+    //从实际特殊技能配置构造逐发公式，包含施放前可以确定的角色机制倍率。
     public static class SpecialSkillBattlePreview
     {
-        //解析职责：按当前按钮操作选择真实攻击段，纯增益和形态切换不伪造伤害。
+        //按当前按钮操作选择真实攻击段，纯增益和形态切换不伪造伤害。
         public static List<BattleActionConfig> Resolve(Ability ability)
         {
             var props = ability.def.comps?.OfType<CompProperties_SpecialSkill>().FirstOrDefault();
@@ -45,7 +45,7 @@ namespace BANWlLib.Skills
             }
         }
 
-        //展开职责：总伤害与治疗倍率按发数均分，护盾每次授予完整配置值，纯增益不显示为零伤害。
+        //总伤害与治疗倍率按发数均分，护盾每次授予完整配置值，纯增益不显示为零伤害。
         public static List<BattleActionConfig> Expand(IEnumerable<SpecialAttackConfig> sources, float multiplier = 1f)
         {
             var actions = new List<BattleActionConfig>();
@@ -64,7 +64,7 @@ namespace BANWlLib.Skills
             return actions;
         }
 
-        //场地预览职责：直接使用场地的公共动作配置，不套用特殊技能连射分摊。
+        //直接使用场地的公共动作配置，不套用特殊技能连射分摊。
         private static List<BattleActionConfig> Expand(IEnumerable<BattleActionConfig> sources)
         {
             return sources.Where(source => source.damageDef != null || source.isHealing || source.isShield)

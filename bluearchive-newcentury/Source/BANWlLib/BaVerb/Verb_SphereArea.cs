@@ -6,10 +6,10 @@ using Verse.AI;
 
 namespace BANWlLib.BaVerb
 {
-    // 施法特效工具，负责让自定义范围 Verb 在施法成功时触发 EffecterDef。
+    //施法特效工具，让自定义范围 Verb 在施法成功时触发 EffecterDef。
     internal static class VerbCastEffecterUtility
     {
-        // 触发施法特效，负责以施法者为锚点并把当前目标传给子特效计算方向。
+        //触发施法特效，以施法者为锚点并把当前目标传给子特效计算方向。
         public static void TriggerCastEffecter(EffecterDef effecterDef, Pawn caster, LocalTargetInfo target)
         {
             if (effecterDef == null || caster?.Map == null)
@@ -25,7 +25,7 @@ namespace BANWlLib.BaVerb
         }
     }
 
-    // 圆形范围动词参数，负责声明圆形半径、执行 Job 和施法触发状态。
+    //圆形范围动词参数，声明圆形半径、执行 Job 和施法触发状态。
     public class VerbProperties_SphereArea : VerbProperties
     {
         public float Sphereradius = 3f;
@@ -34,14 +34,14 @@ namespace BANWlLib.BaVerb
         public EffecterDef effecterDef = null;
     }
 
-    // 圆形范围动词，负责显示目标点圆形预览并把受影响格子交给范围 Job。
+    //圆形范围动词，显示目标点圆形预览并把受影响格子交给范围 Job。
     public class Verb_SphereArea : Verb_CastAbility
     {
         private VerbProperties_SphereArea Props => (VerbProperties_SphereArea)verbProps;
 
         private HashSet<IntVec3> affectedCellsCache = new HashSet<IntVec3>();
 
-        // 尝试施放技能，负责触发 Ability 效果并把圆形目标队列交给 Job。
+        //尝试施放技能，触发 Ability 效果并把圆形目标队列交给 Job。
         protected override bool TryCastShot()
         {
             Pawn caster = CasterPawn;
@@ -85,13 +85,13 @@ namespace BANWlLib.BaVerb
             return castSuccess;
         }
 
-        // 绘制施法高亮，负责优先使用 AbilityDef 预览配置，未配置时保留旧圆形预览。
+        //绘制施法高亮，优先使用 AbilityDef 预览配置，未配置时保留旧圆形预览。
         public override void DrawHighlight(LocalTargetInfo target)
         {
             BattleTargetPreviewUtility.DrawPreview(CasterPawn, target, ResolvePreviewData());
         }
 
-        // 计算受影响格子，负责让实际 Job 和施法预览使用同一套圆形算法。
+        //计算受影响格子，让实际 Job 和施法预览使用同一套圆形算法。
         private HashSet<IntVec3> CalculateAffectedCells(LocalTargetInfo target)
         {
             BattleTargetPreviewData data = ResolvePreviewData();
@@ -100,7 +100,7 @@ namespace BANWlLib.BaVerb
             return cells;
         }
 
-        // 解析预览参数，负责让 AbilityDef 扩展优先覆盖旧圆形字段。
+        //解析预览参数，让 AbilityDef 扩展优先覆盖旧圆形字段。
         private BattleTargetPreviewData ResolvePreviewData()
         {
             return BattleTargetPreviewUtility.ResolvePreviewData(this) ??

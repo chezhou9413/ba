@@ -4,7 +4,7 @@ using Verse.AI;
 
 namespace BANWlLib.WeaponRestrictions
 {
-    // 装备任务补丁，负责在任务开始前再次阻止不符合 Kind 白名单的武器。
+    //装备任务补丁，在任务开始前再次阻止不符合 Kind 白名单的武器。
     [HarmonyPatch(typeof(JobDriver_Equip), nameof(JobDriver_Equip.TryMakePreToilReservations))]
     public static class JobDriverEquipPatch
     {

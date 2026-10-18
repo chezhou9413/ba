@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //角色特殊技能状态，负责保存阶段、计数、计时、蓄积和独立复制技能引用。
+    //角色特殊技能状态，保存阶段、计数、计时、蓄积和独立复制技能引用。
     public class Hediff_SpecialSkillState : HediffWithComps
     {
         public SpecialSkillProfileDef profile;

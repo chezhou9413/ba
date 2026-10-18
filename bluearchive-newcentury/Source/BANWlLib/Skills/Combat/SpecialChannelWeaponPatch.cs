@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //持续施法武器限制，阻止妮露和爱丽丝引导期间主武器继续发射普通子弹。
+    //持续施法武器限制，阻止角色引导期间主武器继续发射普通子弹。
     [HarmonyPatch(typeof(Verb_LaunchProjectile), "TryCastShot")]
     public static class SpecialChannelWeaponPatch
     {
@@ -13,6 +13,7 @@ namespace BANWlLib.Skills
             if (!__instance.CasterIsPawn || __instance.EquipmentSource == null ||
                 __instance.EquipmentSource != __instance.CasterPawn.equipment?.Primary ||
                 !(__instance.CasterPawn.jobs.curDriver is JobDriver_NeroExChannel) &&
+                !(__instance.CasterPawn.jobs.curDriver is JobDriver_HoshinoExChannel) &&
                 !(__instance.CasterPawn.jobs.curDriver is JobDriver_ArisuExChannel)) return true;
             __result = false;
             return false;

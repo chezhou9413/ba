@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //凯伊专属配置，负责指定真实场地来源和普通技能的前摇、语音与表现。
+    //凯伊专属配置，指定真实场地来源和普通技能的前摇、语音与表现。
     public class KeiSkillConfig
     {
         public AbilityDef sourceExAbility;

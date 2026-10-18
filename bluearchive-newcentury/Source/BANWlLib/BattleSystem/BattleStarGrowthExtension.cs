@@ -4,16 +4,16 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 阶级成长数值配置，负责支持按每阶固定表或每阶线性增量计算成长值。
+    //阶级成长数值配置，支持按每阶固定表或每阶线性增量计算成长值。
     public class BattleStarGrowthValue
     {
-        // 每阶线性增量，负责在没有 starValues 时按阶级差计算成长。
+        //每阶线性增量，在没有 starValues 时按阶级差计算成长。
         public float perStar = 0f;
 
-        // 每阶固定值表，负责让每个阶级直接读取对应成长值。
+        //每阶固定值表，让每个阶级直接读取对应成长值。
         public List<float> starValues;
 
-        // 计算当前阶级对应成长值，负责优先读取固定表并在缺少固定表时使用线性增量。
+        //计算当前阶级对应成长值，优先读取固定表并在缺少固定表时使用线性增量。
         public float Evaluate(int starLevel)
         {
             int resolvedStarLevel = Mathf.Max(1, starLevel);
@@ -27,7 +27,7 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 阶级成长扩展，负责让 PawnKindDef 配置生命、攻击和治愈力的每阶成长。
+    //阶级成长扩展，让 PawnKindDef 配置生命、攻击和治愈力的每阶成长。
     public class BattleStarGrowthExtension : DefModExtension
     {
         // 升星生命值倍率成长，参与生命值公式的升星乘区。

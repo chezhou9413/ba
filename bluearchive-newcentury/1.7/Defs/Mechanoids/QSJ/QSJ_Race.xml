@@ -1,0 +1,94 @@
+
+<Defs>
+ <ThingDef ParentName="BANW_Trinity_Mechanoid">
+    
+    <defName>BANW_QSJ_A</defName>
+    
+    <label>清扫车</label>
+    
+    <description>一种小型机器人，主要用来进行清洁，移速和攻击速度很快。</description>
+    
+    <statBases>
+		
+		<ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+		
+		<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+		
+		<BandwidthCost>1</BandwidthCost>
+		
+		<CarryingCapacity>0</CarryingCapacity>
+		
+		<EMPResistance>0.7</EMPResistance>
+		
+		<MoveSpeed>5.5</MoveSpeed>
+        
+        <MechEnergyLossPerHP>0.25</MechEnergyLossPerHP>
+		
+		<WorkSpeedGlobal>1</WorkSpeedGlobal>
+    </statBases>
+    
+    <race>
+      
+      <baseHealthScale>2.5</baseHealthScale>
+      
+      <mechEnabledWorkTypes>
+	 </mechEnabledWorkTypes>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="BANW_Trinity_MechanoidBase">
+    
+    <defName>BANW_QSJ_A</defName>
+    
+    <label>清扫车</label>
+    
+    <race>BANW_QSJ_A</race>
+    
+    <combatPower>60</combatPower>
+    
+    <lifeStages>
+      
+      <li MayRequire="Ludeon.Rimworld.Biotech">
+        <bodyGraphicData>
+          
+          <texPath>Mechanoid/QSJ/QSJ_A/BANW_QJS_A</texPath>
+          
+          <shaderType>CutoutWithOverlay</shaderType>
+          
+          <graphicClass>Graphic_Multi</graphicClass>
+          
+          <drawSize>1.0</drawSize>
+          
+          <shadowData>
+            
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      
+      <li>
+        <bodyGraphicData>
+          
+          <texPath>Mechanoid/QSJ/QSJ_A/BANW_QJS_A</texPath>
+          
+          <shaderType>CutoutWithOverlay</shaderType>
+          
+          <graphicClass>Graphic_Multi</graphicClass>
+          
+          <drawSize>1.0</drawSize>
+          
+          <shadowData>
+            
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    
+    <weaponTags>
+		
+		<li>BANW_QSJ_A_WP</li>
+    </weaponTags>
+  </PawnKindDef>
+   
+</Defs>

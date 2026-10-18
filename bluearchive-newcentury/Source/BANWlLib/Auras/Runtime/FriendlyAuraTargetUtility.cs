@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Auras
 {
-    //光环目标过滤负责检查距离、阵营、种族、角色状态与视线。
+    //光环目标过滤检查距离、阵营、种族、角色状态与视线。
     public static class FriendlyAuraTargetUtility
     {
         //判断一个已生成角色是否符合当前光环的受益条件。

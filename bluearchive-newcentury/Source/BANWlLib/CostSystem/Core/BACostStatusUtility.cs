@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //COST状态工具负责识别参战学生并汇总回复率、减费和透支状态。
+    //COST状态工具识别参战学生并汇总回复率、减费和透支状态。
     public static class BACostStatusUtility
     {
         private const string StudentRaceDefName = "BANW_KivotosStudent";

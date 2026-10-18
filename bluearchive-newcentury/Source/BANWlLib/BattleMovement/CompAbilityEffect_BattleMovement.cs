@@ -7,7 +7,7 @@ using Verse;
 
 namespace BANWlLib.BattleMovement
 {
-    // 位移技能组件配置，负责把自身位移、路径伤害、落地伤害、击退和终点场地暴露给 XML。
+    //位移技能组件配置，把自身位移、路径伤害、落地伤害、击退和终点场地暴露给 XML。
     public class CompProperties_AbilityBattleMovement : CompProperties_AbilityEffect
     {
         public BattleMovementMode mode = BattleMovementMode.Slide;
@@ -26,14 +26,14 @@ namespace BANWlLib.BattleMovement
         public ThingDef fieldThingDef;
         public int durationTicksOverride = -1;
 
-        // 初始化组件类型，负责把 XML 配置绑定到位移技能执行组件。
+        //把 XML 配置绑定到位移技能执行组件。
         public CompProperties_AbilityBattleMovement()
         {
             compClass = typeof(CompAbilityEffect_BattleMovement);
         }
     }
 
-    // 位移技能组件，负责执行自身位移并把伤害、击退和场地交给战斗框架结算。
+    //位移技能组件，执行自身位移并把伤害、击退和场地交给战斗框架结算。
     public class CompAbilityEffect_BattleMovement : CompAbilityEffect
     {
         public new CompProperties_AbilityBattleMovement Props
@@ -44,7 +44,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 执行技能效果，负责解析终点并按位移模式启动移动或瞬移。
+        //执行技能效果，解析终点并按位移模式启动移动或瞬移。
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);
@@ -88,7 +88,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 朝向目标终点，负责让冲刺、跳跃和瞬移在启动前面向目标点。
+        //朝向目标终点，让冲刺、跳跃和瞬移在启动前面向目标点。
         private void FaceDestination(Pawn caster, IntVec3 destination)
         {
             IntVec3 offset = destination - caster.Position;
@@ -100,7 +100,7 @@ namespace BANWlLib.BattleMovement
             caster.Rotation = Rot4.FromAngleFlat(offset.ToVector3().AngleFlat());
         }
 
-        // 启动原版飞行器位移，负责把平面冲刺和跳跃都交给 PawnFlyer 处理起飞、飞行和落地。
+        //启动原版飞行器位移，把平面冲刺和跳跃都交给 PawnFlyer 处理起飞、飞行和落地。
         private void StartFlyer(Pawn pawn, IntVec3 destination, float height, float speed, Action onCompleted)
         {
             if (pawn?.Map == null)
@@ -127,13 +127,13 @@ namespace BANWlLib.BattleMovement
             GenSpawn.Spawn(flyer, startCell, map);
         }
 
-        // 解析位移飞行器 Def，负责允许 XML 替换默认飞行器。
+        //解析位移飞行器 Def，允许 XML 替换默认飞行器。
         private ThingDef ResolveMovementFlyerDef()
         {
             return Props.movementFlyerDef ?? Props.jumpFlyerDef ?? DefDatabase<ThingDef>.GetNamed("BANW_BattleMovement_JumpFlyer");
         }
 
-        // 瞬移放置 Pawn，负责停止寻路并通知原版传送状态。
+        //瞬移放置 Pawn，停止寻路并通知原版传送状态。
         private void PlacePawn(Pawn pawn, IntVec3 cell)
         {
             if (pawn?.Map == null || !cell.IsValid)
@@ -146,7 +146,7 @@ namespace BANWlLib.BattleMovement
             pawn.Notify_Teleported(false, true);
         }
 
-        // 播放自身原地特效，负责在位移开始时触发一次配置的 EffecterDef。
+        //播放自身原地特效，在位移开始时触发一次配置的 EffecterDef。
         private void TriggerSelfEffect(Pawn caster)
         {
             if (Props.selfEffecterDef == null || caster?.Map == null)
@@ -160,7 +160,7 @@ namespace BANWlLib.BattleMovement
             effecter.Cleanup();
         }
 
-        // 处理平面冲撞路径效果，负责对路径内目标结算伤害并按冲撞方向击退。
+        //处理平面冲撞路径效果，对路径内目标结算伤害并按冲撞方向击退。
         private void ApplyPathAction(Pawn caster, IntVec3 destination, Vector3 direction, BattleCasterSnapshot snapshot)
         {
             if (Props.pathAction == null)
@@ -182,7 +182,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 完成位移，负责在终点结算落地范围效果、击退和场地。
+        //完成位移，在终点结算落地范围效果、击退和场地。
         private void CompleteMovement(Pawn caster, IntVec3 destination, Vector3 movementDirection, BattleCasterSnapshot snapshot)
         {
             if (caster?.Map == null)
@@ -215,7 +215,7 @@ namespace BANWlLib.BattleMovement
             SpawnBattleField(caster, destination);
         }
 
-        // 执行击退，负责按阵营过滤并把目标推到阻挡前。
+        //按阵营过滤并把目标推到阻挡前。
         private void ApplyKnockback(Pawn caster, Pawn targetPawn, Vector3 direction)
         {
             if (Props.knockback == null || !Props.knockback.enabled || Props.knockback.distance <= 0)
@@ -242,7 +242,7 @@ namespace BANWlLib.BattleMovement
                 null);
         }
 
-        // 生成终点脱手场地，负责复用现有 Thing_BattleFieldController。
+        //生成终点脱手场地，复用现有 Thing_BattleFieldController。
         private void SpawnBattleField(Pawn caster, IntVec3 destination)
         {
             if (Props.fieldThingDef == null || caster?.Map == null)

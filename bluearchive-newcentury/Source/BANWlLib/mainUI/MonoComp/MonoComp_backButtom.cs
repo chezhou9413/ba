@@ -1,11 +1,24 @@
-﻿using BANWlLib.mainUI.Mission.MonoComp;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using BANWlLib.mainUI.Mission.MonoComp;
 using BANWlLib.mainUI.ManualUI;
 using MyCoolMusicMod.MyCoolMusicMod;
 using newpro;
 using System;
 using System.Collections.Generic;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.MonoComp
@@ -71,13 +84,13 @@ namespace BANWlLib.mainUI.MonoComp
         {
             if (UiMapData.isLocKBack) return;
 
-            // 1. 关闭当前正在显示的页面
+            //关闭当前页面。
             if (backObj != null)
             {
                 backObj.SetActive(false);
             }
 
-            // 2. 检查是否有历史记录（上一级页面）
+            //检查上一层页面。
             if (backList.Count > 0)
             {
                 int lastIndex = backList.Count - 1;
@@ -86,7 +99,7 @@ namespace BANWlLib.mainUI.MonoComp
                 GameObject prevObj = lastEntry.backObj;
                 string prevBgm = lastEntry.bgm;
 
-                // 关键：必须重新激活上一个页面！
+                //返回时重新激活上一层页面。
                 if (prevObj != null)
                 {
                     prevObj.SetActive(true);
@@ -103,7 +116,7 @@ namespace BANWlLib.mainUI.MonoComp
             }
             else
             {
-                // 3. 已经回到主页面，再次点击则是“退出整个UI回到游戏”
+                //主页面再次返回时关闭整个 UI。
                 Log.Message("已回到最底层，执行退出逻辑");
                 ExitWholeUI();
             }

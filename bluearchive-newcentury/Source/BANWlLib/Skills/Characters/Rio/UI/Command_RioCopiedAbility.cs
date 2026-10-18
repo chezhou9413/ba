@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //复制技能按钮，负责显示一次性用途并允许选择目标本体的其他COST技能。
+    //复制技能按钮，显示一次性用途并允许选择目标本体的其他COST技能。
     public class Command_RioCopiedAbility : Command_Ability
     {
         //沿用原版技能瞄准、费用与前摇工作，实际施法者始终是目标本体。

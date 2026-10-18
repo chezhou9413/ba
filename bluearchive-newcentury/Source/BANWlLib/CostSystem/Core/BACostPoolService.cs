@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //COST池服务负责解析地图规则并提供查询、回复、校验和原子扣费入口。
+    //COST池服务解析地图规则并提供查询、回复、校验和原子扣费入口。
     public static class BACostPoolService
     {
         private static readonly BACostRules DefaultRules = new BACostRules();

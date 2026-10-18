@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace BANWlLib.CostSystem
 {
-    //技能费用快照负责保存一次施放所采用的基础费用、减费明细与最终费用。
+    //技能费用快照保存一次施放所采用的基础费用、减费明细与最终费用。
     public sealed class AbilityCostCalculation
     {
         private readonly List<HediffComp_CostDiscount> discounts;

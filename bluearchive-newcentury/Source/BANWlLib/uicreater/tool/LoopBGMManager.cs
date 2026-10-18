@@ -1,4 +1,8 @@
-﻿using HarmonyLib;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using HarmonyLib;
 using newpro;
 using RimWorld;
 using System;
@@ -8,27 +12,39 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using global::UnityEngine.Networking;
+#else
 using UnityEngine.Networking;
+#endif
 using Verse;
 
 namespace MyCoolMusicMod
 {
     using HarmonyLib;
-    // using newpro; // 假设这是你的其他命名空间
     using RimWorld;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Threading.Tasks;
+#if RW_1_7
+    using RimUnity;
+#else
     using UnityEngine;
-    using UnityEngine.Networking;
+#endif
+    using global::UnityEngine.Networking;
     using Verse;
     using static RimWorld.FleshTypeDef;
 
     namespace MyCoolMusicMod
     {
-        //音频入口类负责保留 RimWorld 对旧 Mod 类的实例化路径，并执行轻量全局初始化。
+        //音频入口类保留 RimWorld 对旧 Mod 类的实例化路径，并执行轻量全局初始化。
         public class LordBgmData : Mod
         {
             //构造函数只记录模组根目录并安装补丁，音频解码延后到 BA UI 初始化阶段。
@@ -46,7 +62,7 @@ namespace MyCoolMusicMod
             public static Dictionary<string, AudioClip> audioPool = new Dictionary<string, AudioClip>();
             private static bool audioLoadStarted;
 
-            //启动 UI 音频加载，负责保证 BGM 和音效只在 BA UI 初始化阶段异步加载一次。
+            //启动 UI 音频加载，保证 BGM 和音效只在 BA UI 初始化阶段异步加载一次。
             public static void EnsureAudioLoaded()
             {
                 if (audioLoadStarted)
@@ -91,7 +107,6 @@ namespace MyCoolMusicMod
 
             public static async void PlayClipDirectly(string relativePath)
             {
-                // 1. 防空检查
                 if (string.IsNullOrEmpty(UiMapData.modRootPath))
                 {
                     Log.Error("UiMapData.modRootPath 尚未初始化！");
@@ -101,23 +116,20 @@ namespace MyCoolMusicMod
                 {
                     relativePath += ".ogg";
                 }
-                // 2. 组合完整路径
                 string fullPath = Path.Combine(UiMapData.modRootPath, relativePath);
 
-                // 3. 检查文件是否存在
                 if (!File.Exists(fullPath))
                 {
                     Log.Warning($"试图播放不存在的音频文件: {fullPath}");
                     return;
                 }
 
-                // 4. 异步加载音频
+                //异步加载音频。
                 AudioClip clip = await LoadAudioAsync(fullPath);
 
-                // 5. 播放
                 if (clip != null && UiMapData.mainAudioPlay != null)
                 {
-                    // 这里的关键是 clip 的名称要设好，方便调试
+                    //按文件名设置音频名称，便于日志定位。
                     clip.name = Path.GetFileNameWithoutExtension(fullPath);
 
                     // 更新音量 (以防设置变了)
@@ -134,7 +146,7 @@ namespace MyCoolMusicMod
 
                 float gameVolume = Prefs.VolumeGame;
                 UiMapData.mainAudioPlay.volume = gameVolume;
-                UiMapData.mainBgmPlay.volume = gameVolume;
+                UiMapData.mainBgmPlay.volume = Prefs.VolumeMusic;
             }
             public static async void LoadAllAudio()
             {
@@ -172,7 +184,8 @@ namespace MyCoolMusicMod
                 {
                     if (UiMapData.mainBgmPlay != null)
                     {
-                        if (UiMapData.mainBgmPlay.clip != audioClip)
+                        //关闭界面会停止声部，同一曲目再次打开时也需要恢复播放。
+                        if (UiMapData.mainBgmPlay.clip != audioClip || !UiMapData.mainBgmPlay.isPlaying)
                         {
                             UiMapData.mainBgmPlay.clip = audioClip;
                             UiMapData.mainBgmPlay.Play();
@@ -185,11 +198,7 @@ namespace MyCoolMusicMod
                 }
             }
 
-            /// <summary>
-            /// 播放音效/BGM
-            /// </summary>
-            /// <param name="AudioName">音频名称</param>
-            /// <param name="volume">音量 (0.0 ~ 1.0)，默认为1.0</param>
+            //播放音效或 BGM，volume 范围为 0～1，默认 1。
             public static void playEffAudio(string AudioName, float volume = 1.0f)
             {
                 SetVolumeToGamePrefs();
@@ -210,6 +219,9 @@ namespace MyCoolMusicMod
             }
             public static async Task<AudioClip> LoadAudioAsync(string absolutePath)
             {
+#if RW_1_7
+                return AudioClip.LoadFromFile(absolutePath, streaming: true);
+#else
                 string url = "file://" + absolutePath;
                 using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.OGGVORBIS))
                 {
@@ -226,6 +238,7 @@ namespace MyCoolMusicMod
                     }
                     return DownloadHandlerAudioClip.GetContent(uwr);
                 }
+#endif
             }
         }
     }

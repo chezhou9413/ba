@@ -20,7 +20,6 @@ namespace BANWlLib.Dev
         [BADebugAction("学生档案", "查看当前学生列表", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void LogMyTrackerValues()
         {
-            // 获取你的 GameComponent
             ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
 
             if (tracker == null)
@@ -30,7 +29,6 @@ namespace BANWlLib.Dev
             }
             foreach (var student in tracker.HaveStudent)
             {
-                //使用 Log.Message 打印你想看的值
                 Log.Warning("----学生---- "); 
                 Log.Message(student.ToString()); 
             }
@@ -40,7 +38,6 @@ namespace BANWlLib.Dev
         [BADebugAction("学生档案", "查看当前收藏的学生", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void LogCollectTrackerValues()
         {
-            // 获取你的 GameComponent
             ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
 
             if (tracker == null)
@@ -59,7 +56,6 @@ namespace BANWlLib.Dev
         [BADebugAction("学生档案", "选择一个学生查看序列化的数据", allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void SelectStudentData()
         {
-            // 获取你的 GameComponent
             ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
 
             if (tracker == null)
@@ -86,8 +82,6 @@ namespace BANWlLib.Dev
                         }
                     }
 
-                    // 2. 直接创建 Dialog_MessageBox 实例
-                    // 我们使用它的构造函数来精确控制
                     Dialog_MessageBox infoDialog = new Dialog_MessageBox(
                         message,        // [必要] 对话框显示的文本
                         "返回游戏",         // [必要] 按钮A的文本
@@ -100,7 +94,6 @@ namespace BANWlLib.Dev
                         null            // (可选) 窗口背景
                     );
 
-                    // 3. 将创建好的窗口添加到窗口堆栈以显示出来
                     Find.WindowStack.Add(infoDialog);
                 }
             };

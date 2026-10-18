@@ -6,14 +6,14 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 叠层属性组配置，负责描述同一个叠层状态中某个 Stat 每层对应的加值。
+    //叠层属性组配置，描述同一个叠层状态中某个 Stat 每层对应的加值。
     public class BattleStackStatGroup
     {
         public StatDef targetStat;
         public List<float> stackValues;
         public float valuePerStack = 0f;
 
-        // 获取当前层数对应的 Stat 加值，负责支持指定表和值乘层数两种写法。
+        //获取当前层数对应的 Stat 加值，支持指定表和值乘层数两种写法。
         public float GetValue(int stacks)
         {
             int safeStacks = Mathf.Max(1, stacks);
@@ -27,7 +27,7 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 叠层状态属性配置，负责声明层数、持续时间和一组或多组战斗 Stat 加值。
+    //叠层状态属性配置，声明层数、持续时间和一组或多组战斗 Stat 加值。
     public class HediffCompProperties_BattleStack : HediffCompProperties
     {
         public StatDef targetStat;
@@ -45,7 +45,7 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 叠层状态组件，负责记录当前层数、过期时间，并按层数提供多个 Stat 加值。
+    //叠层状态组件，记录当前层数、过期时间，并按层数提供多个 Stat 加值。
     // 通过动态写入 HediffStage.statOffsets 让原版 StatWorker 和悬浮提示显示当前加成。
     public class HediffComp_BattleStack : HediffComp
     {
@@ -129,7 +129,7 @@ namespace BANWlLib.BattleSystem
             return GetCurrentValue(Props.targetStat);
         }
 
-        // 获取指定 Stat 的当前加值，负责支持同一个叠层 Hediff 同时修改多个属性。
+        //获取指定 Stat 的当前加值，支持同一个叠层 Hediff 同时修改多个属性。
         public float GetCurrentValue(StatDef statDef)
         {
             if (statDef == null)
@@ -158,7 +158,7 @@ namespace BANWlLib.BattleSystem
             return total;
         }
 
-        // 判断当前叠层是否影响指定 Stat，负责让战斗属性聚合只读取相关组。
+        //判断当前叠层是否影响指定 Stat，让战斗属性聚合只读取相关组。
         public bool AffectsStat(StatDef statDef)
         {
             if (statDef == null)
@@ -187,7 +187,7 @@ namespace BANWlLib.BattleSystem
             return false;
         }
 
-        // 获取旧格式当前加值，负责兼容 targetStat、stackValues 和 valuePerStack 配置。
+        //获取旧格式当前加值，兼容 targetStat、stackValues 和 valuePerStack 配置。
         private float GetLegacyCurrentValue()
         {
             if (Props.stackValues != null && Props.stackValues.Count > 0)
@@ -199,7 +199,7 @@ namespace BANWlLib.BattleSystem
             return CurrentStacks * Props.valuePerStack;
         }
 
-        // 确保 HediffDef 有至少一个 stage，原版 StatWorker 和悬浮提示依赖 CurStage。
+        //HediffDef 至少需要一个 stage，StatWorker 和悬浮提示依赖 CurStage。
         private void EnsureStageExists()
         {
             if (parent?.def == null)
@@ -284,7 +284,7 @@ namespace BANWlLib.BattleSystem
 
     public static class BattleStackHediffUtility
     {
-        // 施加可叠层 Hediff，负责在已有状态时只叠层并刷新时间。
+        //施加可叠层 Hediff，在已有状态时只叠层并刷新时间。
         public static Hediff ApplyStackedHediff(Pawn pawn, HediffDef hediffDef)
         {
             Hediff existing = pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef);

@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.CostSystem
 {
-    //COST Def初始化器负责让学生图鉴中的EX费用文本与AbilityDef费用组件保持一致。
+    //COST Def初始化器让学生图鉴中的EX费用文本与AbilityDef费用组件保持一致。
     [StaticConstructorOnStartup]
     public static class BACostDefInitializer
     {

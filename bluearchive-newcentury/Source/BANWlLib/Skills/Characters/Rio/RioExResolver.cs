@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //EX解析器，负责按COST组件识别目标当前阶段可见的原生技能。
+    //EX解析器，按COST组件识别目标当前阶段可见的原生技能。
     public static class RioExResolver
     {
         //收集所有带COST配置的可见原生技能，不以当前费用、冷却或角色白名单过滤。

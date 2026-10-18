@@ -5,14 +5,14 @@ using Verse;
 
 namespace BANWlLib.BattleMovement
 {
-    // 战斗位移飞行器，负责复用原版 PawnFlyer 容器和落地流程，并按技能配置绘制平面或跳跃位移。
+    //战斗位移飞行器，复用原版 PawnFlyer 容器和落地流程，并按技能配置绘制平面或跳跃位移。
     public class BattleMovementPawnFlyer : PawnFlyer
     {
         private float battleMoveHeight = 2.5f;
         private float battleMoveSpeed = 0.25f;
         private Action onBattleMovementCompleted;
 
-        // 当前飞行进度，负责把原版飞行 tick 转换成 0 到 1 的插值比例。
+        //当前飞行进度，把原版飞行 tick 转换成 0 到 1 的插值比例。
         private float Progress
         {
             get
@@ -21,7 +21,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 当前地面位置，负责按原版进度曲线计算水平位移。
+        //当前地面位置，按原版进度曲线计算水平位移。
         private Vector3 GroundPosition
         {
             get
@@ -31,7 +31,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 当前高度，负责按技能配置的最大高度生成抛物线弧度，平面冲刺传入 0 时保持贴地移动。
+        //当前高度，按技能配置的最大高度生成抛物线弧度，平面冲刺传入 0 时保持贴地移动。
         private float BattleHeight
         {
             get
@@ -40,7 +40,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 绘制位置，负责把水平位移和配置高度合成最终小人显示位置。
+        //绘制位置，把水平位移和配置高度合成最终小人显示位置。
         public override Vector3 DrawPos
         {
             get
@@ -50,7 +50,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 创建战斗位移飞行器，负责走原版 MakeFlyer 并注入战斗位移专用配置。
+        //创建战斗位移飞行器，走原版 MakeFlyer 并注入战斗位移专用配置。
         public static BattleMovementPawnFlyer MakeBattleFlyer(ThingDef flyerDef, Pawn pawn, IntVec3 destination, float height, float speed, Action onCompleted)
         {
             BattleMovementPawnFlyer flyer = PawnFlyer.MakeFlyer(flyerDef, pawn, destination, null, null) as BattleMovementPawnFlyer;
@@ -66,7 +66,7 @@ namespace BANWlLib.BattleMovement
             return flyer;
         }
 
-        // 生成飞行器，负责复用原版初始化后按技能速度覆盖飞行持续时间。
+        //生成飞行器，复用原版初始化后按技能速度覆盖飞行持续时间。
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -77,7 +77,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 落地复原 Pawn，负责先执行原版落地流程，再通知战斗位移组件结算完成效果。
+        //落地复原 Pawn，先执行原版落地流程，再通知战斗位移组件结算完成效果。
         protected override void RespawnPawn()
         {
             base.RespawnPawn();
@@ -85,7 +85,7 @@ namespace BANWlLib.BattleMovement
             onBattleMovementCompleted = null;
         }
 
-        // 动态绘制阶段，负责让飞行中的 Pawn 按自定义平面或弧线位置绘制。
+        //动态绘制阶段，让飞行中的 Pawn 按自定义平面或弧线位置绘制。
         public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
         {
             if (FlyingPawn != null)
@@ -103,7 +103,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 绘制飞行附加内容，负责按自定义高度显示阴影和携带物。
+        //绘制飞行附加内容，按自定义高度显示阴影和携带物。
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             DrawBattleShadow(GroundPosition, BattleHeight);
@@ -113,7 +113,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 绘制跳跃阴影，负责用原版 PawnFlyer 阴影材质随高度缩放。
+        //绘制跳跃阴影，用原版 PawnFlyer 阴影材质随高度缩放。
         private void DrawBattleShadow(Vector3 drawLoc, float height)
         {
             Material shadowMaterial = def.pawnFlyer.ShadowMaterial;
@@ -128,7 +128,7 @@ namespace BANWlLib.BattleMovement
             Graphics.DrawMesh(MeshPool.plane10, matrix, shadowMaterial, 0);
         }
 
-        // 保存和读取飞行器状态，负责让飞行中的位移在存档读档后保留高度和速度。
+        //保存和读取飞行器状态，让飞行中的位移在存档读档后保留高度和速度。
         public override void ExposeData()
         {
             base.ExposeData();

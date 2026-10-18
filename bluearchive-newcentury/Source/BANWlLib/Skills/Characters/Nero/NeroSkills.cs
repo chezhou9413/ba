@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //妮露技能，负责对决、锐气叠层和双阶段EX循环。
+    //妮露技能，对决、锐气叠层和双阶段EX循环。
     public static class NeroSkills
     {
         //一段给双方施加对决标记，二段叠加锐气后安排攻击。

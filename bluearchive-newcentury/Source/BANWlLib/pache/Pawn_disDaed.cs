@@ -11,13 +11,13 @@ using Verse;
 
 namespace BANWlLib.pache
 {
-    //任务免死入口，负责保护活动任务中指定的角色。
+    //任务免死入口，保护活动任务中指定的角色。
     public class Pawn_disDaed
     {
         public static GameComp_TaskQuest comp_TaskQuest;
         [HarmonyPatch(typeof(Pawn), "Kill")]
         [HarmonyPatch(new Type[] { typeof(DamageInfo?), typeof(Hediff) })]
-        //任务死亡保护补丁，负责恢复任务角色必要部位并使其暂时倒地。
+        //任务死亡保护补丁，恢复任务角色必要部位并使其暂时倒地。
         public static class PreventDeathPatch
         {
             private static readonly MethodInfo MakeDownedMethod2 = AccessTools.Method(
@@ -65,7 +65,7 @@ namespace BANWlLib.pache
                     }
                 }
                 
-                // ✅ 修复：添加60秒的麻醉Hediff，让学生倒地60秒后自动站起
+                //添加持续 60 秒的麻醉 Hediff，使学生暂时倒地。
                 // 直接添加60秒的麻醉，让其在1分钟后自行醒来
                 // 不依赖Downed检测，统一处理
                 {

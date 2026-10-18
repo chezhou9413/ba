@@ -3,23 +3,23 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    //多发投射物瞄准姿态，负责在延迟连射队列存在期间停留并绘制主武器瞄准。
+    //多发投射物瞄准姿态，在延迟连射队列存在期间停留并绘制主武器瞄准。
     public class MultiShotAimStance : Stance_Busy
     {
-        //读取存档姿态，负责让原版 Scribe 能创建连射瞄准姿态。
+        //读取存档姿态，让原版 Scribe 能创建连射瞄准姿态。
         public MultiShotAimStance()
         {
             neverAimWeapon = true;
         }
 
-        //创建短暂瞄准姿态，负责保存目标并关闭原版装备重复绘制。
+        //保存目标并关闭原版装备重复绘制。
         public MultiShotAimStance(int ticks, LocalTargetInfo focusTarg)
             : base(ticks, focusTarg, null)
         {
             neverAimWeapon = true;
         }
 
-        //绘制姿态，负责复用原版武器瞄准绘制让小人朝目标举枪。
+        //绘制姿态，复用原版武器瞄准绘制让小人朝目标举枪。
         public override void StanceDraw()
         {
             base.StanceDraw();

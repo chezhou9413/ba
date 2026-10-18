@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //星野形态连射补丁，负责按角色形态提供发数而不修改共享武器定义或缓存。
+    //星野形态连射补丁，按角色形态提供发数而不修改共享武器定义或缓存。
     [HarmonyPatch(typeof(Verb), nameof(Verb.BurstShotCount), MethodType.Getter)]
     public static class HoshinoBurstCountPatch
     {

@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Auras
 {
-    //受益状态扩展负责统一同名光环的叠加规则和强度上限。
+    //受益状态扩展统一同名光环的叠加规则和强度上限。
     public sealed class FriendlyAuraEffectExtension : DefModExtension
     {
         public bool stackSeverity;

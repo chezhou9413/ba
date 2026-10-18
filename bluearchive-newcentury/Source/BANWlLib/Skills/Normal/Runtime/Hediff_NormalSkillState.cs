@@ -5,7 +5,7 @@ using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
-    //状态职责：独立保存一个通用普通技能的累计次数、冷却和定义引用。
+    //独立保存一个通用普通技能的累计次数、冷却和定义引用。
     public class Hediff_NormalSkillState : HediffWithComps
     {
         public NormalSkillDef skill;
@@ -23,16 +23,16 @@ namespace BANWlLib.Skills
             (skill.showBattleFormula ? AbilityBattleTooltipUtility.BuildActionsTooltip(pawn, null,
                 SpecialSkillBattlePreview.Expand(skill.actions)) : "");
 
-        //合并职责：同名运行状态保持独立，防止不同普通技能共用计数。
+        //同名运行状态保持独立，防止不同普通技能共用计数。
         public override bool TryMergeWith(Hediff other) => false;
 
-        //计数职责：只接收配置指定的事件，额外技能动作不产生此类事件。
+        //只接收配置指定的事件，额外技能动作不产生此类事件。
         public void Notify(NormalSkillCountMode mode)
         {
             if (skill.countMode == mode) count++;
         }
 
-        //时钟职责：只在次数、冷却和行动条件满足时尝试施放。
+        //只在次数、冷却和行动条件满足时尝试施放。
         public override void Tick()
         {
             base.Tick();
@@ -40,7 +40,7 @@ namespace BANWlLib.Skills
                 SpecialCombatUtility.CanAct(pawn)) TryCast();
         }
 
-        //施放职责：确认合法目标后消费一次进度，保存属性快照并安排各效果段。
+        //确认合法目标后消费一次进度，保存属性快照并安排各效果段。
         private void TryCast()
         {
             Thing target = NormalSkillTargetUtility.Find(pawn, skill);
@@ -55,7 +55,7 @@ namespace BANWlLib.Skills
                 SpecialCombatUtility.ScheduleNormal(pawn, target, action, snapshot, skill);
         }
 
-        //存档职责：保存定义、累计次数与绝对冷却时刻。
+        //保存定义、累计次数与绝对冷却时刻。
         public override void ExposeData()
         {
             base.ExposeData();

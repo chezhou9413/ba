@@ -8,13 +8,13 @@ using Verse;
 
 namespace BANWlLib.BaVerb
 {
-    // 技能目标预览工具，负责统一计算和绘制圆形、直线、扇形、矩形施法范围。
+    //技能目标预览工具，统一计算和绘制圆形、直线、扇形、矩形施法范围。
     public static class BattleTargetPreviewUtility
     {
         private static readonly Color AreaColor = new Color(0.7f, 1f, 1f);
         private static readonly Color RangeColor = new Color(1f, 1f, 1f, 0.3f);
 
-        // 绘制技能预览，负责按配置显示影响格、施法射程圈和目标高亮。
+        //绘制技能预览，按配置显示影响格、施法射程圈和目标高亮。
         internal static void DrawPreview(Pawn caster, LocalTargetInfo target, BattleTargetPreviewData data)
         {
             if (caster == null || caster.Map == null || data == null)
@@ -50,7 +50,7 @@ namespace BANWlLib.BaVerb
             }
         }
 
-        // 计算预览格子，负责按形状分发到具体几何算法。
+        //计算预览格子，按形状分发到具体几何算法。
         internal static HashSet<IntVec3> CalculateCells(Pawn caster, LocalTargetInfo target, BattleTargetPreviewData data)
         {
             if (caster == null || data == null || !target.IsValid)
@@ -73,7 +73,7 @@ namespace BANWlLib.BaVerb
             }
         }
 
-        // 计算圆形范围格子，负责以目标点为中心生成场地或范围治疗影响格。
+        //计算圆形范围格子，以目标点为中心生成场地或范围治疗影响格。
         public static HashSet<IntVec3> CalculateCircleCells(Pawn caster, LocalTargetInfo target, float radius, float maxRange)
         {
             HashSet<IntVec3> cells = new HashSet<IntVec3>();
@@ -101,7 +101,7 @@ namespace BANWlLib.BaVerb
             return cells;
         }
 
-        // 计算直线范围格子，负责从施法者朝目标方向生成可穿墙直线预览。
+        //计算直线范围格子，从施法者朝目标方向生成可穿墙直线预览。
         public static HashSet<IntVec3> CalculateLineCells(Pawn caster, LocalTargetInfo target, float length, float width)
         {
             HashSet<IntVec3> cells = new HashSet<IntVec3>();
@@ -147,7 +147,7 @@ namespace BANWlLib.BaVerb
             return cells;
         }
 
-        // 计算扇形范围格子，负责从施法者朝目标方向展开指定角度。
+        //计算扇形范围格子，从施法者朝目标方向展开指定角度。
         public static HashSet<IntVec3> CalculateFanCells(Pawn caster, LocalTargetInfo target, float range, float fanArc)
         {
             HashSet<IntVec3> cells = new HashSet<IntVec3>();
@@ -198,13 +198,13 @@ namespace BANWlLib.BaVerb
             return cells;
         }
 
-        // 计算矩形范围格子，负责从施法者朝目标方向生成带宽度的长条范围。
+        //计算矩形范围格子，从施法者朝目标方向生成带宽度的长条范围。
         public static HashSet<IntVec3> CalculateBoxCells(Pawn caster, LocalTargetInfo target, float range, float width)
         {
             return CalculateLineCells(caster, target, range, Mathf.Max(1f, width));
         }
 
-        // 从 AbilityDef 和关联 Comp 推导预览参数，负责让脱手场地和穿透投射物无需重复写尺寸。
+        //从 AbilityDef 和关联 Comp 推导预览参数，让脱手场地和穿透投射物无需重复写尺寸。
         internal static BattleTargetPreviewData ResolvePreviewData(Verb_CastAbility verb)
         {
             if (verb == null)
@@ -228,7 +228,7 @@ namespace BANWlLib.BaVerb
             return data;
         }
 
-        // 根据显式形状构造预览参数，负责让旧 Verb 用统一工具保留原有显示行为。
+        //根据显式形状构造预览参数，让旧 Verb 用统一工具保留原有显示行为。
         internal static BattleTargetPreviewData CreateData(AbilityTargetPreviewShape shape, float range, float radius, float width, float length, float fanArc)
         {
             return new BattleTargetPreviewData
@@ -244,7 +244,7 @@ namespace BANWlLib.BaVerb
             };
         }
 
-        // 合并 Def 扩展配置，负责让显式字段优先于自动推导。
+        //合并 Def 扩展配置，让显式字段优先于自动推导。
         private static BattleTargetPreviewData FromExtension(AbilityTargetPreviewExtension extension, float effectiveRange)
         {
             return new BattleTargetPreviewData
@@ -260,7 +260,7 @@ namespace BANWlLib.BaVerb
             };
         }
 
-        // 应用自动尺寸覆盖，负责把配置中要求复用的场地半径和投射物尺寸填进去。
+        //把配置中要求复用的场地半径和投射物尺寸填进去。
         private static void ApplyAutomaticSizeOverrides(BattleTargetPreviewData data, AbilityTargetPreviewExtension extension, AbilityDef abilityDef, float effectiveRange)
         {
             if (extension.useBattleFieldRadius && data.radius <= 0f)
@@ -284,7 +284,7 @@ namespace BANWlLib.BaVerb
             NormalizeData(data, effectiveRange);
         }
 
-        // 自动推导脱手场地预览，负责从场地控制器 Def 获取圆形半径。
+        //自动推导脱手场地预览，从场地控制器 Def 获取圆形半径。
         private static BattleTargetPreviewData TryAutoResolveFromBattleField(AbilityDef abilityDef, float effectiveRange)
         {
             BattleFieldControllerExtension extension = FindBattleFieldExtension(abilityDef);
@@ -298,7 +298,7 @@ namespace BANWlLib.BaVerb
             return data;
         }
 
-        // 自动推导穿透投射物预览，负责从投射物 Def 获取直线宽度和长度。
+        //自动推导穿透投射物预览，从投射物 Def 获取直线宽度和长度。
         private static BattleTargetPreviewData TryAutoResolveFromProjectile(AbilityDef abilityDef, float effectiveRange)
         {
             PiercingProjectileExtension extension = FindPiercingProjectileExtension(abilityDef);
@@ -312,7 +312,7 @@ namespace BANWlLib.BaVerb
             return data;
         }
 
-        // 查找脱手场地配置，负责从 AbilityComp 里定位生成的场地 ThingDef。
+        //查找脱手场地配置，从 AbilityComp 里定位生成的场地 ThingDef。
         private static BattleFieldControllerExtension FindBattleFieldExtension(AbilityDef abilityDef)
         {
             if (abilityDef?.comps == null)
@@ -333,7 +333,7 @@ namespace BANWlLib.BaVerb
             return null;
         }
 
-        // 查找穿透投射物配置，负责从 AbilityComp 里定位 projectileDef。
+        //查找穿透投射物配置，从 AbilityComp 里定位 projectileDef。
         private static PiercingProjectileExtension FindPiercingProjectileExtension(AbilityDef abilityDef)
         {
             if (abilityDef?.comps == null)
@@ -354,7 +354,7 @@ namespace BANWlLib.BaVerb
             return null;
         }
 
-        // 标准化预览参数，负责补齐缺省值并避免无效尺寸导致范围不显示。
+        //标准化预览参数，补齐缺省值并避免无效尺寸导致范围不显示。
         private static void NormalizeData(BattleTargetPreviewData data, float effectiveRange)
         {
             data.range = data.range > 0f ? data.range : effectiveRange;
@@ -364,13 +364,13 @@ namespace BANWlLib.BaVerb
             data.fanArc = data.fanArc > 0f ? data.fanArc : 30f;
         }
 
-        // 获取目标方向，负责把施法者和目标格转换成水平单位向量。
+        //把施法者和目标格转换成水平单位向量。
         private static Vector3 TargetDirection(Pawn caster, LocalTargetInfo target)
         {
             return (target.Cell - caster.Position).ToVector3().Yto0();
         }
 
-        // 解析正数参数，负责在配置无效时使用调用方默认值。
+        //在配置无效时使用调用方默认值。
         private static float ResolvePositive(float value, float fallback)
         {
             return value > 0f ? value : fallback;

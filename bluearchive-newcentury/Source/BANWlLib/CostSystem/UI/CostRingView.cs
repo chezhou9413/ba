@@ -1,11 +1,24 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using System;
 using System.Collections.Generic;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 
 namespace BANWlLib.CostSystem
 {
-    //COST环视图负责把0到10点进度分配给十个环形分段。
+    //COST环视图把0到10点进度分配给十个环形分段。
     internal sealed class CostRingView : IDisposable
     {
         private const float SegmentHandoff = 0.08f;
@@ -136,7 +149,7 @@ namespace BANWlLib.CostSystem
         }
     }
 
-    //COST环分段视图负责维护单段材质参数和一次满格白色闪光。
+    //COST环分段视图维护单段材质参数和一次满格白色闪光。
     internal sealed class CostRingSegmentView : IDisposable
     {
         private static readonly int ProgressId = Shader.PropertyToID("_Progress");
@@ -167,8 +180,11 @@ namespace BANWlLib.CostSystem
             image.raycastTarget = false;
             material = new Material(image.material)
             {
-                name = image.material.name + " (Runtime " + image.gameObject.name + ")",
+                name = image.material.name + " (Runtime " + image.gameObject.name + ")"
+#if !RW_1_7
+                ,
                 hideFlags = HideFlags.HideAndDontSave
+#endif
             };
             image.material = material;
             ApplySpriteData();
@@ -196,7 +212,7 @@ namespace BANWlLib.CostSystem
         //从当前时间开始播放该分段的一秒白色完成光效。
         public void TriggerCompletionFlash()
         {
-            material.SetFloat(CompletionStartTimeId, Time.timeSinceLevelLoad);
+            material.SetFloat(CompletionStartTimeId, Time.time);
         }
 
         //销毁该分段的运行时材质实例。
@@ -204,7 +220,7 @@ namespace BANWlLib.CostSystem
         {
             if (material != null)
             {
-                UnityEngine.Object.Destroy(material);
+                Engine.Object.Destroy(material);
             }
         }
 

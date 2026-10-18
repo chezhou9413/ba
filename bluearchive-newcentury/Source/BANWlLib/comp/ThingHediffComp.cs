@@ -24,10 +24,7 @@ namespace BANWlLib.comp
         public List<int> batchUseCount = new List<int>();
 
 
-        /// <summary>
-        /// 构造函数
-        /// 告诉游戏这个配置对应哪个组件类
-        /// </summary>
+        //绑定道具状态组件。
         public ThingHediffCompProperties()
         {
             this.compClass = typeof(ThingHediffComp);
@@ -38,9 +35,7 @@ namespace BANWlLib.comp
     {
         public ThingHediffCompProperties Props => (ThingHediffCompProperties)this.props;
 
-        /// <summary>
-        /// 检查角色是否符合道具限制，负责按当前学生身份判断。
-        /// </summary>
+        //检查角色是否符合道具限制，按当前学生身份判断。
         private bool IsStudentIdentityAllowed(Pawn pawn)
         {
             if (Props.Race.Count < 1)
@@ -57,17 +52,11 @@ namespace BANWlLib.comp
             return pawn.kindDef != null && Props.Race.Contains(pawn.kindDef.defName);
         }
 
-        /// <summary>
-        /// 提供右键菜单选项
-        /// 当玩家右键点击道具时显示批量使用选项
-        /// 这个方法会在玩家右键点击道具时被游戏自动调用
-        /// </summary>
-        /// <param name="selPawn">选中的角色（即要使用道具的角色）</param>
-        /// <returns>右键菜单选项列表（每个选项都是一个FloatMenuOption对象）</returns>
+        //向道具右键菜单添加批量使用选项。
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
         {
             // 第一步：先返回基础的菜单选项
-            // 这确保了我们不会覆盖掉原有的菜单选项（比如"使用"选项）
+            //保留原有右键菜单选项。
             foreach (FloatMenuOption option in base.CompFloatMenuOptions(selPawn))
             {
                 yield return option; // yield return 表示逐个返回选项，而不是一次性返回所有选项
@@ -160,7 +149,7 @@ namespace BANWlLib.comp
 
                 // 创建使用道具的工作任务
                 Job useJob = JobMaker.MakeJob(useItemJob, parent);
-                useJob.count = Math.Min(count, parent.stackCount); // 确保不超过实际数量
+                useJob.count = Math.Min(count, parent.stackCount);
 
                 // 预约道具，防止其他角色同时使用
                 if (usedBy.Reserve(parent, useJob))
@@ -175,11 +164,7 @@ namespace BANWlLib.comp
             }
         }
 
-        /// <summary>
-        /// 检查是否有新的使用任务
-        /// </summary>
-        /// <param name="pawn">角色</param>
-        /// <returns>是否有新的使用任务</returns>
+        //检查角色是否已有使用任务。
         private bool HasNewUseJob(Pawn pawn)
         {
             try
@@ -220,10 +205,7 @@ namespace BANWlLib.comp
             }
         }
 
-        /// <summary>
-        /// 取消当前的使用任务
-        /// </summary>
-        /// <param name="pawn">角色</param>
+        //取消角色当前的使用任务。
         private void CancelCurrentUseJob(Pawn pawn)
         {
             try
@@ -256,7 +238,6 @@ namespace BANWlLib.comp
         {
             base.DoEffect(usedBy);
 
-            // 1. 获取使用数量
             int useCount = 1;
             if (usedBy.CurJob != null && usedBy.CurJob.count > 1)
             {
@@ -264,7 +245,6 @@ namespace BANWlLib.comp
             }
             useCount = Mathf.Min(useCount, parent.stackCount);
 
-            // 2. 获取 HediffDef
             HediffDef hediffDef = DefDatabase<HediffDef>.GetNamed(Props.hediffDefName, false);
             if (usedBy == null || hediffDef == null)
             {
@@ -272,19 +252,18 @@ namespace BANWlLib.comp
                 return;
             }
 
-            // 3. 核心修正：检查并获取已存在的 Hediff
+            //查找已有状态。
             Hediff hediff = usedBy.health.hediffSet.GetFirstHediffOfDef(hediffDef);
 
             if (hediff != null)
             {
-                // 4. 如果 Hediff 存在，则直接更新其严重度
-                // 注意：更新严重度是累加关系，所以要加上 updateHediffValue
+                //已有状态累加严重度。
                 hediff.Severity = hediff.Severity + (Props.updateHediffSeverity * useCount);
                 CheckLevelChange(usedBy,hediff);
             }
             else
             {
-                // 5. 如果 Hediff 不存在，则创建并添加一个新的
+                //没有状态时创建并添加。
                 Hediff newHediff = HediffMaker.MakeHediff(hediffDef, usedBy);
                 newHediff.Severity = Props.updateHediffSeverity * useCount;
                 usedBy.health.AddHediff(newHediff);

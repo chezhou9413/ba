@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace BANWlLib.CostSystem
 {
-    //COST规则负责描述一张地图的费用上限与基础回复倍率。
+    //COST规则描述一张地图的费用上限与基础回复倍率。
     public class BACostRules
     {
         public int maximumCost = 10;

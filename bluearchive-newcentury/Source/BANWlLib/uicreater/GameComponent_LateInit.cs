@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib;
 using BANWlLib.mainUI.Mission;
 using BANWlLib.mainUI.MonoComp;
@@ -9,13 +13,26 @@ using RimWorld;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
+#if RW_1_7
+using RimUnity.Video;
+#else
 using UnityEngine.Video;
+#endif
 using Verse;
 namespace newpro
 {
-    //游戏级 UI 初始化组件负责在地图可用后延迟创建 BA 主界面，并在读档或新游戏时清理旧 UI 缓存。
+    //游戏级 UI 初始化组件在地图可用后延迟创建 BA 主界面，并在读档或新游戏时清理旧 UI 缓存。
     public class GameComponent_LateInit : GameComponent
     {
         private bool hasInitializedThisSession = false;
@@ -70,7 +87,7 @@ namespace newpro
                 Find.TickManager.CurTimeSpeed = TimeSpeed.Normal;
             }
         }
-        //初始化抽卡 UI 系统，负责加载资源路径、事件系统、主界面、图鉴和任务界面。
+        //初始化抽卡 UI 系统，加载资源路径、事件系统、主界面、图鉴和任务界面。
         public static bool InitializeGachaUI()
         {
             try
@@ -83,7 +100,7 @@ namespace newpro
                     }
 
                     string UIimgPath = Path.Combine(UiMapData.modRootPath, "Common", "Textures");
-                    UiMapData.UIraceimg = Path.Combine(UiMapData.modRootPath, "1.6", "Defs", "GameDefs", "raceimg");
+                    UiMapData.UIraceimg = Path.Combine(UiMapData.modRootPath, UiMapData.ContentVersion, "Defs", "GameDefs", "raceimg");
 
                     if (UiMapData.ImagraceMap == null || UiMapData.ImagraceMap.Count == 0)
                     {
@@ -92,12 +109,18 @@ namespace newpro
 
                     UiMapData.uiclose = false;
 
-                    if (UnityEngine.Object.FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null)
+#if RW_1_7
+                    if (Engine.EventSystems.EventSystem.current == null)
+#else
+                    if (Engine.Object.FindObjectOfType<Engine.EventSystems.EventSystem>() == null)
+#endif
                     {
                         GameObject eventSystem = new GameObject("EventSystem");
-                        eventSystem.AddComponent<UnityEngine.EventSystems.EventSystem>();
-                        eventSystem.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
-                        UnityEngine.Object.DontDestroyOnLoad(eventSystem);
+                        eventSystem.AddComponent<Engine.EventSystems.EventSystem>();
+#if !RW_1_7
+                        eventSystem.AddComponent<Engine.EventSystems.StandaloneInputModule>();
+                        Engine.Object.DontDestroyOnLoad(eventSystem);
+#endif
                     }
                     timing.Mark("路径与事件系统");
                     if (!UICoreStart.InitializeMianUI())
@@ -133,7 +156,7 @@ namespace newpro
 
 
         [HarmonyPatch(typeof(UIRoot), "UIRootOnGUI")]
-        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截基础 UIRoot 的 OnGUI。
+        //Harmony 补丁在 BA 全屏 UI 打开时拦截基础 UIRoot 的 OnGUI。
         public static class PatchDisableUIRootOnGUI
         {
             //Prefix 根据 BA UI 是否接管输入决定是否继续执行原版 OnGUI。
@@ -149,7 +172,7 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot), "UIRootUpdate")]
-        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截基础 UIRoot 的 Update。
+        //Harmony 补丁在 BA 全屏 UI 打开时拦截基础 UIRoot 的 Update。
         public static class PatchDisableUIRootUpdate
         {
             //Prefix 根据 BA UI 是否接管输入决定是否继续执行原版 Update。
@@ -166,7 +189,7 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot_Entry), "UIRootOnGUI")]
-        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截入口界面的 OnGUI。
+        //Harmony 补丁在 BA 全屏 UI 打开时拦截入口界面的 OnGUI。
         public static class PatchDisableUIRootOnGUIE
         {
             //Prefix 根据 BA UI 是否接管输入决定是否继续执行入口界面 OnGUI。
@@ -182,7 +205,7 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot_Entry), "UIRootUpdate")]
-        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截入口界面的 Update。
+        //Harmony 补丁在 BA 全屏 UI 打开时拦截入口界面的 Update。
         public static class PatchDisableUIRootUpdateE
         {
             //Prefix 根据 BA UI 是否接管输入决定是否继续执行入口界面 Update。
@@ -199,7 +222,7 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot_Play), "UIRootOnGUI")]
-        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截游戏内界面的 OnGUI。
+        //Harmony 补丁在 BA 全屏 UI 打开时拦截游戏内界面的 OnGUI。
         public static class PatchDisableUIRootOnGUIP
         {
             //Prefix 根据 BA UI 是否接管输入决定是否继续执行游戏内界面 OnGUI。
@@ -215,7 +238,7 @@ namespace newpro
         }
 
         [HarmonyPatch(typeof(UIRoot_Play), "UIRootUpdate")]
-        //Harmony 补丁负责在 BA 全屏 UI 打开时拦截游戏内界面的 Update。
+        //Harmony 补丁在 BA 全屏 UI 打开时拦截游戏内界面的 Update。
         public static class PatchDisableUIRootUpdateP
         {
             //Prefix 根据 BA UI 是否接管输入决定是否继续执行游戏内界面 Update。
@@ -235,7 +258,7 @@ namespace newpro
 
 namespace newpro
 {
-    //新游戏创建补丁负责在创建新存档时标记 BA UI 需要重建。
+    //新游戏创建补丁在创建新存档时标记 BA UI 需要重建。
     [HarmonyPatch(typeof(Game), "InitNewGame")]
     public static class Patch_GameInitNewGame
     {
@@ -261,7 +284,7 @@ namespace newpro
 
 namespace newpro
 {
-    //存档加载补丁负责在读档后标记 BA UI 需要重建。
+    //存档加载补丁在读档后标记 BA UI 需要重建。
     [HarmonyPatch(typeof(Game), "LoadGame")]
     public static class Patch_GameLoadGame
     {

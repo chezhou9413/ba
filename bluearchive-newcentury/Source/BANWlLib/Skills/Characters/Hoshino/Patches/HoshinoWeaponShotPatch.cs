@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //星野逐发射击补丁，负责替换强化弹丸并按成功发射次数累计普通技能进度。
+    //星野逐发射击补丁，替换强化弹丸并按成功发射次数累计普通技能进度。
     [HarmonyPatch(typeof(Verb_LaunchProjectile), "TryCastShot")]
     public static class HoshinoWeaponShotPatch
     {

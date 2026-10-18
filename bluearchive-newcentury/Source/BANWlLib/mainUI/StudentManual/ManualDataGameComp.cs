@@ -21,11 +21,11 @@ namespace BANWlLib.mainUI.StudentManual
         {
             base.ExposeData();
 
-            // 1. 保存自定义对象列表，使用 LookMode.Deep，这部分是正确的
+            //自定义对象列表使用 LookMode.Deep。
             //    前提是 StudentData 类实现了 IExposable 接口
             Scribe_Collections.Look(ref HaveStudent, "HaveStudent", LookMode.Deep);
             Scribe_Collections.Look(ref studentSaves, "studentSaves", LookMode.Deep);
-            // 2. 保存字典，键和值都是简单类型，应使用 LookMode.Value
+            //简单类型字典使用 LookMode.Value。
             Scribe_Collections.Look(ref StudentCollect, "StudentCollect");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {

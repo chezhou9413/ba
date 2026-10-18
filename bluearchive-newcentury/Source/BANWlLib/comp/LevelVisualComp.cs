@@ -28,7 +28,7 @@ namespace BANWlLib.comp
         // 特效播放计时器（用于控制特效播放时长）
         private int effecterTimer = 0;
         
-        // 性能优化：缓存Hediff引用，避免每帧查找
+        //缓存 Hediff 引用。
         private Hediff cachedHediff = null;
         private int lastHediffCheckTick = 0;
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -70,7 +70,7 @@ namespace BANWlLib.comp
             }
         }
 
-        //获取升级特效，负责优先使用 PawnKind 单独配置。
+        //获取升级特效，优先使用 PawnKind 单独配置。
         private string GetLevelUpEffect()
         {
             PawnProgressBarKindExtension kindConfig = cachedPawn?.kindDef?.GetModExtension<PawnProgressBarKindExtension>();
@@ -92,7 +92,7 @@ namespace BANWlLib.comp
             return "";
         }
 
-        //获取升级语音列表，负责优先使用 PawnKind 单独配置。
+        //获取升级语音列表，优先使用 PawnKind 单独配置。
         private List<string> GetLevelUpSounds()
         {
             PawnProgressBarKindExtension kindConfig = cachedPawn?.kindDef?.GetModExtension<PawnProgressBarKindExtension>();
@@ -121,7 +121,7 @@ namespace BANWlLib.comp
                 }
             }
 
-            // 性能优化：每60tick检查一次Hediff，而不是每帧
+            //每 60 tick 检查一次 Hediff。
             if (cachedPawn != null && hediffDef != null)
             {
                 int currentTick = Find.TickManager.TicksGame;

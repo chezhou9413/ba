@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib
 {
-    //PawnKind 星级配置，负责为每个学生 Kind 单独提供星级绘制参数。
+    //PawnKind 星级配置，为每个学生 Kind 单独提供星级绘制参数。
     public class PawnProgressBarKindExtension : DefModExtension
     {
         //星星的间隔比例。

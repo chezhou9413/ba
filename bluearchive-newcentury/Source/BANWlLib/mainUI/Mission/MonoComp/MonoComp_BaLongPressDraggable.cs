@@ -1,20 +1,35 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using MyCoolMusicMod.MyCoolMusicMod;
 using System.Collections;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.EventSystems;
+#else
 using UnityEngine.EventSystems;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 
 namespace BANWlLib.mainUI.Mission.MonoComp
 {
-    // 1. 添加 IBeginDragHandler 接口
     internal class MonoComp_BaLongPressDraggable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler, IBeginDragHandler
     {
         public static bool isMove = false;
         [Header("移动设置")]
         public RectTransform targetToMove;
 
-        // 不需要 isPointerDown 和 timer 了，我们要的是即时响应
         private bool isDragging = false;
 
         private RectTransform moveTransform;
@@ -44,11 +59,10 @@ namespace BANWlLib.mainUI.Mission.MonoComp
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            // 这里只做简单的按下反馈，或者什么都不做
             // 真正的坐标计算移到 OnBeginDrag，因为那时候父物体会改变
         }
 
-        // 2. 核心逻辑：开始拖拽的一瞬间触发
+        //开始拖拽。
         public void OnBeginDrag(PointerEventData eventData)
         {
             if (moveTransform == null || canvas == null) return;
@@ -62,18 +76,17 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 LoopBGMManager.PlayClipDirectly(studentDef.baStudentData.DraggableAudio);
             }
 
-            // --- A. 记录老家 ---
+            //记录原父节点。
             originalParent = moveTransform.parent;
             originalSiblingIndex = moveTransform.GetSiblingIndex();
 
-            // --- B. 搬家到 Canvas (提层级) ---
+            //移到 Canvas 顶层。
             moveTransform.SetParent(canvas.transform, true);
             moveTransform.SetAsLastSibling();
 
-            // --- C. 更新当前的父物体引用为 Canvas ---
             parentRect = canvas.transform as RectTransform;
 
-            // --- D. 关键：父物体变了，必须重新计算 Offset ---
+            //父节点改变后重新计算拖拽偏移。
             // 否则物体会瞬间闪烁或跳动
             Vector2 localMousePos;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -87,7 +100,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             offset = moveTransform.anchoredPosition - localMousePos;
         }
 
-        // 3. 持续拖拽中
+        //更新拖拽位置。
         public void OnDrag(PointerEventData eventData)
         {
             if (!isDragging || moveTransform == null || parentRect == null) return;
@@ -111,7 +124,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             {
                 var btn = GetComponent<Button>();
 
-                // --- 恢复老家 ---
+                //恢复原父节点。
                 if (moveTransform != null && originalParent != null)
                 {
                     moveTransform.SetParent(originalParent, true);

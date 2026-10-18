@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //特殊生命操作，负责最大生命换算与不经过攻击结算的安全生命消耗。
+    //特殊生命操作，最大生命换算与不经过攻击结算的安全生命消耗。
     public static class SpecialHealthUtility
     {
         //将项目生命倍率转换为面板生命基数。

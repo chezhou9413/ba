@@ -2,7 +2,7 @@ using Verse;
 
 namespace BANWlLib.Effects.AssetBundles
 {
-    // 特效缓存组件，负责在游戏 Tick 中驱动 AB 特效缓存的延迟清理。
+    //特效缓存组件，在游戏 Tick 中驱动 AB 特效缓存的延迟清理。
     public class BAEffectCacheGameComponent : GameComponent
     {
         public BAEffectCacheGameComponent(Game game)

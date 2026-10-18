@@ -1,10 +1,28 @@
-﻿using DG.Tweening;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+#if RW_1_7
+using RimUnity.Tweening;
+#else
+using DG.Tweening;
+#endif
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
 {
+    //准备抽取卡面并播放入场和落下特效。
     public class MonoComp_CardshowList : MonoBehaviour
     {
         public float TargetSize = 2f;
@@ -12,9 +30,17 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         public Vector2 offset = new Vector2(0, 50);
         public gacaData gacaData;
         public Image Image;
-        void Start()
+
+        //实例创建当帧先隐藏卡面，避免 Start 前显示默认贴图和缩放。
+        private void Awake()
         {
             Image = this.transform.Find("MainImage").GetComponent<Image>();
+            Image.gameObject.SetActive(false);
+        }
+
+        //数据由创建方赋值后，先设置初始画面再开始可见动画。
+        void Start()
+        {
             if (gacaData != null)
             {
                 switch (gacaData.starNum)
@@ -32,6 +58,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
             Image.GetComponent<RectTransform>().anchoredPosition += offset;
             Image.transform.localScale = Vector3.one * initSize;
+            Image.gameObject.SetActive(true);
             Sequence cardSeq = DOTween.Sequence();
             cardSeq.Append(Image.transform.DOScale(TargetSize, 0.35f).SetEase(Ease.Linear));
             cardSeq.OnComplete(() =>
@@ -40,6 +67,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 OnCardSlammed();
             });
 
+            //卡片落下时启动对应稀有度的粒子。
             void OnCardSlammed()
             {
                 switch (gacaData.starNum)

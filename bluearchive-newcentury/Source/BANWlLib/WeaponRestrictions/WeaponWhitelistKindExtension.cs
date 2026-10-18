@@ -3,12 +3,12 @@ using Verse;
 
 namespace BANWlLib.WeaponRestrictions
 {
-    // Kind 武器白名单配置，负责声明该 Kind 可以装备的精确武器 Def。
+    //Kind 武器白名单配置，声明该 Kind 可以装备的精确武器 Def。
     public sealed class WeaponWhitelistKindExtension : DefModExtension
     {
         public List<ThingDef> allowedWeapons = new List<ThingDef>();
 
-        // 检查白名单配置，负责在 Def 加载阶段报告空列表、重复项和非武器引用。
+        //检查白名单配置，在 Def 加载阶段报告空列表、重复项和非武器引用。
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (string error in base.ConfigErrors())

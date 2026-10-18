@@ -9,7 +9,7 @@ using Verse.AI;
 
 namespace BANWlLib.BaJob
 {
-    // 球形范围攻击 Job，负责按主序列和延迟序列在目标区域结算效果。
+    //球形范围攻击 Job，按主序列和延迟序列在目标区域结算效果。
     public class Job_SphereAreaAttack : JobDriver
     {
         private List<TickDelayDamageAndHediff> damageSequence;
@@ -21,13 +21,13 @@ namespace BANWlLib.BaJob
 
         private BaJobDef_SphereAreaAttack def => (BaJobDef_SphereAreaAttack)job.def;
 
-        // 预约 Job，负责允许该技能直接开始执行。
+        //预约 Job，允许该技能直接开始执行。
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
         }
 
-        // 执行单次延迟动作，负责对范围内目标应用统一战斗效果。
+        //执行单次延迟动作，对范围内目标应用统一战斗效果。
         private void actionDamageSetting(DamageSetting damage, Map map)
         {
             BattleActionConfig action = damage.ToBattleAction();
@@ -54,7 +54,7 @@ namespace BANWlLib.BaJob
             }
         }
 
-        // 播放延迟范围特效，负责让子段配置的 effecterDef 在范围中心触发。
+        //播放延迟范围特效，让子段配置的 effecterDef 在范围中心触发。
         private void TriggerAreaEffect(EffecterDef effecterDef, Map map)
         {
             if (effecterDef == null || map == null)
@@ -68,7 +68,7 @@ namespace BANWlLib.BaJob
             effecter.Trigger(pawn, targetInfo);
         }
 
-        // 生成 Toil，负责维护主时间轴、待触发列表和朝向。
+        //生成 Toil，维护主时间轴、待触发列表和朝向。
         protected override IEnumerable<Toil> MakeNewToils()
         {
             Toil channelingToil = new Toil();
@@ -162,7 +162,7 @@ namespace BANWlLib.BaJob
             yield return channelingToil;
         }
 
-        // 保存和读取 Job 状态，负责让待触发动作支持读档续跑。
+        //保存和读取 Job 状态，让待触发动作支持读档续跑。
         public override void ExposeData()
         {
             base.ExposeData();

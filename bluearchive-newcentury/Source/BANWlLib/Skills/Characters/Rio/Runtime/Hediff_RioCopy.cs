@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //目标持有的复制机会，负责技能实例、阶段同步、存档和施法完成后的资源回收。
+    //目标持有的复制机会，技能实例、阶段同步、存档和施法完成后的资源回收。
     public class Hediff_RioCopy : HediffWithComps
     {
         public Hediff_SpecialSkillState issuer;

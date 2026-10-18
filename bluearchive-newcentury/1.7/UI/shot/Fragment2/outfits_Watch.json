@@ -1,0 +1,102 @@
+[
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_2_Piece",
+        "ProductDefName": "BANW_Watch_2_Piece",
+        "ProductName": "Lv.2-皮带手表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_3_Piece",
+        "ProductDefName": "BANW_Watch_3_Piece",
+        "ProductName": "Lv.3-波浪猫手表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_4_Piece",
+        "ProductDefName": "BANW_Watch_4_Piece",
+        "ProductName": "Lv.4-复古怀表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_5_Piece",
+        "ProductDefName": "BANW_Watch_5_Piece",
+        "ProductName": "Lv.5-防尘手表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_6_Piece",
+        "ProductDefName": "BANW_Watch_6_Piece",
+        "ProductName": "Lv.6-哥特风手表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_7_Piece",
+        "ProductDefName": "BANW_Watch_7_Piece",
+        "ProductName": "Lv.7-街头时尚手表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_8_Piece",
+        "ProductDefName": "BANW_Watch_8_Piece",
+        "ProductName": "Lv.8-罗蕾莱手表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_9_Piece",
+        "ProductDefName": "BANW_Watch_9_Piece",
+        "ProductName": "Lv.9-潜水员手表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Watch/Watch_10_Piece",
+        "ProductDefName": "BANW_Watch_10_Piece",
+        "ProductName": "Lv.10-触屏手表设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    }
+    
+] 

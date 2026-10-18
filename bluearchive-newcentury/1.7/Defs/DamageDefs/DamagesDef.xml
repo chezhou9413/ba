@@ -1,0 +1,180 @@
+
+<Defs>
+
+  <DamageDef>
+    <defName>BANC_Damage_Akane</defName>
+    <label>Bullet</label>
+    <workerClass>DamageWorker_Stab</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} 死于有品位的贯通</deathMessage>
+    <hediff>Stab</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <hediffSolid>Crack</hediffSolid>
+    <armorCategory>Sharp</armorCategory>
+    <hasForcefulImpact>false</hasForcefulImpact>
+   
+  
+    <additionalHediffs>
+      <li>
+        <hediff>BAWN_Akane_HediffDef</hediff>
+        <severityPerDamageDealt>1</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+    <impactSoundType>Bullet</impactSoundType>
+    <overkillPctToDestroyPart>0.2~0.7</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <damageEffecter>BAWN_Akane_Ef_A</damageEffecter>
+
+  </DamageDef>
+  <DamageDef Name="BANC_Damage_guantong">
+    <defName>BANC_Damage_guantong</defName>
+    <label>贯通</label>
+    <workerClass>DamageWorker_Stab</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} 死于贯通伤害</deathMessage>
+    <hediff>Stab</hediff>
+    <hediff>Gunshot</hediff>
+    <armorCategory>Sharp</armorCategory>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+
+    <DamageDef Name="BANC_Damage_baofa">
+    <defName>BANC_Damage_baofa</defName>
+    <label>爆发</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} 死于爆发伤害</deathMessage>
+    <hediff>Gunshot</hediff>
+    <armorCategory>Sharp</armorCategory>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+
+  <DamageDef Name="BANC_Damage_zhendong">
+    <defName>BANC_Damage_zhendong</defName>
+    <label>振动</label>
+    <workerClass>DamageWorker_Blunt</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} 死于振动伤害</deathMessage>
+    <hediff>Gunshot</hediff>
+    <armorCategory>Sharp</armorCategory>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+
+  <DamageDef Name="BANC_Damage_shenmi">
+    <defName>BANC_Damage_shenmi</defName>
+    <label>神秘</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} 死于神秘伤害</deathMessage>
+    <hediff>Gunshot</hediff>
+    <armorCategory>Sharp</armorCategory>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.4</stabChanceOfForcedInternal>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>BANC_Damage_Yuzu</defName>
+    <label>贯通</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} 死于贯通伤害</deathMessage>
+    <hediff>Stab</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <armorCategory>Sharp</armorCategory>
+        <bluntInnerHitDamageFractionToConvert>0.1~0.2</bluntInnerHitDamageFractionToConvert>
+    <bluntInnerHitDamageFractionToAdd>0.2~0.35</bluntInnerHitDamageFractionToAdd>
+   <hasForcefulImpact>true</hasForcefulImpact>
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <overkillPctToDestroyPart>0.4~0.8</overkillPctToDestroyPart>
+    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+   <DamageDef>
+    <defName>BANC_Damage_Misaki</defName>
+    <label>爆发</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} 死于爆发伤害</deathMessage>
+    <hediff>Gunshot</hediff>
+    <armorCategory>Sharp</armorCategory>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <harmAllLayersUntilOutside>False</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5, 0.3)</explosionColorCenter>
+    <explosionColorEdge>(0.6, 0.5, 0.4)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>BANC_Damage_Arisu</defName>
+    <label>神秘</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} 死于神秘伤害</deathMessage>
+    <hediff>Shredded</hediff>
+    <armorCategory>Heat</armorCategory>
+    <bluntInnerHitDamageFractionToConvert>0.4~0.5</bluntInnerHitDamageFractionToConvert>
+    <bluntInnerHitDamageFractionToAdd>0.4~0.5</bluntInnerHitDamageFractionToAdd>
+    <hasForcefulImpact>true</hasForcefulImpact>
+    <bluntInnerHitChance>0.4</bluntInnerHitChance>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <overkillPctToDestroyPart>0~0.5</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+    <buildingDamageFactor>4</buildingDamageFactor>
+    <damageEffecter>BANW_Effecter_ShakeAris</damageEffecter>
+  </DamageDef>
+
+  <DamageDef ParentName="BANC_Damage_guantong">
+    <defName>BANC_Damage_Akane_Common</defName>
+   <additionalHediffs>
+      <li>
+        <hediff>BAWN_Akane_HediffDef_Common</hediff>
+        <severityPerDamageDealt>1</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+  
+</Defs>

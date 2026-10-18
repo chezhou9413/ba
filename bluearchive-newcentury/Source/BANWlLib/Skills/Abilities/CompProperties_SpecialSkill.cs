@@ -2,7 +2,7 @@ using RimWorld;
 
 namespace BANWlLib.Skills
 {
-    //特殊技能按钮配置，负责把AbilityDef绑定到角色配置与具体操作。
+    //特殊技能按钮配置，把AbilityDef绑定到角色配置与具体操作。
     public class CompProperties_SpecialSkill : CompProperties_AbilityEffect
     {
         public SpecialSkillProfileDef profile;

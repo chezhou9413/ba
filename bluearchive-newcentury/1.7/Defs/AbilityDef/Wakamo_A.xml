@@ -1,0 +1,376 @@
+<Defs>
+ <AbilityDef>
+    <defName>BAWN_Wakamo_A_EXX</defName>
+    <label>翡翠花占</label>
+    <description>对一名敌人造成自身子弹攻击力的1074%的伤害,并且每一击造成1秒眩晕，最后一击造成4秒眩晕</description>
+    <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
+    <cooldownTicksRange>1000</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
+    <warmupStartSound>Wakamo_A_Skill_EXX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <targetRequired>true</targetRequired><!-- 对自己使用 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <statBases>
+    <Ability_Duration>4</Ability_Duration>
+  </statBases>
+    <verbProperties>
+      <warmupEffecter>BANW_Wakamo_A_Ef_C</warmupEffecter>
+      <soundCast></soundCast>
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <range>40.9</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>1.7</warmupTime><!-- 前摇时间（单位：秒） -->
+      <ai_IsWeapon>false</ai_IsWeapon> <!--AI
+      不将此能力视为武器。-->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffecterOnCaster">
+      <!-- 施法完成后在望身上播放原版自身特效，用来测试 EffecterOnCaster 的 PostApplied 链路。 -->
+      <effecterDef>BANW_Wakamo_A_Ef_D</effecterDef>
+      <maintainTicks>320</maintainTicks>
+    </li>
+      <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
+        <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
+        <projectileDef></projectileDef>
+        <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
+        <canHitOwnPawn>true</canHitOwnPawn>
+        <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
+        <canHitOwnBuilding>true</canHitOwnBuilding>
+        <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
+        <cancelWhenCasterMoved>true</cancelWhenCasterMoved>
+        <!-- 施法者倒地、死亡、眩晕或失去基础射击能力后，中断同一轮剩余子弹。 -->
+        <requireCasterCanShoot>true</requireCasterCanShoot>
+        <!-- 每发子弹到点时重新检查视线，视线被墙体或遮挡切断后中断同一轮剩余子弹。 -->
+        <requireLineOfSightEachShot>true</requireLineOfSightEachShot>
+        <!-- 连射队列未结束前每 tick 停止寻路，禁止施法者移动。 -->
+        <lockCasterDuringSequence>true</lockCasterDuringSequence>
+        <!-- 连射队列未结束前持续绘制主武器朝目标瞄准。 -->
+        <drawPrimaryWeaponAimDuringSequence>true</drawPrimaryWeaponAimDuringSequence>
+        <shots>
+          <li>
+            <delayTicks>0</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_EXX</projectileDef>
+            <attackPowerRatio>1.29</attackPowerRatio>
+          </li>
+          <li>
+            <delayTicks>0</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_stun</projectileDef>
+            <attackPowerRatio>1</attackPowerRatio>
+          </li>
+          <li>
+            <delayTicks>15</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_EXX</projectileDef>
+            <attackPowerRatio>1.29</attackPowerRatio>
+          </li>
+          <li>
+            <delayTicks>15</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_stun</projectileDef>
+            <attackPowerRatio>1</attackPowerRatio>
+          </li>
+          <li>
+            <delayTicks>30</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_EXX</projectileDef>
+            <attackPowerRatio>1.29</attackPowerRatio>
+          </li>
+           <li>
+            <delayTicks>30</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_stun</projectileDef>
+            <attackPowerRatio>1</attackPowerRatio>
+          </li>
+          <li>
+            <delayTicks>45</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_EXX</projectileDef>
+            <attackPowerRatio>1.29</attackPowerRatio>
+          </li>
+           <li>
+            <delayTicks>45</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_stun</projectileDef>
+            <attackPowerRatio>1</attackPowerRatio>
+          </li>
+          <li>
+            <delayTicks>60</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_EXX</projectileDef>
+            <attackPowerRatio>1.29</attackPowerRatio>
+          </li>
+           <li>
+            <delayTicks>60</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_stun</projectileDef>
+            <attackPowerRatio>1</attackPowerRatio>
+          </li>
+          <li>
+            <delayTicks>150</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_EXX</projectileDef>
+            <attackPowerRatio>4.23</attackPowerRatio>
+          </li>
+          <li>
+            <delayTicks>150</delayTicks>
+            <projectileDef>BANC_Bullet_Wakamo_A_stun_B</projectileDef>
+            <attackPowerRatio>4.0</attackPowerRatio>
+          </li>
+        </shots>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+      </li>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <shape>Circle</shape>
+        <range>40.9</range>
+        <drawCasterRange>true</drawCasterRange>
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Wakamo_A_EXX</defName>
+    <label>翡翠花占子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_guantong</damageDef><!--子弹类型-->
+      <damageAmountBase>37</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>20</stoppingPower><!--抑制-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
+      <speed>120</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1,4)</drawSize>
+      <texPath>Projectile/Bullet_Wakamo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>1</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>true</isExSkill>
+      <applyAffinity>true</applyAffinity>
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      </li>
+            <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
+       <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
+        <directionalImpactEffect>BANW_Wakamo_A_Ef_B</directionalImpactEffect>
+        <!-- 是否对 Pawn 触发方向命中特效。 -->
+        <directionalImpactOnPawn>true</directionalImpactOnPawn>
+        <!-- 是否对 Building 触发方向命中特效。 -->
+        <directionalImpactOnBuilding>true</directionalImpactOnBuilding>
+        <!-- 方向命中特效飞出速度。 -->
+        <directionalImpactSpeed>1</directionalImpactSpeed>
+        <!-- 方向命中特效沿弹道方向向前偏移。 -->
+        <directionalImpactOffsetForward>0</directionalImpactOffsetForward>
+        <!-- 方向命中特效向上偏移，避免埋进地面。 -->
+        <directionalImpactOffsetUp>0</directionalImpactOffsetUp>
+        <!-- 飞行开始时的绘制缩放。 -->
+        <startDrawScale>0.5</startDrawScale>
+        <!-- 飞行结束时的绘制缩放。 -->
+        <endDrawScale>1.2</endDrawScale>
+        <!-- 淡入 tick 数。 -->
+        <fadeInTicks>2</fadeInTicks>
+        <!-- 淡出 tick 数。 -->
+        <fadeOutTicks>5</fadeOutTicks>
+        <!-- true 表示飞行特效跟随投射物 Thing。 -->
+        <flightEffectAttachToProjectile>true</flightEffectAttachToProjectile>
+        <!-- true 表示附着 Mote 按投射物朝向同步旋转。 -->
+        <flightEffectRotateWithProjectile>true</flightEffectRotateWithProjectile>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Wakamo_A_stun</defName>
+    <label>翡翠花占子弹</label>
+    <projectile>
+      <damageDef>Stun</damageDef><!--子弹类型-->
+      <damageAmountBase>1</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>20</stoppingPower><!--抑制-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
+      <speed>120</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1,4)</drawSize>
+      <texPath>Projectile/kongbai</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>1</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>false</canCrit>
+        <isExSkill>false</isExSkill>
+      <applyAffinity>true</applyAffinity>
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      </li>
+    </modExtensions>
+  </ThingDef>
+   <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Wakamo_A_stun_B</defName>
+    <label>翡翠花占子弹</label>
+    <projectile>
+      <damageDef>Stun</damageDef><!--子弹类型-->
+      <damageAmountBase>4</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>20</stoppingPower><!--抑制-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
+      <speed>120</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(1,4)</drawSize>
+      <texPath>Projectile/kongbai</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <canCrit>false</canCrit>
+        <isExSkill>false</isExSkill>
+      <applyAffinity>true</applyAffinity>
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <canHitOwnBuilding>true</canHitOwnBuilding>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
+  <HediffDef>
+    <!-- 状态的唯一标识符 -->
+    <defName>BAWN_Wakamo_A_Buff_A</defName>
+    <!-- 显示名称 -->
+    <label>翡翠花占</label>
+    <!-- 效果描述 -->
+    <description>翡翠花占</description>
+    <defaultLabelColor>(255, 153, 255)</defaultLabelColor>
+    <!-- 是否为负面效果（会影响心情等） -->
+    <isBad>false</isBad>
+    <hediffClass>HediffWithComps</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+    <stages>
+      <li>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>300</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Wakamo_A_Ef_D</stateEffecter>
+      </li>
+    </comps>
+  </HediffDef>
+  <AbilityDef>
+    <defName>BAWN_Wakamo_A_EX</defName>
+    <label>只为您一人</label>
+    <description>根据自身使用该技能的次数，对自身造成以下效果中的1种\n第1次：攻击力增加31%.承伤率减少9%.\n第2次：攻击力增加62%.承伤率减少19%\n第3次：攻击力增加99%.承伤率减少29%（持续120秒）</description>
+    <iconPath>Ability/Icon/Wakamo_A/Wakamo_EX</iconPath>
+    <cooldownTicksRange>21600</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <charges>3</charges> <!-- 设置该能力有 5 次充能次数。-->
+    <warmupStartSound>Wakamo_A_Skill_EX</warmupStartSound>
+    <warmupEffecter>BANW_Wakamo_A_Ef_A</warmupEffecter>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <targetRequired>false</targetRequired><!-- 对自己使用 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>false</hostile><!-- 是否是敌对行为 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <statBases>
+      <!-- 持续时间：20 秒 = 1200 ticks -->
+      <Ability_Duration>120</Ability_Duration>
+    </statBases>
+    <verbProperties>
+      <soundCast>Aoba_Skill_EX</soundCast>
+      <verbClass>Verb_CastAbility</verbClass> <!-- 动词类，这里是触发型技能 -->
+      <drawAimPie>false</drawAimPie><!-- 不绘制瞄准圈 -->
+      <range>-1</range><!-- 作用范围：-1 表示只能近战接触 -->
+      <warmupTime>2</warmupTime><!-- 前摇时间（单位：秒） -->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetSelf>true</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>false</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>false</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>false</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Effecter_B</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff"><!-- 给目标添加一个 Hediff（状态效果） -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass><!-- 实际执行效果的组件类 -->
+        <hediffDef>BAWN_Wakamo_A_buff</hediffDef><!-- 要添加的状态效果定义名 -->
+        <onlyApplyToSelf>true</onlyApplyToSelf> <!-- 仅对自己生效 -->
+        <replaceExisting>false</replaceExisting><!-- 如果已有同类效果，则替换它 -->
+      </li>
+
+    </comps>
+  </AbilityDef>
+  <HediffDef>
+    <defName>BAWN_Wakamo_A_buff</defName>
+    <label>只为您一人</label>
+    <description>根据自身使用该技能的次数，对自身造成以下效果中的1种\n第1次：攻击力增加31%.承伤系数减少9%.\n第2次：攻击力增加62%.承伤系数减少19%\n第3次：攻击力增加99%.承伤率减少29%</description>
+    <defaultLabelColor>(255, 210, 80)</defaultLabelColor>
+    <isBad>false</isBad>
+    <hediffClass>BANWlLib.BattleSystem.Hediff_BattleStack</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleStack">
+        <!-- 最大层数，超过后只刷新时间。 -->
+        <maxStacks>3</maxStacks>
+        <!-- 重复施加时是否重置持续时间。 -->
+        <refreshDurationOnApply>true</refreshDurationOnApply>
+        <!-- 状态持续时间，单位 tick。 -->
+        <durationTicks>1200</durationTicks>
+        <!-- 到期后是否移除 Hediff。 -->
+        <removeOnExpire>true</removeOnExpire>
+        <!-- 同一个叠层状态内可以配置多个属性组，每组按当前层数取值。 -->
+        <statGroups>
+          <li>
+            <!-- 最终伤害倍率加值：30% / 70% / 100%。 -->
+            <targetStat>BANW_FinalDamageMultiplier</targetStat>
+            <stackValues>
+              <li>0.30</li>
+              <li>0.70</li>
+              <li>1.00</li>
+            </stackValues>
+          </li>
+          <li>
+            <!-- 暴击率加值：5% / 10% / 15%。 -->
+            <targetStat>IncomingDamageFactor</targetStat>
+            <stackValues>
+              <li>-0.09</li>
+              <li>-0.19</li>
+              <li>-0.29</li>
+            </stackValues>
+          </li>
+        </statGroups>
+      </li>
+
+
+    </comps>
+  </HediffDef>
+</Defs>

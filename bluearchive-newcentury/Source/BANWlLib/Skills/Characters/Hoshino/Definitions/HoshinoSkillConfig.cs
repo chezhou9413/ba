@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //星野专属配置，负责分段EX、普攻触发、强化连射和防御普通技能参数。
+    //星野专属配置，分段EX、普攻触发、强化连射和防御普通技能参数。
     public class HoshinoSkillConfig
     {
         public List<HoshinoAttackStage> exStages;
@@ -12,6 +12,14 @@ namespace BANWlLib.Skills
         public int outputBurstShots = 6;
         public int tankBurstShots = 1;
         public AbilityDef tankNormalAbility;
+        public HoshinoSkillEffect switchToOutput;
+        public HoshinoSkillEffect switchToTank;
+        public HoshinoSkillEffect outputNormal;
+        public HoshinoSkillEffect tankNormal;
+        public TraitDef outputTrait;
+        public TraitDef tankTrait;
+        public ThingDef shieldApparel;
+        public EffecterDef interceptEffecter;
         public SpecialAttackConfig empoweredAttack;
         public float empoweredFanArc = 60f;
         public EffecterDef empoweredShotEffecter;
@@ -25,6 +33,10 @@ namespace BANWlLib.Skills
             if (normalRequiredShots <= 0 || outputBurstShots <= 0 || tankBurstShots <= 0)
                 yield return "普攻触发次数和形态连射数必须大于零";
             if (tankNormalAbility == null) yield return "缺少防御普通技能按钮";
+            if (switchToOutput == null || switchToTank == null || outputNormal == null || tankNormal == null)
+                yield return "必须分别配置两种形态切换和两种普通技能的表现";
+            if (outputTrait == null || tankTrait == null || outputTrait == tankTrait)
+                yield return "必须配置不同的输出和坦克职位特性";
             if (empoweredShotEffecter == null) yield return "缺少强化普攻定向特效";
             if (empoweredFanArc <= 0f || empoweredFanArc > 360f)
                 yield return "强化普攻扇形夹角必须大于0且不超过360度";

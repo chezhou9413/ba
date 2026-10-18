@@ -3,21 +3,10 @@ using Verse;
 
 namespace AbilityShoot
 {
-    /// <summary>
-    /// 自定义的玩家射击技能动词类
-    /// 继承自RimWorld原版的Verb_AbilityShoot，用于处理玩家角色的射击类技能
-    /// 主要功能：
-    /// 1. 处理技能的目标选择逻辑
-    /// 2. 在技能施放完成后给施法者添加状态效果
-    /// 适用于需要对施法者自身产生增益效果的射击技能
-    /// </summary>
+    //射击技能动词，在施放后为施法者附加状态。
     public class Verb_AbilityShootForPlayer : Verb_AbilityShoot
     {
-        /// <summary>
-        /// 处理强制目标指定的逻辑
-        /// 当玩家手动选择目标或AI决定攻击目标时调用此方法
-        /// </summary>
-        /// <param name="target">目标信息，包含目标的位置、实体等信息</param>
+        //处理指定目标的施法请求。
         public override void OrderForceTarget(LocalTargetInfo target)
         {
             // 检查当前技能是否包含目标指定组件
@@ -35,26 +24,19 @@ namespace AbilityShoot
             {
                 // 对于纯射击技能（没有特殊位置要求的技能）
                 // 直接将射击任务加入到施法者的任务队列中
-                // 第一个参数是目标，第二个参数是额外的任务数据（这里为null）
                 Ability.QueueCastingJob(target, null);
             }
         }
 
-        /// <summary>
-        /// 技能预热完成后的处理逻辑
-        /// 在技能的warmupTime结束后，实际产生效果之前调用
-        /// 用于处理技能的附加效果，特别是对施法者自身的状态效果
-        /// </summary>
+        //预热结束后执行射击并附加自身状态。
         public override void WarmupComplete()
         {
             // 首先调用基类的WarmupComplete方法
-            // 这确保了原版射击技能的所有标准行为都能正常执行
             base.WarmupComplete();
 
             // 获取施法者的Pawn信息
             Pawn casterPawn = (Pawn)caster;
             
-            // 确保施法者是有效的Pawn
             if (casterPawn == null)
             {
                 return;
@@ -69,7 +51,6 @@ namespace AbilityShoot
                     // 从组件配置中获取要添加的状态效果定义
                     HediffDef hediffDef = giveHediffComp.Props.hediffDef;
                     
-                    // 确保状态效果定义存在
                     if (hediffDef == null)
                     {
                         continue;
@@ -94,7 +75,6 @@ namespace AbilityShoot
                         // 使用RimWorld原生方法创建和添加状态效果
                         Hediff newHediff = HediffMaker.MakeHediff(hediffDef, casterPawn);
                         
-                        // 如果状态效果有持续时间设置，可以在这里进行额外配置
                         // 例如：newHediff.Severity = 1.0f; // 设置严重程度
                         
                         casterPawn.health.AddHediff(newHediff);

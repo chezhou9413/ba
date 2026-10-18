@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.Mission.MonoComp;
 using BANWlLib.mainUI.StudentManual;
@@ -5,8 +9,17 @@ using BANWlLib.Tool;
 using newpro;
 using System.Collections.Generic;
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 using Verse.Noise;
 using static UnityEngine.Networking.UnityWebRequest;
@@ -22,7 +35,7 @@ namespace BANWlLib.mainUI.Mission
             lordMissionPrefab(UiMapData.bundle);
             LordMissionTypeDef();
             LordMissionNodeDef();
-            lordPawnHead();
+            //头像由任务列表按需生成并缓存，初始化不创建未显示学生的临时 Pawn。
         }
 
         //创建任务分类按钮并绑定按需显示的图标。
@@ -57,8 +70,8 @@ namespace BANWlLib.mainUI.Mission
             foreach (BaMissionNode missionNode in sortedList)
             {
                 GameObject typeObj = GameObject.Instantiate(MissionMapData.MissionNodeGameObj, MissionMapData.NodeContent.transform);
-                typeObj.transform.Find("MissionID").GetComponent<UnityEngine.UI.Text>().text = missionNode.MissionID;
-                typeObj.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().text = missionNode.MissionTitle;
+                typeObj.transform.Find("MissionID").GetComponent<Engine.UI.Text>().text = missionNode.MissionID;
+                typeObj.transform.Find("Text").GetComponent<Engine.UI.Text>().text = missionNode.MissionTitle;
                 MonoComp_BaMissionNode monoComp = typeObj.AddComponent<MonoComp_BaMissionNode>();
                 monoComp.type = missionNode.MissionType;
                 monoComp.selfMissionInfo = missionNode;
@@ -66,26 +79,6 @@ namespace BANWlLib.mainUI.Mission
             }
         }
 
-        //为任务界面生成角色头像控件。
-        private static void lordPawnHead()
-        {
-             List<BaStudentDef> StudentList = DefDatabase<BaStudentDef>.AllDefsListForReading;
-            if (StudentList.NullOrEmpty())
-            {
-                return;
-            }
-            foreach(BaStudentDef student in StudentList)
-            {
-                if (student?.kindDef == null)
-                {
-                    continue;
-                }
-
-                string studentId = StudentIdentityUtility.GetStudentId(student);
-                Sprite sprite = RimWorldUISpriteUtil.GetHeadShotSpriteFromKind(student.kindDef, MissionSpriteSizes.CachedHead);
-                MissionMapData.pawnBigHardSprite[studentId] = sprite;
-            }
-        }
         //从资源包加载任务界面所需预制体。
         private static void lordMissionPrefab(AssetBundle bundle)
         {

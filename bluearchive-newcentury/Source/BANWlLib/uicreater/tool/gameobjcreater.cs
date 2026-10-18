@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using HarmonyLib;
 using MyCoolMusicMod;
 using RimWorld;
@@ -8,9 +12,22 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
+#if RW_1_7
+using RimUnity.Video;
+#else
 using UnityEngine.Video;
+#endif
 using Verse;
 using Verse.AI;
 namespace newpro
@@ -107,10 +124,10 @@ namespace newpro
                 return;
             }
 
-            UnityEngine.UI.Text Text_datashow = obj1.GetComponent<UnityEngine.UI.Text>();
-            UnityEngine.UI.Text Text_titleshow = obj2.GetComponent<UnityEngine.UI.Text>();
-            UnityEngine.UI.Text Text_upshow = obj3.GetComponent<UnityEngine.UI.Text>();
-            UnityEngine.UI.Text Text_dexshow = obj4.GetComponent<UnityEngine.UI.Text>();
+            Engine.UI.Text Text_datashow = obj1.GetComponent<Engine.UI.Text>();
+            Engine.UI.Text Text_titleshow = obj2.GetComponent<Engine.UI.Text>();
+            Engine.UI.Text Text_upshow = obj3.GetComponent<Engine.UI.Text>();
+            Engine.UI.Text Text_dexshow = obj4.GetComponent<Engine.UI.Text>();
 
             if (Text_datashow == null || Text_titleshow == null || Text_upshow == null || Text_dexshow == null)
             {
@@ -154,7 +171,7 @@ namespace newpro
             {
                 GameObject childInstance = GameObject.Instantiate(UiMapData.poitlist);
                 childInstance.transform.SetParent(poitcont.transform);
-                UnityEngine.UI.Text text = childInstance.transform.Find("avtname").GetComponent<UnityEngine.UI.Text>();
+                Engine.UI.Text text = childInstance.transform.Find("avtname").GetComponent<Engine.UI.Text>();
                 text.text = poit.characterName;
                 Image image = childInstance.transform.Find("avt").GetComponent<Image>();
                 imgcvT2d.SetImage(image, petpath + "\\" + poit.characterImage + ".png");

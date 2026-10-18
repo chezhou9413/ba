@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //特殊技能效果组件，负责目标筛选、阶段按钮显隐和施法分派。
+    //特殊技能效果组件，目标筛选、阶段按钮显隐和施法分派。
     public class CompAbilityEffect_SpecialSkill : CompAbilityEffect
     {
         public new CompProperties_SpecialSkill Props => (CompProperties_SpecialSkill)props;

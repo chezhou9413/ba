@@ -5,7 +5,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //凯伊场地绑定器，负责把现有EX创建的实际场地连接到独立蓄积状态。
+    //凯伊场地绑定器，把现有EX创建的实际场地连接到独立蓄积状态。
     public static class KeiFieldBinding
     {
         //接收EX场地生成通知，重叠施法使用独立状态保留各自蓄积与释放机会。

@@ -1,0 +1,102 @@
+[
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_2_Piece",
+        "ProductDefName": "BANW_Necklace_2_Piece",
+        "ProductName": "Lv.2-雪花吊坠设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_3_Piece",
+        "ProductDefName": "BANW_Necklace_3_Piece",
+        "ProductName": "Lv.3-尼古拉挂坠盒设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_4_Piece",
+        "ProductDefName": "BANW_Necklace_4_Piece",
+        "ProductName": "Lv.4-十字架颈链设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_5_Piece",
+        "ProductDefName": "BANW_Necklace_5_Piece",
+        "ProductName": "Lv.5-身份牌设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_6_Piece",
+        "ProductDefName": "BANW_Necklace_6_Piece",
+        "ProductName": "Lv.6-朋克项圈设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_7_Piece",
+        "ProductDefName": "BANW_Necklace_7_Piece",
+        "ProductName": "Lv.7-锁扣项链设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_8_Piece",
+        "ProductDefName": "BANW_Necklace_8_Piece",
+        "ProductName": "Lv.8-绿叶项链设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_9_Piece",
+        "ProductDefName": "BANW_Necklace_9_Piece",
+        "ProductName": "Lv.9-章鱼固定器设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Necklace/Necklace_10_Piece",
+        "ProductDefName": "BANW_Necklace_10_Piece",
+        "ProductName": "Lv.10-存储器项链设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    }
+    
+] 

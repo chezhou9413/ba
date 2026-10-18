@@ -8,7 +8,7 @@
     <pawnFlyer>
       <!-- 原版基础飞行速度，实际持续时间由技能 speed 覆盖。 -->
       <flightSpeed>12</flightSpeed>
-      <!-- 原版进度曲线，负责让起跳阶段略快一点。 -->
+      <!-- 原版进度曲线，起跳阶段较快。 -->
       <workerClass>PawnFlyerWorker</workerClass>
       <!-- 原版最短飞行时间，避免短距离跳跃瞬间结束。 -->
       <flightDurationMin>0.25</flightDurationMin>

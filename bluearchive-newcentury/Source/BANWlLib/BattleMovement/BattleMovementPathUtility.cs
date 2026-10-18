@@ -5,16 +5,16 @@ using Verse;
 
 namespace BANWlLib.BattleMovement
 {
-    // 战斗位移路径工具，负责直线路径、可配置阻挡、范围目标和阵营过滤。
+    //战斗位移路径工具，直线路径、可配置阻挡、范围目标和阵营过滤。
     public static class BattleMovementPathUtility
     {
-        // 解析位移终点，负责沿直线扫描并停在第一个阻挡格之前。
+        //解析位移终点，沿直线扫描并停在第一个阻挡格之前。
         public static IntVec3 ResolveBlockedDestination(Pawn pawn, IntVec3 requestedCell)
         {
             return ResolveBlockedDestination(pawn, requestedCell, false, false);
         }
 
-        // 解析位移终点，负责按穿墙和穿掩体配置沿直线扫描可到达终点。
+        //按穿墙和穿掩体配置沿直线扫描可到达终点。
         public static IntVec3 ResolveBlockedDestination(Pawn pawn, IntVec3 requestedCell, bool canPassWalls, bool canPassCover)
         {
             if (pawn?.Map == null || !requestedCell.IsValid)
@@ -47,7 +47,7 @@ namespace BANWlLib.BattleMovement
             return lastValid;
         }
 
-        // 解析击退终点，负责沿击退方向逐格推进到阻挡前。
+        //解析击退终点，沿击退方向逐格推进到阻挡前。
         public static IntVec3 ResolveKnockbackDestination(Pawn pawn, Vector3 direction, int distance)
         {
             if (pawn?.Map == null || distance <= 0)
@@ -59,7 +59,7 @@ namespace BANWlLib.BattleMovement
             return ResolveBlockedDestination(pawn, desiredCell);
         }
 
-        // 枚举路径内 Pawn，负责平面冲撞只对路径目标命中一次。
+        //枚举路径内 Pawn，平面冲撞只对路径目标命中一次。
         public static IEnumerable<Pawn> PawnsInPath(Pawn caster, IntVec3 destination, int pathWidth)
         {
             HashSet<int> visited = new HashSet<int>();
@@ -83,7 +83,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 枚举范围内 Pawn，负责落地和瞬移终点范围结算。
+        //枚举范围内 Pawn，落地和瞬移终点范围结算。
         public static IEnumerable<Pawn> PawnsInRadius(Map map, IntVec3 center, float radius)
         {
             foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, radius, true))
@@ -105,7 +105,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 判断 Pawn 是否符合阵营过滤，负责让击退独立于伤害动作配置。
+        //判断 Pawn 是否符合阵营过滤，让击退独立于伤害动作配置。
         public static bool CanAffectPawn(Pawn caster, Pawn targetPawn, bool affectHostile, bool affectFriendly)
         {
             if (caster == null || targetPawn == null || targetPawn.Dead)
@@ -126,7 +126,7 @@ namespace BANWlLib.BattleMovement
             return affectFriendly;
         }
 
-        // 计算方向向量，负责把两个格子转换成水平单位方向。
+        //计算方向向量，把两个格子转换成水平单位方向。
         public static Vector3 Direction(IntVec3 from, IntVec3 to)
         {
             Vector3 direction = (to - from).ToVector3().Yto0();
@@ -138,13 +138,13 @@ namespace BANWlLib.BattleMovement
             return direction;
         }
 
-        // 判断格子能否站立，负责统一墙体、建筑和不可站立地形阻挡。
+        //判断格子能否站立，统一墙体、建筑和不可站立地形阻挡。
         private static bool CanStandAt(Map map, IntVec3 cell)
         {
             return cell.InBounds(map) && cell.Standable(map);
         }
 
-        // 判断不可站立格是否允许穿过，负责区分墙体类阻挡和掩体类阻挡。
+        //判断不可站立格是否允许穿过，区分墙体类阻挡和掩体类阻挡。
         private static bool CanPassBlockedCell(Map map, IntVec3 cell, bool canPassWalls, bool canPassCover)
         {
             if (!cell.InBounds(map))
@@ -165,7 +165,7 @@ namespace BANWlLib.BattleMovement
             return false;
         }
 
-        // 判断格子是否属于墙体阻挡，负责把墙、封闭建筑和不可通行地形归入穿墙配置。
+        //判断格子是否属于墙体阻挡，把墙、封闭建筑和不可通行地形归入穿墙配置。
         private static bool IsWallBlocker(Map map, IntVec3 cell)
         {
             TerrainDef terrain = cell.GetTerrain(map);
@@ -192,7 +192,7 @@ namespace BANWlLib.BattleMovement
             return false;
         }
 
-        // 判断格子是否属于掩体阻挡，负责识别沙袋、路障等能提供掩体但不是墙的中间阻挡。
+        //判断格子是否属于掩体阻挡，识别沙袋、路障等能提供掩体但不是墙的中间阻挡。
         private static bool IsCoverBlocker(Map map, IntVec3 cell)
         {
             Thing cover = cell.GetCover(map);
@@ -204,7 +204,7 @@ namespace BANWlLib.BattleMovement
             return cover.def.Fillage != FillCategory.Full && cover.def.passability != Traversability.Impassable;
         }
 
-        // 生成直线路径格，负责用整数 Bresenham 算法覆盖起点到目标点。
+        //用整数 Bresenham 算法覆盖起点到目标点。
         private static IEnumerable<IntVec3> LineCells(IntVec3 start, IntVec3 end)
         {
             int x0 = start.x;
@@ -240,7 +240,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 生成路径宽度格，负责给冲撞路径提供可配置宽度。
+        //生成路径宽度格，给冲撞路径提供可配置宽度。
         private static IEnumerable<IntVec3> WidthCells(Map map, IntVec3 center, int pathWidth)
         {
             int radius = Mathf.Max(0, pathWidth - 1);
@@ -259,7 +259,7 @@ namespace BANWlLib.BattleMovement
             }
         }
 
-        // 按方向计算目标格，负责把浮点方向转换成击退终点格。
+        //按方向计算目标格，把浮点方向转换成击退终点格。
         private static IntVec3 CellInDirection(IntVec3 start, Vector3 direction, int distance)
         {
             if (direction.sqrMagnitude < 0.0001f)

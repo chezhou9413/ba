@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //普通投射物存档补丁，负责保存发射时的战斗配置和来源身份。
+    //普通投射物存档补丁，保存发射时的战斗配置和来源身份。
     [HarmonyPatch(typeof(Projectile), nameof(Projectile.ExposeData))]
     public static class ProjectileBattleSavePatch
     {

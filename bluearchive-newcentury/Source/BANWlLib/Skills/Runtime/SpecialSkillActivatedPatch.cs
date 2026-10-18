@@ -6,7 +6,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //成功施法补丁，负责只在能力确实发动后消费复制机会。
+    //成功施法补丁，只在能力确实发动后消费复制机会。
     [HarmonyPatch(typeof(Ability), nameof(Ability.Activate), typeof(LocalTargetInfo), typeof(LocalTargetInfo))]
     public static class SpecialSkillActivatedPatch
     {

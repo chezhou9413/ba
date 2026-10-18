@@ -1,3 +1,7 @@
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
 using BANWlLib.BaDef;
 using BANWlLib.BANWMap;
 using BANWlLib.mainUI.Mission.GameComp;
@@ -11,8 +15,17 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Mission.MonoComp
@@ -253,14 +266,14 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                         child.Find("infoBack/Info/Attack").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.DamageType.ToString() + "_main"];
                         child.Find("infoBack/Info/Defense").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.DefenseType.ToString() + "_def"];
                         child.Find("infoBack/Info").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.PosType.ToString() + "_big"];
-                        child.Find("infoBack/StarCont").GetComponent<UnityEngine.UI.Text>().text = baStudentData.StarCont.ToString();
+                        child.Find("infoBack/StarCont").GetComponent<Engine.UI.Text>().text = baStudentData.StarCont.ToString();
                         if (selectData.studentData != null)
                         {
-                            child.Find("infoBack/Leve").GetComponent<UnityEngine.UI.Text>().text = "Lv." + selectData.studentData.StudentLv;
+                            child.Find("infoBack/Leve").GetComponent<Engine.UI.Text>().text = "Lv." + selectData.studentData.StudentLv;
                         }
                         else
                         {
-                            child.Find("infoBack/Leve").GetComponent<UnityEngine.UI.Text>().text = "Lv.1";
+                            child.Find("infoBack/Leve").GetComponent<Engine.UI.Text>().text = "Lv.1";
                         }
                     }
                     else
@@ -355,12 +368,12 @@ namespace BANWlLib.mainUI.Mission.MonoComp
 
                     GameObject MissionTargetObj = GameObject.Instantiate(MissionMapData.selectList, ListContent.transform);
                     MissionTargetObj.transform.Find("avt").GetComponent<Image>().sprite = GetStudentListSprite(studentData, kindDef, studentId);
-                    MissionTargetObj.transform.Find("Name").GetComponent<UnityEngine.UI.Text>().text = StudentIdentityUtility.GetStudentLabel(baStudentDef, kindDef);
+                    MissionTargetObj.transform.Find("Name").GetComponent<Engine.UI.Text>().text = StudentIdentityUtility.GetStudentLabel(baStudentDef, kindDef);
                     if (baStudentData != null)
                     {
                         MissionTargetObj.transform.Find("box").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.DamageType + "_box"];
                         MissionTargetObj.transform.Find("pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.PosType + "_min"];
-                        MissionTargetObj.transform.Find("Start/StarCont").GetComponent<UnityEngine.UI.Text>().text = baStudentData.StarCont.ToString();
+                        MissionTargetObj.transform.Find("Start/StarCont").GetComponent<Engine.UI.Text>().text = baStudentData.StarCont.ToString();
                     }
                     else
                     {
@@ -385,7 +398,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
             SyncSelectionWithSave();
         }
 
-        //获取学生任务列表头像，负责优先显示真实 Pawn 的当前衣服并在未出击时使用默认学生预览。
+        //获取学生任务列表头像，优先显示真实 Pawn 的当前衣服并在未出击时使用默认学生预览。
         private Sprite GetStudentListSprite(StudentData studentData, PawnKindDef kindDef, string studentId)
         {
             Pawn pawn = studentData?.StudentPawn;
@@ -439,7 +452,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                 GameObject MissionTargetObj = GameObject.Instantiate(MissionMapData.selectList, ListContent.transform);
                 pawnlist.Add(MissionTargetObj);
                 MissionTargetObj.transform.Find("avt").GetComponent<Image>().sprite = RimWorldUISpriteUtil.GetHeadShotSpriteFromPawn(p, MissionSpriteSizes.ListHead);
-                MissionTargetObj.transform.Find("Name").GetComponent<UnityEngine.UI.Text>().text = p.LabelShort;
+                MissionTargetObj.transform.Find("Name").GetComponent<Engine.UI.Text>().text = p.LabelShort;
                 MissionTargetObj.transform.Find("box").GetComponent<Image>().sprite = MissionMapData.MissionSprite["None_Box"];
                 MissionTargetObj.transform.Find("pos").gameObject.SetActive(false);
                 MissionTargetObj.transform.Find("Start").gameObject.SetActive(false);
@@ -534,7 +547,7 @@ namespace BANWlLib.mainUI.Mission.MonoComp
                     BaStudentData baStudentData = selectData.selectData.studentDef?.baStudentData;
                     if (baStudentData != null)
                     {
-                        QueTargetObj.transform.Find("Star/StarCont").GetComponent<UnityEngine.UI.Text>().text = baStudentData.StarCont.ToString();
+                        QueTargetObj.transform.Find("Star/StarCont").GetComponent<Engine.UI.Text>().text = baStudentData.StarCont.ToString();
                         QueTargetObj.transform.Find("Pos").GetComponent<Image>().sprite = MissionMapData.MissionSprite[baStudentData.PosType + "_min"];
                     }
                     else

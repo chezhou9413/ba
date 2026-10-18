@@ -6,7 +6,7 @@ using Verse.AI;
 
 namespace BANWlLib.BaVerb
 {
-    // 扇形持续攻击动词参数，负责声明扇形角度、执行 Job 和施法触发状态。
+    //扇形持续攻击动词参数，声明扇形角度、执行 Job 和施法触发状态。
     public class VerbProperties_SustainedAreaAttack : VerbProperties
     {
         public float fanArc = 30;
@@ -15,7 +15,7 @@ namespace BANWlLib.BaVerb
         public EffecterDef effecterDef = null;
     }
 
-    // 扇形持续攻击动词，负责显示扇形预览并把受影响格子交给持续攻击 Job。
+    //扇形持续攻击动词，显示扇形预览并把受影响格子交给持续攻击 Job。
     public class Verb_SustainedAreaAttack : Verb_CastAbility
     {
         private VerbProperties_SustainedAreaAttack VerbProperties => (VerbProperties_SustainedAreaAttack)verbProps;
@@ -24,7 +24,7 @@ namespace BANWlLib.BaVerb
 
         public override bool MultiSelect => true;
 
-        // 当前有效射程，负责实时读取属性加成后的射程，避免状态或装备变化后继续使用旧缓存。
+        //当前有效射程，实时读取属性加成后的射程，避免状态或装备变化后继续使用旧缓存。
         public override float EffectiveRange
         {
             get
@@ -33,7 +33,7 @@ namespace BANWlLib.BaVerb
             }
         }
 
-        // 计算受影响格子，负责让实际 Job 和施法预览使用同一套扇形算法。
+        //计算受影响格子，让实际 Job 和施法预览使用同一套扇形算法。
         private HashSet<IntVec3> CalculateAffectedCells(LocalTargetInfo target)
         {
             BattleTargetPreviewData data = ResolvePreviewData();
@@ -42,13 +42,13 @@ namespace BANWlLib.BaVerb
             return cells;
         }
 
-        // 绘制施法高亮，负责优先使用 AbilityDef 预览配置，未配置时保留旧扇形预览。
+        //绘制施法高亮，优先使用 AbilityDef 预览配置，未配置时保留旧扇形预览。
         public override void DrawHighlight(LocalTargetInfo target)
         {
             BattleTargetPreviewUtility.DrawPreview(CasterPawn, target, ResolvePreviewData());
         }
 
-        // 尝试施放技能，负责触发 Ability 效果并把扇形目标队列交给 Job。
+        //尝试施放技能，触发 Ability 效果并把扇形目标队列交给 Job。
         protected override bool TryCastShot()
         {
             Pawn caster = CasterPawn;
@@ -91,7 +91,7 @@ namespace BANWlLib.BaVerb
             return castSuccess;
         }
 
-        // 绘制鼠标状态，负责在非法目标上显示不可射击提示。
+        //绘制鼠标状态，在非法目标上显示不可射击提示。
         public override void OnGUI(LocalTargetInfo target)
         {
             if (CanHitTarget(target) && ValidDashTarget(CasterPawn, target.Cell))
@@ -104,7 +104,7 @@ namespace BANWlLib.BaVerb
             }
         }
 
-        // 校验目标，负责限制目标必须在技能有效射程内。
+        //校验目标，限制目标必须在技能有效射程内。
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
             Pawn caster = CasterPawn;
@@ -122,7 +122,7 @@ namespace BANWlLib.BaVerb
             return caster.Position.DistanceTo(cell) <= EffectiveRange;
         }
 
-        // 判断能否命中目标，负责让施法器按有效射程判定目标合法性。
+        //判断能否命中目标，让施法器按有效射程判定目标合法性。
         public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
         {
             if (!targ.IsValid)
@@ -139,7 +139,7 @@ namespace BANWlLib.BaVerb
             return root.DistanceTo(targ.Cell) <= EffectiveRange;
         }
 
-        // 校验移动目标，负责保留原技能对可行走和可到达格子的限制。
+        //校验移动目标，保留原技能对可行走和可到达格子的限制。
         private bool ValidDashTarget(Pawn pawn, IntVec3 cell)
         {
             if (!cell.Walkable(pawn.Map))
@@ -150,7 +150,7 @@ namespace BANWlLib.BaVerb
             return pawn.CanReach(cell, PathEndMode.OnCell, Danger.Deadly);
         }
 
-        // 解析预览参数，负责让 AbilityDef 扩展优先覆盖旧扇形字段。
+        //解析预览参数，让 AbilityDef 扩展优先覆盖旧扇形字段。
         private BattleTargetPreviewData ResolvePreviewData()
         {
             return BattleTargetPreviewUtility.ResolvePreviewData(this) ??

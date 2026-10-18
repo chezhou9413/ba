@@ -3,10 +3,10 @@ using Verse;
 
 namespace BANWlLib.Projectiles
 {
-    // 方向命中特效工具，负责让普通投射物和穿透投射物共享目标过滤与 Effecter 触发流程。
+    //方向命中特效工具，让普通投射物和穿透投射物共享目标过滤与 Effecter 触发流程。
     public static class DirectionalImpactEffectUtility
     {
-        // 尝试触发投射物的方向命中特效，负责读取扩展、校验目标类型并传递弹道方向。
+        //尝试触发投射物的方向命中特效，读取扩展、校验目标类型并传递弹道方向。
         public static void TryTrigger(Projectile projectile, Thing target, Vector3 direction)
         {
             PiercingProjectileExtension extension = projectile?.def?.GetModExtension<PiercingProjectileExtension>();
@@ -45,7 +45,7 @@ namespace BANWlLib.Projectiles
             }
         }
 
-        // 获取普通投射物的飞行方向，负责把投射物旋转转换为水平单位向量。
+        //把投射物旋转转换为水平单位向量。
         public static Vector3 GetTravelDirection(Projectile projectile)
         {
             if (projectile == null)

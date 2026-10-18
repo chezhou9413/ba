@@ -1,0 +1,262 @@
+
+<Defs>
+  <BANWlLib.BattleSystem.DamageAffinityMatrixDef>
+    <defName>BANW_DamageAffinityMatrix_Default</defName>
+    <label>BA属性克制矩阵</label>
+    <!-- 没有攻击类型或防御类型时使用的默认倍率。 -->
+    <defaultMultiplier>1.0</defaultMultiplier>
+    <!-- 每一行代表一种攻击类型，entries 里按目标防御类型配置最终克制倍率。 -->
+    <rows>
+      <li>
+        <!-- 爆发攻击，当前按轻装优势、特殊劣势处理。 -->
+        <attackType>Explosion</attackType>
+        <entries>
+          <li><defenseType>Explosion</defenseType><multiplier>2.0</multiplier></li>
+          <li><defenseType>Through</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Mysterious</defenseType><multiplier>0.5</multiplier></li>
+          <li><defenseType>Vibration</defenseType><multiplier>0.5</multiplier></li>
+          <li><defenseType>Composite</defenseType><multiplier>1.0</multiplier></li>
+        </entries>
+      </li>
+      <li>
+        <!-- 贯通攻击，当前按重装优势、弹力劣势处理。 -->
+        <attackType>Through</attackType>
+        <entries>
+          <li><defenseType>Explosion</defenseType><multiplier>0.5</multiplier></li>
+          <li><defenseType>Through</defenseType><multiplier>2.0</multiplier></li>
+          <li><defenseType>Mysterious</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Vibration</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Composite</defenseType><multiplier>1.0</multiplier></li>
+        </entries>
+      </li>
+      <li>
+        <!-- 神秘攻击，当前按特殊优势、轻装劣势处理。 -->
+        <attackType>Mysterious</attackType>
+        <entries>
+          <li><defenseType>Explosion</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Through</defenseType><multiplier>0.5</multiplier></li>
+          <li><defenseType>Mysterious</defenseType><multiplier>2.0</multiplier></li>
+          <li><defenseType>Vibration</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Composite</defenseType><multiplier>0.5</multiplier></li>
+        </entries>
+      </li>
+      <li>
+        <!-- 振动攻击，当前按弹力优势、重装劣势处理。 -->
+        <attackType>Vibration</attackType>
+        <entries>
+          <li><defenseType>Explosion</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Through</defenseType><multiplier>0.5</multiplier></li>
+          <li><defenseType>Mysterious</defenseType><multiplier>1.5</multiplier></li>
+          <li><defenseType>Vibration</defenseType><multiplier>2.0</multiplier></li>
+          <li><defenseType>Composite</defenseType><multiplier>0.5</multiplier></li>
+        </entries>
+      </li>
+      <li>
+        <!-- 复合攻击样例，默认只对复合防御优势。 -->
+        <attackType>Composite</attackType>
+        <entries>
+          <li><defenseType>Explosion</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Through</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Mysterious</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Vibration</defenseType><multiplier>1.0</multiplier></li>
+          <li><defenseType>Composite</defenseType><multiplier>2.0</multiplier></li>
+        </entries>
+      </li>
+    </rows>
+  </BANWlLib.BattleSystem.DamageAffinityMatrixDef>
+
+  
+
+  <HediffDef>
+    <defName>BANW_BattleStack_Attack_Test</defName>
+    <label>叠层攻击测试</label>
+    <description>重复使用技能时按30%、70%、100%提高攻击力，并刷新持续时间。</description>
+    <defaultLabelColor>(255, 210, 80)</defaultLabelColor>
+    <isBad>false</isBad>
+    <hediffClass>BANWlLib.BattleSystem.Hediff_BattleStack</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleStack">
+        <!-- 叠层状态实际修改的战斗 Stat。 -->
+        <targetStat>BANW_FinalDamageMultiplier</targetStat>
+        <!-- 最大层数，超过后只刷新时间。 -->
+        <maxStacks>3</maxStacks>
+        <!-- 重复施加时是否重置持续时间。 -->
+        <refreshDurationOnApply>true</refreshDurationOnApply>
+        <!-- 状态持续时间，单位 tick。 -->
+        <durationTicks>1200</durationTicks>
+        <!-- 到期后是否移除 Hediff。 -->
+        <removeOnExpire>true</removeOnExpire>
+        <!-- 每层对应的最终数值，第一层 30%，第二层 70%，第三层 100%。 -->
+        <stackValues>
+          <li>0.30</li>
+          <li>0.70</li>
+          <li>1.00</li>
+        </stackValues>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>BANW_BattleStack_MultiStat_Test</defName>
+    <label>叠层多属性测试</label>
+    <description>重复使用技能时同时提高最终伤害、暴击率、暴击伤害和EX技能倍率，并刷新持续时间。</description>
+    <defaultLabelColor>(120, 230, 255)</defaultLabelColor>
+    <isBad>false</isBad>
+    <hediffClass>BANWlLib.BattleSystem.Hediff_BattleStack</hediffClass>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.HediffCompProperties_BattleStack">
+        <!-- 最大层数，超过后只刷新时间。 -->
+        <maxStacks>3</maxStacks>
+        <!-- 重复施加时是否重置持续时间。 -->
+        <refreshDurationOnApply>true</refreshDurationOnApply>
+        <!-- 状态持续时间，单位 tick。 -->
+        <durationTicks>1200</durationTicks>
+        <!-- 到期后是否移除 Hediff。 -->
+        <removeOnExpire>true</removeOnExpire>
+        <!-- 同一个叠层状态内可以配置多个属性组，每组按当前层数取值。 -->
+        <statGroups>
+          <li>
+            <!-- 最终伤害倍率加值：30% / 70% / 100%。 -->
+            <targetStat>BANW_FinalDamageMultiplier</targetStat>
+            <stackValues>
+              <li>0.30</li>
+              <li>0.70</li>
+              <li>1.00</li>
+            </stackValues>
+          </li>
+          <li>
+            <!-- 暴击率加值：5% / 10% / 15%。 -->
+            <targetStat>BANW_CriticalChance</targetStat>
+            <stackValues>
+              <li>0.05</li>
+              <li>0.10</li>
+              <li>0.15</li>
+            </stackValues>
+          </li>
+          <li>
+            <!-- 暴击伤害加值：20% / 35% / 50%。 -->
+            <targetStat>BANW_CriticalDamage</targetStat>
+            <stackValues>
+              <li>0.20</li>
+              <li>0.35</li>
+              <li>0.50</li>
+            </stackValues>
+          </li>
+          <li>
+            <!-- EX技能倍率加值：10% / 20% / 30%。 -->
+            <targetStat>BANW_ExSkillMultiplier</targetStat>
+            <stackValues>
+              <li>0.10</li>
+              <li>0.20</li>
+              <li>0.30</li>
+            </stackValues>
+          </li>
+        </statGroups>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>BANW_Mote_DirectionalImpact_Test</defName>
+    <thingClass>MoteThrown</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData>
+      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <texPath>Effect/HPP</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <mote>
+      <!-- 方向命中特效显示时间，MoteThrown 的速度由 SubEffecter_DirectionalImpactMote 设置。 -->
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>0.20</solidTime>
+      <fadeOutTime>0.18</fadeOutTime>
+      <collide>false</collide>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>BANW_Effecter_DirectionalImpact_Test</defName>
+    <children>
+      <li>
+        <!-- 从穿透弹命中上下文读取弹道方向，并生成沿该方向飞出的 MoteThrown。 -->
+        <subEffecterClass>BANWlLib.Projectiles.SubEffecter_DirectionalImpactMote</subEffecterClass>
+        <!-- 实际飞出的 Mote。 -->
+        <moteDef>BANW_Mote_DirectionalImpact_Test</moteDef>
+        <!-- 纵向贴图直接对齐弹道，避免使用原版随机初始旋转。 -->
+        <rotation>0</rotation>
+        <!-- Mote 缩放倍率。 -->
+        <scale>1</scale>
+        <!-- Mote 自转速度。 -->
+        <rotationRate>0</rotationRate>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>BANW_Mote_Nozomi_Train_Flight_Test</defName>
+    <thingClass>MoteAttached</thingClass>
+    <drawOffscreen>true</drawOffscreen>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData>
+      <!-- 用原版 Graphic_MoteWithAgeSecs 驱动 AgeSecs，配合 GlowAnimated shader 实现飞行中逐帧播放；Effect/Nozomi/B 是本地贴图无 AB。 -->
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <texPath>Effect/Nozomi/B/Nozomi_1</texPath>
+      <shaderType>GlowAnimated</shaderType>
+      <drawSize>6.5</drawSize>
+      <shaderParameters>
+        <!-- 序列帧总帧数，与 Nozomi_1 本地贴图一致。 -->
+        <_NumFrames>30</_NumFrames>
+        <!-- 播放帧率，30 帧约 1 秒。 -->
+        <_FramesPerSec>30</_FramesPerSec>
+      </shaderParameters>
+    </graphicData>
+    <mote>
+      <!-- 飞行特效需要持续维护，投射物销毁时会清理。 -->
+      <fadeInTime>0.02</fadeInTime>
+      <solidTime>2.00</solidTime>
+      <fadeOutTime>0.10</fadeOutTime>
+      <needsMaintenance>true</needsMaintenance>
+      <fadeOutUnmaintained>true</fadeOutUnmaintained>
+      <collide>false</collide>
+    </mote>
+  </ThingDef>
+
+  <EffecterDef>
+    <defName>BANW_Effecter_Nozomi_Train_Flight_Test</defName>
+    <children>
+      <li>
+        <!-- 持续生成并维护附着在直线弹上的飞行 Mote。 -->
+        <subEffecterClass>BANWlLib.Projectiles.SubEffecter_AttachedProjectileMote</subEffecterClass>
+        <moteDef>BANW_Mote_Nozomi_Train_Flight_Test</moteDef>
+        <positionOffset>(0, 0.4, 0)</positionOffset>
+        <scale>1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>BANW_Effecter_BattleShield_Test</defName>
+    <children>
+      <li>
+        <!-- 护盾存在时持续生成并附着到 Pawn 的蓝色光效。 -->
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>BAWN_Bl_GP</moteDef>
+        <scale>0.85</scale>
+        <ticksBetweenMotes>20</ticksBetweenMotes>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0, 0.75)</positionOffset>
+        <positionRadius>0.05</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>

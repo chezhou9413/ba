@@ -4,7 +4,7 @@ using Verse;
 
 namespace BANWlLib.Auras
 {
-    //友军光环配置负责声明覆盖范围、发射条件、目标过滤和受益强度。
+    //友军光环配置声明覆盖范围、发射条件、目标过滤和受益强度。
     public sealed class HediffCompProperties_FriendlyAura : HediffCompProperties
     {
         public HediffDef effectHediff;

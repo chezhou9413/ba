@@ -3,17 +3,17 @@ using Verse;
 
 namespace BANWlLib.BattleSystem
 {
-    // 投射物多段延迟地图组件，负责在子弹命中后按目标所在地图托管后续伤害段。
+    //投射物多段延迟地图组件，在子弹命中后按目标所在地图托管后续伤害段。
     public class ProjectileMultiHitDelayComponent : MapComponent
     {
         private List<PendingProjectileMultiHitDamage> pendingDamages = new List<PendingProjectileMultiHitDamage>();
 
-        // 创建地图延迟组件，负责绑定当前地图的多段子弹伤害队列。
+        //绑定当前地图的多段子弹伤害队列。
         public ProjectileMultiHitDelayComponent(Map map) : base(map)
         {
         }
 
-        // 地图每 tick 更新，负责触发到期的多段子弹伤害。
+        //地图每 tick 更新，触发到期的多段子弹伤害。
         public override void MapComponentTick()
         {
             base.MapComponentTick();
@@ -36,7 +36,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 保存和读取地图延迟队列，负责支持多段子弹延迟期间存读档。
+        //保存和读取地图延迟队列，支持多段子弹延迟期间存读档。
         public override void ExposeData()
         {
             base.ExposeData();
@@ -47,7 +47,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 入队多段子弹伤害，负责优先使用单段延迟配置，没有单段延迟时再按统一间隔排队。
+        //入队多段子弹伤害，优先使用单段延迟配置，没有单段延迟时再按统一间隔排队。
         public static void Queue(ProjectileMultiHitImpactPatch.ProjectileMultiHitImpactState state)
         {
             if (state == null || state.extraDamages.NullOrEmpty())
@@ -89,7 +89,7 @@ namespace BANWlLib.BattleSystem
             }
         }
 
-        // 解析延迟队列所属地图，负责优先把伤害绑定到命中目标当前地图。
+        //解析延迟队列所属地图，优先把伤害绑定到命中目标当前地图。
         private static Map ResolveQueueMap(ProjectileMultiHitImpactPatch.ProjectileMultiHitImpactState state)
         {
             if (state == null)
@@ -100,7 +100,7 @@ namespace BANWlLib.BattleSystem
             return state.target?.MapHeld ?? state.launcher?.MapHeld;
         }
 
-        // 解析单段延迟，负责让段内 delayTicks 覆盖外层统一间隔。
+        //解析单段延迟，让段内 delayTicks 覆盖外层统一间隔。
         private static int ResolveDelayTicks(ProjectileExtraDamageConfig config, int index, int intervalTicks)
         {
             if (config != null && config.delayTicks >= 0)
@@ -112,7 +112,7 @@ namespace BANWlLib.BattleSystem
         }
     }
 
-    // 待触发投射物多段伤害，负责保存单段延迟伤害的施法者、目标和公式参数。
+    //待触发投射物多段伤害，保存单段延迟伤害的施法者、目标和公式参数。
     public class PendingProjectileMultiHitDamage : IExposable
     {
         public int fireAtTick;
@@ -125,7 +125,7 @@ namespace BANWlLib.BattleSystem
         public float weaponBaseAttack;
         public float armorPenetration;
 
-        // 触发单段延迟伤害，负责还原为普通多段命中上下文并进入统一伤害链。
+        //触发单段延迟伤害，还原为普通多段命中上下文并进入统一伤害链。
         public void Apply()
         {
             if (launcher == null || target == null || config == null)
@@ -145,7 +145,7 @@ namespace BANWlLib.BattleSystem
             }, config);
         }
 
-        // 保存和读取待触发伤害，负责支持延迟期间存读档。
+        //保存和读取待触发伤害，支持延迟期间存读档。
         public void ExposeData()
         {
             Scribe_Values.Look(ref fireAtTick, "fireAtTick", 0);

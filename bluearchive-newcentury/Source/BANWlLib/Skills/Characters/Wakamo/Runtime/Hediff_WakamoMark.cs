@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //敌方若藻标记，负责显示实际待释放数值、维护目标特效并保存本次BA换算结果。
+    //敌方若藻标记，显示实际待释放数值、维护目标特效并保存本次BA换算结果。
     public class Hediff_WakamoMark : HediffWithComps
     {
         public Hediff_SpecialSkillState owner;

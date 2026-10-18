@@ -1,0 +1,321 @@
+
+<Defs>
+<ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Atsuko</defName>
+    <label>天蝎座</label>
+    <description>亚津子使用的冲锋枪。短小的枪身蕴藏着强大火力，尤其适合近距离战斗。</description>
+    <graphicData>
+      <texPath>Weapon/Arian/Atsuko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.0</drawSize>
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Atsuko</li>
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>BANW_Wp_SMG_De</soundInteract>
+    <statBases>
+      <WorkToMake>80000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>0.6</AccuracyLong>
+      <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+     
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel>
+    </costList>
+    <recipeMaker>
+      
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>440</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BANC_Bullet_Atsuko</defaultProjectile>
+        <burstShotCount>5</burstShotCount>
+        <warmupTime>1.5</warmupTime>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <range>22.9</range>
+        <soundCast>BANW_Wp_SMG_At</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Atsuko</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Atsuko</defName>
+    <label>天蝎座子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef>
+      <damageAmountBase>5</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
+      <speed>65</speed>
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>2.5</drawSize>
+      <texPath>Projectile/Bullet_Atsuko</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Saori</defName>
+    <label>阿里乌斯制突击步枪</label>
+    <description>纱织使用的突击步枪。追求绝对效率的纱织自己特制的步枪。一旦捕捉到目标，不击倒绝不罢休。</description>
+    <graphicData>
+      <texPath>Weapon/Arian/Saori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Saori</li>
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset>
+    <soundInteract>BANW_Wp_AR_De</soundInteract>
+    <statBases>
+      <WorkToMake>80000</WorkToMake>
+      <Mass>3.5</Mass>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+     
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel>
+    </costList>
+    <recipeMaker>
+      
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>440</displayPriority>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>BANC_Bullet_Saori</defaultProjectile>
+        <burstShotCount>1</burstShotCount>
+        <warmupTime>1.5</warmupTime>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <range>33.9</range>
+        <soundCast>BANW_Wp_AR_At</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Saori</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Saori</defName>
+    <label>阿里乌斯制突击步枪子弹</label>
+    <projectile>
+
+      <damageDef>BANC_Damage_baofa</damageDef>
+      <damageAmountBase>22</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
+      <speed>80</speed>
+    </projectile>
+    <graphicData>
+     <shaderType>MoteGlow</shaderType>
+      <drawSize>2</drawSize>
+      <texPath>Projectile/Bullet_Saori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Hiyori</defName>
+    <label>身份</label>
+    <description>日和使用的狙击步枪。精准瞄准敌人飞行20mm的子弹，即使是在弹如雨下的战场中存在感也非常强。</description>
+    <graphicData>
+      <texPath>Weapon/Arian/Hiyori</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.6</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Hiyori</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>BANW_Wp_SR_De</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0.41</AccuracyTouch><!--贴近-->
+      <AccuracyShort>0.58</AccuracyShort><!--近-->
+      <AccuracyMedium>1</AccuracyMedium><!--中-->
+      <AccuracyLong>1</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Hiyori</defaultProjectile><!--子弹-->
+        <burstShotCount>1</burstShotCount><!--连射次数-->
+        <warmupTime>1.3</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots><!--射速-->
+        <range>69.9</range><!--射距-->
+        <soundCast>BANW_Wp_SR_At_A</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>15</muzzleFlashScale><!--枪口闪光大小-->
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Hiyori</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Hiyori</defName>
+    <label>身份子弹</label>
+    <projectile>
+      <damageDef>BANC_Damage_baofa</damageDef><!--子弹类型-->
+      <damageAmountBase>21</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>1.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <speed>120</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>4</drawSize>
+      <texPath>Projectile/Bullet_Hiyori</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="BANC_BaseHumanMakeableGun">
+    <defName>BANC_Misaki</defName>
+    <label>圣徒掠夺者</label>
+    <description>美咲使用的火箭发射器。火箭弹发射后达到一定高度，将分裂成多个炮弹，造成大范围爆炸。</description>
+    <graphicData>
+      <texPath>Weapon/Arian/Misaki</texPath><!--贴图路径-->
+      <graphicClass>Graphic_Single</graphicClass><!--贴图-->
+      <drawSize>1.5</drawSize><!--贴图大小-->
+    </graphicData>
+    <weaponTags>
+      <li>BANC_Misaki</li><!--武器Tag-->
+    </weaponTags>
+    <equippedAngleOffset>45</equippedAngleOffset><!--武器Tag-->
+    <soundInteract>Interact_Rifle</soundInteract><!--装备音效-->
+    <statBases>
+      <WorkToMake>80000</WorkToMake><!--制作时间-->
+      <Mass>3.5</Mass><!--重量-->
+      <AccuracyTouch>0.81</AccuracyTouch><!--贴近-->
+      <AccuracyShort>0.88</AccuracyShort><!--近-->
+      <AccuracyMedium>0.86</AccuracyMedium><!--中-->
+      <AccuracyLong>0.89</AccuracyLong><!--远-->
+      <RangedWeapon_Cooldown>3</RangedWeapon_Cooldown><!--冷却时间-->
+    </statBases>
+    <equippedStatOffsets>
+     <!-- <SocialImpact>-0.35</SocialImpact>--><!--社交增加-->
+    </equippedStatOffsets>
+    <costList>
+      <Steel>1</Steel><!--材料-->
+    </costList>
+    <recipeMaker>
+      <!--<researchPrerequisite>BA_Weapon_SRT</researchPrerequisite>-->
+      <skillRequirements>
+        <Crafting>8</Crafting><!--需要的手工-->
+      </skillRequirements>
+      <displayPriority>440</displayPriority><!--优先级-->
+    </recipeMaker>
+    <verbs>
+      <li>
+        <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <verbClass>Verb_Shoot</verbClass><!--子弹类型-->
+        <hasStandardCommand>true</hasStandardCommand><!--子弹类型-->
+        <defaultProjectile>BANC_Bullet_Misaki</defaultProjectile><!--子弹-->
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer><!--ai攻击建筑-->
+        <ai_AvoidFriendlyFireRadius>4</ai_AvoidFriendlyFireRadius><!--5格回避范围-->
+        <burstShotCount>5</burstShotCount><!--连射次数-->
+        <warmupTime>2</warmupTime><!--瞄准时间-->
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots><!--射速-->
+        <range>40.9</range><!--射距-->
+        <soundCast>ThumpCannon_Fire</soundCast><!--射击音效-->
+        <soundCastTail>GunTail_Heavy</soundCastTail><!--装填音效-->
+        <muzzleFlashScale>9</muzzleFlashScale><!--枪口闪光大小-->
+        <forcedMissRadius>1.5</forcedMissRadius>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Misaki</li>
+        </requiredPawnKindDefName>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Misaki</defName>
+    <label>圣徒掠夺者</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>BANC_Damage_Misaki</damageDef><!--子弹类型-->
+      <damageAmountBase>11</damageAmountBase><!--子弹伤害-->
+      <explosionRadius>1</explosionRadius>
+      <stoppingPower>2</stoppingPower><!--抑制-->
+      <armorPenetrationBase>0.1</armorPenetrationBase><!--穿透-->
+      <speed>25</speed><!--子弹速度-->
+    </projectile>
+    <graphicData>
+      <shaderType>TransparentPostLight</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <drawSize>1</drawSize>
+      <texPath>Projectile/Bullet_Misaki</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+
+</Defs>

@@ -12,7 +12,7 @@ namespace BANWlLib.comp
     {
         public DropPosCompProperties()
         {
-            // 修复：必须指向对应的 ThingComp 实现类，不能指向 CompProperties
+            //compClass 必须指向 ThingComp 实现类。
             this.compClass = typeof(DropPosComp);
         }
     }

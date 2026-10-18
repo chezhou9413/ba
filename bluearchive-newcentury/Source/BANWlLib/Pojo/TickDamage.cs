@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Pojo
 {
-    // 持续伤害片段配置，负责描述某个 tick 触发的伤害或治疗行为。
+    //持续伤害片段配置，描述某个 tick 触发的伤害或治疗行为。
     public class TickDamage
     {
         public int tick;
@@ -29,7 +29,7 @@ namespace BANWlLib.Pojo
         public bool allowPermanentInjuryHealing = false;
         public bool isExSkill = false;
 
-        // 转成统一战斗配置，负责让持续伤害片段进入统一结算层。
+        //转成统一战斗配置，让持续伤害片段进入统一结算层。
         public BattleActionConfig ToBattleAction()
         {
             return new BattleActionConfig

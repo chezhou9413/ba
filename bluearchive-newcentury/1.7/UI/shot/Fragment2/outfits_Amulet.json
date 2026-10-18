@@ -1,0 +1,102 @@
+[
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_2_Piece",
+        "ProductDefName": "BANW_Amulet_2_Piece",
+        "ProductName": "Lv.2-暖手贴设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_3_Piece",
+        "ProductDefName": "BANW_Amulet_3_Piece",
+        "ProductName": "Lv.3-佩洛洛的羽毛设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+    {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_4_Piece",
+        "ProductDefName": "BANW_Amulet_4_Piece",
+        "ProductName": "Lv.4-十字架设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_5_Piece",
+        "ProductDefName": "BANW_Amulet_5_Piece",
+        "ProductName": "Lv.5-迷彩不倒翁设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_6_Piece",
+        "ProductDefName": "BANW_Amulet_6_Piece",
+        "ProductName": "Lv.6-诅咒娃娃设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_7_Piece",
+        "ProductDefName": "BANW_Amulet_7_Piece",
+        "ProductName": "Lv.7-便携式除臭剂设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_8_Piece",
+        "ProductDefName": "BANW_Amulet_8_Piece",
+        "ProductName": "Lv.8-捕梦网设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_9_Piece",
+        "ProductDefName": "BANW_Amulet_9_Piece",
+        "ProductName": "Lv.9-鲨齿护符设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    },
+     {
+        "CurrencyDefName": "Kami_Proplevel",
+        "CurrencyAmount": 1,
+        "CurrencyImage": "Prop/Proplevel/Kami",
+        "ProductAmount": 5,
+        "ProductImage": "Belt/Amulet/Amulet_10_Piece",
+        "ProductDefName": "BANW_Amulet_10_Piece",
+        "ProductName": "Lv.10-键帽玩具设计图",
+        "ProductDescription": "可制造装备的设计图。",
+        "ProductQuality": "high"
+    }
+    
+] 

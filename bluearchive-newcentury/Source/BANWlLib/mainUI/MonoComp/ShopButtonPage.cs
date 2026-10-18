@@ -1,21 +1,31 @@
-﻿using newpro;
+#if RW_1_7
+using Engine = RimUnity;
+using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
+#endif
+using newpro;
+#if RW_1_7
+using RimUnity;
+#else
+using Engine = UnityEngine;
 using UnityEngine;
+#endif
+#if RW_1_7
+using RimUnity.UI;
+#else
 using UnityEngine.UI;
+#endif
 
 namespace BANWlLib
 {
-    /// <summary>
-    /// 商店按钮页面切换控制器
-    /// 点击按钮时会设置当前为选中状态，并根据选中/非选中状态更换按钮图像与文字颜色
-    /// </summary>
+    //切换商店分页，并更新按钮图片和文字颜色。
     public class ShopButtonPage : MonoBehaviour
     {
-        // ===== 组件引用 =====
+        //组件引用。
         private Button buttonComponent;             // 按钮组件
         private Image backgroundImageComponent;     // 按钮背景图（Image）
         private Text labelTextComponent;            // 按钮上的文字
 
-        // ===== 颜色常量（使用 Color32 可直接用 0~255 颜色值）=====
+        //Color32 使用 0～255 的颜色分量。
         private static readonly Color32 SelectedTextColor = new Color32(255, 204, 0, 255); // 金黄色
         private static readonly Color32 UnselectedTextColor = new Color32(50, 50, 50, 255);  // 深灰色
 
@@ -41,9 +51,7 @@ namespace BANWlLib
             }
         }
 
-        /// <summary>
-        /// 缓存本物体上的常用组件
-        /// </summary>
+        //缓存本物体上的常用组件
         private void CacheComponents()
         {
             buttonComponent = GetComponent<Button>();
@@ -51,9 +59,7 @@ namespace BANWlLib
             labelTextComponent = transform.Find("Text").GetComponent<Text>();
         }
 
-        /// <summary>
-        /// 注册按钮点击事件
-        /// </summary>
+        //注册按钮点击事件
         private void RegisterButtonClickEvent()
         {
             buttonComponent.onClick.AddListener(() =>
@@ -75,10 +81,7 @@ namespace BANWlLib
             });
         }
 
-        /// <summary>
-        /// 根据当前状态更新按钮外观
-        /// </summary>
-        /// <param name="selected">是否选中</param>
+        //按选中状态更新按钮外观。
         private void UpdateVisual(bool selected)
         {
             isSelectedState = selected;
