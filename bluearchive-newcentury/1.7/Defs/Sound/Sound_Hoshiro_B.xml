@@ -1,6 +1,187 @@
 
 <Defs>
-
+	<SoundDef>
+	<defName>Hoshiro_B_Skill_B</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/A/Hoshiro_B</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_Skill_C</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/A/SFX_CH0258_01_Ex_Hit_02</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_Skill_D</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/A/SFX_CH0258_01_Ex_Hit_03</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_Skill_E</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/B/SFX_CH0258_02_Public_Cast</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_Skill_F</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/B/SFX_CH0258_02_Ex_Shield_Start</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_Skill_EX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/A/Hoshiro_ExSkill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_B_Skill_EX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/B/CH0258_CommonSkill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/A/SkillEX/Hoshiro_ExSkill_1</clipPath>
+				</li>
+        <li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/A/SkillEX/Hoshiro_ExSkill_2</clipPath>
+				</li>
+        <li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/A/SkillEX/Hoshiro_ExSkill_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_B_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/B/SkillEX/Hoshiro_ExSkill_1</clipPath>
+				</li>
+        <li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/B/SkillEX/Hoshiro_ExSkill_2</clipPath>
+				</li>
+        <li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/B/SkillEX/Hoshiro_ExSkill_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+<SoundDef>
+	<defName>Hoshiro_B_Skill_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Hoshiro_B/A/Hoshiro_A</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
     <SoundDef>
 	<defName>Hoshiro_B_levelup_A</defName> 
   <context>MapOnly</context>  

@@ -178,7 +178,6 @@
                 <tick>30</tick>
                  <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -196,7 +195,6 @@
                 <tick>30</tick>
                  <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -215,7 +213,6 @@
                 <tick>55</tick>
                               <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -232,7 +229,6 @@
                 <!-- 伤害间隔的TICK,写0会立刻执行 --> 
                 <tick>55</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -249,7 +245,6 @@
                 <tick>80</tick>
                                 <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -265,7 +260,6 @@
             <li>
                 <tick>80</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -282,7 +276,6 @@
                 <tick>105</tick>
                                <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -298,7 +291,7 @@
             <li>
                 <tick>105</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
+
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -315,7 +308,7 @@
                 <tick>130</tick>
                               <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
+  
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -331,7 +324,7 @@
             <li>
                 <tick>130</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
+
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -348,7 +341,6 @@
                 <tick>155</tick>
                               <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -364,7 +356,6 @@
             <li>
                 <tick>155</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -381,8 +372,7 @@
                 <tick>180</tick>
                                <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
-                <!-- 允许该段伤害暴击。 -->
+             <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
                 <!-- 允许该段伤害应用属性克制。 -->
@@ -397,7 +387,6 @@
             <li>
                 <tick>180</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -414,7 +403,6 @@
                 <tick>205</tick>
                               <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -430,7 +418,6 @@
             <li>
                 <tick>205</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -447,7 +434,6 @@
                 <tick>230</tick>
                                <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -463,7 +449,6 @@
             <li>
                 <tick>230</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -480,7 +465,6 @@
                 <tick>255</tick>
                               <!-- 伤害量 --> 
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>8.4</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>
@@ -496,7 +480,6 @@
              <li>
                 <tick>255</tick>
                 <!-- 每段造成最终攻击力 118% 的伤害，六段合计约 708%。 -->
-                <attackPowerRatio>1</attackPowerRatio>
                 <!-- 允许该段伤害暴击。 -->
                 <canCrit>true</canCrit>
                 <damageType>BANC_Damage_Hina_EXX</damageType>

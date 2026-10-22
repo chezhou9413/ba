@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3126861493
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a6a39fa3f669e7bb2be59547f68a9864
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a6a39fa3f669e7bb2be59547f68a9864
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Millennium_B.png
+Dependencies: []

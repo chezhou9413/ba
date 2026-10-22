@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 344542694
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 83cd7c2790c19755a1f8ef61fd873a1b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 83cd7c2790c19755a1f8ef61fd873a1b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Satsuki.png
+Dependencies: []

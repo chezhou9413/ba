@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 594044681
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: abf5d3ed72bb32683dce9a8e5fe707c7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: abf5d3ed72bb32683dce9a8e5fe707c7
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_BunnyGirl_Collection.png
+Dependencies: []

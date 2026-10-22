@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4076151413
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: eeb8b005b312ab9255824d943b1eb5e6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: eeb8b005b312ab9255824d943b1eb5e6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Kirino.png
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3727552753
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a55de09697179b0fde64222fe760b67c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a55de09697179b0fde64222fe760b67c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_FrozenSea_Collection.png
+Dependencies: []

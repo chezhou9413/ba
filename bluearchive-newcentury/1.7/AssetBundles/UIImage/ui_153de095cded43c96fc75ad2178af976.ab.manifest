@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 835015774
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a355a4c74ad9192e64613d5724f87d71
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a355a4c74ad9192e64613d5724f87d71
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_PracticeRoom_Collection.png
+Dependencies: []

@@ -611,7 +611,7 @@
     <label>荷鲁斯之眼子弹</label>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <damageAmountBase>5</damageAmountBase>
+      <damageAmountBase>1</damageAmountBase>
       <stoppingPower>8</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>

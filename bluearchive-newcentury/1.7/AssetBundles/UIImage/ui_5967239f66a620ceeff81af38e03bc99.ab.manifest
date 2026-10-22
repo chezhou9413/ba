@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 511942647
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 392520132d6c04c58a1097b249c2ba18
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 392520132d6c04c58a1097b249c2ba18
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Miyu.png
+Dependencies: []

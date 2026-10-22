@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 527673453
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f95cb33fcd9fd05ff3985602c133b3e6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: f95cb33fcd9fd05ff3985602c133b3e6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_BeachStage_Collection.png
+Dependencies: []

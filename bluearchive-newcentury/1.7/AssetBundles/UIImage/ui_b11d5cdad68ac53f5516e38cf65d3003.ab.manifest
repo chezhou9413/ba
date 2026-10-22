@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 542391456
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c543fb97ae7a46ec4365ac5d14b9cb88
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: c543fb97ae7a46ec4365ac5d14b9cb88
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Rumi.png
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2183218792
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: dae6b725147a37312f18be608ee22c6c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: dae6b725147a37312f18be608ee22c6c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Meru.png
+Dependencies: []

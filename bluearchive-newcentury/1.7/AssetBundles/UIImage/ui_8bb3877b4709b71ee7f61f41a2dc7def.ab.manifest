@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1739498884
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1e35bae2b7409a5ee7bc98af6601b5a3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1e35bae2b7409a5ee7bc98af6601b5a3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Nodoka.png
+Dependencies: []

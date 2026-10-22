@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3659439627
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9ece651a826ab4f2607af446b03110a2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9ece651a826ab4f2607af446b03110a2
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Gehena.png
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1260448815
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 78614d4f9018db965fc6ddf00473fe82
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 78614d4f9018db965fc6ddf00473fe82
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Kotama.png
+Dependencies: []

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4230185223
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1ddf0e349e06cbeaa6d05b8e59878b6d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 1ddf0e349e06cbeaa6d05b8e59878b6d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Hinata.png
+Dependencies: []

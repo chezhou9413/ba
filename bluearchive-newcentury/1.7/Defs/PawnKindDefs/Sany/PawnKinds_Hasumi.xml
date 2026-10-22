@@ -53,11 +53,11 @@
 			</li>
 			<li>
 				<skill>Cooking</skill>
-				<range>8</range>
+				<range>12</range>
 			</li>
 			<li>
 				<skill>Plants</skill>
-				<range>6</range>
+				<range>8</range>
 			</li>
 			<li>
 				<skill>Social</skill>
@@ -65,7 +65,7 @@
 			</li>
 			<li>
 				<skill>Intellectual</skill>
-				<range>7</range>
+				<range>14</range>
 			</li>
 		</skills>
 		<forcedTraits>

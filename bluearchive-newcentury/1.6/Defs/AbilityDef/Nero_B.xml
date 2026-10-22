@@ -139,9 +139,9 @@
     <!-- 二段每发射击的音效，独立于一段施法音效。 -->
     <shotSound>BANW_Wp_SMG_At</shotSound><!-- 每发射击的音效 -->
     <projectileDef>BANW_Nero_B_EXX</projectileDef><!-- 弹丸 ThingDef -->
-    <effecterDef>BANW_Nero_B_Ef_E</effecterDef><!-- 命中时的特效 -->
-    <rotateImpactEffect>true</rotateImpactEffect><!-- 命中特效跟随弹道方向 -->
-    <impactRotationOffset>0</impactRotationOffset><!-- 命中特效贴图方向校正 -->
+    <effecterDef>BANW_Nero_B_Ef_E</effecterDef><!-- 命中时的特效，子节点为 SubEffecter_SprayerTriggered，支持下方定向开关 -->
+    <rotateImpactEffect>true</rotateImpactEffect><!-- 命中特效跟随弹道方向；false 则沿用普通落点特效 -->
+    <impactRotationOffset>0</impactRotationOffset><!-- 贴图轴向校正角，向左校正90度填 -90 -->
   </exAttack>
 </BANWlLib.Skills.SpecialSkillProfileDef>
 <ThingDef ParentName="BaseBullet">

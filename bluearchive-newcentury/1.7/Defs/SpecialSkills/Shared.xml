@@ -24,6 +24,7 @@
     <label>莉音攻击支援</label>
     <description>受到莉音的攻击支援，暂时提高攻击力。</description>
     <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass>
+    <defaultLabelColor>(255,255,0)</defaultLabelColor>
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
     <stages>
@@ -36,10 +37,12 @@
   </HediffDef>
   <HediffDef>
     <defName>BANW_SpecialHoshinoBuff</defName>
-    <label>星野坦克形态增益</label>
-    <description>星野抵达坦克EX的指定位置后暂时提高攻击力。持续时间结束或切换形态时解除。</description>
+    <label>加强防御态势</label>
+    <description>攻击力增加156%(持续40秒)</description>
+    <defaultLabelColor>(255,255,0)</defaultLabelColor>
     <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass>
     <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
     <initialSeverity>1</initialSeverity>
     <stages>
       <li>
@@ -49,29 +52,43 @@
       </li>
     </stages>
   </HediffDef>
+  
   <HediffDef>
     <defName>BANW_SpecialHoshinoCount</defName>
-    <label>星野防御普通技能状态</label>
-    <description>星野主动施放防御普通技能后获得的独立状态，每次实际受到伤害消耗一次，25次耗尽或切换形态时解除。完全闪避和护盾完全吸收不计数，防御EX到期不会清除此状态。剩余受伤次数可在特殊技能状态中查看。</description>
+    <label>更换护甲</label>
+    <description>防弹护板在自身受到25次伤害后解除,承伤系数减少24%。</description>
+    <defaultLabelColor>(255,255,0)</defaultLabelColor>
     <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass>
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
     <!-- 在此填写需要的属性加成，计数归零由角色技能移除状态。 -->
     <stages>
       <li>
-        <statOffsets />
+        <statOffsets>
+          <IncomingDamageFactor>-0.24</IncomingDamageFactor>
+      </statOffsets>
       </li>
     </stages>
+    <comps>
+
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Hoshiro_B_D_Ef</stateEffecter>
+      </li>
+    </comps>
   </HediffDef>
   <HediffDef>
     <defName>BANW_SpecialHoshinoShield</defName>
-    <label>星野个人护盾</label>
-    <description>星野坦克EX提供的个人护盾，吸收受到的攻击。护盾耗尽、持续时间结束或切换形态时解除。</description>
+    <label>加强防御态势</label>
+    <defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <description>加强防御态势提供的护盾，吸收受到的攻击。护盾耗尽、持续时间结束或切换形态时解除。</description>
     <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
     <comps>
       <li Class="BANWlLib.Skills.HediffCompProperties_HoshinoShield" />
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Hoshiro_B_D_Ef_C</stateEffecter>
+      </li>
     </comps>
   </HediffDef>
   <ThingDef ParentName="BaseBullet">

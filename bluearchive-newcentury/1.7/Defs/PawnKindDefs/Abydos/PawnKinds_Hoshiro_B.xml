@@ -75,6 +75,7 @@
 			<BAWC_TraitDef_zhong>0</BAWC_TraitDef_zhong>
 			<BAWC_TraitDef_Hoshiro>0</BAWC_TraitDef_Hoshiro>
 			<BAWC_TraitDef_Hoshiro_B_A>0</BAWC_TraitDef_Hoshiro_B_A>
+			<BAWC_TraitDef_Hoshiro_B_C>0</BAWC_TraitDef_Hoshiro_B_C>
 		</forcedTraits>
 		<modExtensions>
 			<li Class="BANWlLib.WeaponRestrictions.WeaponWhitelistKindExtension">
@@ -221,6 +222,55 @@
             </li>
         </degreeDatas>
     </TraitDef>
+	
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hoshiro_B_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;近战战斗系统&lt;/color&gt;</label>
+                <description>被动技能:自身攻击力增加&lt;color=#DC143C&gt;16%&lt;/color&gt;生命值增加&lt;color=#DC143C&gt;16%&lt;/color&gt;</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_HealthBonusMultiplier>0.16</BANW_HealthBonusMultiplier>
+					<BANW_FinalDamageMultiplier>0.16</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hoshiro_B_C</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;镇压攻击&lt;/color&gt;</label>
+                <description>子技能:自身攻击力增加&lt;color=#DC143C&gt;14%&lt;/color&gt;，所有攻击均无视85%乘伤系数，自身使用EX技能或普通技能时，下1次普通攻击的效果改为：对扇形范围内的敌方单位造成自身攻击力&lt;color=#DC143C&gt;150%&lt;/color&gt;的伤害.</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_FinalDamageMultiplier>0.14</BANW_FinalDamageMultiplier>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 
+	<TraitDef>
+        <defName>BAWC_TraitDef_Hoshiro_B_D</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#DC143C&gt;有效战术&lt;/color&gt;</label>
+                <description>子技能:自身攻击时20%概率立即对目标造成乘伤系数增加19.%（持续20秒）</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+    </TraitDef>
 </Defs>

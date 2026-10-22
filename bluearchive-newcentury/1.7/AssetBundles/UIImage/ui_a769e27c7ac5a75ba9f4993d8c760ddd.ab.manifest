@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4012409511
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 6e81417b82f55e42812199d62e3df62e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 6e81417b82f55e42812199d62e3df62e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Bg/BG_Swimsuit03_Collection.png
+Dependencies: []

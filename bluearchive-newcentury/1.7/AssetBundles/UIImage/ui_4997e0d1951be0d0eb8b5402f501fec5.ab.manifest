@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 3814342511
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0af53bec2fac93a1a040e7eea48d2258
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 0af53bec2fac93a1a040e7eea48d2258
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Shizuko.png
+Dependencies: []

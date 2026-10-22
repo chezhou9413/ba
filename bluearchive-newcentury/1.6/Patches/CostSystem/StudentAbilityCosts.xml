@@ -21,7 +21,7 @@
       defName=&quot;BAWN_Kotama_EXX&quot; or defName=&quot;BAWN_Mashiro_EXX&quot; or
       defName=&quot;BAWN_Momoi_EXX&quot; or defName=&quot;BAWN_Nagisa_EXX&quot; or
       defName=&quot;BAWN_Nagisa_A_EXX&quot; or defName=&quot;BAWN_Natsu_EXX&quot; or
-      defName=&quot;BAWN_Noa_EXX&quot; or 
+      defName=&quot;BAWN_Noa_EXX&quot; or
       defName=&quot;BAWN_Reisa_EXX&quot; or defName=&quot;BAWN_Shun_EXX&quot; or
       defName=&quot;BAWN_Wakamo_A_EXX&quot; or defName=&quot;BAWN_Yuuka_EXX&quot;]/comps</xpath>
     <value>
@@ -60,7 +60,8 @@
 
   <Operation Class="PatchOperationAdd">
     <xpath>Defs/AbilityDef[defName=&quot;BAWN_Chiaki_EXX&quot; or
-      defName=&quot;BAWN_Hina_B_EXX&quot; or defName=&quot;BAWN_Nozomi_EXX&quot; or defName=&quot;BAWN_Mika_EXX&quot;]/comps</xpath>
+      defName=&quot;BAWN_Hina_B_EXX&quot; or defName=&quot;BAWN_Nozomi_EXX&quot; or
+      defName=&quot;BAWN_Mika_EXX&quot;]/comps</xpath>
     <value>
       <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
         <cost>6</cost>

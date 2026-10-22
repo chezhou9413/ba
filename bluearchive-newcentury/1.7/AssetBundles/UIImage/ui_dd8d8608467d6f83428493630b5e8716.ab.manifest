@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 2436799371
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 64dcbc5df17e43e9eb1e9a459a66622d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 64dcbc5df17e43e9eb1e9a459a66622d
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Hibiki.png
+Dependencies: []

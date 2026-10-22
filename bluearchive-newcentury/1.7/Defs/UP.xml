@@ -1,6 +1,6 @@
 
 <Defs>
-  <BANWlLib.Announcements.UpdateAnnouncementDef>
+  <Notice.NoticeDef>
     <defName>SR_StopMaintenance</defName>
     <label>碧蓝档案新世界公测公告2.1</label>
     <description>碧蓝档案新世界超级超级大更新，这次版本修复了非常多的代码问题！详细请看公告！
@@ -278,5 +278,5 @@ Performance Optimizer不兼容的bug已经修复
 加强了鞋子的护甲值，移动速度
 削弱手套的精准和攻速</description>
     <key>2026007007</key>
-  </BANWlLib.Announcements.UpdateAnnouncementDef>
+  </Notice.NoticeDef>
 </Defs>

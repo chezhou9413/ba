@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 850756047
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 26ba8ca9088663e239e117225a7ea99c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 26ba8ca9088663e239e117225a7ea99c
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Nagisa.png
+Dependencies: []

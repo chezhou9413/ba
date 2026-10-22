@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 164724757
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b53de2e1a79d8f9c86b14818add012ae
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b53de2e1a79d8f9c86b14818add012ae
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Niya.png
+Dependencies: []

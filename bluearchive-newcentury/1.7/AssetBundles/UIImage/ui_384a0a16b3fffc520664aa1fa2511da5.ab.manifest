@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1537019459
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8f5b79375ac0951f1b777724ef5e36e5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 8f5b79375ac0951f1b777724ef5e36e5
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Reisa_A.png
+Dependencies: []

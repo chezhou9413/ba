@@ -21,8 +21,8 @@
   <exAttack>
     <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
     <useBattleStats>true</useBattleStats><!-- 是否使用 BA 战斗属性结算 -->
-    <basePower>32</basePower><!-- 基础伤害值（关闭BA时作为攻击基数） -->
-    <attackPowerRatio>14.69</attackPowerRatio><!-- 攻击力总倍率，13 = 1300%，再按 shots 均分 -->
+    <basePower>1</basePower><!-- 基础伤害值（关闭BA时作为攻击基数） -->
+    <attackPowerRatio>176.28</attackPowerRatio><!-- 攻击力总倍率，13 = 1300%，再按 shots 均分 -->
     <damageDef>BANC_Damage_guantong</damageDef><!-- 伤害类型 -->
     <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
     <penetration>2</penetration><!-- 护甲穿透比例，0 = 不穿透 -->
@@ -139,7 +139,7 @@
     <!-- 二段每发射击的音效，独立于一段施法音效。 -->
     <shotSound>BANW_Wp_SMG_At</shotSound><!-- 每发射击的音效 -->
     <projectileDef>BANW_Nero_B_EXX</projectileDef><!-- 弹丸 ThingDef -->
-    <effecterDef>BANW_Effecter_C</effecterDef><!-- 命中时的特效 -->
+    <effecterDef>BANW_Nero_B_Ef_E</effecterDef><!-- 命中时的特效 -->
     <rotateImpactEffect>true</rotateImpactEffect><!-- 命中特效跟随弹道方向 -->
     <impactRotationOffset>0</impactRotationOffset><!-- 命中特效贴图方向校正 -->
   </exAttack>
@@ -189,13 +189,12 @@
     <range>34.9</range><!-- 施法距离 -->
     <warmupTime>3.5</warmupTime><!-- 前摇时间（秒），0 = 瞬间 -->
     <targetParams><!-- 目标筛选 -->
-      <canTargetLocations>false</canTargetLocations>
-        <canTargetSelf>false</canTargetSelf>
-        <canTargetPawns>true</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetAnimals>true</canTargetAnimals>
-        <canTargetHumans>true</canTargetHumans>
-        <canTargetMechs>true</canTargetMechs>
+     <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
     </targetParams>
   </verbProperties>
   <comps>
@@ -237,13 +236,12 @@
     <range>34.9</range>
     <warmupTime>0.1</warmupTime><!-- 0.1 秒前摇，之后由 Job 逐发射击。 -->
     <targetParams>
-      <canTargetLocations>false</canTargetLocations>
-        <canTargetSelf>false</canTargetSelf>
-        <canTargetPawns>true</canTargetPawns>
-        <canTargetBuildings>false</canTargetBuildings>
-        <canTargetAnimals>true</canTargetAnimals>
-        <canTargetHumans>true</canTargetHumans>
-        <canTargetMechs>true</canTargetMechs>
+      <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
+        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
+        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
+        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
+        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
     </targetParams>
   </verbProperties>
   <comps>

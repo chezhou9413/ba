@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 78810108
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 40dfd56b72a37a52a4da798d41c247b6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 40dfd56b72a37a52a4da798d41c247b6
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Miyako.png
+Dependencies: []

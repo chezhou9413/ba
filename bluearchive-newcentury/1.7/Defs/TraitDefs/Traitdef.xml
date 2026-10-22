@@ -14,6 +14,7 @@
                     <IncomingDamageFactor>-0.05</IncomingDamageFactor>
                     <BANW_HealthBonusMultiplier>0.55</BANW_HealthBonusMultiplier>
                 </statOffsets>
+                 
             </li>
         </degreeDatas>
     </TraitDef>

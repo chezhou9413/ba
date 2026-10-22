@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 644582844
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 9b32d556b5900926ab8a17b4bfbecfe4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9b32d556b5900926ab8a17b4bfbecfe4
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Kotori.png
+Dependencies: []

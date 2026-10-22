@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1761300213
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3d409795e14f81a42bb805e88f3e7657
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 3d409795e14f81a42bb805e88f3e7657
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BAUIImages/Common/UIAssets/ManuaUI/Live/Toki.png
+Dependencies: []
