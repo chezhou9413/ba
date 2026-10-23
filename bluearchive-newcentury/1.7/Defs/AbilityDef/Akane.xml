@@ -3,7 +3,7 @@
 <AbilityDef>
   <defName>BAWN_Akane_EX</defName>
   <label>有品位的贯穿</label>
-  <description>发射一枚单体子弹，造成自身攻击力750%的伤害</description>
+  <description>发射一枚单体子弹，造成自身攻击力750%的伤害.</description>
   <iconPath>Ability/Icon/Akane/Akane_EX</iconPath>
   <cooldownTicksRange>2400</cooldownTicksRange>
   <hotKey>Misc12</hotKey>
