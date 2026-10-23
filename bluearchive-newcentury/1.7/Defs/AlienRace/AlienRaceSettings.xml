@@ -787,6 +787,7 @@
           <li>BANW_Body_Shiroko_C</li>
           <li>BANW_Body_Hoshiro_B</li>
           <li>BANW_Body_Hoshiro_Bag</li>
+          <li>BANW_Body_Hoshiro_D</li>
           <li>BANW_Body_Fuyu</li>
           <li>BANW_Body_Nero_B</li>
           <li>BANW_Body_Noa_A</li>
@@ -1107,7 +1108,7 @@
       
       <LeatherAmount>1</LeatherAmount>
       
-      <AimingDelayFactor>1.2</AimingDelayFactor>
+      <Muice_RangedAimingTimeFactor>1.2</Muice_RangedAimingTimeFactor>
       
       <ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
       

@@ -70,10 +70,6 @@
       </li>
     </stages>
     <comps>
-
-      <li Class="HediffCompProperties_Effecter">
-        <stateEffecter>BANW_Hoshiro_B_D_Ef</stateEffecter>
-      </li>
     </comps>
   </HediffDef>
   <HediffDef>

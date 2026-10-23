@@ -211,7 +211,7 @@
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
 					<BANW_RangedWeapon_RangeOffset>10</BANW_RangedWeapon_RangeOffset>
-					<AimingDelayFactor>-0.13</AimingDelayFactor>
+					<Muice_RangedAimingTimeFactor>-0.13</Muice_RangedAimingTimeFactor>
                     <RangedCooldownFactor>-0.13</RangedCooldownFactor>
                 </statOffsets>
 				<statFactors>

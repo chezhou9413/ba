@@ -235,6 +235,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_B_9_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.30</solidTime><!-- 特效持续可见时间（秒） -->
@@ -256,6 +257,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_B_10_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
@@ -277,6 +279,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_B_11_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.70</solidTime><!-- 特效持续可见时间（秒） -->
@@ -482,6 +485,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_C_1_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
@@ -503,6 +507,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_C_2_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.20</solidTime><!-- 特效持续可见时间（秒） -->
@@ -524,6 +529,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_C_3_Mote</defName>
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
@@ -545,6 +551,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_C_4_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
@@ -566,6 +573,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_C_5_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.80</solidTime><!-- 特效持续可见时间（秒） -->
@@ -795,6 +803,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_E_1_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
@@ -816,6 +825,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_E_2_Mote</defName>
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
@@ -837,6 +847,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_E_3_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
@@ -858,6 +869,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_E_4_Mote</defName>
 <altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>0.50</solidTime><!-- 特效持续可见时间（秒） -->
@@ -879,6 +891,7 @@
 <ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
 <defName>BAWN_Hoshiro_B_E_5_Mote</defName>
 <altitudeLayer>MoteLow</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<thingClass>MoteAttached</thingClass>
 <mote>
 <fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
 <solidTime>1.00</solidTime><!-- 特效持续可见时间（秒） -->
@@ -916,7 +929,7 @@
         <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
         <fleckDef>BAWN_Effect_BA_A</fleckDef>
         <burstCount>1</burstCount>
-        <ticksBetweenMotes>120</ticksBetweenMotes>
+        <ticksBetweenMotes>300</ticksBetweenMotes>
         <initialDelayTicks>0</initialDelayTicks>
         <positionRadius>0</positionRadius>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
@@ -1067,7 +1080,7 @@
        <li>
         <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
         <moteDef>BAWN_Hoshiro_B_E_5_Mote</moteDef>
-         <ticksBetweenMotes>90</ticksBetweenMotes><!-- 循环间隔与 D_4 相同，两段首尾相接 -->
+         <ticksBetweenMotes>60</ticksBetweenMotes><!-- 循环间隔与 D_4 相同，两段首尾相接 -->
         <initialDelayTicks>30</initialDelayTicks><!-- 30(D_3 结束) + 60(D_4 时长) = 90 tick 时接上 -->
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
         <rotation>0</rotation><!-- 初始旋转角度 -->

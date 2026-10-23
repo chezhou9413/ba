@@ -205,7 +205,7 @@
      <HediffDef>
         <defName>BANW_FH_Buff_A</defName>
         <label>易燃性光环</label>
-        <description>易燃性提升17%</description>
+        <description>易燃性减少17%</description>
         <defaultLabelColor>(255,255,0)</defaultLabelColor>
         <hediffClass>BANWlLib.Auras.Hediff_FriendlyAuraEffect</hediffClass>
         <isBad>false</isBad>
@@ -221,7 +221,7 @@
         <stages>
             <li>
                 <statOffsets>
-                    <Flammability>0.17</Flammability>
+                    <Flammability>-0.17</Flammability>
                 </statOffsets>
             </li>
         </stages>
@@ -315,7 +315,7 @@
         <stages>
             <li>
                 <statOffsets>
-                    <AimingDelayFactor>-0.085</AimingDelayFactor>
+                    <Muice_RangedAimingTimeFactor>-0.085</Muice_RangedAimingTimeFactor>
                     <RangedCooldownFactor>-0.085</RangedCooldownFactor>
                 </statOffsets>
             </li>

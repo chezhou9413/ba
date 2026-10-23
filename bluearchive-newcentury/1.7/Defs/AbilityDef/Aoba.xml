@@ -204,7 +204,7 @@
       <li>
         <statOffsets>
           <BANW_FinalDamageMultiplier>0.28</BANW_FinalDamageMultiplier>
-          <AimingDelayFactor>-0.33</AimingDelayFactor>
+          <Muice_RangedAimingTimeFactor>-0.33</Muice_RangedAimingTimeFactor>
           <RangedCooldownFactor>-0.33</RangedCooldownFactor>
         </statOffsets>
         <statFactors>

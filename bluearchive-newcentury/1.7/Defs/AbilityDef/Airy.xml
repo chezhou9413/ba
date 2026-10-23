@@ -64,7 +64,7 @@
          <stages>
           <li>     
             <statOffsets>
-            <AimingDelayFactor>0.175</AimingDelayFactor><!-- 瞄准时间 +17.5%（该属性默认 1，数值越大瞄准越慢） -->
+            <Muice_RangedAimingTimeFactor>0.175</Muice_RangedAimingTimeFactor><!-- 瞄准时间 +17.5%（该属性默认 1，数值越大瞄准越慢） -->
             <RangedCooldownFactor>0.175</RangedCooldownFactor><!-- 远程射击冷却 +17.5%，与上一项合计约 35% 攻速下降 -->
             </statOffsets>
            </li>
@@ -240,7 +240,7 @@
          <stages>
           <li>     
             <statOffsets>
-            <AimingDelayFactor>0.13</AimingDelayFactor>
+            <Muice_RangedAimingTimeFactor>0.13</Muice_RangedAimingTimeFactor>
             <RangedCooldownFactor>0.13</RangedCooldownFactor>
             </statOffsets>
             <statFactors>

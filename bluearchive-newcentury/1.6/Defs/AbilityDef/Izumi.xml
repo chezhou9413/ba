@@ -203,7 +203,7 @@
     <stages>
       <li>
         <statOffsets>
-          <AimingDelayFactor>-0.19</AimingDelayFactor>
+          <Muice_RangedAimingTimeFactor>-0.19</Muice_RangedAimingTimeFactor>
           <RangedCooldownFactor>-0.19</RangedCooldownFactor>
         </statOffsets>
       </li>

@@ -220,7 +220,7 @@
           <stages>
           <li>     
            <statOffsets>
-           <AimingDelayFactor>-0.285</AimingDelayFactor>
+           <Muice_RangedAimingTimeFactor>-0.285</Muice_RangedAimingTimeFactor>
            <RangedCooldownFactor>-0.285</RangedCooldownFactor>
            <BANW_Miss>0.3</BANW_Miss>
             </statOffsets>

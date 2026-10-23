@@ -212,7 +212,7 @@
                 <description>子技能:自身攻速增加&lt;color=#DC143C&gt;26%&lt;/color&gt;</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-					<AimingDelayFactor>-0.13</AimingDelayFactor>
+					<Muice_RangedAimingTimeFactor>-0.13</Muice_RangedAimingTimeFactor>
                     <RangedCooldownFactor>-0.13</RangedCooldownFactor>
                 </statOffsets>
 				<statFactors>

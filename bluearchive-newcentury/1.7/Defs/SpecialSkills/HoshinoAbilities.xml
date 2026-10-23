@@ -155,6 +155,10 @@
         <!-- 施放消耗的 COST 值。 -->
         <cost>4</cost>
       </li>
+       <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Hoshiro_B_D_Ef</effecterDef>
+        <maintainForTicks>1500</maintainForTicks>
+      </li>
     </comps>
   </AbilityDef>
 
@@ -261,7 +265,7 @@
       <!-- 施法距离上限（格）。 -->
       <range>25</range>
       <!-- 瞄准时间（秒）。 -->
-      <warmupTime>10</warmupTime>
+      <warmupTime>2</warmupTime>
       <!-- 合法目标类型：仅自身。 -->
       <targetParams>
         <!-- 以自己为目标施放。 -->

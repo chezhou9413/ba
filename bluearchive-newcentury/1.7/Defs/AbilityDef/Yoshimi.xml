@@ -18,7 +18,8 @@
     <verbProperties>
       <warmupEffecter>BANW_Effecter_A</warmupEffecter>
       <soundCast>ThrowGrenade</soundCast>
-      <verbClass>Verb_CastAbility</verbClass> <!-- 改为投射物动词类 -->
+      <!-- 通用预览动词：施法时按 modExtensions 里的 AbilityTargetPreviewExtension 绘制范围。 -->
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
       <range>69.9</range><!-- 投掷范围 -->
       <warmupTime>1</warmupTime><!-- 前摇时间 -->
       <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
@@ -39,6 +40,14 @@
       </li>
     </comps>
     <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <!-- 圆形预览，半径与投射物的 explosionRadius 保持一致，悬停即显示爆炸范围。 -->
+        <shape>Circle</shape>
+        <range>69.9</range>
+        <radius>3.9</radius>
+        <drawCasterRange>true</drawCasterRange>
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
         <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
         <showBattleFormula>true</showBattleFormula>
@@ -142,7 +151,7 @@
           <li>
             <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
             <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
-            <attackPowerRatio>3.53</attackPowerRatio>
+            <attackPowerRatio>10.59</attackPowerRatio>
             <!-- 伤害类型。 -->
             <damageDef>BANC_Damage_guantong</damageDef>
             <!-- 是否允许暴击。 -->
@@ -175,7 +184,10 @@
     </projectile>
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-        <attackPowerRatio>0.01</attackPowerRatio>
+        <!-- 本技能真正的伤害在 BANW_Job_TEST_Yoshimi 的 damages 里结算，这里只为借用发射补丁的命中上下文。
+             必须保持 0：tooltip 会优先读取投射物的这个倍率（AbilityBattleTooltipUtility.TryBuildProjectileActions
+             早于 TryBuildJobActions），填 0.01 会让预估伤害变成 0。 -->
+        <attackPowerRatio>0</attackPowerRatio>
          <isNormalAttack>false</isNormalAttack>
         <canCrit>true</canCrit>
       </li>
@@ -234,7 +246,7 @@
             <isAttackBuilding>false</isAttackBuilding>
             <!-- 触发此伤害时播放的效果 -->
             <effecterDef></effecterDef>
-            <attackPowerRatio>3.53</attackPowerRatio>
+            <attackPowerRatio>10.59</attackPowerRatio>
           </li>
         </damages>
       </li>

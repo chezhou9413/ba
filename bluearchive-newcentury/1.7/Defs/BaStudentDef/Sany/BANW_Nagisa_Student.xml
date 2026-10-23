@@ -101,7 +101,7 @@
                 <offSetY>0</offSetY>
 			</Ability3>
 			<Ability4>
-				<AbilityImagePath>Ability/Icon/Chiaki/Airy/Airy_A</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Airy/Airy_A</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>贵族义务</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>

@@ -230,7 +230,7 @@
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets> 
                        <BANW_CriticalDamage>0.25</BANW_CriticalDamage>
-					   <AimingDelayFactor>-0.13</AimingDelayFactor>
+					   <Muice_RangedAimingTimeFactor>-0.13</Muice_RangedAimingTimeFactor>
                        <RangedCooldownFactor>-0.13</RangedCooldownFactor>
                 </statOffsets>
 				<statFactors>

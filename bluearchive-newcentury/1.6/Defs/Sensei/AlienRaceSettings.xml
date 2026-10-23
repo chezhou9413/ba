@@ -486,7 +486,7 @@
 			<ToxicResistance>0.5</ToxicResistance>
 			<MeatAmount>1</MeatAmount>
 			<LeatherAmount>1</LeatherAmount>
-			<AimingDelayFactor>1.2</AimingDelayFactor>
+			<Muice_RangedAimingTimeFactor>1.2</Muice_RangedAimingTimeFactor>
 			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
 			<PlantWorkSpeed>1.1</PlantWorkSpeed>
 			<ConstructionSpeed>1.15</ConstructionSpeed>

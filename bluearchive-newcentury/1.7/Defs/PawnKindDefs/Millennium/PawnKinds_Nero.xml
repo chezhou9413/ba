@@ -228,7 +228,7 @@
 				<IncomingDamageFactor>-0.1</IncomingDamageFactor><!-- 受到伤害倍率 -0.1（受伤降低 10%） -->
 				<MoveSpeed>5.80</MoveSpeed><!-- 移动速度 +5.8 格/秒 -->
 				<Flammability>-0.6</Flammability><!-- 易燃性 -0.6（更不易被点燃） -->
-				<AimingDelayFactor>-0.20</AimingDelayFactor><!-- 瞄准延迟 -0.8（基础 1.0，大幅加快瞄准） -->
+				<Muice_RangedAimingTimeFactor>-0.20</Muice_RangedAimingTimeFactor><!-- 瞄准延迟 -0.8（基础 1.0，大幅加快瞄准） -->
 				<CarryingCapacity>100</CarryingCapacity> <!-- 负重上限 +100 -->
 				<ShootingAccuracyPawn>30</ShootingAccuracyPawn><!-- 射击精度 +30 -->
                 </statOffsets>

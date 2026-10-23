@@ -224,7 +224,7 @@
                 </statOffsets>
 				<statFactors>
 					<IncomingDamageFactor>0.8</IncomingDamageFactor>
-					<AimingDelayFactor>0.1</AimingDelayFactor>
+					<Muice_RangedAimingTimeFactor>0.1</Muice_RangedAimingTimeFactor>
 					<StaggerDurationFactor>0</StaggerDurationFactor> 
 					<RestFallRateFactor>1.5</RestFallRateFactor>
 					<PsychicSensitivity>2</PsychicSensitivity>

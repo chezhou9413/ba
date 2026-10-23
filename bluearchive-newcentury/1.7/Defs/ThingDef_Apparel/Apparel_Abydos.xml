@@ -230,4 +230,123 @@
       </li>
     </comps>
     </ThingDef>
+
+    <ThingDef ParentName="BANC_Apparel_Shields">
+        <defName>BANW_Body_Hoshiro_D</defName>
+        <label>梦的防爆盾牌</label>
+        <description>梦前辈的遗物</description>
+<graphicData>
+            <drawSize>1.4</drawSize>
+            <texPath>Pawns/Abydos/Hoshiro_B/Shield/Hoshiro_B_shield</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+        <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+		<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+	    <ArmorRating_Heat>0.4</ArmorRating_Heat>
+        </statBases>
+        <comps>
+            <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Hoshiro_B</li>
+        </requiredPawnKindDefName>
+      </li>
+            <li Class="ChezhouLib.comp.ApparelAddBodyAddonCompProperties">
+                <targetRaces>
+                    <li>BANW_KivotosStudent</li>
+                </targetRaces>
+                <bodyAddonDefs>
+                    <li>
+                        <name>BANW_Mine_Greatshield_Back_Adult</name>
+                        <userCustomizable>true</userCustomizable>
+                        <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                        <path>Pawns/Abydos/Hoshiro_B/Apparel/Hoshiro_Bag_Apparel</path>
+                        <colorChannel>apparel</colorChannel>
+                        <inFrontOfBody>false</inFrontOfBody>
+                        <layerInvert>false</layerInvert>
+                        <angle>0</angle>
+                        <drawSize>0.85</drawSize>
+                        <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                        <defaultOffset>Center</defaultOffset>
+                        <alignWithHead>false</alignWithHead>
+                        <conditions>
+                            <BodyPart>
+                                <bodyPart>BANW_Torso</bodyPart>
+                            </BodyPart>
+                            <Apparel />
+                            <Posture>
+                                <drawnStanding>true</drawnStanding>
+                                <drawnLaying>true</drawnLaying>
+                                <drawnInBed>true</drawnInBed>
+                            </Posture>
+                        </conditions>
+                        <offsets>
+                            <west>
+                                <layerOffset>-0.28</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </west>
+                            <south>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </south>
+                            <north>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, -0.58)</offset>
+                            </north>
+                            <east>
+                                <layerOffset>-0.26</layerOffset>
+                                <offset>(0, 0)</offset>
+                            </east>
+                        </offsets>
+                    </li>
+                </bodyAddonDefs>
+                <DraftedbodyAddonDefs>
+                    <li>
+                        <name>BANW_Mine_GreatshieldB_Adult</name>
+                        <userCustomizable>true</userCustomizable>
+                        <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                        <path>Pawns/Abydos/Hoshiro_B/Shield/Hoshiro_B_shield</path>
+                        <colorChannel>apparel</colorChannel>
+                        <inFrontOfBody>true</inFrontOfBody>
+                        <layerInvert>false</layerInvert>
+                        <angle>0</angle>
+                        <drawSize>0.65</drawSize>
+                        <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                        <defaultOffset>Center</defaultOffset>
+                        <alignWithHead>false</alignWithHead>
+                        <conditions>
+                            <BodyPart>
+                                <bodyPart>BANW_Torso</bodyPart>
+                            </BodyPart>
+                            <Apparel />
+                            <Posture>
+                                <drawnStanding>true</drawnStanding>
+                                <drawnLaying>true</drawnLaying>
+                                <drawnInBed>true</drawnInBed>
+                            </Posture>
+                        </conditions>
+                        <offsets>
+                           <west>
+                                <layerOffset>-0.35</layerOffset>
+                                <offset>(-0.2, -0.2)</offset> <!-- 左面往正左移动 -->
+                            </west>
+                            <south>
+                                <layerOffset>-0.20</layerOffset>
+                                <offset>(0.2, -0.2)</offset> <!-- 正面调整至人物正右边 -->
+                            </south>
+                            <north>
+                                <layerOffset>-0.35</layerOffset> <!-- 后面贴图调至最底层 -->
+                                <offset>(-0.2, -0.2)</offset>
+                            </north>
+                            <east>
+                                <layerOffset>-0.35</layerOffset>
+                                <offset>(-0.2, -0.2)</offset> <!-- 右面往正右移动 -->
+                            </east>
+                        </offsets>
+                    </li>
+                </DraftedbodyAddonDefs>
+            </li>
+        </comps>
+    </ThingDef>
+
 </Defs>

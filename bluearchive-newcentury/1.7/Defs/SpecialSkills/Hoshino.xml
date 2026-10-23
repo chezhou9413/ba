@@ -68,7 +68,7 @@
       <!-- 防御形态的职位特性：切到防御形态时移除输出特性并授予此项；两项必须不同，否则报配置错误。 -->
       <tankTrait>BAWC_TraitDef_Tank</tankTrait>
       <!-- 提供护盾与拦截外观的服装：仅该件服装的渲染节点会被换成护盾绘制，不影响其他服装。 -->
-      <shieldApparel>BANW_Body_Hoshiro_Bag</shieldApparel>
+      <shieldApparel>BANW_Body_Hoshiro_D</shieldApparel>
       <!-- 前向拦截成功击落来袭子弹时的命中特效。 -->
       <interceptEffecter>BANW_Effecter_C</interceptEffecter>
       <!-- 每个动作独立设置自身EffecterDef、SoundDef和维持tick；声音留空即不播放。 -->

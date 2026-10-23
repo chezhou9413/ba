@@ -28,7 +28,7 @@
                 <description>{PAWN_nameDef}的职位是输出，负责进行高额伤害的输出，攻击力要比其他职业高</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
-                    <AimingDelayFactor>-0.1</AimingDelayFactor>
+                    <Muice_RangedAimingTimeFactor>-0.1</Muice_RangedAimingTimeFactor>
                     <RangedWeapon_Cooldown>-0.08</RangedWeapon_Cooldown>
                     <ShootingAccuracyPawn>5</ShootingAccuracyPawn><!--	■射撃命中補正-->
                 </statOffsets>
