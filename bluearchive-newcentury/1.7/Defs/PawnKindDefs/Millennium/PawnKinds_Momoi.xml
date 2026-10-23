@@ -207,6 +207,7 @@
 					<ReadingSpeed>-0.3</ReadingSpeed>
 					<PsychicSensitivity>0</PsychicSensitivity>
 					<ShootingAccuracyPawn>-0.2</ShootingAccuracyPawn>
+					<Muice_RangedAimingTimeFactor>-1</Muice_RangedAimingTimeFactor>
                 </statOffsets>
             </li>
         </degreeDatas>

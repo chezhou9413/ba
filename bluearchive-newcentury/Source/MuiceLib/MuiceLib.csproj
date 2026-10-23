@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>14.0</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Deterministic>true</Deterministic>
+    <AssemblyName>MuiceLib</AssemblyName>
+    <RootNamespace>MuiceLib</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DebugType>portable</DebugType>
+    <RimWorldGamePath>$(MSBuildThisFileDirectory)..\..\..\..\..\</RimWorldGamePath>
+    <HarmonyPath>$(RimWorldGamePath)..\..\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll</HarmonyPath>
+    <OutputPath>$(MSBuildThisFileDirectory)..\..\1.7\Assemblies\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldGamePath)Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldGamePath)UnityStubs.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorldGamePath)Waylith.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(HarmonyPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
