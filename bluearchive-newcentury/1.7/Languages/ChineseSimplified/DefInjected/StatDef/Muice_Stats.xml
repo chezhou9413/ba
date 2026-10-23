@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Muice_RangedAimingTimeFactor.label>瞄准时间倍率</Muice_RangedAimingTimeFactor.label>
+  <Muice_RangedAimingTimeFactor.description>人物选择目标后需要多久才能开枪。数值越小，瞄准越快。</Muice_RangedAimingTimeFactor.description>
+</LanguageData>
