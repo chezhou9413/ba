@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //同一件盾牌在输出形态背负，在防御形态移至身前。
+    //防御形态盾牌的前持位置，输出形态背包使用原版服装绘制。
     public class PawnRenderNodeWorker_HoshinoShield : PawnRenderNodeWorker_Apparel_Body
     {
         //从角色实例读取形态，普通服装绘制不会进入本节点。

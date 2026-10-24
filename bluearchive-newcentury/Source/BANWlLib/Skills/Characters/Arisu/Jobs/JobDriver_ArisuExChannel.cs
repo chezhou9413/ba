@@ -3,6 +3,7 @@ using System.Linq;
 using BANWlLib.BattleSystem;
 using Verse;
 using Verse.AI;
+using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
@@ -17,24 +18,32 @@ namespace BANWlLib.Skills
                 verb.Reset();
         }
 
-        //自身充能沿用瞬时施法，攻击则维持工作并在中断时取消剩余伤害。
+        //充能先播放前摇；光束发动后独立结算，工作只负责持续瞄准。
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            if (job.targetA.Thing == pawn)
-            {
-                foreach (Toil toil in base.MakeNewToils()) yield return toil;
-                yield break;
-            }
             var profile = job.ability.CompOfType<CompAbilityEffect_SpecialSkill>().Props.profile;
             var state = Hediff_SpecialSkillState.Find(pawn, profile);
-            Map castMap = pawn.Map;
             this.FailOn(() => !SpecialCombatUtility.CanAct(pawn));
             AddFinishAction(condition =>
             {
-                castMap.GetComponent<MapComponent_SpecialSkills>().CancelCast(job);
-                state.castEndTick = -1;
                 if (pawn.stances.curStance is MultiShotAimStance) pawn.stances.CancelBusyStanceSoft();
             });
+            if (job.targetA.Thing == pawn)
+            {
+                Toil charge = Toils_General.Wait(profile.arisu.chargeWarmupTicks);
+                charge.FailOn(() => state.stage >= 2);
+                if (profile.arisu.chargeWarmupTicks == 0) charge.defaultCompleteMode = ToilCompleteMode.Instant;
+                charge.AddPreInitAction(() =>
+                {
+                    pawn.pather.StopDead();
+                    profile.arisu.chargeSound?.PlayOneShot(new TargetInfo(pawn));
+                    SpecialDirectionalEffects.Trigger(profile.arisu.chargeEffecters[state.stage], pawn, pawn,
+                        profile.arisu.chargeWarmupTicks);
+                });
+                yield return charge;
+                foreach (Toil toil in base.MakeNewToils()) yield return toil;
+                yield break;
+            }
             foreach (Toil toil in base.MakeNewToils()) yield return toil;
             Toil channel = ToilMaker.MakeToil("爱丽丝EX持续施法");
             channel.defaultCompleteMode = ToilCompleteMode.Never;
@@ -48,7 +57,7 @@ namespace BANWlLib.Skills
             {
                 pawn.pather.StopDead();
                 pawn.rotationTracker.FaceTarget(job.targetA);
-                if (!castMap.GetComponent<MapComponent_SpecialSkills>().HasPendingCast(job)) ReadyForNextToil();
+                if (state.Now > state.castEndTick) ReadyForNextToil();
             };
             yield return channel;
         }

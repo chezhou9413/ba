@@ -34,6 +34,9 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         //实例创建当帧先隐藏卡面，避免 Start 前显示默认贴图和缩放。
         private void Awake()
         {
+#if RW_1_7
+            BANWlLib.mainUI.Initialization.BAUiParticles.Configure(gameObject);
+#endif
             Image = this.transform.Find("MainImage").GetComponent<Image>();
             Image.gameObject.SetActive(false);
         }
@@ -59,7 +62,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             Image.GetComponent<RectTransform>().anchoredPosition += offset;
             Image.transform.localScale = Vector3.one * initSize;
             Image.gameObject.SetActive(true);
-            Sequence cardSeq = DOTween.Sequence();
+            Sequence cardSeq = DOTween.Sequence().SetLink(gameObject, LinkBehaviour.KillOnDisable);
             cardSeq.Append(Image.transform.DOScale(TargetSize, 0.35f).SetEase(Ease.Linear));
             cardSeq.OnComplete(() =>
             {
@@ -70,6 +73,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             //卡片落下时启动对应稀有度的粒子。
             void OnCardSlammed()
             {
+                if (!BANWlLib.DamageFontSystem.Setting.DamageFontMod.settings.enableBurstParticle) return;
                 switch (gacaData.starNum)
                 {
                     case 2:

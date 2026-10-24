@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
@@ -14,13 +15,16 @@ namespace BANWlLib.Skills
             if (target?.Map != null) Trigger(def, target.Position, target.Map);
         }
 
-        //在指定格触发一次特效并释放控制器。
+        //将控制器交给地图维护，让延迟和持续子特效有机会完成播放。
         public static void Trigger(EffecterDef def, IntVec3 cell, Map map)
         {
             if (def == null || map == null) return;
             Effecter effecter = def.Spawn();
-            effecter.Trigger(new TargetInfo(cell, map), TargetInfo.Invalid);
-            effecter.Cleanup();
+            TargetInfo point = new TargetInfo(cell, map);
+            effecter.Trigger(point, point);
+            int delay = def.children.NullOrEmpty() ? 0 : def.children.Max(child => child.initialDelayTicks);
+            map.effecterMaintainer.AddEffecterToMaintain(effecter, point, point,
+                System.Math.Max(def.maintainTicks, delay + 1));
         }
 
         //读取充能阶段绑定的特效，不使用静默替换。

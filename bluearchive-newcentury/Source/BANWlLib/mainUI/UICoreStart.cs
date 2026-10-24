@@ -70,8 +70,10 @@ namespace BANWlLib
                 UiMapData.uiCamera.gameObject.SetActive(true);
                 return true;
             }
-            catch (System.Exception)
+            catch (System.Exception error)
             {
+                Log.Error($"[抽卡UI] 打开什亭之匣失败：\n{error}");
+                Messages.Message("什亭之匣无法打开，详细原因见 Player.log。", MessageTypeDefOf.RejectInput, false);
                 return false;
             }
         }
@@ -120,11 +122,11 @@ namespace BANWlLib
                 }
                 Find.TickManager.CurTimeSpeed = TimeSpeed.Normal;
                 UiMapData.mainUI.SetActive(true);
+                UiMapData.uiclose = true;
                 LoopBGMManager.switchUiBgm("bgm2");
                 MonoComp_BackButton.instance.backList.Clear();
                 MonoComp_BackButton.instance.backObj = UiMapData.mainUI;
                 MonoComp_BackButton.instance.currentBgm = "bgm2";
-                UiMapData.uiclose = true;
                 UiMapData.showUI.SetActive(false);
                 ClearSelectedUiObject();
             }
@@ -140,6 +142,7 @@ namespace BANWlLib
         //隐藏什亭之匣主界面并恢复关闭状态。
         public static bool colseMianUI()
         {
+            LoopBGMManager.StopUiAudio();
             UiMapData.mainUI.SetActive(false);
             UiMapData.uiclose = false;
             return true;

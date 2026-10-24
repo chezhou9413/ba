@@ -9,6 +9,7 @@ namespace BANWlLib.Skills
         public float lineLength = 25f;
         public float lineWidth = 3f;
         public int damageDelayTicks;
+        public int chargeWarmupTicks = 60;
         public List<EffecterDef> attackEffecters;
         public List<EffecterDef> chargeEffecters;
         public List<EffecterDef> chargeStateEffecters;
@@ -19,8 +20,8 @@ namespace BANWlLib.Skills
         //检查阶段列表数量和直线尺寸，配置错误直接报告。
         public IEnumerable<string> ConfigErrors()
         {
-            if (lineLength <= 0 || lineWidth <= 0 || damageDelayTicks < 0)
-                yield return "直线长度、宽度或伤害延迟无效";
+            if (lineLength <= 0 || lineWidth <= 0 || damageDelayTicks < 0 || chargeWarmupTicks < 0)
+                yield return "直线长度、宽度、伤害延迟或充能前摇无效";
             if (attackEffecters == null || attackEffecters.Count != 3 || attackEffecters.Contains(null))
                 yield return "对敌特效必须依次配置0、1、2档对应的三个EffecterDef";
             if (chargeEffecters == null || chargeEffecters.Count != 2 || chargeEffecters.Contains(null))

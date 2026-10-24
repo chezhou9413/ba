@@ -1,16 +1,12 @@
 #if RW_1_7
 using Engine = RimUnity;
-using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
 #endif
-using HarmonyLib;
 using newpro;
+using BANWlLib.mainUI.Audio;
 using RimWorld;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 #if RW_1_7
 using RimUnity;
@@ -18,30 +14,13 @@ using RimUnity;
 using Engine = UnityEngine;
 using UnityEngine;
 #endif
-#if RW_1_7
-using global::UnityEngine.Networking;
-#else
+#if !RW_1_7
 using UnityEngine.Networking;
 #endif
 using Verse;
 
 namespace MyCoolMusicMod
 {
-    using HarmonyLib;
-    using RimWorld;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Threading.Tasks;
-#if RW_1_7
-    using RimUnity;
-#else
-    using UnityEngine;
-#endif
-    using global::UnityEngine.Networking;
-    using Verse;
-    using static RimWorld.FleshTypeDef;
-
     namespace MyCoolMusicMod
     {
         //音频入口类保留 RimWorld 对旧 Mod 类的实例化路径，并执行轻量全局初始化。
@@ -55,14 +34,16 @@ namespace MyCoolMusicMod
             }
         }
 
+        //缓存界面音效，并把背景音乐切换交给原版播放器。
         public static class LoopBGMManager
         {
-            public static Dictionary<string, AudioClip> bgmPool = new Dictionary<string, AudioClip>();
-
             public static Dictionary<string, AudioClip> audioPool = new Dictionary<string, AudioClip>();
             private static bool audioLoadStarted;
+            private static Task audioLoadTask;
+            private static int effectRequestVersion;
+            private static AudioClip directClip;
 
-            //启动 UI 音频加载，保证 BGM 和音效只在 BA UI 初始化阶段异步加载一次。
+            //公共音效只在 BA UI 初始化阶段加载一次，音乐使用原版内容缓存。
             public static void EnsureAudioLoaded()
             {
                 if (audioLoadStarted)
@@ -71,42 +52,14 @@ namespace MyCoolMusicMod
                 }
 
                 audioLoadStarted = true;
-                LoadAllBgm();
-                LoadAllAudio();
+                audioLoadTask = LoadAllAudio();
             }
 
-            public static async void LoadAllBgm()
-            {
-                // 防空检查
-                if (string.IsNullOrEmpty(UiMapData.modRootPath))
-                {
-                    Log.Error("UiMapData.modRootPath 尚未初始化！");
-                    return;
-                }
-                string bgmFolderPath = Path.Combine(UiMapData.modRootPath, "Sounds", "Songs");
-                if (!Directory.Exists(bgmFolderPath))
-                {
-                    Log.Warning($"找不到BGM文件夹: {bgmFolderPath}");
-                    return;
-                }
-                string[] files = Directory.GetFiles(bgmFolderPath, "*.ogg", SearchOption.TopDirectoryOnly);
-
-                foreach (string filePath in files)
-                {
-                    string fileNameKey = Path.GetFileNameWithoutExtension(filePath);
-
-                    if (bgmPool.ContainsKey(fileNameKey)) continue;
-                    AudioClip clip = await LoadAudioAsync(filePath);
-                    if (clip != null)
-                    {
-                        clip.name = fileNameKey;
-                        bgmPool.Add(fileNameKey, clip);
-                    }
-                }
-            }
-
+            //按学生配置加载并播放拖动等独立音效。
             public static async void PlayClipDirectly(string relativePath)
             {
+                int requestVersion = ++effectRequestVersion;
+                AudioSource source = UiMapData.mainAudioPlay;
                 if (string.IsNullOrEmpty(UiMapData.modRootPath))
                 {
                     Log.Error("UiMapData.modRootPath 尚未初始化！");
@@ -127,118 +80,162 @@ namespace MyCoolMusicMod
                 //异步加载音频。
                 AudioClip clip = await LoadAudioAsync(fullPath);
 
-                if (clip != null && UiMapData.mainAudioPlay != null)
+                if (clip == null) return;
+                if (requestVersion != effectRequestVersion || source == null ||
+                    source != UiMapData.mainAudioPlay || !source.isActiveAndEnabled)
                 {
-                    //按文件名设置音频名称，便于日志定位。
-                    clip.name = Path.GetFileNameWithoutExtension(fullPath);
-
-                    // 更新音量 (以防设置变了)
+                    Engine.Object.Destroy(clip);
+                    return;
+                }
+                source.Stop();
+                ReleaseDirectClip();
+                directClip = clip;
+                clip.name = Path.GetFileNameWithoutExtension(fullPath);
+                source.clip = clip;
+                try
+                {
                     SetVolumeToGamePrefs();
-
-                    // 赋值并播放
-                    UiMapData.mainAudioPlay.clip = clip;
-                    UiMapData.mainAudioPlay.Stop();
-                    UiMapData.mainAudioPlay.Play();
+                    source.Play();
+                }
+                catch (Exception error)
+                {
+                    source.Stop();
+                    ReleaseDirectClip();
+                    Log.Error($"[BA UI音频] 独立音效播放失败：{fullPath}\n{error}");
                 }
             }
+            //关闭或重建界面时取消延迟请求，并释放独立加载的临时音频。
+            public static void StopUiAudio()
+            {
+                BAUiMusic.Stop();
+                ++effectRequestVersion;
+                UiMapData.mainAudioPlay?.Stop();
+                ReleaseDirectClip();
+            }
+
+            //仅释放直接加载的片段，公共音效缓存由音乐管理器继续持有。
+            private static void ReleaseDirectClip()
+            {
+                if (directClip == null) return;
+                if (UiMapData.mainAudioPlay != null && UiMapData.mainAudioPlay.clip == directClip)
+                    UiMapData.mainAudioPlay.clip = null;
+                Engine.Object.Destroy(directClip);
+                directClip = null;
+            }
+            //按钮与角色独立音效沿用游戏音量。
             public static void SetVolumeToGamePrefs()
             {
 
                 float gameVolume = Prefs.VolumeGame;
                 UiMapData.mainAudioPlay.volume = gameVolume;
-                UiMapData.mainBgmPlay.volume = Prefs.VolumeMusic;
             }
-            public static async void LoadAllAudio()
+            //缓存公共按钮音效，单个文件失败由加载器记录，不阻断其他音效。
+            public static async Task LoadAllAudio()
             {
-                // 防空检查
                 if (string.IsNullOrEmpty(UiMapData.modRootPath))
                 {
                     Log.Error("UiMapData.modRootPath 尚未初始化！");
                     return;
                 }
-                string bgmFolderPath = Path.Combine(UiMapData.modRootPath, "Sounds", "UIAudio");
-                if (!Directory.Exists(bgmFolderPath))
+                string audioFolderPath = Path.Combine(UiMapData.modRootPath, "Sounds", "UIAudio");
+                if (!Directory.Exists(audioFolderPath))
                 {
+                    Log.Warning($"找不到UI音效文件夹: {audioFolderPath}");
                     return;
                 }
-                string[] files = Directory.GetFiles(bgmFolderPath, "*.ogg", SearchOption.TopDirectoryOnly);
-
-                foreach (string filePath in files)
+                try
                 {
-                    string fileNameKey = Path.GetFileNameWithoutExtension(filePath);
-
-                    if (audioPool.ContainsKey(fileNameKey)) continue;
-                    AudioClip clip = await LoadAudioAsync(filePath);
-
-                    if (clip != null)
+                    foreach (string filePath in Directory.GetFiles(audioFolderPath, "*.ogg", SearchOption.TopDirectoryOnly))
                     {
-                        clip.name = fileNameKey;
-                        audioPool.Add(fileNameKey, clip);
-                    }
-                }
-            }
-            public static void switchUiBgm(string bgmName)
-            {
-                SetVolumeToGamePrefs();
-                if (bgmPool.TryGetValue(bgmName, out AudioClip audioClip))
-                {
-                    if (UiMapData.mainBgmPlay != null)
-                    {
-                        //关闭界面会停止声部，同一曲目再次打开时也需要恢复播放。
-                        if (UiMapData.mainBgmPlay.clip != audioClip || !UiMapData.mainBgmPlay.isPlaying)
+                        string fileNameKey = Path.GetFileNameWithoutExtension(filePath);
+                        if (audioPool.ContainsKey(fileNameKey)) continue;
+                        AudioClip clip = await LoadAudioAsync(filePath);
+                        if (clip != null)
                         {
-                            UiMapData.mainBgmPlay.clip = audioClip;
-                            UiMapData.mainBgmPlay.Play();
+                            clip.name = fileNameKey;
+                            audioPool.Add(fileNameKey, clip);
                         }
                     }
                 }
-                else
+                catch (Exception error)
                 {
-                    Log.Warning($"试图播放不存在的BGM: {bgmName}");
+                    Log.Error($"[BA UI音频] 无法读取UI音效目录：{audioFolderPath}\n{error}");
+                }
+            }
+            //分页直接切换原版播放器中的曲目，不依赖页面上的 AudioSource 活动状态。
+            public static void switchUiBgm(string bgmName)
+            {
+                try
+                {
+                    BAUiMusic.Play(bgmName);
+                }
+                catch (Exception error)
+                {
+                    BAUiMusic.Stop();
+                    Log.Error($"[BA UI音频] BGM播放失败：{bgmName}\n{error}");
                 }
             }
 
-            //播放音效或 BGM，volume 范围为 0～1，默认 1。
-            public static void playEffAudio(string AudioName, float volume = 1.0f)
+            //首次播放等待音效加载，关闭页面或后续请求会取消旧播放请求。
+            public static async void playEffAudio(string AudioName, float volume = 1.0f)
             {
-                SetVolumeToGamePrefs();
-
-                if (audioPool.TryGetValue(AudioName, out AudioClip audioClip))
+                try
                 {
-                    if (UiMapData.mainAudioPlay != null)
+                    int requestVersion = ++effectRequestVersion;
+                    AudioSource source = UiMapData.mainAudioPlay;
+                    EnsureAudioLoaded();
+                    await audioLoadTask;
+                    if (requestVersion != effectRequestVersion || source == null ||
+                        source != UiMapData.mainAudioPlay || !source.isActiveAndEnabled) return;
+                    if (audioPool.TryGetValue(AudioName, out AudioClip audioClip))
                     {
-                        UiMapData.mainAudioPlay.clip = audioClip;
-                        UiMapData.mainAudioPlay.volume = Mathf.Clamp01(volume); // 限制在 0~1 范围内
-                        UiMapData.mainAudioPlay.Play();
+                        source.Stop();
+                        ReleaseDirectClip();
+                        source.clip = audioClip;
+                        source.volume = Prefs.VolumeGame * Mathf.Clamp01(volume);
+                        source.Play();
+                    }
+                    else
+                    {
+                        Log.Warning($"[BA UI音频] UI音效未能加载：{AudioName}，请检查前面的音频加载日志。");
                     }
                 }
-                else
+                catch (Exception error)
                 {
-                    Log.Warning($"试图播放不存在的BGM: {AudioName}");
+                    Log.Error($"[BA UI音频] UI音效播放失败：{AudioName}\n{error}");
                 }
             }
+            //按版本使用实际音频后端，解码失败时记录路径和异常，继续处理其他文件。
             public static async Task<AudioClip> LoadAudioAsync(string absolutePath)
             {
-#if RW_1_7
-                return AudioClip.LoadFromFile(absolutePath, streaming: true);
-#else
-                string url = "file://" + absolutePath;
-                using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.OGGVORBIS))
+                try
                 {
-                    ((DownloadHandlerAudioClip)uwr.downloadHandler).streamAudio = true;
-                    var operation = uwr.SendWebRequest();
-                    while (!operation.isDone)
+#if RW_1_7
+                    return AudioClip.LoadFromFile(absolutePath, streaming: true);
+#else
+                    string url = new Uri(absolutePath).AbsoluteUri;
+                    using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.OGGVORBIS))
                     {
-                        await Task.Yield();
+                        ((DownloadHandlerAudioClip)uwr.downloadHandler).streamAudio = true;
+                        var operation = uwr.SendWebRequest();
+                        while (!operation.isDone)
+                        {
+                            await Task.Yield();
+                        }
+                        if (uwr.result != UnityWebRequest.Result.Success)
+                        {
+                            Log.Error($"[BA UI音频] 加载失败：{absolutePath}，{uwr.error}");
+                            return null;
+                        }
+                        return DownloadHandlerAudioClip.GetContent(uwr);
                     }
-                    if (uwr.result != UnityWebRequest.Result.Success)
-                    {
-                        Log.Error($"加载音频失败: {uwr.error}");
-                        return null;
-                    }
-                    return DownloadHandlerAudioClip.GetContent(uwr);
-                }
 #endif
+                }
+                catch (Exception error)
+                {
+                    Log.Error($"[BA UI音频] 解码失败：{absolutePath}\n{error}");
+                    return null;
+                }
             }
         }
     }

@@ -71,9 +71,21 @@ namespace BANWlLib.mainUI.Audio
             }
 #if RW_1_7
             yield return null;
-            AudioClip clip = AudioClip.LoadFromFile(file, streaming: true);
-            loading = null;
-            pending = null;
+            AudioClip clip;
+            try
+            {
+                clip = AudioClip.LoadFromFile(file, streaming: true);
+            }
+            catch (Exception error)
+            {
+                Log.Error($"[BA UI语音] 解码失败：{file}\n{error}");
+                yield break;
+            }
+            finally
+            {
+                loading = null;
+                pending = null;
+            }
 #else
             request = UnityWebRequestMultimedia.GetAudioClip(new Uri(file).AbsoluteUri, AudioType.OGGVORBIS);
             request.timeout = 30;

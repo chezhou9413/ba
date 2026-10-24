@@ -305,6 +305,8 @@
     <Compile Include="mainUI\Events\StudentManualEvents.cs" />
     <Compile Include="mainUI\Gaka\GachaSystem.cs" />
     <Compile Include="mainUI\Gaka\Gakalord.cs" />
+    <Compile Include="mainUI\Gaka\Gakalord.Draw.cs" />
+    <Compile Include="mainUI\Gaka\Gakalord.Presentation.cs" />
     <Compile Include="mainUI\Gaka\GakaMapData.cs" />
     <Compile Include="mainUI\Gaka\MonoComp\MonoComp_CardshowList.cs" />
     <Compile Include="mainUI\Gaka\MonoComp\MonoComp_GakaAnimationPofab.cs" />
@@ -399,6 +401,7 @@
     <Compile Include="uicreater\tool\imgcvT2d.cs" />
     <Compile Include="uicreater\tool\jsoncvpojo.cs" />
     <Compile Include="uicreater\tool\LoopBGMManager.cs" />
+    <Compile Include="mainUI\Audio\BAUiMusic.cs" />
     <Compile Include="uicreater\tool\QinghuiStoneUtility.cs" />
     <Compile Include="uicreater\tool\ButtomEffect.cs" />
     <Compile Include="uicreater\tool\TextEffect.cs" />

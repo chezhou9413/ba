@@ -124,6 +124,7 @@ namespace BANWlLib.mainUI.MonoComp
 
         private void ExitWholeUI()
         {
+            LoopBGMManager.StopUiAudio();
             backObj = null;
             backList.Clear();
 

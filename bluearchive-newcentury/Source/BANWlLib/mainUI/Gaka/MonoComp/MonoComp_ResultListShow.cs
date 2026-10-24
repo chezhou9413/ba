@@ -37,9 +37,14 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         //初始化抽卡结果卡片并启动展示动画。
         void Start()
         {
+#if RW_1_7
+            GetComponentInParent<BANWlLib.mainUI.Initialization.BAGachaRenderOrder>().ConfigureResult(gameObject);
+#endif
             if (gacaData?.BaStudentData != null)
             {
-                goodThings.AddRange(gacaData.BaStudentData.GakaStudentThingData);
+                goodThings.AddRange(gacaData.isUp
+                    ? gacaData.BaStudentData.UpGakaStudentThingData
+                    : gacaData.BaStudentData.GakaStudentThingData);
             }
             Image = this.transform.Find("back").GetComponent<Image>();
             CharacteShow = this.transform.Find("back/CharacteShow").gameObject;
@@ -90,7 +95,8 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                     ItemShow.transform.Find("ItemCont").GetComponent<Engine.UI.Text>().text = "X" + count;
 
                     // 动画播放
-                    ItemShow.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack);
+                    ItemShow.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack)
+                        .SetLink(gameObject, LinkBehaviour.KillOnDisable);
 
                     // 等待一段时间让玩家看清
                     yield return new WaitForSeconds(1f);
@@ -99,7 +105,8 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 CharacteShow.SetActive(true);
 
                 CharacteShow.transform.localScale = Vector3.zero;
-                CharacteShow.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack);
+                CharacteShow.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.OutBack)
+                    .SetLink(gameObject, LinkBehaviour.KillOnDisable);
 
                 // 人物停留时间
                 yield return new WaitForSeconds(1f);
@@ -110,7 +117,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         IEnumerator showStudnt()
         {
             yield return new WaitForSeconds(0.1f);
-            Sequence cardSeq = DOTween.Sequence();
+            Sequence cardSeq = DOTween.Sequence().SetLink(gameObject, LinkBehaviour.KillOnDisable);
             cardSeq.Append(Image.transform.DOLocalRotate(new Vector3(0, 90, 0), 0.2f).SetEase(Ease.Linear));
             cardSeq.AppendCallback(() =>
             {
@@ -133,7 +140,8 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                     case 3:
                         Imageback.sprite = GakaMapData.srrback;
                         star.sprite = GakaMapData.srrstar;
-                        this.transform.Find("kapai_idle_cai_chai").gameObject.SetActive(true);
+                        this.transform.Find("kapai_idle_cai_chai").gameObject.SetActive(
+                            BANWlLib.DamageFontSystem.Setting.DamageFontMod.settings.enableBurstParticle);
                         break;
                 }
             });
@@ -148,7 +156,8 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                     newTagTransform.localScale = Vector3.one;
                     newTagTransform.DOScale(1.1f, 0.8f)
                         .SetLoops(-1, LoopType.Yoyo)
-                        .SetEase(Ease.InOutSine);
+                        .SetEase(Ease.InOutSine)
+                        .SetLink(gameObject, LinkBehaviour.KillOnDisable);
                 }
             });
         }

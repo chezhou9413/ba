@@ -21,12 +21,14 @@ using UnityEngine.UI;
 
 namespace BANWlLib.mainUI.MonoComp
 {
+    //展示只有一个关闭按钮的提示框。
     public class messageUILord : MonoBehaviour
     {
         public string title;
         public string des;
         public string Buttomtext;
 
+        //填入提示文字并绑定关闭事件。
         void Start()
         {
             this.gameObject.transform.Find("UIback/Title").GetComponent<Text>().text = title;
@@ -39,6 +41,7 @@ namespace BANWlLib.mainUI.MonoComp
         }
     }
 
+    //展示确认与取消按钮，确认窗口不持有业务执行后的输入锁。
     public class messageUILordQuek : MonoBehaviour
     {
         public string title;
@@ -47,6 +50,7 @@ namespace BANWlLib.mainUI.MonoComp
         public string QuekButtomtext;
         public Action onQuek;
 
+        //绑定确认事件，在执行业务前移除弹窗以防重复提交。
         void Start()
         {
             this.gameObject.transform.Find("UIback/Title").GetComponent<Text>().text = title;
@@ -59,8 +63,9 @@ namespace BANWlLib.mainUI.MonoComp
             this.gameObject.transform.Find("UIback/Quek/Text").GetComponent<Text>().text = QuekButtomtext;
             this.gameObject.transform.Find("UIback/Quek").GetComponent<Button>().onClick.AddListener(() =>
             {
-                onQuek?.Invoke(); 
+                gameObject.SetActive(false);
                 GameObject.Destroy(this.gameObject);
+                onQuek?.Invoke();
             });
         }
     }

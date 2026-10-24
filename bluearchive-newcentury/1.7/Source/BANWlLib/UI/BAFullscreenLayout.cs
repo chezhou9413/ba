@@ -59,6 +59,7 @@ internal static class BAFullscreenLayout
     internal static void ConfigureGacha(GameObject root)
     {
         ConfigureCanvas(root);
+        BAUiParticles.Configure(root);
         root.AddComponent<BAGachaRenderOrder>().Initialize();
         foreach (string path in new[] { "Clip2", "Clip25", "Clip35", "Clip35/Clip45", "Clip55" })
             FillPage(Rect(root, path));
@@ -77,6 +78,8 @@ internal static class BAFullscreenLayout
     internal static void ConfigureDialog(GameObject root)
     {
         ConfigureCanvas(root);
+        //提示框的显示与鼠标命中均高于抽卡过场及结果卡片。
+        root.GetComponent<Canvas>().sortingOrder = 200;
         Fill(Rect(root, "back"));
     }
 

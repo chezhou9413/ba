@@ -18,6 +18,7 @@ namespace BANWlLib.Skills
             foreach (Trait trait in pawn.story.traits.allTraits.Where(t => t.def == removed).ToList())
                 pawn.story.traits.RemoveTrait(trait);
             if (!pawn.story.traits.HasTrait(desired)) pawn.story.traits.GainTrait(new Trait(desired));
+            HoshinoFormApparel.Apply(pawn, config, state.stage == 1);
             HealthScaleCache.Invalidate(pawn);
             float factor = pawn.HealthScale / previousHealthScale;
             foreach (Hediff_Injury injury in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList())

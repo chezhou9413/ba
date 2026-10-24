@@ -1,10 +1,10 @@
 
 <Defs>
 	<SoundDef>
-    <defName>Arisu_B_Skill_EXX_A</defName><!--二技能伤害-->  
-    <maxVoices>1</maxVoices> 
-    <context>MapOnly</context> 
-	<maxSimultaneous>1</maxSimultaneous> 
+    <defName>Arisu_B_Skill_EXX_A</defName><!--二技能伤害-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -23,10 +23,10 @@
     </subSounds>
   </SoundDef>
   <SoundDef>
-    <defName>Arisu_B_Skill_EXX_B</defName><!--二技能伤害-->  
-    <maxVoices>1</maxVoices> 
-    <context>MapOnly</context> 
-	<maxSimultaneous>1</maxSimultaneous> 
+    <defName>Arisu_B_Skill_EXX_B</defName><!--二技能伤害-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -45,10 +45,10 @@
     </subSounds>
   </SoundDef>
   <SoundDef>
-    <defName>Arisu_B_Skill_EXXS</defName><!--二技能伤害-->  
-    <maxVoices>1</maxVoices> 
-    <context>MapOnly</context> 
-	<maxSimultaneous>1</maxSimultaneous> 
+    <defName>Arisu_B_Skill_EXXS</defName><!--二技能伤害-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -67,10 +67,10 @@
     </subSounds>
   </SoundDef>
   <SoundDef>
-    <defName>Arisu_B_Skill_NS</defName><!--二技能伤害-->  
-    <maxVoices>1</maxVoices> 
-    <context>MapOnly</context> 
-	<maxSimultaneous>1</maxSimultaneous> 
+    <defName>Arisu_B_Skill_NS</defName><!--二技能伤害-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -92,10 +92,10 @@
     </subSounds>
   </SoundDef>
   <SoundDef>
-    <defName>Arisu_B_Skill_NSS</defName><!--二技能伤害-->  
-    <maxVoices>1</maxVoices> 
-    <context>MapOnly</context> 
-	<maxSimultaneous>1</maxSimultaneous> 
+    <defName>Arisu_B_Skill_NSS</defName><!--二技能伤害-->
+    <maxVoices>1</maxVoices>
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -116,8 +116,8 @@
   <SoundDef>
     <defName>Arisu_B_Skill_EX</defName><!--一技能语音-->
     <maxVoices>1</maxVoices>
-    <context>MapOnly</context>  
-	<maxSimultaneous>1</maxSimultaneous> 
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -132,8 +132,8 @@
   <SoundDef>
     <defName>Arisu_B_Skill_A</defName><!--一技能语音-->
     <maxVoices>1</maxVoices>
-    <context>MapOnly</context>  
-	<maxSimultaneous>1</maxSimultaneous> 
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -148,8 +148,8 @@
   <SoundDef>
     <defName>Arisu_B_Skill_B</defName><!--一技能语音-->
     <maxVoices>1</maxVoices>
-    <context>MapOnly</context>  
-	<maxSimultaneous>1</maxSimultaneous> 
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -164,8 +164,8 @@
   <SoundDef>
     <defName>Arisu_B_Skill_C</defName><!--一技能语音-->
     <maxVoices>1</maxVoices>
-    <context>MapOnly</context>  
-	<maxSimultaneous>1</maxSimultaneous> 
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -180,8 +180,8 @@
   <SoundDef>
     <defName>Arisu_B_Skill_D</defName><!--一技能语音-->
     <maxVoices>1</maxVoices>
-    <context>MapOnly</context>  
-	<maxSimultaneous>1</maxSimultaneous> 
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
@@ -196,8 +196,8 @@
   <SoundDef>
     <defName>Arisu_B_Skill_E</defName><!--一技能语音-->
     <maxVoices>1</maxVoices>
-    <context>MapOnly</context>  
-	<maxSimultaneous>1</maxSimultaneous> 
+    <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>

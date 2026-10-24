@@ -10,7 +10,7 @@ namespace BANWlLib.Skills
     public static class SpecialDirectionalEffects
     {
         //在施法者位置触发特效，旋转偏移子节点按本次瞄准角度生成或排队。
-        public static void Trigger(EffecterDef def, Pawn caster, LocalTargetInfo target)
+        public static void Trigger(EffecterDef def, Pawn caster, LocalTargetInfo target, int minimumTicks = 0)
         {
             if (def == null) return;
             Map map = caster.Map;
@@ -27,7 +27,8 @@ namespace BANWlLib.Skills
                 else child.SubTrigger(source, focus);
             }
             //方向子节点由地图队列托管，其余延迟子节点保留原版EffectTick生命周期。
-            int maintainTicks = Math.Max(def.maintainTicks, 1 + def.children.Max(child => child.initialDelayTicks));
+            int lastDelay = def.children.NullOrEmpty() ? 0 : def.children.Max(child => child.initialDelayTicks);
+            int maintainTicks = Math.Max(minimumTicks, Math.Max(def.maintainTicks, 1 + lastDelay));
             map.effecterMaintainer.AddEffecterToMaintain(effect, source, focus, maintainTicks);
         }
 

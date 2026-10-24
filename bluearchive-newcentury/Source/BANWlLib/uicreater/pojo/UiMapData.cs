@@ -80,7 +80,6 @@ namespace newpro
         public static Camera uiCamera;
         public static Engine.UI.Text jingcuixianshi;
         public static GameObject goumaiMack;
-        public static AudioSource mainBgmPlay;
         public static AudioSource mainAudioPlay;
         public static bool isLocKBack = false;
 
@@ -105,6 +104,7 @@ namespace newpro
         //销毁地图UI对象并重置所有跨地图静态引用。
         public static void Reset()
         {
+            MyCoolMusicMod.MyCoolMusicMod.LoopBGMManager.StopUiAudio();
             isLocKBack = false;
             BANWlLib.mainUI.Images.BAUIImageCache.Reset();
             RimWorldUISpriteUtil.ClearGeneratedSpriteCache();
@@ -127,7 +127,6 @@ namespace newpro
                 Object.Destroy(costUI);
             }
 
-            mainBgmPlay = null;
             mainAudioPlay = null;
             MissionMapData.Reset();
             GakaMapData.Reset();

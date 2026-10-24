@@ -9,8 +9,7 @@ layout(binding = 5, set = 2)
 uniform sampler2D _DissloveTex; // @default = white
 layout(binding = 1, set = 2)
 uniform sampler2D _AddTex; // @default = white
-layout(binding = 13, set = 2)
-uniform sampler2D _GrabTexture;
+
 layout(binding = 15, set = 2)
 uniform sampler2D _MainTex; // @default = white
 layout(binding = 17, set = 2)

@@ -1,18 +1,18 @@
 
 <Defs>
 	<SoundDef>
-	<defName>Hoshiro_B_Skill_B</defName>  <!--二技能语音-->  
+	<defName>Hoshiro_B_Skill_B</defName>  <!--二技能语音-->
 	<maxVoices>1</maxVoices>
-  <context>MapOnly</context>  
-	<maxSimultaneous>1</maxSimultaneous>  
+  <context>MapOnly</context>
+	<maxSimultaneous>1</maxSimultaneous>
 	<subSounds>
 		<li>
-			     
+
 			<grains>
 				<li Class="AudioGrain_Clip">
 					<clipPath>Ability/Hoshiro_B/A/Hoshiro_B</clipPath>
 				</li>
-			</grains>      
+			</grains>
 			<volumeRange>70~70</volumeRange>
 		</li>
 	</subSounds>
@@ -97,7 +97,7 @@
 				<li Class="AudioGrain_Clip">
 					<clipPath>Ability/Hoshiro_B/A/Hoshiro_ExSkill</clipPath>
 				</li>
-			</grains>      
+			</grains>
 			<volumeRange>70~70</volumeRange>
 		</li>
 	</subSounds>
@@ -137,7 +137,7 @@
         <li Class="AudioGrain_Clip">
 					<clipPath>Ability/Hoshiro_B/A/SkillEX/Hoshiro_ExSkill_3</clipPath>
 				</li>
-			</grains>      
+			</grains>
 			<volumeRange>70~70</volumeRange>
 		</li>
 	</subSounds>
@@ -177,7 +177,7 @@
 				<li Class="AudioGrain_Clip">
 					<clipPath>Ability/Hoshiro_B/A/Hoshiro_A</clipPath>
 				</li>
-			</grains>      
+			</grains>
 			<volumeRange>70~70</volumeRange>
 		</li>
 	</subSounds>

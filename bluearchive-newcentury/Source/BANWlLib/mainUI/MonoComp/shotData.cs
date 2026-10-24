@@ -243,6 +243,9 @@ public class shotData : MonoBehaviour
             if (goPrefab != null)
             {
                 instGo = Object.Instantiate(goPrefab, worldPos, Quaternion.identity, canvas.transform);
+#if RW_1_7
+                BANWlLib.mainUI.Initialization.BAUiParticles.Configure(instGo);
+#endif
                 particleSystem = instGo.GetComponent<ParticleSystem>();
                 if (particleSystem == null)
                 {

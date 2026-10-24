@@ -61,6 +61,9 @@ public class keyevents : MonoBehaviour
             if (goPrefab != null)
             {
                 instGo = Object.Instantiate(goPrefab, worldPos, Quaternion.identity);
+#if RW_1_7
+                BANWlLib.mainUI.Initialization.BAUiParticles.Configure(instGo);
+#endif
                 particleSystem = instGo.GetComponent<ParticleSystem>() ?? instGo.GetComponentInChildren<ParticleSystem>();
 
                 if (particleSystem == null)

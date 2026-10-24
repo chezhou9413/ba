@@ -39,7 +39,7 @@ using Verse;
 namespace BANWlLib.mainUI.Gaka
 {
     //协调卡池选择、抽取、结果生成及抽卡界面显示。
-    public static class Gakalord
+    public static partial class Gakalord
     {
         //加载抽卡界面模板并初始化卡池控件。
         public static void lordGaka(AssetBundle bundle)
@@ -57,117 +57,17 @@ namespace BANWlLib.mainUI.Gaka
             GakaMapData.GakaUIPet.transform.Find("MainBack/box/Poit").gameObject.AddComponent<MonoComp_updataPoit>();
             GakaMapData.Content = contentTrans.gameObject;
             GakaMapData.GachaPofab = bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/GakaObj/GakaHead.prefab");
-            GakaMapData.GakaAnimationPofab = bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/GakaObj/GakaAnimation.prefab");
-            GakaMapData.cardZheng = bundle.LoadAsset<SpriteAtlas>("Assets/Scenes/Resources/Gaka/abImage/card.spriteatlas").GetSprite("cardzheng_0");
-            GakaMapData.cardFan = bundle.LoadAsset<SpriteAtlas>("Assets/Scenes/Resources/Gaka/abImage/card.spriteatlas").GetSprite("cardfan_0");
-            GakaMapData.showGaList = bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/GakaObj/showGaList.prefab");
-            GakaMapData.ResultList = bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/GakaObj/ResultList.prefab");
             GakaMapData.ShotMaskBack = bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/GakaObj/ShotMaskBack.prefab");
             GakaMapData.GakaShotList = bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/GakaObj/GakaShotList.prefab");
 
-            Texture2D texture1 = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/FX_TEX_GT_RCard_1.png");
-            Texture2D texture2 = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/FX_TEX_GT_SRCard.png");
-            Texture2D texture3 = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/FX_TEX_GT_SSRCard.png");
-
-            GakaMapData.studentcard1star = Sprite.Create(texture1, new Rect(0, 0, texture1.width, texture1.height), new Vector2(0.5f, 0.5f));
-            GakaMapData.studentcard2star = Sprite.Create(texture2, new Rect(0, 0, texture2.width, texture2.height), new Vector2(0.5f, 0.5f));
-            GakaMapData.studentcard3star = Sprite.Create(texture3, new Rect(0, 0, texture3.width, texture3.height), new Vector2(0.5f, 0.5f));
-            Texture2D tex; // 临时变量用于存储加载的图片
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/gtwenhaoback.png");
-            GakaMapData.gtwenhaoback = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/srwenhaoback.png");
-            GakaMapData.srwenhaoback = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/ssrwenhaoback.png");
-            GakaMapData.srrwenhaoback = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/gtback.png");
-            GakaMapData.gtback = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/srback.png");
-            GakaMapData.srback = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/srrback.png");
-            GakaMapData.srrback = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/gtstar.png");
-            GakaMapData.gtstar = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/srstar.png");
-            GakaMapData.srstar = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-            tex = bundle.LoadAsset<Texture2D>("Assets/Scenes/Resources/Gaka/abImage/srrstar.png");
-            GakaMapData.srrstar = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
             SettingButtomData();
         }
 
-        //绑定单抽、十连与抽卡界面按钮事件。
+        //绑定入口事件，过场资源在确认抽卡后、扣费前准备。
         public static void SettingButtomData()
         {
-            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Button_one").GetComponent<Button>().onClick.AddListener(() =>
-            {
-                LoopBGMManager.playEffAudio("鼠标点击音效");
-                int cost = 120;
-
-                // 上帝模式：免费抽卡
-                if (Prefs.DevMode && DebugSettings.godMode)
-                {
-                    BamessageUI.ShowBaMessageUIQuek("提示", "【上帝模式】是否进行一次单抽？", "确认", "取消", () =>
-                    {
-                        UiMapData.isLocKBack = true;
-                        danchou();
-                    });
-                    return;
-                }
-
-                int current = ItemUtility.GetTotalItemCount("QinghuiStone");
-                if (current < cost)
-                {
-                    BamessageUI.ShowBaMessageUI("提示", $"青辉石不足！\n需要：{cost}\n当前：{current}", "确认");
-                    return;
-                }
-                BamessageUI.ShowBaMessageUIQuek("提示", $"是否花费{cost}青辉石进行一次单抽？\n当前持有：{current}", "确认", "取消", () =>
-                {
-                    if (ItemUtility.TryRemoveItem("QinghuiStone", cost))
-                    {
-                        UiMapData.isLocKBack = true;
-                        danchou();
-                    }
-                    else
-                    {
-                        BamessageUI.ShowBaMessageUI("提示", "青辉石不足，扣除失败！", "确认");
-                    }
-                });
-            });
-
-            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Button_ten").GetComponent<Button>().onClick.AddListener(() =>
-            {
-                LoopBGMManager.playEffAudio("鼠标点击音效");
-                int cost = 1200;
-
-                // 上帝模式：免费抽卡
-                if (Prefs.DevMode && DebugSettings.godMode)
-                {
-                    BamessageUI.ShowBaMessageUIQuek("提示", "【上帝模式】是否进行一次十连抽？", "确认", "取消", () =>
-                    {
-                        UiMapData.isLocKBack = true;
-                        shilianchou();
-                    });
-                    return;
-                }
-
-                int current = ItemUtility.GetTotalItemCount("QinghuiStone");
-                if (current < cost)
-                {
-                    BamessageUI.ShowBaMessageUI("提示", $"青辉石不足！\n需要：{cost}\n当前：{current}", "确认");
-                    return;
-                }
-                BamessageUI.ShowBaMessageUIQuek("提示", $"是否花费{cost}青辉石进行一次十连抽？\n当前持有：{current}", "确认", "取消", () =>
-                {
-                    if (ItemUtility.TryRemoveItem("QinghuiStone", cost))
-                    {
-                        UiMapData.isLocKBack = true;
-                        shilianchou();
-                    }
-                    else
-                    {
-                        BamessageUI.ShowBaMessageUI("提示", "青辉石不足，扣除失败！", "确认");
-                    }
-                });
-            });
+            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Button_one").GetComponent<Button>().onClick.AddListener(() => ConfirmDraw(false));
+            GakaMapData.GakaUIPet.transform.Find("MainBack/box/Button_ten").GetComponent<Button>().onClick.AddListener(() => ConfirmDraw(true));
         }
 
         //根据学生标识执行指定抽取流程。
@@ -177,11 +77,9 @@ namespace BANWlLib.mainUI.Gaka
             StudentIdentityUtility.TryGetStudentDef(defname, out studentDef);
             ExtGakaData(studentDef);
         }
-        //执行当前卡池的单次抽取并显示结果。
-        public static void danchou()
+        //按当前卡池生成单抽结果，尚不扣费或结算。
+        private static BaStudentDef DrawOne()
         {
-            GakaMapData.gamecomp_GakaAction.updataGacaPoit(1);
-
             BaStudentDef thingDefs;
 
             //FES池单抽时把常驻三星池和其他FES三星池分开传入，避免三星分流错位
@@ -209,21 +107,12 @@ namespace BANWlLib.mainUI.Gaka
                 );
             }
 
-            ExtGakaData(thingDefs);
-            GameObject game = GameObject.Instantiate(GakaMapData.GakaAnimationPofab);
-            game.GetComponent<Canvas>().worldCamera = UiMapData.mainUI.GetComponent<Canvas>().worldCamera;
-#if RW_1_7
-            game.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
-            BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureGacha(game);
-#endif
-            game.AddComponent<MonoComp_GakaAnimationPofab>();
+            return thingDefs;
         }
 
-        //执行当前卡池的十次抽取并显示结果。
-        public static void shilianchou()
+        //按当前卡池生成十连结果，保留原有 FES 分流与保底规则。
+        private static List<BaStudentDef> DrawTen()
         {
-            GakaMapData.gamecomp_GakaAction.updataGacaPoit(10);
-
             List<BaStudentDef> thingDefs;
 
             //FES池十连时沿用同一套三星池顺序，保证保底和调试强制三星都走正确分布
@@ -251,15 +140,7 @@ namespace BANWlLib.mainUI.Gaka
                 );
             }
 
-            string results = string.Join(", ", thingDefs.Where(d => d != null).Select(d => d.label.ToString()));
-            ExtGakaData(thingDefs);
-            GameObject game = GameObject.Instantiate(GakaMapData.GakaAnimationPofab);
-            game.GetComponent<Canvas>().worldCamera = UiMapData.mainUI.GetComponent<Canvas>().worldCamera;
-#if RW_1_7
-            game.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
-            BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureGacha(game);
-#endif
-            game.AddComponent<MonoComp_GakaAnimationPofab>();
+            return thingDefs;
         }
         //生成学生抽卡结果，仅保存头像路径，显示时再加载图片。
         public static gacaData creatGacaData(BaStudentDef studentDef)

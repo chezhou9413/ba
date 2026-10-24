@@ -16,6 +16,8 @@
       <lineWidth>3</lineWidth>
       <!-- 首段额外延迟；实际首段在施法后的第1加damageDelayTicks个tick结算。 -->
       <damageDelayTicks>160</damageDelayTicks>
+      <!-- 自身充能前摇，60 tick 为1秒；chargeEffecters在前摇开始时播放。 -->
+      <chargeWarmupTicks>60</chargeWarmupTicks>
       <!-- 对敌使用时按当前0、1、2档选择A、B、C，仅触发所选一项。 -->
       <attackEffecters>
         <li>BANW_Arisu_B_Ef_C</li>
@@ -61,12 +63,11 @@
     <!-- 技能唯一标识。 -->
     <defName>BANW_Special_Arisu_Ex</defName>
     <label>光之勇者</label>
-    <description>对自己使用时:能量充能状态提升至1阶充能.
-- 能量充能状态为1阶充能时：能量充能状态提升至2阶充能.
-对敌人使用时:对直线范围内的敌人造成- 造成自身攻击力1330%的伤害。
-※ 能量充能状态为1阶充能时，效果提升至2倍.
-※ 能量充能状态为2阶充能时，效果提升至3倍.
-- 该技能结束后：重置自身能量充能状态为0阶充能</description>
+    <description>对自己使用：准备1秒后获得1档充能，最多2档，准备期间播放对应充能特效。
+
+对其他目标使用：向前方40.9格、宽3格的直线区域发射光束，约2.67秒后开始造成22段伤害，段间隔0.1秒。0／1／2档充能的总倍率分别为攻击力5320%／10640%／15960%，发动后清空充能。
+
+光束方向在发动时固定。移动会结束瞄准动作，已发出的光束继续结算；每段只伤害当时仍在线内的合法目标。普通技能独立按有效普攻命中次数触发。</description>
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
     <jobDef>BANW_Job_ArisuExChannel</jobDef>
     <!-- 技能图标路径。 -->

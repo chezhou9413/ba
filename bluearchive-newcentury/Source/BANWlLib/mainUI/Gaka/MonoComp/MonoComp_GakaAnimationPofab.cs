@@ -34,6 +34,7 @@ using Verse;
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
 {
+    //驱动抽卡过场与结果页，资源和事件在扣费前准备。
     public class MonoComp_GakaAnimationPofab : MonoBehaviour
     {
         public Image Flash2;
@@ -73,96 +74,68 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         private Transform tenContentTransform;
         private Transform tenResContentTransform;
 
-        void Start()
+        private int drawCost;
+        private Button tryAgainButton;
+
+        //再次抽卡只能从结果页触发，过场期间不会重复结算。
+        public bool IsShowingResults => Clip55.activeInHierarchy;
+
+        //同步解析必需控件与事件，让预制体不匹配在扣费前暴露。
+        public void Initialize(bool tenGacha)
         {
-            Gamecomp_gakaAction gamecomp = Current.Game.GetComponent<Gamecomp_gakaAction>();
-            this.transform.Find("Clip55/poit/poit_cont").gameObject.GetComponent<Engine.UI.Text>().text = gamecomp.gacaPoit.ToString();
-            Flash2 = this.transform.Find("Clip25").GetComponent<Image>();
-            clip2 = this.transform.Find("Clip2").gameObject;
-            Card = this.transform.Find("Clip2/Card").GetComponent<Image>();
-            showEnd = this.transform.Find("Clip2/showEnd").GetComponent<Button>();
-            Clip35 = this.transform.Find("Clip35").gameObject;
-            Clip55 = this.transform.Find("Clip55").gameObject;
+            Flash2 = transform.Find("Clip25").GetComponent<Image>();
+            clip2 = transform.Find("Clip2").gameObject;
+            Card = transform.Find("Clip2/Card").GetComponent<Image>();
+            showEnd = transform.Find("Clip2/showEnd").GetComponent<Button>();
+            Clip35 = transform.Find("Clip35").gameObject;
+            Clip55 = transform.Find("Clip55").gameObject;
             showEnd.interactable = false;
-            //获取 Clip1 和 VideoPlayer。
-            Clip1 = this.transform.Find("Clip1").gameObject;
+            Clip1 = transform.Find("Clip1").gameObject;
             videoPlayer = Clip1.GetComponent<VideoPlayer>();
-
-            //缓存子对象引用。
             CacheChildReferences();
-
-            //预热 GameObject。
-            PrewarmGameObjects();
-
-            //预加载卡面纹理。
             PreloadSprites();
-
-            Button tryAgainBtn = Clip55.transform.Find("TryAgainButtom").GetComponent<Button>();
-
-            int cost = GakaMapData.tenGacha ? 1200 : 120;
-            int current = ItemUtility.GetTotalItemCount("QinghuiStone");
-            bool isGodMode = Prefs.DevMode && DebugSettings.godMode;
-            bool canAfford = isGodMode || current >= cost;
-
-            tryAgainBtn.interactable = canAfford;
-
-            if (!canAfford)
-            {
-                var btnText = tryAgainBtn.GetComponentInChildren<Engine.UI.Text>();
-                if (btnText != null)
-                {
-                    btnText.text = $"青辉石不足 ({current}/{cost})";
-                    btnText.color = Color.gray;
-                }
-            }
-
-            tryAgainBtn.onClick.AddListener(() =>
+            drawCost = tenGacha ? 1200 : 120;
+            tryAgainButton = Clip55.transform.Find("TryAgainButtom").GetComponent<Button>();
+            tryAgainButton.onClick.AddListener(() =>
             {
                 LoopBGMManager.playEffAudio("鼠标点击音效");
-                int currentCheck = ItemUtility.GetTotalItemCount("QinghuiStone");
-                bool stillCanAfford = (Prefs.DevMode && DebugSettings.godMode) || currentCheck >= cost;
-
-                if (!stillCanAfford)
-                {
-                    BamessageUI.ShowBaMessageUI("提示", $"青辉石不足！\n需要：{cost}\n当前：{currentCheck}", "确认");
-                    return;
-                }
-
-                if (!(Prefs.DevMode && DebugSettings.godMode))
-                {
-                    if (!ItemUtility.TryRemoveItem("QinghuiStone", cost))
-                    {
-                        BamessageUI.ShowBaMessageUI("提示", "青辉石扣除失败！", "确认");
-                        return;
-                    }
-                }
-
-                if (!GakaMapData.tenGacha)
-                {
-                    Gakalord.danchou();
-                }
-                else
-                {
-                    Gakalord.shilianchou();
-                }
-                GameObject.Destroy(this.gameObject);
+                Gakalord.TryStartDraw(tenGacha);
             });
-
             Clip55.transform.Find("BackButtom").GetComponent<Button>().onClick.AddListener(() =>
             {
                 LoopBGMManager.playEffAudio("鼠标点击音效");
-                UiMapData.isLocKBack = false;
-                GameObject.Destroy(this.gameObject);
+                Gakalord.CloseAnimation(this);
             });
-
             SetAlpha(Flash2, 0);
-
-            delayedCallTween = DOVirtual.DelayedCall(6f, () =>
-            {
-                OnVideoEnd();
-            });
         }
 
+        //结算后读取实际余额和招募点数，再启动过场时钟。
+        private void Start()
+        {
+            try
+            {
+                Gamecomp_gakaAction gamecomp = Current.Game.GetComponent<Gamecomp_gakaAction>();
+                transform.Find("Clip55/poit/poit_cont").GetComponent<Engine.UI.Text>().text = gamecomp.gacaPoit.ToString();
+                int current = ItemUtility.GetTotalItemCount("QinghuiStone");
+                bool canAfford = (Prefs.DevMode && DebugSettings.godMode) || current >= drawCost;
+                tryAgainButton.interactable = canAfford;
+                if (!canAfford)
+                {
+                    Engine.UI.Text text = tryAgainButton.GetComponentInChildren<Engine.UI.Text>();
+                    text.text = $"青辉石不足 ({current}/{drawCost})";
+                    text.color = Color.gray;
+                }
+                PrewarmGameObjects();
+                delayedCallTween = DOVirtual.DelayedCall(6f, OnVideoEnd)
+                    .SetLink(gameObject, LinkBehaviour.KillOnDisable);
+            }
+            catch (System.Exception error)
+            {
+                Gakalord.AbortPresentation(this, error);
+            }
+        }
+
+        //缓存各阶段的粒子、闪光和卡片容器。
         private void CacheChildReferences()
         {
             Transform clip2T = clip2.transform;
@@ -191,8 +164,11 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
         }
 
+        //预热可选粒子时尊重特效设置，关闭时不短暂激活粒子。
         private void PrewarmGameObjects()
         {
+            if (!DamageFontMod.settings.enableBurstParticle) return;
+
             // 先预热 clip2 整体（最重的对象，包含 Canvas、所有子物体）
             // 无论当前 activeSelf 状态，都强制走一遍激活流程
             if (clip2 != null)
@@ -209,7 +185,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 if (!wasActive) Clip35.SetActive(false);
             }
 
-            // 预热子对象（粒子、卡背标记等）
+            //预热子对象（粒子、卡背标记等）。
             GameObject[] toPrewarm = new GameObject[]
             {
                 redStart, blueStart, redLoop, blueLoop,
@@ -228,6 +204,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
         }
 
+        //确认卡背纹理可以读取。
         private void PreloadSprites()
         {
             if (GakaMapData.cardZheng != null && GakaMapData.cardZheng.texture != null)
@@ -240,6 +217,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
         }
 
+        //双击鼠标或 ESC 跳过开场视频。
         void Update()
         {
             if (!videoSkipped && (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(0)))
@@ -253,6 +231,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             }
         }
 
+        //跳过开场计时后沿用正常换景流程。
         private void SkipVideo()
         {
             if (videoSkipped) return;
@@ -310,7 +289,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 }
             }
 
-            // 启动原始的 DelayedCall 时序（从此刻开始计时，和原始逻辑等效）
+            //延迟播放与当前过场绑定，关闭或读档时不再访问旧控件。
             DOVirtual.DelayedCall(0.3f, () =>
             {
                 if (GakaMapData.isP3)
@@ -329,11 +308,11 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                     }
                     if (cardOne != null) cardOne.SetActive(true);
                 }
-            });
+            }).SetLink(gameObject, LinkBehaviour.KillOnDisable);
             DOVirtual.DelayedCall(0.7f, () =>
             {
                 showEnd.interactable = true;
-            });
+            }).SetLink(gameObject, LinkBehaviour.KillOnDisable);
             showEnd.onClick.AddListener(() =>
             {
                 if (DamageFontMod.settings.enableBurstParticle)
@@ -355,7 +334,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 Vector3 scaleSmall = Vector3.one * 0.8f;
                 Vector3 scaleBig = scaleSmall * 3f;
                 float flipSpeed = 0.7f;
-                Sequence cardSeq = DOTween.Sequence();
+                Sequence cardSeq = DOTween.Sequence().SetLink(gameObject, LinkBehaviour.KillOnDisable);
                 cardSeq.Append(Card.transform.DOScale(scaleSmall, 0.4f).SetEase(Ease.OutQuad));
                 cardSeq.Join(Card.transform.DOLocalRotate(new Vector3(0, 0, 0), 0.4f).SetEase(Ease.OutQuad));
                 cardSeq.Append(Card.transform.DOLocalRotate(new Vector3(0, 90, 0), flipSpeed).SetEase(Ease.Linear));
@@ -384,7 +363,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 Card.gameObject.SetActive(true);
                 showEnd.gameObject.SetActive(true);
                 float animDuration = 0.5f;
-                Sequence cardSeq = DOTween.Sequence();
+                Sequence cardSeq = DOTween.Sequence().SetLink(gameObject, LinkBehaviour.KillOnDisable);
                 cardSeq.Append(Card.transform.DOScale(Vector3.one, animDuration).SetEase(Ease.OutBack));
                 cardSeq.Join(Card.transform.DOLocalRotate(new Vector3(0, 0, 0), animDuration).SetEase(Ease.OutQuad));
                 cardSeq.Append(Card.transform.DOLocalRotate(new Vector3(30, 0, 0), animDuration).SetEase(Ease.OutQuad));
@@ -396,19 +375,22 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 {
                     if (cardOne != null) cardOne.SetActive(true);
                 }
-            });
+            }).SetLink(gameObject, LinkBehaviour.KillOnDisable);
         }
 
         //白幕消失后再启动粒子和卡片入场，展示时长从实际可见时开始计算。
         private void BeginCardReveal()
         {
-            if (GakaMapData.isP3)
+            if (DamageFontMod.settings.enableBurstParticle)
             {
-                if (redShow != null) redShow.SetActive(true);
-            }
-            else
-            {
-                if (blueShow != null) blueShow.SetActive(true);
+                if (GakaMapData.isP3)
+                {
+                    if (redShow != null) redShow.SetActive(true);
+                }
+                else
+                {
+                    if (blueShow != null) blueShow.SetActive(true);
+                }
             }
             if (!GakaMapData.tenGacha)
             {
@@ -420,12 +402,12 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 result.transform.SetParent(danTransform55, false);
                 MonoComp_ResultListShow resultShow = result.AddComponent<MonoComp_ResultListShow>();
                 resultShow.gacaData = GakaMapData.gacaDatas[0];
+                StartCoroutine(showResult());
             }
             else
             {
                 StartCoroutine(CreateCardsWithDelay());
             }
-            StartCoroutine(showResult());
         }
 
         //十连卡片按原有间隔入场，结果卡片分帧创建。
@@ -449,6 +431,8 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 monoComp_ResultListShow.gacaData = data;
                 yield return new WaitForSeconds(0.1f);
             }
+            //十张卡全部就绪后才开始退场，低帧率不能提前销毁仍在填充的容器。
+            StartCoroutine(showResult());
         }
 
         //结果页在白幕峰值切入，黑色淡出层独立于即将销毁的上一幕。
@@ -523,6 +507,11 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             delayedCallTween?.Kill();
             flashSequence?.Kill();
             resultTransitionSequence?.Kill();
+            if (GakaMapData.activeAnimation == this)
+            {
+                GakaMapData.activeAnimation = null;
+                UiMapData.isLocKBack = false;
+            }
         }
 
         //设置初始透明度，不启动补间。

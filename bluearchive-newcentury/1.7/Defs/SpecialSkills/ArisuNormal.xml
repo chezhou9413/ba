@@ -12,6 +12,9 @@
     <requiredHits>20</requiredHits>
     <!-- 两次自动触发之间的最短间隔，1 tick 表示命中数达标即立刻追加。 -->
     <cooldownTicks>1</cooldownTicks>
+    <!-- 独立普通技能前摇；期间播放castSound和casterEffecter。 -->
+    <warmupTicks>60</warmupTicks>
+    <jobDef>BANW_Job_ArisuNormalSkill</jobDef>
     <!-- 技能可及距离（格），超出该距离不追加攻击。 -->
     <range>39.9</range>
     <!-- 可分别替换施法音效、自身特效、目标施法特效及attack内的命中特效。 -->
@@ -30,7 +33,7 @@
       <damageDef>BANC_Damage_shenmi</damageDef>
       <!-- 每发使用完整护甲穿透，0.5为50%。 -->
       <penetration>2</penetration>
-      <!-- 是否按 EX 技能结算；普通技能为 false（不吃 EX 独立乘区）。 -->
+      <!-- 是否应用EX独立乘区；不改变普通技能的自动触发与充能规则。 -->
       <isExSkill>true</isExSkill>
       <!-- 是否可暴击。 -->
       <canCrit>true</canCrit>
@@ -55,6 +58,12 @@
       <affectHostile>true</affectHostile>
     </attack>
   </BANWlLib.Skills.ArisuNormalSkillDef>
+  <JobDef>
+    <defName>BANW_Job_ArisuNormalSkill</defName>
+    <driverClass>BANWlLib.Skills.JobDriver_ArisuNormalSkill</driverClass>
+    <reportString>正在施放勇气的魔法。</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
 
  <ThingDef ParentName="BaseBullet">
     <defName>BANW_Bullet_Arisu_B_EX</defName>

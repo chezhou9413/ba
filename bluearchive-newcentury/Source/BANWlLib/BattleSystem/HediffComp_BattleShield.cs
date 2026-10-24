@@ -27,10 +27,10 @@ namespace BANWlLib.BattleSystem
         public override bool CompShouldRemove => remainingShield <= 0.01f;
 
         //健康面板括号文本，直接显示当前剩余护盾值。
-        public override string CompLabelInBracketsExtra => remainingShield.ToString("0.#");
+        public override string CompLabelInBracketsExtra => remainingShield.ToString("0.##");
 
         //健康面板提示文本，显示完整护盾说明。
-        public override string CompTipStringExtra => "剩余护盾值：" + remainingShield.ToString("0.#");
+        public override string CompTipStringExtra => "剩余护盾值：" + remainingShield.ToString("0.##");
 
         //刷新护盾值，用本次计算结果覆盖当前剩余护盾量。
         public void RefreshShield(float amount)

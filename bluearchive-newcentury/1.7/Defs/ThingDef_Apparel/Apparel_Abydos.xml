@@ -184,7 +184,7 @@
         </apparel>
     </ThingDef> 
 
-        <ThingDef ParentName="BANW_Apparel_Base">
+        <ThingDef ParentName="BANW_Apparel_Base" Name="BANW_HoshinoBackpack">
         <defName>BANW_Body_Hoshiro_Bag</defName>
         <label>梦的防爆盾牌</label>
         <description>梦前辈的遗物</description>
@@ -349,4 +349,14 @@
         </comps>
     </ThingDef>
 
+    <ThingDef ParentName="BANW_HoshinoBackpack">
+        <defName>BANW_Body_Hoshiro_Shield</defName>
+        <label>梦的防爆盾牌（前持）</label>
+        <description>星野防御形态使用的前持盾牌，切回输出形态时收回背后。</description>
+        <apparel>
+            <!-- 继续使用不带体型后缀的盾牌贴图，前持位置由专用绘制节点控制。 -->
+            <wornGraphicData><renderUtilityAsPack>true</renderUtilityAsPack></wornGraphicData>
+            <tags Inherit="False" />
+        </apparel>
+    </ThingDef>
 </Defs>

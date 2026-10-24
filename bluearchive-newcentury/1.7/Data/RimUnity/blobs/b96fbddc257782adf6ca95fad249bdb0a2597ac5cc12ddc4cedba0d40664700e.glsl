@@ -1,22 +1,20 @@
 #version 450
 #extension GL_EXT_control_flow_attributes : require
 float RU_CompatSmoothstep(float low, float high, float x) {
-    float t = clamp((x - low) / (high - low), float(0.0), float(1.0));
+    if (low == high) return step(low, x);
+    float t = clamp((x - low) / (high - low), 0.0, 1.0);
     return t * t * (3.0 - 2.0 * t);
 }
 vec2 RU_CompatSmoothstep(vec2 low, vec2 high, vec2 x) {
-    vec2 t = clamp((x - low) / (high - low), vec2(0.0), vec2(1.0));
-    return t * t * (3.0 - 2.0 * t);
+    return vec2(RU_CompatSmoothstep(low.x, high.x, x.x), RU_CompatSmoothstep(low.y, high.y, x.y));
 }
 vec2 RU_CompatSmoothstep(float low, float high, vec2 x) { return RU_CompatSmoothstep(vec2(low), vec2(high), x); }
 vec3 RU_CompatSmoothstep(vec3 low, vec3 high, vec3 x) {
-    vec3 t = clamp((x - low) / (high - low), vec3(0.0), vec3(1.0));
-    return t * t * (3.0 - 2.0 * t);
+    return vec3(RU_CompatSmoothstep(low.x, high.x, x.x), RU_CompatSmoothstep(low.y, high.y, x.y), RU_CompatSmoothstep(low.z, high.z, x.z));
 }
 vec3 RU_CompatSmoothstep(float low, float high, vec3 x) { return RU_CompatSmoothstep(vec3(low), vec3(high), x); }
 vec4 RU_CompatSmoothstep(vec4 low, vec4 high, vec4 x) {
-    vec4 t = clamp((x - low) / (high - low), vec4(0.0), vec4(1.0));
-    return t * t * (3.0 - 2.0 * t);
+    return vec4(RU_CompatSmoothstep(low.x, high.x, x.x), RU_CompatSmoothstep(low.y, high.y, x.y), RU_CompatSmoothstep(low.z, high.z, x.z), RU_CompatSmoothstep(low.w, high.w, x.w));
 }
 vec4 RU_CompatSmoothstep(float low, float high, vec4 x) { return RU_CompatSmoothstep(vec4(low), vec4(high), x); }
 

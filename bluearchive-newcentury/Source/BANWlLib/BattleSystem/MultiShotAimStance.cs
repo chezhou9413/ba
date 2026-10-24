@@ -9,21 +9,20 @@ namespace BANWlLib.BattleSystem
         //读取存档姿态，让原版 Scribe 能创建连射瞄准姿态。
         public MultiShotAimStance()
         {
-            neverAimWeapon = true;
         }
 
-        //保存目标并关闭原版装备重复绘制。
+        //保存目标，由原版装备绘制读取瞄准方向。
         public MultiShotAimStance(int ticks, LocalTargetInfo focusTarg)
             : base(ticks, focusTarg, null)
         {
-            neverAimWeapon = true;
         }
 
-        //绘制姿态，复用原版武器瞄准绘制让小人朝目标举枪。
+        //仅在工作明确隐藏原版武器时补画，避免携带姿态与瞄准姿态各画一把枪。
         public override void StanceDraw()
         {
             base.StanceDraw();
             Pawn pawn = stanceTracker?.pawn;
+            if (pawn?.CurJob != null && pawn.CurJob.def.neverShowWeapon == false) return;
             ThingWithComps weapon = pawn?.equipment?.Primary;
             if (pawn == null || weapon == null || !focusTarg.IsValid)
             {

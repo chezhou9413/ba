@@ -18,6 +18,7 @@ namespace BANWlLib.Skills
         public HoshinoSkillEffect tankNormal;
         public TraitDef outputTrait;
         public TraitDef tankTrait;
+        public ThingDef backpackApparel;
         public ThingDef shieldApparel;
         public EffecterDef interceptEffecter;
         public SpecialAttackConfig empoweredAttack;
@@ -37,6 +38,8 @@ namespace BANWlLib.Skills
                 yield return "必须分别配置两种形态切换和两种普通技能的表现";
             if (outputTrait == null || tankTrait == null || outputTrait == tankTrait)
                 yield return "必须配置不同的输出和坦克职位特性";
+            if (backpackApparel?.apparel == null || shieldApparel?.apparel == null || backpackApparel == shieldApparel)
+                yield return "必须分别配置输出背包和防御盾牌服装";
             if (empoweredShotEffecter == null) yield return "缺少强化普攻定向特效";
             if (empoweredFanArc <= 0f || empoweredFanArc > 360f)
                 yield return "强化普攻扇形夹角必须大于0且不超过360度";

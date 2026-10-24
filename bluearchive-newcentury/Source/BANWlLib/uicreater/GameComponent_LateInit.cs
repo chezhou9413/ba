@@ -125,8 +125,7 @@ namespace newpro
                     timing.Mark("路径与事件系统");
                     if (!UICoreStart.InitializeMianUI())
                     {
-                        Log.Error("[抽卡UI] 主 UI 初始化失败，已停止本轮初始化，避免加载界面反复重试。");
-                        return false;
+                        throw new System.InvalidOperationException("主 UI 资源加载失败。");
                     }
                     timing.Mark("主界面");
                     LoopBGMManager.EnsureAudioLoaded();
@@ -142,6 +141,9 @@ namespace newpro
             catch (System.Exception ex)
             {
                 Log.Error($"[抽卡UI] 初始化 BA UI 核心失败，已停止本轮重试。\n{ex}");
+                UiMapData.Reset();
+                ManualMapData.Reset();
+                Messages.Message("BA 界面加载失败，已关闭未完成的界面。请检查前置模组版本，详细原因见 Player.log。", MessageTypeDefOf.RejectInput, false);
                 return false;
             }
         }

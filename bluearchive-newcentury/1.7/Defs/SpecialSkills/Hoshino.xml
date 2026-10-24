@@ -489,7 +489,7 @@
       <affectHostile>true</affectHostile>
     </normalAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
-  <ThingDef ParentName="BaseBullet">
+ <ThingDef ParentName="BaseBullet">
     <defName>BANW_Bullet_Hoshiro_B_EX_C</defName>
     <label>手枪速射</label>
     <thingClass>BANWlLib.Skills.Projectile_HoshinoSkill</thingClass>
@@ -569,20 +569,21 @@
       <speed>80</speed>
     </projectile>
   </ThingDef>
+
   <EffecterDef>
-    <defName>BANW_Effecter_Hoshiro_B_EX</defName>
-    <children>
-      <li>
+<defName>BANW_Effecter_Hoshiro_B_EX</defName>
+<children>
+  <li>
         <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
         <soundDef>BANW_Skill_NewA</soundDef>
         <spawnLocType>OnSource</spawnLocType>
       </li>
-      <li>
+       <li>
         <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
         <soundDef>Hoshiro_B_Skill_EX</soundDef>
         <spawnLocType>OnSource</spawnLocType>
       </li>
-      <li>
+       <li>
         <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
         <soundDef>Hoshiro_B_Skill_A</soundDef>
         <spawnLocType>OnSource</spawnLocType>
@@ -606,7 +607,7 @@
         <attachToSpawnThing>true</attachToSpawnThing><!-- 是否跟踪 -->
         <absoluteAngle>true</absoluteAngle>
       </li>
-    </children>
-  </EffecterDef>
+</children>
+</EffecterDef>
 
 </Defs>

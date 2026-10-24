@@ -123,7 +123,8 @@ namespace BANWlLib
                 UiMapData.qinghuishitext1 = UiMapData.mainUI.transform.Find("daohang").transform.Find("qinghuishishuliang").GetComponent<Engine.UI.Text>();
                 UiMapData.huangpiaotext1 = UiMapData.mainUI.transform.Find("daohang").transform.Find("qianxianshi").GetComponent<Engine.UI.Text>();
                 UiMapData.mainUI.transform.Find("fanhui").gameObject.AddComponent<MonoComp_BackButton>();
-                UiMapData.mainBgmPlay = UiMapData.mainUI.transform.Find("BgmPlay").GetComponent<AudioSource>();
+                //音乐使用原版播放器，移除旧预制体声源以免重新激活界面时自动播放。
+                Engine.Object.Destroy(UiMapData.mainUI.transform.Find("BgmPlay").gameObject);
                 UiMapData.mainAudioPlay = UiMapData.mainUI.transform.Find("SoundEffectPlay").GetComponent<AudioSource>();
                 UiMapData.jingcuixianshi = UiMapData.mainUI.transform.Find("shangdian/showtextsuipian").GetComponent<Engine.UI.Text>();
                 UiMapData.mainUI.transform.Find("Buttom").transform.Find("zhaomu").GetComponent<Button>().onClick.AddListener(() =>

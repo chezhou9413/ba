@@ -52,7 +52,10 @@ namespace BANWlLib.BattleSystem
                 return string.Empty;
             }
 
-            return BuildActionsTooltip(pawn, ability.def, actions);
+            if (!specialActions) return BuildActionsTooltip(pawn, ability.def, actions);
+            StringBuilder builder = new StringBuilder();
+            AppendCompactActions(builder, pawn, actions, false);
+            return builder.ToString();
         }
 
         //让自动普通技能状态和地图按钮共用同一套真实战斗公式格式。
@@ -658,7 +661,7 @@ namespace BANWlLib.BattleSystem
         }
 
         //用总览和短行展示高段数技能的关键战斗信息。
-        private static void AppendCompactActions(StringBuilder builder, Pawn pawn, List<BattleActionConfig> actions)
+        private static void AppendCompactActions(StringBuilder builder, Pawn pawn, List<BattleActionConfig> actions, bool includeDetails = true)
         {
             CompactActionTotals totals = CalculateCompactTotals(pawn, actions);
             builder.AppendLine();
@@ -680,6 +683,7 @@ namespace BANWlLib.BattleSystem
 
             builder.AppendLine("修正：" + FormatCompactModifiers(totals));
             builder.AppendLine(FormatFormulaHint(totals.applyAffinity));
+            if (!includeDetails) return;
             builder.AppendLine();
             builder.AppendLine("段落明细".Colorize(ColoredText.TipSectionTitleColor));
 

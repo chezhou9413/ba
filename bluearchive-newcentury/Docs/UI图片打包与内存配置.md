@@ -103,6 +103,12 @@ BANWlLib.mainUI.Images.BAUIImageCache.SetImage(image, "ManuaUI/Avatar/Shiroko");
 
 在 `Player.log` 搜索 `[BA UI耗时]` 可以查看资源包、控件实例、商店、学生手册和任务界面的初始化耗时。`[BA UI语音]` 会报告缺失或无法解码的语音文件路径。
 
+## 1.7 UI 着色器导出
+
+抽卡的 Panda UI 材质关闭了深度淡出、屏幕折射和静态法线偏移。重新导出 RimUnity 资源后，在模组目录执行 `python Tools/Build/Optimize-UiShaderExports.py`，使用本地 RimUnity ShaderTool 编译检查后生成专用变体。脚本会检查材质值和动画；如果重新启用了这些功能，会中止并提示使用通用 Shader。
+
+专用变体不声明场景抓取，也不采样地表深度，使用独立的程序键避免与其他模组共用缓存。COST 与抽卡 Shader 的零宽度 `smoothstep` 按硬边界计算，普通和反向边界保持插值。现有的颜色、溶解、贴图和遮罩仍沿用原计算。
+
 ## 查看图片内存
 
 开发者模式 → 调试操作菜单 → **BA调试 → UI内存** 提供：

@@ -1,4 +1,5 @@
 #version 450
+//碧蓝档案 UI：不读取场景颜色与地表深度。
 layout(binding = 25, set = 2)
 uniform sampler2D _VATNormalTex; // @default = black // @vertex
 layout(binding = 27, set = 2)
@@ -7,51 +8,25 @@ layout(binding = 29, set = 2)
 uniform sampler2D _VTOMaskTex; // @default = white // @vertex
 layout(binding = 31, set = 2)
 uniform sampler2D _VTOTex; // @default = white // @vertex
-float RU_CompatPow3(float x) {
-    float result = float(1.0);
-    result *= x;
-    x *= x;
-    result *= x;
-    return result;
-}
+
 float RU_CompatSmoothstep(float low, float high, float x) {
-    float t = clamp((x - low) / (high - low), float(0.0), float(1.0));
+    if (low == high) return step(low, x);
+    float t = clamp((x - low) / (high - low), 0.0, 1.0);
     return t * t * (3.0 - 2.0 * t);
 }
-vec2 RU_CompatPow3(vec2 x) {
-    vec2 result = vec2(1.0);
-    result *= x;
-    x *= x;
-    result *= x;
-    return result;
-}
+
 vec2 RU_CompatSmoothstep(vec2 low, vec2 high, vec2 x) {
-    vec2 t = clamp((x - low) / (high - low), vec2(0.0), vec2(1.0));
-    return t * t * (3.0 - 2.0 * t);
+    return vec2(RU_CompatSmoothstep(low.x, high.x, x.x), RU_CompatSmoothstep(low.y, high.y, x.y));
 }
 vec2 RU_CompatSmoothstep(float low, float high, vec2 x) { return RU_CompatSmoothstep(vec2(low), vec2(high), x); }
-vec3 RU_CompatPow3(vec3 x) {
-    vec3 result = vec3(1.0);
-    result *= x;
-    x *= x;
-    result *= x;
-    return result;
-}
+
 vec3 RU_CompatSmoothstep(vec3 low, vec3 high, vec3 x) {
-    vec3 t = clamp((x - low) / (high - low), vec3(0.0), vec3(1.0));
-    return t * t * (3.0 - 2.0 * t);
+    return vec3(RU_CompatSmoothstep(low.x, high.x, x.x), RU_CompatSmoothstep(low.y, high.y, x.y), RU_CompatSmoothstep(low.z, high.z, x.z));
 }
 vec3 RU_CompatSmoothstep(float low, float high, vec3 x) { return RU_CompatSmoothstep(vec3(low), vec3(high), x); }
-vec4 RU_CompatPow3(vec4 x) {
-    vec4 result = vec4(1.0);
-    result *= x;
-    x *= x;
-    result *= x;
-    return result;
-}
+
 vec4 RU_CompatSmoothstep(vec4 low, vec4 high, vec4 x) {
-    vec4 t = clamp((x - low) / (high - low), vec4(0.0), vec4(1.0));
-    return t * t * (3.0 - 2.0 * t);
+    return vec4(RU_CompatSmoothstep(low.x, high.x, x.x), RU_CompatSmoothstep(low.y, high.y, x.y), RU_CompatSmoothstep(low.z, high.z, x.z), RU_CompatSmoothstep(low.w, high.w, x.w));
 }
 vec4 RU_CompatSmoothstep(float low, float high, vec4 x) { return RU_CompatSmoothstep(vec4(low), vec4(high), x); }
 
@@ -504,8 +479,7 @@ uniform sampler2D _MainTex; // @default = white
 
 
 #line 517
-layout(binding = 13, set = 2)
-uniform sampler2D _GrabTexture;
+
 
 
 #line 519
@@ -2584,12 +2558,7 @@ vec4 ASE_ComputeGrabScreenPos_0(vec4 pos_0)
 
 
 #line 521
-vec4 RU_tex2D_GrabTexture_0(vec2 uv_6)
-{
 
-#line 521
-    return (texture(_GrabTexture, (vec2(uv_6.x, 1.0 - uv_6.y))));
-}
 
 
 #line 459
@@ -3649,67 +3618,11 @@ vec4 RU_tex2D_DissloveTexPlus_0(vec2 uv_9)
 
 
 #line 632
-float RU_GroundDepth_0(vec2 uv_10)
-{
-    vec2 xy_0 = uv_10 * 2.0 - 1.0;
-    vec4 nearH_0 = (((vec4(xy_0, 1.0, 1.0)) * (transpose(RU_Material_0._RimUnity_DepthInvVP))));
-    vec4 farH_0 = (((vec4(xy_0, 0.0, 1.0)) * (transpose(RU_Material_0._RimUnity_DepthInvVP))));
-    vec3 nearP_0 = nearH_0.xyz / nearH_0.w;
-    vec3 farP_0 = farH_0.xyz / farH_0.w;
-    float _S36 = nearP_0.y;
 
-#line 639
-    float dy_2 = farP_0.y - _S36;
-    if((abs(dy_2)) < 9.99999997475242708e-07)
-    {
-
-#line 640
-        return 0.0;
-    }
-
-#line 641
-    float t_0 = - _S36 / dy_2;
-
-#line 641
-    bool _S37;
-    if(t_0 < 0.0)
-    {
-
-#line 642
-        _S37 = true;
-
-#line 642
-    }
-    else
-    {
-
-#line 642
-        _S37 = t_0 > 1.0;
-
-#line 642
-    }
-
-#line 642
-    if(_S37)
-    {
-
-#line 642
-        return 0.0;
-    }
-
-#line 643
-    vec4 hit_0 = (((vec4(mix(nearP_0, farP_0, vec3(t_0)), 1.0)) * (transpose(RU_Material_0._RimUnity_DepthVP))));
-    return saturate_0(hit_0.z / hit_0.w);
-}
 
 
 #line 646
-vec4 RU_Ground_tex2D_0(vec2 uv_11)
-{
 
-#line 646
-    return vec4(RU_GroundDepth_0(uv_11));
-}
 
 
 
@@ -4202,7 +4115,7 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     vec3 _S55 = vec3(temp_output_1587_0_0 * temp_output_1684_0_0);
 
 #line 657
-    float temp_output_1570_0_0 = RU_CompatPow3(1.0) * 0.10000000149011612;
+    float temp_output_1570_0_0 = 1.0 * 0.10000000149011612;
 
 #line 657
     float _S56 = panner59_0.x;
@@ -4868,7 +4781,7 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     vec4 ase_grabScreenPos_0 = ASE_ComputeGrabScreenPos_0(vec4(i_0.screenPos_0.xyz, i_0.screenPos_0.w + 9.999999960041972e-12));
 
 #line 657
-    vec4 screenColor917_0 = RU_tex2D_GrabTexture_0((ase_grabScreenPos_0 / ase_grabScreenPos_0.w * vec4(vec2(RU_Material_0._MainTex_ST.zwxy.x, RU_Material_0._MainTex_ST.zwxy.y), 0.0, 0.0) + vec4(vec2(RU_Material_0._MainTex_ST.zwxy.z, RU_Material_0._MainTex_ST.zwxy.w), 0.0, 0.0) + vec4(temp_output_1691_0_0, 0.0, 0.0) + vec4(temp_output_1057_0_0, 0.0)).xy);
+
 
 #line 657
     if((RU_Material_0._CustomdataDisT) == 0.0)
@@ -4889,22 +4802,13 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     }
 
 #line 657
-    if((RU_Material_0._ScreenAsMain) == 0.0)
-    {
+
 
 #line 657
         temp_output_1684_0_0 = temp_output_2038_39_0;
 
 #line 657
-    }
-    else
-    {
 
-#line 657
-        temp_output_1684_0_0 = screenColor917_0.w;
-
-#line 657
-    }
 
 #line 657
     float temp_output_7_0_0 = temp_output_1550_0_0 * temp_output_1684_0_0 * RU_Material_0._MainColor.w;
@@ -5837,13 +5741,13 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     ase_screenPosNorm88_0[2] = ase_screenPosNorm88_0.z;
 
 #line 657
-    float distanceDepth88_0 = saturate_0((LinearEyeDepth_0(RU_Ground_tex2D_0(ase_screenPosNorm88_0.xy).x) - LinearEyeDepth_0(ase_screenPosNorm88_0.z)) / RU_Material_0._DepthfadeFactor);
+
 
 #line 657
     float temp_output_94_0_0 = saturate_0(pow(1.0 - saturate_0(abs(dot(ase_worldNormal_0, normalize(ase_worldViewDir_0 + (RU_Material_0._Dir.xyz))))), RU_Material_0._fnl_power) * RU_Material_0._fnl_sacle);
 
 #line 657
-    float temp_output_409_0_0 = 1.0 - saturate_0(distanceDepth88_0);
+
 
 #line 657
     float _S105 = MaskAlpha136_0 * MainTexAlpha37_0 * DisAplha42_0;
@@ -5870,37 +5774,13 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     float _S106 = _S105 * ifLocalVar1676_0;
 
 #line 657
-    if(bool(RU_Material_0._Depthfadeon))
-    {
 
-#line 657
-        if((RU_Material_0._DepthF) == 0.0)
-        {
-
-#line 657
-            ifLocalVar1676_0 = distanceDepth88_0;
-
-#line 657
-        }
-        else
-        {
-
-#line 657
-            ifLocalVar1676_0 = 1.0;
-
-#line 657
-        }
-
-#line 657
-    }
-    else
-    {
 
 #line 657
         ifLocalVar1676_0 = 1.0;
 
 #line 657
-    }
+
 
 #line 657
     float _S107 = _S106 * ifLocalVar1676_0;
@@ -5927,22 +5807,13 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     float _S108 = _S107 * ifLocalVar1676_0;
 
 #line 657
-    if((RU_Material_0._DepthF) == 0.0)
-    {
+
 
 #line 657
         ifLocalVar1676_0 = 0.0;
 
 #line 657
-    }
-    else
-    {
 
-#line 657
-        ifLocalVar1676_0 = temp_output_409_0_0;
-
-#line 657
-    }
 
 #line 657
     float MainAlpha142_0 = saturate_0(_S108 + ifLocalVar1676_0);
@@ -5950,7 +5821,7 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     o_1.Alpha_0 = MainAlpha142_0;
 
 #line 657
-    vec4 DepthColor412_0 = temp_output_409_0_0 * RU_Material_0._DepthColor;
+
 
 #line 657
     vec4 fnlColor97_0 = temp_output_94_0_0 * RU_Material_0._fnl_color * i_0.vertexColor_0;
@@ -5989,22 +5860,13 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     vec4 _S110 = RU_Material_0._MainColor;
 
 #line 657
-    if((RU_Material_0._ScreenAsMain) == 0.0)
-    {
+
 
 #line 657
         ifLocalVar1675_0 = vec4(lerpResult4_g1053_0, 0.0);
 
 #line 657
-    }
-    else
-    {
 
-#line 657
-        ifLocalVar1675_0 = screenColor917_0;
-
-#line 657
-    }
 
 #line 657
     vec4 _S111 = _S110 * ifLocalVar1675_0;
@@ -6339,7 +6201,7 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     float temp_output_77_0_g1050_0 = (temp_output_65_0_g1050_0 + 1.0) * temp_output_70_0_g1050_0;
 
 #line 657
-    float temp_output_64_0_g1045_0 = RU_CompatPow3(RU_Material_0._StaticNormalOffset) * 0.10000000149011612;
+    float temp_output_64_0_g1045_0 = 0.0 * 0.10000000149011612;
 
 #line 657
     vec4 tex2DNode70_g1045_0 = RU_tex2D_DissloveTex_0(vec2(temp_output_1550_0_0 + temp_output_64_0_g1045_0, temp_output_1684_0_0));
@@ -6366,7 +6228,7 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     float temp_output_85_0_g1050_0 = saturate_0(pow(temp_output_2038_39_0, RU_Material_0._DissolveTexExp));
 
 #line 657
-    float temp_output_64_0_g1044_0 = RU_CompatPow3(RU_Material_0._StaticNormalOffset) * 0.10000000149011612;
+    float temp_output_64_0_g1044_0 = 0.0 * 0.10000000149011612;
 
 #line 657
     vec4 tex2DNode70_g1044_0 = RU_tex2D_DissloveTexPlus_0(vec2(temp_output_1579_0_0 + temp_output_64_0_g1044_0, temp_output_1580_0_0));
@@ -6654,22 +6516,13 @@ void surf_0(Input_0 i_0, inout SurfaceOutputCustomLightingCustom_0 o_1)
     }
 
 #line 657
-    if((RU_Material_0._DepthF) == 0.0)
-    {
+
 
 #line 657
         ifLocalVar1675_0 = vec4(0.0, 0.0, 0.0, 0.0);
 
 #line 657
-    }
-    else
-    {
 
-#line 657
-        ifLocalVar1675_0 = DepthColor412_0;
-
-#line 657
-    }
 
 #line 657
     vec4 temp_output_145_0_0 = temp_output_1550_0_0 * (ifLocalVar1675_0 + (fnlColor97_0 + DisColor40_0 + Cubemap1144_0));
@@ -7232,7 +7085,7 @@ vec4 LightingStandardCustomLighting_0(inout SurfaceOutputCustomLightingCustom_0 
     vec3 _S139 = vec3(temp_output_1587_0_1 * temp_output_1684_0_1);
 
 #line 657
-    float temp_output_1570_0_1 = RU_CompatPow3(1.0) * 0.10000000149011612;
+    float temp_output_1570_0_1 = 1.0 * 0.10000000149011612;
 
 #line 657
     float _S140 = panner59_1.x;
@@ -7889,7 +7742,7 @@ vec4 LightingStandardCustomLighting_0(inout SurfaceOutputCustomLightingCustom_0 
     vec4 ase_grabScreenPos_1 = ASE_ComputeGrabScreenPos_0(vec4(i_1.screenPos_0.xyz, i_1.screenPos_0.w + 9.999999960041972e-12));
 
 #line 657
-    vec4 screenColor917_1 = RU_tex2D_GrabTexture_0((ase_grabScreenPos_1 / ase_grabScreenPos_1.w * vec4(vec2(RU_Material_0._MainTex_ST.zwxy.x, RU_Material_0._MainTex_ST.zwxy.y), 0.0, 0.0) + vec4(vec2(RU_Material_0._MainTex_ST.zwxy.z, RU_Material_0._MainTex_ST.zwxy.w), 0.0, 0.0) + vec4(temp_output_1691_0_1, 0.0, 0.0) + vec4(temp_output_1057_0_1, 0.0)).xy);
+
 
 #line 657
     if((RU_Material_0._CustomdataDisT) == 0.0)
@@ -7910,22 +7763,13 @@ vec4 LightingStandardCustomLighting_0(inout SurfaceOutputCustomLightingCustom_0 
     }
 
 #line 657
-    if((RU_Material_0._ScreenAsMain) == 0.0)
-    {
+
 
 #line 657
         temp_output_1684_0_1 = temp_output_2038_39_1;
 
 #line 657
-    }
-    else
-    {
 
-#line 657
-        temp_output_1684_0_1 = screenColor917_1.w;
-
-#line 657
-    }
 
 #line 657
     float temp_output_7_0_1 = temp_output_1550_0_1 * temp_output_1684_0_1 * RU_Material_0._MainColor.w;
@@ -8846,13 +8690,13 @@ vec4 LightingStandardCustomLighting_0(inout SurfaceOutputCustomLightingCustom_0 
     ase_screenPosNorm88_1[2] = ase_screenPosNorm88_1.z;
 
 #line 657
-    float distanceDepth88_1 = saturate_0((LinearEyeDepth_0(RU_Ground_tex2D_0(ase_screenPosNorm88_1.xy).x) - LinearEyeDepth_0(ase_screenPosNorm88_1.z)) / RU_Material_0._DepthfadeFactor);
+
 
 #line 657
     float temp_output_94_0_1 = saturate_0(pow(1.0 - saturate_0(abs(dot(ase_worldNormal_1, normalize(ase_worldViewDir_1 + (RU_Material_0._Dir.xyz))))), RU_Material_0._fnl_power) * RU_Material_0._fnl_sacle);
 
 #line 657
-    float temp_output_409_0_1 = 1.0 - saturate_0(distanceDepth88_1);
+
 
 #line 657
     float _S189 = MaskAlpha136_1 * MainTexAlpha37_1 * DisAplha42_1;
@@ -8879,37 +8723,13 @@ vec4 LightingStandardCustomLighting_0(inout SurfaceOutputCustomLightingCustom_0 
     float _S190 = _S189 * temp_output_2038_39_1;
 
 #line 657
-    if(bool(RU_Material_0._Depthfadeon))
-    {
 
-#line 657
-        if((RU_Material_0._DepthF) == 0.0)
-        {
-
-#line 657
-            temp_output_2038_39_1 = distanceDepth88_1;
-
-#line 657
-        }
-        else
-        {
-
-#line 657
-            temp_output_2038_39_1 = 1.0;
-
-#line 657
-        }
-
-#line 657
-    }
-    else
-    {
 
 #line 657
         temp_output_2038_39_1 = 1.0;
 
 #line 657
-    }
+
 
 #line 657
     float _S191 = _S190 * temp_output_2038_39_1;
@@ -8936,22 +8756,13 @@ vec4 LightingStandardCustomLighting_0(inout SurfaceOutputCustomLightingCustom_0 
     float _S192 = _S191 * temp_output_2038_39_1;
 
 #line 657
-    if((RU_Material_0._DepthF) == 0.0)
-    {
+
 
 #line 657
         temp_output_2038_39_1 = 0.0;
 
 #line 657
-    }
-    else
-    {
 
-#line 657
-        temp_output_2038_39_1 = temp_output_409_0_1;
-
-#line 657
-    }
 
 #line 657
     float MainAlpha142_1 = saturate_0(_S192 + temp_output_2038_39_1);
@@ -9129,7 +8940,7 @@ vec4 LightingStandardCustomLighting_0(inout SurfaceOutputCustomLightingCustom_0 
     float temp_output_77_0_g1050_1 = (temp_output_65_0_g1050_1 + 1.0) * temp_output_70_0_g1050_1;
 
 #line 657
-    float temp_output_64_0_g1045_1 = RU_CompatPow3(RU_Material_0._StaticNormalOffset) * 0.10000000149011612;
+    float temp_output_64_0_g1045_1 = 0.0 * 0.10000000149011612;
 
 #line 657
     vec4 tex2DNode70_g1045_1 = RU_tex2D_DissloveTex_0(vec2(temp_output_1550_0_1 + temp_output_64_0_g1045_1, temp_output_1684_0_1));
@@ -9156,7 +8967,7 @@ vec4 LightingStandardCustomLighting_0(inout SurfaceOutputCustomLightingCustom_0 
     float temp_output_85_0_g1050_1 = saturate_0(pow(temp_output_2038_39_1, RU_Material_0._DissolveTexExp));
 
 #line 657
-    float temp_output_64_0_g1044_1 = RU_CompatPow3(RU_Material_0._StaticNormalOffset) * 0.10000000149011612;
+    float temp_output_64_0_g1044_1 = 0.0 * 0.10000000149011612;
 
 #line 657
     vec4 tex2DNode70_g1044_1 = RU_tex2D_DissloveTexPlus_0(vec2(temp_output_1579_0_1 + temp_output_64_0_g1044_1, temp_output_1580_0_1));

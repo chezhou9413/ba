@@ -39,8 +39,8 @@ namespace BANWlLib.Skills
                 reason = "增益场地或待释放蓄积尚未结束";
             else if (s.profile.role == SpecialSkillRole.Hoshino && s.castEndTick >= s.Now)
                 reason = "正在执行形态技能";
-            else if (s.profile.role == SpecialSkillRole.Arisu && s.castEndTick >= s.Now)
-                reason = "正在执行直线EX";
+            else if (s.profile.role == SpecialSkillRole.Arisu && (s.castEndTick >= s.Now || s.arisuNormalJob != null))
+                reason = "正在施放爱丽丝技能";
             return reason != null;
         }
 
@@ -81,7 +81,7 @@ namespace BANWlLib.Skills
             if (!valid && throwMessages)
                 Messages.Message(role == SpecialSkillRole.Nero
                     ? "目标必须是射程和视线内的存活生物，并符合技能的目标类型与伤害配置。"
-                    : "当前目标不能使用此测试技能，或充能已满、目标没有当前阶段可见的COST技能。", MessageTypeDefOf.RejectInput, false);
+                    : "当前目标不能使用此技能，或充能已满、目标没有当前阶段可见的COST技能。", MessageTypeDefOf.RejectInput, false);
             return valid;
         }
 
@@ -107,14 +107,10 @@ namespace BANWlLib.Skills
             SpecialSkillDispatcher.Cast(state, Props.command, target);
         }
 
-        //显示当前状态和每个伤害段的结算模式。
+        //只追加简短状态，避免把普通技能整套公式重复塞入EX悬浮说明。
         public override string ExtraTooltipPart()
         {
-            if (Props.profile.role == SpecialSkillRole.Hoshino)
-                return "测试新技能\nEX使用独立伤害段；攻击普通技能按发数触发。\n" + (State?.TipStringExtra ?? "");
-            var attack = Props.profile.exAttack;
-            return "测试新技能\n" + (attack == null ? "" : attack.useBattleStats ? "EX伤害：BA属性结算\n" :
-                "EX伤害：独立基数 " + attack.basePower + "\n") + (State?.TipStringExtra ?? "");
+            return State?.StatusText ?? "";
         }
     }
 }

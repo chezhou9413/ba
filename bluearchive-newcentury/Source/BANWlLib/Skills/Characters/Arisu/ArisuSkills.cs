@@ -16,8 +16,6 @@ namespace BANWlLib.Skills
             {
                 s.stage = UnityEngine.Mathf.Min(2, s.stage + 1);
                 s.CleanupEffect();
-                config.chargeSound?.PlayOneShot(new TargetInfo(s.pawn));
-                SpecialDirectionalEffects.Trigger(config.chargeEffecters[s.stage - 1], s.pawn, s.pawn);
                 return;
             }
             int stage = s.stage;
@@ -25,11 +23,11 @@ namespace BANWlLib.Skills
             var cells = BattleTargetPreviewUtility.CalculateLineCells(s.pawn, target, config.lineLength, config.lineWidth).ToList();
             config.attackSound?.PlayOneShot(new TargetInfo(s.pawn));
             SpecialDirectionalEffects.Trigger(config.attackEffecters[stage], s.pawn, target);
-            //工作目标固定为瞄准格，持续引导不再依赖原目标的移动或存活。
+            //伤害区域在发动时独立排队，移动或结束瞄准动作不会取消已经发出的光束。
             var castingJob = s.pawn.CurJob;
             castingJob.targetA = new LocalTargetInfo(target.Position);
             SpecialCombatUtility.Schedule(s, null, s.profile.exAttack, 1f + stage,
-                extraDelay: config.damageDelayTicks, center: s.pawn.Position, areaCells: cells, castingJob: castingJob);
+                extraDelay: config.damageDelayTicks, center: s.pawn.Position, areaCells: cells);
             s.castEndTick = s.Now + config.damageDelayTicks + s.profile.exAttack.ShotDelay(s.profile.exAttack.shots - 1);
             s.stage = 0;
             s.CleanupEffect();
