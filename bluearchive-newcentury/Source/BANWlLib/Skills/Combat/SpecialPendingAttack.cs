@@ -23,6 +23,8 @@ namespace BANWlLib.Skills
         public bool droneOrigin;
         public bool normalHit;
         public Verse.AI.Job castingJob;
+        public bool retainTargetPosition;
+        public IntVec3 lastTargetCell = IntVec3.Invalid;
         public Thing excludedTarget;
         public bool completed;
         public Vector3 impactDirection;
@@ -57,6 +59,8 @@ namespace BANWlLib.Skills
             Scribe_Values.Look(ref droneOrigin, "droneOrigin");
             Scribe_Values.Look(ref normalHit, "normalHit");
             Scribe_References.Look(ref castingJob, "castingJob");
+            Scribe_Values.Look(ref retainTargetPosition, "retainTargetPosition");
+            Scribe_Values.Look(ref lastTargetCell, "lastTargetCell", IntVec3.Invalid);
             Scribe_References.Look(ref excludedTarget, "excludedTarget");
             Scribe_Values.Look(ref completed, "completed");
             Scribe_Values.Look(ref impactDirection, "impactDirection");

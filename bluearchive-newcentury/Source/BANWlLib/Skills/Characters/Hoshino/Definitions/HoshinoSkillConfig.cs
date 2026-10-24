@@ -18,13 +18,16 @@ namespace BANWlLib.Skills
         public HoshinoSkillEffect tankNormal;
         public TraitDef outputTrait;
         public TraitDef tankTrait;
+        public List<TraitDef> outputTraits = new List<TraitDef>();
+        public List<TraitDef> tankTraits = new List<TraitDef>();
         public ThingDef backpackApparel;
         public ThingDef shieldApparel;
+        public EffecterDef defenseEffecter;
+        public bool drawInterceptBoundary = true;
         public EffecterDef interceptEffecter;
         public SpecialAttackConfig empoweredAttack;
         public float empoweredFanArc = 60f;
         public EffecterDef empoweredShotEffecter;
-        public float effectSpeed = 20f;
         public float effectOffsetForward = 0.6f;
         public float effectOffsetUp;
 

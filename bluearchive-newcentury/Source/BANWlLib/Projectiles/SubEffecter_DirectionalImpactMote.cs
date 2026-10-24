@@ -28,7 +28,8 @@ namespace BANWlLib.Projectiles
                 return;
             }
 
-            Vector3 spawnPosition = target.DrawPos + data.direction * data.offsetForward + Vector3.up * data.offsetUp;
+            Vector3 spawnPosition = target.DrawPos + def.positionOffset +
+                data.direction * data.offsetForward + Vector3.up * data.offsetUp;
             DirectionalImpactMoteDelayComponent.SpawnOrQueue(map, spawnPosition, data, def, overrideSpawnTick);
         }
     }

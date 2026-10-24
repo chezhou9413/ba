@@ -19,9 +19,8 @@ namespace BANWlLib.Skills
             if (effecter == null) return;
             Effecter instance = effecter.Spawn();
             instance.Trigger(pawn, pawn);
-            int delay = effecter.children.NullOrEmpty() ? 0 : effecter.children.Max(c => c.initialDelayTicks);
             pawn.Map.effecterMaintainer.AddEffecterToMaintain(instance, pawn, pawn,
-                Mathf.Max(maintainTicks, effecter.maintainTicks, delay + 1));
+                Mathf.Max(maintainTicks, SpecialEffects.DurationTicks(effecter)));
         }
     }
 }

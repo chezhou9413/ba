@@ -170,8 +170,7 @@
         <directionalImpactOnPawn>true</directionalImpactOnPawn>
         <!-- 是否对 Building 触发方向命中特效。 -->
         <directionalImpactOnBuilding>true</directionalImpactOnBuilding>
-        <!-- 方向命中特效飞出速度。 -->
-        <directionalImpactSpeed>1</directionalImpactSpeed>
+        <!-- 飞出速度在directionalImpactEffect的子节点speed中配置。 -->
         <!-- 方向命中特效沿弹道方向向前偏移。 -->
         <directionalImpactOffsetForward>0</directionalImpactOffsetForward>
         <!-- 方向命中特效向上偏移，避免埋进地面。 -->

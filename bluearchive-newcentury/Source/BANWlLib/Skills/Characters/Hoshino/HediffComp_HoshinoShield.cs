@@ -20,7 +20,7 @@ namespace BANWlLib.Skills
         //在减伤结算后消耗当前护盾，友军伤害沿用项目原有的穿盾规则。
         public static bool TryAbsorb(Pawn pawn, DamageInfo damage, float amount)
         {
-            if (amount <= 0f || damage.Instigator == pawn ||
+            if (amount <= 0f || !HoshinoInterceptor.CanBlockDamage(pawn, damage) || damage.Instigator == pawn ||
                 damage.Instigator?.Faction != null && damage.Instigator.Faction == pawn.Faction) return false;
             foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
             {

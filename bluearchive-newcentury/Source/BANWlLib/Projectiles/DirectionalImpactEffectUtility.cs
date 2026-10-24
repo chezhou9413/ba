@@ -29,7 +29,6 @@ namespace BANWlLib.Projectiles
             DirectionalImpactEffectContext.Register(
                 target,
                 direction,
-                extension.directionalImpactSpeed,
                 extension.directionalImpactOffsetForward,
                 extension.directionalImpactOffsetUp);
 
@@ -37,7 +36,9 @@ namespace BANWlLib.Projectiles
             {
                 Effecter effecter = extension.directionalImpactEffect.Spawn();
                 effecter.Trigger(new TargetInfo(projectile.Position, map), new TargetInfo(target));
-                effecter.Cleanup();
+                TargetInfo point = new TargetInfo(target.Position, map);
+                map.effecterMaintainer.AddEffecterToMaintain(effecter, point, point,
+                    Skills.SpecialEffects.DurationTicks(extension.directionalImpactEffect));
             }
             finally
             {

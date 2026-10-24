@@ -184,6 +184,7 @@
       <li>
         <!-- 从穿透弹命中上下文读取弹道方向，并生成沿该方向飞出的 MoteThrown。 -->
         <subEffecterClass>BANWlLib.Projectiles.SubEffecter_DirectionalImpactMote</subEffecterClass>
+        <speed>8</speed>
         <!-- 实际飞出的 Mote。 -->
         <moteDef>BANW_Mote_DirectionalImpact_Test</moteDef>
         <!-- 纵向贴图直接对齐弹道，避免使用原版随机初始旋转。 -->

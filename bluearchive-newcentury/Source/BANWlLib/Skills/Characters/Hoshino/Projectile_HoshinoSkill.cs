@@ -11,15 +11,17 @@ namespace BANWlLib.Skills
             Vector3.Lerp(origin, destination, 1f - (float)ticksToImpact / Mathf.Max(1, Mathf.CeilToInt(StartingTicksToImpact))).Yto0()
             + Vector3.up * def.Altitude;
 
-        //从当前位置继续追踪存活目标，目标失效后沿最后一段轨迹飞行。
+        //从当前位置继续追踪目标与尸体，落点段保持指定位置。
         protected override void TickInterval(int delta)
         {
-            Thing target = attack?.target;
-            if (target != null && target.Spawned && target.Map == Map && !(target is Pawn pawn && pawn.Dead))
+            if (attack != null && !attack.center.IsValid)
             {
+                LocalTargetInfo target = SpecialBurstTarget.Resolve(attack.target, Map, ref attack.lastTargetCell);
+                if (!target.IsValid) { base.TickInterval(delta); return; }
                 Vector3 current = ExactPosition;
                 origin = current.Yto0();
-                destination = target.DrawPos.Yto0();
+                destination = target.CenterVector3.Yto0();
+                attack.impactDirection = (destination - origin).normalized;
                 ticksToImpact = Mathf.Max(1, Mathf.CeilToInt(StartingTicksToImpact));
                 lifetime = ticksToImpact;
             }

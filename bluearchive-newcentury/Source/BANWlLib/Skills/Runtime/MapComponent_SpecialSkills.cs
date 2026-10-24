@@ -59,6 +59,8 @@ namespace BANWlLib.Skills
             int now = Find.TickManager.TicksGame;
             for (int i = 0; i < pending.Count;)
             {
+                if (pending[i].retainTargetPosition && !pending[i].center.IsValid)
+                    SpecialBurstTarget.Resolve(pending[i].target, map, ref pending[i].lastTargetCell);
                 if (pending[i].dueTick > now) { i++; continue; }
                 SpecialPendingAttack attack = pending[i];
                 pending.RemoveAt(i);
@@ -67,7 +69,7 @@ namespace BANWlLib.Skills
                 //发射前再次检查施法工作，避免同一tick内的倒地、离图或中断留下后台射击。
                 if (attack.castingJob != null && (attack.caster.CurJob != attack.castingJob ||
                     !SpecialCombatUtility.CanAct(attack.caster) ||
-                    (attack.areaCells == null &&
+                    (!attack.retainTargetPosition && attack.areaCells == null &&
                      !attack.castingJob.ability.CompOfType<CompAbilityEffect_SpecialSkill>().Valid(
                          attack.center.IsValid ? attack.castingJob.targetA : new LocalTargetInfo(attack.target)))))
                 { attack.Complete(); continue; }

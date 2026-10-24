@@ -48,12 +48,13 @@ namespace BANWlLib.Skills
         private static void PlayEffect(Pawn pawn, LocalTargetInfo target, HoshinoSkillConfig config)
         {
             Vector3 direction = (target.CenterVector3 - pawn.DrawPos).Yto0().normalized;
-            DirectionalImpactEffectContext.Register(pawn, direction, config.effectSpeed, config.effectOffsetForward, config.effectOffsetUp);
+            DirectionalImpactEffectContext.Register(pawn, direction, config.effectOffsetForward, config.effectOffsetUp);
             try
             {
                 Effecter effect = config.empoweredShotEffecter.Spawn();
                 effect.Trigger(new TargetInfo(pawn), new TargetInfo(pawn));
-                effect.Cleanup();
+                pawn.Map.effecterMaintainer.AddEffecterToMaintain(effect, pawn, pawn,
+                    SpecialEffects.DurationTicks(config.empoweredShotEffecter));
             }
             finally { DirectionalImpactEffectContext.Clear(pawn); }
         }

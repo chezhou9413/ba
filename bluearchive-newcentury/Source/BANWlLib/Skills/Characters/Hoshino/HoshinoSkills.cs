@@ -1,5 +1,4 @@
 using System.Linq;
-using BANWlLib.BattleMovement;
 using BANWlLib.BattleSystem;
 using RimWorld;
 using UnityEngine;
@@ -36,7 +35,7 @@ namespace BANWlLib.Skills
                 {
                     SpecialCombatUtility.Schedule(s, stage.targetLocation ? null : target.Thing, stage.attack,
                         extraDelay: stage.delayTicks, center: stage.targetLocation ? (IntVec3?)target.Cell : null,
-                        castingJob: s.pawn.CurJob);
+                        castingJob: s.pawn.CurJob, retainTargetPosition: true);
                     lastShot = Mathf.Max(lastShot, stage.delayTicks + stage.attack.ShotDelay(stage.attack.shots - 1));
                 }
                 s.castEndTick = s.Now + lastShot;
@@ -44,7 +43,7 @@ namespace BANWlLib.Skills
                 s.hoshino.outputExCasting = true;
                 return;
             }
-            IntVec3 destination = BattleMovementPathUtility.ResolveBlockedDestination(s.pawn, target.Cell, false, false);
+            IntVec3 destination = target.Cell;
             if (destination == s.pawn.Position) { Arrive(s); return; }
             Map map = s.pawn.Map;
             IntVec3 start = s.pawn.Position;
@@ -52,7 +51,8 @@ namespace BANWlLib.Skills
             //位移载体暂时收纳角色，不应被当作真正离图而清除独立普通技能。
             s.hoshino.moving = true;
             var flyer = (HoshinoMovementFlyer)PawnFlyer.MakeFlyer(
-                DefDatabase<ThingDef>.GetNamed("BANW_SpecialHoshinoFlyer"), s.pawn, destination, null, null);
+                DefDatabase<ThingDef>.GetNamed("BANW_SpecialHoshinoFlyer"), s.pawn, destination,
+                s.profile.hoshino.defenseEffecter, null);
             flyer.state = s;
             flyer.speed = s.profile.moveSpeed;
             GenSpawn.Spawn(flyer, start, map);

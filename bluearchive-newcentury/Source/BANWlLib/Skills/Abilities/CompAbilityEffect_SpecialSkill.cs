@@ -37,8 +37,11 @@ namespace BANWlLib.Skills
                 reason = "正在持续施放二段EX";
             else if (s.profile.role == SpecialSkillRole.Kei && (s.Active || s.releaseReady))
                 reason = "增益场地或待释放蓄积尚未结束";
-            else if (s.profile.role == SpecialSkillRole.Hoshino && s.castEndTick >= s.Now)
+            else if (s.profile.role == SpecialSkillRole.Hoshino &&
+                (s.castEndTick >= s.Now || s.hoshino.outputExCasting))
                 reason = "正在执行形态技能";
+            else if (s.profile.role == SpecialSkillRole.Wakamo && s.castEndTick >= s.Now)
+                reason = "正在持续施放若藻EX";
             else if (s.profile.role == SpecialSkillRole.Arisu && (s.castEndTick >= s.Now || s.arisuNormalJob != null))
                 reason = "正在施放爱丽丝技能";
             return reason != null;

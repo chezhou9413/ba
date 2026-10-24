@@ -37,7 +37,7 @@ namespace BANWlLib.Skills
         {
             base.Tick();
             if (count >= skill.requiredCount && Find.TickManager.TicksGame >= nextCastTick &&
-                SpecialCombatUtility.CanAct(pawn)) TryCast();
+                SpecialCombatUtility.CanAct(pawn) && !(pawn.jobs.curDriver is JobDriver_SpecialBurstChannel)) TryCast();
         }
 
         //确认合法目标后消费一次进度，保存属性快照并安排各效果段。

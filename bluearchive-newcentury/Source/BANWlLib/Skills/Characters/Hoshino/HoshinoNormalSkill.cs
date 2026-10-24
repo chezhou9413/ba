@@ -14,7 +14,8 @@ namespace BANWlLib.Skills
         //达到触发次数后等待当前连射与技能结束，再寻找目标释放普通技能。
         public static void Tick(Hediff_SpecialSkillState s)
         {
-            if (!s.native || s.stage != 0 || s.castEndTick >= s.Now || s.pawn.jobs.curDriver is JobDriver_HoshinoExChannel ||
+            if (!s.native || s.stage != 0 || s.castEndTick >= s.Now || s.hoshino.outputExCasting ||
+                s.pawn.jobs.curDriver is JobDriver_HoshinoExChannel ||
                 s.hits < s.profile.hoshino.normalRequiredShots || !SpecialCombatUtility.CanAct(s.pawn)) return;
             var weapon = s.pawn.equipment.Primary?.GetComp<CompEquippable>();
             if (weapon?.PrimaryVerb.Bursting == true) return;

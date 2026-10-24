@@ -12,6 +12,12 @@ namespace BANWlLib.Skills
         public override Vector3 DrawPos => Vector3.Lerp(startVec, DestinationPos,
             Mathf.Clamp01((float)ticksFlying / Mathf.Max(1, ticksFlightTime)));
 
+        //角色与跟随特效共用平面位移位置，避免原版跳跃弧线与盾面分离。
+        public override void DynamicDrawPhaseAt(DrawPhase phase, Vector3 drawLoc, bool flip = false)
+        {
+            FlyingPawn?.DynamicDrawPhaseAt(phase, DrawPos, flip);
+        }
+
         //按配置速度确定位移时间，读档保留原有进度。
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {

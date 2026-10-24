@@ -1,20 +1,22 @@
 # 若藻EX技能配置说明
 
-配置文件：[Wakamo.xml](../1.6/Defs/SpecialSkills/Wakamo.xml)。技能为 `BANW_Special_Wakamo_Ex`（测试新技能·若藻），机制配置为 `BANW_Special_Wakamo`。
+配置文件：[Wakamo.xml](../1.7/Defs/SpecialSkills/Wakamo.xml)。技能为 `BANW_Special_Wakamo_Ex`（测试新技能·若藻），机制配置为 `BANW_Special_Wakamo`。
 
 ## 单体连射
 
-`exAttack` 默认发射6颗单体实体弹丸，总基础倍率为攻击力100%，由6发均分，每发分别进行BA伤害结算。`radius` 保持0。
+`exAttack` 发射6颗单体实体弹丸，`attackPowerRatio` 总倍率由6发均分，每发实际命中后分别进行BA伤害结算。`radius` 保持0。
+
+`jobDef=BANW_Job_WakamoExChannel` 保持前摇和连射期间停步瞄准。当前 `shotTicks` 为181、193、205、217、229、245，均相对前摇完成计时，先播放起手动画，再依次发射。目标死亡后继续指向尸体或最后位置，施法者倒地、眩晕或取消工作会停止未发射的子弹。
 
 | 字段 | 作用 |
 | --- | --- |
 | `shots` | 连射发数，至少2发 |
-| `shotIntervalTicks` | 相邻发射间隔，默认6 tick；60 tick为1秒 |
-| `shotTicks` | 可选的逐发发射时刻列表，填写时数量与发数一致，从第1 tick开始，按非递减顺序排列 |
-| `attackPowerRatio` | 整轮总伤害倍率，默认1 |
-| `projectileDef` | 实体弹丸定义，默认 `BANW_SpecialSkillBullet` |
-| `damageDef` | 连射伤害类型，默认 `BANC_Damage_shenmi` |
-| `penetration` | 每发护甲穿透，默认0；0.5表示50%，不按发数均分 |
+| `shotIntervalTicks` | 不填写shotTicks时的相邻发射间隔；60 tick为1秒 |
+| `shotTicks` | 逐发发射时刻列表；条目数必须与shots一致，所有时刻不小于1，按非递减顺序排列 |
+| `attackPowerRatio` | 整轮总伤害倍率，当前3.25 |
+| `projectileDef` | 实体弹丸定义，当前 `BANW_Bullet_Wakamo_EXX` |
+| `damageDef` | 连射伤害类型，当前 `BANC_Damage_Wakamo_EX_B` |
+| `penetration` | 每发护甲穿透，当前2；0.5表示50%，不按发数均分 |
 | `shotSound` | 可选的逐发射击音效 |
 | `effecterDef` | 本段攻击特效 |
 
@@ -54,3 +56,7 @@
 | `effecterDef` | 爆发伤害特效 |
 
 同一若藻再次施放会清除旧记录并开始新的连射，不提前引爆。旧批次的在途子弹不能重新建立已取消的记录。目标或若藻死亡、离图，或者蓄积状态被移除时取消记录。不同施法者的标记分别保存和累计。
+
+## 定向命中特效
+
+`BANWlLib.Projectiles.SubEffecter_DirectionalImpactMote` 直接读取子节点 `positionOffset` 和 `speed`。例如 `<positionOffset>(0, 0.5, 0)</positionOffset>` 表示垂直绘制偏移0.5；顺序为Unity的X、Y高度、Z地图纵向。`<speed>0</speed>` 表示原地播放，不再被弹丸扩展中的速度覆盖。延迟节点保留命中瞬间的方向与位置。

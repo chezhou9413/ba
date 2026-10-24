@@ -138,7 +138,8 @@ namespace BANWlLib.BattleSystem
                 }
 
                 //星野的受伤型伤害在部位减伤后扣盾，其他护盾保留原有结算规则。
-                if (shield is Skills.HediffComp_HoshinoShield && dinfo.Def.Worker is DamageWorker_AddInjury)
+                if (shield is Skills.HediffComp_HoshinoShield &&
+                    (dinfo.Def.Worker is DamageWorker_AddInjury || !Skills.HoshinoInterceptor.CanBlockDamage(__instance, dinfo)))
                     continue;
 
                 if (!shield.TryAbsorbDamage(dinfo.Amount))

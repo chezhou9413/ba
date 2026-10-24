@@ -12,19 +12,37 @@ namespace BANWlLib.Skills
         //在角色当前位置触发一次特效。
         public static void Trigger(EffecterDef def, Thing target)
         {
-            if (target?.Map != null) Trigger(def, target.Position, target.Map);
+            if (def != null && target?.Map != null) Trigger(def, new TargetInfo(target));
         }
 
         //将控制器交给地图维护，让延迟和持续子特效有机会完成播放。
         public static void Trigger(EffecterDef def, IntVec3 cell, Map map)
         {
             if (def == null || map == null) return;
+            Trigger(def, new TargetInfo(cell, map));
+        }
+
+        //保留实体锚点，让附着子特效在整个生命周期内跟随角色。
+        private static void Trigger(EffecterDef def, TargetInfo point)
+        {
             Effecter effecter = def.Spawn();
-            TargetInfo point = new TargetInfo(cell, map);
             effecter.Trigger(point, point);
-            int delay = def.children.NullOrEmpty() ? 0 : def.children.Max(child => child.initialDelayTicks);
-            map.effecterMaintainer.AddEffecterToMaintain(effecter, point, point,
-                System.Math.Max(def.maintainTicks, delay + 1));
+            point.Map.effecterMaintainer.AddEffecterToMaintain(effecter, point, point, DurationTicks(def));
+        }
+
+        //维护到最后一个延迟子节点播放完，粒子本身仍使用各自配置的完整时长。
+        public static int DurationTicks(EffecterDef def)
+        {
+            return Mathf.Max(1, def.maintainTicks,
+                def.children.NullOrEmpty() ? 0 : def.children.Max(ChildDuration));
+        }
+
+        //组合子节点按延迟加粒子寿命计算，不用统一一秒截断。
+        private static int ChildDuration(SubEffecterDef child)
+        {
+            float seconds = Mathf.Max(child.moteDef?.mote?.Lifespan ?? 0f, child.fleckDef?.Lifetime ?? 0f);
+            int nested = child.children.NullOrEmpty() ? 0 : child.children.Max(ChildDuration);
+            return child.initialDelayTicks + Mathf.Max(1, Mathf.CeilToInt(seconds * 60f), nested);
         }
 
         //读取充能阶段绑定的特效，不使用静默替换。
@@ -37,7 +55,8 @@ namespace BANWlLib.Skills
         public static void Cast(Hediff_SpecialSkillState state, SpecialSkillCommand command, LocalTargetInfo target)
         {
             if (state.profile.role == SpecialSkillRole.Hoshino &&
-                (command == SpecialSkillCommand.SwitchForm || command == SpecialSkillCommand.Normal)) return;
+                (command == SpecialSkillCommand.SwitchForm || command == SpecialSkillCommand.Normal ||
+                 command == SpecialSkillCommand.AlternateEx)) return;
             if (state.profile.role == SpecialSkillRole.Nero && command != SpecialSkillCommand.AlternateEx) return;
             var channel = state.pawn.jobs.curDriver as JobDriver_NeroExChannel;
             if (state.profile.role == SpecialSkillRole.Nero && channel != null)

@@ -11,7 +11,9 @@ namespace BANWlLib.Skills
         public static void Cast(Hediff_SpecialSkillState s, Pawn target)
         {
             Clear(s);
-            SpecialCombatUtility.Schedule(s, target, s.profile.exAttack, startRecord: true);
+            SpecialCombatUtility.Schedule(s, target, s.profile.exAttack, startRecord: true,
+                castingJob: s.pawn.CurJob, retainTargetPosition: true);
+            s.castEndTick = s.Now + s.profile.exAttack.ShotDelay(s.profile.exAttack.shots - 1);
         }
 
         //首发有效伤害后附加状态并计入首发金额，后续伤害由公共事件统一累计。

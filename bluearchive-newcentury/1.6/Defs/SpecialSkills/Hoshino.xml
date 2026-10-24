@@ -66,6 +66,7 @@
       <outputTrait>BAWC_TraitDef_Attack</outputTrait><tankTrait>BAWC_TraitDef_Tank</tankTrait>
       <backpackApparel>BANW_Body_Hoshiro_Bag</backpackApparel>
       <shieldApparel>BANW_Body_Hoshiro_Shield</shieldApparel>
+      <defenseEffecter>BANW_Effecter_B</defenseEffecter>
       <interceptEffecter>BANW_Effecter_C</interceptEffecter>
       <!-- 每个动作独立设置自身EffecterDef、SoundDef和维持tick；声音留空即不播放。 -->
       <!-- 四个动作使用各自的特效定义和声音，编辑其中一项不会改变其他动作。 -->
@@ -77,7 +78,6 @@
       <empoweredShotEffecter>BANW_Effecter_Hoshino_EmpoweredShot</empoweredShotEffecter>
       <!-- 强化普攻以星野为起点，朝射击方向展开；夹角单位为度，长度沿用主武器射程。 -->
       <empoweredFanArc>30</empoweredFanArc>
-      <effectSpeed>20</effectSpeed>
       <effectOffsetForward>0.6</effectOffsetForward>
       <effectOffsetUp>0</effectOffsetUp>
       <empoweredAttack>

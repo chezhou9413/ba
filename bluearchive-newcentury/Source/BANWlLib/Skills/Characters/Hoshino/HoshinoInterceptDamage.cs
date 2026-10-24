@@ -7,8 +7,19 @@ namespace BANWlLib.Skills
     //将被拦截弹丸的一次本体伤害送入星野的护盾结算，不引发爆炸或追加命中效果。
     public static class HoshinoInterceptDamage
     {
-        //保留技能快照和普通武器公式，避免把技能弹的占位伤害当成真实扣盾量。
+        public static Pawn InterceptingPawn { get; private set; }
+
+        //外沿已经判定真实弹道入射方向，结算期间保留该判定而不改用发射者位置。
         public static void Apply(Projectile projectile, Pawn target)
+        {
+            Pawn previous = InterceptingPawn;
+            InterceptingPawn = target;
+            try { ApplyDamage(projectile, target); }
+            finally { InterceptingPawn = previous; }
+        }
+
+        //保留技能快照和普通武器公式，避免把技能弹的占位伤害当成真实扣盾量。
+        private static void ApplyDamage(Projectile projectile, Pawn target)
         {
             if (projectile is Projectile_SpecialSkill special && special.attack != null)
             {

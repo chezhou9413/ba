@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- 输出形态切换的独立特效；声音在Hoshino.xml对应动作的sound字段设置。 -->
+  <EffecterDef>
+    <defName>BANW_Hoshino_SwitchOutput</defName>
+    <maintainTicks>120</maintainTicks>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_Effect_BA_A</fleckDef>
+        <burstCount>1</burstCount>
+        <initialDelayTicks>0</initialDelayTicks>
+        <positionRadius>0</positionRadius>
+        <scale>1</scale>
+        <positionOffset>(0,0.4,0)</positionOffset>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+  </EffecterDef>
+  <!-- 防御形态切换的独立特效；声音在Hoshino.xml对应动作的sound字段设置。 -->
+  <EffecterDef>
+    <defName>BANW_Hoshino_SwitchTank</defName>
+    <maintainTicks>120</maintainTicks>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_Effect_BA_A</fleckDef>
+        <burstCount>1</burstCount>
+        <initialDelayTicks>0</initialDelayTicks>
+        <positionRadius>0</positionRadius>
+        <scale>1</scale>
+        <positionOffset>(0,0.4,0)</positionOffset>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+  </EffecterDef>
+  <!-- 输出普通技能的独立特效；声音在Hoshino.xml对应动作的sound字段设置。 -->
+  <EffecterDef>
+    <defName>BANW_Hoshino_OutputNormal</defName>
+    <maintainTicks>120</maintainTicks>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_Effect_BA_A</fleckDef>
+        <burstCount>1</burstCount>
+        <initialDelayTicks>0</initialDelayTicks>
+        <positionRadius>0</positionRadius>
+        <scale>1</scale>
+        <positionOffset>(0,0.4,0)</positionOffset>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+  </EffecterDef>
+  <!-- 防御普通技能的独立特效；声音在Hoshino.xml对应动作的sound字段设置。 -->
+  <EffecterDef>
+    <defName>BANW_Hoshino_TankNormal</defName>
+    <maintainTicks>120</maintainTicks>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BAWN_Effect_BA_A</fleckDef>
+        <burstCount>1</burstCount>
+        <initialDelayTicks>0</initialDelayTicks>
+        <positionRadius>0</positionRadius>
+        <scale>1</scale>
+        <positionOffset>(0,0.4,0)</positionOffset>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>

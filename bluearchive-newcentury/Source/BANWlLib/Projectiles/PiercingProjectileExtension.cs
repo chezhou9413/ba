@@ -34,7 +34,6 @@ namespace BANWlLib.Projectiles
         public EffecterDef directionalImpactEffect;
         public bool directionalImpactOnPawn = true;
         public bool directionalImpactOnBuilding = true;
-        public float directionalImpactSpeed = 8f;
         public float directionalImpactOffsetForward = 0.2f;
         public float directionalImpactOffsetUp = 0.4f;
         public float startDrawScale = 1f;

@@ -17,7 +17,7 @@ namespace BANWlLib.Skills
             float angle = attack.impactDirection.AngleFlat();
             Effecter effect = def.Spawn();
             TargetInfo point = new TargetInfo(cell, map);
-            int maintainTicks = Math.Max(1, def.maintainTicks);
+            int maintainTicks = SpecialEffects.DurationTicks(def);
             for (int i = 0; i < effect.children.Count; i++)
             {
                 SubEffecterDef childDef = def.children[i];
@@ -44,7 +44,7 @@ namespace BANWlLib.Skills
         {
             if (hit == null) return;
             var action = attack.action;
-            DirectionalImpactEffectContext.Register(hit, attack.impactDirection, action.impactEffectSpeed,
+            DirectionalImpactEffectContext.Register(hit, attack.impactDirection,
                 action.impactOffsetForward, action.impactOffsetUp);
             try
             {

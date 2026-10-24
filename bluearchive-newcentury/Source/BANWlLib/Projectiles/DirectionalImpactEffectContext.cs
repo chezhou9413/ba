@@ -10,7 +10,7 @@ namespace BANWlLib.Projectiles
         private static readonly Dictionary<int, DirectionalImpactEffectData> dataByThingId = new Dictionary<int, DirectionalImpactEffectData>();
 
         //注册命中特效参数，让同一帧触发的 SubEffecter 能读取命中方向。
-        public static void Register(Thing target, Vector3 direction, float speed, float offsetForward, float offsetUp)
+        public static void Register(Thing target, Vector3 direction, float offsetForward, float offsetUp)
         {
             if (target == null)
             {
@@ -27,7 +27,6 @@ namespace BANWlLib.Projectiles
             dataByThingId[target.thingIDNumber] = new DirectionalImpactEffectData
             {
                 direction = normalizedDirection,
-                speed = speed,
                 offsetForward = offsetForward,
                 offsetUp = offsetUp
             };
@@ -50,11 +49,10 @@ namespace BANWlLib.Projectiles
         }
     }
 
-    //方向命中特效数据，保存一次命中需要的飞行方向、速度和生成偏移。
+    //方向命中特效数据，保存一次命中需要的方向和生成偏移。
     public struct DirectionalImpactEffectData
     {
         public Vector3 direction;
-        public float speed;
         public float offsetForward;
         public float offsetUp;
     }

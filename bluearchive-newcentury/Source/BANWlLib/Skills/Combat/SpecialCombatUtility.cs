@@ -46,7 +46,7 @@ namespace BANWlLib.Skills
             float multiplier = 1f, bool drone = false, float resolved = -1f, bool startRecord = false,
             EffecterDef impactEffecter = null, int extraDelay = 0, IntVec3? center = null, bool normalHit = false,
             Thing excludedTarget = null, List<IntVec3> areaCells = null, Verse.AI.Job castingJob = null,
-            bool resolvedCritical = false)
+            bool resolvedCritical = false, bool retainTargetPosition = false)
         {
             if (action == null || state.pawn.Map == null) return;
             var snapshot = BattleStatUtility.CreateSnapshot(state.pawn);
@@ -62,6 +62,7 @@ namespace BANWlLib.Skills
                     recordCastId = startRecord ? state.wakamo.castId : 0, resolvedCritical = resolvedCritical,
                     droneOrigin = drone, impactEffecter = impactEffecter, normalHit = normalHit,
                     castingJob = castingJob,
+                    retainTargetPosition = retainTargetPosition, lastTargetCell = target?.Position ?? center ?? IntVec3.Invalid,
                     center = center ?? IntVec3.Invalid, excludedTarget = excludedTarget, areaCells = areaCells
                 });
         }
@@ -81,26 +82,29 @@ namespace BANWlLib.Skills
         //发射技能弹丸或直接执行配置中的伤害段。
         public static void Launch(SpecialPendingAttack attack, Map map)
         {
-            if (attack.target != null && (attack.target.Destroyed || !attack.target.Spawned || attack.target.Map != map))
+            if (!attack.retainTargetPosition && attack.target != null &&
+                (attack.target.Destroyed || !attack.target.Spawned || attack.target.Map != map))
             { attack.Complete(); return; }
             if (attack.droneOrigin && attack.target is Pawn victim && victim.Dead)
             { attack.Complete(); return; }
-            IntVec3 cell = attack.center.IsValid ? attack.center : attack.target?.Position ?? IntVec3.Invalid;
+            LocalTargetInfo focus = attack.center.IsValid ? new LocalTargetInfo(attack.center) :
+                attack.retainTargetPosition ? SpecialBurstTarget.Resolve(attack.target, map, ref attack.lastTargetCell) :
+                attack.target != null ? new LocalTargetInfo(attack.target) : LocalTargetInfo.Invalid;
+            IntVec3 cell = focus.Cell;
             if (!cell.IsValid || !cell.InBounds(map)) { attack.Complete(); return; }
             Vector3 origin = attack.droneOrigin ? DroneRenderer.Position(attack.state) : attack.caster.DrawPos;
             attack.impactDirection = (cell.ToVector3Shifted() - origin).Yto0().normalized;
             attack.action.shotSound?.PlayOneShot(new TargetInfo(origin.ToIntVec3(), map));
             if (attack.action.projectileDef == null)
             {
-                Impact(attack, attack.target, cell, map);
+                Impact(attack, focus.Thing, cell, map);
                 attack.Complete();
                 return;
             }
             var projectile = (Projectile_SpecialSkill)ThingMaker.MakeThing(attack.action.projectileDef);
             projectile.attack = attack;
             GenSpawn.Spawn(projectile, origin.ToIntVec3(), map);
-            LocalTargetInfo target = attack.target != null ? new LocalTargetInfo(attack.target) : new LocalTargetInfo(cell);
-            projectile.Launch(attack.caster, origin, target, target, ProjectileHitFlags.IntendedTarget);
+            projectile.Launch(attack.caster, origin, focus, focus, ProjectileHitFlags.IntendedTarget);
         }
 
         //按实际命中位置处理单体或范围效果，伤害附加状态交给每次真实扣血处理。

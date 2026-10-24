@@ -55,7 +55,8 @@
       <radius>0</radius>
       <!-- 连射发数：6发，总倍率由这6发均分。 -->
       <shots>6</shots>
-      <!-- 连射间隔：6 tick = 0.1秒一发；第n发在生效后 1 + n×6 tick 射出。 -->
+      <!-- 逐发时刻与起手动画后的连射及245 tick收尾对齐。 -->
+      <shotTicks><li>181</li><li>193</li><li>205</li><li>217</li><li>229</li><li>245</li></shotTicks>
       <shotIntervalTicks>12</shotIntervalTicks>
       <!-- 弹丸 Def；若藻EX校验要求必须配置弹丸（单体连射）。 -->
       <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
@@ -104,6 +105,7 @@
   <AbilityDef>
     <!-- 技能按钮唯一标识，被 profile 的 primaryAbility 与 comps 引用。 -->
     <defName>BANW_Special_Wakamo_Ex</defName>
+    <jobDef>BANW_Job_WakamoExChannel</jobDef>
     <!-- 按钮显示名。 -->
     <label>深红花占</label>
     <!-- 鼠标悬停说明；文本必须紧跟标签，首字符不能是空白，否则报 description has leading whitespace。 -->
@@ -352,8 +354,7 @@
         <directionalImpactOnPawn>true</directionalImpactOnPawn>
         <!-- 是否对 Building 触发方向命中特效。 -->
         <directionalImpactOnBuilding>true</directionalImpactOnBuilding>
-        <!-- 方向命中特效飞出速度。 -->
-        <directionalImpactSpeed>1</directionalImpactSpeed>
+        <!-- 飞出速度在directionalImpactEffect的子节点speed中配置。 -->
         <!-- 方向命中特效沿弹道方向向前偏移。 -->
         <directionalImpactOffsetForward>0</directionalImpactOffsetForward>
         <!-- 方向命中特效向上偏移，避免埋进地面。 -->
@@ -373,4 +374,11 @@
       </li>
     </modExtensions>
   </ThingDef>
+  <JobDef>
+    <defName>BANW_Job_WakamoExChannel</defName>
+    <driverClass>BANWlLib.Skills.JobDriver_WakamoExChannel</driverClass>
+    <reportString>正在瞄准并施放若藻EX。</reportString>
+    <abilityCasting>true</abilityCasting>
+    <neverShowWeapon>true</neverShowWeapon>
+  </JobDef>
 </Defs>

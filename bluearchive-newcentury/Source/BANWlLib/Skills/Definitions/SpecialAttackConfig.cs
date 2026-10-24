@@ -16,7 +16,6 @@ namespace BANWlLib.Skills
         public int buffDurationTicks = -1;
         public bool rotateImpactEffect;
         public float impactRotationOffset;
-        public float impactEffectSpeed;
         public float impactOffsetForward;
         public float impactOffsetUp;
 
@@ -46,7 +45,6 @@ namespace BANWlLib.Skills
             Scribe_Values.Look(ref buffDurationTicks, "buffDurationTicks", -1);
             Scribe_Values.Look(ref rotateImpactEffect, "rotateImpactEffect");
             Scribe_Values.Look(ref impactRotationOffset, "impactRotationOffset");
-            Scribe_Values.Look(ref impactEffectSpeed, "impactEffectSpeed");
             Scribe_Values.Look(ref impactOffsetForward, "impactOffsetForward");
             Scribe_Values.Look(ref impactOffsetUp, "impactOffsetUp");
         }

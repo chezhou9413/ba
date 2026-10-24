@@ -14,7 +14,8 @@ namespace BANWlLib.Skills
         {
             __state = HoshinoWeaponUtility.State(__instance);
             if (__state == null) return true;
-            if (__state.castEndTick >= __state.Now) { __result = false; return false; }
+            if (__state.castEndTick >= __state.Now || __state.hoshino.outputExCasting ||
+                __state.pawn.jobs.curDriver is JobDriver_HoshinoExChannel) { __result = false; return false; }
             if (__state.stage != 0 || !__state.hoshino.empoweredBurst) return true;
             __result = HoshinoEmpoweredAttack.Fire(__instance, __state);
             if (__result)

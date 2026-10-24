@@ -27,13 +27,12 @@ namespace BANWlLib.Skills
                 else child.SubTrigger(source, focus);
             }
             //方向子节点由地图队列托管，其余延迟子节点保留原版EffectTick生命周期。
-            int lastDelay = def.children.NullOrEmpty() ? 0 : def.children.Max(child => child.initialDelayTicks);
-            int maintainTicks = Math.Max(minimumTicks, Math.Max(def.maintainTicks, 1 + lastDelay));
+            int maintainTicks = Math.Max(minimumTicks, SpecialEffects.DurationTicks(def));
             map.effecterMaintainer.AddEffecterToMaintain(effect, source, focus, maintainTicks);
         }
 
         //读取本次目标的视觉方向，自身施法时使用当前瞄准目标或角色朝向。
-        private static float AimAngle(Pawn caster, LocalTargetInfo target)
+        public static float AimAngle(Pawn caster, LocalTargetInfo target)
         {
             if (!target.IsValid || target.Thing == caster || target.Cell == caster.Position)
             {

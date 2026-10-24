@@ -10,6 +10,9 @@ namespace BANWlLib.Skills
     //爱丽丝EX施法工作，保持直线瞄准直到最后一段伤害完成。
     public class JobDriver_ArisuExChannel : JobDriver_CastAbility
     {
+        //自身充能期间禁止玩家指令打断，对敌光束仍允许移动。
+        public override bool PlayerInterruptable => job.targetA.Thing != pawn && base.PlayerInterruptable;
+
         //开始EX时停止主武器连射，避免引导期间继续普通攻击。
         public override void Notify_Starting()
         {

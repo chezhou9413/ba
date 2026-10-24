@@ -51,7 +51,8 @@ namespace BANWlLib.Skills
             if (s.profile.role == SpecialSkillRole.Arisu) return ArisuNormalSkill.TryCast(s);
             if (s.profile.role == SpecialSkillRole.Kei) return KeiNormalSkill.TryStart(s);
             if (s.profile.role == SpecialSkillRole.Hoshino &&
-                (s.stage != 0 || s.castEndTick >= s.Now || s.hits < s.profile.hoshino.normalRequiredShots)) return false;
+                (s.stage != 0 || s.castEndTick >= s.Now || s.hoshino.outputExCasting ||
+                 s.pawn.jobs.curDriver is JobDriver_HoshinoExChannel || s.hits < s.profile.hoshino.normalRequiredShots)) return false;
             Pawn target = SpecialCombatUtility.FindEnemy(s.pawn, s.profile.range);
             if (target == null) return false;
             switch (s.profile.role)

@@ -105,6 +105,8 @@ namespace BANWlLib.Skills
             if (profile.role == SpecialSkillRole.Wakamo) { CleanupEffect(); return; }
             bool charged = profile.role == SpecialSkillRole.Arisu && stage > 0;
             EffecterDef effect = charged ? profile.arisu.chargeStateEffecters?[stage - 1] : profile.stateEffecter;
+            if (profile.role == SpecialSkillRole.Hoshino)
+                effect = stage == 1 && HoshinoInterceptor.HasShield(this) ? profile.hoshino.defenseEffecter : null;
             if (maintainedDef != effect) CleanupEffect();
             if (pawn.Spawned && !pawn.Dead && (Active || charged) && effect != null)
             {

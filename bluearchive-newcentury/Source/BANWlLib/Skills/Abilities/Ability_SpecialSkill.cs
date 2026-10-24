@@ -17,6 +17,12 @@ namespace BANWlLib.Skills
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest)
         {
             var effect = CompOfType<CompAbilityEffect_SpecialSkill>();
+            if (effect.Props.profile.role == SpecialSkillRole.Wakamo &&
+                (!(pawn.jobs.curDriver is JobDriver_WakamoExChannel) || pawn.CurJob.ability != this))
+            {
+                Log.Error("若藻EX必须通过JobDriver_WakamoExChannel施法");
+                return false;
+            }
             if (effect.Props.profile.role == SpecialSkillRole.Hoshino && effect.Props.command == SpecialSkillCommand.Ex &&
                 (!(pawn.jobs.curDriver is JobDriver_HoshinoExChannel) || pawn.CurJob.ability != this))
             {

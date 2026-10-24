@@ -15,7 +15,8 @@ namespace BANWlLib.Skills
             var state = Hediff_SpecialSkillState.Find(pawn, SpecialSkillRole.Hoshino);
             foreach (var entry in __result)
             {
-                if (state != null && entry.node.apparel?.def == state.profile.hoshino.shieldApparel)
+                if (state != null && entry.node.apparel?.def.defName == "BANW_Body_Hoshiro_Shield" &&
+                    entry.node.apparel.def == state.profile.hoshino.shieldApparel)
                     entry.node.Props.workerClass = typeof(PawnRenderNodeWorker_HoshinoShield);
                 yield return entry;
             }

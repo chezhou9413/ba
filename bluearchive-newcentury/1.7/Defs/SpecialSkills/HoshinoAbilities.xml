@@ -116,6 +116,8 @@
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <!-- 施法动词参数：防御EX支持选点位移。 -->
     <verbProperties>
+      <!-- 位移只检查落点，不被途中树木或岩石遮挡。 -->
+      <requireLineOfSight>false</requireLineOfSight>
       <soundCast>Hoshiro_B_B_Skill_EXX</soundCast>
       <warmupEffecter>BANW_Hoshiro_B_D_Ef_B</warmupEffecter>
       <!-- 标准施法动词。 -->
