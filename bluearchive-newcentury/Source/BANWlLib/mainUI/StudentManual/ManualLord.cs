@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.MonoComp;
 using BANWlLib.mainUI.pojo;
@@ -17,17 +15,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.StudentManual
@@ -60,9 +49,6 @@ namespace BANWlLib.mainUI.StudentManual
             lordStudentDef();
             lordPrefab();
             lordStudentlist();
-#if !RW_1_7
-            ManualMapData.ManualScrollView.AddComponent<StudentResetList>();
-#endif
             ManualMapData.StudentManual.transform.Find("cangkulizt").transform.Find("typeButtm").gameObject.AddComponent<StudentTypeButtomController>();
             lordPawnRef();
             addSelectDetails();
@@ -71,21 +57,7 @@ namespace BANWlLib.mainUI.StudentManual
         //为当前引擎建立学生列表，虚拟网格仅创建视口附近的卡片。
         public static void lordStudentlist()
         {
-#if RW_1_7
             ManualMapData.ManualScrollView.AddComponent<StudentVirtualGrid>();
-#else
-            ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
-            foreach (BaStudentUI baStudentUI in ManualMapData.studentUIList)
-            {
-
-                GameObject studentItem = GameObject.Instantiate(ManualMapData.StudentListOBJ);
-                studentItem.transform.SetParent(ManualMapData.ManualScrollView.transform, false);
-                StudentListShow studentListShow = studentItem.AddComponent<StudentListShow>();
-                studentListShow.BaStudentUI = baStudentUI;
-                studentListShow.studentData = StudentRosterUtility.GetStudentData(tracker, baStudentUI.StudentId);
-            }
-            StudentManualEvents.resetUIlistRefresh();
-#endif
         }
 
         public static void lordPrefab()

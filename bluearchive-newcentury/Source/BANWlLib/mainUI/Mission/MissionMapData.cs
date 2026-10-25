@@ -1,16 +1,9 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.mainUI.Mission.MonoComp;
 using BANWlLib.Tool;
 using System.Collections.Generic;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 
 namespace BANWlLib.mainUI.Mission
 {

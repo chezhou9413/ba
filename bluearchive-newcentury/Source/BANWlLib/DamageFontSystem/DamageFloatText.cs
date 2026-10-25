@@ -1,19 +1,8 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using System.Collections;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 
 namespace BANWlLib.DamageFontSystem
 {

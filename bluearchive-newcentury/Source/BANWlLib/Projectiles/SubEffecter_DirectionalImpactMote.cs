@@ -28,7 +28,9 @@ namespace BANWlLib.Projectiles
                 return;
             }
 
-            Vector3 spawnPosition = target.DrawPos + def.positionOffset +
+            //偏移以弹道的右方、绘制高度、前方为轴；固定地图偏移由 absoluteAngle 指定。
+            Vector3 offset = def.absoluteAngle ? def.positionOffset : def.positionOffset.RotatedBy(data.direction.AngleFlat());
+            Vector3 spawnPosition = target.DrawPos + offset +
                 data.direction * data.offsetForward + Vector3.up * data.offsetUp;
             DirectionalImpactMoteDelayComponent.SpawnOrQueue(map, spawnPosition, data, def, overrideSpawnTick);
         }

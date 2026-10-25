@@ -9,22 +9,22 @@
     <RootNamespace>MuiceLib</RootNamespace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <GenerateDependencyFile>false</GenerateDependencyFile>
-    <DebugType>portable</DebugType>
-    <RimWorldGamePath>$(MSBuildThisFileDirectory)..\..\..\..\..\</RimWorldGamePath>
-    <HarmonyPath>$(RimWorldGamePath)..\..\workshop\content\294100\2009463077\1.7\Assemblies\0Harmony.dll</HarmonyPath>
+    <DebugType>none</DebugType>
+    <RimWorldGamePath Condition="'$(RimWorldGamePath)' == ''">E:/steam/steamapps/common/RimWorld</RimWorldGamePath>
+    <HarmonyPath>$(RimWorldGamePath)/../../workshop/content/294100/2009463077/1.7/Assemblies/0Harmony.dll</HarmonyPath>
     <OutputPath>$(MSBuildThisFileDirectory)..\..\1.7\Assemblies\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>$(RimWorldGamePath)Assembly-CSharp.dll</HintPath>
+      <HintPath>$(RimWorldGamePath)/Assembly-CSharp.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityStubs">
-      <HintPath>$(RimWorldGamePath)UnityStubs.dll</HintPath>
+      <HintPath>$(RimWorldGamePath)/UnityStubs.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Waylith">
-      <HintPath>$(RimWorldGamePath)Waylith.dll</HintPath>
+      <HintPath>$(RimWorldGamePath)/Waylith.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="0Harmony">

@@ -26,8 +26,11 @@ namespace BANWlLib.Skills
                     return "\n普通技能宿主攻击：" + Formula(state.pawn, profile.normalAttack) +
                         (state.Active ? "\n无人机连射：" + Formula(state.pawn, profile.burstAttack) : "");
                 case SpecialSkillRole.Kei:
-                    return "\n普通技能释放金额：" + UnityEngine.Mathf.Min(state.recorded, state.recordCap).ToString("0.##") +
-                        "（按已蓄积金额释放，命中后仍处理护甲、闪避与护盾）";
+                    return "\n普通技能攻击力伤害：" + Formula(state.pawn, profile.normalAttack) +
+                        "\n普通技能记录伤害：" +
+                        (UnityEngine.Mathf.Min(state.recorded, state.recordCap) * profile.burstAttack.attackPowerRatio).ToString("0.##") +
+                        "（记录量×" + profile.burstAttack.attackPowerRatio.ToString("0.##") +
+                        "，独立结算，命中后仍处理护甲、闪避与护盾）";
                 case SpecialSkillRole.Wakamo:
                     return "\n蓄积爆发采用目标标记中锁定的换算倍率和暴击结果，到期按标记显示金额释放。";
                 default: return "";

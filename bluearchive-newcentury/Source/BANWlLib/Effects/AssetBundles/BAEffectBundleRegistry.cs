@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Reflection;
 using UnityEngine;
 using Verse;
 
 namespace BANWlLib.Effects.AssetBundles
 {
-    //特效 AB 注册表，按 texPath 加载贴图、创建材质并按空闲时间释放资源。
+    //特效资源注册表，按texPath加载RimUnity贴图、创建材质并按空闲时间释放资源。
     public static class BAEffectBundleRegistry
     {
         private const int CleanupIntervalTicks = 300;
@@ -127,7 +126,7 @@ namespace BANWlLib.Effects.AssetBundles
             lastCleanupTick = int.MinValue / 2;
         }
 
-        //加载或复用记录，创建 AB、读取包内贴图并记录路径。
+        //从RimUnity清单加载或复用贴图，保留可独立释放的资源记录。
         private static BAEffectBundleRecord GetOrLoadRecord(string texPath)
         {
             CleanupIfNeeded();
@@ -137,49 +136,8 @@ namespace BANWlLib.Effects.AssetBundles
                 return existing;
             }
 
-#if RW_1_7
             var owned = RimUnity.Assets.AssetLoader.LoadOwnedTexture(LoadedModManager.GetMod<BANWlLib.newpro>().Content, "Effects/" + texPath);
             var record = new BAEffectBundleRecord { texPath = texPath, ownedTexture = owned, texture = RimUnity.Assets.HostAssets.ToHost(owned) };
-#else
-            string bundlePath = BAEffectPathUtility.GetBundlePath(texPath);
-            if (!File.Exists(bundlePath))
-            {
-                Log.Error("[BA特效AB] 缺少 AB 文件：" + bundlePath);
-                return null;
-            }
-
-            string assetPath = BAEffectPathUtility.GetAssetPathFromManifest(bundlePath);
-            if (string.IsNullOrWhiteSpace(assetPath))
-            {
-                return null;
-            }
-
-            AssetBundle bundle = AssetBundle.LoadFromFile(bundlePath);
-            if (bundle == null)
-            {
-                Log.Error("[BA特效AB] AssetBundle.LoadFromFile 失败：" + bundlePath);
-                return null;
-            }
-
-            Texture2D texture = bundle.LoadAsset<Texture2D>(assetPath);
-            if (texture == null)
-            {
-                bundle.Unload(true);
-                Log.Error("[BA特效AB] 包内找不到贴图资源：" + assetPath + " in " + bundlePath);
-                return null;
-            }
-
-            texture.wrapMode = TextureWrapMode.Clamp;
-            texture.filterMode = FilterMode.Bilinear;
-            BAEffectBundleRecord record = new BAEffectBundleRecord
-            {
-                texPath = texPath,
-                bundlePath = bundlePath,
-                assetPath = assetPath,
-                bundle = bundle,
-                texture = texture
-            };
-#endif
             Touch(record);
             records[texPath] = record;
             return record;
@@ -278,17 +236,8 @@ namespace BANWlLib.Effects.AssetBundles
             }
 
             record.materials.Clear();
-#if RW_1_7
             RimUnity.Object.Destroy(record.ownedTexture);
             record.ownedTexture = null;
-#else
-            if (record.bundle != null)
-            {
-                record.bundle.Unload(true);
-            }
-
-            record.bundle = null;
-#endif
             record.texture = null;
         }
     }

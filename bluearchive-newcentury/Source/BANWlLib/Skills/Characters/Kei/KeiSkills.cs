@@ -41,7 +41,7 @@ namespace BANWlLib.Skills
             if (s.releaseReady && s.pawn.Spawned) SpecialSkillDispatcher.TryNormal(s);
         }
 
-        //释放已确定的累计伤害，清空记录并允许下一次EX。
+        //同次施法分别发射攻击力伤害与蓄积伤害，消耗一次释放机会。
         public static void Release(Hediff_SpecialSkillState s, Pawn target)
         {
             float amount = Mathf.Min(s.recorded, s.recordCap);
@@ -51,7 +51,9 @@ namespace BANWlLib.Skills
             config.castSound?.PlayOneShot(new TargetInfo(s.pawn));
             SpecialDirectionalEffects.Trigger(config.casterEffecter, s.pawn, target);
             SpecialEffects.Trigger(config.targetEffecter, target);
-            SpecialCombatUtility.Schedule(s, target, s.profile.burstAttack, resolved: amount);
+            SpecialCombatUtility.Schedule(s, target, s.profile.normalAttack);
+            SpecialCombatUtility.Schedule(s, target, s.profile.burstAttack,
+                resolved: amount * s.profile.burstAttack.attackPowerRatio);
         }
     }
 }

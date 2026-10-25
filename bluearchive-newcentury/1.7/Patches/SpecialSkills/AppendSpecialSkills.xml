@@ -158,19 +158,6 @@
       </value>
     </nomatch>
   </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/PawnKindDef[defName="BANW_Hoshiro_B"]/abilities</xpath>
-    <value>
-      <li>BANW_Special_Hoshino_Ex</li>
-      <li>BANW_Special_Hoshino_AlternateEx</li>
-      <li>BANW_Special_Hoshino_SwitchForm</li>
-      <li>BANW_Special_Hoshino_TankNormal</li>
-    </value>
-  </Operation>
-  <Operation Class="PatchOperationAdd">
-    <xpath>Defs/PawnKindDef[defName="BANW_Hoshiro_B"]/modExtensions</xpath>
-    <value><li Class="BANWlLib.Skills.SpecialSkillKindExtension"><profile>BANW_Special_Hoshino</profile></li></value>
-  </Operation>
   <Operation Class="PatchOperationConditional">
     <xpath>Defs/PawnKindDef[defName="BANW_Kei"]/abilities</xpath>
     <match Class="PatchOperationAdd">

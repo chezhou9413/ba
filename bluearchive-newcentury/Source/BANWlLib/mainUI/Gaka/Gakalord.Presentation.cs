@@ -1,15 +1,8 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
 using RimUnity;
 using RimUnity.UI;
 using RimUnity.U2D;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.U2D;
-#endif
 using BANWlLib.mainUI.Gaka.MonoComp;
 using newpro;
 
@@ -74,10 +67,8 @@ namespace BANWlLib.mainUI.Gaka
             {
                 game.SetActive(false);
                 game.GetComponent<Canvas>().worldCamera = UiMapData.mainUI.GetComponent<Canvas>().worldCamera;
-#if RW_1_7
                 game.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
                 BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureGacha(game);
-#endif
                 MonoComp_GakaAnimationPofab animation = game.AddComponent<MonoComp_GakaAnimationPofab>();
                 animation.Initialize(tenGacha);
                 return animation;

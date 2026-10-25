@@ -49,6 +49,9 @@
         <subEffecterClass>BANWlLib.Projectiles.SubEffecter_DirectionalImpactMote</subEffecterClass>
         <speed>20</speed>
         <moteDef>BAWN_Hoshiro_B_1_Mote</moteDef>
+        <!-- 素材发射口在画面左侧，前移绘制中心，使发射口对齐角色枪口。 -->
+        <positionOffset>(0, 0.5, 10)</positionOffset>
+        <absoluteAngle>false</absoluteAngle>
         <initialDelayTicks>0</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
         <rotation>-90</rotation><!-- 贴图轴向校正，最终角度为弹道角度加该值 -->
@@ -58,6 +61,9 @@
         <subEffecterClass>BANWlLib.Projectiles.SubEffecter_DirectionalImpactMote</subEffecterClass>
         <speed>20</speed>
         <moteDef>BAWN_Hoshiro_B_2_Mote</moteDef>
+        <!-- 枪口闪光使用自身尺寸的对齐偏移，不沿用长条特效的前移距离。 -->
+        <positionOffset>(0, 0.5, 1.5)</positionOffset>
+        <absoluteAngle>false</absoluteAngle>
         <initialDelayTicks>0</initialDelayTicks>
         <scale>1</scale>  <!-- 缩放比例，影响特效显示大小 -->
         <rotation>-90</rotation><!-- 贴图轴向校正，最终角度为弹道角度加该值 -->

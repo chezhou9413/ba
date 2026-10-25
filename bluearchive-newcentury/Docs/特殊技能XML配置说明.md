@@ -8,17 +8,17 @@
 
 | 角色 | 正式 PawnKind | 完整配置与 AbilityDef |
 |---|---|---|
-| 妮露 | BANW_Nero | [Nero_B.xml](../1.6/Defs/AbilityDef/Nero_B.xml) |
-| 临战爱丽丝 | BANW_Arisu_B | [Arisu.xml](../1.6/Defs/SpecialSkills/Arisu.xml)、[ArisuNormal.xml](../1.6/Defs/SpecialSkills/ArisuNormal.xml)、[ArisuEffects.xml](../1.6/Defs/SpecialSkills/ArisuEffects.xml) |
-| 黑子 | BANW_Shiroko | [Shiroko.xml](../1.6/Defs/SpecialSkills/Shiroko.xml) |
-| 若藻 | BANW_Wakamo | [Wakamo.xml](../1.6/Defs/SpecialSkills/Wakamo.xml) |
-| 双形态星野 | BANW_Hoshiro | [Hoshino.xml](../1.6/Defs/SpecialSkills/Hoshino.xml)、[HoshinoAbilities.xml](../1.6/Defs/SpecialSkills/HoshinoAbilities.xml) |
-| 凯伊 | BANW_Kei | [Kei.xml](../1.6/Defs/SpecialSkills/Kei.xml) |
-| 莉音 | BANW_Rio | [Rio.xml](../1.6/Defs/SpecialSkills/Rio.xml) |
+| 妮露 | BANW_Nero | [Nero_B.xml](../1.7/Defs/AbilityDef/Nero_B.xml) |
+| 临战爱丽丝 | BANW_Arisu_B | [Arisu.xml](../1.7/Defs/SpecialSkills/Arisu.xml)、[ArisuNormal.xml](../1.7/Defs/SpecialSkills/ArisuNormal.xml)、[ArisuEffects.xml](../1.7/Defs/SpecialSkills/ArisuEffects.xml) |
+| 黑子 | BANW_Shiroko | [Shiroko.xml](../1.7/Defs/SpecialSkills/Shiroko.xml) |
+| 若藻 | BANW_Wakamo | [Wakamo.xml](../1.7/Defs/SpecialSkills/Wakamo.xml) |
+| 双形态星野 | BANW_Hoshiro | [Hoshino.xml](../1.7/Defs/SpecialSkills/Hoshino.xml)、[HoshinoAbilities.xml](../1.7/Defs/SpecialSkills/HoshinoAbilities.xml) |
+| 凯伊 | BANW_Kei | [Kei.xml](../1.7/Defs/SpecialSkills/Kei.xml) |
+| 莉音 | BANW_Rio | [Rio.xml](../1.7/Defs/SpecialSkills/Rio.xml) |
 
-以上文件提供角色机制配置和按钮定义；星野的定向特效另见 [HoshinoEffects.xml](../1.6/Defs/SpecialSkills/HoshinoEffects.xml)。复制为其他技能时，要为各个 Def 设置独立的 defName，并同步修改引用，避免重复定义。
+以上文件提供角色机制配置和按钮定义；星野的定向特效另见 [HoshinoEffects.xml](../1.7/Defs/SpecialSkills/HoshinoEffects.xml)。复制为其他技能时，要为各个 Def 设置独立的 defName，并同步修改引用，避免重复定义。
 
-公共弹丸、护盾、增益与移动载体见 [Shared.xml](../1.6/Defs/SpecialSkills/Shared.xml)。正式角色追加补丁见 [AppendSpecialSkills.xml](../1.6/Patches/SpecialSkills/AppendSpecialSkills.xml)。
+公共弹丸、护盾、增益与移动载体见 [Shared.xml](../1.7/Defs/SpecialSkills/Shared.xml)。正式角色追加补丁见 [AppendSpecialSkills.xml](../1.7/Patches/SpecialSkills/AppendSpecialSkills.xml)。
 
 ## 2. 每个攻击段是否使用 BA 属性
 
@@ -107,7 +107,7 @@ AbilityDef的`targetParams`继续控制生物类型：`canTargetPawns`是Pawn总
 
 | 角色 | 护甲穿透配置位置 |
 |---|---|
-| 妮露 | `1.6/Defs/AbilityDef/Nero_B.xml`：`exAttack.penetration` |
+| 妮露 | `1.7/Defs/AbilityDef/Nero_B.xml`：`exAttack.penetration` |
 | 爱丽丝 | `Arisu.xml`：`exAttack.penetration`；`ArisuNormal.xml`：`attack.penetration`；EX充能倍率不改变穿透 |
 | 黑子 | `Shiroko.xml`：`normalAttack.penetration`、`droneAttack.penetration`、`burstAttack.penetration` |
 | 若藻 | `Wakamo.xml`：`exAttack.penetration`、`burstAttack.penetration`，首段和蓄积爆发独立配置 |

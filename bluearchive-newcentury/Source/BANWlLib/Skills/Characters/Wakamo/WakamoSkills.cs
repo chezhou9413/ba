@@ -7,13 +7,18 @@ namespace BANWlLib.Skills
     //若藻技能，单体连射、伤害附加敌方标记和BA蓄积爆发。
     public static class WakamoSkills
     {
-        //开始独立施法批次，任一子弹首次造成实际伤害时建立标记。
+        //各段按独立参数发射，共用施法批次，首次有效伤害建立标记。
         public static void Cast(Hediff_SpecialSkillState s, Pawn target)
         {
             Clear(s);
-            SpecialCombatUtility.Schedule(s, target, s.profile.exAttack, startRecord: true,
-                castingJob: s.pawn.CurJob, retainTargetPosition: true);
-            s.castEndTick = s.Now + s.profile.exAttack.ShotDelay(s.profile.exAttack.shots - 1);
+            int lastShot = 0;
+            foreach (WakamoAttackStage stage in s.profile.wakamo.exStages)
+            {
+                SpecialCombatUtility.Schedule(s, target, stage.attack, startRecord: true,
+                    extraDelay: stage.delayTicks, castingJob: s.pawn.CurJob, retainTargetPosition: true);
+                lastShot = Mathf.Max(lastShot, stage.delayTicks + stage.attack.ShotDelay(stage.attack.shots - 1));
+            }
+            s.castEndTick = s.Now + lastShot;
         }
 
         //首发有效伤害后附加状态并计入首发金额，后续伤害由公共事件统一累计。
@@ -26,7 +31,8 @@ namespace BANWlLib.Skills
             var result = WakamoBurstCalculator.CalculateUnit(s, target, snapshot);
             var mark = (Hediff_WakamoMark)HediffMaker.MakeHediff(s.profile.buffHediff, target);
             mark.owner = s;
-            mark.rawCap = (s.profile.exAttack.useBattleStats ? snapshot.attackPower : s.profile.exAttack.basePower) * s.profile.recordCapRatio;
+            //蓄积基数取实际建立标记的伤害段，在标记建立后保持不变。
+            mark.rawCap = (attack.action.useBattleStats ? snapshot.attackPower : attack.action.basePower) * s.profile.recordCapRatio;
             mark.damageFactor = result.finalAmount;
             mark.critical = result.isCrit;
             s.recordTarget = target;

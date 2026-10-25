@@ -34,41 +34,148 @@
     <endEffecter></endEffecter>
     <!-- 蓄积状态存续期间挂在被标记敌人身上的循环特效（由标记自行维护与清理）。 -->
     <stateEffecter></stateEffecter>
-    <exAttack>
-      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
-      <useBattleStats>true</useBattleStats>
-      <!-- 不走BA战斗属性（useBattleStats=false）时使用的攻击基数。 -->
-      <basePower>100</basePower>
-      <!-- 本段伤害占攻击力的比例，1 = 100%。 -->
-      <attackPowerRatio>3.25</attackPowerRatio>
-      <!-- 本段伤害类型。 -->
-      <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
-      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>2</penetration>
-      <!-- 按EX技能结算，享受EX相关加成与统计。 -->
-      <isExSkill>true</isExSkill>
-      <!-- 允许暴击（暴击结果与换算在建立标记时锁定）。 -->
-      <canCrit>true</canCrit>
-      <!-- 应用克制（属性相性）加成。 -->
-      <applyAffinity>true</applyAffinity>
-      <!-- 每发作用半径：0 为单体；若藻EX校验要求必须为 0。 -->
-      <radius>0</radius>
-      <!-- 连射发数：6发，总倍率由这6发均分。 -->
-      <shots>6</shots>
-      <!-- 明确逐发时刻，与起手动画结束后的连射及245 tick收尾对齐。 -->
-      <shotTicks><li>181</li><li>193</li><li>205</li><li>217</li><li>229</li><li>245</li></shotTicks>
-      <shotIntervalTicks>12</shotIntervalTicks>
-      <!-- 弹丸 Def；若藻EX校验要求必须配置弹丸（单体连射）。 -->
-      <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
-      <!-- 本段命中时在目标处播放的特效。 -->
-      <effecterDef></effecterDef>
-      <!-- 是否允许选择和伤害敌对及无阵营生物。 -->
-      <affectHostile>true</affectHostile>
-      <!-- 是否影响中立及友好阵营生物（false = 不误伤友方）。 -->
-      <affectFriendly>false</affectFriendly>
-      <!-- 是否允许选择和伤害己方生物（false = 不打自家人）。 -->
-      <canHitOwnPawn>false</canHitOwnPawn>
-    </exAttack>
+    <wakamo>
+      <!-- 每个li独立配置一段攻击；整轮六段合计约325%攻击力。 -->
+      <!-- 发射时刻为delayTicks加段内ShotDelay；未填shotTicks时首发为delayTicks+1。 -->
+      <exStages>
+        <!-- 第1段：前摇结束后第181 tick发射，可独立调整attack中的伤害参数。 -->
+        <li>
+          <delayTicks>180</delayTicks>
+          <attack>
+            <!-- 开启时读取BA攻击力，关闭时使用basePower。 -->
+            <useBattleStats>true</useBattleStats>
+            <basePower>100</basePower>
+            <!-- 本段总倍率；shots大于1时仅在本段内均分，不再除以整轮发数。 -->
+            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <!-- 本段独立的伤害类型。 -->
+            <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
+            <penetration>2</penetration>
+            <isExSkill>true</isExSkill>
+            <canCrit>true</canCrit>
+            <applyAffinity>true</applyAffinity>
+            <!-- 若藻连射为单体弹丸，radius保持0。 -->
+            <radius>0</radius>
+            <shots>1</shots>
+            <shotIntervalTicks>12</shotIntervalTicks>
+            <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
+            <effecterDef></effecterDef>
+            <affectHostile>true</affectHostile>
+            <affectFriendly>false</affectFriendly>
+            <canHitOwnPawn>false</canHitOwnPawn>
+          </attack>
+        </li>
+        <!-- 第2段：前摇结束后第193 tick发射，可独立调整attack中的伤害参数。 -->
+        <li>
+          <delayTicks>192</delayTicks>
+          <attack>
+            <useBattleStats>true</useBattleStats>
+            <basePower>100</basePower>
+            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
+            <penetration>2</penetration>
+            <isExSkill>true</isExSkill>
+            <canCrit>true</canCrit>
+            <applyAffinity>true</applyAffinity>
+            <radius>0</radius>
+            <shots>1</shots>
+            <shotIntervalTicks>12</shotIntervalTicks>
+            <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
+            <effecterDef></effecterDef>
+            <affectHostile>true</affectHostile>
+            <affectFriendly>false</affectFriendly>
+            <canHitOwnPawn>false</canHitOwnPawn>
+          </attack>
+        </li>
+        <!-- 第3段：前摇结束后第205 tick发射，可独立调整attack中的伤害参数。 -->
+        <li>
+          <delayTicks>204</delayTicks>
+          <attack>
+            <useBattleStats>true</useBattleStats>
+            <basePower>100</basePower>
+            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
+            <penetration>2</penetration>
+            <isExSkill>true</isExSkill>
+            <canCrit>true</canCrit>
+            <applyAffinity>true</applyAffinity>
+            <radius>0</radius>
+            <shots>1</shots>
+            <shotIntervalTicks>12</shotIntervalTicks>
+            <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
+            <effecterDef></effecterDef>
+            <affectHostile>true</affectHostile>
+            <affectFriendly>false</affectFriendly>
+            <canHitOwnPawn>false</canHitOwnPawn>
+          </attack>
+        </li>
+        <!-- 第4段：前摇结束后第217 tick发射，可独立调整attack中的伤害参数。 -->
+        <li>
+          <delayTicks>216</delayTicks>
+          <attack>
+            <useBattleStats>true</useBattleStats>
+            <basePower>100</basePower>
+            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
+            <penetration>2</penetration>
+            <isExSkill>true</isExSkill>
+            <canCrit>true</canCrit>
+            <applyAffinity>true</applyAffinity>
+            <radius>0</radius>
+            <shots>1</shots>
+            <shotIntervalTicks>12</shotIntervalTicks>
+            <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
+            <effecterDef></effecterDef>
+            <affectHostile>true</affectHostile>
+            <affectFriendly>false</affectFriendly>
+            <canHitOwnPawn>false</canHitOwnPawn>
+          </attack>
+        </li>
+        <!-- 第5段：前摇结束后第229 tick发射，可独立调整attack中的伤害参数。 -->
+        <li>
+          <delayTicks>228</delayTicks>
+          <attack>
+            <useBattleStats>true</useBattleStats>
+            <basePower>100</basePower>
+            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
+            <penetration>2</penetration>
+            <isExSkill>true</isExSkill>
+            <canCrit>true</canCrit>
+            <applyAffinity>true</applyAffinity>
+            <radius>0</radius>
+            <shots>1</shots>
+            <shotIntervalTicks>12</shotIntervalTicks>
+            <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
+            <effecterDef></effecterDef>
+            <affectHostile>true</affectHostile>
+            <affectFriendly>false</affectFriendly>
+            <canHitOwnPawn>false</canHitOwnPawn>
+          </attack>
+        </li>
+        <!-- 第6段：前摇结束后第245 tick发射，可独立调整attack中的伤害参数。 -->
+        <li>
+          <delayTicks>244</delayTicks>
+          <attack>
+            <useBattleStats>true</useBattleStats>
+            <basePower>100</basePower>
+            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
+            <penetration>2</penetration>
+            <isExSkill>true</isExSkill>
+            <canCrit>true</canCrit>
+            <applyAffinity>true</applyAffinity>
+            <radius>0</radius>
+            <shots>1</shots>
+            <shotIntervalTicks>12</shotIntervalTicks>
+            <projectileDef>BANW_Bullet_Wakamo_EXX</projectileDef>
+            <effecterDef></effecterDef>
+            <affectHostile>true</affectHostile>
+            <affectFriendly>false</affectFriendly>
+            <canHitOwnPawn>false</canHitOwnPawn>
+          </attack>
+        </li>
+      </exStages>
+    </wakamo>
     <burstAttack>
       <!-- 累计伤害作为基础，按若藻BA输出、暴击、克制与EX倍率换算，再显示于敌方状态。 -->
       <useBattleStats>true</useBattleStats>
@@ -94,7 +201,7 @@
       <shotIntervalTicks>6</shotIntervalTicks>
       <!-- 此段直接结算，不生成弹丸。 -->
       <effecterDef>BANW_Wakamo_Ef_B</effecterDef>
-      <!-- 蓄积爆发独立过滤目标；需要完整攻击同类目标时，与exAttack的阵营开关一起设置。 -->
+      <!-- 蓄积爆发独立过滤目标；需要完整攻击同类目标时，与wakamo.exStages各段的阵营开关一起设置。 -->
       <affectHostile>true</affectHostile>
       <!-- 是否影响中立及友好阵营生物（false = 爆发同样不误伤友方）。 -->
       <affectFriendly>false</affectFriendly>

@@ -1,26 +1,11 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using System;
 using System.Collections.Generic;
 using System.Linq;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using global::UnityEngine.Profiling;
-#else
-using UnityEngine.Profiling;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Images
@@ -30,10 +15,8 @@ namespace BANWlLib.mainUI.Images
     {
         private static readonly Dictionary<string, BAUIImageEntry> entries = new Dictionary<string, BAUIImageEntry>(StringComparer.OrdinalIgnoreCase);
         private static readonly HashSet<BAUIImageBinding> bindings = new HashSet<BAUIImageBinding>();
-#if RW_1_7
         private static int pooledLoadFrame = -1;
         private static long pooledLoadTicks;
-#endif
 
         //为图片控件绑定资源路径，控件显示、滚动与关闭时自动管理引用。
         public static void SetImage(Image image, string path)
@@ -45,7 +28,6 @@ namespace BANWlLib.mainUI.Images
             binding.Configure(image, path);
         }
 
-#if RW_1_7
         //虚拟列表已限定卡片数量，预留行提前加载图片，不再逐张轮询视口。
         internal static void SetPooledImage(Image image, string path)
         {
@@ -77,7 +59,6 @@ namespace BANWlLib.mainUI.Images
             pooledLoadTicks += System.Diagnostics.Stopwatch.GetTimestamp() - start;
             return true;
         }
-#endif
 
         //取得一份显示引用；首次引用时读取单张图片，失败只向调用控件报告一次。
         internal static BAUIImageEntry Acquire(string path)
@@ -117,12 +98,8 @@ namespace BANWlLib.mainUI.Images
             //共享图标先交给原版查找，避免同一张技能或物品贴图出现两份内存副本。
             if (texture == null && nativePath != null)
             {
-#if RW_1_7
                 var nativeTexture = ContentFinder<global::UnityEngine.Texture2D>.Get(nativePath, false);
                 texture = nativeTexture != null ? Texture2D.FromNative(nativeTexture.CoreTexture) : null;
-#else
-                texture = ContentFinder<Texture2D>.Get(nativePath, false);
-#endif
                 borrowed = texture != null;
             }
             if (texture == null)
@@ -138,16 +115,9 @@ namespace BANWlLib.mainUI.Images
                     Key = key, Texture = texture, Bundle = bundle, Borrowed = borrowed,
                     Transient = record?.Transient == true || key.IndexOf("/ManuaUI/Live/", StringComparison.OrdinalIgnoreCase) >= 0 ||
                         key.IndexOf("/ManuaUI/Bg/", StringComparison.OrdinalIgnoreCase) >= 0
-#if !RW_1_7
-                        || (long)texture.width * texture.height >= 512 * 1024
-#endif
                         ,
                     Sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100f),
-#if RW_1_7
                     Bytes = texture.storageSizeBytes
-#else
-                    Bytes = Profiler.GetRuntimeMemorySizeLong(texture)
-#endif
                 };
             }
             catch

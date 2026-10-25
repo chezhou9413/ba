@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.mainUI;
 using BANWlLib.CostSystem;
 using BANWlLib.mainUI.Gaka;
@@ -13,22 +11,9 @@ using newpro;
 using RimWorld;
 using System.IO;
 using System.Linq;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.EventSystems;
-#else
-using UnityEngine.EventSystems;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 using BANWlLib.mainUI.Initialization;
 
@@ -59,15 +44,7 @@ namespace BANWlLib
                     UiMapData.costUI = null;
                 }
                 UiMapData.uplodorBundle();
-                string abPath = Path.Combine(
-                      LoadedModManager.GetMod<newpro>().Content.RootDir,
-                      "1.6", "AssetBundles", "bamainui.ab"
-                  );
-#if RW_1_7
                 UiMapData.bundle = AssetBundle.Open();
-#else
-                UiMapData.bundle = AssetBundle.LoadFromFile(abPath);
-#endif
                 timing.Mark("主界面资源包");
                 if (UiMapData.bundle == null)
                 {
@@ -84,11 +61,9 @@ namespace BANWlLib
                 UiMapData.uiCamera = Engine.Object.Instantiate(UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/Main Camera.prefab")).GetComponent<Camera>();
                 UiMapData.uiCamera.depth = 100f;
                 UiMapData.mainUI.GetComponent<Canvas>().worldCamera = UiMapData.uiCamera;
-#if RW_1_7
                 //复杂粒子需要场景顶点流，主界面与抽卡共用独立 UI 相机。
                 UiMapData.mainUI.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
                 BAFullscreenLayout.ConfigureMain(UiMapData.mainUI);
-#endif
                 UiMapData.buyParticle = UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/lizi.prefab");
                 UiMapData.uiCamera.gameObject.SetActive(false);
                 UiMapData.showUI = Engine.Object.Instantiate(UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/OpenUi.prefab"));
@@ -104,12 +79,6 @@ namespace BANWlLib
                 UiMapData.openUIBUTT = openMainButton.gameObject;
                 UiMapData.openUIBUTT.AddComponent<LongPressDraggableButton>();
                 InitializeCostUI();
-#if !RW_1_7
-                Engine.Object.DontDestroyOnLoad(UiMapData.mainUI);
-#endif
-#if !RW_1_7
-                Engine.Object.DontDestroyOnLoad(UiMapData.uiCamera.gameObject);
-#endif
                 timing.Mark("界面实例与COST");
                 getShopButtonImage(UiMapData.bundle);
                 Setshopselectpage();

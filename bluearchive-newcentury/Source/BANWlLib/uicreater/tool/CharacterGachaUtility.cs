@@ -1,17 +1,10 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 using Verse;
 using RimWorld;
 

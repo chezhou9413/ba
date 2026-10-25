@@ -1,16 +1,9 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.DamageFontSystem.Comp;
 using BANWlLib.CostSystem;
 using newpro;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 using Verse;
 
 namespace BANWlLib.DamageFontSystem.Setting
@@ -41,7 +34,7 @@ namespace BANWlLib.DamageFontSystem.Setting
             list.CheckboxLabeled(
     "启用爆发型粒子效果",
     ref settings.enableBurstParticle,
-    "如果你的显卡为 AMD 或 Intel 核显，关闭此选项可能改善卡顿"
+    "控制抽卡过程和结算页面的粒子光效"
 );
             if (list.ButtonText("重置UI位置", "点击此按钮把UI入口恢复默认设置"))
             {

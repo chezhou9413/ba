@@ -1,23 +1,12 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.Tool;
 using MyCoolMusicMod.MyCoolMusicMod;
 using newpro;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.StudentManual.MonoComp
@@ -34,7 +23,6 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         public BaStudentUI BaStudentUI;
         public Button AvtButtom;
         public bool SelfisCollect = false;
-#if RW_1_7
         private bool pooled;
 
         //复用卡片时仅绑定当前学生；名册同步、筛选与排序由网格统一执行。
@@ -47,7 +35,6 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             Images.BAUIImageCache.SetPooledImage(avt, student.StudentAvatar);
             UpdateStudentState();
         }
-#endif
 
         private readonly ManualDataGameComp tracker = Current.Game.GetComponent<ManualDataGameComp>();
 
@@ -65,17 +52,13 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         //绑定头像路径、星级与学生详情页交互。
         void Start()
         {
-#if RW_1_7
             if (!pooled)
             {
-#endif
             StudentManualEvents.OnRefreshAllStudentData += UpDataStudentData;
 
             imgcvT2d.SetImage(avt, BaStudentUI.StudentAvatar);
             studentNameText.text = BaStudentUI.StudentName;
-#if RW_1_7
             }
-#endif
             Collect.interactable = true;
 
             Collect.onClick.AddListener(() =>
@@ -105,9 +88,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 LoopBGMManager.playEffAudio("鼠标点击音效");
             });
 
-#if RW_1_7
             if (!pooled)
-#endif
                 UpDataStudentData();
         }
 
@@ -143,9 +124,7 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         //条目重新启用时同步学生状态。
         void OnEnable()
         {
-#if RW_1_7
             if (pooled) return;
-#endif
             if (BaStudentUI == null)
             {
                 return;

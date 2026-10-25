@@ -1,18 +1,11 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.mainUI.pojo;
 using newpro;
 using System;
 using System.Collections.Generic;
 using System.IO;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 using Verse;
 
 namespace BANWlLib

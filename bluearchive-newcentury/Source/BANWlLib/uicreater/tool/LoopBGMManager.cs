@@ -1,6 +1,4 @@
-#if RW_1_7
 using Engine = RimUnity;
-#endif
 using newpro;
 using BANWlLib.mainUI.Audio;
 using RimWorld;
@@ -8,15 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if !RW_1_7
-using UnityEngine.Networking;
-#endif
 using Verse;
 
 namespace MyCoolMusicMod
@@ -210,26 +200,7 @@ namespace MyCoolMusicMod
             {
                 try
                 {
-#if RW_1_7
                     return AudioClip.LoadFromFile(absolutePath, streaming: true);
-#else
-                    string url = new Uri(absolutePath).AbsoluteUri;
-                    using (UnityWebRequest uwr = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.OGGVORBIS))
-                    {
-                        ((DownloadHandlerAudioClip)uwr.downloadHandler).streamAudio = true;
-                        var operation = uwr.SendWebRequest();
-                        while (!operation.isDone)
-                        {
-                            await Task.Yield();
-                        }
-                        if (uwr.result != UnityWebRequest.Result.Success)
-                        {
-                            Log.Error($"[BA UI音频] 加载失败：{absolutePath}，{uwr.error}");
-                            return null;
-                        }
-                        return DownloadHandlerAudioClip.GetContent(uwr);
-                    }
-#endif
                 }
                 catch (Exception error)
                 {

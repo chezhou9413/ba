@@ -1,20 +1,9 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using System;
 using System.Collections.Generic;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 
 namespace BANWlLib.CostSystem
 {
@@ -181,10 +170,6 @@ namespace BANWlLib.CostSystem
             material = new Material(image.material)
             {
                 name = image.material.name + " (Runtime " + image.gameObject.name + ")"
-#if !RW_1_7
-                ,
-                hideFlags = HideFlags.HideAndDontSave
-#endif
             };
             image.material = material;
             ApplySpriteData();

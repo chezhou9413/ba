@@ -1,14 +1,7 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using System.Collections.Generic;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 using Verse;
 
 namespace BANWlLib.DamageFontSystem
@@ -67,9 +60,7 @@ namespace BANWlLib.DamageFontSystem
                 return;
             }
 
-#if RW_1_7
             InitializeFontSystem.EnsureCurrentGame();
-#endif
             if (FontDataBase.CriticalFont == null || FontDataBase.Canvas == null)
             {
                 if (!missingPrefabLogged)
@@ -82,26 +73,12 @@ namespace BANWlLib.DamageFontSystem
             }
 
             GameObject gameObject = getCriticalObj();
-#if RW_1_7
             var camera = RimUnity.Camera.main;
             FontDataBase.Canvas.GetComponent<Canvas>().worldCamera = camera;
             gameObject.transform.SetParent(FontDataBase.Canvas.transform, false);
             Vector3 worldPos = new(pawn.DrawPos.x, AltitudeLayer.MetaOverlays.AltitudeFor() + 0.03f, pawn.DrawPos.z);
             gameObject.transform.position = worldPos;
             gameObject.transform.rotation = camera.transform.rotation;
-#else
-            if (FontDataBase.Canvas.GetComponent<Canvas>().worldCamera != Find.Camera)
-            {
-                FontDataBase.Canvas.GetComponent<Canvas>().worldCamera = Find.Camera;
-                FontDataBase.Canvas.GetComponent<Canvas>().sortingOrder = 1000;
-            }
-
-            gameObject.transform.SetParent(FontDataBase.Canvas.transform, false);
-            Vector3 worldPos = pawn.DrawPos;
-            worldPos.y = AltitudeLayer.MetaOverlays.AltitudeFor() + 0.03f;
-            gameObject.transform.position = worldPos;
-            gameObject.transform.LookAt(gameObject.transform.position + Find.Camera.transform.rotation * Vector3.forward, Find.Camera.transform.rotation * Vector3.up);
-#endif
             gameObject.transform.localScale = Vector3.one * 0.01f;
 
             DamageFloatText floatText = gameObject.GetComponent<DamageFloatText>();

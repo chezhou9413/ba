@@ -6,7 +6,7 @@ using Verse.AI;
 
 namespace BANWlLib.Skills
 {
-    //凯伊自动普通技能工作，停步瞄准、前摇表现和单发弹丸释放。
+    //凯伊自动普通技能工作，停步瞄准后一次释放两段单体弹丸。
     public class JobDriver_KeiNormalSkill : JobDriver
     {
         //通过工作引用定位蓄积来源，使重叠场地的释放互不覆盖。

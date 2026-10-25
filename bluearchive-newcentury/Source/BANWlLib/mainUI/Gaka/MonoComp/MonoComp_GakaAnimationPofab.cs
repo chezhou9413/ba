@@ -1,35 +1,16 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.BANWGamecomp;
 using BANWlLib.DamageFontSystem.Setting;
 using BANWlLib.uicreater.tool;
-#if RW_1_7
 using RimUnity.Tweening;
-#else
-using DG.Tweening;
-#endif
 using MyCoolMusicMod.MyCoolMusicMod;
 using newpro;
 using System.Collections;
 using System.Linq;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
-#if RW_1_7
 using RimUnity.Video;
-#else
-using UnityEngine.Video;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
@@ -87,6 +68,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             clip2 = transform.Find("Clip2").gameObject;
             Card = transform.Find("Clip2/Card").GetComponent<Image>();
             showEnd = transform.Find("Clip2/showEnd").GetComponent<Button>();
+            ConfigureRevealInput();
             Clip35 = transform.Find("Clip35").gameObject;
             Clip55 = transform.Find("Clip55").gameObject;
             showEnd.interactable = false;
@@ -107,6 +89,19 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 Gakalord.CloseAnimation(this);
             });
             SetAlpha(Flash2, 0);
+        }
+
+        //签字页的透明按钮铺满整页，纸张上的装饰图像不拦截点击。
+        private void ConfigureRevealInput()
+        {
+            RectTransform trigger = (RectTransform)showEnd.transform;
+            trigger.anchorMin = Vector2.zero;
+            trigger.anchorMax = Vector2.one;
+            trigger.offsetMin = Vector2.zero;
+            trigger.offsetMax = Vector2.zero;
+            trigger.SetAsLastSibling();
+            foreach (Engine.UI.Graphic graphic in Card.GetComponentsInChildren<Engine.UI.Graphic>(true))
+                graphic.raycastTarget = false;
         }
 
         //结算后读取实际余额和招募点数，再启动过场时钟。
@@ -270,10 +265,8 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
 
             yield return null; //等待下一幕完成首帧布局。
 
-#if RW_1_7
             videoPlayer.Stop();
             Clip1.SetActive(false);
-#endif
             FadeOutFlash(Flash2, 1f);
 
             // 第2帧：激活循环粒子

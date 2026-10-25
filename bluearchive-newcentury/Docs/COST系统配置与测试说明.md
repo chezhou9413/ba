@@ -1,7 +1,7 @@
 # BA 地图共享 COST 系统配置说明
 
 适用项目：`bluearchive-newcentury`
-适用版本：RimWorld 1.6
+适用版本：RimWorld 1.7
 核心命名空间：`BANWlLib.CostSystem`
 
 ## 功能
@@ -23,12 +23,12 @@ COST 由地图共享，技能和什亭之匣入口 UI 读取同一份余额：
 | 内容 | 项目内位置 |
 |---|---|
 | COST 核心、技能、状态和 UI 运行时代码 | `Source/BANWlLib/CostSystem/` |
-| C# 项目编译入口 | `Source/BANWlLib/BANWlLib.csproj` |
-| 已编译模组程序集 | `1.6/Assemblies/BANWlLib.dll` |
-| 112 个技能费用补丁 | `1.6/Patches/CostSystem/StudentAbilityCosts.xml` |
-| 可直接引用的示例状态 | `1.6/Defs/HediffDefs/CostSystem/CostSystem_Hediffs.xml` |
-| 20 点任务规则 | `1.6/Defs/MissionDef/MissionNode/MissionNode.xml` |
-| 游戏加载的 UI 资源包 | `1.6/AssetBundles/bamainui.ab` |
+| C# 项目编译入口 | `1.7/Source/BANWlLib/BANWlLib.csproj` |
+| 已编译模组程序集 | `1.7/Assemblies/BANWlLib.dll` |
+| 112 个技能费用补丁 | `1.7/Patches/CostSystem/StudentAbilityCosts.xml` |
+| 可直接引用的示例状态 | `1.7/Defs/HediffDefs/CostSystem/CostSystem_Hediffs.xml` |
+| 20 点任务规则 | `1.7/Defs/MissionDef/MissionNode/MissionNode.xml` |
+| 游戏加载的 UI 资源包 | `1.7/Data/RimUnity/catalog.json` |
 | Unity 独立预制体 | `E:/mygame/BAUIMIAN/Assets/Scenes/Resources/UI/CostUI.prefab` |
 | Unity 环形进度 Shader | `E:/mygame/BAUIMIAN/Assets/Shaders/UI/Cost/CostRingProgress.shader` |
 
@@ -318,25 +318,16 @@ bool spent = BACostPoolService.TrySpend(ability, out reason);
 在项目根目录执行：
 
 ```powershell
-dotnet build Source/BANWlLib/BANWlLib.csproj -c Release --nologo
+dotnet build 1.7/Source/BANWlLib/BANWlLib.csproj -c Release --nologo
 ```
 
-项目会把结果输出到 `1.6/Assemblies/BANWlLib.dll`。修改纯 C#、Defs 或 Patch 时不需要重新构建 AssetBundle。
+项目会把结果输出到 `1.7/Assemblies/BANWlLib.dll`。修改纯 C#、Defs 或 Patch 时不需要重新导出 RimUnity 资源。
 
-### 构建 UI 资源包
+### 导出 UI 资源
 
-只有修改 `CostUI.prefab`、Shader、材质、数字图集或其他 Unity 资源时才需要执行：
+修改 CostUI 预制体、Shader、材质或数字图集后，通过 RimUnity 导出工具更新暂存资源，再发布到 `1.7/Data/RimUnity`。导出入口与源资源清单位于模组 `Tools/Build`；运行时代码来自 `BANWlLib.dll`。
 
-```text
-RimWorldTools/UI/Build and Deploy bamainui.ab
-```
-
-该 Unity 菜单会覆盖以下文件：
-
-- `1.6/AssetBundles/bamainui.ab`
-- `1.6/AssetBundles/bamainui.ab.manifest`
-
-构建前应确认 `CostUI.prefab` 的 AssetBundle 标记为 `bamainui.ab` 对应的现有项目配置，构建后检查 Unity Console 没有 Error。不要把 `Assembly-CSharp` 自定义脚本序列化进预制体；运行时代码全部来自 `BANWlLib.dll`。
+Unity 工程内的原有文件与构建菜单保持不变，当前模组不使用旧 Unity 资源包部署入口。
 
 ## 常见问题
 

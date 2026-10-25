@@ -5,7 +5,6 @@
     <AssemblyName>BANWlLib</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <DefineConstants>$(DefineConstants);RW_1_7</DefineConstants>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>../../Assemblies</OutputPath>
     <DebugType>none</DebugType>
@@ -14,12 +13,12 @@
     <ChezhouLibRoot Condition="'$(ChezhouLibRoot)' == ''">E:/RimModDev/ChezhouLib</ChezhouLibRoot>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="../../../Source/BANWlLib/**/*.cs" Exclude="../../../Source/BANWlLib/obj/**;../../../Source/BANWlLib/bin/**;../../../Source/BANWlLib/DOTween/**" />
+    <Compile Include="../../../Source/BANWlLib/**/*.cs" Exclude="../../../Source/BANWlLib/obj/**;../../../Source/BANWlLib/bin/**" />
     <Compile Include="**/*.cs" Exclude="obj/**;bin/**" />
     <Reference Include="Assembly-CSharp" HintPath="$(RimWorldDir)/Assembly-CSharp.dll" Private="false" />
     <Reference Include="UnityStubs" HintPath="$(RimWorldDir)/UnityStubs.dll" Private="false" />
     <Reference Include="Waylith" HintPath="$(RimWorldDir)/Waylith.dll" Private="false" />
-    <Reference Include="Newtonsoft.Json" HintPath="../../../1.6/Assemblies/Newtonsoft.Json.dll" Private="true" />
+    <Reference Include="Newtonsoft.Json" HintPath="../../../Source/References/Newtonsoft.Json.dll" Private="true" />
     <Reference Include="0Harmony" HintPath="$(RimWorldDir)/../../workshop/content/294100/2009463077/1.7/Assemblies/0Harmony.dll" Private="false" />
     <Reference Include="AlienRace" HintPath="$(ChezhouLibRoot)/Source/.build/references/1.7/AlienRace.dll" Private="false" />
     <Reference Include="ChezhouLib" HintPath="$(ChezhouLibRoot)/1.7/Assemblies/ChezhouLib.dll" Private="false" />

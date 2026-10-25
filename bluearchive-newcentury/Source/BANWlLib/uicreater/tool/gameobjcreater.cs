@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using HarmonyLib;
 using MyCoolMusicMod;
 using RimWorld;
@@ -12,22 +10,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
-#if RW_1_7
 using RimUnity.Video;
-#else
-using UnityEngine.Video;
-#endif
 using Verse;
 using Verse.AI;
 namespace newpro

@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.mainUI.Gaka;
 using BANWlLib.mainUI.ManualUI;
 using BANWlLib.mainUI.Mission;
@@ -9,22 +7,9 @@ using BANWlLib.mainUI.pojo;
 using BANWlLib.mainUI.StudentManual;
 using BANWlLib.Tool;
 using System.Collections.Generic;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
-#if RW_1_7
 using RimUnity.Video;
-#else
-using UnityEngine.Video;
-#endif
 using Verse;
 
 namespace newpro
@@ -33,11 +18,7 @@ namespace newpro
     [StaticConstructorOnStartup]
     public static class UiMapData
     {
-#if RW_1_7
         public const string ContentVersion = "1.7";
-#else
-        public const string ContentVersion = "1.6";
-#endif
         public static GameObject openUIBUTT;
         public static Dictionary<string, UIbody> BodyMap = new Dictionary<string, UIbody>();
         public static Dictionary<string, string> ImagraceMap = new Dictionary<string, string>();
@@ -93,9 +74,6 @@ namespace newpro
         {
             if (bundle != null)
             {
-#if !RW_1_7
-                bundle.Unload(false);
-#endif
             }
 
             BAUIRimWorldSpriteLoader.ClearAll();

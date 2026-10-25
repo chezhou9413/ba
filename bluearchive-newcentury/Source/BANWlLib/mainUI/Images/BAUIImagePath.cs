@@ -32,7 +32,7 @@ namespace BANWlLib.mainUI.Images
             if (Path.IsPathRooted(key)) return key;
             key = key.TrimStart('/');
             if (key.StartsWith("ManuaUI/", StringComparison.OrdinalIgnoreCase)) return "Common/UIAssets/" + key;
-            if (key.StartsWith("Common/", StringComparison.OrdinalIgnoreCase) || key.StartsWith("1.6/", StringComparison.OrdinalIgnoreCase)) return key;
+            if (key.StartsWith("Common/", StringComparison.OrdinalIgnoreCase) || key.StartsWith("1.7/", StringComparison.OrdinalIgnoreCase)) return key;
             return "Common/Textures/" + key;
         }
 

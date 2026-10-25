@@ -1,24 +1,9 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
-#if RW_1_7
 using RimUnity.Tweening;
-#else
-using DG.Tweening;
-#endif
 using System.Linq;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
 {
@@ -34,9 +19,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         //实例创建当帧先隐藏卡面，避免 Start 前显示默认贴图和缩放。
         private void Awake()
         {
-#if RW_1_7
             BANWlLib.mainUI.Initialization.BAUiParticles.Configure(gameObject);
-#endif
             Image = this.transform.Find("MainImage").GetComponent<Image>();
             Image.gameObject.SetActive(false);
         }
@@ -44,6 +27,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         //数据由创建方赋值后，先设置初始画面再开始可见动画。
         void Start()
         {
+            GetComponentInParent<BANWlLib.mainUI.Initialization.BAGachaRenderOrder>().ConfigureReveal(gameObject);
             if (gacaData != null)
             {
                 switch (gacaData.starNum)

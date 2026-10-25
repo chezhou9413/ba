@@ -3,7 +3,7 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //防御EX的循环盾面跟随位移载体与角色，并同步当前瞄准方向。
+    //防御 EX 位移期间的盾面跟随载体，并同步移动方向。
     public class SubEffecter_HoshinoShieldMote : SubEffecter
     {
         private Mote mote;
@@ -44,7 +44,7 @@ namespace BANWlLib.Skills
             mote.Maintain();
         }
 
-        //破盾、离图或形态结束时立即清理对应盾面。
+        //位移结束或载体销毁时立即清理盾面。
         public override void SubCleanup()
         {
             if (mote != null && !mote.Destroyed) mote.Destroy();

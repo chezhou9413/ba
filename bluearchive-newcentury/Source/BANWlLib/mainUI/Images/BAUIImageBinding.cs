@@ -1,18 +1,7 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 
 namespace BANWlLib.mainUI.Images
 {
@@ -44,9 +33,7 @@ namespace BANWlLib.mainUI.Images
             RefreshParents();
             earliestFrame = Time.frameCount + (preloadWhileEnabled ? 0 : 1);
             nextCheck = 0;
-#if RW_1_7
             if (preloadWhileEnabled && target.isActiveAndEnabled) LoadPooledImage();
-#endif
         }
 
         //恢复显示时安排可见性检查，不立即加载尚未完成布局的列表图片。
@@ -55,9 +42,7 @@ namespace BANWlLib.mainUI.Images
             earliestFrame = Time.frameCount + (preloadWhileEnabled ? 0 : 1);
             nextCheck = 0;
             RefreshParents();
-#if RW_1_7
             if (preloadWhileEnabled && target != null) LoadPooledImage();
-#endif
         }
 
         //随父节点改变更新裁剪和透明度依赖。
@@ -80,13 +65,11 @@ namespace BANWlLib.mainUI.Images
         private void LateUpdate()
         {
             if (Time.frameCount <= earliestFrame || Time.realtimeSinceStartup < nextCheck) return;
-#if RW_1_7
             if (preloadWhileEnabled)
             {
                 LoadPooledImage();
                 return;
             }
-#endif
             nextCheck = Time.realtimeSinceStartup + 0.15f;
             bool visible = IsVisible();
             if (!visible) Release();
@@ -98,7 +81,6 @@ namespace BANWlLib.mainUI.Images
             }
         }
 
-#if RW_1_7
         //复用已缓存头像可同帧显示；只有冷加载预算用尽才延后到下一帧。
         private void LoadPooledImage()
         {
@@ -114,7 +96,6 @@ namespace BANWlLib.mainUI.Images
             }
             nextCheck = float.PositiveInfinity;
         }
-#endif
 
         //只为启用且与所有滚动视口相交的控件保留图片引用。
         private bool IsVisible()

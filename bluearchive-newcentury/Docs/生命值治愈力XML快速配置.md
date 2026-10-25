@@ -172,7 +172,7 @@
 
 ## 定义与计算位置
 
-- StatDef：`1.6/Defs/RangedWeapon/Damage.xml`。
+- StatDef：`1.7/Defs/RangedWeapon/Damage.xml`。
 - 角色固有属性：`Source/BANWlLib/BattleSystem/BattleBaseStatExtension.cs`。
 - 治疗计算：`BattleStatUtility.GetInitialHeal`、`GetFinalHealPower`、`GetHealReceivedMultiplier`。
 - 生命值计算：`Source/BANWlLib/KindStats/BANWKindStatUtility.cs`。

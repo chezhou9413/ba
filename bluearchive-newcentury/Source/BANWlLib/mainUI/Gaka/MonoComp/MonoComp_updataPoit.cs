@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.Mission;
 using BANWlLib.mainUI.StudentManual;
@@ -12,17 +10,8 @@ using newpro;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 using Verse.Noise;
 
@@ -62,9 +51,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             UiMapData.isLocKBack = true;
             gakashot = GameObject.Instantiate(GakaMapData.ShotMaskBack);
             gakashot.transform.SetParent(GakaMapData.GakaUIPet.transform, false);
-#if RW_1_7
             BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureModal(gakashot);
-#endif
             gakashot.transform.SetAsLastSibling();
             RefreshShopList();
             gakashot.transform.Find("Close").GetComponent<Button>().onClick.AddListener(() => {

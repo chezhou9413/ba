@@ -18,6 +18,7 @@ namespace BANWlLib.Skills
         public SpecialAttackConfig burstAttack;
         public bool showNormalBattleFormula = true;
         public HoshinoSkillConfig hoshino;
+        public WakamoSkillConfig wakamo;
         public ArisuSkillConfig arisu;
         public KeiSkillConfig kei;
         public float range = 25f;
@@ -77,8 +78,8 @@ namespace BANWlLib.Skills
             {
                 if (buffHediff?.hediffClass != typeof(Hediff_WakamoMark))
                     yield return defName + " 的buffHediff必须使用Hediff_WakamoMark";
-                if (exAttack == null || exAttack.projectileDef == null || exAttack.radius != 0f || exAttack.shots < 2)
-                    yield return defName + " 的若藻EX必须为单体连射弹丸";
+                if (wakamo == null) yield return defName + " 缺少wakamo专属配置";
+                else foreach (string error in wakamo.ConfigErrors()) yield return defName + "：" + error;
                 if (burstAttack == null || burstAttack.radius != 0f || burstAttack.shots != 1 || burstAttack.isNormalAttack)
                     yield return defName + " 的蓄积爆发必须为单次单体技能伤害";
                 if (recordRatio < 0f || recordCapRatio < 0f) yield return defName + " 的蓄积比例和上限不能为负数";

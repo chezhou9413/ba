@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.mainUI;
 using BANWlLib.CostSystem;
 using BANWlLib.mainUI.Gaka;
@@ -13,22 +11,9 @@ using newpro;
 using RimWorld;
 using System.IO;
 using System.Linq;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.EventSystems;
-#else
-using UnityEngine.EventSystems;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 
 namespace BANWlLib

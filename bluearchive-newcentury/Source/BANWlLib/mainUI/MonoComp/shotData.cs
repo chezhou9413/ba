@@ -1,22 +1,11 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.mainUI.pojo;
 using MyCoolMusicMod;
 using newpro;
 using System.IO;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 using System.Text.RegularExpressions;
 using BANWlLib.mainUI.MonoComp;
@@ -78,9 +67,7 @@ public class shotData : MonoBehaviour
         gounauvbutton.onClick.AddListener(() =>
         {
             GameObject maskgoumai = GameObject.Instantiate(UiMapData.goumaiMack,this.transform.parent.parent.parent.parent.parent);
-#if RW_1_7
             BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureModal(maskgoumai);
-#endif
             pilianggoumai pilianggoumai = maskgoumai.AddComponent<pilianggoumai>();
             pilianggoumai.shotData = this;
         });
@@ -134,18 +121,10 @@ public class shotData : MonoBehaviour
         float containerWidth = rt != null ? rt.rect.width : 0f;
         if (containerWidth > 0f)
         {
-#if RW_1_7
             int previousSize = titleText.fontSize;
             titleText.fontSize = targetFontSize;
             float preferredWidth = titleText.preferredWidth;
             titleText.fontSize = previousSize;
-#else
-            var settings = titleText.GetGenerationSettings(Vector2.zero);
-            settings.scaleFactor = 1f;
-
-            settings.fontSize = targetFontSize;
-            float preferredWidth = titleText.cachedTextGeneratorForLayout.GetPreferredWidth(content, settings) / titleText.pixelsPerUnit;
-#endif
 
             float maxWidth = Mathf.Max(0f, containerWidth - extraPadding);
             if (preferredWidth > maxWidth && preferredWidth > 0.01f)
@@ -243,9 +222,7 @@ public class shotData : MonoBehaviour
             if (goPrefab != null)
             {
                 instGo = Object.Instantiate(goPrefab, worldPos, Quaternion.identity, canvas.transform);
-#if RW_1_7
                 BANWlLib.mainUI.Initialization.BAUiParticles.Configure(instGo);
-#endif
                 particleSystem = instGo.GetComponent<ParticleSystem>();
                 if (particleSystem == null)
                 {
@@ -306,40 +283,8 @@ public class shotData : MonoBehaviour
     //把粒子渲染排序同步到当前 Canvas，确保粒子显示在购买界面上方。
     private void ApplySortingToParticles(GameObject root, Canvas canvas, int orderOffset)
     {
-#if RW_1_7
         //相机 UI 的粒子与控件共同按层级提交，最后一个同级节点位于购买按钮上方。
         root.transform.SetAsLastSibling();
-#else
-        try
-        {
-            int layerID = canvas.sortingLayerID;
-            int order = canvas.sortingOrder + orderOffset;
-
-            var renderers = root.GetComponentsInChildren<Renderer>(true);
-            foreach (var r in renderers)
-            {
-                if (r != null)
-                {
-                    r.sortingLayerID = layerID;
-                    r.sortingOrder = order;
-                }
-            }
-
-            var particleRenderers = root.GetComponentsInChildren<ParticleSystemRenderer>(true);
-            foreach (var pr in particleRenderers)
-            {
-                if (pr != null)
-                {
-                    pr.sortingLayerID = layerID;
-                    pr.sortingOrder = order;
-                }
-            }
-
-        }
-        catch (System.Exception ex)
-        {
-        }
-#endif
     }
 
     //根据玩家持有货币数量刷新购买按钮可用状态。

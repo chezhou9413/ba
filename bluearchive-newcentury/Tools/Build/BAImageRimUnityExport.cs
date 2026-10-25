@@ -19,7 +19,7 @@ public static class BAImageRimUnityExport
         File.Copy(Mod + "/About/About.xml", output + "/About/About.xml", true);
         var requests = new List<ExportRequest>();
         var assets = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        foreach (var row in XDocument.Load(Mod + "/1.6/UI/images/bundles.xml").Root.Elements("Image"))
+        foreach (var row in XDocument.Load(Mod + "/1.7/UI/images/bundles.xml").Root.Elements("Image"))
         {
             string path = (string)row.Attribute("asset");
             if (!assets.Add(path)) continue;

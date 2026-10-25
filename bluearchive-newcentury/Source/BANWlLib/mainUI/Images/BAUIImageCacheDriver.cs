@@ -1,13 +1,6 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 
 namespace BANWlLib.mainUI.Images
 {
@@ -22,9 +15,6 @@ namespace BANWlLib.mainUI.Images
         {
             if (instance != null) return;
             GameObject driver = new GameObject("BA UI图片内存管理");
-#if !RW_1_7
-            Object.DontDestroyOnLoad(driver);
-#endif
             instance = driver.AddComponent<BAUIImageCacheDriver>();
         }
 

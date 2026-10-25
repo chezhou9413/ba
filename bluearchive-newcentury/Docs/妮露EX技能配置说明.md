@@ -1,6 +1,6 @@
 # 妮露EX施法与逐发配置
 
-技能配置文件：`1.6/Defs/AbilityDef/Nero_B.xml`。引导特效定义：`1.6/Defs/Effecter/Nero_C.xml`。
+技能配置文件：`1.7/Defs/AbilityDef/Nero_B.xml`。引导特效定义：`1.7/Defs/Effecter/Nero_C.xml`。
 
 ## 目标类型与对决
 

@@ -1,19 +1,13 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 
 using BANWlLib;
 using BANWlLib.mainUI.MonoComp;
 using BANWlLib.mainUI.StudentManual;
 using newpro;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 using Verse;
+//处理主界面的退出按键和鼠标点击特效。
 public class keyevents : MonoBehaviour
 {
    
@@ -22,8 +16,7 @@ public class keyevents : MonoBehaviour
         
     }
 
-    //验证粒子预制体是否正确加载
-
+    //点击位置投影到独立UI画布，粒子与界面保持同一深度。
     void Update()
     {
         if (UiMapData.uiclose)
@@ -34,9 +27,10 @@ public class keyevents : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(0)) // 0 = 左键
             {
-                Vector3 worldPos = UiMapData.uiCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Mathf.Abs(Camera.main.transform.position.z)));
+                Camera camera = UiMapData.uiCamera;
+                float depth = Vector3.Dot(UiMapData.mainUI.transform.position - camera.transform.position, camera.transform.forward);
+                Vector3 worldPos = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, depth));
                 ShopEvents.RaiseRefresh();
-                worldPos.z = 0;
                 SpawnParticleAtPosition(worldPos);
             }
         }
@@ -61,9 +55,10 @@ public class keyevents : MonoBehaviour
             if (goPrefab != null)
             {
                 instGo = Object.Instantiate(goPrefab, worldPos, Quaternion.identity);
-#if RW_1_7
+                //随画布提交到最后一层，避免场景粒子被随后绘制的UI背景盖住。
+                instGo.transform.SetParent(UiMapData.mainUI.transform, true);
+                instGo.transform.SetAsLastSibling();
                 BANWlLib.mainUI.Initialization.BAUiParticles.Configure(instGo);
-#endif
                 particleSystem = instGo.GetComponent<ParticleSystem>() ?? instGo.GetComponentInChildren<ParticleSystem>();
 
                 if (particleSystem == null)

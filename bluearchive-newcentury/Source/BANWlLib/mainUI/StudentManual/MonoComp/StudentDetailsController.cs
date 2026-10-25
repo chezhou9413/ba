@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.BaDef;
 using BANWlLib.mainUI.pojo;
 using BANWlLib.Tool;
@@ -12,17 +10,8 @@ using RimWorld;
 using System;
 using System.Diagnostics;
 using System.Linq;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.StudentManual.MonoComp

@@ -1,5 +1,6 @@
 using System.Linq;
 using BANWlLib.BattleSystem;
+using BANWlLib.KindStats;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -69,6 +70,20 @@ namespace BANWlLib.Skills
                 .FirstOrDefault(s => s.native && s.profile?.role == role);
         }
 
+        //为角色持有的技能安装本体状态，保留已存在的阶段、计数和冷却。
+        public static void InstallNative(Pawn pawn, SpecialSkillProfileDef profile)
+        {
+            var state = Find(pawn, profile);
+            if (state == null)
+            {
+                float previousScale = pawn.HealthScale;
+                state = Create(pawn, profile);
+                HealthScaleCache.Invalidate(pawn);
+                if (profile.role == SpecialSkillRole.Hoshino) HoshinoFormUtility.Apply(state, previousScale);
+            }
+            pawn.Map.GetComponent<MapComponent_SpecialSkills>().Register(state);
+        }
+
         //创建属于当前角色的独立状态，不修改共享配置。
         public static Hediff_SpecialSkillState Create(Pawn pawn, SpecialSkillProfileDef profile, bool native = true)
         {
@@ -101,12 +116,14 @@ namespace BANWlLib.Skills
         //维护一份持续特效，避免每次命中或层数变化反复创建特效。
         private void UpdateEffect()
         {
-            //若藻的蓄积特效由敌人身上的标记维护。
-            if (profile.role == SpecialSkillRole.Wakamo) { CleanupEffect(); return; }
+            //若藻的蓄积特效由敌方标记维护；星野的盾面只由 EX 位移载体维护。
+            if (profile.role == SpecialSkillRole.Wakamo || profile.role == SpecialSkillRole.Hoshino)
+            {
+                CleanupEffect();
+                return;
+            }
             bool charged = profile.role == SpecialSkillRole.Arisu && stage > 0;
             EffecterDef effect = charged ? profile.arisu.chargeStateEffecters?[stage - 1] : profile.stateEffecter;
-            if (profile.role == SpecialSkillRole.Hoshino)
-                effect = stage == 1 && HoshinoInterceptor.HasShield(this) ? profile.hoshino.defenseEffecter : null;
             if (maintainedDef != effect) CleanupEffect();
             if (pawn.Spawned && !pawn.Dead && (Active || charged) && effect != null)
             {

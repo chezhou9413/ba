@@ -1,22 +1,11 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using global::UnityEngine.Networking;
-#else
-using UnityEngine.Networking;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Audio
@@ -69,7 +58,6 @@ namespace BANWlLib.mainUI.Audio
                 pending = null;
                 yield break;
             }
-#if RW_1_7
             yield return null;
             AudioClip clip;
             try
@@ -86,31 +74,6 @@ namespace BANWlLib.mainUI.Audio
                 loading = null;
                 pending = null;
             }
-#else
-            request = UnityWebRequestMultimedia.GetAudioClip(new Uri(file).AbsoluteUri, AudioType.OGGVORBIS);
-            request.timeout = 30;
-            yield return request.SendWebRequest();
-
-            UnityWebRequest completed = request;
-            request = null;
-            loading = null;
-            pending = null;
-            AudioClip clip;
-            using (completed)
-            {
-                if (completed.result != UnityWebRequest.Result.Success)
-                {
-                    Log.Error("[BA UI语音] 加载失败：" + file + "，" + completed.error);
-                    yield break;
-                }
-                clip = DownloadHandlerAudioClip.GetContent(completed);
-            }
-            if (clip == null)
-            {
-                Log.Error("[BA UI语音] 音频解码结果为空：" + file);
-                yield break;
-            }
-#endif
             clip.name = Path.GetFileNameWithoutExtension(file);
             clips.Add(file, clip);
             animation.aronaAudioClip = clip;

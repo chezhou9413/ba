@@ -53,10 +53,7 @@ public static class BAUiRimUnityProbe
         {
             EditorPrefs.SetString("RimUnity.ShaderTool", "E:/RimModDev/RimUnity/Tools/bin/ShaderTool/RimUnity.ShaderTool.exe");
             EditorPrefs.SetString("RimUnity.GameRoot", "E:/steam/steamapps/common/RimWorld");
-            var paths = new List<string>();
-            foreach (string bundle in new[] { "bamainui.ab", "damagefontsystem.ab" })
-                foreach (string line in File.ReadAllLines(Mod + "/1.6/AssetBundles/" + bundle + ".manifest"))
-                    if (line.StartsWith("- Assets/")) paths.Add(line.Substring(2));
+            var paths = File.ReadAllLines(Mod + "/Tools/Build/UIExportAssets.txt");
             foreach (string path in paths.Distinct())
             {
                 if (!path.EndsWith(".prefab"))

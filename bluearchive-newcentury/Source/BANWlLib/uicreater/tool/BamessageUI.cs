@@ -1,21 +1,10 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.mainUI.MonoComp;
 using BANWlLib.mainUI.StudentManual;
-#if RW_1_7
 using RimUnity.Tweening;
-#else
-using DG.Tweening;
-#endif
 using System;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 
 namespace BANWlLib.uicreater.tool
 {
@@ -24,9 +13,7 @@ namespace BANWlLib.uicreater.tool
         public static void ShowBaMessageUI(string title,string des,string Buttomtext)
         {
             GameObject a = Engine.Object.Instantiate(ManualMapData.messageUI);
-#if RW_1_7
             BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureDialog(a);
-#endif
             messageUILord messageUILord = a.AddComponent<messageUILord>();
             messageUILord.title = title;
             messageUILord.des = des;
@@ -41,9 +28,7 @@ namespace BANWlLib.uicreater.tool
         public static void ShowBaMessageUIQuek(string title, string des, string quekText, string closeText = "关闭", Action onQuekAction = null)
         {
             GameObject uiGo = Engine.Object.Instantiate(ManualMapData.messageUIQuek);
-#if RW_1_7
             BANWlLib.mainUI.Initialization.BAFullscreenLayout.ConfigureDialog(uiGo);
-#endif
             messageUILordQuek script = uiGo.GetComponent<messageUILordQuek>() ?? uiGo.AddComponent<messageUILordQuek>();
             script.title = title;
             script.des = des;

@@ -36,7 +36,7 @@ namespace BANWlLib.Skills
                         } };
                     return Expand(profile.hoshino.exStages.Select(stage => stage.attack));
                 case SpecialSkillRole.Wakamo:
-                    return Expand(new[] { profile.exAttack });
+                    return Expand(profile.wakamo.exStages.Select(stage => stage.attack));
                 case SpecialSkillRole.Kei:
                     return Expand(profile.kei.FieldProperties.fieldThingDef
                         .GetModExtension<BattleFieldControllerExtension>().actions);

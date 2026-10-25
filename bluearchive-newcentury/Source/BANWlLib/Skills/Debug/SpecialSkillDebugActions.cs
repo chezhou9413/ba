@@ -12,7 +12,7 @@ namespace BANWlLib.Skills
     public static class SpecialSkillDebugActions
     {
         private const string Category = "特殊技能";
-        private static readonly string[] Kinds = { "BANW_Nero", "BANW_Arisu_B", "BANW_Shiroko", "BANW_Wakamo", "BANW_Hoshiro", "BANW_Kei", "BANW_Rio" };
+        private static readonly string[] Kinds = { "BANW_Nero", "BANW_Arisu_B", "BANW_Shiroko", "BANW_Wakamo", "BANW_Hoshiro_B", "BANW_Kei", "BANW_Rio" };
 
         //在鼠标附近一次生成七名已追加测试技能的正式角色。
         [BADebugAction(Category, "生成全部七名正式角色", actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
@@ -71,7 +71,8 @@ namespace BANWlLib.Skills
             foreach (var state in SelectedStates())
             {
                 var action = state.profile.exAttack ?? state.profile.burstAttack;
-                string mode = action == null ? "状态技能" : action.useBattleStats ? "BA战斗属性" : "独立基数 " + action.basePower;
+                string mode = state.profile.role == SpecialSkillRole.Wakamo ? "按EX各段独立配置结算" :
+                    action == null ? "状态技能" : action.useBattleStats ? "BA战斗属性" : "独立基数 " + action.basePower;
                 string message = state.LabelBase + "\n" + state.TipStringExtra + "\n结算：" + mode;
                 Log.Message("[BANW特殊技能] " + message);
                 Find.WindowStack.Add(new Dialog_MessageBox(message));

@@ -88,7 +88,7 @@ namespace BANWlLib.Skills
             return valid;
         }
 
-        //主动攻击按实际伤害段选择阵营，星野任一EX段允许作用即可选中目标。
+        //主动攻击按实际伤害段选择阵营，分段EX任一段允许作用即可选中目标。
         private bool ValidAttackTarget(LocalTargetInfo target)
         {
             Pawn caster = parent.pawn;
@@ -98,6 +98,8 @@ namespace BANWlLib.Skills
             var profile = Props.profile;
             if (profile.role == SpecialSkillRole.Hoshino)
                 return profile.hoshino.exStages.Any(stage => BattleStatUtility.ShouldAffectTarget(caster, victim, stage.attack));
+            if (profile.role == SpecialSkillRole.Wakamo)
+                return profile.wakamo.exStages.Any(stage => BattleStatUtility.ShouldAffectTarget(caster, victim, stage.attack));
             return BattleStatUtility.ShouldAffectTarget(caster, victim, profile.exAttack);
         }
 

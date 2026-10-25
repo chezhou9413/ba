@@ -1,27 +1,12 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.Tool;
-#if RW_1_7
 using RimUnity.Tweening;
-#else
-using DG.Tweening;
-#endif
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
@@ -37,9 +22,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         //初始化抽卡结果卡片并启动展示动画。
         void Start()
         {
-#if RW_1_7
             GetComponentInParent<BANWlLib.mainUI.Initialization.BAGachaRenderOrder>().ConfigureResult(gameObject);
-#endif
             if (gacaData?.BaStudentData != null)
             {
                 goodThings.AddRange(gacaData.isUp

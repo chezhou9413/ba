@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.BaDef;
 using BANWlLib.BANWGamecomp;
 using BANWlLib.mainUI.Gaka.MonoComp;
@@ -13,27 +11,10 @@ using newpro;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.U2D;
-#else
-using UnityEngine.U2D;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
-#if RW_1_7
 using RimUnity.Video;
-#else
-using UnityEngine.Video;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka

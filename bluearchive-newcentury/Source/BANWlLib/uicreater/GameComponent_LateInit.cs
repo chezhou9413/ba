@@ -1,7 +1,5 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib;
 using BANWlLib.mainUI.Mission;
 using BANWlLib.mainUI.MonoComp;
@@ -13,22 +11,9 @@ using RimWorld;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
-#if RW_1_7
 using RimUnity.UI;
-#else
-using UnityEngine.UI;
-#endif
-#if RW_1_7
 using RimUnity.Video;
-#else
-using UnityEngine.Video;
-#endif
 using Verse;
 namespace newpro
 {
@@ -109,18 +94,10 @@ namespace newpro
 
                     UiMapData.uiclose = false;
 
-#if RW_1_7
                     if (Engine.EventSystems.EventSystem.current == null)
-#else
-                    if (Engine.Object.FindObjectOfType<Engine.EventSystems.EventSystem>() == null)
-#endif
                     {
                         GameObject eventSystem = new GameObject("EventSystem");
                         eventSystem.AddComponent<Engine.EventSystems.EventSystem>();
-#if !RW_1_7
-                        eventSystem.AddComponent<Engine.EventSystems.StandaloneInputModule>();
-                        Engine.Object.DontDestroyOnLoad(eventSystem);
-#endif
                     }
                     timing.Mark("路径与事件系统");
                     if (!UICoreStart.InitializeMianUI())

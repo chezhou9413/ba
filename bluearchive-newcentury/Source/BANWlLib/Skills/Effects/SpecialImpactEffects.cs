@@ -48,8 +48,11 @@ namespace BANWlLib.Skills
                 action.impactOffsetForward, action.impactOffsetUp);
             try
             {
+                var config = SpecialImpactSprayerConfig.Create(source, 0f, action.impactRotationOffset);
+                //定向节点自行旋转位置偏移，保留原开关，避免被普通喷射节点的绝对角度覆盖。
+                config.absoluteAngle = source.absoluteAngle;
                 var directional = new SubEffecter_DirectionalImpactMote(
-                    SpecialImpactSprayerConfig.Create(source, 0f, action.impactRotationOffset), child.parent);
+                    config, child.parent);
                 directional.SubTrigger(point, new TargetInfo(hit));
             }
             finally { DirectionalImpactEffectContext.Clear(hit); }

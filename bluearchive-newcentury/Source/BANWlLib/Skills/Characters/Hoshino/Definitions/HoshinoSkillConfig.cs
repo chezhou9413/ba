@@ -22,6 +22,7 @@ namespace BANWlLib.Skills
         public List<TraitDef> tankTraits = new List<TraitDef>();
         public ThingDef backpackApparel;
         public ThingDef shieldApparel;
+        //仅在防御 EX 位移期间播放，由位移载体在结束时清理。
         public EffecterDef defenseEffecter;
         public bool drawInterceptBoundary = true;
         public EffecterDef interceptEffecter;

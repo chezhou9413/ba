@@ -1,19 +1,12 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.BattleSystem;
 using BANWlLib.DamageFontSystem;
 using BANWlLib.DamageFontSystem.Setting;
 using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 using Verse;
 
 //伤害字体系统补丁，处理旧暴击规则、统一战斗伤害飘字和原版远程伤害接入。

@@ -80,7 +80,7 @@
       <backpackApparel>BANW_Body_Hoshiro_Bag</backpackApparel>
       <!-- 防御形态实际穿戴的服装Def，外观沿用该服装自身定义。 -->
       <shieldApparel>BANW_Body_Hoshiro_D</shieldApparel>
-      <!-- 防御EX专用盾面：位移与持盾期间跟随角色和瞄准方向。 -->
+      <!-- 防御EX专用盾面：仅在位移期间跟随角色，抵达目标点后结束播放。 -->
       <defenseEffecter>BANW_Hoshiro_B_D_Ef</defenseEffecter>
       <!-- 前方拦截半圆的辅助线；半径由interceptRadius控制。 -->
       <drawInterceptBoundary>true</drawInterceptBoundary>

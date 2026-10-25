@@ -14,8 +14,8 @@ $backup = [IO.Path]::GetFullPath("E:\ModdevMics\Backups\BlueArchive\Deploy-$id")
 if ((Split-Path $destination -Parent) -ne $mods -or $destination -eq [IO.Path]::GetFullPath($mod)) { throw '部署目标越界。' }
 if (Test-Path -LiteralPath $stage) { throw '暂存目录已经存在。' }
 [IO.Directory]::CreateDirectory($stage) | Out-Null
-#只复制运行内容，保留两个版本的资源，不发布源码与编译缓存。
-foreach ($folder in @('About', 'Common', 'Sounds', '1.6', 'Docs')) {
+#只复制1.7运行内容和共享资源，不发布源码与编译缓存。
+foreach ($folder in @('About', 'Common', 'Sounds', 'Docs')) {
     Copy-Item -LiteralPath (Join-Path $mod $folder) -Destination $stage -Recurse
 }
 foreach ($folder in @('Assemblies', 'Data', 'Defs', 'Languages', 'Patches', 'UI', 'Textures')) {

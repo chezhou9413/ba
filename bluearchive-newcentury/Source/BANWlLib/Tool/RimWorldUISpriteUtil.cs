@@ -1,17 +1,10 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 using Verse;
 
 namespace BANWlLib.Tool
@@ -20,9 +13,7 @@ namespace BANWlLib.Tool
     public static class RimWorldUISpriteUtil
     {
         private static readonly Dictionary<string, Sprite> GeneratedSpriteCache = new Dictionary<string, Sprite>();
-#if RW_1_7
         [System.ThreadStatic] internal static bool GeneratingPreview;
-#endif
 
         //按 PawnKindDef 生成全身预览，展示任务队列中未实例化学生的默认外观。
         public static Sprite GetSpriteFromKind(PawnKindDef kindDef, int size = 128)
@@ -109,15 +100,7 @@ namespace BANWlLib.Tool
         public static Sprite GetSpriteFromThingDef(ThingDef def)
         {
             if (def == null) return null;
-#if RW_1_7
             Texture2D rimTexture = Texture2D.FromNative((def.uiIcon ?? BaseContent.BadTex).CoreTexture);
-#else
-            Texture2D rimTexture = def.uiIcon;
-            if (rimTexture == null)
-            {
-                rimTexture = BaseContent.BadTex;
-            }
-#endif
             return Sprite.Create(
                 rimTexture,
                 new Rect(0, 0, rimTexture.width, rimTexture.height),
@@ -135,7 +118,6 @@ namespace BANWlLib.Tool
             try
             {
                 PortraitsCache.SetDirty(pawn);
-#if RW_1_7
                 var renderTexture = PortraitsCache.Get(pawn, new global::UnityEngine.Vector2(requestSize, requestSize), Rot4.South,
                     new global::UnityEngine.Vector3(offset.x, offset.y, offset.z), zoom);
                 var capture = new global::UnityEngine.Texture2D(renderTexture.width, renderTexture.height, global::UnityEngine.TextureFormat.RGBA32, false);
@@ -150,26 +132,6 @@ namespace BANWlLib.Tool
                     rawTexture.Apply();
                 }
                 finally { global::UnityEngine.RenderTexture.active = oldActive; global::UnityEngine.Object.Destroy(capture); }
-#else
-                RenderTexture renderTexture = PortraitsCache.Get(pawn, new Vector2(requestSize, requestSize), Rot4.South, offset, zoom);
-                int actualWidth = renderTexture.width;
-                int actualHeight = renderTexture.height;
-
-                rawTexture = new Texture2D(actualWidth, actualHeight, TextureFormat.RGBA32, false);
-
-                RenderTexture oldActive = RenderTexture.active;
-                RenderTexture.active = renderTexture;
-
-                try
-                {
-                    rawTexture.ReadPixels(new Rect(0, 0, actualWidth, actualHeight), 0, 0);
-                    rawTexture.Apply();
-                }
-                finally
-                {
-                    RenderTexture.active = oldActive;
-                }
-#endif
 
                 finalTexture = ProcessTextureFitHeightPriority(rawTexture, targetSize, padding: 0);
 
@@ -358,14 +320,10 @@ namespace BANWlLib.Tool
         //生成任务 UI 使用的临时 Pawn，给未出击学生提供默认预览图。
         private static Pawn GenerateTempPawn(PawnKindDef kindDef)
         {
-#if RW_1_7
             bool previous = GeneratingPreview;
             GeneratingPreview = true;
             try { return GenerateTempPawnCore(kindDef); }
             finally { GeneratingPreview = previous; }
-#else
-            return GenerateTempPawnCore(kindDef);
-#endif
         }
 
         //保留角色外观生成规则，临时实例由截图调用者回收。

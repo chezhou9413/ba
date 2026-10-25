@@ -1,17 +1,10 @@
-#if RW_1_7
 using Engine = RimUnity;
 using AssetBundle = BANWlLib.RimUnityMigration.BAUiAssets;
-#endif
 using BANWlLib.BaDef;
 using BANWlLib.BANWGamecomp;
 using System.Collections;
 using System.Collections.Generic;
-#if RW_1_7
 using RimUnity;
-#else
-using Engine = UnityEngine;
-using UnityEngine;
-#endif
 using Verse;
 
 namespace BANWlLib.mainUI.Gaka
@@ -87,15 +80,9 @@ namespace BANWlLib.mainUI.Gaka
             ReleaseSprite(ref gtstar);
             ReleaseSprite(ref srstar);
             ReleaseSprite(ref srrstar);
-#if RW_1_7
             //RimUnity 返回图集共享精灵，只清空引用。
             cardZheng = null;
             cardFan = null;
-#else
-            //Unity 的图集查询返回独立副本，需要释放。
-            ReleaseSprite(ref cardZheng);
-            ReleaseSprite(ref cardFan);
-#endif
             presentationAssetsLoaded = false;
             ResultList = null;
             showGaList = null;

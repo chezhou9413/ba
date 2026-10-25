@@ -2,27 +2,13 @@
 chcp 65001 > nul
 setlocal
 
-REM 脚本职责：在外层开发目录中编译 BANWlLib C# 项目。
-set "PROJECT_FILE=%~dp0bluearchive-newcentury\Source\BANWlLib\BANWlLib.csproj"
-set "PROJECT_DIR=%~dp0bluearchive-newcentury\Source\BANWlLib"
+REM 编译 RimWorld 1.7 主库与瞄准显示组件。
 set "CONFIGURATION=%~1"
-if "%CONFIGURATION%"=="" set "CONFIGURATION=Debug"
-
-if not exist "%PROJECT_FILE%" (
-    echo 未找到项目文件: %PROJECT_FILE%
+if "%CONFIGURATION%"=="" set "CONFIGURATION=Release"
+set "BUILD_SCRIPT=%~dp0bluearchive-newcentury\Tools\Build\Build-1.7.ps1"
+if not exist "%BUILD_SCRIPT%" (
+    echo 未找到构建脚本: %BUILD_SCRIPT%
     exit /b 1
 )
-
-pushd "%PROJECT_DIR%"
-echo 正在编译 BANWlLib (%CONFIGURATION%)...
-msbuild "%PROJECT_FILE%" /p:Configuration=%CONFIGURATION% /p:Platform="AnyCPU"
-set "BUILD_EXIT_CODE=%ERRORLEVEL%"
-popd
-
-if not "%BUILD_EXIT_CODE%"=="0" (
-    echo 编译失败，退出码: %BUILD_EXIT_CODE%
-    exit /b %BUILD_EXIT_CODE%
-)
-
-echo 编译完成。
-exit /b 0
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%BUILD_SCRIPT%" -Configuration "%CONFIGURATION%"
+exit /b %ERRORLEVEL%

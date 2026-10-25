@@ -30,9 +30,7 @@ namespace BANWlLib.mainUI.Audio
             string path = "Songs/" + name;
             UnityEngine.AudioClip clip = ContentFinder<UnityEngine.AudioClip>.Get(path, reportFailure: false);
             if (clip == null) throw new InvalidOperationException("无法加载界面音乐：Sounds/" + path + ".ogg");
-#if RW_1_7
             UnityStubs.ImportDefaults.KeepStereo(clip);
-#endif
             song = new SongDef
             {
                 defName = "BANW_UI_" + name,

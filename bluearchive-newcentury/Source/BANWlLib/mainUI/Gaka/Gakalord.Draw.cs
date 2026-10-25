@@ -1,8 +1,4 @@
-#if RW_1_7
 using RimUnity;
-#else
-using UnityEngine;
-#endif
 using System;
 using BANWlLib.BaDef;
 using System.Collections.Generic;
