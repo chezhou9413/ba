@@ -1,0 +1,347 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|e:\\rimmoddev\\sandworm\\sandworm\\1.6\\source\\sandwormlib\\sandwormhudoverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormhudoverlay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormhitproxything.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormhitproxything.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormduststormmapcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormduststormmapcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormpressuremapcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormpressuremapcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormthing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormthing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehavior\\sandwormbehaviordef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehavior\\sandwormbehaviordef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehavior\\sandwormbehaviortransition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehavior\\sandwormbehaviortransition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehavior\\sandwormchargebehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehavior\\sandwormchargebehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehavior\\sandwormstatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehavior\\sandwormstatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehavior\\sandwormwanderbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehavior\\sandwormwanderbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehaviorcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehaviorcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehaviorids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehaviorids.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormblackboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormblackboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehavior\\isandwormbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehavior\\isandwormbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormbehavior\\sandwormbehaviorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormbehavior\\sandwormbehaviorbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\sandwormhostiledummycomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5AC9BF5-6A2A-4C89-8D9E-6D1E0D8D4FE8}|SandWormLib.csproj|solutionrelative:sandwormhostiledummycomp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBurrowBehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SandWormBehavior\\SandWormBurrowBehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormLockOnChargeBehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SandWormBehavior\\SandWormLockOnChargeBehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SandWormDustStormMapComponent.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormDustStormMapComponent.cs",
+              "RelativeDocumentMoniker": "SandWormDustStormMapComponent.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormDustStormMapComponent.cs",
+              "RelativeToolTip": "SandWormDustStormMapComponent.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAgwAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SandWormBehaviorDef.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBehaviorDef.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\SandWormBehaviorDef.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBehaviorDef.cs",
+              "RelativeToolTip": "SandWormBehavior\\SandWormBehaviorDef.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SandWormChargeBehavior.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormChargeBehavior.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\SandWormChargeBehavior.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormChargeBehavior.cs",
+              "RelativeToolTip": "SandWormBehavior\\SandWormChargeBehavior.cs",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SandWormStateMachine.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormStateMachine.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\SandWormStateMachine.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormStateMachine.cs",
+              "RelativeToolTip": "SandWormBehavior\\SandWormStateMachine.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SandWormBehaviorContext.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehaviorContext.cs",
+              "RelativeDocumentMoniker": "SandWormBehaviorContext.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehaviorContext.cs",
+              "RelativeToolTip": "SandWormBehaviorContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwG8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SandWormHitProxyThing.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormHitProxyThing.cs",
+              "RelativeDocumentMoniker": "SandWormHitProxyThing.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormHitProxyThing.cs",
+              "RelativeToolTip": "SandWormHitProxyThing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SandWormHudOverlay.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormHudOverlay.cs",
+              "RelativeDocumentMoniker": "SandWormHudOverlay.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormHudOverlay.cs",
+              "RelativeToolTip": "SandWormHudOverlay.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SandWormThing.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormThing.cs",
+              "RelativeDocumentMoniker": "SandWormThing.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormThing.cs",
+              "RelativeToolTip": "SandWormThing.cs",
+              "ViewState": "AgIAAFIEAAAAAAAAAAA6wOEEAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SandWormPressureMapComponent.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormPressureMapComponent.cs",
+              "RelativeDocumentMoniker": "SandWormPressureMapComponent.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormPressureMapComponent.cs",
+              "RelativeToolTip": "SandWormPressureMapComponent.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwA4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SandWormBehaviorIds.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehaviorIds.cs",
+              "RelativeDocumentMoniker": "SandWormBehaviorIds.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehaviorIds.cs",
+              "RelativeToolTip": "SandWormBehaviorIds.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SandWormBlackboard.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBlackboard.cs",
+              "RelativeDocumentMoniker": "SandWormBlackboard.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBlackboard.cs",
+              "RelativeToolTip": "SandWormBlackboard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SandWormBehaviorTransition.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBehaviorTransition.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\SandWormBehaviorTransition.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBehaviorTransition.cs",
+              "RelativeToolTip": "SandWormBehavior\\SandWormBehaviorTransition.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ISandWormBehavior.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\ISandWormBehavior.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\ISandWormBehavior.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\ISandWormBehavior.cs",
+              "RelativeToolTip": "SandWormBehavior\\ISandWormBehavior.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SandWormAssets.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormAssets.cs",
+              "RelativeDocumentMoniker": "SandWormAssets.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormAssets.cs",
+              "RelativeToolTip": "SandWormAssets.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SandWormWanderBehavior.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormWanderBehavior.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\SandWormWanderBehavior.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormWanderBehavior.cs",
+              "RelativeToolTip": "SandWormBehavior\\SandWormWanderBehavior.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SandWormBehaviorBase.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBehaviorBase.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\SandWormBehaviorBase.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBehaviorBase.cs",
+              "RelativeToolTip": "SandWormBehavior\\SandWormBehaviorBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SandWormLockOnChargeBehavior.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormLockOnChargeBehavior.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\SandWormLockOnChargeBehavior.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormLockOnChargeBehavior.cs",
+              "RelativeToolTip": "SandWormBehavior\\SandWormLockOnChargeBehavior.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T13:16:52.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SandWormBurrowBehavior.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBurrowBehavior.cs",
+              "RelativeDocumentMoniker": "SandWormBehavior\\SandWormBurrowBehavior.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormBehavior\\SandWormBurrowBehavior.cs",
+              "RelativeToolTip": "SandWormBehavior\\SandWormBurrowBehavior.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T12:35:36.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SandWormHostileDummyComp.cs",
+              "DocumentMoniker": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormHostileDummyComp.cs",
+              "RelativeDocumentMoniker": "SandWormHostileDummyComp.cs",
+              "ToolTip": "E:\\RimModDev\\SandWorm\\SandWorm\\1.6\\Source\\SandWormLib\\SandWormHostileDummyComp.cs",
+              "RelativeToolTip": "SandWormHostileDummyComp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T05:25:11.308Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f4fc5ff1-28ef-4b04-ad02-6b298310ccc7}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{28836128-fc2c-11d2-a433-00c04f72d18a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
