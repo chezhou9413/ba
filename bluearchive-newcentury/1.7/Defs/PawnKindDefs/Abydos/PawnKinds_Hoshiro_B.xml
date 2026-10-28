@@ -264,7 +264,7 @@
         <degreeDatas>
             <li>
                 <label>&lt;color=#DC143C&gt;有效战术&lt;/color&gt;</label>
-                <description>子技能:自身攻击时20%概率立即对目标造成乘伤系数增加19.%（持续20秒）</description>
+                <description>子技能:自身攻击时20%概率立即对目标造成乘伤系数增加19%（持续20秒）</description>
                 <marketValueFactorOffset>1</marketValueFactorOffset>
                 <statOffsets>
                 </statOffsets>

@@ -1,0 +1,41 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{B8EFCA5F-814F-285C-A8CB-F00F14650265}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.7", "1.7", "{C0D505F1-F9A6-57D3-E9CF-82BD9A9B7E56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuiceLib", "Source\MuiceLib\MuiceLib.csproj", "{12B09D4C-6016-8F95-07B3-B5891AE1FC3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{9F5AF597-9A0C-25BE-D60E-5DFC2806E00F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BANWlLib", "1.7\Source\BANWlLib\BANWlLib.csproj", "{1A0CDFB8-3952-B758-1FB3-1B451AB140CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12B09D4C-6016-8F95-07B3-B5891AE1FC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B09D4C-6016-8F95-07B3-B5891AE1FC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B09D4C-6016-8F95-07B3-B5891AE1FC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B09D4C-6016-8F95-07B3-B5891AE1FC3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A0CDFB8-3952-B758-1FB3-1B451AB140CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A0CDFB8-3952-B758-1FB3-1B451AB140CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A0CDFB8-3952-B758-1FB3-1B451AB140CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A0CDFB8-3952-B758-1FB3-1B451AB140CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12B09D4C-6016-8F95-07B3-B5891AE1FC3C} = {B8EFCA5F-814F-285C-A8CB-F00F14650265}
+		{9F5AF597-9A0C-25BE-D60E-5DFC2806E00F} = {C0D505F1-F9A6-57D3-E9CF-82BD9A9B7E56}
+		{1A0CDFB8-3952-B758-1FB3-1B451AB140CE} = {9F5AF597-9A0C-25BE-D60E-5DFC2806E00F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BE89B6B-0591-49E0-BEE6-36D27C86A0D5}
+	EndGlobalSection
+EndGlobal

@@ -17,7 +17,7 @@
       <!-- 首段额外延迟；实际首段在施法后的第1加damageDelayTicks个tick结算。 -->
       <damageDelayTicks>160</damageDelayTicks>
       <!-- 自身充能前摇，60 tick 为1秒；chargeEffecters在前摇开始时播放。 -->
-      <chargeWarmupTicks>60</chargeWarmupTicks>
+      <chargeWarmupTicks>150</chargeWarmupTicks>
       <!-- 对敌使用时按当前0、1、2档选择A、B、C，仅触发所选一项。 -->
       <attackEffecters>
         <li>BANW_Arisu_B_Ef_C</li>

@@ -168,7 +168,7 @@
 对自身造成以下效果：
 - 立即重新抓取1次EX技能牌.
 ※ 自身攻击时，对拥有对决状态的敌方单位造成的伤害加算0.2倍.
-※ 自身拥有对决状态时，EX技能改为使用「这招可要疼了哦？」.</description>
+※ 自身拥有对决状态时，EX技能改为使用「这招可要疼了哦？」.`</description>
   <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass><!-- 特殊技能专用能力类 -->
   <iconPath>Ability/Icon/Nero_B/Nero_EXX</iconPath><!-- 图标路径 -->
   <cooldownTicksRange>1000</cooldownTicksRange><!-- 冷却，60 tick = 1 秒 -->

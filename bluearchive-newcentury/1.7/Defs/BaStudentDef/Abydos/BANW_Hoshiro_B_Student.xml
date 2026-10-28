@@ -68,10 +68,11 @@
 			<Ability1>
 				<AbilityImagePath>Ability/Icon/Chise/Chise_EX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>集中突破</AbilityTitle>
+				<AbilityTitle>集中突破/加强防御态势</AbilityTitle>
 				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>6</color>]]></AbilitySubtitle>
 				<AbilityIntroduction><![CDATA[对1名敌方单位造成自身攻击力<color=#00FFFF>149%</color>的伤害。
-对以上述单位为中心的圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>503%</color>的伤害。]]>
+对以上述单位为中心的圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>503%</color>的伤害。
+位移至指定位置后，攻击力增加<color=#00FFFF>156%</color>，并获得最大生命值<color=#00FFFF>69.1%</color>的护盾，持续40秒。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
@@ -79,9 +80,11 @@
 			<Ability2>
 				<AbilityImagePath>Ability/Icon/Asuna/Asuna_EX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>手枪速射</AbilityTitle><!--不会改-->
+				<AbilityTitle>手枪速射/更换护甲</AbilityTitle><!--不会改-->
 				<AbilitySubtitle><![CDATA[基本技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[每普通攻击30次对敌人造成自身攻击力<color=#00FFFF>400%</color>的伤害]]>
+				<AbilityIntroduction><![CDATA[每普通攻击30次对敌人造成自身攻击力<color=#00FFFF>400%</color>的伤害
+装备防弹护板.防弹护板在自身受到25次伤害后解除.
+防弹护板效果：承伤率减少24.1%。]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
@@ -89,9 +92,10 @@
 			<Ability3>
 				<AbilityImagePath>Ability/Icon/Natsu/Natsu_EX</AbilityImagePath>
 				<AbilityTypeText>被动技能</AbilityTypeText>
-				<AbilityTitle>战术视野扩大</AbilityTitle>
+				<AbilityTitle>战术视野扩大/近战战斗系统</AbilityTitle>
 				<AbilitySubtitle><![CDATA[被动技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身射程增加<color=#00FFFF>30</color>暴击伤害增加<color=#00FFFF>21%</color>]]><!--不确定是不是这样改-->
+				<AbilityIntroduction><![CDATA[自身射程增加<color=#00FFFF>30</color>暴击伤害增加<color=#00FFFF>21%</color>
+自身攻击力增加<color=#00FFFF>16%</color>生命值增加<color=#00FFFF>16%</color>]]><!--不确定是不是这样改-->
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>
@@ -99,9 +103,10 @@
 			<Ability4>
 				<AbilityImagePath>Ability/Icon/Hoshiro_B/Hoshiro_A</AbilityImagePath>
 				<AbilityTypeText>子技能</AbilityTypeText>
-				<AbilityTitle>镇压攻击</AbilityTitle>
+				<AbilityTitle>镇压攻击/有效战术</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>14%</color>，所有攻击均无视85%乘伤系数，自身使用EX技能或普通技能时，下1次普通攻击的效果改为：对扇形范围内的敌方单位造成自身攻击力<color=#00FFFF>150%</color>的伤害.]]>
+				<AbilityIntroduction><![CDATA[自身攻击力增加<color=#00FFFF>14%</color>，所有攻击均无视85%乘伤系数，自身使用EX技能或普通技能时，下1次普通攻击的效果改为：对扇形范围内的敌方单位造成自身攻击力<color=#00FFFF>150%</color>的伤害.
+自身攻击时20%概率立即对目标造成乘伤系数增加19.%（持续20秒）]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
 				<offSetY>0</offSetY>

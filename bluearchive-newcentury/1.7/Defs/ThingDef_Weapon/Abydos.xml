@@ -615,6 +615,13 @@
       <stoppingPower>8</stoppingPower>
       <armorPenetrationBase>0.1</armorPenetrationBase>
       <speed>100</speed>
+      <extraDamages>
+      <li>
+        <def>BANC_Damage_Hoshiro_B</def>
+        <amount>1</amount>
+        <chance>0.1</chance>
+      </li>
+    </extraDamages>
     </projectile>
     <graphicData>
       <shaderType>MoteGlow</shaderType>
@@ -622,7 +629,41 @@
       <texPath>Projectile/Bullet_Hoshiro_B</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-
   </ThingDef>
-
+  <DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Hoshiro_B</defName>
+   <additionalHediffs>
+      <li>
+        <hediff>BAWN_Hoshiro_B_HediffDef_Common</hediff>
+        <severityPerDamageDealt>1</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+  </DamageDef>
+  <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Hoshiro_B_HediffDef_Common</defName>
+        <!-- 显示名称 -->
+        <label>有效战术</label>
+        <!-- 效果描述 -->
+        <description>增加19%的乘伤系数</description>
+        <defaultLabelColor>(255, 0, 0)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>true</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+           <statOffsets>
+           <IncomingDamageFactor>0.19</IncomingDamageFactor>
+            </statOffsets>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+        </li>
+    </comps>
+    </HediffDef>
 </Defs>

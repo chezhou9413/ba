@@ -22,7 +22,7 @@
     <recordRatio>1</recordRatio>
     <!-- 蓄积上限倍率：上限 = 建立标记时的攻击力 × 13.22（即 1322%），建立时锁定不再变动。 -->
     <recordCapRatio>13.22</recordCapRatio>
-    <!-- 由EX实际伤害附加到所选目标身上的蓄积状态。 -->
+    <!-- 由EX实际伤害附加到所选目标身上的蓄积状态，必须是 Hediff_WakamoMark 子类。 -->
     <buffHediff>BANW_WakamoAccumulation</buffHediff>
     <!-- 施法者身上朝目标播放的指向性施法特效。 -->
     <casterEffecter>BANW_Wakamo_Ef_A</casterEffecter>
@@ -40,13 +40,13 @@
       <exStages>
         <!-- 第1段：前摇结束后第181 tick发射，可独立调整attack中的伤害参数。 -->
         <li>
-          <delayTicks>180</delayTicks>
+          <delayTicks>60</delayTicks>
           <attack>
             <!-- 开启时读取BA攻击力，关闭时使用basePower。 -->
             <useBattleStats>true</useBattleStats>
             <basePower>100</basePower>
             <!-- 本段总倍率；shots大于1时仅在本段内均分，不再除以整轮发数。 -->
-            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <attackPowerRatio>0.39</attackPowerRatio>
             <!-- 本段独立的伤害类型。 -->
             <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
             <penetration>2</penetration>
@@ -66,11 +66,11 @@
         </li>
         <!-- 第2段：前摇结束后第193 tick发射，可独立调整attack中的伤害参数。 -->
         <li>
-          <delayTicks>192</delayTicks>
+          <delayTicks>77</delayTicks>
           <attack>
             <useBattleStats>true</useBattleStats>
             <basePower>100</basePower>
-            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <attackPowerRatio>0.39</attackPowerRatio>
             <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
             <penetration>2</penetration>
             <isExSkill>true</isExSkill>
@@ -88,11 +88,11 @@
         </li>
         <!-- 第3段：前摇结束后第205 tick发射，可独立调整attack中的伤害参数。 -->
         <li>
-          <delayTicks>204</delayTicks>
+          <delayTicks>94</delayTicks>
           <attack>
             <useBattleStats>true</useBattleStats>
             <basePower>100</basePower>
-            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <attackPowerRatio>0.39</attackPowerRatio>
             <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
             <penetration>2</penetration>
             <isExSkill>true</isExSkill>
@@ -110,11 +110,11 @@
         </li>
         <!-- 第4段：前摇结束后第217 tick发射，可独立调整attack中的伤害参数。 -->
         <li>
-          <delayTicks>216</delayTicks>
+          <delayTicks>111</delayTicks>
           <attack>
             <useBattleStats>true</useBattleStats>
-            <basePower>100</basePower>
-            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <basePower>90</basePower>
+            <attackPowerRatio>0.39</attackPowerRatio>
             <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
             <penetration>2</penetration>
             <isExSkill>true</isExSkill>
@@ -132,11 +132,11 @@
         </li>
         <!-- 第5段：前摇结束后第229 tick发射，可独立调整attack中的伤害参数。 -->
         <li>
-          <delayTicks>228</delayTicks>
+          <delayTicks>128</delayTicks>
           <attack>
             <useBattleStats>true</useBattleStats>
             <basePower>100</basePower>
-            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <attackPowerRatio>0.39</attackPowerRatio>
             <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
             <penetration>2</penetration>
             <isExSkill>true</isExSkill>
@@ -154,11 +154,11 @@
         </li>
         <!-- 第6段：前摇结束后第245 tick发射，可独立调整attack中的伤害参数。 -->
         <li>
-          <delayTicks>244</delayTicks>
+          <delayTicks>240</delayTicks>
           <attack>
             <useBattleStats>true</useBattleStats>
             <basePower>100</basePower>
-            <attackPowerRatio>0.5416667</attackPowerRatio>
+            <attackPowerRatio>1.31</attackPowerRatio>
             <damageDef>BANC_Damage_Wakamo_EX_B</damageDef>
             <penetration>2</penetration>
             <isExSkill>true</isExSkill>
@@ -217,7 +217,7 @@
     <label>深红花占</label>
     <!-- 鼠标悬停说明；文本必须紧跟标签，首字符不能是空白，否则报 description has leading whitespace。 -->
     <description>对1名敌方单位造成自身攻击力325%的伤害，并施加积蓄(持续10秒)
-※ 该状态持续期间，以100%的系数蓄积我方单位对该目标造成的伤害，结束时对该目标造成等同于蓄积伤害量的神秘属性伤害，且无法暴击;伤害蓄积最大值为若藻1322%的攻击力。</description> 
+      ※ 该状态持续期间，以100%的系数蓄积我方单位对该目标造成的伤害，结束时对该目标造成等同于蓄积伤害量的神秘属性伤害，且无法暴击;伤害蓄积最大值为若藻1322%的攻击力。</description>
     <!-- 技能逻辑类：读取档案配置执行EX连射、标记记录与到期爆发流程。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
     <!-- 按钮图标路径。 -->
@@ -245,7 +245,7 @@
       <!-- 施放距离（格），与档案 range 一致。 -->
       <range>49</range>
       <!-- 预热时间：0 = 点下即进入技能流程，不额外等待。 -->
-      <warmupTime>0.5</warmupTime>
+      <warmupTime>0.1</warmupTime>
       <targetParams>
         <!-- 不能以自己为目标。 -->
         <canTargetSelf>false</canTargetSelf>
@@ -294,6 +294,11 @@
     <initialSeverity>1</initialSeverity>
     <!-- 不能被道具治愈，只能到期或目标失效时移除。 -->
     <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Wakamo_Ef_F</stateEffecter>
+      </li>
+    </comps>
   </HediffDef>
   <ThingDef ParentName="BaseBullet">
     <defName>BANW_Bullet_Wakamo_EXX</defName>
@@ -311,7 +316,7 @@
       <speed>100</speed>
     </projectile>
   </ThingDef>
-   <DamageDef ParentName="BANC_Damage_shenmi">
+  <DamageDef ParentName="BANC_Damage_shenmi">
     <defName>BANC_Damage_Wakamo_EX</defName><!--通用贯通-->
     <additionalHediffs><!--额外健康-->
       <li>
@@ -326,16 +331,7 @@
   </DamageDef>
 
 
-
-
-
-
-
-
-
-
-
-    <AbilityDef>
+  <AbilityDef>
     <defName>BAWN_Wakamo_EX</defName>
     <label>随风凋谢的漫天花雨</label>
     <description>对1名敌方单位造成自身攻击力369%的伤害</description>
@@ -373,11 +369,11 @@
     <comps>
       <li Class="CompProperties_AbilityLaunchProjectile">
         <!-- 普通子弹投射物，disablePiercing=true 使命中即销毁。 -->
-         <projectileDef>BANW_Bullet_Wakamo_NS</projectileDef>
+        <projectileDef>BANW_Bullet_Wakamo_NS</projectileDef>
       </li>
     </comps>
     <modExtensions>
-     
+
       <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
         <!-- 普通子弹不显示直线范围，Circle 且不设 radius 时只显示射程圈和目标点高亮。 -->
         <shape>Circle</shape>
@@ -424,15 +420,15 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <modExtensions>
-       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
-      <!-- 主段攻击力倍率：7.5 = 750%。非普攻时缺这行伤害为 0 -->
-      <attackPowerRatio>3.69</attackPowerRatio>
-      <isNormalAttack>false</isNormalAttack>
-      <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
-      <canCrit>true</canCrit>
-      <isExSkill>false</isExSkill>
-      <applyAffinity>true</applyAffinity>
-    </li>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <!-- 主段攻击力倍率：7.5 = 750%。非普攻时缺这行伤害为 0 -->
+        <attackPowerRatio>3.69</attackPowerRatio>
+        <isNormalAttack>false</isNormalAttack>
+        <baseMasteryMultiplier>1.0</baseMasteryMultiplier>
+        <canCrit>true</canCrit>
+        <isExSkill>false</isExSkill>
+        <applyAffinity>true</applyAffinity>
+      </li>
       <li Class="BANWlLib.Projectiles.PiercingProjectileExtension">
         <!-- 核心开关：true 时禁用穿透，子弹按原版飞行命中第一个目标即销毁。 -->
         <disablePiercing>true</disablePiercing>
@@ -455,7 +451,7 @@
         <canHitBuilding>true</canHitBuilding>
         <affectHostile>true</affectHostile>
         <affectFriendly>false</affectFriendly>
-       <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
+        <!-- 命中 Pawn 或 Building 时触发的方向自适应特效。 -->
         <directionalImpactEffect>BANW_Wakamo_Ef_E</directionalImpactEffect>
         <!-- 是否对 Pawn 触发方向命中特效。 -->
         <directionalImpactOnPawn>true</directionalImpactOnPawn>

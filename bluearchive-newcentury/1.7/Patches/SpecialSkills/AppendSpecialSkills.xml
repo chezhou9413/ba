@@ -39,15 +39,15 @@
     </nomatch>
   </Operation>
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]/abilities</xpath>
+    <xpath>Defs/PawnKindDef[defName="BANW_Shiroko_C"]/abilities</xpath>
     <match Class="PatchOperationAdd">
-      <xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]/abilities</xpath>
+      <xpath>Defs/PawnKindDef[defName="BANW_Shiroko_C"]/abilities</xpath>
       <value>
         <li>BANW_Special_Shiroko_Ex</li>
       </value>
     </match>
     <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]</xpath>
+      <xpath>Defs/PawnKindDef[defName="BANW_Shiroko_C"]</xpath>
       <value>
         <abilities>
           <li>BANW_Special_Shiroko_Ex</li>
@@ -56,9 +56,9 @@
     </nomatch>
   </Operation>
   <Operation Class="PatchOperationConditional">
-    <xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]/modExtensions</xpath>
+    <xpath>Defs/PawnKindDef[defName="BANW_Shiroko_C"]/modExtensions</xpath>
     <match Class="PatchOperationAdd">
-      <xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]/modExtensions</xpath>
+      <xpath>Defs/PawnKindDef[defName="BANW_Shiroko_C"]/modExtensions</xpath>
       <value>
         <li Class="BANWlLib.Skills.SpecialSkillKindExtension">
           <profile>BANW_Special_Shiroko</profile>
@@ -66,7 +66,7 @@
       </value>
     </match>
     <nomatch Class="PatchOperationAdd">
-      <xpath>Defs/PawnKindDef[defName="BANW_Shiroko"]</xpath>
+      <xpath>Defs/PawnKindDef[defName="BANW_Shiroko_C"]</xpath>
       <value>
         <modExtensions>
           <li Class="BANWlLib.Skills.SpecialSkillKindExtension">
@@ -163,14 +163,14 @@
     <match Class="PatchOperationAdd">
       <xpath>Defs/PawnKindDef[defName="BANW_Kei"]/abilities</xpath>
       <value>
-        <li>BANW_Special_Kei_Ex</li>
+        <li>BAWN_Kei_EXX</li>
       </value>
     </match>
     <nomatch Class="PatchOperationAdd">
       <xpath>Defs/PawnKindDef[defName="BANW_Kei"]</xpath>
       <value>
         <abilities>
-          <li>BANW_Special_Kei_Ex</li>
+          <li>BAWN_Kei_EXX</li>
         </abilities>
       </value>
     </nomatch>

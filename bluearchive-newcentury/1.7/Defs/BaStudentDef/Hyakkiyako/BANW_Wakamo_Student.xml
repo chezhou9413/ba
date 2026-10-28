@@ -17,7 +17,7 @@
 			<!-- 角色立绘的缩放倍数，1.2表示放大1.2倍 -->
 			<CharacterimageOffsetSize>1.8</CharacterimageOffsetSize>
 			<!-- 角色立绘在X轴上的偏移量，单位像素 -->
-			<CharacterimageOffsetX>70</CharacterimageOffsetX>
+			<CharacterimageOffsetX>90</CharacterimageOffsetX>
 			<!-- 角色立绘在Y轴上的偏移量，单位像素 -->
 			<CharacterimageOffsetY>-100</CharacterimageOffsetY>
 			<!-- 角色类型标签路径，用于显示学生的类型标签 -->
@@ -67,23 +67,22 @@
 				<WapenTypeText>狙击枪</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Wakamo/Wakamo_EXX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>EX技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>深红花占</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>2</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名敌方单位造成自身攻击力<color=#00FFFF>325%</color>的伤害，并施加积蓄(持续10秒)
+      ※ 该状态持续期间，以<color=#00FFFF>100%</color>的系数蓄积我方单位对该目标造成的伤害，结束时对该目标造成等同于蓄积伤害量的神秘属性伤害，且无法暴击;伤害蓄积最大值为若藻<color=#00FFFF>1322%</color>的攻击力。(该伤害无视乘伤系数)]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Asuna/Asuna_EX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>EX技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[]]>
+				<AbilityTitle>随风凋谢的漫天花雨</AbilityTitle>
+				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>25</color>秒]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对1名敌方单位造成自身攻击力<color=#00FFFF>369%</color>的伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
