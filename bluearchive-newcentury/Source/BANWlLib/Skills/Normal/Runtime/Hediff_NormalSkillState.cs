@@ -1,4 +1,5 @@
 using BANWlLib.BattleSystem;
+using RimWorld;
 using System.Linq;
 using Verse;
 using Verse.Sound;
@@ -11,6 +12,7 @@ namespace BANWlLib.Skills
         public NormalSkillDef skill;
         public int count;
         public int nextCastTick;
+        private Ability componentAbility;
         public override bool ShouldRemove => false;
         public override string LabelBase => skill?.label ?? base.LabelBase;
         public override string TipStringExtra => skill == null ? "" :
@@ -53,6 +55,12 @@ namespace BANWlLib.Skills
             var snapshot = BattleStatUtility.CreateSnapshot(pawn);
             foreach (SpecialAttackConfig action in skill.actions)
                 SpecialCombatUtility.ScheduleNormal(pawn, target, action, snapshot, skill);
+            if (!skill.comps.NullOrEmpty())
+            {
+                if (componentAbility == null) componentAbility = new Ability(pawn, skill.ComponentDef);
+                foreach (CompAbilityEffect effect in componentAbility.EffectComps)
+                    effect.Apply(target, target);
+            }
         }
 
         //保存定义、累计次数与绝对冷却时刻。

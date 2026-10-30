@@ -51,16 +51,22 @@
     <defName>BANW_Normal_AllyAttackBuff</defName>
     <label>普通技能攻击支援</label>
     <description>在持续期间提高20%攻击力加成。</description>
-    <hediffClass>BANWlLib.Skills.TimedSkillBuff</hediffClass>
+    <hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
     <stages><li><statOffsets><BANW_FinalDamageMultiplier>0.2</BANW_FinalDamageMultiplier></statOffsets></li></stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>300</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
   </HediffDef>
 
   <BANWlLib.Skills.NormalSkillDef>
     <defName>BANW_Normal_AllyBuffExample</defName>
     <label>普攻连携支援</label>
-    <description>每成功射出3发主武器普攻，为25格内生命比例最低的其他同阵营队友提供5秒攻击支援。</description>
+    <description>每成功射出3发主武器普攻，向25格内生命比例最低的其他同阵营队友发射支援弹丸，命中后提供5秒攻击支援；发动时自身也获得5秒攻击支援。</description>
     <countMode>ShotFired</countMode>
     <requiredCount>3</requiredCount>
     <cooldownTicks>60</cooldownTicks>
@@ -78,9 +84,10 @@
     <targetEffecter>BANW_Effecter_C</targetEffecter>
     <actions>
       <li>
-        <!-- 纯增益不填写damageDef，也不需要伤害倍率或弹丸。 -->
+        <!-- 纯增益不填写damageDef；弹丸只负责送达增益，不造成伤害。 -->
         <triggerHediff>BANW_Normal_AllyAttackBuff</triggerHediff>
         <buffDurationTicks>300</buffDurationTicks>
+        <projectileDef>BANW_Normal_AllySupportBullet</projectileDef>
         <shots>1</shots>
         <radius>0</radius>
         <affectHostile>false</affectHostile>
@@ -88,5 +95,30 @@
         <canHitOwnPawn>false</canHitOwnPawn>
       </li>
     </actions>
+    <comps>
+      <!-- 原版增益组件在技能发动时作用于自己，队友的增益由弹丸命中后施加。 -->
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>BANW_Normal_AllyAttackBuff</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+        <durationSecondsOverride>5</durationSecondsOverride>
+      </li>
+    </comps>
   </BANWlLib.Skills.NormalSkillDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANW_Normal_AllySupportBullet</defName>
+    <label>普通技能支援弹丸</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData>
+      <texPath>Projectile/Bullet_Wakamo</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Blunt</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>60</speed>
+    </projectile>
+  </ThingDef>
 </Defs>

@@ -22,6 +22,15 @@ namespace BANWlLib.Skills
         public EffecterDef casterEffecter;
         public EffecterDef targetEffecter;
         public List<SpecialAttackConfig> actions = new List<SpecialAttackConfig>();
+        public List<AbilityCompProperties> comps = new List<AbilityCompProperties>();
+        private AbilityDef componentDef;
+
+        //只给增益组件提供原版施法上下文，不注册主动按钮或加入角色能力列表。
+        internal AbilityDef ComponentDef => componentDef ?? (componentDef = new AbilityDef
+        {
+            defName = defName + "_Components", label = label, comps = comps,
+            verbProperties = new VerbProperties { verbClass = typeof(Verb_CastAbility) }
+        });
 
         //明确报告不能执行的目标类型、触发参数和动作配置。
         public override IEnumerable<string> ConfigErrors()
@@ -31,6 +40,17 @@ namespace BANWlLib.Skills
                 yield return defName + " 的次数、冷却和范围必须大于零";
             if (targetParams == null || targetParams.canTargetLocations)
                 yield return defName + " 必须配置实体目标筛选，自动普通技能不能自动选择空地";
+            foreach (AbilityCompProperties properties in comps)
+            {
+                if (!(properties is CompProperties_AbilityGiveHediff give) ||
+                    give.compClass != typeof(CompAbilityEffect_GiveHediff))
+                { yield return defName + " 的comps仅支持CompAbilityEffect_GiveHediff"; continue; }
+                if (give.hediffDef == null) yield return defName + " 的增益组件缺少hediffDef";
+                else if (typeof(TimedSkillBuff).IsAssignableFrom(give.hediffDef.hediffClass))
+                    yield return defName + " 的增益组件应使用原版HediffWithComps，TimedSkillBuff请放在actions中";
+                if (give.hediffDef?.HasComp(typeof(HediffComp_Disappears)) == true && give.durationSecondsOverride.min <= 0f)
+                    yield return defName + " 的限时增益组件必须设置正数durationSecondsOverride（秒）";
+            }
             if (actions.NullOrEmpty()) { yield return defName + " 缺少actions"; yield break; }
             foreach (SpecialAttackConfig action in actions)
             {

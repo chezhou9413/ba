@@ -255,7 +255,8 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
                 }
                 else if (!pawnUtils.IsAtFullHealth_IgnoreBenign(studentData.StudentPawn))
                 {
-                    BamessageUI.ShowBaMessageUI("召回失败", BaStudentUI.StudentName + " 的健康状态非正常，无法召回!", "返回");
+                    BamessageUI.ShowBaMessageUI("召回失败", BaStudentUI.StudentName + " 仍有以下状态，恢复后才能召回：\n" +
+                        pawnUtils.RecallHealthBlockers(studentData.StudentPawn), "返回");
                 }
                 else if (!studentData.StudentPawn.Spawned)
                 {

@@ -42,7 +42,7 @@ namespace BANWlLib.BattleSystem
             float actionMultiplier = request.isNormalAttack ? 1f : Mathf.Max(0f, request.attackPowerRatio);
             float normalAttackStatMultiplier = request.useNormalAttackStat ? ResolveNormalAttackMultiplier(request, casterPawn) : 1f;
             float baseMasteryMultiplier = request.snapshot != null ? request.snapshot.baseMasteryMultiplier : BattleStatUtility.GetBaseMasteryMultiplier(casterPawn);
-            float masteryMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.baseMasteryMultiplier) * baseMasteryMultiplier : 1f;
+            float masteryMultiplier = Mathf.Max(0f, request.baseMasteryMultiplier) * baseMasteryMultiplier;
             bool canCrit = request.canCrit && !DamageFontRuleUtility.IsCriticalDisabled(request.damageDef);
             bool alwaysCrit = request.alwaysCrit || DamageFontRuleUtility.IsCriticalEnsured(request.damageDef);
             float critChance = canCrit ? ResolveCritChance(casterPawn, targetPawn, request.snapshot) : 0f;
@@ -95,10 +95,11 @@ namespace BANWlLib.BattleSystem
                 + " x 攻击力加成" + FormatNumber(attackMultiplier)
                 + (request.useNormalAttackStat ? " x 普通攻击倍率Stat" + FormatNumber(normalAttackStatMultiplier) : "")
                 + " x 技能倍率" + FormatNumber(actionMultiplier)
-                + " x 熟练补正(" + FormatNumber(request.baseMasteryMultiplier) + " x " + FormatNumber(baseMasteryMultiplier) + ")=" + FormatNumber(masteryMultiplier)
                 + " x 暴击" + FormatNumber(critMultiplier)
                 + " x 克制" + FormatNumber(result.affinityMultiplier)
                 + " x EX" + FormatNumber(result.exSkillMultiplier)
+                + " x 机制倍率" + FormatNumber(request.mechanismMultiplier)
+                + " x 基础精通(" + FormatNumber(request.baseMasteryMultiplier) + " x " + FormatNumber(baseMasteryMultiplier) + ")=" + FormatNumber(masteryMultiplier)
                 + " = 送入伤害" + FormatNumber(result.finalAmount)
                 + "；暴击率(扣抵抗后)=" + FormatPercent(critChance)
                 + "；暴击伤害(扣抵抗后)=" + FormatNumber(critDamage));

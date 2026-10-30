@@ -7,21 +7,24 @@ namespace BANWlLib.Skills
     //若藻技能，单体连射、伤害附加敌方标记和BA蓄积爆发。
     public static class WakamoSkills
     {
-        //各段按独立参数发射，共用施法批次，首次有效伤害建立标记。
+        //各段按独立参数发射，最后一发命中结算后才建立蓄积标记。
         public static void Cast(Hediff_SpecialSkillState s, Pawn target)
         {
             Clear(s);
             int lastShot = 0;
+            WakamoAttackStage finalStage = null;
             foreach (WakamoAttackStage stage in s.profile.wakamo.exStages)
             {
-                SpecialCombatUtility.Schedule(s, target, stage.attack, startRecord: true,
-                    extraDelay: stage.delayTicks, castingJob: s.pawn.CurJob, retainTargetPosition: true);
-                lastShot = Mathf.Max(lastShot, stage.delayTicks + stage.attack.ShotDelay(stage.attack.shots - 1));
+                int end = stage.delayTicks + stage.attack.ShotDelay(stage.attack.shots - 1);
+                if (end >= lastShot) { lastShot = end; finalStage = stage; }
             }
+            foreach (WakamoAttackStage stage in s.profile.wakamo.exStages)
+                SpecialCombatUtility.Schedule(s, target, stage.attack, startRecord: stage == finalStage,
+                    extraDelay: stage.delayTicks, castingJob: s.pawn.CurJob, retainTargetPosition: true);
             s.castEndTick = s.Now + lastShot;
         }
 
-        //首发有效伤害后附加状态并计入首发金额，后续伤害由公共事件统一累计。
+        //末发有效伤害后附加状态，只累计标记建立之后的伤害。
         public static void OnExDamage(SpecialPendingAttack attack, Pawn target, float dealt)
         {
             var s = attack.state;
@@ -42,8 +45,6 @@ namespace BANWlLib.Skills
             s.endTick = s.Now + s.profile.durationTicks;
             s.wakamo.mark = mark;
             target.health.AddHediff(mark);
-            //首次伤害的公共通知发生在状态创建前，因此只在这里补计这一次。
-            mark.AddDamage(dealt);
         }
 
         //累计同阵营单位对被标记目标造成的实际伤害。
