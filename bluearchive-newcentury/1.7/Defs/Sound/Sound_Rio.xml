@@ -1,6 +1,29 @@
 
 <Defs>
 	<SoundDef>
+	<defName>Rio_Skill_EXX</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Rio/SkillEX/ch0158_exskill_level_1</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Rio/SkillEX/ch0158_exskill_level_2</clipPath>
+				</li>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Rio/SkillEX/ch0158_exskill_level_3</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+</SoundDef>
+	<SoundDef>
 	<defName>Rio_Skill_EX</defName>  <!--二技能语音-->  
 	<maxVoices>1</maxVoices>
   <context>MapOnly</context>  
@@ -11,6 +34,40 @@
 			<grains>
 				<li Class="AudioGrain_Clip">
 					<clipPath>Ability/Rio/Rio_ExSkill</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Rio_Skill_EX_A</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Rio/SFX_CH0158_Ex1_Appear</clipPath>
+				</li>
+			</grains>      
+			<volumeRange>70~70</volumeRange>
+		</li>
+	</subSounds>
+	</SoundDef>
+	<SoundDef>
+	<defName>Rio_Skill_EX_B</defName>  <!--二技能语音-->  
+	<maxVoices>1</maxVoices>
+  <context>MapOnly</context>  
+	<maxSimultaneous>1</maxSimultaneous>  
+	<subSounds>
+		<li>
+			     
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Ability/Rio/SFX_CH0158_Ex1_Drone_Scan</clipPath>
 				</li>
 			</grains>      
 			<volumeRange>70~70</volumeRange>

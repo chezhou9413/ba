@@ -271,11 +271,11 @@
         <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Wakamo_3_Mote</moteDef>
         <scale>1</scale>
-        <initialDelayTicks>245</initialDelayTicks>
+        <initialDelayTicks>240</initialDelayTicks>
         <rotation>-90</rotation>
         <rotationRate>0</rotationRate>
         <burstCount>1</burstCount>
-        <positionOffset>(0, 0.5,0.5)</positionOffset>
+        <positionOffset>(0, 0.5,1.5)</positionOffset>
         <angle>0</angle>
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
         <spawnLocType>OnSource</spawnLocType>
@@ -287,11 +287,11 @@
         <subEffecterClass>BANWlLib.BaClass.SubEffecter_SprayerTriggeredRotatedOffset</subEffecterClass>
         <moteDef>BAWN_Wakamo_4_Mote</moteDef>
         <scale>1</scale>
-        <initialDelayTicks>245</initialDelayTicks>
-        <rotation>90</rotation>
+        <initialDelayTicks>240</initialDelayTicks>
+        <rotation>-90</rotation>
         <rotationRate>0</rotationRate>
         <burstCount>1</burstCount>
-        <positionOffset>(0, 0.5,-0.5)</positionOffset>
+        <positionOffset>(0, 0.5,-0.8)</positionOffset>
         <angle>0</angle>
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
         <spawnLocType>OnSource</spawnLocType>
@@ -540,6 +540,197 @@
         <positionOffset>(-1, 0.5, 0)</positionOffset>
         <angle>0</angle>
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+</children>
+</EffecterDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Wakamo_14_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒）：9帧 ÷ 30帧每秒 = 0.3秒 -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Wakamo/B/Wakamo_2</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Wakamo_15_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒）：9帧 ÷ 30帧每秒 = 0.3秒 -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Wakamo/B/Wakamo_3</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Wakamo_16_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒）：9帧 ÷ 30帧每秒 = 0.3秒 -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Wakamo/B/Wakamo_4</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Wakamo_17_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒）：9帧 ÷ 30帧每秒 = 0.3秒 -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Wakamo/B/Wakamo_5</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Wakamo_18_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒）：9帧 ÷ 30帧每秒 = 0.3秒 -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Wakamo/B/Wakamo_6</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+<ThingDef ParentName="MoteBase"><!-- Fleck定义 -->
+<defName>BAWN_Wakamo_19_Mote</defName>
+<thingClass>MoteAttached</thingClass>
+<altitudeLayer>MoteOverhead</altitudeLayer><!-- 特效的海拔层，设置为头顶显示 -->
+<mote>
+<fadeInTime>0.0</fadeInTime><!-- 特效淡入时间（秒） -->
+<solidTime>1.0</solidTime><!-- 特效持续可见时间（秒）：9帧 ÷ 30帧每秒 = 0.3秒 -->
+<fadeOutTime>0.0</fadeOutTime><!-- 特效淡出时间（秒） -->
+</mote>
+<graphicData>
+<shaderType>TransparentAnimated</shaderType><!-- 着色器类型，使用发光动画着色器 -->
+<texPath>Effect/Wakamo/B/Wakamo_7</texPath> <!-- 纹理路径，指向特效图片资源 -->
+<drawSize>5.5</drawSize><!-- 绘制尺寸 -->   
+</graphicData>
+</ThingDef>
+<EffecterDef>
+<defName>BANW_Wakamo_Ef_F</defName>
+<children>
+   <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>BAWN_Wakamo_14_Mote</moteDef>
+        <initialDelayTicks>0</initialDelayTicks>
+        <scale>1.1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 3)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+       <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Wakamo_15_Mote</moteDef>
+        <initialDelayTicks>60</initialDelayTicks>
+        <scale>1.1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 3)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Wakamo_16_Mote</moteDef>
+        <initialDelayTicks>120</initialDelayTicks>
+        <scale>1.1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 3)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Wakamo_17_Mote</moteDef>
+        <initialDelayTicks>180</initialDelayTicks>
+        <scale>1.1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 3)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Wakamo_18_Mote</moteDef>
+        <initialDelayTicks>240</initialDelayTicks>
+        <scale>1.1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 3)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <speed>0</speed>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <absoluteAngle>true</absoluteAngle>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggeredDelayed</subEffecterClass>
+        <moteDef>BAWN_Wakamo_19_Mote</moteDef>
+        <initialDelayTicks>300</initialDelayTicks>
+        <scale>1.1</scale>
+        <rotation>0</rotation>
+        <rotationRate>0</rotationRate>
+        <burstCount>1</burstCount>
+        <positionOffset>(0, 0.5, 4)</positionOffset>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
         <spawnLocType>OnSource</spawnLocType>
         <speed>0</speed>
         <attachToSpawnThing>true</attachToSpawnThing>

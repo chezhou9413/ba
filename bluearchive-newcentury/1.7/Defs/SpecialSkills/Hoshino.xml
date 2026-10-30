@@ -80,12 +80,12 @@
       <backpackApparel>BANW_Body_Hoshiro_Bag</backpackApparel>
       <!-- 防御形态实际穿戴的服装Def，外观沿用该服装自身定义。 -->
       <shieldApparel>BANW_Body_Hoshiro_D</shieldApparel>
-      <!-- 防御EX专用盾面：仅在位移期间跟随角色，抵达目标点后结束播放。 -->
-      <defenseEffecter>BANW_Hoshiro_B_D_Ef</defenseEffecter>
+      <!-- 防御EX专用盾面：位移与持盾期间跟随角色和瞄准方向。 -->
+      <defenseEffecter>BANW_Hoshiro_B_D_Ef_B</defenseEffecter>
       <!-- 前方拦截半圆的辅助线；半径由interceptRadius控制。 -->
       <drawInterceptBoundary>true</drawInterceptBoundary>
       <!-- 前向拦截成功击落来袭子弹时的命中特效。 -->
-      <interceptEffecter>BANW_Effecter_C</interceptEffecter>
+      <interceptEffecter></interceptEffecter>
       <!-- 每个动作独立设置自身EffecterDef、SoundDef和维持tick；声音留空即不播放。 -->
       <!-- 动作音效由该 Effecter 的声音子项播放，避免再叠加旧语音。 -->
       <!-- 切换到输出形态时播放，每次形态切换只播一次。 -->

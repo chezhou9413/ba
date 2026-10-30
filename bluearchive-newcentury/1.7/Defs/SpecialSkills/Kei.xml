@@ -2,32 +2,50 @@
 <Defs>
   <!-- 凯伊技能配置：友军增益场地、伤害蓄积与结束释放。 -->
   <BANWlLib.Skills.SpecialSkillProfileDef>
-    <defName>BANW_Special_Kei</defName><label>凯伊</label><role>Kei</role>
-    <primaryAbility>BANW_Special_Kei_Ex</primaryAbility>
-    <range>25</range>
+    <!-- 技能档案唯一标识，供 AbilityDef 的 comps 引用。 -->
+    <defName>BANW_Special_Kei</defName>
+    <!-- 档案显示名，同时作为技能状态 hediff 的显示名。 -->
+    <label>凯伊</label>
+    <!-- 归属角色标识，决定技能流程走 KeiSkills 分支。 -->
+    <role>Kei</role>
+    <!-- 该档案绑定的主技能 Def。 -->
+    <primaryAbility>BAWN_Kei_EXX</primaryAbility>
+    <!-- 技能射程（格），与 AbilityDef 的 range 保持一致。 -->
+    <range>69.9</range>
+    <!-- 凯伊专属配置：场地来源、蓄积贡献状态与普通技能表现。 -->
     <kei>
       <!-- 场地半径、持续时间和增益动作都读取这个现有EX的实际配置。 -->
       <sourceExAbility>BAWN_Kei_EXX</sourceExAbility>
+      <!-- 友军进入场地后获得的增益状态，同时用于判定其是否仍在场地内、可以贡献蓄积。 -->
       <contributionHediff>BAWN_Kei_buff</contributionHediff>
+      <!-- 场地结束后自动执行的释放工作。 -->
       <normalJob>BANW_Job_KeiNormalSkill</normalJob>
       <!-- 普通技能前摇，60 tick为1秒；语音与前摇特效在前摇开始时播放。 -->
-      <warmupTicks>60</warmupTicks>
+      <warmupTicks>120</warmupTicks>
+      <!-- 前摇开始时播放的语音。 -->
       <warmupSound>Kei_Skill_EXX</warmupSound>
+      <!-- 前摇开始时在施法者身上播放的特效。 -->
       <warmupEffecter>BANW_Kei_Ef_B</warmupEffecter>
-      <castSound>BANW_Wp_HG_At</castSound>
-      <casterEffecter>BANW_Effecter_B</casterEffecter>
-      <targetEffecter>BANW_Effecter_A</targetEffecter>
+      <!-- 子弹命中结算时播放的射击语音。 -->
+      <castSound>BANW_Wp_RG_At</castSound>
+      <!-- 普通技能发射时施法者身上朝目标方向的定向特效。 -->
+      <casterEffecter></casterEffecter>
+      <!-- 普通技能发射时目标位置播放的特效；留空表示不播放。 -->
+      <targetEffecter></targetEffecter>
     </kei>
+    <!-- 友军在场地内对敌人造成的实际伤害计入蓄积的比例，0.1为10%；施法者自身伤害不计入。 -->
     <recordRatio>0.1</recordRatio>
+    <!-- 蓄积上限倍率：上限 = burstAttack 的攻击基数 × 该倍率，50 即 5000%。 -->
     <recordCapRatio>50</recordCapRatio>
-    <casterEffecter>BANW_Effecter_A</casterEffecter>
-    <targetEffecter>BANW_Effecter_C</targetEffecter>
-    <stageEffecter>BANW_Effecter_B</stageEffecter>
-    <endEffecter>BANW_Effecter_C</endEffecter>
-    <stateEffecter>BANW_Effecter_B</stateEffecter>
+    <casterEffecter></casterEffecter>
+    <targetEffecter></targetEffecter>
+    <stageEffecter></stageEffecter>
+    <endEffecter></endEffecter>
+    <stateEffecter></stateEffecter>
     <normalAttack>
       <!-- 普通技能的攻击力伤害段，与蓄积伤害分别结算。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 未启用 BA 战斗数值时使用的固定攻击基数。 -->
       <basePower>100</basePower>
       <!-- 281%自身攻击力，记录量为0时仍正常造成该段伤害。 -->
       <attackPowerRatio>2.81</attackPowerRatio>
@@ -52,57 +70,26 @@
       <attackPowerRatio>1</attackPowerRatio>
       <damageDef>BANC_Damage_shenmi</damageDef>
       <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>0</penetration>
+      <penetration>2</penetration>
+      <!-- 是否乘施法者的 EX 技能倍率；false 表示按普通伤害结算。 -->
       <isExSkill>false</isExSkill>
+      <!-- 允许暴击。 -->
       <canCrit>true</canCrit>
+      <!-- 结算时应用属性克制/亲和加成。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 命中范围半径，0 为单体直接命中。 -->
       <radius>0</radius>
+      <!-- 连射发数；单发单体弹丸固定为 1。 -->
       <shots>1</shots>
+      <!-- 相邻两发之间的间隔 tick，60 tick 为 1 秒。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
       <!-- 单发单体实体弹丸在命中时结算蓄积伤害，shots固定为1、radius固定为0。 -->
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <effecterDef>BANW_Effecter_C</effecterDef>
-      
+      <projectileDef>BANC_Bullet_Kei_NS</projectileDef>
+      <!-- 弹丸命中时播放的特效。 -->
+      <effecterDef></effecterDef>
     </burstAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
-  <AbilityDef>
-    <defName>BANW_Special_Kei_Ex</defName>
-    <label>测试新技能·凯伊</label>
-    <description>在25格内的指定位置创建持续25秒、半径4.9格的增益场地，为范围内友军提供攻击力＋51%、神秘克制加成＋84%、暴击率＋22%的增益。
 
-场地范围和持续时间沿用现有EX“存在于此的我”的配置；使用现有EX也会触发相同蓄积与普通技能。场地存在期间，其他同阵营友军获得增益后，在范围内对敌人造成的实际伤害按10%计入蓄积；自身伤害不计入，友军离开范围后停止贡献。蓄积上限为施法时攻击力的5000%。
-
-场地结束后，普通技能自动停步瞄准，经过1秒前摇并播放语音与特效，发射两段单体弹丸：分别造成自身攻击力281%的伤害和增幅装置伤害记录量100%的伤害。两段独立结算，记录量为0时仍造成攻击力伤害，不消耗COST。没有目标或前摇中断时保留释放机会。场地存在或蓄积尚未释放时，不能再次施放本测试EX。
-
-基础消耗：4 COST。冷却：1秒。</description>
-    <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
-    <iconPath>UI/StarIcon</iconPath>
-    <cooldownTicksRange>60</cooldownTicksRange>
-    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-    <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
-    <showWhenDrafted>true</showWhenDrafted>
-    <showPsycastEffects>false</showPsycastEffects>
-    <hostile>false</hostile>
-    <targetRequired>true</targetRequired>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <verbProperties>
-      <verbClass>BANWlLib.Skills.Verb_KeiSpecialSkill</verbClass>
-      <range>25</range><warmupTime>0</warmupTime>
-      <targetParams>
-        <canTargetSelf>false</canTargetSelf>
-        <canTargetPawns>true</canTargetPawns>
-        <canTargetHumans>true</canTargetHumans><canTargetAnimals>true</canTargetAnimals>
-        <canTargetMechs>true</canTargetMechs><canTargetBuildings>false</canTargetBuildings>
-        <canTargetLocations>true</canTargetLocations>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
-        <profile>BANW_Special_Kei</profile><command>Ex</command>
-      </li>
-      <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost"><cost>4</cost></li>
-    </comps>
-  </AbilityDef>
   <!-- 普通技能工作不提供主动按钮，只能在场地到期后自动执行。 -->
   <JobDef>
     <defName>BANW_Job_KeiNormalSkill</defName>
@@ -110,4 +97,20 @@
     <reportString>正在瞄准并释放两段普通技能伤害。</reportString>
     <alwaysShowWeapon>true</alwaysShowWeapon>
   </JobDef>
+   <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Kei_NS</defName>
+    <label>亮新星子弹 </label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
+      <texPath>Projectile/Bullet_Kei</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+   <drawSize>(8,15)</drawSize><!--贴图大小-->
+    </graphicData>
+    <projectile>
+      <damageDef>BANC_Damage_shenmi</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <speed>140</speed>
+    </projectile>
+  </ThingDef>
 </Defs>

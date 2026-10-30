@@ -7,9 +7,8 @@
     <!-- 按钮显示名。 -->
     <label>集中突破</label>
     <!-- 技能说明文本，展示在按钮提示中。 -->
-    <description>准备0.1秒后，持续瞄准目标并依次发射追踪技能弹。各段分别造成单体或范围伤害，实际总倍率见下方预估；目标移动时弹丸继续跟踪，友军目标同样显示举枪瞄准。
-
-施放期间承伤系数降低0.85，最低为0。完整发射后，下一轮普攻强化为扇形范围攻击；即使目标提前死亡，也会朝最后瞄准位置打完剩余强化弹。</description>
+    <description>对1名敌方单位造成自身攻击力149%的伤害。
+对以上述单位为中心的圆形范围内的敌方单位造成自身攻击力503%的伤害。</description>
     <!-- 技能实现类，负责把施法请求交给特殊技能系统处理。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
     <!-- 前摇结束后保持瞄准，直到最后一段弹丸发射。 -->
@@ -91,14 +90,13 @@
     <label>加强防御态势</label>
     <!-- 技能说明文本。 -->
     <description>位移至指定位置后，攻击力增加156%，并获得最大生命值69.1%的护盾，持续40秒。
-
 个人护盾与前方3格半圆拦截共用同一余额，按实际减伤后的伤害扣除。破盾这一击完全抵挡；余额耗尽后停止拦截。背后、友军和从拦截范围内部射出的弹丸不受前向拦截影响。</description>
     <!-- 技能实现类。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
     <!-- 按钮图标路径。 -->
     <iconPath>Ability/Icon/Hoshiro_B/Hoshiro_EXXX</iconPath>
     <!-- 冷却时间，60 tick = 1 秒。 -->
-    <cooldownTicksRange>60</cooldownTicksRange>
+    <cooldownTicksRange>600</cooldownTicksRange>
     <!-- 未征召时也显示按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
     <!-- 未征召时按钮置灰不可点。 -->
@@ -119,7 +117,7 @@
       <!-- 位移只检查落点，不被途中树木或岩石遮挡。 -->
       <requireLineOfSight>false</requireLineOfSight>
       <soundCast>Hoshiro_B_B_Skill_EXX</soundCast>
-      <warmupEffecter>BANW_Hoshiro_B_D_Ef_B</warmupEffecter>
+      <warmupEffecter></warmupEffecter>
       <!-- 标准施法动词。 -->
       <verbClass>Verb_CastAbility</verbClass>
       <!-- 施法距离上限（格）。 -->
@@ -168,7 +166,7 @@
     <!-- 按钮显示名。 -->
     <label>切换战斗形态</label>
     <!-- 技能说明文本。 -->
-    <description>切换输出／坦克形态，同时切换职位特性、EX与普通技能，以及背负装备／前持盾牌。装备转换保留品质、颜色与耐久比例。初始为输出形态。</description>
+    <description>在输出形态与坦克形态之间切换，同时切换对应的EX与普通技能。初始为输出形态</description>
     <!-- 技能实现类。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
     <!-- 按钮图标路径。 -->
@@ -283,6 +281,10 @@
         <profile>BANW_Special_Hoshino</profile>
         <!-- 指令分支：Normal 为防御形态普通技能。 -->
         <command>Normal</command>
+      </li>
+       <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Hoshiro_B_D_Ef</effecterDef>
+        <maintainForTicks>1500</maintainForTicks>
       </li>
     </comps>
   </AbilityDef>

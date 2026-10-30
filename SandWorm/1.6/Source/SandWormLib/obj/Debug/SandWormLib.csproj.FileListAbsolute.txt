@@ -1,0 +1,12 @@
+E:\RimModDev\沙虫\沙虫\1.6\Assemblies\SandWormLib.dll
+E:\RimModDev\沙虫\沙虫\1.6\Assemblies\SandWormLib.pdb
+E:\RimModDev\沙虫\沙虫\1.6\Source\SandWormLib\obj\Debug\SandWormLib.csproj.AssemblyReference.cache
+E:\RimModDev\沙虫\沙虫\1.6\Source\SandWormLib\obj\Debug\SandWormLib.csproj.CoreCompileInputs.cache
+E:\RimModDev\沙虫\沙虫\1.6\Source\SandWormLib\obj\Debug\SandWormLib.dll
+E:\RimModDev\沙虫\沙虫\1.6\Source\SandWormLib\obj\Debug\SandWormLib.pdb
+E:\RimModDev\SandWorm\SandWorm\1.6\Source\SandWormLib\obj\Debug\SandWormLib.csproj.AssemblyReference.cache
+E:\RimModDev\SandWorm\SandWorm\1.6\Source\SandWormLib\obj\Debug\SandWormLib.csproj.CoreCompileInputs.cache
+E:\RimModDev\SandWorm\SandWorm\1.6\Assemblies\SandWormLib.dll
+E:\RimModDev\SandWorm\SandWorm\1.6\Assemblies\SandWormLib.pdb
+E:\RimModDev\SandWorm\SandWorm\1.6\Source\SandWormLib\obj\Debug\SandWormLib.dll
+E:\RimModDev\SandWorm\SandWorm\1.6\Source\SandWormLib\obj\Debug\SandWormLib.pdb

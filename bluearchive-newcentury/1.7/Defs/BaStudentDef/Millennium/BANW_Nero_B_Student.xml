@@ -67,13 +67,21 @@
 				<WapenTypeText>冲锋枪</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Nero_B/Nero_EXX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>EX技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>想试试看吗？/这招可要疼了哦？</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对自身及1名所选生物造成以下效果(持续70秒)：
+- 获得对决状态.
+对自身造成以下效果：
+- 立即重新抓取1次EX技能牌.
+※ 自身攻击时，对拥有对决状态的敌方单位造成的伤害加算0.2倍.
+※ 自身拥有对决状态时，EX技能改为使用「这招可要疼了哦？」.
+对自身造成以下效果：
+- 获得1层「锐气」.
+  ※ 最多5层.
+对1名所选生物造成以下效果（可选择敌人、友军和中立生物）：
+- 造成自身攻击力<color=#00FFFF>1469%</color>的伤害.]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -105,7 +113,9 @@
 				<AbilityTypeText>子技能</AbilityTypeText>
 				<AbilityTitle>一枪一个准</AbilityTitle>
 				<AbilitySubtitle><![CDATA[子技能]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>24%</color>的基础精通倍率。]]>
+				<AbilityIntroduction><![CDATA[增加自身<color=#00FFFF>24%</color>的基础精通倍率。自身每拥有1层「锐气」：
+立即对自身造成以下效果：
+- 自身的EX技能「这招可要疼了哦？」造成的伤害加算0.35倍.]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>

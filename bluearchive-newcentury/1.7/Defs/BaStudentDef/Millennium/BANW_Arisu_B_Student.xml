@@ -67,25 +67,26 @@
 				<WapenTypeText>步枪</WapenTypeText>
 			</WapenUI>
 			<Ability1>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Arisu_B/Arisu_EXX</AbilityImagePath>
 				<AbilityTypeText>EX技能</AbilityTypeText>
-				<AbilityTitle>EX技能</AbilityTitle>
-				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityTitle>光之勇者</AbilityTitle>
+				<AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>4</color>]]></AbilitySubtitle>
+				<AbilityIntroduction><![CDATA[对自己使用时:能量充能状态提升至1阶充能.
+- 能量充能状态为1阶充能时：能量充能状态提升至2阶充能.
+对敌人使用时:对直线范围内的敌人造成- 造成自身攻击力<color=#00FFFF>1330%</color>的伤害。
+※ 能量充能状态为1阶充能时，效果提升至2倍.
+※ 能量充能状态为2阶充能时，效果提升至3倍.
+- 该技能结束后：重置自身能量充能状态为0阶充能]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
 			</Ability1>
 			<Ability2>
-				<AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+				<AbilityImagePath>Ability/Icon/Asuna/Asuna_EX</AbilityImagePath>
 				<AbilityTypeText>基本技能</AbilityTypeText>
-				<AbilityTitle>基本技能</AbilityTitle>
+				<AbilityTitle>勇气的魔法</AbilityTitle>
 				<AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>35</color>秒]]></AbilitySubtitle>
-				<AbilityIntroduction><![CDATA[这里是技能2的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+				<AbilityIntroduction><![CDATA[自身每普通攻击20次时，对敌人造成自身攻击力<color=#00FFFF>457%</color>的伤害]]>
 				</AbilityIntroduction>
 				<offSetX>12</offSetX>
                 <offSetY>0</offSetY>
