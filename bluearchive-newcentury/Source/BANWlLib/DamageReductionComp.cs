@@ -279,7 +279,7 @@ namespace BANWlLib
                 }
                 catch (Exception ex)
                 {
-                    Log.Error($"[减伤系统] ApplyDamageToPart 替换方法执行出错: {ex.Message}");
+                    Log.Error($"[减伤系统] ApplyDamageToPart 替换方法执行出错: {ex}");
                     // 如果出错，让原方法继续执行
                     return true;
                 }

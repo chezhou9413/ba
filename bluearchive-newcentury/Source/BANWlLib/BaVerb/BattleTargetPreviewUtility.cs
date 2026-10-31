@@ -25,7 +25,16 @@ namespace BANWlLib.BaVerb
             float range = ResolvePositive(data.range, 0f);
             if (data.drawCasterRange && range > 0f)
             {
-                GenDraw.DrawRadiusRing(caster.Position, range, RangeColor);
+                if (range < GenRadial.MaxRadialPatternRadius)
+                {
+                    GenDraw.DrawRadiusRing(caster.Position, range, RangeColor);
+                }
+                else
+                {
+                    //大射程使用几何圆周，不受原版预计算格子表的半径限制。
+                    GenDraw.DrawCircleOutline(caster.Position.ToVector3ShiftedWithAltitude(AltitudeLayer.MetaOverlays),
+                        range, SolidColorMaterials.SimpleSolidColorMaterial(RangeColor));
+                }
             }
 
             if (!target.IsValid || !target.Cell.InBounds(caster.Map))

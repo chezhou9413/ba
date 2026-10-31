@@ -20,12 +20,16 @@ namespace BANWlLib.Skills
         //在减伤结算后消耗当前护盾，友军伤害沿用项目原有的穿盾规则。
         public static bool TryAbsorb(Pawn pawn, DamageInfo damage, float amount)
         {
-            if (amount <= 0f || !HoshinoInterceptor.CanBlockDamage(pawn, damage) || damage.Instigator == pawn ||
+            //死亡后的部位扩散仍会进入伤害链，此时姿态组件已被原版移除。
+            if (amount <= 0f || pawn.Dead || damage.Instigator == pawn ||
                 damage.Instigator?.Faction != null && damage.Instigator.Faction == pawn.Faction) return false;
             foreach (Hediff hediff in pawn.health.hediffSet.hediffs)
             {
                 var shield = hediff.TryGetComp<HediffComp_HoshinoShield>();
-                if (shield != null && shield.AbsorbResolved(amount)) return true;
+                if (shield == null) continue;
+                //只有持有星野护盾的目标才需要读取姿态并判断来袭方向。
+                if (!HoshinoInterceptor.CanBlockDamage(pawn, damage)) return false;
+                if (shield.AbsorbResolved(amount)) return true;
             }
             return false;
         }
