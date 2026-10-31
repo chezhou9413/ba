@@ -44,6 +44,13 @@ namespace BANWlLib.Tool
             return pawn.health.hediffSet.hediffs.All(IsRecallAllowedHediff);
         }
 
+        //显示真正阻止召回的状态，区分仍未恢复的伤病与已治疗完的伤口。
+        public static string RecallHealthBlockers(Pawn pawn)
+        {
+            return string.Join("、", pawn.health.hediffSet.hediffs.Where(h => !IsRecallAllowedHediff(h))
+                .Select(h => h.LabelCap.ToString()).Distinct());
+        }
+
         //判断单个 Hediff 是否允许召回，把养成状态和非负面状态排除在异常健康之外。
         private static bool IsRecallAllowedHediff(Hediff hediff)
         {
@@ -56,6 +63,9 @@ namespace BANWlLib.Tool
             {
                 return true;
             }
+
+            //治疗将伤口严重度归零后，原版下一次健康更新才移除；暂停界面时不能继续拦截。
+            if (hediff.ShouldRemove || (hediff is Hediff_Injury && hediff.Severity <= 0f)) return true;
 
             string defName = hediff.def.defName;
             return defName == "BANW_LevelTrait" ||

@@ -58,7 +58,7 @@ namespace BANWlLib.Skills
                     caster = state.pawn, state = state, target = target, action = action,
                     snapshot = snapshot, dueTick = state.Now + extraDelay + action.ShotDelay(i),
                     multiplier = multiplier / count, resolvedAmount = resolved < 0 ? -1 : resolved / count,
-                    canAccumulate = resolved < 0, startRecord = startRecord,
+                    canAccumulate = resolved < 0, startRecord = startRecord && i == count - 1,
                     recordCastId = startRecord ? state.wakamo.castId : 0, resolvedCritical = resolvedCritical,
                     droneOrigin = drone, impactEffecter = impactEffecter, normalHit = normalHit,
                     castingJob = castingJob,

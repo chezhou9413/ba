@@ -1,7 +1,4 @@
-using System.Linq;
-using BANWlLib.BaVerb;
 using Verse;
-using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
@@ -19,15 +16,8 @@ namespace BANWlLib.Skills
                 return;
             }
             int stage = s.stage;
-            //几何范围与阶段倍率在施法时固定，目标死亡后余下伤害段仍作用于这条直线。
-            var cells = BattleTargetPreviewUtility.CalculateLineCells(s.pawn, target, config.lineLength, config.lineWidth).ToList();
-            config.attackSound?.PlayOneShot(new TargetInfo(s.pawn));
-            SpecialDirectionalEffects.Trigger(config.attackEffecters[stage], s.pawn, target);
-            //伤害区域在发动时独立排队，移动或结束瞄准动作不会取消已经发出的光束。
-            var castingJob = s.pawn.CurJob;
-            castingJob.targetA = new LocalTargetInfo(target.Position);
-            SpecialCombatUtility.Schedule(s, null, s.profile.exAttack, 1f + stage,
-                extraDelay: config.damageDelayTicks, center: s.pawn.Position, areaCells: cells);
+            //准备期保留实体目标，光束出射时才由施法工作锁定直线范围。
+            ((JobDriver_ArisuExChannel)s.pawn.jobs.curDriver).BeginAttack(stage);
             s.castEndTick = s.Now + config.damageDelayTicks + s.profile.exAttack.ShotDelay(s.profile.exAttack.shots - 1);
             s.stage = 0;
             s.CleanupEffect();

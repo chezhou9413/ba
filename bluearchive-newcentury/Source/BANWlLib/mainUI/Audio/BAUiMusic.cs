@@ -14,6 +14,8 @@ namespace BANWlLib.mainUI.Audio
         private static readonly Dictionary<string, SongDef> songs = new Dictionary<string, SongDef>();
         private static MusicManagerPlay owner;
         private static SongDef selectedSong;
+        private static readonly AccessTools.FieldRef<MusicManagerPlay, UnityEngine.AudioSource> musicSource =
+            AccessTools.FieldRefAccess<MusicManagerPlay, UnityEngine.AudioSource>("audioSource");
 
         //曲目不加入 DefDatabase，原版随机选曲、兜底选曲和其他场景均无法选中它们。
         private static SongDef GetSong(string name)
@@ -51,11 +53,20 @@ namespace BANWlLib.mainUI.Audio
             MusicManagerPlay manager = Find.MusicManagerPlay;
             if (manager == null) throw new InvalidOperationException("原版音乐播放器尚未初始化。");
             SongDef song = GetSong(name);
+            SilenceOtherMusicSources(manager);
             if (owner == manager && selectedSong == song && manager.CurrentSong == song && manager.IsPlaying) return;
             owner = manager;
             selectedSong = song;
             manager.Stop();
             manager.ForcePlaySong(song, ignorePrefsVolume: false);
+        }
+
+        //清理菜单或旧播放器残留的原版音乐声部，不影响环境声、音效和角色语音。
+        private static void SilenceOtherMusicSources(MusicManagerPlay manager)
+        {
+            UnityEngine.AudioSource current = musicSource(manager);
+            foreach (UnityEngine.AudioSource source in UnityEngine.Object.FindObjectsOfType<UnityEngine.AudioSource>())
+                if (source != current && source.gameObject.name == "MusicAudioSourceDummy") source.Stop();
         }
 
         //关闭界面或卸载存档时撤销接管，由原版按当前地图与危险状态重新选曲。
@@ -112,6 +123,31 @@ namespace BANWlLib.mainUI.Audio
         {
             //仅暂停选曲过渡，原版播放器本身继续正常更新。
             private static bool Prefix(MusicManagerPlay __instance) => !Owns(__instance);
+        }
+
+        //拦住直接强制播放和序列入口，避免它们绕过自动选曲的接管。
+        [HarmonyPatch(typeof(MusicManagerPlay), "PlaySong")]
+        private static class ExclusiveUiSong
+        {
+            //界面打开时只允许所属播放器播放选中的UI曲目。
+            private static bool Prefix(MusicManagerPlay __instance, SongDef song)
+            {
+                return !Owns(owner) || (__instance == owner && song == selectedSong);
+            }
+        }
+
+        //外部强制过渡不能让播放器进入与UI曲目不一致的序列状态。
+        [HarmonyPatch(typeof(MusicManagerPlay), "StartSequence")]
+        private static class BlockUiSequence
+        {
+            private static bool Prefix() => !Owns(owner);
+        }
+
+        //旧菜单管理器若仍被更新，也不能在UI期间重启另一个原版音乐声源。
+        [HarmonyPatch(typeof(MusicManagerEntry), nameof(MusicManagerEntry.MusicManagerEntryUpdate))]
+        private static class BlockEntryMusic
+        {
+            private static bool Prefix() => !Owns(owner);
         }
 
         //界面音乐遵从音乐音量，地图乐器的距离衰减和旧曲淡出不应使它静音。

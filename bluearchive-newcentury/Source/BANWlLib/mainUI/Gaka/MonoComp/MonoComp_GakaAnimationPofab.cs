@@ -57,6 +57,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
 
         private int drawCost;
         private Button tryAgainButton;
+        private Engine.UI.Text tryAgainText;
 
         //再次抽卡只能从结果页触发，过场期间不会重复结算。
         public bool IsShowingResults => Clip55.activeInHierarchy;
@@ -78,6 +79,9 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
             PreloadSprites();
             drawCost = tenGacha ? 1200 : 120;
             tryAgainButton = Clip55.transform.Find("TryAgainButtom").GetComponent<Button>();
+            //结果页尚未激活，扣费前也要取得并确认按钮的文字控件。
+            tryAgainText = tryAgainButton.GetComponentInChildren<Engine.UI.Text>(true)
+                ?? throw new System.InvalidOperationException("抽卡预制体缺少 Clip55/TryAgainButtom 的文字控件。");
             tryAgainButton.onClick.AddListener(() =>
             {
                 LoopBGMManager.playEffAudio("鼠标点击音效");
@@ -116,9 +120,8 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 tryAgainButton.interactable = canAfford;
                 if (!canAfford)
                 {
-                    Engine.UI.Text text = tryAgainButton.GetComponentInChildren<Engine.UI.Text>();
-                    text.text = $"青辉石不足 ({current}/{drawCost})";
-                    text.color = Color.gray;
+                    tryAgainText.text = $"青辉石不足 ({current}/{drawCost})";
+                    tryAgainText.color = Color.gray;
                 }
                 PrewarmGameObjects();
                 delayedCallTween = DOVirtual.DelayedCall(6f, OnVideoEnd)
@@ -431,7 +434,7 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         //结果页在白幕峰值切入，黑色淡出层独立于即将销毁的上一幕。
         IEnumerator showResult()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             clip45Image.transform.SetParent(transform, false);
             PlayWhiteInBlackOut(clip45Image, 0.5f, 0.4f, () =>
             {

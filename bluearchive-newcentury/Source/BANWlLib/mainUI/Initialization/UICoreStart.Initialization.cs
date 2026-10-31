@@ -60,6 +60,8 @@ namespace BANWlLib
                 UiMapData.goumaiMack = UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/goumaiMack.prefab");
                 UiMapData.uiCamera = Engine.Object.Instantiate(UiMapData.bundle.LoadAsset<GameObject>("Assets/Scenes/Resources/UI/Main Camera.prefab")).GetComponent<Camera>();
                 UiMapData.uiCamera.depth = 100f;
+                //原始 UI 相机使用 HDR，保留高亮粒子与低透明度相乘后的强度。
+                UiMapData.uiCamera.allowHDR = true;
                 UiMapData.mainUI.GetComponent<Canvas>().worldCamera = UiMapData.uiCamera;
                 //复杂粒子需要场景顶点流，主界面与抽卡共用独立 UI 相机。
                 UiMapData.mainUI.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;

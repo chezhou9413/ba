@@ -9,10 +9,11 @@ namespace BANWlLib.Skills
         public SpecialPendingAttack attack;
         public override int UpdateRateTicks => 1;
 
-        //无人机瞄准锁定对象，抵达后交给伤害链独立判定闪避，不额外执行原版倒地目标偏弹。
+        //无人机和无伤害支援弹丸直接处理预定目标，治疗倒地队友不套用攻击偏弹。
         protected override void ImpactSomething()
         {
-            if (attack?.droneOrigin == true && attack.target != null && CanHit(attack.target))
+            if (attack != null && (attack.droneOrigin || attack.action.damageDef == null) &&
+                attack.target != null && CanHit(attack.target))
                 Impact(attack.target);
             else base.ImpactSomething();
         }

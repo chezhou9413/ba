@@ -4,12 +4,12 @@ using RimUnity.UI;
 
 namespace BANWlLib.mainUI.Initialization;
 
-//把抽卡画布排序落实到材质队列，单独控制大面积背景光的叠加强度。
+//把抽卡画布排序落实到材质队列，保留原始背景光的叠加强度。
 internal sealed class BAGachaRenderOrder : MonoBehaviour
 {
-    private readonly Dictionary<(Material source, int queue, float brightness, float opacity), Material> materials = new();
+    private readonly Dictionary<(Material source, int queue, bool unlitStreak), Material> materials = new();
 
-    //只配置当前过场实例，沿用原 Shader、贴图、混合及深度状态。
+    //排序与背景线条的无光照材质只配置到当前过场实例。
     internal void Initialize()
     {
         GetComponent<Canvas>().sortingOrder = 100;
@@ -87,15 +87,17 @@ internal sealed class BAGachaRenderOrder : MonoBehaviour
     {
         Transform group = transform.Find(path);
         Transform glow = group.Find("root/glow");
+        Transform streak = group.Find("root/xian");
         Transform washOne = group.Find("root/Particle System01");
         Transform washTwo = group.Find("root/Particle System02");
         foreach (ParticleSystemRenderer renderer in group.GetComponentsInChildren<ParticleSystemRenderer>(true))
         {
             bool centralGlow = renderer.transform == glow;
             bool colorWash = renderer.transform == washOne || renderer.transform == washTwo;
-            //中央光使用加法混合，降低RGB；紫色铺底使用Alpha混合，降低覆盖度而不把颜色压黑。
+            //光晕与铺底保留源材质颜色和透明度，HDR 相机负责保留高亮叠加。
             renderer.sharedMaterial = OrderedMaterial(renderer.sharedMaterial,
-                centralGlow || colorWash ? 3001 : 3003, centralGlow ? 0.65f : 1f, colorWash ? 0.85f : 1f);
+                centralGlow || colorWash ? 3001 : 3003,
+                unlitStreak: renderer.transform == streak);
         }
     }
 
@@ -106,10 +108,10 @@ internal sealed class BAGachaRenderOrder : MonoBehaviour
         image.material = OrderedMaterial(image.material, queue);
     }
 
-    //按模板、队列和背景光参数复用实例，避免影响其他阶段共用的源材质。
-    private Material OrderedMaterial(Material source, int queue, float brightness = 1f, float opacity = 1f)
+    //按模板和队列复用实例，无光照线条与其他阶段分别缓存。
+    private Material OrderedMaterial(Material source, int queue, bool unlitStreak = false)
     {
-        var key = (source, queue, brightness, opacity);
+        var key = (source, queue, unlitStreak);
         if (materials.TryGetValue(key, out Material cached)) return cached;
         Material material;
         if (source != null)
@@ -121,13 +123,9 @@ internal sealed class BAGachaRenderOrder : MonoBehaviour
             material = new Material(Shader.Find("RimUnity_UI"));
             material.SetVector("_MainTex_ST", new Vector4(1, 1, 0, 0));
         }
+        //放射线原用受光粒子材质；UI 保留贴图、颜色、加法混合和背面剔除，不受地图昼夜影响。
+        if (unlitStreak) material.shader = Shader.Find("RimUnity_ParticleAdditiveBack");
         material.renderQueue = queue;
-        if (brightness != 1f || opacity != 1f)
-        {
-            Color color = material.GetColor("_MainColor");
-            material.SetColor("_MainColor", new Color(color.r * brightness, color.g * brightness,
-                color.b * brightness, color.a * opacity));
-        }
         materials.Add(key, material);
         return material;
     }

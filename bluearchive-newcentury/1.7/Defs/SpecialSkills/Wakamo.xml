@@ -22,7 +22,7 @@
     <recordRatio>1</recordRatio>
     <!-- 蓄积上限倍率：上限 = 建立标记时的攻击力 × 13.22（即 1322%），建立时锁定不再变动。 -->
     <recordCapRatio>13.22</recordCapRatio>
-    <!-- 由EX实际伤害附加到所选目标身上的蓄积状态，必须是 Hediff_WakamoMark 子类。 -->
+    <!-- EX最后一发实际伤害结算后附加到目标身上，仅累计此后的伤害；必须是 Hediff_WakamoMark 子类。 -->
     <buffHediff>BANW_WakamoAccumulation</buffHediff>
     <!-- 施法者身上朝目标播放的指向性施法特效。 -->
     <casterEffecter>BANW_Wakamo_Ef_A</casterEffecter>
@@ -318,12 +318,7 @@
   </ThingDef>
   <DamageDef ParentName="BANC_Damage_shenmi">
     <defName>BANC_Damage_Wakamo_EX</defName><!--通用贯通-->
-    <additionalHediffs><!--额外健康-->
-      <li>
-        <hediff>BANW_WakamoAccumulation</hediff><!--健康类型-->
-        <severityPerDamageDealt>1</severityPerDamageDealt><!--每点伤害增加的健康严重值-->
-      </li>
-    </additionalHediffs>
+    <!-- 蓄积由EX最后一发命中后的技能逻辑创建，不能由伤害类型提前附加。 -->
   </DamageDef>
   <DamageDef ParentName="BANC_Damage_shenmi">
     <defName>BANC_Damage_Wakamo_EX_B</defName><!--通用贯通-->

@@ -58,7 +58,7 @@ namespace BANWlLib.BattleSystem
             return GetBaseStatExtension(pawn)?.exSkillMultiplierOffset ?? 0f;
         }
 
-        //获取学生基础精通倍率平加，接入普通攻击口径伤害的基础精通属性。
+        //获取学生基础精通倍率平加，接入所有BA伤害的最终乘区。
         public static float GetBaseMasteryMultiplierOffset(Pawn pawn)
         {
             return GetBaseStatExtension(pawn)?.baseMasteryMultiplierOffset ?? 0f;
@@ -207,7 +207,7 @@ namespace BANWlLib.BattleSystem
             return Mathf.Max(0f, 1f + bonus);
         }
 
-        //把角色、装备和状态上的基础精通属性接入普通攻击口径伤害。
+        //读取角色、装备和状态提供的基础精通，供所有BA伤害最终乘算。
         public static float GetBaseMasteryMultiplier(Pawn pawn)
         {
             if (pawn == null)
@@ -517,8 +517,8 @@ namespace BANWlLib.BattleSystem
             float actionMultiplier = request.isNormalAttack ? 1f : Mathf.Max(0f, request.attackPowerRatio);
             float normalAttackStatMultiplier = request.useNormalAttackStat ? ResolveNormalAttackMultiplier(request, casterPawn) : 1f;
             float baseMasteryMultiplier = request.snapshot != null ? request.snapshot.baseMasteryMultiplier : GetBaseMasteryMultiplier(casterPawn);
-            float masteryMultiplier = request.isNormalAttack ? Mathf.Max(0f, request.baseMasteryMultiplier) * baseMasteryMultiplier : 1f;
-            float amount = attackPower * attackMultiplier * normalAttackStatMultiplier * actionMultiplier * masteryMultiplier;
+            float masteryMultiplier = Mathf.Max(0f, request.baseMasteryMultiplier) * baseMasteryMultiplier;
+            float amount = attackPower * attackMultiplier * normalAttackStatMultiplier * actionMultiplier;
 
             float critMultiplier = 1f;
             bool canCrit = request.canCrit && !DamageFontRuleUtility.IsCriticalDisabled(request.damageDef);
@@ -535,7 +535,7 @@ namespace BANWlLib.BattleSystem
             result.exSkillMultiplier = GetExSkillMultiplier(request.instigator, request.snapshot, request.isExSkill);
             amount *= result.exSkillMultiplier;
 
-            result.finalAmount = Mathf.Max(0f, amount * request.mechanismMultiplier);
+            result.finalAmount = Mathf.Max(0f, amount * request.mechanismMultiplier * masteryMultiplier);
             return result;
         }
 

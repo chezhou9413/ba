@@ -14,7 +14,7 @@
     <arisu>
       <lineLength>40.9</lineLength>
       <lineWidth>3</lineWidth>
-      <!-- 首段额外延迟；实际首段在施法后的第1加damageDelayTicks个tick结算。 -->
+      <!-- 对敌准备时间，期间跟随瞄准；结束时锁定光束方向，下一tick开始结算伤害。 -->
       <damageDelayTicks>160</damageDelayTicks>
       <!-- 自身充能前摇，60 tick 为1秒；chargeEffecters在前摇开始时播放。 -->
       <chargeWarmupTicks>150</chargeWarmupTicks>
