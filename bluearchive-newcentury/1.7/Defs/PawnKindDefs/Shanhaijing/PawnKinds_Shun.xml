@@ -9,6 +9,7 @@
 
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<abilities>
+		<li>BAWN_Shun_EXX</li>
         <li>BAWN_Shun_EXX</li>
         </abilities>
 		<startingHediffs>

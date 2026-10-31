@@ -22,7 +22,6 @@
         </startingHediffs>
 		<abilities>
         <li>BAWN_Mika_EXX</li>
-		<li>BAWN_Mika_EX</li>
         </abilities>
 		<backstoryFiltersOverride>
 			<li>
@@ -79,6 +78,12 @@
 				<allowedWeapons>
 					<li>BANC_Mika</li>
 				</allowedWeapons>
+			</li>
+			<!-- 绑定通用普通技能：角色生成时安装 BANW_NormalSkillRuntime 状态，普攻计数满足后自动触发 -->
+			<li Class="BANWlLib.Skills.SpecialSkillKindExtension">
+				<normalSkills>
+					<li>BANW_Mika_NormalSkill</li>
+				</normalSkills>
 			</li>
 			
 			<li Class="BANWlLib.BattleSystem.BattleBaseStatExtension">

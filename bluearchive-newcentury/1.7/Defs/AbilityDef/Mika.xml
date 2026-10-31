@@ -133,87 +133,89 @@
       </li>
     </modExtensions>
   </AbilityDef>
-  <AbilityDef>
-    <defName>BAWN_Mika_EX</defName>
+  <!-- 未花普通技能：累计普攻发数后自动对敌人追加一次 282% 攻击力伤害。 -->
+  <BANWlLib.Skills.NormalSkillDef>
+    <defName>BANW_Mika_NormalSkill</defName>
     <label>星之呼唤</label>
-    <description>对一名敌人造成自身子弹攻击力282%的伤害</description>
-    <iconPath>Ability/Icon/Mika/Mika_EXX</iconPath>
-    <cooldownTicksRange>600</cooldownTicksRange>
-    <hotKey>Misc12</hotKey>
-    <warmupStartSound>Mika_Skill_EX</warmupStartSound>
-    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
-    <stunTargetWhileCasting>True</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
-    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
-    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
-    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
-    <jobDef>BANW_Job_Nozomi_DelayedMultiShot_Test</jobDef>
-    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
-    <hostile>true</hostile><!-- 是否是敌对行为 -->
-    <targetRequired>true</targetRequired><!-- 对自己使用 -->
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
-    <verbProperties>
-      <warmupEffecter>BANW_Effecter_A</warmupEffecter>
-      <soundCast>BANW_Wp_SMG_At</soundCast>
-      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass> <!-- 动词类，这里是触发型技能 -->
-      <defaultProjectile>BANC_Bullet_Mika_EX</defaultProjectile>
-      <range>24.9</range><!-- 作用范围：-1 表示只能近战接触 -->
-      <warmupTime>0.4</warmupTime><!-- 前摇时间（单位：秒） -->
-      <ai_IsWeapon>false</ai_IsWeapon> <!--AI
-      不将此能力视为武器。-->
-      <targetParams><!-- 目标参数设置 -->
-        <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
-        <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
-        <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
-        <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
-        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
-      </targetParams>
-    </verbProperties>
+    <description>自身每进行15次普通攻击，对一名敌人造成自身子弹攻击力282%的伤害。</description>
+    <!-- 主武器每成功发射一发普攻累计一次。 -->
+    <countMode>ShotFired</countMode>
+    <requiredCount>25</requiredCount>
+    <!-- 触发后无额外冷却，计数满即可再次触发。 -->
+    <cooldownTicks>1</cooldownTicks>
+    <range>24.9</range>
+    <onlyTargetAllies>false</onlyTargetAllies>
+    <showBattleFormula>true</showBattleFormula>
+    <!-- 自动技能必须选实体目标，不能选空地。 -->
+    <targetParams>
+      <canTargetLocations>false</canTargetLocations>
+      <canTargetSelf>false</canTargetSelf>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetBuildings>true</canTargetBuildings>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>true</canTargetHumans>
+      <canTargetMechs>true</canTargetMechs>
+    </targetParams>
+    <castSound>Mika_Skill_EX</castSound>
+    <casterEffecter>BANW_Effecter_A</casterEffecter>
+    <!-- BANW_Mika_Ef_A 是 EXX 大招的 4 段延时状态光效，普通技能不要用，故留空。 -->
+    <targetEffecter></targetEffecter>
+    <actions>
+      <li>
+        <!-- 攻击力倍率是本段全部发数的总倍率：3 发 × 0.94 = 282%。 -->
+        <useBattleStats>true</useBattleStats>
+        <attackPowerRatio>14.1</attackPowerRatio>
+        <damageDef>BANC_Damage_Mika_None</damageDef>
+        <canCrit>true</canCrit>
+        <alwaysCrit>false</alwaysCrit>
+        <applyAffinity>true</applyAffinity>
+        <!-- 普通技能动作必须保持 false，否则加载时报配置错误。 -->
+        <isExSkill>false</isExSkill>
+        <isNormalAttack>false</isNormalAttack>
+        <penetration>2</penetration>
+        <radius>0</radius>
+        <shots>3</shots>
+        <shotIntervalTicks>6</shotIntervalTicks>
+        <!-- 别换成 BANC_Bullet_Mika_EX：它自带 BattleProjectileExtension(1.55)，命中时会被 Projectile.DamageAmount 补丁再结算一次。 -->
+        <projectileDef>BANC_Bullet_Mika_Normal</projectileDef>
+        <effecterDef>BANW_Mika_Ef_C</effecterDef>
+        <shotSound>BANW_Wp_SMG_At</shotSound>
+        <affectHostile>true</affectHostile>
+        <affectFriendly>false</affectFriendly>
+        <canHitOwnPawn>false</canHitOwnPawn>
+      </li>
+    </actions>
+  </BANWlLib.Skills.NormalSkillDef>
+  <!-- 普通技能弹丸，必须使用 Projectile_SpecialSkill 才能进入统一伤害结算。 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANC_Bullet_Mika_Normal</defName>
+    <label>星之呼唤子弹</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData>
+      <texPath>Projectile/Bullet_Mika</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <projectile>
+      <!-- 伤害全部由 SpecialCombatUtility 结算，这里保持 0 避免 base.Impact 再补一次跳字。 -->
+      <damageDef>BANC_Damage_Mika_None</damageDef>
+      <damageAmountBase>24</damageAmountBase>
+      <speed>70</speed>
+    </projectile>
     <modExtensions>
-      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
-        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
-        <showBattleFormula>true</showBattleFormula>
-        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>1</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>false</isExSkill>
+      <applyAffinity>true</applyAffinity>
+      <canHitOwnPawn>true</canHitOwnPawn>
+      <canHitOwnBuilding>true</canHitOwnBuilding>
       </li>
+
     </modExtensions>
-     <comps>
-      <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
-        <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
-        <projectileDef>BANC_Bullet_Mika_EXX</projectileDef>
-        <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
-        <canHitOwnPawn>true</canHitOwnPawn>
-        <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
-        <canHitOwnBuilding>true</canHitOwnBuilding>
-        <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
-        <cancelWhenCasterMoved>true</cancelWhenCasterMoved>
-        <!-- 施法者倒地、死亡、眩晕或失去基础射击能力后，中断同一轮剩余子弹。 -->
-        <requireCasterCanShoot>true</requireCasterCanShoot>
-        <!-- 每发子弹到点时重新检查视线，视线被墙体或遮挡切断后中断同一轮剩余子弹。 -->
-        <requireLineOfSightEachShot>true</requireLineOfSightEachShot>
-        <!-- 连射队列未结束前每 tick 停止寻路，禁止施法者移动。 -->
-        <lockCasterDuringSequence>true</lockCasterDuringSequence>
-        <!-- 连射队列未结束前持续绘制主武器朝目标瞄准。 -->
-        <drawPrimaryWeaponAimDuringSequence>true</drawPrimaryWeaponAimDuringSequence>
-        <shots>
-          <li>
-            <delayTicks>0</delayTicks>
-            <projectileDef>BANC_Bullet_Mika_EX</projectileDef>
-            <attackPowerRatio>0.94</attackPowerRatio>
-          </li>
-          <li>
-            <delayTicks>6</delayTicks>
-            <projectileDef>BANC_Bullet_Mika_EX</projectileDef>
-            <attackPowerRatio>0.94</attackPowerRatio>
-          </li>
-          <li>
-            <delayTicks>12</delayTicks>
-            <projectileDef>BANC_Bullet_Mika_EX</projectileDef>
-            <attackPowerRatio>0.94</attackPowerRatio>
-          </li>
-        </shots>
-      </li>
-    </comps>
-  </AbilityDef>
+  </ThingDef>
   <!-- 定义一个状态效果（Hediff），用于持续治疗 -->
   <HediffDef>
     <!-- 状态的唯一标识符 -->
@@ -333,6 +335,7 @@
   <ThingDef ParentName="BaseBullet">
     <defName>BANC_Bullet_Mika_EX</defName>
     <label>星之呼唤子弹</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
     <projectile>
       <damageDef>BANC_Damage_Mika_None</damageDef><!--子弹类型-->
       <damageAmountBase>24</damageAmountBase><!--子弹伤害-->

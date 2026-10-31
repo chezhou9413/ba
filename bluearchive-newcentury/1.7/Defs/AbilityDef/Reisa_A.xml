@@ -15,34 +15,25 @@
     <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
     <hostile>true</hostile><!-- 是否是敌对行为 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <targetRequired>true</targetRequired><!-- 必须选择目标 -->
+    <statBases>
+      <Ability_Duration>0.1</Ability_Duration>
+    </statBases>
     <verbProperties>
-      <warmupEffecter>BANW_Reisa_A_Ef_B</warmupEffecter>
-      <soundCast>BANW_Wp_SG_At</soundCast>
-      <verbClass>AbilityShoot.Verb_AbilityShootForPlayer</verbClass> <!-- 动词类，这里是触发型技能 -->
-      <defaultProjectile>BANC_Bullet_Reisa_A_EX</defaultProjectile>
+      <soundCast></soundCast>
+      <!-- 纯施法动词，子弹全部由 CompProperties_AbilityMultiShotProjectile 的连射队列发射。 -->
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
       <range>33.9</range><!-- 作用范围：-1 表示只能近战接触 -->
       <warmupTime>1</warmupTime><!-- 前摇时间（单位：秒） -->
-      <muzzleFlashScale>9</muzzleFlashScale><!-- 枪口闪光的缩放比例为 9 -->
-      <ticksBetweenBurstShots>7</ticksBetweenBurstShots><!-- 连发射击之间的间隔为 6 ticks -->
-      <burstShotCount>2</burstShotCount> <!--连发射击的数量为
-      12 发。-->
-      <accuracyTouch>1</accuracyTouch><!--近距离射击的命中率为
-      90%。-->
-      <accuracyShort>1</accuracyShort> <!--短距离射击的命中率为
-      80%。-->
-      <accuracyMedium>1</accuracyMedium> <!--中距离射击的命中率为
-      70%。-->
-      <accuracyLong>1</accuracyLong><!--长距离射击的命中率为
-      60%。-->
-      <ai_IsWeapon>false</ai_IsWeapon> <!--AI
-      不将此能力视为武器。-->
+      <ai_IsWeapon>false</ai_IsWeapon><!-- AI 不将此能力视为武器 -->
+      <sprayEffecterDef>BANW_Reisa_A_Ef_B</sprayEffecterDef>
       <targetParams><!-- 目标参数设置 -->
         <canTargetSelf>false</canTargetSelf> <!-- 可以选自己 -->
         <canTargetPawns>true</canTargetPawns><!-- 不能选其他生物 -->
         <canTargetBuildings>true</canTargetBuildings><!-- 不能选建筑 -->
         <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
-        <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-        <canTargetMechs>true</canTargetMechs><!-- 不能选机械体 -->
+        <canTargetHumans>true</canTargetHumans> <!-- 不能选人类 -->
+        <canTargetMechs>true</canTargetMechs> <!-- 不能选机械体 -->
       </targetParams>
     </verbProperties>
     <comps>
@@ -57,8 +48,42 @@
         <!-- 是否替换已存在的同种效果 -->
         <replaceExisting>true</replaceExisting>
       </li>
+      <li Class="CompProperties_AbilityEffecterOnCaster">
+        <effecterDef>BANW_Reisa_A_Ef_B</effecterDef>
+        <maintainTicks>60</maintainTicks><!-- 覆盖整轮连射时长 -->
+      </li>
+      <li Class="BANWlLib.BattleSystem.CompProperties_AbilityMultiShotProjectile">
+        <!-- 默认子弹 Def，单发配置不覆盖时使用它。 -->
+        <projectileDef>BANC_Bullet_Reisa_A_EX</projectileDef>
+        <!-- 是否允许本技能子弹对同阵营 Pawn 生效。 -->
+        <canHitOwnPawn>false</canHitOwnPawn>
+        <!-- 是否允许本技能子弹对同阵营建筑生效。 -->
+        <canHitOwnBuilding>false</canHitOwnBuilding>
+        <!-- 施法者离开施法完成时所在格后，中断同一轮剩余子弹。 -->
+        <cancelWhenCasterMoved>true</cancelWhenCasterMoved>
+        <!-- 施法者倒地、死亡、眩晕或失去基础射击能力后，中断同一轮剩余子弹。 -->
+        <requireCasterCanShoot>true</requireCasterCanShoot>
+        <!-- 每发子弹到点时重新检查视线，视线被墙体或遮挡切断后中断同一轮剩余子弹。 -->
+        <requireLineOfSightEachShot>true</requireLineOfSightEachShot>
+        <!-- 连射队列未结束前每 tick 停止寻路，禁止施法者移动。 -->
+        <lockCasterDuringSequence>true</lockCasterDuringSequence>
+        <!-- 连射队列未结束前持续绘制主武器朝目标瞄准。 -->
+        <drawPrimaryWeaponAimDuringSequence>true</drawPrimaryWeaponAimDuringSequence>
+        <!-- 每个 li 代表一发，delayTicks 是相对施法完成时的发射延迟。 -->
+        <!-- 10 发 × 弹丸倍率 0.265 = 265%。 -->
+        <shots>
+          <li><delayTicks>0</delayTicks></li>
+          <li><delayTicks>6</delayTicks></li>
+        </shots>
+      </li>
     </comps>
     <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <shape>Circle</shape>
+        <range>33.9</range>
+        <drawCasterRange>true</drawCasterRange>
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
       <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
         <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
         <showBattleFormula>true</showBattleFormula>
@@ -75,7 +100,7 @@
             <!-- 是否应用攻击类型与护甲类型克制。 -->
             <applyAffinity>true</applyAffinity>
             <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
-            <isExSkill>true</isExSkill>
+            <isExSkill>false</isExSkill>
           </li>
         </previewActions>
       </li>
@@ -146,6 +171,7 @@
     </graphicData>
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <!-- 单发倍率，连射 10 发合计 265%。 -->
         <attackPowerRatio>1.33</attackPowerRatio>
          <isNormalAttack>false</isNormalAttack>
         <canCrit>true</canCrit>

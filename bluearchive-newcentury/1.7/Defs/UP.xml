@@ -2,8 +2,17 @@
 <Defs>
   <BANWlLib.Announcements.UpdateAnnouncementDef>
     <defName>SR_StopMaintenance</defName>
-    <label>碧蓝档案新世界公测公告2.1</label>
+    <label>碧蓝档案新世界公测公告2.2</label>
     <description>碧蓝档案新世界超级超级大更新，这次版本修复了非常多的代码问题！详细请看公告！
+&lt;color=#66FFFF&gt;11月11日更新公告：&lt;/color&gt;
+新增 FES 角色： 星野(临战)，尼禄(制服)，白子(恐怖)，
+新增所有FES角色的ex技能
+新增srt狐狸小队，甜点部乐队，和其他的一些角色有谁我忘了
+新增新机制cost点数，现在所有的ex都需要cost点数，点数会根据征兆的学生恢复
+新增后排学生的光环技能
+更新1.7
+修复了一堆大大小小的问题时间跨越太大我都忘了修了啥了
+更新了一堆技能
 &lt;color=#66FFFF&gt;7月07日更新公告：&lt;/color&gt;
 &lt;color=#00FF00&gt;新角色&lt;/color&gt;
 新增 FES 角色：渚（泳装）、未花（泳装）
