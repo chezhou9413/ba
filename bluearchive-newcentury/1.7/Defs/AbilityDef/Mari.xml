@@ -2,7 +2,7 @@
 <Defs>
    <AbilityDef>
     <defName>BAWN_Mari_EX</defName>
-    <label>想吃苦头是吧？！</label>
+    <label>净化的洗礼</label>
     <description>对圆形范围内的敌方单位造成自身攻击力364%的伤害</description>
     <iconPath>Ability/Icon/Chise/Chise_EX</iconPath>
     <cooldownTicksRange>1500</cooldownTicksRange>

@@ -13,6 +13,7 @@
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
 		<abilities>
+			<li>BAWN_Atsuko_EX</li>
 			<li>BAWN_Atsuko_EXX</li>
 		</abilities>
 		<startingHediffs>

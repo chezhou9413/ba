@@ -172,7 +172,7 @@
     <!-- 按钮图标路径。 -->
     <iconPath>Ability/Icon/Hoshiro_B/Hoshiro</iconPath>
     <!-- 冷却时间，60 tick = 1 秒。 -->
-    <cooldownTicksRange>60</cooldownTicksRange>
+    <cooldownTicksRange>4800</cooldownTicksRange>
     <!-- 未征召时也显示按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
     <!-- 未征召时按钮置灰不可点。 -->

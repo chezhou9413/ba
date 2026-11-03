@@ -177,9 +177,9 @@
             <!-- 弹丸 ThingDef，必须使用 Projectile_SpecialSkill。 -->
             <projectileDef>BANW_Bullet_Hoshiro_B_EX_C</projectileDef>
             <!-- 是否可以命中自己。 -->
-            <canHitOwnPawn>true</canHitOwnPawn>
+            <canHitOwnPawn>false</canHitOwnPawn>
             <!-- 是否影响友军。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 是否影响敌军。 -->
             <affectHostile>true</affectHostile>
           </attack>
@@ -216,9 +216,9 @@
             <!-- 弹丸 ThingDef。 -->
             <projectileDef>BANW_Bullet_Hoshiro_B_EX_C</projectileDef>
             <!-- 是否可以命中自己。 -->
-            <canHitOwnPawn>true</canHitOwnPawn>
+            <canHitOwnPawn>false</canHitOwnPawn>
             <!-- 是否影响友军。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 是否影响敌军。 -->
             <affectHostile>true</affectHostile>
           </attack>
@@ -255,9 +255,9 @@
             <!-- 弹丸 ThingDef。 -->
             <projectileDef>BANW_Bullet_Hoshiro_B_EX_C</projectileDef>
             <!-- 是否可以命中自己。 -->
-            <canHitOwnPawn>true</canHitOwnPawn>
+            <canHitOwnPawn>false</canHitOwnPawn>
             <!-- 是否影响友军。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 是否影响敌军。 -->
             <affectHostile>true</affectHostile>
           </attack>
@@ -296,9 +296,9 @@
             <!-- 命中特效，删除则不播放爆炸表现。 -->
             <effecterDef>BANW_Hoshiro_B_C_Ef_A</effecterDef>
             <!-- 是否可以命中自己。 -->
-            <canHitOwnPawn>true</canHitOwnPawn>
+            <canHitOwnPawn>false</canHitOwnPawn>
             <!-- 是否影响友军。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 是否影响敌军。 -->
             <affectHostile>true</affectHostile>
           </attack>
@@ -337,9 +337,9 @@
             <!-- 命中特效。 -->
             <effecterDef>BANW_Effecter_ShakeHoshiro</effecterDef>
             <!-- 是否可以命中自己。 -->
-            <canHitOwnPawn>true</canHitOwnPawn>
+            <canHitOwnPawn>false</canHitOwnPawn>
             <!-- 是否影响友军。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 是否影响敌军。 -->
             <affectHostile>true</affectHostile>
           </attack>
@@ -378,9 +378,9 @@
             <!-- 命中特效。 -->
             <effecterDef>BANW_Effecter_ShakeHoshiro</effecterDef>
             <!-- 是否可以命中自己。 -->
-            <canHitOwnPawn>true</canHitOwnPawn>
+            <canHitOwnPawn>false</canHitOwnPawn>
             <!-- 是否影响友军。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 是否影响敌军。 -->
             <affectHostile>true</affectHostile>
           </attack>
@@ -419,9 +419,9 @@
             <!-- 命中特效。 -->
             <effecterDef>BANW_Hoshiro_B_C_Ef_B</effecterDef>
             <!-- 是否可以命中自己。 -->
-            <canHitOwnPawn>true</canHitOwnPawn>
+            <canHitOwnPawn>false</canHitOwnPawn>
             <!-- 是否影响友军。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 是否影响敌军。 -->
             <affectHostile>true</affectHostile>
           </attack>
@@ -459,9 +459,9 @@
             <!-- 命中特效。 -->
             <effecterDef></effecterDef>
             <!-- 是否可以命中自己。 -->
-            <canHitOwnPawn>true</canHitOwnPawn>
+            <canHitOwnPawn>false</canHitOwnPawn>
             <!-- 是否影响友军。 -->
-            <affectFriendly>true</affectFriendly>
+            <affectFriendly>false</affectFriendly>
             <!-- 是否影响敌军。 -->
             <affectHostile>true</affectHostile>
           </attack>

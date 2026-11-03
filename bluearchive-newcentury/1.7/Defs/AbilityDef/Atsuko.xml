@@ -208,4 +208,142 @@
       </li>
     </stages>
   </HediffDef>
+
+
+
+  <AbilityDef>
+    <defName>BAWN_Atsuko_EX</defName>
+    <label>躲起来吧</label>
+    <description>在自身处释放圆形范围的烟雾，对该范围内的我方单位造成闪避值增加39%。（持续20秒）</description>
+    <iconPath>Ability/Icon/Atsuko/Atsuko_EX</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hotKey>Misc6</hotKey>
+    <warmupStartSound>Atsuko_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <showWhenDrafted>True</showWhenDrafted>
+    <hostile>true</hostile>
+    <warmupEffecter></warmupEffecter>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_NewA</warmupEffecter>
+      <soundCast>BANW_Wp_HG_At</soundCast>
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+      <range>1</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <!-- 允许把施法者自己选为目标，点自己脚下即可在原地放烟。 -->
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BANWlLib.BattleSystem.CompProperties_AbilitySpawnBattleField">
+        <!-- 场地控制器 ThingDef。 -->
+        <fieldThingDef>BANW_BattleField_Atsuko_Test</fieldThingDef>
+        <!-- 场地持续1500 tick，即25秒。 -->
+        <durationTicksOverride>1200</durationTicksOverride>
+      </li>
+      <li Class="CompProperties_AbilityEffecterOnTarget">
+        <effecterDef>BANW_Atsuko_Ef_C</effecterDef>
+        <maintainForTicks>1200</maintainForTicks>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <!-- 圆形预览，从场地控制器读取半径。 -->
+        <shape>Circle</shape>
+        <range>1</range>
+        <useBattleFieldRadius>true</useBattleFieldRadius>
+        <drawCasterRange>true</drawCasterRange>
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <!-- 场地控制器：每100 tick为范围内友军刷新增益状态。 -->
+  <ThingDef>
+    <defName>BANW_BattleField_Atsuko_Test</defName>
+    <label>躲起来吧</label>
+    <thingClass>BANWlLib.BattleSystem.Thing_BattleFieldController</thingClass>
+    <category>Mote</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <useHitPoints>false</useHitPoints>
+    <selectable>false</selectable>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>UI/StarIcon</texPath>
+      <drawSize>0.01</drawSize>
+    </graphicData>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleFieldControllerExtension">
+        <!-- 场地存在时间，单位 tick。 -->
+        <durationTicks>1200</durationTicks>
+        <!-- 每100 tick结算一次。 -->
+        <intervalTicks>100</intervalTicks>
+        <!-- 场地半径。 -->
+        <radius>3.9</radius>
+        <!-- 快照施法者属性。 -->
+        <useCasterSnapshot>true</useCasterSnapshot>
+        <!-- 每次脉冲播放的范围提示特效。 -->
+        <pulseEffecter></pulseEffecter>
+        <!-- 场地每次脉冲执行的战斗动作。 -->
+        <actions>
+          <li>
+            <!-- 影响敌对目标。 -->
+            <affectHostile>false</affectHostile>
+            <!-- 影响友方。 -->
+            <affectFriendly>true</affectFriendly>
+            <!-- 不命中建筑。 -->
+            <canHitBuilding>false</canHitBuilding>
+            <!-- 每次脉冲为范围内友军施加增益并刷新剩余时间。 -->
+            <triggerHediff>BAWN_Atsuko_buff_B</triggerHediff>
+          </li>
+        </actions>
+      </li>
+    </modExtensions>
+  </ThingDef>
+    <!-- 场地增益状态，由场地脉冲刷新，离开场地后短暂保留表现与属性。 -->
+    <HediffDef>
+        <!-- 状态的唯一标识符 -->
+        <defName>BAWN_Atsuko_buff_B</defName>
+        <!-- 显示名称 -->
+        <label>躲起来吧</label>
+        <!-- 效果描述 -->
+        <description>闪避率增加39%(持续25秒)</description>
+        <defaultLabelColor>(0, 0, 204)</defaultLabelColor>
+        <!-- 是否为负面效果（会影响心情等） -->
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <!-- 属性限制调整，这里是 LifeStage 属性不受影响 -->
+          <stages>
+          <li>     
+            <statOffsets>
+           <BANW_Miss>0.39</BANW_Miss>
+            </statOffsets>
+           <statFactors>
+           </statFactors>
+           </li>
+          </stages>
+        <comps>
+        <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>120</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Hoshiro_A_Ef_B</stateEffecter>
+      </li>
+    </comps>
+    </HediffDef>
 </Defs>

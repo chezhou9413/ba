@@ -221,10 +221,11 @@
 <MeleeDodgeChance>20</MeleeDodgeChance>
 					<ShootingAccuracyPawn>30</ShootingAccuracyPawn>
 					<BANW_RangedWeapon_RangeOffset>5</BANW_RangedWeapon_RangeOffset>
+					<Muice_RangedAimingTimeFactor>-0.3</Muice_RangedAimingTimeFactor>
                 </statOffsets>
 				<statFactors>
 					<IncomingDamageFactor>0.8</IncomingDamageFactor>
-					<Muice_RangedAimingTimeFactor>0.1</Muice_RangedAimingTimeFactor>
+					
 					<StaggerDurationFactor>0</StaggerDurationFactor> 
 					<RestFallRateFactor>1.5</RestFallRateFactor>
 					<PsychicSensitivity>2</PsychicSensitivity>

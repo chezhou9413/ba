@@ -57,6 +57,57 @@
 		</subSounds>
 	</SoundDef>
 	<SoundDef>
+		<defName>Kei_Skill_EX</defName>  <!--二技能语音-->
+		<maxVoices>1</maxVoices>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Ability/Kei/Kei_Skill</clipPath>
+					</li>
+				</grains>
+				<volumeRange>80~80</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	<SoundDef>
+		<defName>Kei_Skill_EX_C</defName>  <!--二技能语音-->
+		<maxVoices>1</maxVoices>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Ability/Kei/SFX_CH0335_Public_Hit</clipPath>
+					</li>
+				</grains>
+				<volumeRange>80~80</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	<SoundDef>
+		<defName>Kei_Skill_EX_D</defName>  <!--二技能语音-->
+		<maxVoices>1</maxVoices>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Ability/Kei/SFX_CH0335_Public_Shot</clipPath>
+					</li>
+				</grains>
+				<volumeRange>80~80</volumeRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	<SoundDef>
 		<defName>Kei_levelup_A</defName>  <!--二技能语音-->
 		<maxVoices>1</maxVoices>
 		<context>MapOnly</context>

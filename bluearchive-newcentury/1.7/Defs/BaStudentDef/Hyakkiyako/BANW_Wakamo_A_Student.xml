@@ -29,7 +29,7 @@
 			<!-- 出击按钮旁边的2号tag图片路径，对应位置左下 -->
 			<infotagImagePath2>ManuaUI/Type/后排</infotagImagePath2>
 			<!-- 出击按钮旁边的3号tag图片路径，对应位置右上 -->
-			<infotagImagePath3>ManuaUI/Type/贯穿</infotagImagePath3>
+			<infotagImagePath3>ManuaUI/Type/贯通</infotagImagePath3>
 			<!-- 出击按钮旁边的4号tag图片路径，对应位置右下 -->
 			<infotagImagePath4>ManuaUI/Type/重装甲</infotagImagePath4>
 			<!-- 技能等级显示，写整数，不要大于20，小于0 -->

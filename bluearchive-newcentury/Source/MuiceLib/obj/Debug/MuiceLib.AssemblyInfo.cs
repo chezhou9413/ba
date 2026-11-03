@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MuiceLib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbf89174be26ef129331197cf653aabbc5b0f765")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+575ba841b0f55abf195e4954f9d3b581e9b7e372")]
 [assembly: System.Reflection.AssemblyProductAttribute("MuiceLib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MuiceLib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

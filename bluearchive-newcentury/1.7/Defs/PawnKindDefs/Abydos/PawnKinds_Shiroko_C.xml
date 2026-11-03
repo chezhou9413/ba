@@ -15,12 +15,15 @@
 		<humanPregnancyChance>0.0</humanPregnancyChance>
 		<fixedGender>Female</fixedGender>
 		<abilities>
-        <li>BAWN_Shiroko_EX</li>
+        <li>BAWN_Shiroko_C_NS</li>
         </abilities>
 		<startingHediffs>
 		<li>
 			<def>BANW_LevelTrait</def>
 			<severity>0.001</severity>
+		</li>
+		<li>
+			<def>BAWN_Shiroko_C_Buff</def>
 		</li>
         </startingHediffs>
 		<backstoryFiltersOverride>
@@ -45,27 +48,27 @@
 		<skills>
 			<li>
 				<skill>Shooting</skill>
-				<range>14</range>
+				<range>20</range>
 			</li>
 			<li>
 				<skill>Melee</skill>
-				<range>11</range>
+				<range>20</range>
 			</li>
 			<li>
 				<skill>Mining</skill>
-				<range>7</range>
+				<range>15</range>
 			</li>
 			<li>
 				<skill>Animals</skill>
-				<range>8</range>
+				<range>10</range>
 			</li>
 			<li>
 				<skill>Plants</skill>
-				<range>7</range>
+				<range>10</range>
 			</li>
 			<li>
 				<skill>Construction</skill>
-				<range>7</range>
+				<range>14</range>
 			</li>
 			<li>
 				<skill>Social</skill>
@@ -73,13 +76,14 @@
 			</li>
 			<li>
 				<skill>Intellectual</skill>
-				<range>5</range>
+				<range>10</range>
 			</li>
 		</skills>
 		<forcedTraits>
 			<BAWC_TraitDef_Attack>0</BAWC_TraitDef_Attack>
 			<BAWC_TraitDef_shenmi>0</BAWC_TraitDef_shenmi>
 			<BAWC_TraitDef_teshu>0</BAWC_TraitDef_teshu>
+			<BAWC_TraitDef_Shiroko_C>0</BAWC_TraitDef_Shiroko_C>
 			<BAWC_TraitDef_Shiroko_C_A>0</BAWC_TraitDef_Shiroko_C_A>
 			
 		</forcedTraits>
@@ -230,4 +234,114 @@
             </li>
         </degreeDatas>
 	</TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Shiroko_C_B</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#4169E1&gt;沉稳呼吸&lt;/color&gt;</label>
+                <description>子技能:自身神秘克制率加算&lt;color=#DC143C&gt;49%&lt;/color&gt;。
+自身生命值不高于1%时： 立即对自身造成以下效果（冷却90秒）：
+- 15秒内每秒获得1层退场缓冲.
+  ※ 最多15层.
+  ※ 自身拥有退场缓冲期间，不会死亡.自身生命值回复至100%时： 立即对自身造成以下效果：
+- 移除自身拥有的所有退场缓冲层数且中断获得.自身拥有退场缓冲15层后：
+立即对自身造成以下效果：
+- 立即死亡.</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+                    <BANW_AffinityBonus_Mysterious>0.49</BANW_AffinityBonus_Mysterious>
+                </statOffsets>
+				<statFactors>
+				</statFactors>
+            </li>
+        </degreeDatas>
+	</TraitDef>
+	<TraitDef>
+        <defName>BAWC_TraitDef_Shiroko_C</defName>
+        <commonality>0</commonality>
+        <degreeDatas>
+            <li>
+                <label>&lt;color=#E066FF&gt;色彩&lt;/color&gt;&lt;color=#23dbe8&gt;反转&lt;/color&gt;</label>	
+                <description>【色彩】终于和冥界之神接触了！
+虽然尚不知引导色彩的，是痛苦还是死亡……不过，这便是最后的阶段了。
+终于能将【湮没众神】从这个世界驱逐出去……将终结呼唤到这个世界了。
+祂们总算迎来了和吾等相同的命运。
+如同因无名而无法被呼唤，因无法被呼唤而无法存在的【无名众神】一样，
+你们也将迎来同样的结局。
+尽管招来色彩存在诸多危险，但这才是正确的选择。
+祭司因无时不崇拜神，而懂得如何拥有。
+因此，吾等将在此处迎接崭新的崇高。
+将一切存在引导至冥界的死亡之神——
+阿努比斯。
+从此刻开始，就用因色彩而显现的你自身的【恐怖】，笼罩这个世界吧。
+在那之前，死亡与安息都不被允许。
+直到你成为【色彩的引导者】，毁灭一切为止！
+直到让所有时空的【湮没众神】灰飞烟灭为止！</description>
+                <marketValueFactorOffset>1</marketValueFactorOffset>
+                <statOffsets>
+					<BANW_CarryMassOffset>100</BANW_CarryMassOffset>
+					<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+		            <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+	                <ArmorRating_Heat>0.3</ArmorRating_Heat>
+					<PainShockThreshold>5.5</PainShockThreshold>
+					<MoveSpeed>8</MoveSpeed>
+					<CarryingCapacity>100</CarryingCapacity> 
+<MeleeDodgeChance>20</MeleeDodgeChance>
+					<ShootingAccuracyPawn>50</ShootingAccuracyPawn>
+					<Muice_RangedAimingTimeFactor>-0.3</Muice_RangedAimingTimeFactor>
+                </statOffsets>
+				<statFactors>
+					
+					<StaggerDurationFactor>0</StaggerDurationFactor> 
+					<RestFallRateFactor>0.8</RestFallRateFactor>
+					<PsychicSensitivity>0</PsychicSensitivity>
+					<WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+					<MeleeDamageFactor>8.1</MeleeDamageFactor>           
+                    <MeleeArmorPenetration>8.5</MeleeArmorPenetration>   
+                    <MeleeCooldownFactor>0.3</MeleeCooldownFactor>
+				</statFactors>
+            </li>
+        </degreeDatas>
+</TraitDef>
+<HediffDef>
+        
+        <defName>BAWN_Shiroko_C_Buff</defName>
+        <label>白子*恐怖</label>
+        <description>是我错了……那时候就不该收下围巾，不如直接在沙漠里死掉，一了百了……
+最后反正都会变成这样……
+要是我……我早一点那样……老师……跟大家……也许都能活下来……
+都是因为我活着……因为我的错……
+我杀了老师……毁灭了世界……
+让老师暴露在色彩里……
+所以老师……才指引我来到这里，来毁灭所有的世界……
+对不起……真的，对不起……</description>
+        <defaultLabelColor>(224,102,255)</defaultLabelColor>
+        <isBad>false</isBad>
+        <hediffClass>HediffWithComps</hediffClass>
+        <everCurableByItem>false</everCurableByItem>
+        <stages>
+        <li>
+        <painFactor>0.30</painFactor>
+        <!-- 失血量系数：0.5 表示流血速度减半，这是阶段自带的字段，不通过属性系统生效。 -->
+        <totalBleedFactor>0.5</totalBleedFactor>
+        <!-- 抗性类：按比例加值，1 表示 100%。 -->
+        <statOffsets>
+            <!-- 有毒环境抗性 +60%，降低污染环境里的中毒判定。上限为 1。 -->
+            <ToxicEnvironmentResistance>0.6</ToxicEnvironmentResistance>
+            <!-- 毒素抗性 +60%，降低毒素类伤害结算。上限为 1。 -->
+            <ToxicResistance>0.6</ToxicResistance>
+            <!-- 最高舒适温度 +30 度。 -->
+            <ComfyTemperatureMax>30</ComfyTemperatureMax>
+            <!-- 最低舒适温度 -30 度。 -->
+            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+        </statOffsets>
+        <!-- 系数类：按乘法修正，1 表示不变。 -->
+        <statFactors>
+            <!-- 免疫速度 x1.5，即 +50%。 -->
+            <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+        </statFactors>
+        </li>
+        </stages>
+    </HediffDef>
 </Defs>

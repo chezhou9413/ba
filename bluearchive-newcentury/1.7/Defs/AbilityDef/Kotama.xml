@@ -220,19 +220,6 @@
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>BANW_Effecter_Kotama_A</stateEffecter>
       </li>
-      <li Class="HediffCompProperties_GiveHediffsInRange">
-        <!-- 目标选择参数 -->
-        <targetingParameters>
-          <!-- 不影响建筑 -->
-          <canTargetBuildings>false</canTargetBuildings>
-          <!-- 不影响动物 -->
-          <canTargetAnimals>false</canTargetAnimals>
-          <!-- 不影响机械体 -->
-          <canTargetMechs>false</canTargetMechs>
-          <!-- 只影响殖民者 -->
-          <onlyTargetColonists>true</onlyTargetColonists>
-        </targetingParameters>
-      </li>
     </comps>
     </HediffDef>
 </Defs>

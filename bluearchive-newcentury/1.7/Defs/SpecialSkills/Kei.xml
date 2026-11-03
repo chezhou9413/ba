@@ -21,13 +21,13 @@
       <!-- 场地结束后自动执行的释放工作。 -->
       <normalJob>BANW_Job_KeiNormalSkill</normalJob>
       <!-- 普通技能前摇，60 tick为1秒；语音与前摇特效在前摇开始时播放。 -->
-      <warmupTicks>120</warmupTicks>
+      <warmupTicks>130</warmupTicks>
       <!-- 前摇开始时播放的语音。 -->
-      <warmupSound>Kei_Skill_EXX</warmupSound>
+      <warmupSound>Kei_Skill_EX</warmupSound>
       <!-- 前摇开始时在施法者身上播放的特效。 -->
-      <warmupEffecter>BANW_Kei_Ef_B</warmupEffecter>
+      <warmupEffecter>BANW_Kei_Ef_D</warmupEffecter>
       <!-- 子弹命中结算时播放的射击语音。 -->
-      <castSound>BANW_Wp_RG_At</castSound>
+      <castSound></castSound>
       <!-- 普通技能发射时施法者身上朝目标方向的定向特效。 -->
       <casterEffecter></casterEffecter>
       <!-- 普通技能发射时目标位置播放的特效；留空表示不播放。 -->
@@ -50,7 +50,7 @@
       <!-- 281%自身攻击力，记录量为0时仍正常造成该段伤害。 -->
       <attackPowerRatio>2.81</attackPowerRatio>
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <penetration>0</penetration>
+      <penetration>2</penetration>
       <!-- 普通技能不属于武器普攻，也不使用EX加成。 -->
       <isNormalAttack>false</isNormalAttack>
       <isExSkill>false</isExSkill>
@@ -59,8 +59,8 @@
       <radius>0</radius>
       <shots>1</shots>
       <shotIntervalTicks>6</shotIntervalTicks>
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <effecterDef>BANW_Effecter_C</effecterDef>
+      <projectileDef>BANC_Bullet_Kei_NS</projectileDef>
+      <effecterDef></effecterDef>
     </normalAttack>
     <burstAttack>
       <!-- 普通技能的记录伤害段，独立于normalAttack；攻击基数仅用于计算蓄积上限。 -->
@@ -86,7 +86,7 @@
       <!-- 单发单体实体弹丸在命中时结算蓄积伤害，shots固定为1、radius固定为0。 -->
       <projectileDef>BANC_Bullet_Kei_NS</projectileDef>
       <!-- 弹丸命中时播放的特效。 -->
-      <effecterDef></effecterDef>
+      <effecterDef>BANW_Kei_Ef_E</effecterDef>
     </burstAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
 
@@ -105,7 +105,7 @@
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <texPath>Projectile/Bullet_Kei</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-   <drawSize>(8,15)</drawSize><!--贴图大小-->
+   <drawSize>(3,5)</drawSize><!--贴图大小-->
     </graphicData>
     <projectile>
       <damageDef>BANC_Damage_shenmi</damageDef>

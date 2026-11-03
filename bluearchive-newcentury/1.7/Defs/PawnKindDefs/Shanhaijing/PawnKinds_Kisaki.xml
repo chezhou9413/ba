@@ -9,6 +9,8 @@
 
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<abilities>
+			<li>BAWN_Kisaki_EX</li>
+			<li>BAWN_Kisaki_EXX</li>
         </abilities>
 		<startingHediffs>
 		<li>

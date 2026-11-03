@@ -1,129 +1,405 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <!-- 白子技能配置：无人机、生命消耗、不死层数与特效。 -->
+  <!-- 特殊技能配置档：把白子的EX、普通技能、无人机攻击和不死被动集中在一处，运行时由 Ability_SpecialSkill 按 role 读取。 -->
   <BANWlLib.Skills.SpecialSkillProfileDef>
+    <!-- 配置档唯一标识，被 AbilityDef 的 CompProperties_SpecialSkill.profile 引用。 -->
     <defName>BANW_Special_Shiroko</defName>
+    <!-- 显示名称，用于调试和日志。 -->
     <label>黑子</label>
+    <!-- 角色类型，决定运行时走哪一套专属机制代码。 -->
     <role>Shiroko</role>
+    <!-- 本配置档对应的主能力Def，能力按钮通过它反查到这里。 -->
     <primaryAbility>BANW_Special_Shiroko_Ex</primaryAbility>
-    <range>25</range>
+    <!-- 普通技能选敌与EX瞄准的最大距离（格）。 -->
+    <range>32.9</range>
+    <!-- 普通技能自动触发间隔（tick）：1800 tick = 30 秒。 -->
     <normalIntervalTicks>1800</normalIntervalTicks>
-    <radius>3</radius>
+    <!-- 普通技能命中后的溅射半径（格），0 表示只打单体。 -->
+    <radius>0</radius>
+    <!-- EX 召唤的无人机持续时间（tick）：2400 tick = 40 秒，再次施放会刷新。 -->
     <durationTicks>2400</durationTicks>
+    <!-- 施放EX时扣除的最大生命比例：0.2 表示 20%，且不会把自己扣死。 -->
     <lifeCostRatio>0.2</lifeCostRatio>
+    <!-- 不死被动的冷却（tick）：5400 tick = 90 秒，从本场首次触发开始计算。 -->
     <immortalityCooldownTicks>5400</immortalityCooldownTicks>
+    <!-- 不死层数上限：叠到第 15 层时强制死亡。 -->
     <lethalStackLimit>15</lethalStackLimit>
-    <casterEffecter>BANW_Effecter_A</casterEffecter>
-    <targetEffecter>BANW_Effecter_C</targetEffecter>
-    <stageEffecter>BANW_Effecter_B</stageEffecter>
-    <endEffecter>BANW_Effecter_C</endEffecter>
-    <stateEffecter>BANW_Effecter_B</stateEffecter>
-    <!-- 不指定droneTexturePath时绘制简易测试无人机；填写贴图后必须确保资源存在。 -->
+    <!-- 施法者在EX前摇/施法时的特效。 -->
+    <casterEffecter></casterEffecter>
+    <!-- 命中目标时播放的特效。 -->
+    <targetEffecter></targetEffecter>
+    <!-- 无人机阶段切换（存在期间）维持的特效。 -->
+    <stageEffecter></stageEffecter>
+    <!-- 无人机结束/EX 到期时播放的收尾特效。 -->
+    <endEffecter></endEffecter>
+    <!-- 无人机常驻状态特效，持续绘制在无人机身上。 -->
+    <stateEffecter></stateEffecter>
+    <!-- 无人机贴图绘制尺寸（宽,高），不指定droneTexturePath时绘制简易测试无人机；填写贴图后必须确保资源存在。 -->
     <droneDrawSize>(0.7,0.5)</droneDrawSize>
+    <!-- 无人机相对宿主的绘制偏移（右,前,上），用于摆出悬浮跟随的位置。 -->
     <droneOffset>(0.8,0,0.5)</droneOffset>
+    <!-- 普通技能的攻击段配置：每 30 秒宿主自动对敌人打出的那一段。 -->
     <normalAttack>
       <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 关闭BA战斗系统时使用的攻击基数，100 表示以 100 点攻击为基准。 -->
       <basePower>100</basePower>
-      <attackPowerRatio>4</attackPowerRatio>
+      <!-- 攻击力总倍率：4 表示 400%，连射时分摊到每一发。 -->
+      <attackPowerRatio>0.2</attackPowerRatio>
+      <!-- 本段伤害使用的伤害类型。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
+      <!-- 本段每次伤害的护甲穿透比例：0.5为50%，不随连射发数均分；0 表示不额外穿透。 -->
       <penetration>0</penetration>
+      <!-- false 表示不吃施法者EX伤害加成。 -->
       <isExSkill>false</isExSkill>
+      <!-- 是否允许暴击。 -->
       <canCrit>true</canCrit>
+      <!-- 是否应用攻击类型与护甲类型克制。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 溅射半径（格），0 表示单体。 -->
       <radius>0</radius>
-      <shots>1</shots>
+      <!-- 本段发数，总倍率按此数均分。 -->
+      <shots>7</shots>
+      <!-- 相邻两发之间的间隔（tick）。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <!-- 本段使用的弹丸Def。 -->
+      <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+      <!-- 命中时的特效。 -->
       <effecterDef>BANW_Effecter_C</effecterDef>
 
     </normalAttack>
+    <!-- 无人机追击攻击段配置：宿主每发普攻触发一次的那一段。 -->
     <droneAttack>
       <!-- 每发宿主普攻触发一次；按白子的普攻基准结算50%伤害，不读取EX增益。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 关闭BA战斗系统时使用的攻击基数。 -->
       <basePower>100</basePower>
-      <attackPowerRatio>0.5</attackPowerRatio>
+      <!-- 攻击力总倍率：0.5 表示以普攻基准的 50% 结算。 -->
+      <attackPowerRatio>0.6</attackPowerRatio>
+      <!-- 本段伤害使用的伤害类型。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>0</penetration>
+      <!-- 本段每次伤害的护甲穿透比例：0.5为50%，不随连射发数均分；0 表示不额外穿透。 -->
+      <penetration>2</penetration>
+      <!-- false 表示不享受EX伤害加成。 -->
       <isExSkill>false</isExSkill>
+      <!-- true 表示按“普通攻击”结算，套用本体普攻倍率与基础精通。 -->
       <isNormalAttack>true</isNormalAttack>
+      <!-- 是否允许暴击。 -->
       <canCrit>true</canCrit>
+      <!-- 是否应用攻击类型与护甲类型克制。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 溅射半径（格），0 表示单体。 -->
       <radius>0</radius>
-      <shots>1</shots>
+      <!-- 单次追击的发数。 -->
+      <shots>7</shots>
+      <!-- 相邻两发之间的间隔（tick）。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 每次射击播放的音效。 -->
       <shotSound>BANW_Shiroko_DroneShot</shotSound>
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <effecterDef>BANW_Effecter_C</effecterDef>
+      <!-- 本段使用的弹丸Def。 -->
+      <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+      <!-- 命中时的特效。 -->
+      <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
 
     </droneAttack>
+    <!-- 连射攻击段配置：普通技能触发、无人机锁定目标后的 12 连射。 -->
     <burstAttack>
-      <!-- 锁定目标连续射击20次；总倍率10均分后，每发为白子普攻基准的50%。 -->
+      <!-- 锁定目标连续射击12次；总倍率10均分后，每发为白子普攻基准的83.3%。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 关闭BA战斗系统时使用的攻击基数。 -->
       <basePower>100</basePower>
+      <!-- 连射总倍率：10 表示 1000%，由 20 发均分。 -->
       <attackPowerRatio>10</attackPowerRatio>
+      <!-- 本段伤害使用的伤害类型。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>0</penetration>
+      <!-- 本段每次伤害的护甲穿透比例：0.5为50%，不随连射发数均分；0 表示不额外穿透。 -->
+      <penetration>2</penetration>
+      <!-- false 表示不享受EX伤害加成。 -->
       <isExSkill>false</isExSkill>
+      <!-- true 表示按“普通攻击”结算，套用本体普攻倍率与基础精通。 -->
       <isNormalAttack>true</isNormalAttack>
+      <!-- 是否允许暴击。 -->
       <canCrit>true</canCrit>
+      <!-- 是否应用攻击类型与护甲类型克制。 -->
       <applyAffinity>true</applyAffinity>
+      <!-- 溅射半径（格），0 表示单体。 -->
       <radius>0</radius>
-      <shots>20</shots>
+      <!-- 连射发数。 -->
+      <shots>12</shots>
+      <!-- 相邻两发之间的间隔（tick）：6 tick ≈ 0.1 秒。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
+      <!-- 每发播放的射击音效，与无人机追击段共用同一素材。 -->
       <shotSound>BANW_Shiroko_DroneShot</shotSound>
+      <!-- 本段使用的弹丸Def。 -->
       <projectileDef>BANW_SpecialSkillBullet</projectileDef>
+      <!-- 命中时的特效。 -->
       <effecterDef>BANW_Effecter_C</effecterDef>
 
     </burstAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
+  <!-- EX 能力本体：消耗生命召唤无人机，按钮由上面配置档的 primaryAbility 指过来。 -->
   <AbilityDef>
+    <!-- 能力唯一标识。 -->
     <defName>BANW_Special_Shiroko_Ex</defName>
-    <label>测试新技能·黑子</label>
-    <description>消耗最大生命的20%，召唤持续40秒的跟随无人机。生命不足时只扣除安全允许的部分，不会因此死亡。无人机无法被攻击；自身每发武器普攻射出时，无人机对本发瞄准目标追击一次，不受宿主射偏、被闪避、护甲减伤或护盾抵挡影响。再次施放刷新无人机持续时间。
-
-无人机伤害按本体普通攻击结算，包含本体普攻倍率、基础精通、暴击和克制，不享受EX伤害加成；每发仍独立接受目标闪避、护甲、穿透和护盾判定，每次射击都播放音效。
-
-普通技能：每30秒选取敌人，宿主造成攻击力400%的伤害；无人机存在时锁定该目标自动连射20发，每发为本体普攻基准的50%，间隔0.1秒，不需要宿主继续攻击。已开始的20发可以在EX到期后完成；目标死亡、消失或离图时停止剩余射击。
-
-不死被动：首次承受致命伤时获得1层不死，此后每次致命伤再增加1层；第15层强制死亡。满血时解除不死并清空层数。被动冷却90秒，从首次触发开始计算；不会治疗已有伤口或阻止倒地。
-
-基础消耗：4 COST。EX冷却：1秒。</description>
+    <!-- 按钮显示名称。 -->
+    <label>火力强化</label>
+    <!-- 悬浮说明，直接展示给玩家的机制与数值。 -->
+    <description>召唤无人机（持续40秒）。
+-暴击率增加67%（持续40秒）。
+- 暴击伤害增加134%（持续40秒）
+- 攻击速度增加34%（持续40秒）。
+- 造成自身生命值上限20%的固定伤害。
+无人机造成自身攻击力20%的伤害
+※ 自身不会因该技能的效果退场.</description>
+    <!-- 自定义能力类，接管EX释放、普通技能轮询和无人机生命周期。 -->
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>
-    <iconPath>UI/StarIcon</iconPath>
-    <cooldownTicksRange>60</cooldownTicksRange>
+    <!-- 按钮图标路径。 -->
+    <iconPath>Ability/Icon/Shiroko_C/Shiroko_EXX</iconPath>
+    <!-- EX 冷却（tick）：600 tick = 10 秒，配合再次施放刷新无人机。 -->
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <!-- 未征召时仍显示按钮。 -->
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <!-- 但未征召时按钮置灰不可点。 -->
     <disableGizmoWhileUndrafted>true</disableGizmoWhileUndrafted>
+    <warmupEffecter>BANW_Shiroko_C_Ef_B</warmupEffecter>
+    <!-- 征召状态下显示按钮。 -->
     <showWhenDrafted>true</showWhenDrafted>
+    <!-- 不绘制心灵仪式类特效。 -->
     <showPsycastEffects>false</showPsycastEffects>
+    <!-- false 表示这不是敌对行为。 -->
     <hostile>false</hostile>
+    <!-- false 表示施放时不需要选择目标（对自己放）。 -->
     <targetRequired>false</targetRequired>
+    <!-- 施法者不要求具备暴力能力。 -->
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <warmupStartSound>Shiroko_C_Skill_EXX</warmupStartSound>
+    <statBases>
+<!-- 持续时间：20 秒 = 1200 ticks -->
+  <Ability_Duration>40</Ability_Duration>
+ </statBases>
     <verbProperties>
+      <!-- 基础施法动词，本技能的实际效果全部由 comps 接管。 -->
       <verbClass>Verb_CastAbility</verbClass>
+      <!-- 施法距离（格）。 -->
       <range>25</range>
-      <warmupTime>0</warmupTime>
+      <!-- 前摇时间（秒），2 表示施法前摇 2 秒，走完才结算 comps。 -->
+      <warmupTime>2</warmupTime>
+      <!-- 目标参数：只能选自己，因此关闭了选空地、选Pawn和选建筑。 -->
       <targetParams>
+        <!-- 允许以自己为目标。 -->
         <canTargetSelf>true</canTargetSelf>
+        <!-- 不允许瞄准其他 Pawn。 -->
         <canTargetPawns>false</canTargetPawns>
+        <!-- 人类目标开关，这里不生效（canTargetPawns 已关闭）。 -->
         <canTargetHumans>true</canTargetHumans>
+        <!-- 动物目标开关，这里不生效。 -->
         <canTargetAnimals>true</canTargetAnimals>
+        <!-- 机械体目标开关，这里不生效。 -->
         <canTargetMechs>true</canTargetMechs>
+        <!-- 不允许选建筑。 -->
         <canTargetBuildings>false</canTargetBuildings>
+        <!-- 不允许选空地。 -->
         <canTargetLocations>false</canTargetLocations>
       </targetParams>
     </verbProperties>
     <comps>
+      <!-- 核心效果组件：把能力挂到对应配置档上，并声明本次是 EX 施放。 -->
       <li Class="BANWlLib.Skills.CompProperties_SpecialSkill">
+        <!-- 引用上面的配置档 defName。 -->
         <profile>BANW_Special_Shiroko</profile>
+        <!-- 施放类型：Ex 表示召唤/刷新无人机的EX；同一能力还会用该组件承载普通技能与被动。 -->
         <command>Ex</command>
       </li>
+      <!-- 自身增益组件：施法完成后给自己挂上火力强化，重复施放会替换旧状态并重新计时。 -->
+      <li Class="CompProperties_AbilityGiveHediff">
+        <!-- 使用原版给予状态的效果类。 -->
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <!-- 要施加的状态Def。 -->
+        <hediffDef>BANW_Shiroko_FirepowerBuff</hediffDef>
+        <!-- 只作用于施法者自己。 -->
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+        <!-- 再次施放时移除旧状态再添加，从而刷新 40 秒持续时间。 -->
+        <replaceExisting>true</replaceExisting>
+      </li>
+      <!-- COST 消耗组件：施放时扣除 4 点 COST。 -->
       <li Class="BANWlLib.CostSystem.CompProperties_AbilityCost">
-        <cost>4</cost>
+        <!-- 本技能消耗的 COST 点数。 -->
+        <cost>3</cost>
       </li>
     </comps>
   </AbilityDef>
+  <!-- EX 施放后给予自身的火力强化状态：暴击率 +67%，暴击伤害倍率 +1.34（即 +134%），持续 40 秒。 -->
+  <HediffDef>
+    <!-- 状态唯一标识，被上面 CompProperties_AbilityGiveHediff 引用。 -->
+    <defName>BANW_Shiroko_FirepowerBuff</defName>
+    <!-- 状态显示名，与技能名保持一致。 -->
+    <label>火力强化</label>
+    <!-- 悬浮说明，写明具体加成与持续时间。 -->
+    <description>暴击率增加67%，暴击伤害增加134%，攻击速度增加34%(持续40秒)</description>
+    <!-- 正面状态，按增益显示在健康面板。 -->
+    <isBad>false</isBad>
+    <!-- 标签颜色，与其余技能增益保持一致的金黄色。 -->
+    <defaultLabelColor>(255,255,0)</defaultLabelColor>
+    <!-- 不能被道具治愈，只能等持续时间结束或被刷新替换。 -->
+    <everCurableByItem>false</everCurableByItem>
+    <!-- 状态逻辑类：必须为 HediffWithComps 或其子类，否则下面的 comps 无法加载。 -->
+    <hediffClass>HediffWithComps</hediffClass>
+    <!-- 初始严重度，保证第 0 阶段的属性加成生效。 -->
+    <initialSeverity>1</initialSeverity>
+    <!-- 属性加成放在阶段里，severity >= 0 即套用。 -->
+    <stages>
+      <li>
+        <statOffsets>
+          <!-- 暴击率加值：0.67 即 +67%，该属性单位为比例，1 表示 100%。 -->
+          <BANW_CriticalChance>0.67</BANW_CriticalChance>
+          <!-- 暴击伤害倍率加值：1.34 即 +134%，基础 2 表示 200%，加后为 334%。 -->
+          <BANW_CriticalDamage>1.34</BANW_CriticalDamage>
+          <Muice_RangedAimingTimeFactor>-0.17</Muice_RangedAimingTimeFactor>
+          <RangedCooldownFactor>-0.17</RangedCooldownFactor>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <!-- 2400 tick = 40 秒后自动消失，并在健康面板显示剩余时间。 -->
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+        <disappearsAfterTicks>2400</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_Effecter">
+        <stateEffecter>BANW_Shiroko_C_Ef_C</stateEffecter>
+      </li>
+    </comps>
+  </HediffDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>BANW_Bullet_Shiroko_C_EX</defName>
+    <label>导弹</label>
+    <thingClass>BANWlLib.Skills.Projectile_SpecialSkill</thingClass>
+    <graphicData>
+      <texPath>Weapon/Abydos/Shiroko_C_Bullet_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,0.8)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>BANC_Damage_Shiroko_C_EX_A</damageDef>
+      <damageAmountBase>2</damageAmountBase>
+      <speed>90</speed>
+    </projectile>
+  </ThingDef>
+    <DamageDef ParentName="BANC_Damage_shenmi">
+    <defName>BANC_Damage_Shiroko_C_EX_A</defName><!--通用贯通-->
+    <damageEffecter>BANW_Shiroko_C_Ef_A</damageEffecter>
+  </DamageDef>
+
+  <AbilityDef>
+    <defName>BAWN_Shiroko_C_NS</defName>
+    <label>投掷手榴弹·改</label>
+    <description>对圆形范围内的敌方单位造成自身攻击力704%的伤害</description>
+    <iconPath>Ability/Icon/Asuna/Asuna_EX</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hotKey>Misc12</hotKey>
+    <warmupStartSound>Shiroko_C_Skill_EX</warmupStartSound>
+    <showPsycastEffects>False</showPsycastEffects><!-- 是否显示心灵异能特效（如光束、粒子） -->
+    <stunTargetWhileCasting>false</stunTargetWhileCasting><!-- 施法时是否定身目标 -->
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted><!-- 未征召状态下是否显示操作按钮 -->
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted><!-- 未征召状态下是否禁用按钮 -->
+    <uiOrder>5</uiOrder><!-- 在 UI 中的排列顺序 -->
+    <showWhenDrafted>True</showWhenDrafted><!-- 是否在征召状态时显示 -->
+    <hostile>true</hostile><!-- 是否是敌对行为 -->
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence><!-- 施法者是否必须能进行暴力行为 -->
+    <verbProperties>
+      <warmupEffecter>BANW_Effecter_NewA</warmupEffecter>
+      <soundCast>ThrowGrenade</soundCast>
+      <!-- 通用预览动词：施法时按 modExtensions 里的 AbilityTargetPreviewExtension 绘制范围。 -->
+      <verbClass>BANWlLib.BaVerb.Verb_CastAbilityWithTargetPreview</verbClass>
+      <range>45.9</range><!-- 投掷范围 -->
+      <warmupTime>1</warmupTime><!-- 前摇时间 -->
+      <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+      <requireLineOfSight>false</requireLineOfSight><!-- 不需要视线 -->
+      <targetParams><!-- 目标参数设置 -->
+        <canTargetLocations>true</canTargetLocations> <!-- 可以瞄准地面位置 -->
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetMechs>true</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>BAWN_Shiroko_NS_Boom</projectileDef>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="BANWlLib.BaVerb.AbilityTargetPreviewExtension">
+        <!-- 圆形预览，半径与投射物的 explosionRadius 保持一致，悬停即显示爆炸范围。 -->
+        <shape>Circle</shape>
+        <range>45.9</range>
+        <radius>2.9</radius>
+        <drawCasterRange>true</drawCasterRange>
+        <drawTargetHighlight>true</drawTargetHighlight>
+      </li>
+      <li Class="BANWlLib.BattleSystem.AbilityBattleTooltipExtension">
+        <!-- true 表示地图技能按钮悬浮时显示BA战斗公式。 -->
+        <showBattleFormula>true</showBattleFormula>
+        <!-- 悬浮预览用的战斗段配置，只用于显示公式，不直接造成伤害。 -->
+        <previewActions>
+          <li>
+            <!-- 固定基础伤害，0 表示只吃攻击力倍率。 -->
+            <!-- 最终攻击力倍率，2.0 表示造成 200% 攻击力伤害。 -->
+            <attackPowerRatio>7.04</attackPowerRatio>
+            <!-- 伤害类型。 -->
+            <damageDef>BANC_Damage_shenmi</damageDef>
+            <!-- 是否允许暴击。 -->
+            <canCrit>true</canCrit>
+            <!-- 是否应用攻击类型与护甲类型克制。 -->
+            <applyAffinity>true</applyAffinity>
+            <!-- true 表示该段效果会额外乘施法者 EX技能倍率。 -->
+            <isExSkill>false</isExSkill>
+          </li>
+        </previewActions>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+  <!-- 投掷物型弹丸：继承原版 BaseGrenadeProjectile，自带 Projectile_Explosive、弧线飞行与落地阴影，命中即爆炸。 -->
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>BAWN_Shiroko_NS_Boom</defName>
+    <label>投掷手榴弹·改</label>
+    <projectile>
+      <explosionRadius>2.9</explosionRadius>
+      <damageDef>BANC_Damage_Shiroko_NS</damageDef><!--子弹类型-->
+      <damageAmountBase>24</damageAmountBase><!--子弹伤害-->
+      <stoppingPower>1.5</stoppingPower><!--抑制-->
+      <armorPenetrationBase>2</armorPenetrationBase><!--穿透-->
+      <speed>90</speed><!--子弹速度-->
+      <!-- 落地立即爆炸，不延迟。 -->
+      <explosionDelay>0</explosionDelay>
+      <!-- 伤害由中心向外衰减。 -->
+      <explosionDamageFalloff>true</explosionDamageFalloff>
+    </projectile>
+    <graphicData>
+      <drawSize>1.0</drawSize>
+      <texPath>Weapon/Abydos/Shiroko_C_Bullet_B</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <modExtensions>
+      <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
+        <attackPowerRatio>7.04</attackPowerRatio>
+         <isNormalAttack>false</isNormalAttack>
+        <canCrit>true</canCrit>
+        <isExSkill>false</isExSkill>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  <DamageDef ParentName="BANC_Damage_guantong">
+    <defName>BANC_Damage_Shiroko_NS</defName><!--通用贯通-->
+    <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <!-- 爆炸颜色：中心偏亮的深蓝，边缘压暗的深蓝。 -->
+    <explosionColorCenter>(0.13, 0.28, 0.62)</explosionColorCenter>
+    <explosionColorEdge>(0.05, 0.11, 0.30)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
 </Defs>

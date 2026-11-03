@@ -35,19 +35,19 @@
             
             <Skills>
                 
-                <Shooting>14</Shooting>
+                <Shooting>20</Shooting>
                 
-                <Melee>11</Melee>
+                <Melee>20</Melee>
                 
-                <Construction>7</Construction>
+                <Construction>14</Construction>
                 
-                <Mining>7</Mining>
+                <Mining>15</Mining>
                 
                 <Cooking>0</Cooking>
                 
-                <Plants>7</Plants>
+                <Plants>10</Plants>
                 
-                <Animals>8</Animals>
+                <Animals>10</Animals>
                 
                 <Crafting>0</Crafting>
                 
@@ -57,7 +57,7 @@
                 
                 <Social>6</Social>
                 
-                <Intellectual>5</Intellectual>
+                <Intellectual>10</Intellectual>
             </Skills>
             
             <WapenUI>
@@ -67,13 +67,17 @@
                 <WapenTypeText>步枪</WapenTypeText>
             </WapenUI>
             <Ability1>
-                <AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
+                <AbilityImagePath>Ability/Icon/Shiroko_C/Shiroko_EXX</AbilityImagePath>
                 <AbilityTypeText>EX技能</AbilityTypeText>
-                <AbilityTitle>EX技能</AbilityTitle>
-                <AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>114514</color>]]></AbilitySubtitle>
-                <AbilityIntroduction><![CDATA[这里是技能1的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+                <AbilityTitle>火力强化</AbilityTitle>
+                <AbilitySubtitle><![CDATA[EX技能 / <color=black>COST:</color><color=blue>3</color>]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[召唤无人机（持续40秒）。
+-暴击率增加<color=#00FFFF>67%</color>（持续40秒）。
+- 暴击伤害增加<color=#00FFFF>134%</color>（持续40秒）
+- 攻击速度增加<color=#00FFFF>34%</color>（持续40秒）。
+- 造成自身生命值上限20%的固定伤害。
+无人机造成自身攻击力20%的伤害
+※ 自身不会因该技能的效果退场。]]>
                 </AbilityIntroduction>
                 <offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -81,9 +85,10 @@
             <Ability2>
                 <AbilityImagePath>Ability/Icon/Asuna/Asuna_EX</AbilityImagePath>
                 <AbilityTypeText>基本技能</AbilityTypeText>
-                <AbilityTitle>投掷手榴弹·改</AbilityTitle>
-                <AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>30</color>秒]]></AbilitySubtitle>
-                <AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>368%</color>的伤害]]>
+                <AbilityTitle>投掷手榴弹·改/召唤无人机：交叉射击</AbilityTitle>
+                <AbilitySubtitle><![CDATA[基本技能 / 冷却<color=#00FFFF>40</color>秒]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[对圆形范围内的敌方单位造成自身攻击力<color=#00FFFF>368%</color>的伤害
+无人机在场时改为使用召唤无人机：交叉射击.自身使用EX技能时对敌人造成自身攻击力<color=#00FFFF>902%</color>的伤害]]>
                 </AbilityIntroduction>
                 <offSetX>12</offSetX>
                 <offSetY>0</offSetY>
@@ -101,11 +106,16 @@
             <Ability4>
                 <AbilityImagePath>Ability/Icon/Icon_Error</AbilityImagePath>
                 <AbilityTypeText>子技能</AbilityTypeText>
-                <AbilityTitle>测试技能4</AbilityTitle>
-                <AbilitySubtitle><![CDATA[测试技能4 / <color=black>COST: </color><color=blue>30</color>]]></AbilitySubtitle>
-                <AbilityIntroduction><![CDATA[这里是技能4的简介部分。
-可以包含<b>多行</b>文本。
-并且可以混合使用<color=#FFA500>各种颜色</color>和<i>样式</i>。]]>
+                <AbilityTitle>沉稳呼吸</AbilityTitle>
+                <AbilitySubtitle><![CDATA[沉稳呼吸]]></AbilitySubtitle>
+                <AbilityIntroduction><![CDATA[自身神秘克制率加算<color=#00FFFF>49%</color>。
+自身生命值不高于1%时： 立即对自身造成以下效果（冷却90秒）：
+- 15秒内每秒获得1层退场缓冲.
+  ※ 最多15层.
+  ※ 自身拥有退场缓冲期间，不会死亡.自身生命值回复至100%时： 立即对自身造成以下效果：
+- 移除自身拥有的所有退场缓冲层数且中断获得.自身拥有退场缓冲15层后：
+立即对自身造成以下效果：
+- 立即死亡.]]>
                 </AbilityIntroduction>
                 <offSetX>12</offSetX>
                 <offSetY>0</offSetY>

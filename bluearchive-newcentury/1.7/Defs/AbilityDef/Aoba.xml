@@ -205,7 +205,7 @@
         <statOffsets>
           <BANW_FinalDamageMultiplier>0.28</BANW_FinalDamageMultiplier>
           <Muice_RangedAimingTimeFactor>-0.33</Muice_RangedAimingTimeFactor>
-          <RangedCooldownFactor>-0.33</RangedCooldownFactor>
+          <RangedCooldownFactor>-0.34</RangedCooldownFactor>
         </statOffsets>
         <statFactors>
         </statFactors>

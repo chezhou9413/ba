@@ -324,6 +324,7 @@
     <defName>BANC_Damage_Wakamo_EX_B</defName><!--通用贯通-->
     <damageEffecter>BANW_Wakamo_Ef_C</damageEffecter>
   </DamageDef>
+  
 
 
   <AbilityDef>
