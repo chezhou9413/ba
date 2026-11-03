@@ -34,7 +34,7 @@ namespace BANWlLib.Skills
                     state.shiroko.normalJob = null;
                     state.shiroko.warmupStartTick = -1;
                 }
-                if (pawn.stances?.curStance is MultiShotAimStance) pawn.stances.CancelBusyStanceSoft();
+                if (pawn.stances?.curStance is MultiShotAimStance) pawn.stances.SetStance(new Stance_Mobile());
             });
             Toil warmup = Toils_General.Wait(skill.warmupTicks, TargetIndex.A);
             if (skill.warmupTicks == 0) warmup.defaultCompleteMode = ToilCompleteMode.Instant;
@@ -56,7 +56,13 @@ namespace BANWlLib.Skills
             yield return warmup;
             Toil fire = ToilMaker.MakeToil("白子手榴弹与无人机发射");
             fire.defaultCompleteMode = ToilCompleteMode.Instant;
-            fire.initAction = () => ShirokoNormalSkill.Fire(state, job.targetA.Pawn);
+            //前摇到期直接投掷并归还原工作，后续连射由地图队列独立完成。
+            fire.atomicWithPrevious = true;
+            fire.initAction = () =>
+            {
+                ShirokoNormalSkill.Fire(state, job.targetA.Pawn);
+                EndJobWith(JobCondition.Succeeded);
+            };
             yield return fire;
         }
 
