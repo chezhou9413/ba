@@ -1,309 +1,379 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- 只由黑子EX状态触发，不注册主动按钮；各发攻击配置互相独立。 -->
+  <!--
+    黑子（Shiroko）EX期间的普通技能定义。
+    只由 EX 状态自动触发，不注册主动按钮，也不出现在能力列表里。
+    一轮流程：前摇 → 锁定攻击属性快照 → 投掷跟踪手榴弹 → 无人机按 droneShots 逐发连射。
+    手榴弹与每一发无人机的倍率、伤害类型、穿透、弹丸、音效互相独立。
+  -->
   <BANWlLib.Skills.ShirokoNormalSkillDef>
+    <!-- 配置档唯一标识，被 BANW_Special_Shiroko 的 shiroko.normalSkill 引用。 -->
     <defName>BANW_Special_Shiroko_Normal</defName>
+    <!-- 调试与日志显示名。 -->
     <label>无人机协同投掷</label>
+    <!-- 面向玩家的机制说明。 -->
     <description>EX期间自动瞄准最近的可见敌人，投掷跟踪手榴弹并由无人机逐发连射。</description>
-    <range>25</range>
-    <cooldownTicks>1800</cooldownTicks>
-    <warmupTicks>30</warmupTicks>
+
+    <!-- 自动索敌半径（格），超出该距离或没有视线的敌人不会被选为目标。 -->
+    <range>33.9</range>
+    <!-- 两次普通技能之间的间隔（tick）：2400 tick = 40 秒。 -->
+    <cooldownTicks>2400</cooldownTicks>
+    <!-- 前摇时长（tick）：100 tick = 2 秒，前摇结束时锁定本轮攻击属性快照。 -->
+    <warmupTicks>100</warmupTicks>
+    <!-- 执行技能的工作定义，driverClass 必须是 JobDriver_ShirokoNormalSkill。 -->
     <jobDef>BANW_Job_ShirokoNormalSkill</jobDef>
-    <warmupSound>Shiroko_Skill_EX</warmupSound>
+    <!-- 前摇音效，留空表示不播放。 -->
+    <warmupSound>Shiroko_C_Skill_EX_B</warmupSound>
+    <!-- 前摇期间持续播放的特效。 -->
     <warmupEffecter>BANW_Effecter_A</warmupEffecter>
-    <!-- 单枚手榴弹；4为400%攻击力，半径2.9格。前摇结束时锁定本轮攻击属性。 -->
+
+    <!--
+      手榴弹攻击段（SpecialAttackConfig）。
+      单枚跟踪手榴弹，伤害与溅射半径都由这里定义，弹丸本身不重复结算。
+    -->
     <grenadeAttack>
+      <!-- true 走BA战斗系统攻击力公式；false 则直接用 basePower 作为基数。 -->
       <useBattleStats>true</useBattleStats>
+      <!-- 关闭BA战斗系统时使用的攻击基数。 -->
       <basePower>100</basePower>
-      <attackPowerRatio>4</attackPowerRatio>
+      <!-- 伤害总倍率：4.5 表示 450% 攻击力，不按发数均分（本段固定 1 发）。 -->
+      <attackPowerRatio>4.5</attackPowerRatio>
+      <!-- 本段伤害类型。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <penetration>0</penetration>
+      <!-- 护甲穿透比例：2 表示穿透2点护甲；0 表示不额外穿透。 -->
+      <penetration>2</penetration>
+      <!-- 必须为 false：true 会把倍率锁定成100%攻击力并计入普攻事件。 -->
       <isNormalAttack>false</isNormalAttack>
+      <!-- false 表示不享受EX伤害加成。 -->
       <isExSkill>false</isExSkill>
+      <!-- 是否允许暴击。 -->
       <canCrit>true</canCrit>
+      <!-- 是否应用攻击类型与护甲类型克制。 -->
       <applyAffinity>true</applyAffinity>
-      <radius>2.9</radius>
+      <!-- 溅射半径（格）：0.9 格圆形爆炸。 -->
+      <radius>0.9</radius>
+      <!-- 本段发数，手榴弹固定为 1。 -->
       <shots>1</shots>
+      <!-- 弹丸Def，必须是 Projectile_ShirokoGrenade（跟踪手榴弹）。 -->
       <projectileDef>BANW_ShirokoTrackingGrenade</projectileDef>
-      <shotSound>ThrowGrenade</shotSound>
-      <effecterDef>BANW_Effecter_C</effecterDef>
+      <!-- 投掷音效，留空表示不播放。 -->
+      <shotSound></shotSound>
+      <!-- 爆炸命中特效。 -->
+      <effecterDef>BANW_Shiroko_C_Ef_D</effecterDef>
     </grenadeAttack>
-    <!-- delayTicks相对手榴弹投掷时刻。每项仅一发，倍率不再除以列表长度。 -->
+
+    <!--
+      无人机逐发连射列表（droneShots）。
+      每项 = 一个 delayTicks + 一个 attack，代表独立的一发技能伤害，间隔 7 tick：
+        delayTicks      相对手榴弹投掷时刻的延迟（tick），必须非负，按升序排列。
+        attack.shots    必须为 1，时间由 delayTicks 控制，倍率不再除以列表长度。
+        attack.attackPowerRatio 该发自己的倍率：0.376 = 37.6% 攻击力。
+        attack.isNormalAttack   必须 false，否则 attackPowerRatio 会被忽略。
+        attack.isExSkill        必须 false，表示不享 EX 加成。
+        attack.projectileDef    必须使用 Projectile_SpecialSkill 系列实体弹丸。
+    -->
     <droneShots>
-      <!-- 第1发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第1发：delayTicks 0，倍率 0.376（37.6% 攻击力）。 -->
       <li>
         <delayTicks>0</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第2发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第2发：delayTicks 7，倍率 0.376。 -->
       <li>
-        <delayTicks>6</delayTicks>
+        <delayTicks>7</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第3发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第3发：delayTicks 14，倍率 0.376。 -->
       <li>
-        <delayTicks>12</delayTicks>
+        <delayTicks>14</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第4发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第4发：delayTicks 21，倍率 0.376。 -->
       <li>
-        <delayTicks>18</delayTicks>
+        <delayTicks>21</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第5发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第5发：delayTicks 28，倍率 0.376。 -->
       <li>
-        <delayTicks>24</delayTicks>
+        <delayTicks>28</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第6发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第6发：delayTicks 35，倍率 0.376。 -->
       <li>
-        <delayTicks>30</delayTicks>
+        <delayTicks>35</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第7发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
-      <li>
-        <delayTicks>36</delayTicks>
-        <attack>
-          <useBattleStats>true</useBattleStats>
-          <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
-          <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
-          <isNormalAttack>false</isNormalAttack>
-          <isExSkill>false</isExSkill>
-          <canCrit>true</canCrit>
-          <applyAffinity>true</applyAffinity>
-          <radius>0</radius>
-          <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
-        </attack>
-      </li>
-      <!-- 第8发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第7发：delayTicks 42，倍率 0.376。 -->
       <li>
         <delayTicks>42</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第9发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第8发：delayTicks 49，倍率 0.376。 -->
       <li>
-        <delayTicks>48</delayTicks>
+        <delayTicks>49</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第10发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第9发：delayTicks 56，倍率 0.376。 -->
       <li>
-        <delayTicks>54</delayTicks>
+        <delayTicks>56</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第11发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第10发：delayTicks 63，倍率 0.376。 -->
       <li>
-        <delayTicks>60</delayTicks>
+        <delayTicks>63</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
-      <!-- 第12发：独立倍率、伤害类型、穿透、弹丸、声音与命中特效。 -->
+      <!-- 第11发：delayTicks 70，倍率 0.376。 -->
       <li>
-        <delayTicks>66</delayTicks>
+        <delayTicks>70</delayTicks>
         <attack>
           <useBattleStats>true</useBattleStats>
           <basePower>100</basePower>
-          <attackPowerRatio>0.5</attackPowerRatio>
+          <attackPowerRatio>0.376</attackPowerRatio>
           <damageDef>BANC_Damage_shenmi</damageDef>
-          <penetration>0</penetration>
+          <penetration>2</penetration>
           <isNormalAttack>false</isNormalAttack>
           <isExSkill>false</isExSkill>
           <canCrit>true</canCrit>
           <applyAffinity>true</applyAffinity>
           <radius>0</radius>
           <shots>1</shots>
-          <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-          <shotSound>BANW_Shiroko_DroneShot</shotSound>
-          <effecterDef>BANW_Effecter_C</effecterDef>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
+        </attack>
+      </li>
+      <!-- 第12发：delayTicks 77，倍率 0.376（末发，整轮 12 发共 77 tick ≈ 1.28 秒）。 -->
+      <li>
+        <delayTicks>77</delayTicks>
+        <attack>
+          <useBattleStats>true</useBattleStats>
+          <basePower>100</basePower>
+          <attackPowerRatio>0.376</attackPowerRatio>
+          <damageDef>BANC_Damage_shenmi</damageDef>
+          <penetration>2</penetration>
+          <isNormalAttack>false</isNormalAttack>
+          <isExSkill>false</isExSkill>
+          <canCrit>true</canCrit>
+          <applyAffinity>true</applyAffinity>
+          <radius>0</radius>
+          <shots>1</shots>
+          <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
+          <shotSound></shotSound>
+          <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
         </attack>
       </li>
     </droneShots>
   </BANWlLib.Skills.ShirokoNormalSkillDef>
+
+  <!-- 普通技能的工作定义：让小人站定做前摇，再投掷手榴弹。 -->
   <JobDef>
+    <!-- 工作唯一标识，被上面 ShirokoNormalSkillDef.jobDef 引用。 -->
     <defName>BANW_Job_ShirokoNormalSkill</defName>
+    <!-- 工作驱动类，校验器要求必须是它。 -->
     <driverClass>BANWlLib.Skills.JobDriver_ShirokoNormalSkill</driverClass>
+    <!-- 小人进行中显示的工作说明。 -->
     <reportString>正在瞄准并投掷手榴弹。</reportString>
+    <!-- 执行时显示主武器，避免双手空举。 -->
     <alwaysShowWeapon>true</alwaysShowWeapon>
   </JobDef>
+
+  <!-- 跟踪手榴弹实体：只负责飞行与命中表现，实际伤害与爆炸范围读 grenadeAttack。 -->
   <ThingDef ParentName="BaseBullet">
+    <!-- 弹丸唯一标识，被 grenadeAttack.projectileDef 引用。 -->
     <defName>BANW_ShirokoTrackingGrenade</defName>
+    <!-- 显示名称。 -->
     <label>白子跟踪手榴弹</label>
+    <!-- 自定义弹丸类：追踪目标并在命中时按技能配置结算，不走原版爆炸伤害。 -->
     <thingClass>BANWlLib.Skills.Projectile_ShirokoGrenade</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Grenade</texPath>
+      <!-- 手榴弹贴图路径。 -->
+      <texPath>Weapon/Abydos/Shiroko_C_Bullet_B</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <!-- 绘制尺寸（格）。 -->
       <drawSize>(0.5,0.5)</drawSize>
     </graphicData>
     <projectile>
+      <!-- 占位伤害类型，真实伤害由 grenadeAttack.damageDef 结算。 -->
       <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 实际伤害与范围读取grenadeAttack，避免原版爆炸重复结算。 -->
+      <!-- 原版伤害固定为 1，仅作占位，避免与技能伤害重复结算。 -->
       <damageAmountBase>1</damageAmountBase>
-      <speed>25</speed>
+      <!-- 飞行速度（格/秒）。 -->
+      <speed>50</speed>
+      <!-- 抛物线高度系数，1 表示完整的投掷弧线。 -->
       <arcHeightFactor>1</arcHeightFactor>
+      <!-- 自转速度（度/秒）。 -->
       <spinRate>720</spinRate>
+      <!-- 阴影大小。 -->
       <shadowSize>0.3</shadowSize>
     </projectile>
   </ThingDef>
+
+  <!-- 退场缓冲：黑子首次致命伤后不立即倒地，而是按秒叠层，叠满才真正死亡。 -->
   <HediffDef>
+    <!-- 状态唯一标识。 -->
     <defName>BANW_ShirokoRetirementBuffer</defName>
+    <!-- 显示名称。 -->
     <label>退场缓冲</label>
+    <!-- 机制说明，数值与 BANW_Special_Shiroko 的层数上限保持一致。 -->
     <description>首次致命伤触发时获得1层，此后每经过完整1游戏秒增加一层；受伤不额外加层或刷新计时。满血时清空；达到技能配置的层数上限时强制死亡，默认15层，即首次触发14秒后。</description>
+    <!-- 自定义状态类，负责计时叠层与强制死亡。 -->
     <hediffClass>BANWlLib.Skills.Hediff_ShirokoRetirementBuffer</hediffClass>
+    <!-- 不是负面状态，避免被治疗类逻辑顺手清掉。 -->
     <isBad>false</isBad>
+    <!-- 初始层数为 1，即触发致命伤的那一刻先给一层。 -->
     <initialSeverity>1</initialSeverity>
+    <!-- 不能被物品或手术治愈，只能靠满血清空。 -->
     <everCurableByItem>false</everCurableByItem>
   </HediffDef>
 </Defs>

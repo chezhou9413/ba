@@ -47,7 +47,7 @@
 					<clipPath>Ability/Shiroko_C/Shiroko_2</clipPath>
 				</li>
 			</grains>      
-			<volumeRange>70~70</volumeRange>
+			<volumeRange>140</volumeRange>
 		</li>
 	</subSounds>
 </SoundDef>
@@ -64,7 +64,7 @@
 					<clipPath>Ability/Shiroko_C/Shiroko_3</clipPath>
 				</li>
 			</grains>      
-			<volumeRange>70~70</volumeRange>
+			<volumeRange>40</volumeRange>
 		</li>
 	</subSounds>
 </SoundDef>
