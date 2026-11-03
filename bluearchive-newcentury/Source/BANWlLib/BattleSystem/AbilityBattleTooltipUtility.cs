@@ -104,14 +104,13 @@ namespace BANWlLib.BattleSystem
             return builder.ToString();
         }
 
-        //供含多组攻击的角色状态复用简短总览，角色属性只在第一组展示。
-        public static string BuildCompactTooltip(Pawn pawn, List<BattleActionConfig> actions, bool includeCasterStats)
+        //多组伤害各显示一行合计，复用实际预估算法，不展开属性公式与逐发明细。
+        public static string BuildDamageSummary(Pawn pawn, List<BattleActionConfig> actions)
         {
-            StringBuilder builder = new StringBuilder();
-            builder.AppendLine();
-            if (includeCasterStats) AppendCasterStats(builder, pawn);
-            AppendCompactActions(builder, pawn, actions);
-            return builder.ToString();
+            CompactActionTotals totals = CalculateCompactTotals(pawn, actions);
+            return totals.damageCount + "发，总倍率 " +
+                FormatColor((totals.damageRatioTotal * 100f).ToString("0.##") + "%", DamageColor) +
+                "，预估 " + FormatColor(totals.damageTotal.ToString("0.##"), DamageColor);
         }
 
         //判断是否使用紧凑显示，避免多段技能把悬浮说明撑得过长。

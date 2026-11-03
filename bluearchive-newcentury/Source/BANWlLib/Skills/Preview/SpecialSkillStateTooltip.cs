@@ -4,10 +4,10 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //为没有主动按钮的专属普通技能显示真实配置公式，并说明蓄积伤害的口径。
+    //为没有主动按钮的专属普通技能显示伤害预览，并说明蓄积伤害的口径。
     public static class SpecialSkillStateTooltip
     {
-        //按角色显示普通技能公式，已经确定的蓄积金额直接显示而不再次随机结算。
+        //按角色显示普通技能预览，已经确定的蓄积金额直接显示而不再次随机结算。
         public static string Build(Hediff_SpecialSkillState state)
         {
             var profile = state.profile;
@@ -25,15 +25,16 @@ namespace BANWlLib.Skills
                         Formula(state.pawn, profile.normalAttack) : "";
                 case SpecialSkillRole.Shiroko:
                     var normal = profile.shiroko.normalSkill;
-                    return "\n无人机普攻追击（每发主武器射击触发）：" +
-                        AbilityBattleTooltipUtility.BuildCompactTooltip(state.pawn,
-                            SpecialSkillBattlePreview.Expand(new[] { profile.droneAttack }), true) +
-                        "\nEX普通技能·手榴弹（半径" + normal.grenadeAttack.radius.ToString("0.####") + "格）：" +
-                        AbilityBattleTooltipUtility.BuildCompactTooltip(state.pawn,
-                            SpecialSkillBattlePreview.Expand(new[] { normal.grenadeAttack }), false) +
-                        "\nEX普通技能·无人机（" + normal.droneShots.Count + "发，各发独立倍率）：" +
-                        AbilityBattleTooltipUtility.BuildCompactTooltip(state.pawn,
-                            SpecialSkillBattlePreview.Expand(normal.droneShots.Select(shot => shot.attack)), false);
+                    return "\n\n普攻追击（每发主武器触发）\n" +
+                        AbilityBattleTooltipUtility.BuildDamageSummary(state.pawn,
+                            SpecialSkillBattlePreview.Expand(new[] { profile.droneAttack })) +
+                        "\n\n普通技能·手榴弹（半径" + normal.grenadeAttack.radius.ToString("0.##") + "格）\n" +
+                        AbilityBattleTooltipUtility.BuildDamageSummary(state.pawn,
+                            SpecialSkillBattlePreview.Expand(new[] { normal.grenadeAttack })) +
+                        "\n\n普通技能·无人机\n" +
+                        AbilityBattleTooltipUtility.BuildDamageSummary(state.pawn,
+                            SpecialSkillBattlePreview.Expand(normal.droneShots.Select(shot => shot.attack))) +
+                        "\n\n预估未计暴击、克制与目标减伤。";
                 case SpecialSkillRole.Kei:
                     return "\n普通技能攻击力伤害：" + Formula(state.pawn, profile.normalAttack) +
                         "\n普通技能记录伤害：" +
