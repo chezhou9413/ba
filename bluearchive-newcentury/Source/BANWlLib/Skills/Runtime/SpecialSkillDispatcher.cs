@@ -38,8 +38,6 @@ namespace BANWlLib.Skills
                 case SpecialSkillRole.Rio: RioSkills.Tick(s); break;
             }
             if (!s.native || !SpecialCombatUtility.CanAct(s.pawn) || s.Now < s.nextNormalTick) return;
-            if (s.profile.role == SpecialSkillRole.Shiroko)
-                TryNormal(s);
             if (s.profile.role == SpecialSkillRole.Arisu && s.hits >= s.profile.arisu.normalSkill.requiredHits)
                 TryNormal(s);
         }
@@ -49,6 +47,7 @@ namespace BANWlLib.Skills
         {
             if (!SpecialCombatUtility.CanAct(s.pawn)) return false;
             if (s.profile.role == SpecialSkillRole.Arisu) return ArisuNormalSkill.TryCast(s);
+            if (s.profile.role == SpecialSkillRole.Shiroko) return ShirokoNormalSkill.TryCast(s);
             if (s.profile.role == SpecialSkillRole.Kei) return KeiNormalSkill.TryStart(s);
             if (s.profile.role == SpecialSkillRole.Hoshino &&
                 (s.stage != 0 || s.castEndTick >= s.Now || s.hoshino.outputExCasting ||
@@ -57,8 +56,6 @@ namespace BANWlLib.Skills
             if (target == null) return false;
             switch (s.profile.role)
             {
-                case SpecialSkillRole.Shiroko:
-                    ShirokoSkills.Normal(s, target); break;
                 case SpecialSkillRole.Hoshino:
                     HoshinoNormalSkill.Attack(s, target); break;
                 default: return false;
@@ -79,6 +76,7 @@ namespace BANWlLib.Skills
         //角色离图时清理地图实体和表现，并终止依赖当前地图的记录。
         public static void LeaveMap(Hediff_SpecialSkillState s)
         {
+            if (s.profile.role == SpecialSkillRole.Shiroko) ShirokoSkills.Clear(s);
             s.CleanupEffect();
             s.activeMap?.GetComponent<MapComponent_SpecialSkills>().Unregister(s);
             //凯伊引用的场地属于实际EX，角色离图不能销毁场地或提前触发普通技能。
@@ -111,11 +109,13 @@ namespace BANWlLib.Skills
             if (s.copiedAbility != null) RioSkills.RemoveCopy(s);
             if (s.profile.role == SpecialSkillRole.Hoshino && s.stage != 0) HoshinoSkills.Switch(s);
             s.stage = s.stacks = s.hits = s.remainingHits = 0;
+            if (s.profile.role == SpecialSkillRole.Shiroko) ShirokoSkills.RemoveBuffer(s);
             s.endTick = s.castEndTick = -1;
             s.recorded = s.recordCap = 0;
             s.releaseReady = s.forceDeath = false;
             s.field = null;
             s.keiNormalJob = null;
+            if (s.profile.role == SpecialSkillRole.Kei) s.kei = new KeiRuntimeState();
             s.arisuNormalJob = null;
             s.passiveReadyTick = 0;
             s.nextNormalTick = s.Now + (s.profile.role == SpecialSkillRole.Arisu

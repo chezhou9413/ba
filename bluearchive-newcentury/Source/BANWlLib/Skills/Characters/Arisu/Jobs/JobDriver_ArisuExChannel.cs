@@ -15,7 +15,7 @@ namespace BANWlLib.Skills
         private int attackStage;
         private bool beamFired;
         private IntVec3 aimCell = IntVec3.Invalid;
-        private ArisuExEffects attackEffects;
+        private AimedSkillEffects attackEffects;
 
         //能力实际生效后启动准备表现，伤害等到光束出射时再安排。
         public void BeginAttack(int stage)
@@ -25,7 +25,7 @@ namespace BANWlLib.Skills
             aimCell = job.targetA.Cell;
             var config = job.ability.CompOfType<CompAbilityEffect_SpecialSkill>().Props.profile.arisu;
             config.attackSound?.PlayOneShot(new TargetInfo(pawn));
-            attackEffects = new ArisuExEffects(config.attackEffecters[stage], pawn, attackStartTick);
+            attackEffects = new AimedSkillEffects(config.attackEffecters[stage], pawn, attackStartTick);
             attackEffects.Tick(job.targetA);
         }
 
@@ -98,7 +98,7 @@ namespace BANWlLib.Skills
                 }
                 pawn.rotationTracker.FaceTarget(job.targetA);
                 if (attackEffects == null && attackStartTick >= 0)
-                    attackEffects = new ArisuExEffects(profile.arisu.attackEffecters[attackStage], pawn, attackStartTick);
+                    attackEffects = new AimedSkillEffects(profile.arisu.attackEffecters[attackStage], pawn, attackStartTick);
                 attackEffects?.Tick(beamFired ? job.targetA : new LocalTargetInfo(aimCell));
                 if (state.Now > state.castEndTick) ReadyForNextToil();
             };

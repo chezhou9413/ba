@@ -37,7 +37,9 @@ namespace BANWlLib.Skills
         public int pendingAttacks;
         public HoshinoRuntimeState hoshino = new HoshinoRuntimeState();
         public WakamoRuntimeState wakamo = new WakamoRuntimeState();
+        public ShirokoRuntimeState shiroko = new ShirokoRuntimeState();
         public Verse.AI.Job keiNormalJob;
+        public KeiRuntimeState kei;
         public Verse.AI.Job arisuNormalJob;
         private Effecter maintainedEffect;
         private EffecterDef maintainedDef;
@@ -48,7 +50,13 @@ namespace BANWlLib.Skills
         public override bool TryMergeWith(Hediff other) => false;
         public override string LabelBase => profile == null ? base.LabelBase : profile.LabelCap.ToString();
         //按钮只显示当前角色相关的状态，完整公式留在健康状态说明中。
-        public string StatusText => profile?.role == SpecialSkillRole.Arisu
+        public string StatusText => profile?.role == SpecialSkillRole.Shiroko
+            ? $"无人机：{(ShirokoSkills.DronePresent(this) ? "在场" : "未召唤")}　EX剩余：{Mathf.Max(0, endTick - Now) / 60f:0.0}秒\n退场缓冲：{stacks}/{profile.lethalStackLimit}层" +
+                (shiroko.normalJob != null ? "\n正在瞄准投掷" : Active ? $"\n普通技能冷却：{Mathf.Max(0, nextNormalTick - Now) / 60f:0.0}秒" : "\nEX普通技能未启用")
+            : profile?.role == SpecialSkillRole.Kei
+            ? $"普通技能待释放：{KeiRuntimeState.Get(this).ReadyCount}次　蓄积中：{KeiRuntimeState.Get(this).charges.Count - KeiRuntimeState.Get(this).ReadyCount}次" +
+                (keiNormalJob != null ? "\n正在瞄准释放" : "")
+            : profile?.role == SpecialSkillRole.Arisu
             ? $"充能：{stage}/2档　普通技能命中：{hits}/{profile.arisu.normalSkill.requiredHits}" +
                 (arisuNormalJob != null ? "\n正在施放普通技能" : castEndTick >= Now ? "\n技能伤害正在结算" : "")
             : (profile?.role == SpecialSkillRole.Hoshino
@@ -149,6 +157,11 @@ namespace BANWlLib.Skills
         //删除状态时释放持续表现。
         public override void PostRemoved()
         {
+            if (profile?.role == SpecialSkillRole.Shiroko)
+            {
+                ShirokoSkills.Clear(this);
+                ShirokoSkills.RemoveBuffer(this);
+            }
             if (copiedAbility != null) RioSkills.RemoveCopy(this);
             if (profile?.role == SpecialSkillRole.Wakamo) WakamoSkills.Clear(this);
             CleanupEffect();
@@ -185,7 +198,9 @@ namespace BANWlLib.Skills
             Scribe_Deep.Look(ref snapshot, "snapshot");
             Scribe_Deep.Look(ref hoshino, "hoshino");
             Scribe_Deep.Look(ref wakamo, "wakamo");
+            Scribe_Deep.Look(ref shiroko, "shiroko");
             Scribe_References.Look(ref keiNormalJob, "keiNormalJob");
+            Scribe_Deep.Look(ref kei, "kei");
             Scribe_References.Look(ref arisuNormalJob, "arisuNormalJob");
         }
     }

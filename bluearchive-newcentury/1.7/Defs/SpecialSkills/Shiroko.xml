@@ -11,13 +11,8 @@
     <role>Shiroko</role>
     <!-- 本配置档对应的主能力Def，能力按钮通过它反查到这里。 -->
     <primaryAbility>BANW_Special_Shiroko_Ex</primaryAbility>
-    <!-- 普通技能选敌与EX瞄准的最大距离（格）。 -->
-    <range>32.9</range>
-    <!-- 普通技能自动触发间隔（tick）：1800 tick = 30 秒。 -->
-    <normalIntervalTicks>1800</normalIntervalTicks>
-    <!-- 普通技能命中后的溅射半径（格），0 表示只打单体。 -->
+    <range>33.9</range>
     <radius>0</radius>
-    <!-- EX 召唤的无人机持续时间（tick）：2400 tick = 40 秒，再次施放会刷新。 -->
     <durationTicks>2400</durationTicks>
     <!-- 施放EX时扣除的最大生命比例：0.2 表示 20%，且不会把自己扣死。 -->
     <lifeCostRatio>0.2</lifeCostRatio>
@@ -25,53 +20,29 @@
     <immortalityCooldownTicks>5400</immortalityCooldownTicks>
     <!-- 不死层数上限：叠到第 15 层时强制死亡。 -->
     <lethalStackLimit>15</lethalStackLimit>
-    <!-- 施法者在EX前摇/施法时的特效。 -->
     <casterEffecter></casterEffecter>
-    <!-- 命中目标时播放的特效。 -->
     <targetEffecter></targetEffecter>
-    <!-- 无人机阶段切换（存在期间）维持的特效。 -->
     <stageEffecter></stageEffecter>
-    <!-- 无人机结束/EX 到期时播放的收尾特效。 -->
     <endEffecter></endEffecter>
-    <!-- 无人机常驻状态特效，持续绘制在无人机身上。 -->
     <stateEffecter></stateEffecter>
-    <!-- 无人机贴图绘制尺寸（宽,高），不指定droneTexturePath时绘制简易测试无人机；填写贴图后必须确保资源存在。 -->
-    <droneDrawSize>(0.7,0.5)</droneDrawSize>
-    <!-- 无人机相对宿主的绘制偏移（右,前,上），用于摆出悬浮跟随的位置。 -->
-    <droneOffset>(0.8,0,0.5)</droneOffset>
-    <!-- 普通技能的攻击段配置：每 30 秒宿主自动对敌人打出的那一段。 -->
-    <normalAttack>
-      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
-      <useBattleStats>true</useBattleStats>
-      <!-- 关闭BA战斗系统时使用的攻击基数，100 表示以 100 点攻击为基准。 -->
-      <basePower>100</basePower>
-      <!-- 攻击力总倍率：4 表示 400%，连射时分摊到每一发。 -->
-      <attackPowerRatio>0.2</attackPowerRatio>
-      <!-- 本段伤害使用的伤害类型。 -->
-      <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 本段每次伤害的护甲穿透比例：0.5为50%，不随连射发数均分；0 表示不额外穿透。 -->
-      <penetration>0</penetration>
-      <!-- false 表示不吃施法者EX伤害加成。 -->
-      <isExSkill>false</isExSkill>
-      <!-- 是否允许暴击。 -->
-      <canCrit>true</canCrit>
-      <!-- 是否应用攻击类型与护甲类型克制。 -->
-      <applyAffinity>true</applyAffinity>
-      <!-- 溅射半径（格），0 表示单体。 -->
-      <radius>0</radius>
-      <!-- 本段发数，总倍率按此数均分。 -->
-      <shots>7</shots>
-      <!-- 相邻两发之间的间隔（tick）。 -->
-      <shotIntervalTicks>6</shotIntervalTicks>
-      <!-- 本段使用的弹丸Def。 -->
-      <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
-      <!-- 命中时的特效。 -->
-      <effecterDef>BANW_Effecter_C</effecterDef>
-
-    </normalAttack>
-    <!-- 无人机追击攻击段配置：宿主每发普攻触发一次的那一段。 -->
+    <shiroko>
+      <!-- EX期间禁用指定按钮及施放；保留原能力、充能与正常流逝的冷却。 -->
+      <disabledNormalAbility>BAWN_Shiroko_C_NS</disabledNormalAbility>
+      <normalSkill>BANW_Special_Shiroko_Normal</normalSkill>
+      <retirementBufferHediff>BANW_ShirokoRetirementBuffer</retirementBufferHediff>
+      <!-- 路径不带方向后缀；缺少西向图时由原版镜像东向图。偏移同时用于机体和发射点。 -->
+      <droneGraphic>
+        <texPath>Pawns/Abydos/Shiroko/Skill/Wurenji</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(0.7,0.5)</drawSize>
+        <drawOffsetNorth>(-0.8,0,0.5)</drawOffsetNorth>
+        <drawOffsetEast>(0.8,0,-0.5)</drawOffsetEast>
+        <drawOffsetSouth>(0.8,0,0.5)</drawOffsetSouth>
+        <drawOffsetWest>(-0.8,0,-0.5)</drawOffsetWest>
+      </droneGraphic>
+    </shiroko>
     <droneAttack>
-      <!-- 每发宿主普攻触发一次；按白子的普攻基准结算50%伤害，不读取EX增益。 -->
+      <!-- 每发主武器射击触发一轮；attackPowerRatio为整轮倍率，按shots均分。 -->
       <useBattleStats>true</useBattleStats>
       <!-- 关闭BA战斗系统时使用的攻击基数。 -->
       <basePower>100</basePower>
@@ -83,9 +54,8 @@
       <penetration>2</penetration>
       <!-- false 表示不享受EX伤害加成。 -->
       <isExSkill>false</isExSkill>
-      <!-- true 表示按“普通攻击”结算，套用本体普攻倍率与基础精通。 -->
+      <!-- 按角色攻击力计算，不额外乘武器普通攻击倍率或EX倍率。 -->
       <isNormalAttack>true</isNormalAttack>
-      <!-- 是否允许暴击。 -->
       <canCrit>true</canCrit>
       <!-- 是否应用攻击类型与护甲类型克制。 -->
       <applyAffinity>true</applyAffinity>
@@ -103,40 +73,6 @@
       <effecterDef>BANW_Shiroko_C_Ef_A</effecterDef>
 
     </droneAttack>
-    <!-- 连射攻击段配置：普通技能触发、无人机锁定目标后的 12 连射。 -->
-    <burstAttack>
-      <!-- 锁定目标连续射击12次；总倍率10均分后，每发为白子普攻基准的83.3%。 -->
-      <useBattleStats>true</useBattleStats>
-      <!-- 关闭BA战斗系统时使用的攻击基数。 -->
-      <basePower>100</basePower>
-      <!-- 连射总倍率：10 表示 1000%，由 20 发均分。 -->
-      <attackPowerRatio>10</attackPowerRatio>
-      <!-- 本段伤害使用的伤害类型。 -->
-      <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 本段每次伤害的护甲穿透比例：0.5为50%，不随连射发数均分；0 表示不额外穿透。 -->
-      <penetration>2</penetration>
-      <!-- false 表示不享受EX伤害加成。 -->
-      <isExSkill>false</isExSkill>
-      <!-- true 表示按“普通攻击”结算，套用本体普攻倍率与基础精通。 -->
-      <isNormalAttack>true</isNormalAttack>
-      <!-- 是否允许暴击。 -->
-      <canCrit>true</canCrit>
-      <!-- 是否应用攻击类型与护甲类型克制。 -->
-      <applyAffinity>true</applyAffinity>
-      <!-- 溅射半径（格），0 表示单体。 -->
-      <radius>0</radius>
-      <!-- 连射发数。 -->
-      <shots>12</shots>
-      <!-- 相邻两发之间的间隔（tick）：6 tick ≈ 0.1 秒。 -->
-      <shotIntervalTicks>6</shotIntervalTicks>
-      <!-- 每发播放的射击音效，与无人机追击段共用同一素材。 -->
-      <shotSound>BANW_Shiroko_DroneShot</shotSound>
-      <!-- 本段使用的弹丸Def。 -->
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <!-- 命中时的特效。 -->
-      <effecterDef>BANW_Effecter_C</effecterDef>
-
-    </burstAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
   <!-- EX 能力本体：消耗生命召唤无人机，按钮由上面配置档的 primaryAbility 指过来。 -->
   <AbilityDef>

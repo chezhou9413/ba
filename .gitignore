@@ -1,1 +1,13 @@
-﻿*.zip
+*.zip
+
+#本机编译与编辑器缓存
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.pdb
+*.log
+
+#无关工程目录
+/SandWorm/

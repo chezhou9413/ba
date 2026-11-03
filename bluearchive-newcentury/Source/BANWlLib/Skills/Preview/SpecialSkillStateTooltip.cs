@@ -1,3 +1,4 @@
+using System.Linq;
 using BANWlLib.BattleSystem;
 using Verse;
 
@@ -23,8 +24,16 @@ namespace BANWlLib.Skills
                     return state.stage == 0 ? "\n攻击普通技能（每" + profile.hoshino.normalRequiredShots + "发普攻）：" +
                         Formula(state.pawn, profile.normalAttack) : "";
                 case SpecialSkillRole.Shiroko:
-                    return "\n普通技能宿主攻击：" + Formula(state.pawn, profile.normalAttack) +
-                        (state.Active ? "\n无人机连射：" + Formula(state.pawn, profile.burstAttack) : "");
+                    var normal = profile.shiroko.normalSkill;
+                    return "\n无人机普攻追击（每发主武器射击触发）：" +
+                        AbilityBattleTooltipUtility.BuildCompactTooltip(state.pawn,
+                            SpecialSkillBattlePreview.Expand(new[] { profile.droneAttack }), true) +
+                        "\nEX普通技能·手榴弹（半径" + normal.grenadeAttack.radius.ToString("0.####") + "格）：" +
+                        AbilityBattleTooltipUtility.BuildCompactTooltip(state.pawn,
+                            SpecialSkillBattlePreview.Expand(new[] { normal.grenadeAttack }), false) +
+                        "\nEX普通技能·无人机（" + normal.droneShots.Count + "发，各发独立倍率）：" +
+                        AbilityBattleTooltipUtility.BuildCompactTooltip(state.pawn,
+                            SpecialSkillBattlePreview.Expand(normal.droneShots.Select(shot => shot.attack)), false);
                 case SpecialSkillRole.Kei:
                     return "\n普通技能攻击力伤害：" + Formula(state.pawn, profile.normalAttack) +
                         "\n普通技能记录伤害：" +

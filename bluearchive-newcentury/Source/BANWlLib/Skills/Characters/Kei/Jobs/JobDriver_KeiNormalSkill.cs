@@ -9,7 +9,7 @@ namespace BANWlLib.Skills
     //凯伊自动普通技能工作，停步瞄准后一次释放两段单体弹丸。
     public class JobDriver_KeiNormalSkill : JobDriver
     {
-        //通过工作引用定位蓄积来源，使重叠场地的释放互不覆盖。
+        //工作引用定位角色，运行队列锁定本次前摇对应的独立蓄积。
         private Hediff_SpecialSkillState State => pawn.health.hediffSet.hediffs
             .OfType<Hediff_SpecialSkillState>().FirstOrDefault(s => s.keiNormalJob == job);
 
@@ -21,12 +21,17 @@ namespace BANWlLib.Skills
         {
             var state = State;
             if (state == null) { Log.Error("凯伊普通技能工作缺少蓄积状态"); yield break; }
+            var runtime = KeiRuntimeState.Get(state);
             var config = state.profile.kei;
             this.FailOn(() => !state.releaseReady || !SpecialCombatUtility.CanAct(pawn) ||
                 !SpecialCombatUtility.ValidEnemy(pawn, job.targetA.Pawn, state.profile.range));
             AddFinishAction(condition =>
             {
-                if (state.keiNormalJob == job) state.keiNormalJob = null;
+                if (state.keiNormalJob == job)
+                {
+                    state.keiNormalJob = null;
+                    runtime.castingIndex = -1;
+                }
                 if (pawn.stances.curStance is MultiShotAimStance) pawn.stances.CancelBusyStanceSoft();
             });
             Toil warmup = Toils_General.Wait(config.warmupTicks, TargetIndex.A);

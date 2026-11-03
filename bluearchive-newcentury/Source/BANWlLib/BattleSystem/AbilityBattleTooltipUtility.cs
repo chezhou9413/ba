@@ -95,12 +95,22 @@ namespace BANWlLib.BattleSystem
                 }
                 else
                 {
-                    AppendDamageAction(builder, pawn, action);
+                    AppendDamageAction(builder, pawn, action, repeatCount);
                 }
 
                 i += repeatCount;
             }
 
+            return builder.ToString();
+        }
+
+        //供含多组攻击的角色状态复用简短总览，角色属性只在第一组展示。
+        public static string BuildCompactTooltip(Pawn pawn, List<BattleActionConfig> actions, bool includeCasterStats)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine();
+            if (includeCasterStats) AppendCasterStats(builder, pawn);
+            AppendCompactActions(builder, pawn, actions);
             return builder.ToString();
         }
 
@@ -801,8 +811,11 @@ namespace BANWlLib.BattleSystem
                 return;
             }
 
-            float damage = EstimateDamage(pawn, action) * group.repeatCount;
-            builder.AppendLine("  " + title + "：" + FormatColor("伤害", DamageColor) + " " + FormatPercent(GetDamageActionMultiplier(action)) + " x" + group.repeatCount + " = " + FormatColor(FormatNumber(damage), DamageColor) + "，" + (action.useBattleStats ? FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill) : "独立基数，不应用BA输出属性"));
+            float singleDamage = EstimateDamage(pawn, action);
+            builder.AppendLine("  " + title + "：单发倍率 " + FormatPercent(GetDamageActionMultiplier(action)) +
+                "，单发预估 " + FormatColor(FormatNumber(singleDamage), DamageColor));
+            builder.AppendLine("  " + group.repeatCount + "发合计：" + FormatColor(FormatNumber(singleDamage * group.repeatCount), DamageColor) +
+                (action.useBattleStats ? "，最后乘基础精通 " + FormatPercent(BattleStatUtility.GetBaseMasteryMultiplier(pawn) * action.baseMasteryMultiplier) : "，独立基数"));
         }
 
         //估算单段伤害，复用战斗属性工具的真实伤害计算。
@@ -822,11 +835,11 @@ namespace BANWlLib.BattleSystem
                 isNormalAttack = action.isNormalAttack,
                 useNormalAttackStat = action.isNormalAttack,
                 mechanismMultiplier = action.previewMechanismMultiplier,
-                canCrit = action.alwaysCrit && action.canCrit,
+                canCrit = action.canCrit,
                 alwaysCrit = action.alwaysCrit,
-                applyAffinity = false,
+                applyAffinity = action.applyAffinity,
                 isExSkill = action.isExSkill
-            });
+            }, preview: true);
             return result.finalAmount;
         }
 
@@ -909,13 +922,17 @@ namespace BANWlLib.BattleSystem
 
             builder.AppendLine("角色攻击力：" + FormatNumber(weaponBaseAttack) + " x " + FormatPercent(levelMultiplier) + " x " + FormatPercent(starMultiplier) + " + " + FormatNumber(attackFlat) + " = " + FormatColor(FormatNumber(finalAttack), DamageColor));
             builder.AppendLine("攻击力加成：" + FormatColor(FormatPercent(attackMultiplier), DamageColor));
+            builder.AppendLine("加成后攻击力：" + FormatColor(FormatNumber(finalAttack * attackMultiplier), DamageColor));
             builder.AppendLine("普通攻击倍率：" + FormatColor(FormatPercent(normalAttackStatMultiplier), DamageColor));
+            builder.AppendLine("基础精通（最后乘算）：" + FormatColor(FormatPercent(BattleStatUtility.GetBaseMasteryMultiplier(pawn)), DamageColor));
+            builder.AppendLine("暴击率：" + FormatPercent(pawn.GetStatValue(BattleStatDefOf.BANW_CriticalChance)) +
+                "，暴击伤害：" + FormatPercent(pawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamage)));
             builder.AppendLine("治愈力：((" + FormatNumber(healBase) + " x " + FormatPercent(healLevelMultiplier) + " x " + FormatPercent(healStarMultiplier) + ") + " + FormatNumber(healFlatBonus) + ") x " + FormatPercent(healBonusMultiplier) + " = " + FormatColor(FormatNumber(finalHeal), HealColor));
             builder.AppendLine("EX技能倍率：" + FormatColor(FormatPercent(exMultiplier), ExColor));
         }
 
         //写入伤害段公式，展示固定值、攻击力倍率、暴击、克制和 EX 倍率。
-        private static void AppendDamageAction(StringBuilder builder, Pawn pawn, BattleActionConfig action)
+        private static void AppendDamageAction(StringBuilder builder, Pawn pawn, BattleActionConfig action, int repeatCount)
         {
             BattleDamageResult result = BattleStatUtility.BuildDamageResult(new BattleDamageRequest
             {
@@ -931,21 +948,23 @@ namespace BANWlLib.BattleSystem
                 isNormalAttack = action.isNormalAttack,
                 useNormalAttackStat = action.isNormalAttack,
                 mechanismMultiplier = action.previewMechanismMultiplier,
-                canCrit = action.alwaysCrit && action.canCrit,
+                canCrit = action.canCrit,
                 alwaysCrit = action.alwaysCrit,
-                applyAffinity = false,
+                applyAffinity = action.applyAffinity,
                 isExSkill = action.isExSkill
-            });
+            }, preview: true);
 
             builder.AppendLine("类型：" + FormatColor("伤害", DamageColor));
-            builder.AppendLine("伤害倍率：" + FormatColor(FormatPercent(GetDamageActionMultiplier(action)), DamageColor));
+            builder.AppendLine("单发倍率：" + FormatColor(FormatPercent(GetDamageActionMultiplier(action)), DamageColor));
+            builder.AppendLine("发数：" + repeatCount + "，总倍率：" + FormatColor(FormatPercent(GetDamageActionMultiplier(action) * repeatCount), DamageColor));
             builder.AppendLine("暴击：" + FormatSwitch(action.canCrit, CritColor));
             builder.AppendLine("强制暴击：" + FormatSwitch(action.alwaysCrit, CritColor));
             builder.AppendLine("暴击文字：" + FormatSwitch(action.alwaysShowCriticalText, CritColor));
             builder.AppendLine("属性克制：" + FormatSwitch(action.applyAffinity, AffinityColor));
             builder.AppendLine("EX倍率：" + FormatEx(action.isExSkill, result.exSkillMultiplier));
-            AppendDamageFormula(builder, action);
-            builder.AppendLine("基础预估伤害：" + FormatColor(FormatNumber(result.finalAmount), DamageColor));
+            AppendDamageFormula(builder, pawn, action);
+            builder.AppendLine("单发预估伤害：" + FormatColor(FormatNumber(result.finalAmount), DamageColor));
+            builder.AppendLine("整轮预估合计：" + FormatColor(FormatNumber(result.finalAmount * repeatCount), DamageColor));
             builder.AppendLine(FormatFormulaHint(action.applyAffinity));
         }
 
@@ -996,16 +1015,18 @@ namespace BANWlLib.BattleSystem
         }
 
         //用短行展示实际结算顺序，避免 tooltip 横向撑开。
-        private static void AppendDamageFormula(StringBuilder builder, BattleActionConfig action)
+        private static void AppendDamageFormula(StringBuilder builder, Pawn pawn, BattleActionConfig action)
         {
             builder.AppendLine("算法：");
             string basis = action.useBattleStats ?
-                (action.isNormalAttack ? "角色自身攻击力 x 攻击力加成 x 普通攻击倍率 x 熟练倍率" :
+                (action.isNormalAttack ? "角色自身攻击力 x 攻击力加成 x 普通攻击倍率" :
                     "角色自身攻击力 x 攻击力加成 x 技能倍率") : "独立基数 x " + (action.isNormalAttack ? "机制倍率" : "技能倍率");
             builder.AppendLine(FormatColor("  攻击：" + basis, ColoredText.SubtleGrayColor));
             if (action.previewMechanismMultiplier != 1f)
                 builder.AppendLine(FormatColor("  机制与逐发分摊：x " + FormatNumber(action.previewMechanismMultiplier), ColoredText.SubtleGrayColor));
             builder.AppendLine(FormatColor("  修正：" + (action.useBattleStats ? FormatFormulaModifiers(action.canCrit, action.alwaysCrit, action.applyAffinity, action.isExSkill) : "独立基数，不应用BA输出属性"), ColoredText.SubtleGrayColor));
+            if (action.useBattleStats)
+                builder.AppendLine(FormatColor("  最后乘基础精通：x " + FormatNumber(BattleStatUtility.GetBaseMasteryMultiplier(pawn) * action.baseMasteryMultiplier), ColoredText.SubtleGrayColor));
         }
 
         //用短行展示实际结算顺序，避免 tooltip 横向撑开。
@@ -1088,10 +1109,10 @@ namespace BANWlLib.BattleSystem
         {
             if (!applyAffinity)
             {
-                return FormatColor("属性克制未参与；命中后仍会继续经过护甲、减伤和承伤系数。", DisabledColor);
+                return FormatColor("预估为未暴击、未计算目标防御的基础伤害。命中后按目标护甲、减伤和承伤系数结算。", DisabledColor);
             }
 
-            return FormatColor("命中目标后会按目标护甲类型结算克制，并继续经过护甲、减伤和承伤系数。", AffinityColor);
+            return FormatColor("预估为未暴击、未计算目标克制与防御的基础伤害。命中后独立判定暴击，并按目标克制、护甲、减伤和承伤系数结算。", AffinityColor);
         }
 
         //把启用和禁用状态染成不同颜色。
@@ -1109,13 +1130,13 @@ namespace BANWlLib.BattleSystem
         //格式化数值，让 tooltip 中的计算结果保持短小稳定。
         private static string FormatNumber(float value)
         {
-            return value.ToString("0.#");
+            return value.ToString("0.####");
         }
 
         //把 1.2 显示为 120%。
         private static string FormatPercent(float value)
         {
-            return value.ToString("P0");
+            return (value * 100f).ToString("0.####") + "%";
         }
 
         //格式化彩色文本，统一 RimWorld 富文本颜色写法。

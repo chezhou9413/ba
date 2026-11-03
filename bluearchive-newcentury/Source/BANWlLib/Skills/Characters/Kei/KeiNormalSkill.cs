@@ -17,13 +17,18 @@ namespace BANWlLib.Skills
                 !pawn.jobs.IsCurrentJobPlayerInterruptible()) return false;
             Pawn target = SpecialCombatUtility.FindEnemy(pawn, state.profile.range);
             if (target == null) return false;
+            var runtime = KeiRuntimeState.Get(state);
+            if (!runtime.ReserveNext()) return false;
             //结束武器正在进行的连射，防止普通子弹与技能前摇同时执行。
             foreach (Verb verb in pawn.equipment.Primary?.GetComp<CompEquippable>()?.AllVerbs ?? Enumerable.Empty<Verb>())
                 verb.Reset();
             Job job = JobMaker.MakeJob(state.profile.kei.normalJob, target);
             state.keiNormalJob = job;
             pawn.jobs.StartJob(job, JobCondition.InterruptForced, resumeCurJobAfterwards: true);
-            return pawn.CurJob == job;
+            if (pawn.CurJob == job) return true;
+            if (state.keiNormalJob == job) state.keiNormalJob = null;
+            runtime.castingIndex = -1;
+            return false;
         }
     }
 }

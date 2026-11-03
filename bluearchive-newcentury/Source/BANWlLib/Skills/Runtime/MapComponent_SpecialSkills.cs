@@ -24,6 +24,17 @@ namespace BANWlLib.Skills
         //安排下一游戏时刻或指定时刻执行的攻击。
         public void Enqueue(SpecialPendingAttack attack) { pending.Add(attack); }
 
+        //角色离图或所属技能移除时取消未发射的专属攻击。
+        public void CancelPending(Hediff_SpecialSkillState state)
+        {
+            for (int i = pending.Count - 1; i >= 0; i--)
+            {
+                if (pending[i].state != state) continue;
+                pending[i].Complete();
+                pending.RemoveAt(i);
+            }
+        }
+
         //判断持续施法是否还有待执行伤害段，不等待已经飞出的弹丸命中。
         public bool HasPendingCast(Verse.AI.Job job) => pending.Any(a => a.castingJob == job);
 

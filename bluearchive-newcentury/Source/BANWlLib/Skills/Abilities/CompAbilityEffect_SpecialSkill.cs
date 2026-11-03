@@ -35,8 +35,6 @@ namespace BANWlLib.Skills
             if (ShouldHideGizmo) reason = "当前阶段不能使用此技能";
             else if (s.profile.role == SpecialSkillRole.Nero && s.castEndTick >= s.Now)
                 reason = "正在持续施放二段EX";
-            else if (s.profile.role == SpecialSkillRole.Kei && (s.Active || s.releaseReady))
-                reason = "增益场地或待释放蓄积尚未结束";
             else if (s.profile.role == SpecialSkillRole.Hoshino &&
                 (s.castEndTick >= s.Now || s.hoshino.outputExCasting))
                 reason = "正在执行形态技能";

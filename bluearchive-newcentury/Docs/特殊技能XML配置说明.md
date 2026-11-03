@@ -10,7 +10,7 @@
 |---|---|---|
 | 妮露 | BANW_Nero | [Nero_B.xml](../1.7/Defs/AbilityDef/Nero_B.xml) |
 | 临战爱丽丝 | BANW_Arisu_B | [Arisu.xml](../1.7/Defs/SpecialSkills/Arisu.xml)、[ArisuNormal.xml](../1.7/Defs/SpecialSkills/ArisuNormal.xml)、[ArisuEffects.xml](../1.7/Defs/SpecialSkills/ArisuEffects.xml) |
-| 黑子 | BANW_Shiroko | [Shiroko.xml](../1.7/Defs/SpecialSkills/Shiroko.xml) |
+| 黑子 | BANW_Shiroko_C | [Shiroko.xml](../1.7/Defs/SpecialSkills/Shiroko.xml)、[ShirokoNormal.xml](../1.7/Defs/SpecialSkills/ShirokoNormal.xml) |
 | 若藻 | BANW_Wakamo | [Wakamo.xml](../1.7/Defs/SpecialSkills/Wakamo.xml) |
 | 双形态星野 | BANW_Hoshiro | [Hoshino.xml](../1.7/Defs/SpecialSkills/Hoshino.xml)、[HoshinoAbilities.xml](../1.7/Defs/SpecialSkills/HoshinoAbilities.xml) |
 | 凯伊 | BANW_Kei | [Kei.xml](../1.7/Defs/SpecialSkills/Kei.xml) |
@@ -109,7 +109,7 @@ AbilityDef的`targetParams`继续控制生物类型：`canTargetPawns`是Pawn总
 |---|---|
 | 妮露 | `1.7/Defs/AbilityDef/Nero_B.xml`：`exAttack.penetration` |
 | 爱丽丝 | `Arisu.xml`：`exAttack.penetration`；`ArisuNormal.xml`：`attack.penetration`；EX充能倍率不改变穿透 |
-| 黑子 | `Shiroko.xml`：`normalAttack.penetration`、`droneAttack.penetration`、`burstAttack.penetration` |
+| 黑子 | `Shiroko.xml`：`droneAttack.penetration`；`ShirokoNormal.xml`：`grenadeAttack.penetration`、各项`droneShots/li/attack/penetration` |
 | 若藻 | `Wakamo.xml`：`exAttack.penetration`、`burstAttack.penetration`，首段和蓄积爆发独立配置 |
 | 星野 | `Hoshino.xml`：`hoshino.exStages`每段的`attack.penetration`、`normalAttack.penetration`、`hoshino.empoweredAttack.penetration` |
 | 凯伊 | `Kei.xml`：`burstAttack.penetration`，控制蓄积释放的穿透 |
@@ -158,13 +158,15 @@ EX为固定直线多段AOE，默认`arisu.lineLength=25`、`lineWidth=3`、`exAt
 
 durationTicks=2400，无人机持续40秒；lifeCostRatio=0.2，EX安全消耗最大生命20%。生命消耗通过可治疗伤口实现，不经过护盾和攻击事件，不破坏身体部位；接近致死时只消耗安全允许的部分。
 
-`droneAttack` 默认单发50%，宿主主武器每成功发射一发就对该发瞄准对象跟射一次；宿主射偏、被闪避、护甲减伤或护盾吸收都不影响触发。无人机仍独立接受目标闪避、护甲与护盾判定。`normalAttack` 保留宿主400%伤害；每30秒自动选敌后，无人机锁定该目标执行 `burstAttack`，总普攻倍率1000%分20发，每发50%，间隔6 tick。
+`droneAttack` 默认单发50%，宿主主武器每成功发射一发就对该发瞄准对象追击一轮；总倍率按`shots`均分。宿主射偏、被闪避、护甲减伤或护盾吸收都不影响触发，无人机自己仍独立接受目标防御判定。
 
-两段无人机攻击均标记 `isNormalAttack=true`、`isExSkill=false`，读取宿主普攻倍率、基础精通、暴击和克制，禁止EX增益。各段的 `shotSound` 在每次实际发射时播放，默认使用 `ShirokoEffects.xml` 中的 `BANW_Shiroko_DroneShot`。发射后的弹丸由统一伤害链结算，各段 `penetration` 仍可独立配置。详见[白子无人机技能配置说明](白子无人机技能配置说明.md)。
+EX期间禁用`shiroko.disabledNormalAbility`指定的原技能，默认`BAWN_Shiroko_EX`，保留实例、充能和正常流逝的冷却。`shiroko.normalSkill`指向独立的`ShirokoNormalSkillDef`，EX生效后立即准备自动技能，选择25格内最近的可见敌人，前摇30 tick后投掷4倍攻击力、半径2.9的跟踪手榴弹，同时无人机发射12发独立0.5倍攻击，时间为0、6……66 tick。投掷后按1800 tick冷却重复，无目标保留机会，EX外不启动。
 
-immortalityCooldownTicks=5400，lethalStackLimit=15。首次致命伤进入一层，此后每次致命伤加一层，同次伤害涉及多个部位也只加一次；满血清层，冷却保留。第15层强制死亡并绕过项目任务免死。保护不自动治疗旧伤、不额外免倒地。
+白子不再使用`normalAttack`或`burstAttack`。追击与EX普通技能都设置`isNormalAttack=false`、`isExSkill=false`，使用角色攻击力与攻击力加成，继承暴击、克制与最后乘算的基础精通，不额外乘普通攻击倍率或EX倍率。`droneShots`每项代表一发，可单独调整`delayTicks`及`attack`中的倍率、伤害类型、穿透、弹丸、音效、命中特效，倍率不除以列表长度。详见[白子无人机技能配置说明](白子无人机技能配置说明.md)。
 
-无人机跟随宿主，不会被攻击。droneTexturePath 可填现有纹理路径；不填时显示简易机体。droneDrawSize 与 droneOffset 控制尺寸和宿主偏移。已经开始的20发连射可在EX到期后完成，目标死亡、消失或离图时取消剩余发射；EX到期后不再响应宿主新的普攻追击。
+immortalityCooldownTicks=5400，lethalStackLimit=15。首次致命伤获得1层并添加“退场缓冲”，健康栏直接读取现有层数；此后每满60个游戏Tick增加1层，受伤不额外加层或刷新计时。没有后续伤害也增长，暂停不增长。第840 Tick（触发14秒后）达到第15层，强制死亡并绕过项目任务免死。满血清层并移除状态与叠层时钟，90秒冷却保留；冷却结束后新的致命伤从1层重新开始。存档保留下一层的绝对Tick，旧档缺少计时时保留原层数，从恢复后完整一秒续增。保护不自动治疗旧伤、不额外免倒地。
+
+无人机跟随宿主且无法被攻击。`shiroko.droneGraphic`使用`Graphic_Multi`，路径为`Pawns/Abydos/Shiroko/Skill/Wurenji`，按宿主朝向选图，缺西向图时镜像东向图。`drawSize`和`drawOffsetNorth/East/South/West`控制尺寸与四向偏移，机体和发射位置共用计算。EX到期恢复原技能、取消前摇；已投掷的连射允许完成，目标死亡或离图时停止剩余发射。
 
 ### 若藻
 
@@ -190,7 +192,7 @@ immortalityCooldownTicks=5400，lethalStackLimit=15。首次致命伤进入一�
 
 `kei.sourceExAbility=BAWN_Kei_EXX` 绑定现有EX“存在于此的我”。使用现有EX会直接连接它生成的实际场地；测试EX也读取此来源的场地配置和持续时间覆盖值。半径只修改 `AbilityDef/Kei.xml` 中场地的 `BattleFieldControllerExtension.radius`，持续时间优先读取来源EX的 `durationTicksOverride`。默认1500 tick、半径4.9格，无需同步第二份角色范围。详细入口见[凯伊技能配置说明](凯伊技能配置说明.md)。
 
-场地期间只记录已获得 `kei.contributionHediff`、当前仍在实际场地格子范围内的其他同阵营单位对敌方造成的有效伤害。`recordRatio=0.1`、`recordCapRatio=50`，离开范围后不再贡献。结束后自动普通技能等待合法敌人，停步瞄准并经过 `kei.warmupTicks=60` 的前摇，再发射 `burstAttack.projectileDef` 指定的一颗单体弹丸；命中时释放记录值100%，无额外基础伤害。`burstAttack.penetration` 控制穿透，`shots` 必须为1、`radius` 必须为0。前摇中断或无目标时保留资格；发射后清空。测试EX在记录或待释放期间禁用；现有EX的多次施法各自独立记录。
+场地期间只记录已获得 `kei.contributionHediff`、当前仍在实际场地格子范围内的其他同阵营单位对敌方造成的有效伤害。`recordRatio=0.1`、`recordCapRatio=50`，离开范围后不再贡献。结束后自动普通技能等待合法敌人，停步瞄准并经过 `kei.warmupTicks` 的前摇，再分别发射 `normalAttack` 的攻击力伤害段和 `burstAttack` 的记录伤害段；后者命中时释放记录值100%，不再次乘攻击力。两段的穿透、投射物与命中特效独立配置，`shots` 必须为1、`radius` 必须为0。前摇中断或无目标时保留资格。每次实际EX或测试EX成功生成场地均独立积攒一次普通技能机会，不新增次数上限；各场地独立蓄积和到期。前摇锁定一份到期记录，发射时只消耗该次机会，其他机会继续保留。重复EX不会覆盖旧记录，次数和前摇绑定均保存到存档。普通技能两段伤害的详细配置以[凯伊技能配置说明](凯伊技能配置说明.md)为准。
 
 若藻和凯伊的蓄积爆发均标记为不可再蓄积，防止互相循环记录。
 
@@ -293,7 +295,7 @@ AppendSpecialSkills.xml 配置了七个正式角色的技能追加。修改角�
 
 1. **妮露**：对另一名存活生物使用一阶段EX，随后使用二阶段攻击。两段均支持敌人、友军和中立生物；每次二阶段先增加一层锐气，对有效对决敌人另有增伤。一段只播放前摇与阶段特效，二段才播放casterEffecter；对决结束后恢复一阶段并清空锐气。
 2. **爱丽丝**：连续两次对自己使用EX完成充能，再对敌人释放。观察普通攻击每造成三次有效命中后自动发动普通技能。
-3. **黑子**：使用EX召唤无人机，再让宿主攻击敌人。宿主射出每发子弹就触发无人机追击，即使射偏或被闪避也触发；普通技能锁定目标后自动连射20发，每发播放声音，伤害不享受EX增益。
+3. **黑子**：EX期间原普通技能变灰，自动瞄准最近可见敌人，投掷跟踪手榴弹并连射12发。宿主每发主武器射击仍触发无人机追击；EX到期恢复原技能并让已投掷的连射完成。伤害不额外乘普通攻击倍率或EX倍率，致命伤触发后健康栏显示退场缓冲层数。
 4. **若藻**：对敌人使用EX，首次实际扣血后查看敌人的“若藻伤害蓄积”状态，再由友军持续攻击该目标。观察待释放伤害增长；记录满10秒后释放，重新施放会重新开始记录。
 5. **星野**：使用形态切换按钮，分别操作输出EX和坦克EX。坦克形态选择移动落点，抵达后获得护盾与前方拦截；普通技能次数可在状态窗口查看。
 6. **凯伊**：选择场地位置，让其他友军站在范围内攻击敌人。场地结束后，凯伊会寻找合法目标释放蓄积；没有目标时保留金额。

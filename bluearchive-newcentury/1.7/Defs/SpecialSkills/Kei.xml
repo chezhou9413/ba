@@ -18,7 +18,7 @@
       <sourceExAbility>BAWN_Kei_EXX</sourceExAbility>
       <!-- 友军进入场地后获得的增益状态，同时用于判定其是否仍在场地内、可以贡献蓄积。 -->
       <contributionHediff>BAWN_Kei_buff</contributionHediff>
-      <!-- 场地结束后自动执行的释放工作。 -->
+      <!-- 每次成功EX独立蓄积一次普通技能机会，场地结束后逐次自动释放。 -->
       <normalJob>BANW_Job_KeiNormalSkill</normalJob>
       <!-- 普通技能前摇，60 tick为1秒；语音与前摇特效在前摇开始时播放。 -->
       <warmupTicks>130</warmupTicks>

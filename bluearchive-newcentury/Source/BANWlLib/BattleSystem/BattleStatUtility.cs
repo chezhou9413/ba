@@ -472,6 +472,7 @@ namespace BANWlLib.BattleSystem
             float attackMultiplier = GetAttackMultiplier(pawn);
             float healMultiplier = GetHealBonusMultiplier(pawn);
             float weaponBaseAttack = GetWeaponBaseAttack(pawn);
+            damageType? attackType = TryGetDamageType(pawn);
             return new BattleCasterSnapshot
             {
                 casterLabel = pawn.LabelShortCap,
@@ -486,12 +487,13 @@ namespace BANWlLib.BattleSystem
                 criticalChance = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalChance),
                 criticalDamage = pawn.GetStatValue(BattleStatDefOf.BANW_CriticalDamage),
                 exSkillMultiplier = GetExSkillMultiplier(pawn),
-                damageType = TryGetDamageType(pawn)
+                damageType = attackType,
+                affinityBonus = attackType.HasValue ? GetAffinityBonus(pawn, attackType.Value) : 0f
             };
         }
 
-        //按请求选择BA、独立基数或已确定金额并构造伤害结果。
-        public static BattleDamageResult BuildDamageResult(BattleDamageRequest request)
+        //预览与实战共用乘区；预览不随机暴击，也不代入未知目标的克制。
+        public static BattleDamageResult BuildDamageResult(BattleDamageRequest request, bool preview = false)
         {
             BattleDamageResult result = new BattleDamageResult();
             if (request == null)
@@ -521,12 +523,12 @@ namespace BANWlLib.BattleSystem
             float amount = attackPower * attackMultiplier * normalAttackStatMultiplier * actionMultiplier;
 
             float critMultiplier = 1f;
-            bool canCrit = request.canCrit && !DamageFontRuleUtility.IsCriticalDisabled(request.damageDef);
+            bool canCrit = !preview && request.canCrit && !DamageFontRuleUtility.IsCriticalDisabled(request.damageDef);
             bool alwaysCrit = request.alwaysCrit || DamageFontRuleUtility.IsCriticalEnsured(request.damageDef);
             result.isCrit = TryRollCrit(casterPawn, request.target as Pawn, request.snapshot, canCrit, alwaysCrit, out critMultiplier);
             amount *= critMultiplier;
 
-            if (request.applyAffinity)
+            if (!preview && request.applyAffinity)
             {
                 result.affinityMultiplier = GetAffinityMultiplier(request.instigator, request.target, request.snapshot);
                 amount *= result.affinityMultiplier;
@@ -925,7 +927,7 @@ namespace BANWlLib.BattleSystem
                             return matrixMultiplier;
                         }
 
-                        return matrixMultiplier * (1f + GetAffinityBonus(instigator as Pawn, attackType.Value));
+                        return matrixMultiplier * (1f + (snapshot != null ? snapshot.affinityBonus : GetAffinityBonus(instigator as Pawn, attackType.Value)));
                     }
                 }
             }
