@@ -11,11 +11,23 @@ namespace BANWlLib.Skills
     public class JobDriver_ShirokoNormalSkill : JobDriver
     {
         private AimedSkillEffects effects;
+        private Verb interruptedWeaponVerb;
+        private LocalTargetInfo interruptedWeaponTarget = LocalTargetInfo.Invalid;
+        private int weaponReadyTick = -1;
         private Hediff_SpecialSkillState State => pawn.health.hediffSet.hediffs
             .OfType<Hediff_SpecialSkillState>().FirstOrDefault(state => state.shiroko.normalJob == job);
 
         //自动远程技能无需预约目标。
         public override bool TryMakePreToilReservations(bool errorOnFailed) => true;
+
+        //保存被技能打断的武器瞄准，读档后仍按原就绪时间恢复。
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref interruptedWeaponVerb, "interruptedWeaponVerb");
+            Scribe_TargetInfo.Look(ref interruptedWeaponTarget, "interruptedWeaponTarget");
+            Scribe_Values.Look(ref weaponReadyTick, "weaponReadyTick", -1);
+        }
 
         //前摇持续跟随目标，到期或中断时清理姿态和特效。
         protected override IEnumerable<Toil> MakeNewToils()
@@ -37,10 +49,20 @@ namespace BANWlLib.Skills
                 if (pawn.stances?.curStance is MultiShotAimStance) pawn.stances.SetStance(new Stance_Mobile());
             });
             Toil warmup = Toils_General.Wait(skill.warmupTicks, TargetIndex.A);
+            //原武器可能仍在瞄准，由本工作接管，不能先等待它结束。
+            warmup.atomicWithPrevious = true;
             if (skill.warmupTicks == 0) warmup.defaultCompleteMode = ToilCompleteMode.Instant;
             warmup.handlingFacing = true;
             warmup.AddPreInitAction(() =>
             {
+                if (pawn.stances.curStance is Stance_Warmup weaponWarmup &&
+                    weaponWarmup.verb?.verbProps.Ranged == true &&
+                    weaponWarmup.verb.EquipmentSource == pawn.equipment?.Primary)
+                {
+                    interruptedWeaponVerb = weaponWarmup.verb;
+                    interruptedWeaponTarget = weaponWarmup.focusTarg;
+                    weaponReadyTick = state.Now + weaponWarmup.ticksLeft;
+                }
                 pawn.pather.StopDead();
                 pawn.rotationTracker.FaceTarget(job.targetA);
                 pawn.stances.SetStance(new MultiShotAimStance(skill.warmupTicks + 1, job.targetA));
@@ -61,9 +83,20 @@ namespace BANWlLib.Skills
             fire.initAction = () =>
             {
                 ShirokoNormalSkill.Fire(state, job.targetA.Pawn);
-                EndJobWith(JobCondition.Succeeded);
+                //同一刻恢复排队工作或自动开火，避免先进入不能远程射击的姿态等待工作。
+                pawn.jobs.EndCurrentJob(JobCondition.Succeeded, startNewJob: false);
+                pawn.jobs.CheckForJobOverride(ignoreQueue: false);
+                ResumeWeaponWarmup(state.Now);
             };
             yield return fire;
+        }
+
+        //同一武器继续瞄准原目标时，技能前摇也计入已等待时间，不重新计算整段瞄准。
+        private void ResumeWeaponWarmup(int now)
+        {
+            if (weaponReadyTick < 0 || !(pawn.stances.curStance is Stance_Warmup warmup) ||
+                warmup.verb != interruptedWeaponVerb || warmup.focusTarg != interruptedWeaponTarget) return;
+            warmup.ticksLeft = System.Math.Min(warmup.ticksLeft, System.Math.Max(1, weaponReadyTick - now));
         }
 
         //读档后按保存的起始时间重建表现，不重播前摇音效。

@@ -32,7 +32,9 @@ namespace BANWlLib.Skills
             Job job = JobMaker.MakeJob(skill.jobDef, target);
             state.shiroko.normalJob = job;
             state.shiroko.warmupStartTick = -1;
-            state.pawn.jobs.StartJob(job, JobCondition.InterruptForced, resumeCurJobAfterwards: true);
+            //前摇工作自行接管姿态，先保留武器瞄准进度供投掷后恢复。
+            state.pawn.jobs.StartJob(job, JobCondition.InterruptForced,
+                resumeCurJobAfterwards: true, cancelBusyStances: false);
             if (state.pawn.CurJob == job) return true;
             state.shiroko.normalJob = null;
             return false;
