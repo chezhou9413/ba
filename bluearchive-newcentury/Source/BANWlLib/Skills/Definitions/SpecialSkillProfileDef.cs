@@ -21,6 +21,7 @@ namespace BANWlLib.Skills
         public WakamoSkillConfig wakamo;
         public ArisuSkillConfig arisu;
         public KeiSkillConfig kei;
+        public ShirokoSkillConfig shiroko;
         public float range = 25f;
         public float radius = 3f;
         public int durationTicks = 2400;
@@ -49,9 +50,6 @@ namespace BANWlLib.Skills
         public float shieldBasePower = 1000f;
         public float moveSpeed = 0.35f;
         public float interceptRadius = 3f;
-        public string droneTexturePath;
-        public Vector2 droneDrawSize = new Vector2(0.7f, 0.5f);
-        public Vector3 droneOffset = new Vector3(0.8f, 0f, 0.5f);
         public EffecterDef casterEffecter;
         public EffecterDef targetEffecter;
         public EffecterDef stateEffecter;
@@ -100,9 +98,13 @@ namespace BANWlLib.Skills
             }
             if (role == SpecialSkillRole.Shiroko)
             {
-                foreach (SpecialAttackConfig attack in new[] { droneAttack, burstAttack })
-                    if (attack == null || !attack.isNormalAttack || attack.isExSkill || attack.shotSound == null)
-                        yield return defName + " 的无人机伤害段必须标记为普通攻击、关闭EX加成并配置逐发shotSound";
+                if (shiroko == null) yield return defName + " 缺少shiroko专属配置";
+                else foreach (string error in shiroko.ConfigErrors()) yield return defName + "：" + error;
+                if (droneAttack == null || droneAttack.isNormalAttack || droneAttack.isExSkill ||
+                    droneAttack.shotSound == null || droneAttack.projectileDef == null)
+                    yield return defName + " 的无人机追击必须使用技能倍率、关闭EX加成并配置弹丸和逐发音效";
+                if (normalAttack != null || burstAttack != null)
+                    yield return defName + " 的普通技能必须配置在shiroko.normalSkill中";
             }
             if (role == SpecialSkillRole.Hoshino && (shieldHediff == null || buffHediff == null))
                 yield return defName + " 的星野配置缺少护盾或增益状态";

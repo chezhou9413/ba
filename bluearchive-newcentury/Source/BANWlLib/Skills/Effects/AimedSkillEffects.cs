@@ -5,8 +5,8 @@ using Verse;
 
 namespace BANWlLib.Skills
 {
-    //爱丽丝EX沿原有时间表播放特效，让准备表现与光束使用同一瞄准方向。
-    internal sealed class ArisuExEffects
+    //沿技能时间表播放定向特效，让准备表现持续跟随当前瞄准方向。
+    internal sealed class AimedSkillEffects
     {
         private readonly Pawn caster;
         private readonly int startTick;
@@ -16,7 +16,7 @@ namespace BANWlLib.Skills
             new List<(SubEffecterDef, Mote, float)>();
 
         //独立创建本次特效状态，不修改共享EffecterDef或Mote定义。
-        internal ArisuExEffects(EffecterDef def, Pawn caster, int startTick)
+        internal AimedSkillEffects(EffecterDef def, Pawn caster, int startTick)
         {
             this.caster = caster;
             this.startTick = startTick;
@@ -72,7 +72,7 @@ namespace BANWlLib.Skills
             mote.exactRotation = rotation + facing;
         }
 
-        //准备被打断时清掉表现，已发射光束保留Mote本身的播放尾段。
+        //前摇结束或被打断时按调用方要求释放跟随表现。
         internal void Cleanup(bool cancelMotes)
         {
             effect?.Cleanup();

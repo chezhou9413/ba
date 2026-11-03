@@ -7,7 +7,6 @@
     <role>Shiroko</role>
     <primaryAbility>BANW_Special_Shiroko_Ex</primaryAbility>
     <range>25</range>
-    <normalIntervalTicks>1800</normalIntervalTicks>
     <radius>3</radius>
     <durationTicks>2400</durationTicks>
     <lifeCostRatio>0.2</lifeCostRatio>
@@ -18,29 +17,24 @@
     <stageEffecter>BANW_Effecter_B</stageEffecter>
     <endEffecter>BANW_Effecter_C</endEffecter>
     <stateEffecter>BANW_Effecter_B</stateEffecter>
-    <!-- 不指定droneTexturePath时绘制简易测试无人机；填写贴图后必须确保资源存在。 -->
-    <droneDrawSize>(0.7,0.5)</droneDrawSize>
-    <droneOffset>(0.8,0,0.5)</droneOffset>
-    <normalAttack>
-      <!-- 总倍率由shots均分；关闭BA时改用basePower作为攻击基数。 -->
-      <useBattleStats>true</useBattleStats>
-      <basePower>100</basePower>
-      <attackPowerRatio>4</attackPowerRatio>
-      <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>0</penetration>
-      <isExSkill>false</isExSkill>
-      <canCrit>true</canCrit>
-      <applyAffinity>true</applyAffinity>
-      <radius>0</radius>
-      <shots>1</shots>
-      <shotIntervalTicks>6</shotIntervalTicks>
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <effecterDef>BANW_Effecter_C</effecterDef>
-
-    </normalAttack>
+    <shiroko>
+      <!-- EX期间禁用指定按钮及施放；保留原能力、充能与正常流逝的冷却。 -->
+      <disabledNormalAbility>BAWN_Shiroko_EX</disabledNormalAbility>
+      <normalSkill>BANW_Special_Shiroko_Normal</normalSkill>
+      <retirementBufferHediff>BANW_ShirokoRetirementBuffer</retirementBufferHediff>
+      <!-- 路径不带方向后缀；缺少西向图时由原版镜像东向图。偏移同时用于机体和发射点。 -->
+      <droneGraphic>
+        <texPath>Pawns/Abydos/Shiroko/Skill/Wurenji</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <drawSize>(0.7,0.5)</drawSize>
+        <drawOffsetNorth>(-0.8,0,0.5)</drawOffsetNorth>
+        <drawOffsetEast>(0.8,0,-0.5)</drawOffsetEast>
+        <drawOffsetSouth>(0.8,0,0.5)</drawOffsetSouth>
+        <drawOffsetWest>(-0.8,0,-0.5)</drawOffsetWest>
+      </droneGraphic>
+    </shiroko>
     <droneAttack>
-      <!-- 每发宿主普攻触发一次；按白子的普攻基准结算50%伤害，不读取EX增益。 -->
+      <!-- 每发主武器射击触发一轮；attackPowerRatio为整轮倍率，按shots均分。 -->
       <useBattleStats>true</useBattleStats>
       <basePower>100</basePower>
       <attackPowerRatio>0.5</attackPowerRatio>
@@ -48,7 +42,8 @@
       <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
       <penetration>0</penetration>
       <isExSkill>false</isExSkill>
-      <isNormalAttack>true</isNormalAttack>
+      <!-- 按角色攻击力计算，不额外乘武器普通攻击倍率或EX倍率。 -->
+      <isNormalAttack>false</isNormalAttack>
       <canCrit>true</canCrit>
       <applyAffinity>true</applyAffinity>
       <radius>0</radius>
@@ -59,37 +54,17 @@
       <effecterDef>BANW_Effecter_C</effecterDef>
 
     </droneAttack>
-    <burstAttack>
-      <!-- 锁定目标连续射击20次；总倍率10均分后，每发为白子普攻基准的50%。 -->
-      <useBattleStats>true</useBattleStats>
-      <basePower>100</basePower>
-      <attackPowerRatio>10</attackPowerRatio>
-      <damageDef>BANC_Damage_shenmi</damageDef>
-      <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->
-      <penetration>0</penetration>
-      <isExSkill>false</isExSkill>
-      <isNormalAttack>true</isNormalAttack>
-      <canCrit>true</canCrit>
-      <applyAffinity>true</applyAffinity>
-      <radius>0</radius>
-      <shots>20</shots>
-      <shotIntervalTicks>6</shotIntervalTicks>
-      <shotSound>BANW_Shiroko_DroneShot</shotSound>
-      <projectileDef>BANW_SpecialSkillBullet</projectileDef>
-      <effecterDef>BANW_Effecter_C</effecterDef>
-
-    </burstAttack>
   </BANWlLib.Skills.SpecialSkillProfileDef>
   <AbilityDef>
     <defName>BANW_Special_Shiroko_Ex</defName>
     <label>测试新技能·黑子</label>
     <description>消耗最大生命的20%，召唤持续40秒的跟随无人机。生命不足时只扣除安全允许的部分，不会因此死亡。无人机无法被攻击；自身每发武器普攻射出时，无人机对本发瞄准目标追击一次，不受宿主射偏、被闪避、护甲减伤或护盾抵挡影响。再次施放刷新无人机持续时间。
 
-无人机伤害按本体普通攻击结算，包含本体普攻倍率、基础精通、暴击和克制，不享受EX伤害加成；每发仍独立接受目标闪避、护甲、穿透和护盾判定，每次射击都播放音效。
+无人机伤害按白子的攻击力和配置倍率结算，继承攻击力加成、暴击、克制与最后乘算的基础精通，不额外应用普通攻击倍率或EX加成；每发独立接受目标闪避、护甲、穿透和护盾判定。
 
-普通技能：每30秒选取敌人，宿主造成攻击力400%的伤害；无人机存在时锁定该目标自动连射20发，每发为本体普攻基准的50%，间隔0.1秒，不需要宿主继续攻击。已开始的20发可以在EX到期后完成；目标死亡、消失或离图时停止剩余射击。
+EX期间原投掷手榴弹技能暂时不可用。EX生效后立即准备自动普通技能，选择25格内最近的可见敌人，持续瞄准0.5秒后投掷跟踪手榴弹，在半径2.9格内造成攻击力400%的伤害；同时无人机连射12发，每发为攻击力50%，间隔0.1秒。投掷后30秒可再次触发，无目标时保持就绪。EX到期取消未完成的前摇并恢复原技能，已投掷的连射仍可完成；目标死亡或离图时停止剩余连射。
 
-不死被动：首次承受致命伤时获得1层不死，此后每次致命伤再增加1层；第15层强制死亡。满血时解除不死并清空层数。被动冷却90秒，从首次触发开始计算；不会治疗已有伤口或阻止倒地。
+不死被动：首次承受致命伤时获得1层退场缓冲，此后每经过完整1游戏秒增加1层，受到伤害不额外加层或刷新计时；触发14秒后达到第15层并强制死亡。健康栏显示当前层数，满血时清空并移除退场缓冲。被动冷却90秒，从首次触发开始计算；不会治疗已有伤口或阻止倒地。
 
 基础消耗：4 COST。EX冷却：1秒。</description>
     <abilityClass>BANWlLib.Skills.Ability_SpecialSkill</abilityClass>

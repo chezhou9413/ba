@@ -46,10 +46,10 @@ namespace BANWlLib.Skills
             float multiplier = 1f, bool drone = false, float resolved = -1f, bool startRecord = false,
             EffecterDef impactEffecter = null, int extraDelay = 0, IntVec3? center = null, bool normalHit = false,
             Thing excludedTarget = null, List<IntVec3> areaCells = null, Verse.AI.Job castingJob = null,
-            bool resolvedCritical = false, bool retainTargetPosition = false)
+            bool resolvedCritical = false, bool retainTargetPosition = false, BattleCasterSnapshot casterSnapshot = null)
         {
             if (action == null || state.pawn.Map == null) return;
-            var snapshot = BattleStatUtility.CreateSnapshot(state.pawn);
+            var snapshot = casterSnapshot ?? BattleStatUtility.CreateSnapshot(state.pawn);
             int count = Mathf.Max(1, action.shots);
             state.pendingAttacks += count;
             for (int i = 0; i < count; i++)
@@ -142,7 +142,7 @@ namespace BANWlLib.Skills
         internal static void Damage(SpecialPendingAttack attack, Thing target)
         {
             BattleActionConfig a = attack.action;
-            bool normalAttack = attack.droneOrigin || a.isNormalAttack;
+            bool normalAttack = a.isNormalAttack;
             float dealt = BattleStatUtility.ApplyDamage(new BattleDamageRequest
             {
                 instigator = attack.caster, target = target, damageDef = a.damageDef,
@@ -153,7 +153,7 @@ namespace BANWlLib.Skills
                 mechanismMultiplier = attack.multiplier * (normalAttack ? a.attackPowerRatio : 1f), snapshot = attack.snapshot,
                 canCrit = a.canCrit, alwaysCrit = a.alwaysCrit, applyAffinity = a.applyAffinity,
                 alwaysShowCriticalText = a.alwaysShowCriticalText,
-                isExSkill = !attack.droneOrigin && a.isExSkill, isNormalAttack = normalAttack,
+                isExSkill = a.isExSkill, isNormalAttack = normalAttack,
                 useNormalAttackStat = normalAttack, normalHit = attack.normalHit,
                 countForNormalSkill = attack.normalHit && !attack.droneOrigin,
                 areaSecondary = attack.excludedTarget != null,

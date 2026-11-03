@@ -6,7 +6,7 @@ using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
-    //凯伊技能，友军场地、输出蓄积和场地结束后的单次释放。
+    //凯伊技能，每个友军场地独立蓄积，到期后逐次释放普通技能。
     public static class KeiSkills
     {
         //生成友军增益场地并锁定记录上限。
@@ -22,31 +22,32 @@ namespace BANWlLib.Skills
         //只统计当前增益区域内其他友军对敌人的实际有效伤害。
         public static void Record(Hediff_SpecialSkillState s, Pawn attacker, Thing target, float amount)
         {
-            if (!s.Active || attacker == null || attacker == s.pawn || attacker.Faction != s.pawn.Faction ||
-                !KeiFieldBinding.Contains(s, attacker) ||
+            if (attacker == null || attacker == s.pawn || attacker.Faction != s.pawn.Faction ||
                 !target.HostileTo(attacker)) return;
-            s.recorded = Mathf.Min(s.recordCap, s.recorded + amount * s.profile.recordRatio);
+            var runtime = KeiRuntimeState.Get(s);
+            foreach (var charge in runtime.charges)
+                if (!charge.ready && charge.endTick > s.Now && KeiFieldBinding.Contains(s, charge.field, attacker))
+                    charge.recorded = Mathf.Min(charge.recordCap, charge.recorded + amount * s.profile.recordRatio);
+            runtime.Sync(s);
         }
 
-        //场地结束后保留一次释放资格，有可行动角色和合法敌人时自动释放。
+        //每个场地各自到期；没有合法敌人时保留全部机会。
         public static void Tick(Hediff_SpecialSkillState s)
         {
-            if (s.endTick > 0 && !s.Active)
-            {
-                s.endTick = -1;
-                s.field = null;
-                s.releaseReady = true;
+            var runtime = KeiRuntimeState.Get(s);
+            int completed = runtime.Advance(s.Now);
+            runtime.Sync(s);
+            for (int i = 0; i < completed; i++)
                 SpecialEffects.Trigger(s.profile.endEffecter, s.pawn);
-            }
             if (s.releaseReady && s.pawn.Spawned) SpecialSkillDispatcher.TryNormal(s);
         }
 
         //同次施法分别发射攻击力伤害与蓄积伤害，消耗一次释放机会。
         public static void Release(Hediff_SpecialSkillState s, Pawn target)
         {
-            float amount = Mathf.Min(s.recorded, s.recordCap);
-            s.recorded = 0f;
-            s.releaseReady = false;
+            var runtime = KeiRuntimeState.Get(s);
+            if (!runtime.TryConsume(out float amount)) return;
+            runtime.Sync(s);
             var config = s.profile.kei;
             config.castSound?.PlayOneShot(new TargetInfo(s.pawn));
             SpecialDirectionalEffects.Trigger(config.casterEffecter, s.pawn, target);

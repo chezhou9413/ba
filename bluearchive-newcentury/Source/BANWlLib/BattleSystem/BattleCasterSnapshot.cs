@@ -19,6 +19,7 @@ namespace BANWlLib.BattleSystem
         public float criticalDamage;
         public float exSkillMultiplier = 1f;
         public damageType? damageType;
+        public float affinityBonus;
 
         //保存和读取快照数据，让存档后的场地继续使用同一套施法属性。
         public void ExposeData()
@@ -36,6 +37,7 @@ namespace BANWlLib.BattleSystem
             Scribe_Values.Look(ref criticalDamage, "criticalDamage", 2f);
             Scribe_Values.Look(ref exSkillMultiplier, "exSkillMultiplier", 1f);
             Scribe_Values.Look(ref damageType, "damageType");
+            Scribe_Values.Look(ref affinityBonus, "affinityBonus");
         }
     }
 }
