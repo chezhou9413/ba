@@ -30,7 +30,8 @@ namespace BANWlLib.Skills
         //无人机到期结束表现，满血则清除不死层数但保留被动冷却。
         public static void Tick(Hediff_SpecialSkillState s)
         {
-            if (!s.Active) ShirokoNormalSkill.CancelWarmup(s);
+            //EX到期只取消尚未投掷的前摇，已启动的连射仍保持普攻锁定。
+            if (!s.Active && s.shiroko.warmupStartTick >= 0) ShirokoNormalSkill.CancelCast(s);
             if (s.endTick > 0 && !DronePresent(s))
             {
                 s.endTick = -1;
@@ -56,10 +57,10 @@ namespace BANWlLib.Skills
             s.countBuff = null;
         }
 
-        //离图或状态移除时清理前摇和未发射攻击，飞行中的弹丸独立完成。
+        //离图或状态移除时清理技能工作和未发射攻击，飞行中的弹丸独立完成。
         public static void Clear(Hediff_SpecialSkillState s)
         {
-            ShirokoNormalSkill.CancelWarmup(s);
+            ShirokoNormalSkill.CancelCast(s);
             s.activeMap?.GetComponent<MapComponent_SpecialSkills>().CancelPending(s);
             s.castEndTick = s.shiroko.normalEndTick = -1;
             if (s.pawn.Dead) RemoveBuffer(s);

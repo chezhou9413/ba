@@ -32,7 +32,7 @@ namespace BANWlLib.Skills
             Job job = JobMaker.MakeJob(skill.jobDef, target);
             state.shiroko.normalJob = job;
             state.shiroko.warmupStartTick = -1;
-            //前摇工作自行接管姿态，先保留武器瞄准进度供投掷后恢复。
+            //技能工作自行接管姿态，先保留武器瞄准进度供整轮连射后恢复。
             state.pawn.jobs.StartJob(job, JobCondition.InterruptForced,
                 resumeCurJobAfterwards: true, cancelBusyStances: false);
             if (state.pawn.CurJob == job) return true;
@@ -55,12 +55,13 @@ namespace BANWlLib.Skills
                 lastShot = Mathf.Max(lastShot, 1 + shot.delayTicks);
             }
             state.shiroko.normalEndTick = state.Now + lastShot;
+            state.shiroko.warmupStartTick = -1;
             state.castEndTick = Mathf.Max(state.castEndTick, state.shiroko.normalEndTick);
             state.nextNormalTick = state.Now + 1 + skill.cooldownTicks;
         }
 
-        //只中断本角色的前摇，已经飞出的弹丸继续交给地图结算。
-        public static void CancelWarmup(Hediff_SpecialSkillState state)
+        //中断本角色的前摇或连射等待，已经飞出的弹丸继续交给地图结算。
+        public static void CancelCast(Hediff_SpecialSkillState state)
         {
             Job job = state.shiroko.normalJob;
             if (job != null && state.pawn.CurJob == job)

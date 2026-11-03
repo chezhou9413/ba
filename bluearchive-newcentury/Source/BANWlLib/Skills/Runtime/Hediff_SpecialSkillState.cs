@@ -52,7 +52,9 @@ namespace BANWlLib.Skills
         //按钮只显示当前角色相关的状态，完整公式留在健康状态说明中。
         public string StatusText => profile?.role == SpecialSkillRole.Shiroko
             ? $"无人机：{(ShirokoSkills.DronePresent(this) ? "在场" : "未召唤")}　EX剩余：{Mathf.Max(0, endTick - Now) / 60f:0.0}秒\n退场缓冲：{stacks}/{profile.lethalStackLimit}层" +
-                (shiroko.normalJob != null ? "\n正在瞄准投掷" : Active ? $"\n普通技能冷却：{Mathf.Max(0, nextNormalTick - Now) / 60f:0.0}秒" : "\nEX普通技能未启用")
+                (shiroko.normalJob != null && shiroko.warmupStartTick >= 0 ? "\n瞄准投掷中（普攻锁定）" :
+                 shiroko.normalEndTick >= Now ? "\n无人机连射中（普攻锁定）" :
+                 Active ? $"\n普通技能冷却：{Mathf.Max(0, nextNormalTick - Now) / 60f:0.0}秒" : "\nEX普通技能未启用")
             : profile?.role == SpecialSkillRole.Kei
             ? $"普通技能待释放：{KeiRuntimeState.Get(this).ReadyCount}次　蓄积中：{KeiRuntimeState.Get(this).charges.Count - KeiRuntimeState.Get(this).ReadyCount}次" +
                 (keiNormalJob != null ? "\n正在瞄准释放" : "")

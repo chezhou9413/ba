@@ -7,7 +7,7 @@ using Verse.Sound;
 
 namespace BANWlLib.Skills
 {
-    //EX普通技能瞄准前摇，投掷完成后归还白子的原工作。
+    //EX普通技能前摇与连射锁定，末发射出后归还白子的原工作。
     public class JobDriver_ShirokoNormalSkill : JobDriver
     {
         private AimedSkillEffects effects;
@@ -29,13 +29,13 @@ namespace BANWlLib.Skills
             Scribe_Values.Look(ref weaponReadyTick, "weaponReadyTick", -1);
         }
 
-        //前摇持续跟随目标，到期或中断时清理姿态和特效。
+        //前摇持续跟随目标，投掷后保持普攻锁定直到无人机末发射出。
         protected override IEnumerable<Toil> MakeNewToils()
         {
             var state = State;
             if (state == null) { Log.Error("白子普通技能工作缺少角色状态"); yield break; }
             var skill = state.profile.shiroko.normalSkill;
-            this.FailOn(() => !state.Active || !SpecialCombatUtility.CanAct(pawn) ||
+            this.FailOn(() => !SpecialCombatUtility.CanAct(pawn) ||
                 !SpecialCombatUtility.ValidEnemy(pawn, job.targetA.Pawn, skill.range));
             AddFinishAction(condition =>
             {
@@ -49,6 +49,7 @@ namespace BANWlLib.Skills
                 if (pawn.stances?.curStance is MultiShotAimStance) pawn.stances.SetStance(new Stance_Mobile());
             });
             Toil warmup = Toils_General.Wait(skill.warmupTicks, TargetIndex.A);
+            warmup.FailOn(() => !state.Active);
             //原武器可能仍在瞄准，由本工作接管，不能先等待它结束。
             warmup.atomicWithPrevious = true;
             if (skill.warmupTicks == 0) warmup.defaultCompleteMode = ToilCompleteMode.Instant;
@@ -78,20 +79,36 @@ namespace BANWlLib.Skills
             yield return warmup;
             Toil fire = ToilMaker.MakeToil("白子手榴弹与无人机发射");
             fire.defaultCompleteMode = ToilCompleteMode.Instant;
-            //前摇到期直接投掷并归还原工作，后续连射由地图队列独立完成。
+            //前摇到期投掷，紧接着进入连射等待，不在两阶段之间释放普攻。
             fire.atomicWithPrevious = true;
+            fire.FailOn(() => !state.Active);
             fire.initAction = () =>
             {
                 ShirokoNormalSkill.Fire(state, job.targetA.Pawn);
-                //同一刻恢复排队工作或自动开火，避免先进入不能远程射击的姿态等待工作。
+                effects?.Cleanup(true);
+                effects = null;
+            };
+            yield return fire;
+            Toil channel = ToilMaker.MakeToil("白子无人机连射锁定普攻");
+            channel.defaultCompleteMode = ToilCompleteMode.Never;
+            channel.atomicWithPrevious = true;
+            channel.handlingFacing = true;
+            channel.initAction = () => pawn.stances.SetStance(new MultiShotAimStance(
+                System.Math.Max(1, state.shiroko.normalEndTick - state.Now + 2), job.targetA));
+            channel.tickAction = () =>
+            {
+                pawn.pather.StopDead();
+                pawn.rotationTracker.FaceTarget(job.targetA);
+                //末发所在tick仍然锁定，避免角色更新早于地图发射队列时提前开枪。
+                if (state.Now <= state.shiroko.normalEndTick) return;
                 pawn.jobs.EndCurrentJob(JobCondition.Succeeded, startNewJob: false);
                 pawn.jobs.CheckForJobOverride(ignoreQueue: false);
                 ResumeWeaponWarmup(state.Now);
             };
-            yield return fire;
+            yield return channel;
         }
 
-        //同一武器继续瞄准原目标时，技能前摇也计入已等待时间，不重新计算整段瞄准。
+        //同一武器继续瞄准原目标时，技能前摇和连射等待都计入瞄准进度。
         private void ResumeWeaponWarmup(int now)
         {
             if (weaponReadyTick < 0 || !(pawn.stances.curStance is Stance_Warmup warmup) ||
