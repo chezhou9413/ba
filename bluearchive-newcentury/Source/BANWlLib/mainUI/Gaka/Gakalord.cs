@@ -155,7 +155,11 @@ namespace BANWlLib.mainUI.Gaka
             {
                 gacaData.isNew = false;
             }
-            var upPool = GakaMapData.selectGachaDef?.upthreeStarPool?.StudentList;
+            //UP身份按当前卡池类型读取，FES池使用独立的当期UP名单。
+            var selectedGacha = GakaMapData.selectGachaDef;
+            var upPool = selectedGacha?.isFes == true
+                ? selectedGacha.FESupthreeStarPool?.StudentList
+                : selectedGacha?.upthreeStarPool?.StudentList;
             gacaData.isUp = upPool != null && upPool.Any(def => def != null && StudentIdentityUtility.GetStudentId(def) == studentId);
             return gacaData;
         }
@@ -192,50 +196,23 @@ namespace BANWlLib.mainUI.Gaka
             spawStudentThing();
         }
 
-        //结算抽卡获得的学生和重复兑换物品。
+        //发放UP首获附赠奖励和重复学生兑换奖励。
         public static void spawStudentThing()
         {
             Map map = Find.CurrentMap;
             foreach (gacaData gacaData in GakaMapData.gacaDatas)
             {
-                BaStudentData studentData = gacaData.BaStudentData;
-                if (studentData == null)
+                Dictionary<ThingDef, int> rewards = gacaData.RewardItems;
+                if (rewards == null)
                 {
                     continue;
                 }
 
-                if (gacaData.isUp)
+                foreach (KeyValuePair<ThingDef, int> kvp in rewards)
                 {
-                    if (gacaData.isNew)
-                    {
-                        foreach (KeyValuePair<ThingDef, int> kvp in studentData.OneGakaStudentThingData)
-                        {
-                            Thing thing = ThingMaker.MakeThing(kvp.Key);
-                            thing.stackCount = kvp.Value;
-                            PawnDropHelper.DropThing(map, thing);
-                        }
-                    }
-                    else if (!gacaData.isNew)
-                    {
-                        foreach (KeyValuePair<ThingDef, int> kvp in studentData.UpGakaStudentThingData)
-                        {
-                            Thing thing = ThingMaker.MakeThing(kvp.Key);
-                            thing.stackCount = kvp.Value;
-                            PawnDropHelper.DropThing(map, thing);
-                        }
-                    }
-                }
-                else
-                {
-                    if (!gacaData.isNew)
-                    {
-                        foreach (KeyValuePair<ThingDef, int> kvp in studentData.GakaStudentThingData)
-                        {
-                            Thing thing = ThingMaker.MakeThing(kvp.Key);
-                            thing.stackCount = kvp.Value;
-                            PawnDropHelper.DropThing(map, thing);
-                        }
-                    }
+                    Thing thing = ThingMaker.MakeThing(kvp.Key);
+                    thing.stackCount = kvp.Value;
+                    PawnDropHelper.DropThing(map, thing);
                 }
             }
             GakaMapData.isP3 = false;

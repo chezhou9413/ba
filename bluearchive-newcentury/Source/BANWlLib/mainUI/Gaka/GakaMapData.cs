@@ -21,6 +21,17 @@ namespace BANWlLib.mainUI.Gaka
         public string AvatarPath;
         public bool isNew = false;
         public bool isUp = false;
+
+        //发放与展示共用本次奖励，首次获得非UP学生时没有附赠道具。
+        public Dictionary<ThingDef, int> RewardItems
+        {
+            get
+            {
+                if (BaStudentData == null) return null;
+                if (isNew) return isUp ? BaStudentData.OneGakaStudentThingData : null;
+                return isUp ? BaStudentData.UpGakaStudentThingData : BaStudentData.GakaStudentThingData;
+            }
+        }
     }
     //抽卡界面运行时缓存，保存界面预制体、当前卡池和抽卡结果。
     public static class GakaMapData

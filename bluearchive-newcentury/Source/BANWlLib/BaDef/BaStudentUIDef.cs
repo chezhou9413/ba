@@ -98,8 +98,11 @@ namespace BANWlLib.BaDef
         public posType PosType;
         public int StarCont;
         public string DraggableAudio;
+        //非UP情况下重复获得学生时发放。
         public Dictionary<ThingDef, int> GakaStudentThingData = new Dictionary<ThingDef, int>();
+        //当期UP学生重复获得时发放。
         public Dictionary<ThingDef, int> UpGakaStudentThingData = new Dictionary<ThingDef, int>();
+        //当期UP学生首次加入名册时附赠。
         public Dictionary<ThingDef, int> OneGakaStudentThingData = new Dictionary<ThingDef, int>();
         public string avtTexPath;
         public string stuSchool;
