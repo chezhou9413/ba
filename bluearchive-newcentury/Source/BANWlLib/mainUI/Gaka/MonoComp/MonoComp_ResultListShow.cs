@@ -11,7 +11,7 @@ using Verse;
 
 namespace BANWlLib.mainUI.Gaka.MonoComp
 {
-    //展示抽卡结果卡片及兑换道具，头像引用随实际显示状态释放。
+    //展示抽卡结果卡片及首获、重复奖励，头像引用随实际显示状态释放。
     public class MonoComp_ResultListShow : MonoBehaviour
     {
         public gacaData gacaData;
@@ -23,11 +23,10 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
         void Start()
         {
             GetComponentInParent<BANWlLib.mainUI.Initialization.BAGachaRenderOrder>().ConfigureResult(gameObject);
-            if (gacaData?.BaStudentData != null)
+            Dictionary<ThingDef, int> rewards = gacaData?.RewardItems;
+            if (rewards != null)
             {
-                goodThings.AddRange(gacaData.isUp
-                    ? gacaData.BaStudentData.UpGakaStudentThingData
-                    : gacaData.BaStudentData.GakaStudentThingData);
+                goodThings.AddRange(rewards);
             }
             Image = this.transform.Find("back").GetComponent<Image>();
             CharacteShow = this.transform.Find("back/CharacteShow").gameObject;
@@ -48,12 +47,12 @@ namespace BANWlLib.mainUI.Gaka.MonoComp
                 }
             }
             StartCoroutine(showStudnt());
-            if (!gacaData.isNew)
+            if (goodThings.Count > 0)
             {
                 StartCoroutine(IterateForever());
             }
         }
-        //循环展示重复学生兑换的道具奖励。
+        //循环展示本次实际发放的首获或重复道具奖励。
         IEnumerator IterateForever()
         {
             yield return new WaitForSeconds(2f);

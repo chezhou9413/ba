@@ -40,7 +40,7 @@
       <!-- 未启用 BA 战斗数值时使用的固定攻击基数。 -->
       <basePower>100</basePower>
       <!-- 攻击力倍率，13 = 1300%。 -->
-      <attackPowerRatio>53.2</attackPowerRatio>
+      <attackPowerRatio>39</attackPowerRatio>
       <!-- 使用的伤害 Def。 -->
       <damageDef>BANC_Damage_Arisu_B_EXX</damageDef>
       <!-- 本段每次伤害的护甲穿透：0.5为50%，不随连射发数均分。 -->

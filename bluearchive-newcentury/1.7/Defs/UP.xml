@@ -4,7 +4,7 @@
     <defName>SR_StopMaintenance</defName>
     <label>碧蓝档案新世界公测公告2.2</label>
     <description>碧蓝档案新世界超级超级大更新，这次版本修复了非常多的代码问题！详细请看公告！
-&lt;color=#66FFFF&gt;11月11日更新公告：&lt;/color&gt;
+&lt;color=#66FFFF&gt;11月4日更新公告：&lt;/color&gt;
 新增 FES 角色： 星野(临战)，尼禄(制服)，白子(恐怖)，
 新增所有FES角色的ex技能
 新增srt狐狸小队，甜点部乐队，和其他的一些角色有谁我忘了，好像有一个上古时期的卫星角色
@@ -13,6 +13,7 @@
 更新1.7
 修复了一堆大大小小的问题时间跨越太大我都忘了修了啥了
 更新了一堆技能
+调整了ui音量
 因为更新了1.7所以ab包的贴图也不打包进ab包了，但是目前没有发现什么特别严重的内存泄露，甚至我感觉还比以前内存消耗变少了1g，错觉吧
 &lt;color=#66FFFF&gt;7月07日更新公告：&lt;/color&gt;
 &lt;color=#00FF00&gt;新角色&lt;/color&gt;
@@ -287,6 +288,6 @@ Performance Optimizer不兼容的bug已经修复
 加强帽子的攻击力
 加强了鞋子的护甲值，移动速度
 削弱手套的精准和攻速</description>
-    <key>2026007007</key>
+    <key>2026001104</key>
   </BANWlLib.Announcements.UpdateAnnouncementDef>
 </Defs>

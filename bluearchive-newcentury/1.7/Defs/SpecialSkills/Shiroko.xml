@@ -66,7 +66,7 @@
       <!-- 相邻两发之间的间隔（tick）。 -->
       <shotIntervalTicks>6</shotIntervalTicks>
       <!-- 每次射击播放的音效。 -->
-      <shotSound>BANW_Shiroko_DroneShot</shotSound>
+      <shotSound>BANW_Sound_Kong</shotSound>
       <!-- 本段使用的弹丸Def。 -->
       <projectileDef>BANW_Bullet_Shiroko_C_EX</projectileDef>
       <!-- 命中时的特效。 -->
@@ -118,7 +118,7 @@
       <!-- 基础施法动词，本技能的实际效果全部由 comps 接管。 -->
       <verbClass>Verb_CastAbility</verbClass>
       <!-- 施法距离（格）。 -->
-      <range>25</range>
+      <range>33.9</range>
       <!-- 前摇时间（秒），2 表示施法前摇 2 秒，走完才结算 comps。 -->
       <warmupTime>2</warmupTime>
       <!-- 目标参数：只能选自己，因此关闭了选空地、选Pawn和选建筑。 -->

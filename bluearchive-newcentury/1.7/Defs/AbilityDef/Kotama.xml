@@ -34,7 +34,7 @@
   <canTargetBuildings>false</canTargetBuildings><!-- 不能选建筑 -->
   <canTargetAnimals>true</canTargetAnimals> <!-- 不能选动物 -->
   <canTargetHumans>true</canTargetHumans><!-- 不能选人类 -->
-  <canTargetMechs>false</canTargetMechs><!-- 不能选机械体 -->
+  <canTargetMechs>true</canTargetMechs><!-- 可以选机械体 -->
   </targetParams>
   </verbProperties>
   <comps>

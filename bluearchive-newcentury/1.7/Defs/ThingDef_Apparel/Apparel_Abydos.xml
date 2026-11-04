@@ -358,5 +358,12 @@
             <wornGraphicData><renderUtilityAsPack>true</renderUtilityAsPack></wornGraphicData>
             <tags Inherit="False" />
         </apparel>
+         <comps>
+            <li Class="ChezhouLib.Comp.CompProperties_KindLocked">
+        <requiredPawnKindDefName>
+          <li>BANW_Hoshiro_B</li>
+        </requiredPawnKindDefName>
+      </li>
+        </comps>
     </ThingDef>
 </Defs>

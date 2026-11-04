@@ -87,7 +87,7 @@
       <shaderType>MoteGlow</shaderType><!-- 使用的着色器类型，用于发光效果 -->
       <drawSize>3.5</drawSize>
       <texPath>Projectile/kongbai</texPath>
-      <graphicClass>BANWlLib.Effects.Graphic_BAAbSingle</graphicClass>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <modExtensions>
       <li Class="BANWlLib.BattleSystem.BattleProjectileExtension">
