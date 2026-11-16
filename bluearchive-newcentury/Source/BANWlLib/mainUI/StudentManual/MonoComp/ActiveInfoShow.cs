@@ -7,6 +7,7 @@ using RimUnity.UI;
 
 namespace BANWlLib.mainUI.StudentManual.MonoComp
 {
+    //显示学生技能悬浮信息，并让长描述适配文本框。
     public class ActiveInfoShow : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         public string ID;
@@ -14,18 +15,19 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
         public GameObject Abilityinfo;
         public GameObject penter;
         private Ability ability;
-        // 这个函数会在鼠标指针进入该对象的可交互区域时被自动调用
+        //鼠标移入技能按钮时显示详情。
         public void OnPointerEnter(PointerEventData eventData)
         {
             ShowInfo();
         }
 
-        // 这个函数会在鼠标指针离开该对象的可交互区域时被自动调用
+        //鼠标离开技能按钮时隐藏详情。
         public void OnPointerExit(PointerEventData eventData)
         {
             hidderInfo();
         }
 
+        //填充当前技能信息，以原字号为上限自动缩小过长的描述。
         void ShowInfo()
         {
             switch (ID)
@@ -46,10 +48,15 @@ namespace BANWlLib.mainUI.StudentManual.MonoComp
             Abilityinfo.SetActive(true);
             Abilityinfo.transform.Find("Title").GetComponent<Text>().text = ability.AbilityTitle;
             Abilityinfo.transform.Find("Subtitle").GetComponent<Text>().text = ability.AbilitySubtitle;
-            Abilityinfo.transform.Find("Introduction").GetComponent<Text>().text = ability.AbilityIntroduction;
+            Text introduction = Abilityinfo.transform.Find("Introduction").GetComponent<Text>();
+            introduction.resizeTextMaxSize = introduction.fontSize;
+            introduction.resizeTextMinSize = 1;
+            introduction.resizeTextForBestFit = true;
+            introduction.text = ability.AbilityIntroduction;
             penter.transform.Find("Heading").gameObject.SetActive(true);
         }
 
+        //关闭技能详情和对应按钮的高亮。
         void hidderInfo()
         {
             Abilityinfo.SetActive(false);

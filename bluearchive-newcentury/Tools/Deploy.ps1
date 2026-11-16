@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $mod = Split-Path $PSScriptRoot -Parent
 if (Get-Process RimWorld,RimWorldWin64 -ErrorAction SilentlyContinue) { throw '请先关闭 RimWorld，部署不会自动结束游戏进程。' }
 if (!(Test-Path -LiteralPath (Join-Path $GameRoot 'Assembly-CSharp.dll'))) { throw '游戏目录无效。' }
-foreach ($file in @('1.7\Assemblies\BANWlLib.dll', '1.7\Data\RimUnity\catalog.json', '1.7\Textures\Ability\Icon\Airy\Airy_EX.png', '1.7\Textures\UI\StarIcon.png')) {
+foreach ($file in @('1.7\Assemblies\BANWlLib.dll', '1.7\Data\RimUnity\catalog.json', 'Common\Textures\Ability\Icon\Airy\Airy_EX.png', '1.7\Textures\UI\StarIcon.png')) {
     if (!(Test-Path -LiteralPath (Join-Path $mod $file))) { throw "缺少 1.7 构建产物：$file" }
 }
 $id = Get-Date -Format 'yyyyMMdd-HHmmss'
